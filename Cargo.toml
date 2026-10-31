@@ -13,3 +13,5 @@ publish = false
 [features]
 default = []
 
+[workspace]
+members = ["oracle"]
