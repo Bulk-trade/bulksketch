@@ -13,7 +13,11 @@ difference of the two sets, as long as it has at most `c` elements.
   (`DecodeLimits::max_work`); a decode that would exceed it stops with
   `WorkLimitExceeded`. `DecodePlan::complete_bound` computes a budget and a
   scratch size meant to cover any input of the given shape. The budget counts
-  logical operations; it is not a wall-clock bound.
+  logical operations; it is not a wall-clock bound. It is also conservative:
+  by our operation-count model, the complete budget is over 100 times the work
+  of an honest full-capacity decode at capacity 18, and several hundred times
+  at capacity 89. It caps the cost of a hostile row; it does not make that cost
+  small.
 - **Verified output.** A decoded row is checked against every stored syndrome
   before it is returned. A row that cannot be decoded within its budget is
   reported as `Failed`; no partial result of that row escapes.
@@ -22,15 +26,19 @@ difference of the two sets, as long as it has at most `c` elements.
 - **Runtime-selected arithmetic.** A portable backend, a PCLMUL backend and a
   VPCLMUL/AVX-512 backend on x86-64, chosen at runtime (`BackendRequest::Auto`).
   The tests check that forced backends give the same results and work counts.
-  `unsafe` code is confined to the two x86-64 backend files.
-- **Minisketch's row bytes.** The syndrome payload of a one-bucket sketch is
-  byte-for-byte a serialized 64-bit minisketch of the same capacity, and
-  `decode_rows_into` accepts such rows directly. The full encoding
-  (`FrozenSketch::encoded_v1`) adds its own header and is not minisketch's format.
+  `unsafe` code is confined to the two x86-64 backend files. Other targets,
+  including AArch64, use the portable backend only.
+- **Minisketch's row bytes, for now.** Today the syndrome payload of a
+  one-bucket sketch is byte-for-byte a serialized 64-bit minisketch of the same
+  capacity, and `decode_rows_into` accepts such rows directly. This is a current
+  property, not a promise: the field, layout or wire format may change in a
+  later version if that makes decoding faster or sketches smaller. The full
+  encoding (`FrozenSketch::encoded_v1`) already adds its own header and is not
+  minisketch's format.
 
-Licensing is pending company sign-off, so `Cargo.toml` sets no `license` and
-`publish = false`. The vendored minisketch sources in `oracle/` keep their own
-licenses (see [Repository layout](#repository-layout)).
+License: TBD. `Cargo.toml` sets no `license` and `publish = false`. The vendored
+minisketch sources in `oracle/` keep their own licenses (see
+[Repository layout](#repository-layout)).
 
 ## Example
 
@@ -129,6 +137,17 @@ Other entry points:
 - `candidates` passes IDs the caller expects in the difference; they can save
   work but never make the decoder accept an unverified result.
 
+### Why the splitter seed should be secret
+
+Root finding splits the locator polynomial along directions derived from the
+`Decoder` seed. An attacker who knows the seed can choose IDs whose roots resist
+those directions, so many split attempts fail. By our operation-count model,
+such a crafted row costs around 20 to 25 times the work of an honest
+full-capacity decode, in minisketch's algorithm and on our seeded root-finding
+path. The work budget still caps it. With a secret seed, the worst an attacker
+can easily force is about one honest full-capacity decode per row. Fixed seeds
+are fine for tests and deterministic simulation.
+
 ### Beyond capacity
 
 When a row holds more than `c` differences, the sketch no longer identifies the
@@ -201,7 +220,9 @@ with `-O3 -march=native`.
 
 ## Performance
 
-> **Draft, pending final wording approval.**
+In the tables below, a *vote* is one complete 16-bucket sketch from a peer,
+compared against the local sketch: one call handles all 16 rows, and each row
+decodes or fails on its own.
 
 Measured on one core of an AMD EPYC 9575F (x86-64) server: 64 fresh processes
 per cell, both libraries timed in the same process, minisketch compiled with
@@ -238,6 +259,28 @@ Where bulksketch is **not** faster, or only slightly:
 - Full 16 x 18 votes are just under 2x CLMUL at p99 (1.94x).
 
 The work budget limits counted operations, not time.
+
+### Reproducing the numbers
+
+The timing tool behind this table is not in this repository yet. Its method:
+
+- Both libraries (and minisketch impl 0 and 1) are linked into one release
+  binary and given identical input bytes. Correctness is checked outside the
+  timed region.
+- The binary runs as 64 fresh processes, one after another, pinned with
+  `taskset -c 2` on an otherwise idle host (no builds or other benchmarks).
+- Within each process the libraries alternate in a random balanced ABBA/BAAB
+  order per call: 1,600 calls per library per process, 5,000 for the
+  smallest cases.
+- Every individual call is kept. p50 and p99 are taken over all calls from all
+  processes, with no overhead subtracted. An A/A pair (the same code timed
+  twice) in every cell shows the noise level.
+- The fixtures are frozen before timing.
+
+To get comparable ratios with what is here, run the Criterion benchmark above
+pinned to one idle core on an x86-64 CPU with PCLMUL, and compare ratios rather
+than absolute times. Expect different numbers: the benchmark decodes every row,
+including equal ones, and does not use the wrapper described above.
 
 ## Repository layout
 
