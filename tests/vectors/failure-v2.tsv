@@ -1,0 +1,13 @@
+# schema bulksketch-failure-v2; fields: name raw_candidate_cap outcome_slots expected
+# GF64 identity B=2 c=[1,1] beta=0 candidates=[1]; local empty, remote zero flag only.
+# Other work/scratch caps and all non-outcome segments are sufficient.
+admission-mixed 0 2 CandidateLimitExceeded
+admission-mixed-short 0 0 CandidateLimitExceeded
+admission-short-control 1 0 ScratchTooSmall
+admission-admitted-control 1 2 DegreeExceedsBudget,Equal
+# name input max_work successful_prefix failed_stage
+# One One 12 12 Canonicalization
+# Two-algebra Two 190 23 DirectTwo
+# Two-verify Two 191 191 Verification
+# Two-sort Two 208 208 Canonicalization
+# Atomic B=2:O=[2];[1] 24 24 Canonicalization

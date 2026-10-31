@@ -1,0 +1,15 @@
+[package]
+name = "bulksketch"
+version = "0.1.0"
+edition = "2024"
+description = "PinSketch (BCH) set-reconciliation sketches over GF(2^64) in pure Rust, with a bounded work budget per decode"
+readme = "README.md"
+keywords = ["sketch", "set-reconciliation", "pinsketch", "bch", "minisketch"]
+categories = ["algorithms", "data-structures"]
+publish = false
+
+[dependencies]
+
+[features]
+default = []
+

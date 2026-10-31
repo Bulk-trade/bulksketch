@@ -1,0 +1,19 @@
+# GF64 B=1, local empty, no candidates. name capacity beta zero odd outcome work
+Equal 1 1 0 0 Equal 4
+One 1 1 0 1 1 13
+Two 2 2 0 3,9 1,2 212
+Zero-plus-one 2 2 1 1,1 0,1 27
+Zero-plus-two 3 3 1 3,9,33 0,1,2 246
+Zero-only 1 1 1 0 0 283
+Underflow 1 0 1 0 DegreeExceedsBudget 2
+No-budget 1 0 0 1 DegreeExceedsBudget 141
+S1-zero 2 2 0 0,1 DegreeExceedsBudget 449
+Protected 2 1 0 3,9 DegreeExceedsBudget 444
+One-late 3 3 0 1,1,0 DegreeExceedsBudget 975
+Two-late 3 2 0 3,9,32 DegreeExceedsBudget 962
+Trace-one 2 2 0 1,0x2000000000000001 NotSplit 953
+One-last 3 3 0 1,1,1 1 47
+Two-last 3 2 0 3,9,33 1,2 227
+# The next representations also arise from true sets {1,2} and {1,2,3}, respectively.
+Alias-one 1 1 0 3 3 13
+Alias-equal 1 1 0 0 Equal 4

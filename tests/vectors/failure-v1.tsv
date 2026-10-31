@@ -1,0 +1,7 @@
+# schema bulksketch-failure-v1; fields: name raw_candidate_cap outcome_slots expected
+# GF64 identity B=2 c=[1,1] beta=0 candidates=[1]; local empty, remote zero flag only.
+# Other work/scratch caps and all non-outcome segments are sufficient.
+admission-mixed 0 2 CandidateLimitExceeded
+admission-mixed-short 0 0 CandidateLimitExceeded
+admission-short-control 1 0 ScratchTooSmall
+admission-admitted-control 1 2 DegreeExceedsBudget,Equal
