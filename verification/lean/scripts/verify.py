@@ -56,6 +56,8 @@ def main():
     records = []
     result, _ = command("regenerate", ["python3", "extraction/regenerate.py"])
     records.append(result)
+    result, _ = command("regenerate-field-tables", ["python3", "extraction/extract-field-tables.py"])
+    records.append(result)
     for path, expected in frozen["files"].items():
         if digest(ROOT / path) != expected:
             raise RuntimeError("regeneration changed a frozen input: " + path)

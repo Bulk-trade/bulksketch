@@ -1,0 +1,8 @@
+pub(crate) fn trace<F: BinaryField>(a: u64) -> u8 {
+    debug_assert_eq!(a & !F::MASK, 0, "noncanonical field operand");
+    if F::BITS == 64 {
+        // Only Z^61 and Z^63 have trace one in this polynomial basis.
+        return u8::try_from(((a >> 61) ^ (a >> 63)) & 1).expect("trace is a bit");
+    }
+    canonical_trace::<F>(a)
+}

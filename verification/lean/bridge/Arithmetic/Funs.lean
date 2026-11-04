@@ -25,6 +25,16 @@ noncomputable section
 
 namespace bulksketch
 
+/-- Trait implementation: [core::num::error::{impl core::fmt::Debug for core::num::error::TryFromIntError}]
+    Source: '/rustc/library/core/src/num/error.rs', lines 8:9-8:14
+    Name pattern: [core::fmt::Debug<core::num::error::TryFromIntError>] -/
+@[reducible, rust_trait_impl
+  "core::fmt::Debug<core::num::error::TryFromIntError>"]
+def core.num.error.TryFromIntError.Insts.CoreFmtDebug : core.fmt.Debug
+  core.num.error.TryFromIntError := {
+  fmt := core.num.error.TryFromIntError.Insts.CoreFmtDebug.fmt
+}
+
 /-- [bulksketch::field::gf64::raw_mul]: loop body 0:
     Source: 'src/field/gf64.rs', lines 15:4-17:5 -/
 @[rust_loop_body]
@@ -344,6 +354,383 @@ def field.gf64.frobenius
   else
     let _ ← core.fmt.Arguments.from_str (toStr "noncanonical field operand")
     fail panic
+
+/-- [bulksketch::field::maps::canonical_trace]: loop body 0:
+    Source: 'src/field/maps.rs', lines 19:4-22:5 -/
+@[rust_loop_body]
+def field.maps.canonical_trace_loop.body
+  {F : Type _} (BinaryFieldInst : field.BinaryField F)
+  (iter : core.ops.range.Range Std.U32) (sum : Std.U64) (conjugate : Std.U64) :
+  Result (ControlFlow ((core.ops.range.Range Std.U32) × Std.U64 × Std.U64)
+    Std.U64)
+  := do
+  let (o, iter1) ←
+    core.iter.range.IteratorRange.next core.iter.range.StepU32 iter
+  match o with
+  | none => ok (done sum)
+  | some _ =>
+    let conjugate1 ← field.gf64.square BinaryFieldInst conjugate
+    let sum1 ← lift (sum ^^^ conjugate1)
+    ok (cont (iter1, sum1, conjugate1))
+
+/-- [bulksketch::field::maps::canonical_trace]: loop 0:
+    Source: 'src/field/maps.rs', lines 19:4-22:5 -/
+@[rust_loop]
+def field.maps.canonical_trace_loop
+  {F : Type _} (BinaryFieldInst : field.BinaryField F)
+  (iter : core.ops.range.Range Std.U32) (sum : Std.U64) (conjugate : Std.U64) :
+  Result Std.U64
+  := do
+  loop
+    (fun (iter1, sum1, conjugate1) => field.maps.canonical_trace_loop.body
+      BinaryFieldInst iter1 sum1 conjugate1)
+    (iter, sum, conjugate)
+
+/-- [bulksketch::field::maps::canonical_trace]:
+    Source: 'src/field/maps.rs', lines 16:0-25:1 -/
+def field.maps.canonical_trace
+  {F : Type _} (BinaryFieldInst : field.BinaryField F) (a : Std.U64) :
+  Result Std.U8
+  := do
+  let i ← BinaryFieldInst.BITS
+  let sum ←
+    field.maps.canonical_trace_loop BinaryFieldInst
+      { start := 1#u32, «end» := i } a a
+  massert (sum <= 1#u64)
+  let r ← U8.Insts.CoreConvertTryFromU64TryFromIntError.try_from sum
+  core.result.Result.expect core.num.error.TryFromIntError.Insts.CoreFmtDebug r
+    (toStr "trace is a bit")
+
+/-- [bulksketch::field::maps::trace]:
+    Source: 'src/field/maps.rs', lines 7:0-14:1 -/
+def field.maps.trace
+  {F : Type _} (BinaryFieldInst : field.BinaryField F) (a : Std.U64) :
+  Result Std.U8
+  := do
+  let i ← BinaryFieldInst.MASK
+  let i1 ← lift (~~~ i)
+  let left_val ← lift (a &&& i1)
+  if left_val = 0#u64
+  then
+    let i2 ← BinaryFieldInst.BITS
+    if i2 = 64#u32
+    then
+      let i3 ← a >>> 61#i32
+      let i4 ← a >>> 63#i32
+      let i5 ← lift (i3 ^^^ i4)
+      let i6 ← lift (i5 &&& 1#u64)
+      let r ← U8.Insts.CoreConvertTryFromU64TryFromIntError.try_from i6
+      core.result.Result.expect
+        core.num.error.TryFromIntError.Insts.CoreFmtDebug r (toStr
+        "trace is a bit")
+    else field.maps.canonical_trace BinaryFieldInst a
+  else
+    let _ ← core.fmt.Arguments.from_str (toStr "noncanonical field operand")
+    fail panic
+
+/-- [bulksketch::field::maps::GF64_QUADRATIC]
+    Source: 'src/field/maps.rs', lines 125:0-190:2 -/
+@[global_simps, irreducible]
+def field.maps.GF64_QUADRATIC : Array Std.U64 64#usize :=
+  Array.make 64#usize [
+    0#u64, 8398585260092789085#u64, 7488310659475462862#u64,
+    7488310659475462848#u64, 1395453116794009576#u64, 1395453116794009566#u64,
+    2548508245335960542#u64, 2550635654253336446#u64, 2545540199578697448#u64,
+    1399383604477156862#u64, 3337928929701997879#u64, 3342948981927381271#u64,
+    2559471621619928503#u64, 3368557543993841534#u64, 4456756027494153833#u64,
+    3459814952248680041#u64, 2545540440096013544#u64, 3459815124046486633#u64,
+    953237978995387008#u64, 3337928852393241367#u64, 3368558780944955262#u64,
+    3368558841070956894#u64, 3519767859746349568#u64, 3459809257130859081#u64,
+    245716952044689609#u64, 1220002250678046519#u64, 1047465764472502857#u64,
+    3519717282079351296#u64, 2105187657906894206#u64, 1168190162306967831#u64,
+    3458764513820540928#u64, 1167986591071188862#u64, 2305843009213693953#u64,
+    1397829015311993751#u64, 16803982325333097#u64, 2548508245335960471#u64,
+    3473829224475440233#u64, 2184543947671713150#u64, 3525907395203334656#u64,
+    66763746388352105#u64, 3525908116758102016#u64, 2214713679040850711#u64,
+    3459811456143628873#u64, 15393164886016#u64, 1220017643876486967#u64,
+    2321275398053375287#u64, 3459025571608691744#u64, 2320876575992394590#u64,
+    3698439238294632649#u64, 1156686590035989342#u64, 1034824430330455584#u64,
+    1058731360612792905#u64, 1156689304455057758#u64, 1156691503480410462#u64,
+    3475538002954599529#u64, 1157002433331171127#u64, 316410265476201#u64,
+    1060669550483088928#u64, 2203708950639523710#u64, 1016505131941771337#u64,
+    190025699843513961#u64, 340093610103809568#u64, 2305843009213693952#u64,
+    8398585260092789086#u64
+    ]
+
+/-- [bulksketch::field::maps::quadratic_rows]:
+    Source: 'src/field/maps.rs', lines 109:0-122:1 -/
+def field.maps.quadratic_rows
+  {F : Type _} (BinaryFieldInst : field.BinaryField F) :
+  Result (Slice Std.U64)
+  := do
+  let i ← BinaryFieldInst.BITS
+  match i with
+  | 64#uscalar => ok (Array.to_slice field.maps.GF64_QUADRATIC)
+  | _ => fail panic
+
+/-- [bulksketch::field::quadratic_chunks::GF64_QUADRATIC_CHUNKS]
+    Source: 'src/field/quadratic_chunks.rs', lines 4:0-293:2 -/
+@[global_simps, irreducible]
+def field.quadratic_chunks.GF64_QUADRATIC_CHUNKS
+  : Array (Array Std.U64 16#usize) 16#usize :=
+  Array.make 16#usize [
+    Array.make 16#usize [
+      0#u64, 1858076378458151938#u64, 9561900855309385444#u64,
+      11347809601525572326#u64, 9561900855309385446#u64,
+      11347809601525572324#u64, 2#u64, 1858076378458151936#u64,
+      11347809597230670838#u64, 9561900859604418548#u64,
+      1858076374163250450#u64, 4295033104#u64, 1858076374163250448#u64,
+      4295033106#u64, 11347809597230670836#u64, 9561900859604418550#u64
+      ],
+    Array.make 16#usize [
+      0#u64, 9561900855309385442#u64, 4018460688368531344#u64,
+      12931737364441319794#u64, 11347809597230670846#u64,
+      1858076374163250460#u64, 12303820987964593262#u64,
+      3318385649691142796#u64, 281517943493500#u64, 9562182287353523614#u64,
+      4018742206311884012#u64, 12932018796485335566#u64,
+      11347528165187055746#u64, 1857794856220282464#u64,
+      12303539555921102610#u64, 3318104131748313584#u64
+      ],
+    Array.make 16#usize [
+      0#u64, 9561900855309385458#u64, 3931244771709608444#u64,
+      12843180233110904590#u64, 4018460688368531376#u64,
+      12931737364441319746#u64, 93140721393931852#u64, 9653559073713891518#u64,
+      1858076305444036428#u64, 11347809528511455678#u64,
+      3406868409643908784#u64, 12390830763651301442#u64,
+      3318385718410881276#u64, 12303821056684332558#u64,
+      1766484659308382464#u64, 11254885084768565234#u64
+      ],
+    Array.make 16#usize [
+      0#u64, 11347809597230670782#u64, 3336501280695469424#u64,
+      12913551347790292686#u64, 281517943493628#u64, 11347528165187055682#u64,
+      3336219779965408908#u64, 12913832796980229426#u64,
+      9580096982618358322#u64, 1839953295933809036#u64,
+      12303540947492210498#u64, 4018743563520894204#u64,
+      9579815533428560334#u64, 1840234796663747184#u64,
+      12303822379535701182#u64, 4018462045577541376#u64
+      ],
+    Array.make 16#usize [
+      0#u64, 9561900855309385714#u64, 4018742189131883772#u64,
+      12932018779305335566#u64, 3931244771709608956#u64,
+      12843180233110903822#u64, 93422136257414912#u64, 9653840574476728562#u64,
+      12932019878818011918#u64, 4018743288642462972#u64,
+      9561901954819964914#u64, 1099512676352#u64, 9653841673987307762#u64,
+      93423235770091264#u64, 12843181332623580174#u64, 3931245871220188156#u64
+      ],
+    Array.make 16#usize [
+      0#u64, 4018460688368530352#u64, 9650468784525026546#u64,
+      12837839003169314626#u64, 1858076305444034380#u64,
+      3318385718410880252#u64, 11251237291811926974#u64,
+      12384929762064203790#u64, 12303816589915979790#u64,
+      11347805199182066622#u64, 3409975036878791932#u64,
+      1771843807844751180#u64, 12931741693766522690#u64,
+      9561905322073531634#u64, 3934910998654481328#u64, 99057202030968832#u64
+      ],
+    Array.make 16#usize [
+      0#u64, 11347809597230674878#u64, 9563028610608019698#u64,
+      1859203167389207372#u64, 3336501280695477616#u64,
+      12913551347790288590#u64, 12320460885348670850#u64,
+      3999360651108462140#u64, 1427071658708988#u64, 11348672344512707650#u64,
+      9562164763890906894#u64, 1857777195318674608#u64,
+      3335113258980092556#u64, 12912725451361212722#u64,
+      12321285682323788414#u64, 4000749772393144768#u64
+      ],
+    Array.make 16#usize [
+      0#u64, 281517943510012#u64, 12541401399658572814#u64,
+      12541682917601525746#u64, 9580096982618391090#u64,
+      9579815533428576718#u64, 3098288881728925244#u64,
+      3098007432538619328#u64, 9223372039002259470#u64,
+      9223653556945769458#u64, 3318029364951280640#u64,
+      3318310882894233596#u64, 356724943616131644#u64, 356443494426317248#u64,
+      12321660916436217394#u64, 12321379467245911502#u64
+      ],
+    Array.make 16#usize [
+      0#u64, 9561900855309451250#u64, 12931737355851385214#u64,
+      4018460696958400140#u64, 4018742189132014844#u64,
+      12932018779305532174#u64, 9562182313123327362#u64, 281526533362288#u64,
+      11254603532465727182#u64, 1766203124185356604#u64,
+      3406587003369828272#u64, 12390549357377294402#u64,
+      12390830780831433266#u64, 3406868495543451072#u64,
+      1766484650718710604#u64, 11254884990279611582#u64
+      ],
+    Array.make 16#usize [
+      0#u64, 3931244771709346812#u64, 18546751265078896#u64,
+      3949501182891564428#u64, 12932019878817487630#u64,
+      9653841673988094194#u64, 12913552670640350590#u64,
+      9635647075681584770#u64, 9635927528439764686#u64,
+      12913833621614736690#u64, 9653559417310488766#u64,
+      12931738257795042114#u64, 3949219922679926208#u64, 18265989269646908#u64,
+      3931526701969830832#u64, 282565915643980#u64
+      ],
+    Array.make 16#usize [
+      0#u64, 4018460688367481776#u64, 1863711165003320140#u64,
+      3321769602856270076#u64, 9650468784527123698#u64,
+      12837839003172460354#u64, 11254602484490956734#u64,
+      12390548129014619150#u64, 1841373461176552128#u64,
+      3335390361664190832#u64, 22768712787509644#u64, 4004989463543591484#u64,
+      11268152857162853938#u64, 12368280845259988354#u64,
+      9637067945302386046#u64, 12860537295350961870#u64
+      ],
+    Array.make 16#usize [
+      0#u64, 1858076305448228684#u64, 339958567963100336#u64,
+      2125400000275239932#u64, 12303816589907591182#u64,
+      12931741693779105602#u64, 12540333103895971006#u64,
+      13240864422681203698#u64, 9241497849131167678#u64,
+      11063466158302705906#u64, 9581306849093053198#u64,
+      11330657946154220610#u64, 3098359259063119792#u64,
+      3690317104213407996#u64, 3335007680094104320#u64, 3999589401049611340#u64
+      ],
+    Array.make 16#usize [
+      0#u64, 11347809597213897662#u64, 1783765537390569292#u64,
+      9636210042798363890#u64, 9563028610641574130#u64,
+      1859203167405984588#u64, 11274628164515504062#u64, 75437630560168960#u64,
+      12319055597872112254#u64, 4003022188067656128#u64,
+      12841775203294627122#u64, 3408277373667784332#u64,
+      3332839743779265164#u64, 12914956635322427698#u64,
+      3927584557649100224#u64, 12392237030431002238#u64
+      ],
+    Array.make 16#usize [
+      0#u64, 3336501280628368752#u64, 3623343634930477708#u64,
+      2019039704854908924#u64, 1427071792926716#u64, 3335113258778765964#u64,
+      3624731656780080496#u64, 2017612633061982208#u64,
+      13116755630313467918#u64, 10972371766102267262#u64,
+      9529792831041067650#u64, 12253452540644507634#u64,
+      13118143669099642866#u64, 10970944711799626370#u64,
+      9531219885343708542#u64, 12252064501858332686#u64
+      ],
+    Array.make 16#usize [
+      0#u64, 281518211945468#u64, 2165389375334596604#u64,
+      2165107857660079104#u64, 12541401399121701902#u64,
+      12541682916796219378#u64, 12682418068887262194#u64,
+      12682136550675316750#u64, 1012186353053232128#u64,
+      1012467870727749628#u64, 1153203022818792444#u64,
+      1152921504606846976#u64, 11529215046068469774#u64,
+      11529496564280415218#u64, 13694604421403066354#u64,
+      13694322903728548878#u64
+      ],
+    Array.make 16#usize [
+      0#u64, 9580096983692132914#u64, 13853606100407680462#u64,
+      4950214841177030652#u64, 9223372036854775822#u64, 356724946837357116#u64,
+      4630234063552904640#u64, 14173586878031806450#u64, 0#u64,
+      9580096983692132914#u64, 13853606100407680462#u64,
+      4950214841177030652#u64, 9223372036854775822#u64, 356724946837357116#u64,
+      4630234063552904640#u64, 14173586878031806450#u64
+      ]
+    ]
+
+/-- [bulksketch::field::maps::quadratic_value]: loop body 0:
+    Source: 'src/field/maps.rs', lines 95:8-99:9 -/
+@[rust_loop_body]
+def field.maps.quadratic_value_loop0.body
+  (iter : core.slice.iter.Iter (Array Std.U64 16#usize)) (remaining : Std.U64)
+  (value : Std.U64) :
+  Result (ControlFlow ((core.slice.iter.Iter (Array Std.U64 16#usize)) ×
+    Std.U64 × Std.U64) Std.U64)
+  := do
+  let (o, iter1) ← core.slice.iter.IteratorSliceIter.next iter
+  match o with
+  | none => ok (done value)
+  | some table =>
+    let i ← lift (remaining &&& 15#u64)
+    let r ← Usize.Insts.CoreConvertTryFromU64TryFromIntError.try_from i
+    let index ←
+      core.result.Result.expect
+        core.num.error.TryFromIntError.Insts.CoreFmtDebug r (toStr
+        "nibble index")
+    let i1 ← Array.index_usize table index
+    let value1 ← lift (value ^^^ i1)
+    let remaining1 ← remaining >>> 4#i32
+    ok (cont (iter1, remaining1, value1))
+
+/-- [bulksketch::field::maps::quadratic_value]: loop 0:
+    Source: 'src/field/maps.rs', lines 95:8-99:9 -/
+@[rust_loop]
+def field.maps.quadratic_value_loop0
+  (iter : core.slice.iter.Iter (Array Std.U64 16#usize)) (remaining : Std.U64)
+  (value : Std.U64) :
+  Result Std.U64
+  := do
+  loop
+    (fun (iter1, remaining1, value1) => field.maps.quadratic_value_loop0.body
+      iter1 remaining1 value1)
+    (iter, remaining, value)
+
+/-- [bulksketch::field::maps::quadratic_value]: loop body 1:
+    Source: 'src/field/maps.rs', lines 103:4-105:5 -/
+@[rust_loop_body]
+def field.maps.quadratic_value_loop1.body
+  (a : Std.U64)
+  (iter : core.iter.adapters.enumerate.Enumerate (core.slice.iter.Iter
+  Std.U64)) (z : Std.U64) :
+  Result (ControlFlow ((core.iter.adapters.enumerate.Enumerate
+    (core.slice.iter.Iter Std.U64)) × Std.U64) Std.U64)
+  := do
+  let (o, iter1) ←
+    core.iter.adapters.enumerate.IteratorEnumerate.next
+      (core.iter.traits.iterator.IteratorSliceIter Std.U64) iter
+  match o with
+  | none => ok (done z)
+  | some p =>
+    let (bit, row) := p
+    let i ← lift (row &&& a)
+    let i1 ← core.num.U64.count_ones i
+    let i2 ← lift (i1 &&& 1#u32)
+    let i3 ← lift (core.convert.num.FromU64U32.from i2)
+    let i4 ← i3 <<< bit
+    let z1 ← lift (z ||| i4)
+    ok (cont (iter1, z1))
+
+/-- [bulksketch::field::maps::quadratic_value]: loop 1:
+    Source: 'src/field/maps.rs', lines 103:4-105:5 -/
+@[rust_loop]
+def field.maps.quadratic_value_loop1
+  (iter : core.iter.adapters.enumerate.Enumerate (core.slice.iter.Iter
+  Std.U64)) (a : Std.U64) (z : Std.U64) :
+  Result Std.U64
+  := do
+  loop
+    (fun (iter1, z1) => field.maps.quadratic_value_loop1.body a iter1 z1)
+    (iter, z)
+
+/-- [bulksketch::field::maps::quadratic_value]:
+    Source: 'src/field/maps.rs', lines 91:0-107:1 -/
+def field.maps.quadratic_value
+  {F : Type _} (BinaryFieldInst : field.BinaryField F) (a : Std.U64) :
+  Result Std.U64
+  := do
+  let i ← BinaryFieldInst.BITS
+  if i = 64#u32
+  then
+    let iter ←
+      SharedArray.Insts.CoreIterTraitsCollectIntoIteratorSharedIter.into_iter
+        field.quadratic_chunks.GF64_QUADRATIC_CHUNKS
+    field.maps.quadratic_value_loop0 iter a 0#u64
+  else
+    let s ← field.maps.quadratic_rows BinaryFieldInst
+    let i1 ← core.slice.Slice.iter s
+    let iter ←
+      core.iter.traits.iterator.Iterator.enumerate.trait_default
+        (core.iter.traits.iterator.IteratorSliceIter Std.U64) i1
+    field.maps.quadratic_value_loop1 iter a 0#u64
+
+/-- [bulksketch::field::maps::solve_quadratic]:
+    Source: 'src/field/maps.rs', lines 81:0-88:1 -/
+def field.maps.solve_quadratic
+  {F : Type _} (BinaryFieldInst : field.BinaryField F) (a : Std.U64) :
+  Result (Option Std.U64)
+  := do
+  let i ← field.maps.trace BinaryFieldInst a
+  if i != 0#u8
+  then ok none
+  else
+    let z ← field.maps.quadratic_value BinaryFieldInst a
+    let i1 ← field.gf64.square BinaryFieldInst z
+    let left_val ← lift (i1 ^^^ z)
+    if left_val = a
+    then ok (some z)
+    else
+      let _ ← core.fmt.Arguments.from_str (toStr "quadratic-map invariant")
+      fail panic
 
 /-- [bulksketch::field::{impl core::clone::Clone for bulksketch::field::Gf64}::clone]:
     Source: 'src/field/mod.rs', lines 37:9-37:14

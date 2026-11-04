@@ -26,7 +26,23 @@ The coefficient specification is independent of the source table/loop schedule.
 [Frobenius.lean](BulksketchBridge/Frobenius.lean) additionally proves exact
 normal return after the source's modulo-64 number of squarings for every input
 word and U32 power. Its bounded loop retains the actual source and square call.
-The period-64 field identity is a separate open algebraic obligation.
+The new [FrobeniusPeriod.lean](BulksketchBridge/FrobeniusPeriod.lean) proves
+universal word-model period 64 and upgrades the same native source item to
+unmodded square iterations. The exact
+[modulus theorem](BulksketchBridge/Algebra/Modulus.lean) proves irreducibility
+over `Polynomial (ZMod 2)` without a prior target-field assumption.
+
+The source [trace](BulksketchBridge/MapsTraceMath.lean),
+[canonical trace](BulksketchBridge/MapsCanonicalTrace.lean),
+[table](BulksketchBridge/MapsTables.lean),
+[chunk loop](BulksketchBridge/MapsQuadraticValue.lean) and
+[quadratic solver](BulksketchBridge/MapsQuadratic.lean) proofs establish exact
+normal behavior for every input. All 320 native row/chunk entries are
+kernel-linked; independent universal matrix identities supply correct roots,
+trace-zero solvability and free-bit-zero uniqueness. See
+[FIELD_ALGEBRA.md](../FIELD_ALGEBRA.md) for the certificate and scope details.
+The word-to-Mathlib quotient-field bridge, field-law/`Algebra.trace` transport,
+inverse wrappers and x86-only table-generation paths remain open.
 
 From the parent Lean directory:
 

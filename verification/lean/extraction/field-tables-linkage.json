@@ -1,0 +1,13 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "source_files": {
+    "src/field/maps.rs": "56d1f22aad44faa402a4d743b9719e2f93fe891ca72da411e29598c37f925f22",
+    "src/field/quadratic_chunks.rs": "6b64976353c70aec71c9416cb59993751b1babbdcd7323cbb3a7e7ff34e3d50d"
+  },
+  "row_entries": 64,
+  "chunk_entries": 256,
+  "derived_transpose_entries": 64,
+  "output": "BulksketchProofs/Generated/FieldTables.lean",
+  "output_sha256": "25cb2883183185bd93f22b3f1d000f20a7ee67ab7867ce010a86fc80a1dda124",
+  "trust": "strict integer-literal extraction only; transpose and mathematical claims require Lean proofs"
+}

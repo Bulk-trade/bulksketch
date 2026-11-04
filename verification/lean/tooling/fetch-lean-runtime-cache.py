@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch Mathlib artifacts only for explicit imports used by pinned Aeneas."""
+"""Fetch artifacts only for explicit Mathlib imports in runtime and native proofs."""
 import json
 import os
 from pathlib import Path
@@ -11,7 +11,7 @@ RUNTIME=ROOT/'tooling/aeneas/backends/lean'
 WORKSPACE=ROOT/'bridge'
 (ROOT/'tooling/logs').mkdir(parents=True,exist_ok=True)
 modules=set()
-for directory in [RUNTIME/'Aeneas',RUNTIME/'AeneasMeta']:
+for directory in [RUNTIME/'Aeneas',RUNTIME/'AeneasMeta',WORKSPACE/'BulksketchBridge']:
     for source in directory.rglob('*.lean'):
         for line in source.read_text().splitlines():
             match=re.match(r'^(?:public\s+)?import\s+(Mathlib\.[A-Za-z0-9_.]+)',line)

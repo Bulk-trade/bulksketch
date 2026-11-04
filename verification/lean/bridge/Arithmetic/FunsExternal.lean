@@ -1,6 +1,7 @@
 module
 public import Arithmetic.Types
 public import Arithmetic.TrailingZeros
+public import Arithmetic.MapsRuntime
 @[expose] public section
 
 namespace Aeneas.Std

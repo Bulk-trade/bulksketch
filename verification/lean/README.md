@@ -18,12 +18,14 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | GF64 reduction | Universal division certificate for every 128-bit input, unique bounded quotient/remainder and XOR-linearity | Actual generated reduction using the actual extracted Gf64 dictionary; the generic BITS=64 contract is also retained |
 | Raw multiplication | Full 128-bit GF(2) coefficient convolution, degree at most 126, exact nibble table and accumulator prefixes | Both original generated loops terminate normally; subtraction, reads/writes, shifts, casts and output splitting checked |
 | Bit spreading and raw square | Exact coefficient placement and XOR-linearity for every 64-bit input | Actual generated spread; raw-square model and actual Gf64 square compose with reduction |
-| Repeated squaring | Exact normal output after `power % 64` independent polynomial squarings for every U64/U32 input pair | Actual generated Frobenius guard, remainder and bounded loop; no unmodded-exponent/period-64 theorem claimed |
+| Repeated squaring | Exact normal output for every U64/U32 input pair, strengthened to unmodded polynomial-square iterations | Original modulo-count contract retained; universal word-period theorem justifies the stronger endpoint |
+| Period and modulus | Every word returns after 64 squarings; all natural iteration counts reduce modulo 64; exact `Polynomial (ZMod 2)` modulus is irreducible | Checked basis/linearity proof and polynomial square/Bézout/factor-degree certificates; native word-to-quotient representation remains separate |
+| Trace and quadratic maps | Complete 64-conjugate trace, all row/chunk identities, trace-zero solvability and normalized uniqueness | Actual source trace/canonical trace, row selector, 16-chunk value loop and solver refine the universal word models |
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The current bridge targets nine source functions: the three meter operations,
-spread, raw multiplication, reduction, multiplication, square and Frobenius.
+The current bridge targets fourteen source functions: the three meter operations,
+six arithmetic operations and five trace/quadratic map operations.
 This is functional refinement of generated
 bodies under the stated trust boundary, not a count of complete native contracts.
 Full native implementation coverage is not achieved.
@@ -31,12 +33,14 @@ Full native implementation coverage is not achieved.
 The [core proofs](BulksketchProofs.lean) and [generated-body bridge](bridge/README.md)
 use frozen proposition definitions, transitive axiom audits and exported-term
 replay through Lean and independent Nanoda. The only permitted axioms are
-`propext`, `Quot.sound` and `Classical.choice`. The current core needs the first
-two; the bridge also uses choice. No admitted application-correctness or native
+`propext`, `Quot.sound` and `Classical.choice`. The current core and bridge use
+all three. No admitted application-correctness or native
 evaluation axioms discharge an obligation.
 
 [RAW_MULTIPLICATION.md](RAW_MULTIPLICATION.md) explains the independent product,
 both source-loop invariants, every bound and the final composition in detail.
+[FIELD_ALGEBRA.md](FIELD_ALGEBRA.md) explains the exact modulus theorem, universal
+period, table certificates and normalized quadratic solver semantics.
 
 The [coverage ledger](audit/coverage.json) keeps every native item in scope,
 including unsupported and unproved items. Related mathematical model evidence
@@ -68,7 +72,8 @@ python3 scripts/verify_all.py
 The runtime setup clones only the pinned Aeneas source and its pinned Lean
 dependencies. It does not install OCaml or build the Rust extractor. It disables
 Mathlib's automatic full-cache update hook and requests cache artifacts only for
-the explicit imports used by the runtime. Setup/build caches are ignored by Git.
+the explicit imports used by the runtime and native proofs, including the pinned
+Mathlib finite-field modules. Setup/build caches are ignored by Git.
 
 `verify_all.py` fails closed across core checking, bridge checking and negative
 fixtures. It checks frozen endpoint propositions, exact source/body hashes and
@@ -124,6 +129,12 @@ correspondence, allocator/runtime, intrinsic lowering and machine semantics also
 remain separately declared assumptions. These proofs do not verify the compiler
 or the entire Rust standard library.
 
+Field maps reuse general checked conversions and add an exact population-count
+model. The pinned runtime's integer-conversion error/Debug model erases diagnostic
+detail. Native endpoint proofs establish inner `Ok` before every `expect`, and
+independence from all Debug dictionaries is checked. Rust formatting correctness
+is outside these claims.
+
 ## Regenerate source-derived artifacts
 
 `python3 extraction/regenerate.py` reruns the small locked Rust/Syn AST utility
@@ -145,8 +156,9 @@ around associated iterator types, and full Aeneas translation encounters
 associated-type, function-pointer, lifetime and loop limitations. They are proof
 tooling gaps, not completed obligations or demonstrated library defects.
 
-Next milestones are field maps/tables, modulus irreducibility and the algebraic
-period needed to relate reduced Frobenius exponents to arbitrary powers; then the capacity-18 public slice,
+Next milestones are the formal native-word/Mathlib quotient-field representation,
+field-law and `Algebra.trace` transport, inverse wrappers and the x86-only
+Frobenius lookup/table-generation paths; then the capacity-18 public slice,
 general decoder completeness, public state/resource/ownership behavior, and both
 x86 backends. The Mac's inability to execute x86 does not remove those source
 bodies from the proof scope. Performance tests and formal proof obligations remain

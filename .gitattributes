@@ -10,6 +10,13 @@ verification/lean/extraction/canonical-arithmetic/rawmul/Arithmetic/** linguist-
 verification/lean/extraction/canonical-arithmetic/frobenius/Arithmetic/** linguist-generated=true
 verification/lean/extraction/canonical-arithmetic/rawmul/arithmetic.llbc linguist-generated=true
 verification/lean/extraction/canonical-arithmetic/frobenius/arithmetic.llbc linguist-generated=true
+verification/lean/extraction/canonical-arithmetic/maps/Arithmetic/** linguist-generated=true
+verification/lean/extraction/canonical-arithmetic/maps/arithmetic.llbc linguist-generated=true
+verification/lean/extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc linguist-generated=true
+verification/lean/extraction/inverse-chain/** linguist-generated=true
+verification/lean/BulksketchProofs/Generated/FieldTables.lean linguist-generated=true
+verification/lean/extraction/canonical-arithmetic/maps/runtime/*.rs whitespace=-blank-at-eof
+verification/lean/extraction/canonical-arithmetic/maps/runtime/*.lean.txt whitespace=-blank-at-eof
 verification/lean/extraction/canonical-arithmetic/rawmul/runtime/*.rs whitespace=-blank-at-eof
 verification/lean/extraction/reduce/** linguist-generated=true
 verification/lean/extraction/spread/generated/** linguist-generated=true

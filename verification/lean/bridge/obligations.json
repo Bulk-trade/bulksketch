@@ -84,6 +84,66 @@
     {
       "challenge": "BulksketchBridge.FrobeniusChallenges.normalResultMatchesIteratedSquare",
       "theorem": "BulksketchBridge.Frobenius.frobenius_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusPeriodChallenges.oldFrozenModelMatchesCoreExactly",
+      "theorem": "BulksketchBridge.FrobeniusPeriod.model_correspondence"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusPeriodChallenges.oldFrozenModelHasPeriod64",
+      "theorem": "BulksketchBridge.FrobeniusPeriod.existing_period64"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusPeriodChallenges.oldFrozenModelIterationCountsReduceModulo64",
+      "theorem": "BulksketchBridge.FrobeniusPeriod.existing_iteration_mod64"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusPeriodChallenges.actualNativeFrobeniusMatchesUnmoddedIteration",
+      "theorem": "BulksketchBridge.FrobeniusPeriod.native_unmodded_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Algebra.ModulusChallenges.exactPolynomialIrreducible",
+      "theorem": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsTraceChallenges.normalResultMatchesSelector",
+      "theorem": "BulksketchBridge.MapsTrace.trace_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsTraceMathChallenges.actualTraceMatchesAbsoluteTrace",
+      "theorem": "BulksketchBridge.MapsTraceMath.trace_matches_absolute"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.allGeneratedRowsMatchSourceData",
+      "theorem": "BulksketchBridge.MapsTables.rows_match_source"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.allGeneratedChunksMatchSourceData",
+      "theorem": "BulksketchBridge.MapsTables.chunks_match_source"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualRowsReturnExactSourceData",
+      "theorem": "BulksketchBridge.MapsTables.quadratic_rows_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualValueMatchesAllChunkContributions",
+      "theorem": "BulksketchBridge.MapsQuadratic.quadratic_value_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualValueMatchesIndependentMatrix",
+      "theorem": "BulksketchBridge.MapsQuadratic.quadratic_value_matches_matrix"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualSolverMatchesNormalizedModel",
+      "theorem": "BulksketchBridge.MapsQuadratic.solve_quadratic_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualSolverHasExactNormalizedSolutionMeaning",
+      "theorem": "BulksketchBridge.MapsQuadratic.solve_quadratic_exact_meaning"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsCanonicalTraceChallenges.normalResultMatchesAbsoluteTrace",
+      "theorem": "BulksketchBridge.MapsCanonicalTrace.canonical_trace_refines"
     }
   ],
   "refinements": [
@@ -202,17 +262,17 @@
         "bridge/Arithmetic/Funs.lean"
       ],
       "source_linkage": "bridge/source-linkage.json",
-      "scope": "Original generated mul with the actual Gf64 dictionary; every U64 pair returns normally with canonical-degree polynomial division certificate for the complete unreduced product. Modulus irreducibility and compiler/runtime execution closure remain open.",
+      "scope": "Original generated mul with actual Gf64 dictionary; every U64 pair returns normally with the canonical-degree polynomial division certificate for the complete raw product. This endpoint does not use irreducibility; native word-to-quotient-field and compiler/runtime closure remain open.",
       "challenge": "BulksketchBridge.RawMulChallenges.actualMultiplicationHasDivisionCertificate",
       "generated_declaration": "bulksketch.field.gf64.mul",
       "generated_file": "bridge/Arithmetic/Funs.lean"
     },
     {
-      "label": "gf64::frobenius [actual Gf64, power%64]",
+      "label": "gf64::frobenius [actual Gf64, unmodded iteration]",
       "native_item_id": "src/field/gf64.rs:81:function:bulksketch::field::gf64::frobenius",
       "source_line_span_sha256": "dc831257671f85b75849509d94af69c95a7f6ac0c7210783bf96f3ed2a3dd9e7",
-      "theorem": "BulksketchBridge.Frobenius.frobenius_refines",
-      "challenge": "BulksketchBridge.FrobeniusChallenges.normalResultMatchesIteratedSquare",
+      "theorem": "BulksketchBridge.FrobeniusPeriod.native_unmodded_refines",
+      "challenge": "BulksketchBridge.FrobeniusPeriodChallenges.actualNativeFrobeniusMatchesUnmoddedIteration",
       "generated_declaration": "bulksketch.field.gf64.frobenius",
       "generated_file": "bridge/Arithmetic/Funs.lean",
       "generated_files": [
@@ -220,7 +280,82 @@
         "bridge/Arithmetic/Funs.lean"
       ],
       "source_linkage": "bridge/source-linkage.json",
-      "scope": "Original generated frobenius with actual Gf64 dictionary; every U64 input and U32 power returns normally with exactly power.val%64 independent polynomial squarings. Source guard/remainder/range/loop bounds checked. No period64 identity or unmodded exponent/irreducibility claim; compiler/runtime correspondence remains explicit TCB."
+      "scope": "Every U64/U32 source call equals unmodded power.val independent polynomial squarings, using universally proved period64 and count-modulo identities. Earlier modulo-source contract retained; word-to-quotient-field exponent/Algebra.trace bridges remain separate."
+    },
+    {
+      "label": "maps::trace [actual Gf64]",
+      "native_item_id": "src/field/maps.rs:6:function:bulksketch::field::maps::trace",
+      "source_line_span_sha256": "af7a67e3e512458adcddb5d3d8a44db60458918083b50603ab203a287d66b231",
+      "theorem": "BulksketchBridge.MapsTraceMath.trace_matches_absolute",
+      "challenge": "BulksketchBridge.MapsTraceMathChallenges.actualTraceMatchesAbsoluteTrace",
+      "generated_declaration": "bulksketch.field.maps.trace",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every U64 source trace call returns normally with the complete byte, its zero extension equals the independent sum of64polynomial conjugates, and value<=1. Original mask/shifts/checked conversion/expect retained; actual Gf64 dictionary."
+    },
+    {
+      "label": "maps::canonical_trace [actual Gf64]",
+      "native_item_id": "src/field/maps.rs:16:function:bulksketch::field::maps::canonical_trace",
+      "source_line_span_sha256": "efabcb0d40953253bb91fae9017599154e5a262bf02432ce2342ecc130cfe1b4",
+      "theorem": "BulksketchBridge.MapsCanonicalTrace.canonical_trace_refines",
+      "challenge": "BulksketchBridge.MapsCanonicalTraceChallenges.normalResultMatchesAbsoluteTrace",
+      "generated_declaration": "bulksketch.field.maps.canonical_trace",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every U64 actual Gf64 canonical trace returns normally after the original63-step loop with the complete64-conjugate sum byte. Loop bounds/termination, sum<=1 assertion, checked conversion and expect discharged; no trace-bound/success/irreducibility premise."
+    },
+    {
+      "label": "maps::quadratic_rows [actual Gf64]",
+      "native_item_id": "src/field/maps.rs:109:function:bulksketch::field::maps::quadratic_rows",
+      "source_line_span_sha256": "9a94e5fff7ed7cce7a162c6167f45d6b786704ae55ab691e3e02194edabd869c",
+      "theorem": "BulksketchBridge.MapsTables.quadratic_rows_refines",
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualRowsReturnExactSourceData",
+      "generated_declaration": "bulksketch.field.maps.quadratic_rows",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Actual Gf64 source selector returns the complete64-row slice normally, with exact length/data equality to the source-derived core table. Other-field fallback retained."
+    },
+    {
+      "label": "maps::quadratic_value [actual Gf64]",
+      "native_item_id": "src/field/maps.rs:90:function:bulksketch::field::maps::quadratic_value",
+      "source_line_span_sha256": "ac0891f612737bd743955386079908a9437fec0a8477d32c953a28974634a0f1",
+      "theorem": "BulksketchBridge.MapsQuadratic.quadratic_value_matches_matrix",
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualValueMatchesIndependentMatrix",
+      "generated_declaration": "bulksketch.field.maps.quadratic_value",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every U64 source call returns the exact fullword independent matrix map; all16 original chunk iterations, checked casts/index/shift/terminal/termination proved; all320native row/chunk constants kernel-linked and map equality universal."
+    },
+    {
+      "label": "maps::solve_quadratic [actual Gf64]",
+      "native_item_id": "src/field/maps.rs:77:function:bulksketch::field::maps::solve_quadratic",
+      "source_line_span_sha256": "550c5c5a4e9f104a09f5602c4cab0013a0e8554781cdab0afab6421b5f7b1610",
+      "theorem": "BulksketchBridge.MapsQuadratic.solve_quadratic_exact_meaning",
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualSolverHasExactNormalizedSolutionMeaning",
+      "generated_declaration": "bulksketch.field.maps.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every U64 source solver returns normally: None exactly for trace one, or the correct quadratic root with bit0=false and uniqueness among normalized roots. Original trace/table/square/assert/Some/None branches retained; no source-success/irreducibility premise."
     }
   ]
 }

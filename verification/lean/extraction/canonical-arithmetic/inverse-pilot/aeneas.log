@@ -1,0 +1,34 @@
+[[92mInfo[39m ] Imported: /workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc
+[?25lApplied prepasses:  [------------------------------------------------]   0/120 ⠋Applied prepasses:  [------------------------------------------------]   1/120 ⠋Applied prepasses:  [####--------------------------------------------]  12/120 ⠋Applied prepasses:  [################################################] 120/120 ✔️
+[?25h[?25lTranslated globals:  [-------------------------------------------------]  0/26 ⠋Translated globals:  [############################---------------------] 15/26 ✔️
+[?25h[?25lTranslated opaque functions:  [----------------------------------------]  0/64 ⠋Translated opaque functions:  [########################################] 64/64 ✔️
+[?25h[?25lTranslated transparent functions:  [-----------------------------------]  0/39 ⠋Translated transparent functions:  [-----------------------------------]  1/39 ⠋Translated transparent functions:  [##########-------------------------] 12/39 ⠙Translated transparent functions:  [###########################--------] 31/39 ⠙[[91mError[39m] Joining region abstractions containing shared loans whose shared value contains borrows is not supported yet
+Source: 'src/field/maps.rs', lines 43:8-45:9
+[[93mWarn[39m ] Could not translate the body of function 'bulksketch::field::maps::inverse_using::{impl core::ops::function::Fn<(u64, u32), u64> for bulksketch::field::maps::inverse_using::{closure}<'_0, F, T1, T2>}::call because of previous error
+Name pattern: 'bulksketch::field::maps::inverse_using::{core::ops::function::Fn<bulksketch::field::maps::inverse_using::closure<'0, @F, @T1, @T2>, (u64, u32), u64>}::call'
+Definition span: 'src/field/maps.rs', lines 42:40-47:5
+Source: 'src/field/maps.rs', lines 43:8-45:9
+Compiler source: interp/Interp.ml, line 685
+
+Translated transparent functions:  [#############################------] 33/39 ⠙Translated transparent functions:  [##############################-----] 34/39 ⠹Translated transparent functions:  [################################---] 36/39 ⠹Translated transparent functions:  [#################################--] 37/39 ⠸Translated transparent functions:  [###################################] 39/39 ⠸Translated transparent functions:  [###################################] 39/39 ✔️
+[?25h[?25lTranslated trait declarations:  [--------------------------------------]  0/33 ⠋Translated trait declarations:  [###################-------------------] 17/33 ✔️
+[?25h[?25lTranslated trait impls:  [---------------------------------------------]  0/56 ⠋Translated trait impls:  [############################-----------------] 35/56 ✔️
+[?25h[?25lPost-processed translated opaque functions:  [-------------------------]  0/64 ⠋Post-processed translated opaque functions:  [-------------------------]  1/64 ⠋Post-processed translated opaque functions:  [#########################] 64/64 ✔️
+[?25h[?25lPost-processed translated transparent functions:  [--------------------]  0/39 ⠋Post-processed translated transparent functions:  [--------------------]  1/39 ⠋Post-processed translated transparent functions:  [################----] 32/39 ⠋Post-processed translated transparent functions:  [#################---] 34/39 ⠙Post-processed translated transparent functions:  [##################--] 36/39 ⠙Post-processed translated transparent functions:  [####################] 39/39 ⠙Post-processed translated transparent functions:  [####################] 39/39 ✔️
+[?25h[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::traits::iterator::Iterator', could not find the information for item 'rev'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/traits/iterator.rs', lines 42:0-42:24
+Compiler source: extract/Extract.ml, line 2866
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::range::Step', could not find the information for item 'forward_overflowing'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/range.rs', lines 35:0-35:64
+Compiler source: extract/Extract.ml, line 2866
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::range::Step', could not find the information for item 'backward_overflowing'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/range.rs', lines 35:0-35:64
+Compiler source: extract/Extract.ml, line 2866
+
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/inverse-pilot/Arithmetic/TypesExternal_Template.lean
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/inverse-pilot/Arithmetic/Types.lean
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/inverse-pilot/Arithmetic/FunsExternal_Template.lean
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/inverse-pilot/Arithmetic/Funs.lean
+[[92mInfo[39m ] Total execution time: 0.708612 seconds

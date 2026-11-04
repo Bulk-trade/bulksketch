@@ -1,6 +1,6 @@
 {
   "policy": "Initial approved challenge/specification freeze. Proof files may evolve; these meanings/source inputs must not change silently. Intentional changes require review and a new freeze record.",
-  "challenge_count": 15,
+  "challenge_count": 29,
   "files": {
     "BulksketchProofs/Challenges.lean": "4a3802958e73c5b65937f7710c86ac0bb0c0ec25fc03faaece632ae4ef6e268f",
     "BulksketchProofs/Field/ReductionSpec.lean": "7babe2cc4dcd17bc89f40c7720fb44607ba25752e009297932ccfe855fc00856",
@@ -13,16 +13,29 @@
     "scope.json": "2502dabb052753705a42f5aa3bbdd17800da04316e30912a0fc3d8fb64bde5dd",
     "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
     "lakefile.toml": "b6b1d522c0d1a9676055f895112143020c2a04b9ff250fb795a0cbddd46398a0",
-    "BulksketchProofs/Audit.lean": "7206c4f7d7c1be5ed178b5f3f62f908e6da37731da15da5aa9e295bb2314b574",
-    "scripts/verify.py": "990388ee1b4641c5536dc6cac88babf77b338a1ead74bff7fabfdf52a1c5eabf",
+    "BulksketchProofs/Audit.lean": "c9ce92f2202ceb9297e81c78c86965dbecaf1509289c53ce106dbedd54ad8eb1",
+    "scripts/verify.py": "54985bd8bbae78224c386873f82d1fd9e23e1af362729fafd9fabb304e0d54db",
     "BulksketchProofs/Field/SpreadSpec.lean": "cb21b3ad6e0c378438699e848a78038ca0d61b757322f8489fede4fc57cc9062",
     "BulksketchProofs/SpreadChallenges.lean": "1efb7e6e3d8561c83a26916282b6240a774a80db52091dd7420053a4424f7c63",
     "scripts/verify_all.py": "9c0f63cbea92b253f314ff3651ca9b843a4e481deebef6e38afdae05f44c55bd",
     "scripts/check_negative_fixtures.py": "1be2bee7eb62aad32a2e9a3b4949a7076be5e8ee6ab8b59ec8e4370c0024ac7d",
-    "BulksketchProofs.lean": "98e3f3231cf43fb03237202b4889a9fc9619af171c3bab3ea1eb2ea4d74315b5",
+    "BulksketchProofs.lean": "062759adee4278c7bc60184084009295b282e3e2c6293ca5bda2b572547f13b5",
     "BulksketchProofs/Field/CLMulSpec.lean": "b80c1557d0e1d10e719c255d6d74500f5a48e2580ed04e26d7e16d210ba1737b",
     "BulksketchProofs/CLMulChallenges.lean": "e1d1017fabdbbf07a8ac259d8fca264ef20175e6c5b1d0706306ea542237cdbb",
-    "audit/clmul-contract-review.json": "eaf9a143e359757389300176c8ea75eabb4f7d945a1ca8204d62c4dcc75d0306"
+    "audit/clmul-contract-review.json": "eaf9a143e359757389300176c8ea75eabb4f7d945a1ca8204d62c4dcc75d0306",
+    "BulksketchProofs/Field/PeriodSpec.lean": "d2417cef84e3e58cb5f1050c4fe416322aa1d5b2e874e0252c921e7dfe9387d9",
+    "BulksketchProofs/PeriodChallenges.lean": "fc7142606f57b8a005ae4961f15e83c7af9c9d5978d51de59c2bae620141b315",
+    "BulksketchProofs/Field/MapsSpec.lean": "bf9be6ad14733817b644efb7ac5dc3c42a1c74c60778d0cf9ec4d602cb74f439",
+    "BulksketchProofs/MapsChallenges.lean": "7506d3be82924407281f607c704612f693c361d600b8f8176005b265f7e4afdf",
+    "BulksketchProofs/Generated/FieldTables.lean": "25cb2883183185bd93f22b3f1d000f20a7ee67ab7867ce010a86fc80a1dda124",
+    "extraction/extract-field-tables.py": "46b020654d32253b223e7961bd9f9c0ee805d056e7db5492e0907ad555c1aece",
+    "extraction/field-tables-linkage.json": "e532e17a5d7ae98864de10a826d9d1af62c7929d9a5ef3b5af228f1179d6c674",
+    "audit/maps-contract-preproof-freeze.json": "5510580141b61dbb4a930b0fd2b879efb0f56ddc4d8fbd8e9b6939b1af9a72d8",
+    "audit/period-contract-preproof-freeze.json": "0abf907b9472f61d18abcf50650e71deefccd89e552a94200111ab91e1a33ade",
+    "audit/modulus-proof-independent-review.md": "24a9fa1b70f297f50efacf5d2fdfb3592ecfdc82fdb80fc5ab6d79ea36e2b96b",
+    "audit/core-maps-proof-independent-review.md": "aed4509f239a8e3db59c7a9f0d95ca20286d8a6df50372e3f59c172572101124",
+    "audit/field-algebra-accounting-review.md": "55d3cd81a3f03185992e3272994c04b13b5e7ea34ff85e5d8e2cfced90f240be",
+    "audit/field-algebra-checkpoint.json": "e93b65ffd57dcdb5c4c987c76f96d48b8917e82f52969853dbb979c049a4220e"
   },
   "reviewed_policy_revisions": [
     {
@@ -127,6 +140,24 @@
       "old_sha256": "26a43d0ff01ec6d291a15ed3cfe0e35ecf6b71c5bd72e3043a71d76518eacbc5",
       "new_sha256": "9c0f63cbea92b253f314ff3651ca9b843a4e481deebef6e38afdae05f44c55bd",
       "reason": "Build the source-pinned scheduling-only kernel replay executable and require its seven regression cases in the combined gate. No prior mathematical contract changed; no proof root, kernel check or axiom policy weakened."
+    },
+    {
+      "path": "BulksketchProofs/Audit.lean",
+      "old_sha256": "7206c4f7d7c1be5ed178b5f3f62f908e6da37731da15da5aa9e295bb2314b574",
+      "new_sha256": "c9ce92f2202ceb9297e81c78c86965dbecaf1509289c53ce106dbedd54ad8eb1",
+      "reason": "Add independently reviewed period64 and complete source-table/trace/quadratic contracts. Keep all previous meanings and source obligations. Regenerate exact source literals and kernel-check transpose/table identities; no assumed correctness from generator."
+    },
+    {
+      "path": "scripts/verify.py",
+      "old_sha256": "990388ee1b4641c5536dc6cac88babf77b338a1ead74bff7fabfdf52a1c5eabf",
+      "new_sha256": "54985bd8bbae78224c386873f82d1fd9e23e1af362729fafd9fabb304e0d54db",
+      "reason": "Add independently reviewed period64 and complete source-table/trace/quadratic contracts. Keep all previous meanings and source obligations. Regenerate exact source literals and kernel-check transpose/table identities; no assumed correctness from generator."
+    },
+    {
+      "path": "BulksketchProofs.lean",
+      "old_sha256": "98e3f3231cf43fb03237202b4889a9fc9619af171c3bab3ea1eb2ea4d74315b5",
+      "new_sha256": "062759adee4278c7bc60184084009295b282e3e2c6293ca5bda2b572547f13b5",
+      "reason": "Add independently reviewed period64 and complete source-table/trace/quadratic contracts. Keep all previous meanings and source obligations. Regenerate exact source literals and kernel-check transpose/table identities; no assumed correctness from generator."
     }
   ]
 }

@@ -1,0 +1,8 @@
+'BulksketchBridge.MapsTables.rows_match_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.MapsTables.chunks_match_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.MapsTables.quadratic_rows_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.MapsQuadratic.masked_conversion_normal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.MapsQuadratic.body_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.MapsQuadratic.terminal_body' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.MapsQuadratic.every_prefix_completes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.MapsQuadratic.quadratic_value_refines' depends on axioms: [propext, Classical.choice, Quot.sound]

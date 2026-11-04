@@ -1,0 +1,9 @@
+⚠ [1803/1803] Built BulksketchBridge.MapsQuadratic (1.0s)
+warning: BulksketchBridge/MapsQuadratic.lean:52:39: This simp argument is unused:
+  bind_ok
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [traceCase, expectedSolution]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Build completed successfully (1803 jobs).

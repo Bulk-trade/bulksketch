@@ -16,15 +16,15 @@
       "byte_identical": true
     },
     {
-      "generated": "extraction/canonical-arithmetic/frobenius/Arithmetic/Types.lean",
+      "generated": "extraction/canonical-arithmetic/maps/Arithmetic/Types.lean",
       "bridge_copy": "bridge/Arithmetic/Types.lean",
       "sha256": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
       "byte_identical": true
     },
     {
-      "generated": "extraction/canonical-arithmetic/frobenius/Arithmetic/Funs.lean",
+      "generated": "extraction/canonical-arithmetic/maps/Arithmetic/Funs.lean",
       "bridge_copy": "bridge/Arithmetic/Funs.lean",
-      "sha256": "99216822e5bf477e2063b48a3f2b7058fcd6582e0014dc640138b83c559e654b",
+      "sha256": "4d688e3ce715126a0bf92d0c43cac8361de11c6f5215c01fdbf7caf8d3584ef9",
       "byte_identical": true
     }
   ],
@@ -39,7 +39,7 @@
   "generated_templates_untouched": true,
   "application_axioms_added": false,
   "generated_lean_elaboration": "passed: Workmeter.Types/FunsExternal/Funs; exact generated copies",
-  "native_refinement_proof": "Nine source-generated body refinements under the explicit frontend/runtime/compiler/ISA TCB; see bridge/obligations.json and current bridge/audit/results/verification.json. Full native implementation coverage remains false.",
+  "native_refinement_proof": "Fourteen distinct source-generated functional refinements; no mathematical certificate/extraction-only inverse counted as a native body. Full native coverage remains false.",
   "generated_definition_axiom_audit": "passed: standard propext/Classical.choice/Quot.sound only",
   "generated_definition_axiom_log": "bridge/audit/results/axioms.json",
   "native_source_file": {
@@ -141,39 +141,59 @@
   "generated_model_theorems": [
     {
       "name": "BulksketchBridge.WorkMeter.new_refines",
-      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
     },
     {
       "name": "BulksketchBridge.WorkMeter.charge_refines",
-      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
     },
     {
       "name": "BulksketchBridge.WorkMeter.used_refines",
-      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
     },
     {
       "name": "BulksketchBridge.Spread.spread_refines",
-      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
     },
     {
       "name": "BulksketchBridge.Gf64Reduce.reduce_refines",
-      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
     },
     {
       "name": "BulksketchBridge.Square.square_refines",
-      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
     },
     {
       "name": "BulksketchBridge.RawMul.raw_mul_refines",
-      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
     },
     {
       "name": "BulksketchBridge.RawMul.mul_division_certificate",
-      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
     },
     {
-      "name": "BulksketchBridge.Frobenius.frobenius_refines",
-      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
+      "name": "BulksketchBridge.FrobeniusPeriod.native_unmodded_refines",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.MapsTraceMath.trace_matches_absolute",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.MapsCanonicalTrace.canonical_trace_refines",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.MapsTables.quadratic_rows_refines",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.MapsQuadratic.quadratic_value_matches_matrix",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.MapsQuadratic.solve_quadratic_exact_meaning",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
     }
   ],
   "implementation_coverage_credit": "root ledger owns final classification; no whole-native verification claimed",
@@ -187,8 +207,8 @@
       "has_errors": false
     },
     {
-      "path": "extraction/canonical-arithmetic/frobenius/arithmetic.llbc",
-      "sha256": "60dc1bd2cb2cd94b79b9c136696bb6e20a63b9e15d0dcecd28336b3e932c6bf5",
+      "path": "extraction/canonical-arithmetic/maps/arithmetic.llbc",
+      "sha256": "1d6bc490fcbdad972f225107409b038f1521dc059d94ecb29ca8afb6979b33a8",
       "has_errors": false
     }
   ],
@@ -203,6 +223,10 @@
       "functions": "bridge/Arithmetic/TrailingZeros.lean",
       "runtime_source_receipt": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
       "scope": "General value model of usize.trailing_zeros including zero and both pointer widths; all six model-property theorems independently exported. Rust std/intrinsic/compiler/ISA correspondence remains trusted."
+    },
+    {
+      "functions": "bridge/Arithmetic/MapsRuntime.lean",
+      "source_scope": "General checked unsigned conversions and full U64 population count; TryFromIntError/Debug use existing diagnostics-erased Unit model and expect independence is proved for all Debug dictionaries. Formatting correctness not claimed; all native endpoint conversions establish innerOk. Std/intrinsic/compiler/ISA correspondence stays TCB."
     }
   ],
   "arithmetic_source_inputs": {
@@ -256,6 +280,31 @@
     {
       "native_item_id": "src/field/gf64.rs:81:function:bulksketch::field::gf64::frobenius",
       "generated_declaration": "bulksketch.field.gf64.frobenius",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/maps.rs:6:function:bulksketch::field::maps::trace",
+      "generated_declaration": "bulksketch.field.maps.trace",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/maps.rs:16:function:bulksketch::field::maps::canonical_trace",
+      "generated_declaration": "bulksketch.field.maps.canonical_trace",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/maps.rs:109:function:bulksketch::field::maps::quadratic_rows",
+      "generated_declaration": "bulksketch.field.maps.quadratic_rows",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/maps.rs:90:function:bulksketch::field::maps::quadratic_value",
+      "generated_declaration": "bulksketch.field.maps.quadratic_value",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/maps.rs:77:function:bulksketch::field::maps::solve_quadratic",
+      "generated_declaration": "bulksketch.field.maps.solve_quadratic",
       "generated_file": "bridge/Arithmetic/Funs.lean"
     }
   ],
