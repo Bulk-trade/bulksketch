@@ -2,6 +2,8 @@ import BulksketchProofs
 import BulksketchProofs.Challenges
 import BulksketchProofs.SpreadChallenges
 import BulksketchProofs.CLMulChallenges
+import BulksketchProofs.PeriodChallenges
+import BulksketchProofs.MapsChallenges
 import Lean
 
 open Lean Elab Command Meta
@@ -40,7 +42,35 @@ run_cmd do
     (``BulksketchProofs.CLMulChallenges.noCoefficientBeyondDegree126,
       ``BulksketchProofs.Field.clmul128_top_bit),
     (``BulksketchProofs.CLMulChallenges.polynomialHasDegreeAtMost126,
-      ``BulksketchProofs.Field.clmulCoefficient_high)
+      ``BulksketchProofs.Field.clmulCoefficient_high),
+    (``BulksketchProofs.PeriodChallenges.allBasisWordsReturnAfter64Squares,
+      ``BulksketchProofs.Field.Period.basis_certificate),
+    (``BulksketchProofs.PeriodChallenges.allWordsReturnAfter64Squares,
+      ``BulksketchProofs.Field.Period.sixty_four_squares_identity),
+    (``BulksketchProofs.PeriodChallenges.allNaturalIterationCountsReduceModulo64,
+      ``BulksketchProofs.Field.Period.iteration_modulo64),
+    (``BulksketchProofs.MapsChallenges.columnsMatchSourceRows,
+      ``BulksketchProofs.Field.Maps.columns_match_rows),
+    (``BulksketchProofs.MapsChallenges.absoluteTraceMatchesSelector,
+      ``BulksketchProofs.Field.Maps.absoluteTrace_eq_selector),
+    (``BulksketchProofs.MapsChallenges.traceIsTheConjugateSum,
+      ``BulksketchProofs.Field.Maps.absoluteTrace_is_sum),
+    (``BulksketchProofs.MapsChallenges.allChunkEntriesMatchMatrix,
+      ``BulksketchProofs.Field.Maps.chunk_entries_match),
+    (``BulksketchProofs.MapsChallenges.chunkLookupMatchesMatrixForEveryWord,
+      ``BulksketchProofs.Field.Maps.chunk_lookup_eq_matrix),
+    (``BulksketchProofs.MapsChallenges.quadraticRightInverseProjection,
+      ``BulksketchProofs.Field.Maps.quadratic_right_inverse),
+    (``BulksketchProofs.MapsChallenges.quadraticLeftInverseProjection,
+      ``BulksketchProofs.Field.Maps.quadratic_left_inverse),
+    (``BulksketchProofs.MapsChallenges.quadraticMapHasZeroTrace,
+      ``BulksketchProofs.Field.Maps.quadratic_trace_zero),
+    (``BulksketchProofs.MapsChallenges.chosenSolutionHasZeroFreeBit,
+      ``BulksketchProofs.Field.Maps.quadraticValue_bit_zero),
+    (``BulksketchProofs.MapsChallenges.quadraticSolutionsExactlyTraceZero,
+      ``BulksketchProofs.Field.Maps.quadratic_solvable_iff_trace_zero),
+    (``BulksketchProofs.MapsChallenges.normalizedSolutionIsUnique,
+      ``BulksketchProofs.Field.Maps.normalized_solution_unique)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

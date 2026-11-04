@@ -1,0 +1,16 @@
+{
+  "reviewer": "wrapper_performance",
+  "status": "APPROVED before proof search; no blockers",
+  "files": {
+    "bridge/BulksketchBridge/MapsQuadraticSpec.lean": "67d92a8392bed12e9b0477ed87be28b3d99f88d1b5794675a4ad22c75a58dc07",
+    "bridge/BulksketchBridge/MapsQuadraticChallenges.lean": "cd797900ed4228284c5acf3914bd65e3d4643bc1543947963b5cbc04c3e8a319",
+    "bridge/BulksketchBridge/MapsTraceMathChallenges.lean": "adab521e51208cc53e6aa50b6b63a207e479c3fc97605fd701a9bbddde13458f"
+  },
+  "scope": "unconditional native allU64 row/chunk/value/solver Result.ok links, exact trace-one None and normalized unique Some meanings; fullbyte absolute-trace link; no success or field/irreducibility premise",
+  "source_inspected": [
+    "src/field/maps.rs7-24,77-121",
+    "bridge/Arithmetic/Funs.lean trace/quadratic_rows/quadratic_value/solve_quadratic full original branches"
+  ],
+  "builds_performed": false,
+  "source_edits_performed": false
+}

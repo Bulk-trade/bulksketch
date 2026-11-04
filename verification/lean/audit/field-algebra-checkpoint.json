@@ -1,0 +1,20 @@
+{
+  "source_revision": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkpoint": "field maps, exact modulus irreducibility, universal word Frobenius period",
+  "core_challenges": 29,
+  "bridge_challenges": 36,
+  "native_body_refinements": 14,
+  "scope_items_retained": 344,
+  "polynomial_root": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
+  "word_period": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
+  "native_word_polynomial_quotient_bridge": "open",
+  "mathlib_Algebra_trace_identification": "open",
+  "inverse_proof_credit": 0,
+  "reviews": [
+    "audit/modulus-proof-independent-review.md",
+    "audit/core-maps-proof-independent-review.md",
+    "bridge/audit/native-maps-final-semantic-review.md",
+    "audit/field-algebra-accounting-review.md"
+  ],
+  "note": "Final aggregate gate owns pass status. Mathematical certificates are not extra native bodies; no scope item removed. Stale multiplication-scope irreducibility wording was corrected in matching registry and ledger."
+}

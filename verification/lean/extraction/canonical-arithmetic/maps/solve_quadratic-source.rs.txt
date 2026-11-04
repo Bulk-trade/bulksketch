@@ -1,0 +1,8 @@
+pub(crate) fn solve_quadratic<F: BinaryField>(a: u64) -> Option<u64> {
+    if trace::<F>(a) != 0 {
+        return None;
+    }
+    let z = quadratic_value::<F>(a);
+    assert_eq!(gf64::square::<F>(z) ^ z, a, "quadratic-map invariant");
+    Some(z)
+}

@@ -1,0 +1,138 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_files_rechecked": 41,
+  "llbc": {
+    "path": "extraction/canonical-arithmetic/maps/arithmetic.llbc",
+    "sha256": "343db245a54c6276cdd7bba9e9df0fe6df2c883571e3c40065aa2013d4af11b4",
+    "has_errors": false
+  },
+  "source_definitions": [
+    {
+      "native_item_id": "src/field/maps.rs:6:function:bulksketch::field::maps::trace",
+      "llbc_def_id": 15,
+      "source_path": "src/field/maps.rs",
+      "source_file_sha256": "56d1f22aad44faa402a4d743b9719e2f93fe891ca72da411e29598c37f925f22",
+      "span": {
+        "file_id": 7,
+        "beg": {
+          "line": 7,
+          "col": 0
+        },
+        "end": {
+          "line": 14,
+          "col": 1
+        }
+      },
+      "source_fragment": "pub(crate) fn trace<F: BinaryField>(a: u64) -> u8 {\n    debug_assert_eq!(a & !F::MASK, 0, \"noncanonical field operand\");\n    if F::BITS == 64 {\n        // Only Z^61 and Z^63 have trace one in this polynomial basis.\n        return u8::try_from(((a >> 61) ^ (a >> 63)) & 1).expect(\"trace is a bit\");\n    }\n    canonical_trace::<F>(a)\n}",
+      "source_fragment_sha256": "e5285815c43abf50be14960809165e3b1020154efc61bd166fdc2caa94a84b2c",
+      "snapshot": "extraction/canonical-arithmetic/maps/trace-source.rs.txt",
+      "generated_declaration": "bulksketch.field.maps.trace",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "proved_endpoints": [
+        "BulksketchBridge.MapsTrace.trace_refines",
+        "BulksketchBridge.MapsTraceMath.trace_matches_absolute"
+      ]
+    },
+    {
+      "native_item_id": "src/field/maps.rs:90:function:bulksketch::field::maps::quadratic_value",
+      "llbc_def_id": 16,
+      "source_path": "src/field/maps.rs",
+      "source_file_sha256": "56d1f22aad44faa402a4d743b9719e2f93fe891ca72da411e29598c37f925f22",
+      "span": {
+        "file_id": 7,
+        "beg": {
+          "line": 91,
+          "col": 0
+        },
+        "end": {
+          "line": 107,
+          "col": 1
+        }
+      },
+      "source_fragment": "pub(crate) fn quadratic_value<F: BinaryField>(a: u64) -> u64 {\n    if F::BITS == 64 {\n        let mut remaining = a;\n        let mut value = 0;\n        for table in &super::quadratic_chunks::GF64_QUADRATIC_CHUNKS {\n            let index = usize::try_from(remaining & 15).expect(\"nibble index\");\n            value ^= table[index];\n            remaining >>= 4;\n        }\n        return value;\n    }\n    let mut z = 0;\n    for (bit, &row) in quadratic_rows::<F>().iter().enumerate() {\n        z |= u64::from((row & a).count_ones() & 1) << bit;\n    }\n    z\n}",
+      "source_fragment_sha256": "4beb0c71dbd67a8357a19931958a5d63575af2f89a6455c7c5a6b5516760323d",
+      "snapshot": "extraction/canonical-arithmetic/maps/quadratic_value-source.rs.txt",
+      "generated_declaration": "bulksketch.field.maps.quadratic_value",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "proved_endpoints": [
+        "BulksketchBridge.MapsQuadratic.quadratic_value_refines",
+        "BulksketchBridge.MapsQuadratic.quadratic_value_matches_matrix"
+      ]
+    },
+    {
+      "native_item_id": "src/field/maps.rs:77:function:bulksketch::field::maps::solve_quadratic",
+      "llbc_def_id": 17,
+      "source_path": "src/field/maps.rs",
+      "source_file_sha256": "56d1f22aad44faa402a4d743b9719e2f93fe891ca72da411e29598c37f925f22",
+      "span": {
+        "file_id": 7,
+        "beg": {
+          "line": 81,
+          "col": 0
+        },
+        "end": {
+          "line": 88,
+          "col": 1
+        }
+      },
+      "source_fragment": "pub(crate) fn solve_quadratic<F: BinaryField>(a: u64) -> Option<u64> {\n    if trace::<F>(a) != 0 {\n        return None;\n    }\n    let z = quadratic_value::<F>(a);\n    assert_eq!(gf64::square::<F>(z) ^ z, a, \"quadratic-map invariant\");\n    Some(z)\n}",
+      "source_fragment_sha256": "72c15696fbf1da6f6838714d84360a240b9f625272eddb25f04fba9f9410dd18",
+      "snapshot": "extraction/canonical-arithmetic/maps/solve_quadratic-source.rs.txt",
+      "generated_declaration": "bulksketch.field.maps.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "proved_endpoints": [
+        "BulksketchBridge.MapsQuadratic.solve_quadratic_refines",
+        "BulksketchBridge.MapsQuadratic.solve_quadratic_exact_meaning"
+      ]
+    },
+    {
+      "native_item_id": "src/field/maps.rs:109:function:bulksketch::field::maps::quadratic_rows",
+      "llbc_def_id": 41,
+      "source_path": "src/field/maps.rs",
+      "source_file_sha256": "56d1f22aad44faa402a4d743b9719e2f93fe891ca72da411e29598c37f925f22",
+      "span": {
+        "file_id": 7,
+        "beg": {
+          "line": 109,
+          "col": 0
+        },
+        "end": {
+          "line": 122,
+          "col": 1
+        }
+      },
+      "source_fragment": "pub(super) fn quadratic_rows<F: BinaryField>() -> &'static [u64] {\n    match F::BITS {\n        64 => &GF64_QUADRATIC,\n        #[cfg(test)]\n        2 => &GF4_QUADRATIC,\n        #[cfg(test)]\n        4 => &GF16_QUADRATIC,\n        #[cfg(test)]\n        8 => &GF256_QUADRATIC,\n        #[cfg(test)]\n        16 => &GF65536_QUADRATIC,\n        _ => unreachable!(\"sealed field has no quadratic map\"),\n    }\n}",
+      "source_fragment_sha256": "44e8dd34dbbf099da4df5d75bbe9d25a235dac223b2e3d9cc4159e1f899ef427",
+      "snapshot": "extraction/canonical-arithmetic/maps/quadratic_rows-source.rs.txt",
+      "generated_declaration": "bulksketch.field.maps.quadratic_rows",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "proved_endpoints": [
+        "BulksketchBridge.MapsTables.quadratic_rows_refines"
+      ]
+    }
+  ],
+  "generated_copies": [
+    {
+      "path": "bridge/Arithmetic/Types.lean",
+      "artifact": "extraction/canonical-arithmetic/maps/Arithmetic/Types.lean",
+      "sha256": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+      "byte_identical": true
+    },
+    {
+      "path": "bridge/Arithmetic/Funs.lean",
+      "artifact": "extraction/canonical-arithmetic/maps/Arithmetic/Funs.lean",
+      "sha256": "4d688e3ce715126a0bf92d0c43cac8361de11c6f5215c01fdbf7caf8d3584ef9",
+      "byte_identical": true
+    }
+  ],
+  "all_previous_declarations_unchanged": "extraction/canonical-arithmetic/maps/previous-declaration-comparison.json",
+  "data_linkage_proofs": [
+    "BulksketchBridge.MapsTables.rows_match_source",
+    "BulksketchBridge.MapsTables.chunks_match_source"
+  ],
+  "table_comparison": "extraction/canonical-arithmetic/maps/table-literal-correspondence.json",
+  "native_source_edited": false,
+  "application_generated_files_hand_edited": false,
+  "test_only_field_instances_extracted": false,
+  "generic_fallback_branches_retained": true
+}

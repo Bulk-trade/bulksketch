@@ -1,0 +1,197 @@
+{
+  "status": "all-owned-source-and-semantic-proofs-compiled-exact-challenges-and-standard-only-axioms; independent-review-approved",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "files": [
+    {
+      "path": "bridge/BulksketchBridge/MapsTrace.lean",
+      "sha256": "3a779e7dd1ecbbc617bc458019f4d8f23046614e7a8dea194b8800c4a01c33d3"
+    },
+    {
+      "path": "bridge/BulksketchBridge/MapsTables.lean",
+      "sha256": "4ae5b3bd35603ef13a5674b7b3d88f6c9d017de3baf14e4dd6f1fa38ded850a7"
+    },
+    {
+      "path": "bridge/BulksketchBridge/MapsQuadraticValue.lean",
+      "sha256": "e6d8aa3771e93a3d32737f87a4e85182b8c6dc655a378dae08de80f7eca0b0b3"
+    },
+    {
+      "path": "bridge/BulksketchBridge/MapsTraceMath.lean",
+      "sha256": "3e269c67af0a7e33feeeb57d20dd44e6ac252f2767a593c30bb044a424b22256"
+    },
+    {
+      "path": "bridge/BulksketchBridge/MapsQuadratic.lean",
+      "sha256": "aeffa77176669cb410e566e340d1f3bb415b9ba219c45274d79353008f1ba055"
+    },
+    {
+      "path": "bridge/BulksketchBridge/MapsTraceSpec.lean",
+      "sha256": "b43673ef244087d9c45a0180117707762014e191286a1ad18bc0a39915cc4926"
+    },
+    {
+      "path": "bridge/BulksketchBridge/MapsTraceChallenges.lean",
+      "sha256": "ef7eeb6893d59822de47155cc714ecf5092364059cef07386bee4f6f410ead63"
+    },
+    {
+      "path": "bridge/BulksketchBridge/MapsQuadraticSpec.lean",
+      "sha256": "67d92a8392bed12e9b0477ed87be28b3d99f88d1b5794675a4ad22c75a58dc07"
+    },
+    {
+      "path": "bridge/BulksketchBridge/MapsQuadraticChallenges.lean",
+      "sha256": "cd797900ed4228284c5acf3914bd65e3d4643bc1543947963b5cbc04c3e8a319"
+    },
+    {
+      "path": "bridge/BulksketchBridge/MapsTraceMathChallenges.lean",
+      "sha256": "adab521e51208cc53e6aa50b6b63a207e479c3fc97605fd701a9bbddde13458f"
+    }
+  ],
+  "contract_freezes": [
+    "extraction/canonical-arithmetic/maps/trace-contract-preproof-freeze.json",
+    "extraction/canonical-arithmetic/maps/quadratic-contract-preproof-freeze.json"
+  ],
+  "source_linkage": "extraction/canonical-arithmetic/maps/source-linkage.json",
+  "runtime_models": "extraction/canonical-arithmetic/maps/runtime-model-receipt.json",
+  "migration": "extraction/canonical-arithmetic/maps/migration-receipt.json",
+  "axiom_audits": [
+    {
+      "path": "extraction/canonical-arithmetic/maps/runtime-axioms.log",
+      "sha256": "1b1b744300085ee4b7ff219c5673b4d81cb704d3fc2294828af9d51294c60f13",
+      "declarations_checked": 8,
+      "all_within_allowlist": true
+    },
+    {
+      "path": "extraction/canonical-arithmetic/maps/trace-axioms.log",
+      "sha256": "dcc02cb0123dc06fbe485eea1a11e778c843b708ae8a60aad1fb2ea4b49362e1",
+      "declarations_checked": 3,
+      "all_within_allowlist": true
+    },
+    {
+      "path": "extraction/canonical-arithmetic/maps/quadratic-source-axioms.log",
+      "sha256": "5074073714c71a3a9ebbf3b8510c0ce26014ff4369eef488368a37a683cdd001",
+      "declarations_checked": 8,
+      "all_within_allowlist": true
+    },
+    {
+      "path": "extraction/canonical-arithmetic/maps/semantic-axioms.log",
+      "sha256": "058a061ecf4edadcf92d59d0e61f4dab8621b7807c17cba6feba0af98047d3d3",
+      "declarations_checked": 7,
+      "all_within_allowlist": true
+    }
+  ],
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "exact_challenge_assignments_checked": 9,
+  "native_source_items_owned_and_proved": 4,
+  "native_functions": [
+    "trace",
+    "quadratic_rows",
+    "quadratic_value",
+    "solve_quadratic"
+  ],
+  "endpoints": [
+    {
+      "challenge": "BulksketchBridge.MapsTraceChallenges.normalResultMatchesSelector",
+      "proof": "BulksketchBridge.MapsTrace.trace_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsTraceMathChallenges.actualTraceMatchesAbsoluteTrace",
+      "proof": "BulksketchBridge.MapsTraceMath.trace_matches_absolute"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.allGeneratedRowsMatchSourceData",
+      "proof": "BulksketchBridge.MapsTables.rows_match_source"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.allGeneratedChunksMatchSourceData",
+      "proof": "BulksketchBridge.MapsTables.chunks_match_source"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualRowsReturnExactSourceData",
+      "proof": "BulksketchBridge.MapsTables.quadratic_rows_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualValueMatchesAllChunkContributions",
+      "proof": "BulksketchBridge.MapsQuadratic.quadratic_value_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualValueMatchesIndependentMatrix",
+      "proof": "BulksketchBridge.MapsQuadratic.quadratic_value_matches_matrix"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualSolverMatchesNormalizedModel",
+      "proof": "BulksketchBridge.MapsQuadratic.solve_quadratic_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualSolverHasExactNormalizedSolutionMeaning",
+      "proof": "BulksketchBridge.MapsQuadratic.solve_quadratic_exact_meaning"
+    }
+  ],
+  "source_loop_invariant": "Actual original SliceIter over fixed16rows; count0..16, remaining=input>>>4count, accumulator=independent chunkPrefix input count; exactrowdata, low-nibble cast innerOk for32/64usize, index<16, safe constantshift4, natural16-count decreases, terminalNone before read/shift.",
+  "semantic_claim": "AllU64inputs normal, exact fullbytes/words. Native trace matches independent64-conjugate wordmodel sum. Native quadratic output equals independentmatrix. Solver None ontrace1; ontrace0 returns exactQroot, bit0false, unique among normalized roots; actual square/assert verified.",
+  "not_claimed": [
+    "FormalAlgebra.trace/quotientrepresentation isomorphism",
+    "Rust frontend/compiler/runtime/ISA correctness",
+    "inverse family native implementation correctness",
+    "all-native or all-cfg backend verification"
+  ],
+  "build_logs": [
+    {
+      "path": "extraction/canonical-arithmetic/maps/runtime-build.log",
+      "sha256": "99ef291cb22cc7ac6aeec4dc369ae7a4c8fd7eda6832f8b0f6fd5f039284efb4",
+      "exit_code": 0
+    },
+    {
+      "path": "extraction/canonical-arithmetic/maps/trace-build.log",
+      "sha256": "33362e3dcfaf8cd191899b8dbd24c7589c121762712621dd1dc82c290c0a0995",
+      "exit_code": 0
+    },
+    {
+      "path": "extraction/canonical-arithmetic/maps/tables-build.log",
+      "sha256": "0679dfb6bb742761704bef07d7dcaf296179d02f82ed8ecd252933e9dd51a689",
+      "exit_code": 0
+    },
+    {
+      "path": "extraction/canonical-arithmetic/maps/quadratic-value-build.log",
+      "sha256": "7cf087d08f82fbcd5f00f83c5bec32ff41a5a01d0f825ae71d998170104c40fa",
+      "exit_code": 0
+    },
+    {
+      "path": "extraction/canonical-arithmetic/maps/semantic-build.log",
+      "sha256": "307bc24dee87842257289697e41acbf2ecd7fb4b6e6af5459520e8b298c05a82",
+      "exit_code": 0
+    }
+  ],
+  "independent_reviews": [
+    {
+      "reviewer": "wrapper_performance",
+      "approved": true,
+      "path": "extraction/canonical-arithmetic/maps/native-trace-proof-review.md",
+      "sha256": "d9b448bd43d919557b9591cb697a058e6eb58a37e230e4d272f3b4c3a34cb14e"
+    },
+    {
+      "reviewer": "wrapper_performance",
+      "approved": true,
+      "path": "extraction/canonical-arithmetic/maps/native-quadratic-value-proof-review.md",
+      "sha256": "8c74ccc913635845bfc974087c91b0c0030fa721872d923e8ed24131719f70cb"
+    },
+    {
+      "reviewer": "wrapper_performance",
+      "approved": true,
+      "path": "extraction/canonical-arithmetic/maps/native-maps-final-semantic-review.md",
+      "sha256": "80e5e03027149e7ab4d8984cb863d9faabd66ff9b6e29ab95d973cc598d38959"
+    },
+    {
+      "reviewer": "wrapper_performance",
+      "approved": true,
+      "path": "extraction/canonical-arithmetic/maps/native-maps-contract-review.json",
+      "sha256": "170f3293e3efb712ee274a9fedadc23173b6b8b73c02632f407deff2fb1c03ba"
+    }
+  ],
+  "independent_semantic_review_message_approved": true,
+  "native_source_edited": false,
+  "application_generated_files_hand_edited": false,
+  "shared_audit_frozen_registry_not_edited_by_this_agent": true,
+  "coverage_accounting": "Root ledger owns final sourceitem classification; multiple semantic endpoints and generated helpers do not double-count the4 original native functions.",
+  "files_stable_for_parent_freeze": true
+}

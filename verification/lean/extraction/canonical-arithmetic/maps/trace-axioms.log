@@ -1,0 +1,3 @@
+'BulksketchBridge.MapsTrace.selector_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.MapsTrace.selector_conversion_normal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.MapsTrace.trace_refines' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -9,6 +9,12 @@ import BulksketchBridge.RawMulTableChallenges
 import BulksketchBridge.RawMulAccumChallenges
 import BulksketchBridge.RawMulChallenges
 import BulksketchBridge.FrobeniusChallenges
+import BulksketchBridge.FrobeniusPeriodChallenges
+import BulksketchBridge.Algebra.ModulusChallenges
+import BulksketchBridge.MapsTraceChallenges
+import BulksketchBridge.MapsTraceMathChallenges
+import BulksketchBridge.MapsQuadraticChallenges
+import BulksketchBridge.MapsCanonicalTraceChallenges
 import Lean
 
 open Lean Elab Command Meta
@@ -56,7 +62,37 @@ run_cmd do
     (``BulksketchBridge.RawMulChallenges.actualMultiplicationHasDivisionCertificate,
       ``BulksketchBridge.RawMul.mul_division_certificate),
     (``BulksketchBridge.FrobeniusChallenges.normalResultMatchesIteratedSquare,
-      ``BulksketchBridge.Frobenius.frobenius_refines)
+      ``BulksketchBridge.Frobenius.frobenius_refines),
+    (``BulksketchBridge.FrobeniusPeriodChallenges.oldFrozenModelMatchesCoreExactly,
+      ``BulksketchBridge.FrobeniusPeriod.model_correspondence),
+    (``BulksketchBridge.FrobeniusPeriodChallenges.oldFrozenModelHasPeriod64,
+      ``BulksketchBridge.FrobeniusPeriod.existing_period64),
+    (``BulksketchBridge.FrobeniusPeriodChallenges.oldFrozenModelIterationCountsReduceModulo64,
+      ``BulksketchBridge.FrobeniusPeriod.existing_iteration_mod64),
+    (``BulksketchBridge.FrobeniusPeriodChallenges.actualNativeFrobeniusMatchesUnmoddedIteration,
+      ``BulksketchBridge.FrobeniusPeriod.native_unmodded_refines),
+    (``BulksketchBridge.Algebra.ModulusChallenges.exactPolynomialIrreducible,
+      ``BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible),
+    (``BulksketchBridge.MapsTraceChallenges.normalResultMatchesSelector,
+      ``BulksketchBridge.MapsTrace.trace_refines),
+    (``BulksketchBridge.MapsTraceMathChallenges.actualTraceMatchesAbsoluteTrace,
+      ``BulksketchBridge.MapsTraceMath.trace_matches_absolute),
+    (``BulksketchBridge.MapsQuadraticChallenges.allGeneratedRowsMatchSourceData,
+      ``BulksketchBridge.MapsTables.rows_match_source),
+    (``BulksketchBridge.MapsQuadraticChallenges.allGeneratedChunksMatchSourceData,
+      ``BulksketchBridge.MapsTables.chunks_match_source),
+    (``BulksketchBridge.MapsQuadraticChallenges.actualRowsReturnExactSourceData,
+      ``BulksketchBridge.MapsTables.quadratic_rows_refines),
+    (``BulksketchBridge.MapsQuadraticChallenges.actualValueMatchesAllChunkContributions,
+      ``BulksketchBridge.MapsQuadratic.quadratic_value_refines),
+    (``BulksketchBridge.MapsQuadraticChallenges.actualValueMatchesIndependentMatrix,
+      ``BulksketchBridge.MapsQuadratic.quadratic_value_matches_matrix),
+    (``BulksketchBridge.MapsQuadraticChallenges.actualSolverMatchesNormalizedModel,
+      ``BulksketchBridge.MapsQuadratic.solve_quadratic_refines),
+    (``BulksketchBridge.MapsQuadraticChallenges.actualSolverHasExactNormalizedSolutionMeaning,
+      ``BulksketchBridge.MapsQuadratic.solve_quadratic_exact_meaning),
+    (``BulksketchBridge.MapsCanonicalTraceChallenges.normalResultMatchesAbsoluteTrace,
+      ``BulksketchBridge.MapsCanonicalTrace.canonical_trace_refines)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge
@@ -77,7 +113,10 @@ run_cmd do
     ``Aeneas.Std.usize_trailing_zeros_zero,
     ``Aeneas.Std.usize_trailing_zeros_least_set_bit,
     ``Aeneas.Std.trailingZeroCount_eq_of_toNat_eq,
-    ``Aeneas.Std.usize_trailing_zeros_nibble]
+    ``Aeneas.Std.usize_trailing_zeros_nibble,
+    ``Aeneas.Std.checked_unsigned_conversion_normal,
+    ``Aeneas.Std.u64_count_ones_spec,
+    ``Aeneas.Std.result_expect_independent_of_debug]
   let names := environment.constants.toList.filterMap fun (declarationName, information) =>
     match information with
     | .thmInfo _ =>

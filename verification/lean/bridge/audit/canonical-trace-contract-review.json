@@ -1,0 +1,11 @@
+{
+  "status": "APPROVED independent meaning review BEFORE proof search; no blockers",
+  "reviewer": "wrapper_performance",
+  "files": {
+    "bridge/BulksketchBridge/MapsCanonicalTraceSpec.lean": "88308b651b7673fb95b59575b6ceeba036b30cbc49d9a46536ac238d5d635431",
+    "bridge/BulksketchBridge/MapsCanonicalTraceChallenges.lean": "62a07e36b164687d27f8997dfe7f985d49406ea1d3e137cb02383459e0d438d7"
+  },
+  "scope": "everyU64 actualGf64 canonical_trace Result.ok completebyte absoluteTrace.setWidth8; no successfulreturn/canonicalinput/tracebound/field premise",
+  "source_loop": "original1..64 sum+conjugate loop, assertion and checkedconversion retained",
+  "builds_or_edits": false
+}

@@ -5574,7 +5574,7 @@
         "source_linkage": "bridge/source-linkage.json",
         "registry": "bridge/obligations.json",
         "verification": "bridge/audit/results/verification.json",
-        "scope": "Original generated mul with the actual Gf64 dictionary; every U64 pair returns normally with canonical-degree polynomial division certificate for the complete unreduced product. Modulus irreducibility and compiler/runtime execution closure remain open."
+        "scope": "Original generated mul with actual Gf64 dictionary; every U64 pair returns normally with the canonical-degree polynomial division certificate for the complete raw product. This endpoint does not use irreducibility; native word-to-quotient-field and compiler/runtime closure remain open."
       }
     },
     {
@@ -5708,11 +5708,20 @@
       "trusted_assumptions": [],
       "generated_body_refinement_evidence": {
         "status": "kernel_checked_and_independently_replayed",
-        "theorem": "BulksketchBridge.Frobenius.frobenius_refines",
+        "theorem": "BulksketchBridge.FrobeniusPeriod.native_unmodded_refines",
         "source_linkage": "bridge/source-linkage.json",
         "registry": "bridge/obligations.json",
         "verification": "bridge/audit/results/verification.json",
-        "scope": "Original generated frobenius with actual Gf64 dictionary; every U64 input and U32 power returns normally with exactly power.val%64 independent polynomial squarings. Source guard/remainder/range/loop bounds checked. No period64 identity or unmodded exponent/irreducibility claim; compiler/runtime correspondence remains explicit TCB."
+        "scope": "Every U64/U32 source call equals unmodded power.val independent polynomial squarings, using universally proved period64 and count-modulo identities. Earlier modulo-source contract retained; word-to-quotient-field exponent/Algebra.trace bridges remain separate."
+      },
+      "related_model_evidence": {
+        "status": "kernel_checked_universal_period64",
+        "module": "BulksketchProofs.Field.Period",
+        "theorems": [
+          "BulksketchProofs.Field.Period.sixty_four_squares_identity",
+          "BulksketchProofs.Field.Period.iteration_modulo64"
+        ],
+        "remaining": "Formal native word-to-Polynomial/quotient-field representation and complete execution closure remain open."
       }
     },
     {
@@ -5733,7 +5742,15 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "status": "kernel_checked_and_independently_replayed",
+        "theorem": "BulksketchBridge.MapsTables.quadratic_rows_refines",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json",
+        "scope": "Actual Gf64 source selector returns the complete64-row slice normally, with exact length/data equality to the source-derived core table. Other-field fallback retained."
+      }
     },
     {
       "id": "src/field/maps.rs:125:constant:bulksketch::field::maps::GF64_QUADRATIC",
@@ -5773,7 +5790,24 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "status": "kernel_checked_and_independently_replayed",
+        "theorem": "BulksketchBridge.MapsCanonicalTrace.canonical_trace_refines",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json",
+        "scope": "Every U64 actual Gf64 canonical trace returns normally after the original63-step loop with the complete64-conjugate sum byte. Loop bounds/termination, sum<=1 assertion, checked conversion and expect discharged; no trace-bound/success/irreducibility premise."
+      },
+      "related_model_evidence": {
+        "status": "kernel_checked_universal_trace_quadratic_word_model",
+        "module": "BulksketchProofs.Field.Maps",
+        "theorems": [
+          "BulksketchProofs.Field.Maps.absoluteTrace_is_sum",
+          "BulksketchProofs.Field.Maps.absoluteTrace_eq_selector"
+        ],
+        "remaining": "See separate generated-body evidence. Native word-to-Polynomial/quotient-field representation and complete compiler/runtime/memory/ISA closure remain open."
+      }
     },
     {
       "id": "src/field/maps.rs:27:function:bulksketch::field::maps::inverse",
@@ -5853,7 +5887,23 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "status": "kernel_checked_and_independently_replayed",
+        "theorem": "BulksketchBridge.MapsTraceMath.trace_matches_absolute",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json",
+        "scope": "Every U64 source trace call returns normally with the complete byte, its zero extension equals the independent sum of64polynomial conjugates, and value<=1. Original mask/shifts/checked conversion/expect retained; actual Gf64 dictionary."
+      },
+      "related_model_evidence": {
+        "status": "kernel_checked_universal_trace_quadratic_word_model",
+        "module": "BulksketchProofs.Field.Maps",
+        "theorems": [
+          "BulksketchProofs.Field.Maps.absoluteTrace_eq_selector"
+        ],
+        "remaining": "See separate generated-body evidence. Native word-to-Polynomial/quotient-field representation and complete compiler/runtime/memory/ISA closure remain open."
+      }
     },
     {
       "id": "src/field/maps.rs:77:function:bulksketch::field::maps::solve_quadratic",
@@ -5873,7 +5923,24 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "status": "kernel_checked_and_independently_replayed",
+        "theorem": "BulksketchBridge.MapsQuadratic.solve_quadratic_exact_meaning",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json",
+        "scope": "Every U64 source solver returns normally: None exactly for trace one, or the correct quadratic root with bit0=false and uniqueness among normalized roots. Original trace/table/square/assert/Some/None branches retained; no source-success/irreducibility premise."
+      },
+      "related_model_evidence": {
+        "status": "kernel_checked_universal_trace_quadratic_word_model",
+        "module": "BulksketchProofs.Field.Maps",
+        "theorems": [
+          "BulksketchProofs.Field.Maps.quadratic_solvable_iff_trace_zero",
+          "BulksketchProofs.Field.Maps.normalized_solution_unique"
+        ],
+        "remaining": "See separate generated-body evidence. Native word-to-Polynomial/quotient-field representation and complete compiler/runtime/memory/ISA closure remain open."
+      }
     },
     {
       "id": "src/field/maps.rs:90:function:bulksketch::field::maps::quadratic_value",
@@ -5893,7 +5960,25 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "status": "kernel_checked_and_independently_replayed",
+        "theorem": "BulksketchBridge.MapsQuadratic.quadratic_value_matches_matrix",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json",
+        "scope": "Every U64 source call returns the exact fullword independent matrix map; all16 original chunk iterations, checked casts/index/shift/terminal/termination proved; all320native row/chunk constants kernel-linked and map equality universal."
+      },
+      "related_model_evidence": {
+        "status": "kernel_checked_universal_trace_quadratic_word_model",
+        "module": "BulksketchProofs.Field.Maps",
+        "theorems": [
+          "BulksketchProofs.Field.Maps.chunk_lookup_eq_matrix",
+          "BulksketchProofs.Field.Maps.quadratic_right_inverse",
+          "BulksketchProofs.Field.Maps.quadraticValue_bit_zero"
+        ],
+        "remaining": "See separate generated-body evidence. Native word-to-Polynomial/quotient-field representation and complete compiler/runtime/memory/ISA closure remain open."
+      }
     },
     {
       "id": "src/field/mod.rs:10:module:bulksketch::field::frobenius",
@@ -11037,11 +11122,18 @@
     }
   ],
   "proof_progress": {
-    "source_items_with_related_model_evidence": 6,
+    "source_items_with_related_model_evidence": 11,
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Six have core model evidence and nine narrower actual generated-body refinements. raw_mul includes both original loops, full 128-bit product and all numeric/index/cast/shift bounds; mul composes reduction; frobenius proves exact power % 64 source behavior. Full native contracts/compiler-runtime closure and field irreducibility/period identity remain open; percentages withheld.",
-    "checked_generated_body_refinements_under_recorded_TCB": 9
+    "note": "All 344 native executable declarations retained. Fourteen narrower actual-generated-body refinements include trace/canonical_trace/quadratic rows/value/solver. Universal period64, trace/table/normalized-solution properties and exact Polynomial(ZMod2) irreducibility checked separately; these mathematical results are not extra native functions. Full representation/compiler/runtime/memory/ISA closure and remaining native methods stay open; no percentage claimed.",
+    "checked_generated_body_refinements_under_recorded_TCB": 14,
+    "field_algebra_evidence": {
+      "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
+      "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
+      "source_tables": "BulksketchBridge.MapsTables.rows_match_source/chunks_match_source",
+      "native_word_quotient_field_bridge": "not_proved",
+      "inverse_wrappers": "unproved; failed captured-closure pilot and successful standalone chain extraction do not grant proof credit"
+    }
   }
 }
