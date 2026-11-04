@@ -1,0 +1,42 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "b0eab3d6fb4eefdb97157a67dd0301a42bc19c4c",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "llbc_has_errors": false,
+  "commands": [
+    {
+      "tool": "charon",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch/verification/lean/extraction/reduce/reduce.llbc",
+        "--start-from=bulksketch::field::gf64::reduce",
+        "--",
+        "--manifest-path",
+        "/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked"
+      ],
+      "exit_code": 0
+    },
+    {
+      "tool": "aeneas",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/reduce/Reduce",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/reduce/reduce.llbc"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

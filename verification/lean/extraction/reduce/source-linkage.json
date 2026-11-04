@@ -1,0 +1,39 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_file": {
+    "path": "src/field/gf64.rs",
+    "sha256": "c5320b7121c3de4d3e7e04ecdc88a6ddf100901a534912b8811c6ff5add9aa27"
+  },
+  "llbc": {
+    "path": "extraction/reduce/reduce.llbc",
+    "sha256": "573355f697cac5fa94e228b270a4031a57d2d7fb71c283f81ee267e81eadee54",
+    "has_errors": false
+  },
+  "generated_application_copies": [
+    {
+      "generated": "extraction/reduce/Reduce/Types.lean",
+      "bridge_copy": "bridge/Reduce/Types.lean",
+      "sha256": "66b7b151a88f26abda856540ce6d34e586f3dce04eb7d09b1317c696d8046213",
+      "byte_identical": true
+    },
+    {
+      "generated": "extraction/reduce/Reduce/Funs.lean",
+      "bridge_copy": "bridge/Reduce/Funs.lean",
+      "sha256": "fe9bdc7cd082ff8e82be247c8850bc132825f12e736156d2f62b3ef3a3d37d7f",
+      "byte_identical": true
+    }
+  ],
+  "runtime_models": {
+    "types": "bridge/Reduce/TypesExternal.lean",
+    "functions": "bridge/Reduce/FunsExternal.lean",
+    "source_snapshot": "bridge/runtime-models/array-iterator.rs",
+    "correspondence": "explicit trusted owned remaining-sequence value model, not a proof of Rust std ownership/drop/representation"
+  },
+  "contract_review": {
+    "reviewer": "wrapper_performance",
+    "before_proof_search": true,
+    "spec_sha256": "f544901960402b251b832412991ad43dd3395820fec7cbe533688d5298256a42",
+    "challenge_sha256": "190ed042531fa8a748a83991f3af8f28cf9f08b4fa35c8c90de3e8b7772e27a6"
+  },
+  "scope": "Only generic BITS=.ok64 branch. Actual Gf64 dictionary linkage/fallback correctness remain open. Whole native contract not achieved."
+}

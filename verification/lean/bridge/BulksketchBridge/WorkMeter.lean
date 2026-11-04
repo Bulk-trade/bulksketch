@@ -1,4 +1,5 @@
 import BulksketchBridge.WorkMeterSpec
+import BulksketchBridge.WorkMeterUsedChallenges
 import Workmeter.Funs
 import BulksketchProofs.Resource.WorkMeter
 
@@ -134,5 +135,16 @@ theorem charge_refines (meter : GeneratedMeter) (amount : U64) :
           bulksketch.types.WorkMeter.charge.closure.Insts.CoreOpsFunctionFnOnceTupleU64Bool.call_once,
           Aeneas.Std.core.option.Option.expect, Aeneas.Std.Result.ofOption,
           UScalar.lt_equiv, hgt, rustOutcome]
+
+/-- The original generated getter returns the exact charged-counter value.
+
+All generated states are covered, including exhausted and over-limit states.
+The shared-reference memory frame is part of the declared frontend/runtime
+boundary; this theorem establishes exact normal return and value correspondence.
+-/
+theorem used_refines (meter : GeneratedMeter) :
+    bulksketch.types.WorkMeter.impl.used meter = Aeneas.Std.Result.ok meter.used ∧
+    toUInt64 meter.used = (toModel meter).used := by
+  constructor <;> rfl
 
 end BulksketchBridge.WorkMeter

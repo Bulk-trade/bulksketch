@@ -1,0 +1,15 @@
+{
+  "policy": "Actual concrete-Gf64 square contracts independently reviewed and frozen before proof search; no statement weakening.",
+  "review_date": "2026-11-04",
+  "independent_reviewer": "/root/wrapper_performance",
+  "files": {
+    "bridge/BulksketchBridge/SquareSpec.lean": "7d7bba6364278040e943e89b56b882961f7104e5e29d773a90fbfdd8063aace3",
+    "bridge/BulksketchBridge/SquareChallenges.lean": "a342a622b720e4c47ad1c6d121e5e28bc3b2bb9e018de81e1f9df14b3907bae0",
+    "bridge/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+    "bridge/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614"
+  },
+  "root_challenges": [
+    "BulksketchBridge.SquareChallenges.normalResultMatchesModel",
+    "BulksketchBridge.SquareChallenges.rawSquareDivisionCertificate"
+  ]
+}

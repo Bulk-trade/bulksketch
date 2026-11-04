@@ -1,0 +1,147 @@
+{
+  "schema": "bulksketch-spread-actual-extraction-v1",
+  "reviewed_native_revision": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_head": "b0eab3d6fb4eefdb97157a67dd0301a42bc19c4c",
+  "selected_native_item": "bulksketch::field::gf64::spread",
+  "source_files_sha256": {
+    "src/backend/contract.rs": "4d05ce564edc408ba04f5a907b159ad91018ba8cfd93126e17913ed49f7e3d59",
+    "src/backend/detect.rs": "8ac50fa112b09f753d3e2e7b5e68fae8f7be6df23455a4d6fc66f370311c7d8a",
+    "src/backend/mod.rs": "b4883e5070592cd5db4c9450fbc14e7dc9c07ec457029a54917295a24a94fb72",
+    "src/backend/portable.rs": "2c3543dc3c5a67d5343e292a1c7b4f0554ba15f68f45b9533d269e3f4ba9b8da",
+    "src/backend/x86_pclmul.rs": "8cf4abd4ed47aa63b2d050928c37a5cdc93f49e8cd07b2f7c8ffddb56b7b4fff",
+    "src/backend/x86_vpclmul512.rs": "7a9c29dff254508671aa4122b20644b21a9cfb40f86ba5eaadce02bf680475d4",
+    "src/decode/affine.rs": "a7c45498717202aec291b4c4acdd6f819edf16bcdf478500a8c74a3492c4e11d",
+    "src/decode/bm.rs": "7bd35324f67902e65f143113c8e5c85ec4c2466c8b0d56e4b5f1d7df727bdfe5",
+    "src/decode/deg34.rs": "50e92cc158d33b58361cf95719d4f13e01295802a15e1dab7622fab5ce050015",
+    "src/decode/degree_probe.rs": "60d72b0aa11f311c4359bfe94f0d6fede00723602b3251492cbdb10ee51752ed",
+    "src/decode/direct.rs": "c31effb60ad9233c2c75ba56797608b916611971a78cc537db2d4a848aa46240",
+    "src/decode/mod.rs": "4d1f559feaa82a6f89e4ddd533fb7fa526d5637386364385020888c25e6026b4",
+    "src/decode/probe.rs": "14a478d93b2b55ac2803c40bed0aa93226bb53d82d35b3ea8bfa4c11b6ca460f",
+    "src/decode/roots.rs": "4697d5874fd1eb03c0210371fdac83a8dc7171de2724da046613f59c879f4fb6",
+    "src/decode/row.rs": "bf5ae89114d3bab811f1e0ca3b370cd916803bddd178471b3167e81b432df7bc",
+    "src/decode/scratch.rs": "97016cadabf021829b567ff1472a9f11136f54059d78e457d58896cc318e50f6",
+    "src/decode/stages.rs": "93825fcb5054e98e9af060a81da72d4770c29354d79822ccfc949cc55f6e9b23",
+    "src/decode/verify.rs": "6a377c1eeb9c2cbcd89660bf6a9d0549634ca83c8140dc48e6ad1384d5a332a8",
+    "src/decode/work.rs": "c0a9bbdc839f889502e7b6b3f2960649c2bc71000b3e787f613b3fc8c23ac3af",
+    "src/field/frobenius.rs": "08059508c802ff4bfc7d868233f2bb240ad21eeb4e7b0ba67b403085eba5c432",
+    "src/field/gf64.rs": "c5320b7121c3de4d3e7e04ecdc88a6ddf100901a534912b8811c6ff5add9aa27",
+    "src/field/maps.rs": "56d1f22aad44faa402a4d743b9719e2f93fe891ca72da411e29598c37f925f22",
+    "src/field/mod.rs": "035dc6193ebb50b324527525c0ee47cbe06ca325db16aa5f8ee55b0e79baa723",
+    "src/field/quadratic_chunks.rs": "6b64976353c70aec71c9416cb59993751b1babbdcd7323cbb3a7e7ff34e3d50d",
+    "src/lib.rs": "5174f3741a1c1b0bbdfddfac894adb8d96de06896dce8960bad76fe2056fe124",
+    "src/poly/dense.rs": "13b360fba6387dda36a9655f3f67d01be6752e4ca6b7f8e1824e7333bf3da644",
+    "src/poly/mod.rs": "93fcb671a61dce34848723a52bc0f49e2f8c440f918d748f4101956dbb11ac2e",
+    "src/sketch/api.rs": "45333a4d9966d07bd36c6382f84ae03b156fd00aea4af5e87218f33919fb8700",
+    "src/sketch/candidates.rs": "5071c62cae68c4cc27c3d5db00697ed4412fde698f6868a6da6e266f2e1fada5",
+    "src/sketch/contract.rs": "64fbca95f2fbfd839f472d965f23addc74e9abf7576b68d17a328edd13e3c0d8",
+    "src/sketch/dispatch.rs": "4d506d82339b3294a8ab28e0476e55c8f4b1e80bf85f409430d7e52a82e01e56",
+    "src/sketch/input.rs": "6c89022d5900daa757d0d5a1901c2446ec37e135610073b57cd78264c406ffaa",
+    "src/sketch/job.rs": "9959867b58272bd4807beb32d0a4da092e484f12c7349308c5b9488452a460a4",
+    "src/sketch/mod.rs": "1f994b7873a7d5ee9b9a656c1c824cad7cdf26ef623ceb603b1f208374842f58",
+    "src/sketch/plan.rs": "572724a6bd72579f7e7e2540d4ec4f7f874c719afa9f1d7bbec8791c412f8cb3",
+    "src/sketch/scratch.rs": "f72a3fb7165817d7e2f504d2025fbcba98c38a31685fb0f57bffb63ca502384c",
+    "src/sketch/shape.rs": "ea2286691663eda48c422ba8bab29d69c17ca30ffaec465d0e2a5a0a4fdbc17d",
+    "src/sketch/state.rs": "516876d63076bf34f5b37bcf47a8ca557cc22b1b1615124522b6853f9b8b3b45",
+    "src/sketch/wire/encode.rs": "d679d342330febdd41176abe3eb5bbe5aad165c6d98779c01dab4a7b77fdb1e5",
+    "src/sketch/wire/mod.rs": "483ebee81f86b3a3f08e5ed0440e79d1bca14a2b29a3269bd75ca5090ac7ce0b",
+    "src/types.rs": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
+  },
+  "build_inputs_sha256": {
+    "Cargo.toml": "56f9564093d2e82888a88b3cdb8e9043818c91e7483ae8f1ab4c7690e919efdc",
+    "Cargo.lock": "2d0ee90905288ebaf0914424b4e41ef6ca03c067c00e26fa0a1211f80b80a887",
+    "rust-toolchain.toml": "6791dcb04edcb490caaf08590dbe1dd9d9954b46dab2095df12dc984f704f1a8"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_executable_sha256": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+  "aeneas_executable_sha256": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+  "charon": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/Users/junbug/bulk/bulksketch/verification/lean/extraction/spread/spread.llbc",
+      "--start-from=bulksketch::field::gf64::spread",
+      "--",
+      "--manifest-path",
+      "/Users/junbug/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.214372208341956,
+    "log": "extraction/spread/charon.log",
+    "log_sha256": "c221fd7b99d01b9934536b8f7644d957da927afee92f5e98a6c820be7b571dac"
+  },
+  "aeneas": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch/verification/lean/extraction/spread/generated",
+      "/Users/junbug/bulk/bulksketch/verification/lean/extraction/spread/spread.llbc"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4032631255686283,
+    "log": "extraction/spread/aeneas.log",
+    "log_sha256": "b8898ab6838db8bb18af7a9cdd492f9103d563cdd0882919800d0bea0af5a231"
+  },
+  "llbc": "extraction/spread/spread.llbc",
+  "llbc_has_errors": false,
+  "llbc_sha256": "8841aad6a1120b9f43bd20ff3cd48f94e42ff4ed02449b708faf8f0e6318e50d",
+  "generated_copies": [
+    {
+      "source": "extraction/spread/generated/Types.lean",
+      "copy": "bridge/Spread/Types.lean",
+      "sha256": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea"
+    },
+    {
+      "source": "extraction/spread/generated/Funs.lean",
+      "copy": "bridge/Spread/Funs.lean",
+      "sha256": "45c56c68a2de3fd1d5a40a7c95adbbf9eea5736d1143e5b38dd9b73eb69965fe"
+    }
+  ],
+  "external_templates": [],
+  "generated_body_modified": false,
+  "source_body_refinement": "Lean-checked universal generated-body refinement; aggregate independent replay pending root",
+  "full_native_coverage_achieved": false,
+  "proof_module": "bridge/BulksketchBridge/Spread.lean",
+  "model_specification": "bridge/BulksketchBridge/SpreadSpec.lean",
+  "independent_challenges": "bridge/BulksketchBridge/SpreadChallenges.lean",
+  "contract_freeze": "extraction/spread/contract-freeze.json",
+  "theorems": [
+    "BulksketchBridge.Spread.spread_refines",
+    "BulksketchBridge.Spread.spread_coefficients"
+  ],
+  "checked_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "no_new_runtime_adapter": true,
+  "current_generated_module": "Arithmetic.Funs",
+  "canonical_migration_receipt": "extraction/canonical-arithmetic/migration-receipt.json",
+  "current_generated_files": [
+    {
+      "path": "bridge/Arithmetic/Types.lean",
+      "sha256": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0"
+    },
+    {
+      "path": "bridge/Arithmetic/Funs.lean",
+      "sha256": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614"
+    }
+  ],
+  "earlier_spread_only_copies": "generated_copies records initial Spread-only copies before the reviewed canonical Arithmetic import migration; extraction originals remain in extraction/spread/generated",
+  "trust_boundary": [
+    "pinned Charon/Aeneas translation correctness",
+    "Aeneas standard scalar and Result model correspondence",
+    "extraction compiler versus production compiler correspondence",
+    "Rust compiler and machine semantics"
+  ]
+}

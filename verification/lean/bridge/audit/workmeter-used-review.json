@@ -1,0 +1,22 @@
+{
+  "review_date": "2026-11-04",
+  "policy": "New exact getter claim and unchanged mappings frozen before proof search; no native edits or weaker preconditions.",
+  "status": "frozen and independently hash-reviewed before proof search",
+  "files": {
+    "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
+    "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
+    "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
+    "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
+    "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4"
+  },
+  "endpoint": "BulksketchBridge.Challenges.generatedUsedMatchesExactValue",
+  "actual_extracted_method": "bulksketch.types.WorkMeter.impl.used",
+  "distinct_structure_projection": "bulksketch.types.WorkMeter.used",
+  "contract_review": {
+    "root": "approved all-state exact getter and lossless projection contract before proof search",
+    "wrapper_performance": "Exact file reviewed; independently confirmed SHA256 e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1; approved all-state actual impl.used contract, shared-reference framing remains TCB."
+  },
+  "source_compile_inputs": "scope.json production fingerprints checked; proof-only repository HEAD permitted",
+  "implementation_proof_credit": 0,
+  "proof_search_started_after_review": true
+}

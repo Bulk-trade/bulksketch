@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/Users/junbug/bulk/bulksketch/verification/lean/extraction/spread/spread.llbc",
+    "--start-from=bulksketch::field::gf64::spread",
+    "--",
+    "--manifest-path",
+    "/Users/junbug/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.214372208341956,
+  "log": "extraction/spread/charon.log",
+  "log_sha256": "c221fd7b99d01b9934536b8f7644d957da927afee92f5e98a6c820be7b571dac"
+}

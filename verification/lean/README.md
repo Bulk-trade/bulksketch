@@ -15,14 +15,15 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 
 | Area | Result | Source relationship |
 | --- | --- | --- |
-| GF64 reduction | Universal division certificate for every 128-bit input, unique bounded quotient/remainder and XOR-linearity | Exact-source AST-derived expression; the narrow translator is unverified |
-| Bit spreading and raw square | Exact coefficient placement and XOR-linearity for every 64-bit input | Handwritten native-shaped specification; Rust refinement remains open |
+| GF64 reduction | Universal division certificate for every 128-bit input, unique bounded quotient/remainder and XOR-linearity | Actual generated reduction using the actual extracted Gf64 dictionary; the generic BITS=64 contract is also retained |
+| Bit spreading and raw square | Exact coefficient placement and XOR-linearity for every 64-bit input | Actual generated spread; raw-square model and actual Gf64 square compose with reduction |
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
-| `WorkMeter::new` and `charge` | Exact normal return, Rust result and final state for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
+| `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-There are 58 handwritten core theorem declarations and six bridge theorem
-declarations. These are theorem counts, not counts of fully verified source
-functions. Full native implementation coverage is not achieved.
+The current bridge targets six source functions: the three meter operations,
+spread, GF64 reduction and GF64 square. This is functional refinement of generated
+bodies under the stated trust boundary, not a count of complete native contracts.
+Full native implementation coverage is not achieved.
 
 The [core proofs](BulksketchProofs.lean) and [generated-body bridge](bridge/README.md)
 use frozen proposition definitions, transitive axiom audits and exported-term
@@ -64,7 +65,7 @@ Mathlib's automatic full-cache update hook and requests cache artifacts only for
 the explicit imports used by the runtime. Setup/build caches are ignored by Git.
 
 `verify_all.py` fails closed across core checking, bridge checking and negative
-fixtures. It checks 15 frozen endpoint propositions, exact source/body hashes and
+fixtures. It checks frozen endpoint propositions, exact source/body hashes and
 axiom closures, then replays exported proofs in both kernels. The negative
 fixtures confirm rejection of an application axiom and replacement of an unused
 challenged theorem by a same-type axiom. Generated results and logs are written
@@ -90,10 +91,16 @@ verification commands; an automated CI workflow is not part of this change.
   input is rejected until its source contract is reviewed.
 - [source-linkage.json](bridge/source-linkage.json) ties the generated bridge to
   source spans, IR/body hashes and byte-identical generated application files.
+- [obligations.json](bridge/obligations.json) maps source items and generated files
+  to exact challenge/theorem pairs. The bridge verifier reconciles it with both
+  the Lean audit and coverage ledger before reporting any functional refinement.
 
-The bridge supplies one missing standard-library model, `Option::is_none_or`,
-as a concrete definition: None returns true, Some invokes the supplied closure.
-Its Rust standard-library correspondence is an explicit trusted boundary.
+The bridge supplies concrete models for `Option::is_none_or` and owned array
+iteration. None returns true and Some invokes the closure for the former;
+the latter preserves the remaining value sequence and consumes its head.
+Their Rust standard-library correspondence, including ownership/drop behavior,
+is an explicit trusted boundary. The GF64 reduction theorem does not traverse
+the generic fallback that contains array iteration; that fallback remains intact.
 Charon/Aeneas frontend correctness, extraction-versus-production compiler
 correspondence, allocator/runtime, intrinsic lowering and machine semantics also
 remain separately declared assumptions. These proofs do not verify the compiler
@@ -106,7 +113,7 @@ against the reviewed source fingerprints. It rejects unsupported syntax and
 preserves the parsed XOR/shift expression. The generated expression is a model
 artifact; its mathematical proof is not a theorem proving the translator correct.
 
-The committed WorkMeter IR and generated Lean record the original extraction.
+The committed WorkMeter and arithmetic IR/generated Lean record actual extraction.
 The IR retains historical build-path metadata; proof checking resolves paths
 from this checkout and does not execute those historical paths. Regenerating
 these actual Rust-to-LLBC-to-Lean artifacts requires the exact
@@ -120,7 +127,7 @@ around associated iterator types, and full Aeneas translation encounters
 associated-type, function-pointer, lifetime and loop limitations. They are proof
 tooling gaps, not completed obligations or demonstrated library defects.
 
-Next milestones are actual generated arithmetic refinements, raw multiplication,
+Next milestones are full 128-bit raw multiplication, its loop/runtime refinements,
 field maps/tables and modulus irreducibility; then the capacity-18 public slice,
 general decoder completeness, public state/resource/ownership behavior, and both
 x86 backends. The Mac's inability to execute x86 does not remove those source

@@ -3,18 +3,45 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "0642bbbc233cac913dc63cab04164039b50a761b88f7c80f37f612dbb3fd75e6",
+    "bridge/BulksketchBridge/Audit.lean": "faa9730c1f16a6d9bd3c5a53a96e7c4f0cab5db0b38f284f9d44756fadad1f72",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
-    "bridge/Workmeter/Funs.lean": "d67d1059d16a2d9b0cd81df9d66560150dd089bf31557f0711f8c5332f99d7bb",
+    "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
     "bridge/runtime-models/option-is-none-or.rs": "c7775aa2037540ec5e8cf2149ffa3552bbe5bcf955e1caa0e5944fee72c472cd",
-    "bridge/lakefile.toml": "400fe0fb49af353cf125ae3ab836987acdca582c2abf9d25ad314c7987ff6ee1",
+    "bridge/lakefile.toml": "6f15924b66061eae1e09c37a5c56d00e82f5ce4df85821307e59188e7a08d1cd",
     "bridge/lake-manifest.json": "970d79e6e04955e73035be01137816af4a56eb4789020c8822b9c623414281d6",
-    "extraction/aeneas-pilot/workmeter.llbc": "3ac347b6781390132c0c441f949090faeada725177a9629c6d3da11490679bf2",
+    "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
-    "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "d67d1059d16a2d9b0cd81df9d66560150dd089bf31557f0711f8c5332f99d7bb",
-    "scripts/verify_bridge.py": "ba510ad4e767fabecfa07cc9daf0b68a08649a0f1698af5fdf1b2a6f96bd23e7",
-    "audit/frozen-inputs.json": "f3289a01ed0e3a0fd9c92bcacc704d3e6f360d2f0e8e3e76c0a2056a7678255e"
+    "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
+    "scripts/verify_bridge.py": "167703810fd8afba33f4bb196c9aa20a46e598c03d5dbfcc91e6012cfad1d11e",
+    "audit/frozen-inputs.json": "8c041ef15b189b6a4f3a7f1f90fbe9f367f840e5cb34f77dd501281c42457215",
+    "bridge/BulksketchBridge.lean": "06f0a4af05f5bc1857d835ba751bc5a88b1f0679c0e0097378c55657fcaf2391",
+    "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
+    "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
+    "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
+    "bridge/BulksketchBridge/ReduceSpec.lean": "7b97bceb850f787a397f1c8bf85dd6c9a254d5e483a7d684b63a77efb8acb79a",
+    "bridge/BulksketchBridge/ReduceChallenges.lean": "190ed042531fa8a748a83991f3af8f28cf9f08b4fa35c8c90de3e8b7772e27a6",
+    "bridge/BulksketchBridge/Gf64ReduceSpec.lean": "afb2395d0c9052f56c644e9eb075bea16ca2ae4f3abab450ee2c53d0123c9b78",
+    "bridge/BulksketchBridge/Gf64ReduceChallenges.lean": "6d1f08045e6d1fb47b2fb623b337a0aa7eac77c7752f1b025d2628b9ae6970d0",
+    "bridge/BulksketchBridge/SquareSpec.lean": "7d7bba6364278040e943e89b56b882961f7104e5e29d773a90fbfdd8063aace3",
+    "bridge/BulksketchBridge/SquareChallenges.lean": "a342a622b720e4c47ad1c6d121e5e28bc3b2bb9e018de81e1f9df14b3907bae0",
+    "bridge/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+    "bridge/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
+    "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
+    "bridge/Arithmetic/FunsExternal.lean": "0920ec8a166029f316f1c7492ecae854e27946de24d14c5f39c4cdbf69c643e3",
+    "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
+    "bridge/source-linkage.json": "0fd441a5e3125a7335e5ea40fe641fdf95c48ad9447f6865388e8353335fa664",
+    "bridge/obligations.json": "bb6bed3a6d8eb38bdec272f6c66a089c1a31e1494cdade7f2416c06c59c0a26c",
+    "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
+    "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+    "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
+    "extraction/canonical-arithmetic/impl-root/receipt.json": "3830363a0e31ef7951cba8feb862a70851a8038d48dcd1df878acfa145210fcf",
+    "extraction/canonical-arithmetic/migration-receipt.json": "3f4df303f63f5b77a14ac08d58fbc303b94f62ef59a17081eca39768f010272a",
+    "extraction/canonical-arithmetic/square-contract-freeze.json": "80eee18f507d9ead47f0a272a7f874d902d23559df233c146c25321add79e51b",
+    "bridge/audit/workmeter-used-review.json": "982704c4ac127cf9c69261e83391f5122cfb6f308f5945dd6ecb3bedeb29043b",
+    "bridge/audit/gf64-reduce-review.json": "4d2460387a791800f0ef7efde3a4fd245d01f82ea1439dedaef65d0da58bbb44",
+    "tooling/setup_lean_runtime.py": "285c68b938ac803d6a79424ab2fa74bb22df6faae5ef84e766405540ae5c7d0e",
+    "bridge/audit/arithmetic-contract-review.json": "062bd0838262cad4bf899b96f5928203659496064785b22ae95f1cef9cf2e8dd"
   },
   "reviewed_policy_revisions": [
     {
@@ -53,6 +80,61 @@
           "new_sha256": "ba510ad4e767fabecfa07cc9daf0b68a08649a0f1698af5fdf1b2a6f96bd23e7"
         }
       ]
+    },
+    {
+      "reason": "Reviewed native-only extension: preserve all previous challenge meanings, add actual source getter and arithmetic contracts; canonical extraction retains unchanged function bodies and the real Gf64 implementation. Validator reconciles frozen source associations with audited challenges, retains every native obligation and runtime pin. No application axioms or native source changes.",
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "old_sha256": "0642bbbc233cac913dc63cab04164039b50a761b88f7c80f37f612dbb3fd75e6",
+      "new_sha256": "faa9730c1f16a6d9bd3c5a53a96e7c4f0cab5db0b38f284f9d44756fadad1f72"
+    },
+    {
+      "reason": "Reviewed native-only extension: preserve all previous challenge meanings, add actual source getter and arithmetic contracts; canonical extraction retains unchanged function bodies and the real Gf64 implementation. Validator reconciles frozen source associations with audited challenges, retains every native obligation and runtime pin. No application axioms or native source changes.",
+      "path": "bridge/Workmeter/Funs.lean",
+      "old_sha256": "d67d1059d16a2d9b0cd81df9d66560150dd089bf31557f0711f8c5332f99d7bb",
+      "new_sha256": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940"
+    },
+    {
+      "reason": "Reviewed native-only extension: preserve all previous challenge meanings, add actual source getter and arithmetic contracts; canonical extraction retains unchanged function bodies and the real Gf64 implementation. Validator reconciles frozen source associations with audited challenges, retains every native obligation and runtime pin. No application axioms or native source changes.",
+      "path": "bridge/lakefile.toml",
+      "old_sha256": "400fe0fb49af353cf125ae3ab836987acdca582c2abf9d25ad314c7987ff6ee1",
+      "new_sha256": "6f15924b66061eae1e09c37a5c56d00e82f5ce4df85821307e59188e7a08d1cd"
+    },
+    {
+      "reason": "Reviewed native-only extension: preserve all previous challenge meanings, add actual source getter and arithmetic contracts; canonical extraction retains unchanged function bodies and the real Gf64 implementation. Validator reconciles frozen source associations with audited challenges, retains every native obligation and runtime pin. No application axioms or native source changes.",
+      "path": "extraction/aeneas-pilot/workmeter.llbc",
+      "old_sha256": "3ac347b6781390132c0c441f949090faeada725177a9629c6d3da11490679bf2",
+      "new_sha256": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4"
+    },
+    {
+      "reason": "Reviewed native-only extension: preserve all previous challenge meanings, add actual source getter and arithmetic contracts; canonical extraction retains unchanged function bodies and the real Gf64 implementation. Validator reconciles frozen source associations with audited challenges, retains every native obligation and runtime pin. No application axioms or native source changes.",
+      "path": "extraction/aeneas-pilot/workmeter-lean/Funs.lean",
+      "old_sha256": "d67d1059d16a2d9b0cd81df9d66560150dd089bf31557f0711f8c5332f99d7bb",
+      "new_sha256": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940"
+    },
+    {
+      "reason": "Reviewed native-only extension: preserve all previous challenge meanings, add actual source getter and arithmetic contracts; canonical extraction retains unchanged function bodies and the real Gf64 implementation. Validator reconciles frozen source associations with audited challenges, retains every native obligation and runtime pin. No application axioms or native source changes.",
+      "path": "scripts/verify_bridge.py",
+      "old_sha256": "ba510ad4e767fabecfa07cc9daf0b68a08649a0f1698af5fdf1b2a6f96bd23e7",
+      "new_sha256": "7f118168f79e5d26e7d3b08a781127aae5ddce6850384475830750a95a18fa40"
+    },
+    {
+      "reason": "Reviewed native-only extension: preserve all previous challenge meanings, add actual source getter and arithmetic contracts; canonical extraction retains unchanged function bodies and the real Gf64 implementation. Validator reconciles frozen source associations with audited challenges, retains every native obligation and runtime pin. No application axioms or native source changes.",
+      "path": "audit/frozen-inputs.json",
+      "old_sha256": "f3289a01ed0e3a0fd9c92bcacc704d3e6f360d2f0e8e3e76c0a2056a7678255e",
+      "new_sha256": "8c041ef15b189b6a4f3a7f1f90fbe9f367f840e5cb34f77dd501281c42457215"
+    },
+    {
+      "reason": "Require the pinned extraction has_errors flag to be exactly false rather than merely false-like; source and frozen proposition meanings unchanged.",
+      "path": "scripts/verify_bridge.py",
+      "old_sha256": "7f118168f79e5d26e7d3b08a781127aae5ddce6850384475830750a95a18fa40",
+      "new_sha256": "167703810fd8afba33f4bb196c9aa20a46e598c03d5dbfcc91e6012cfad1d11e"
+    },
+    {
+      "reason": "Record the six completed aggregate source-body refinements and current axiom/result paths; frozen mathematical definitions, generated application files and source associations unchanged.",
+      "path": "bridge/source-linkage.json",
+      "old_sha256": "7fda3898871099a01f19d80632cb4f7aaaacb1e814a20aea3702efff60e47e5d",
+      "new_sha256": "0fd441a5e3125a7335e5ea40fe641fdf95c48ad9447f6865388e8353335fa664"
     }
-  ]
+  ],
+  "challenge_count": 11
 }

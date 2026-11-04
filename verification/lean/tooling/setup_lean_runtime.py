@@ -44,7 +44,7 @@ def main():
         subprocess.run(["python3", str(ROOT / "tooling/fetch-lean-runtime-cache.py")], env=ENV, check=True)
     # Cache and build in the consuming workspace. Building only the runtime's
     # own workspace leaves the bridge with a second uncached dependency tree.
-    subprocess.run(["elan", "run", "leanprover/lean4:v4.35.0", "lake", "build", "Workmeter.Funs"],
+    subprocess.run(["elan", "run", "leanprover/lean4:v4.35.0", "lake", "build", "Workmeter.Funs", "Arithmetic.Funs"],
                    cwd=ROOT / "bridge", env=ENV, check=True)
 
 

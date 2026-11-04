@@ -89,7 +89,7 @@ def main():
     checked_names = {event["theorem"] for event in theorems}
     for item in coverage["items"]:
         if item["proof_status"] != "unproved":
-            raise RuntimeError("initial ledger has no checked Rust refinement bridge; model proof cannot grant implementation credit")
+            raise RuntimeError("complete native-contract closure remains open; narrower evidence cannot grant full implementation credit")
         for theorem in item.get("related_model_evidence", {}).get("theorems", []):
             if theorem not in checked_names:
                 raise RuntimeError("coverage references an unchecked model theorem: " + theorem)
