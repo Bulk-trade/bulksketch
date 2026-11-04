@@ -42,6 +42,7 @@ charon cargo --preset=aeneas --sysroot=default \
   --dest-file=/path/to/output/workmeter.llbc \
   '--start-from=bulksketch::types::_::new' \
   '--start-from=bulksketch::types::_::charge' \
+  '--start-from=bulksketch::types::_::used' \
   -- --manifest-path Cargo.toml -p bulksketch --lib --locked
 
 aeneas -backend lean -split-files -dest /path/to/output/workmeter-lean \
@@ -63,8 +64,36 @@ OCaml and the extraction compiler are regeneration prerequisites, not proof
 checking prerequisites. The runtime adapter, frontend correctness, source/compiler
 correspondence and machine execution remain explicit trust boundaries.
 
-The initial full-native extraction was incomplete and is not committed as a
-successful certificate. Generic reduction still needs proper iterator models;
-the monomorphization experiment encountered incompatible Charon/Aeneas preset
-requirements. No source branches or IR metadata were removed to bypass those
-limitations.
+## Canonical actual arithmetic extraction
+
+The successful arithmetic extraction selects the original `square` and the real
+source `Gf64` trait implementation. It reaches unchanged `reduce`, `spread`,
+`square` and the actual constants/trait dictionary. The fallback reduction loops
+remain present. From this Lean directory:
+
+```sh
+python3 extraction/canonical-arithmetic/run.py \
+  --charon /path/to/pinned/charon \
+  --aeneas /path/to/pinned/aeneas --label regenerated
+```
+
+The trait selector is
+`{impl bulksketch::field::BinaryField for bulksketch::field::Gf64}`.
+It starts at the first path segment, without a crate prefix. The runner checks
+all native/build-input fingerprints and tool source pins, rejects incomplete
+LLBC and preserves tool commands, logs, binary hashes and generated files.
+
+The committed canonical Types/Funs are copied byte-for-byte into
+`bridge/Arithmetic`. Its missing standard array iterator primitives use concrete
+remaining-sequence models, with source correspondence and ownership/drop
+semantics explicitly trusted. Generic BITS=64 refinement and the unconditional
+actual-Gf64 refinement refer to the same source body. The canonical extraction
+avoids duplicate generated declaration names across separate spread/reduce
+packages; [migration-receipt.json](canonical-arithmetic/migration-receipt.json)
+records exact-name body comparisons and the reviewed import-only migration.
+
+The initial full-native extraction remains incomplete and is not a successful
+certificate. The earlier monomorphization experiment encountered incompatible
+Charon/Aeneas preset requirements; the canonical route keeps the original generic
+body and uses its actual extracted instance instead. No source branches or IR
+metadata were removed to bypass a limitation.

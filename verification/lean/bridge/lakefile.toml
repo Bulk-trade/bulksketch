@@ -14,4 +14,7 @@ path = ".."
 name = "Workmeter"
 
 [[lean_lib]]
+name = "Arithmetic"
+
+[[lean_lib]]
 name = "BulksketchBridge"

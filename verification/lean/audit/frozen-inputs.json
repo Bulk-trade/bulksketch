@@ -14,9 +14,11 @@
     "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
     "lakefile.toml": "4ffda0cb95c818990d0cc89af6d17c1bbd1a9bbb1a19a37de679db7569e50f9a",
     "BulksketchProofs/Audit.lean": "4f1d759b7542495d9999654616c2ea2d80237f85892ef85eed2752cd7acfd658",
-    "scripts/verify.py": "4a3b2094654db2f3b8f307f874b60867b831aabeb0bbdb59b66b8bc673bfe510",
+    "scripts/verify.py": "990388ee1b4641c5536dc6cac88babf77b338a1ead74bff7fabfdf52a1c5eabf",
     "BulksketchProofs/Field/SpreadSpec.lean": "cb21b3ad6e0c378438699e848a78038ca0d61b757322f8489fede4fc57cc9062",
-    "BulksketchProofs/SpreadChallenges.lean": "1efb7e6e3d8561c83a26916282b6240a774a80db52091dd7420053a4424f7c63"
+    "BulksketchProofs/SpreadChallenges.lean": "1efb7e6e3d8561c83a26916282b6240a774a80db52091dd7420053a4424f7c63",
+    "scripts/verify_all.py": "26a43d0ff01ec6d291a15ed3cfe0e35ecf6b71c5bd72e3043a71d76518eacbc5",
+    "scripts/check_negative_fixtures.py": "1be2bee7eb62aad32a2e9a3b4949a7076be5e8ee6ab8b59ec8e4370c0024ac7d"
   },
   "reviewed_policy_revisions": [
     {
@@ -91,6 +93,12 @@
           "new_sha256": "4a3b2094654db2f3b8f307f874b60867b831aabeb0bbdb59b66b8bc673bfe510"
         }
       ]
+    },
+    {
+      "reason": "Keep the conservative full-native-contract gate while accurately distinguishing narrower generated-body refinement evidence; no mathematical proposition changed.",
+      "path": "scripts/verify.py",
+      "old_sha256": "4a3b2094654db2f3b8f307f874b60867b831aabeb0bbdb59b66b8bc673bfe510",
+      "new_sha256": "990388ee1b4641c5536dc6cac88babf77b338a1ead74bff7fabfdf52a1c5eabf"
     }
   ]
 }

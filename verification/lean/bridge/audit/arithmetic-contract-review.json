@@ -1,0 +1,25 @@
+{
+  "policy": "Independent frozen contracts were reviewed before proof search. Canonical migration changes import paths only and retains exact original generated function/type text; no proposition was weakened.",
+  "reviewer": "wrapper_performance",
+  "canonical_definition_review": "extraction/canonical-arithmetic/migration-receipt.json",
+  "pre_search_files": {
+    "bridge/BulksketchBridge/ReduceSpec.lean": "f544901960402b251b832412991ad43dd3395820fec7cbe533688d5298256a42",
+    "bridge/BulksketchBridge/ReduceChallenges.lean": "190ed042531fa8a748a83991f3af8f28cf9f08b4fa35c8c90de3e8b7772e27a6",
+    "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
+    "bridge/BulksketchBridge/SpreadChallenges.lean": "134f3649317623d7f9b8e0f8ad6be8724ba0e956940092e381c2a01fb9f906ae"
+  },
+  "import_only_migration": [
+    {
+      "path": "bridge/BulksketchBridge/ReduceSpec.lean",
+      "old_sha256": "f544901960402b251b832412991ad43dd3395820fec7cbe533688d5298256a42",
+      "new_sha256": "7b97bceb850f787a397f1c8bf85dd6c9a254d5e483a7d684b63a77efb8acb79a",
+      "change": "Import Arithmetic.Funs instead of the separate unchanged-function pilot module; generated declaration names, type definitions and function text preserved."
+    },
+    {
+      "path": "bridge/BulksketchBridge/SpreadChallenges.lean",
+      "old_sha256": "134f3649317623d7f9b8e0f8ad6be8724ba0e956940092e381c2a01fb9f906ae",
+      "new_sha256": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
+      "change": "Import Arithmetic.Funs instead of the separate unchanged-function pilot module; generated declaration names, type definitions and function text preserved."
+    }
+  ]
+}

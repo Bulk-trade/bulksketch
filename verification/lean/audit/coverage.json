@@ -5538,7 +5538,15 @@
           "BulksketchProofs.Field.generated_reduction_xor"
         ],
         "source_link": "extraction/reduce-gf64-linkage.json",
-        "remaining": "unverified AST translator and Rust semantic refinement"
+        "remaining": "See separate generated-body refinement evidence for the source-body link under its explicit TCB. Complete native contracts, frontend/compiler/runtime correspondence and execution closure remain open."
+      },
+      "generated_body_refinement_evidence": {
+        "status": "kernel_checked_and_independently_replayed",
+        "theorem": "BulksketchBridge.Gf64Reduce.reduce_refines",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json",
+        "scope": "Original generic generated reduction called with the actual source-extracted Gf64 dictionary; every raw 128-bit input, exact full remainder and division certificate/normal return. Other-field fallback correctness and native compiler/runtime closure remain open."
       }
     },
     {
@@ -5586,7 +5594,15 @@
         "theorems": [
           "BulksketchProofs.Field.spread64_bits"
         ],
-        "remaining": "actual Rust-body semantic refinement"
+        "remaining": "See separate generated-body refinement evidence for the source-body link under its explicit TCB. Complete native contracts, frontend/compiler/runtime correspondence and execution closure remain open."
+      },
+      "generated_body_refinement_evidence": {
+        "status": "kernel_checked_and_independently_replayed",
+        "theorem": "BulksketchBridge.Spread.spread_refines",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json",
+        "scope": "Entire generated spread for every U64; exact complete output and normal return."
       }
     },
     {
@@ -5634,7 +5650,15 @@
         "theorems": [
           "BulksketchProofs.Field.rawSquare128_bits"
         ],
-        "remaining": "actual generated square/refinement and complete field-operation contract"
+        "remaining": "See separate generated-body refinement evidence for the source-body link under its explicit TCB. Complete native contracts, frontend/compiler/runtime correspondence and execution closure remain open."
+      },
+      "generated_body_refinement_evidence": {
+        "status": "kernel_checked_and_independently_replayed",
+        "theorem": "BulksketchBridge.Square.square_refines",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json",
+        "scope": "Original generated square called with the actual source-extracted Gf64 dictionary; every U64 input, exact full remainder, coefficient-square division certificate and normal return including the canonicality assertion. Modulus irreducibility is not assumed or claimed."
       }
     },
     {
@@ -10700,14 +10724,15 @@
         "theorems": [
           "BulksketchProofs.Resource.WorkMeter.new_bounded"
         ],
-        "remaining": "full constructor contract and Rust-body semantic refinement"
+        "remaining": "See separate generated-body refinement evidence for the source-body link under its explicit TCB. Complete native contracts, frontend/compiler/runtime correspondence and execution closure remain open."
       },
       "generated_body_refinement_evidence": {
         "status": "kernel_checked_and_independently_replayed",
         "theorem": "BulksketchBridge.WorkMeter.new_refines",
         "source_linkage": "bridge/source-linkage.json",
-        "verification": "bridge/audit/verification.json",
-        "scope": "actual generated body under recorded frontend/runtime/compiler TCB; not full native execution closure"
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json",
+        "scope": "Entire generated constructor; production compiler/runtime correspondence remains TCB."
       }
     },
     {
@@ -10737,14 +10762,15 @@
           "BulksketchProofs.Resource.WorkMeter.overflow_rejected",
           "BulksketchProofs.Resource.WorkMeter.bounded_preserved"
         ],
-        "remaining": "actual Rust-body semantic refinement"
+        "remaining": "See separate generated-body refinement evidence for the source-body link under its explicit TCB. Complete native contracts, frontend/compiler/runtime correspondence and execution closure remain open."
       },
       "generated_body_refinement_evidence": {
         "status": "kernel_checked_and_independently_replayed",
         "theorem": "BulksketchBridge.WorkMeter.charge_refines",
         "source_linkage": "bridge/source-linkage.json",
-        "verification": "bridge/audit/verification.json",
-        "scope": "all generated states and amounts; exact result/state; recorded frontend/runtime/compiler TCB; not full native execution closure"
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json",
+        "scope": "Entire generated charge for all states/amounts; exact Rust outcome and final state; std Option model correspondence remains TCB."
       }
     },
     {
@@ -10765,7 +10791,15 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "status": "kernel_checked_and_independently_replayed",
+        "theorem": "BulksketchBridge.WorkMeter.used_refines",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json",
+        "scope": "Entire generated getter for every state; exact word and normal return; shared-reference framing remains TCB."
+      }
     },
     {
       "id": "src/types.rs:31:method:bulksketch::types::<ShapeError as std :: fmt :: Display>::fmt",
@@ -10973,7 +11007,7 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations stay in the denominator. Five have related core model evidence and two have actual-generated-body functional refinements; full native contract/compiler-runtime closure remains open and percentages are withheld.",
-    "checked_generated_body_refinements_under_recorded_TCB": 2
+    "note": "All 344 native executable declarations stay in the denominator. Five have core model evidence and six have narrower actual-generated-body functional refinements; the arithmetic reduction/square contracts use the actual Gf64 dictionary. Full native contract/compiler-runtime closure remains open and percentages are withheld.",
+    "checked_generated_body_refinements_under_recorded_TCB": 6
   }
 }

@@ -73,4 +73,10 @@ def types.WorkMeter.charge
       let i2 ← core.option.Option.expect next (toStr "checked work charge")
       ok (core.result.Result.Ok (), { self with used := i2 })
 
+/-- [bulksketch::types::{bulksketch::types::WorkMeter}::used]:
+    Source: 'src/types.rs', lines 299:4-301:5 -/
+def types.WorkMeter.impl.used
+  (self : types.WorkMeter) : Result types.WorkUnits := do
+  ok self.used
+
 end bulksketch

@@ -12,7 +12,19 @@
     {
       "generated": "extraction/aeneas-pilot/workmeter-lean/Funs.lean",
       "bridge_copy": "bridge/Workmeter/Funs.lean",
-      "sha256": "d67d1059d16a2d9b0cd81df9d66560150dd089bf31557f0711f8c5332f99d7bb",
+      "sha256": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
+      "byte_identical": true
+    },
+    {
+      "generated": "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean",
+      "bridge_copy": "bridge/Arithmetic/Types.lean",
+      "sha256": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+      "byte_identical": true
+    },
+    {
+      "generated": "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/Funs.lean",
+      "sha256": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
       "byte_identical": true
     }
   ],
@@ -27,16 +39,16 @@
   "generated_templates_untouched": true,
   "application_axioms_added": false,
   "generated_lean_elaboration": "passed: Workmeter.Types/FunsExternal/Funs; exact generated copies",
-  "native_refinement_proof": "generated-body model refinement passed per proof agent; root owns coverage credit; frontend/runtime/compiler remain TCB",
+  "native_refinement_proof": "Six distinct generated source-body functional refinements recorded in bridge/obligations.json; validated by bridge/audit/results/verification.json under explicit frontend/runtime/compiler TCB; no whole-native claim.",
   "generated_definition_axiom_audit": "passed: standard propext/Classical.choice/Quot.sound only",
-  "generated_definition_axiom_log": "tooling/logs/workmeter-generated-axioms.log",
+  "generated_definition_axiom_log": "bridge/audit/results/axioms.json",
   "native_source_file": {
     "path": "src/types.rs",
     "sha256": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
   },
   "llbc": {
     "path": "extraction/aeneas-pilot/workmeter.llbc",
-    "sha256": "5e92f8c2a8f6abb35f776fd59d780b6d6c2b8fab5220d6d0c5826846a87031f5",
+    "sha256": "c37e294a7a674c6db06c971ca62672ec36e674323a09561fa72839e0b71b6a43",
     "has_errors": false
   },
   "native_item_body_spans": [
@@ -103,20 +115,116 @@
       "source_fragment": "|n| n > self.limit.0",
       "source_fragment_sha256": "5c15d88773ea2b1b3c8e6c7daeb92eba641b12ae47c6ab1fcc59fa3e61e5dc15",
       "has_errors": false
+    },
+    {
+      "name_ident_segments": [
+        "bulksketch",
+        "types",
+        "used"
+      ],
+      "source_span": {
+        "file_id": 5,
+        "beg": {
+          "line": 299,
+          "col": 4
+        },
+        "end": {
+          "line": 301,
+          "col": 5
+        }
+      },
+      "source_fragment": "pub(crate) fn used(&self) -> WorkUnits {\n        self.used\n    }",
+      "source_fragment_sha256": "74890722d4781a5787e9fbf72d0aba3ee2f3995500b1b0e2ac89aef5effaa197",
+      "has_errors": false
     }
   ],
   "generated_model_theorems": [
     {
       "name": "BulksketchBridge.WorkMeter.new_refines",
-      "status": "typechecked; independent transitive axiom audit passed (standard three only)"
+      "status": "exact frozen challenge matched; standard-only transitive axioms; both proof-term replays passed"
     },
     {
       "name": "BulksketchBridge.WorkMeter.charge_refines",
-      "status": "typechecked; independent transitive axiom audit passed (standard three only)"
+      "status": "exact frozen challenge matched; standard-only transitive axioms; both proof-term replays passed"
+    },
+    {
+      "name": "BulksketchBridge.WorkMeter.used_refines",
+      "status": "exact frozen challenge matched; standard-only transitive axioms; both proof-term replays passed"
+    },
+    {
+      "name": "BulksketchBridge.Spread.spread_refines",
+      "status": "exact frozen challenge matched; standard-only transitive axioms; both proof-term replays passed"
+    },
+    {
+      "name": "BulksketchBridge.Gf64Reduce.reduce_refines",
+      "status": "exact frozen challenge matched; standard-only transitive axioms; both proof-term replays passed"
+    },
+    {
+      "name": "BulksketchBridge.Square.square_refines",
+      "status": "exact frozen challenge matched; standard-only transitive axioms; both proof-term replays passed"
     }
   ],
   "implementation_coverage_credit": "root ledger owns final classification; no whole-native verification claimed",
   "independent_generated_model_refinement_axiom_audit": "passed: propext/Classical.choice/Quot.sound only",
-  "independent_refinement_axiom_log": "tooling/logs/workmeter-refinement-independent-axioms.log",
-  "generated_model_refinement_source_sha256": "7cdda32e9d09255f19c1015744aab9168e68f32bba6d11f894f10d66158cbee0"
+  "independent_refinement_axiom_log": "bridge/audit/results/axioms.json",
+  "generated_model_refinement_source_sha256": "5f96237fa121091b828431e86408cafaf5556a0f586b7d4b2bd7edb48bfb34fd",
+  "extractions": [
+    {
+      "path": "extraction/aeneas-pilot/workmeter.llbc",
+      "sha256": "c37e294a7a674c6db06c971ca62672ec36e674323a09561fa72839e0b71b6a43",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/canonical-arithmetic/impl-root/arithmetic.llbc",
+      "sha256": "6181b18500a6116ee7f363e08136ff438516432de6e06dbc8fc03f8443d95de9",
+      "has_errors": false
+    }
+  ],
+  "additional_runtime_models": [
+    {
+      "types": "bridge/Arithmetic/TypesExternal.lean",
+      "functions": "bridge/Arithmetic/FunsExternal.lean",
+      "source_snapshot": "bridge/runtime-models/array-iterator.rs",
+      "correspondence": "concrete owned remaining-sequence value model, not a kernel proof of Rust std memory/ownership/drop; GF64 reduction proof does not traverse fallback"
+    }
+  ],
+  "arithmetic_source_inputs": {
+    "src/field/gf64.rs": "c5320b7121c3de4d3e7e04ecdc88a6ddf100901a534912b8811c6ff5add9aa27",
+    "src/field/mod.rs": "035dc6193ebb50b324527525c0ee47cbe06ca325db16aa5f8ee55b0e79baa723",
+    "src/types.rs": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
+  },
+  "canonical_arithmetic_migration": "extraction/canonical-arithmetic/migration-receipt.json",
+  "workmeter_getter_linkage": "bridge/workmeter-used-linkage.json",
+  "source_definitions": [
+    {
+      "native_item_id": "src/types.rs:281:method:bulksketch::types::WorkMeter::new",
+      "generated_declaration": "bulksketch.types.WorkMeter.new",
+      "generated_file": "bridge/Workmeter/Funs.lean"
+    },
+    {
+      "native_item_id": "src/types.rs:289:method:bulksketch::types::WorkMeter::charge",
+      "generated_declaration": "bulksketch.types.WorkMeter.charge",
+      "generated_file": "bridge/Workmeter/Funs.lean"
+    },
+    {
+      "native_item_id": "src/types.rs:299:method:bulksketch::types::WorkMeter::used",
+      "generated_declaration": "bulksketch.types.WorkMeter.impl.used",
+      "generated_file": "bridge/Workmeter/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/gf64.rs:63:function:bulksketch::field::gf64::spread",
+      "generated_declaration": "bulksketch.field.gf64.spread",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/gf64.rs:28:function:bulksketch::field::gf64::reduce",
+      "generated_declaration": "bulksketch.field.gf64.reduce",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/gf64.rs:72:function:bulksketch::field::gf64::square",
+      "generated_declaration": "bulksketch.field.gf64.square",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    }
+  ]
 }

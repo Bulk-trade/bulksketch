@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Check actual generated WorkMeter body refinements under the recorded tool/runtime TCB."""
+"""Check source-linked generated body refinements under the recorded tool/runtime TCB."""
 from pathlib import Path
 import hashlib
 import json
 import os
+import re
 import subprocess
 import time
 
@@ -46,14 +47,32 @@ def main():
     for file in inventory["files"]:
         if sha(source / file["path"]) != file["sha256"]:
             raise RuntimeError("native source body drift")
+    for path, expected in scope["source_build_inputs_sha256"].items():
+        if sha(source / path) != expected:
+            raise RuntimeError("native build input drift: " + path)
     frozen = json.loads((AUDIT / "frozen-inputs.json").read_text())
     for path, expected in frozen["files"].items():
         if sha(ROOT / path) != expected:
             raise RuntimeError("frozen bridge/source/model input drift: " + path)
     linkage = json.loads((BRIDGE / "source-linkage.json").read_text())
+    runtime = ROOT / "tooling/aeneas"
+    runtime_head = subprocess.check_output(["git", "-C", str(runtime), "rev-parse", "HEAD"], text=True).strip()
+    if runtime_head != linkage["aeneas_commit"] or subprocess.check_output(
+            ["git", "-C", str(runtime), "status", "--porcelain", "--untracked-files=no"], text=True).strip():
+        raise RuntimeError("Aeneas runtime differs from its clean reviewed source pin")
+    for item in linkage["extractions"]:
+        if sha(ROOT / item["path"]) != item["sha256"] or \
+                json.loads((ROOT / item["path"]).read_text())["has_errors"] is not False:
+            raise RuntimeError("incomplete or stale native extraction")
     for item in linkage["native_generated_copies"]:
         if (ROOT / item["generated"]).read_bytes() != (ROOT / item["bridge_copy"]).read_bytes():
             raise RuntimeError("application-generated body was edited")
+        if sha(ROOT / item["bridge_copy"]) != item["sha256"]:
+            raise RuntimeError("generated-body linkage hash is stale")
+    registry = json.loads((BRIDGE / "obligations.json").read_text())
+    coverage = json.loads((ROOT / "audit/coverage.json").read_text())
+    if {item["id"] for item in coverage["items"]} != {item["id"] for item in inventory["items"]}:
+        raise RuntimeError("native obligation disappeared from coverage denominator")
     records = []
     result, _ = run("build", ["elan", "run", CHAIN, "lake", "build",
                                 "BulksketchBridge", "BulksketchBridge.Audit"], timeout=1200)
@@ -66,15 +85,57 @@ def main():
         start = line.find('{"')
         if start >= 0: events.append(json.loads(line[start:]))
     roots = [event for event in events if event["kind"] == "theorem_axioms"]
-    challenges = {event["theorem"] for event in events if event["kind"] == "challenge_match"}
+    challenges = {(event["challenge"], event["theorem"]) for event in events
+                  if event["kind"] == "challenge_match"}
     names = {event["theorem"] for event in roots}
-    if len(challenges) != 3 or not challenges <= names:
+    expected = {(item["challenge"], item["theorem"]) for item in registry["challenges"]}
+    if not expected or challenges != expected or not {item[1] for item in challenges} <= names:
         raise RuntimeError("bridge challenge omitted from axiom/export roots")
+    summaries = [event for event in events if event["kind"] == "summary"]
+    if len(summaries) != 1 or summaries[0]["public_theorems"] != len(roots) or \
+            summaries[0]["matched_challenges"] != len(expected):
+        raise RuntimeError("incomplete bridge theorem/challenge audit")
+    items = {item["id"]: item for item in coverage["items"]}
+    source_items = {item["id"]: item for item in inventory["items"]}
+    refined = {entry["native_item_id"]: entry for entry in registry["refinements"]}
+    evidence = {item["id"] for item in coverage["items"]
+                if item.get("generated_body_refinement_evidence")}
+    if len(refined) != len(registry["refinements"]) or evidence != set(refined):
+        raise RuntimeError("unregistered or missing generated-body coverage evidence")
+    if coverage["proof_progress"]["checked_generated_body_refinements_under_recorded_TCB"] != len(refined):
+        raise RuntimeError("stale generated-body coverage summary")
+    copies = {item["bridge_copy"] for item in linkage["native_generated_copies"]}
+    for native_id, entry in refined.items():
+        item = items[native_id]
+        recorded = item["generated_body_refinement_evidence"]
+        match = next((event for event in events if event["kind"] == "challenge_match" and
+                      event["challenge"] == entry["challenge"] and event["theorem"] == entry["theorem"]), None)
+        if source_items[native_id]["kind"] not in {"function", "method", "trait_default"} or \
+                entry["source_linkage"] != "bridge/source-linkage.json" or \
+                entry["source_line_span_sha256"] != source_items[native_id]["source_line_span_sha256"] or \
+                item["source_line_span_sha256"] != source_items[native_id]["source_line_span_sha256"] or \
+                match is None or entry["generated_declaration"] not in match["referenced_constants"] or \
+                recorded["theorem"] != entry["theorem"] or \
+                recorded["scope"] != entry["scope"] or \
+                recorded["source_linkage"] != entry["source_linkage"] or \
+                recorded["registry"] != "bridge/obligations.json" or \
+                recorded["verification"] != "bridge/audit/results/verification.json" or \
+                not entry["generated_files"] or not set(entry["generated_files"]) <= copies:
+            raise RuntimeError("coverage claim lacks exact source/generated/challenge linkage: " + native_id)
+        association = {"native_item_id": native_id,
+                       "generated_declaration": entry["generated_declaration"],
+                       "generated_file": entry["generated_file"]}
+        declaration = entry["generated_declaration"].removeprefix("bulksketch.")
+        if association not in linkage["source_definitions"] or \
+                entry["generated_file"] not in entry["generated_files"] or \
+                not re.search(r"^def\s+" + re.escape(declaration) + r"(?=\s|\(|\{)",
+                              (ROOT / entry["generated_file"]).read_text(), re.MULTILINE):
+            raise RuntimeError("generated declaration is not bound to the source-linked file: " + native_id)
     for event in roots:
         if set(event["axioms"]) - set(scope["permitted_axioms"]):
             raise RuntimeError("nonstandard bridge axiom")
     (RESULTS / "axioms.json").write_text(json.dumps(events, indent=2) + "\n")
-    export = RESULTS / "workmeter.export.ndjson"
+    export = RESULTS / "bridge.export.ndjson"
     args = ["elan", "run", CHAIN, "lake", "env", "leanexport", "BulksketchBridge", "--"]
     args += sorted(names)
     start = time.monotonic()
@@ -98,8 +159,9 @@ def main():
                                                 str(RESULTS / "nanoda.json")], timeout=120)
     records.append(result)
     summary = {"status": "passed", "source_commit": scope["source_commit"], "checkout_commit": head,
-               "checked_generated_body_refinements": ["WorkMeter::new", "WorkMeter::charge"],
-               "frozen_challenges_matched": 3,
+               "runtime_commit": runtime_head,
+               "checked_generated_body_refinements": [entry["label"] for entry in registry["refinements"]],
+               "frozen_challenges_matched": len(challenges),
                "axioms_used": sorted({axiom for event in roots for axiom in event["axioms"]}),
                "checks": records, "whole_native_coverage_achieved": False,
                "trust_boundary": "pinned Charon/Aeneas translation, concrete Rust std Option/scalar models, source/extraction-compiler correspondence, Rust compiler and machine semantics; no application axioms"}

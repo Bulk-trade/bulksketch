@@ -1,0 +1,38 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_source_file": "src/types.rs",
+  "native_source_sha256": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d",
+  "native_item": "bulksketch::types::WorkMeter::used",
+  "source_span": {
+    "file_id": 5,
+    "beg": {
+      "line": 299,
+      "col": 4
+    },
+    "end": {
+      "line": 301,
+      "col": 5
+    }
+  },
+  "source_fragment": "pub(crate) fn used(&self) -> WorkUnits {\n        self.used\n    }",
+  "source_fragment_sha256": "74890722d4781a5787e9fbf72d0aba3ee2f3995500b1b0e2ac89aef5effaa197",
+  "actual_generated_method": "bulksketch.types.WorkMeter.impl.used",
+  "distinct_structure_projection": "bulksketch.types.WorkMeter.used",
+  "llbc_has_errors": false,
+  "llbc_sha256": "c37e294a7a674c6db06c971ca62672ec36e674323a09561fa72839e0b71b6a43",
+  "generated_native_function_count": 4,
+  "generated_types_unchanged_from_milestone": true,
+  "existing_new_charge_closure_text_unchanged": true,
+  "frozen_contract_review": "bridge/audit/workmeter-used-review.json",
+  "theorem": "BulksketchBridge.WorkMeter.used_refines",
+  "challenge": "BulksketchBridge.Challenges.generatedUsedMatchesExactValue",
+  "isolated_build": "passed",
+  "isolated_exact_challenge_match": "passed",
+  "isolated_axiom_audit": "only propext and Quot.sound; no new axioms",
+  "new_runtime_models": [],
+  "full_export_independent_checker_audit": "not run by this subtask; root integrates shared audit",
+  "native_full_contract_status": "not claimed; frontend/runtime/compiler framing boundaries unchanged",
+  "proof_source_sha256": "5f96237fa121091b828431e86408cafaf5556a0f586b7d4b2bd7edb48bfb34fd",
+  "challenge_source_sha256": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
+  "axiom_log": "extraction/aeneas-pilot/workmeter-used-staging/proof-axioms.log"
+}
