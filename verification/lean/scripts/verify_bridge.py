@@ -20,10 +20,10 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def run(name, args, timeout=180):
+def run(name, args, timeout=180, cwd=BRIDGE):
     start = time.monotonic()
     try:
-        result = subprocess.run(args, cwd=BRIDGE, env=ENV, stdin=subprocess.DEVNULL,
+        result = subprocess.run(args, cwd=cwd, env=ENV, stdin=subprocess.DEVNULL,
                                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                 text=True, timeout=timeout)
     except subprocess.TimeoutExpired as error:
@@ -34,8 +34,8 @@ def run(name, args, timeout=180):
         raise
     (RESULTS / (name + ".log")).write_text(result.stdout)
     if result.returncode:
-        raise RuntimeError(name + " failed:\n" + result.stdout[-4000:])
-    return {"name": name, "command": args, "exit_code": 0,
+        raise RuntimeError(name + " failed with exit " + str(result.returncode) + ":\n" + result.stdout[-4000:])
+    return {"name": name, "command": args, "cwd": str(cwd), "exit_code": 0,
             "elapsed_seconds": time.monotonic() - start}, result.stdout
 
 
@@ -74,6 +74,9 @@ def main():
     if {item["id"] for item in coverage["items"]} != {item["id"] for item in inventory["items"]}:
         raise RuntimeError("native obligation disappeared from coverage denominator")
     records = []
+    result, _ = run("build-replay-loader", ["elan", "run", CHAIN, "lake", "build", "replay_export"],
+                    timeout=120, cwd=ROOT)
+    records.append(result)
     result, _ = run("build", ["elan", "run", CHAIN, "lake", "build",
                                 "BulksketchBridge", "BulksketchBridge.Audit"], timeout=1200)
     records.append(result)
@@ -147,8 +150,25 @@ def main():
                     "sha256": sha(export), "bytes": export.stat().st_size,
                     "elapsed_seconds": time.monotonic() - start})
     prefix = Path(subprocess.check_output(["elan", "run", CHAIN, "lean", "--print-prefix"], text=True).strip())
-    result, _ = run("lean-kernel-replay", [str(prefix / "bin/leanchecker"), "--silent",
-                                          "--from-export", str(export)], timeout=120)
+    selector = RESULTS / "core-literal-selector.export.ndjson"
+    selector_args = ["elan", "run", CHAIN, "lake", "env", "leanexport", "BulksketchBridge", "--",
+                     "String.ofList", "Char.ofNat"]
+    with selector.open("w") as out, (RESULTS / "literal-selector.stderr.log").open("w") as err:
+        result = subprocess.run(selector_args, cwd=BRIDGE, env=ENV, stdin=subprocess.DEVNULL,
+                                stdout=out, stderr=err, timeout=120)
+    if result.returncode:
+        raise RuntimeError("core literal selector export failed")
+    prelude = RESULTS / "core-literal-prelude.export.ndjson"
+    result, _ = run("project-core-literal-prelude", ["python3", str(ROOT / "scripts/project_core_prelude.py"),
+        "--selector", str(selector), "--main", str(export), "--output", str(prelude)])
+    result["selector_sha256"] = sha(selector)
+    result["prelude_sha256"] = sha(prelude)
+    records.append(result)
+    result, _ = run("lean-core-prelude-replay", [str(prefix / "bin/leanchecker"),
+                                               "--from-export", str(prelude)], timeout=120)
+    records.append(result)
+    result, _ = run("lean-kernel-replay", [str(ROOT / ".lake/build/bin/replay_export"),
+                                          str(prelude), str(export)], timeout=120)
     records.append(result)
     config = {"use_stdin": False, "export_file_path": str(export),
               "permitted_axioms": scope["permitted_axioms"],
@@ -163,6 +183,10 @@ def main():
                "checked_generated_body_refinements": [entry["label"] for entry in registry["refinements"]],
                "frozen_challenges_matched": len(challenges),
                "axioms_used": sorted({axiom for event in roots for axiom in event["axioms"]}),
+               "kernel_replay_loader": {"source": "tooling/ReplayExport.lean",
+                   "source_sha256": sha(ROOT / "tooling/ReplayExport.lean"),
+                   "executable_sha256": sha(ROOT / ".lake/build/bin/replay_export"),
+                   "purpose": "schedule implicit core string-literal dependencies; unchanged parser/kernel/replay and original main export; every declaration checked or exact checked-prelude duplicate"},
                "checks": records, "whole_native_coverage_achieved": False,
                "trust_boundary": "pinned Charon/Aeneas translation, concrete Rust std Option/scalar models, source/extraction-compiler correspondence, Rust compiler and machine semantics; no application axioms"}
     (RESULTS / "verification.json").write_text(json.dumps(summary, indent=2) + "\n")

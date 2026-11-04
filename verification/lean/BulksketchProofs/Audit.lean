@@ -1,6 +1,7 @@
 import BulksketchProofs
 import BulksketchProofs.Challenges
 import BulksketchProofs.SpreadChallenges
+import BulksketchProofs.CLMulChallenges
 import Lean
 
 open Lean Elab Command Meta
@@ -33,7 +34,13 @@ run_cmd do
     (``BulksketchProofs.Challenges.successfulSequenceAccountsExactly,
       ``BulksketchProofs.Resource.WorkMeter.successful_charges_sum),
     (``BulksketchProofs.Challenges.exhaustedMeterRejectsEveryCharge,
-      ``BulksketchProofs.Resource.WorkMeter.exhausted_sticky)
+      ``BulksketchProofs.Resource.WorkMeter.exhausted_sticky),
+    (``BulksketchProofs.CLMulChallenges.completeCoefficientConvolution,
+      ``BulksketchProofs.Field.clmul128_bits),
+    (``BulksketchProofs.CLMulChallenges.noCoefficientBeyondDegree126,
+      ``BulksketchProofs.Field.clmul128_top_bit),
+    (``BulksketchProofs.CLMulChallenges.polynomialHasDegreeAtMost126,
+      ``BulksketchProofs.Field.clmulCoefficient_high)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

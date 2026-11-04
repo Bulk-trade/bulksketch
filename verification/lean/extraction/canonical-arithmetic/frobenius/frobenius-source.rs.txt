@@ -1,0 +1,7 @@
+pub(crate) fn frobenius<F: BinaryField>(mut a: u64, power: u32) -> u64 {
+    debug_assert_eq!(a & !F::MASK, 0, "noncanonical field operand");
+    for _ in 0..power % F::BITS {
+        a = square::<F>(a);
+    }
+    a
+}

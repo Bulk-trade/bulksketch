@@ -3,3 +3,5 @@ import BulksketchBridge.Spread
 import BulksketchBridge.Reduce
 import BulksketchBridge.Gf64Reduce
 import BulksketchBridge.Square
+import BulksketchBridge.RawMul
+import BulksketchBridge.Frobenius

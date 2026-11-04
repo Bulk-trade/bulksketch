@@ -25,6 +25,111 @@ noncomputable section
 
 namespace bulksketch
 
+/-- [bulksketch::field::gf64::raw_mul]: loop body 0:
+    Source: 'src/field/gf64.rs', lines 15:4-17:5 -/
+@[rust_loop_body]
+def field.gf64.raw_mul_loop0.body
+  (a : Std.U64) (iter : core.ops.range.Range Std.Usize)
+  (multiples : Array Std.U128 16#usize) :
+  Result (ControlFlow ((core.ops.range.Range Std.Usize) × (Array Std.U128
+    16#usize)) (Array Std.U128 16#usize))
+  := do
+  let (o, iter1) ←
+    core.iter.range.IteratorRange.next core.iter.range.StepUsize iter
+  match o with
+  | none => ok (done multiples)
+  | some i =>
+    let i1 ← i - 1#usize
+    let i2 ← lift (i &&& i1)
+    let i3 ← Array.index_usize multiples i2
+    let i4 ← lift (core.convert.num.FromU128U64.from a)
+    let i5 ← core.num.Usize.trailing_zeros i
+    let i6 ← i4 <<< i5
+    let i7 ← lift (i3 ^^^ i6)
+    let a1 ← Array.update multiples i i7
+    ok (cont (iter1, a1))
+
+/-- [bulksketch::field::gf64::raw_mul]: loop 0:
+    Source: 'src/field/gf64.rs', lines 15:4-17:5 -/
+@[rust_loop]
+def field.gf64.raw_mul_loop0
+  (iter : core.ops.range.Range Std.Usize) (a : Std.U64)
+  (multiples : Array Std.U128 16#usize) :
+  Result (Array Std.U128 16#usize)
+  := do
+  loop
+    (fun (iter1, multiples1) => field.gf64.raw_mul_loop0.body a iter1
+      multiples1)
+    (iter, multiples)
+
+/-- [bulksketch::field::gf64::raw_mul]: loop body 1:
+    Source: 'src/field/gf64.rs', lines 19:4-21:5 -/
+@[rust_loop_body]
+def field.gf64.raw_mul_loop1.body
+  (b : Std.U64) (multiples : Array Std.U128 16#usize)
+  (iter : core.iter.adapters.step_by.StepBy (core.ops.range.Range Std.U32))
+  (product : Std.U128) :
+  Result (ControlFlow ((core.iter.adapters.step_by.StepBy (core.ops.range.Range
+    Std.U32)) × Std.U128) Std.U128)
+  := do
+  let (o, iter1) ←
+    core.iter.adapters.step_by.IteratorStepBy.next
+      (core.iter.traits.iterator.IteratorRange core.iter.range.StepU32) iter
+  match o with
+  | none => ok (done product)
+  | some shift =>
+    let i ← b >>> shift
+    let i1 ← lift (i &&& 15#u64)
+    let i2 ← lift (UScalar.cast .Usize i1)
+    let i3 ← Array.index_usize multiples i2
+    let i4 ← i3 <<< shift
+    let product1 ← lift (product ^^^ i4)
+    ok (cont (iter1, product1))
+
+/-- [bulksketch::field::gf64::raw_mul]: loop 1:
+    Source: 'src/field/gf64.rs', lines 19:4-21:5 -/
+@[rust_loop]
+def field.gf64.raw_mul_loop1
+  (iter : core.iter.adapters.step_by.StepBy (core.ops.range.Range Std.U32))
+  (b : Std.U64) (multiples : Array Std.U128 16#usize) (product : Std.U128) :
+  Result Std.U128
+  := do
+  loop
+    (fun (iter1, product1) => field.gf64.raw_mul_loop1.body b multiples iter1
+      product1)
+    (iter, product)
+
+/-- [bulksketch::field::gf64::raw_mul]:
+    Source: 'src/field/gf64.rs', lines 12:0-26:1 -/
+def field.gf64.raw_mul
+  {F : Type _} (BinaryFieldInst : field.BinaryField F) (a : Std.U64)
+  (b : Std.U64) :
+  Result types.RawProduct
+  := do
+  let i ← lift (a ||| b)
+  let i1 ← BinaryFieldInst.MASK
+  let i2 ← lift (~~~ i1)
+  let left_val ← lift (i &&& i2)
+  if left_val = 0#u64
+  then
+    let multiples := Array.repeat 16#usize 0#u128
+    let multiples1 ←
+      field.gf64.raw_mul_loop0 { start := 1#usize, «end» := 16#usize } a
+        multiples
+    let i3 ← BinaryFieldInst.BITS
+    let iter ←
+      core.iter.traits.iterator.Iterator.step_by.trait_default
+        (core.iter.traits.iterator.IteratorRange core.iter.range.StepU32)
+        { start := 0#u32, «end» := i3 } 4#usize
+    let product ← field.gf64.raw_mul_loop1 iter b multiples1 0#u128
+    let i4 ← lift (UScalar.cast .U64 product)
+    let i5 ← product >>> 64#i32
+    let i6 ← lift (UScalar.cast .U64 i5)
+    ok { lo := i4, hi := i6 }
+  else
+    let _ ← core.fmt.Arguments.from_str (toStr "noncanonical field operand")
+    fail panic
+
 /-- [bulksketch::field::gf64::reduce]: loop body 1:
     Source: 'src/field/gf64.rs', lines 48:12-52:13 -/
 @[rust_loop_body]
@@ -142,6 +247,16 @@ def field.gf64.reduce
         (Array.make 2#usize [ product.hi, product.lo ])
     field.gf64.reduce_loop0 BinaryFieldInst i iter 0#u64
 
+/-- [bulksketch::field::gf64::mul]:
+    Source: 'src/field/gf64.rs', lines 59:0-61:1 -/
+def field.gf64.mul
+  {F : Type _} (BinaryFieldInst : field.BinaryField F) (a : Std.U64)
+  (b : Std.U64) :
+  Result Std.U64
+  := do
+  let rp ← field.gf64.raw_mul BinaryFieldInst a b
+  field.gf64.reduce BinaryFieldInst rp
+
 /-- [bulksketch::field::gf64::spread]:
     Source: 'src/field/gf64.rs', lines 63:0-70:1 -/
 def field.gf64.spread (word : Std.U64) : Result Std.U64 := do
@@ -177,6 +292,55 @@ def field.gf64.square
     let i3 ← a >>> 32#i32
     let i4 ← field.gf64.spread i3
     field.gf64.reduce BinaryFieldInst { lo := i2, hi := i4 }
+  else
+    let _ ← core.fmt.Arguments.from_str (toStr "noncanonical field operand")
+    fail panic
+
+/-- [bulksketch::field::gf64::frobenius]: loop body 0:
+    Source: 'src/field/gf64.rs', lines 84:4-86:5 -/
+@[rust_loop_body]
+def field.gf64.frobenius_loop.body
+  {F : Type _} (BinaryFieldInst : field.BinaryField F)
+  (iter : core.ops.range.Range Std.U32) (a : Std.U64) :
+  Result (ControlFlow ((core.ops.range.Range Std.U32) × Std.U64) Std.U64)
+  := do
+  let (o, iter1) ←
+    core.iter.range.IteratorRange.next core.iter.range.StepU32 iter
+  match o with
+  | none => ok (done a)
+  | some _ =>
+    let a1 ← field.gf64.square BinaryFieldInst a
+    ok (cont (iter1, a1))
+
+/-- [bulksketch::field::gf64::frobenius]: loop 0:
+    Source: 'src/field/gf64.rs', lines 84:4-86:5 -/
+@[rust_loop]
+def field.gf64.frobenius_loop
+  {F : Type _} (BinaryFieldInst : field.BinaryField F)
+  (iter : core.ops.range.Range Std.U32) (a : Std.U64) :
+  Result Std.U64
+  := do
+  loop
+    (fun (iter1, a1) => field.gf64.frobenius_loop.body BinaryFieldInst iter1
+      a1)
+    (iter, a)
+
+/-- [bulksketch::field::gf64::frobenius]:
+    Source: 'src/field/gf64.rs', lines 82:0-88:1 -/
+def field.gf64.frobenius
+  {F : Type _} (BinaryFieldInst : field.BinaryField F) (a : Std.U64)
+  (power : Std.U32) :
+  Result Std.U64
+  := do
+  let i ← BinaryFieldInst.MASK
+  let i1 ← lift (~~~ i)
+  let left_val ← lift (a &&& i1)
+  if left_val = 0#u64
+  then
+    let i2 ← BinaryFieldInst.BITS
+    let i3 ← power % i2
+    field.gf64.frobenius_loop BinaryFieldInst { start := 0#u32, «end» := i3 }
+      a
   else
     let _ ← core.fmt.Arguments.from_str (toStr "noncanonical field operand")
     fail panic

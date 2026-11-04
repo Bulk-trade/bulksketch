@@ -1,0 +1,10 @@
+{
+  "policy": "Exact all-input original raw_mul and mul endpoints frozen before assembly proof search; actual source dictionary, complete128bitword, coefficientconvolution and canonical-degree division certificate; no loop/table/success premises.",
+  "independent_reviewer": "bulk_integration",
+  "files": {
+    "bridge/BulksketchBridge/RawMulSpec.lean": "52effc68aea0b20165025762cbcb16d8b33c0e582d40fb925f33eeced11ccd11",
+    "bridge/BulksketchBridge/RawMulChallenges.lean": "94d8cd6ea195547d2d9256a45864e8332d13bab460a6b7e8839fab33b20dbe9b"
+  },
+  "application_axioms_permitted": false,
+  "review": "Approved exact complete RawProduct for every U64 pair, every output coefficient, normal reduced multiplication with full raw-product division identity."
+}
