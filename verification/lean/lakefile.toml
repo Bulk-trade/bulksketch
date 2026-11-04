@@ -4,3 +4,7 @@ defaultTargets = ["BulksketchProofs"]
 
 [[lean_lib]]
 name = "BulksketchProofs"
+
+[[lean_exe]]
+name = "replay_export"
+root = "tooling.ReplayExport"

@@ -44,6 +44,46 @@
     {
       "challenge": "BulksketchBridge.SquareChallenges.rawSquareDivisionCertificate",
       "theorem": "BulksketchBridge.Square.square_division_certificate"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulTableChallenges.initializedTableLoopCompletes",
+      "theorem": "BulksketchBridge.RawMulTable.initialized_table_loop_completes"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulTableChallenges.everyInitializedPrefixCompletes",
+      "theorem": "BulksketchBridge.RawMulTable.every_initialized_prefix_completes"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulAccumChallenges.nibbleShiftsIndicesAndCastsAreSafe",
+      "theorem": "BulksketchBridge.RawMulAccum.nibble_bounds"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulAccumChallenges.eachOriginalBodyPreservesPrefix",
+      "theorem": "BulksketchBridge.RawMulAccum.body_step"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulAccumChallenges.originalBodyStopsBeforeShift64",
+      "theorem": "BulksketchBridge.RawMulAccum.terminal_body"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulAccumChallenges.everyOriginalPrefixCompletes",
+      "theorem": "BulksketchBridge.RawMulAccum.every_prefix_completes"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulChallenges.actualRawMultiplicationReturnsEveryBit",
+      "theorem": "BulksketchBridge.RawMul.raw_mul_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulChallenges.actualRawMultiplicationHasConvolutionCoefficients",
+      "theorem": "BulksketchBridge.RawMul.raw_mul_coefficients"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulChallenges.actualMultiplicationHasDivisionCertificate",
+      "theorem": "BulksketchBridge.RawMul.mul_division_certificate"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusChallenges.normalResultMatchesIteratedSquare",
+      "theorem": "BulksketchBridge.Frobenius.frobenius_refines"
     }
   ],
   "refinements": [
@@ -136,6 +176,51 @@
       "challenge": "BulksketchBridge.SquareChallenges.normalResultMatchesModel",
       "generated_declaration": "bulksketch.field.gf64.square",
       "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "label": "gf64::raw_mul [actual Gf64]",
+      "native_item_id": "src/field/gf64.rs:6:function:bulksketch::field::gf64::raw_mul",
+      "source_line_span_sha256": "dc20e46c553176d6c42ea9d29457f4b6ffcf2bf96909906840c2a615f2bacfbf",
+      "theorem": "BulksketchBridge.RawMul.raw_mul_refines",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original generated raw_mul with the actual Gf64 dictionary; every U64 pair, exact complete128-bit product, both original loops normal/terminating, all subtraction/index/cast/shift bounds and final lo/hi split. Concrete iterator/cttz models and frontend/compiler/machine correspondence remain explicit TCB.",
+      "challenge": "BulksketchBridge.RawMulChallenges.actualRawMultiplicationReturnsEveryBit",
+      "generated_declaration": "bulksketch.field.gf64.raw_mul",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "label": "gf64::mul [actual Gf64]",
+      "native_item_id": "src/field/gf64.rs:58:function:bulksketch::field::gf64::mul",
+      "source_line_span_sha256": "d77d085bd0d40e5bfa71cdcc843a46f01a464492cf9dd220b36142fd6b91abd4",
+      "theorem": "BulksketchBridge.RawMul.mul_division_certificate",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original generated mul with the actual Gf64 dictionary; every U64 pair returns normally with canonical-degree polynomial division certificate for the complete unreduced product. Modulus irreducibility and compiler/runtime execution closure remain open.",
+      "challenge": "BulksketchBridge.RawMulChallenges.actualMultiplicationHasDivisionCertificate",
+      "generated_declaration": "bulksketch.field.gf64.mul",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "label": "gf64::frobenius [actual Gf64, power%64]",
+      "native_item_id": "src/field/gf64.rs:81:function:bulksketch::field::gf64::frobenius",
+      "source_line_span_sha256": "dc831257671f85b75849509d94af69c95a7f6ac0c7210783bf96f3ed2a3dd9e7",
+      "theorem": "BulksketchBridge.Frobenius.frobenius_refines",
+      "challenge": "BulksketchBridge.FrobeniusChallenges.normalResultMatchesIteratedSquare",
+      "generated_declaration": "bulksketch.field.gf64.frobenius",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original generated frobenius with actual Gf64 dictionary; every U64 input and U32 power returns normally with exactly power.val%64 independent polynomial squarings. Source guard/remainder/range/loop bounds checked. No period64 identity or unmodded exponent/irreducibility claim; compiler/runtime correspondence remains explicit TCB."
     }
   ]
 }

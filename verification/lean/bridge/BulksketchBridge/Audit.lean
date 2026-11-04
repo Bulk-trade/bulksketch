@@ -5,6 +5,10 @@ import BulksketchBridge.SpreadChallenges
 import BulksketchBridge.ReduceChallenges
 import BulksketchBridge.Gf64ReduceChallenges
 import BulksketchBridge.SquareChallenges
+import BulksketchBridge.RawMulTableChallenges
+import BulksketchBridge.RawMulAccumChallenges
+import BulksketchBridge.RawMulChallenges
+import BulksketchBridge.FrobeniusChallenges
 import Lean
 
 open Lean Elab Command Meta
@@ -32,7 +36,27 @@ run_cmd do
     (``BulksketchBridge.SquareChallenges.normalResultMatchesModel,
       ``BulksketchBridge.Square.square_refines),
     (``BulksketchBridge.SquareChallenges.rawSquareDivisionCertificate,
-      ``BulksketchBridge.Square.square_division_certificate)
+      ``BulksketchBridge.Square.square_division_certificate),
+    (``BulksketchBridge.RawMulTableChallenges.initializedTableLoopCompletes,
+      ``BulksketchBridge.RawMulTable.initialized_table_loop_completes),
+    (``BulksketchBridge.RawMulTableChallenges.everyInitializedPrefixCompletes,
+      ``BulksketchBridge.RawMulTable.every_initialized_prefix_completes),
+    (``BulksketchBridge.RawMulAccumChallenges.nibbleShiftsIndicesAndCastsAreSafe,
+      ``BulksketchBridge.RawMulAccum.nibble_bounds),
+    (``BulksketchBridge.RawMulAccumChallenges.eachOriginalBodyPreservesPrefix,
+      ``BulksketchBridge.RawMulAccum.body_step),
+    (``BulksketchBridge.RawMulAccumChallenges.originalBodyStopsBeforeShift64,
+      ``BulksketchBridge.RawMulAccum.terminal_body),
+    (``BulksketchBridge.RawMulAccumChallenges.everyOriginalPrefixCompletes,
+      ``BulksketchBridge.RawMulAccum.every_prefix_completes),
+    (``BulksketchBridge.RawMulChallenges.actualRawMultiplicationReturnsEveryBit,
+      ``BulksketchBridge.RawMul.raw_mul_refines),
+    (``BulksketchBridge.RawMulChallenges.actualRawMultiplicationHasConvolutionCoefficients,
+      ``BulksketchBridge.RawMul.raw_mul_coefficients),
+    (``BulksketchBridge.RawMulChallenges.actualMultiplicationHasDivisionCertificate,
+      ``BulksketchBridge.RawMul.mul_division_certificate),
+    (``BulksketchBridge.FrobeniusChallenges.normalResultMatchesIteratedSquare,
+      ``BulksketchBridge.Frobenius.frobenius_refines)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge
@@ -47,12 +71,23 @@ run_cmd do
       ("theorem", toJson solution.toString),
       ("referenced_constants", toJson <| proposition.getUsedConstants.map Name.toString)]
   let environment ← getEnv
+  let runtimeProofs := #[
+    ``Aeneas.Std.trailingZeroCount_le_width,
+    ``Aeneas.Std.usize_trailing_zeros_spec,
+    ``Aeneas.Std.usize_trailing_zeros_zero,
+    ``Aeneas.Std.usize_trailing_zeros_least_set_bit,
+    ``Aeneas.Std.trailingZeroCount_eq_of_toNat_eq,
+    ``Aeneas.Std.usize_trailing_zeros_nibble]
   let names := environment.constants.toList.filterMap fun (declarationName, information) =>
     match information with
-    | .thmInfo _ => if declarationName.toString.startsWith "BulksketchBridge." then some declarationName else none
+    | .thmInfo _ =>
+        if declarationName.toString.startsWith "BulksketchBridge." || runtimeProofs.contains declarationName
+        then some declarationName else none
     | _ => none
   let names := names.toArray.qsort Name.lt
   let permitted := #[``propext, ``Quot.sound, ``Classical.choice]
+  for declarationName in runtimeProofs do
+    unless names.contains declarationName do throwError "runtime model theorem missing from audit"
   for (_, solution) in pairs do
     unless names.contains solution do throwError "bridge root missing from theorem audit"
   for declarationName in names do

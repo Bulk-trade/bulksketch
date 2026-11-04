@@ -1,0 +1,117 @@
+{
+  "status": "kernel-checked-value-model-with-explicit-runtime-correspondence-TCB",
+  "native_source_edited": false,
+  "llbc": {
+    "path": "extraction/canonical-arithmetic/rawmul/arithmetic.llbc",
+    "sha256": "9c8c70bc5e2ffe966d9757b737fecef3a4e1bc3e780756603462fff1c0e6a1f6",
+    "has_errors": false
+  },
+  "generated_copies": [
+    {
+      "path": "bridge/Arithmetic/Types.lean",
+      "artifact": "extraction/canonical-arithmetic/rawmul/Arithmetic/Types.lean",
+      "sha256": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+      "byte_identical": true
+    },
+    {
+      "path": "bridge/Arithmetic/Funs.lean",
+      "artifact": "extraction/canonical-arithmetic/rawmul/Arithmetic/Funs.lean",
+      "sha256": "3a9f4912c2340ee6b9fabaefb68198a9c625c1136a9e13c5849c0452cba10265",
+      "byte_identical": true
+    }
+  ],
+  "native_source_definitions": [
+    {
+      "native_item": "bulksketch::field::gf64::raw_mul",
+      "llbc_def_id": 12,
+      "source_path": "src/field/gf64.rs",
+      "source_file_sha256": "c5320b7121c3de4d3e7e04ecdc88a6ddf100901a534912b8811c6ff5add9aa27",
+      "span": {
+        "file_id": 6,
+        "beg": {
+          "line": 12,
+          "col": 0
+        },
+        "end": {
+          "line": 26,
+          "col": 1
+        }
+      },
+      "source_fragment": "pub(crate) fn raw_mul<F: BinaryField>(a: u64, b: u64) -> RawProduct {\n    debug_assert_eq!((a | b) & !F::MASK, 0, \"noncanonical field operand\");\n    let mut multiples = [0_u128; 16];\n    for i in 1_usize..16 {\n        multiples[i] = multiples[i & (i - 1)] ^ (u128::from(a) << i.trailing_zeros());\n    }\n    let mut product = 0_u128;\n    for shift in (0..F::BITS).step_by(4) {\n        product ^= multiples[((b >> shift) & 15) as usize] << shift;\n    }\n    RawProduct {\n        lo: product as u64,\n        hi: (product >> 64) as u64,\n    }\n}",
+      "source_fragment_sha256": "8df36602b0541c1322385a1e83b61394bfaaf4eebe27aea9289a0d5f036e841b",
+      "snapshot": "extraction/canonical-arithmetic/rawmul/raw_mul-source.rs.txt",
+      "generated_declaration": "bulksketch.field.gf64.raw_mul",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item": "bulksketch::field::gf64::mul",
+      "llbc_def_id": 13,
+      "source_path": "src/field/gf64.rs",
+      "source_file_sha256": "c5320b7121c3de4d3e7e04ecdc88a6ddf100901a534912b8811c6ff5add9aa27",
+      "span": {
+        "file_id": 6,
+        "beg": {
+          "line": 59,
+          "col": 0
+        },
+        "end": {
+          "line": 61,
+          "col": 1
+        }
+      },
+      "source_fragment": "pub(crate) fn mul<F: BinaryField>(a: u64, b: u64) -> u64 {\n    reduce::<F>(raw_mul::<F>(a, b))\n}",
+      "source_fragment_sha256": "c0d3647190b535988cb092630a754ba0ffa583671b758b1764dfac08ed17bf48",
+      "snapshot": "extraction/canonical-arithmetic/rawmul/mul-source.rs.txt",
+      "generated_declaration": "bulksketch.field.gf64.mul",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    }
+  ],
+  "runtime_model": {
+    "path": "bridge/Arithmetic/TrailingZeros.lean",
+    "sha256": "078b4b6b7372c5064e9b2ae6adc298367431a862cfef55e9db3ec7cde7beabb6",
+    "declaration": "Aeneas.Std.core.num.Usize.trailing_zeros",
+    "scope": "all usize values, width32or64, including zero; no caller-specialized primitive replacement",
+    "definition": "Result.ok (U32 built from word.bv.ctz.setWidth 32)",
+    "source_snapshots": [
+      {
+        "rust_source": "/workspace/.rustup/toolchains/nightly-2026-09-17-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/num/uint_macros.rs",
+        "source_sha256": "b2a9c6a570a44e56955c60ca0c5007f7318e27286e53d3b9180bb34c8064e506",
+        "line_first": 157,
+        "line_last": 180,
+        "snapshot": "extraction/canonical-arithmetic/rawmul/runtime/usize-trailing-zeros.rs",
+        "snapshot_sha256": "f6e5e58007285c172c40bff16f9ea5ea95177c958b010dd81fa9b9dbc3bcc283"
+      },
+      {
+        "rust_source": "/workspace/.rustup/toolchains/nightly-2026-09-17-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/intrinsics/mod.rs",
+        "source_sha256": "f86ef5c0af5501e29bf23645327e7d2808afb9ca8aeb786e2cef36d14b0036cb",
+        "line_first": 1820,
+        "line_last": 1859,
+        "snapshot": "extraction/canonical-arithmetic/rawmul/runtime/cttz-intrinsic.rs",
+        "snapshot_sha256": "5f4f75dcef306d2d9fd4224c663e55109d14147f5094f6f3ddff7553e8018bbd"
+      }
+    ],
+    "rust_std_body_in_llbc": "Opaque",
+    "correspondence_status": "Concrete intended standard-library/intrinsic value model. Rust std to BitVec correspondence, compiler lowering, target ISA, and execution are explicit TCB assumptions, not proved Rust refinement."
+  },
+  "proved_model_properties": [
+    "normal return with exact ctz count and <= targetwidth",
+    "zero returns targetwidth",
+    "all lower bits false and nonzero returned bit true",
+    "nonzero values equal across widths have equal count",
+    "caller1<=value<16 returns4bitctz and count<4"
+  ],
+  "axiom_audit": {
+    "path": "extraction/canonical-arithmetic/rawmul/trailing-zeros-axioms.log",
+    "sha256": "ae315101c324a97faa11cc46c171b82dd664bd27e044dc4c54fbd05cfdfe3ce3",
+    "declarations_checked": 7,
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "all_within_allowlist": true
+  },
+  "build_log": "extraction/canonical-arithmetic/rawmul/trailing-zeros-build.log",
+  "proof_credit": "Root ledger decides source-level evidence; runtime model is not a new native item; no whole-native verification claim.",
+  "application_generated_files_hand_edited": false
+}

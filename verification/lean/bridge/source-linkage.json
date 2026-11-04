@@ -16,15 +16,15 @@
       "byte_identical": true
     },
     {
-      "generated": "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean",
+      "generated": "extraction/canonical-arithmetic/frobenius/Arithmetic/Types.lean",
       "bridge_copy": "bridge/Arithmetic/Types.lean",
       "sha256": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
       "byte_identical": true
     },
     {
-      "generated": "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean",
+      "generated": "extraction/canonical-arithmetic/frobenius/Arithmetic/Funs.lean",
       "bridge_copy": "bridge/Arithmetic/Funs.lean",
-      "sha256": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
+      "sha256": "99216822e5bf477e2063b48a3f2b7058fcd6582e0014dc640138b83c559e654b",
       "byte_identical": true
     }
   ],
@@ -39,7 +39,7 @@
   "generated_templates_untouched": true,
   "application_axioms_added": false,
   "generated_lean_elaboration": "passed: Workmeter.Types/FunsExternal/Funs; exact generated copies",
-  "native_refinement_proof": "Six distinct generated source-body functional refinements recorded in bridge/obligations.json; validated by bridge/audit/results/verification.json under explicit frontend/runtime/compiler TCB; no whole-native claim.",
+  "native_refinement_proof": "Nine source-generated body refinements under the explicit frontend/runtime/compiler/ISA TCB; see bridge/obligations.json and current bridge/audit/results/verification.json. Full native implementation coverage remains false.",
   "generated_definition_axiom_audit": "passed: standard propext/Classical.choice/Quot.sound only",
   "generated_definition_axiom_log": "bridge/audit/results/axioms.json",
   "native_source_file": {
@@ -141,27 +141,39 @@
   "generated_model_theorems": [
     {
       "name": "BulksketchBridge.WorkMeter.new_refines",
-      "status": "exact frozen challenge matched; standard-only transitive axioms; both proof-term replays passed"
+      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
     },
     {
       "name": "BulksketchBridge.WorkMeter.charge_refines",
-      "status": "exact frozen challenge matched; standard-only transitive axioms; both proof-term replays passed"
+      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
     },
     {
       "name": "BulksketchBridge.WorkMeter.used_refines",
-      "status": "exact frozen challenge matched; standard-only transitive axioms; both proof-term replays passed"
+      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
     },
     {
       "name": "BulksketchBridge.Spread.spread_refines",
-      "status": "exact frozen challenge matched; standard-only transitive axioms; both proof-term replays passed"
+      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
     },
     {
       "name": "BulksketchBridge.Gf64Reduce.reduce_refines",
-      "status": "exact frozen challenge matched; standard-only transitive axioms; both proof-term replays passed"
+      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
     },
     {
       "name": "BulksketchBridge.Square.square_refines",
-      "status": "exact frozen challenge matched; standard-only transitive axioms; both proof-term replays passed"
+      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
+    },
+    {
+      "name": "BulksketchBridge.RawMul.raw_mul_refines",
+      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
+    },
+    {
+      "name": "BulksketchBridge.RawMul.mul_division_certificate",
+      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
+    },
+    {
+      "name": "BulksketchBridge.Frobenius.frobenius_refines",
+      "status": "checked against exact frozen source contract and both proof kernels at the current recorded checkpoint"
     }
   ],
   "implementation_coverage_credit": "root ledger owns final classification; no whole-native verification claimed",
@@ -175,8 +187,8 @@
       "has_errors": false
     },
     {
-      "path": "extraction/canonical-arithmetic/impl-root/arithmetic.llbc",
-      "sha256": "6181b18500a6116ee7f363e08136ff438516432de6e06dbc8fc03f8443d95de9",
+      "path": "extraction/canonical-arithmetic/frobenius/arithmetic.llbc",
+      "sha256": "60dc1bd2cb2cd94b79b9c136696bb6e20a63b9e15d0dcecd28336b3e932c6bf5",
       "has_errors": false
     }
   ],
@@ -186,6 +198,11 @@
       "functions": "bridge/Arithmetic/FunsExternal.lean",
       "source_snapshot": "bridge/runtime-models/array-iterator.rs",
       "correspondence": "concrete owned remaining-sequence value model, not a kernel proof of Rust std memory/ownership/drop; GF64 reduction proof does not traverse fallback"
+    },
+    {
+      "functions": "bridge/Arithmetic/TrailingZeros.lean",
+      "runtime_source_receipt": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
+      "scope": "General value model of usize.trailing_zeros including zero and both pointer widths; all six model-property theorems independently exported. Rust std/intrinsic/compiler/ISA correspondence remains trusted."
     }
   ],
   "arithmetic_source_inputs": {
@@ -225,6 +242,24 @@
       "native_item_id": "src/field/gf64.rs:72:function:bulksketch::field::gf64::square",
       "generated_declaration": "bulksketch.field.gf64.square",
       "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/gf64.rs:6:function:bulksketch::field::gf64::raw_mul",
+      "generated_declaration": "bulksketch.field.gf64.raw_mul",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/gf64.rs:58:function:bulksketch::field::gf64::mul",
+      "generated_declaration": "bulksketch.field.gf64.mul",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/gf64.rs:81:function:bulksketch::field::gf64::frobenius",
+      "generated_declaration": "bulksketch.field.gf64.frobenius",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
     }
-  ]
+  ],
+  "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
+  "frobenius_source_linkage": "extraction/canonical-arithmetic/frobenius/source-linkage.json",
+  "kernel_replay_loader": "audit/replay-loader-review.json"
 }

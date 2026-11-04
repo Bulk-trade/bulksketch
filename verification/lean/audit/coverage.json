@@ -5567,7 +5567,15 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "status": "kernel_checked_and_independently_replayed",
+        "theorem": "BulksketchBridge.RawMul.mul_division_certificate",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json",
+        "scope": "Original generated mul with the actual Gf64 dictionary; every U64 pair returns normally with canonical-degree polynomial division certificate for the complete unreduced product. Modulus irreducibility and compiler/runtime execution closure remain open."
+      }
     },
     {
       "id": "src/field/gf64.rs:63:function:bulksketch::field::gf64::spread",
@@ -5623,7 +5631,25 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "related_model_evidence": {
+        "status": "kernel_checked_independent_full128_bit_polynomial_model",
+        "module": "BulksketchProofs.Field.CLMul",
+        "theorems": [
+          "BulksketchProofs.Field.clmul128_bits",
+          "BulksketchProofs.Field.clmulCoefficient_high",
+          "BulksketchProofs.Field.clmulPrefix_nibble_step"
+        ],
+        "remaining": "Source-loop/cast/bounds and complete generated-body refinement are separate pending obligations."
+      },
+      "generated_body_refinement_evidence": {
+        "status": "kernel_checked_and_independently_replayed",
+        "theorem": "BulksketchBridge.RawMul.raw_mul_refines",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json",
+        "scope": "Original generated raw_mul with the actual Gf64 dictionary; every U64 pair, exact complete128-bit product, both original loops normal/terminating, all subtraction/index/cast/shift bounds and final lo/hi split. Concrete iterator/cttz models and frontend/compiler/machine correspondence remain explicit TCB."
+      }
     },
     {
       "id": "src/field/gf64.rs:72:function:bulksketch::field::gf64::square",
@@ -5679,7 +5705,15 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "status": "kernel_checked_and_independently_replayed",
+        "theorem": "BulksketchBridge.Frobenius.frobenius_refines",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json",
+        "scope": "Original generated frobenius with actual Gf64 dictionary; every U64 input and U32 power returns normally with exactly power.val%64 independent polynomial squarings. Source guard/remainder/range/loop bounds checked. No period64 identity or unmodded exponent/irreducibility claim; compiler/runtime correspondence remains explicit TCB."
+      }
     },
     {
       "id": "src/field/maps.rs:109:function:bulksketch::field::maps::quadratic_rows",
@@ -11003,11 +11037,11 @@
     }
   ],
   "proof_progress": {
-    "source_items_with_related_model_evidence": 5,
+    "source_items_with_related_model_evidence": 6,
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations stay in the denominator. Five have core model evidence and six have narrower actual-generated-body functional refinements; the arithmetic reduction/square contracts use the actual Gf64 dictionary. Full native contract/compiler-runtime closure remains open and percentages are withheld.",
-    "checked_generated_body_refinements_under_recorded_TCB": 6
+    "note": "All 344 native executable declarations retained. Six have core model evidence and nine narrower actual generated-body refinements. raw_mul includes both original loops, full 128-bit product and all numeric/index/cast/shift bounds; mul composes reduction; frobenius proves exact power % 64 source behavior. Full native contracts/compiler-runtime closure and field irreducibility/period identity remain open; percentages withheld.",
+    "checked_generated_body_refinements_under_recorded_TCB": 9
   }
 }

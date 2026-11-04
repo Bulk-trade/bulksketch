@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Select original square plus real Gf64 constants; preserve exact tool results.
+"""Select original portable arithmetic and real Gf64 constants; preserve tool results.
 
 Native source is read only. Generated files and failures remain in this directory;
 this script does not copy or edit any bridge/application Lean body.
@@ -43,7 +43,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--charon", type=Path, required=True)
     parser.add_argument("--aeneas", type=Path, required=True)
-    parser.add_argument("--label", default="impl-root")
+    parser.add_argument("--label", required=True)
+    parser.add_argument("--start-from", action="append", default=[],
+                        help="additional source root; repeat without changing the baseline roots")
     parser.add_argument("--impl-selector", default="{impl bulksketch::field::BinaryField for bulksketch::field::Gf64}")
     arguments = parser.parse_args()
     scope = json.loads((PROOF / "scope.json").read_text())
@@ -71,7 +73,9 @@ def main():
     environment = dict(os.environ, RUSTUP_TOOLCHAIN="nightly-2026-09-17",
                        CARGO_TARGET_DIR=str(PROOF / "tooling/canonical-arithmetic-charon-target"),
                        CARGO_BUILD_JOBS="1")
-    roots = ["bulksketch::field::gf64::square", arguments.impl_selector]
+    roots = ["bulksketch::field::gf64::square", "bulksketch::field::gf64::raw_mul",
+             "bulksketch::field::gf64::mul", arguments.impl_selector]
+    roots += arguments.start_from
     command = [str(tools["charon"]), "cargo", "--preset=aeneas", "--sysroot=default",
                "--dest-file=" + str(llbc)]
     command += ["--start-from=" + root for root in roots]

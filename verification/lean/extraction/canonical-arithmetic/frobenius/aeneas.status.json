@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-split-files",
+    "-dest",
+    "/workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/frobenius/Arithmetic",
+    "/workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/frobenius/arithmetic.llbc"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.7306442093104124,
+  "log": "extraction/canonical-arithmetic/frobenius/aeneas.log",
+  "log_sha256": "75b28f1deb62b41123b46eccc6b445574591b2028e1e45e4d2d43d8a74dde983"
+}

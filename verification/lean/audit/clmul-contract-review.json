@@ -1,0 +1,11 @@
+{
+  "policy": "Independent universal full128-bit carryless-product specification frozen before proof search; source loop and runtime refinements are separate obligations.",
+  "reviewer": "upstream_core",
+  "review": "Approved exact XOR-of-shifts product, coefficient convolution guard, zero-extended nibble model and bit127 support fact. Added stronger all-Nat degree support endpoint without altering either prior proposition. Upstream reviewer also approved the added all-Nat coefficient support endpoint before proof search.",
+  "files": {
+    "BulksketchProofs/Field/CLMulSpec.lean": "b80c1557d0e1d10e719c255d6d74500f5a48e2580ed04e26d7e16d210ba1737b",
+    "BulksketchProofs/CLMulChallenges.lean": "e1d1017fabdbbf07a8ac259d8fca264ef20175e6c5b1d0706306ea542237cdbb"
+  },
+  "pre_review_challenge_sha256": "220f5486d920652e7e388343da7aa89b6cdaf1a93382007a7ceaadbf426a82ca",
+  "degree_support_extension_independently_approved": true
+}

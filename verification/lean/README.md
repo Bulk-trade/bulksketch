@@ -16,12 +16,15 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Area | Result | Source relationship |
 | --- | --- | --- |
 | GF64 reduction | Universal division certificate for every 128-bit input, unique bounded quotient/remainder and XOR-linearity | Actual generated reduction using the actual extracted Gf64 dictionary; the generic BITS=64 contract is also retained |
+| Raw multiplication | Full 128-bit GF(2) coefficient convolution, degree at most 126, exact nibble table and accumulator prefixes | Both original generated loops terminate normally; subtraction, reads/writes, shifts, casts and output splitting checked |
 | Bit spreading and raw square | Exact coefficient placement and XOR-linearity for every 64-bit input | Actual generated spread; raw-square model and actual Gf64 square compose with reduction |
+| Repeated squaring | Exact normal output after `power % 64` independent polynomial squarings for every U64/U32 input pair | Actual generated Frobenius guard, remainder and bounded loop; no unmodded-exponent/period-64 theorem claimed |
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The current bridge targets six source functions: the three meter operations,
-spread, GF64 reduction and GF64 square. This is functional refinement of generated
+The current bridge targets nine source functions: the three meter operations,
+spread, raw multiplication, reduction, multiplication, square and Frobenius.
+This is functional refinement of generated
 bodies under the stated trust boundary, not a count of complete native contracts.
 Full native implementation coverage is not achieved.
 
@@ -31,6 +34,9 @@ replay through Lean and independent Nanoda. The only permitted axioms are
 `propext`, `Quot.sound` and `Classical.choice`. The current core needs the first
 two; the bridge also uses choice. No admitted application-correctness or native
 evaluation axioms discharge an obligation.
+
+[RAW_MULTIPLICATION.md](RAW_MULTIPLICATION.md) explains the independent product,
+both source-loop invariants, every bound and the final composition in detail.
 
 The [coverage ledger](audit/coverage.json) keeps every native item in scope,
 including unsupported and unproved items. Related mathematical model evidence
@@ -66,10 +72,19 @@ the explicit imports used by the runtime. Setup/build caches are ignored by Git.
 
 `verify_all.py` fails closed across core checking, bridge checking and negative
 fixtures. It checks frozen endpoint propositions, exact source/body hashes and
-axiom closures, then replays exported proofs in both kernels. The negative
+axiom closures, then replays exported proofs in both kernels. The bridge uses a
+small source-pinned loader for Lean 4.35's implicit string-dependency scheduling
+gap, described in the [bridge checking notes](bridge/README.md). It uses the
+unchanged parser and kernel and leaves the original proof export untouched.
+The negative
 fixtures confirm rejection of an application axiom and replacement of an unused
 challenged theorem by a same-type axiom. Generated results and logs are written
 under `audit/results/` and `bridge/audit/results/`.
+
+The replay-loader fixtures additionally reject a malformed actual project proof,
+conflicting preloaded declarations, unsafe/partial declarations, a valid extra
+prelude declaration, and forbidden axioms in either input. A prelude may reorder
+only an exact subset of the original export; it cannot extend the environment.
 
 These are controlled-source exact-type checks and independent proof-term replay.
 Sandboxed Linux Comparator validation is a separate, remaining integrity gate.
@@ -95,9 +110,12 @@ verification commands; an automated CI workflow is not part of this change.
   to exact challenge/theorem pairs. The bridge verifier reconciles it with both
   the Lean audit and coverage ledger before reporting any functional refinement.
 
-The bridge supplies concrete models for `Option::is_none_or` and owned array
-iteration. None returns true and Some invokes the closure for the former;
-the latter preserves the remaining value sequence and consumes its head.
+The bridge supplies concrete models for `Option::is_none_or`, `usize.trailing_zeros` and owned array
+iteration. For the Option operation, None returns true and Some invokes the closure;
+array iteration preserves the remaining value sequence and consumes its head.
+Trailing-zero counting models every word, including zero and both pointer widths;
+its exact count/bounds/least-set-bit properties are checked, including the table
+caller's shift below four. All six new primitive-property theorems are exported.
 Their Rust standard-library correspondence, including ownership/drop behavior,
 is an explicit trusted boundary. The GF64 reduction theorem does not traverse
 the generic fallback that contains array iteration; that fallback remains intact.
@@ -127,8 +145,8 @@ around associated iterator types, and full Aeneas translation encounters
 associated-type, function-pointer, lifetime and loop limitations. They are proof
 tooling gaps, not completed obligations or demonstrated library defects.
 
-Next milestones are full 128-bit raw multiplication, its loop/runtime refinements,
-field maps/tables and modulus irreducibility; then the capacity-18 public slice,
+Next milestones are field maps/tables, modulus irreducibility and the algebraic
+period needed to relate reduced Frobenius exponents to arbitrary powers; then the capacity-18 public slice,
 general decoder completeness, public state/resource/ownership behavior, and both
 x86 backends. The Mac's inability to execute x86 does not remove those source
 bodies from the proof scope. Performance tests and formal proof obligations remain

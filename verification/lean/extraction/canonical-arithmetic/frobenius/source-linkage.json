@@ -1,0 +1,53 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "llbc": {
+    "path": "extraction/canonical-arithmetic/frobenius/arithmetic.llbc",
+    "sha256": "60dc1bd2cb2cd94b79b9c136696bb6e20a63b9e15d0dcecd28336b3e932c6bf5",
+    "has_errors": false
+  },
+  "definitions": [
+    {
+      "native_item_id": "src/field/gf64.rs:81:function:bulksketch::field::gf64::frobenius",
+      "llbc_def_id": 14,
+      "source_path": "src/field/gf64.rs",
+      "source_file_sha256": "c5320b7121c3de4d3e7e04ecdc88a6ddf100901a534912b8811c6ff5add9aa27",
+      "span": {
+        "file_id": 6,
+        "beg": {
+          "line": 82,
+          "col": 0
+        },
+        "end": {
+          "line": 88,
+          "col": 1
+        }
+      },
+      "source_fragment": "pub(crate) fn frobenius<F: BinaryField>(mut a: u64, power: u32) -> u64 {\n    debug_assert_eq!(a & !F::MASK, 0, \"noncanonical field operand\");\n    for _ in 0..power % F::BITS {\n        a = square::<F>(a);\n    }\n    a\n}",
+      "source_fragment_sha256": "ca9c853aa6f5f5d2bb3b67c697d56ac5f177069135d939c284bc76e76f5f41c6",
+      "snapshot": "extraction/canonical-arithmetic/frobenius/frobenius-source.rs.txt",
+      "generated_declaration": "bulksketch.field.gf64.frobenius",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "generated_helpers": [
+        "bulksketch.field.gf64.frobenius_loop.body",
+        "bulksketch.field.gf64.frobenius_loop"
+      ]
+    }
+  ],
+  "generated_copies": [
+    {
+      "path": "bridge/Arithmetic/Types.lean",
+      "artifact": "extraction/canonical-arithmetic/frobenius/Arithmetic/Types.lean",
+      "sha256": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+      "byte_identical": true
+    },
+    {
+      "path": "bridge/Arithmetic/Funs.lean",
+      "artifact": "extraction/canonical-arithmetic/frobenius/Arithmetic/Funs.lean",
+      "sha256": "99216822e5bf477e2063b48a3f2b7058fcd6582e0014dc640138b83c559e654b",
+      "byte_identical": true
+    }
+  ],
+  "additional_runtime_models": [],
+  "native_source_edited": false,
+  "application_generated_files_hand_edited": false
+}

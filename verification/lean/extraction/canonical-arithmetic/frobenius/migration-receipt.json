@@ -1,0 +1,20 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "previous_artifact": "extraction/canonical-arithmetic/rawmul/Arithmetic",
+  "new_artifact": "extraction/canonical-arithmetic/frobenius/Arithmetic",
+  "previous_function_declarations_checked_by_fullname": 26,
+  "previous_type_declarations_checked_by_fullname": 5,
+  "missing": [],
+  "changed": [],
+  "new_function_declarations": 3,
+  "comparison": "extraction/canonical-arithmetic/frobenius/previous-declaration-comparison.json",
+  "generated_copies_byte_identical": true,
+  "bridge_file_hashes": {
+    "Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+    "Funs.lean": "99216822e5bf477e2063b48a3f2b7058fcd6582e0014dc640138b83c559e654b"
+  },
+  "native_source_edited": false,
+  "external_templates_unchanged": true,
+  "runtime_model_extension": null,
+  "authorization": "Parent allowed migration after raw multiplication mathgate both kernel replays passed; no source or endpoint proposition changes."
+}
