@@ -1,0 +1,46 @@
+{
+  "schema": "bulksketch-narrow-source-extraction-v1",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "source_files": [
+    {
+      "path": "src/field/gf64.rs",
+      "sha256": "c5320b7121c3de4d3e7e04ecdc88a6ddf100901a534912b8811c6ff5add9aa27"
+    },
+    {
+      "path": "src/field/mod.rs",
+      "sha256": "035dc6193ebb50b324527525c0ee47cbe06ca325db16aa5f8ee55b0e79baa723"
+    },
+    {
+      "path": "src/types.rs",
+      "sha256": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
+    }
+  ],
+  "source_item": "bulksketch::field::gf64::reduce::<Gf64>",
+  "normalised_full_body_sha256": "a58b006da292ffefd3e6807af4ab39c80236c01926163cf56e278088525d86b4",
+  "selected_branch": "F::BITS == 64",
+  "selected_specialization_guard": "Gf64::BITS = 64; checked from parsed native impl",
+  "raw_product_fields": {
+    "lo": "u64",
+    "hi": "u64"
+  },
+  "supported_branch_syntax": [
+    "immutable let",
+    "RawProduct lo/hi fields",
+    "bound identifier",
+    "u64 bitwise XOR",
+    "literal u64 left/right shift below64",
+    "parentheses"
+  ],
+  "unsupported_ast_policy": "reject; never emit opaque or assumed definitions",
+  "excluded_branch": "generic non-GF64 else; not claimed by this model",
+  "generated_declaration": "BulksketchProofs.Generated.reduceGf64",
+  "generated_module": "BulksketchProofs/Generated/Reduce.lean",
+  "generated_module_sha256": "879e86d45b97d916e235d239ded7ade460e13457204e7c4130ff16f9b81ca62a",
+  "ast_sexpr_sha256": "5238c937cb273b4d967fe144f315b194e8d16a4b086a13c1cfd46dfe6a270b92",
+  "generator_source_sha256": "44def5e94c09b0ad4a1f3784c6c0e9664557c132a48cb3ba82549e8dcb1e3b7e",
+  "generator_cargo_lock_sha256": "aa72961ff258686a9e58d5b35b8ecfbca5d37216fca539bfc2870b442ef02cf3",
+  "is_aeneas_generated": false,
+  "translator_verified": false,
+  "rust_semantic_refinement_proved": false,
+  "implementation_proof_credit": 0
+}

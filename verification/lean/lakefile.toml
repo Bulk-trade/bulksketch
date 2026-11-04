@@ -1,0 +1,6 @@
+name = "bulksketch-proofs"
+version = "0.1.0"
+defaultTargets = ["BulksketchProofs"]
+
+[[lean_lib]]
+name = "BulksketchProofs"
