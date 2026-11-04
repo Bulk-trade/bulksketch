@@ -1,0 +1,58 @@
+{
+  "policy": "Frozen independently reviewed generated-body challenge types, lossless model mappings and actual unedited extraction artifacts; runtime std model remains an explicit trusted boundary.",
+  "files": {
+    "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
+    "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
+    "bridge/BulksketchBridge/Audit.lean": "0642bbbc233cac913dc63cab04164039b50a761b88f7c80f37f612dbb3fd75e6",
+    "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
+    "bridge/Workmeter/Funs.lean": "d67d1059d16a2d9b0cd81df9d66560150dd089bf31557f0711f8c5332f99d7bb",
+    "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
+    "bridge/runtime-models/option-is-none-or.rs": "c7775aa2037540ec5e8cf2149ffa3552bbe5bcf955e1caa0e5944fee72c472cd",
+    "bridge/lakefile.toml": "400fe0fb49af353cf125ae3ab836987acdca582c2abf9d25ad314c7987ff6ee1",
+    "bridge/lake-manifest.json": "970d79e6e04955e73035be01137816af4a56eb4789020c8822b9c623414281d6",
+    "extraction/aeneas-pilot/workmeter.llbc": "3ac347b6781390132c0c441f949090faeada725177a9629c6d3da11490679bf2",
+    "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
+    "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "d67d1059d16a2d9b0cd81df9d66560150dd089bf31557f0711f8c5332f99d7bb",
+    "scripts/verify_bridge.py": "ba510ad4e767fabecfa07cc9daf0b68a08649a0f1698af5fdf1b2a6f96bd23e7",
+    "audit/frozen-inputs.json": "f3289a01ed0e3a0fd9c92bcacc704d3e6f360d2f0e8e3e76c0a2056a7678255e"
+  },
+  "reviewed_policy_revisions": [
+    {
+      "reason": "Use the already validated two-let theorem enumeration syntax; fix parser error in bridge audit only. Challenge/specification types unchanged.",
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "old_sha256": "2943c5a29a34ecef05bb17d277928832d177e353958d5904e9dfadd0ad1a80d3",
+      "new_sha256": "189eeb0c250d9d534ced99946ed23a481929c58d5b8078b52538f4e6c9a53471"
+    },
+    {
+      "reason": "Aeneas StepArraySpec syntax reserves the literal name token. Rename meta-audit binder name to declarationName; exact challenge propositions and checking policy unchanged.",
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "old_sha256": "189eeb0c250d9d534ced99946ed23a481929c58d5b8078b52538f4e6c9a53471",
+      "new_sha256": "0642bbbc233cac913dc63cab04164039b50a761b88f7c80f37f612dbb3fd75e6"
+    },
+    {
+      "reason": "Repository packaging: resolve native sources from the repository, retain reviewed content hashes across proof-only commits, and write generated verification output under ignored results directories. Frozen mathematical definitions, propositions and generated application bodies are byte-identical to the checked milestone.",
+      "changes": [
+        {
+          "path": "scripts/verify_bridge.py",
+          "old_sha256": "1955033a1b6055841c47311bea5810af5b3f056d21b6a9be51e767080584ef77",
+          "new_sha256": "4419ab7ef7da805101709967d21f66283684a2d0d61e3263dc0546ba97cce32b"
+        },
+        {
+          "path": "audit/frozen-inputs.json",
+          "old_sha256": "091742e468fdb244f9688d9e0ae9b4abe95fd542e1baf2cf2385a69483ae6851",
+          "new_sha256": "f3289a01ed0e3a0fd9c92bcacc704d3e6f360d2f0e8e3e76c0a2056a7678255e"
+        }
+      ]
+    },
+    {
+      "reason": "Permit a cold moved-checkout bridge dependency build up to twenty minutes and retain partial timeout logs. Lean/Nanoda proof-replay timeouts and frozen mathematical statements unchanged.",
+      "changes": [
+        {
+          "path": "scripts/verify_bridge.py",
+          "old_sha256": "4419ab7ef7da805101709967d21f66283684a2d0d61e3263dc0546ba97cce32b",
+          "new_sha256": "ba510ad4e767fabecfa07cc9daf0b68a08649a0f1698af5fdf1b2a6f96bd23e7"
+        }
+      ]
+    }
+  ]
+}

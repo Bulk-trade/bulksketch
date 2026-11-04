@@ -1,0 +1,10 @@
+.lake/
+**/.lake/
+audit/results/
+bridge/audit/results/
+extraction/native-source/
+tooling/aeneas
+tooling/*-target/
+tooling/logs/
+tooling/*.status.json
+**/__pycache__/

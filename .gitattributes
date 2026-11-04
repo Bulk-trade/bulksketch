@@ -1,0 +1,6 @@
+verification/lean/audit/source-inventory.json linguist-generated=true
+verification/lean/extraction/generated/* linguist-generated=true
+verification/lean/extraction/aeneas-pilot/* linguist-generated=true
+verification/lean/bridge/Workmeter/Funs.lean linguist-generated=true
+verification/lean/bridge/Workmeter/Types.lean linguist-generated=true
+verification/lean/bridge/runtime-models/*.rs linguist-generated=true whitespace=-blank-at-eof

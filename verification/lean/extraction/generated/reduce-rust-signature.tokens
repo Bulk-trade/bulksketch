@@ -1,0 +1,1 @@
+fn reduce < F : BinaryField > (product : RawProduct) -> u64

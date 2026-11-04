@@ -1,0 +1,128 @@
+# Native Bulksketch Lean 4 proofs
+
+This directory verifies native Bulksketch at reviewed source revision
+`0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`. Proof-only commits may change Git HEAD;
+verification checks the exact native source and build-input fingerprints against
+the frozen inventory. Native Rust remains the implementation.
+
+The scope is `src/` with production configurations, including portable and x86
+backends. The oracle, Minisketch, its bindings, and test-only implementations are
+excluded. The initial inventory retains 344 executable source declarations and
+532 declarations in total. Compiler-expanded bodies and complete per-item
+contracts remain open, so no implementation-coverage percentage is claimed.
+
+## Checked milestone
+
+| Area | Result | Source relationship |
+| --- | --- | --- |
+| GF64 reduction | Universal division certificate for every 128-bit input, unique bounded quotient/remainder and XOR-linearity | Exact-source AST-derived expression; the narrow translator is unverified |
+| Bit spreading and raw square | Exact coefficient placement and XOR-linearity for every 64-bit input | Handwritten native-shaped specification; Rust refinement remains open |
+| Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
+| `WorkMeter::new` and `charge` | Exact normal return, Rust result and final state for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
+
+There are 58 handwritten core theorem declarations and six bridge theorem
+declarations. These are theorem counts, not counts of fully verified source
+functions. Full native implementation coverage is not achieved.
+
+The [core proofs](BulksketchProofs.lean) and [generated-body bridge](bridge/README.md)
+use frozen proposition definitions, transitive axiom audits and exported-term
+replay through Lean and independent Nanoda. The only permitted axioms are
+`propext`, `Quot.sound` and `Classical.choice`. The current core needs the first
+two; the bridge also uses choice. No admitted application-correctness or native
+evaluation axioms discharge an obligation.
+
+The [coverage ledger](audit/coverage.json) keeps every native item in scope,
+including unsupported and unproved items. Related mathematical model evidence
+and actual-generated-body refinement evidence have separate fields. Conservative
+full native-contract statuses remain unproved until their remaining links close.
+
+## Check the proofs
+
+Install [elan](https://github.com/leanprover/elan), Python 3 and Rust toolchain
+`1.96.1`. The Lean toolchain is pinned to `4.35.0`; its distribution must include
+`leanexport`, `leanchecker` and `nanoda_bin`. The verifier fails if a checker is
+missing.
+
+From this directory, check the dependency-free core and negative policy fixtures:
+
+```sh
+python3 scripts/verify.py
+python3 scripts/check_negative_fixtures.py
+```
+
+To include the actual-generated-body bridge, fetch its exact Lean runtime and
+Mathlib dependencies, then run the combined check:
+
+```sh
+python3 tooling/setup_lean_runtime.py
+python3 scripts/verify_all.py
+```
+
+The runtime setup clones only the pinned Aeneas source and its pinned Lean
+dependencies. It does not install OCaml or build the Rust extractor. It disables
+Mathlib's automatic full-cache update hook and requests cache artifacts only for
+the explicit imports used by the runtime. Setup/build caches are ignored by Git.
+
+`verify_all.py` fails closed across core checking, bridge checking and negative
+fixtures. It checks 15 frozen endpoint propositions, exact source/body hashes and
+axiom closures, then replays exported proofs in both kernels. The negative
+fixtures confirm rejection of an application axiom and replacement of an unused
+challenged theorem by a same-type axiom. Generated results and logs are written
+under `audit/results/` and `bridge/audit/results/`.
+
+These are controlled-source exact-type checks and independent proof-term replay.
+Sandboxed Linux Comparator validation is a separate, remaining integrity gate.
+Run native regression tests from the repository root with
+`cargo +1.96.1 test --release --locked -p bulksketch`. This milestone includes the
+verification commands; an automated CI workflow is not part of this change.
+
+## Specification and source integrity
+
+- [Challenges.lean](BulksketchProofs/Challenges.lean),
+  [SpreadChallenges.lean](BulksketchProofs/SpreadChallenges.lean) and the
+  [bridge challenges](bridge/BulksketchBridge/Challenges.lean) define intended
+  propositions without proof holes.
+- [frozen-inputs.json](audit/frozen-inputs.json) and its bridge counterpart pin
+  those meanings, source descriptors and validator code. Intentional changes
+  require an explicit review record; proof search must not silently weaken them.
+- [scope.json](scope.json) records the reviewed native content, exclusions and
+  axiom policy. A proof-only commit is allowed; a changed native body or build
+  input is rejected until its source contract is reviewed.
+- [source-linkage.json](bridge/source-linkage.json) ties the generated bridge to
+  source spans, IR/body hashes and byte-identical generated application files.
+
+The bridge supplies one missing standard-library model, `Option::is_none_or`,
+as a concrete definition: None returns true, Some invokes the supplied closure.
+Its Rust standard-library correspondence is an explicit trusted boundary.
+Charon/Aeneas frontend correctness, extraction-versus-production compiler
+correspondence, allocator/runtime, intrinsic lowering and machine semantics also
+remain separately declared assumptions. These proofs do not verify the compiler
+or the entire Rust standard library.
+
+## Regenerate source-derived artifacts
+
+`python3 extraction/regenerate.py` reruns the small locked Rust/Syn AST utility
+against the reviewed source fingerprints. It rejects unsupported syntax and
+preserves the parsed XOR/shift expression. The generated expression is a model
+artifact; its mathematical proof is not a theorem proving the translator correct.
+
+The committed WorkMeter IR and generated Lean record the original extraction.
+The IR retains historical build-path metadata; proof checking resolves paths
+from this checkout and does not execute those historical paths. Regenerating
+these actual Rust-to-LLBC-to-Lean artifacts requires the exact
+[tool pins and recipe](extraction/README.md), separately from checking the
+committed proofs. Generated application bodies must not be hand-edited.
+
+## Remaining work toward full native coverage
+
+The full-crate attempt remains incomplete: the Charon artifact reports errors
+around associated iterator types, and full Aeneas translation encounters
+associated-type, function-pointer, lifetime and loop limitations. They are proof
+tooling gaps, not completed obligations or demonstrated library defects.
+
+Next milestones are actual generated arithmetic refinements, raw multiplication,
+field maps/tables and modulus irreducibility; then the capacity-18 public slice,
+general decoder completeness, public state/resource/ownership behavior, and both
+x86 backends. The Mac's inability to execute x86 does not remove those source
+bodies from the proof scope. Performance tests and formal proof obligations remain
+separate evidence.
