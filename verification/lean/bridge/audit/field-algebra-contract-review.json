@@ -1,0 +1,23 @@
+{
+  "policy": "Independently reviewed new exact algebraic and source-normality contracts before proof search; all old frozen meanings retained. Literal table links, period and irreducibility are distinct obligations, not extra Rust functions.",
+  "files": {
+    "bridge/BulksketchBridge/Algebra/ModulusSpec.lean": "a4537b0df5908321068dfe54d2470aa76fe7ca715899c99faee0aaf3f6b5048e",
+    "bridge/BulksketchBridge/Algebra/ModulusChallenges.lean": "a6431a9a520f86e55a0dae48bf413a107fc54d27d703b23e07c10aa5417943ac",
+    "bridge/BulksketchBridge/FrobeniusPeriodSpec.lean": "382ead3ba493b23435aa954e4336b768decba3dee301e4459b0182dd068100cd",
+    "bridge/BulksketchBridge/FrobeniusPeriodChallenges.lean": "38af93ede9761a5a5f47706fd2c8eae4e3c714bc5df553c8066e514e46f1838c",
+    "bridge/BulksketchBridge/MapsTraceSpec.lean": "b43673ef244087d9c45a0180117707762014e191286a1ad18bc0a39915cc4926",
+    "bridge/BulksketchBridge/MapsTraceChallenges.lean": "ef7eeb6893d59822de47155cc714ecf5092364059cef07386bee4f6f410ead63",
+    "bridge/BulksketchBridge/MapsQuadraticSpec.lean": "67d92a8392bed12e9b0477ed87be28b3d99f88d1b5794675a4ad22c75a58dc07",
+    "bridge/BulksketchBridge/MapsQuadraticChallenges.lean": "cd797900ed4228284c5acf3914bd65e3d4643bc1543947963b5cbc04c3e8a319",
+    "bridge/BulksketchBridge/MapsTraceMathChallenges.lean": "adab521e51208cc53e6aa50b6b63a207e479c3fc97605fd701a9bbddde13458f",
+    "bridge/BulksketchBridge/MapsCanonicalTraceSpec.lean": "88308b651b7673fb95b59575b6ceeba036b30cbc49d9a46536ac238d5d635431",
+    "bridge/BulksketchBridge/MapsCanonicalTraceChallenges.lean": "62a07e36b164687d27f8997dfe7f985d49406ea1d3e137cb02383459e0d438d7"
+  },
+  "reviewers": [
+    "root",
+    "upstream_core",
+    "wrapper_performance",
+    "bulk_integration"
+  ],
+  "scope": "Exact polynomial irreducibility and universal word-model period/trace/quadratic laws; actual source functions under explicit frontend/runtime/compiler/ISA TCB. Native word-to-Polynomial quotient and Algebra.trace representation remain open; inverse extraction-only artifacts receive no proof credit."
+}

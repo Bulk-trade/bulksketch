@@ -1,0 +1,48 @@
+{
+  "review_date": "2026-11-04",
+  "status": "root_independent_contract_approval_and_spec_elaboration_passed_before_proof_search",
+  "files": {
+    "bridge/BulksketchBridge/RawMulAccumSpec.lean": "6cd4233f8d036f3d07caa8b1b968cd28783a40b9ae82033b41443079f9d477c0",
+    "bridge/BulksketchBridge/RawMulAccumChallenges.lean": "3ab73677a4a78e54eea3f549141f4d5981c4e8bfbe2d364b8f54904bc9a8913a",
+    "bridge/BulksketchBridge/RawMulTableSpec.lean": "8d733a61c0cafb7314940346e9f52c59995a94c3aad23206763f3fb04aefb34d",
+    "BulksketchProofs/Field/CLMulSpec.lean": "b80c1557d0e1d10e719c255d6d74500f5a48e2580ed04e26d7e16d210ba1737b",
+    "bridge/Arithmetic/Funs.lean": "3a9f4912c2340ee6b9fabaefb68198a9c625c1136a9e13c5849c0452cba10265",
+    "bridge/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0"
+  },
+  "contract_scope": [
+    "all source loop1 nibble positions k<=16 with exact symbolic128bit prefix",
+    "body progress for k<16 with only full table correctness premise",
+    "terminal body has no unnecessary table-correctness premise",
+    "all masked indices below16 and cast preserves nibble bits; shifts below64/128"
+  ],
+  "reviews": {
+    "root": "approved before proof search: no success premise or output truncation loophole",
+    "table_owner": "shared TableCorrect reviewed by wrapper_performance; compatible full128bit total getter predicate",
+    "upstream_core": "independently approved before proof search: exact normal 128-bit result, sufficient bounds, no unnecessary terminal table premise; no change requested"
+  },
+  "syntax_note": "An explicit BitVec64 annotation was added to the literal15 before spec elaboration; the intended mask and proposition meaning are unchanged.",
+  "elaboration_command": "CI=1 MATHLIB_NO_CACHE_ON_UPDATE=1 LEAN_NUM_THREADS=2 lake +leanprover/lean4:v4.35.0 build BulksketchBridge.RawMulAccumSpec BulksketchBridge.RawMulAccumChallenges",
+  "elaboration_exit_code": 0,
+  "runtime_boundary": "Aeneas StepBy advances its model range before return; Rust std layout/ownership correspondence remains TCB",
+  "proof_status": "all_four_frozen_contracts_lean_checked; independent_export_replay_pending_parent_aggregate_audit",
+  "proof": {
+    "file": "bridge/BulksketchBridge/RawMulAccum.lean",
+    "sha256": "6d6a2ee5de9b3c0096eca4bb8a7e3a43143a5a79615257252785f0ade6d13581",
+    "theorems": [
+      "BulksketchBridge.RawMulAccum.nibble_bounds",
+      "BulksketchBridge.RawMulAccum.body_step",
+      "BulksketchBridge.RawMulAccum.terminal_body",
+      "BulksketchBridge.RawMulAccum.every_prefix_completes"
+    ],
+    "command": "CI=1 MATHLIB_NO_CACHE_ON_UPDATE=1 LEAN_NUM_THREADS=2 lake +leanprover/lean4:v4.35.0 build BulksketchBridge.RawMulAccum",
+    "build_exit_code": 0,
+    "exact_frozen_challenge_type_assignments_exit_code": 0,
+    "allowed_axiom_closure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "algorithm": "exact body and total iterator equations; strong induction on remaining count 16-count, no source-body unrolling",
+    "native_item_accounting": "loop helpers belong to original raw_mul and do not add separate native coverage items"
+  }
+}

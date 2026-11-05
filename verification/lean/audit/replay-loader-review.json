@@ -1,0 +1,18 @@
+{
+  "policy": "Scheduling-only replay of an exact subset followed by every original main declaration; unchanged parser/kernel/replay, no proof rewrite or new axiom policy. Controlled-source checking, not sandboxed Comparator.",
+  "lean_version": "4.35.0",
+  "lean_githash": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+  "implicit_literal_dependencies": [
+    "String.ofList",
+    "Char.ofNat"
+  ],
+  "independent_review": "audit/replay-loader-review.md",
+  "driver_sha256": "fc254c50b77e31a100c9c3cf81ee3d7bd1732ba639dbf676ff080999c6178064",
+  "projection_sha256": "cc2989e61b77284389612948cc26ad645a524d86c42cbdb1268d637d6e310ba1",
+  "negative_suite": "scripts/check_replay_fixtures.py",
+  "regression": "Observed old loader accept one valid extra definition; strict subset guard added and all seven expected rejections passed. Original exports preserved.",
+  "original_rawmul_35_export_sha256": "9c062f688253c8a359a0d3347377b844ed3c0bd11c701587bbda2da3f423c6b5",
+  "kernel_rules_changed": false,
+  "original_proof_export_rewritten": false,
+  "foundation_axioms_changed": false
+}

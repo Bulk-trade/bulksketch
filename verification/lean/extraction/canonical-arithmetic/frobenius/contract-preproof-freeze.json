@@ -1,0 +1,29 @@
+{
+  "status": "independently-reviewed-before-proof-search",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "files": [
+    {
+      "path": "bridge/BulksketchBridge/FrobeniusSpec.lean",
+      "sha256": "c6d1bca0bdadd3fc24de2890e26c9caf174d13ac87e6f0bc05301c334defe62a"
+    },
+    {
+      "path": "bridge/BulksketchBridge/FrobeniusChallenges.lean",
+      "sha256": "ba780186bdf358b60c7a1f7eba108a3451d64e0a648a9de0c029d2ea97867d4f"
+    }
+  ],
+  "requested_claim": "unconditional exact normal output for every U64 input and U32 power; independent repeated polynomial square model at power mod64",
+  "not_claimed": [
+    "Frobenius period64",
+    "irreducibility",
+    "full hardware/Rust frontend refinement"
+  ],
+  "implementation": "fresh unmigrated original Charon/Aeneas output under extraction/canonical-arithmetic/frobenius",
+  "proof_search_started": false,
+  "independent_review": {
+    "reviewer": "wrapper_performance",
+    "approved": true,
+    "spec_sha256": "c6d1bca0bdadd3fc24de2890e26c9caf174d13ac87e6f0bc05301c334defe62a",
+    "challenges_sha256": "ba780186bdf358b60c7a1f7eba108a3451d64e0a648a9de0c029d2ea97867d4f",
+    "review_note": "Unconditional all-input normal exact full-word output at power modulo64; recurrence agrees with original source; no period/irreducibility claim."
+  }
+}

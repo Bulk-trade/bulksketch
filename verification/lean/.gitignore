@@ -1,0 +1,15 @@
+.lake/
+**/.lake/
+audit/results/
+bridge/audit/results/
+extraction/native-source/
+extraction/aeneas-pilot/workmeter-used-staging/
+extraction/canonical-arithmetic/AuditGf64Reduce.lean
+extraction/canonical-arithmetic/frobenius/FrobeniusAudit.lean
+extraction/canonical-arithmetic/maps/*Audit.lean
+extraction/canonical-arithmetic/gf64-*.log
+tooling/aeneas
+tooling/*-target/
+tooling/logs/
+tooling/*.status.json
+**/__pycache__/

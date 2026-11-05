@@ -1,0 +1,63 @@
+{
+  "status": "targeted-kernel-check-axiom-audit-and-independent-proof-review-passed",
+  "frozen_contracts_unchanged": true,
+  "files": [
+    {
+      "path": "bridge/BulksketchBridge/FrobeniusSpec.lean",
+      "sha256": "c6d1bca0bdadd3fc24de2890e26c9caf174d13ac87e6f0bc05301c334defe62a"
+    },
+    {
+      "path": "bridge/BulksketchBridge/FrobeniusChallenges.lean",
+      "sha256": "ba780186bdf358b60c7a1f7eba108a3451d64e0a648a9de0c029d2ea97867d4f"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Frobenius.lean",
+      "sha256": "b2d847306dd9e92facba0e383682abd0c0c95ebe7e19e0414cfb2e048997f324"
+    }
+  ],
+  "source_linkage": "extraction/canonical-arithmetic/frobenius/source-linkage.json",
+  "migration": "extraction/canonical-arithmetic/frobenius/migration-receipt.json",
+  "independent_preproof_contract_review": "extraction/canonical-arithmetic/frobenius/contract-preproof-freeze.json",
+  "challenge": "BulksketchBridge.FrobeniusChallenges.normalResultMatchesIteratedSquare",
+  "endpoint": "BulksketchBridge.Frobenius.frobenius_refines",
+  "auxiliary_source_loop_endpoint": "BulksketchBridge.Frobenius.loop_refines",
+  "claim": "Every U64 input and U32 power return normally with the exact independent polynomial-square model iterated power.val modulo64 times. Every valid original loop suffix terminates.",
+  "loop_bounds": "0 <= start <= end <=63; active range steps advance start by1 and strictly decrease end-start; every actual square returns normally.",
+  "not_claimed": [
+    "Frobenius period64",
+    "modulus irreducibility",
+    "field exponent reduction for unmodded power",
+    "Rust frontend/compiler/hardware correctness",
+    "whole-native or multi-cfg backend verification"
+  ],
+  "build": {
+    "exit_code": 0,
+    "path": "extraction/canonical-arithmetic/frobenius/proof-build.log",
+    "sha256": "d58f865a9dbe9afcea5901898e5d4a9b435c4b183b128b3e1e358f427643feeb"
+  },
+  "axiom_audit": {
+    "exit_code": 0,
+    "declarations_checked": 5,
+    "path": "extraction/canonical-arithmetic/frobenius/axioms.log",
+    "sha256": "d02d3ec3c95e8b80efda1f1e6ec6d1b1fe33c220063f261110561f9b991b8f5f",
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "all_within_allowlist": true
+  },
+  "no_native_source_changes": true,
+  "no_generated_application_hand_edits": true,
+  "no_additional_runtime_models": true,
+  "shared_frozen_audit_registry_not_edited_by_this_agent": true,
+  "implementation_coverage_credit": "Root ledger classifies one original native function; generated loop helpers do not add denominator items.",
+  "independent_proof_review": {
+    "reviewer": "wrapper_performance",
+    "approved": true,
+    "path": "extraction/canonical-arithmetic/frobenius/independent-proof-review.md",
+    "sha256": "516e5044fc2ee1c8d846e3f66015254bffa799dde28155984f0e7585452f091e",
+    "no_blocking_findings": true,
+    "fresh_build_by_reviewer": false
+  }
+}

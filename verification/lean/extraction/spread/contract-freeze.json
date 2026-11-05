@@ -1,0 +1,16 @@
+{
+  "policy": "Spread generated source and independent universal contracts frozen before proof search; no statement change permitted without independent review.",
+  "review_date": "2026-11-04",
+  "independent_reviewer": "/root/wrapper_performance",
+  "files": {
+    "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
+    "bridge/BulksketchBridge/SpreadChallenges.lean": "134f3649317623d7f9b8e0f8ad6be8724ba0e956940092e381c2a01fb9f906ae",
+    "bridge/Spread/Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+    "bridge/Spread/Funs.lean": "45c56c68a2de3fd1d5a40a7c95adbbf9eea5736d1143e5b38dd9b73eb69965fe"
+  },
+  "root_challenges": [
+    "BulksketchBridge.SpreadChallenges.normalResultMatchesModel",
+    "BulksketchBridge.SpreadChallenges.allCoefficientsMatch"
+  ],
+  "proof_search_started_after_this_freeze": true
+}

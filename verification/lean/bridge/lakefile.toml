@@ -1,0 +1,20 @@
+name = "bulksketch-bridge"
+version = "0.0.0"
+defaultTargets = ["BulksketchBridge"]
+
+[[require]]
+name = "aeneas"
+path = "../tooling/aeneas/backends/lean"
+
+[[require]]
+name = "bulksketch-proofs"
+path = ".."
+
+[[lean_lib]]
+name = "Workmeter"
+
+[[lean_lib]]
+name = "Arithmetic"
+
+[[lean_lib]]
+name = "BulksketchBridge"

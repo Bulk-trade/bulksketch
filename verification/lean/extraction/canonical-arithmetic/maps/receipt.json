@@ -1,0 +1,98 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "362b54bc04de7a783b2a20fbb5f8152a524ee533",
+  "native_files_checked": 41,
+  "build_inputs_checked": 3,
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  },
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "selected_roots": [
+    "bulksketch::field::gf64::square",
+    "bulksketch::field::gf64::raw_mul",
+    "bulksketch::field::gf64::mul",
+    "{impl bulksketch::field::BinaryField for bulksketch::field::Gf64}",
+    "bulksketch::field::gf64::frobenius",
+    "bulksketch::field::maps::trace",
+    "bulksketch::field::maps::quadratic_value",
+    "bulksketch::field::maps::solve_quadratic"
+  ],
+  "charon": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/maps/arithmetic.llbc",
+      "--start-from=bulksketch::field::gf64::square",
+      "--start-from=bulksketch::field::gf64::raw_mul",
+      "--start-from=bulksketch::field::gf64::mul",
+      "--start-from={impl bulksketch::field::BinaryField for bulksketch::field::Gf64}",
+      "--start-from=bulksketch::field::gf64::frobenius",
+      "--start-from=bulksketch::field::maps::trace",
+      "--start-from=bulksketch::field::maps::quadratic_value",
+      "--start-from=bulksketch::field::maps::solve_quadratic",
+      "--",
+      "--manifest-path",
+      "/workspace/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.025430374778807,
+    "log": "extraction/canonical-arithmetic/maps/charon.log",
+    "log_sha256": "58e3c19dab666b70a6f948ec0657f1b3a9d012717ca8f6501a59dd3a0ebe2e06"
+  },
+  "application_source_edited": false,
+  "bridge_files_edited": false,
+  "implementation_proof_credit": 0,
+  "llbc_has_errors": false,
+  "llbc_sha256": "1d6bc490fcbdad972f225107409b038f1521dc059d94ecb29ca8afb6979b33a8",
+  "declaration_counts": {
+    "fun_decls": 297,
+    "type_decls": 60,
+    "global_decls": 51,
+    "trait_impls": 48
+  },
+  "aeneas": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/maps/Arithmetic",
+      "/workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/maps/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.2802895000204444,
+    "log": "extraction/canonical-arithmetic/maps/aeneas.log",
+    "log_sha256": "97e7da4b6df21114f4ea41f3feeb80d0f369ba79b38862d32613573cea7aabfe"
+  },
+  "status": "generated",
+  "generated": [
+    {
+      "path": "extraction/canonical-arithmetic/maps/Arithmetic/Funs.lean",
+      "sha256": "4d688e3ce715126a0bf92d0c43cac8361de11c6f5215c01fdbf7caf8d3584ef9"
+    },
+    {
+      "path": "extraction/canonical-arithmetic/maps/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "8b97aa0a8694376031ef620fdf272bdd1e72ea27456606b6014466c74f238cb8"
+    },
+    {
+      "path": "extraction/canonical-arithmetic/maps/Arithmetic/Types.lean",
+      "sha256": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0"
+    },
+    {
+      "path": "extraction/canonical-arithmetic/maps/Arithmetic/TypesExternal_Template.lean",
+      "sha256": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582"
+    }
+  ]
+}

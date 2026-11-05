@@ -1,0 +1,361 @@
+{
+  "policy": "Source-linked generated-body evidence under the explicit frontend/runtime/compiler TCB. Every native executable obligation is retained; branches and complete native contracts are distinct. Each registry challenge must match an audited theorem and be exported to both independent replayers.",
+  "challenges": [
+    {
+      "challenge": "BulksketchBridge.Challenges.generatedConstructorMatchesModel",
+      "theorem": "BulksketchBridge.WorkMeter.new_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Challenges.generatedChargeMatchesExactResultAndState",
+      "theorem": "BulksketchBridge.WorkMeter.charge_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Challenges.stateProjectionLosesNothing",
+      "theorem": "BulksketchBridge.WorkMeter.toModel_injective"
+    },
+    {
+      "challenge": "BulksketchBridge.Challenges.generatedUsedMatchesExactValue",
+      "theorem": "BulksketchBridge.WorkMeter.used_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.SpreadChallenges.normalResultMatchesModel",
+      "theorem": "BulksketchBridge.Spread.spread_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.SpreadChallenges.allCoefficientsMatch",
+      "theorem": "BulksketchBridge.Spread.spread_coefficients"
+    },
+    {
+      "challenge": "BulksketchBridge.ReduceChallenges.generatedGF64ReductionMatchesModel",
+      "theorem": "BulksketchBridge.Reduce.reduce64_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.ReduceChallenges.generatedGF64ReductionHasDivisionCertificate",
+      "theorem": "BulksketchBridge.Reduce.reduce64_division_certificate"
+    },
+    {
+      "challenge": "BulksketchBridge.Gf64ReduceChallenges.actualGf64ReductionMatchesFoldAndCertificate",
+      "theorem": "BulksketchBridge.Gf64Reduce.reduce_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.SquareChallenges.normalResultMatchesModel",
+      "theorem": "BulksketchBridge.Square.square_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.SquareChallenges.rawSquareDivisionCertificate",
+      "theorem": "BulksketchBridge.Square.square_division_certificate"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulTableChallenges.initializedTableLoopCompletes",
+      "theorem": "BulksketchBridge.RawMulTable.initialized_table_loop_completes"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulTableChallenges.everyInitializedPrefixCompletes",
+      "theorem": "BulksketchBridge.RawMulTable.every_initialized_prefix_completes"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulAccumChallenges.nibbleShiftsIndicesAndCastsAreSafe",
+      "theorem": "BulksketchBridge.RawMulAccum.nibble_bounds"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulAccumChallenges.eachOriginalBodyPreservesPrefix",
+      "theorem": "BulksketchBridge.RawMulAccum.body_step"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulAccumChallenges.originalBodyStopsBeforeShift64",
+      "theorem": "BulksketchBridge.RawMulAccum.terminal_body"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulAccumChallenges.everyOriginalPrefixCompletes",
+      "theorem": "BulksketchBridge.RawMulAccum.every_prefix_completes"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulChallenges.actualRawMultiplicationReturnsEveryBit",
+      "theorem": "BulksketchBridge.RawMul.raw_mul_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulChallenges.actualRawMultiplicationHasConvolutionCoefficients",
+      "theorem": "BulksketchBridge.RawMul.raw_mul_coefficients"
+    },
+    {
+      "challenge": "BulksketchBridge.RawMulChallenges.actualMultiplicationHasDivisionCertificate",
+      "theorem": "BulksketchBridge.RawMul.mul_division_certificate"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusChallenges.normalResultMatchesIteratedSquare",
+      "theorem": "BulksketchBridge.Frobenius.frobenius_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusPeriodChallenges.oldFrozenModelMatchesCoreExactly",
+      "theorem": "BulksketchBridge.FrobeniusPeriod.model_correspondence"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusPeriodChallenges.oldFrozenModelHasPeriod64",
+      "theorem": "BulksketchBridge.FrobeniusPeriod.existing_period64"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusPeriodChallenges.oldFrozenModelIterationCountsReduceModulo64",
+      "theorem": "BulksketchBridge.FrobeniusPeriod.existing_iteration_mod64"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusPeriodChallenges.actualNativeFrobeniusMatchesUnmoddedIteration",
+      "theorem": "BulksketchBridge.FrobeniusPeriod.native_unmodded_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Algebra.ModulusChallenges.exactPolynomialIrreducible",
+      "theorem": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsTraceChallenges.normalResultMatchesSelector",
+      "theorem": "BulksketchBridge.MapsTrace.trace_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsTraceMathChallenges.actualTraceMatchesAbsoluteTrace",
+      "theorem": "BulksketchBridge.MapsTraceMath.trace_matches_absolute"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.allGeneratedRowsMatchSourceData",
+      "theorem": "BulksketchBridge.MapsTables.rows_match_source"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.allGeneratedChunksMatchSourceData",
+      "theorem": "BulksketchBridge.MapsTables.chunks_match_source"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualRowsReturnExactSourceData",
+      "theorem": "BulksketchBridge.MapsTables.quadratic_rows_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualValueMatchesAllChunkContributions",
+      "theorem": "BulksketchBridge.MapsQuadratic.quadratic_value_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualValueMatchesIndependentMatrix",
+      "theorem": "BulksketchBridge.MapsQuadratic.quadratic_value_matches_matrix"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualSolverMatchesNormalizedModel",
+      "theorem": "BulksketchBridge.MapsQuadratic.solve_quadratic_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualSolverHasExactNormalizedSolutionMeaning",
+      "theorem": "BulksketchBridge.MapsQuadratic.solve_quadratic_exact_meaning"
+    },
+    {
+      "challenge": "BulksketchBridge.MapsCanonicalTraceChallenges.normalResultMatchesAbsoluteTrace",
+      "theorem": "BulksketchBridge.MapsCanonicalTrace.canonical_trace_refines"
+    }
+  ],
+  "refinements": [
+    {
+      "label": "WorkMeter::new",
+      "native_item_id": "src/types.rs:281:method:bulksketch::types::WorkMeter::new",
+      "source_line_span_sha256": "74ffb5b7b598e3026767dae87f81b8401fb2ebe28c07ba60fde17c44afd32195",
+      "theorem": "BulksketchBridge.WorkMeter.new_refines",
+      "generated_files": [
+        "bridge/Workmeter/Types.lean",
+        "bridge/Workmeter/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Entire generated constructor; production compiler/runtime correspondence remains TCB.",
+      "challenge": "BulksketchBridge.Challenges.generatedConstructorMatchesModel",
+      "generated_declaration": "bulksketch.types.WorkMeter.new",
+      "generated_file": "bridge/Workmeter/Funs.lean"
+    },
+    {
+      "label": "WorkMeter::charge",
+      "native_item_id": "src/types.rs:289:method:bulksketch::types::WorkMeter::charge",
+      "source_line_span_sha256": "42a5b7d4e8539845543f057632829499b7a664fd700249426538b26a74f3af0a",
+      "theorem": "BulksketchBridge.WorkMeter.charge_refines",
+      "generated_files": [
+        "bridge/Workmeter/Types.lean",
+        "bridge/Workmeter/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Entire generated charge for all states/amounts; exact Rust outcome and final state; std Option model correspondence remains TCB.",
+      "challenge": "BulksketchBridge.Challenges.generatedChargeMatchesExactResultAndState",
+      "generated_declaration": "bulksketch.types.WorkMeter.charge",
+      "generated_file": "bridge/Workmeter/Funs.lean"
+    },
+    {
+      "label": "WorkMeter::used",
+      "native_item_id": "src/types.rs:299:method:bulksketch::types::WorkMeter::used",
+      "source_line_span_sha256": "6902d68bb404b1b1f82a703e33666f6589cc61300d322be098dda287b1f93149",
+      "theorem": "BulksketchBridge.WorkMeter.used_refines",
+      "generated_files": [
+        "bridge/Workmeter/Types.lean",
+        "bridge/Workmeter/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Entire generated getter for every state; exact word and normal return; shared-reference framing remains TCB.",
+      "challenge": "BulksketchBridge.Challenges.generatedUsedMatchesExactValue",
+      "generated_declaration": "bulksketch.types.WorkMeter.impl.used",
+      "generated_file": "bridge/Workmeter/Funs.lean"
+    },
+    {
+      "label": "gf64::spread",
+      "native_item_id": "src/field/gf64.rs:63:function:bulksketch::field::gf64::spread",
+      "source_line_span_sha256": "c6bd18bb74d854d5e7fc088716472ee6f8a2a0ef60297b47fb1700403fb5f2f1",
+      "theorem": "BulksketchBridge.Spread.spread_refines",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Entire generated spread for every U64; exact complete output and normal return.",
+      "challenge": "BulksketchBridge.SpreadChallenges.normalResultMatchesModel",
+      "generated_declaration": "bulksketch.field.gf64.spread",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "label": "gf64::reduce [actual Gf64]",
+      "native_item_id": "src/field/gf64.rs:28:function:bulksketch::field::gf64::reduce",
+      "source_line_span_sha256": "ac3f3ffbcdb79b2c15f0ebcdda7c3a6beca14e71942f895c95ffbfe40aa364f5",
+      "theorem": "BulksketchBridge.Gf64Reduce.reduce_refines",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original generic generated reduction called with the actual source-extracted Gf64 dictionary; every raw 128-bit input, exact full remainder and division certificate/normal return. Other-field fallback correctness and native compiler/runtime closure remain open.",
+      "challenge": "BulksketchBridge.Gf64ReduceChallenges.actualGf64ReductionMatchesFoldAndCertificate",
+      "generated_declaration": "bulksketch.field.gf64.reduce",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "label": "gf64::square [actual Gf64]",
+      "native_item_id": "src/field/gf64.rs:72:function:bulksketch::field::gf64::square",
+      "source_line_span_sha256": "e09981958b1b8d0e535538f60324764dfd45c4e20dc125c4b87004ee6de1b5a2",
+      "theorem": "BulksketchBridge.Square.square_refines",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original generated square called with the actual source-extracted Gf64 dictionary; every U64 input, exact full remainder, coefficient-square division certificate and normal return including the canonicality assertion. Modulus irreducibility is not assumed or claimed.",
+      "challenge": "BulksketchBridge.SquareChallenges.normalResultMatchesModel",
+      "generated_declaration": "bulksketch.field.gf64.square",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "label": "gf64::raw_mul [actual Gf64]",
+      "native_item_id": "src/field/gf64.rs:6:function:bulksketch::field::gf64::raw_mul",
+      "source_line_span_sha256": "dc20e46c553176d6c42ea9d29457f4b6ffcf2bf96909906840c2a615f2bacfbf",
+      "theorem": "BulksketchBridge.RawMul.raw_mul_refines",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original generated raw_mul with the actual Gf64 dictionary; every U64 pair, exact complete128-bit product, both original loops normal/terminating, all subtraction/index/cast/shift bounds and final lo/hi split. Concrete iterator/cttz models and frontend/compiler/machine correspondence remain explicit TCB.",
+      "challenge": "BulksketchBridge.RawMulChallenges.actualRawMultiplicationReturnsEveryBit",
+      "generated_declaration": "bulksketch.field.gf64.raw_mul",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "label": "gf64::mul [actual Gf64]",
+      "native_item_id": "src/field/gf64.rs:58:function:bulksketch::field::gf64::mul",
+      "source_line_span_sha256": "d77d085bd0d40e5bfa71cdcc843a46f01a464492cf9dd220b36142fd6b91abd4",
+      "theorem": "BulksketchBridge.RawMul.mul_division_certificate",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original generated mul with actual Gf64 dictionary; every U64 pair returns normally with the canonical-degree polynomial division certificate for the complete raw product. This endpoint does not use irreducibility; native word-to-quotient-field and compiler/runtime closure remain open.",
+      "challenge": "BulksketchBridge.RawMulChallenges.actualMultiplicationHasDivisionCertificate",
+      "generated_declaration": "bulksketch.field.gf64.mul",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "label": "gf64::frobenius [actual Gf64, unmodded iteration]",
+      "native_item_id": "src/field/gf64.rs:81:function:bulksketch::field::gf64::frobenius",
+      "source_line_span_sha256": "dc831257671f85b75849509d94af69c95a7f6ac0c7210783bf96f3ed2a3dd9e7",
+      "theorem": "BulksketchBridge.FrobeniusPeriod.native_unmodded_refines",
+      "challenge": "BulksketchBridge.FrobeniusPeriodChallenges.actualNativeFrobeniusMatchesUnmoddedIteration",
+      "generated_declaration": "bulksketch.field.gf64.frobenius",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every U64/U32 source call equals unmodded power.val independent polynomial squarings, using universally proved period64 and count-modulo identities. Earlier modulo-source contract retained; word-to-quotient-field exponent/Algebra.trace bridges remain separate."
+    },
+    {
+      "label": "maps::trace [actual Gf64]",
+      "native_item_id": "src/field/maps.rs:6:function:bulksketch::field::maps::trace",
+      "source_line_span_sha256": "af7a67e3e512458adcddb5d3d8a44db60458918083b50603ab203a287d66b231",
+      "theorem": "BulksketchBridge.MapsTraceMath.trace_matches_absolute",
+      "challenge": "BulksketchBridge.MapsTraceMathChallenges.actualTraceMatchesAbsoluteTrace",
+      "generated_declaration": "bulksketch.field.maps.trace",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every U64 source trace call returns normally with the complete byte, its zero extension equals the independent sum of64polynomial conjugates, and value<=1. Original mask/shifts/checked conversion/expect retained; actual Gf64 dictionary."
+    },
+    {
+      "label": "maps::canonical_trace [actual Gf64]",
+      "native_item_id": "src/field/maps.rs:16:function:bulksketch::field::maps::canonical_trace",
+      "source_line_span_sha256": "efabcb0d40953253bb91fae9017599154e5a262bf02432ce2342ecc130cfe1b4",
+      "theorem": "BulksketchBridge.MapsCanonicalTrace.canonical_trace_refines",
+      "challenge": "BulksketchBridge.MapsCanonicalTraceChallenges.normalResultMatchesAbsoluteTrace",
+      "generated_declaration": "bulksketch.field.maps.canonical_trace",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every U64 actual Gf64 canonical trace returns normally after the original63-step loop with the complete64-conjugate sum byte. Loop bounds/termination, sum<=1 assertion, checked conversion and expect discharged; no trace-bound/success/irreducibility premise."
+    },
+    {
+      "label": "maps::quadratic_rows [actual Gf64]",
+      "native_item_id": "src/field/maps.rs:109:function:bulksketch::field::maps::quadratic_rows",
+      "source_line_span_sha256": "9a94e5fff7ed7cce7a162c6167f45d6b786704ae55ab691e3e02194edabd869c",
+      "theorem": "BulksketchBridge.MapsTables.quadratic_rows_refines",
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualRowsReturnExactSourceData",
+      "generated_declaration": "bulksketch.field.maps.quadratic_rows",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Actual Gf64 source selector returns the complete64-row slice normally, with exact length/data equality to the source-derived core table. Other-field fallback retained."
+    },
+    {
+      "label": "maps::quadratic_value [actual Gf64]",
+      "native_item_id": "src/field/maps.rs:90:function:bulksketch::field::maps::quadratic_value",
+      "source_line_span_sha256": "ac0891f612737bd743955386079908a9437fec0a8477d32c953a28974634a0f1",
+      "theorem": "BulksketchBridge.MapsQuadratic.quadratic_value_matches_matrix",
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualValueMatchesIndependentMatrix",
+      "generated_declaration": "bulksketch.field.maps.quadratic_value",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every U64 source call returns the exact fullword independent matrix map; all16 original chunk iterations, checked casts/index/shift/terminal/termination proved; all320native row/chunk constants kernel-linked and map equality universal."
+    },
+    {
+      "label": "maps::solve_quadratic [actual Gf64]",
+      "native_item_id": "src/field/maps.rs:77:function:bulksketch::field::maps::solve_quadratic",
+      "source_line_span_sha256": "550c5c5a4e9f104a09f5602c4cab0013a0e8554781cdab0afab6421b5f7b1610",
+      "theorem": "BulksketchBridge.MapsQuadratic.solve_quadratic_exact_meaning",
+      "challenge": "BulksketchBridge.MapsQuadraticChallenges.actualSolverHasExactNormalizedSolutionMeaning",
+      "generated_declaration": "bulksketch.field.maps.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/Funs.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every U64 source solver returns normally: None exactly for trace one, or the correct quadratic root with bit0=false and uniqueness among normalized roots. Original trace/table/square/assert/Some/None branches retained; no source-success/irreducibility premise."
+    }
+  ]
+}

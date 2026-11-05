@@ -164,6 +164,12 @@ set whenever minisketch finds a consistent one.
 
 ## Tests
 
+Lean 4 proofs for the native implementation are in
+[`verification/lean`](verification/lean/README.md). The initial milestone covers
+GF64 reduction and raw-square models, finite work accounting, and refinements of
+the actual Rust-generated WorkMeter constructor and charge bodies. The ledger
+retains the full native scope; complete implementation coverage remains open.
+
 ```sh
 cargo test --workspace --release
 ```

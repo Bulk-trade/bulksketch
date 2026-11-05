@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/rawmul/arithmetic.llbc",
+    "--start-from=bulksketch::field::gf64::square",
+    "--start-from=bulksketch::field::gf64::raw_mul",
+    "--start-from=bulksketch::field::gf64::mul",
+    "--start-from={impl bulksketch::field::BinaryField for bulksketch::field::Gf64}",
+    "--",
+    "--manifest-path",
+    "/workspace/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.5399615420028567,
+  "log": "extraction/canonical-arithmetic/rawmul/charon.log",
+  "log_sha256": "e1f6c4de1c367416b711d8e317a2c89b79a5355f0c787dc6b6ff8980357a71ec"
+}

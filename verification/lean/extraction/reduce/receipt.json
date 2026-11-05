@@ -1,0 +1,42 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "086fef0248953f7c7d5ab3c396c011f7d3c2c43d",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "llbc_has_errors": false,
+  "commands": [
+    {
+      "tool": "charon",
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch/verification/lean/extraction/reduce/reduce.llbc",
+        "--start-from=bulksketch::field::gf64::reduce",
+        "--",
+        "--manifest-path",
+        "/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked"
+      ],
+      "exit_code": 0
+    },
+    {
+      "tool": "aeneas",
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/reduce/Reduce",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/reduce/reduce.llbc"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "selected_roots": [
+    "bulksketch::field::maps::inverse_with_frobenius",
+    "{impl bulksketch::field::BinaryField for bulksketch::field::Gf64}"
+  ],
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "362b54bc04de7a783b2a20fbb5f8152a524ee533",
+  "native_files_checked": 41,
+  "native_source_edited": false,
+  "active_arithmetic_edited": false,
+  "implementation_proof_credit": 0,
+  "charon": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/workspace/bulk/bulksketch/verification/lean/extraction/inverse-chain/inverse.llbc",
+      "--start-from=bulksketch::field::maps::inverse_with_frobenius",
+      "--start-from={impl bulksketch::field::BinaryField for bulksketch::field::Gf64}",
+      "--",
+      "--manifest-path",
+      "/workspace/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.29214920848608,
+    "log_sha256": "05f874972dd9bb691e9d54da14f4d468f5963af9f5a6dbf8a6ed5dc00d8a0231"
+  },
+  "llbc_has_errors": false,
+  "llbc_sha256": "196793bbdd90105377a5457642680a92416bbd84012875a2816aeceea90810c5",
+  "aeneas": {
+    "command": [
+      "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch/verification/lean/extraction/inverse-chain/Inverse",
+      "/workspace/bulk/bulksketch/verification/lean/extraction/inverse-chain/inverse.llbc"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7510272078216076,
+    "log_sha256": "20ea3692780e5da890de0dfd04f03ff3d81cf27b7fc0966c39bc147d708f0677"
+  },
+  "generated": [
+    {
+      "path": "extraction/inverse-chain/Inverse/Funs.lean",
+      "sha256": "54c868d864da1a7410177e9fc2fa7e5250a4198dfb8e297b506ad436271ab397"
+    },
+    {
+      "path": "extraction/inverse-chain/Inverse/Types.lean",
+      "sha256": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8"
+    }
+  ],
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  },
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "native_build_inputs_checked": 3,
+  "status": "generated_successfully_but_proof_and_migration_deferred",
+  "limitation": "The enclosing inverse_using captured-square closure still has the separately preserved failed extraction. This pilot does not establish inversion, prove callback contracts, or earn native source-body proof credit.",
+  "projection_draft_outside_repository": "/workspace/bulk/bulksketch-pr-20261104/inverse-projection-deferred"
+}

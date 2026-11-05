@@ -1,0 +1,15 @@
+pub(crate) fn raw_mul<F: BinaryField>(a: u64, b: u64) -> RawProduct {
+    debug_assert_eq!((a | b) & !F::MASK, 0, "noncanonical field operand");
+    let mut multiples = [0_u128; 16];
+    for i in 1_usize..16 {
+        multiples[i] = multiples[i & (i - 1)] ^ (u128::from(a) << i.trailing_zeros());
+    }
+    let mut product = 0_u128;
+    for shift in (0..F::BITS).step_by(4) {
+        product ^= multiples[((b >> shift) & 15) as usize] << shift;
+    }
+    RawProduct {
+        lo: product as u64,
+        hi: (product >> 64) as u64,
+    }
+}

@@ -1,0 +1,100 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "362b54bc04de7a783b2a20fbb5f8152a524ee533",
+  "native_files_checked": 41,
+  "build_inputs_checked": 3,
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  },
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "selected_roots": [
+    "bulksketch::field::gf64::square",
+    "bulksketch::field::gf64::raw_mul",
+    "bulksketch::field::gf64::mul",
+    "{impl bulksketch::field::BinaryField for bulksketch::field::Gf64}",
+    "bulksketch::field::gf64::frobenius",
+    "bulksketch::field::maps::trace",
+    "bulksketch::field::maps::quadratic_value",
+    "bulksketch::field::maps::solve_quadratic",
+    "bulksketch::field::maps::inverse"
+  ],
+  "charon": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc",
+      "--start-from=bulksketch::field::gf64::square",
+      "--start-from=bulksketch::field::gf64::raw_mul",
+      "--start-from=bulksketch::field::gf64::mul",
+      "--start-from={impl bulksketch::field::BinaryField for bulksketch::field::Gf64}",
+      "--start-from=bulksketch::field::gf64::frobenius",
+      "--start-from=bulksketch::field::maps::trace",
+      "--start-from=bulksketch::field::maps::quadratic_value",
+      "--start-from=bulksketch::field::maps::solve_quadratic",
+      "--start-from=bulksketch::field::maps::inverse",
+      "--",
+      "--manifest-path",
+      "/workspace/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6750422501936555,
+    "log": "extraction/canonical-arithmetic/inverse-pilot/charon.log",
+    "log_sha256": "2184a30cc6d42313b1fade13d4873ab96ea05575e69544b7411561b709c5dd66"
+  },
+  "application_source_edited": false,
+  "bridge_files_edited": false,
+  "implementation_proof_credit": 0,
+  "llbc_has_errors": false,
+  "llbc_sha256": "cd5efbbf9c68a8283359a2d48ffded1d60560df82374e131201a248106ebac7e",
+  "declaration_counts": {
+    "fun_decls": 314,
+    "type_decls": 62,
+    "global_decls": 63,
+    "trait_impls": 57
+  },
+  "aeneas": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/inverse-pilot/Arithmetic",
+      "/workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.8910608338192105,
+    "log": "extraction/canonical-arithmetic/inverse-pilot/aeneas.log",
+    "log_sha256": "9ae504ff0ed9af5a80bd7ef1fa4192327bf56d272a65816438c51a23b9dc283e"
+  },
+  "status": "aeneas_failed",
+  "generated": [
+    {
+      "path": "extraction/canonical-arithmetic/inverse-pilot/Arithmetic/Funs.lean",
+      "sha256": "f850e9e38aef47442de167d547f5b81b015ff31b1a243005d9de3cf8605c3976"
+    },
+    {
+      "path": "extraction/canonical-arithmetic/inverse-pilot/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "8b97aa0a8694376031ef620fdf272bdd1e72ea27456606b6014466c74f238cb8"
+    },
+    {
+      "path": "extraction/canonical-arithmetic/inverse-pilot/Arithmetic/Types.lean",
+      "sha256": "ef16309c06e9b68d0cd9d207f76f10734347b52d239ce3925bad1c6c645a760a"
+    },
+    {
+      "path": "extraction/canonical-arithmetic/inverse-pilot/Arithmetic/TypesExternal_Template.lean",
+      "sha256": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582"
+    }
+  ]
+}

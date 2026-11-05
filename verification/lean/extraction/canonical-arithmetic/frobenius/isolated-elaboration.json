@@ -1,0 +1,96 @@
+{
+  "status": "elaboration-only-no-proof-search",
+  "shared_arithmetic_sources_or_oleans_changed": false,
+  "lean_path_prepend": "extraction/canonical-arithmetic/frobenius/oleans",
+  "copied_built_dependencies": [
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/Types.olean.server",
+      "sha256": "59684e68dd3d5cd563376ee5600582e0282e599a1c53416d55c40a7644f5a94f"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/Types.olean",
+      "sha256": "077029c64e5d762542d2688866fe62d6fa66bd379a46c2e0d71442913114da0e"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/Types.olean.private",
+      "sha256": "23bd229ee1c5a8e5ad102140d9910de752eff83f2d4fa5e103edb512124f29f0"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/TypesExternal.olean.private",
+      "sha256": "41b38ff501c7d34d6575e95068133a04a7f91752019ca63947998033f1a62ec0"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/TypesExternal.olean.server",
+      "sha256": "4870fe788ba79de216babacd72f89308a8f82e54d42e653f48e21705de9ac22d"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/TypesExternal.olean",
+      "sha256": "ed02ae48e36cadd211b9ff328edc036fe7ffaa50d717ffd830c84ff90152f5a0"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/FunsExternal.olean",
+      "sha256": "7e1fdb1d2b4b02530351dad0adee7146b01cd899a9a8c2a4aa757bbc2872f3b9"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/FunsExternal.olean.server",
+      "sha256": "a2baa7921f30c4e0b189802385d431616a6fbc0ae77644fa1a63263961a2630c"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/FunsExternal.olean.private",
+      "sha256": "7e89df1d51bc0c180be0ada4301c74ba38c91f82fdd8a6097b4d81bec72d84ef"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/TrailingZeros.olean.server",
+      "sha256": "532d2da55bc48fc64612eec5f1926363d2ab6dc1e60c98ef3ac0be68a921ea0d"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/TrailingZeros.olean.private",
+      "sha256": "b133df6b24a15db9c6d5b1986d45303b4104a43ec829353019a538c41f5490d2"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/TrailingZeros.olean",
+      "sha256": "c338f0a860035a18912b1173b1c2750f80a7c28b801b60e9eb046bdf7b55a6bc"
+    }
+  ],
+  "results": [
+    {
+      "module": "Arithmetic/Funs",
+      "exit_code": 0,
+      "command": [
+        "/workspace/.elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+        "--root",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/frobenius",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/frobenius/Arithmetic/Funs.lean",
+        "-o",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/frobenius/oleans/Arithmetic/Funs.olean"
+      ],
+      "log": "extraction/canonical-arithmetic/frobenius/Arithmetic-Funs-elaboration.log"
+    },
+    {
+      "module": "BulksketchBridge/FrobeniusSpec",
+      "exit_code": 0,
+      "command": [
+        "/workspace/.elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+        "--root",
+        "/workspace/bulk/bulksketch/verification/lean/bridge",
+        "/workspace/bulk/bulksketch/verification/lean/bridge/BulksketchBridge/FrobeniusSpec.lean",
+        "-o",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/frobenius/oleans/BulksketchBridge/FrobeniusSpec.olean"
+      ],
+      "log": "extraction/canonical-arithmetic/frobenius/BulksketchBridge-FrobeniusSpec-elaboration.log"
+    },
+    {
+      "module": "BulksketchBridge/FrobeniusChallenges",
+      "exit_code": 0,
+      "command": [
+        "/workspace/.elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+        "--root",
+        "/workspace/bulk/bulksketch/verification/lean/bridge",
+        "/workspace/bulk/bulksketch/verification/lean/bridge/BulksketchBridge/FrobeniusChallenges.lean",
+        "-o",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/frobenius/oleans/BulksketchBridge/FrobeniusChallenges.olean"
+      ],
+      "log": "extraction/canonical-arithmetic/frobenius/BulksketchBridge-FrobeniusChallenges-elaboration.log"
+    }
+  ]
+}

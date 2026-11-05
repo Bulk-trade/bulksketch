@@ -1,0 +1,17 @@
+pub(crate) fn quadratic_value<F: BinaryField>(a: u64) -> u64 {
+    if F::BITS == 64 {
+        let mut remaining = a;
+        let mut value = 0;
+        for table in &super::quadratic_chunks::GF64_QUADRATIC_CHUNKS {
+            let index = usize::try_from(remaining & 15).expect("nibble index");
+            value ^= table[index];
+            remaining >>= 4;
+        }
+        return value;
+    }
+    let mut z = 0;
+    for (bit, &row) in quadratic_rows::<F>().iter().enumerate() {
+        z |= u64::from((row & a).count_ones() & 1) << bit;
+    }
+    z
+}

@@ -1,0 +1,100 @@
+{
+  "status": "general-concrete-models-compiled-and-standard-only-axiom-closure",
+  "model": "bridge/Arithmetic/MapsRuntime.lean",
+  "model_sha256": "ebac090bd9b4f610659f8d8a34222e1c7be297e29f05e2ee335f1257f20bf02b",
+  "source_snapshots": [
+    {
+      "rust_source": "/workspace/.rustup/toolchains/nightly-2026-09-17-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/convert/num.rs",
+      "source_file_sha256": "8dbf6c64681e2dee556e0844eef3e53d62a40df0280d25f469352870a401e034",
+      "line_first": 331,
+      "line_last": 345,
+      "snapshot": "extraction/canonical-arithmetic/maps/runtime/unsigned-unbounded-conversion.rs",
+      "sha256": "48b68cddaed2a3b10d283b38207db6d9fe9f923a9d7c7711c739f8801215cef3"
+    },
+    {
+      "rust_source": "/workspace/.rustup/toolchains/nightly-2026-09-17-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/convert/num.rs",
+      "source_file_sha256": "8dbf6c64681e2dee556e0844eef3e53d62a40df0280d25f469352870a401e034",
+      "line_first": 372,
+      "line_last": 393,
+      "snapshot": "extraction/canonical-arithmetic/maps/runtime/unsigned-upper-bound-conversion.rs",
+      "sha256": "b6263dc9324e1ef30f79a8f2616038a23819d07dd84bff5b59fe184b3185e11a"
+    },
+    {
+      "rust_source": "/workspace/.rustup/toolchains/nightly-2026-09-17-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/convert/num.rs",
+      "source_file_sha256": "8dbf6c64681e2dee556e0844eef3e53d62a40df0280d25f469352870a401e034",
+      "line_first": 532,
+      "line_last": 580,
+      "snapshot": "extraction/canonical-arithmetic/maps/runtime/pointer-width-conversions.rs",
+      "sha256": "1b9884af39c0955fa2dc526697e962a3bd484ebaee33c2defac04592b5f761fc"
+    },
+    {
+      "rust_source": "/workspace/.rustup/toolchains/nightly-2026-09-17-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/num/uint_macros.rs",
+      "source_file_sha256": "b2a9c6a570a44e56955c60ca0c5007f7318e27286e53d3b9180bb34c8064e506",
+      "line_first": 61,
+      "line_last": 86,
+      "snapshot": "extraction/canonical-arithmetic/maps/runtime/u64-count-ones.rs",
+      "sha256": "235b40a12932b4a508f04c20d7998c476a77d9975d6cd96387fa7eb6061582e3"
+    },
+    {
+      "rust_source": "/workspace/.rustup/toolchains/nightly-2026-09-17-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/num/error.rs",
+      "source_file_sha256": "7447f99e89ce2f0163c83cbe177008c3b789b8129602099dfe9dc3f02909baff",
+      "line_first": 6,
+      "line_last": 10,
+      "snapshot": "extraction/canonical-arithmetic/maps/runtime/conversion-error-debug.rs",
+      "sha256": "fd46096c50a9a8a3218d2a205386710049254c664492513a55c8f346a5965985"
+    },
+    {
+      "rust_source": "/workspace/.rustup/toolchains/nightly-2026-09-17-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/intrinsics/mod.rs",
+      "source_file_sha256": "f86ef5c0af5501e29bf23645327e7d2808afb9ca8aeb786e2cef36d14b0036cb",
+      "line_first": 1742,
+      "line_last": 1755,
+      "snapshot": "extraction/canonical-arithmetic/maps/runtime/ctpop-intrinsic.rs",
+      "sha256": "be6bbf32991c7d4ef5d20b6a42e33dce8532932ba8d77eddaf0eebb6958afcd5"
+    }
+  ],
+  "full_domain_models": [
+    "U64->U8 checked conversion via existing general target-max range check",
+    "U64->Usize checked conversion with modeled32/64widths",
+    "U64 population count exact BitVec.cpop with all-input bound<=64"
+  ],
+  "diagnostics_boundary": "Existing Aeneas TryFromIntError=Unit erases IntErrorKind detail; Debug adapter reuses DebugUnit.fmt and is not a formatting correctness proof. Result.expect proven independent of every Debug dictionary. Every actual admitted native endpoint conversion is proved inner Ok, so native diagnostics/error formatting is not executed.",
+  "rust_correspondence": "Rust std/intrinsic lowering, compiler, target ISA, scalar/slice value models and execution remain explicit TCB; no arbitrary application axioms or failure stubs.",
+  "runtime_axiom_audit": {
+    "path": "extraction/canonical-arithmetic/maps/runtime-axioms.log",
+    "sha256": "1b1b744300085ee4b7ff219c5673b4d81cb704d3fc2294828af9d51294c60f13",
+    "declarations_checked": 8,
+    "all_within_allowlist": true,
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "proof_helpers": [
+    "Aeneas.Std.checked_unsigned_conversion_normal",
+    "Aeneas.Std.u64_count_ones_spec",
+    "Aeneas.Std.result_expect_independent_of_debug"
+  ],
+  "existing_aeneas_abstraction_snapshots": [
+    {
+      "source": "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/backends/lean/Aeneas/Std/Scalar/CoreConvertNum.lean",
+      "source_file_sha256": "fa5ee445bca249a854906badfc18314537acb8b2a87a5eb009d0bc82891f6aea",
+      "line_first": 805,
+      "line_last": 815,
+      "snapshot": "extraction/canonical-arithmetic/maps/runtime/aeneas-error-unit-model.lean.txt",
+      "sha256": "3c635d8faad3128e7fe48d98e3d5433d313d1e68f523d1dec05aade603a75f1b"
+    },
+    {
+      "source": "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/backends/lean/Aeneas/Std/Core/Fmt.lean",
+      "source_file_sha256": "a802741356d8f7814a7d0655910fa287755000909144183d35657d1ce9eecf2c",
+      "line_first": 105,
+      "line_last": 123,
+      "snapshot": "extraction/canonical-arithmetic/maps/runtime/aeneas-expect-diagnostics-model.lean.txt",
+      "sha256": "88a256bc77db0d2e97843b2ddc4927c93e4f8fa3873dacd3c334976f09d21724"
+    }
+  ],
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  }
+}

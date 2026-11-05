@@ -1,0 +1,14 @@
+pub(super) fn quadratic_rows<F: BinaryField>() -> &'static [u64] {
+    match F::BITS {
+        64 => &GF64_QUADRATIC,
+        #[cfg(test)]
+        2 => &GF4_QUADRATIC,
+        #[cfg(test)]
+        4 => &GF16_QUADRATIC,
+        #[cfg(test)]
+        8 => &GF256_QUADRATIC,
+        #[cfg(test)]
+        16 => &GF65536_QUADRATIC,
+        _ => unreachable!("sealed field has no quadratic map"),
+    }
+}

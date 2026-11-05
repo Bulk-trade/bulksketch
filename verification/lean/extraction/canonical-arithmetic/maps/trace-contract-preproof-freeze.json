@@ -1,0 +1,25 @@
+{
+  "status": "parent-independently-approved-before-proof-search",
+  "files": [
+    {
+      "path": "bridge/BulksketchBridge/MapsTraceSpec.lean",
+      "sha256": "b43673ef244087d9c45a0180117707762014e191286a1ad18bc0a39915cc4926"
+    },
+    {
+      "path": "bridge/BulksketchBridge/MapsTraceChallenges.lean",
+      "sha256": "ef7eeb6893d59822de47155cc714ecf5092364059cef07386bee4f6f410ead63"
+    }
+  ],
+  "claim": "Every U64 input gives normal exact8bit source selector output with real Gf64 dictionary; no successfulreturn premise",
+  "not_claimed": [
+    "mathematical absolute trace correctness until separate semantic proof",
+    "Rust std/compiler/ISA correctness"
+  ],
+  "proof_search_started": false,
+  "active_arithmetic_copies_changed": false,
+  "independent_review": {
+    "reviewer": "root",
+    "approved": true,
+    "note": "All-U64 normal U8 word, every outputbit; separate mathematical trace certificate to follow."
+  }
+}
