@@ -164,12 +164,6 @@ set whenever minisketch finds a consistent one.
 
 ## Tests
 
-Lean 4 proofs for the native implementation are in
-[`verification/lean`](verification/lean/README.md). The initial milestone covers
-GF64 reduction and raw-square models, finite work accounting, and refinements of
-the actual Rust-generated WorkMeter constructor and charge bodies. The ledger
-retains the full native scope; complete implementation coverage remains open.
-
 ```sh
 cargo test --workspace --release
 ```
@@ -190,6 +184,18 @@ minisketch comparisons in `oracle/tests/`:
 
 The `oracle` crate builds minisketch from C++ source, so it needs a C++ compiler
 and libclang (for `bindgen`). The library itself needs neither.
+
+## Proofs
+
+[`verification/lean`](verification/lean/README.md) holds Lean 4 proofs about the
+portable Rust code, checked against Lean translations of the actual function
+bodies. They cover 14 functions: GF64 multiplication, reduction, squaring and
+Frobenius; the trace and quadratic solver; and the work meter. They also prove
+that the modulus `X^64 + X^4 + X^3 + X + 1` is irreducible.
+
+The x86 PCLMUL and VPCLMUL backends, field inversion, the decoder and the sketch
+API are not covered yet. The proofs are pinned to a source revision, so the
+checker rejects them after any change to `src/` until they are updated.
 
 ## Benchmark
 
@@ -295,6 +301,7 @@ including equal ones, and does not use the wrapper described above.
 | `src/` | The library: field arithmetic and backends (`field/`, `backend/`), polynomials (`poly/`), Berlekamp-Massey, root finding and verification (`decode/`), and the sketch, wire format, scratch and request API (`sketch/`) |
 | `tests/` | Integration tests and frozen vectors (`tests/vectors/`) |
 | `tools/check-ownership.py` | Compile-fail check used by `tests/ownership.rs` |
+| `verification/lean/` | Lean 4 proofs of the field arithmetic and work meter (see Proofs) |
 | `oracle/` | Test-only crate (`publish = false`): minisketch comparisons (`oracle/tests/`) and the benchmark (`oracle/benches/decode.rs`) |
 | `oracle/minisketch-rs/` | Vendored copy of the [minisketch-rs](https://github.com/eupn/minisketch-rs) binding (Apache-2.0, see its `Cargo.toml`) with the minisketch C++ sources (MIT, `oracle/minisketch-rs/minisketch/LICENSE`, copyright 2018 Pieter Wuille, Greg Maxwell, Gleb Naumenko) |
 
