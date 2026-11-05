@@ -1,0 +1,11 @@
+@[expose, reducible, rust_type "core::num::error::TryFromIntError"]
+def core.num.error.TryFromIntError : Type := Unit
+
+/-- General fallible conversion between unsigned scalar types. -/
+@[expose] def core.num.tryFromUScalar {srcTy : UScalarTy} (tgtTy : UScalarTy) (i : UScalar srcTy) :
+  Result (core.result.Result (UScalar tgtTy) core.num.error.TryFromIntError) :=
+  if i.val ≤ UScalar.max tgtTy then
+    ok (.Ok (UScalar.cast tgtTy i))
+  else
+    ok (.Err ())
+

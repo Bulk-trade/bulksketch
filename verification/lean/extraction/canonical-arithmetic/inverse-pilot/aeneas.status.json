@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-split-files",
+    "-dest",
+    "/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/inverse-pilot/Arithmetic",
+    "/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 0.8910608338192105,
+  "log": "extraction/canonical-arithmetic/inverse-pilot/aeneas.log",
+  "log_sha256": "445184e512d68f1d4af6a71357117084140a5b33d53b46fe062631be3732fd2b"
+}

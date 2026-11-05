@@ -1,0 +1,7 @@
+'Aeneas.Std.core.num.Usize.trailing_zeros' depends on axioms: [propext, Quot.sound]
+'Aeneas.Std.trailingZeroCount_le_width' depends on axioms: [propext, Quot.sound]
+'Aeneas.Std.usize_trailing_zeros_spec' depends on axioms: [propext, Quot.sound]
+'Aeneas.Std.usize_trailing_zeros_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Aeneas.Std.usize_trailing_zeros_least_set_bit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Aeneas.Std.trailingZeroCount_eq_of_toNat_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Aeneas.Std.usize_trailing_zeros_nibble' depends on axioms: [propext, Classical.choice, Quot.sound]

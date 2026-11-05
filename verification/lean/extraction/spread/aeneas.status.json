@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-split-files",
+    "-dest",
+    "/Users/junbug/bulk/bulksketch/verification/lean/extraction/spread/generated",
+    "/Users/junbug/bulk/bulksketch/verification/lean/extraction/spread/spread.llbc"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.4032631255686283,
+  "log": "extraction/spread/aeneas.log",
+  "log_sha256": "b8898ab6838db8bb18af7a9cdd492f9103d563cdd0882919800d0bea0af5a231"
+}

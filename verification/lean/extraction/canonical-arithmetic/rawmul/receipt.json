@@ -1,0 +1,90 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "2f5b3af749aea5a173ef0cb8710df9f02808d51b",
+  "native_files_checked": 41,
+  "build_inputs_checked": 3,
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  },
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "selected_roots": [
+    "bulksketch::field::gf64::square",
+    "bulksketch::field::gf64::raw_mul",
+    "bulksketch::field::gf64::mul",
+    "{impl bulksketch::field::BinaryField for bulksketch::field::Gf64}"
+  ],
+  "charon": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/rawmul/arithmetic.llbc",
+      "--start-from=bulksketch::field::gf64::square",
+      "--start-from=bulksketch::field::gf64::raw_mul",
+      "--start-from=bulksketch::field::gf64::mul",
+      "--start-from={impl bulksketch::field::BinaryField for bulksketch::field::Gf64}",
+      "--",
+      "--manifest-path",
+      "/Users/junbug/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.5399615420028567,
+    "log": "extraction/canonical-arithmetic/rawmul/charon.log",
+    "log_sha256": "7979486de1eb2402da8f27ed62f9626be6950ac6710c56054043f61b7d1d035f"
+  },
+  "application_source_edited": false,
+  "bridge_files_edited": false,
+  "implementation_proof_credit": 0,
+  "llbc_has_errors": false,
+  "llbc_sha256": "b005e85f0799de25604fb583874e9d764b560a0f717f5a10beaff11a4802f93c",
+  "declaration_counts": {
+    "fun_decls": 250,
+    "type_decls": 58,
+    "global_decls": 33,
+    "trait_impls": 41
+  },
+  "aeneas": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/rawmul/Arithmetic",
+      "/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/rawmul/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.0088517079129815,
+    "log": "extraction/canonical-arithmetic/rawmul/aeneas.log",
+    "log_sha256": "3b06120249e2bb454bbf20cb7a48313fde2dd4dd858ae4634c6e7c3298f70f4b"
+  },
+  "status": "generated",
+  "generated": [
+    {
+      "path": "extraction/canonical-arithmetic/rawmul/Arithmetic/Funs.lean",
+      "sha256": "3a9f4912c2340ee6b9fabaefb68198a9c625c1136a9e13c5849c0452cba10265"
+    },
+    {
+      "path": "extraction/canonical-arithmetic/rawmul/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "7b4e353af0033b875161d5f1d6927db768bf3c7a3a269bb7ab90384e35303bd1"
+    },
+    {
+      "path": "extraction/canonical-arithmetic/rawmul/Arithmetic/Types.lean",
+      "sha256": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0"
+    },
+    {
+      "path": "extraction/canonical-arithmetic/rawmul/Arithmetic/TypesExternal_Template.lean",
+      "sha256": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[[92mInfo[39m ] Imported: /Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/maps/arithmetic.llbc
+[?25lApplied prepasses:  [------------------------------------------------]   0/103 ⠋Applied prepasses:  [------------------------------------------------]   1/103 ⠋Applied prepasses:  [#####-------------------------------------------]  12/103 ⠋Applied prepasses:  [################################################] 103/103 ✔️
+[?25h[?25lTranslated globals:  [-------------------------------------------------]  0/23 ⠋Translated globals:  [###########################----------------------] 13/23 ✔️
+[?25h[?25lTranslated opaque functions:  [----------------------------------------]  0/62 ⠋Translated opaque functions:  [########################################] 62/62 ✔️
+[?25h[?25lTranslated transparent functions:  [-----------------------------------]  0/26 ⠋Translated transparent functions:  [#----------------------------------]  1/26 ⠋Translated transparent functions:  [##########-------------------------]  8/26 ⠙Translated transparent functions:  [####################---------------] 15/26 ⠙Translated transparent functions:  [############################-------] 21/26 ⠙Translated transparent functions:  [#############################------] 22/26 ⠹Translated transparent functions:  [################################---] 24/26 ⠸Translated transparent functions:  [###################################] 26/26 ⠸Translated transparent functions:  [###################################] 26/26 ✔️
+[?25h[?25lTranslated trait declarations:  [--------------------------------------]  0/32 ⠋Translated trait declarations:  [################----------------------] 14/32 ✔️
+[?25h[?25lTranslated trait impls:  [---------------------------------------------]  0/47 ⠋Translated trait impls:  [########################---------------------] 26/47 ✔️
+[?25h[?25lPost-processed translated opaque functions:  [-------------------------]  0/62 ⠋Post-processed translated opaque functions:  [-------------------------]  1/62 ⠙Post-processed translated opaque functions:  [#########################] 62/62 ✔️
+[?25h[?25lPost-processed translated transparent functions:  [--------------------]  0/26 ⠋Post-processed translated transparent functions:  [--------------------]  1/26 ⠋Post-processed translated transparent functions:  [##############------] 19/26 ⠋Post-processed translated transparent functions:  [################----] 22/26 ⠙Post-processed translated transparent functions:  [##################--] 24/26 ⠙Post-processed translated transparent functions:  [####################] 26/26 ✔️
+[?25h[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::traits::iterator::Iterator', could not find the information for item 'rev'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/traits/iterator.rs', lines 42:0-42:24
+Compiler source: extract/Extract.ml, line 2866
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::range::Step', could not find the information for item 'forward_overflowing'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/range.rs', lines 35:0-35:64
+Compiler source: extract/Extract.ml, line 2866
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::range::Step', could not find the information for item 'backward_overflowing'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/range.rs', lines 35:0-35:64
+Compiler source: extract/Extract.ml, line 2866
+
+[[92mInfo[39m ] Generated: /Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/maps/Arithmetic/TypesExternal_Template.lean
+[[92mInfo[39m ] Generated: /Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/maps/Arithmetic/Types.lean
+[[92mInfo[39m ] Generated: /Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/maps/Arithmetic/FunsExternal_Template.lean
+[[92mInfo[39m ] Generated: /Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/maps/Arithmetic/Funs.lean
+[[92mInfo[39m ] Total execution time: 0.849716 seconds

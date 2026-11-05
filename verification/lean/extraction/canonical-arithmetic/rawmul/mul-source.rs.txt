@@ -1,0 +1,3 @@
+pub(crate) fn mul<F: BinaryField>(a: u64, b: u64) -> u64 {
+    reduce::<F>(raw_mul::<F>(a, b))
+}

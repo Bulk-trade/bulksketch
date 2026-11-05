@@ -1,0 +1,90 @@
+{
+  "status": "canonical_migration_files_prepared_not_built",
+  "application_generated_bodies_edited": false,
+  "original_definition_checks": {
+    "field.gf64.reduce_loop0_loop0.body": {
+      "exact_definition_text_equal": true,
+      "definition_sha256": "a61cb9961b07f7c6e843773624c8a74b8e5542e6d3f48cba05304950757e04b8",
+      "reference": "/Users/junbug/bulk/bulksketch/verification/lean/extraction/reduce/Reduce/Funs.lean",
+      "reference_definition_line": 31,
+      "canonical_definition_line": 31
+    },
+    "field.gf64.reduce_loop0_loop0": {
+      "exact_definition_text_equal": true,
+      "definition_sha256": "a11c6fd759ffebcde5d6d9d1b5decaaa9835081c13124ada9a02b7158df5d93e",
+      "reference": "/Users/junbug/bulk/bulksketch/verification/lean/extraction/reduce/Reduce/Funs.lean",
+      "reference_definition_line": 63,
+      "canonical_definition_line": 63
+    },
+    "field.gf64.reduce_loop0.body": {
+      "exact_definition_text_equal": true,
+      "definition_sha256": "523be3ffe28a3978fdbdac6cd91f97d36862449bb6a21aff13ca657ef18f4ca6",
+      "reference": "/Users/junbug/bulk/bulksketch/verification/lean/extraction/reduce/Reduce/Funs.lean",
+      "reference_definition_line": 77,
+      "canonical_definition_line": 77
+    },
+    "field.gf64.reduce_loop0": {
+      "exact_definition_text_equal": true,
+      "definition_sha256": "9f10c206bc57783a56c9ceeab65f0865d97ee7056bb576ac5c6016a47ea892ed",
+      "reference": "/Users/junbug/bulk/bulksketch/verification/lean/extraction/reduce/Reduce/Funs.lean",
+      "reference_definition_line": 100,
+      "canonical_definition_line": 100
+    },
+    "field.gf64.reduce": {
+      "exact_definition_text_equal": true,
+      "definition_sha256": "a8e71f5067683aaebe09c49f32dba1b118fff75f16089ae8cbfa05261e169ba8",
+      "reference": "/Users/junbug/bulk/bulksketch/verification/lean/extraction/reduce/Reduce/Funs.lean",
+      "reference_definition_line": 112,
+      "canonical_definition_line": 112
+    },
+    "field.gf64.spread": {
+      "exact_definition_text_equal": true,
+      "definition_sha256": "be9c368bd1e104d6f530afd274db2fef15853e4a92c1e51e4bb36d066f3cf62d",
+      "reference": "/Users/junbug/bulk/bulksketch/verification/lean/extraction/spread/generated/Funs.lean",
+      "reference_definition_line": 26,
+      "canonical_definition_line": 147
+    },
+    "field.gf64.square": {
+      "exact_definition_text_equal": true,
+      "definition_sha256": "63e0bf5b27bb576ff1fd6eb3f6c2a631cc85b1c6f2f55354073950c462e7d83e",
+      "reference": "/Users/junbug/bulk/bulksketch-proofs/extraction/aeneas-pilot/arithmetic-lean/Funs.lean",
+      "reference_definition_line": 272,
+      "canonical_definition_line": 167
+    },
+    "shared_type_declarations": {
+      "exact_text_equal": true,
+      "sha256": "bb48148f193d841eead9366709f7740c60779caf85fd8f372b37c84c0190f357"
+    }
+  },
+  "files": {
+    "Types.lean": {
+      "origin": "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean",
+      "sha256": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+      "byte_identical": true
+    },
+    "Funs.lean": {
+      "origin": "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean",
+      "sha256": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
+      "byte_identical": true
+    },
+    "TypesExternal.lean": {
+      "origin": "bridge/Reduce/TypesExternal.lean",
+      "sha256": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
+      "change": "exact byte copy"
+    },
+    "FunsExternal.lean": {
+      "origin": "bridge/Reduce/FunsExternal.lean",
+      "sha256": "0920ec8a166029f316f1c7492ecae854e27946de24d14c5f39c4cdbf69c643e3",
+      "change": "only Reduce.Types import to Arithmetic.Types"
+    }
+  },
+  "real_dictionary": "bulksketch.field.Gf64.Insts.BulksketchFieldBinaryField",
+  "proof_credit": 0,
+  "definition_selector": "unique multiline ^def FULLNAME followed by whitespace, ( or {",
+  "comparison_correction": {
+    "reason": "Previous str.index prefix lookup could select an earlier reduce helper; exact-name selection now independently rerun.",
+    "superseded_receipt_sha256": "77780fb108885629d254a636daef26261b4a8a050d8726c6bdb5c954df91969e",
+    "generated_files_modified": false,
+    "trailing_whitespace_at_definition_end_only_normalized": true
+  }
+}

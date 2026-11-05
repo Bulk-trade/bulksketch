@@ -1,0 +1,21 @@
+{
+  "status": "parent-approved-exact-generated-canonical-migration",
+  "previous_artifact": "extraction/canonical-arithmetic/frobenius/Arithmetic",
+  "new_artifact": "extraction/canonical-arithmetic/maps/Arithmetic",
+  "previous_function_declarations_checked_by_fullname": 29,
+  "previous_type_declarations_checked_by_fullname": 5,
+  "missing": [],
+  "changed": [],
+  "new_function_declarations": 14,
+  "generated_copies_byte_identical": true,
+  "bridge_file_hashes": {
+    "Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+    "Funs.lean": "4d688e3ce715126a0bf92d0c43cac8361de11c6f5215c01fdbf7caf8d3584ef9",
+    "FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
+    "MapsRuntime.lean": "ebac090bd9b4f610659f8d8a34222e1c7be297e29f05e2ee335f1257f20bf02b"
+  },
+  "external_change": "One public import Arithmetic.MapsRuntime; all previous external definitions unchanged.",
+  "native_source_edited": false,
+  "application_generated_files_hand_edited": false,
+  "comparison": "extraction/canonical-arithmetic/maps/previous-declaration-comparison.json"
+}

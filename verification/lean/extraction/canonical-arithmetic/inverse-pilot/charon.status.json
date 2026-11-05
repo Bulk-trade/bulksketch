@@ -1,0 +1,29 @@
+{
+  "command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc",
+    "--start-from=bulksketch::field::gf64::square",
+    "--start-from=bulksketch::field::gf64::raw_mul",
+    "--start-from=bulksketch::field::gf64::mul",
+    "--start-from={impl bulksketch::field::BinaryField for bulksketch::field::Gf64}",
+    "--start-from=bulksketch::field::gf64::frobenius",
+    "--start-from=bulksketch::field::maps::trace",
+    "--start-from=bulksketch::field::maps::quadratic_value",
+    "--start-from=bulksketch::field::maps::solve_quadratic",
+    "--start-from=bulksketch::field::maps::inverse",
+    "--",
+    "--manifest-path",
+    "/Users/junbug/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.6750422501936555,
+  "log": "extraction/canonical-arithmetic/inverse-pilot/charon.log",
+  "log_sha256": "1cb01f89c9f311451eedae9abf9ca0bc605dd175b2402b94370a3de5e4198f93"
+}

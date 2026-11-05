@@ -1,0 +1,11 @@
+'BulksketchBridge.MapsTraceMath.selector_matches_trace_word' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.MapsTraceMath.trace_byte_case' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.MapsTraceMath.selector_value_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.MapsTraceMath.trace_matches_absolute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.MapsQuadratic.quadratic_value_matches_matrix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BulksketchBridge.MapsQuadratic.solve_quadratic_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.MapsQuadratic.solve_quadratic_exact_meaning' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,8 @@
+'Aeneas.Std.core.fmt.Formatter' does not depend on any axioms
+'Aeneas.Std.U8.Insts.CoreConvertTryFromU64TryFromIntError.try_from' depends on axioms: [propext, Quot.sound]
+'Aeneas.Std.Usize.Insts.CoreConvertTryFromU64TryFromIntError.try_from' depends on axioms: [propext, Quot.sound]
+'Aeneas.Std.checked_unsigned_conversion_normal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Aeneas.Std.core.num.U64.count_ones' depends on axioms: [propext, Quot.sound]
+'Aeneas.Std.u64_count_ones_spec' depends on axioms: [propext, Quot.sound]
+'Aeneas.Std.core.num.error.TryFromIntError.Insts.CoreFmtDebug.fmt' depends on axioms: [propext, Quot.sound]
+'Aeneas.Std.result_expect_independent_of_debug' depends on axioms: [propext, Quot.sound]

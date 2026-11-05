@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-split-files",
+    "-dest",
+    "/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/rawmul/Arithmetic",
+    "/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/rawmul/arithmetic.llbc"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.0088517079129815,
+  "log": "extraction/canonical-arithmetic/rawmul/aeneas.log",
+  "log_sha256": "3b06120249e2bb454bbf20cb7a48313fde2dd4dd858ae4634c6e7c3298f70f4b"
+}

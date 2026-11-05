@@ -1,0 +1,328 @@
+{
+  "policy": "Frozen independently reviewed generated-body challenge types, lossless model mappings and actual unedited extraction artifacts; runtime std model remains an explicit trusted boundary.",
+  "files": {
+    "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
+    "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
+    "bridge/BulksketchBridge/Audit.lean": "efe35b3f240cc339a9387de4a059695dbb6f7ea360b94a255d0988176ce62425",
+    "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
+    "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
+    "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
+    "bridge/runtime-models/option-is-none-or.rs": "c7775aa2037540ec5e8cf2149ffa3552bbe5bcf955e1caa0e5944fee72c472cd",
+    "bridge/lakefile.toml": "6f15924b66061eae1e09c37a5c56d00e82f5ce4df85821307e59188e7a08d1cd",
+    "bridge/lake-manifest.json": "970d79e6e04955e73035be01137816af4a56eb4789020c8822b9c623414281d6",
+    "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
+    "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
+    "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
+    "scripts/verify_bridge.py": "63b0494c4dac2112f50b3717f9bcf55632b9dd049074396444c351b1f65ac8b8",
+    "audit/frozen-inputs.json": "3fa37b704fbf1f138b18d8c0455cdfb327ac9e45c27f9e30197c0a9ca32fb4cd",
+    "bridge/BulksketchBridge.lean": "b5a7799330bf69d4778f5122b67ab7388751a3a1eede0281f1f5e639fbdc35e9",
+    "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
+    "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
+    "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
+    "bridge/BulksketchBridge/ReduceSpec.lean": "7b97bceb850f787a397f1c8bf85dd6c9a254d5e483a7d684b63a77efb8acb79a",
+    "bridge/BulksketchBridge/ReduceChallenges.lean": "190ed042531fa8a748a83991f3af8f28cf9f08b4fa35c8c90de3e8b7772e27a6",
+    "bridge/BulksketchBridge/Gf64ReduceSpec.lean": "afb2395d0c9052f56c644e9eb075bea16ca2ae4f3abab450ee2c53d0123c9b78",
+    "bridge/BulksketchBridge/Gf64ReduceChallenges.lean": "6d1f08045e6d1fb47b2fb623b337a0aa7eac77c7752f1b025d2628b9ae6970d0",
+    "bridge/BulksketchBridge/SquareSpec.lean": "7d7bba6364278040e943e89b56b882961f7104e5e29d773a90fbfdd8063aace3",
+    "bridge/BulksketchBridge/SquareChallenges.lean": "a342a622b720e4c47ad1c6d121e5e28bc3b2bb9e018de81e1f9df14b3907bae0",
+    "bridge/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+    "bridge/Arithmetic/Funs.lean": "4d688e3ce715126a0bf92d0c43cac8361de11c6f5215c01fdbf7caf8d3584ef9",
+    "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
+    "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
+    "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
+    "bridge/source-linkage.json": "ec4352ecf9e3be2ac2dd39cd40ddf46c0f1fa1bac8b894ee3981bc5ba5e6f414",
+    "bridge/obligations.json": "099cd86c79b5c2934215ea0303062857cd8161037bdbd6305996fe6c6152b176",
+    "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
+    "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+    "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
+    "extraction/canonical-arithmetic/impl-root/receipt.json": "3830363a0e31ef7951cba8feb862a70851a8038d48dcd1df878acfa145210fcf",
+    "extraction/canonical-arithmetic/migration-receipt.json": "3f4df303f63f5b77a14ac08d58fbc303b94f62ef59a17081eca39768f010272a",
+    "extraction/canonical-arithmetic/square-contract-freeze.json": "80eee18f507d9ead47f0a272a7f874d902d23559df233c146c25321add79e51b",
+    "bridge/audit/workmeter-used-review.json": "982704c4ac127cf9c69261e83391f5122cfb6f308f5945dd6ecb3bedeb29043b",
+    "bridge/audit/gf64-reduce-review.json": "4d2460387a791800f0ef7efde3a4fd245d01f82ea1439dedaef65d0da58bbb44",
+    "tooling/setup_lean_runtime.py": "285c68b938ac803d6a79424ab2fa74bb22df6faae5ef84e766405540ae5c7d0e",
+    "bridge/audit/arithmetic-contract-review.json": "062bd0838262cad4bf899b96f5928203659496064785b22ae95f1cef9cf2e8dd",
+    "bridge/Arithmetic/TrailingZeros.lean": "078b4b6b7372c5064e9b2ae6adc298367431a862cfef55e9db3ec7cde7beabb6",
+    "bridge/BulksketchBridge/RawMulSpec.lean": "52effc68aea0b20165025762cbcb16d8b33c0e582d40fb925f33eeced11ccd11",
+    "bridge/BulksketchBridge/RawMulChallenges.lean": "94d8cd6ea195547d2d9256a45864e8332d13bab460a6b7e8839fab33b20dbe9b",
+    "bridge/BulksketchBridge/RawMulTableSpec.lean": "8d733a61c0cafb7314940346e9f52c59995a94c3aad23206763f3fb04aefb34d",
+    "bridge/BulksketchBridge/RawMulTableChallenges.lean": "4130cbeed74994d1afbc225e58a03da233b1130c8074468d71898f3d55615e36",
+    "bridge/BulksketchBridge/RawMulAccumSpec.lean": "6cd4233f8d036f3d07caa8b1b968cd28783a40b9ae82033b41443079f9d477c0",
+    "bridge/BulksketchBridge/RawMulAccumChallenges.lean": "3ab73677a4a78e54eea3f549141f4d5981c4e8bfbe2d364b8f54904bc9a8913a",
+    "bridge/audit/rawmul-contract-review.json": "4739a5859d140fe06add686bd91af3c81d77b336d2dbef51c816e5114c18105b",
+    "bridge/audit/rawmul-accum-review.json": "c13fe3ea02de7b4e411db2199cb85b9ae2f09ea9ffd3e6aff8274bdc5d26dbb1",
+    "extraction/canonical-arithmetic/rawmul-table-contract-freeze.json": "2ec88c6d4c2aac92261fcb0a314a33b0b8a7984df030cd2b2c44eb8514b3b552",
+    "extraction/canonical-arithmetic/rawmul/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+    "extraction/canonical-arithmetic/rawmul/Arithmetic/Funs.lean": "3a9f4912c2340ee6b9fabaefb68198a9c625c1136a9e13c5849c0452cba10265",
+    "extraction/canonical-arithmetic/rawmul/arithmetic.llbc": "b005e85f0799de25604fb583874e9d764b560a0f717f5a10beaff11a4802f93c",
+    "extraction/canonical-arithmetic/rawmul/receipt.json": "fe021515e0b250f8197ee7c744875f44e1e5a4f4509ff27d7f5dd4ac8726d8cb",
+    "extraction/canonical-arithmetic/rawmul/previous-declaration-comparison.json": "dc93b8677f5cdce1cc81c521c19ff269fb8d265d078e2ace9857428c5b69c833",
+    "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json": "7e708326a27765179045fb4df7fc10c83e4915b8b582374d388e10bf54458e7d",
+    "extraction/canonical-arithmetic/rawmul/runtime/usize-trailing-zeros.rs": "f6e5e58007285c172c40bff16f9ea5ea95177c958b010dd81fa9b9dbc3bcc283",
+    "extraction/canonical-arithmetic/rawmul/runtime/cttz-intrinsic.rs": "5f4f75dcef306d2d9fd4224c663e55109d14147f5094f6f3ddff7553e8018bbd",
+    "tooling/ReplayExport.lean": "fc254c50b77e31a100c9c3cf81ee3d7bd1732ba639dbf676ff080999c6178064",
+    "scripts/project_core_prelude.py": "cc2989e61b77284389612948cc26ad645a524d86c42cbdb1268d637d6e310ba1",
+    "scripts/check_replay_fixtures.py": "ba40ff44c637d6fd854d79c0163329e9443bf19747c27ee52a400d7c83d8ec66",
+    "audit/replay-loader-review.md": "ac27b98d9e7c0549337e1cc3c4570aa3465e5eaf32e5dfb7f037ed3f4a54d77c",
+    "audit/replay-loader-review.json": "294460c650a9cddebfa5554756966d9439ab168708509d20526f7eec9975cc99",
+    "bridge/BulksketchBridge/FrobeniusSpec.lean": "c6d1bca0bdadd3fc24de2890e26c9caf174d13ac87e6f0bc05301c334defe62a",
+    "bridge/BulksketchBridge/FrobeniusChallenges.lean": "ba780186bdf358b60c7a1f7eba108a3451d64e0a648a9de0c029d2ea97867d4f",
+    "extraction/canonical-arithmetic/frobenius/Arithmetic/Funs.lean": "99216822e5bf477e2063b48a3f2b7058fcd6582e0014dc640138b83c559e654b",
+    "extraction/canonical-arithmetic/frobenius/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+    "extraction/canonical-arithmetic/frobenius/arithmetic.llbc": "1b9f3232cf84609102dc0b1573d9c47874a306c24b4b1cf06286e7351a52c65b",
+    "extraction/canonical-arithmetic/frobenius/receipt.json": "204eebd8b96fbfbab1ceb1492ffe277c3c8d3968d41fa59c7ded6614565ca2f7",
+    "extraction/canonical-arithmetic/frobenius/source-linkage.json": "82e1d1a2904ff7e286803caf3bff9c846ae07a5547ed00b5e54dd58c8adeb859",
+    "extraction/canonical-arithmetic/frobenius/migration-receipt.json": "aed709f1515393de4edc916e99e314e08c20ea65bb0eb5da0c0843b6e40ed173",
+    "extraction/canonical-arithmetic/frobenius/refinement-receipt.json": "39f475dd4b102455a88e7deed21c649dde3c55827c799d514366d78bfadcc06b",
+    "extraction/canonical-arithmetic/frobenius/contract-preproof-freeze.json": "b5d37ea24ac84939c081baff6c3aef3b013efd8eeda785ed9975fe5585a26a24",
+    "extraction/canonical-arithmetic/frobenius/independent-proof-review.md": "516e5044fc2ee1c8d846e3f66015254bffa799dde28155984f0e7585452f091e",
+    "bridge/BulksketchBridge/FrobeniusPeriodSpec.lean": "382ead3ba493b23435aa954e4336b768decba3dee301e4459b0182dd068100cd",
+    "bridge/BulksketchBridge/FrobeniusPeriodChallenges.lean": "38af93ede9761a5a5f47706fd2c8eae4e3c714bc5df553c8066e514e46f1838c",
+    "bridge/BulksketchBridge/Algebra/ModulusSpec.lean": "a4537b0df5908321068dfe54d2470aa76fe7ca715899c99faee0aaf3f6b5048e",
+    "bridge/BulksketchBridge/Algebra/ModulusChallenges.lean": "a6431a9a520f86e55a0dae48bf413a107fc54d27d703b23e07c10aa5417943ac",
+    "bridge/BulksketchBridge/MapsTraceSpec.lean": "b43673ef244087d9c45a0180117707762014e191286a1ad18bc0a39915cc4926",
+    "bridge/BulksketchBridge/MapsTraceChallenges.lean": "ef7eeb6893d59822de47155cc714ecf5092364059cef07386bee4f6f410ead63",
+    "bridge/BulksketchBridge/MapsTraceMathChallenges.lean": "adab521e51208cc53e6aa50b6b63a207e479c3fc97605fd701a9bbddde13458f",
+    "bridge/BulksketchBridge/MapsQuadraticSpec.lean": "67d92a8392bed12e9b0477ed87be28b3d99f88d1b5794675a4ad22c75a58dc07",
+    "bridge/BulksketchBridge/MapsQuadraticChallenges.lean": "cd797900ed4228284c5acf3914bd65e3d4643bc1543947963b5cbc04c3e8a319",
+    "bridge/BulksketchBridge/MapsCanonicalTraceSpec.lean": "88308b651b7673fb95b59575b6ceeba036b30cbc49d9a46536ac238d5d635431",
+    "bridge/BulksketchBridge/MapsCanonicalTraceChallenges.lean": "62a07e36b164687d27f8997dfe7f985d49406ea1d3e137cb02383459e0d438d7",
+    "bridge/Arithmetic/MapsRuntime.lean": "ebac090bd9b4f610659f8d8a34222e1c7be297e29f05e2ee335f1257f20bf02b",
+    "bridge/audit/field-algebra-contract-review.json": "bae93fb884285c66e18df6a4375b0a91511b4c945f056b06e963622ede82be65",
+    "bridge/audit/canonical-trace-contract-review.json": "8dc46b675360d08cfcda86381557f75d3420d3a45b70b4542153bb7e4cca2746",
+    "bridge/audit/native-maps-final-semantic-review.md": "80e5e03027149e7ab4d8984cb863d9faabd66ff9b6e29ab95d973cc598d38959",
+    "tooling/fetch-lean-runtime-cache.py": "be0265b58802a1dbfe17d1271ebe19241e95de118d450e5db0af6c0acda3ac8a",
+    "extraction/canonical-arithmetic/maps/Arithmetic/Funs.lean": "4d688e3ce715126a0bf92d0c43cac8361de11c6f5215c01fdbf7caf8d3584ef9",
+    "extraction/canonical-arithmetic/maps/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+    "extraction/canonical-arithmetic/maps/arithmetic.llbc": "343db245a54c6276cdd7bba9e9df0fe6df2c883571e3c40065aa2013d4af11b4",
+    "extraction/canonical-arithmetic/maps/receipt.json": "4a88df33c17a4a526961a33d1cff85e8df18dfbcd53bd9570bc810590282433e",
+    "extraction/canonical-arithmetic/maps/migration-receipt.json": "b663d281649cb93c8591e53a3ed14e8508dada94dbf4c83149703e5b680c8dbd",
+    "extraction/canonical-arithmetic/maps/previous-declaration-comparison.json": "3a3036e9696532cc09acadce14b10b5355996e579e2256106f9df1239a6bfd9e",
+    "extraction/canonical-arithmetic/maps/table-literal-correspondence.json": "9bf2a15ac9d27adceb7e19a89d0e477fa9d7e0554dcd10bedd187ba9db5fda82",
+    "extraction/canonical-arithmetic/maps/source-linkage.json": "015d2c44062a1b0d155c11e69b0161432b21cfbaec29477777105d80ac430e66",
+    "extraction/canonical-arithmetic/maps/runtime-model-receipt.json": "cc056c981c8eb73937517aa972264772a289f15c4448be4eaa39e40be2ed8b20",
+    "extraction/canonical-arithmetic/maps/refinement-receipt.json": "1a6ff2b011ea7ff50cf21a4bd9cb7e1ee26d2f88cdad540795014c756e3ff350",
+    "extraction/canonical-arithmetic/maps/trace-contract-preproof-freeze.json": "0a8fa4bc95d7b5d2b8e8e5bd351e52afcf859ae985ddc4414be7d6fbd36c2677",
+    "extraction/canonical-arithmetic/maps/quadratic-contract-preproof-freeze.json": "56dd0d3433b7cb2b7c8f5ffa5cbb93e8848d93a499ff6c64a66f02588d327b0c"
+  },
+  "reviewed_policy_revisions": [
+    {
+      "reason": "Use the already validated two-let theorem enumeration syntax; fix parser error in bridge audit only. Challenge/specification types unchanged.",
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "old_sha256": "2943c5a29a34ecef05bb17d277928832d177e353958d5904e9dfadd0ad1a80d3",
+      "new_sha256": "189eeb0c250d9d534ced99946ed23a481929c58d5b8078b52538f4e6c9a53471"
+    },
+    {
+      "reason": "Aeneas StepArraySpec syntax reserves the literal name token. Rename meta-audit binder name to declarationName; exact challenge propositions and checking policy unchanged.",
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "old_sha256": "189eeb0c250d9d534ced99946ed23a481929c58d5b8078b52538f4e6c9a53471",
+      "new_sha256": "0642bbbc233cac913dc63cab04164039b50a761b88f7c80f37f612dbb3fd75e6"
+    },
+    {
+      "reason": "Repository packaging: resolve native sources from the repository, retain reviewed content hashes across proof-only commits, and write generated verification output under ignored results directories. Frozen mathematical definitions, propositions and generated application bodies are byte-identical to the checked milestone.",
+      "changes": [
+        {
+          "path": "scripts/verify_bridge.py",
+          "old_sha256": "1955033a1b6055841c47311bea5810af5b3f056d21b6a9be51e767080584ef77",
+          "new_sha256": "4419ab7ef7da805101709967d21f66283684a2d0d61e3263dc0546ba97cce32b"
+        },
+        {
+          "path": "audit/frozen-inputs.json",
+          "old_sha256": "091742e468fdb244f9688d9e0ae9b4abe95fd542e1baf2cf2385a69483ae6851",
+          "new_sha256": "f3289a01ed0e3a0fd9c92bcacc704d3e6f360d2f0e8e3e76c0a2056a7678255e"
+        }
+      ]
+    },
+    {
+      "reason": "Permit a cold moved-checkout bridge dependency build up to twenty minutes and retain partial timeout logs. Lean/Nanoda proof-replay timeouts and frozen mathematical statements unchanged.",
+      "changes": [
+        {
+          "path": "scripts/verify_bridge.py",
+          "old_sha256": "4419ab7ef7da805101709967d21f66283684a2d0d61e3263dc0546ba97cce32b",
+          "new_sha256": "ba510ad4e767fabecfa07cc9daf0b68a08649a0f1698af5fdf1b2a6f96bd23e7"
+        }
+      ]
+    },
+    {
+      "reason": "Reviewed native-only extension: preserve all previous challenge meanings, add actual source getter and arithmetic contracts; canonical extraction retains unchanged function bodies and the real Gf64 implementation. Validator reconciles frozen source associations with audited challenges, retains every native obligation and runtime pin. No application axioms or native source changes.",
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "old_sha256": "0642bbbc233cac913dc63cab04164039b50a761b88f7c80f37f612dbb3fd75e6",
+      "new_sha256": "faa9730c1f16a6d9bd3c5a53a96e7c4f0cab5db0b38f284f9d44756fadad1f72"
+    },
+    {
+      "reason": "Reviewed native-only extension: preserve all previous challenge meanings, add actual source getter and arithmetic contracts; canonical extraction retains unchanged function bodies and the real Gf64 implementation. Validator reconciles frozen source associations with audited challenges, retains every native obligation and runtime pin. No application axioms or native source changes.",
+      "path": "bridge/Workmeter/Funs.lean",
+      "old_sha256": "d67d1059d16a2d9b0cd81df9d66560150dd089bf31557f0711f8c5332f99d7bb",
+      "new_sha256": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940"
+    },
+    {
+      "reason": "Reviewed native-only extension: preserve all previous challenge meanings, add actual source getter and arithmetic contracts; canonical extraction retains unchanged function bodies and the real Gf64 implementation. Validator reconciles frozen source associations with audited challenges, retains every native obligation and runtime pin. No application axioms or native source changes.",
+      "path": "bridge/lakefile.toml",
+      "old_sha256": "400fe0fb49af353cf125ae3ab836987acdca582c2abf9d25ad314c7987ff6ee1",
+      "new_sha256": "6f15924b66061eae1e09c37a5c56d00e82f5ce4df85821307e59188e7a08d1cd"
+    },
+    {
+      "reason": "Reviewed native-only extension: preserve all previous challenge meanings, add actual source getter and arithmetic contracts; canonical extraction retains unchanged function bodies and the real Gf64 implementation. Validator reconciles frozen source associations with audited challenges, retains every native obligation and runtime pin. No application axioms or native source changes.",
+      "path": "extraction/aeneas-pilot/workmeter.llbc",
+      "old_sha256": "3ac347b6781390132c0c441f949090faeada725177a9629c6d3da11490679bf2",
+      "new_sha256": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4"
+    },
+    {
+      "reason": "Reviewed native-only extension: preserve all previous challenge meanings, add actual source getter and arithmetic contracts; canonical extraction retains unchanged function bodies and the real Gf64 implementation. Validator reconciles frozen source associations with audited challenges, retains every native obligation and runtime pin. No application axioms or native source changes.",
+      "path": "extraction/aeneas-pilot/workmeter-lean/Funs.lean",
+      "old_sha256": "d67d1059d16a2d9b0cd81df9d66560150dd089bf31557f0711f8c5332f99d7bb",
+      "new_sha256": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940"
+    },
+    {
+      "reason": "Reviewed native-only extension: preserve all previous challenge meanings, add actual source getter and arithmetic contracts; canonical extraction retains unchanged function bodies and the real Gf64 implementation. Validator reconciles frozen source associations with audited challenges, retains every native obligation and runtime pin. No application axioms or native source changes.",
+      "path": "scripts/verify_bridge.py",
+      "old_sha256": "ba510ad4e767fabecfa07cc9daf0b68a08649a0f1698af5fdf1b2a6f96bd23e7",
+      "new_sha256": "7f118168f79e5d26e7d3b08a781127aae5ddce6850384475830750a95a18fa40"
+    },
+    {
+      "reason": "Reviewed native-only extension: preserve all previous challenge meanings, add actual source getter and arithmetic contracts; canonical extraction retains unchanged function bodies and the real Gf64 implementation. Validator reconciles frozen source associations with audited challenges, retains every native obligation and runtime pin. No application axioms or native source changes.",
+      "path": "audit/frozen-inputs.json",
+      "old_sha256": "f3289a01ed0e3a0fd9c92bcacc704d3e6f360d2f0e8e3e76c0a2056a7678255e",
+      "new_sha256": "8c041ef15b189b6a4f3a7f1f90fbe9f367f840e5cb34f77dd501281c42457215"
+    },
+    {
+      "reason": "Require the pinned extraction has_errors flag to be exactly false rather than merely false-like; source and frozen proposition meanings unchanged.",
+      "path": "scripts/verify_bridge.py",
+      "old_sha256": "7f118168f79e5d26e7d3b08a781127aae5ddce6850384475830750a95a18fa40",
+      "new_sha256": "167703810fd8afba33f4bb196c9aa20a46e598c03d5dbfcc91e6012cfad1d11e"
+    },
+    {
+      "reason": "Record the six completed aggregate source-body refinements and current axiom/result paths; frozen mathematical definitions, generated application files and source associations unchanged.",
+      "path": "bridge/source-linkage.json",
+      "old_sha256": "7fda3898871099a01f19d80632cb4f7aaaacb1e814a20aea3702efff60e47e5d",
+      "new_sha256": "0fd441a5e3125a7335e5ea40fe641fdf95c48ad9447f6865388e8353335fa664"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "old_sha256": "faa9730c1f16a6d9bd3c5a53a96e7c4f0cab5db0b38f284f9d44756fadad1f72",
+      "new_sha256": "ff82f19f06a5aa9e0bddd4b0d9d67f712ec902f3dfc0da8fdbd6942f55c3b455",
+      "reason": "Reviewed additive raw multiplication/mul extraction and frozen full128-bit contracts, both original loop invariants and all bounds. All previous generated declarations remain exact; new cttz runtime value model has explicit std/compiler/ISA correspondence boundary, with every new model theorem audited/exported. No native source or prior challenge meaning changed."
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "old_sha256": "8c041ef15b189b6a4f3a7f1f90fbe9f367f840e5cb34f77dd501281c42457215",
+      "new_sha256": "53cc5d8266de1599cd74209cfd741e16c0335a915b6a22f111d133695aa54ad7",
+      "reason": "Reviewed additive raw multiplication/mul extraction and frozen full128-bit contracts, both original loop invariants and all bounds. All previous generated declarations remain exact; new cttz runtime value model has explicit std/compiler/ISA correspondence boundary, with every new model theorem audited/exported. No native source or prior challenge meaning changed."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "old_sha256": "06f0a4af05f5bc1857d835ba751bc5a88b1f0679c0e0097378c55657fcaf2391",
+      "new_sha256": "056737896f6015c93d61b5f63839469b9bdad22f99de02bdf4cdc8412507c576",
+      "reason": "Reviewed additive raw multiplication/mul extraction and frozen full128-bit contracts, both original loop invariants and all bounds. All previous generated declarations remain exact; new cttz runtime value model has explicit std/compiler/ISA correspondence boundary, with every new model theorem audited/exported. No native source or prior challenge meaning changed."
+    },
+    {
+      "path": "bridge/Arithmetic/Funs.lean",
+      "old_sha256": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
+      "new_sha256": "3a9f4912c2340ee6b9fabaefb68198a9c625c1136a9e13c5849c0452cba10265",
+      "reason": "Reviewed additive raw multiplication/mul extraction and frozen full128-bit contracts, both original loop invariants and all bounds. All previous generated declarations remain exact; new cttz runtime value model has explicit std/compiler/ISA correspondence boundary, with every new model theorem audited/exported. No native source or prior challenge meaning changed."
+    },
+    {
+      "path": "bridge/Arithmetic/FunsExternal.lean",
+      "old_sha256": "0920ec8a166029f316f1c7492ecae854e27946de24d14c5f39c4cdbf69c643e3",
+      "new_sha256": "9e88c3dbb2b3aac952c1be41d6fa1abcb1a1abe856b956431ba6d15b9e7e8681",
+      "reason": "Reviewed additive raw multiplication/mul extraction and frozen full128-bit contracts, both original loop invariants and all bounds. All previous generated declarations remain exact; new cttz runtime value model has explicit std/compiler/ISA correspondence boundary, with every new model theorem audited/exported. No native source or prior challenge meaning changed."
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "old_sha256": "0fd441a5e3125a7335e5ea40fe641fdf95c48ad9447f6865388e8353335fa664",
+      "new_sha256": "75fc9a1ac9555258a2f6d3777675954cc198c46484ebd4baf3550b585b191828",
+      "reason": "Reviewed additive raw multiplication/mul extraction and frozen full128-bit contracts, both original loop invariants and all bounds. All previous generated declarations remain exact; new cttz runtime value model has explicit std/compiler/ISA correspondence boundary, with every new model theorem audited/exported. No native source or prior challenge meaning changed."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "old_sha256": "bb6bed3a6d8eb38bdec272f6c66a089c1a31e1494cdade7f2416c06c59c0a26c",
+      "new_sha256": "c90c5938cbc83b802089a40957be601210bb75ae000cfeb6cdd26fdbe9e4e0f1",
+      "reason": "Reviewed additive raw multiplication/mul extraction and frozen full128-bit contracts, both original loop invariants and all bounds. All previous generated declarations remain exact; new cttz runtime value model has explicit std/compiler/ISA correspondence boundary, with every new model theorem audited/exported. No native source or prior challenge meaning changed."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "old_sha256": "ff82f19f06a5aa9e0bddd4b0d9d67f712ec902f3dfc0da8fdbd6942f55c3b455",
+      "new_sha256": "8e0529052987e6e8bc6a06c1ca43bbc7f4b53f2f09bf781af9dfbb5021543aa7",
+      "reason": "Reviewed additive Frobenius extraction preserves all 26 prior definitions; add exact all-input power%64 behavior. Fix Lean4.35 string-literal dependency scheduling through an exact original-export subset and unchanged kernel; every prior proof root, axiom policy and ordinary Nanoda replay retained. Seven loader regressions required."
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "old_sha256": "167703810fd8afba33f4bb196c9aa20a46e598c03d5dbfcc91e6012cfad1d11e",
+      "new_sha256": "63b0494c4dac2112f50b3717f9bcf55632b9dd049074396444c351b1f65ac8b8",
+      "reason": "Reviewed additive Frobenius extraction preserves all 26 prior definitions; add exact all-input power%64 behavior. Fix Lean4.35 string-literal dependency scheduling through an exact original-export subset and unchanged kernel; every prior proof root, axiom policy and ordinary Nanoda replay retained. Seven loader regressions required."
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "old_sha256": "53cc5d8266de1599cd74209cfd741e16c0335a915b6a22f111d133695aa54ad7",
+      "new_sha256": "b4decab418e323881e018046e8d26eaa27cc295672888a2e803bb6890cd63b2d",
+      "reason": "Reviewed additive Frobenius extraction preserves all 26 prior definitions; add exact all-input power%64 behavior. Fix Lean4.35 string-literal dependency scheduling through an exact original-export subset and unchanged kernel; every prior proof root, axiom policy and ordinary Nanoda replay retained. Seven loader regressions required."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "old_sha256": "056737896f6015c93d61b5f63839469b9bdad22f99de02bdf4cdc8412507c576",
+      "new_sha256": "2463b37880797ca6d651d2d009f1749c94be7289c2d86a61e39aad1eb1875a85",
+      "reason": "Reviewed additive Frobenius extraction preserves all 26 prior definitions; add exact all-input power%64 behavior. Fix Lean4.35 string-literal dependency scheduling through an exact original-export subset and unchanged kernel; every prior proof root, axiom policy and ordinary Nanoda replay retained. Seven loader regressions required."
+    },
+    {
+      "path": "bridge/Arithmetic/Funs.lean",
+      "old_sha256": "3a9f4912c2340ee6b9fabaefb68198a9c625c1136a9e13c5849c0452cba10265",
+      "new_sha256": "99216822e5bf477e2063b48a3f2b7058fcd6582e0014dc640138b83c559e654b",
+      "reason": "Reviewed additive Frobenius extraction preserves all 26 prior definitions; add exact all-input power%64 behavior. Fix Lean4.35 string-literal dependency scheduling through an exact original-export subset and unchanged kernel; every prior proof root, axiom policy and ordinary Nanoda replay retained. Seven loader regressions required."
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "old_sha256": "75fc9a1ac9555258a2f6d3777675954cc198c46484ebd4baf3550b585b191828",
+      "new_sha256": "fa602c3c427e6fab91ae050fc4b14d5828ae677d220090407f49246fdbdfa342",
+      "reason": "Reviewed additive Frobenius extraction preserves all 26 prior definitions; add exact all-input power%64 behavior. Fix Lean4.35 string-literal dependency scheduling through an exact original-export subset and unchanged kernel; every prior proof root, axiom policy and ordinary Nanoda replay retained. Seven loader regressions required."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "old_sha256": "c90c5938cbc83b802089a40957be601210bb75ae000cfeb6cdd26fdbe9e4e0f1",
+      "new_sha256": "6b9e33dc879d6f1a5e0a75485ea19877755395e1084175ff712d5ac06844521e",
+      "reason": "Reviewed additive Frobenius extraction preserves all 26 prior definitions; add exact all-input power%64 behavior. Fix Lean4.35 string-literal dependency scheduling through an exact original-export subset and unchanged kernel; every prior proof root, axiom policy and ordinary Nanoda replay retained. Seven loader regressions required."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "old_sha256": "8e0529052987e6e8bc6a06c1ca43bbc7f4b53f2f09bf781af9dfbb5021543aa7",
+      "new_sha256": "efe35b3f240cc339a9387de4a059695dbb6f7ea360b94a255d0988176ce62425",
+      "reason": "Reviewed additive field maps/period/irreducibility checkpoint; preserve all old challenge meanings and29 prior generated function definitions. Add exact allword source contracts and strengthened existing Frobenius endpoint. Constants kernel-linked, primitive adapters concrete/diagnostics erasure explicit, inverse remains unproved, no source or axiom-policy change."
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "old_sha256": "b4decab418e323881e018046e8d26eaa27cc295672888a2e803bb6890cd63b2d",
+      "new_sha256": "3fa37b704fbf1f138b18d8c0455cdfb327ac9e45c27f9e30197c0a9ca32fb4cd",
+      "reason": "Reviewed additive field maps/period/irreducibility checkpoint; preserve all old challenge meanings and29 prior generated function definitions. Add exact allword source contracts and strengthened existing Frobenius endpoint. Constants kernel-linked, primitive adapters concrete/diagnostics erasure explicit, inverse remains unproved, no source or axiom-policy change."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "old_sha256": "2463b37880797ca6d651d2d009f1749c94be7289c2d86a61e39aad1eb1875a85",
+      "new_sha256": "b5a7799330bf69d4778f5122b67ab7388751a3a1eede0281f1f5e639fbdc35e9",
+      "reason": "Reviewed additive field maps/period/irreducibility checkpoint; preserve all old challenge meanings and29 prior generated function definitions. Add exact allword source contracts and strengthened existing Frobenius endpoint. Constants kernel-linked, primitive adapters concrete/diagnostics erasure explicit, inverse remains unproved, no source or axiom-policy change."
+    },
+    {
+      "path": "bridge/Arithmetic/Funs.lean",
+      "old_sha256": "99216822e5bf477e2063b48a3f2b7058fcd6582e0014dc640138b83c559e654b",
+      "new_sha256": "4d688e3ce715126a0bf92d0c43cac8361de11c6f5215c01fdbf7caf8d3584ef9",
+      "reason": "Reviewed additive field maps/period/irreducibility checkpoint; preserve all old challenge meanings and29 prior generated function definitions. Add exact allword source contracts and strengthened existing Frobenius endpoint. Constants kernel-linked, primitive adapters concrete/diagnostics erasure explicit, inverse remains unproved, no source or axiom-policy change."
+    },
+    {
+      "path": "bridge/Arithmetic/FunsExternal.lean",
+      "old_sha256": "9e88c3dbb2b3aac952c1be41d6fa1abcb1a1abe856b956431ba6d15b9e7e8681",
+      "new_sha256": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
+      "reason": "Reviewed additive field maps/period/irreducibility checkpoint; preserve all old challenge meanings and29 prior generated function definitions. Add exact allword source contracts and strengthened existing Frobenius endpoint. Constants kernel-linked, primitive adapters concrete/diagnostics erasure explicit, inverse remains unproved, no source or axiom-policy change."
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "old_sha256": "fa602c3c427e6fab91ae050fc4b14d5828ae677d220090407f49246fdbdfa342",
+      "new_sha256": "ec4352ecf9e3be2ac2dd39cd40ddf46c0f1fa1bac8b894ee3981bc5ba5e6f414",
+      "reason": "Reviewed additive field maps/period/irreducibility checkpoint; preserve all old challenge meanings and29 prior generated function definitions. Add exact allword source contracts and strengthened existing Frobenius endpoint. Constants kernel-linked, primitive adapters concrete/diagnostics erasure explicit, inverse remains unproved, no source or axiom-policy change."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "old_sha256": "6b9e33dc879d6f1a5e0a75485ea19877755395e1084175ff712d5ac06844521e",
+      "new_sha256": "099cd86c79b5c2934215ea0303062857cd8161037bdbd6305996fe6c6152b176",
+      "reason": "Reviewed additive field maps/period/irreducibility checkpoint; preserve all old challenge meanings and29 prior generated function definitions. Add exact allword source contracts and strengthened existing Frobenius endpoint. Constants kernel-linked, primitive adapters concrete/diagnostics erasure explicit, inverse remains unproved, no source or axiom-policy change."
+    }
+  ],
+  "challenge_count": 36
+}

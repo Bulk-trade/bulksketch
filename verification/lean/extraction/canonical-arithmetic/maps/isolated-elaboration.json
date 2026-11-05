@@ -1,0 +1,109 @@
+{
+  "status": "isolated-elaboration",
+  "shared_arithmetic_sources_or_oleans_changed": false,
+  "lean_path_prepend": "extraction/canonical-arithmetic/maps/oleans",
+  "copied_built_dependencies": [
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/Types.olean.server",
+      "sha256": "59684e68dd3d5cd563376ee5600582e0282e599a1c53416d55c40a7644f5a94f"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/Types.olean",
+      "sha256": "077029c64e5d762542d2688866fe62d6fa66bd379a46c2e0d71442913114da0e"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/Types.olean.private",
+      "sha256": "23bd229ee1c5a8e5ad102140d9910de752eff83f2d4fa5e103edb512124f29f0"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/TypesExternal.olean.private",
+      "sha256": "41b38ff501c7d34d6575e95068133a04a7f91752019ca63947998033f1a62ec0"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/TypesExternal.olean.server",
+      "sha256": "4870fe788ba79de216babacd72f89308a8f82e54d42e653f48e21705de9ac22d"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/TypesExternal.olean",
+      "sha256": "ed02ae48e36cadd211b9ff328edc036fe7ffaa50d717ffd830c84ff90152f5a0"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/TrailingZeros.olean.server",
+      "sha256": "532d2da55bc48fc64612eec5f1926363d2ab6dc1e60c98ef3ac0be68a921ea0d"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/TrailingZeros.olean.private",
+      "sha256": "b133df6b24a15db9c6d5b1986d45303b4104a43ec829353019a538c41f5490d2"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/TrailingZeros.olean",
+      "sha256": "c338f0a860035a18912b1173b1c2750f80a7c28b801b60e9eb046bdf7b55a6bc"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/MapsRuntime.olean.server",
+      "sha256": "f6dab37b87a02d64cbb1fd5dbfd317345975b155c7eeb4d7ab1c5ffd8e59dd67"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/MapsRuntime.olean",
+      "sha256": "b68bd5999ed55580011bcbc9bbd79ed7b0e2bfbeefdb5edf0e2ae03b40d395e3"
+    },
+    {
+      "path": "bridge/.lake/build/lib/lean/Arithmetic/MapsRuntime.olean.private",
+      "sha256": "b09e7598a3bbb094a8d010aafcf29b46fab4cf5cc18cf0719ac6af0af94a895a"
+    }
+  ],
+  "results": [
+    {
+      "module": "Arithmetic/FunsExternal",
+      "exit_code": 0,
+      "command": [
+        "/Users/junbug/.elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+        "--root",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/maps/runtime",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/maps/runtime/Arithmetic/FunsExternal.lean",
+        "-o",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/maps/oleans/Arithmetic/FunsExternal.olean"
+      ],
+      "log": "extraction/canonical-arithmetic/maps/Arithmetic-FunsExternal-elaboration.log"
+    },
+    {
+      "module": "Arithmetic/Funs",
+      "exit_code": 0,
+      "command": [
+        "/Users/junbug/.elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+        "--root",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/maps",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/maps/Arithmetic/Funs.lean",
+        "-o",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/maps/oleans/Arithmetic/Funs.olean"
+      ],
+      "log": "extraction/canonical-arithmetic/maps/Arithmetic-Funs-elaboration.log"
+    },
+    {
+      "module": "BulksketchBridge/MapsTraceSpec",
+      "exit_code": 0,
+      "command": [
+        "/Users/junbug/.elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+        "--root",
+        "/Users/junbug/bulk/bulksketch/verification/lean/bridge",
+        "/Users/junbug/bulk/bulksketch/verification/lean/bridge/BulksketchBridge/MapsTraceSpec.lean",
+        "-o",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/maps/oleans/BulksketchBridge/MapsTraceSpec.olean"
+      ],
+      "log": "extraction/canonical-arithmetic/maps/BulksketchBridge-MapsTraceSpec-elaboration.log"
+    },
+    {
+      "module": "BulksketchBridge/MapsTraceChallenges",
+      "exit_code": 0,
+      "command": [
+        "/Users/junbug/.elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+        "--root",
+        "/Users/junbug/bulk/bulksketch/verification/lean/bridge",
+        "/Users/junbug/bulk/bulksketch/verification/lean/bridge/BulksketchBridge/MapsTraceChallenges.lean",
+        "-o",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/maps/oleans/BulksketchBridge/MapsTraceChallenges.olean"
+      ],
+      "log": "extraction/canonical-arithmetic/maps/BulksketchBridge-MapsTraceChallenges-elaboration.log"
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "native_generated_copies": [
+    {
+      "generated": "extraction/aeneas-pilot/workmeter-lean/Types.lean",
+      "bridge_copy": "bridge/Workmeter/Types.lean",
+      "sha256": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
+      "byte_identical": true
+    },
+    {
+      "generated": "extraction/aeneas-pilot/workmeter-lean/Funs.lean",
+      "bridge_copy": "bridge/Workmeter/Funs.lean",
+      "sha256": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
+      "byte_identical": true
+    },
+    {
+      "generated": "extraction/canonical-arithmetic/maps/Arithmetic/Types.lean",
+      "bridge_copy": "bridge/Arithmetic/Types.lean",
+      "sha256": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+      "byte_identical": true
+    },
+    {
+      "generated": "extraction/canonical-arithmetic/maps/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/Funs.lean",
+      "sha256": "4d688e3ce715126a0bf92d0c43cac8361de11c6f5215c01fdbf7caf8d3584ef9",
+      "byte_identical": true
+    }
+  ],
+  "std_model": {
+    "file": "bridge/Workmeter/FunsExternal.lean",
+    "sha256": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
+    "operation": "core::option::Option::is_none_or",
+    "runtime_source_snapshot": "bridge/runtime-models/option-is-none-or.rs",
+    "runtime_source_snapshot_sha256": "c7775aa2037540ec5e8cf2149ffa3552bbe5bcf955e1caa0e5944fee72c472cd",
+    "runtime_source_correspondence": "explicit trusted standard-library boundary; not kernel-proved"
+  },
+  "generated_templates_untouched": true,
+  "application_axioms_added": false,
+  "generated_lean_elaboration": "passed: Workmeter.Types/FunsExternal/Funs; exact generated copies",
+  "native_refinement_proof": "Fourteen distinct source-generated functional refinements; no mathematical certificate/extraction-only inverse counted as a native body. Full native coverage remains false.",
+  "generated_definition_axiom_audit": "passed: standard propext/Classical.choice/Quot.sound only",
+  "generated_definition_axiom_log": "bridge/audit/results/axioms.json",
+  "native_source_file": {
+    "path": "src/types.rs",
+    "sha256": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
+  },
+  "llbc": {
+    "path": "extraction/aeneas-pilot/workmeter.llbc",
+    "sha256": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
+    "has_errors": false
+  },
+  "native_item_body_spans": [
+    {
+      "name_ident_segments": [
+        "bulksketch",
+        "types",
+        "new"
+      ],
+      "source_span": {
+        "file_id": 5,
+        "beg": {
+          "line": 281,
+          "col": 4
+        },
+        "end": {
+          "line": 287,
+          "col": 5
+        }
+      },
+      "source_fragment": "pub(crate) fn new(limit: WorkUnits) -> Self {\n        Self {\n            limit,\n            used: WorkUnits(0),\n            exhausted: false,\n        }\n    }",
+      "source_fragment_sha256": "658af798941d89ac0036aafc3ad5c6d75d1703a45af29338509ef5fd8d094443",
+      "has_errors": false
+    },
+    {
+      "name_ident_segments": [
+        "bulksketch",
+        "types",
+        "charge"
+      ],
+      "source_span": {
+        "file_id": 5,
+        "beg": {
+          "line": 289,
+          "col": 4
+        },
+        "end": {
+          "line": 297,
+          "col": 5
+        }
+      },
+      "source_fragment": "pub(crate) fn charge(&mut self, charge: WorkUnits) -> Result<(), DecodeError> {\n        let next = self.used.0.checked_add(charge.0);\n        if self.exhausted || next.is_none_or(|n| n > self.limit.0) {\n            self.exhausted = true;\n            return Err(DecodeError::WorkLimitExceeded);\n        }\n        self.used = WorkUnits(next.expect(\"checked work charge\"));\n        Ok(())\n    }",
+      "source_fragment_sha256": "920d51d7c82633ef60b5bb8b7578553bbecac1a10e3559772544843c3a629f01",
+      "has_errors": false
+    },
+    {
+      "name_ident_segments": [
+        "bulksketch",
+        "types",
+        "charge",
+        "call_once"
+      ],
+      "source_span": {
+        "file_id": 5,
+        "beg": {
+          "line": 291,
+          "col": 45
+        },
+        "end": {
+          "line": 291,
+          "col": 65
+        }
+      },
+      "source_fragment": "|n| n > self.limit.0",
+      "source_fragment_sha256": "5c15d88773ea2b1b3c8e6c7daeb92eba641b12ae47c6ab1fcc59fa3e61e5dc15",
+      "has_errors": false
+    },
+    {
+      "name_ident_segments": [
+        "bulksketch",
+        "types",
+        "used"
+      ],
+      "source_span": {
+        "file_id": 5,
+        "beg": {
+          "line": 299,
+          "col": 4
+        },
+        "end": {
+          "line": 301,
+          "col": 5
+        }
+      },
+      "source_fragment": "pub(crate) fn used(&self) -> WorkUnits {\n        self.used\n    }",
+      "source_fragment_sha256": "74890722d4781a5787e9fbf72d0aba3ee2f3995500b1b0e2ac89aef5effaa197",
+      "has_errors": false
+    }
+  ],
+  "generated_model_theorems": [
+    {
+      "name": "BulksketchBridge.WorkMeter.new_refines",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.WorkMeter.charge_refines",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.WorkMeter.used_refines",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.Spread.spread_refines",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.Gf64Reduce.reduce_refines",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.Square.square_refines",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.RawMul.raw_mul_refines",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.RawMul.mul_division_certificate",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.FrobeniusPeriod.native_unmodded_refines",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.MapsTraceMath.trace_matches_absolute",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.MapsCanonicalTrace.canonical_trace_refines",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.MapsTables.quadratic_rows_refines",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.MapsQuadratic.quadratic_value_matches_matrix",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    },
+    {
+      "name": "BulksketchBridge.MapsQuadratic.solve_quadratic_exact_meaning",
+      "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
+    }
+  ],
+  "implementation_coverage_credit": "root ledger owns final classification; no whole-native verification claimed",
+  "independent_generated_model_refinement_axiom_audit": "passed: propext/Classical.choice/Quot.sound only",
+  "independent_refinement_axiom_log": "bridge/audit/results/axioms.json",
+  "generated_model_refinement_source_sha256": "5f96237fa121091b828431e86408cafaf5556a0f586b7d4b2bd7edb48bfb34fd",
+  "extractions": [
+    {
+      "path": "extraction/aeneas-pilot/workmeter.llbc",
+      "sha256": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/canonical-arithmetic/maps/arithmetic.llbc",
+      "sha256": "343db245a54c6276cdd7bba9e9df0fe6df2c883571e3c40065aa2013d4af11b4",
+      "has_errors": false
+    }
+  ],
+  "additional_runtime_models": [
+    {
+      "types": "bridge/Arithmetic/TypesExternal.lean",
+      "functions": "bridge/Arithmetic/FunsExternal.lean",
+      "source_snapshot": "bridge/runtime-models/array-iterator.rs",
+      "correspondence": "concrete owned remaining-sequence value model, not a kernel proof of Rust std memory/ownership/drop; GF64 reduction proof does not traverse fallback"
+    },
+    {
+      "functions": "bridge/Arithmetic/TrailingZeros.lean",
+      "runtime_source_receipt": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
+      "scope": "General value model of usize.trailing_zeros including zero and both pointer widths; all six model-property theorems independently exported. Rust std/intrinsic/compiler/ISA correspondence remains trusted."
+    },
+    {
+      "functions": "bridge/Arithmetic/MapsRuntime.lean",
+      "source_scope": "General checked unsigned conversions and full U64 population count; TryFromIntError/Debug use existing diagnostics-erased Unit model and expect independence is proved for all Debug dictionaries. Formatting correctness not claimed; all native endpoint conversions establish innerOk. Std/intrinsic/compiler/ISA correspondence stays TCB."
+    }
+  ],
+  "arithmetic_source_inputs": {
+    "src/field/gf64.rs": "c5320b7121c3de4d3e7e04ecdc88a6ddf100901a534912b8811c6ff5add9aa27",
+    "src/field/mod.rs": "035dc6193ebb50b324527525c0ee47cbe06ca325db16aa5f8ee55b0e79baa723",
+    "src/types.rs": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
+  },
+  "canonical_arithmetic_migration": "extraction/canonical-arithmetic/migration-receipt.json",
+  "workmeter_getter_linkage": "bridge/workmeter-used-linkage.json",
+  "source_definitions": [
+    {
+      "native_item_id": "src/types.rs:281:method:bulksketch::types::WorkMeter::new",
+      "generated_declaration": "bulksketch.types.WorkMeter.new",
+      "generated_file": "bridge/Workmeter/Funs.lean"
+    },
+    {
+      "native_item_id": "src/types.rs:289:method:bulksketch::types::WorkMeter::charge",
+      "generated_declaration": "bulksketch.types.WorkMeter.charge",
+      "generated_file": "bridge/Workmeter/Funs.lean"
+    },
+    {
+      "native_item_id": "src/types.rs:299:method:bulksketch::types::WorkMeter::used",
+      "generated_declaration": "bulksketch.types.WorkMeter.impl.used",
+      "generated_file": "bridge/Workmeter/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/gf64.rs:63:function:bulksketch::field::gf64::spread",
+      "generated_declaration": "bulksketch.field.gf64.spread",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/gf64.rs:28:function:bulksketch::field::gf64::reduce",
+      "generated_declaration": "bulksketch.field.gf64.reduce",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/gf64.rs:72:function:bulksketch::field::gf64::square",
+      "generated_declaration": "bulksketch.field.gf64.square",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/gf64.rs:6:function:bulksketch::field::gf64::raw_mul",
+      "generated_declaration": "bulksketch.field.gf64.raw_mul",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/gf64.rs:58:function:bulksketch::field::gf64::mul",
+      "generated_declaration": "bulksketch.field.gf64.mul",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/gf64.rs:81:function:bulksketch::field::gf64::frobenius",
+      "generated_declaration": "bulksketch.field.gf64.frobenius",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/maps.rs:6:function:bulksketch::field::maps::trace",
+      "generated_declaration": "bulksketch.field.maps.trace",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/maps.rs:16:function:bulksketch::field::maps::canonical_trace",
+      "generated_declaration": "bulksketch.field.maps.canonical_trace",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/maps.rs:109:function:bulksketch::field::maps::quadratic_rows",
+      "generated_declaration": "bulksketch.field.maps.quadratic_rows",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/maps.rs:90:function:bulksketch::field::maps::quadratic_value",
+      "generated_declaration": "bulksketch.field.maps.quadratic_value",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/maps.rs:77:function:bulksketch::field::maps::solve_quadratic",
+      "generated_declaration": "bulksketch.field.maps.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/Funs.lean"
+    }
+  ],
+  "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
+  "frobenius_source_linkage": "extraction/canonical-arithmetic/frobenius/source-linkage.json",
+  "kernel_replay_loader": "audit/replay-loader-review.json"
+}

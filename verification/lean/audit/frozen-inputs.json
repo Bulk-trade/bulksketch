@@ -1,0 +1,163 @@
+{
+  "policy": "Initial approved challenge/specification freeze. Proof files may evolve; these meanings/source inputs must not change silently. Intentional changes require review and a new freeze record.",
+  "challenge_count": 29,
+  "files": {
+    "BulksketchProofs/Challenges.lean": "4a3802958e73c5b65937f7710c86ac0bb0c0ec25fc03faaece632ae4ef6e268f",
+    "BulksketchProofs/Field/ReductionSpec.lean": "7babe2cc4dcd17bc89f40c7720fb44607ba25752e009297932ccfe855fc00856",
+    "BulksketchProofs/Resource/WorkMeterSpec.lean": "74060cbd8aa426fffd7f895610ed4587cdbe408297111aefb0dab25079441081",
+    "BulksketchProofs/Generated/Reduce.lean": "879e86d45b97d916e235d239ded7ade460e13457204e7c4130ff16f9b81ca62a",
+    "extraction/generated/reduce-gf64.ast.sexp": "5238c937cb273b4d967fe144f315b194e8d16a4b086a13c1cfd46dfe6a270b92",
+    "tooling/ast-extractor/src/main.rs": "44def5e94c09b0ad4a1f3784c6c0e9664557c132a48cb3ba82549e8dcb1e3b7e",
+    "tooling/ast-extractor/Cargo.lock": "aa72961ff258686a9e58d5b35b8ecfbca5d37216fca539bfc2870b442ef02cf3",
+    "audit/source-inventory.json": "e8143e36f398a78722f9a78c7b31313e0648a28472d33c60dc87d41fd4f7943e",
+    "scope.json": "2502dabb052753705a42f5aa3bbdd17800da04316e30912a0fc3d8fb64bde5dd",
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lakefile.toml": "b6b1d522c0d1a9676055f895112143020c2a04b9ff250fb795a0cbddd46398a0",
+    "BulksketchProofs/Audit.lean": "c9ce92f2202ceb9297e81c78c86965dbecaf1509289c53ce106dbedd54ad8eb1",
+    "scripts/verify.py": "54985bd8bbae78224c386873f82d1fd9e23e1af362729fafd9fabb304e0d54db",
+    "BulksketchProofs/Field/SpreadSpec.lean": "cb21b3ad6e0c378438699e848a78038ca0d61b757322f8489fede4fc57cc9062",
+    "BulksketchProofs/SpreadChallenges.lean": "1efb7e6e3d8561c83a26916282b6240a774a80db52091dd7420053a4424f7c63",
+    "scripts/verify_all.py": "9c0f63cbea92b253f314ff3651ca9b843a4e481deebef6e38afdae05f44c55bd",
+    "scripts/check_negative_fixtures.py": "1be2bee7eb62aad32a2e9a3b4949a7076be5e8ee6ab8b59ec8e4370c0024ac7d",
+    "BulksketchProofs.lean": "062759adee4278c7bc60184084009295b282e3e2c6293ca5bda2b572547f13b5",
+    "BulksketchProofs/Field/CLMulSpec.lean": "b80c1557d0e1d10e719c255d6d74500f5a48e2580ed04e26d7e16d210ba1737b",
+    "BulksketchProofs/CLMulChallenges.lean": "e1d1017fabdbbf07a8ac259d8fca264ef20175e6c5b1d0706306ea542237cdbb",
+    "audit/clmul-contract-review.json": "eaf9a143e359757389300176c8ea75eabb4f7d945a1ca8204d62c4dcc75d0306",
+    "BulksketchProofs/Field/PeriodSpec.lean": "d2417cef84e3e58cb5f1050c4fe416322aa1d5b2e874e0252c921e7dfe9387d9",
+    "BulksketchProofs/PeriodChallenges.lean": "fc7142606f57b8a005ae4961f15e83c7af9c9d5978d51de59c2bae620141b315",
+    "BulksketchProofs/Field/MapsSpec.lean": "bf9be6ad14733817b644efb7ac5dc3c42a1c74c60778d0cf9ec4d602cb74f439",
+    "BulksketchProofs/MapsChallenges.lean": "7506d3be82924407281f607c704612f693c361d600b8f8176005b265f7e4afdf",
+    "BulksketchProofs/Generated/FieldTables.lean": "25cb2883183185bd93f22b3f1d000f20a7ee67ab7867ce010a86fc80a1dda124",
+    "extraction/extract-field-tables.py": "46b020654d32253b223e7961bd9f9c0ee805d056e7db5492e0907ad555c1aece",
+    "extraction/field-tables-linkage.json": "e532e17a5d7ae98864de10a826d9d1af62c7929d9a5ef3b5af228f1179d6c674",
+    "audit/maps-contract-preproof-freeze.json": "5510580141b61dbb4a930b0fd2b879efb0f56ddc4d8fbd8e9b6939b1af9a72d8",
+    "audit/period-contract-preproof-freeze.json": "0abf907b9472f61d18abcf50650e71deefccd89e552a94200111ab91e1a33ade",
+    "audit/modulus-proof-independent-review.md": "24a9fa1b70f297f50efacf5d2fdfb3592ecfdc82fdb80fc5ab6d79ea36e2b96b",
+    "audit/core-maps-proof-independent-review.md": "aed4509f239a8e3db59c7a9f0d95ca20286d8a6df50372e3f59c172572101124",
+    "audit/field-algebra-accounting-review.md": "55d3cd81a3f03185992e3272994c04b13b5e7ea34ff85e5d8e2cfced90f240be",
+    "audit/field-algebra-checkpoint.json": "e93b65ffd57dcdb5c4c987c76f96d48b8917e82f52969853dbb979c049a4220e"
+  },
+  "reviewed_policy_revisions": [
+    {
+      "reason": "Independent cross-review found that a challenged root replaced by a same-type axiom could be omitted from the theorem-only audit. Require theorem kind and challenge-root inclusion in axiom checking/export. Specification propositions unchanged.",
+      "changes": [
+        {
+          "path": "BulksketchProofs/Audit.lean",
+          "old_sha256": "23326043898b8fa1ebe2853936a779edb5a0719752683534a9ccc618c06a514d",
+          "new_sha256": "7c634837f9bf50e36f7cc0d5faa2ea7ed510bd861ac01fc09d3d6a6415d3a276"
+        },
+        {
+          "path": "scripts/verify.py",
+          "old_sha256": "6391d49f2e27a55532b0c3f661e0addac16d8ec981f1987cce232002f25e2137",
+          "new_sha256": "6fdf42bdf78613996b8c76270feb7324e39b8c43f334927d783089afb93d1ada"
+        }
+      ]
+    },
+    {
+      "reason": "Strengthen source freshness: freeze native Cargo manifest, lockfile and Rust toolchain metadata in addition to all native Rust bodies. Proposition/specification definitions unchanged.",
+      "changes": [
+        {
+          "path": "scripts/verify.py",
+          "old_sha256": "6fdf42bdf78613996b8c76270feb7324e39b8c43f334927d783089afb93d1ada",
+          "new_sha256": "e4e882481b403e1f54acf90af6b228baaf71b319ed960290818f2476d3b9bb38"
+        },
+        {
+          "path": "scope.json",
+          "old_sha256": "49c09ec0a883b72fc0d4a8867f5824b099de28ad5806f0541265d74a3e895502",
+          "new_sha256": "6c7e3164ac9fd8fcfe0f888a065606756be52d95b31ad89cf14b2afbd8f97405"
+        }
+      ]
+    },
+    {
+      "reason": "Freeze independent universal spread/raw-square contracts and their stable specification before adding their proof roots. Existing ten endpoint propositions unchanged. New endpoints remain pending until compiled and audited.",
+      "changes": [
+        {
+          "path": "BulksketchProofs/Field/SpreadSpec.lean",
+          "new_sha256": "cb21b3ad6e0c378438699e848a78038ca0d61b757322f8489fede4fc57cc9062"
+        },
+        {
+          "path": "BulksketchProofs/SpreadChallenges.lean",
+          "new_sha256": "1efb7e6e3d8561c83a26916282b6240a774a80db52091dd7420053a4424f7c63"
+        }
+      ]
+    },
+    {
+      "reason": "Integrate two previously frozen universal spread/raw-square endpoints after successful Lean checks. Existing ten proposition/spec hashes unchanged.",
+      "changes": [
+        {
+          "path": "BulksketchProofs/Audit.lean",
+          "old_sha256": "7c634837f9bf50e36f7cc0d5faa2ea7ed510bd861ac01fc09d3d6a6415d3a276",
+          "new_sha256": "4f1d759b7542495d9999654616c2ea2d80237f85892ef85eed2752cd7acfd658"
+        }
+      ]
+    },
+    {
+      "reason": "Repository packaging: resolve native sources from the repository, retain reviewed content hashes across proof-only commits, and write generated verification output under ignored results directories. Frozen mathematical definitions, propositions and generated application bodies are byte-identical to the checked milestone.",
+      "changes": [
+        {
+          "path": "audit/source-inventory.json",
+          "old_sha256": "49e395a37bb101651e5e5cade51733394a97cdf05a76116edc805fba2c72844a",
+          "new_sha256": "e8143e36f398a78722f9a78c7b31313e0648a28472d33c60dc87d41fd4f7943e"
+        },
+        {
+          "path": "scope.json",
+          "old_sha256": "6c7e3164ac9fd8fcfe0f888a065606756be52d95b31ad89cf14b2afbd8f97405",
+          "new_sha256": "2502dabb052753705a42f5aa3bbdd17800da04316e30912a0fc3d8fb64bde5dd"
+        },
+        {
+          "path": "scripts/verify.py",
+          "old_sha256": "e4e882481b403e1f54acf90af6b228baaf71b319ed960290818f2476d3b9bb38",
+          "new_sha256": "4a3b2094654db2f3b8f307f874b60867b831aabeb0bbdb59b66b8bc673bfe510"
+        }
+      ]
+    },
+    {
+      "reason": "Keep the conservative full-native-contract gate while accurately distinguishing narrower generated-body refinement evidence; no mathematical proposition changed.",
+      "path": "scripts/verify.py",
+      "old_sha256": "4a3b2094654db2f3b8f307f874b60867b831aabeb0bbdb59b66b8bc673bfe510",
+      "new_sha256": "990388ee1b4641c5536dc6cac88babf77b338a1ead74bff7fabfdf52a1c5eabf"
+    },
+    {
+      "path": "BulksketchProofs/Audit.lean",
+      "old_sha256": "4f1d759b7542495d9999654616c2ea2d80237f85892ef85eed2752cd7acfd658",
+      "new_sha256": "7206c4f7d7c1be5ed178b5f3f62f908e6da37731da15da5aa9e295bb2314b574",
+      "reason": "Retain every prior challenge and add three independently frozen full128-bit carryless-product/coefficient-degree endpoints. No prior proposition changed."
+    },
+    {
+      "path": "BulksketchProofs.lean",
+      "old_sha256": "5deccdffe137f17ee56fab90dd5638db7c83a530842224f9d975f4cf45f60af6",
+      "new_sha256": "98e3f3231cf43fb03237202b4889a9fc9619af171c3bab3ea1eb2ea4d74315b5",
+      "reason": "Include every public nibble recurrence/bounds helper in core audit and independent exports; existing challenge types and specification unchanged."
+    },
+    {
+      "path": "lakefile.toml",
+      "old_sha256": "4ffda0cb95c818990d0cc89af6d17c1bbd1a9bbb1a19a37de679db7569e50f9a",
+      "new_sha256": "b6b1d522c0d1a9676055f895112143020c2a04b9ff250fb795a0cbddd46398a0",
+      "reason": "Build the source-pinned scheduling-only kernel replay executable and require its seven regression cases in the combined gate. No prior mathematical contract changed; no proof root, kernel check or axiom policy weakened."
+    },
+    {
+      "path": "scripts/verify_all.py",
+      "old_sha256": "26a43d0ff01ec6d291a15ed3cfe0e35ecf6b71c5bd72e3043a71d76518eacbc5",
+      "new_sha256": "9c0f63cbea92b253f314ff3651ca9b843a4e481deebef6e38afdae05f44c55bd",
+      "reason": "Build the source-pinned scheduling-only kernel replay executable and require its seven regression cases in the combined gate. No prior mathematical contract changed; no proof root, kernel check or axiom policy weakened."
+    },
+    {
+      "path": "BulksketchProofs/Audit.lean",
+      "old_sha256": "7206c4f7d7c1be5ed178b5f3f62f908e6da37731da15da5aa9e295bb2314b574",
+      "new_sha256": "c9ce92f2202ceb9297e81c78c86965dbecaf1509289c53ce106dbedd54ad8eb1",
+      "reason": "Add independently reviewed period64 and complete source-table/trace/quadratic contracts. Keep all previous meanings and source obligations. Regenerate exact source literals and kernel-check transpose/table identities; no assumed correctness from generator."
+    },
+    {
+      "path": "scripts/verify.py",
+      "old_sha256": "990388ee1b4641c5536dc6cac88babf77b338a1ead74bff7fabfdf52a1c5eabf",
+      "new_sha256": "54985bd8bbae78224c386873f82d1fd9e23e1af362729fafd9fabb304e0d54db",
+      "reason": "Add independently reviewed period64 and complete source-table/trace/quadratic contracts. Keep all previous meanings and source obligations. Regenerate exact source literals and kernel-check transpose/table identities; no assumed correctness from generator."
+    },
+    {
+      "path": "BulksketchProofs.lean",
+      "old_sha256": "98e3f3231cf43fb03237202b4889a9fc9619af171c3bab3ea1eb2ea4d74315b5",
+      "new_sha256": "062759adee4278c7bc60184084009295b282e3e2c6293ca5bda2b572547f13b5",
+      "reason": "Add independently reviewed period64 and complete source-table/trace/quadratic contracts. Keep all previous meanings and source obligations. Regenerate exact source literals and kernel-check transpose/table identities; no assumed correctness from generator."
+    }
+  ]
+}

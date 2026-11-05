@@ -1,0 +1,23 @@
+{
+  "review_date": "2026-11-04",
+  "status": "frozen and independently hash-reviewed before proof search",
+  "policy": "Original source-generated Gf64 instance, every RawProduct, exact normal remainder and full division identity; no free dictionary/BITS/success premise.",
+  "files": {
+    "bridge/BulksketchBridge/Gf64ReduceSpec.lean": "afb2395d0c9052f56c644e9eb075bea16ca2ae4f3abab450ee2c53d0123c9b78",
+    "bridge/BulksketchBridge/Gf64ReduceChallenges.lean": "6d1f08045e6d1fb47b2fb623b337a0aa7eac77c7752f1b025d2628b9ae6970d0",
+    "bridge/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+    "bridge/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
+    "BulksketchProofs/Field/ReductionSpec.lean": "7babe2cc4dcd17bc89f40c7720fb44607ba25752e009297932ccfe855fc00856"
+  },
+  "challenge": "BulksketchBridge.Gf64ReduceChallenges.actualGf64ReductionMatchesFoldAndCertificate",
+  "actual_dictionary": "bulksketch.field.Gf64.Insts.BulksketchFieldBinaryField",
+  "coverage_mapping": "promote existing native reduce item evidence; no duplicate source-item credit",
+  "frontend_runtime_compiler_boundary": "inherited from pinned canonical Arithmetic generation; no new models or assumptions",
+  "independent_review": {
+    "reviewer": "wrapper_performance",
+    "spec_sha256": "afb2395d0c9052f56c644e9eb075bea16ca2ae4f3abab450ee2c53d0123c9b78",
+    "challenge_sha256": "6d1f08045e6d1fb47b2fb623b337a0aa7eac77c7752f1b025d2628b9ae6970d0",
+    "decision": "approved all-product concrete Gf64 normal remainder/fold/division certificate, no success/BITS/canonicality premises or fallback/irreducibility overclaim"
+  },
+  "proof_search_started_after_review": true
+}

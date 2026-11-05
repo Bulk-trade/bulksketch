@@ -1,0 +1,22 @@
+✖ [1785/1785] Building BulksketchBridge.MapsTraceMath (1.0s)
+trace: .> LEAN_PATH=/Users/junbug/bulk/bulksketch/verification/lean/bridge/.lake/packages/Cli/.lake/build/lib/lean:/Users/junbug/bulk/bulksketch/verification/lean/bridge/.lake/packages/batteries/.lake/build/lib/lean:/Users/junbug/bulk/bulksketch/verification/lean/bridge/.lake/packages/Qq/.lake/build/lib/lean:/Users/junbug/bulk/bulksketch/verification/lean/bridge/.lake/packages/aesop/.lake/build/lib/lean:/Users/junbug/bulk/bulksketch/verification/lean/bridge/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/junbug/bulk/bulksketch/verification/lean/bridge/.lake/packages/importGraph/.lake/build/lib/lean:/Users/junbug/bulk/bulksketch/verification/lean/bridge/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/junbug/bulk/bulksketch/verification/lean/bridge/.lake/packages/plausible/.lake/build/lib/lean:/Users/junbug/bulk/bulksketch/verification/lean/bridge/.lake/packages/mathlib/.lake/build/lib/lean:/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/backends/lean/.lake/build/lib/lean:/Users/junbug/bulk/bulksketch/verification/lean/.lake/build/lib/lean:/Users/junbug/bulk/bulksketch/verification/lean/bridge/.lake/build/lib/lean /Users/junbug/.elan/toolchains/leanprover--lean4---v4.35.0/bin/lean /Users/junbug/bulk/bulksketch/verification/lean/bridge/BulksketchBridge/MapsTraceMath.lean -o /Users/junbug/bulk/bulksketch/verification/lean/bridge/.lake/build/lib/lean/BulksketchBridge/MapsTraceMath.olean -i /Users/junbug/bulk/bulksketch/verification/lean/bridge/.lake/build/lib/lean/BulksketchBridge/MapsTraceMath.ilean -c /Users/junbug/bulk/bulksketch/verification/lean/bridge/.lake/build/ir/BulksketchBridge/MapsTraceMath.c --setup /Users/junbug/bulk/bulksketch/verification/lean/bridge/.lake/build/ir/BulksketchBridge/MapsTraceMath.setup.json --json
+warning: BulksketchBridge/MapsTraceMath.lean:23:52: This simp argument is unused:
+  bitCase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: BulksketchBridge/MapsTraceMath.lean:35:55: unsolved goals
+case false
+input : U64
+bitCase : Maps.traceBit input.bv = false
+⊢ 0 = 0#UScalarTy.U8.numBits
+
+case true
+input : U64
+bitCase : Maps.traceBit input.bv = true
+⊢ 1 = 1#UScalarTy.U8.numBits
+Some required targets logged failures:
+- BulksketchBridge.MapsTraceMath
+error: build failed
