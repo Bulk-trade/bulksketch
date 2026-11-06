@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-06",
+  "reviewed_native_source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "branch_base": "2ab81be9b05f5567d5ad6969e10ff2071173a487",
+  "branch": "jun/proofs",
+  "native_rust_or_build_input_changed": false,
+  "native_body_refinements_before": 14,
+  "native_body_refinements_after": 15,
+  "native_executable_obligations_retained": 344,
+  "inventory_declarations_retained": 532,
+  "frozen_endpoints_core": 29,
+  "frozen_endpoints_bridge": 57,
+  "full_native_coverage_achieved": false,
+  "new_results": [
+    "Bijective polynomial-basis representation in the exact Mathlib quotient field",
+    "Universal reduction, multiplication, square, field laws and full-count Frobenius transport",
+    "Word trace and both actual native trace functions equal Mathlib Algebra.trace",
+    "Original inverse_with_frobenius source loop, all scalar bounds, zero/unit cases and exact field inverse; explicit generic callbacks plus closed native callback instance"
+  ],
+  "logical_axioms_allowed": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "new_runtime_models": 0,
+  "generated_inverse_declarations_retained_verbatim": 3,
+  "negative_policy_cases": 2,
+  "negative_replay_loader_cases": 7,
+  "negative_projection_cases": 8,
+  "native_release_tests_passed": 139,
+  "native_test_toolchain": "1.96.1",
+  "proof_toolchain": "leanprover/lean4:v4.35.0",
+  "replay_time_limits_changed": false,
+  "independent_reviews": [
+    "audit/word-quotient-independent-review.md",
+    "bridge/audit/quotient-trace-independent-review.md",
+    "bridge/audit/inverse-independent-review.md"
+  ],
+  "remaining_gaps": [
+    "inverse_using captured borrowed-square closure and inverse caller: original pinned extractor fails; optimized MIR and monomorphization pilots provide no usable body",
+    "x86 Frobenius tables/generation and accelerated arithmetic",
+    "Decoder completeness, public state/resource/ownership behavior and compiler-expanded native closure",
+    "Compiler/runtime/machine correspondence and sandboxed comparator integrity gate"
+  ],
+  "proof_files_sha256": {
+    "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
+    "bridge/BulksketchBridge/Algebra/InversePower.lean": "d043761d20fd30a38826ce0aba1916c0b421b3270a11e2e4ff8aba7c6473401c",
+    "bridge/BulksketchBridge/Algebra/InversePowerChallenges.lean": "24babaafcaab91b6f8159d591cb98ba48222c493916c28be713f8e7e8061e4cb",
+    "bridge/BulksketchBridge/Algebra/Trace.lean": "2199a8d90458e11f36850c8ba8bbdd87fbfe4db9b5a1f52a9b30b20385c24d46",
+    "bridge/BulksketchBridge/Algebra/TraceChallenges.lean": "2e3b710a135c204ddb5847891ad94c81bf79f4792b503ae0bfd4ec647f0495d2",
+    "bridge/BulksketchBridge/Algebra/TraceNative.lean": "61ea031b1f42c154526729aa76fd62bfe79040adde448261abeacad4e6e42840",
+    "bridge/BulksketchBridge/Algebra/TraceNativeChallenges.lean": "de3bcc419d7dd562ba5e85888c12297475278b84f00373107c36b86d084b8b30",
+    "bridge/BulksketchBridge/Algebra/TraceSpec.lean": "b0d020053fba3dc2df6ce2c28077fe70972580db18f0a7373f91a2ff03517dec",
+    "bridge/BulksketchBridge/Algebra/Word.lean": "3e215eb5e2c0e8715d6a1b292aa9b5c121745e492f2dacc6a02e794e45da72ff",
+    "bridge/BulksketchBridge/Algebra/WordChallenges.lean": "bd1baacce1fb827da2a25fa6ca35c743b07bbef3597c1d178e82af25ae44d8b8",
+    "bridge/BulksketchBridge/Algebra/WordEndpoints.lean": "89a3c83f35dcbaf1ebda13d3cca3d242298b432408a963a566e233aa82389701",
+    "bridge/BulksketchBridge/Algebra/WordEquiv.lean": "e900033497485b6a34b863d10752e2cf462b7a2a9f95138b487e07b01b0a7396",
+    "bridge/BulksketchBridge/Algebra/WordLaws.lean": "3aefe6750763ed1bbcd9980f9ae8339eb988c678ff5926a33a22851e7fdc81fc",
+    "bridge/BulksketchBridge/Algebra/WordNative.lean": "cc733fa11e671bc847c65661c1ebc5c63978f42dfbc963e0eafbc2bacbded296",
+    "bridge/BulksketchBridge/Algebra/WordNativeChallenges.lean": "36454b67ea1a1e5f3e2cd19f6e5a1ac1815504f8ea71b66c8508f998b39fad55",
+    "bridge/BulksketchBridge/Algebra/WordOps.lean": "41a9d59672477555441f3d1e9b6f91bae5cd6845ce4f4e2d409c3fb61e28733a",
+    "bridge/BulksketchBridge/Algebra/WordSpec.lean": "ab8929aa4b46148dbaf1add1f4fdb19b21de1b7c15b4edbed8f084b062db33c8",
+    "bridge/BulksketchBridge/Algebra/WordSquare.lean": "feedc20646c9c5b37effbf9074a0cb65d3b195cb8cb7ecca5ab5000a619985e2",
+    "bridge/BulksketchBridge/Inverse.lean": "54cd6502db9913a9edbf56aa7e889946b4bd982336f6d2740eb2197a4d785e63",
+    "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
+    "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
+    "bridge/BulksketchBridge/InverseMath.lean": "8a90625c159f5bcd09e2f8c02670b9deee5d86cd1597dffe64011ab8bc57e8f9",
+    "bridge/BulksketchBridge/InverseNative.lean": "7d7ce75bbd9742896412d81538b16c0d196f90ff1f282bc74fa091a14f981696",
+    "bridge/BulksketchBridge/InverseSpec.lean": "cfab6bdd1c375b36576d4a35935137ac7883de01ea5e5c34650aa90ddc504f2c"
+  },
+  "validation_status": "scoped builds/axiom audits/independent dual replay and native release tests passed; final aggregate results recorded separately in audit/results/overall-verification.json"
+}

@@ -13,7 +13,8 @@ def main():
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps({"status": "running"}) + "\n")
     stages = []
-    for script in ["verify.py", "verify_bridge.py", "check_negative_fixtures.py", "check_replay_fixtures.py"]:
+    for script in ["verify.py", "verify_bridge.py", "check_negative_fixtures.py",
+                   "check_replay_fixtures.py", "check_projection_fixtures.py"]:
         start = time.monotonic()
         result = subprocess.run(["python3", str(ROOT / "scripts" / script)], cwd=ROOT)
         stages.append({"script": script, "exit_code": result.returncode,

@@ -210,6 +210,11 @@
       "path": "extraction/canonical-arithmetic/maps/arithmetic.llbc",
       "sha256": "343db245a54c6276cdd7bba9e9df0fe6df2c883571e3c40065aa2013d4af11b4",
       "has_errors": false
+    },
+    {
+      "path": "extraction/inverse-chain/inverse.llbc",
+      "sha256": "22cc34302a68119411d0b38a31b9a627b88150159fdf4d39f0df9e24dea79e87",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -306,9 +311,25 @@
       "native_item_id": "src/field/maps.rs:77:function:bulksketch::field::maps::solve_quadratic",
       "generated_declaration": "bulksketch.field.maps.solve_quadratic",
       "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/maps.rs:50:function:bulksketch::field::maps::inverse_with_frobenius",
+      "generated_declaration": "bulksketch.field.maps.inverse_with_frobenius",
+      "generated_file": "bridge/Arithmetic/InverseGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
   "frobenius_source_linkage": "extraction/canonical-arithmetic/frobenius/source-linkage.json",
-  "kernel_replay_loader": "audit/replay-loader-review.json"
+  "kernel_replay_loader": "audit/replay-loader-review.json",
+  "native_generated_projections": [
+    {
+      "generated": "extraction/inverse-chain/Inverse/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/InverseGenerated.lean",
+      "sha256": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
+      "raw_sha256": "54c868d864da1a7410177e9fc2fa7e5250a4198dfb8e297b506ad436271ab397",
+      "checker": "extraction/inverse-chain/project.py",
+      "declaration_count": 3,
+      "scope": "Exact inverse_with_frobenius body and two loop helpers copied verbatim; shared extracted types and all Gf64 function dictionaries checked byte for byte. No native source or generated declaration body edits."
+    }
+  ]
 }

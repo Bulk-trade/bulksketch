@@ -189,12 +189,18 @@ and libclang (for `bindgen`). The library itself needs neither.
 
 [`verification/lean`](verification/lean/README.md) holds Lean 4 proofs about the
 portable Rust code, checked against Lean translations of the actual function
-bodies. They cover 14 functions: GF64 multiplication, reduction, squaring and
-Frobenius; the trace and quadratic solver; and the work meter. They also prove
-that the modulus `X^64 + X^4 + X^3 + X + 1` is irreducible.
+bodies. They provide functional refinements of 15 functions: GF64
+multiplication, reduction, squaring and
+Frobenius; the trace and quadratic solver; the original `inverse_with_frobenius`
+chain with native arithmetic callbacks; and the work meter. They also prove
+that the modulus `X^64 + X^4 + X^3 + X + 1` is irreducible and connect native
+words to Mathlib's quotient-field arithmetic and `Algebra.trace`.
 
-The x86 PCLMUL and VPCLMUL backends, field inversion, the decoder and the sketch
-API are not covered yet. The proofs are pinned to a source revision, so the
+The enclosing `inverse_using` and `inverse` wrappers, x86 PCLMUL and VPCLMUL
+backends, decoder and sketch API are not covered yet. All 344 native executable
+obligations remain in scope; full native coverage is not achieved. The proofs
+retain the documented translator/runtime/compiler trust boundary and are pinned
+to a source revision, so the
 checker rejects them after any change to `src/` until they are updated.
 
 ## Benchmark

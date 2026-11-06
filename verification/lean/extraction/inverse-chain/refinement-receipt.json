@@ -1,0 +1,93 @@
+{
+  "status": "all-owned-source-and-field-inverse-endpoints-built; exact-challenge-assignments-and-standard-only-axioms-checked; independent-review-and-global-replay-separate",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_source_edited": false,
+  "source_item_id": "src/field/maps.rs:50:function:bulksketch::field::maps::inverse_with_frobenius",
+  "source_line_span_sha256": "e40501a340bf956e9ff7d6aa181295dd010fd4e9500379507122d7be9fe71543",
+  "native_source_body_refinements_added": 1,
+  "complete_native_contract_status": "unproved; compiler/runtime/machine and other declared TCB links remain",
+  "files": [
+    {
+      "path": "bridge/BulksketchBridge/Inverse.lean",
+      "sha256": "54cd6502db9913a9edbf56aa7e889946b4bd982336f6d2740eb2197a4d785e63"
+    },
+    {
+      "path": "bridge/BulksketchBridge/InverseChallenges.lean",
+      "sha256": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4"
+    },
+    {
+      "path": "bridge/BulksketchBridge/InverseFieldSpec.lean",
+      "sha256": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59"
+    },
+    {
+      "path": "bridge/BulksketchBridge/InverseMath.lean",
+      "sha256": "8a90625c159f5bcd09e2f8c02670b9deee5d86cd1597dffe64011ab8bc57e8f9"
+    },
+    {
+      "path": "bridge/BulksketchBridge/InverseNative.lean",
+      "sha256": "7d7ce75bbd9742896412d81538b16c0d196f90ff1f282bc74fa091a14f981696"
+    },
+    {
+      "path": "bridge/BulksketchBridge/InverseSpec.lean",
+      "sha256": "cfab6bdd1c375b36576d4a35935137ac7883de01ea5e5c34650aa90ddc504f2c"
+    },
+    {
+      "path": "bridge/Arithmetic/InverseGenerated.lean",
+      "sha256": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359"
+    },
+    {
+      "path": "extraction/inverse-chain/axiom-audit.log",
+      "sha256": "8744e3cf39532fd891044923b1f4c3ced438aa61329e4f6fd285fde99a26e259"
+    }
+  ],
+  "original_extraction_receipt": "extraction/inverse-chain/receipt.json",
+  "llbc_sha256": "22cc34302a68119411d0b38a31b9a627b88150159fdf4d39f0df9e24dea79e87",
+  "projection_validator": "extraction/inverse-chain/project.py",
+  "projection": "bridge/Arithmetic/InverseGenerated.lean",
+  "projection_note": "Exactly three original generated declarations retained byte-for-byte; shared types and Gf64 dictionaries are checked against the active arithmetic extraction. No generated application body hand-edit.",
+  "endpoints": [
+    {
+      "challenge": "BulksketchBridge.InverseChallenges.actualSourceReturnsExactChain",
+      "proof": "BulksketchBridge.Inverse.exact_chain_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.InverseChallenges.actualSourceReturnsFieldInverse",
+      "proof": "BulksketchBridge.Inverse.field_inverse_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.InverseChallenges.nativeCallbackInstanceReturnsFieldInverse",
+      "proof": "BulksketchBridge.Inverse.native_callback_instance"
+    }
+  ],
+  "source_proof_details": [
+    "allU64inputs and actual Gf64 dictionary; canonical mask unconditional",
+    "zero and unit return normally independently of arbitrary callback behavior",
+    "target63, exact leadingzeros26, bitlength6, initial reverse range0..5",
+    "five exact source iterations with k1,3,7,15,31 ending63; allbranchbitsselected",
+    "every iterator decrement, multiplicationby2, additionby1 and shift proved normal and bounded",
+    "remaining5-count decreases; terminalNone precedes callbacks; allreachableprefixes complete",
+    "exact chain U64 output under explicit universal callback normal-result contracts"
+  ],
+  "mathematical_meaning": [
+    "every reachable chainprefix maps to x^(2^k-1) in actual Mathlib quotient",
+    "final square has exponent2^64-2; independentlyproved field inverse law applies including zero",
+    "exact optionwordvalue is None iff input0 and represented quotientinverse otherwise",
+    "universal field contract explicitly requires callbacks equal actual native gf64 mul and frobenius",
+    "closed existing-BuiltinFn instantiation invokes those actualgeneratedbodies, discharging callbackcontracts"
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "new_runtime_models": [],
+  "remaining_enclosing_wrapper_blocker": {
+    "functions": [
+      "inverse_using",
+      "inverse"
+    ],
+    "evidence": "extraction/inverse-chain/enclosing-retry/receipt.json",
+    "status": "unproved",
+    "reason": "Pinned Aeneas cannot join captured borrowed-square sharedloan closure at maps.rs43-45. Originalbody unchanged; loops-no-rec/loops-to-rec both failed. No closure correctness axiom or replacement inverse wrapper inserted."
+  }
+}

@@ -41,8 +41,16 @@ normal behavior for every input. All 320 native row/chunk entries are
 kernel-linked; independent universal matrix identities supply correct roots,
 trace-zero solvability and free-bit-zero uniqueness. See
 [FIELD_ALGEBRA.md](../FIELD_ALGEBRA.md) for the certificate and scope details.
-The word-to-Mathlib quotient-field bridge, field-law/`Algebra.trace` transport,
-inverse wrappers and x86-only table-generation paths remain open.
+The [quotient-field checkpoint](../QUOTIENT_FIELD.md) proves a bijective
+polynomial-basis representation, field-law transport and the actual Mathlib
+`Algebra.trace`. Existing native arithmetic and both trace endpoints are
+strengthened in place. The original `inverse_with_frobenius` body now computes
+the represented field inverse under explicit native callback contracts, with a
+closed callback instance. Its three generated declarations are retained byte
+for byte and checked against the original extraction and shared dictionaries.
+The enclosing `inverse_using`/`inverse` borrowed closure and x86-only
+table-generation paths remain open. Fifteen distinct native bodies have narrower
+functional refinements; all 344 native executable obligations remain in scope.
 
 From the parent Lean directory:
 

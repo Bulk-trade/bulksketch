@@ -15,6 +15,12 @@ import BulksketchBridge.MapsTraceChallenges
 import BulksketchBridge.MapsTraceMathChallenges
 import BulksketchBridge.MapsQuadraticChallenges
 import BulksketchBridge.MapsCanonicalTraceChallenges
+import BulksketchBridge.Algebra.WordChallenges
+import BulksketchBridge.Algebra.WordNativeChallenges
+import BulksketchBridge.Algebra.TraceChallenges
+import BulksketchBridge.Algebra.TraceNativeChallenges
+import BulksketchBridge.Algebra.InversePowerChallenges
+import BulksketchBridge.InverseChallenges
 import Lean
 
 open Lean Elab Command Meta
@@ -92,7 +98,49 @@ run_cmd do
     (``BulksketchBridge.MapsQuadraticChallenges.actualSolverHasExactNormalizedSolutionMeaning,
       ``BulksketchBridge.MapsQuadratic.solve_quadratic_exact_meaning),
     (``BulksketchBridge.MapsCanonicalTraceChallenges.normalResultMatchesAbsoluteTrace,
-      ``BulksketchBridge.MapsCanonicalTrace.canonical_trace_refines)
+      ``BulksketchBridge.MapsCanonicalTrace.canonical_trace_refines),
+    (``BulksketchBridge.Algebra.Gf64.WordChallenges.ExactPolynomialCoefficients,
+      ``BulksketchBridge.Algebra.Gf64.exact_polynomial_coefficients),
+    (``BulksketchBridge.Algebra.Gf64.WordChallenges.BijectiveRepresentation,
+      ``BulksketchBridge.Algebra.Gf64.bijective_representation),
+    (``BulksketchBridge.Algebra.Gf64.WordChallenges.AdditiveRepresentation,
+      ``BulksketchBridge.Algebra.Gf64.additive_representation),
+    (``BulksketchBridge.Algebra.Gf64.WordChallenges.CompleteRawProduct,
+      ``BulksketchBridge.Algebra.Gf64.complete_raw_product),
+    (``BulksketchBridge.Algebra.Gf64.WordChallenges.ReductionRepresentation,
+      ``BulksketchBridge.Algebra.Gf64.reduction_representation),
+    (``BulksketchBridge.Algebra.Gf64.WordChallenges.MultiplicationRepresentation,
+      ``BulksketchBridge.Algebra.Gf64.multiplication_representation),
+    (``BulksketchBridge.Algebra.Gf64.WordChallenges.SquareRepresentation,
+      ``BulksketchBridge.Algebra.Gf64.square_representation),
+    (``BulksketchBridge.Algebra.Gf64.WordChallenges.ArithmeticFieldLaws,
+      ``BulksketchBridge.Algebra.Gf64.arithmetic_field_laws),
+    (``BulksketchBridge.Algebra.Gf64.WordNativeChallenges.actualReductionIsQuotientRemainder,
+      ``BulksketchBridge.Algebra.Gf64.native_reduce_is_quotient),
+    (``BulksketchBridge.Algebra.Gf64.WordNativeChallenges.actualMultiplicationIsFieldMultiplication,
+      ``BulksketchBridge.Algebra.Gf64.native_mul_is_field),
+    (``BulksketchBridge.Algebra.Gf64.WordNativeChallenges.actualSquareIsFieldSquare,
+      ``BulksketchBridge.Algebra.Gf64.native_square_is_field),
+    (``BulksketchBridge.Algebra.Gf64.WordNativeChallenges.actualFrobeniusIsFieldPower,
+      ``BulksketchBridge.Algebra.Gf64.native_frobenius_is_field),
+    (``BulksketchBridge.Algebra.Gf64.TraceChallenges.wordAbsoluteTraceIsAlgebraTrace,
+      ``BulksketchBridge.Algebra.Gf64.word_absolute_trace_transport),
+    (``BulksketchBridge.Algebra.Gf64.TraceChallenges.nativeSelectorIsAlgebraTrace,
+      ``BulksketchBridge.Algebra.Gf64.native_selector_trace_transport),
+    (``BulksketchBridge.Algebra.Gf64.TraceNativeChallenges.actualTraceIsAlgebraTrace,
+      ``BulksketchBridge.Algebra.Gf64.native_trace_is_algebra_trace),
+    (``BulksketchBridge.Algebra.Gf64.TraceNativeChallenges.actualCanonicalTraceIsAlgebraTrace,
+      ``BulksketchBridge.Algebra.Gf64.native_canonical_trace_is_algebra_trace),
+    (``BulksketchBridge.Algebra.Gf64.InversePowerChallenges.fieldPowerPeriod,
+      ``BulksketchBridge.Algebra.Gf64.field_power_period),
+    (``BulksketchBridge.Algebra.Gf64.InversePowerChallenges.fieldInverseExponent,
+      ``BulksketchBridge.Algebra.Gf64.field_inverse_power),
+    (``BulksketchBridge.InverseChallenges.actualSourceReturnsExactChain,
+      ``BulksketchBridge.Inverse.exact_chain_refines),
+    (``BulksketchBridge.InverseChallenges.actualSourceReturnsFieldInverse,
+      ``BulksketchBridge.Inverse.field_inverse_refines),
+    (``BulksketchBridge.InverseChallenges.nativeCallbackInstanceReturnsFieldInverse,
+      ``BulksketchBridge.Inverse.native_callback_instance)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

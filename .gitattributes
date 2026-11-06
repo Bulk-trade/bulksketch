@@ -5,6 +5,7 @@ verification/lean/bridge/Workmeter/Funs.lean linguist-generated=true
 verification/lean/bridge/Workmeter/Types.lean linguist-generated=true
 verification/lean/bridge/Arithmetic/Funs.lean linguist-generated=true
 verification/lean/bridge/Arithmetic/Types.lean linguist-generated=true
+verification/lean/bridge/Arithmetic/InverseGenerated.lean linguist-generated=true
 verification/lean/extraction/canonical-arithmetic/impl-root/** linguist-generated=true
 verification/lean/extraction/canonical-arithmetic/rawmul/Arithmetic/** linguist-generated=true
 verification/lean/extraction/canonical-arithmetic/frobenius/Arithmetic/** linguist-generated=true
@@ -14,6 +15,7 @@ verification/lean/extraction/canonical-arithmetic/maps/Arithmetic/** linguist-ge
 verification/lean/extraction/canonical-arithmetic/maps/arithmetic.llbc linguist-generated=true
 verification/lean/extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc linguist-generated=true
 verification/lean/extraction/inverse-chain/** linguist-generated=true
+verification/lean/extraction/inverse-chain/project.py linguist-generated=false
 verification/lean/BulksketchProofs/Generated/FieldTables.lean linguist-generated=true
 verification/lean/extraction/canonical-arithmetic/maps/runtime/*.rs whitespace=-blank-at-eof
 verification/lean/extraction/canonical-arithmetic/maps/runtime/*.lean.txt whitespace=-blank-at-eof

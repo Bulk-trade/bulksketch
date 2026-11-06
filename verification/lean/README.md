@@ -21,11 +21,14 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Repeated squaring | Exact normal output for every U64/U32 input pair, strengthened to unmodded polynomial-square iterations | Original modulo-count contract retained; universal word-period theorem justifies the stronger endpoint |
 | Period and modulus | Every word returns after 64 squarings; all natural iteration counts reduce modulo 64; exact `Polynomial (ZMod 2)` modulus is irreducible | Checked basis/linearity proof and polynomial square/Bézout/factor-degree certificates; native word-to-quotient representation remains separate |
 | Trace and quadratic maps | Complete 64-conjugate trace, all row/chunk identities, trace-zero solvability and normalized uniqueness | Actual source trace/canonical trace, row selector, 16-chunk value loop and solver refine the universal word models |
+| Quotient field and algebra trace | Bijective polynomial-basis interpretation in Mathlib's exact irreducible quotient; multiplication, square, field laws and `Algebra.trace` transport | Existing native reduction/multiplication/square/Frobenius/trace endpoints strengthened in place; entire trace byte bounded by one |
+| Inversion chain | Original five reverse-range iterations and every bound; exact represented field inverse for nonzero input and `None` for zero | Actual `inverse_with_frobenius` with native arithmetic callback contracts, plus a closed callback instance; enclosing `inverse_using`/`inverse` remain open |
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The current bridge targets fourteen source functions: the three meter operations,
-six arithmetic operations and five trace/quadratic map operations.
+The current bridge targets fifteen source functions: the three meter operations,
+six arithmetic operations, five trace/quadratic map operations and the original
+`inverse_with_frobenius` function.
 This is functional refinement of generated
 bodies under the stated trust boundary, not a count of complete native contracts.
 Full native implementation coverage is not achieved.
@@ -41,6 +44,8 @@ evaluation axioms discharge an obligation.
 both source-loop invariants, every bound and the final composition in detail.
 [FIELD_ALGEBRA.md](FIELD_ALGEBRA.md) explains the exact modulus theorem, universal
 period, table certificates and normalized quadratic solver semantics.
+[QUOTIENT_FIELD.md](QUOTIENT_FIELD.md) explains the polynomial representation,
+actual algebra trace, source inversion chain and remaining enclosing-wrapper gap.
 
 The [coverage ledger](audit/coverage.json) keeps every native item in scope,
 including unsupported and unproved items. Related mathematical model evidence
@@ -90,6 +95,12 @@ The replay-loader fixtures additionally reject a malformed actual project proof,
 conflicting preloaded declarations, unsafe/partial declarations, a valid extra
 prelude declaration, and forbidden axioms in either input. A prelude may reorder
 only an exact subset of the original export; it cannot extend the environment.
+
+The inverse declaration projection retains all three original generated bodies
+byte for byte and checks shared types and dictionaries against the larger
+arithmetic extraction. Eight mutation checks reject body, type, dictionary and
+raw-extraction edits in both ordinary and optimized Python. No new standard
+library model or application-correctness axiom is introduced.
 
 These are controlled-source exact-type checks and independent proof-term replay.
 Sandboxed Linux Comparator validation is a separate, remaining integrity gate.
@@ -156,9 +167,9 @@ around associated iterator types, and full Aeneas translation encounters
 associated-type, function-pointer, lifetime and loop limitations. They are proof
 tooling gaps, not completed obligations or demonstrated library defects.
 
-Next milestones are the formal native-word/Mathlib quotient-field representation,
-field-law and `Algebra.trace` transport, inverse wrappers and the x86-only
-Frobenius lookup/table-generation paths; then the capacity-18 public slice,
+Next milestones are the separately blocked enclosing `inverse_using` and
+`inverse` wrappers and the x86-only Frobenius lookup/table-generation paths;
+then the capacity-18 public slice,
 general decoder completeness, public state/resource/ownership behavior, and both
 x86 backends. The Mac's inability to execute x86 does not remove those source
 bodies from the proof scope. Performance tests and formal proof obligations remain

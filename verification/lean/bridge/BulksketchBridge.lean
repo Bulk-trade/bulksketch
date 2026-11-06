@@ -13,3 +13,8 @@ import BulksketchBridge.MapsQuadraticValue
 import BulksketchBridge.MapsTraceMath
 import BulksketchBridge.MapsQuadratic
 import BulksketchBridge.MapsCanonicalTrace
+import BulksketchBridge.Algebra.WordEndpoints
+import BulksketchBridge.Algebra.WordNative
+import BulksketchBridge.Algebra.TraceNative
+import BulksketchBridge.Algebra.InversePower
+import BulksketchBridge.InverseNative

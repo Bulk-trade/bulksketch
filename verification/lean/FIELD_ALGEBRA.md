@@ -1,5 +1,10 @@
 # Field algebra and native maps checkpoint
 
+This records the earlier field-algebra checkpoint. The subsequent
+[quotient-field checkpoint](QUOTIENT_FIELD.md) closes the word representation
+and algebra-trace transport listed as remaining below, and verifies the original
+`inverse_with_frobenius` body. The enclosing inversion wrappers remain open.
+
 This checkpoint preserves native revision
 `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`. Rust implementation and build inputs
 are unchanged. All earlier frozen statements and generated function definitions

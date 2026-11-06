@@ -74,6 +74,19 @@ def main():
     if {item["id"] for item in coverage["items"]} != {item["id"] for item in inventory["items"]}:
         raise RuntimeError("native obligation disappeared from coverage denominator")
     records = []
+    projections = linkage.get("native_generated_projections", [])
+    for projection in projections:
+        result, output = run("check-inverse-declaration-projection",
+            ["python3", str(ROOT / projection["checker"])], timeout=30, cwd=ROOT)
+        receipt = json.loads(output)
+        if receipt["compiled_projection"] != projection["bridge_copy"] or \
+                receipt["raw_generated_file"] != projection["generated"] or \
+                receipt["projection_file_sha256"] != projection["sha256"] or \
+                receipt["raw_file_sha256"] != projection["raw_sha256"] or \
+                receipt["source_declarations_retained_verbatim"] != 3 or \
+                receipt["shared_types_and_function_dictionary_declarations_checked"] is not True:
+            raise RuntimeError("inverse declaration projection lost exact source provenance")
+        records.append(result)
     result, _ = run("build-replay-loader", ["elan", "run", CHAIN, "lake", "build", "replay_export"],
                     timeout=120, cwd=ROOT)
     records.append(result)
@@ -108,6 +121,7 @@ def main():
     if coverage["proof_progress"]["checked_generated_body_refinements_under_recorded_TCB"] != len(refined):
         raise RuntimeError("stale generated-body coverage summary")
     copies = {item["bridge_copy"] for item in linkage["native_generated_copies"]}
+    copies.update(item["bridge_copy"] for item in projections)
     for native_id, entry in refined.items():
         item = items[native_id]
         recorded = item["generated_body_refinement_evidence"]
