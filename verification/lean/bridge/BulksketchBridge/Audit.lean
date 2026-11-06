@@ -21,6 +21,10 @@ import BulksketchBridge.Algebra.TraceChallenges
 import BulksketchBridge.Algebra.TraceNativeChallenges
 import BulksketchBridge.Algebra.InversePowerChallenges
 import BulksketchBridge.InverseChallenges
+import BulksketchBridge.PortableChallenges
+import BulksketchBridge.InverseUsingChallenges
+import BulksketchBridge.PortableInverseChallenges
+import BulksketchBridge.FrobeniusConstChallenges
 import Lean
 
 open Lean Elab Command Meta
@@ -140,7 +144,31 @@ run_cmd do
     (``BulksketchBridge.InverseChallenges.actualSourceReturnsFieldInverse,
       ``BulksketchBridge.Inverse.field_inverse_refines),
     (``BulksketchBridge.InverseChallenges.nativeCallbackInstanceReturnsFieldInverse,
-      ``BulksketchBridge.Inverse.native_callback_instance)
+      ``BulksketchBridge.Inverse.native_callback_instance),
+    (``BulksketchBridge.PortableChallenges.actualMultiplicationIsFieldMultiplication,
+      ``BulksketchBridge.Portable.mul_refines),
+    (``BulksketchBridge.PortableChallenges.actualSquareIsFieldSquare,
+      ``BulksketchBridge.Portable.square_refines),
+    (``BulksketchBridge.PortableChallenges.actualFrobeniusIsFullFieldPower,
+      ``BulksketchBridge.Portable.frobenius_refines),
+    (``BulksketchBridge.PortableChallenges.actualTraceIsAlgebraTrace,
+      ``BulksketchBridge.Portable.trace_refines),
+    (``BulksketchBridge.PortableChallenges.actualQuadraticHasNormalizedFieldMeaning,
+      ``BulksketchBridge.Portable.solve_quadratic_refines),
+    (``BulksketchBridge.PortableChallenges.actualRawMultiplicationReturnsFullProduct,
+      ``BulksketchBridge.Portable.raw_mul_refines),
+    (``BulksketchBridge.PortableChallenges.actualReductionIsExactQuotientRemainder,
+      ``BulksketchBridge.Portable.reduce_refines),
+    (``BulksketchBridge.InverseUsingChallenges.capturedSquareReturnsEveryIteration,
+      ``BulksketchBridge.InverseUsing.captured_square_refines),
+    (``BulksketchBridge.InverseUsingChallenges.actualInverseUsingReturnsFieldInverse,
+      ``BulksketchBridge.InverseUsing.inverse_using_refines),
+    (``BulksketchBridge.InverseUsingChallenges.actualInverseReturnsFieldInverse,
+      ``BulksketchBridge.InverseUsing.inverse_refines),
+    (``BulksketchBridge.PortableInverseChallenges.actualInverseReturnsFieldInverse,
+      ``BulksketchBridge.PortableInverse.inverse_refines),
+    (``BulksketchBridge.FrobeniusConstChallenges.actualConstSquareMatchesWord,
+      ``BulksketchBridge.FrobeniusConst.square_refines)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

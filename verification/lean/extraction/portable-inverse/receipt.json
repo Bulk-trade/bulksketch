@@ -1,0 +1,81 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "99aa9676b16281d02e8035e08331e553f2214356",
+  "selected_roots": [
+    "{impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::inverse",
+    "{impl bulksketch::field::BinaryField for bulksketch::field::Gf64}"
+  ],
+  "native_source_edited": false,
+  "reviewed_translator_variant": "tooling/aeneas-loop-capture",
+  "sanity_checks_required": true,
+  "commands": [
+    {
+      "name": "charon",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch/verification/lean/extraction/portable-inverse/portable-inverse.llbc",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::inverse",
+        "--start-from={impl bulksketch::field::BinaryField for bulksketch::field::Gf64}",
+        "--",
+        "--manifest-path",
+        "/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.782960041000024,
+      "log_sha256": "bfefd33c5c0b9ce84a1afc76b5c0cab61a209855886afa69cfba20b5543c8b4f"
+    },
+    {
+      "name": "aeneas",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-loop-capture/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/portable-inverse/PortableInverse",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/portable-inverse/portable-inverse.llbc"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.2326418329998887,
+      "log_sha256": "fd40be0d48a8744fb632bb69b7e5ed3cf80360c8515af98375b7fa14d3b3e327",
+      "binary_sha256": "680b8f84cd8578523d31a2d925b2a9340f2fd8cd2b95878f891b40058d00d209"
+    }
+  ],
+  "llbc_has_errors": false,
+  "llbc_sha256": "bdf97754398bcd49c23a632d8c7d8f76006402e09a6503ed30e4336048d1e4f8",
+  "generated": [
+    {
+      "path": "extraction/portable-inverse/PortableInverse/Funs.lean",
+      "sha256": "a9ef06a1539d0b7278024945bf738a8794a4dadf07447027049d6ac8921db337"
+    },
+    {
+      "path": "extraction/portable-inverse/PortableInverse/FunsExternal_Template.lean",
+      "sha256": "8ec389a8cc0d5df440639393fd97f6b242c65bb1a95763744b127e073de806c6"
+    },
+    {
+      "path": "extraction/portable-inverse/PortableInverse/Types.lean",
+      "sha256": "5c1085f440778976a5f256d30a14272df3e1c581783e8a30a167dbcac516e40b"
+    },
+    {
+      "path": "extraction/portable-inverse/PortableInverse/TypesExternal_Template.lean",
+      "sha256": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582"
+    }
+  ],
+  "status": "generated",
+  "required_flags": [
+    "-checks",
+    "-sequential"
+  ],
+  "translator_patch_sha256": "15ecb6d84c03d7ad68a384f10b153a1538474d813bacaeb27d4e79156cfbf111",
+  "native_files_checked": 41,
+  "build_inputs_checked": 3
+}

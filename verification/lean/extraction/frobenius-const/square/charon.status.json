@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/Users/junbug/bulk/bulksketch/verification/lean/extraction/frobenius-const/square/arithmetic.llbc",
+    "--start-from=bulksketch::field::frobenius::square",
+    "--",
+    "--manifest-path",
+    "/Users/junbug/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 3.1124804589999258,
+  "log": "extraction/frobenius-const/square/charon.log",
+  "log_sha256": "38d82fd2435c52a98466edd6532c69fd185983e7898d6b0c5066015254de7e2f"
+}

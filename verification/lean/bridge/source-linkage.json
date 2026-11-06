@@ -26,6 +26,12 @@
       "bridge_copy": "bridge/Arithmetic/Funs.lean",
       "sha256": "4d688e3ce715126a0bf92d0c43cac8361de11c6f5215c01fdbf7caf8d3584ef9",
       "byte_identical": true
+    },
+    {
+      "generated": "extraction/frobenius-const/square/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+      "sha256": "840f09b2caaf3a369502fcaa724ecdd097f031c47e2abd950aba59bc25218d23",
+      "byte_identical": true
     }
   ],
   "std_model": {
@@ -215,6 +221,26 @@
       "path": "extraction/inverse-chain/inverse.llbc",
       "sha256": "22cc34302a68119411d0b38a31b9a627b88150159fdf4d39f0df9e24dea79e87",
       "has_errors": false
+    },
+    {
+      "path": "extraction/portable-forwarding/portable.llbc",
+      "sha256": "729c11f465d25e2c7c9c5262f77b891b3b09f67e8e94b0c133d9b601b17d65fa",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc",
+      "sha256": "e42f06cbc1f27712f3c5fa9fed822841cf1093bd2f858c936dea9b1066ae5335",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/portable-inverse/portable-inverse.llbc",
+      "sha256": "bdf97754398bcd49c23a632d8c7d8f76006402e09a6503ed30e4336048d1e4f8",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/frobenius-const/square/arithmetic.llbc",
+      "sha256": "bbff1327f63a9743350a6f707e9c32bc33c85f9fa570456b599db1f2be70eb5e",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -316,6 +342,61 @@
       "native_item_id": "src/field/maps.rs:50:function:bulksketch::field::maps::inverse_with_frobenius",
       "generated_declaration": "bulksketch.field.maps.inverse_with_frobenius",
       "generated_file": "bridge/Arithmetic/InverseGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:14:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::mul",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.mul",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:18:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::square",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.square",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:22:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::frobenius",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.frobenius",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:34:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::trace",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.trace",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:38:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::solve_quadratic",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:42:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::raw_mul",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.raw_mul",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:46:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::reduce",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.reduce",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean"
+    },
+    {
+      "native_item_id": "src/field/maps.rs:36:function:bulksketch::field::maps::inverse_using",
+      "generated_declaration": "bulksketch.field.maps.inverse_using",
+      "generated_file": "bridge/Arithmetic/InverseUsingGenerated.lean"
+    },
+    {
+      "native_item_id": "src/field/maps.rs:27:function:bulksketch::field::maps::inverse",
+      "generated_declaration": "bulksketch.field.maps.inverse",
+      "generated_file": "bridge/Arithmetic/InverseUsingGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:26:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::inverse",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.inverse",
+      "generated_file": "bridge/Arithmetic/PortableInverseGenerated.lean"
+    },
+    {
+      "native_item_id": "src/field/frobenius.rs:55:function:bulksketch::field::frobenius::square",
+      "generated_declaration": "bulksketch.field.frobenius.square",
+      "generated_file": "bridge/Arithmetic/FrobeniusConstGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -330,6 +411,69 @@
       "checker": "extraction/inverse-chain/project.py",
       "declaration_count": 3,
       "scope": "Exact inverse_with_frobenius body and two loop helpers copied verbatim; shared extracted types and all Gf64 function dictionaries checked byte for byte. No native source or generated declaration body edits."
+    },
+    {
+      "generated": "extraction/portable-forwarding/Portable/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PortableGenerated.lean",
+      "sha256": "a0a51923e2be29423404ac9a5523d270e502f4f151e2ae84c46b60f9de286539",
+      "raw_sha256": "11ee26b358174af8fcf51b0f1cdd47f7bfbd57646faf8a1f9fd11360a933dd08",
+      "checker": "extraction/portable-forwarding/project.py",
+      "declaration_count": 7,
+      "scope": "Seven original forwarding methods retained verbatim; all shared source types/functions/dictionaries checked exactly."
+    },
+    {
+      "generated": "extraction/inverse-wrappers/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/InverseUsingGenerated.lean",
+      "sha256": "7c6ad32c606fe4779dc950fc6bc77b2631a36033eba170301eb0a5e12a0dfb46",
+      "raw_sha256": "4a8009854592056eecc02291a4fe1a3d8a71c20ab5920784eff1aa6aaeccbc8b",
+      "checker": "extraction/inverse-wrappers/project.py",
+      "checker_args": [],
+      "declaration_count": 22,
+      "translator_variant": "checked-frozen-capture-v1",
+      "scope": "Exact original closure and wrapper declarations under reviewed checks-enabled frontend; all shared declarations byte-identical to prior packages."
+    },
+    {
+      "generated": "extraction/inverse-wrappers/Arithmetic/Types.lean",
+      "bridge_copy": "bridge/Arithmetic/InverseUsingTypes.lean",
+      "sha256": "619fb7c67f9aa399df652f490893644a1cbcdce23748b885f5a93a38acad7235",
+      "raw_sha256": "ef16309c06e9b68d0cd9d207f76f10734347b52d239ce3925bad1c6c645a760a",
+      "checker": "extraction/inverse-wrappers/project.py",
+      "checker_args": [
+        "--types"
+      ],
+      "declaration_count": 1,
+      "translator_variant": "checked-frozen-capture-v1",
+      "scope": "Exact original closure and wrapper declarations under reviewed checks-enabled frontend; all shared declarations byte-identical to prior packages."
+    },
+    {
+      "generated": "extraction/portable-inverse/PortableInverse/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PortableInverseGenerated.lean",
+      "sha256": "c9f4b8b77ecc93ecf64e944309ceafd5ae52169fc13c2d00412b84ca93f74a94",
+      "raw_sha256": "a9ef06a1539d0b7278024945bf738a8794a4dadf07447027049d6ac8921db337",
+      "checker": "extraction/portable-inverse/project.py",
+      "declaration_count": 1,
+      "translator_variant": "checked-frozen-capture-v1",
+      "scope": "One exact original inverse forwarding method; all51 shared function/dictionary declarations and all shared types checked byte for byte."
+    },
+    {
+      "generated": "extraction/frobenius-const/square/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+      "sha256": "840f09b2caaf3a369502fcaa724ecdd097f031c47e2abd950aba59bc25218d23",
+      "raw_sha256": "840f09b2caaf3a369502fcaa724ecdd097f031c47e2abd950aba59bc25218d23",
+      "checker": "extraction/frobenius-const/project.py",
+      "declaration_count": 5,
+      "scope": "Whole generated const-square file is byte-identical. Original generated Types has no application declarations; all primitive types/runtime unchanged."
+    }
+  ],
+  "reviewed_translator_variants": [
+    {
+      "id": "checked-frozen-capture-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "tooling/aeneas-loop-capture/loop-capture.patch",
+      "patch_sha256": "15ecb6d84c03d7ad68a384f10b153a1538474d813bacaeb27d4e79156cfbf111",
+      "receipt": "tooling/aeneas-loop-capture/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Frozen immutable shared-only acyclic capture graphs ending in opaque type-variable leaves, with frozen-context equality checks enabled; loop signature generic retention. Original collapse guard unchanged; not a formal compiler soundness proof."
     }
   ]
 }

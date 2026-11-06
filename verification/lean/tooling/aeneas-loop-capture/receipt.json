@@ -1,0 +1,667 @@
+{
+  "status": "passed",
+  "base_aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "patch": "tooling/aeneas-loop-capture/loop-capture.patch",
+  "patch_sha256": "15ecb6d84c03d7ad68a384f10b153a1538474d813bacaeb27d4e79156cfbf111",
+  "modified_sources": {
+    "src/interp/InterpJoin.ml": "2dfe2f409bfc1aa36f250cde6780517f74fced50535b082b8d2f669922aa363a",
+    "src/pure/PureUtils.ml": "3d1b194af3d70fe748aacfc2adba5c4eb3b3aa75bca2192e4a42648046c60117",
+    "src/pure/PureMicroPassesLoops.ml": "5651ae0defd5428a4433f30ad594de325c750f3a822c92f8a5c7f231fd0947a4"
+  },
+  "base_sources": {
+    "src/interp/InterpJoin.ml": "57c5478aae42f8a354755424b67f67f37dc8bd233d653c97de0dcbbea5dd6229",
+    "src/pure/PureUtils.ml": "b39bc6bc55f6a005b4af40ecf8e6e395129aa61538cd25b5ec2e0fd94512c8bd",
+    "src/pure/PureMicroPassesLoops.ml": "f41d4074d48ba81113c651b7bda765a53aae2341d8b1cd6060e80c5ae2a54c37"
+  },
+  "unchanged_collapse_guard_source_sha256": "bd02b5094799b93f14f29e962b3371db7ccde9eda496ae444aef41995c4948e7",
+  "patched_binary_sha256": "680b8f84cd8578523d31a2d925b2a9340f2fd8cd2b95878f891b40058d00d209",
+  "baseline_binary_sha256": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+  "extraction": {
+    "input": "extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc",
+    "input_sha256": "e42f06cbc1f27712f3c5fa9fed822841cf1093bd2f858c936dea9b1066ae5335",
+    "required_flags": [
+      "-checks",
+      "-sequential"
+    ],
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-loop-capture/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-split-files",
+      "-checks",
+      "-sequential",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/original-inverse",
+      "/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc"
+    ],
+    "generated": [
+      {
+        "path": "extraction/inverse-wrappers/Arithmetic/Types.lean",
+        "sha256": "ef16309c06e9b68d0cd9d207f76f10734347b52d239ce3925bad1c6c645a760a"
+      },
+      {
+        "path": "extraction/inverse-wrappers/Arithmetic/Funs.lean",
+        "sha256": "4a8009854592056eecc02291a4fe1a3d8a71c20ab5920784eff1aa6aaeccbc8b"
+      }
+    ],
+    "exit_code": 0
+  },
+  "regressions": [
+    {
+      "case": "captured_callback",
+      "baseline_exit_code": 1,
+      "patched_exit_code": 0,
+      "status": "passed",
+      "meaning": "required positive"
+    },
+    {
+      "case": "aliased_shared_capture",
+      "baseline_exit_code": 1,
+      "patched_exit_code": 0,
+      "status": "passed",
+      "meaning": "required positive"
+    },
+    {
+      "case": "captured_phantom_callback",
+      "baseline_exit_code": 1,
+      "patched_exit_code": 0,
+      "status": "passed",
+      "meaning": "required positive"
+    },
+    {
+      "case": "ordinary_shared_loop",
+      "baseline_exit_code": 0,
+      "patched_exit_code": 0,
+      "status": "passed",
+      "meaning": "required positive"
+    },
+    {
+      "case": "captured_borrow_result",
+      "baseline_exit_code": 1,
+      "patched_exit_code": 0,
+      "status": "passed",
+      "meaning": "required positive"
+    },
+    {
+      "case": "nested_mutable_shared_capture",
+      "baseline_exit_code": 1,
+      "patched_exit_code": 1,
+      "status": "passed",
+      "meaning": "unchanged indirect graph control"
+    },
+    {
+      "case": "nested_shared_referent_capture",
+      "baseline_exit_code": 1,
+      "patched_exit_code": 1,
+      "status": "passed",
+      "meaning": "unchanged indirect graph control"
+    },
+    {
+      "case": "captured_expandable_referent",
+      "baseline_exit_code": 1,
+      "patched_exit_code": 1,
+      "status": "passed",
+      "meaning": "unchanged indirect graph control"
+    },
+    {
+      "case": "without-checks",
+      "exit_code": 1,
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "nested_shared_then_mutable",
+      "status": "expected_rust_borrow_rejection_confirmed"
+    },
+    {
+      "case": "shared_then_mutable",
+      "status": "expected_rust_borrow_rejection_confirmed"
+    }
+  ],
+  "commands": [
+    {
+      "name": "captured_callback-charon",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_callback/input.llbc",
+        "--start-from=aeneas_loop_capture_regression::captured_callback",
+        "--",
+        "--manifest-path",
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas-loop-capture/tests/Cargo.toml",
+        "--lib",
+        "--locked"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.42659625000032975,
+      "log_sha256": "ea13b42984a4a62b6580bdaecee6b1ec9f171ea9502b0f53efeb5609bde2c04b"
+    },
+    {
+      "name": "captured_callback-baseline",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_callback/baseline",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_callback/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 0.42314058300007673,
+      "log_sha256": "1e32d2cf3eaa48c6605e655725443fd05648a5d435432e3918d9ff863c90b234"
+    },
+    {
+      "name": "captured_callback-patched",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-loop-capture/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_callback/patched",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_callback/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.47674245899997914,
+      "log_sha256": "b20b4e000ed8a916be6dde3009007989604634e28ba34687fdea2013d61d9fe3"
+    },
+    {
+      "name": "aliased_shared_capture-charon",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/aliased_shared_capture/input.llbc",
+        "--start-from=aeneas_loop_capture_regression::aliased_shared_capture",
+        "--",
+        "--manifest-path",
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas-loop-capture/tests/Cargo.toml",
+        "--lib",
+        "--locked"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.4683152089996838,
+      "log_sha256": "8814bd87c57d86ac630d4cb3c8bb963af5ddd78f6f83b9862d193ceaf937338f"
+    },
+    {
+      "name": "aliased_shared_capture-baseline",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/aliased_shared_capture/baseline",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/aliased_shared_capture/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 0.44463854200012065,
+      "log_sha256": "ff84ef6add819414c8e7fff024c080c4f8dd1f3e4103dd909a5adbc4f2bb8912"
+    },
+    {
+      "name": "aliased_shared_capture-patched",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-loop-capture/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/aliased_shared_capture/patched",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/aliased_shared_capture/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.5092416249999587,
+      "log_sha256": "6b44271840e802504dabb87f62b950bbf4e492809fd8d5c5a0a1a1b1460d0aa3"
+    },
+    {
+      "name": "captured_phantom_callback-charon",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_phantom_callback/input.llbc",
+        "--start-from=aeneas_loop_capture_regression::captured_phantom_callback",
+        "--",
+        "--manifest-path",
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas-loop-capture/tests/Cargo.toml",
+        "--lib",
+        "--locked"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.47536075000016353,
+      "log_sha256": "8814bd87c57d86ac630d4cb3c8bb963af5ddd78f6f83b9862d193ceaf937338f"
+    },
+    {
+      "name": "captured_phantom_callback-baseline",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_phantom_callback/baseline",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_phantom_callback/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 0.4242669579998619,
+      "log_sha256": "2dfd4396a1b146ad5b2bbdd2f51dcfc4523dbc37c652bf68e13aab99bfdf45bf"
+    },
+    {
+      "name": "captured_phantom_callback-patched",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-loop-capture/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_phantom_callback/patched",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_phantom_callback/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.4722210410000116,
+      "log_sha256": "07bed09db5c36cc80a58279314b251d656fc9610dcef8d5c4bf61e51bba0be90"
+    },
+    {
+      "name": "ordinary_shared_loop-charon",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/ordinary_shared_loop/input.llbc",
+        "--start-from=aeneas_loop_capture_regression::ordinary_shared_loop",
+        "--",
+        "--manifest-path",
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas-loop-capture/tests/Cargo.toml",
+        "--lib",
+        "--locked"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.4409635410002011,
+      "log_sha256": "ea13b42984a4a62b6580bdaecee6b1ec9f171ea9502b0f53efeb5609bde2c04b"
+    },
+    {
+      "name": "ordinary_shared_loop-baseline",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/ordinary_shared_loop/baseline",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/ordinary_shared_loop/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.44709287500018036,
+      "log_sha256": "7b6ea4f5219bbe9506b4dd19bd09f8b59cdfbe571d90b545038afd7730c84dd2"
+    },
+    {
+      "name": "ordinary_shared_loop-patched",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-loop-capture/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/ordinary_shared_loop/patched",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/ordinary_shared_loop/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.44277645800002574,
+      "log_sha256": "af08e6e3539315ee540e90e5f68ad421e6e27e09ea933d24e86b77871b3debb9"
+    },
+    {
+      "name": "captured_borrow_result-charon",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_borrow_result/input.llbc",
+        "--start-from=aeneas_loop_capture_regression::captured_borrow_result",
+        "--",
+        "--manifest-path",
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas-loop-capture/tests/Cargo.toml",
+        "--lib",
+        "--locked"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.410711375000119,
+      "log_sha256": "877fca76a1d37152b0f7a4610b45bc33c53b7128ae6ef602c1483c1c11bf2fb7"
+    },
+    {
+      "name": "captured_borrow_result-baseline",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_borrow_result/baseline",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_borrow_result/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 0.4701122500000565,
+      "log_sha256": "a31a2806c41b1737792a45ce5754715da3b9157190bc64f619ac670bee72f4ba"
+    },
+    {
+      "name": "captured_borrow_result-patched",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-loop-capture/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_borrow_result/patched",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_borrow_result/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.5159660000003896,
+      "log_sha256": "fe2423f332542a5b2858eb4b4e1413a151e297639deecf517b5a47a515764286"
+    },
+    {
+      "name": "nested_mutable_shared_capture-charon",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/nested_mutable_shared_capture/input.llbc",
+        "--start-from=aeneas_loop_capture_regression::nested_mutable_shared_capture",
+        "--",
+        "--manifest-path",
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas-loop-capture/tests/Cargo.toml",
+        "--lib",
+        "--locked"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.41352983400020094,
+      "log_sha256": "ea13b42984a4a62b6580bdaecee6b1ec9f171ea9502b0f53efeb5609bde2c04b"
+    },
+    {
+      "name": "nested_mutable_shared_capture-baseline",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/nested_mutable_shared_capture/baseline",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/nested_mutable_shared_capture/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 0.359473916999832,
+      "log_sha256": "ff41788d5dab5f672e570981c4b126f21a5008a600db2e703fbc732762b0af0a"
+    },
+    {
+      "name": "nested_mutable_shared_capture-patched",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-loop-capture/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/nested_mutable_shared_capture/patched",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/nested_mutable_shared_capture/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 0.3554666250001901,
+      "log_sha256": "1ebac15980926805f51de433c258da1b7b38003bbee48cd479db1bf938c0ece7"
+    },
+    {
+      "name": "nested_shared_referent_capture-charon",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/nested_shared_referent_capture/input.llbc",
+        "--start-from=aeneas_loop_capture_regression::nested_shared_referent_capture",
+        "--",
+        "--manifest-path",
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas-loop-capture/tests/Cargo.toml",
+        "--lib",
+        "--locked"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.39534649999995963,
+      "log_sha256": "877fca76a1d37152b0f7a4610b45bc33c53b7128ae6ef602c1483c1c11bf2fb7"
+    },
+    {
+      "name": "nested_shared_referent_capture-baseline",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/nested_shared_referent_capture/baseline",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/nested_shared_referent_capture/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 0.42977937500018015,
+      "log_sha256": "5be6c7d6889caa2161d811c8449ffaace39407af25a43e01de64dcbfc5a8632a"
+    },
+    {
+      "name": "nested_shared_referent_capture-patched",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-loop-capture/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/nested_shared_referent_capture/patched",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/nested_shared_referent_capture/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 0.41769879200001014,
+      "log_sha256": "d4d3ee69b9767182490f11cb92c56493c98466c14146ef6da96ebe4e4143303d"
+    },
+    {
+      "name": "captured_expandable_referent-charon",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_expandable_referent/input.llbc",
+        "--start-from=aeneas_loop_capture_regression::captured_expandable_referent",
+        "--",
+        "--manifest-path",
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas-loop-capture/tests/Cargo.toml",
+        "--lib",
+        "--locked"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.4270438340004148,
+      "log_sha256": "874db340833fe9b16b25b813d58a98ba156de8f29790f1e05f8acec56580103b"
+    },
+    {
+      "name": "captured_expandable_referent-baseline",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_expandable_referent/baseline",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_expandable_referent/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 0.42559495799969227,
+      "log_sha256": "249e32f360539ebd140b11d872041a5e50d403f3929703172521a1be1c6f31c4"
+    },
+    {
+      "name": "captured_expandable_referent-patched",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-loop-capture/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_expandable_referent/patched",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_expandable_referent/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 0.42646229099955235,
+      "log_sha256": "53dc7a4676966cfa7f2361fcbf6748146174901e07c272f905d21fe79be6953f"
+    },
+    {
+      "name": "without-checks",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-loop-capture/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/without-checks",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/captured_callback/input.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 0.42788879099998667,
+      "log_sha256": "f3dcb9fad37589a78234ce6fc6195f75cf1e7fa6846b2451e6151657a563a315"
+    },
+    {
+      "name": "nested_shared_then_mutable-rust-borrow-rejection",
+      "command": [
+        "rustc",
+        "--edition=2024",
+        "--crate-type=lib",
+        "--emit=metadata",
+        "-o",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/nested_shared_then_mutable.rmeta",
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas-loop-capture/tests/negative/nested_shared_then_mutable.rs"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 0.045175416999882145,
+      "log_sha256": "487da7a2f0fb9cc55c5438820ab0d4c558ae52c0cdede2e5b29cb43c4ce04fd6"
+    },
+    {
+      "name": "shared_then_mutable-rust-borrow-rejection",
+      "command": [
+        "rustc",
+        "--edition=2024",
+        "--crate-type=lib",
+        "--emit=metadata",
+        "-o",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/shared_then_mutable.rmeta",
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas-loop-capture/tests/negative/shared_then_mutable.rs"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 0.04783820900001956,
+      "log_sha256": "6a938ac12b8454c37a88b53914391884f2290f3355621f4a59f8d3f67deb8452"
+    },
+    {
+      "name": "rust-value-regressions",
+      "command": [
+        "cargo",
+        "test",
+        "--release",
+        "--locked",
+        "--manifest-path",
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas-loop-capture/tests/Cargo.toml",
+        "--target-dir",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/rust-target",
+        "-j2"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.051908875000208354,
+      "log_sha256": "da903b706cc93632bda60cbc8b08b775dfa350c300e45300adb959cf0e5af1cb"
+    },
+    {
+      "name": "original-inverse",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-loop-capture/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/capture-regressions-final/original-inverse",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 1.4471184999997604,
+      "log_sha256": "aad9cc1b5c59b10a592240f7ca7c290f950a681e799473aa2c6ea24f2986339a"
+    }
+  ],
+  "native_source_changed": false,
+  "regression_sources": {
+    "tooling/aeneas-loop-capture/run.py": "d7c058d5c76b5b58309b3c249cd93bdd524ace5503b155bf4d34992cabea1747",
+    "tooling/aeneas-loop-capture/tests/Cargo.toml": "ae431364b119e3dcc981627892e0dd70d5192da8e87d939fc5c839ff66661765",
+    "tooling/aeneas-loop-capture/tests/Cargo.lock": "ac2c6bd2c17d40954934091aab68d7838a20451f960ba44a3c536a6a3a3f86d5",
+    "tooling/aeneas-loop-capture/tests/negative/nested_shared_then_mutable.rs": "42f7b8fd74abac3cc3198f83cf0bc68179f2f4d8aeef2e554f8d859d694cc86a",
+    "tooling/aeneas-loop-capture/tests/negative/shared_then_mutable.rs": "152499380468149ef6040741f2a1b826155aa4c212e7b23e867bea987b9d2a2c",
+    "tooling/aeneas-loop-capture/tests/src/lib.rs": "a29be3658d98bc00a89ed8dc7fc4e87a161be41c955bb59b0371a53f52038196"
+  },
+  "new_native_coverage_credit_from_tests": 0,
+  "trust_boundary": "Reviewed Aeneas frontend patch under mandatory enabled sanity/frozen-context checks; not a kernel theorem of compiler correctness."
+}

@@ -74,18 +74,82 @@ def main():
     if {item["id"] for item in coverage["items"]} != {item["id"] for item in inventory["items"]}:
         raise RuntimeError("native obligation disappeared from coverage denominator")
     records = []
+    variants = linkage.get("reviewed_translator_variants", [])
+    for variant in variants:
+        receipt = json.loads((ROOT / variant["receipt"]).read_text())
+        extraction = receipt["extraction"]
+        expected_sources = {"src/interp/InterpJoin.ml", "src/pure/PureUtils.ml",
+                            "src/pure/PureMicroPassesLoops.ml"}
+        if receipt["status"] != "passed" or receipt["base_aeneas_commit"] != runtime_head or \
+                receipt["base_aeneas_commit"] != variant["base_commit"] or \
+                variant["mandatory_checks"] is not True or \
+                receipt["charon_commit"] != linkage["charon_commit"] or \
+                receipt["patch"] != variant["patch"] or \
+                receipt["patch_sha256"] != variant["patch_sha256"] or \
+                sha(ROOT / variant["patch"]) != variant["patch_sha256"] or \
+                set(receipt["modified_sources"]) != expected_sources or \
+                set(receipt["base_sources"]) != expected_sources or \
+                extraction["input"] != "extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc" or \
+                len(extraction["generated"]) != 2 or \
+                {item["path"] for item in extraction["generated"]} != {
+                    "extraction/inverse-wrappers/Arithmetic/Types.lean",
+                    "extraction/inverse-wrappers/Arithmetic/Funs.lean"} or \
+                extraction["exit_code"] != 0 or "-checks" not in extraction["required_flags"] or \
+                not set(extraction["required_flags"]) <= set(extraction["command"]) or \
+                sha(ROOT / extraction["input"]) != extraction["input_sha256"]:
+            raise RuntimeError("reviewed translator variant lost pinned provenance/checks")
+        changed = re.findall(r"(?m)^diff --git a/(\S+) b/(\S+)$",
+                             (ROOT / variant["patch"]).read_text())
+        if {before for before, after in changed if before == after} != expected_sources or \
+                len(changed) != len(expected_sources):
+            raise RuntimeError("reviewed translator patch modifies unexpected files")
+        if sha(runtime / "src/interp/InterpReduceCollapse.ml") != \
+                receipt["unchanged_collapse_guard_source_sha256"]:
+            raise RuntimeError("original nested-loan guard changed")
+        for path, expected in receipt["base_sources"].items():
+            if sha(runtime / path) != expected:
+                raise RuntimeError("translator variant base source drift")
+        for item in extraction["generated"]:
+            if sha(ROOT / item["path"]) != item["sha256"]:
+                raise RuntimeError("reviewed variant generated artifact drift")
+        if not receipt["regressions"] or any(item["status"] not in {
+                "passed", "expected_rejection_confirmed", "expected_rust_borrow_rejection_confirmed"}
+                for item in receipt["regressions"]):
+            raise RuntimeError("missing successful translator regression evidence")
+        regressions = {item["case"]: item for item in receipt["regressions"]}
+        expected_matrix = {"captured_callback": (1, 0), "aliased_shared_capture": (1, 0),
+                           "captured_phantom_callback": (1, 0), "ordinary_shared_loop": (0, 0),
+                           "captured_borrow_result": (1, 0), "nested_mutable_shared_capture": (1, 1),
+                           "nested_shared_referent_capture": (1, 1), "captured_expandable_referent": (1, 1)}
+        if len(regressions) != len(receipt["regressions"]) or \
+                set(regressions) != set(expected_matrix) | {
+                    "without-checks", "shared_then_mutable", "nested_shared_then_mutable"}:
+            raise RuntimeError("translator regression matrix omitted a required control")
+        for name, expected in expected_matrix.items():
+            if (regressions[name]["baseline_exit_code"], regressions[name]["patched_exit_code"]) != expected:
+                raise RuntimeError("translator positive/indirect-control outcome changed")
+        if regressions["without-checks"]["exit_code"] == 0 or \
+                any(regressions[name]["status"] != "expected_rust_borrow_rejection_confirmed"
+                    for name in ["shared_then_mutable", "nested_shared_then_mutable"]) or \
+                not any(item["name"] == "rust-value-regressions" and item["exit_code"] == 0
+                        for item in receipt["commands"]):
+            raise RuntimeError("translator checks/alias/value controls are incomplete")
+        result, _ = run("reviewed-translator-patch-applies", ["git", "apply", "--check",
+                         str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
+        records.append(result)
     projections = linkage.get("native_generated_projections", [])
     for projection in projections:
-        result, output = run("check-inverse-declaration-projection",
-            ["python3", str(ROOT / projection["checker"])], timeout=30, cwd=ROOT)
+        result, output = run("check-projection-" + Path(projection["bridge_copy"]).stem,
+            ["python3", str(ROOT / projection["checker"]), *projection.get("checker_args", [])],
+            timeout=30, cwd=ROOT)
         receipt = json.loads(output)
         if receipt["compiled_projection"] != projection["bridge_copy"] or \
                 receipt["raw_generated_file"] != projection["generated"] or \
                 receipt["projection_file_sha256"] != projection["sha256"] or \
                 receipt["raw_file_sha256"] != projection["raw_sha256"] or \
-                receipt["source_declarations_retained_verbatim"] != 3 or \
+                receipt["source_declarations_retained_verbatim"] != projection["declaration_count"] or \
                 receipt["shared_types_and_function_dictionary_declarations_checked"] is not True:
-            raise RuntimeError("inverse declaration projection lost exact source provenance")
+            raise RuntimeError("declaration projection lost exact source provenance")
         records.append(result)
     result, _ = run("build-replay-loader", ["elan", "run", CHAIN, "lake", "build", "replay_export"],
                     timeout=120, cwd=ROOT)
@@ -122,9 +186,18 @@ def main():
         raise RuntimeError("stale generated-body coverage summary")
     copies = {item["bridge_copy"] for item in linkage["native_generated_copies"]}
     copies.update(item["bridge_copy"] for item in projections)
+    variant_ids = {item["id"] for item in variants}
+    if len(variant_ids) != len(variants):
+        raise RuntimeError("duplicate reviewed translator variant")
     for native_id, entry in refined.items():
         item = items[native_id]
         recorded = item["generated_body_refinement_evidence"]
+        used_variants = {projection["translator_variant"] for projection in projections
+                         if projection["bridge_copy"] in entry["generated_files"] and
+                         "translator_variant" in projection}
+        if used_variants != ({entry["translator_variant"]} if "translator_variant" in entry else set()) or \
+                not used_variants <= variant_ids:
+            raise RuntimeError("source refinement hides or lacks its translator variant")
         match = next((event for event in events if event["kind"] == "challenge_match" and
                       event["challenge"] == entry["challenge"] and event["theorem"] == entry["theorem"]), None)
         if source_items[native_id]["kind"] not in {"function", "method", "trait_default"} or \
@@ -194,6 +267,7 @@ def main():
     records.append(result)
     summary = {"status": "passed", "source_commit": scope["source_commit"], "checkout_commit": head,
                "runtime_commit": runtime_head,
+               "reviewed_translator_variants": [item["id"] for item in variants],
                "checked_generated_body_refinements": [entry["label"] for entry in registry["refinements"]],
                "frozen_challenges_matched": len(challenges),
                "axioms_used": sorted({axiom for event in roots for axiom in event["axioms"]}),

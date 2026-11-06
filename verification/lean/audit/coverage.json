@@ -1106,7 +1106,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Portable.mul_refines",
+        "scope": "Original Portable forwarding body returns normally on every native-width input with the exact full-word/raw-product result and genuine Mathlib field/trace/normalized quadratic semantics stated by its frozen challenge. No callback-success or caller-success premise; original source and shared dependencies retained verbatim.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/portable.rs:18:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::square",
@@ -1126,7 +1133,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Portable.square_refines",
+        "scope": "Original Portable forwarding body returns normally on every native-width input with the exact full-word/raw-product result and genuine Mathlib field/trace/normalized quadratic semantics stated by its frozen challenge. No callback-success or caller-success premise; original source and shared dependencies retained verbatim.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/portable.rs:22:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::frobenius",
@@ -1146,7 +1160,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Portable.frobenius_refines",
+        "scope": "Original Portable forwarding body returns normally on every native-width input with the exact full-word/raw-product result and genuine Mathlib field/trace/normalized quadratic semantics stated by its frozen challenge. No callback-success or caller-success premise; original source and shared dependencies retained verbatim.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/portable.rs:26:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::inverse",
@@ -1166,7 +1187,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.PortableInverse.inverse_refines",
+        "scope": "Every original Portable inverse returns normally: None exactly for zero, otherwise the unique represented Mathlib field inverse. No callback premise; original forwarding body and dependencies retained verbatim under the mandatory-checks reviewed frontend variant.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/portable.rs:34:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::trace",
@@ -1186,7 +1214,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Portable.trace_refines",
+        "scope": "Original Portable forwarding body returns normally on every native-width input with the exact full-word/raw-product result and genuine Mathlib field/trace/normalized quadratic semantics stated by its frozen challenge. No callback-success or caller-success premise; original source and shared dependencies retained verbatim.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/portable.rs:38:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::solve_quadratic",
@@ -1206,7 +1241,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Portable.solve_quadratic_refines",
+        "scope": "Original Portable forwarding body returns normally on every native-width input with the exact full-word/raw-product result and genuine Mathlib field/trace/normalized quadratic semantics stated by its frozen challenge. No callback-success or caller-success premise; original source and shared dependencies retained verbatim.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/portable.rs:42:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::raw_mul",
@@ -1226,7 +1268,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Portable.raw_mul_refines",
+        "scope": "Original Portable forwarding body returns normally on every native-width input with the exact full-word/raw-product result and genuine Mathlib field/trace/normalized quadratic semantics stated by its frozen challenge. No callback-success or caller-success premise; original source and shared dependencies retained verbatim.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/portable.rs:46:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::reduce",
@@ -1246,7 +1295,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Portable.reduce_refines",
+        "scope": "Original Portable forwarding body returns normally on every native-width input with the exact full-word/raw-product result and genuine Mathlib field/trace/normalized quadratic semantics stated by its frozen challenge. No callback-success or caller-success premise; original source and shared dependencies retained verbatim.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/portable.rs:62:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::scale_xor",
@@ -5454,7 +5510,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.FrobeniusConst.square_refines",
+        "scope": "Every original U64 const-square call returns the exact canonical square word. Original two64-step loops, all checked I32 arithmetic/shifts, arbitrary128-bit polynomial long division and all eight byte reads/LE reconstruction are proved. Actual original production x86 target extracted with unmodified pinned tools; no ISA execution or table-initializer proof credit.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/field/frobenius.rs:5:static:bulksketch::field::frobenius::TABLES",
@@ -5827,7 +5890,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.InverseUsing.inverse_refines",
+        "scope": "Every U64 input returns normally as None exactly for zero and otherwise the unique represented Mathlib field inverse. Original captured-square loop and all U32 counts/bounds are proved; inverse_using has explicit native callback equalities, while inverse supplies actual generated function-pointer dictionaries with no callback premise. Requires recorded checks-enabled reviewed frontend variant; no replacement closure model or application axiom.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/field/maps.rs:36:function:bulksketch::field::maps::inverse_using",
@@ -5847,7 +5917,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.InverseUsing.inverse_using_refines",
+        "scope": "Every U64 input returns normally as None exactly for zero and otherwise the unique represented Mathlib field inverse. Original captured-square loop and all U32 counts/bounds are proved; inverse_using has explicit native callback equalities, while inverse supplies actual generated function-pointer dictionaries with no callback premise. Requires recorded checks-enabled reviewed frontend variant; no replacement closure model or application axiom.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/field/maps.rs:50:function:bulksketch::field::maps::inverse_with_frobenius",
@@ -11133,18 +11210,20 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Fifteen actual generated-body refinements: six earlier bodies strengthened in place to Mathlib quotient-field arithmetic/Algebra.trace, plus the original inverse_with_frobenius body under explicit native callback contracts and a closed callback instance. Mathematical lemmas, loop helpers and extraction artifacts add no extra native body credit. Complete compiler/runtime/memory/ISA closure and remaining methods stay open; no percentage claimed.",
-    "checked_generated_body_refinements_under_recorded_TCB": 15,
+    "note": "All 344 native executable declarations retained. Twenty-six distinct generated-body functional refinements: all three scalar inversion functions, eight Portable arithmetic forwarders, original x86-visible Frobenius const-square, and earlier meter/arithmetic/maps. Three enclosing inverse bodies use the named mandatory-checks reviewed frontend variant; no new runtime models or application axioms. Compiler/runtime/memory/ISA/expanded native closure remains open; no percentage or full native coverage claim.",
+    "checked_generated_body_refinements_under_recorded_TCB": 26,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
       "source_tables": "BulksketchBridge.MapsTables.rows_match_source/chunks_match_source",
       "native_word_quotient_field_bridge": "BulksketchBridge.Algebra.Gf64.bijective_representation",
-      "inverse_wrappers": "inverse_with_frobenius: BulksketchBridge.Inverse.field_inverse_refines and native_callback_instance; inverse_using/inverse remain blocked by the original captured-closure extractor limitation, with zero credit.",
+      "inverse_wrappers": "All three scalar maps inversion functions have source-body field-inverse refinements; inverse_using/inverse use the checks-enabled reviewed translator variant checked-frozen-capture-v1, not the failing unpatched frontend.",
       "multiplication_transport": "BulksketchBridge.Algebra.Gf64.native_mul_is_field",
       "square_transport": "BulksketchBridge.Algebra.Gf64.native_square_is_field",
       "algebra_trace_transport": "BulksketchBridge.Algebra.Gf64.native_trace_is_algebra_trace",
-      "inverse_exponent": "BulksketchBridge.Algebra.Gf64.field_inverse_power"
+      "inverse_exponent": "BulksketchBridge.Algebra.Gf64.field_inverse_power",
+      "native_const_square": "BulksketchBridge.FrobeniusConst.square_refines; all128 source loop steps and complete LE output; original pinned frontend/x86 production target, no tables/ISA credit.",
+      "portable_arithmetic": "Seven Portable forwarding endpoints plus callback-free PortableInverse.inverse_refines; each original source method counted once."
     }
   }
 }

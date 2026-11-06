@@ -1,0 +1,63 @@
+{
+  "status": "targeted Lean exact-source endpoint and standard-only axiom closures passed; independent review and global replay are separate gates",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "source_item_id": "src/field/frobenius.rs:55:function:bulksketch::field::frobenius::square",
+  "source_line_span_sha256": "327fbb9dc34a842ed4b8521785748310e6bc14e6ab38466f771afbdb157b5d84",
+  "native_source_edited": false,
+  "native_body_refinements_added": 1,
+  "loop_helper_source_credits": 0,
+  "complete_native_contract_status": "unproved; frontend/runtime/compiler/machine correspondence and other declared trust links remain",
+  "cross_target": "x86_64-apple-darwin",
+  "production_configuration": true,
+  "test_cfg_enabled": false,
+  "target_std_installed": "nightly-2026-09-17 x86_64-apple-darwin",
+  "generated_module": "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+  "raw_extraction_receipt": "extraction/frobenius-const/square/receipt.json",
+  "source_declarations_retained_verbatim": 5,
+  "new_runtime_models": 0,
+  "files_sha256": {
+    "bridge/BulksketchBridge/FrobeniusConstSpec.lean": "68ae588ef8c0c8808c3feaa95550254fb4a511c434d8d0300e18d074000a6df4",
+    "bridge/BulksketchBridge/FrobeniusConstChallenges.lean": "3b6d008cc28b54591230316749b45b42380d735bd3abad9d03c350eff12ddd4d",
+    "bridge/BulksketchBridge/FrobeniusConstMath.lean": "62463a835c8ef3b3633e692da36698b20d9f159d8ac72ffad542e00639431a24",
+    "bridge/BulksketchBridge/FrobeniusConstSource.lean": "7c4507d36f8d6c074ae4c8e30e39bebcb324b40e291550b8e052cc2b1be799b8",
+    "bridge/BulksketchBridge/FrobeniusConst.lean": "e536bb8852d48ebfee0e94e5414e83806997f447b07067ca247db5578ff8678c",
+    "bridge/Arithmetic/FrobeniusConstGenerated.lean": "840f09b2caaf3a369502fcaa724ecdd097f031c47e2abd950aba59bc25218d23",
+    "extraction/frobenius-const/project.py": "0a3c7e4720e4cc8e35af198449aa2c8803d3938390fa61031c8a044ed8b59d2e",
+    "extraction/frobenius-const/run.py": "d94b61ee434d37235f0508addb9f254398d19bfd86cca2eec64a5b76b73ebde7"
+  },
+  "endpoint": {
+    "challenge": "BulksketchBridge.FrobeniusConstChallenges.actualConstSquareMatchesWord",
+    "theorem": "BulksketchBridge.FrobeniusConst.square_refines"
+  },
+  "mathematical_guarantees": [
+    "Every complete 128-bit division input has the invariant original=current remainder XOR exact modulusMultiple128 accumulated quotient",
+    "Each cancellation clears its selected coefficient and preserves every previously cleared higher coefficient; final degree below 64",
+    "Bounded-quotient/remainder uniqueness identifies actual long division with existing two-fold canonical reduction",
+    "Every spread prefix preserves exactly the processed input bits at even coefficient positions; full 128-bit raw square matches"
+  ],
+  "source_guarantees": [
+    "All U64 operands; actual original const-square body returns normally with exact complete Period.squareWord output",
+    "All 64 spread steps and 64 descending long-division steps; Nat countdown strictly decreases and terminal ControlFlow.done reached",
+    "Source I32 counters range 0..128; addition,doubling,both subtractions and all U64/U128 shifts checked before use",
+    "All 8 original array indices 0..7 inbounds of 16 little-endian bytes for both pointer widths; U64 reconstruction retains exactly low 64 coefficients"
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "checks": [
+    "lake build BulksketchBridge.FrobeniusConst",
+    "exact frozen challenge assignment in extraction/frobenius-const/Audit.lean",
+    "five transitive axiom closures in extraction/frobenius-const/axiom-audit.log",
+    "strict original generated-file/type-empty/declaration-count checker extraction/frobenius-const/project.py"
+  ],
+  "untouched_remaining_scope": [
+    "field::frobenius::lookup",
+    "field::frobenius::inverse21",
+    "field::frobenius::inverse21_table",
+    "field::frobenius::tables",
+    "all accelerated ISA backend bodies"
+  ],
+  "note": "Cross-target source extraction is not x86 execution or an ISA correctness proof. Existing pinned Aeneas byte/scalar models and compiler/machine correspondence remain explicit TCB; no application correctness axiom or opaque source-function adapter."
+}

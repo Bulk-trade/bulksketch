@@ -1,0 +1,105 @@
+diff --git a/src/interp/InterpJoin.ml b/src/interp/InterpJoin.ml
+index 46328d4..6ccb81e 100644
+--- a/src/interp/InterpJoin.ml
++++ b/src/interp/InterpJoin.ml
+@@ -200,6 +200,31 @@ let reborrow_ashared_loans (span : Meta.span) (loop_id : LoopId.id option)
+   in
+   List.iter (fun abs -> visitor#visit_abs abs abs) absl;
+ 
++  (* Keep a concrete immutable capture graph on its original frozen loans.
++     Follow every shared-borrow edge: an owner must be frozen, the graph must
++     be acyclic, and every referent must be concrete or an opaque type-variable
++     leaf. Type variables cannot be expanded; symbolic ADTs are deliberately
++     excluded because projection could expand their fields. No mutable or
++     reserved borrow, loan or endable referent is admitted. Original IDs are
++     preserved. Enable this case only with sanity checks: the existing join
++     and fixed-point matching must check equality of every frozen abstraction.
++     All other values retain the existing reborrow path and collapse guard. *)
++  let rec concrete_shared_only (visited : BorrowId.Set.t) (sv : tvalue) : bool =
++    match sv.value with
++    | VLiteral _ -> true
++    | VAdt { fields; _ } -> List.for_all (concrete_shared_only visited) fields
++    | VSymbolic { sv_ty = TVar _; _ } -> true
++    | VBorrow (VSharedBorrow (bid, _)) ->
++        if BorrowId.Set.mem bid visited then false
++        else (
++          match BorrowId.Map.find_opt bid !loan_to_shared_value with
++          | Some (owner, referent, _) ->
++              (not owner.can_end)
++              && concrete_shared_only (BorrowId.Set.add bid visited) referent
++          | None -> false)
++    | _ -> false
++  in
++
+   (* Explore the shared borrows in the environment, and introduce
+      fresh abstractions with reborrows.
+ 
+@@ -219,7 +244,13 @@ let reborrow_ashared_loans (span : Meta.span) (loop_id : LoopId.id option)
+             super#visit_VSharedBorrow env bid sid
+         | Some (abs, sv, rty) ->
+             (* Check if the region abstraction is frozen *)
+-            if not abs.can_end then
++            if
++              (not abs.can_end)
++              && not
++                   (!Config.sanity_checks
++                   && tvalue_has_borrows (Some span) ctx sv
++                   && concrete_shared_only BorrowId.Set.empty sv)
++            then
+               let bid, sid = push_abs_for_shared_value abs sv rty bid sid in
+               VSharedBorrow (bid, sid)
+             else super#visit_VSharedBorrow env bid sid
+diff --git a/src/pure/PureMicroPassesLoops.ml b/src/pure/PureMicroPassesLoops.ml
+index 5c5fdc8..8863e88 100644
+--- a/src/pure/PureMicroPassesLoops.ml
++++ b/src/pure/PureMicroPassesLoops.ml
+@@ -3071,8 +3071,10 @@ let decompose_loops_aux (ctx : ctx) (def : fun_decl) (body : fun_body) :
+     (* Compute the generic params - note that the indices are not updated,
+        meaning we do not need to update those in the body *)
+     let generics, generics_filter =
+-      filter_generic_params_used_in_texpr def.signature.generics
+-        loop_body.loop_body
++      filter_generic_params_used_in_texpr
++        ~signature_tys:
++          (constant_input_tys @ List.map (fun (pat : tpat) -> pat.ty) loop_body.inputs)
++        def.signature.generics loop_body.loop_body
+     in
+     [%ldebug
+       "- generic_params:\n"
+@@ -3473,8 +3475,9 @@ let decompose_loop_body_aux (ctx : ctx) (def : fun_decl) (body : fun_body)
+ 
+   (* Compute the generic params used in the body *)
+   let generics, generics_filter =
+-    filter_generic_params_used_in_texpr def.signature.generics
+-      loop_body.loop_body
++    filter_generic_params_used_in_texpr
++      ~signature_tys:(List.map (fun (pat : tpat) -> pat.ty) body_fun_body.inputs)
++      def.signature.generics loop_body.loop_body
+   in
+ 
+   (* Build the signature for the body function.
+diff --git a/src/pure/PureUtils.ml b/src/pure/PureUtils.ml
+index 594ad13..a3c5b3a 100644
+--- a/src/pure/PureUtils.ml
++++ b/src/pure/PureUtils.ml
+@@ -2424,8 +2424,8 @@ type generics_filter = {
+     Side remark: some functions (for computing names for trait clauses) actually
+     *need* the indices of the trait clauses to be preserved from the LLBC code
+     to the pure code. *)
+-let filter_generic_params_used_in_texpr (generic : generic_params) (e : texpr) :
+-    generic_params * generics_filter =
++let filter_generic_params_used_in_texpr ?(signature_tys : ty list = [])
++    (generic : generic_params) (e : texpr) : generic_params * generics_filter =
+   (* Collect the sets of parameters used in the expression *)
+   let type_ids = ref TypeVarId.Set.empty in
+   let cg_ids = ref ConstGenericVarId.Set.empty in
+@@ -2445,6 +2445,9 @@ let filter_generic_params_used_in_texpr (generic : generic_params) (e : texpr) :
+     end
+   in
+   visitor#visit_texpr () e;
++  (* Constant input types may retain phantom parameters even when the
++     corresponding expression type has been normalized to a type alias. *)
++  List.iter (visitor#visit_ty ()) signature_tys;
+ 
+   (* Repeatedly explore the needed trait clauses to make sure we include
+      all their parameters in the set. We compute a fixed point as theoretically

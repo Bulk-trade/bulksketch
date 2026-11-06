@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "814ffa1f5f60e0a08516748fb9a2769b44e86e18a521684b5824ce447feb2692",
+    "bridge/BulksketchBridge/Audit.lean": "96dbd50aaabc245b7ba498b350ce3d4a195dae63dd92b6261c667828253c08c1",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,9 +13,9 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "d5fe005154c6c783861cb81b651321fae9b524de23049d54d8b7ce20b6620024",
-    "audit/frozen-inputs.json": "950cfbc8613039cdf9e4f7fb45d6fa0d2a46051380b0e99245ad6c5b5c2372de",
-    "bridge/BulksketchBridge.lean": "21441ed35558407f073d1345f6eddbe4097fc905983610e6fdbcf9e8280b48a7",
+    "scripts/verify_bridge.py": "b52c9ca277bd18e4f281a39fec82d521b299eb50807bbae3127f401704b5f681",
+    "audit/frozen-inputs.json": "4b7060639eb1012ef7cd69c54a8175f7940c56b2879d1901e55546a3b26de926",
+    "bridge/BulksketchBridge.lean": "1a889cdc2b2bf918c1e6a2002cdd96058a1f5cf7a9591b6c0c28a3c0dcfb77da",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "59405597c4013d04e4ca4247767a6e925172432789fd09b8728084a739dff3c4",
-    "bridge/obligations.json": "cdf808c66897198f3ab7eb7910d86d06c4c32830dafdf33a0b45f9db9804de96",
+    "bridge/source-linkage.json": "0a0b3f4026380f29a7ba5036f1029bd2f634cbff88d0c61545aff6d662787eb9",
+    "bridge/obligations.json": "4effcdcf07c245e6347871b98c71ac35469889a9481b0be88b7d251cb71e56d5",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "0dc011a7b556e5ae676623de89697ff63fde06fbb77df9f2f5334272b11f232f",
+    "scripts/check_projection_fixtures.py": "a3b6e70b3b74705644e70783c4c1d86c8a13b7146a8754259c44f3a527c6d18c",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -129,7 +129,67 @@
     "audit/inverse-enclosing-translator-investigation.md": "1c1efaa84c0c7fa8efa502689e4f5d8b71b6bac588e25dc310caa9e8e4097d5f",
     "bridge/audit/quotient-trace-independent-review.md": "0b09b3d6298e8dae500dfe5f9db1665b2891c3ca15de4d8c6c5797d6137b96f2",
     "bridge/audit/inverse-independent-review.md": "ae678a02595c01159f9623f88a3694f09747d6d19b0c7f87ded1e728cf629d95",
-    "extraction/inverse-chain/monomorphization-pilot-receipt.json": "103658a02c5f0c750bdfa0bc3e4e35512d1838a116ca2952d7f16be552e7a3e1"
+    "extraction/inverse-chain/monomorphization-pilot-receipt.json": "103658a02c5f0c750bdfa0bc3e4e35512d1838a116ca2952d7f16be552e7a3e1",
+    "scripts/check_variant_fixtures.py": "d789b1ea872aec1de1be9471e04782c28bf0919258149b049a620c9657597490",
+    "audit/native-coverage-checkpoint.json": "b8317d30100e2ce80f6e5905b8d37d8019f51a7f18c4da48a5524caf62f8e4e1",
+    "audit/aeneas-capture-independent-review.md": "7b82b268d8c4dc108cd1378ec6065432074be9ea323a87fdc3adf6162cb6e68a",
+    "audit/frobenius-const-independent-review.md": "1fa3167209409d3508febc2d25e991de8dc67c3e6fa8a7717b0e6958377ba3cd",
+    "audit/native-coverage-integration-review.md": "e60ef8ebb5ba375b19de1a4620d9d9dd0ffa436be49ecc61e39998f91c28903c",
+    "bridge/BulksketchBridge/PortableChallenges.lean": "235976ed618ad5c1b66ffd922623b4a58241f8e36b384466e308c9f47cb649f9",
+    "bridge/BulksketchBridge/PortableInverseChallenges.lean": "f03e0f23dd87626c7b6f8ae10ef8adfa6e0dd8d38ef0a079b860570bc1494a79",
+    "bridge/BulksketchBridge/InverseUsingChallenges.lean": "e5a7a24c61ae853775ee7c0266f49abecf120f1a0f5aa61e924d49c3f7827141",
+    "bridge/BulksketchBridge/FrobeniusConstSpec.lean": "68ae588ef8c0c8808c3feaa95550254fb4a511c434d8d0300e18d074000a6df4",
+    "bridge/BulksketchBridge/FrobeniusConstChallenges.lean": "3b6d008cc28b54591230316749b45b42380d735bd3abad9d03c350eff12ddd4d",
+    "bridge/Arithmetic/PortableGenerated.lean": "a0a51923e2be29423404ac9a5523d270e502f4f151e2ae84c46b60f9de286539",
+    "bridge/Arithmetic/PortableInverseGenerated.lean": "c9f4b8b77ecc93ecf64e944309ceafd5ae52169fc13c2d00412b84ca93f74a94",
+    "bridge/Arithmetic/InverseUsingGenerated.lean": "7c6ad32c606fe4779dc950fc6bc77b2631a36033eba170301eb0a5e12a0dfb46",
+    "bridge/Arithmetic/InverseUsingTypes.lean": "619fb7c67f9aa399df652f490893644a1cbcdce23748b885f5a93a38acad7235",
+    "bridge/Arithmetic/FrobeniusConstGenerated.lean": "840f09b2caaf3a369502fcaa724ecdd097f031c47e2abd950aba59bc25218d23",
+    "extraction/portable-forwarding/Portable/Funs.lean": "11ee26b358174af8fcf51b0f1cdd47f7bfbd57646faf8a1f9fd11360a933dd08",
+    "extraction/portable-forwarding/Portable/FunsExternal_Template.lean": "4b078d613901aa8fc418f5e0a2bf8fda4945f2f0f88e2b3056fc7f05c2a41c62",
+    "extraction/portable-forwarding/Portable/Types.lean": "f46e2c77542b7b4e96e746bb5461a9483fae18bf7c716c9da4ad38aeee8424fe",
+    "extraction/portable-forwarding/Portable/TypesExternal_Template.lean": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582",
+    "extraction/portable-forwarding/aeneas.status.json": "c5a09fc629122dfc14d1ab16589063ffabc82146ef3cee8e26840e440611a0b3",
+    "extraction/portable-forwarding/charon.status.json": "1a4c8e82c193e6ee26a53abbe44c8c396abd1aa52eed2858261673b7f1e13b4e",
+    "extraction/portable-forwarding/portable.llbc": "729c11f465d25e2c7c9c5262f77b891b3b09f67e8e94b0c133d9b601b17d65fa",
+    "extraction/portable-forwarding/project.py": "3bf5de96139cdca99c0bba565526e3784ef5c067319b041276a66286aaee7f04",
+    "extraction/portable-forwarding/receipt.json": "cb38001d32e6315df38b9a1f963f286d822f60f5cb4f552f4917989dc6602f14",
+    "extraction/portable-forwarding/refinement-receipt.json": "2d759b16d656fb67294c6796790f0fc4e28ccd895510dc1db0d0655e7faf62dd",
+    "extraction/portable-forwarding/run.py": "1180e53ad4b941089a272a87fac5bc9cca0f2d71dc2b7c8f0f70cb78301e8c11",
+    "extraction/portable-inverse/PortableInverse/Funs.lean": "a9ef06a1539d0b7278024945bf738a8794a4dadf07447027049d6ac8921db337",
+    "extraction/portable-inverse/PortableInverse/FunsExternal_Template.lean": "8ec389a8cc0d5df440639393fd97f6b242c65bb1a95763744b127e073de806c6",
+    "extraction/portable-inverse/PortableInverse/Types.lean": "5c1085f440778976a5f256d30a14272df3e1c581783e8a30a167dbcac516e40b",
+    "extraction/portable-inverse/PortableInverse/TypesExternal_Template.lean": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582",
+    "extraction/portable-inverse/portable-inverse.llbc": "bdf97754398bcd49c23a632d8c7d8f76006402e09a6503ed30e4336048d1e4f8",
+    "extraction/portable-inverse/project.py": "1ab56ea02e2a6b2e4cd7e2cd94a01e94f0766c76a359268565551ccac82f4e9a",
+    "extraction/portable-inverse/receipt.json": "a11e61a57ce507befb80e424812c0b7688f3687747248506616f07ed1046fdec",
+    "extraction/portable-inverse/refinement-receipt.json": "aecb8b66dcb9ebd545bb4195e60805a22d03d42a0d062d23eea65cead53ff507",
+    "extraction/inverse-wrappers/Arithmetic/Funs.lean": "4a8009854592056eecc02291a4fe1a3d8a71c20ab5920784eff1aa6aaeccbc8b",
+    "extraction/inverse-wrappers/Arithmetic/FunsExternal_Template.lean": "8b97aa0a8694376031ef620fdf272bdd1e72ea27456606b6014466c74f238cb8",
+    "extraction/inverse-wrappers/Arithmetic/Types.lean": "ef16309c06e9b68d0cd9d207f76f10734347b52d239ce3925bad1c6c645a760a",
+    "extraction/inverse-wrappers/Arithmetic/TypesExternal_Template.lean": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582",
+    "extraction/inverse-wrappers/project.py": "63e1514ea54745c244ce1819d810f1c79ecff59ad47c840d4bb605498309dfa7",
+    "extraction/inverse-wrappers/receipt.json": "37ea6dd4277684185b3b255da113ccfcd2348a65151dcfd1a26eeba2b6b2fd97",
+    "extraction/frobenius-const/Audit.lean": "7525d8dbc5ba9730e0c7e4d35244de03dafdcbe12ac738a4075478e944b9b27e",
+    "extraction/frobenius-const/project.py": "0a3c7e4720e4cc8e35af198449aa2c8803d3938390fa61031c8a044ed8b59d2e",
+    "extraction/frobenius-const/refinement-receipt.json": "523bc508133a7419affa49e36b877b395a12576125d0750fe72c0fecab0eb0ef",
+    "extraction/frobenius-const/run.py": "d94b61ee434d37235f0508addb9f254398d19bfd86cca2eec64a5b76b73ebde7",
+    "extraction/frobenius-const/square/Arithmetic/Funs.lean": "840f09b2caaf3a369502fcaa724ecdd097f031c47e2abd950aba59bc25218d23",
+    "extraction/frobenius-const/square/Arithmetic/Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+    "extraction/frobenius-const/square/aeneas.status.json": "d25b2f69a3356ad2cc42713637d9ad8d2baeef1cdd86c87fd51bca64d9ec1102",
+    "extraction/frobenius-const/square/arithmetic.llbc": "bbff1327f63a9743350a6f707e9c32bc33c85f9fa570456b599db1f2be70eb5e",
+    "extraction/frobenius-const/square/charon.status.json": "3813dae0d26998959d66360cb72db87c0e41bac88f292abe81925498b081bef2",
+    "extraction/frobenius-const/square/receipt.json": "507afdab619af5c9a1f06708f5ab78fc69c648b5fd4368c14ad52b0d0c363977",
+    "tooling/aeneas-loop-capture/README.md": "30edd923c28cf9241cc9af16a6539e80491c93160d0307dd19e543df92301af4",
+    "tooling/aeneas-loop-capture/loop-capture.patch": "15ecb6d84c03d7ad68a384f10b153a1538474d813bacaeb27d4e79156cfbf111",
+    "tooling/aeneas-loop-capture/receipt.json": "75073744d6a168e873ff8f86624f774c8dd462c8f13bc1a08be6ba6264830bbd",
+    "tooling/aeneas-loop-capture/run.py": "d7c058d5c76b5b58309b3c249cd93bdd524ace5503b155bf4d34992cabea1747",
+    "tooling/aeneas-loop-capture/tests/Cargo.lock": "ac2c6bd2c17d40954934091aab68d7838a20451f960ba44a3c536a6a3a3f86d5",
+    "tooling/aeneas-loop-capture/tests/Cargo.toml": "ae431364b119e3dcc981627892e0dd70d5192da8e87d939fc5c839ff66661765",
+    "tooling/aeneas-loop-capture/tests/negative/nested_shared_then_mutable.rs": "42f7b8fd74abac3cc3198f83cf0bc68179f2f4d8aeef2e554f8d859d694cc86a",
+    "tooling/aeneas-loop-capture/tests/negative/shared_then_mutable.rs": "152499380468149ef6040741f2a1b826155aa4c212e7b23e867bea987b9d2a2c",
+    "tooling/aeneas-loop-capture/tests/src/lib.rs": "a29be3658d98bc00a89ed8dc7fc4e87a161be41c955bb59b0371a53f52038196",
+    "extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc": "e42f06cbc1f27712f3c5fa9fed822841cf1093bd2f858c936dea9b1066ae5335"
   },
   "reviewed_policy_revisions": [
     {
@@ -526,7 +586,360 @@
       "path": "extraction/inverse-chain/monomorphization-pilot-receipt.json",
       "new_sha256": "103658a02c5f0c750bdfa0bc3e4e35512d1838a116ca2952d7f16be552e7a3e1",
       "reason": "Final reviewed evidence and metadata freeze for quotient-field, actual Algebra.trace and the original source inversion chain. No source/specification weakening, timeout changes, custom axioms or unsupported enclosing-wrapper credit."
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "4b7060639eb1012ef7cd69c54a8175f7940c56b2879d1901e55546a3b26de926",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes.",
+      "old_sha256": "950cfbc8613039cdf9e4f7fb45d6fa0d2a46051380b0e99245ad6c5b5c2372de"
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "1a889cdc2b2bf918c1e6a2002cdd96058a1f5cf7a9591b6c0c28a3c0dcfb77da",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes.",
+      "old_sha256": "21441ed35558407f073d1345f6eddbe4097fc905983610e6fdbcf9e8280b48a7"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "96dbd50aaabc245b7ba498b350ce3d4a195dae63dd92b6261c667828253c08c1",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes.",
+      "old_sha256": "814ffa1f5f60e0a08516748fb9a2769b44e86e18a521684b5824ce447feb2692"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "0a0b3f4026380f29a7ba5036f1029bd2f634cbff88d0c61545aff6d662787eb9",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes.",
+      "old_sha256": "59405597c4013d04e4ca4247767a6e925172432789fd09b8728084a739dff3c4"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "4effcdcf07c245e6347871b98c71ac35469889a9481b0be88b7d251cb71e56d5",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes.",
+      "old_sha256": "cdf808c66897198f3ab7eb7910d86d06c4c32830dafdf33a0b45f9db9804de96"
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "b52c9ca277bd18e4f281a39fec82d521b299eb50807bbae3127f401704b5f681",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes.",
+      "old_sha256": "d5fe005154c6c783861cb81b651321fae9b524de23049d54d8b7ce20b6620024"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "a3b6e70b3b74705644e70783c4c1d86c8a13b7146a8754259c44f3a527c6d18c",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes.",
+      "old_sha256": "0dc011a7b556e5ae676623de89697ff63fde06fbb77df9f2f5334272b11f232f"
+    },
+    {
+      "path": "scripts/check_variant_fixtures.py",
+      "new_sha256": "d789b1ea872aec1de1be9471e04782c28bf0919258149b049a620c9657597490",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "audit/native-coverage-checkpoint.json",
+      "new_sha256": "b8317d30100e2ce80f6e5905b8d37d8019f51a7f18c4da48a5524caf62f8e4e1",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "audit/aeneas-capture-independent-review.md",
+      "new_sha256": "7b82b268d8c4dc108cd1378ec6065432074be9ea323a87fdc3adf6162cb6e68a",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "audit/frobenius-const-independent-review.md",
+      "new_sha256": "1fa3167209409d3508febc2d25e991de8dc67c3e6fa8a7717b0e6958377ba3cd",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "audit/native-coverage-integration-review.md",
+      "new_sha256": "e60ef8ebb5ba375b19de1a4620d9d9dd0ffa436be49ecc61e39998f91c28903c",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PortableChallenges.lean",
+      "new_sha256": "235976ed618ad5c1b66ffd922623b4a58241f8e36b384466e308c9f47cb649f9",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PortableInverseChallenges.lean",
+      "new_sha256": "f03e0f23dd87626c7b6f8ae10ef8adfa6e0dd8d38ef0a079b860570bc1494a79",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "bridge/BulksketchBridge/InverseUsingChallenges.lean",
+      "new_sha256": "e5a7a24c61ae853775ee7c0266f49abecf120f1a0f5aa61e924d49c3f7827141",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "bridge/BulksketchBridge/FrobeniusConstSpec.lean",
+      "new_sha256": "68ae588ef8c0c8808c3feaa95550254fb4a511c434d8d0300e18d074000a6df4",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "bridge/BulksketchBridge/FrobeniusConstChallenges.lean",
+      "new_sha256": "3b6d008cc28b54591230316749b45b42380d735bd3abad9d03c350eff12ddd4d",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "bridge/Arithmetic/PortableGenerated.lean",
+      "new_sha256": "a0a51923e2be29423404ac9a5523d270e502f4f151e2ae84c46b60f9de286539",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "bridge/Arithmetic/PortableInverseGenerated.lean",
+      "new_sha256": "c9f4b8b77ecc93ecf64e944309ceafd5ae52169fc13c2d00412b84ca93f74a94",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "bridge/Arithmetic/InverseUsingGenerated.lean",
+      "new_sha256": "7c6ad32c606fe4779dc950fc6bc77b2631a36033eba170301eb0a5e12a0dfb46",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "bridge/Arithmetic/InverseUsingTypes.lean",
+      "new_sha256": "619fb7c67f9aa399df652f490893644a1cbcdce23748b885f5a93a38acad7235",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+      "new_sha256": "840f09b2caaf3a369502fcaa724ecdd097f031c47e2abd950aba59bc25218d23",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-forwarding/Portable/Funs.lean",
+      "new_sha256": "11ee26b358174af8fcf51b0f1cdd47f7bfbd57646faf8a1f9fd11360a933dd08",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-forwarding/Portable/FunsExternal_Template.lean",
+      "new_sha256": "4b078d613901aa8fc418f5e0a2bf8fda4945f2f0f88e2b3056fc7f05c2a41c62",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-forwarding/Portable/Types.lean",
+      "new_sha256": "f46e2c77542b7b4e96e746bb5461a9483fae18bf7c716c9da4ad38aeee8424fe",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-forwarding/Portable/TypesExternal_Template.lean",
+      "new_sha256": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-forwarding/aeneas.status.json",
+      "new_sha256": "c5a09fc629122dfc14d1ab16589063ffabc82146ef3cee8e26840e440611a0b3",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-forwarding/charon.status.json",
+      "new_sha256": "1a4c8e82c193e6ee26a53abbe44c8c396abd1aa52eed2858261673b7f1e13b4e",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-forwarding/portable.llbc",
+      "new_sha256": "729c11f465d25e2c7c9c5262f77b891b3b09f67e8e94b0c133d9b601b17d65fa",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-forwarding/project.py",
+      "new_sha256": "3bf5de96139cdca99c0bba565526e3784ef5c067319b041276a66286aaee7f04",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-forwarding/receipt.json",
+      "new_sha256": "cb38001d32e6315df38b9a1f963f286d822f60f5cb4f552f4917989dc6602f14",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-forwarding/refinement-receipt.json",
+      "new_sha256": "2d759b16d656fb67294c6796790f0fc4e28ccd895510dc1db0d0655e7faf62dd",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-forwarding/run.py",
+      "new_sha256": "1180e53ad4b941089a272a87fac5bc9cca0f2d71dc2b7c8f0f70cb78301e8c11",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-inverse/PortableInverse/Funs.lean",
+      "new_sha256": "a9ef06a1539d0b7278024945bf738a8794a4dadf07447027049d6ac8921db337",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-inverse/PortableInverse/FunsExternal_Template.lean",
+      "new_sha256": "8ec389a8cc0d5df440639393fd97f6b242c65bb1a95763744b127e073de806c6",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-inverse/PortableInverse/Types.lean",
+      "new_sha256": "5c1085f440778976a5f256d30a14272df3e1c581783e8a30a167dbcac516e40b",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-inverse/PortableInverse/TypesExternal_Template.lean",
+      "new_sha256": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-inverse/portable-inverse.llbc",
+      "new_sha256": "bdf97754398bcd49c23a632d8c7d8f76006402e09a6503ed30e4336048d1e4f8",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-inverse/project.py",
+      "new_sha256": "1ab56ea02e2a6b2e4cd7e2cd94a01e94f0766c76a359268565551ccac82f4e9a",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-inverse/receipt.json",
+      "new_sha256": "a11e61a57ce507befb80e424812c0b7688f3687747248506616f07ed1046fdec",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/portable-inverse/refinement-receipt.json",
+      "new_sha256": "aecb8b66dcb9ebd545bb4195e60805a22d03d42a0d062d23eea65cead53ff507",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/inverse-wrappers/Arithmetic/Funs.lean",
+      "new_sha256": "4a8009854592056eecc02291a4fe1a3d8a71c20ab5920784eff1aa6aaeccbc8b",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/inverse-wrappers/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "8b97aa0a8694376031ef620fdf272bdd1e72ea27456606b6014466c74f238cb8",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/inverse-wrappers/Arithmetic/Types.lean",
+      "new_sha256": "ef16309c06e9b68d0cd9d207f76f10734347b52d239ce3925bad1c6c645a760a",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/inverse-wrappers/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/inverse-wrappers/project.py",
+      "new_sha256": "63e1514ea54745c244ce1819d810f1c79ecff59ad47c840d4bb605498309dfa7",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/inverse-wrappers/receipt.json",
+      "new_sha256": "37ea6dd4277684185b3b255da113ccfcd2348a65151dcfd1a26eeba2b6b2fd97",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/frobenius-const/Audit.lean",
+      "new_sha256": "7525d8dbc5ba9730e0c7e4d35244de03dafdcbe12ac738a4075478e944b9b27e",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/frobenius-const/project.py",
+      "new_sha256": "0a3c7e4720e4cc8e35af198449aa2c8803d3938390fa61031c8a044ed8b59d2e",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/frobenius-const/refinement-receipt.json",
+      "new_sha256": "523bc508133a7419affa49e36b877b395a12576125d0750fe72c0fecab0eb0ef",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/frobenius-const/run.py",
+      "new_sha256": "d94b61ee434d37235f0508addb9f254398d19bfd86cca2eec64a5b76b73ebde7",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/frobenius-const/square/Arithmetic/Funs.lean",
+      "new_sha256": "840f09b2caaf3a369502fcaa724ecdd097f031c47e2abd950aba59bc25218d23",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/frobenius-const/square/Arithmetic/Types.lean",
+      "new_sha256": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/frobenius-const/square/aeneas.status.json",
+      "new_sha256": "d25b2f69a3356ad2cc42713637d9ad8d2baeef1cdd86c87fd51bca64d9ec1102",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/frobenius-const/square/arithmetic.llbc",
+      "new_sha256": "bbff1327f63a9743350a6f707e9c32bc33c85f9fa570456b599db1f2be70eb5e",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/frobenius-const/square/charon.status.json",
+      "new_sha256": "3813dae0d26998959d66360cb72db87c0e41bac88f292abe81925498b081bef2",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/frobenius-const/square/receipt.json",
+      "new_sha256": "507afdab619af5c9a1f06708f5ab78fc69c648b5fd4368c14ad52b0d0c363977",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "tooling/aeneas-loop-capture/README.md",
+      "new_sha256": "30edd923c28cf9241cc9af16a6539e80491c93160d0307dd19e543df92301af4",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "tooling/aeneas-loop-capture/loop-capture.patch",
+      "new_sha256": "15ecb6d84c03d7ad68a384f10b153a1538474d813bacaeb27d4e79156cfbf111",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "tooling/aeneas-loop-capture/receipt.json",
+      "new_sha256": "75073744d6a168e873ff8f86624f774c8dd462c8f13bc1a08be6ba6264830bbd",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "tooling/aeneas-loop-capture/run.py",
+      "new_sha256": "d7c058d5c76b5b58309b3c249cd93bdd524ace5503b155bf4d34992cabea1747",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "tooling/aeneas-loop-capture/tests/Cargo.lock",
+      "new_sha256": "ac2c6bd2c17d40954934091aab68d7838a20451f960ba44a3c536a6a3a3f86d5",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "tooling/aeneas-loop-capture/tests/Cargo.toml",
+      "new_sha256": "ae431364b119e3dcc981627892e0dd70d5192da8e87d939fc5c839ff66661765",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "tooling/aeneas-loop-capture/tests/closure.llbc",
+      "new_sha256": "2f255921fa5e6e5da0113c20e99f5aa81027e1aabca0ff023f8ff8eb0ae92e5f",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "tooling/aeneas-loop-capture/tests/negative/nested_shared_then_mutable.rs",
+      "new_sha256": "42f7b8fd74abac3cc3198f83cf0bc68179f2f4d8aeef2e554f8d859d694cc86a",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "tooling/aeneas-loop-capture/tests/negative/shared_then_mutable.rs",
+      "new_sha256": "152499380468149ef6040741f2a1b826155aa4c212e7b23e867bea987b9d2a2c",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "tooling/aeneas-loop-capture/tests/src/lib.rs",
+      "new_sha256": "a29be3658d98bc00a89ed8dc7fc4e87a161be41c955bb59b0371a53f52038196",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc",
+      "new_sha256": "e42f06cbc1f27712f3c5fa9fed822841cf1093bd2f858c936dea9b1066ae5335",
+      "reason": "Reviewed additive native coverage checkpoint: exact original enclosing inverses with named mandatory-checks frontend variant, eight Portable methods and original const square. All earlier frozen meanings, native source/build fingerprints and every source obligation retained; no new runtime models, logical axioms or replay limit changes."
+    },
+    {
+      "path": "tooling/aeneas-loop-capture/tests/closure.llbc",
+      "old_sha256": "2f255921fa5e6e5da0113c20e99f5aa81027e1aabca0ff023f8ff8eb0ae92e5f",
+      "removed_unused_development_input": true,
+      "reason": "Exclude an ignored, unused development-only LLBC snapshot from the new checkpoint freeze. The regression runner regenerates each test LLBC from pinned test Rust source; actual original native LLBC, source/proposition files, exact generated artifacts and translator regression receipt remain pinned. No previously published frozen input is removed."
     }
   ],
-  "challenge_count": 57
+  "challenge_count": 69
 }

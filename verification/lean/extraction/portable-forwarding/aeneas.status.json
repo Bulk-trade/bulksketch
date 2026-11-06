@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-split-files",
+    "-dest",
+    "/Users/junbug/bulk/bulksketch/verification/lean/extraction/portable-forwarding/Portable",
+    "/Users/junbug/bulk/bulksketch/verification/lean/extraction/portable-forwarding/portable.llbc"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.2971443330000056,
+  "log": "extraction/portable-forwarding/aeneas.log",
+  "log_sha256": "1010742350d5ef98d37f6511ed8e9987e3f9629055171336be8e99ea9f4c12a6"
+}

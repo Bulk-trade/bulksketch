@@ -228,6 +228,54 @@
     {
       "challenge": "BulksketchBridge.InverseChallenges.nativeCallbackInstanceReturnsFieldInverse",
       "theorem": "BulksketchBridge.Inverse.native_callback_instance"
+    },
+    {
+      "challenge": "BulksketchBridge.PortableChallenges.actualMultiplicationIsFieldMultiplication",
+      "theorem": "BulksketchBridge.Portable.mul_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.PortableChallenges.actualSquareIsFieldSquare",
+      "theorem": "BulksketchBridge.Portable.square_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.PortableChallenges.actualFrobeniusIsFullFieldPower",
+      "theorem": "BulksketchBridge.Portable.frobenius_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.PortableChallenges.actualTraceIsAlgebraTrace",
+      "theorem": "BulksketchBridge.Portable.trace_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.PortableChallenges.actualQuadraticHasNormalizedFieldMeaning",
+      "theorem": "BulksketchBridge.Portable.solve_quadratic_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.PortableChallenges.actualRawMultiplicationReturnsFullProduct",
+      "theorem": "BulksketchBridge.Portable.raw_mul_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.PortableChallenges.actualReductionIsExactQuotientRemainder",
+      "theorem": "BulksketchBridge.Portable.reduce_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.InverseUsingChallenges.capturedSquareReturnsEveryIteration",
+      "theorem": "BulksketchBridge.InverseUsing.captured_square_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.InverseUsingChallenges.actualInverseUsingReturnsFieldInverse",
+      "theorem": "BulksketchBridge.InverseUsing.inverse_using_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.InverseUsingChallenges.actualInverseReturnsFieldInverse",
+      "theorem": "BulksketchBridge.InverseUsing.inverse_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.PortableInverseChallenges.actualInverseReturnsFieldInverse",
+      "theorem": "BulksketchBridge.PortableInverse.inverse_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusConstChallenges.actualConstSquareMatchesWord",
+      "theorem": "BulksketchBridge.FrobeniusConst.square_refines"
     }
   ],
   "refinements": [
@@ -480,6 +528,191 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Every U64 input returns normally: None exactly for zero, otherwise Some of the unique represented Mathlib field inverse. Generic callback dictionaries must equal the actual generated native multiplication and Frobenius on every argument; those native calls are proved normal. A closed BuiltinFn instance discharges these premises. All five reverse-range iterations, scalar bounds, zero/unit branches and the final square are proved. The enclosing inverse_using captured closure and inverse remain unproved."
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:14:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::mul",
+      "source_line_span_sha256": "2b288ccccae8fad2a3c3496e3842d7aab58adf4698d96bfcc945c5a3185fb473",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.mul",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean",
+      "challenge": "BulksketchBridge.PortableChallenges.actualMultiplicationIsFieldMultiplication",
+      "theorem": "BulksketchBridge.Portable.mul_refines",
+      "label": "Portable::mul [actual Gf64]",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/PortableGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original Portable forwarding body returns normally on every native-width input with the exact full-word/raw-product result and genuine Mathlib field/trace/normalized quadratic semantics stated by its frozen challenge. No callback-success or caller-success premise; original source and shared dependencies retained verbatim."
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:18:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::square",
+      "source_line_span_sha256": "47226fc382b7cd78150cb6e3b0802167449a8db7428423f78969675fecfa1a9e",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.square",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean",
+      "challenge": "BulksketchBridge.PortableChallenges.actualSquareIsFieldSquare",
+      "theorem": "BulksketchBridge.Portable.square_refines",
+      "label": "Portable::square [actual Gf64]",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/PortableGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original Portable forwarding body returns normally on every native-width input with the exact full-word/raw-product result and genuine Mathlib field/trace/normalized quadratic semantics stated by its frozen challenge. No callback-success or caller-success premise; original source and shared dependencies retained verbatim."
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:22:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::frobenius",
+      "source_line_span_sha256": "888862c8d820d17f3f6636733d031668b95be8f41a0617510258e5c832f6d974",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.frobenius",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean",
+      "challenge": "BulksketchBridge.PortableChallenges.actualFrobeniusIsFullFieldPower",
+      "theorem": "BulksketchBridge.Portable.frobenius_refines",
+      "label": "Portable::frobenius [actual Gf64]",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/PortableGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original Portable forwarding body returns normally on every native-width input with the exact full-word/raw-product result and genuine Mathlib field/trace/normalized quadratic semantics stated by its frozen challenge. No callback-success or caller-success premise; original source and shared dependencies retained verbatim."
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:34:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::trace",
+      "source_line_span_sha256": "1ec7113e49a764171ab3b96e2758f8834cf0adaa91364a71fcc5cadca5075741",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.trace",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean",
+      "challenge": "BulksketchBridge.PortableChallenges.actualTraceIsAlgebraTrace",
+      "theorem": "BulksketchBridge.Portable.trace_refines",
+      "label": "Portable::trace [actual Gf64]",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/PortableGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original Portable forwarding body returns normally on every native-width input with the exact full-word/raw-product result and genuine Mathlib field/trace/normalized quadratic semantics stated by its frozen challenge. No callback-success or caller-success premise; original source and shared dependencies retained verbatim."
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:38:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::solve_quadratic",
+      "source_line_span_sha256": "9e526847941884bff9f59dbc6a9166c81497beb99a098be449c948963e9814b0",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean",
+      "challenge": "BulksketchBridge.PortableChallenges.actualQuadraticHasNormalizedFieldMeaning",
+      "theorem": "BulksketchBridge.Portable.solve_quadratic_refines",
+      "label": "Portable::solve_quadratic [actual Gf64]",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/PortableGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original Portable forwarding body returns normally on every native-width input with the exact full-word/raw-product result and genuine Mathlib field/trace/normalized quadratic semantics stated by its frozen challenge. No callback-success or caller-success premise; original source and shared dependencies retained verbatim."
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:42:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::raw_mul",
+      "source_line_span_sha256": "380b2c6368ed9cbe8a6baeb054857eb37b033102dff677c2eb9ff435aef8e102",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.raw_mul",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean",
+      "challenge": "BulksketchBridge.PortableChallenges.actualRawMultiplicationReturnsFullProduct",
+      "theorem": "BulksketchBridge.Portable.raw_mul_refines",
+      "label": "Portable::raw_mul [actual Gf64]",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/PortableGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original Portable forwarding body returns normally on every native-width input with the exact full-word/raw-product result and genuine Mathlib field/trace/normalized quadratic semantics stated by its frozen challenge. No callback-success or caller-success premise; original source and shared dependencies retained verbatim."
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:46:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::reduce",
+      "source_line_span_sha256": "592c0d5d12dd32c8af11c3be21ddc9796be7b77dea26da4364ead673b6e87f78",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.reduce",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean",
+      "challenge": "BulksketchBridge.PortableChallenges.actualReductionIsExactQuotientRemainder",
+      "theorem": "BulksketchBridge.Portable.reduce_refines",
+      "label": "Portable::reduce [actual Gf64]",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/PortableGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original Portable forwarding body returns normally on every native-width input with the exact full-word/raw-product result and genuine Mathlib field/trace/normalized quadratic semantics stated by its frozen challenge. No callback-success or caller-success premise; original source and shared dependencies retained verbatim."
+    },
+    {
+      "label": "maps::inverse_using [actual Gf64, reviewed checked frontend]",
+      "native_item_id": "src/field/maps.rs:36:function:bulksketch::field::maps::inverse_using",
+      "source_line_span_sha256": "78130318ea4a965e73deada41bb0e25fcd1e7198331b448d1c628ad8b1f8deb4",
+      "theorem": "BulksketchBridge.InverseUsing.inverse_using_refines",
+      "challenge": "BulksketchBridge.InverseUsingChallenges.actualInverseUsingReturnsFieldInverse",
+      "generated_declaration": "bulksketch.field.maps.inverse_using",
+      "generated_file": "bridge/Arithmetic/InverseUsingGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/InverseGenerated.lean",
+        "bridge/Arithmetic/InverseUsingTypes.lean",
+        "bridge/Arithmetic/InverseUsingGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "translator_variant": "checked-frozen-capture-v1",
+      "scope": "Every U64 input returns normally as None exactly for zero and otherwise the unique represented Mathlib field inverse. Original captured-square loop and all U32 counts/bounds are proved; inverse_using has explicit native callback equalities, while inverse supplies actual generated function-pointer dictionaries with no callback premise. Requires recorded checks-enabled reviewed frontend variant; no replacement closure model or application axiom."
+    },
+    {
+      "label": "maps::inverse [actual Gf64, reviewed checked frontend]",
+      "native_item_id": "src/field/maps.rs:27:function:bulksketch::field::maps::inverse",
+      "source_line_span_sha256": "c0a3efabe176c4f91856b88c21483b9cf89fe24c64c3e734748ca9ff12de25fa",
+      "theorem": "BulksketchBridge.InverseUsing.inverse_refines",
+      "challenge": "BulksketchBridge.InverseUsingChallenges.actualInverseReturnsFieldInverse",
+      "generated_declaration": "bulksketch.field.maps.inverse",
+      "generated_file": "bridge/Arithmetic/InverseUsingGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/InverseGenerated.lean",
+        "bridge/Arithmetic/InverseUsingTypes.lean",
+        "bridge/Arithmetic/InverseUsingGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "translator_variant": "checked-frozen-capture-v1",
+      "scope": "Every U64 input returns normally as None exactly for zero and otherwise the unique represented Mathlib field inverse. Original captured-square loop and all U32 counts/bounds are proved; inverse_using has explicit native callback equalities, while inverse supplies actual generated function-pointer dictionaries with no callback premise. Requires recorded checks-enabled reviewed frontend variant; no replacement closure model or application axiom."
+    },
+    {
+      "source_line_span_sha256": "0498af637fdca28129420645db2ed29b28516ae9f946c014b7d9592d70438fe8",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.inverse",
+      "generated_file": "bridge/Arithmetic/PortableInverseGenerated.lean",
+      "challenge": "BulksketchBridge.PortableInverseChallenges.actualInverseReturnsFieldInverse",
+      "theorem": "BulksketchBridge.PortableInverse.inverse_refines",
+      "native_item_id": "src/backend/portable.rs:26:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::inverse",
+      "label": "Portable::inverse [actual Gf64, reviewed checked frontend]",
+      "source_linkage": "bridge/source-linkage.json",
+      "translator_variant": "checked-frozen-capture-v1",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/InverseGenerated.lean",
+        "bridge/Arithmetic/InverseUsingTypes.lean",
+        "bridge/Arithmetic/InverseUsingGenerated.lean",
+        "bridge/Arithmetic/PortableInverseGenerated.lean"
+      ],
+      "scope": "Every original Portable inverse returns normally: None exactly for zero, otherwise the unique represented Mathlib field inverse. No callback premise; original forwarding body and dependencies retained verbatim under the mandatory-checks reviewed frontend variant."
+    },
+    {
+      "label": "frobenius::square [original x86-visible const fn]",
+      "native_item_id": "src/field/frobenius.rs:55:function:bulksketch::field::frobenius::square",
+      "source_line_span_sha256": "327fbb9dc34a842ed4b8521785748310e6bc14e6ab38466f771afbdb157b5d84",
+      "theorem": "BulksketchBridge.FrobeniusConst.square_refines",
+      "challenge": "BulksketchBridge.FrobeniusConstChallenges.actualConstSquareMatchesWord",
+      "generated_declaration": "bulksketch.field.frobenius.square",
+      "generated_file": "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/FrobeniusConstGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every original U64 const-square call returns the exact canonical square word. Original two64-step loops, all checked I32 arithmetic/shifts, arbitrary128-bit polynomial long division and all eight byte reads/LE reconstruction are proved. Actual original production x86 target extracted with unmodified pinned tools; no ISA execution or table-initializer proof credit."
     }
   ]
 }

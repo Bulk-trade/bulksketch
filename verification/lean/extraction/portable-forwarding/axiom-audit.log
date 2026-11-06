@@ -1,0 +1,7 @@
+'BulksketchBridge.Portable.mul_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.Portable.square_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.Portable.frobenius_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.Portable.trace_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.Portable.solve_quadratic_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.Portable.raw_mul_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.Portable.reduce_refines' depends on axioms: [propext, Classical.choice, Quot.sound]

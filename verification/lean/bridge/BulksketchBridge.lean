@@ -18,3 +18,7 @@ import BulksketchBridge.Algebra.WordNative
 import BulksketchBridge.Algebra.TraceNative
 import BulksketchBridge.Algebra.InversePower
 import BulksketchBridge.InverseNative
+import BulksketchBridge.Portable
+import BulksketchBridge.InverseUsing
+import BulksketchBridge.PortableInverse
+import BulksketchBridge.FrobeniusConst

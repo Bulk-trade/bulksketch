@@ -48,9 +48,15 @@ strengthened in place. The original `inverse_with_frobenius` body now computes
 the represented field inverse under explicit native callback contracts, with a
 closed callback instance. Its three generated declarations are retained byte
 for byte and checked against the original extraction and shared dictionaries.
-The enclosing `inverse_using`/`inverse` borrowed closure and x86-only
-table-generation paths remain open. Fifteen distinct native bodies have narrower
-functional refinements; all 344 native executable obligations remain in scope.
+The subsequent [native coverage checkpoint](../NATIVE_COVERAGE.md) closes
+`inverse_using`/`inverse` and Portable inverse under a named reviewed,
+checks-enabled frontend variant. Seven other Portable forwarders and the original
+x86-visible const square use the unchanged pinned extractor. The original
+runtime and nested-loan guard are unchanged; no replacement closure model is
+introduced. Twenty-six distinct native bodies have narrower functional
+refinements; all 344 native executable obligations remain in scope. Table
+generation/lookup, accelerated backends and the remaining decoder/API contracts
+remain open.
 
 From the parent Lean directory:
 

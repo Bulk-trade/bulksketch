@@ -1,5 +1,10 @@
 # Word representation, algebra trace and source inversion
 
+This records the earlier quotient-field checkpoint. The subsequent
+[native coverage checkpoint](NATIVE_COVERAGE.md) closes the enclosing inversion
+wrappers listed as open below using an explicitly reviewed, checks-enabled
+frontend variant. The original failing extractor evidence remains preserved.
+
 The native source remains revision
 `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`. This checkpoint adds proof and checking
 artifacts; it changes no native Rust, build input or runtime operation.

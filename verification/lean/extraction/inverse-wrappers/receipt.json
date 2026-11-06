@@ -1,0 +1,28 @@
+{
+  "status": "complete original-source extraction; final translator test/review receipt integrated separately",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "original_llbc": "extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc",
+  "original_llbc_sha256": "e42f06cbc1f27712f3c5fa9fed822841cf1093bd2f858c936dea9b1066ae5335",
+  "reviewed_translator_variant": "tooling/aeneas-loop-capture",
+  "sanity_checks_required": true,
+  "generated": [
+    {
+      "path": "extraction/inverse-wrappers/Arithmetic/Funs.lean",
+      "sha256": "4a8009854592056eecc02291a4fe1a3d8a71c20ab5920784eff1aa6aaeccbc8b"
+    },
+    {
+      "path": "extraction/inverse-wrappers/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "8b97aa0a8694376031ef620fdf272bdd1e72ea27456606b6014466c74f238cb8"
+    },
+    {
+      "path": "extraction/inverse-wrappers/Arithmetic/Types.lean",
+      "sha256": "ef16309c06e9b68d0cd9d207f76f10734347b52d239ce3925bad1c6c645a760a"
+    },
+    {
+      "path": "extraction/inverse-wrappers/Arithmetic/TypesExternal_Template.lean",
+      "sha256": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582"
+    }
+  ],
+  "native_source_edited": false,
+  "application_runtime_models_added": 0
+}
