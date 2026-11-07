@@ -1,0 +1,84 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "09ffca3e977be3353c594ceedf80dd7a39004eb6",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "selected_roots": [
+    "bulksketch::backend::contract::BulkKernels::odd_recurrence_matches"
+  ],
+  "llbc_has_errors": false,
+  "native_source_edited": false,
+  "artifacts": [
+    {
+      "path": "extraction/odd-recurrence/arithmetic.llbc",
+      "sha256": "e9f422a6cf5c5a8571f71c5371f14d239d501579e8271e0563533273e625af0d"
+    },
+    {
+      "path": "extraction/odd-recurrence/charon.log",
+      "sha256": "5b11b050796317834ef183df5245ee1289f32c7e5f9b224e2a31d8929d0079e1"
+    },
+    {
+      "path": "extraction/odd-recurrence/aeneas.log",
+      "sha256": "5f35e6dd3a9323d92c9faa0370cdc4fec75861004bbc08a0dfd16ffbd2f1c896"
+    },
+    {
+      "path": "extraction/odd-recurrence/Arithmetic/Types.lean",
+      "sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1"
+    },
+    {
+      "path": "extraction/odd-recurrence/Arithmetic/Funs.lean",
+      "sha256": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739"
+    },
+    {
+      "path": "extraction/odd-recurrence/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829"
+    }
+  ],
+  "source_directory": "/Users/junbug/bulk/bulksketch",
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+    "CARGO_TARGET_DIR": "/Users/junbug/bulk/bulksketch-proof-evidence-20261108/odd-recurrence/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true"
+  },
+  "charon_command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261108/odd-recurrence/arithmetic.llbc",
+    "--start-from=bulksketch::backend::contract::BulkKernels::odd_recurrence_matches",
+    "--",
+    "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked"
+  ],
+  "aeneas_command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-checks",
+    "-sequential",
+    "-print-error-emitters",
+    "-split-files",
+    "-dest",
+    "/Users/junbug/bulk/bulksketch-proof-evidence-20261108/odd-recurrence/Arithmetic",
+    "/Users/junbug/bulk/bulksketch-proof-evidence-20261108/odd-recurrence/arithmetic.llbc"
+  ],
+  "aeneas_flags": [
+    "-backend",
+    "lean",
+    "-checks",
+    "-sequential",
+    "-print-error-emitters",
+    "-split-files"
+  ],
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  }
+}

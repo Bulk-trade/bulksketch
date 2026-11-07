@@ -1,0 +1,52 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "rust_toolchain": "nightly-2026-09-17",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_roots": [
+    "bulksketch::decode::verify::product_counts",
+    "bulksketch::decode::verify::use_rebuilt_lfsr"
+  ],
+  "aeneas_flags": [
+    "-backend",
+    "lean",
+    "-checks",
+    "-sequential",
+    "-print-error-emitters",
+    "-split-files"
+  ],
+  "llbc_has_errors": false,
+  "artifacts": [
+    {
+      "path": "extraction/verify-dispatch/arithmetic.llbc",
+      "sha256": "f8a6e00931f51b434d9e9284b9a1a3ae738c9e8731ce1f3f03a2b20c9a2bc7b0"
+    },
+    {
+      "path": "extraction/verify-dispatch/charon.log",
+      "sha256": "89780b18861572cb1cca8d2b10f1b6cefca7a01ab9e47398a069739213013b60"
+    },
+    {
+      "path": "extraction/verify-dispatch/aeneas.log",
+      "sha256": "9d5c0b7ae94d2f617c1ef36edf325e14fddba52a8e1408d55620783716d3885d"
+    },
+    {
+      "path": "extraction/verify-dispatch/Arithmetic/Funs.lean",
+      "sha256": "74e0f15d8b16ce8a465b89dd7d9d8ff4bf893286546d8dd01f026ea4f36d6d68"
+    },
+    {
+      "path": "extraction/verify-dispatch/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "e88942fb69d4da5bff624b100e3fe1f3c22dd21632699c389d61143543fc410d"
+    },
+    {
+      "path": "extraction/verify-dispatch/Arithmetic/Types.lean",
+      "sha256": "03b264c559c161d5bac5a9486d1892ac1f37d545aa9371068cb46166192d07ff"
+    }
+  ],
+  "scoped_runtime_sha256": "df4f66b03164ceb806a65c62c5dee72a1ace614622866749c4375671036c8e0d",
+  "rust_std_source_reference": {
+    "path": "library/core/src/num/uint_macros.rs",
+    "lines": "3817-3825",
+    "sha256": "b2a9c6a570a44e56955c60ca0c5007f7318e27286e53d3b9180bb34c8064e506"
+  }
+}

@@ -27,13 +27,11 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The bridge now has 37 distinct source-body refinements. The latest checkpoint
-adds the original Portable XOR, square and scale-XOR methods, dense normalization
-and the dense coefficient update. The Dense polynomial theorem proves the exact
-active-prefix monomial addition and preserves it through normalization.
-This is functional refinement of generated
-bodies under the stated trust boundary, not a count of complete native contracts.
-Full native implementation coverage is not achieved.
+The bridge now has 42 distinct generated-body refinements under the recorded
+trust boundary. The latest checkpoint covers the decoder verification dispatch,
+scalar continuation check, wire record sizing and Dense squaring. Separate GF64 reconciliation theorems cover
+syndrome uniqueness, rebuilt recurrence and locator minimality. The full
+native implementation contracts remain open.
 
 The [core proofs](BulksketchProofs.lean) and [generated-body bridge](bridge/README.md)
 use frozen proposition definitions, transitive axiom audits and exported-term
@@ -52,6 +50,7 @@ actual algebra trace, source inversion chain and remaining enclosing-wrapper gap
 reviewed frontend variant and explains the Portable and const-square proofs.
 [FROBENIUS_TABLES.md](FROBENIUS_TABLES.md) records the table, lookup and slice checkpoint.
 [SLICE_NORMALIZATION.md](SLICE_NORMALIZATION.md) records the mutable Zip and Dense proofs.
+[RECONCILIATION.md](RECONCILIATION.md) records decoder dispatch, wire sizing and reconciliation.
 
 The [coverage ledger](audit/coverage.json) keeps every native item in scope,
 including unsupported and unproved items. Related mathematical model evidence

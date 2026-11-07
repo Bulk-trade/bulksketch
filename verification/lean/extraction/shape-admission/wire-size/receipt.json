@@ -1,0 +1,60 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "09ffca3e977be3353c594ceedf80dd7a39004eb6",
+  "selected_roots": [
+    "bulksketch::sketch::shape::record_bytes"
+  ],
+  "native_files_checked": 41,
+  "native_build_inputs_checked": 3,
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  },
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "llbc_has_errors": false,
+  "llbc_sha256": "efb9cc32442e2f7d7e298415751cd59643627527220b412adc36b7b335f73481",
+  "generated": [
+    {
+      "path": "extraction/shape-admission/wire-size/Arithmetic/Funs.lean",
+      "sha256": "500d295030764702667dc9b958d8c6a7f3ddfb003207d0b0e0c9e6b04fe4b691"
+    },
+    {
+      "path": "extraction/shape-admission/wire-size/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "34f7c4e4e95d6e18644e8e6dcb96bb8576369bce2eaba2252e1d7e75a1863051"
+    },
+    {
+      "path": "extraction/shape-admission/wire-size/Arithmetic/Types.lean",
+      "sha256": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea"
+    }
+  ],
+  "logs": {
+    "charon.log": "a1e2363a76cdfd92bd347efb231a1ff375444a23a464cf6fb951f0549a75cbcf",
+    "aeneas.log": "eff17e6b29dc6746bc81eded34448505ae38aae755ce8269354442bbb4bf3d74"
+  },
+  "native_source_edited": false,
+  "recorded_output_directory": "/Users/junbug/bulk/bulksketch-proof-tools/shape-admission/wire-size",
+  "command_recipe": [
+    "charon cargo --preset=aeneas --sysroot=default --dest-file=<output>/arithmetic.llbc --start-from=bulksketch::sketch::shape::record_bytes -- --manifest-path=<repo>/Cargo.toml -p bulksketch --lib --locked",
+    "aeneas -backend lean -checks -sequential -print-error-emitters -split-files -dest <output>/Arithmetic <output>/arithmetic.llbc"
+  ],
+  "scoped_runtime_sha256": "c58c15a917cc7d925f90ba7dfc4e9615bdf79e921f98f96bbc87a925c5d1ed6a",
+  "rust_std_source_references": [
+    {
+      "path": "library/core/src/option.rs",
+      "sha256": "2f248fbebf89dad9730d0488f3300c97ae720b5162b88a67f657257954d573d7",
+      "lines": "2875\u20132891",
+      "scope": "Option Try branch and FromResidual None"
+    },
+    {
+      "path": "library/core/src/result.rs",
+      "sha256": "7f23a9f38da4fc06aaee76066e468d51d4da279f2325f44a8335186420f9ee6c",
+      "lines": "709\u2013712",
+      "scope": "Result.ok discards value-level error"
+    }
+  ]
+}

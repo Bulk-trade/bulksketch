@@ -1,0 +1,90 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "09ffca3e977be3353c594ceedf80dd7a39004eb6",
+  "status": "generated",
+  "target": "aarch64-apple-darwin",
+  "selected_roots": [
+    "{impl bulksketch::poly::Polynomial for bulksketch::poly::Dense}::square_into"
+  ],
+  "native_files_checked": 41,
+  "build_inputs_checked": 3,
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  },
+  "translator_variant": "checked-shared-expansion-owner-v1",
+  "translator_patch_sha256": "8d3b307160f0309621cc3971b01cf1a18b8d78b09d1631ebee6da30e9b442150",
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "67d90faba0a8001c3df2f3de63c7102a00252e5573ee741b2c7b0e790d4b9529"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "native_source_edited": false,
+  "llbc_has_errors": false,
+  "llbc_sha256": "47a218ad89148629f87f5917b8de29b413bcd31033cc0c2678315aa6c7c11217",
+  "implementation_proof_credit": 0,
+  "original_commands": [
+    {
+      "name": "charon",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-tools/dense-prefix-investigation/square/arithmetic.llbc",
+        "--start-from={impl bulksketch::poly::Polynomial for bulksketch::poly::Dense}::square_into",
+        "--",
+        "--manifest-path",
+        "/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "aeneas",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-dense-prefix/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-checks",
+        "-sequential",
+        "-print-error-emitters",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/dense-prefix-investigation/square/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-tools/dense-prefix-investigation/square/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "extraction/dense-square/arithmetic.llbc",
+      "sha256": "47a218ad89148629f87f5917b8de29b413bcd31033cc0c2678315aa6c7c11217"
+    },
+    {
+      "path": "extraction/dense-square/charon.log",
+      "sha256": "cfc136078ec42352ce11f79bf967c7e977f45bf5e0f279ab50d4e19ef96cc3aa"
+    },
+    {
+      "path": "extraction/dense-square/aeneas.log",
+      "sha256": "1cd2076e727b1aad35dad140c093b83bba202e77062314e1730798c8cfcb4604"
+    },
+    {
+      "path": "extraction/dense-square/Arithmetic/Funs.lean",
+      "sha256": "7ff7bf02a64fb62cb3d28154514ad7b426018c4380dc56b4d101dee3d73bd505"
+    },
+    {
+      "path": "extraction/dense-square/Arithmetic/Types.lean",
+      "sha256": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557"
+    },
+    {
+      "path": "extraction/dense-square/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "9d47cb5223b7a3a784065947ca87ceea2b65fb72423eb973c18862af9f72a5c8"
+    }
+  ]
+}

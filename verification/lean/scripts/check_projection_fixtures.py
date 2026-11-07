@@ -68,6 +68,29 @@ PROJECTIONS = [
      "compiled Dense coefficient projection differs", None, None,
      ["bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/DenseNormalizationTypes.lean",
       "bridge/Arithmetic/DenseNormalizationGenerated.lean"]),
+    ("verify-dispatch", "extraction/verify-dispatch/project.py",
+     "extraction/verify-dispatch/receipt.json", "extraction/verify-dispatch/Arithmetic/Funs.lean",
+     "bridge/Arithmetic/VerifyDispatchGenerated.lean",
+     "if degree <= 2#usize", "if degree <= 3#usize", "compiled dispatch declarations differ",
+     None, None, ["bridge/Arithmetic/VerifyDispatchRuntime.lean"]),
+    ("shape-wire", "extraction/shape-admission/wire-size/project.py",
+     "extraction/shape-admission/wire-size/receipt.json", "extraction/shape-admission/wire-size/Arithmetic/Funs.lean",
+     "bridge/Arithmetic/ShapeWireGenerated.lean",
+     "Usize.checked_mul words 8#usize", "Usize.checked_mul words 7#usize", "compiled wire-size projection differs",
+     None, None, ["bridge/Arithmetic/ShapeWireRuntime.lean",
+                  "extraction/shape-admission/wire-size/arithmetic.llbc"]),
+    ("odd-recurrence", "extraction/odd-recurrence/project.py",
+     "extraction/odd-recurrence/receipt.json", "extraction/odd-recurrence/Arithmetic/Funs.lean",
+     "bridge/Arithmetic/OddRecurrenceGenerated.lean",
+     "let i ← index - lag", "let i ← index + lag", "compiled recurrence projection differs",
+     None, None, ["bridge/Arithmetic/SliceKernelTypes.lean"]),
+    ("dense-square", "extraction/dense-square/project.py", "extraction/dense-square/receipt.json",
+     "extraction/dense-square/Arithmetic/Funs.lean", "bridge/Arithmetic/DenseSquareGenerated.lean",
+     "let size ← 2#usize * i", "let size ← 3#usize * i", "compiled Dense square projection differs",
+     None, None, ["extraction/dense-square/refinement-receipt.json",
+                  "bridge/Arithmetic/DenseSquareRuntime.lean", "bridge/Arithmetic/SliceKernelTypes.lean",
+                  "bridge/Arithmetic/DenseNormalizationTypes.lean",
+                  "bridge/Arithmetic/DenseNormalizationGenerated.lean"]),
 ]
 
 
@@ -81,7 +104,7 @@ def main():
         originals[label] = projector.check()["source_declarations_retained_verbatim"]
         receipt = json.loads((ROOT / receipt_path).read_text())
         files = [receipt_path, active_path, "bridge/Arithmetic/Types.lean", "bridge/Arithmetic/Funs.lean"]
-        artifact_key = "artifacts" if label == "dense-normalization" else "generated"
+        artifact_key = "artifacts" if label in {"dense-normalization", "verify-dispatch", "odd-recurrence", "dense-square"} else "generated"
         files += [item["path"] for item in receipt[artifact_key]] + extra_files
         cases = [
             ("compiled-body-edit", active_path, before, after, changed),
@@ -113,6 +136,22 @@ def main():
             cases.append(("compiled-closure-type-edit", "bridge/Arithmetic/DenseNormalizationTypes.lean",
                           "normalized_len.closure_1 := Unit", "normalized_len.closure_1 := Bool",
                           "compiled dense-normalization types differ"))
+        if label == "verify-dispatch":
+            cases.append(("ceiling-rounding-edit", "bridge/Arithmetic/VerifyDispatchRuntime.lean",
+                          "remainder > 0#u64", "remainder > 1#u64", "scoped dispatch runtime mismatch"))
+        if label == "shape-wire":
+            cases.append(("receipt-artifact-omission", receipt_path,
+                          '"path": "extraction/shape-admission/wire-size/Arithmetic/Types.lean"',
+                          '"path": "extraction/shape-admission/wire-size/Arithmetic/Funs.lean"',
+                          "incomplete wire-size extraction receipt"))
+            cases.append(("compiled-runtime-edit", "bridge/Arithmetic/ShapeWireRuntime.lean",
+                          "none =>", "some _ =>", "scoped wire-size runtime mismatch"))
+        if label == "dense-square":
+            cases.append(("stride-zero-guard-edit", "bridge/Arithmetic/DenseSquareRuntime.lean",
+                          "if stride.val = 0", "if stride.val = 1", "scoped Dense square runtime mismatch"))
+            cases.append(("shared-normalization-edit", "bridge/Arithmetic/DenseNormalizationGenerated.lean",
+                          "def poly.dense.normalized_len\n", "def poly.dense.normalized_len_edited\n",
+                          "shared normalization declaration mismatch"))
         for name, path, before, after, diagnostic in cases:
             name = label + "/" + name
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:

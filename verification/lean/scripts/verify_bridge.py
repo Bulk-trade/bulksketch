@@ -39,6 +39,58 @@ def run(name, args, timeout=180, cwd=BRIDGE):
             "elapsed_seconds": time.monotonic() - start}, result.stdout
 
 
+def check_dense_prefix_variant(variant, receipt, runtime, runtime_head, linkage):
+    """Validate the narrow shared-owner patch separately from capture-v1."""
+    directory = "tooling/aeneas-dense-prefix/"
+    source = "src/interp/InterpExpansion.ml"
+    patch = directory + "owner-guard.patch"
+    input_path = "extraction/dense-square/arithmetic.llbc"
+    generated = {"extraction/dense-square/Arithmetic/" + name
+                 for name in ("Types.lean", "Funs.lean")}
+    tests = {directory + name for name in ("run.py", "tests/Cargo.toml",
+             "tests/Cargo.lock", "tests/src/lib.rs", "guards/dune", "guards/dense_prefix_guards.ml")}
+    extraction = receipt["extraction"]
+    if receipt["status"] != "passed" or receipt["variant_id"] != variant["id"] or \
+            receipt["native_source_changed"] is not False or \
+            receipt["new_native_coverage_credit_from_tests"] != 0 or \
+            variant["receipt"] != directory + "receipt.json" or \
+            receipt["base_aeneas_commit"] != runtime_head or variant["base_commit"] != runtime_head or \
+            receipt["charon_commit"] != linkage["charon_commit"] or \
+            variant["mandatory_checks"] is not True or receipt["patch"] != patch or \
+            variant["patch"] != patch or receipt["patch_sha256"] != variant["patch_sha256"] or \
+            sha(ROOT / patch) != variant["patch_sha256"] or \
+            set(receipt["modified_sources"]) != {source} or \
+            receipt["base_sources"] != {source: sha(runtime / source)} or \
+            re.findall(r"(?m)^diff --git a/(\S+) b/(\S+)$", (ROOT / patch).read_text()) != [(source, source)] or \
+            sha(runtime / "src/interp/InterpReduceCollapse.ml") != receipt["unchanged_collapse_guard_source_sha256"]:
+        raise RuntimeError("dense-prefix variant lost pinned provenance")
+    if extraction["input"] != input_path or sha(ROOT / input_path) != extraction["input_sha256"] or \
+            extraction["exit_code"] != 0 or set(extraction["required_flags"]) != {"-checks", "-sequential"} or \
+            not set(extraction["required_flags"]) <= set(extraction["command"]) or \
+            len(extraction["generated"]) != len(generated) or \
+            {item["path"] for item in extraction["generated"]} != generated or \
+            any(sha(ROOT / item["path"]) != item["sha256"] for item in extraction["generated"]):
+        raise RuntimeError("dense-prefix variant lost checks-enabled original extraction")
+    if set(receipt["regression_sources"]) != tests or \
+            any(sha(ROOT / path) != digest for path, digest in receipt["regression_sources"].items()):
+        raise RuntimeError("dense-prefix regression sources changed")
+
+    successes = {"prefix_zip_read", "prefix_stride_read"}
+    rejections = {"without-checks", "shared-abstraction-owner", "shared-abstraction-child",
+                  "shared-expression-owner", "shared-expression-child", "non-shared-expansion-with-loans"}
+    cases = {item["case"]: item for item in receipt["regressions"]}
+    commands = {item["name"]: item for item in receipt["commands"]}
+    if set(cases) != successes | rejections or len(cases) != len(receipt["regressions"]) or \
+            any(cases[key]["status"] != "passed" or cases[key]["baseline_exit_code"] != 1 or
+                cases[key]["patched_exit_code"] != 0 for key in successes) or \
+            any(cases[key]["status"] != "expected_rejection_confirmed" for key in rejections) or \
+            cases["without-checks"]["exit_code"] != 1 or \
+            commands["projection-guards"]["exit_code"] != 0 or commands["rust-value-regressions"]["exit_code"] != 0 or \
+            commands["original-square"]["command"] != extraction["command"] or \
+            commands["original-square"]["exit_code"] != 0:
+        raise RuntimeError("dense-prefix regression matrix is incomplete")
+
+
 def main():
     scope = json.loads((ROOT / "scope.json").read_text())
     source = (ROOT / scope["source_repository"]).resolve()
@@ -77,6 +129,14 @@ def main():
     variants = linkage.get("reviewed_translator_variants", [])
     for variant in variants:
         receipt = json.loads((ROOT / variant["receipt"]).read_text())
+        if variant["id"] == "checked-shared-expansion-owner-v1":
+            check_dense_prefix_variant(variant, receipt, runtime, runtime_head, linkage)
+            result, _ = run("checked-dense-prefix-patch-applies", ["git", "apply", "--check",
+                            str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
+            records.append(result)
+            continue
+        if variant["id"] != "checked-frozen-capture-v1":
+            raise RuntimeError("unknown reviewed translator variant")
         extraction = receipt["extraction"]
         expected_sources = {"src/interp/InterpJoin.ml", "src/pure/PureUtils.ml",
                             "src/pure/PureMicroPassesLoops.ml"}
@@ -169,7 +229,8 @@ def main():
                   if event["kind"] == "challenge_match"}
     names = {event["theorem"] for event in roots}
     expected = {(item["challenge"], item["theorem"]) for item in registry["challenges"]}
-    if not expected or challenges != expected or not {item[1] for item in challenges} <= names:
+    if not expected or len(expected) != frozen["challenge_count"] or challenges != expected or \
+            not {item[1] for item in challenges} <= names:
         raise RuntimeError("bridge challenge omitted from axiom/export roots")
     summaries = [event for event in events if event["kind"] == "summary"]
     if len(summaries) != 1 or summaries[0]["public_theorems"] != len(roots) or \

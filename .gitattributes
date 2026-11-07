@@ -60,3 +60,4 @@ verification/lean/extraction/dense-normalization/** linguist-generated=true
 verification/lean/extraction/dense-normalization/*.py linguist-generated=false
 verification/lean/extraction/dense-coefficient/** linguist-generated=true
 verification/lean/extraction/dense-coefficient/*.py linguist-generated=false
+verification/lean/tooling/aeneas-dense-prefix/*.patch whitespace=-trailing-space

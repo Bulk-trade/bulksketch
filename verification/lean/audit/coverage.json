@@ -766,7 +766,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.OddRecurrence.default_refines",
+        "scope": "For a nonempty ascending squared locator and explicit exact raw multiplication and reduction callback contracts, the original default returns normally and accepts exactly when every odd continuation equation holds. Both loops, index bounds, reduction and short-circuit mismatch are covered.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/contract.rs:6:trait:bulksketch::backend::contract::Arithmetic",
@@ -5093,7 +5100,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.VerifyDispatch.product_counts_refines",
+        "scope": "Exact Option and both counts over all usize inputs. Rejects unordered or out-of-wire-range dimensions and proves every checked arithmetic operation succeeds on admitted inputs.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/verify.rs:54:function:bulksketch::decode::verify::use_rebuilt_lfsr",
@@ -5113,7 +5127,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.VerifyDispatch.use_rebuilt_lfsr_refines",
+        "scope": "For every usize pair, tiny or rejected dimensions return false. Otherwise both rebuilt counts must be no greater and one strictly smaller. Includes the generated derived comparison.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/verify.rs:69:function:bulksketch::decode::verify::rebuilt_lfsr",
@@ -6677,7 +6698,15 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.DenseSquare.square_into_refines",
+        "scope": "Exact original generated frame: checked scalar overflow and both buffer guards, even slots squared, odd slots cleared, destination tail and raw scratch preserved, and returned canonical length. Explicit native square callback equality. Requires the recorded checks-enabled Dense-prefix frontend variant.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json",
+        "translator_variant": "checked-shared-expansion-owner-v1"
+      }
     },
     {
       "id": "src/poly/dense.rs:40:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::div_rem_into",
@@ -9977,7 +10006,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.ShapeWire.record_bytes_refines",
+        "scope": "For every usize pair the actual helper returns normally. Some carries exact size 24 + 2*buckets + 8*words + ceil(buckets/8) iff descriptor and payload fit u32 and complete record fits usize. None is exact rejection. Both supported machine widths are included; intermediate checked additions, multiplications, division, and conversions are reconciled with these final bounds. This is the wire-size admission helper. Shape constructor allocation and descriptor admission remain separate obligations.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/shape.rs:12:struct:bulksketch::sketch::shape::ShapeLimits",
@@ -11287,8 +11323,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Thirty-seven distinct generated-body refinements include the original mutable slice XOR, square and scale methods, dense normalization and dense coefficient update. Model laws and polynomial transport add no source-body credit. Full decoder and machine memory/ISA closure remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 37,
+    "note": "All 344 native executable declarations retained. Exact decoder dispatch, default odd recurrence, record-size admission and Dense square are linked to original generated bodies. GF64 reconciliation theorems establish sparse uniqueness, rebuilt recurrence equivalence and minimal locator uniqueness, with zero additional source-body credit. Complete native decoder, compiler-expanded closure, memory and ISA contracts remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 42,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11303,7 +11339,17 @@
       "portable_arithmetic": "Seven Portable forwarding endpoints plus callback-free PortableInverse.inverse_refines; each original source method counted once.",
       "frobenius_tables_and_lookups": "Original tables() and inverse21_table() generate all 2,560 scheduled cells. Both original lookup paths are proved for every word and selector.",
       "linear_slice_product": "The original default multiply_linear computes the full GF64 polynomial product when the final spare slot is zero.",
-      "dense_coefficient_polynomial": "Original coefficient XOR adds the selected GF64 monomial to the active polynomial. Trimming the trailing zeros preserves the result."
+      "dense_coefficient_polynomial": "Original coefficient XOR adds the selected GF64 monomial to the active polynomial. Trimming the trailing zeros preserves the result.",
+      "dense_square_polynomial": "The normalized output of the original Dense square represents the square of the ascending input polynomial over GF64."
+    },
+    "reconciliation_algebra_evidence": {
+      "sparse_support_uniqueness": "BulksketchBridge.Reconciliation.gf64_sparse_support_unique",
+      "positive_power_sums": "BulksketchBridge.Reconciliation.gf64_positive_powerSums",
+      "rebuilt_verification_iff_direct": "BulksketchBridge.Reconciliation.gf64_rebuilt_verification_iff_direct",
+      "scalar_continuation_to_full_comparison": "BulksketchBridge.Reconciliation.gf64_scalar_continuation_iff_direct",
+      "locator_minimal": "BulksketchBridge.Reconciliation.gf64_positive_locator_minimal",
+      "locator_unique": "BulksketchBridge.Reconciliation.gf64_positive_locator_unique",
+      "native_body_credit": 0
     }
   }
 }

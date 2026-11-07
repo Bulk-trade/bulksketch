@@ -52,11 +52,13 @@ The subsequent [native coverage checkpoint](../NATIVE_COVERAGE.md) closes
 `inverse_using`/`inverse` and Portable inverse under a named reviewed,
 checks-enabled frontend variant. Seven other Portable forwarders and the original
 x86-visible const square use the unchanged pinned extractor. The original
-runtime and nested-loan guard are unchanged; no replacement closure model is
-introduced. Twenty-six distinct native bodies have narrower functional
-refinements; all 344 native executable obligations remain in scope. Table
-generation/lookup, accelerated backends and the remaining decoder/API contracts
-remain open.
+runtime and nested-loan guard remain pinned. The
+[Frobenius](../FROBENIUS_TABLES.md) and [slice](../SLICE_NORMALIZATION.md)
+checkpoints cover the original table generation, lookups, Portable slice
+operations and Dense coefficient normalization. The
+[reconciliation checkpoint](../RECONCILIATION.md) adds exact decoder dispatch
+and wire-size admission, the original scalar recurrence check and Dense square, with separate GF64 locator theorems.
+The coverage ledger retains all 344 executable source obligations.
 
 From the parent Lean directory:
 

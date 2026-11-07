@@ -13,7 +13,7 @@ def prefixSlice (words : Slice U64) (count : Nat) : Slice U64 :=
     rw [List.length_take]
     exact (Nat.min_le_right _ _).trans words.length_ineq)
 
-private theorem prefix_coeff (words : Slice U64) (count index : Nat)
+theorem prefix_coeff (words : Slice U64) (count index : Nat)
     (bounded : count ≤ words.length) :
     (slicePolynomial (prefixSlice words count)).coeff index =
       if index < count then toField words[index]!.bv else 0 := by

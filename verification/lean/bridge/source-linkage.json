@@ -271,6 +271,26 @@
       "path": "extraction/dense-coefficient/xor-coefficient/arithmetic.llbc",
       "sha256": "2bd96468b069d11b65ae8f2226bd17f35e33114eb17599eb855a3a58b9f51215",
       "has_errors": false
+    },
+    {
+      "path": "extraction/dense-square/arithmetic.llbc",
+      "sha256": "47a218ad89148629f87f5917b8de29b413bcd31033cc0c2678315aa6c7c11217",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/verify-dispatch/arithmetic.llbc",
+      "sha256": "f8a6e00931f51b434d9e9284b9a1a3ae738c9e8731ce1f3f03a2b20c9a2bc7b0",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/shape-admission/wire-size/arithmetic.llbc",
+      "sha256": "efb9cc32442e2f7d7e298415751cd59643627527220b412adc36b7b335f73481",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/odd-recurrence/arithmetic.llbc",
+      "sha256": "e9f422a6cf5c5a8571f71c5371f14d239d501579e8271e0563533273e625af0d",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -300,6 +320,18 @@
     {
       "functions": "bridge/Arithmetic/ReversePositionRuntime.lean",
       "source_scope": "Shared slice Iter::rposition and Option::map_or. The reverse scan threads the original callback state and keeps the unvisited prefix. Pointer, aliasing and drop semantics stay within the runtime trust boundary."
+    },
+    {
+      "functions": "bridge/Arithmetic/VerifyDispatchRuntime.lean",
+      "source_scope": "Concrete Rust core u64 div_ceil quotient, remainder, and conditional checked increment. Runtime/source correspondence stays in the recorded boundary."
+    },
+    {
+      "functions": "bridge/Arithmetic/ShapeWireRuntime.lean",
+      "source_scope": "Option Try branch and None residual plus value-level Result.ok, with pinned Aeneas scalar arithmetic and conversions."
+    },
+    {
+      "functions": "bridge/Arithmetic/DenseSquareRuntime.lean",
+      "source_scope": "Concrete mutable slice StepBy and shared-right Zip value models. StepBy advances the cursor by the stride. The backward continuation updates the original yielded index on the later state. Pointer, alias and drop correspondence remain trusted."
     }
   ],
   "arithmetic_source_inputs": {
@@ -494,6 +526,31 @@
       "native_item_id": "src/poly/dense.rs:159:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::xor_coefficient",
       "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.xor_coefficient",
       "generated_file": "bridge/Arithmetic/DenseCoefficientGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/verify.rs:14:function:bulksketch::decode::verify::product_counts",
+      "generated_declaration": "bulksketch.decode.verify.product_counts",
+      "generated_file": "bridge/Arithmetic/VerifyDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/verify.rs:54:function:bulksketch::decode::verify::use_rebuilt_lfsr",
+      "generated_declaration": "bulksketch.decode.verify.use_rebuilt_lfsr",
+      "generated_file": "bridge/Arithmetic/VerifyDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/shape.rs:120:function:bulksketch::sketch::shape::record_bytes",
+      "generated_declaration": "bulksketch.sketch.shape.record_bytes",
+      "generated_file": "bridge/Arithmetic/ShapeWireGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/contract.rs:65:trait_default:bulksketch::backend::contract::BulkKernels::odd_recurrence_matches",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.odd_recurrence_matches.default",
+      "generated_file": "bridge/Arithmetic/OddRecurrenceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:30:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::square_into",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.square_into",
+      "generated_file": "bridge/Arithmetic/DenseSquareGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -638,6 +695,55 @@
       "checker": "extraction/dense-coefficient/project.py",
       "declaration_count": 1,
       "scope": "Verbatim Dense coefficient method with nine shared normalization declarations checked."
+    },
+    {
+      "generated": "extraction/verify-dispatch/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/VerifyDispatchGenerated.lean",
+      "sha256": "e091cf238637b0f73e586f535b767f2893a688e83914adb678e3b528c0a42837",
+      "raw_sha256": "74e0f15d8b16ce8a465b89dd7d9d8ff4bf893286546d8dd01f026ea4f36d6d68",
+      "checker": "extraction/verify-dispatch/project.py",
+      "declaration_count": 4,
+      "scope": "Original decoder count, dispatch and generated PartialEq definitions with only import adaptation."
+    },
+    {
+      "generated": "extraction/verify-dispatch/Arithmetic/Types.lean",
+      "bridge_copy": "bridge/Arithmetic/VerifyDispatchTypes.lean",
+      "sha256": "03b264c559c161d5bac5a9486d1892ac1f37d545aa9371068cb46166192d07ff",
+      "raw_sha256": "03b264c559c161d5bac5a9486d1892ac1f37d545aa9371068cb46166192d07ff",
+      "checker": "extraction/verify-dispatch/project.py",
+      "declaration_count": 1,
+      "scope": "Byte-identical derived count record.",
+      "checker_args": [
+        "--types"
+      ]
+    },
+    {
+      "generated": "extraction/shape-admission/wire-size/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/ShapeWireGenerated.lean",
+      "sha256": "be38b0252b70adba3a22ed197bad57944cd64b3a6f52cf5d4d3b8a867dc7f31b",
+      "raw_sha256": "500d295030764702667dc9b958d8c6a7f3ddfb003207d0b0e0c9e6b04fe4b691",
+      "checker": "extraction/shape-admission/wire-size/project.py",
+      "declaration_count": 1,
+      "scope": "Verbatim original record_bytes body and concrete scoped Option Try and Result.ok bindings."
+    },
+    {
+      "generated": "extraction/odd-recurrence/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/OddRecurrenceGenerated.lean",
+      "sha256": "d5d594b8be4ec2b8ad30a9b8a18347191568f8f98b5739d05f24203bbc4d198b",
+      "raw_sha256": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739",
+      "checker": "extraction/odd-recurrence/project.py",
+      "declaration_count": 6,
+      "scope": "Original scalar recurrence default, both loop bodies and wrappers, and RawProduct default with shared types checked."
+    },
+    {
+      "generated": "extraction/dense-square/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseSquareGenerated.lean",
+      "sha256": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
+      "raw_sha256": "7ff7bf02a64fb62cb3d28154514ad7b426018c4380dc56b4d101dee3d73bd505",
+      "checker": "extraction/dense-square/project.py",
+      "declaration_count": 3,
+      "scope": "Original square body and both loop declarations, with exact shared types, normalized_len and scoped iterator bindings checked.",
+      "translator_variant": "checked-shared-expansion-owner-v1"
     }
   ],
   "reviewed_translator_variants": [
@@ -649,6 +755,15 @@
       "receipt": "tooling/aeneas-loop-capture/receipt.json",
       "mandatory_checks": true,
       "scope": "Frozen immutable shared-only acyclic capture graphs ending in opaque type-variable leaves, with frozen-context equality checks enabled; loop signature generic retention. Original collapse guard unchanged; not a formal compiler soundness proof."
+    },
+    {
+      "id": "checked-shared-expansion-owner-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "tooling/aeneas-dense-prefix/owner-guard.patch",
+      "patch_sha256": "8d3b307160f0309621cc3971b01cf1a18b8d78b09d1631ebee6da30e9b442150",
+      "receipt": "tooling/aeneas-dense-prefix/receipt.json",
+      "mandatory_checks": true,
+      "scope": "In checked shared symbolic expansion only, skip the empty-loan requirement on unrelated owners while still traversing their children. Matching, non-shared and unchecked paths retain the original guard. No formal translation-soundness claim."
     }
   ]
 }

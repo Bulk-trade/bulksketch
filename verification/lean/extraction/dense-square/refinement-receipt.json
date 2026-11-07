@@ -1,0 +1,45 @@
+{
+  "status": "targeted Lean build, exact challenge assignment and standard-only axiom audit passed",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_item_id": "src/poly/dense.rs:30:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::square_into",
+  "source_line_span_sha256": "3e965ba40793cc7723a14f56d7440c754b27d221b29aef2c060d18e2096c451f",
+  "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.square_into",
+  "generated_file": "bridge/Arithmetic/DenseSquareGenerated.lean",
+  "generated_files": [
+    "bridge/Arithmetic/Types.lean",
+    "bridge/Arithmetic/Funs.lean",
+    "bridge/Arithmetic/SliceKernelTypes.lean",
+    "bridge/Arithmetic/DenseNormalizationTypes.lean",
+    "bridge/Arithmetic/DenseNormalizationGenerated.lean",
+    "bridge/Arithmetic/DenseSquareGenerated.lean"
+  ],
+  "challenge": "BulksketchBridge.DenseSquareChallenges.actualSquareIntoReturnsExactFrame",
+  "theorem": "BulksketchBridge.DenseSquare.square_into_refines",
+  "translator_variant": "checked-shared-expansion-owner-v1",
+  "native_body_refinements_added": 1,
+  "verbatim_functions": 3,
+  "scope": "The actual Dense square body under an explicit equality between the selected square callback and original GF64 square. Every supported slice length and output slot is covered. Exact normalization, preserved raw slice, preserved destination tail, zero odd slots, exact squared even slots and buffer assertion failure. Oversize input has the extracted scalar model\u2019s checked multiplication overflow.",
+  "runtime_trust_boundary": "Source/runtime correspondence for checked scalar operations and physically representable Rust slices, slice mutation and borrows, and front traversal of StepBy<IterMut<T>> zipped with a shared slice. Virtual absolute cursor advances through skipped positions without a mutation. The yielded element retains the pinned backward callback. The ordinary Zip path consumes left before attempting right and preserves operation failures and cursors.",
+  "std_references": [
+    {
+      "file": "library/core/src/iter/adapters/step_by.rs",
+      "sha256": "039d8702353c31142dc045043d8810ac480145bb41a2cb72f9ba63bf4856baf1",
+      "lines": "225\u2013233"
+    },
+    {
+      "file": "library/core/src/iter/adapters/zip.rs",
+      "sha256": "0c7f9a5a00af318a1262d3505b440c102db0dce2756f35fbb95f176a6cdc8ce9",
+      "lines": "161\u2013168"
+    }
+  ],
+  "native_source_edited": false,
+  "full_native_coverage_achieved": false,
+  "files_sha256": {
+    "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
+    "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
+    "bridge/BulksketchBridge/DenseSquareChallenges.lean": "46fa85b32addc7b3547d70a0b48a7784beb0d1ba2d29e8765bc83e71b6d3f972",
+    "bridge/BulksketchBridge/DenseSquareLoop.lean": "abc34f4a5de2c7ee07d4ac562b488668af08e1f05875e2feb12a2a60a34de86d",
+    "bridge/BulksketchBridge/DenseSquare.lean": "07f469ed7cde9ee45be6848dc528c2a05d8c5b87fbeb55e72e4bc35afdb3dea2",
+    "extraction/dense-square/project.py": "ee166d2d0229898359e9f475e09065f3526532a3eb49d049c217e09ef80acb1a"
+  }
+}

@@ -336,6 +336,58 @@
     {
       "challenge": "BulksketchBridge.DenseCoefficient.XorCoefficientPolynomialRefines",
       "theorem": "BulksketchBridge.DenseCoefficient.xor_coefficient_polynomial_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseSquareChallenges.actualSquareIntoReturnsExactFrame",
+      "theorem": "BulksketchBridge.DenseSquare.square_into_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseSquare.SquareIntoPolynomialRefines",
+      "theorem": "BulksketchBridge.DenseSquare.square_into_polynomial_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.OddRecurrence.ActualDefaultMatchesEveryContinuation",
+      "theorem": "BulksketchBridge.OddRecurrence.default_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Reconciliation.GF64ScalarContinuationIffDirect",
+      "theorem": "BulksketchBridge.Reconciliation.gf64_scalar_continuation_iff_direct"
+    },
+    {
+      "challenge": "BulksketchBridge.VerifyDispatch.ProductCountsRefines",
+      "theorem": "BulksketchBridge.VerifyDispatch.product_counts_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.VerifyDispatch.UseRebuiltLfsrRefines",
+      "theorem": "BulksketchBridge.VerifyDispatch.use_rebuilt_lfsr_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.ShapeWireChallenges.actualRecordBytesMatchesWireBounds",
+      "theorem": "BulksketchBridge.ShapeWire.record_bytes_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Reconciliation.GF64OddSyndromesDeterminePositivePowers",
+      "theorem": "BulksketchBridge.Reconciliation.gf64_positive_powerSums"
+    },
+    {
+      "challenge": "BulksketchBridge.Reconciliation.GF64OddSyndromesIdentifySparseSupport",
+      "theorem": "BulksketchBridge.Reconciliation.gf64_sparse_support_unique"
+    },
+    {
+      "challenge": "BulksketchBridge.Reconciliation.GF64RebuiltLocatorRecurrence",
+      "theorem": "BulksketchBridge.Reconciliation.gf64_rebuilt_locator_recurrence"
+    },
+    {
+      "challenge": "BulksketchBridge.Reconciliation.GF64RebuiltVerificationIffDirect",
+      "theorem": "BulksketchBridge.Reconciliation.gf64_rebuilt_verification_iff_direct"
+    },
+    {
+      "challenge": "BulksketchBridge.Reconciliation.GF64PositiveLocatorMinimal",
+      "theorem": "BulksketchBridge.Reconciliation.gf64_positive_locator_minimal"
+    },
+    {
+      "challenge": "BulksketchBridge.Reconciliation.GF64PositiveLocatorUnique",
+      "theorem": "BulksketchBridge.Reconciliation.gf64_positive_locator_unique"
     }
   ],
   "refinements": [
@@ -958,6 +1010,87 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Both invalid bounds produce the original assertion failure. Valid inputs return the exact normalized length and full buffer frame, including newly active zero fill and the preserved inactive tail."
+    },
+    {
+      "label": "decode::verify::product_counts [original source]",
+      "native_item_id": "src/decode/verify.rs:14:function:bulksketch::decode::verify::product_counts",
+      "source_line_span_sha256": "9c084ab2fbe65a322667fd3f4db0c5aecc462ed1ee24c49fafdb7f769c2f02bc",
+      "theorem": "BulksketchBridge.VerifyDispatch.product_counts_refines",
+      "challenge": "BulksketchBridge.VerifyDispatch.ProductCountsRefines",
+      "generated_declaration": "bulksketch.decode.verify.product_counts",
+      "generated_file": "bridge/Arithmetic/VerifyDispatchGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/VerifyDispatchTypes.lean",
+        "bridge/Arithmetic/VerifyDispatchGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact Option and both counts over all usize inputs. Rejects unordered or out-of-wire-range dimensions and proves every checked arithmetic operation succeeds on admitted inputs."
+    },
+    {
+      "label": "decode::verify::use_rebuilt_lfsr [original source]",
+      "native_item_id": "src/decode/verify.rs:54:function:bulksketch::decode::verify::use_rebuilt_lfsr",
+      "source_line_span_sha256": "2ff586d9c0102c6d89953fd24c2fd9535c01f8db0ad36e476e7802151a38e11f",
+      "theorem": "BulksketchBridge.VerifyDispatch.use_rebuilt_lfsr_refines",
+      "challenge": "BulksketchBridge.VerifyDispatch.UseRebuiltLfsrRefines",
+      "generated_declaration": "bulksketch.decode.verify.use_rebuilt_lfsr",
+      "generated_file": "bridge/Arithmetic/VerifyDispatchGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/VerifyDispatchTypes.lean",
+        "bridge/Arithmetic/VerifyDispatchGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "For every usize pair, tiny or rejected dimensions return false. Otherwise both rebuilt counts must be no greater and one strictly smaller. Includes the generated derived comparison."
+    },
+    {
+      "label": "sketch::shape::record_bytes [original source]",
+      "native_item_id": "src/sketch/shape.rs:120:function:bulksketch::sketch::shape::record_bytes",
+      "source_line_span_sha256": "ddf48321f3f4ac2859630467516d4493bde8e0bd33112acb8d5b4e2b25da2bf0",
+      "theorem": "BulksketchBridge.ShapeWire.record_bytes_refines",
+      "challenge": "BulksketchBridge.ShapeWireChallenges.actualRecordBytesMatchesWireBounds",
+      "generated_declaration": "bulksketch.sketch.shape.record_bytes",
+      "generated_file": "bridge/Arithmetic/ShapeWireGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/ShapeWireGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "For every usize pair the actual helper returns normally. Some carries exact size 24 + 2*buckets + 8*words + ceil(buckets/8) iff descriptor and payload fit u32 and complete record fits usize. None is exact rejection. Both supported machine widths are included; intermediate checked additions, multiplications, division, and conversions are reconciled with these final bounds. This is the wire-size admission helper. Shape constructor allocation and descriptor admission remain separate obligations."
+    },
+    {
+      "label": "BulkKernels::odd_recurrence_matches [original scalar trait default]",
+      "native_item_id": "src/backend/contract.rs:65:trait_default:bulksketch::backend::contract::BulkKernels::odd_recurrence_matches",
+      "source_line_span_sha256": "eb041da80ff5fc3a8c109f75fd70bc6419e75ba397e2d36ba869064a61652353",
+      "theorem": "BulksketchBridge.OddRecurrence.default_refines",
+      "challenge": "BulksketchBridge.OddRecurrence.ActualDefaultMatchesEveryContinuation",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.odd_recurrence_matches.default",
+      "generated_file": "bridge/Arithmetic/OddRecurrenceGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/SliceKernelTypes.lean",
+        "bridge/Arithmetic/OddRecurrenceGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "For a nonempty ascending squared locator and explicit exact raw multiplication and reduction callback contracts, the original default returns normally and accepts exactly when every odd continuation equation holds. Both loops, index bounds, reduction and short-circuit mismatch are covered."
+    },
+    {
+      "label": "Dense::square_into [original source, reviewed checked frontend]",
+      "native_item_id": "src/poly/dense.rs:30:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::square_into",
+      "source_line_span_sha256": "3e965ba40793cc7723a14f56d7440c754b27d221b29aef2c060d18e2096c451f",
+      "theorem": "BulksketchBridge.DenseSquare.square_into_refines",
+      "challenge": "BulksketchBridge.DenseSquareChallenges.actualSquareIntoReturnsExactFrame",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.square_into",
+      "generated_file": "bridge/Arithmetic/DenseSquareGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/SliceKernelTypes.lean",
+        "bridge/Arithmetic/DenseNormalizationTypes.lean",
+        "bridge/Arithmetic/DenseNormalizationGenerated.lean",
+        "bridge/Arithmetic/DenseSquareGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original generated frame: checked scalar overflow and both buffer guards, even slots squared, odd slots cleared, destination tail and raw scratch preserved, and returned canonical length. Explicit native square callback equality. Requires the recorded checks-enabled Dense-prefix frontend variant.",
+      "translator_variant": "checked-shared-expansion-owner-v1"
     }
   ]
 }
