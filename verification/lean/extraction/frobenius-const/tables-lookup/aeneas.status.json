@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-split-files",
+    "-dest",
+    "/Users/junbug/bulk/bulksketch/verification/lean/extraction/frobenius-const/tables-lookup/Arithmetic",
+    "/Users/junbug/bulk/bulksketch/verification/lean/extraction/frobenius-const/tables-lookup/arithmetic.llbc"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 6.048829249999983,
+  "log": "extraction/frobenius-const/tables-lookup/aeneas.log",
+  "log_sha256": "7279bb2f81cd64d73c16ad2997a765db6d84ec1498679f43aa117dceb5f5c264"
+}

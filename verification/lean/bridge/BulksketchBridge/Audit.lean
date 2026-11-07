@@ -25,6 +25,8 @@ import BulksketchBridge.PortableChallenges
 import BulksketchBridge.InverseUsingChallenges
 import BulksketchBridge.PortableInverseChallenges
 import BulksketchBridge.FrobeniusConstChallenges
+import BulksketchBridge.FrobeniusLookupChallenges
+import BulksketchBridge.SliceKernelChallenges
 import Lean
 
 open Lean Elab Command Meta
@@ -168,7 +170,25 @@ run_cmd do
     (``BulksketchBridge.PortableInverseChallenges.actualInverseReturnsFieldInverse,
       ``BulksketchBridge.PortableInverse.inverse_refines),
     (``BulksketchBridge.FrobeniusConstChallenges.actualConstSquareMatchesWord,
-      ``BulksketchBridge.FrobeniusConst.square_refines)
+      ``BulksketchBridge.FrobeniusConst.square_refines),
+    (``BulksketchBridge.FrobeniusTable.TablesRefine,
+      ``BulksketchBridge.FrobeniusTables.tables_refines),
+    (``BulksketchBridge.FrobeniusTable.InverseTableRefines,
+      ``BulksketchBridge.FrobeniusInverseTable.inverse21_table_refines),
+    (``BulksketchBridge.FrobeniusTable.LookupRefines,
+      ``BulksketchBridge.FrobeniusTable.lookup_refines),
+    (``BulksketchBridge.FrobeniusTable.InverseLookupRefines,
+      ``BulksketchBridge.FrobeniusTable.inverse21_refines),
+    (``BulksketchBridge.SliceKernelChallenges.actualMultiplyLinearReturnsExactFrame,
+      ``BulksketchBridge.SliceKernels.multiply_linear_refines),
+    (``BulksketchBridge.SliceKernelChallenges.actualSquareModFallbackPreservesBuffers,
+      ``BulksketchBridge.SliceKernels.square_mod_fallback_refines),
+    (``BulksketchBridge.FrobeniusTable.StaticTablesRefine,
+      ``BulksketchBridge.FrobeniusTable.static_tables_refine),
+    (``BulksketchBridge.FrobeniusTable.StaticInverseTableRefines,
+      ``BulksketchBridge.FrobeniusTable.static_inverse_table_refines),
+    (``BulksketchBridge.SliceKernels.PaddedProductRefines,
+      ``BulksketchBridge.SliceKernels.multiply_linear_padded_product)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

@@ -41,3 +41,9 @@ verification/lean/extraction/spread/spread.llbc linguist-generated=true
 verification/lean/extraction/**/*_Template.lean whitespace=-blank-at-eof
 verification/lean/extraction/**/*.log whitespace=-trailing-space
 verification/lean/bridge/runtime-models/*.rs linguist-generated=true whitespace=-blank-at-eof
+verification/lean/bridge/Arithmetic/FrobeniusTablesGenerated.lean linguist-generated=true
+verification/lean/bridge/Arithmetic/SliceKernelGenerated.lean linguist-generated=true
+verification/lean/bridge/Arithmetic/SliceKernelTypes.lean linguist-generated=true
+verification/lean/extraction/frobenius-const/tables-lookup/project.py linguist-generated=false
+verification/lean/extraction/slice-kernels/** linguist-generated=true
+verification/lean/extraction/slice-kernels/*.py linguist-generated=false

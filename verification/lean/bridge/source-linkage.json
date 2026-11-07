@@ -241,6 +241,16 @@
       "path": "extraction/frobenius-const/square/arithmetic.llbc",
       "sha256": "bbff1327f63a9743350a6f707e9c32bc33c85f9fa570456b599db1f2be70eb5e",
       "has_errors": false
+    },
+    {
+      "path": "extraction/frobenius-const/tables-lookup/arithmetic.llbc",
+      "sha256": "91acd53320edee29d04090b6df30eb15138a64d7abcff2968e94d2228c66c313",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/slice-kernels/multiply-linear/arithmetic.llbc",
+      "sha256": "75bb0571962da64d67c9b7ce29cf01da20d31b87c14207b3bc6bc11ff73f3193",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -258,6 +268,10 @@
     {
       "functions": "bridge/Arithmetic/MapsRuntime.lean",
       "source_scope": "General checked unsigned conversions and full U64 population count; TryFromIntError/Debug use existing diagnostics-erased Unit model and expect independence is proved for all Debug dictionaries. Formatting correctness not claimed; all native endpoint conversions establish innerOk. Std/intrinsic/compiler/ISA correspondence stays TCB."
+    },
+    {
+      "functions": "bridge/Arithmetic/FrobeniusTablesRuntime.lean",
+      "source_scope": "U32 to usize binding reuses the existing complete checked unsigned conversion model. Lookup proves inner Ok before expect. The usual Rust std/compiler correspondence assumption applies."
     }
   ],
   "arithmetic_source_inputs": {
@@ -397,6 +411,36 @@
       "native_item_id": "src/field/frobenius.rs:55:function:bulksketch::field::frobenius::square",
       "generated_declaration": "bulksketch.field.frobenius.square",
       "generated_file": "bridge/Arithmetic/FrobeniusConstGenerated.lean"
+    },
+    {
+      "native_item_id": "src/field/frobenius.rs:79:function:bulksketch::field::frobenius::tables",
+      "generated_declaration": "bulksketch.field.frobenius.tables",
+      "generated_file": "bridge/Arithmetic/FrobeniusTablesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/field/frobenius.rs:33:function:bulksketch::field::frobenius::inverse21_table",
+      "generated_declaration": "bulksketch.field.frobenius.inverse21_table",
+      "generated_file": "bridge/Arithmetic/FrobeniusTablesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/field/frobenius.rs:7:function:bulksketch::field::frobenius::lookup",
+      "generated_declaration": "bulksketch.field.frobenius.lookup",
+      "generated_file": "bridge/Arithmetic/FrobeniusTablesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/field/frobenius.rs:22:function:bulksketch::field::frobenius::inverse21",
+      "generated_declaration": "bulksketch.field.frobenius.inverse21",
+      "generated_file": "bridge/Arithmetic/FrobeniusTablesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/contract.rs:57:trait_default:bulksketch::backend::contract::BulkKernels::multiply_linear",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.multiply_linear.default",
+      "generated_file": "bridge/Arithmetic/SliceKernelGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/contract.rs:51:trait_default:bulksketch::backend::contract::BulkKernels::square_mod",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.square_mod.default",
+      "generated_file": "bridge/Arithmetic/SliceKernelGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -463,6 +507,36 @@
       "checker": "extraction/frobenius-const/project.py",
       "declaration_count": 5,
       "scope": "Whole generated const-square file is byte-identical. Original generated Types has no application declarations; all primitive types/runtime unchanged."
+    },
+    {
+      "generated": "extraction/frobenius-const/tables-lookup/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/FrobeniusTablesGenerated.lean",
+      "sha256": "48fb506f80524458ed13d26bae161a086e97f87724868c18a7f7aaeedc3f13ed",
+      "raw_sha256": "d143693a61179995a0190dbc143da1b6915cdd0ae8b9acb7300cf4c823eb564d",
+      "checker": "extraction/frobenius-const/tables-lookup/project.py",
+      "declaration_count": 37,
+      "scope": "Verbatim table and lookup declarations. Five original square declarations and the existing debug dictionary are checked and reused."
+    },
+    {
+      "generated": "extraction/slice-kernels/multiply-linear/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/SliceKernelGenerated.lean",
+      "sha256": "551874d223068225ec2942b28559b8d62f8b53df04a9268a2195ac416b1683b9",
+      "raw_sha256": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739",
+      "checker": "extraction/slice-kernels/project.py",
+      "declaration_count": 4,
+      "scope": "Two original trait defaults and their generated loop helpers."
+    },
+    {
+      "generated": "extraction/slice-kernels/multiply-linear/Arithmetic/Types.lean",
+      "bridge_copy": "bridge/Arithmetic/SliceKernelTypes.lean",
+      "sha256": "2823889040f078b47aa5e5f4b30a1738815e3f1c113e1b71d4359344010c0742",
+      "raw_sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+      "checker": "extraction/slice-kernels/project.py",
+      "declaration_count": 2,
+      "scope": "Original Arithmetic and BulkKernels dictionary types with checked shared declarations.",
+      "checker_args": [
+        "--types"
+      ]
     }
   ],
   "reviewed_translator_variants": [

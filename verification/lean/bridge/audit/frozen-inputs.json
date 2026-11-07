@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "96dbd50aaabc245b7ba498b350ce3d4a195dae63dd92b6261c667828253c08c1",
+    "bridge/BulksketchBridge/Audit.lean": "2e3b165ee376ca426558d7b17af64a1297682e95cbb7c569b8f11db2b1adbbc8",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "b52c9ca277bd18e4f281a39fec82d521b299eb50807bbae3127f401704b5f681",
-    "audit/frozen-inputs.json": "4b7060639eb1012ef7cd69c54a8175f7940c56b2879d1901e55546a3b26de926",
-    "bridge/BulksketchBridge.lean": "1a889cdc2b2bf918c1e6a2002cdd96058a1f5cf7a9591b6c0c28a3c0dcfb77da",
+    "audit/frozen-inputs.json": "886d0dd8c32cd273efb0daf36488e43d579b31194dcdc09ccdefc29bd9d1a5e0",
+    "bridge/BulksketchBridge.lean": "4cbf348ba8147524dc5951b91f774fba182debc331e055013bd331e89ae13049",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "0a0b3f4026380f29a7ba5036f1029bd2f634cbff88d0c61545aff6d662787eb9",
-    "bridge/obligations.json": "4effcdcf07c245e6347871b98c71ac35469889a9481b0be88b7d251cb71e56d5",
+    "bridge/source-linkage.json": "c3e8927e1e33d24c6da36d404bb1be53f473dbceb5f0b45ce4b64858508301fa",
+    "bridge/obligations.json": "93bb1e2bc9a2adf66d0705d53aa09c6def3d7159b4d704a1380accbcd392194e",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "a3b6e70b3b74705644e70783c4c1d86c8a13b7146a8754259c44f3a527c6d18c",
+    "scripts/check_projection_fixtures.py": "161a5eda3850e0052bb1e98641d24fe7e2fdf84b9bba033869d0553705514c1c",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -189,7 +189,45 @@
     "tooling/aeneas-loop-capture/tests/negative/nested_shared_then_mutable.rs": "42f7b8fd74abac3cc3198f83cf0bc68179f2f4d8aeef2e554f8d859d694cc86a",
     "tooling/aeneas-loop-capture/tests/negative/shared_then_mutable.rs": "152499380468149ef6040741f2a1b826155aa4c212e7b23e867bea987b9d2a2c",
     "tooling/aeneas-loop-capture/tests/src/lib.rs": "a29be3658d98bc00a89ed8dc7fc4e87a161be41c955bb59b0371a53f52038196",
-    "extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc": "e42f06cbc1f27712f3c5fa9fed822841cf1093bd2f858c936dea9b1066ae5335"
+    "extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc": "e42f06cbc1f27712f3c5fa9fed822841cf1093bd2f858c936dea9b1066ae5335",
+    "audit/frobenius-tables-checkpoint.json": "a4805e16cc6e384364fb2f546d9daed5383f458ecc48b1124099da39c799be67",
+    "bridge/Arithmetic/FrobeniusTablesGenerated.lean": "48fb506f80524458ed13d26bae161a086e97f87724868c18a7f7aaeedc3f13ed",
+    "bridge/Arithmetic/FrobeniusTablesRuntime.lean": "4627e77229e44886b5ba4ade6685ba02e2302015170d84082983bcee748361ef",
+    "bridge/Arithmetic/SliceKernelGenerated.lean": "551874d223068225ec2942b28559b8d62f8b53df04a9268a2195ac416b1683b9",
+    "bridge/Arithmetic/SliceKernelTypes.lean": "2823889040f078b47aa5e5f4b30a1738815e3f1c113e1b71d4359344010c0742",
+    "bridge/BulksketchBridge/FrobeniusInverseTable.lean": "eab28428ccb9908000b1bd2c89a7a7fd622114565b0a50387ee8c5587617797a",
+    "bridge/BulksketchBridge/FrobeniusLookup.lean": "06a3be85d5a4e3ab8afecd2baaacecb380de7f5a6e7dffb78dff530d7706cc10",
+    "bridge/BulksketchBridge/FrobeniusLookupChallenges.lean": "77fd83c86d846d9b63f4e9b3d4ad7d16560273805ff6f7d86d6261ffd3c48372",
+    "bridge/BulksketchBridge/FrobeniusLookupLoop.lean": "43ae05d93566c125e9780313cf0eb92999ddffdc5033034255c18c41df27a878",
+    "bridge/BulksketchBridge/FrobeniusLookupMath.lean": "587461da15f840bc7ea6ca72262c32827a549007d0a80c5a52a9cb1548cd4673",
+    "bridge/BulksketchBridge/FrobeniusTableSpec.lean": "c70a7f20c5724e80c7f0f933af6c685bd7054b266395589e37c87e9cca3e1d67",
+    "bridge/BulksketchBridge/FrobeniusTables.lean": "5f9582216389eec0a5c2f8c90b1b7652ed8f3eabce8b536b6ffc1001b93789dc",
+    "bridge/BulksketchBridge/FrobeniusTablesColumns.lean": "8cfb1082f325d1502f3ed364cf6ad0a4798a0d78b8b65c0ce91a2ac477770046",
+    "bridge/BulksketchBridge/FrobeniusTablesEntries.lean": "0fff4c3270f32ee7a7983ab963ba1bc29a1fa81bd83e6c464eafc9d97802521f",
+    "bridge/BulksketchBridge/FrobeniusTablesSupport.lean": "2770d62af3ae35cdbdb2fb5031a652dc9f1d53a714d974a04f0884e8b98de47c",
+    "bridge/BulksketchBridge/SliceKernelChallenges.lean": "e2fec1a3b7e56388da39896b8e99d6e5ee3b7d3a91035875fc849216dc997134",
+    "bridge/BulksketchBridge/SliceKernels.lean": "aa524a1df259ffcd439f29878cd89228ea3b2e0912274296e6d50df3549592d3",
+    "bridge/BulksketchBridge/SlicePolynomial.lean": "deab852382fd971c037a82dbdb37598d2f5f2f4a69c88eac8d83e9f23ec8a969",
+    "extraction/frobenius-const/tables-lookup/Arithmetic/Funs.lean": "d143693a61179995a0190dbc143da1b6915cdd0ae8b9acb7300cf4c823eb564d",
+    "extraction/frobenius-const/tables-lookup/Arithmetic/FunsExternal_Template.lean": "1658129ecab6b06f49c42d41be323e62e37943626ea194a735656ad6cd881de0",
+    "extraction/frobenius-const/tables-lookup/Arithmetic/Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+    "extraction/frobenius-const/tables-lookup/aeneas.log": "7279bb2f81cd64d73c16ad2997a765db6d84ec1498679f43aa117dceb5f5c264",
+    "extraction/frobenius-const/tables-lookup/aeneas.status.json": "f3fea4435cbd777c522b4cb8f7cf611a32b663299d01311c60a83da854537997",
+    "extraction/frobenius-const/tables-lookup/arithmetic.llbc": "91acd53320edee29d04090b6df30eb15138a64d7abcff2968e94d2228c66c313",
+    "extraction/frobenius-const/tables-lookup/charon.log": "9359f3e8d5426fc9b5df41415f928558b119339668698c8c35aae36a8587f8d1",
+    "extraction/frobenius-const/tables-lookup/charon.status.json": "572647d5fe1b98939a01b9e89411d1f6576c3bb17c1029dd8b600f3b2c8fe512",
+    "extraction/frobenius-const/tables-lookup/project.py": "1cb66ebd8c120cd96cef271251c1c12844c0e5ec58aa2573de99ca9c96380727",
+    "extraction/frobenius-const/tables-lookup/receipt.json": "e847cd241c513ae7197ccbb94e763191b349270e55ddeea999016732a74716ac",
+    "extraction/slice-kernels/axiom-audit.log": "2fa9f67a6c3f8cd01cce7e9a6170b05897bd3be5ce560670880a8e994e90a51a",
+    "extraction/slice-kernels/multiply-linear/Arithmetic/Funs.lean": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739",
+    "extraction/slice-kernels/multiply-linear/Arithmetic/FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+    "extraction/slice-kernels/multiply-linear/Arithmetic/Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+    "extraction/slice-kernels/multiply-linear/aeneas.log": "c8440191951783911385f3c85449302f91108ed50209871930f604c8408374fe",
+    "extraction/slice-kernels/multiply-linear/arithmetic.llbc": "75bb0571962da64d67c9b7ce29cf01da20d31b87c14207b3bc6bc11ff73f3193",
+    "extraction/slice-kernels/multiply-linear/charon.log": "fd6c77a24f5f651bc5c64adce028f8b8d3a7c2a53fc9719af6daaf7d3496a2cf",
+    "extraction/slice-kernels/multiply-linear/receipt.json": "c4aace62f33513514e2972e0e8e1c950053abc9965c0828e6c3ae0a3b76344b6",
+    "extraction/slice-kernels/project.py": "b611861aaef5d9faf2facc3295b93c54720b9b418e66057bc71f8f67817b149f",
+    "extraction/slice-kernels/refinement-receipt.json": "acdfb032267000dcd872cc7bd1d67b3dddd40b15a981e23b1e2a998395ba6362"
   },
   "reviewed_policy_revisions": [
     {
@@ -939,7 +977,233 @@
       "old_sha256": "2f255921fa5e6e5da0113c20e99f5aa81027e1aabca0ff023f8ff8eb0ae92e5f",
       "removed_unused_development_input": true,
       "reason": "Exclude an ignored, unused development-only LLBC snapshot from the new checkpoint freeze. The regression runner regenerates each test LLBC from pinned test Rust source; actual original native LLBC, source/proposition files, exact generated artifacts and translator regression receipt remain pinned. No previously published frozen input is removed."
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "886d0dd8c32cd273efb0daf36488e43d579b31194dcdc09ccdefc29bd9d1a5e0",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations.",
+      "old_sha256": "4b7060639eb1012ef7cd69c54a8175f7940c56b2879d1901e55546a3b26de926"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "161a5eda3850e0052bb1e98641d24fe7e2fdf84b9bba033869d0553705514c1c",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations.",
+      "old_sha256": "a3b6e70b3b74705644e70783c4c1d86c8a13b7146a8754259c44f3a527c6d18c"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "c3e8927e1e33d24c6da36d404bb1be53f473dbceb5f0b45ce4b64858508301fa",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations.",
+      "old_sha256": "0a0b3f4026380f29a7ba5036f1029bd2f634cbff88d0c61545aff6d662787eb9"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "93bb1e2bc9a2adf66d0705d53aa09c6def3d7159b4d704a1380accbcd392194e",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations.",
+      "old_sha256": "4effcdcf07c245e6347871b98c71ac35469889a9481b0be88b7d251cb71e56d5"
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "4cbf348ba8147524dc5951b91f774fba182debc331e055013bd331e89ae13049",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations.",
+      "old_sha256": "1a889cdc2b2bf918c1e6a2002cdd96058a1f5cf7a9591b6c0c28a3c0dcfb77da"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "2e3b165ee376ca426558d7b17af64a1297682e95cbb7c569b8f11db2b1adbbc8",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations.",
+      "old_sha256": "96dbd50aaabc245b7ba498b350ce3d4a195dae63dd92b6261c667828253c08c1"
+    },
+    {
+      "path": "audit/frobenius-tables-checkpoint.json",
+      "new_sha256": "a4805e16cc6e384364fb2f546d9daed5383f458ecc48b1124099da39c799be67",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/FrobeniusTablesGenerated.lean",
+      "new_sha256": "48fb506f80524458ed13d26bae161a086e97f87724868c18a7f7aaeedc3f13ed",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/FrobeniusTablesRuntime.lean",
+      "new_sha256": "4627e77229e44886b5ba4ade6685ba02e2302015170d84082983bcee748361ef",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/SliceKernelGenerated.lean",
+      "new_sha256": "551874d223068225ec2942b28559b8d62f8b53df04a9268a2195ac416b1683b9",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/SliceKernelTypes.lean",
+      "new_sha256": "2823889040f078b47aa5e5f4b30a1738815e3f1c113e1b71d4359344010c0742",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/FrobeniusInverseTable.lean",
+      "new_sha256": "eab28428ccb9908000b1bd2c89a7a7fd622114565b0a50387ee8c5587617797a",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/FrobeniusLookup.lean",
+      "new_sha256": "06a3be85d5a4e3ab8afecd2baaacecb380de7f5a6e7dffb78dff530d7706cc10",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/FrobeniusLookupChallenges.lean",
+      "new_sha256": "77fd83c86d846d9b63f4e9b3d4ad7d16560273805ff6f7d86d6261ffd3c48372",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/FrobeniusLookupLoop.lean",
+      "new_sha256": "43ae05d93566c125e9780313cf0eb92999ddffdc5033034255c18c41df27a878",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/FrobeniusLookupMath.lean",
+      "new_sha256": "587461da15f840bc7ea6ca72262c32827a549007d0a80c5a52a9cb1548cd4673",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/FrobeniusTableSpec.lean",
+      "new_sha256": "c70a7f20c5724e80c7f0f933af6c685bd7054b266395589e37c87e9cca3e1d67",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/FrobeniusTables.lean",
+      "new_sha256": "5f9582216389eec0a5c2f8c90b1b7652ed8f3eabce8b536b6ffc1001b93789dc",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/FrobeniusTablesColumns.lean",
+      "new_sha256": "8cfb1082f325d1502f3ed364cf6ad0a4798a0d78b8b65c0ce91a2ac477770046",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/FrobeniusTablesEntries.lean",
+      "new_sha256": "0fff4c3270f32ee7a7983ab963ba1bc29a1fa81bd83e6c464eafc9d97802521f",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/FrobeniusTablesSupport.lean",
+      "new_sha256": "2770d62af3ae35cdbdb2fb5031a652dc9f1d53a714d974a04f0884e8b98de47c",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/SliceKernelChallenges.lean",
+      "new_sha256": "e2fec1a3b7e56388da39896b8e99d6e5ee3b7d3a91035875fc849216dc997134",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/SliceKernels.lean",
+      "new_sha256": "aa524a1df259ffcd439f29878cd89228ea3b2e0912274296e6d50df3549592d3",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/SlicePolynomial.lean",
+      "new_sha256": "deab852382fd971c037a82dbdb37598d2f5f2f4a69c88eac8d83e9f23ec8a969",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/frobenius-const/tables-lookup/Arithmetic/Funs.lean",
+      "new_sha256": "d143693a61179995a0190dbc143da1b6915cdd0ae8b9acb7300cf4c823eb564d",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/frobenius-const/tables-lookup/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "1658129ecab6b06f49c42d41be323e62e37943626ea194a735656ad6cd881de0",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/frobenius-const/tables-lookup/Arithmetic/Types.lean",
+      "new_sha256": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/frobenius-const/tables-lookup/aeneas.log",
+      "new_sha256": "7279bb2f81cd64d73c16ad2997a765db6d84ec1498679f43aa117dceb5f5c264",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/frobenius-const/tables-lookup/aeneas.status.json",
+      "new_sha256": "f3fea4435cbd777c522b4cb8f7cf611a32b663299d01311c60a83da854537997",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/frobenius-const/tables-lookup/arithmetic.llbc",
+      "new_sha256": "91acd53320edee29d04090b6df30eb15138a64d7abcff2968e94d2228c66c313",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/frobenius-const/tables-lookup/charon.log",
+      "new_sha256": "9359f3e8d5426fc9b5df41415f928558b119339668698c8c35aae36a8587f8d1",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/frobenius-const/tables-lookup/charon.status.json",
+      "new_sha256": "572647d5fe1b98939a01b9e89411d1f6576c3bb17c1029dd8b600f3b2c8fe512",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/frobenius-const/tables-lookup/project.py",
+      "new_sha256": "1cb66ebd8c120cd96cef271251c1c12844c0e5ec58aa2573de99ca9c96380727",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/frobenius-const/tables-lookup/receipt.json",
+      "new_sha256": "e847cd241c513ae7197ccbb94e763191b349270e55ddeea999016732a74716ac",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/slice-kernels/axiom-audit.log",
+      "new_sha256": "2fa9f67a6c3f8cd01cce7e9a6170b05897bd3be5ce560670880a8e994e90a51a",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/slice-kernels/multiply-linear/Arithmetic/Funs.lean",
+      "new_sha256": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/slice-kernels/multiply-linear/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/slice-kernels/multiply-linear/Arithmetic/Types.lean",
+      "new_sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/slice-kernels/multiply-linear/aeneas.log",
+      "new_sha256": "c8440191951783911385f3c85449302f91108ed50209871930f604c8408374fe",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/slice-kernels/multiply-linear/arithmetic.llbc",
+      "new_sha256": "75bb0571962da64d67c9b7ce29cf01da20d31b87c14207b3bc6bc11ff73f3193",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/slice-kernels/multiply-linear/charon.log",
+      "new_sha256": "fd6c77a24f5f651bc5c64adce028f8b8d3a7c2a53fc9719af6daaf7d3496a2cf",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/slice-kernels/multiply-linear/receipt.json",
+      "new_sha256": "c4aace62f33513514e2972e0e8e1c950053abc9965c0828e6c3ae0a3b76344b6",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/slice-kernels/project.py",
+      "new_sha256": "b611861aaef5d9faf2facc3295b93c54720b9b418e66057bc71f8f67817b149f",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "extraction/slice-kernels/refinement-receipt.json",
+      "new_sha256": "acdfb032267000dcd872cc7bd1d67b3dddd40b15a981e23b1e2a998395ba6362",
+      "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
     }
   ],
-  "challenge_count": 69
+  "challenge_count": 78
 }

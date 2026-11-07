@@ -1,5 +1,8 @@
 # Enclosing inversion, Portable arithmetic and const-square checkpoint
 
+The [Frobenius and slice checkpoint](FROBENIUS_TABLES.md) extends the 26-body
+checkpoint below to 32 source-body refinements.
+
 This continues the quotient-field checkpoint without changing native source
 revision `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6` or its build inputs. The ledger
 now records 26 distinct generated-body functional refinements under the stated

@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/Users/junbug/bulk/bulksketch/verification/lean/extraction/frobenius-const/tables-lookup/arithmetic.llbc",
+    "--start-from=bulksketch::field::frobenius::square",
+    "--start-from=bulksketch::field::frobenius::tables",
+    "--start-from=bulksketch::field::frobenius::inverse21_table",
+    "--start-from=bulksketch::field::frobenius::lookup",
+    "--start-from=bulksketch::field::frobenius::inverse21",
+    "--",
+    "--manifest-path",
+    "/Users/junbug/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.3565818750000176,
+  "log": "extraction/frobenius-const/tables-lookup/charon.log",
+  "log_sha256": "9359f3e8d5426fc9b5df41415f928558b119339668698c8c35aae36a8587f8d1"
+}

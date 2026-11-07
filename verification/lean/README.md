@@ -27,10 +27,10 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The current bridge targets twenty-six source functions: the three meter
-operations, six scalar arithmetic operations, five trace/quadratic map
-operations, all three scalar inversion functions, eight Portable arithmetic
-forwarders and the original x86-visible Frobenius const square.
+The bridge now has 32 distinct source-body refinements. The latest checkpoint
+adds both original Frobenius table generators, both lookup paths and two
+original slice kernel defaults. The padded linear update also has an exact
+Mathlib polynomial product theorem.
 This is functional refinement of generated
 bodies under the stated trust boundary, not a count of complete native contracts.
 Full native implementation coverage is not achieved.
@@ -50,6 +50,7 @@ period, table certificates and normalized quadratic solver semantics.
 actual algebra trace, source inversion chain and remaining enclosing-wrapper gap.
 [NATIVE_COVERAGE.md](NATIVE_COVERAGE.md) closes that wrapper gap under a named
 reviewed frontend variant and explains the Portable and const-square proofs.
+[FROBENIUS_TABLES.md](FROBENIUS_TABLES.md) records the table, lookup and slice checkpoint.
 
 The [coverage ledger](audit/coverage.json) keeps every native item in scope,
 including unsupported and unproved items. Related mathematical model evidence
@@ -101,7 +102,7 @@ prelude declaration, and forbidden axioms in either input. A prelude may reorder
 only an exact subset of the original export; it cannot extend the environment.
 
 Every declaration projection retains original bodies byte for byte and checks
-shared types and dictionaries against the larger arithmetic extraction. Forty
+shared types and dictionaries against the larger arithmetic extraction. Fifty-two
 mutation checks reject body, type, dictionary and raw-extraction edits in both
 ordinary and optimized Python. No new standard-library model or application
 correctness axiom is introduced. The three enclosing inverse bodies require the
@@ -173,9 +174,7 @@ around associated iterator types, and full Aeneas translation encounters
 associated-type, function-pointer, lifetime and loop limitations. They are proof
 tooling gaps, not completed obligations or demonstrated library defects.
 
-Next milestones are the Frobenius lookup/table-generation paths and slice kernels;
-then the capacity-18 public slice,
-general decoder completeness, public state/resource/ownership behavior, and both
-x86 backends. The Mac's inability to execute x86 does not remove those source
-bodies from the proof scope. Performance tests and formal proof obligations remain
-separate evidence.
+Next milestones are the remaining slice and polynomial kernels, the capacity-18
+public slice, general decoder completeness, public state/resource/ownership
+behavior, and both accelerated x86 backends. Target execution and memory safety
+remain separate proof obligations.

@@ -712,7 +712,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.SliceKernels.square_mod_fallback_refines",
+        "scope": "Original default fallback returns false and preserves both mutable value buffers for every input.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/contract.rs:57:trait_default:bulksketch::backend::contract::BulkKernels::multiply_linear",
@@ -732,7 +739,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.SliceKernels.multiply_linear_refines",
+        "scope": "Original descending update terminates normally and preserves the length and exact value of every destination coefficient. Applies to every slice length, with the supplied multiplication equal to the actual GF64 body.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/contract.rs:65:trait_default:bulksketch::backend::contract::BulkKernels::odd_recurrence_matches",
@@ -5456,7 +5470,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.FrobeniusTable.inverse21_refines",
+        "scope": "Every U64 word returns the exact 21st Frobenius power. Original local static initializer and full scan checked.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/field/frobenius.rs:33:function:bulksketch::field::frobenius::inverse21_table",
@@ -5474,7 +5495,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.FrobeniusInverseTable.inverse21_table_refines",
+        "scope": "Normal completion of the original three loops with all 256 cells equal to the 21st Frobenius power of their placed nibbles. All checked operations and update frames covered.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/field/frobenius.rs:4:constant:bulksketch::field::frobenius::POWERS",
@@ -5553,7 +5581,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.FrobeniusTables.tables_refines",
+        "scope": "Normal completion of the original six loops with every one of the 2,304 cells equal to the scheduled Frobenius image of its placed nibble. All bounds and nested update frames checked.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/field/frobenius.rs:7:function:bulksketch::field::frobenius::lookup",
@@ -5571,7 +5606,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.FrobeniusTable.lookup_refines",
+        "scope": "Every U64 word and U32 power returns the exact selected Frobenius word for powers 1 through 7, 15 and 31, or None otherwise. Original static initializer, selector and reachable scan bodies checked.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/field/gf64.rs:28:function:bulksketch::field::gf64::reduce",
@@ -11210,8 +11252,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Twenty-six distinct generated-body functional refinements: all three scalar inversion functions, eight Portable arithmetic forwarders, original x86-visible Frobenius const-square, and earlier meter/arithmetic/maps. Three enclosing inverse bodies use the named mandatory-checks reviewed frontend variant; no new runtime models or application axioms. Compiler/runtime/memory/ISA/expanded native closure remains open; no percentage or full native coverage claim.",
-    "checked_generated_body_refinements_under_recorded_TCB": 26,
+    "note": "All 344 native executable declarations retained. Thirty-two distinct generated-body refinements include both original Frobenius table generators, both lookup paths and two original BulkKernels defaults. Static initializer statements and the padded polynomial transport add no source-body credit. Compiler/runtime/memory/ISA and complete decoder closure remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 32,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11223,7 +11265,9 @@
       "algebra_trace_transport": "BulksketchBridge.Algebra.Gf64.native_trace_is_algebra_trace",
       "inverse_exponent": "BulksketchBridge.Algebra.Gf64.field_inverse_power",
       "native_const_square": "BulksketchBridge.FrobeniusConst.square_refines; all128 source loop steps and complete LE output; original pinned frontend/x86 production target, no tables/ISA credit.",
-      "portable_arithmetic": "Seven Portable forwarding endpoints plus callback-free PortableInverse.inverse_refines; each original source method counted once."
+      "portable_arithmetic": "Seven Portable forwarding endpoints plus callback-free PortableInverse.inverse_refines; each original source method counted once.",
+      "frobenius_tables_and_lookups": "Original tables() and inverse21_table() generate all 2,560 scheduled cells. Both original lookup paths are proved for every word and selector.",
+      "linear_slice_product": "The original default multiply_linear computes the full GF64 polynomial product when the final spare slot is zero."
     }
   }
 }

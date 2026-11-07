@@ -276,6 +276,42 @@
     {
       "challenge": "BulksketchBridge.FrobeniusConstChallenges.actualConstSquareMatchesWord",
       "theorem": "BulksketchBridge.FrobeniusConst.square_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusTable.TablesRefine",
+      "theorem": "BulksketchBridge.FrobeniusTables.tables_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusTable.InverseTableRefines",
+      "theorem": "BulksketchBridge.FrobeniusInverseTable.inverse21_table_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusTable.LookupRefines",
+      "theorem": "BulksketchBridge.FrobeniusTable.lookup_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusTable.InverseLookupRefines",
+      "theorem": "BulksketchBridge.FrobeniusTable.inverse21_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.SliceKernelChallenges.actualMultiplyLinearReturnsExactFrame",
+      "theorem": "BulksketchBridge.SliceKernels.multiply_linear_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.SliceKernelChallenges.actualSquareModFallbackPreservesBuffers",
+      "theorem": "BulksketchBridge.SliceKernels.square_mod_fallback_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusTable.StaticTablesRefine",
+      "theorem": "BulksketchBridge.FrobeniusTable.static_tables_refine"
+    },
+    {
+      "challenge": "BulksketchBridge.FrobeniusTable.StaticInverseTableRefines",
+      "theorem": "BulksketchBridge.FrobeniusTable.static_inverse_table_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.SliceKernels.PaddedProductRefines",
+      "theorem": "BulksketchBridge.SliceKernels.multiply_linear_padded_product"
     }
   ],
   "refinements": [
@@ -713,6 +749,107 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Every original U64 const-square call returns the exact canonical square word. Original two64-step loops, all checked I32 arithmetic/shifts, arbitrary128-bit polynomial long division and all eight byte reads/LE reconstruction are proved. Actual original production x86 target extracted with unmodified pinned tools; no ISA execution or table-initializer proof credit."
+    },
+    {
+      "label": "frobenius::tables [original x86-visible source]",
+      "native_item_id": "src/field/frobenius.rs:79:function:bulksketch::field::frobenius::tables",
+      "source_line_span_sha256": "2b9146b702443aec405afa407b476781582bf854fd93fe7ac397da327a439fd1",
+      "theorem": "BulksketchBridge.FrobeniusTables.tables_refines",
+      "challenge": "BulksketchBridge.FrobeniusTable.TablesRefine",
+      "generated_declaration": "bulksketch.field.frobenius.tables",
+      "generated_file": "bridge/Arithmetic/FrobeniusTablesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+        "bridge/Arithmetic/FrobeniusTablesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Normal completion of the original six loops with every one of the 2,304 cells equal to the scheduled Frobenius image of its placed nibble. All bounds and nested update frames checked."
+    },
+    {
+      "label": "frobenius::inverse21_table [original x86-visible source]",
+      "native_item_id": "src/field/frobenius.rs:33:function:bulksketch::field::frobenius::inverse21_table",
+      "source_line_span_sha256": "8730ef9c595e9e309f474f807dbe83930f6376c09bd73def0a107610a7742e76",
+      "theorem": "BulksketchBridge.FrobeniusInverseTable.inverse21_table_refines",
+      "challenge": "BulksketchBridge.FrobeniusTable.InverseTableRefines",
+      "generated_declaration": "bulksketch.field.frobenius.inverse21_table",
+      "generated_file": "bridge/Arithmetic/FrobeniusTablesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+        "bridge/Arithmetic/FrobeniusTablesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Normal completion of the original three loops with all 256 cells equal to the 21st Frobenius power of their placed nibbles. All checked operations and update frames covered."
+    },
+    {
+      "label": "frobenius::lookup [original x86-visible source]",
+      "native_item_id": "src/field/frobenius.rs:7:function:bulksketch::field::frobenius::lookup",
+      "source_line_span_sha256": "4dc179733b2eff3614b2adb102a03fb78aa94ebe5b327cfbe7d1d7ec2b66da48",
+      "theorem": "BulksketchBridge.FrobeniusTable.lookup_refines",
+      "challenge": "BulksketchBridge.FrobeniusTable.LookupRefines",
+      "generated_declaration": "bulksketch.field.frobenius.lookup",
+      "generated_file": "bridge/Arithmetic/FrobeniusTablesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+        "bridge/Arithmetic/FrobeniusTablesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every U64 word and U32 power returns the exact selected Frobenius word for powers 1 through 7, 15 and 31, or None otherwise. Original static initializer, selector and reachable scan bodies checked."
+    },
+    {
+      "label": "frobenius::inverse21 [original x86-visible source]",
+      "native_item_id": "src/field/frobenius.rs:22:function:bulksketch::field::frobenius::inverse21",
+      "source_line_span_sha256": "c9f4ce00e9dc8f731a9f2b34ce82b514cbbb962293f104d8a4da1724e99595a6",
+      "theorem": "BulksketchBridge.FrobeniusTable.inverse21_refines",
+      "challenge": "BulksketchBridge.FrobeniusTable.InverseLookupRefines",
+      "generated_declaration": "bulksketch.field.frobenius.inverse21",
+      "generated_file": "bridge/Arithmetic/FrobeniusTablesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+        "bridge/Arithmetic/FrobeniusTablesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every U64 word returns the exact 21st Frobenius power. Original local static initializer and full scan checked."
+    },
+    {
+      "label": "multiply_linear [original trait default]",
+      "native_item_id": "src/backend/contract.rs:57:trait_default:bulksketch::backend::contract::BulkKernels::multiply_linear",
+      "source_line_span_sha256": "b8bbdf235aaf8c9effd7e20d86a740cf59e415630426a4b9d725ae3ebf611509",
+      "theorem": "BulksketchBridge.SliceKernels.multiply_linear_refines",
+      "challenge": "BulksketchBridge.SliceKernelChallenges.actualMultiplyLinearReturnsExactFrame",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.multiply_linear.default",
+      "generated_file": "bridge/Arithmetic/SliceKernelGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/SliceKernelTypes.lean",
+        "bridge/Arithmetic/SliceKernelGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original descending update terminates normally and preserves the length and exact value of every destination coefficient. Applies to every slice length, with the supplied multiplication equal to the actual GF64 body."
+    },
+    {
+      "label": "square_mod [original trait default]",
+      "native_item_id": "src/backend/contract.rs:51:trait_default:bulksketch::backend::contract::BulkKernels::square_mod",
+      "source_line_span_sha256": "b01239b8f78cfd1197f19871f6e8bfff32529bcaff26d3be5c8566bc3c420c11",
+      "theorem": "BulksketchBridge.SliceKernels.square_mod_fallback_refines",
+      "challenge": "BulksketchBridge.SliceKernelChallenges.actualSquareModFallbackPreservesBuffers",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.square_mod.default",
+      "generated_file": "bridge/Arithmetic/SliceKernelGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/SliceKernelTypes.lean",
+        "bridge/Arithmetic/SliceKernelGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original default fallback returns false and preserves both mutable value buffers for every input."
     }
   ]
 }

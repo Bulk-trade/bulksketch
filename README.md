@@ -188,22 +188,18 @@ and libclang (for `bindgen`). The library itself needs neither.
 ## Proofs
 
 [`verification/lean`](verification/lean/README.md) holds Lean 4 proofs about the
-portable Rust code, checked against Lean translations of the actual function
-bodies. They provide functional refinements of 26 functions: GF64
-multiplication, reduction, squaring and
-Frobenius; trace and quadratic solving; the scalar inversion functions; eight
-Portable arithmetic wrappers; the x86-visible const square; and the work meter. They also prove
-that the modulus `X^64 + X^4 + X^3 + X + 1` is irreducible and connect native
+native Rust code, checked against Lean translations of 32 source bodies. The
+proofs cover GF64 arithmetic, trace, quadratic solving, inversion, the Portable
+arithmetic methods, all fixed Frobenius table and lookup bodies, two slice
+kernel defaults, and the work meter. They also prove that the modulus `X^64 + X^4 + X^3 + X + 1` is irreducible and connect native
 words to Mathlib's quotient-field arithmetic and `Algebra.trace`.
 
 Three enclosing inverse bodies use a separately reviewed Aeneas frontend patch
 with invariant checks required; the original pinned Lean runtime is unchanged.
-The x86 table/lookup and PCLMUL/VPCLMUL backends, decoder and sketch API are not
-covered yet. All 344 native executable
-obligations remain in scope; full native coverage is not achieved. The proofs
-retain the documented translator/runtime/compiler trust boundary and are pinned
-to a source revision, so the
-checker rejects them after any change to `src/` until they are updated.
+The remaining work includes other slice and polynomial kernels, decoder and
+sketch API contracts, and the PCLMUL/VPCLMUL backends. All 344 native executable
+obligations remain in scope. The checker enforces the pinned source revision and
+the documented translator, runtime and compiler trust boundary.
 
 ## Benchmark
 

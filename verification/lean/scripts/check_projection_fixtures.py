@@ -31,6 +31,18 @@ PROJECTIONS = [
     ("frobenius", "extraction/frobenius-const/project.py", "extraction/frobenius-const/square/receipt.json",
      "extraction/frobenius-const/square/Arithmetic/Funs.lean", "bridge/Arithmetic/FrobeniusConstGenerated.lean",
      "if bit < 64#i32", "if bit < 63#i32", "compiled const-square projection differs", None, None, []),
+    ("frobenius-tables", "extraction/frobenius-const/tables-lookup/project.py",
+     "extraction/frobenius-const/tables-lookup/receipt.json",
+     "extraction/frobenius-const/tables-lookup/Arithmetic/Funs.lean",
+     "bridge/Arithmetic/FrobeniusTablesGenerated.lean",
+     "if value < 16#usize", "if value < 15#usize", "compiled Frobenius projection differs",
+     None, None, ["bridge/Arithmetic/FrobeniusConstGenerated.lean"]),
+    ("slice-kernels", "extraction/slice-kernels/project.py",
+     "extraction/slice-kernels/multiply-linear/receipt.json",
+     "extraction/slice-kernels/multiply-linear/Arithmetic/Funs.lean",
+     "bridge/Arithmetic/SliceKernelGenerated.lean",
+     "ok (false, _dst, _raw)", "ok (true, _dst, _raw)", "compiled slice body projection differs",
+     None, None, ["bridge/Arithmetic/SliceKernelTypes.lean"]),
 ]
 
 
@@ -61,6 +73,13 @@ def main():
             cases.append(("raw-type-edit", "extraction/frobenius-const/square/Arithmetic/Types.lean",
                           "\nend bulksketch", "\ndef shadowType := Unit\nend bulksketch",
                           "raw const-square extraction drift"))
+        if label == "frobenius-tables":
+            cases.append(("shared-square-edit", "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+                          "if bit < 64#i32", "if bit < 63#i32", "shared Frobenius declaration drift"))
+        if label == "slice-kernels":
+            cases.append(("compiled-dictionary-edit", "bridge/Arithmetic/SliceKernelTypes.lean",
+                          "structure backend.contract.Arithmetic", "structure changed.Arithmetic",
+                          "compiled slice type projection differs"))
         for name, path, before, after, diagnostic in cases:
             name = label + "/" + name
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:

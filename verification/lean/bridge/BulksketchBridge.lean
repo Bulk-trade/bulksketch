@@ -22,3 +22,5 @@ import BulksketchBridge.Portable
 import BulksketchBridge.InverseUsing
 import BulksketchBridge.PortableInverse
 import BulksketchBridge.FrobeniusConst
+import BulksketchBridge.FrobeniusLookup
+import BulksketchBridge.SlicePolynomial

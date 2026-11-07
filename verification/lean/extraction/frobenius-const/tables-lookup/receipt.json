@@ -1,0 +1,91 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "f9a753d1201ddabe22161c10333479d56da479e4",
+  "native_files_checked": 41,
+  "build_inputs_checked": 3,
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  },
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "selected_roots": [
+    "bulksketch::field::frobenius::square",
+    "bulksketch::field::frobenius::tables",
+    "bulksketch::field::frobenius::inverse21_table",
+    "bulksketch::field::frobenius::lookup",
+    "bulksketch::field::frobenius::inverse21"
+  ],
+  "target": "x86_64-apple-darwin",
+  "charon": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/Users/junbug/bulk/bulksketch/verification/lean/extraction/frobenius-const/tables-lookup/arithmetic.llbc",
+      "--start-from=bulksketch::field::frobenius::square",
+      "--start-from=bulksketch::field::frobenius::tables",
+      "--start-from=bulksketch::field::frobenius::inverse21_table",
+      "--start-from=bulksketch::field::frobenius::lookup",
+      "--start-from=bulksketch::field::frobenius::inverse21",
+      "--",
+      "--manifest-path",
+      "/Users/junbug/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked",
+      "--target",
+      "x86_64-apple-darwin"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.3565818750000176,
+    "log": "extraction/frobenius-const/tables-lookup/charon.log",
+    "log_sha256": "9359f3e8d5426fc9b5df41415f928558b119339668698c8c35aae36a8587f8d1"
+  },
+  "application_source_edited": false,
+  "bridge_files_edited": false,
+  "implementation_proof_credit": 0,
+  "llbc_has_errors": false,
+  "llbc_sha256": "91acd53320edee29d04090b6df30eb15138a64d7abcff2968e94d2228c66c313",
+  "declaration_counts": {
+    "fun_decls": 177,
+    "type_decls": 52,
+    "global_decls": 17,
+    "trait_impls": 25
+  },
+  "aeneas": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch/verification/lean/extraction/frobenius-const/tables-lookup/Arithmetic",
+      "/Users/junbug/bulk/bulksketch/verification/lean/extraction/frobenius-const/tables-lookup/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 6.048829249999983,
+    "log": "extraction/frobenius-const/tables-lookup/aeneas.log",
+    "log_sha256": "7279bb2f81cd64d73c16ad2997a765db6d84ec1498679f43aa117dceb5f5c264"
+  },
+  "status": "generated",
+  "generated": [
+    {
+      "path": "extraction/frobenius-const/tables-lookup/Arithmetic/Funs.lean",
+      "sha256": "d143693a61179995a0190dbc143da1b6915cdd0ae8b9acb7300cf4c823eb564d"
+    },
+    {
+      "path": "extraction/frobenius-const/tables-lookup/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "1658129ecab6b06f49c42d41be323e62e37943626ea194a735656ad6cd881de0"
+    },
+    {
+      "path": "extraction/frobenius-const/tables-lookup/Arithmetic/Types.lean",
+      "sha256": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea"
+    }
+  ]
+}
