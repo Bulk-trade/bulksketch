@@ -27,6 +27,10 @@ import BulksketchBridge.PortableInverseChallenges
 import BulksketchBridge.FrobeniusConstChallenges
 import BulksketchBridge.FrobeniusLookupChallenges
 import BulksketchBridge.SliceKernelChallenges
+import BulksketchBridge.PortableSliceChallenges
+import BulksketchBridge.PortableXorChallenges
+import BulksketchBridge.DenseNormalizationSpec
+import BulksketchBridge.DenseCoefficientSpec
 import Lean
 
 open Lean Elab Command Meta
@@ -188,7 +192,19 @@ run_cmd do
     (``BulksketchBridge.FrobeniusTable.StaticInverseTableRefines,
       ``BulksketchBridge.FrobeniusTable.static_inverse_table_refines),
     (``BulksketchBridge.SliceKernels.PaddedProductRefines,
-      ``BulksketchBridge.SliceKernels.multiply_linear_padded_product)
+      ``BulksketchBridge.SliceKernels.multiply_linear_padded_product),
+    (``BulksketchBridge.PortableXorChallenges.actualXorAssignReturnsFrame,
+      ``BulksketchBridge.PortableXor.xor_assign_refines),
+    (``BulksketchBridge.PortableSliceChallenges.squareRefines,
+      ``BulksketchBridge.PortableSlice.square_slice_refines),
+    (``BulksketchBridge.PortableSliceChallenges.scaleRefines,
+      ``BulksketchBridge.PortableSlice.scale_xor_refines),
+    (``BulksketchBridge.DenseNormalization.NormalizedLenRefines,
+      ``BulksketchBridge.DenseNormalization.normalized_len_refines),
+    (``BulksketchBridge.DenseCoefficient.XorCoefficientRefines,
+      ``BulksketchBridge.DenseCoefficient.xor_coefficient_refines),
+    (``BulksketchBridge.DenseCoefficient.XorCoefficientPolynomialRefines,
+      ``BulksketchBridge.DenseCoefficient.xor_coefficient_polynomial_refines)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

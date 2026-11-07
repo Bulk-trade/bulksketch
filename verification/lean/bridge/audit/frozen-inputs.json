@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "2e3b165ee376ca426558d7b17af64a1297682e95cbb7c569b8f11db2b1adbbc8",
+    "bridge/BulksketchBridge/Audit.lean": "90726701a2f1d67ff1f3ab91d263a37988d6a9204077e754b954b02bf611dafa",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "b52c9ca277bd18e4f281a39fec82d521b299eb50807bbae3127f401704b5f681",
-    "audit/frozen-inputs.json": "886d0dd8c32cd273efb0daf36488e43d579b31194dcdc09ccdefc29bd9d1a5e0",
-    "bridge/BulksketchBridge.lean": "4cbf348ba8147524dc5951b91f774fba182debc331e055013bd331e89ae13049",
+    "audit/frozen-inputs.json": "e921c0cf8fe7ec0aa7ba486846d0b9bc93112295d990f3cf3f802abb6d4adf7c",
+    "bridge/BulksketchBridge.lean": "224d5e52e842be3ecc518ed1413034185873f2067e8217982c386ae0966a1dcb",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "c3e8927e1e33d24c6da36d404bb1be53f473dbceb5f0b45ce4b64858508301fa",
-    "bridge/obligations.json": "93bb1e2bc9a2adf66d0705d53aa09c6def3d7159b4d704a1380accbcd392194e",
+    "bridge/source-linkage.json": "675b8900d117ccaf91ab500b361bbeaeb1752512ad78aa8748979bf0f6e32fea",
+    "bridge/obligations.json": "ed2be6acf293abd7236e0ace9f94d86ace9fd7ad90d0b08da54c384aeab5b4e2",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "161a5eda3850e0052bb1e98641d24fe7e2fdf84b9bba033869d0553705514c1c",
+    "scripts/check_projection_fixtures.py": "da5ca1f1d466a0635297b722052ebc224295980e9cc81401f1e873faca669cb9",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -207,7 +207,7 @@
     "bridge/BulksketchBridge/FrobeniusTablesSupport.lean": "2770d62af3ae35cdbdb2fb5031a652dc9f1d53a714d974a04f0884e8b98de47c",
     "bridge/BulksketchBridge/SliceKernelChallenges.lean": "e2fec1a3b7e56388da39896b8e99d6e5ee3b7d3a91035875fc849216dc997134",
     "bridge/BulksketchBridge/SliceKernels.lean": "aa524a1df259ffcd439f29878cd89228ea3b2e0912274296e6d50df3549592d3",
-    "bridge/BulksketchBridge/SlicePolynomial.lean": "deab852382fd971c037a82dbdb37598d2f5f2f4a69c88eac8d83e9f23ec8a969",
+    "bridge/BulksketchBridge/SlicePolynomial.lean": "0b4245441338ad8fa2f4b3dde905e2f9bcb6272c6fc4dc5b594c66147767045c",
     "extraction/frobenius-const/tables-lookup/Arithmetic/Funs.lean": "d143693a61179995a0190dbc143da1b6915cdd0ae8b9acb7300cf4c823eb564d",
     "extraction/frobenius-const/tables-lookup/Arithmetic/FunsExternal_Template.lean": "1658129ecab6b06f49c42d41be323e62e37943626ea194a735656ad6cd881de0",
     "extraction/frobenius-const/tables-lookup/Arithmetic/Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
@@ -227,7 +227,67 @@
     "extraction/slice-kernels/multiply-linear/charon.log": "fd6c77a24f5f651bc5c64adce028f8b8d3a7c2a53fc9719af6daaf7d3496a2cf",
     "extraction/slice-kernels/multiply-linear/receipt.json": "c4aace62f33513514e2972e0e8e1c950053abc9965c0828e6c3ae0a3b76344b6",
     "extraction/slice-kernels/project.py": "b611861aaef5d9faf2facc3295b93c54720b9b418e66057bc71f8f67817b149f",
-    "extraction/slice-kernels/refinement-receipt.json": "acdfb032267000dcd872cc7bd1d67b3dddd40b15a981e23b1e2a998395ba6362"
+    "extraction/slice-kernels/refinement-receipt.json": "acdfb032267000dcd872cc7bd1d67b3dddd40b15a981e23b1e2a998395ba6362",
+    "audit/slice-normalization-checkpoint.json": "3d8280c2357808e64972e3fb1b05b32081393dce12797abe61e25c6a08e5967a",
+    "bridge/Arithmetic/DenseCoefficientGenerated.lean": "994421cf411adab42c21c66b7cdce11926d44682d64046752eab997579550389",
+    "bridge/Arithmetic/DenseNormalizationGenerated.lean": "e57328fd7a7a07e1b52bbcc8dbf34478515c64e05765870eb12fb5318873933a",
+    "bridge/Arithmetic/DenseNormalizationTypes.lean": "80c6092652ad879ea7ea8291b58021bad512da62c4089c1515bcbbd755156b94",
+    "bridge/Arithmetic/MutableZipRuntime.lean": "683a48af92e8c4f992d4f0893ed18679122344714cdda9a2293c07029b85776d",
+    "bridge/Arithmetic/PortableSliceGenerated.lean": "5c96da93c60d31823dfd273e669f9066a51bd8d9648a04c19e163a9814408c31",
+    "bridge/Arithmetic/PortableXorGenerated.lean": "2a1c99ee83804b84583ec0181c5de5465cc094d3d2f27a6959b1ffdeb5b41c77",
+    "bridge/Arithmetic/ReversePositionRuntime.lean": "3d8f5779421c77041237184f0d6e235a4921411fcdfc6f24f8cc7ecffff5a548",
+    "bridge/BulksketchBridge/DenseCoefficient.lean": "89a55053d3fd9acecb68079c355772828aa33413dc912a99c00452b8c1de2405",
+    "bridge/BulksketchBridge/DenseCoefficientPolynomial.lean": "8d3539b1be09829892b8632bf4bc100bbfc73b72fdd37618693ac51aeab80199",
+    "bridge/BulksketchBridge/DenseCoefficientSpec.lean": "0fe176fd4a3b3c84e40abea881bc681ac9e93295efe06dfec9eefcbefd20c691",
+    "bridge/BulksketchBridge/DenseCoefficientState.lean": "b6d29c523adc326f253c0b60cba9c8a80d612670fab109d10f5b432b67fc7a33",
+    "bridge/BulksketchBridge/DenseNormalization.lean": "b6a7d7827080bd9ee528b4f1ca805ae8207f7e32730dcc348d69af28ca133522",
+    "bridge/BulksketchBridge/DenseNormalizationSpec.lean": "52f1af7292112a95c536e8318d3df2710f76ce96aa27df82ec5fa8e95083b4f5",
+    "bridge/BulksketchBridge/MutableZip.lean": "f43e51fcc1978f214e3b7556b7bab654424a181dbd524ea1f4fd1b6b58b43e9a",
+    "bridge/BulksketchBridge/PortableSlice.lean": "433903e62eca4c6e9197d0a96b0287e7851da0120d8f732abe027894627093fb",
+    "bridge/BulksketchBridge/PortableSliceChallenges.lean": "4c48cb6708e3dde37218ee623d1795c4834d93064b4c4c614247567eff0b9433",
+    "bridge/BulksketchBridge/PortableXor.lean": "0ae910b96101b63800f3fb6781f82eb2b96609b47e24be7caf6bb9c03253b5c3",
+    "bridge/BulksketchBridge/PortableXorChallenges.lean": "774cf83c647087ccbef1c9c48bb167e700fd422bdf513ee2ae5d432483457d9c",
+    "bridge/BulksketchBridge/PortableZipMap.lean": "b347c30b1a807dd998d7700bb0ddd069f1846a13813effd8c6b3a436cda6d61a",
+    "bridge/BulksketchBridge/ReversePosition.lean": "6218f4de9a6e6e835f3803174d4298e0175b90a413a8ee4550da920b86531d33",
+    "extraction/dense-coefficient/axiom-audit.log": "d68a90f9ee203862fb0a51a5f66ac1d4eae3cbed4f6b8ba0d659f12fa37b2cbc",
+    "extraction/dense-coefficient/project.py": "42170fcf21167cb803fa3b6290c2bd0aa17edbd47a6ea83b7814a5ae30e964cc",
+    "extraction/dense-coefficient/refinement-receipt.json": "005f3369c603df161810e6bb9879e383116930701ce4e5262a6a4174384c6848",
+    "extraction/dense-coefficient/xor-coefficient/Arithmetic/Funs.lean": "850b5681ff4ffbc1f256f72645f0f7681a6536cf8953b0ad706420fe0b841e63",
+    "extraction/dense-coefficient/xor-coefficient/Arithmetic/FunsExternal_Template.lean": "9d47cb5223b7a3a784065947ca87ceea2b65fb72423eb973c18862af9f72a5c8",
+    "extraction/dense-coefficient/xor-coefficient/Arithmetic/Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
+    "extraction/dense-coefficient/xor-coefficient/aeneas.log": "4c52138682cca18b523b3ebbb06826f14e6b6d822fcf2bb6155ca31b22e03005",
+    "extraction/dense-coefficient/xor-coefficient/arithmetic.llbc": "2bd96468b069d11b65ae8f2226bd17f35e33114eb17599eb855a3a58b9f51215",
+    "extraction/dense-coefficient/xor-coefficient/charon.log": "049f5ea80fdd0c25e94c13acbc7635282c428d862297cc66f0990c8523b8fa3c",
+    "extraction/dense-coefficient/xor-coefficient/receipt.json": "d65b36a8299c522003e6b31813e6441fdf10615be73733009bc038b77db47222",
+    "extraction/dense-normalization/Normalized/Funs.lean": "cd8735662016aef12e26d3c4aba6684edccc0b3a86067fb3d17582c6ee80f817",
+    "extraction/dense-normalization/Normalized/FunsExternal_Template.lean": "5d20bacc3ce2a0a7784ff39cec868cd40796a32563db28cbbaae7d7e6dc9e88b",
+    "extraction/dense-normalization/Normalized/Types.lean": "80c6092652ad879ea7ea8291b58021bad512da62c4089c1515bcbbd755156b94",
+    "extraction/dense-normalization/aeneas.log": "971fc730afa69d66a47b3d2deab60d8ef6d0d540f576b4e14c1372f55dff8d0d",
+    "extraction/dense-normalization/axiom-audit.log": "ac929f1e852fa0d48d1689e70fbf7d453b0cb63d04192364e97a4e560a5ffd96",
+    "extraction/dense-normalization/charon.log": "9ebe1ecf2dbafba9703e9b136f22261398af6c94ee05c48cbb798c22dbc8a78f",
+    "extraction/dense-normalization/normalized.llbc": "93cd20e2ab87e7bb0188d42349117b0021c125357be994e34d1813920079b369",
+    "extraction/dense-normalization/project.py": "bda1f88e75763964eeffe6678e0773f370a76a3c7bf9e50d28d7d0e2ec41f7c9",
+    "extraction/dense-normalization/receipt.json": "dd1d76dd6dce579b1e31d6ec13309b95a162940f9358b34076c4f6046c1dabe2",
+    "extraction/dense-normalization/refinement-receipt.json": "9bd123d2fbbbd4be2913f1ce3386ff76249292987fb190d8172bcd9803145af1",
+    "extraction/portable-slice/Arithmetic/Funs.lean": "6362153a8daa0a65334a0e7273cf0e91b96cb21ced7c2181167f11caa0b247e5",
+    "extraction/portable-slice/Arithmetic/FunsExternal_Template.lean": "aa92ae87d3b8ddd106954fbb10f21d53faa757da84626936b29f3c0942bd3285",
+    "extraction/portable-slice/Arithmetic/Types.lean": "d85fc6fef598ee48e95ca16c4955e9352bf9a9ce33b572b78f91d46f5b8db9f5",
+    "extraction/portable-slice/Arithmetic/TypesExternal_Template.lean": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582",
+    "extraction/portable-slice/aeneas.log": "513b64d2cfae3dcc48341242aa315d3c018c0dc8ec2b14d6d2b444d77181b7e9",
+    "extraction/portable-slice/arithmetic.llbc": "91363bd395e98217f283ef10efb32724426c8147b8c610263896c93134468efc",
+    "extraction/portable-slice/charon.log": "a4393698d95a07b69197ea4deba3ef4c17e71857c940309148c8d4d53d4dda25",
+    "extraction/portable-slice/project.py": "790822fcb1bbca9101ee91626b2cc1a39fe9826ed093def5ba233994ce9b04a4",
+    "extraction/portable-slice/receipt.json": "c98123957af73cc644dc6dfcdd9243f58dcf249ad68165cd5ac64c5faf0c7767",
+    "extraction/portable-xor/Arithmetic/Funs.lean": "2de32175a7ff8f0bfcebfa5ad4ed9814965136fff08e0bd5b804e8d9250763f2",
+    "extraction/portable-xor/Arithmetic/FunsExternal_Template.lean": "fca2fe70ab4b973fb5bbbc5f1644826e71abb99c0245cd04c3a63eff88326ed4",
+    "extraction/portable-xor/Arithmetic/Types.lean": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef",
+    "extraction/portable-xor/aeneas.log": "460111a90267965d6ee57f3675cf10e0815cb00881c6b2305c2b75e73729ae8a",
+    "extraction/portable-xor/arithmetic.llbc": "0aa39e2d8ef67aac06067391af16361ba2cc588bc1e8fcff82cafdb251ad2d28",
+    "extraction/portable-xor/axiom-audit.log": "104cec11f8a7bb72e2efe8ec308b9e6ec702a44ca7c4a91e04dbce445b9715b3",
+    "extraction/portable-xor/charon.log": "f12ee587767f5292cb9de7423a727881ffd8564105101d7414e0d238c86a54ed",
+    "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
+    "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
+    "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa"
   },
   "reviewed_policy_revisions": [
     {
@@ -1203,7 +1263,349 @@
       "path": "extraction/slice-kernels/refinement-receipt.json",
       "new_sha256": "acdfb032267000dcd872cc7bd1d67b3dddd40b15a981e23b1e2a998395ba6362",
       "reason": "Add original table/lookup and slice source proofs with checked provenance. Preserve all earlier frozen meanings and native source obligations."
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "e921c0cf8fe7ec0aa7ba486846d0b9bc93112295d990f3cf3f802abb6d4adf7c",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations.",
+      "old_sha256": "886d0dd8c32cd273efb0daf36488e43d579b31194dcdc09ccdefc29bd9d1a5e0"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "da5ca1f1d466a0635297b722052ebc224295980e9cc81401f1e873faca669cb9",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations.",
+      "old_sha256": "161a5eda3850e0052bb1e98641d24fe7e2fdf84b9bba033869d0553705514c1c"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "675b8900d117ccaf91ab500b361bbeaeb1752512ad78aa8748979bf0f6e32fea",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations.",
+      "old_sha256": "c3e8927e1e33d24c6da36d404bb1be53f473dbceb5f0b45ce4b64858508301fa"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "ed2be6acf293abd7236e0ace9f94d86ace9fd7ad90d0b08da54c384aeab5b4e2",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations.",
+      "old_sha256": "93bb1e2bc9a2adf66d0705d53aa09c6def3d7159b4d704a1380accbcd392194e"
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "224d5e52e842be3ecc518ed1413034185873f2067e8217982c386ae0966a1dcb",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations.",
+      "old_sha256": "4cbf348ba8147524dc5951b91f774fba182debc331e055013bd331e89ae13049"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "90726701a2f1d67ff1f3ab91d263a37988d6a9204077e754b954b02bf611dafa",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations.",
+      "old_sha256": "2e3b165ee376ca426558d7b17af64a1297682e95cbb7c569b8f11db2b1adbbc8"
+    },
+    {
+      "path": "bridge/BulksketchBridge/SlicePolynomial.lean",
+      "new_sha256": "0b4245441338ad8fa2f4b3dde905e2f9bcb6272c6fc4dc5b594c66147767045c",
+      "reason": "Expose the existing coefficient lemma for Dense polynomial transport. Its statement, proof, and the earlier frozen padded-product contract are unchanged.",
+      "old_sha256": "deab852382fd971c037a82dbdb37598d2f5f2f4a69c88eac8d83e9f23ec8a969"
+    },
+    {
+      "path": "audit/slice-normalization-checkpoint.json",
+      "new_sha256": "3d8280c2357808e64972e3fb1b05b32081393dce12797abe61e25c6a08e5967a",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/DenseCoefficientGenerated.lean",
+      "new_sha256": "994421cf411adab42c21c66b7cdce11926d44682d64046752eab997579550389",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/DenseNormalizationGenerated.lean",
+      "new_sha256": "e57328fd7a7a07e1b52bbcc8dbf34478515c64e05765870eb12fb5318873933a",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/DenseNormalizationTypes.lean",
+      "new_sha256": "80c6092652ad879ea7ea8291b58021bad512da62c4089c1515bcbbd755156b94",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/MutableZipRuntime.lean",
+      "new_sha256": "683a48af92e8c4f992d4f0893ed18679122344714cdda9a2293c07029b85776d",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/PortableSliceGenerated.lean",
+      "new_sha256": "5c96da93c60d31823dfd273e669f9066a51bd8d9648a04c19e163a9814408c31",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/PortableXorGenerated.lean",
+      "new_sha256": "2a1c99ee83804b84583ec0181c5de5465cc094d3d2f27a6959b1ffdeb5b41c77",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/ReversePositionRuntime.lean",
+      "new_sha256": "3d8f5779421c77041237184f0d6e235a4921411fcdfc6f24f8cc7ecffff5a548",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseCoefficient.lean",
+      "new_sha256": "89a55053d3fd9acecb68079c355772828aa33413dc912a99c00452b8c1de2405",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseCoefficientPolynomial.lean",
+      "new_sha256": "8d3539b1be09829892b8632bf4bc100bbfc73b72fdd37618693ac51aeab80199",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseCoefficientSpec.lean",
+      "new_sha256": "0fe176fd4a3b3c84e40abea881bc681ac9e93295efe06dfec9eefcbefd20c691",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseCoefficientState.lean",
+      "new_sha256": "b6d29c523adc326f253c0b60cba9c8a80d612670fab109d10f5b432b67fc7a33",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseNormalization.lean",
+      "new_sha256": "b6a7d7827080bd9ee528b4f1ca805ae8207f7e32730dcc348d69af28ca133522",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseNormalizationSpec.lean",
+      "new_sha256": "52f1af7292112a95c536e8318d3df2710f76ce96aa27df82ec5fa8e95083b4f5",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/MutableZip.lean",
+      "new_sha256": "f43e51fcc1978f214e3b7556b7bab654424a181dbd524ea1f4fd1b6b58b43e9a",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PortableSlice.lean",
+      "new_sha256": "433903e62eca4c6e9197d0a96b0287e7851da0120d8f732abe027894627093fb",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PortableSliceChallenges.lean",
+      "new_sha256": "4c48cb6708e3dde37218ee623d1795c4834d93064b4c4c614247567eff0b9433",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PortableXor.lean",
+      "new_sha256": "0ae910b96101b63800f3fb6781f82eb2b96609b47e24be7caf6bb9c03253b5c3",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PortableXorChallenges.lean",
+      "new_sha256": "774cf83c647087ccbef1c9c48bb167e700fd422bdf513ee2ae5d432483457d9c",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PortableZipMap.lean",
+      "new_sha256": "b347c30b1a807dd998d7700bb0ddd069f1846a13813effd8c6b3a436cda6d61a",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ReversePosition.lean",
+      "new_sha256": "6218f4de9a6e6e835f3803174d4298e0175b90a413a8ee4550da920b86531d33",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-coefficient/axiom-audit.log",
+      "new_sha256": "d68a90f9ee203862fb0a51a5f66ac1d4eae3cbed4f6b8ba0d659f12fa37b2cbc",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-coefficient/project.py",
+      "new_sha256": "42170fcf21167cb803fa3b6290c2bd0aa17edbd47a6ea83b7814a5ae30e964cc",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-coefficient/refinement-receipt.json",
+      "new_sha256": "005f3369c603df161810e6bb9879e383116930701ce4e5262a6a4174384c6848",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-coefficient/xor-coefficient/Arithmetic/Funs.lean",
+      "new_sha256": "850b5681ff4ffbc1f256f72645f0f7681a6536cf8953b0ad706420fe0b841e63",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-coefficient/xor-coefficient/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "9d47cb5223b7a3a784065947ca87ceea2b65fb72423eb973c18862af9f72a5c8",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-coefficient/xor-coefficient/Arithmetic/Types.lean",
+      "new_sha256": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-coefficient/xor-coefficient/aeneas.log",
+      "new_sha256": "4c52138682cca18b523b3ebbb06826f14e6b6d822fcf2bb6155ca31b22e03005",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-coefficient/xor-coefficient/arithmetic.llbc",
+      "new_sha256": "2bd96468b069d11b65ae8f2226bd17f35e33114eb17599eb855a3a58b9f51215",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-coefficient/xor-coefficient/charon.log",
+      "new_sha256": "049f5ea80fdd0c25e94c13acbc7635282c428d862297cc66f0990c8523b8fa3c",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-coefficient/xor-coefficient/receipt.json",
+      "new_sha256": "d65b36a8299c522003e6b31813e6441fdf10615be73733009bc038b77db47222",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-normalization/Normalized/Funs.lean",
+      "new_sha256": "cd8735662016aef12e26d3c4aba6684edccc0b3a86067fb3d17582c6ee80f817",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-normalization/Normalized/FunsExternal_Template.lean",
+      "new_sha256": "5d20bacc3ce2a0a7784ff39cec868cd40796a32563db28cbbaae7d7e6dc9e88b",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-normalization/Normalized/Types.lean",
+      "new_sha256": "80c6092652ad879ea7ea8291b58021bad512da62c4089c1515bcbbd755156b94",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-normalization/aeneas.log",
+      "new_sha256": "971fc730afa69d66a47b3d2deab60d8ef6d0d540f576b4e14c1372f55dff8d0d",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-normalization/axiom-audit.log",
+      "new_sha256": "ac929f1e852fa0d48d1689e70fbf7d453b0cb63d04192364e97a4e560a5ffd96",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-normalization/charon.log",
+      "new_sha256": "9ebe1ecf2dbafba9703e9b136f22261398af6c94ee05c48cbb798c22dbc8a78f",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-normalization/normalized.llbc",
+      "new_sha256": "93cd20e2ab87e7bb0188d42349117b0021c125357be994e34d1813920079b369",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-normalization/project.py",
+      "new_sha256": "bda1f88e75763964eeffe6678e0773f370a76a3c7bf9e50d28d7d0e2ec41f7c9",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-normalization/receipt.json",
+      "new_sha256": "dd1d76dd6dce579b1e31d6ec13309b95a162940f9358b34076c4f6046c1dabe2",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/dense-normalization/refinement-receipt.json",
+      "new_sha256": "9bd123d2fbbbd4be2913f1ce3386ff76249292987fb190d8172bcd9803145af1",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-slice/Arithmetic/Funs.lean",
+      "new_sha256": "6362153a8daa0a65334a0e7273cf0e91b96cb21ced7c2181167f11caa0b247e5",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-slice/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "aa92ae87d3b8ddd106954fbb10f21d53faa757da84626936b29f3c0942bd3285",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-slice/Arithmetic/Types.lean",
+      "new_sha256": "d85fc6fef598ee48e95ca16c4955e9352bf9a9ce33b572b78f91d46f5b8db9f5",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-slice/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-slice/aeneas.log",
+      "new_sha256": "513b64d2cfae3dcc48341242aa315d3c018c0dc8ec2b14d6d2b444d77181b7e9",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-slice/arithmetic.llbc",
+      "new_sha256": "91363bd395e98217f283ef10efb32724426c8147b8c610263896c93134468efc",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-slice/charon.log",
+      "new_sha256": "a4393698d95a07b69197ea4deba3ef4c17e71857c940309148c8d4d53d4dda25",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-slice/project.py",
+      "new_sha256": "790822fcb1bbca9101ee91626b2cc1a39fe9826ed093def5ba233994ce9b04a4",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-slice/receipt.json",
+      "new_sha256": "c98123957af73cc644dc6dfcdd9243f58dcf249ad68165cd5ac64c5faf0c7767",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-xor/Arithmetic/Funs.lean",
+      "new_sha256": "2de32175a7ff8f0bfcebfa5ad4ed9814965136fff08e0bd5b804e8d9250763f2",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-xor/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "fca2fe70ab4b973fb5bbbc5f1644826e71abb99c0245cd04c3a63eff88326ed4",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-xor/Arithmetic/Types.lean",
+      "new_sha256": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-xor/aeneas.log",
+      "new_sha256": "460111a90267965d6ee57f3675cf10e0815cb00881c6b2305c2b75e73729ae8a",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-xor/arithmetic.llbc",
+      "new_sha256": "0aa39e2d8ef67aac06067391af16361ba2cc588bc1e8fcff82cafdb251ad2d28",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-xor/axiom-audit.log",
+      "new_sha256": "104cec11f8a7bb72e2efe8ec308b9e6ec702a44ca7c4a91e04dbce445b9715b3",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-xor/charon.log",
+      "new_sha256": "f12ee587767f5292cb9de7423a727881ffd8564105101d7414e0d238c86a54ed",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-xor/project.py",
+      "new_sha256": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-xor/receipt.json",
+      "new_sha256": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
+    },
+    {
+      "path": "extraction/portable-xor/refinement-receipt.json",
+      "new_sha256": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
+      "reason": "Add exact slice and Dense source refinements with checked iterator value bindings and provenance. Retain earlier frozen meanings and native obligations."
     }
   ],
-  "challenge_count": 78
+  "challenge_count": 84
 }

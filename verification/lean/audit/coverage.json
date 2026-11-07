@@ -1060,7 +1060,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.PortableXor.xor_assign_refines",
+        "scope": "Equal lengths return the original destination length and the exact XOR in every slot. Unequal lengths reach the original panic before traversal. Each backward write is applied to the later iterator state.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/portable.rs:109:method:bulksketch::backend::portable::<Portable as BulkKernels < F >>::horner_many",
@@ -1336,7 +1343,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.PortableSlice.scale_xor_refines",
+        "scope": "All lengths and scale words. The exact full destination frame is dst XOR native GF64 multiplication. Zero uses the unchanged frame, one uses the proved original XOR path, and unequal lengths panic before traversal.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/portable.rs:76:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::square_slice",
@@ -1356,7 +1370,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.PortableSlice.square_slice_refines",
+        "scope": "All lengths, including empty slices. Equal lengths return the full destination frame with the exact GF64 square of each source word. Unequal lengths panic before traversal.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/portable.rs:85:method:bulksketch::backend::portable::<Portable as BulkKernels < F >>::insert_nonzero",
@@ -6542,7 +6563,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.DenseCoefficient.xor_coefficient_refines",
+        "scope": "Both invalid bounds produce the original assertion failure. Valid inputs return the exact normalized length and full buffer frame, including newly active zero fill and the preserved inactive tail.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/poly/dense.rs:167:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::prepare_square_table",
@@ -6602,7 +6630,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.DenseNormalization.normalized_len_refines",
+        "scope": "Every coefficient slice returns normally with the length after removing its maximal trailing-zero suffix. Both original callbacks execute and the checked index increment stays in bounds.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/poly/dense.rs:234:function:bulksketch::poly::dense::times_x_mod",
@@ -11252,8 +11287,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Thirty-two distinct generated-body refinements include both original Frobenius table generators, both lookup paths and two original BulkKernels defaults. Static initializer statements and the padded polynomial transport add no source-body credit. Compiler/runtime/memory/ISA and complete decoder closure remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 32,
+    "note": "All 344 native executable declarations retained. Thirty-seven distinct generated-body refinements include the original mutable slice XOR, square and scale methods, dense normalization and dense coefficient update. Model laws and polynomial transport add no source-body credit. Full decoder and machine memory/ISA closure remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 37,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11267,7 +11302,8 @@
       "native_const_square": "BulksketchBridge.FrobeniusConst.square_refines; all128 source loop steps and complete LE output; original pinned frontend/x86 production target, no tables/ISA credit.",
       "portable_arithmetic": "Seven Portable forwarding endpoints plus callback-free PortableInverse.inverse_refines; each original source method counted once.",
       "frobenius_tables_and_lookups": "Original tables() and inverse21_table() generate all 2,560 scheduled cells. Both original lookup paths are proved for every word and selector.",
-      "linear_slice_product": "The original default multiply_linear computes the full GF64 polynomial product when the final spare slot is zero."
+      "linear_slice_product": "The original default multiply_linear computes the full GF64 polynomial product when the final spare slot is zero.",
+      "dense_coefficient_polynomial": "Original coefficient XOR adds the selected GF64 monomial to the active polynomial. Trimming the trailing zeros preserves the result."
     }
   }
 }

@@ -43,6 +43,31 @@ PROJECTIONS = [
      "bridge/Arithmetic/SliceKernelGenerated.lean",
      "ok (false, _dst, _raw)", "ok (true, _dst, _raw)", "compiled slice body projection differs",
      None, None, ["bridge/Arithmetic/SliceKernelTypes.lean"]),
+    ("portable-xor", "extraction/portable-xor/project.py", "extraction/portable-xor/receipt.json",
+     "extraction/portable-xor/Arithmetic/Funs.lean", "bridge/Arithmetic/PortableXorGenerated.lean",
+     "lift (target ^^^ source)", "lift (target ^^^ target)", "compiled XOR projection differs",
+     None, None, ["bridge/Arithmetic/MutableZipRuntime.lean"]),
+    ("portable-slice", "extraction/portable-slice/project.py", "extraction/portable-slice/receipt.json",
+     "extraction/portable-slice/Arithmetic/Funs.lean", "bridge/Arithmetic/PortableSliceGenerated.lean",
+     "if scale = 0#u64", "if scale = 1#u64", "compiled Portable slice projection differs",
+     None, None, ["bridge/Arithmetic/PortableGenerated.lean",
+                  "bridge/Arithmetic/PortableXorGenerated.lean",
+                  "extraction/portable-xor/Arithmetic/Funs.lean"]),
+    ("dense-normalization", "extraction/dense-normalization/project.py",
+     "extraction/dense-normalization/receipt.json",
+     "extraction/dense-normalization/Normalized/Funs.lean",
+     "bridge/Arithmetic/DenseNormalizationGenerated.lean",
+     "def poly.dense.normalized_len\n", "def poly.dense.normalized_len_edited\n",
+     "compiled dense-normalization declarations differ", None, None,
+     ["bridge/Arithmetic/DenseNormalizationTypes.lean"]),
+    ("dense-coefficient", "extraction/dense-coefficient/project.py",
+     "extraction/dense-coefficient/xor-coefficient/receipt.json",
+     "extraction/dense-coefficient/xor-coefficient/Arithmetic/Funs.lean",
+     "bridge/Arithmetic/DenseCoefficientGenerated.lean",
+     "massert (index < i1)", "massert (index <= i1)",
+     "compiled Dense coefficient projection differs", None, None,
+     ["bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/DenseNormalizationTypes.lean",
+      "bridge/Arithmetic/DenseNormalizationGenerated.lean"]),
 ]
 
 
@@ -56,7 +81,8 @@ def main():
         originals[label] = projector.check()["source_declarations_retained_verbatim"]
         receipt = json.loads((ROOT / receipt_path).read_text())
         files = [receipt_path, active_path, "bridge/Arithmetic/Types.lean", "bridge/Arithmetic/Funs.lean"]
-        files += [item["path"] for item in receipt["generated"]] + extra_files
+        artifact_key = "artifacts" if label == "dense-normalization" else "generated"
+        files += [item["path"] for item in receipt[artifact_key]] + extra_files
         cases = [
             ("compiled-body-edit", active_path, before, after, changed),
             ("raw-extraction-edit", raw_path, before, after, raw_path),
@@ -80,6 +106,13 @@ def main():
             cases.append(("compiled-dictionary-edit", "bridge/Arithmetic/SliceKernelTypes.lean",
                           "structure backend.contract.Arithmetic", "structure changed.Arithmetic",
                           "compiled slice type projection differs"))
+        if label == "portable-xor":
+            cases.append(("backward-projection-edit", "bridge/Arithmetic/MutableZipRuntime.lean",
+                          "fun state => state.fst", "fun _ => left", "scoped mutable Zip runtime mismatch"))
+        if label == "dense-normalization":
+            cases.append(("compiled-closure-type-edit", "bridge/Arithmetic/DenseNormalizationTypes.lean",
+                          "normalized_len.closure_1 := Unit", "normalized_len.closure_1 := Bool",
+                          "compiled dense-normalization types differ"))
         for name, path, before, after, diagnostic in cases:
             name = label + "/" + name
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:

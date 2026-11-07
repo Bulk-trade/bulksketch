@@ -1,5 +1,8 @@
 # Frobenius tables and slice kernels
 
+The later [slice and normalization checkpoint](SLICE_NORMALIZATION.md) resolves
+the mutable Zip and Dense iterator dependencies listed below.
+
 The two original Frobenius generators complete normally and produce all 2,560
 cells. Each cell is the scheduled power of the square map applied to a nibble
 placed at its four-bit offset. The shared table contains nine maps for powers

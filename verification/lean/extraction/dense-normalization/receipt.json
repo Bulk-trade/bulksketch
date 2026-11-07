@@ -1,0 +1,77 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "status": "generated",
+  "target": "aarch64-apple-darwin",
+  "selected_roots": [
+    "bulksketch::poly::dense::normalized_len"
+  ],
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "original_commands": [
+    {
+      "name": "charon",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261106/continuation/normalized-len/normalized.llbc",
+        "--start-from=bulksketch::poly::dense::normalized_len",
+        "--",
+        "--manifest-path",
+        "/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.254102290999981
+    },
+    {
+      "name": "aeneas",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261106/continuation/normalized-len/Normalized",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261106/continuation/normalized-len/normalized.llbc"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.4530261249999512
+    }
+  ],
+  "native_source_edited": false,
+  "llbc_has_errors": false,
+  "artifacts": [
+    {
+      "path": "extraction/dense-normalization/Normalized/Funs.lean",
+      "sha256": "cd8735662016aef12e26d3c4aba6684edccc0b3a86067fb3d17582c6ee80f817"
+    },
+    {
+      "path": "extraction/dense-normalization/Normalized/FunsExternal_Template.lean",
+      "sha256": "5d20bacc3ce2a0a7784ff39cec868cd40796a32563db28cbbaae7d7e6dc9e88b"
+    },
+    {
+      "path": "extraction/dense-normalization/Normalized/Types.lean",
+      "sha256": "80c6092652ad879ea7ea8291b58021bad512da62c4089c1515bcbbd755156b94"
+    },
+    {
+      "path": "extraction/dense-normalization/aeneas.log",
+      "sha256": "971fc730afa69d66a47b3d2deab60d8ef6d0d540f576b4e14c1372f55dff8d0d"
+    },
+    {
+      "path": "extraction/dense-normalization/charon.log",
+      "sha256": "9ebe1ecf2dbafba9703e9b136f22261398af6c94ee05c48cbb798c22dbc8a78f"
+    },
+    {
+      "path": "extraction/dense-normalization/normalized.llbc",
+      "sha256": "93cd20e2ab87e7bb0188d42349117b0021c125357be994e34d1813920079b369"
+    }
+  ]
+}

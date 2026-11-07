@@ -10,7 +10,7 @@ open scoped BigOperators
 noncomputable def slicePolynomial (words : Slice U64) : Polynomial Field :=
   ∑ i ∈ Finset.range words.length, monomial i (toField words[i]!.bv)
 
-private theorem slicePolynomial_coeff (words : Slice U64) (index : Nat) :
+theorem slicePolynomial_coeff (words : Slice U64) (index : Nat) :
     (slicePolynomial words).coeff index =
       if index < words.length then toField words[index]!.bv else 0 := by
   classical

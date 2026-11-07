@@ -24,3 +24,5 @@ import BulksketchBridge.PortableInverse
 import BulksketchBridge.FrobeniusConst
 import BulksketchBridge.FrobeniusLookup
 import BulksketchBridge.SlicePolynomial
+import BulksketchBridge.PortableSlice
+import BulksketchBridge.DenseCoefficientPolynomial

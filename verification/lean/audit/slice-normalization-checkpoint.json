@@ -1,0 +1,18 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "previous_checkpoint": "6eb9167f0665c537a7ff7110d772786ba579e408",
+  "source_body_refinements_before": 32,
+  "source_body_refinements_after": 37,
+  "native_executable_obligations_retained": 344,
+  "frozen_endpoints": 113,
+  "new_source_bodies": 5,
+  "native_source_edited": false,
+  "full_native_coverage_achieved": false,
+  "scope": "Original Portable xor_assign, square_slice and scale_xor; original dense normalized_len and xor_coefficient. The polynomial transport proves active-prefix monomial addition and preservation under normalization.",
+  "runtime_models": [
+    "MutableZipRuntime",
+    "ReversePositionRuntime"
+  ],
+  "remaining": "Dense square and multiplication kernels, Horner evaluation, decoder completeness and machine memory/ISA contracts.",
+  "verification": "python3 scripts/verify_all.py"
+}

@@ -251,6 +251,26 @@
       "path": "extraction/slice-kernels/multiply-linear/arithmetic.llbc",
       "sha256": "75bb0571962da64d67c9b7ce29cf01da20d31b87c14207b3bc6bc11ff73f3193",
       "has_errors": false
+    },
+    {
+      "path": "extraction/portable-xor/arithmetic.llbc",
+      "sha256": "0aa39e2d8ef67aac06067391af16361ba2cc588bc1e8fcff82cafdb251ad2d28",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/portable-slice/arithmetic.llbc",
+      "sha256": "91363bd395e98217f283ef10efb32724426c8147b8c610263896c93134468efc",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/dense-normalization/normalized.llbc",
+      "sha256": "93cd20e2ab87e7bb0188d42349117b0021c125357be994e34d1813920079b369",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/dense-coefficient/xor-coefficient/arithmetic.llbc",
+      "sha256": "2bd96468b069d11b65ae8f2226bd17f35e33114eb17599eb855a3a58b9f51215",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -272,6 +292,14 @@
     {
       "functions": "bridge/Arithmetic/FrobeniusTablesRuntime.lean",
       "source_scope": "U32 to usize binding reuses the existing complete checked unsigned conversion model. Lookup proves inner Ok before expect. The usual Rust std/compiler correspondence assumption applies."
+    },
+    {
+      "functions": "bridge/Arithmetic/MutableZipRuntime.lean",
+      "source_scope": "Scoped value bindings for the original mutable-left/shared-right slice Zip specialization. The checked backward update preserves later writes, the source slice, cursor positions and length. Rust std pointer and ownership correspondence stays within the runtime trust boundary."
+    },
+    {
+      "functions": "bridge/Arithmetic/ReversePositionRuntime.lean",
+      "source_scope": "Shared slice Iter::rposition and Option::map_or. The reverse scan threads the original callback state and keeps the unvisited prefix. Pointer, aliasing and drop semantics stay within the runtime trust boundary."
     }
   ],
   "arithmetic_source_inputs": {
@@ -441,6 +469,31 @@
       "native_item_id": "src/backend/contract.rs:51:trait_default:bulksketch::backend::contract::BulkKernels::square_mod",
       "generated_declaration": "bulksketch.backend.contract.BulkKernels.square_mod.default",
       "generated_file": "bridge/Arithmetic/SliceKernelGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:102:method:bulksketch::backend::portable::<Portable as BulkKernels < F >>::xor_assign",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractBulkKernels.xor_assign",
+      "generated_file": "bridge/Arithmetic/PortableXorGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:76:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::square_slice",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.square_slice",
+      "generated_file": "bridge/Arithmetic/PortableSliceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:62:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::scale_xor",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.scale_xor",
+      "generated_file": "bridge/Arithmetic/PortableSliceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:227:function:bulksketch::poly::dense::normalized_len",
+      "generated_declaration": "bulksketch.poly.dense.normalized_len",
+      "generated_file": "bridge/Arithmetic/DenseNormalizationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:159:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::xor_coefficient",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.xor_coefficient",
+      "generated_file": "bridge/Arithmetic/DenseCoefficientGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -537,6 +590,54 @@
       "checker_args": [
         "--types"
       ]
+    },
+    {
+      "generated": "extraction/portable-xor/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PortableXorGenerated.lean",
+      "sha256": "2a1c99ee83804b84583ec0181c5de5465cc094d3d2f27a6959b1ffdeb5b41c77",
+      "raw_sha256": "2de32175a7ff8f0bfcebfa5ad4ed9814965136fff08e0bd5b804e8d9250763f2",
+      "checker": "extraction/portable-xor/project.py",
+      "declaration_count": 3,
+      "scope": "Three verbatim source bodies with scoped mutable Zip bindings and pinned shared types."
+    },
+    {
+      "generated": "extraction/portable-slice/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PortableSliceGenerated.lean",
+      "sha256": "5c96da93c60d31823dfd273e669f9066a51bd8d9648a04c19e163a9814408c31",
+      "raw_sha256": "6362153a8daa0a65334a0e7273cf0e91b96cb21ced7c2181167f11caa0b247e5",
+      "checker": "extraction/portable-slice/project.py",
+      "declaration_count": 6,
+      "scope": "Six verbatim original square and scale declarations with checked arithmetic and XOR dependencies."
+    },
+    {
+      "generated": "extraction/dense-normalization/Normalized/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseNormalizationGenerated.lean",
+      "sha256": "e57328fd7a7a07e1b52bbcc8dbf34478515c64e05765870eb12fb5318873933a",
+      "raw_sha256": "cd8735662016aef12e26d3c4aba6684edccc0b3a86067fb3d17582c6ee80f817",
+      "checker": "extraction/dense-normalization/project.py",
+      "declaration_count": 9,
+      "scope": "Original normalization body, callbacks, and dictionaries with import-only adaptation."
+    },
+    {
+      "generated": "extraction/dense-normalization/Normalized/Types.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseNormalizationTypes.lean",
+      "sha256": "80c6092652ad879ea7ea8291b58021bad512da62c4089c1515bcbbd755156b94",
+      "raw_sha256": "80c6092652ad879ea7ea8291b58021bad512da62c4089c1515bcbbd755156b94",
+      "checker": "extraction/dense-normalization/project.py",
+      "declaration_count": 2,
+      "scope": "Two original closure types retained byte for byte.",
+      "checker_args": [
+        "--types"
+      ]
+    },
+    {
+      "generated": "extraction/dense-coefficient/xor-coefficient/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseCoefficientGenerated.lean",
+      "sha256": "994421cf411adab42c21c66b7cdce11926d44682d64046752eab997579550389",
+      "raw_sha256": "850b5681ff4ffbc1f256f72645f0f7681a6536cf8953b0ad706420fe0b841e63",
+      "checker": "extraction/dense-coefficient/project.py",
+      "declaration_count": 1,
+      "scope": "Verbatim Dense coefficient method with nine shared normalization declarations checked."
     }
   ],
   "reviewed_translator_variants": [

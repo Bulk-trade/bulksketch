@@ -1,0 +1,46 @@
+{
+  "status": "targeted build, exact type checks and transitive axiom checks passed",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "source_item_id": "src/poly/dense.rs:159:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::xor_coefficient",
+  "source_line_span_sha256": "615b0ab4ef6d536574b5807540a752fe5f93a37fb22ce48497863a0b4bdc1cd6",
+  "native_source_edited": false,
+  "native_body_refinements_added": 1,
+  "new_runtime_models": 0,
+  "projected_method_count": 1,
+  "shared_normalization_declarations_checked": 9,
+  "source_projection": "extraction/dense-coefficient/project.py",
+  "raw_extraction_receipt": "extraction/dense-coefficient/xor-coefficient/receipt.json",
+  "endpoints": [
+    {
+      "challenge": "BulksketchBridge.DenseCoefficient.XorCoefficientRefines",
+      "theorem": "BulksketchBridge.DenseCoefficient.xor_coefficient_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseCoefficient.XorCoefficientPolynomialRefines",
+      "theorem": "BulksketchBridge.DenseCoefficient.xor_coefficient_polynomial_refines"
+    }
+  ],
+  "guarantees": [
+    "Arbitrary generated field and backend dictionaries. Each invalid bound reaches the original assertion failure.",
+    "Valid inputs complete with checked index addition, max, growth-window fill, coefficient read and update, prefix read, and normalized length.",
+    "Exact fixed-length destination frame for every original slot. The edited slot is XORed with the original active coefficient or with zero outside the old active window. Other newly active slots are cleared and the inactive tail is preserved.",
+    "The updated active GF64 polynomial equals the original active polynomial plus the selected monomial. Removing exactly the trailing zero suffix preserves that polynomial."
+  ],
+  "files_sha256": {
+    "bridge/Arithmetic/DenseCoefficientGenerated.lean": "994421cf411adab42c21c66b7cdce11926d44682d64046752eab997579550389",
+    "bridge/BulksketchBridge/DenseCoefficientState.lean": "b6d29c523adc326f253c0b60cba9c8a80d612670fab109d10f5b432b67fc7a33",
+    "bridge/BulksketchBridge/DenseCoefficientSpec.lean": "0fe176fd4a3b3c84e40abea881bc681ac9e93295efe06dfec9eefcbefd20c691",
+    "bridge/BulksketchBridge/DenseCoefficient.lean": "89a55053d3fd9acecb68079c355772828aa33413dc912a99c00452b8c1de2405",
+    "bridge/BulksketchBridge/DenseCoefficientPolynomial.lean": "8d3539b1be09829892b8632bf4bc100bbfc73b72fdd37618693ac51aeab80199",
+    "extraction/dense-coefficient/project.py": "42170fcf21167cb803fa3b6290c2bd0aa17edbd47a6ea83b7814a5ae30e964cc",
+    "extraction/dense-coefficient/axiom-audit.log": "d68a90f9ee203862fb0a51a5f66ac1d4eae3cbed4f6b8ba0d659f12fa37b2cbc",
+    "extraction/dense-coefficient/xor-coefficient/receipt.json": "d65b36a8299c522003e6b31813e6441fdf10615be73733009bc038b77db47222"
+  },
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "verification_command": "lake build BulksketchBridge.DenseCoefficientPolynomial",
+  "scope": "Original generated method refinement within the existing extraction and runtime correspondence boundary."
+}

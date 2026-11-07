@@ -1,0 +1,48 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "6eb9167f0665c537a7ff7110d772786ba579e408",
+  "native_files_checked": 41,
+  "build_inputs_checked": 3,
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  },
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "llbc_has_errors": false,
+  "llbc_sha256": "91363bd395e98217f283ef10efb32724426c8147b8c610263896c93134468efc",
+  "application_source_edited": false,
+  "selected_roots": [
+    "{impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::square_slice",
+    "{impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::scale_xor"
+  ],
+  "recorded_output_directory": "/Users/junbug/bulk/bulksketch-proof-tools/portable-slice-next",
+  "command_recipe": [
+    "charon cargo --preset=aeneas --sysroot=default --dest-file=<output>/arithmetic.llbc <selected-roots> -- --manifest-path=<repo>/Cargo.toml -p bulksketch --lib --locked",
+    "aeneas -backend lean -checks -sequential -split-files -dest <output>/Arithmetic <output>/arithmetic.llbc"
+  ],
+  "charon_log_sha256": "a4393698d95a07b69197ea4deba3ef4c17e71857c940309148c8d4d53d4dda25",
+  "aeneas_log_sha256": "513b64d2cfae3dcc48341242aa315d3c018c0dc8ec2b14d6d2b444d77181b7e9",
+  "generated": [
+    {
+      "path": "extraction/portable-slice/Arithmetic/Funs.lean",
+      "sha256": "6362153a8daa0a65334a0e7273cf0e91b96cb21ced7c2181167f11caa0b247e5"
+    },
+    {
+      "path": "extraction/portable-slice/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "aa92ae87d3b8ddd106954fbb10f21d53faa757da84626936b29f3c0942bd3285"
+    },
+    {
+      "path": "extraction/portable-slice/Arithmetic/Types.lean",
+      "sha256": "d85fc6fef598ee48e95ca16c4955e9352bf9a9ce33b572b78f91d46f5b8db9f5"
+    },
+    {
+      "path": "extraction/portable-slice/Arithmetic/TypesExternal_Template.lean",
+      "sha256": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582"
+    }
+  ]
+}

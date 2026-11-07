@@ -1,0 +1,65 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_source_edited": false,
+  "native_item_id": "src/poly/dense.rs:227:function:bulksketch::poly::dense::normalized_len",
+  "source_line_span_sha256": "cef45ae28fd3ea6b85122b70d01c3ce863a96aaca4e7721a7008451f38a3323f",
+  "status": "exact_challenge_assignment_built; transitive_axiom_audit_checked; full_replay_separate",
+  "native_source_body_refinements_added": 1,
+  "endpoint": {
+    "challenge": "BulksketchBridge.DenseNormalization.NormalizedLenRefines",
+    "theorem": "BulksketchBridge.DenseNormalization.normalized_len_refines",
+    "generated_declaration": "bulksketch.poly.dense.normalized_len"
+  },
+  "extraction_receipt": "extraction/dense-normalization/receipt.json",
+  "projection_checker": "extraction/dense-normalization/project.py",
+  "files": [
+    {
+      "path": "bridge/Arithmetic/DenseNormalizationTypes.lean",
+      "sha256": "80c6092652ad879ea7ea8291b58021bad512da62c4089c1515bcbbd755156b94"
+    },
+    {
+      "path": "bridge/Arithmetic/DenseNormalizationGenerated.lean",
+      "sha256": "e57328fd7a7a07e1b52bbcc8dbf34478515c64e05765870eb12fb5318873933a"
+    },
+    {
+      "path": "bridge/Arithmetic/ReversePositionRuntime.lean",
+      "sha256": "3d8f5779421c77041237184f0d6e235a4921411fcdfc6f24f8cc7ecffff5a548"
+    },
+    {
+      "path": "bridge/BulksketchBridge/ReversePosition.lean",
+      "sha256": "6218f4de9a6e6e835f3803174d4298e0175b90a413a8ee4550da920b86531d33"
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseNormalizationSpec.lean",
+      "sha256": "52f1af7292112a95c536e8318d3df2710f76ce96aa27df82ec5fa8e95083b4f5"
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseNormalization.lean",
+      "sha256": "b6a7d7827080bd9ee528b4f1ca805ae8207f7e32730dcc348d69af28ca133522"
+    },
+    {
+      "path": "extraction/dense-normalization/axiom-audit.log",
+      "sha256": "ac929f1e852fa0d48d1689e70fbf7d453b0cb63d04192364e97a4e560a5ffd96"
+    },
+    {
+      "path": "extraction/dense-normalization/project.py",
+      "sha256": "bda1f88e75763964eeffe6678e0773f370a76a3c7bf9e50d28d7d0e2ec41f7c9"
+    }
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "runtime_value_models": [
+    "Shared slice Iter::rposition override uses the complete remaining suffix, visits from the end, threads FnMut callback state, short circuits on a match, and retains the unvisited prefix and front cursor. Associated item types are identified with the Rust slice value type.",
+    "Option::map_or returns the supplied fallback for None or invokes the supplied FnOnce callback for Some."
+  ],
+  "runtime_trust_boundary": "Rust standard-library value correspondence, pointers, aliasing and drop semantics remain trusted. No generic Iterator default or mutable-slice reverse search model is supplied.",
+  "source_proof_details": [
+    "Original nonzero predicate and index-plus-one callbacks are reused verbatim.",
+    "Every slice length is admitted, including empty and all-zero slices.",
+    "Reverse search index fits usize and checked plus-one is at most the original slice length on either pointer width.",
+    "The returned length is exactly the list length minus its maximal trailing-zero run."
+  ]
+}

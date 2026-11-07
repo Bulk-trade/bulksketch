@@ -27,10 +27,10 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The bridge now has 32 distinct source-body refinements. The latest checkpoint
-adds both original Frobenius table generators, both lookup paths and two
-original slice kernel defaults. The padded linear update also has an exact
-Mathlib polynomial product theorem.
+The bridge now has 37 distinct source-body refinements. The latest checkpoint
+adds the original Portable XOR, square and scale-XOR methods, dense normalization
+and the dense coefficient update. The Dense polynomial theorem proves the exact
+active-prefix monomial addition and preserves it through normalization.
 This is functional refinement of generated
 bodies under the stated trust boundary, not a count of complete native contracts.
 Full native implementation coverage is not achieved.
@@ -51,6 +51,7 @@ actual algebra trace, source inversion chain and remaining enclosing-wrapper gap
 [NATIVE_COVERAGE.md](NATIVE_COVERAGE.md) closes that wrapper gap under a named
 reviewed frontend variant and explains the Portable and const-square proofs.
 [FROBENIUS_TABLES.md](FROBENIUS_TABLES.md) records the table, lookup and slice checkpoint.
+[SLICE_NORMALIZATION.md](SLICE_NORMALIZATION.md) records the mutable Zip and Dense proofs.
 
 The [coverage ledger](audit/coverage.json) keeps every native item in scope,
 including unsupported and unproved items. Related mathematical model evidence
@@ -102,12 +103,11 @@ prelude declaration, and forbidden axioms in either input. A prelude may reorder
 only an exact subset of the original export; it cannot extend the environment.
 
 Every declaration projection retains original bodies byte for byte and checks
-shared types and dictionaries against the larger arithmetic extraction. Fifty-two
-mutation checks reject body, type, dictionary and raw-extraction edits in both
-ordinary and optimized Python. No new standard-library model or application
-correctness axiom is introduced. The three enclosing inverse bodies require the
-named reviewed checks-enabled frontend variant; the original Lean runtime and
-its unchanged nested-loan guard remain pinned and clean.
+shared types and dictionaries against the larger arithmetic extraction. Seventy-two
+mutation checks exercise source and runtime provenance in ordinary and optimized
+Python. The runtime inventory records scoped value models for mutable slice Zip,
+shared-slice reverse position and Option map-or. The three enclosing inverse
+bodies require the named reviewed frontend variant with invariant checks.
 
 These are controlled-source exact-type checks and independent proof-term replay.
 Sandboxed Linux Comparator validation is a separate, remaining integrity gate.

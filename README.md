@@ -188,10 +188,10 @@ and libclang (for `bindgen`). The library itself needs neither.
 ## Proofs
 
 [`verification/lean`](verification/lean/README.md) holds Lean 4 proofs about the
-native Rust code, checked against Lean translations of 32 source bodies. The
+native Rust code, checked against Lean translations of 37 source bodies. The
 proofs cover GF64 arithmetic, trace, quadratic solving, inversion, the Portable
-arithmetic methods, all fixed Frobenius table and lookup bodies, two slice
-kernel defaults, and the work meter. They also prove that the modulus `X^64 + X^4 + X^3 + X + 1` is irreducible and connect native
+arithmetic methods, fixed Frobenius tables and lookups, selected slice kernels,
+dense coefficient updates, and the work meter. They also prove that the modulus `X^64 + X^4 + X^3 + X + 1` is irreducible and connect native
 words to Mathlib's quotient-field arithmetic and `Algebra.trace`.
 
 Three enclosing inverse bodies use a separately reviewed Aeneas frontend patch
