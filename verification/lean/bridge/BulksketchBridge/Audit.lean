@@ -364,7 +364,19 @@ run_cmd do
     (``BulksketchBridge.StageCharge.ReconstructChargeRefines,
       ``BulksketchBridge.StageCharge.reconstruct_refines),
     (``BulksketchBridge.WorkspaceAdmission.ActualWorkspaceAdmissionReturnsExactFrame,
-      ``BulksketchBridge.WorkspaceAdmission.check_workspace_refines)
+      ``BulksketchBridge.WorkspaceAdmission.check_workspace_refines),
+    (``BulksketchBridge.AffineQuartic.ActualAffineQuarticRefines,
+      ``BulksketchBridge.AffineQuartic.affine_quartic_refines),
+    (``BulksketchBridge.QuarticSemantics.ActualQuarticRefines,
+      ``BulksketchBridge.QuarticSemantics.quartic_refines),
+    (``BulksketchBridge.QuarticControl.ActualQuarticReturnsExact,
+      ``BulksketchBridge.QuarticControl.quartic_refines),
+    (``BulksketchBridge.QuarticLoops.ActualQuarticPrefixProducts,
+      ``BulksketchBridge.QuarticLoops.prefix_products_refines),
+    (``BulksketchBridge.QuarticLoops.ActualQuarticReverseWords,
+      ``BulksketchBridge.QuarticLoops.reverse_words_refine),
+    (``BulksketchBridge.QuarticSolve.ActualSolveReturnsExactFrame,
+      ``BulksketchBridge.QuarticSolve.solve_refines)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

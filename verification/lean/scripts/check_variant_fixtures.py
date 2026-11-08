@@ -229,6 +229,43 @@ for name, mutate in certificate_cases:
     results.append({"case": name, "status": status})
     print(name, status)
 
+quartic = next(entry for entry in link["reviewed_translator_variants"]
+               if entry["id"] == "checked-fixedpoint-scalar-array-loan-retry-v1")
+quartic_original = json.loads((ROOT / quartic["receipt"]).read_text())
+quartic_check = runpy.run_path(str(ROOT / "scripts/verify_bridge.py"))["check_quartic_array_retry_variant"]
+quartic_cases = [
+    ("quartic-positive", lambda receipt: None),
+    ("quartic-wrong-extension", lambda receipt: receipt.update(base_extension="wrong")),
+    ("quartic-extra-source", lambda receipt: receipt["modified_sources"].update(other="wrong")),
+    ("quartic-replay-omits-checks", lambda receipt: next(row for row in receipt["commands"]
+        if row["name"] == "replay")["command"].remove("-checks")),
+    ("quartic-unchecked-accepted", lambda receipt: next(row for row in receipt["commands"]
+        if row["name"] == "unchecked").update(exit_code=0)),
+    ("quartic-missing-mutable-control", lambda receipt: receipt["guard_controls"].remove("payload-active-loan")),
+    ("quartic-missing-certificate-replay", lambda receipt: receipt.update(
+        unrelated_certificate_control_byte_identical=2)),
+    ("quartic-replay-wrong-input", lambda receipt: next(row for row in receipt["commands"]
+        if row["name"] == "replay")["command"].__setitem__(-1, "/tmp/unrelated/arithmetic.llbc")),
+    ("quartic-cubic-wrong-digest", lambda receipt: next(row for row in receipt["commands"]
+        if row["name"] == "cubic-control").update(input_sha256="0" * 64)),
+    ("quartic-unchecked-wrong-log", lambda receipt: next(row for row in receipt["commands"]
+        if row["name"] == "unchecked").update(log_sha256="0" * 64)),
+    ("quartic-replay-wrong-output", lambda receipt:
+        receipt["replay_output_sha256"]["replay"].update({"Funs.lean": "0" * 64})),
+    ("quartic-wrong-patched-source", lambda receipt:
+        receipt["modified_sources"].update({"src/interp/InterpJoin.ml": "0" * 64})),
+]
+for name, mutate in quartic_cases:
+    receipt = copy.deepcopy(quartic_original)
+    mutate(receipt)
+    try:
+        quartic_check(quartic, receipt, runtime, runtime_head, link)
+        status = "accepted"
+    except (RuntimeError, KeyError, ValueError):
+        status = "rejected"
+    results.append({"case": name, "status": status})
+    print(name, status)
+
 # Exercise the exact per-refinement attribution statements from the same main AST.
 refine_loop=next(n for n in main.body if isinstance(n,ast.For) and isinstance(n.target,ast.Tuple) and any(isinstance(x,ast.Name) and x.id=='native_id' for x in n.target.elts))
 assignment=next(n for n in refine_loop.body if isinstance(n,ast.Assign) and any(isinstance(x,ast.Name) and x.id=='used_variants' for x in n.targets))
@@ -253,7 +290,7 @@ for name,entry,mutate in attribution_cases:
  results.append({'case':name,'status':status});print(name,status)
 
 for row in results:
- expected = 'accepted' if row['case'] in {'positive','dense-positive','dense-mul-positive','horner-positive','pclmul-horner-positive','certificate-positive','valid-patched','valid-pinned','valid-dense-source'} else 'rejected'
+ expected = 'accepted' if row['case'] in {'positive','dense-positive','dense-mul-positive','horner-positive','pclmul-horner-positive','certificate-positive','quartic-positive','valid-patched','valid-pinned','valid-dense-source'} else 'rejected'
  if row['status'] != expected:
   raise RuntimeError('variant/attribution gate outcome differs: '+row['case'])
 valid_count = sum(row["status"] == "accepted" for row in results)

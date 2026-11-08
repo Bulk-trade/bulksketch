@@ -6,6 +6,7 @@ import json
 import os
 import re
 import subprocess
+import tempfile
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -244,6 +245,82 @@ def check_certificate_match_variant(variant, receipt, runtime, runtime_head, lin
         raise RuntimeError("Certificate matcher regression matrix is incomplete")
 
 
+def check_quartic_array_retry_variant(variant, receipt, runtime, runtime_head, linkage):
+    directory = "extraction/quartic/"
+    patch = directory + "translator/checked-array-loan-retry.patch"
+    sources = {"src/interp/" + stem + suffix
+               for stem in ("InterpJoin", "InterpMatchCtxs") for suffix in (".ml", ".mli")}
+    if (variant["receipt"] != directory + "receipt.json" or variant["base_commit"] != runtime_head or
+            variant["mandatory_checks"] is not True or variant["patch"] != patch or
+            receipt["aeneas_commit"] != runtime_head or receipt["charon_commit"] != linkage["charon_commit"] or
+            receipt["source_commit"] != linkage["source_commit"] or
+            receipt["candidate_variant"] != variant["id"] or
+            receipt["base_extension"] != "checked-ended-projector-leaf-v1" or
+            receipt["status"] != "checked_original_closure_extracted" or
+            receipt["native_source_edited"] is not False or receipt["native_body_proof_credit"] != 0 or
+            receipt["patch_sha256"] != variant["patch_sha256"] or
+            sha(ROOT / patch) != variant["patch_sha256"] or set(receipt["modified_sources"]) != sources or
+            receipt["base_sources"] != {name: sha(runtime / name) for name in sources} or
+            set(re.findall(r"(?m)^--- a/(\S+)\n\+\+\+ b/(\S+)$", (ROOT / patch).read_text()))
+                != {(name, name) for name in sources}):
+        raise RuntimeError("quartic array retry lost checked translator provenance")
+    commands = {row["name"]: row for row in receipt["commands"]}
+    codes = {"charon": 0, "candidate-build": 0, "narrow": 0, "replay": 0, "unchecked": 1, "pinned": 1,
+             "cubic-control": 0, "certificate-control": 0, "guard-controls": 0}
+    expected_controls = {"end-left-shared", "end-right-shared", "unchecked", "original-mode",
+                         "non-array", "non-scalar-elements", "mismatched-payload-type", "payload-active-loan"}
+    if (len(commands) != len(receipt["commands"]) or
+            {name: row["exit_code"] for name, row in commands.items()} != codes or
+            any(not {"-checks", "-sequential"} <= set(commands[name]["command"])
+                for name in ("narrow", "replay", "pinned", "cubic-control", "certificate-control")) or
+            "-checks" in commands["unchecked"]["command"] or
+            len(receipt["guard_controls"]) != len(expected_controls) or
+            set(receipt["guard_controls"]) != expected_controls or
+            any(receipt[name] != 3 for name in ("replayed_outputs_byte_identical",
+                "unrelated_cubic_control_byte_identical", "unrelated_certificate_control_byte_identical"))):
+        raise RuntimeError("quartic array retry regression matrix changed")
+    original = directory + "arithmetic.llbc"
+    input_paths = dict.fromkeys(("narrow", "replay", "pinned", "unchecked"), original)
+    input_paths.update({"cubic-control": "extraction/cubic/arithmetic.llbc",
+                        "certificate-control": "extraction/degree-certificate/arithmetic.llbc"})
+    logs = {"narrow": "translator/narrow.log", "replay": "aeneas.log", "pinned": "pinned.log",
+            "unchecked": "unchecked.log", "cubic-control": "translator/cubic-control.log",
+            "certificate-control": "translator/certificate-control.log"}
+    destination = [arg.removeprefix("--dest-file=") for arg in commands["charon"]["command"]
+                   if arg.startswith("--dest-file=")]
+    checked_binary = commands["replay"]["command"][0]
+    linked = {entry["path"]: entry["sha256"] for entry in linkage["extractions"]}
+    if len(destination) != 1 or Path(destination[0]).name != "arithmetic.llbc":
+        raise RuntimeError("quartic extraction command lost its LLBC destination")
+    for name, path in input_paths.items():
+        command = commands[name]
+        input_arg = Path(command["command"][-1])
+        expected = Path(path)
+        if (command["input_sha256"] != linked[path] or linked[path] != sha(ROOT / path) or
+                (str(input_arg) != destination[0] if path == original else
+                 input_arg.parts[-len(expected.parts):] != expected.parts) or
+                command["log_sha256"] != receipt["files_sha256"][directory + logs[name]] or
+                command["log_sha256"] != sha(ROOT / directory / logs[name]) or
+                (name != "pinned" and command["command"][0] != checked_binary)):
+            raise RuntimeError("quartic replay command lost its input or log linkage: " + name)
+    outputs = {"replay": directory, "cubic-control": "extraction/cubic/",
+               "certificate-control": "extraction/degree-certificate/"}
+    if receipt["replay_output_sha256"] != {
+            name: {file: sha(ROOT / path / "Arithmetic" / file)
+                   for file in ("Funs.lean", "Types.lean", "FunsExternal_Template.lean")}
+            for name, path in outputs.items()}:
+        raise RuntimeError("quartic replay output fingerprints changed")
+    with tempfile.TemporaryDirectory(prefix="quartic-checked-translator-") as temporary:
+        work = Path(temporary)
+        for name in sources:
+            (work / name).parent.mkdir(parents=True, exist_ok=True)
+            (work / name).write_bytes((runtime / name).read_bytes())
+        applied = subprocess.run(["git", "apply", str(ROOT / patch)], cwd=work,
+                                 capture_output=True, timeout=30)
+        if applied.returncode or receipt["modified_sources"] != {name: sha(work / name) for name in sources}:
+            raise RuntimeError("quartic retry patched translator sources changed")
+
+
 def check_pclmul_horner_extension(extension, receipt, variants, runtime_head, linkage):
     """Bind the second original Horner extraction to the reviewed matcher."""
     variant = next((entry for entry in variants if entry["id"] == "checked-ended-shared-scalar-v1"), None)
@@ -345,6 +422,12 @@ def main():
         if variant["id"] == "checked-ended-projector-leaf-v1":
             check_certificate_match_variant(variant, receipt, runtime, runtime_head, linkage)
             result, _ = run("checked-certificate-matcher-patch-applies", ["git", "apply", "--check",
+                            str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
+            records.append(result)
+            continue
+        if variant["id"] == "checked-fixedpoint-scalar-array-loan-retry-v1":
+            check_quartic_array_retry_variant(variant, receipt, runtime, runtime_head, linkage)
+            result, _ = run("checked-quartic-array-retry-patch-applies", ["git", "apply", "--check",
                             str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
             records.append(result)
             continue

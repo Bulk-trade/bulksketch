@@ -59,3 +59,5 @@ import BulksketchBridge.AvxXorLlbc
 import BulksketchBridge.X86Difference
 import BulksketchBridge.CertificatePolynomial
 import BulksketchBridge.ReconstructionPowerSums
+import BulksketchBridge.QuarticSemantics
+import BulksketchBridge.QuarticSolve

@@ -3518,7 +3518,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AffineQuartic.affine_quartic_refines",
+        "scope": "Original affine quartic returns normally. Under exact GF64 callbacks, success is equivalent to the native certified kernel gate and existence of an affine root, and returns four distinct roots. The exact unsigned minimum and normalized quadratic selections are retained.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/deg34.rs:162:function:bulksketch::decode::deg34::quartic",
@@ -3538,7 +3545,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.QuarticSemantics.quartic_refines",
+        "scope": "Original general quartic normal return for factor length at least four. Under exact GF64 callbacks, success is equivalent to the native recovery gate and existence of a root, with four distinct roots from the original affine or reciprocal and batch-inversion path.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/deg34.rs:197:function:bulksketch::decode::deg34::solve",
@@ -3558,7 +3572,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.QuarticSolve.solve_refines",
+        "scope": "Original solve normal return for factor lengths four and five under exact GF64 callbacks and output room. A miss leaves the output unchanged. A hit copies the exact candidate words from the selected original solver into the prefix and returns the degree.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/deg34.rs:65:function:bulksketch::decode::deg34::normalize",
@@ -11663,8 +11684,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Original reconstruction, both loop instances and the Reconstruct price and stage charge are checked. Original workspace admission uses a separate checked LLBC contract. Full decoder and physical memory and ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 87,
+    "note": "All 344 native executable declarations retained. Original affine and general quartic helpers have exact root and native gate refinements. Original degree-three/four solve copies the exact candidate prefix and preserves the output suffix. Native Berlekamp\u2013Massey, general root recovery and end-to-end decoder completeness remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 90,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11704,7 +11725,9 @@
       "native_cube_root": "BulksketchBridge.CubeRoot.cube_root_refines",
       "native_cubic_soundness": "BulksketchBridge.Cubic.cubic_refines",
       "native_reconstruction_power_sums": "BulksketchBridge.Reconstruction.reconstruct_returns_power_sums",
-      "native_workspace_admission": "BulksketchBridge.WorkspaceAdmission.check_workspace_refines"
+      "native_workspace_admission": "BulksketchBridge.WorkspaceAdmission.check_workspace_refines",
+      "native_affine_quartic": "BulksketchBridge.AffineQuartic.affine_quartic_refines",
+      "native_general_quartic": "BulksketchBridge.QuarticSemantics.quartic_refines"
     },
     "masked_memory_evidence": {
       "store_obstruction": "BulksketchBridge.X86MaskedMemory.PureExtraction.pure_store_cannot_writeback",

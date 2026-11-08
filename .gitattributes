@@ -64,3 +64,4 @@ verification/lean/tooling/aeneas-dense-prefix/*.patch whitespace=-trailing-space
 verification/lean/tooling/aeneas-dense-mul/*.patch whitespace=-trailing-space
 verification/lean/tooling/aeneas-horner-match/*.patch whitespace=-trailing-space
 verification/lean/tooling/aeneas-ended-projector/*.patch whitespace=-trailing-space
+verification/lean/extraction/quartic/translator/*.patch whitespace=-trailing-space

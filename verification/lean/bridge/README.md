@@ -72,7 +72,10 @@ adds PCLMUL slice and Horner refinements, the stateful AVX XOR assignment and
 difference callers, and the original degree-3/4 certificate. The
 [reconstruction checkpoint](../NATIVE_RECONSTRUCTION.md) adds the original
 stage wrapper, both loops, the reconstruction charge and separate LLBC
-workspace admission, with a power-sum theorem for the actual stage.
+workspace admission, with a power-sum theorem for the actual stage. The
+[quartic checkpoint](../NATIVE_QUARTIC.md) adds exact affine and reciprocal
+quartic recovery gates and root theorems, the original batch inversion loops,
+and the degree-three/four candidate output frame.
 
 From the parent Lean directory:
 

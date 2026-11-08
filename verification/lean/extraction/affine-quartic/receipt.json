@@ -1,0 +1,108 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checked_checkout": "4ae9217cd1fb3a1571e5af3b5e5a56ef0f1cee72",
+  "source_path": "src/decode/deg34.rs",
+  "source_sha256": "50e92cc158d33b58361cf95719d4f13e01295802a15e1dab7622fab5ce050015",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "tool_sha256": {
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "opaque_application_bodies": {
+    "bulksketch::decode::deg34::quadratic": {
+      "native_item_id": "src/decode/deg34.rs:79:function:bulksketch::decode::deg34::quadratic",
+      "theorem": "BulksketchBridge.Cubic.quadratic_refines",
+      "scope": "The original helper returns the exact normalized quadratic option for every GF64 input under the exact square and quadratic callback contracts.",
+      "generated_file": "bridge/Arithmetic/CubicGenerated.lean",
+      "declaration_sha256": "8efcf33e39ad9b44c39a44e24ea9141fcbbba99a931bf22e5e9dc564aadbb6d6"
+    },
+    "bulksketch::decode::deg34::cubic": {
+      "native_item_id": "src/decode/deg34.rs:95:function:bulksketch::decode::deg34::cubic",
+      "theorem": "BulksketchBridge.Cubic.cubic_refines",
+      "scope": "The original helper returns normally for every input under exact GF64 callback contracts. Every returned word is a root of the given monic cubic. The proof uses the previously verified inverse wrapper under checked-frozen-capture-v1.",
+      "generated_file": "bridge/Arithmetic/CubicGenerated.lean",
+      "declaration_sha256": "67bf37562f6b1ec4fcf62b6ec74713cf74e52cd501c424add54303435375e5ab"
+    },
+    "bulksketch::decode::deg34::certificate": {
+      "native_item_id": "src/decode/deg34.rs:111:function:bulksketch::decode::deg34::certificate",
+      "theorem": "BulksketchBridge.Certificate.certificate_refines",
+      "scope": "Original degree-3/4 certificate over exact GF64 multiplication with admitted usize and path-conditional scratch bounds. Checks malformed roots, the rebuilt coefficient prefix and preservation of the scratch suffix.",
+      "generated_file": "bridge/Arithmetic/CertificateGenerated.lean",
+      "declaration_sha256": "e08fb17acaec516bf32227a28d74b587fbbdc4e8e9aae639f2ce7b8a4627ecb7"
+    }
+  },
+  "status": "generated",
+  "source_root": "bulksketch::decode::deg34::affine_quartic",
+  "llbc_has_errors": false,
+  "llbc_sha256": "e216c6788215c631dfc62fe73b6e527d1876dc74a712cfc894d0da66b7d245aa",
+  "native_source_edited": false,
+  "affine_declaration_sha256": "ce5d64f0c1a78fdd0e670e2ade2a27982feec75b95e624b09a024207fe18697f",
+  "artifacts": {
+    "extraction/affine-quartic/arithmetic.llbc": "e216c6788215c631dfc62fe73b6e527d1876dc74a712cfc894d0da66b7d245aa",
+    "extraction/affine-quartic/charon.log": "6a7f6429ead9c5ba5b8317c418243920c4bd3b2efceb7f8a93fc4c3e5eea0139",
+    "extraction/affine-quartic/aeneas.log": "0a844f1842f3512c632176a25a62ae2de5e71e8f958485ef9b2c830492dc24a9",
+    "extraction/affine-quartic/Arithmetic/Funs.lean": "bffad41121c95c48e6f86ddfc59d393184385be85b367757da7e9f973413a75e",
+    "extraction/affine-quartic/Arithmetic/Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+    "extraction/affine-quartic/Arithmetic/FunsExternal_Template.lean": "7f3b547cf8caa32619d21c6109720ad99e1a20e84bdb4e06def52f639668b1b8"
+  },
+  "commands": [
+    [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-next/degree-recovery-pilot/affine-only/arithmetic.llbc",
+      "--start-from=bulksketch::decode::deg34::affine_quartic",
+      "--opaque=bulksketch::decode::deg34::certificate",
+      "--opaque=bulksketch::decode::deg34::cubic",
+      "--opaque=bulksketch::decode::deg34::quadratic",
+      "--",
+      "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked",
+      "--target",
+      "x86_64-apple-darwin"
+    ],
+    [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-next/degree-recovery-pilot/affine-only/Arithmetic",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-next/degree-recovery-pilot/affine-only/arithmetic.llbc"
+    ]
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+    "CARGO_TARGET_DIR": "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-next/degree-recovery-pilot/affine-only/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true"
+  },
+  "stdlib_source": {
+    "cmp.rs": {
+      "sha256": "aa1d810f0c36798492e3b17b10a85ac91c047c0020b9be5db86f1111b34e94be",
+      "bindings": [
+        "Ord<&A>::cmp lines 2514\u20132523",
+        "Ord::min default lines 1136\u20131141"
+      ]
+    },
+    "iter/traits/iterator.rs": {
+      "sha256": "6a6468cade532beaba7c8b3f0db2b3fa768a069c56b636c68fbf1b27bc7d81a0",
+      "bindings": [
+        "Iterator::min lines 3297\u20133304",
+        "Iterator::reduce lines 2711\u20132719"
+      ]
+    }
+  },
+  "runtime_sha256": "c9796f89c4d08496edd201250f5144604b52ec5c61cda695a98d8a6fcaf0ec2c"
+}

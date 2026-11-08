@@ -656,6 +656,30 @@
     {
       "challenge": "BulksketchBridge.WorkspaceAdmission.ActualWorkspaceAdmissionReturnsExactFrame",
       "theorem": "BulksketchBridge.WorkspaceAdmission.check_workspace_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineQuartic.ActualAffineQuarticRefines",
+      "theorem": "BulksketchBridge.AffineQuartic.affine_quartic_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.QuarticSemantics.ActualQuarticRefines",
+      "theorem": "BulksketchBridge.QuarticSemantics.quartic_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.QuarticSolve.ActualSolveReturnsExactFrame",
+      "theorem": "BulksketchBridge.QuarticSolve.solve_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.QuarticControl.ActualQuarticReturnsExact",
+      "theorem": "BulksketchBridge.QuarticControl.quartic_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.QuarticLoops.ActualQuarticPrefixProducts",
+      "theorem": "BulksketchBridge.QuarticLoops.prefix_products_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.QuarticLoops.ActualQuarticReverseWords",
+      "theorem": "BulksketchBridge.QuarticLoops.reverse_words_refine"
     }
   ],
   "refinements": [
@@ -2124,6 +2148,50 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Every tag composes the original pricing result with the exact WorkMeter transition and preserves the meter on a pricing error. Reconstruct separately has an independently proved price."
+    },
+    {
+      "label": "deg34::affine_quartic [original source]",
+      "native_item_id": "src/decode/deg34.rs:138:function:bulksketch::decode::deg34::affine_quartic",
+      "source_line_span_sha256": "6a854cbbd7098cf0850641e0dd1fe1b6b5b2a678b326f6a62cef02a59eb55fde",
+      "theorem": "BulksketchBridge.AffineQuartic.affine_quartic_refines",
+      "challenge": "BulksketchBridge.AffineQuartic.ActualAffineQuarticRefines",
+      "generated_declaration": "bulksketch.decode.deg34.affine_quartic",
+      "generated_file": "bridge/Arithmetic/AffineQuarticGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AffineQuarticGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original affine quartic returns normally. Under exact GF64 callbacks, success is equivalent to the native certified kernel gate and existence of an affine root, and returns four distinct roots. The exact unsigned minimum and normalized quadratic selections are retained."
+    },
+    {
+      "label": "deg34::quartic [original source]",
+      "native_item_id": "src/decode/deg34.rs:162:function:bulksketch::decode::deg34::quartic",
+      "source_line_span_sha256": "1128a45b3ac827d9bc75d5f3bd93d3bd3439778877d547372e099cf39b722dd5",
+      "theorem": "BulksketchBridge.QuarticSemantics.quartic_refines",
+      "challenge": "BulksketchBridge.QuarticSemantics.ActualQuarticRefines",
+      "generated_declaration": "bulksketch.decode.deg34.quartic",
+      "generated_file": "bridge/Arithmetic/QuarticGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/QuarticGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original general quartic normal return for factor length at least four. Under exact GF64 callbacks, success is equivalent to the native recovery gate and existence of a root, with four distinct roots from the original affine or reciprocal and batch-inversion path.",
+      "translator_variant": "checked-fixedpoint-scalar-array-loan-retry-v1"
+    },
+    {
+      "label": "deg34::solve [original source]",
+      "native_item_id": "src/decode/deg34.rs:197:function:bulksketch::decode::deg34::solve",
+      "source_line_span_sha256": "d83fdc32b93d3bf3bca9a8d906c6f536bc3575a0d8783ea3aa34bc79b032ccef",
+      "theorem": "BulksketchBridge.QuarticSolve.solve_refines",
+      "challenge": "BulksketchBridge.QuarticSolve.ActualSolveReturnsExactFrame",
+      "generated_declaration": "bulksketch.decode.deg34.solve",
+      "generated_file": "bridge/Arithmetic/QuarticGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/QuarticGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original solve normal return for factor lengths four and five under exact GF64 callbacks and output room. A miss leaves the output unchanged. A hit copies the exact candidate words from the selected original solver into the prefix and returns the degree.",
+      "translator_variant": "checked-fixedpoint-scalar-array-loan-retry-v1"
     }
   ],
   "stateful_llbc_refinements": [

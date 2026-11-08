@@ -11,7 +11,7 @@ open Aeneas Aeneas.Std Algebra.Gf64 bulksketch.backend.contract bulksketch.decod
 private abbrev mulWord := Inverse.multiplyNativeWord
 private noncomputable abbrev inverseWord := DirectTwo.inverseWord
 
-private theorem normalized_equation {target solution : U64}
+theorem normalized_equation {target solution : U64}
     (found : MapsQuadratic.expectedSolution target = some solution) :
     Square.expectedWord solution ^^^ solution = target := by
   obtain ⟨output, normal, meaning⟩ := MapsQuadratic.solve_quadratic_exact_meaning target
@@ -84,7 +84,7 @@ private theorem words_sound (a b c u v : U64)
   · simpa only [xor_field, mul_field, evaluate] using second
   · simpa only [xor_field, mul_field, evaluate] using third
 
-private theorem inverse_normal {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64)
+theorem inverse_normal {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64)
     (arithmetic : CorrectArithmetic kernels) (word : U64) (nonzero : word ≠ 0#u64) :
     kernels.ArithmeticInst.inverse word = Result.ok (some (inverseWord word)) := by
   rw [arithmetic.2.1, InverseUsing.inverse_refines]

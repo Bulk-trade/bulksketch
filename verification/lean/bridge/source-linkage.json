@@ -406,6 +406,16 @@
       "path": "extraction/workspace-admission/arithmetic.llbc",
       "sha256": "2839bcdd234dc0ba589b89dc4f98a72a20c3206ab2a3f43e3f589710fe02c947",
       "has_errors": false
+    },
+    {
+      "path": "extraction/affine-quartic/arithmetic.llbc",
+      "sha256": "e216c6788215c631dfc62fe73b6e527d1876dc74a712cfc894d0da66b7d245aa",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/quartic/arithmetic.llbc",
+      "sha256": "da84d56163344d55e94fad671dddc1318e2bd80051fdd6f07067fd77ae4db090",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -923,6 +933,21 @@
       "native_item_id": "src/decode/stages.rs:163:method:bulksketch::decode::stages::Execution < F , K >::charge",
       "generated_declaration": "bulksketch.decode.stages.Execution.charge",
       "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:138:function:bulksketch::decode::deg34::affine_quartic",
+      "generated_declaration": "bulksketch.decode.deg34.affine_quartic",
+      "generated_file": "bridge/Arithmetic/AffineQuarticGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:162:function:bulksketch::decode::deg34::quartic",
+      "generated_declaration": "bulksketch.decode.deg34.quartic",
+      "generated_file": "bridge/Arithmetic/QuarticGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:197:function:bulksketch::decode::deg34::solve",
+      "generated_declaration": "bulksketch.decode.deg34.solve",
+      "generated_file": "bridge/Arithmetic/QuarticGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1318,6 +1343,25 @@
       "checker": "extraction/work-schedule/project.py",
       "declaration_count": 12,
       "scope": "Original WorkScheduleV1 cost, checked arithmetic helpers and stage charge wrapper from pinned Aeneas. Price refinement covers the Reconstruct tag."
+    },
+    {
+      "generated": "extraction/affine-quartic/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AffineQuarticGenerated.lean",
+      "sha256": "26d7e234816500442058fd371c6a068d1cbd053f3b762d5243d6808a16332b8e",
+      "raw_sha256": "bffad41121c95c48e6f86ddfc59d393184385be85b367757da7e9f973413a75e",
+      "checker": "extraction/affine-quartic/project.py",
+      "declaration_count": 3,
+      "scope": "Original affine quartic returns normally. Under exact GF64 callbacks, success is equivalent to the native certified kernel gate and existence of an affine root, and returns four distinct roots. The exact unsigned minimum and normalized quadratic selections are retained."
+    },
+    {
+      "generated": "extraction/quartic/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/QuarticGenerated.lean",
+      "sha256": "17fef74ec3aa05286e5b5d25b01eb01104233e5a85c752de42b3a1af1f308689",
+      "raw_sha256": "06faff2bfa131ad027aeaae819304d010a5ef034fe0303e0e52ebea79f236102",
+      "checker": "extraction/quartic/project.py",
+      "declaration_count": 6,
+      "scope": "Original general quartic normal return for factor length at least four. Under exact GF64 callbacks, success is equivalent to the native recovery gate and existence of a root, with four distinct roots from the original affine or reciprocal and batch-inversion path.",
+      "translator_variant": "checked-fixedpoint-scalar-array-loan-retry-v1"
     }
   ],
   "reviewed_translator_variants": [
@@ -1365,6 +1409,15 @@
       "receipt": "tooling/aeneas-ended-projector/receipt.json",
       "mandatory_checks": true,
       "scope": "In checked context matching, preserve identical unmarked ended projector leaves with equal types, no consumed or borrowed descendants and the same symbolic ID."
+    },
+    {
+      "id": "checked-fixedpoint-scalar-array-loan-retry-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/quartic/translator/checked-array-loan-retry.patch",
+      "patch_sha256": "43068339bcc31cdafb233423f36f5cee17578b427c501d0df5786666231f16de",
+      "receipt": "extraction/quartic/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Checked continuation-free loop fixed-point list join only. Mixed concrete shared/mutable scalar arrays with matching borrow-free shared payload cause a stock retry ending the shared loan only. Context matching, collapse, and synthesis joins keep old mode. The original checked path still synthesizes and validates both sides."
     }
   ],
   "diagnostic_generated_projections": [

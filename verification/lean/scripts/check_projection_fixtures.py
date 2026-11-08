@@ -196,6 +196,17 @@ PROJECTIONS = [
                   "bridge/Arithmetic/WorkScheduleGenerated.lean", "bridge/Workmeter/Types.lean",
                   "bridge/Workmeter/Funs.lean", "tooling/aeneas-ended-projector/receipt.json",
                   "tooling/aeneas-ended-projector/ended-projector-leaf.patch"]),
+    ("affine-quartic", "extraction/affine-quartic/project.py", "extraction/affine-quartic/receipt.json",
+     "extraction/affine-quartic/Arithmetic/Funs.lean", "bridge/Arithmetic/AffineQuarticGenerated.lean",
+     "if c = 0#u64", "if c = 1#u64", "compiled affine projection differs",
+     None, None, ["bridge/Arithmetic/CubicGenerated.lean", "bridge/Arithmetic/CertificateGenerated.lean",
+                  "bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/AffineQuarticRuntime.lean"]),
+    ("quartic", "extraction/quartic/project.py", "extraction/quartic/receipt.json",
+     "extraction/quartic/Arithmetic/Funs.lean", "bridge/Arithmetic/QuarticGenerated.lean",
+     "if denominator = 0#u64", "if denominator = 1#u64", "compiled quartic projection differs",
+     None, None, ["bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/AffineQuarticGenerated.lean",
+                  "bridge/Arithmetic/CubicGenerated.lean", "bridge/Arithmetic/CubeRootGenerated.lean",
+                  "bridge/Arithmetic/CertificateGenerated.lean"]),
 ]
 
 
@@ -210,7 +221,7 @@ def main():
         originals[label] = projector.check(**kwargs)["source_declarations_retained_verbatim"]
         receipt = json.loads((ROOT / receipt_path).read_text())
         files = [receipt_path, active_path, "bridge/Arithmetic/Types.lean", "bridge/Arithmetic/Funs.lean"]
-        artifact_key = "artifacts" if "artifacts" in receipt else "generated"
+        artifact_key = next(key for key in ("files_sha256", "artifacts", "generated") if key in receipt)
         artifacts = receipt[artifact_key]
         if isinstance(artifacts, dict):
             artifact_paths = [name if name.startswith("extraction/") else str(Path(receipt_path).parent / name)
@@ -319,7 +330,7 @@ def main():
             name = label + "/" + name
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:
                 shadow = Path(directory)
-                if label in {"degree-certificate", "reconstruction"}:
+                if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

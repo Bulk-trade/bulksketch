@@ -1,0 +1,39 @@
+{
+  "status": "pinned original affine projection and minimum support build and audit passed",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_item_id": "src/decode/deg34.rs:138:function:bulksketch::decode::deg34::affine_quartic",
+  "source_line_span_sha256": "6a854cbbd7098cf0850641e0dd1fe1b6b5b2a678b326f6a62cef02a59eb55fde",
+  "projected_declarations": 3,
+  "source_method": "bulksketch.decode.deg34.affine_quartic",
+  "generated_file": "bridge/Arithmetic/AffineQuarticGenerated.lean",
+  "minimum_theorems": [
+    "BulksketchBridge.AffineQuarticMin.kernel_minimum_refines",
+    "BulksketchBridge.AffineQuarticMin.kernelMinimum_mem",
+    "BulksketchBridge.AffineQuarticMin.kernelMinimum_le"
+  ],
+  "scope": "The minimum endpoint covers every fixed three-word kernel array and the actual shared order and iterator dictionaries. It supplies a library refinement for the separate native affine quartic wrapper proof.",
+  "new_source_refinement_count": 0,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "projection_controls": {
+    "modes": [
+      "ordinary",
+      "optimized"
+    ],
+    "valid_acceptances": 2,
+    "expected_rejections": 10,
+    "log": "/Users/junbug/bulk/bulksketch-proof-tools/affine-quartic-projection-controls.log"
+  },
+  "files_sha256": {
+    "bridge/Arithmetic/AffineQuarticGenerated.lean": "26d7e234816500442058fd371c6a068d1cbd053f3b762d5243d6808a16332b8e",
+    "bridge/Arithmetic/AffineQuarticRuntime.lean": "c9796f89c4d08496edd201250f5144604b52ec5c61cda695a98d8a6fcaf0ec2c",
+    "bridge/BulksketchBridge/AffineQuarticMin.lean": "fd5c987456393d908b860a0601a23773eeae1c26d839ac92950f8c53ac571077",
+    "extraction/affine-quartic/project.py": "60a41086e99750888325cfc79baf851aee880e9456a62f9c2399196a27d09705",
+    "extraction/affine-quartic/receipt.json": "5c70c3dccec353de070a85c8d1568f644cb124969c30c1ed9e0a1395b8ebf6b4",
+    "extraction/affine-quartic/axiom-audit.log": "66dbb304ecce40b443ad8f2eda0ecedb9122e11ec49378a461b73c030e6598d7",
+    "extraction/affine-quartic/README.md": "d850c012ad777769259c06081523c52c4c368d9a6a0271ff2aa8b9c1d9c57016"
+  }
+}
