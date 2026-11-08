@@ -137,6 +137,23 @@ PROJECTIONS = [
      "extraction/x86-lane-mask/Arithmetic/Funs.lean", "bridge/Arithmetic/X86LaneMaskGenerated.lean",
      "8#usize - len", "7#usize - len", "compiled x86 mask projection differs",
      None, None, []),
+    ("pclmul-register", "extraction/pclmul-register/project.py", "extraction/pclmul-register/receipt.json",
+     "extraction/pclmul-register/Arithmetic/Funs.lean", "bridge/Arithmetic/X86PclmulGenerated.lean",
+     "0#i32 mi mi1", "1#i32 mi mi1", "compiled scalar x86 projection differs",
+     None, None, ["bridge/Arithmetic/X86PclmulRuntime.lean"]),
+    ("avx512-register", "extraction/avx512-register/project.py", "extraction/avx512-register/receipt.json",
+     "extraction/avx512-register/Arithmetic/Funs.lean", "bridge/Arithmetic/Avx512RegisterGenerated.lean",
+     "17#i32 a b", "0#i32 a b", "compiled AVX-512 projection differs",
+     None, None, ["bridge/Arithmetic/Avx512RegisterRuntime.lean",
+                  "extraction/avx512-register/refinement-receipt.json"]),
+    ("cube-root", "extraction/cube-root/project.py", "extraction/cube-root/receipt.json",
+     "extraction/cube-root/Arithmetic/Funs.lean", "bridge/Arithmetic/CubeRootGenerated.lean",
+     "«end» := 10#i32", "«end» := 9#i32", "compiled cube root projection differs",
+     None, None, ["bridge/Arithmetic/CubeRootRuntime.lean", "bridge/Arithmetic/SliceKernelTypes.lean"]),
+    ("masked-memory-diagnostic", "extraction/masked-memory/project.py", "extraction/masked-memory/receipt.json",
+     "extraction/masked-memory/Arithmetic/Funs.lean", "bridge/Arithmetic/X86MaskedMemoryPureGenerated.lean",
+     "ok words1", "ok words", "compiled masked memory obstruction projection differs",
+     None, None, ["bridge/Arithmetic/X86LaneMaskGenerated.lean"]),
 ]
 
 
@@ -216,6 +233,19 @@ def main():
         if label == "portable-horner":
             cases.append(("reverse-fold-runtime-edit", "bridge/Arithmetic/PortableHornerRuntime.lean",
                           "reverseFold", "forwardFold", "scoped Portable Horner runtime mismatch"))
+        if label == "pclmul-register":
+            cases.append(("word-selector-edit", "bridge/Arithmetic/X86PclmulRuntime.lean",
+                          "getLsbD 4", "getLsbD 3", "scoped scalar x86 runtime mismatch"))
+        if label == "avx512-register":
+            cases.append(("carryless-runtime-edit", "bridge/Arithmetic/Avx512RegisterRuntime.lean",
+                          "clmul128", "clmulPrefix", "scoped AVX-512 runtime mismatch"))
+        if label == "cube-root":
+            cases.append(("then-some-runtime-edit", "bridge/Arithmetic/CubeRootRuntime.lean",
+                          "some", "none", "scoped cube root runtime mismatch"))
+        if label == "masked-memory-diagnostic":
+            cases.append(("false-native-credit", receipt_path,
+                          '"native_body_proof_credit": 0', '"native_body_proof_credit": 1',
+                          "masked memory diagnostic receipt changed"))
         for name, path, before, after, diagnostic in cases:
             name = label + "/" + name
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:

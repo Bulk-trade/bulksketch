@@ -43,3 +43,8 @@ import BulksketchBridge.DenseMulPolynomial
 import BulksketchBridge.DirectTwo
 import BulksketchBridge.HornerPolynomial
 import BulksketchBridge.X86LaneMask
+import BulksketchBridge.X86Pclmul
+import BulksketchBridge.Avx512Register
+import BulksketchBridge.CubeRoot
+import BulksketchBridge.X86MaskedMemoryObstruction
+import BulksketchBridge.X86MaskedMemoryRegister

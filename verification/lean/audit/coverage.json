@@ -1479,7 +1479,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86Pclmul.word_refines",
+        "scope": "Every U64 word moves into the low XMM word with zero upper word. The original U64 to bytes and I64 from bytes round trip preserves every bit.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:123:function:bulksketch::backend::x86_pclmul::low",
@@ -1497,7 +1504,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86Pclmul.low_refines",
+        "scope": "Every 128-bit register returns its exact low word. The original signed to native bytes and unsigned from bytes round trip preserves every bit.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:129:function:bulksketch::backend::x86_pclmul::words",
@@ -1515,7 +1529,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86Pclmul.words_refines",
+        "scope": "Every 128-bit register splits into exact low and high words through the original byte shift and both low reads.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:139:function:bulksketch::backend::x86_pclmul::raw_product",
@@ -1533,7 +1554,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86Pclmul.raw_product_refines",
+        "scope": "Exact complete 128-bit carryless product from the original low-lane selector, word moves and split.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:145:function:bulksketch::backend::x86_pclmul::reduced",
@@ -1551,7 +1579,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86Pclmul.reduced_refines",
+        "scope": "Every register reduces to the canonical GF64 low word in both original branches. The carryless branch retains the exact high XOR quotient word and the fallback zeroes the high word.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:158:function:bulksketch::backend::x86_pclmul::multiply",
@@ -1569,7 +1604,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86Pclmul.multiply_refines",
+        "scope": "The original scalar multiply returns the exact GF64 product for both constant reduction modes and all words.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:177:function:bulksketch::backend::x86_pclmul::scale_xor",
@@ -1731,7 +1773,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86Pclmul.mul_refines",
+        "scope": "The original x86 arithmetic entry method selects the carryless branch and returns the exact GF64 product.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:40:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::square",
@@ -1749,7 +1798,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86Pclmul.square_refines",
+        "scope": "The original x86 arithmetic entry method returns the exact canonical GF64 square for every word.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:45:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::frobenius",
@@ -1839,7 +1895,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86Pclmul.raw_mul_refines",
+        "scope": "The original x86 raw arithmetic entry method returns all 128 carryless product bits.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:73:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::reduce",
@@ -2134,7 +2197,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Avx512Register.raw_refines",
+        "scope": "All eight independent 64-by-64 products, with complete 128-bit output. Even and odd input lanes appear in separate 512-bit registers.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:217:function:bulksketch::backend::x86_vpclmul512::square_mod",
@@ -2206,7 +2276,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Avx512Register.reduce_shift_refines",
+        "scope": "Every low/high word pair for all eight lanes reduces to its canonical GF64 remainder.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:278:function:bulksketch::backend::x86_vpclmul512::reduce_cl",
@@ -2224,7 +2301,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Avx512Register.reduce_cl_refines",
+        "scope": "All four 128-bit lanes return both exact words. The low word is the canonical remainder and the high word is the polynomial division quotient.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:27:struct:bulksketch::backend::x86_vpclmul512::Vpclmul512",
@@ -2260,7 +2344,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Avx512Register.multiply_refines",
+        "scope": "Both original const-generic branches, all eight independent field products, all input register words.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:30:function:bulksketch::backend::x86_vpclmul512::available",
@@ -3415,7 +3506,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.CubeRoot.cube_root_refines",
+        "scope": "For exact GF64 multiply, square and Frobenius callbacks, the original chain returns None exactly when no nonzero cube root exists, otherwise its exact chain exponent and a nonzero cubing witness.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/deg34.rs:95:function:bulksketch::decode::deg34::cubic",
@@ -11379,8 +11477,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. The original Dense multiplication has exact frame and normalized polynomial-product refinements. Portable Horner has an exact frame and GF64 evaluation. Original direct two-root derivation has an exact result and S1/S3 soundness. The original x86 mask enables exactly the low admitted lanes. Compiler-expanded native contracts remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 50,
+    "note": "All 344 native executable declarations retained. Nine original scalar PCLMUL bodies, four original AVX-512 register bodies, and the native cube-root helper have exact refinements. Masked pointer load and store source behavior and compiler-expanded native contracts remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 64,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11399,7 +11497,8 @@
       "dense_square_polynomial": "The normalized output of the original Dense square represents the square of the ascending input polynomial over GF64.",
       "dense_mul_polynomial": "The normalized active output of the original Dense multiplication is the GF64 polynomial product. All three original loops and both scratch frames are linked.",
       "portable_horner": "Original Portable Horner evaluates the ascending GF64 polynomial at each input point.",
-      "x86_low_lane_mask": "Original x86 mask enables exactly lanes below an admitted length in 0..8. Physical memory and instruction semantics remain separate."
+      "x86_low_lane_mask": "Original x86 mask enables exactly lanes below an admitted length in 0..8. Physical memory and instruction semantics remain separate.",
+      "x86_register_kernels": "Original PCLMUL raw multiplication and reduced scalar entry methods, plus the original AVX-512 raw, two reduction and multiply bodies. Exact register values under scoped instruction and byte models."
     },
     "reconciliation_algebra_evidence": {
       "sparse_support_uniqueness": "BulksketchBridge.Reconciliation.gf64_sparse_support_unique",
@@ -11412,7 +11511,15 @@
       "rebuilt_locator_words": "BulksketchBridge.RebuiltLfsr.locator_words_product",
       "rebuilt_wrapper_to_full_comparison": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_iff_direct",
       "portable_seed_to_full_comparison": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_portable_seed_refines",
-      "direct_two_soundness": "BulksketchBridge.DirectTwo.direct_two_sound"
+      "direct_two_soundness": "BulksketchBridge.DirectTwo.direct_two_sound",
+      "native_cube_root": "BulksketchBridge.CubeRoot.cube_root_refines"
+    },
+    "masked_memory_evidence": {
+      "store_obstruction": "BulksketchBridge.X86MaskedMemory.PureExtraction.pure_store_cannot_writeback",
+      "load_obstruction": "BulksketchBridge.X86MaskedMemory.PureExtraction.pure_load_cannot_read_two_words",
+      "byte_addressed_register_payload": "BulksketchBridge.X86MaskedMemory.store_register_payload",
+      "native_body_proof_credit": 0,
+      "remaining": "Source lowering with heap effects or checked writeback, machine address and provenance conditions, and physical instruction semantics."
     }
   }
 }

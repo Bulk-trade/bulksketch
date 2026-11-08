@@ -452,6 +452,74 @@
     {
       "challenge": "BulksketchBridge.X86LaneMask.ActualMaskReturnsLowLanes",
       "theorem": "BulksketchBridge.X86LaneMask.mask_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86Pclmul.WordRefines",
+      "theorem": "BulksketchBridge.X86Pclmul.word_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86Pclmul.LowRefines",
+      "theorem": "BulksketchBridge.X86Pclmul.low_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86Pclmul.WordsRefines",
+      "theorem": "BulksketchBridge.X86Pclmul.words_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86Pclmul.RawProductRefines",
+      "theorem": "BulksketchBridge.X86Pclmul.raw_product_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86Pclmul.ReducedRefines",
+      "theorem": "BulksketchBridge.X86Pclmul.reduced_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86Pclmul.MultiplyRefines",
+      "theorem": "BulksketchBridge.X86Pclmul.multiply_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86Pclmul.MulRefines",
+      "theorem": "BulksketchBridge.X86Pclmul.mul_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86Pclmul.SquareRefines",
+      "theorem": "BulksketchBridge.X86Pclmul.square_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86Pclmul.RawMulRefines",
+      "theorem": "BulksketchBridge.X86Pclmul.raw_mul_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Avx512RegisterChallenges.rawRefines",
+      "theorem": "BulksketchBridge.Avx512Register.raw_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Avx512RegisterChallenges.reduceShiftRefines",
+      "theorem": "BulksketchBridge.Avx512Register.reduce_shift_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Avx512RegisterChallenges.reduceClRefines",
+      "theorem": "BulksketchBridge.Avx512Register.reduce_cl_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Avx512RegisterChallenges.multiplyRefines",
+      "theorem": "BulksketchBridge.Avx512Register.multiply_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.CubeRoot.ActualCubeRootComplete",
+      "theorem": "BulksketchBridge.CubeRoot.cube_root_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86MaskedMemory.PureExtraction.PureStoreWritebackImpossible",
+      "theorem": "BulksketchBridge.X86MaskedMemory.PureExtraction.pure_store_cannot_writeback"
+    },
+    {
+      "challenge": "BulksketchBridge.X86MaskedMemory.PureExtraction.PureLoadTwoWordsImpossible",
+      "theorem": "BulksketchBridge.X86MaskedMemory.PureExtraction.pure_load_cannot_read_two_words"
+    },
+    {
+      "challenge": "BulksketchBridge.X86MaskedMemory.StatefulRegisterPayload",
+      "theorem": "BulksketchBridge.X86MaskedMemory.store_register_payload"
     }
   ],
   "refinements": [
@@ -1304,6 +1372,223 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Every admitted length at most eight returns the exact low-lane byte and each bit is set exactly for a lane below the length. Includes zero and full masks and the checked shift bound. Value semantics only."
+    },
+    {
+      "label": "x86_pclmul::word [original x86 source]",
+      "native_item_id": "src/backend/x86_pclmul.rs:117:function:bulksketch::backend::x86_pclmul::word",
+      "source_line_span_sha256": "2c6e88473d6c560dda2ea688682706423a8e09cc91b615f0adee4c4a5de79f4e",
+      "theorem": "BulksketchBridge.X86Pclmul.word_refines",
+      "challenge": "BulksketchBridge.X86Pclmul.WordRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.word",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every U64 word moves into the low XMM word with zero upper word. The original U64 to bytes and I64 from bytes round trip preserves every bit."
+    },
+    {
+      "label": "x86_pclmul::low [original x86 source]",
+      "native_item_id": "src/backend/x86_pclmul.rs:123:function:bulksketch::backend::x86_pclmul::low",
+      "source_line_span_sha256": "82abb4ab9580ce6f834602123b10fe14847d8b30725dc22d089d4eb10204d4c0",
+      "theorem": "BulksketchBridge.X86Pclmul.low_refines",
+      "challenge": "BulksketchBridge.X86Pclmul.LowRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.low",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every 128-bit register returns its exact low word. The original signed to native bytes and unsigned from bytes round trip preserves every bit."
+    },
+    {
+      "label": "x86_pclmul::words [original x86 source]",
+      "native_item_id": "src/backend/x86_pclmul.rs:129:function:bulksketch::backend::x86_pclmul::words",
+      "source_line_span_sha256": "53cf563037494d0da3d42bbb38a3143f4a9fdc0e9a613dd61ed77e9e75d1f974",
+      "theorem": "BulksketchBridge.X86Pclmul.words_refines",
+      "challenge": "BulksketchBridge.X86Pclmul.WordsRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.words",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every 128-bit register splits into exact low and high words through the original byte shift and both low reads."
+    },
+    {
+      "label": "x86_pclmul::raw_product [original x86 source]",
+      "native_item_id": "src/backend/x86_pclmul.rs:139:function:bulksketch::backend::x86_pclmul::raw_product",
+      "source_line_span_sha256": "1e348ccdaf94b7227143c2a38f00a23d42f4134fb3628186195cce4be3fb04fd",
+      "theorem": "BulksketchBridge.X86Pclmul.raw_product_refines",
+      "challenge": "BulksketchBridge.X86Pclmul.RawProductRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.raw_product",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact complete 128-bit carryless product from the original low-lane selector, word moves and split."
+    },
+    {
+      "label": "x86_pclmul::reduced [original x86 source]",
+      "native_item_id": "src/backend/x86_pclmul.rs:145:function:bulksketch::backend::x86_pclmul::reduced",
+      "source_line_span_sha256": "3718b5d352b0f8d77e0fef9bdf194a2e4be3e8b24d9242ab76b43c5ee0636323",
+      "theorem": "BulksketchBridge.X86Pclmul.reduced_refines",
+      "challenge": "BulksketchBridge.X86Pclmul.ReducedRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.reduced",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every register reduces to the canonical GF64 low word in both original branches. The carryless branch retains the exact high XOR quotient word and the fallback zeroes the high word."
+    },
+    {
+      "label": "x86_pclmul::multiply [original x86 source]",
+      "native_item_id": "src/backend/x86_pclmul.rs:158:function:bulksketch::backend::x86_pclmul::multiply",
+      "source_line_span_sha256": "6eb7afe45120e53f7ebd39e6aaaf41d7217f66ed30e996172e68ad32e1cb5c79",
+      "theorem": "BulksketchBridge.X86Pclmul.multiply_refines",
+      "challenge": "BulksketchBridge.X86Pclmul.MultiplyRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.multiply",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "The original scalar multiply returns the exact GF64 product for both constant reduction modes and all words."
+    },
+    {
+      "label": "x86_pclmul::mul [original x86 source]",
+      "native_item_id": "src/backend/x86_pclmul.rs:35:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::mul",
+      "source_line_span_sha256": "a55be8fb55bc688f5dc5d5cbd46c2e41a584ef191665adf12aeaa098b6ce02ae",
+      "theorem": "BulksketchBridge.X86Pclmul.mul_refines",
+      "challenge": "BulksketchBridge.X86Pclmul.MulRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.mul",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "The original x86 arithmetic entry method selects the carryless branch and returns the exact GF64 product."
+    },
+    {
+      "label": "x86_pclmul::square [original x86 source]",
+      "native_item_id": "src/backend/x86_pclmul.rs:40:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::square",
+      "source_line_span_sha256": "ceddd6010224d8da75148495680ce565ad93504a7c1b5c85bf99e275f4d90b10",
+      "theorem": "BulksketchBridge.X86Pclmul.square_refines",
+      "challenge": "BulksketchBridge.X86Pclmul.SquareRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.square",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "The original x86 arithmetic entry method returns the exact canonical GF64 square for every word."
+    },
+    {
+      "label": "x86_pclmul::raw_mul [original x86 source]",
+      "native_item_id": "src/backend/x86_pclmul.rs:68:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::raw_mul",
+      "source_line_span_sha256": "c6276d51c8ce4cd0153c0caf3d3c79857a295ce82a8244953c268b58f13f4c3a",
+      "theorem": "BulksketchBridge.X86Pclmul.raw_mul_refines",
+      "challenge": "BulksketchBridge.X86Pclmul.RawMulRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.raw_mul",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "The original x86 raw arithmetic entry method returns all 128 carryless product bits."
+    },
+    {
+      "label": "x86_vpclmul512::raw [original x86 source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:208:function:bulksketch::backend::x86_vpclmul512::raw",
+      "source_line_span_sha256": "9d6501eaf99f8473420bcfc6e3c78cff53170c8cab90487bde823618536d3bc2",
+      "theorem": "BulksketchBridge.Avx512Register.raw_refines",
+      "challenge": "BulksketchBridge.Avx512RegisterChallenges.rawRefines",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.raw",
+      "generated_file": "bridge/Arithmetic/Avx512RegisterGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Avx512RegisterGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "All eight independent 64-by-64 products, with complete 128-bit output. Even and odd input lanes appear in separate 512-bit registers."
+    },
+    {
+      "label": "x86_vpclmul512::reduce_shift [original x86 source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:260:function:bulksketch::backend::x86_vpclmul512::reduce_shift",
+      "source_line_span_sha256": "47a2965d12a38ede03ed4baeeee8433e8414e580712f412a5d5f5cfd32714a4d",
+      "theorem": "BulksketchBridge.Avx512Register.reduce_shift_refines",
+      "challenge": "BulksketchBridge.Avx512RegisterChallenges.reduceShiftRefines",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.reduce_shift",
+      "generated_file": "bridge/Arithmetic/Avx512RegisterGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Avx512RegisterGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every low/high word pair for all eight lanes reduces to its canonical GF64 remainder."
+    },
+    {
+      "label": "x86_vpclmul512::reduce_cl [original x86 source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:278:function:bulksketch::backend::x86_vpclmul512::reduce_cl",
+      "source_line_span_sha256": "a217aea92d2c89da76392d155928810c791c94d805b12644d5faf47589385e82",
+      "theorem": "BulksketchBridge.Avx512Register.reduce_cl_refines",
+      "challenge": "BulksketchBridge.Avx512RegisterChallenges.reduceClRefines",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.reduce_cl",
+      "generated_file": "bridge/Arithmetic/Avx512RegisterGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Avx512RegisterGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "All four 128-bit lanes return both exact words. The low word is the canonical remainder and the high word is the polynomial division quotient."
+    },
+    {
+      "label": "x86_vpclmul512::multiply [original x86 source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:286:function:bulksketch::backend::x86_vpclmul512::multiply",
+      "source_line_span_sha256": "f04d2f535a9fd4b93963506f84001aeaaee7dd259ad52fdc4b1399aee2a8d5b8",
+      "theorem": "BulksketchBridge.Avx512Register.multiply_refines",
+      "challenge": "BulksketchBridge.Avx512RegisterChallenges.multiplyRefines",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.multiply",
+      "generated_file": "bridge/Arithmetic/Avx512RegisterGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Avx512RegisterGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Both original const-generic branches, all eight independent field products, all input register words."
+    },
+    {
+      "label": "decode::deg34::cube_root [original source]",
+      "native_item_id": "src/decode/deg34.rs:84:function:bulksketch::decode::deg34::cube_root",
+      "source_line_span_sha256": "249d7f8eb555b2220ee07141bbcc7e273a609f08dfa22616e21f99ae06525a8a",
+      "theorem": "BulksketchBridge.CubeRoot.cube_root_refines",
+      "challenge": "BulksketchBridge.CubeRoot.ActualCubeRootComplete",
+      "generated_declaration": "bulksketch.decode.deg34.cube_root",
+      "generated_file": "bridge/Arithmetic/CubeRootGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/SliceKernelTypes.lean",
+        "bridge/Arithmetic/CubeRootGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "For exact GF64 multiply, square and Frobenius callbacks, the original chain returns None exactly when no nonzero cube root exists, otherwise its exact chain exponent and a nonzero cubing witness."
     }
   ]
 }

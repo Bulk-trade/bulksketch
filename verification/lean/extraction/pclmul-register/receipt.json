@@ -1,0 +1,105 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "ccae3e801dd8aa1005f20a6990d3cef034e73479",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "llbc_has_errors": false,
+  "native_source_edited": false,
+  "runtime_sha256": "527522b826c35bd0bc841d4106bed3aed1e32cba17f48f08b75145c09713d808",
+  "commands": [
+    {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-isa/pclmul/arithmetic.llbc",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_pclmul::Pclmul}::raw_mul",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_pclmul::Pclmul}::mul",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_pclmul::Pclmul}::square",
+        "--",
+        "--manifest-path",
+        "/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-isa/pclmul/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-isa/pclmul/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "extraction/pclmul-register/arithmetic.llbc",
+      "sha256": "1e7ed4fd12a75c6d8cea780150bd3b8caebf10f45ad96e96811dff8d0b09d484"
+    },
+    {
+      "path": "extraction/pclmul-register/charon.log",
+      "sha256": "85ea220ce10bfd62f45c917fb6e85a0cfbda49ed30cb73b0220f35357ec0bbd1"
+    },
+    {
+      "path": "extraction/pclmul-register/aeneas.log",
+      "sha256": "c25c5e37ade783817a829fcf3ae4932fc1c664ada5155a222d6d7a622ee7146d"
+    },
+    {
+      "path": "extraction/pclmul-register/Arithmetic/Funs.lean",
+      "sha256": "db091247ce267c6af34684ee20dfb05250cdde6fdf87856bd0fcfe421aeba59a"
+    },
+    {
+      "path": "extraction/pclmul-register/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "3d714dc20e75bca58f22cdadad26ccf8b6a3d609adad808a1b2c2b19b428d510"
+    },
+    {
+      "path": "extraction/pclmul-register/Arithmetic/Types.lean",
+      "sha256": "d85fc6fef598ee48e95ca16c4955e9352bf9a9ce33b572b78f91d46f5b8db9f5"
+    },
+    {
+      "path": "extraction/pclmul-register/Arithmetic/TypesExternal_Template.lean",
+      "sha256": "a1e7a1d84b947daa18ecec5a47226ab87de975dc5e2a6ca2f99059d1e76d5d82"
+    }
+  ],
+  "rust_std_source_references": [
+    {
+      "path": "stdarch/crates/core_arch/src/x86/pclmulqdq.rs",
+      "sha256": "0adcefc80189d1148ce5a881666c8ac110cdacef9a257545bc729ba600db9d8e"
+    },
+    {
+      "path": "stdarch/crates/core_arch/src/x86/sse2.rs",
+      "sha256": "146cf1feebba09845c116ea3f9797686b303732f3afde70ba8b9ac7824d89e41"
+    },
+    {
+      "path": "stdarch/crates/core_arch/src/x86_64/sse2.rs",
+      "sha256": "05c76964cb8d233d9206ebc1760a666896c6c58f233f8f86d6008adb3e61e2e1"
+    },
+    {
+      "path": "core/src/num/int_macros.rs",
+      "sha256": "c6809ba25662238982cbd7572b43ac44d3137e106213bf1e2db7b1371ce53cb6"
+    },
+    {
+      "path": "core/src/num/uint_macros.rs",
+      "sha256": "b2a9c6a570a44e56955c60ca0c5007f7318e27286e53d3b9180bb34c8064e506"
+    }
+  ],
+  "instruction_reference": "https://cdrdv2-public.intel.com/782151/253667-sdm-vol-2b.pdf"
+}

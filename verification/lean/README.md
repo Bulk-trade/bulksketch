@@ -27,10 +27,11 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The bridge now has 50 distinct generated-body refinements under the recorded
-trust boundary. The latest checkpoint covers full original Dense multiplication,
-Portable Horner, direct two-root derivation, and the original x86 lane mask. Full native implementation
-contracts remain open.
+The bridge now has 64 distinct generated-body refinements under the recorded
+trust boundary. The latest checkpoint adds the scalar PCLMUL and AVX-512
+register kernels and native cube-root helper. Separate masked-memory proofs
+identify the pure extraction boundary and verify a byte-addressed model.
+Full native implementation contracts remain open.
 
 The [core proofs](BulksketchProofs.lean) and [generated-body bridge](bridge/README.md)
 use frozen proposition definitions, transitive axiom audits and exported-term
@@ -52,6 +53,7 @@ reviewed frontend variant and explains the Portable and const-square proofs.
 [RECONCILIATION.md](RECONCILIATION.md) records decoder dispatch, wire sizing and reconciliation.
 [NATIVE_VERIFIER.md](NATIVE_VERIFIER.md) records the rebuilt verifier and Dense multiplication extraction.
 [DENSE_PRODUCT.md](DENSE_PRODUCT.md) records the full Dense product, Portable Horner and direct two-root checkpoint.
+[X86_REGISTER_MEMORY.md](X86_REGISTER_MEMORY.md) records the native x86 register kernels and masked-memory boundary.
 
 The [coverage ledger](audit/coverage.json) keeps every native item in scope,
 including unsupported and unproved items. Related mathematical model evidence

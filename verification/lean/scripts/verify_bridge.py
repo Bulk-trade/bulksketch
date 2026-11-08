@@ -329,6 +329,18 @@ def main():
                 receipt["shared_types_and_function_dictionary_declarations_checked"] is not True:
             raise RuntimeError("declaration projection lost exact source provenance")
         records.append(result)
+    for diagnostic in linkage.get("diagnostic_generated_projections", []):
+        result, output = run("check-diagnostic-" + Path(diagnostic["bridge_copy"]).stem,
+            ["python3", str(ROOT / diagnostic["checker"])], timeout=30, cwd=ROOT)
+        receipt = json.loads(output)
+        if (receipt["compiled_projection"] != diagnostic["bridge_copy"] or
+                receipt["projection_file_sha256"] != diagnostic["sha256"] or
+                receipt["source_declarations_retained_verbatim"] != diagnostic["declaration_count"] or
+                receipt["native_body_proof_credit"] != 0 or diagnostic["native_body_proof_credit"] != 0 or
+                any(item["bridge_copy"] == diagnostic["bridge_copy"]
+                    for item in [*linkage["native_generated_copies"], *projections])):
+            raise RuntimeError("diagnostic projection lost its provenance or entered native coverage")
+        records.append(result)
     result, _ = run("build-replay-loader", ["elan", "run", CHAIN, "lake", "build", "replay_export"],
                     timeout=120, cwd=ROOT)
     records.append(result)

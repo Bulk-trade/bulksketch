@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "c21047d034caebc1b667a4da39735bb4bc30382bb3bdd7c4c50b627094aa6fc7",
+    "bridge/BulksketchBridge/Audit.lean": "be4a9313d9b5aa8047446b772c8f67b5cd3b83c898a00661bf6a634dd7494445",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,9 +13,9 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "8534bfb737f4021a475d0febe93229f8d629c6ff75de37455cf328c3eea1f520",
-    "audit/frozen-inputs.json": "c57e2de190694d11009f880cb7760e5eee06d4f3ab6d1c6aa4b5ec437c731bf8",
-    "bridge/BulksketchBridge.lean": "e81d85bd8fb119557ca31c8d6d137777203efd5b4ee51673aa88991cef1cf53f",
+    "scripts/verify_bridge.py": "f456bfce6962c8f28c2de207bba7106ae4fa2ef1ecaf8258f74281ebf58bcf69",
+    "audit/frozen-inputs.json": "01d72d3c4a50eb9ef6c12fcf71df4f3e54ddbb404c45536f89b9371adf179df1",
+    "bridge/BulksketchBridge.lean": "fa9f7cd1c52841956c4fee1db3fd6842259db2dcadd41c4e5c8b1cf19eeeb646",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "0cfbbe07273121e3bfb0be43e42cd6fef9bf7fbf61faf6130ebb9f09330ffc12",
-    "bridge/obligations.json": "73343d3d72e2e7b88d5f7f00875b73576451838c0f7335cfbef2c17fdcaf210b",
+    "bridge/source-linkage.json": "a1b1815fe6c1250b7ad15eab410ef27087819e3279f645c429926fcc7a808fa0",
+    "bridge/obligations.json": "d5006e7d2f0c31d5b5aae4266ecc5f9b62b3345fe30f43a0129b646ede271cef",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "1e2ebb7ee1b29ad23e159523323a00c7b7188423ad946cffb19bb78d01890e22",
+    "scripts/check_projection_fixtures.py": "e896833f87f6054e5c7618352ef02c836cecd3952afeb725baf927b8c753f906",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "77fcb802ec343a3d8207f682c700fb7abb4bf846b67fd2049ad3456f03da690c",
+    "README.md": "4e966cf55ce50759ecc02b8722d8a05b0d5912e2973cc44bf4854d73cee0adf5",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "b5272dbffe47361792ba14a9a8e435e242f571d56a8908aff1a760b5a3580693",
+    "audit/coverage.json": "b195b8b8fb1280b09847212075f6a43a3b0164d2d6e2a15d23b18d9d96152e1c",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -319,7 +319,7 @@
     "bridge/BulksketchBridge/SyndromeUniquenessSpec.lean": "0fb7dd6f308fa79337dce13cbd73c522f78c75024d86e05b7c5fd7d2d0ceff3c",
     "bridge/BulksketchBridge/VerifyDispatch.lean": "38d817777987c9d3e97ee3155717d243b545f42e976afa8fbcdb9b9c8e7b917c",
     "bridge/BulksketchBridge/VerifyDispatchSpec.lean": "d609a22b3daf8816de9afdc60f1e293bf4efdf6ed37d19efafd190b70217fb06",
-    "bridge/README.md": "aa620c49e9f608cdea7bb9b6f871d616da2616aa36441333224f62cac3bfb6cf",
+    "bridge/README.md": "382e7b74478c74678f1b7cb7e607dd65f99e8b87f8c83db9ae1e82085dcce568",
     "extraction/dense-square/Arithmetic/Funs.lean": "7ff7bf02a64fb62cb3d28154514ad7b426018c4380dc56b4d101dee3d73bd505",
     "extraction/dense-square/Arithmetic/FunsExternal_Template.lean": "9d47cb5223b7a3a784065947ca87ceea2b65fb72423eb973c18862af9f72a5c8",
     "extraction/dense-square/Arithmetic/Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
@@ -499,7 +499,67 @@
     "tooling/aeneas-horner-match/run.py": "8f6560bfcd2c101c0d250c743e6f462532bc999ef13c0d9c3f64f6dc23afc750",
     "tooling/aeneas-horner-match/tests/Cargo.lock": "373d27af87c071b00c07a78a04d086a1ecdcc4573753e020e2453a177c49fc80",
     "tooling/aeneas-horner-match/tests/Cargo.toml": "57c2e7cfdd06bc6ae7cfc07ea4b6c45069b8eb0d07b5f7cbb4cdcefc84e86d93",
-    "tooling/aeneas-horner-match/tests/src/lib.rs": "7ece47c0d239ab96aebbf5a226f87f6b317afb10cd1a7e7e298f7d1e0186fb9f"
+    "tooling/aeneas-horner-match/tests/src/lib.rs": "7ece47c0d239ab96aebbf5a226f87f6b317afb10cd1a7e7e298f7d1e0186fb9f",
+    "X86_REGISTER_MEMORY.md": "9edd4cc172bb56ca7ec13c77152a71e19fe7f6551a6fe299a4cce9abebc41c01",
+    "audit/x86-register-checkpoint.json": "ef525dc9780d883dca83d20dde6e0c64077aa502b1208f583fd326a506f4bc10",
+    "bridge/Arithmetic/Avx512RegisterGenerated.lean": "671fe8eb15890499b45174fa832221a7e32b1c1db19eef8112bc5e476ad2c14f",
+    "bridge/Arithmetic/Avx512RegisterRuntime.lean": "3615bb72464790c8193f7b88e054fff142377dcc86b7fa3ad49f359173d8f99f",
+    "bridge/Arithmetic/CubeRootGenerated.lean": "1966ff7f1b81211f9f2ab91b4520c85a1fcd6c6279db89ecb0d3d5398971563d",
+    "bridge/Arithmetic/CubeRootRuntime.lean": "abafb35660103af3d0ce1772e0e0a075b5d41efd4bb4f0b9fc1805adae682aa7",
+    "bridge/Arithmetic/X86MaskedMemoryPureGenerated.lean": "bee4d3302449bf187171b770c7b8e4ae4da9587fe50c7fec1ae9a3a4cf07d365",
+    "bridge/Arithmetic/X86PclmulGenerated.lean": "dc418d8fb3549ba684ddfe5cc26712890d43c6f9c801975048826fedd1e55963",
+    "bridge/Arithmetic/X86PclmulRuntime.lean": "527522b826c35bd0bc841d4106bed3aed1e32cba17f48f08b75145c09713d808",
+    "bridge/BulksketchBridge/Avx512Register.lean": "9480405acabc6140a25f9993950a6d2a466541cb5c23553e0b913b2ad26f2643",
+    "bridge/BulksketchBridge/Avx512RegisterChallenges.lean": "a7c37f3aa90a68a4b65a94c684144fe38f806d32655b63e3590ddfeb2a8bb1fd",
+    "bridge/BulksketchBridge/ClmulModulus.lean": "f60e12c47172f05bfc2d7e97ddd647f40a49b4356baba74e17f458b075192ecb",
+    "bridge/BulksketchBridge/CubeRoot.lean": "4c37cbdf351841ba1c61878d372b32b1cf269dcb1d49bdfd4061237291555c15",
+    "bridge/BulksketchBridge/CubeRootSpec.lean": "e3ac427aa5dadfa98a61ee17764563f1109411146b3ae0895ea6ed7a33ff5114",
+    "bridge/BulksketchBridge/X86MaskedMemory.lean": "767c1f439bf9162dd73f36c2724ea9f9272cc4db62b7cb80b2096eb3d7649569",
+    "bridge/BulksketchBridge/X86MaskedMemoryObstruction.lean": "09ea74fce5383a74d99d6d5377fda53cc8dba236c6f54242a6b5c7e356b7a4f0",
+    "bridge/BulksketchBridge/X86MaskedMemoryRegister.lean": "5cfdf52e64f70855a4c94e3893ab7f3a5f6bcff6232c928e47fd726b2a3cbc7d",
+    "bridge/BulksketchBridge/X86MaskedMemorySpec.lean": "acc281e4d7384a17f344d87fad759f0b0a3672b73090f2bd59a12062b8dc7d43",
+    "bridge/BulksketchBridge/X86Pclmul.lean": "7e41974f03838992a71d4e2a5ca68f4142d9d7e27a9e32923b53319e34d0284b",
+    "bridge/BulksketchBridge/X86PclmulSpec.lean": "26644b07d9e34be40d1a08a366df138a47011b04d3bf26e7cf752509548d59c1",
+    "bridge/BulksketchBridge/X86PclmulWords.lean": "a74918cd4d1e60e21f3844fccaee520d31e36e2a5fccc2b43cd910f69db070b0",
+    "extraction/avx512-register/Arithmetic/Funs.lean": "54af9cc961dad9ebcc81f3d4668563f751eaf34d0d1689f0d020b0e17f222b59",
+    "extraction/avx512-register/Arithmetic/FunsExternal_Template.lean": "d018ab2041c38a1ff77ad3b4c16b0470f43e49e4fdbd2c0e382248809887219d",
+    "extraction/avx512-register/Arithmetic/Types.lean": "667b39487bf75f7bb3b56b52025276e311073fbd1f5652b6322bf39768e70f15",
+    "extraction/avx512-register/Arithmetic/TypesExternal_Template.lean": "03741536dc80eed14803efe4fd7a041e11748aea6728adcbefb2155abfd99bc5",
+    "extraction/avx512-register/README.md": "d5f36266af4544cc62703ddf5eda7e95807a60f07865097b51aab6d6a1b7c082",
+    "extraction/avx512-register/aeneas.log": "90a15b37dc1a3ecfe1bcb05bd5867b5f62e731ea8c0d100d9ec5657c1e2b0c30",
+    "extraction/avx512-register/arithmetic.llbc": "1e25c60e3db8f81621d4f13548fb6faf5c7ab779f233d6f15b64a2e72ac3c8de",
+    "extraction/avx512-register/charon.log": "c1835177088822e4bd84ec025f1f1d8f3838a16a0d6e637397d19973288c8728",
+    "extraction/avx512-register/project.py": "f8745e719177b27cdf08e888e693d2b3fdece664e6993ff6ae9dc5da014a2ec7",
+    "extraction/avx512-register/receipt.json": "b7e72447d333b1c9f2e3d5e581c9e743235dfe08dbe3107783c9ed22a4c35f16",
+    "extraction/avx512-register/refinement-receipt.json": "21ac4461688f18665c08f648303fad3224345afde311d8214b0e3023f2cc3b01",
+    "extraction/cube-root/Arithmetic/Funs.lean": "62b2805334b6ef3a9ade0b9ef21de36938f09f307eb82089f12f728f8b9e1c68",
+    "extraction/cube-root/Arithmetic/FunsExternal_Template.lean": "fb813b5507f2bd6ba5472072200344f4b113fc1d1b64233ae9164b0193bf03f4",
+    "extraction/cube-root/Arithmetic/Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+    "extraction/cube-root/aeneas.log": "1ae54112b36b9711c5329be8ab143dbd1fb16a2f15891f10c4ef8a16599409fd",
+    "extraction/cube-root/arithmetic.llbc": "d0b9f1d8aa94630086c72b833d04593982b3db4cb972e9b05b19c8cf0d7dc846",
+    "extraction/cube-root/charon.log": "49bc3c8d873bf3a3aac6adcf0f4b5f9ac8adef90b517ae7abb69f90582a12469",
+    "extraction/cube-root/project.py": "9a92e61ef7273750665f593471775667a327a634123b0495aa084efbd56389e0",
+    "extraction/cube-root/receipt.json": "05b573eb3e037ff89eedf34397fb7223f9fd4072ab792baa8d20bbe0f5a20fc0",
+    "extraction/masked-memory/Arithmetic/Funs.lean": "fd6580176007c59804664065d916ee7f92930ce1db455b043a93f81b16aba065",
+    "extraction/masked-memory/Arithmetic/FunsExternal_Template.lean": "8ebf3210795ec3e6c8c15cc15b206119e9e3d5177aa3f3f66488129ceac8d556",
+    "extraction/masked-memory/Arithmetic/Types.lean": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+    "extraction/masked-memory/Arithmetic/TypesExternal_Template.lean": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e",
+    "extraction/masked-memory/README.md": "4119b8cc25453fd3da0412d8cbc36ddf78ee207388f5f95ecc170960d35ce8a4",
+    "extraction/masked-memory/aeneas.log": "afa28c08a12a810adfefb5b6f452a4189bf842f47b69b4118aa1a66b674f97ea",
+    "extraction/masked-memory/arithmetic.llbc": "986307e55be3936bb3d50bee8227e663f12a91abb7897e424fb37844697f6275",
+    "extraction/masked-memory/axiom-audit.log": "8d7282ebdf08a615b65b51068ca32da2e275a66852a7f82ff8b92bee7bdd830b",
+    "extraction/masked-memory/charon.log": "a7f9b45f472d0643c14566e033d50f744e4c860fe2fb4bfa40d02e0005175e85",
+    "extraction/masked-memory/project.py": "788600e740aa22c00888e2f453e44e173b1e82f18d13ee3edd70727a7b87f5bf",
+    "extraction/masked-memory/receipt.json": "f406150b3f8b9afc873e63a0ff34171d13d0a3ee00c51ced5713778ef522a7d0",
+    "extraction/pclmul-register/Arithmetic/Funs.lean": "db091247ce267c6af34684ee20dfb05250cdde6fdf87856bd0fcfe421aeba59a",
+    "extraction/pclmul-register/Arithmetic/FunsExternal_Template.lean": "3d714dc20e75bca58f22cdadad26ccf8b6a3d609adad808a1b2c2b19b428d510",
+    "extraction/pclmul-register/Arithmetic/Types.lean": "d85fc6fef598ee48e95ca16c4955e9352bf9a9ce33b572b78f91d46f5b8db9f5",
+    "extraction/pclmul-register/Arithmetic/TypesExternal_Template.lean": "a1e7a1d84b947daa18ecec5a47226ab87de975dc5e2a6ca2f99059d1e76d5d82",
+    "extraction/pclmul-register/aeneas.log": "c25c5e37ade783817a829fcf3ae4932fc1c664ada5155a222d6d7a622ee7146d",
+    "extraction/pclmul-register/arithmetic.llbc": "1e7ed4fd12a75c6d8cea780150bd3b8caebf10f45ad96e96811dff8d0b09d484",
+    "extraction/pclmul-register/charon.log": "85ea220ce10bfd62f45c917fb6e85a0cfbda49ed30cb73b0220f35357ec0bbd1",
+    "extraction/pclmul-register/project.py": "10ee4753421949a4680e9ce12f0b0f7f56b839132b3d2130ce715686a8485788",
+    "extraction/pclmul-register/receipt.json": "11aa3f69b5fb6bac8f0408fb3406e5e1aa28885eb07595484841a977182696cb"
   },
   "reviewed_policy_revisions": [
     {
@@ -3087,7 +3147,367 @@
       "path": "tooling/aeneas-horner-match/tests/src/lib.rs",
       "new_sha256": "7ece47c0d239ab96aebbf5a226f87f6b317afb10cd1a7e7e298f7d1e0186fb9f",
       "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "4e966cf55ce50759ecc02b8722d8a05b0d5912e2973cc44bf4854d73cee0adf5",
+      "old_sha256": "77fcb802ec343a3d8207f682c700fb7abb4bf846b67fd2049ad3456f03da690c",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "X86_REGISTER_MEMORY.md",
+      "new_sha256": "9edd4cc172bb56ca7ec13c77152a71e19fe7f6551a6fe299a4cce9abebc41c01",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "b195b8b8fb1280b09847212075f6a43a3b0164d2d6e2a15d23b18d9d96152e1c",
+      "old_sha256": "b5272dbffe47361792ba14a9a8e435e242f571d56a8908aff1a760b5a3580693",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "01d72d3c4a50eb9ef6c12fcf71df4f3e54ddbb404c45536f89b9371adf179df1",
+      "old_sha256": "c57e2de190694d11009f880cb7760e5eee06d4f3ab6d1c6aa4b5ec437c731bf8",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "audit/x86-register-checkpoint.json",
+      "new_sha256": "ef525dc9780d883dca83d20dde6e0c64077aa502b1208f583fd326a506f4bc10",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/Arithmetic/Avx512RegisterGenerated.lean",
+      "new_sha256": "671fe8eb15890499b45174fa832221a7e32b1c1db19eef8112bc5e476ad2c14f",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/Arithmetic/Avx512RegisterRuntime.lean",
+      "new_sha256": "3615bb72464790c8193f7b88e054fff142377dcc86b7fa3ad49f359173d8f99f",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/Arithmetic/CubeRootGenerated.lean",
+      "new_sha256": "1966ff7f1b81211f9f2ab91b4520c85a1fcd6c6279db89ecb0d3d5398971563d",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/Arithmetic/CubeRootRuntime.lean",
+      "new_sha256": "abafb35660103af3d0ce1772e0e0a075b5d41efd4bb4f0b9fc1805adae682aa7",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/Arithmetic/X86MaskedMemoryPureGenerated.lean",
+      "new_sha256": "bee4d3302449bf187171b770c7b8e4ae4da9587fe50c7fec1ae9a3a4cf07d365",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/Arithmetic/X86PclmulGenerated.lean",
+      "new_sha256": "dc418d8fb3549ba684ddfe5cc26712890d43c6f9c801975048826fedd1e55963",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/Arithmetic/X86PclmulRuntime.lean",
+      "new_sha256": "527522b826c35bd0bc841d4106bed3aed1e32cba17f48f08b75145c09713d808",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "fa9f7cd1c52841956c4fee1db3fd6842259db2dcadd41c4e5c8b1cf19eeeb646",
+      "old_sha256": "e81d85bd8fb119557ca31c8d6d137777203efd5b4ee51673aa88991cef1cf53f",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "be4a9313d9b5aa8047446b772c8f67b5cd3b83c898a00661bf6a634dd7494445",
+      "old_sha256": "c21047d034caebc1b667a4da39735bb4bc30382bb3bdd7c4c50b627094aa6fc7",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Avx512Register.lean",
+      "new_sha256": "9480405acabc6140a25f9993950a6d2a466541cb5c23553e0b913b2ad26f2643",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Avx512RegisterChallenges.lean",
+      "new_sha256": "a7c37f3aa90a68a4b65a94c684144fe38f806d32655b63e3590ddfeb2a8bb1fd",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ClmulModulus.lean",
+      "new_sha256": "f60e12c47172f05bfc2d7e97ddd647f40a49b4356baba74e17f458b075192ecb",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CubeRoot.lean",
+      "new_sha256": "4c37cbdf351841ba1c61878d372b32b1cf269dcb1d49bdfd4061237291555c15",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CubeRootSpec.lean",
+      "new_sha256": "e3ac427aa5dadfa98a61ee17764563f1109411146b3ae0895ea6ed7a33ff5114",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86MaskedMemory.lean",
+      "new_sha256": "767c1f439bf9162dd73f36c2724ea9f9272cc4db62b7cb80b2096eb3d7649569",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86MaskedMemoryObstruction.lean",
+      "new_sha256": "09ea74fce5383a74d99d6d5377fda53cc8dba236c6f54242a6b5c7e356b7a4f0",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86MaskedMemoryRegister.lean",
+      "new_sha256": "5cfdf52e64f70855a4c94e3893ab7f3a5f6bcff6232c928e47fd726b2a3cbc7d",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86MaskedMemorySpec.lean",
+      "new_sha256": "acc281e4d7384a17f344d87fad759f0b0a3672b73090f2bd59a12062b8dc7d43",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86Pclmul.lean",
+      "new_sha256": "7e41974f03838992a71d4e2a5ca68f4142d9d7e27a9e32923b53319e34d0284b",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86PclmulSpec.lean",
+      "new_sha256": "26644b07d9e34be40d1a08a366df138a47011b04d3bf26e7cf752509548d59c1",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86PclmulWords.lean",
+      "new_sha256": "a74918cd4d1e60e21f3844fccaee520d31e36e2a5fccc2b43cd910f69db070b0",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/README.md",
+      "new_sha256": "382e7b74478c74678f1b7cb7e607dd65f99e8b87f8c83db9ae1e82085dcce568",
+      "old_sha256": "aa620c49e9f608cdea7bb9b6f871d616da2616aa36441333224f62cac3bfb6cf",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "d5006e7d2f0c31d5b5aae4266ecc5f9b62b3345fe30f43a0129b646ede271cef",
+      "old_sha256": "73343d3d72e2e7b88d5f7f00875b73576451838c0f7335cfbef2c17fdcaf210b",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "a1b1815fe6c1250b7ad15eab410ef27087819e3279f645c429926fcc7a808fa0",
+      "old_sha256": "0cfbbe07273121e3bfb0be43e42cd6fef9bf7fbf61faf6130ebb9f09330ffc12",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/avx512-register/Arithmetic/Funs.lean",
+      "new_sha256": "54af9cc961dad9ebcc81f3d4668563f751eaf34d0d1689f0d020b0e17f222b59",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/avx512-register/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "d018ab2041c38a1ff77ad3b4c16b0470f43e49e4fdbd2c0e382248809887219d",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/avx512-register/Arithmetic/Types.lean",
+      "new_sha256": "667b39487bf75f7bb3b56b52025276e311073fbd1f5652b6322bf39768e70f15",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/avx512-register/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "03741536dc80eed14803efe4fd7a041e11748aea6728adcbefb2155abfd99bc5",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/avx512-register/README.md",
+      "new_sha256": "d5f36266af4544cc62703ddf5eda7e95807a60f07865097b51aab6d6a1b7c082",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/avx512-register/aeneas.log",
+      "new_sha256": "90a15b37dc1a3ecfe1bcb05bd5867b5f62e731ea8c0d100d9ec5657c1e2b0c30",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/avx512-register/arithmetic.llbc",
+      "new_sha256": "1e25c60e3db8f81621d4f13548fb6faf5c7ab779f233d6f15b64a2e72ac3c8de",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/avx512-register/charon.log",
+      "new_sha256": "c1835177088822e4bd84ec025f1f1d8f3838a16a0d6e637397d19973288c8728",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/avx512-register/project.py",
+      "new_sha256": "f8745e719177b27cdf08e888e693d2b3fdece664e6993ff6ae9dc5da014a2ec7",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/avx512-register/receipt.json",
+      "new_sha256": "b7e72447d333b1c9f2e3d5e581c9e743235dfe08dbe3107783c9ed22a4c35f16",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/avx512-register/refinement-receipt.json",
+      "new_sha256": "21ac4461688f18665c08f648303fad3224345afde311d8214b0e3023f2cc3b01",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/cube-root/Arithmetic/Funs.lean",
+      "new_sha256": "62b2805334b6ef3a9ade0b9ef21de36938f09f307eb82089f12f728f8b9e1c68",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/cube-root/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "fb813b5507f2bd6ba5472072200344f4b113fc1d1b64233ae9164b0193bf03f4",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/cube-root/Arithmetic/Types.lean",
+      "new_sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/cube-root/aeneas.log",
+      "new_sha256": "1ae54112b36b9711c5329be8ab143dbd1fb16a2f15891f10c4ef8a16599409fd",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/cube-root/arithmetic.llbc",
+      "new_sha256": "d0b9f1d8aa94630086c72b833d04593982b3db4cb972e9b05b19c8cf0d7dc846",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/cube-root/charon.log",
+      "new_sha256": "49bc3c8d873bf3a3aac6adcf0f4b5f9ac8adef90b517ae7abb69f90582a12469",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/cube-root/project.py",
+      "new_sha256": "9a92e61ef7273750665f593471775667a327a634123b0495aa084efbd56389e0",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/cube-root/receipt.json",
+      "new_sha256": "05b573eb3e037ff89eedf34397fb7223f9fd4072ab792baa8d20bbe0f5a20fc0",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/masked-memory/Arithmetic/Funs.lean",
+      "new_sha256": "fd6580176007c59804664065d916ee7f92930ce1db455b043a93f81b16aba065",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/masked-memory/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "8ebf3210795ec3e6c8c15cc15b206119e9e3d5177aa3f3f66488129ceac8d556",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/masked-memory/Arithmetic/Types.lean",
+      "new_sha256": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/masked-memory/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/masked-memory/README.md",
+      "new_sha256": "4119b8cc25453fd3da0412d8cbc36ddf78ee207388f5f95ecc170960d35ce8a4",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/masked-memory/aeneas.log",
+      "new_sha256": "afa28c08a12a810adfefb5b6f452a4189bf842f47b69b4118aa1a66b674f97ea",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/masked-memory/arithmetic.llbc",
+      "new_sha256": "986307e55be3936bb3d50bee8227e663f12a91abb7897e424fb37844697f6275",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/masked-memory/axiom-audit.log",
+      "new_sha256": "8d7282ebdf08a615b65b51068ca32da2e275a66852a7f82ff8b92bee7bdd830b",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/masked-memory/charon.log",
+      "new_sha256": "a7f9b45f472d0643c14566e033d50f744e4c860fe2fb4bfa40d02e0005175e85",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/masked-memory/project.py",
+      "new_sha256": "788600e740aa22c00888e2f453e44e173b1e82f18d13ee3edd70727a7b87f5bf",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/masked-memory/receipt.json",
+      "new_sha256": "f406150b3f8b9afc873e63a0ff34171d13d0a3ee00c51ced5713778ef522a7d0",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/pclmul-register/Arithmetic/Funs.lean",
+      "new_sha256": "db091247ce267c6af34684ee20dfb05250cdde6fdf87856bd0fcfe421aeba59a",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/pclmul-register/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "3d714dc20e75bca58f22cdadad26ccf8b6a3d609adad808a1b2c2b19b428d510",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/pclmul-register/Arithmetic/Types.lean",
+      "new_sha256": "d85fc6fef598ee48e95ca16c4955e9352bf9a9ce33b572b78f91d46f5b8db9f5",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/pclmul-register/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "a1e7a1d84b947daa18ecec5a47226ab87de975dc5e2a6ca2f99059d1e76d5d82",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/pclmul-register/aeneas.log",
+      "new_sha256": "c25c5e37ade783817a829fcf3ae4932fc1c664ada5155a222d6d7a622ee7146d",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/pclmul-register/arithmetic.llbc",
+      "new_sha256": "1e7ed4fd12a75c6d8cea780150bd3b8caebf10f45ad96e96811dff8d0b09d484",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/pclmul-register/charon.log",
+      "new_sha256": "85ea220ce10bfd62f45c917fb6e85a0cfbda49ed30cb73b0220f35357ec0bbd1",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/pclmul-register/project.py",
+      "new_sha256": "10ee4753421949a4680e9ce12f0b0f7f56b839132b3d2130ce715686a8485788",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "extraction/pclmul-register/receipt.json",
+      "new_sha256": "11aa3f69b5fb6bac8f0408fb3406e5e1aa28885eb07595484841a977182696cb",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "e896833f87f6054e5c7618352ef02c836cecd3952afeb725baf927b8c753f906",
+      "old_sha256": "1e2ebb7ee1b29ad23e159523323a00c7b7188423ad946cffb19bb78d01890e22",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "f456bfce6962c8f28c2de207bba7106ae4fa2ef1ecaf8258f74281ebf58bcf69",
+      "old_sha256": "8534bfb737f4021a475d0febe93229f8d629c6ff75de37455cf328c3eea1f520",
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
     }
   ],
-  "challenge_count": 113
+  "challenge_count": 130
 }

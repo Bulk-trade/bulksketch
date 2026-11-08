@@ -62,7 +62,10 @@ The [native verifier checkpoint](../NATIVE_VERIFIER.md) adds the rebuilt
 verifier and its Portable seed composition, Portable insertion, default
 encoding and affine linear evaluation. The [Dense product checkpoint](../DENSE_PRODUCT.md)
 adds full Dense multiplication, Portable Horner, direct two-root derivation, and the x86 lane-mask helper.
-The coverage ledger retains all 344 executable source obligations.
+The [x86 register checkpoint](../X86_REGISTER_MEMORY.md) adds the original
+PCLMUL and AVX-512 register kernels and cube-root helper, plus diagnostic
+proofs for the masked-memory lowering. The coverage ledger retains all
+344 executable source obligations.
 
 From the parent Lean directory:
 

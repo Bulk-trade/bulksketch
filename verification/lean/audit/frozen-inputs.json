@@ -36,7 +36,7 @@
     "audit/core-maps-proof-independent-review.md": "aed4509f239a8e3db59c7a9f0d95ca20286d8a6df50372e3f59c172572101124",
     "audit/field-algebra-accounting-review.md": "55d3cd81a3f03185992e3272994c04b13b5e7ea34ff85e5d8e2cfced90f240be",
     "audit/field-algebra-checkpoint.json": "e93b65ffd57dcdb5c4c987c76f96d48b8917e82f52969853dbb979c049a4220e",
-    "scripts/check_projection_fixtures.py": "1e2ebb7ee1b29ad23e159523323a00c7b7188423ad946cffb19bb78d01890e22",
+    "scripts/check_projection_fixtures.py": "e896833f87f6054e5c7618352ef02c836cecd3952afeb725baf927b8c753f906",
     "audit/quotient-field-checkpoint.json": "c14a8dd2f0d747079f64b40c3dc9e52db3373ddfc1414b62667727444a82825e",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
     "audit/word-quotient-independent-review.md": "311018cf261231ef631f59867defc66cf7a13e5eba60d414f88b9d4e922dc823",
@@ -50,7 +50,8 @@
     "audit/slice-normalization-checkpoint.json": "3d8280c2357808e64972e3fb1b05b32081393dce12797abe61e25c6a08e5967a",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "audit/native-verifier-checkpoint.json": "9f43fec3294df6daf59f96f5687cea0b2de6738e243b6d56988cf955577f013c",
-    "audit/dense-product-checkpoint.json": "fe219c06a58310128bc55c5ca9b2e96652c4faf2a587bc6e11968b1cde19e48e"
+    "audit/dense-product-checkpoint.json": "fe219c06a58310128bc55c5ca9b2e96652c4faf2a587bc6e11968b1cde19e48e",
+    "audit/x86-register-checkpoint.json": "ef525dc9780d883dca83d20dde6e0c64077aa502b1208f583fd326a506f4bc10"
   },
   "reviewed_policy_revisions": [
     {
@@ -326,6 +327,20 @@
           "path": "scripts/check_variant_fixtures.py",
           "new_sha256": "8dca0f8f385a1898538da709228a3dbdd23f1d6c6b9027204f7d0d8be5045197",
           "old_sha256": "5cd4df885362acef3ac067f0268bbf35a4ea1f0a674703cd291c106309bf3b75"
+        }
+      ]
+    },
+    {
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins.",
+      "changes": [
+        {
+          "path": "audit/x86-register-checkpoint.json",
+          "new_sha256": "ef525dc9780d883dca83d20dde6e0c64077aa502b1208f583fd326a506f4bc10"
+        },
+        {
+          "path": "scripts/check_projection_fixtures.py",
+          "new_sha256": "e896833f87f6054e5c7618352ef02c836cecd3952afeb725baf927b8c753f906",
+          "old_sha256": "1e2ebb7ee1b29ad23e159523323a00c7b7188423ad946cffb19bb78d01890e22"
         }
       ]
     }

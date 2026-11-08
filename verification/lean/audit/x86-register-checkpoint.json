@@ -1,0 +1,19 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "previous_proof_commit": "ccae3e801dd8aa1005f20a6990d3cef034e73479",
+  "retained_native_executable_obligations": 344,
+  "generated_body_refinements_under_recorded_TCB": 64,
+  "whole_native_coverage_achieved": false,
+  "new_original_bodies": {
+    "scalar_pclmul": 9,
+    "avx512_register": 4,
+    "native_cube_root": 1
+  },
+  "masked_memory_native_body_proof_credit": 0,
+  "open": [
+    "Masked load/store heap effects or verified writeback and pointer provenance",
+    "Accelerated field maps, dispatch, ISA and remaining x86 kernels",
+    "Berlekamp-Massey mutable prefix expansion and reconstruction backedge",
+    "General root recovery, end-to-end decoder completeness and compiler-expanded closure"
+  ]
+}

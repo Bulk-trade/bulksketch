@@ -331,6 +331,26 @@
       "path": "extraction/x86-lane-mask/arithmetic.llbc",
       "sha256": "6e84bb95450c4e490481684011417a7d7a29442df7c94aae97c27712c6209198",
       "has_errors": false
+    },
+    {
+      "path": "extraction/pclmul-register/arithmetic.llbc",
+      "sha256": "1e7ed4fd12a75c6d8cea780150bd3b8caebf10f45ad96e96811dff8d0b09d484",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx512-register/arithmetic.llbc",
+      "sha256": "1e25c60e3db8f81621d4f13548fb6faf5c7ab779f233d6f15b64a2e72ac3c8de",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/cube-root/arithmetic.llbc",
+      "sha256": "d0b9f1d8aa94630086c72b833d04593982b3db4cb972e9b05b19c8cf0d7dc846",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/masked-memory/arithmetic.llbc",
+      "sha256": "986307e55be3936bb3d50bee8227e663f12a91abb7897e424fb37844697f6275",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -388,6 +408,18 @@
     {
       "functions": "bridge/Arithmetic/PortableHornerRuntime.lean",
       "source_scope": "Shared split_last and reverse fold through the pinned iterator cursor and original FnMut callback, plus checked mutable Zip reuse. Physical alias correspondence remains a trust boundary."
+    },
+    {
+      "functions": "bridge/Arithmetic/X86PclmulRuntime.lean",
+      "source_scope": "X86-64 little-endian scalar byte conversions, XMM zero-extension, low lane, byte shift, XOR and CLMUL selectors in a 128-bit value model. CPU features, hardware and code generation remain separate."
+    },
+    {
+      "functions": "bridge/Arithmetic/Avx512RegisterRuntime.lean",
+      "source_scope": "Register-only value correspondence for the pinned Rust stdarch AVX-512 operations and the Intel register ISA. Covers the exact legal immediates and all register values at the original calls. LLVM code generation, target-feature availability, CPU execution, masked memory and dispatch are separate."
+    },
+    {
+      "functions": "bridge/Arithmetic/CubeRootRuntime.lean",
+      "source_scope": "Value-level eager Bool::then_some with normal Some or None; existing scalar and range models."
     }
   ],
   "arithmetic_source_inputs": {
@@ -647,6 +679,76 @@
       "native_item_id": "src/backend/x86_vpclmul512.rs:190:function:bulksketch::backend::x86_vpclmul512::mask",
       "generated_declaration": "bulksketch.backend.x86_vpclmul512.mask",
       "generated_file": "bridge/Arithmetic/X86LaneMaskGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:117:function:bulksketch::backend::x86_pclmul::word",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.word",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:123:function:bulksketch::backend::x86_pclmul::low",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.low",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:129:function:bulksketch::backend::x86_pclmul::words",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.words",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:139:function:bulksketch::backend::x86_pclmul::raw_product",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.raw_product",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:145:function:bulksketch::backend::x86_pclmul::reduced",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.reduced",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:158:function:bulksketch::backend::x86_pclmul::multiply",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.multiply",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:35:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::mul",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.mul",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:40:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::square",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.square",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:68:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::raw_mul",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.raw_mul",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:208:function:bulksketch::backend::x86_vpclmul512::raw",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.raw",
+      "generated_file": "bridge/Arithmetic/Avx512RegisterGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:260:function:bulksketch::backend::x86_vpclmul512::reduce_shift",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.reduce_shift",
+      "generated_file": "bridge/Arithmetic/Avx512RegisterGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:278:function:bulksketch::backend::x86_vpclmul512::reduce_cl",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.reduce_cl",
+      "generated_file": "bridge/Arithmetic/Avx512RegisterGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:286:function:bulksketch::backend::x86_vpclmul512::multiply",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.multiply",
+      "generated_file": "bridge/Arithmetic/Avx512RegisterGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:84:function:bulksketch::decode::deg34::cube_root",
+      "generated_declaration": "bulksketch.decode.deg34.cube_root",
+      "generated_file": "bridge/Arithmetic/CubeRootGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -940,6 +1042,33 @@
       "checker": "extraction/x86-lane-mask/project.py",
       "declaration_count": 1,
       "scope": "Original x86 target lane mask body with checked arithmetic and no additional runtime bindings."
+    },
+    {
+      "generated": "extraction/pclmul-register/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/X86PclmulGenerated.lean",
+      "sha256": "dc418d8fb3549ba684ddfe5cc26712890d43c6f9c801975048826fedd1e55963",
+      "raw_sha256": "db091247ce267c6af34684ee20dfb05250cdde6fdf87856bd0fcfe421aeba59a",
+      "checker": "extraction/pclmul-register/project.py",
+      "declaration_count": 9,
+      "scope": "Nine verbatim original scalar x86 register operations and entry methods. Pinned little-endian bytes, SSE2 moves and PCLMUL selectors have concrete value bindings."
+    },
+    {
+      "generated": "extraction/avx512-register/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/Avx512RegisterGenerated.lean",
+      "sha256": "671fe8eb15890499b45174fa832221a7e32b1c1db19eef8112bc5e476ad2c14f",
+      "raw_sha256": "54af9cc961dad9ebcc81f3d4668563f751eaf34d0d1689f0d020b0e17f222b59",
+      "checker": "extraction/avx512-register/project.py",
+      "declaration_count": 5,
+      "scope": "Verbatim original AVX-512 register kernels and reduction closure with scoped VPCLMUL, shift, broadcast, XOR and unpack bindings."
+    },
+    {
+      "generated": "extraction/cube-root/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CubeRootGenerated.lean",
+      "sha256": "1966ff7f1b81211f9f2ab91b4520c85a1fcd6c6279db89ecb0d3d5398971563d",
+      "raw_sha256": "62b2805334b6ef3a9ade0b9ef21de36938f09f307eb82089f12f728f8b9e1c68",
+      "checker": "extraction/cube-root/project.py",
+      "declaration_count": 3,
+      "scope": "Original cube-root chain and iterator loop with scoped Bool then_some."
     }
   ],
   "reviewed_translator_variants": [
@@ -978,6 +1107,16 @@
       "receipt": "tooling/aeneas-horner-match/receipt.json",
       "mandatory_checks": true,
       "scope": "In the checked context matcher only, match two already ended shared loans carrying identical typed scalar metadata and either both absent ignored children or exactly repeated scalar child payloads."
+    }
+  ],
+  "diagnostic_generated_projections": [
+    {
+      "bridge_copy": "bridge/Arithmetic/X86MaskedMemoryPureGenerated.lean",
+      "sha256": "bee4d3302449bf187171b770c7b8e4ae4da9587fe50c7fec1ae9a3a4cf07d365",
+      "checker": "extraction/masked-memory/project.py",
+      "declaration_count": 2,
+      "native_body_proof_credit": 0,
+      "scope": "Verbatim original pure masked load/store bodies, parameterized by the generated external signatures, used only for the two impossibility theorems."
     }
   ]
 }
