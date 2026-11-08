@@ -1,0 +1,95 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "d2545103aba40a629b50262db26756f7fb46de3e",
+  "selected_roots": [
+    "bulksketch::decode::work::_::cost",
+    "bulksketch::decode::stages::_::charge"
+  ],
+  "native_source_edited": false,
+  "native_files_checked": 41,
+  "native_build_inputs_checked": 3,
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "llbc_has_errors": false,
+  "llbc_sha256": "650870c303dfc61b7653b468a5243a403589015d585ec046830e25aee9f07a23",
+  "artifacts": {
+    "extraction/work-schedule/arithmetic.llbc": "650870c303dfc61b7653b468a5243a403589015d585ec046830e25aee9f07a23",
+    "extraction/work-schedule/charon.log": "933c00a1846356b41210dc4fc18b3520461006af5f6762d8be9984bed0b96885",
+    "extraction/work-schedule/aeneas.log": "56618065aaed594696fc9b50b948557df88c84fa862433dc2b0d9ff2b28eff5a",
+    "extraction/work-schedule/Arithmetic/Funs.lean": "800e6141c605e6078bff44c4642fb8f26c74d8374c5730f98db858f629b154bd",
+    "extraction/work-schedule/Arithmetic/Types.lean": "01215c53d0ce8d9dc49aaaf5077a51aaa7a8620201fea67787d5aec1b766ebc7",
+    "extraction/work-schedule/Arithmetic/FunsExternal_Template.lean": "a631f46115cc648b943077f6cec608de11d9093232b7d9ffde2a30f7b2b04399"
+  },
+  "matching_filtered_declarations": {
+    "types.WorkMeter.charge.closure.Insts.CoreOpsFunctionFnOnceTupleU64Bool.call_once": "8a741103d1cb1f4796392df70fe999d738c20e4a580e8d3eb837baa06d799a76",
+    "types.WorkMeter.charge.closure.Insts.CoreOpsFunctionFnOnceTupleU64Bool": "6de7852f03f57668cf91193bb23e1c6db7dd619d13b04305a729983fa2284b66",
+    "types.WorkMeter.charge": "9a29f45f1a238ef3417a59ab3a7939b19bbf2bd83f85396d5331d575e08e4164",
+    "decode.work.log2_ceil": "c5b579bc0d61d747139a24870e8b63fbd9e01e3bf32787e11dca4896c7ca47cb",
+    "decode.work.mul": "2e5090a365aa85340ed4a32c482d51870a1e54728f9399472593d3cf6076b999",
+    "decode.work.add": "6893dd73fca6bce4f0f768aaa3e7da7561c77529fccd2622ac6494cb58e6bb17",
+    "decode.work.number.closure.Insts.CoreOpsFunctionFnOnceTupleTryFromIntErrorDecodeError.call_once": "79718cd406aa050b3fd45fa9d21a70706f6aa35a4d3e0b15a2bd222e026726ef",
+    "decode.work.number.closure.Insts.CoreOpsFunctionFnOnceTupleTryFromIntErrorDecodeError": "4146dde7fb71b7a47cede2161c010fc9d9a8af579f5d107788f41e58d8d41c21",
+    "decode.work.number": "35745af4664c169cede9c4fa7256b64df944bce3154b4c47c7e7e55fc4f9f583",
+    "decode.work.square": "19b01d797374ecdd5a46155754abe1da6ee6361a80bacc4c8312374d1c0721c5",
+    "decode.work.square_mod": "37ed009e772b78c6b1bb8ce38af461a4bd793157208a7f5eeb4b2fb9c4895779",
+    "decode.work.WorkScheduleV1.cost.closure.Insts.CoreOpsFunctionFnOnceTupleTryFromIntErrorDecodeError.call_once": "eddade72ce546e0de48915958d13931f62dd7a41d133f4a044d48b7b2a89c2fe",
+    "decode.work.WorkScheduleV1.cost.closure.Insts.CoreOpsFunctionFnOnceTupleTryFromIntErrorDecodeError": "9a4bef683e5251f209ca440117174b6236793e9c1f9cc2f18c3ece1c26347fb8",
+    "decode.work.WorkScheduleV1.cost": "ccedbbcdabcd148c53a0f6ddc05eb9a4b6420d8d1a569ebc17cf9c3fd8c2fcb6",
+    "decode.stages.Execution.charge": "58d9a2d8cd4251c5b41413aa2b98d6fe8b1fffbce6a5563013e17f2e89a57200",
+    "types.WorkMeter.charge.closure": "a5d4559e9220bb1072645afe3b0e9af91dee1e826dc147603e68d0126278c1ed",
+    "types.WorkUnits": "ec7087b7f9adf1172d6a0eb1fdff075ae0d8d9f2284fd996bef1de58ec7c260e",
+    "types.WorkMeter": "66b812293acf49d849662ebb476156a8320c379e8b4c2c198872b3424e14c7c5",
+    "types.DecodeError": "33b4dd1da9e706b3e1d328636739e9ceac305ac78417eaaf21fecb62ff2a334c",
+    "decode.work.number.closure": "6c3010044a71b142b8713e52d907da8c41f2c48cae695f5136cde53f1e46a7a7",
+    "decode.work.WorkScheduleV1.cost.closure": "59f0676010cf0e5e5aa39645bcc881e5f4828a5719477c720a2fa56d9c50b484",
+    "decode.work.Charge": "9e0ed38fdcb7811b95efb00708b4ccc0af87f6f06d889922cf08e2855e360312"
+  },
+  "checked_filtered_artifacts": {
+    "Types.lean": "744c9ad2bf87c425744c19e6ba0137afafdd196687029dcd8b2c44db5c34acb3",
+    "Funs.lean": "f6155441a842fa7faf893966ee353d535a570712fb20b05c151e96910c321894"
+  },
+  "commands": [
+    [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/Users/junbug/bulk/bulksketch-proof-tools/work-schedule/arithmetic.llbc",
+      "--start-from=bulksketch::decode::work::_::cost",
+      "--start-from=bulksketch::decode::stages::_::charge",
+      "--",
+      "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked",
+      "--target",
+      "x86_64-apple-darwin"
+    ],
+    [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-tools/work-schedule/Arithmetic",
+      "/Users/junbug/bulk/bulksketch-proof-tools/work-schedule/arithmetic.llbc"
+    ]
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+    "CARGO_TARGET_DIR": "/Users/junbug/bulk/bulksketch-proof-tools/work-schedule/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true"
+  }
+}

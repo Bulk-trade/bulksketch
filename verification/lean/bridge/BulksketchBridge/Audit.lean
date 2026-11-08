@@ -344,7 +344,27 @@ run_cmd do
     (``BulksketchBridge.Certificate.ActualCertificateReturnsExactFrame,
       ``BulksketchBridge.Certificate.certificate_refines),
     (``BulksketchBridge.Certificate.ActualCertificateAcceptsRootPolynomial,
-      ``BulksketchBridge.Certificate.certificate_accepts_root_polynomial)
+      ``BulksketchBridge.Certificate.certificate_accepts_root_polynomial),
+    (``BulksketchBridge.Reconstruction.ActualReconstructionReturnsExactFrame,
+      ``BulksketchBridge.Reconstruction.reconstruct_refines),
+    (``BulksketchBridge.Reconstruction.ActualReconstructionLoop0,
+      ``BulksketchBridge.Reconstruction.reconstruct_loop0_refines),
+    (``BulksketchBridge.Reconstruction.ActualReconstructionLoop1,
+      ``BulksketchBridge.Reconstruction.reconstruct_loop1_refines),
+    (``BulksketchBridge.Reconstruction.ActualReconstructionReturnsPowerSums,
+      ``BulksketchBridge.Reconstruction.reconstruct_returns_power_sums),
+    (``BulksketchBridge.WorkSchedule.NumberRefines,
+      ``BulksketchBridge.WorkSchedule.number_refines),
+    (``BulksketchBridge.WorkSchedule.CheckedMultiplyRefines,
+      ``BulksketchBridge.WorkSchedule.mul_refines),
+    (``BulksketchBridge.WorkSchedule.ReconstructCostRefines,
+      ``BulksketchBridge.WorkSchedule.reconstruct_refines),
+    (``BulksketchBridge.StageCharge.ChargeRefines,
+      ``BulksketchBridge.StageCharge.charge_refines),
+    (``BulksketchBridge.StageCharge.ReconstructChargeRefines,
+      ``BulksketchBridge.StageCharge.reconstruct_refines),
+    (``BulksketchBridge.WorkspaceAdmission.ActualWorkspaceAdmissionReturnsExactFrame,
+      ``BulksketchBridge.WorkspaceAdmission.check_workspace_refines)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

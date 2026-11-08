@@ -391,6 +391,21 @@
       "path": "extraction/degree-certificate/arithmetic.llbc",
       "sha256": "95ab2b5d88dbb5c9a3f258f8f6370c42f0152d63eef269711311c043a8b285ca",
       "has_errors": false
+    },
+    {
+      "path": "extraction/reconstruction/arithmetic.llbc",
+      "sha256": "eccf159f29108f4d92b22df95e371e97f8e2e04303bea54f785bdef9824a0be5",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/work-schedule/arithmetic.llbc",
+      "sha256": "650870c303dfc61b7653b468a5243a403589015d585ec046830e25aee9f07a23",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/workspace-admission/arithmetic.llbc",
+      "sha256": "2839bcdd234dc0ba589b89dc4f98a72a20c3206ab2a3f43e3f589710fe02c947",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -883,6 +898,31 @@
       "native_item_id": "src/decode/deg34.rs:111:function:bulksketch::decode::deg34::certificate",
       "generated_declaration": "bulksketch.decode.deg34.certificate",
       "generated_file": "bridge/Arithmetic/CertificateGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:241:method:bulksketch::decode::stages::Execution < F , K >::reconstruct",
+      "generated_declaration": "bulksketch.decode.stages.Execution.reconstruct",
+      "generated_file": "bridge/Arithmetic/ReconstructionGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:301:function:bulksketch::decode::work::number",
+      "generated_declaration": "bulksketch.decode.work.number",
+      "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:309:function:bulksketch::decode::work::mul",
+      "generated_declaration": "bulksketch.decode.work.mul",
+      "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:104:method:bulksketch::decode::work::WorkScheduleV1::cost",
+      "generated_declaration": "bulksketch.decode.work.WorkScheduleV1.cost",
+      "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:163:method:bulksketch::decode::stages::Execution < F , K >::charge",
+      "generated_declaration": "bulksketch.decode.stages.Execution.charge",
+      "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1259,6 +1299,25 @@
       "declaration_count": 10,
       "scope": "Original degree-3/4 certificate over exact GF64 multiplication with admitted usize and path-conditional scratch bounds. Checks malformed roots, the rebuilt coefficient prefix and preservation of the scratch suffix.",
       "translator_variant": "checked-ended-projector-leaf-v1"
+    },
+    {
+      "generated": "extraction/reconstruction/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/ReconstructionGenerated.lean",
+      "sha256": "7c9bcc9f70158a2978fe460d8bbd2390f09a00e5e850707749785b1c66dc18f9",
+      "raw_sha256": "f6155441a842fa7faf893966ee353d535a570712fb20b05c151e96910c321894",
+      "checker": "extraction/reconstruction/project.py",
+      "declaration_count": 9,
+      "scope": "Original reconstruction wrapper and both inclusive-range loops. Exact zero path, pricing and meter failure, post-charge workspace rejection, syndrome recurrence, stage result and frame under the exact GF64 square callback.",
+      "translator_variant": "checked-ended-projector-leaf-v1"
+    },
+    {
+      "generated": "extraction/work-schedule/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/WorkScheduleGenerated.lean",
+      "sha256": "b2be6d0dea4f1a2b02500d28164110241d634d5c288bc5dfd56a5b770c9410e7",
+      "raw_sha256": "800e6141c605e6078bff44c4642fb8f26c74d8374c5730f98db858f629b154bd",
+      "checker": "extraction/work-schedule/project.py",
+      "declaration_count": 12,
+      "scope": "Original WorkScheduleV1 cost, checked arithmetic helpers and stage charge wrapper from pinned Aeneas. Price refinement covers the Reconstruct tag."
     }
   ],
   "reviewed_translator_variants": [
@@ -1364,6 +1423,19 @@
         "src/backend/x86_vpclmul512.rs:800:function:bulksketch::backend::x86_vpclmul512::difference": "BulksketchBridge.X86MaskedMemory.Difference.differenceProgram"
       },
       "scope": "Exact original AVX difference caller with equal local and destination word counts, exactly eight mapped little-endian remote bytes per word, mapped local words and separated writable destination. The proof covers every full block and short tail, the exact destination XOR, the mismatch bit, and all outside bytes."
+    },
+    {
+      "checker": "extraction/workspace-admission/project.py",
+      "controls": "extraction/workspace-admission/check_controls.py",
+      "negative_control_count": 9,
+      "program_file": "bridge/BulksketchBridge/WorkspaceAdmissionGenerated.lean",
+      "projection_sha256": "49754b7b722a6661a787af75a04504ed7b593335d283ef1c489dff70d894c099",
+      "llbc_sha256": "2839bcdd234dc0ba589b89dc4f98a72a20c3206ab2a3f43e3f589710fe02c947",
+      "source_sha256": "93825fcb5054e98e9af060a81da72d4770c29354d79822ccfc949cc55f6e9b23",
+      "programs": {
+        "src/decode/stages.rs:454:function:bulksketch::decode::stages::check_workspace": "BulksketchBridge.WorkspaceAdmission.runOriginal"
+      },
+      "scope": "Exact checked original read-only LLBC workspace admission, including all nine length reads, arithmetic overflow, short circuit rejection, and preservation of the complete workspace."
     }
   ]
 }

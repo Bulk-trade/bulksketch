@@ -431,7 +431,9 @@ def main():
                 receipt["projection_file_sha256"] != projection["sha256"] or \
                 receipt["raw_file_sha256"] != projection["raw_sha256"] or \
                 receipt["source_declarations_retained_verbatim"] != projection["declaration_count"] or \
-                receipt["shared_types_and_function_dictionary_declarations_checked"] is not True:
+                receipt["shared_types_and_function_dictionary_declarations_checked"] is not True or \
+                ("translator_variant" in receipt and
+                 receipt["translator_variant"] != projection.get("translator_variant")):
             raise RuntimeError("declaration projection lost exact source provenance")
         records.append(result)
     for diagnostic in linkage.get("diagnostic_generated_projections", []):

@@ -58,3 +58,4 @@ import BulksketchBridge.X86PclmulHorner
 import BulksketchBridge.AvxXorLlbc
 import BulksketchBridge.X86Difference
 import BulksketchBridge.CertificatePolynomial
+import BulksketchBridge.ReconstructionPowerSums

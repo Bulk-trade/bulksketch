@@ -1,0 +1,19 @@
+PASS original workspace LLBC
+diagnostic mutable workspace borrow: workspace projection creates a writable loan
+rejected mutable workspace borrow
+diagnostic changed length comparison: compiled projection changed
+rejected changed length comparison
+diagnostic changed checked arithmetic: compiled projection changed
+rejected changed checked arithmetic
+diagnostic wrong error variant: error variant is not ScratchTooSmall
+rejected wrong error variant
+diagnostic reversed budget branch: compiled projection changed
+rejected reversed budget branch
+diagnostic mismatched slice metadata: bad ref metadata
+rejected mismatched slice metadata
+diagnostic write to workspace input: workspace or nonlocal write
+rejected write to workspace input
+diagnostic changed unwind terminal: unsupported unwind action
+rejected changed unwind terminal
+diagnostic changed target width: unexpected workspace target
+rejected changed target width

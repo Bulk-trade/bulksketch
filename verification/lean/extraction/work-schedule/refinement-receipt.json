@@ -1,0 +1,79 @@
+{
+  "status": "targeted Lean build, exact type and transitive axiom checks passed",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "source_refinements": [
+    {
+      "native_item_id": "src/decode/work.rs:301:function:bulksketch::decode::work::number",
+      "source_line_span_sha256": "422cac1edc8b8c574aa4cf2eb93615fc754167d462d9d65b1b138b2ecec15188",
+      "challenge": "BulksketchBridge.WorkSchedule.NumberRefines",
+      "theorem": "BulksketchBridge.WorkSchedule.number_refines",
+      "scope": "Every usize input converts exactly to u64 on either modeled pointer width."
+    },
+    {
+      "native_item_id": "src/decode/work.rs:309:function:bulksketch::decode::work::mul",
+      "source_line_span_sha256": "90113ed0fba9e59d28a9ffba01cf9a51137fe1b9c5dfca33bee23cd10fc298e0",
+      "challenge": "BulksketchBridge.WorkSchedule.CheckedMultiplyRefines",
+      "theorem": "BulksketchBridge.WorkSchedule.mul_refines",
+      "scope": "Every u64 input pair returns the exact natural product or the original work-limit error on overflow."
+    },
+    {
+      "native_item_id": "src/decode/work.rs:104:method:bulksketch::decode::work::WorkScheduleV1::cost",
+      "source_line_span_sha256": "091eb72e922361b1e1fd8ebf57b06dc36163767b6e8a8b29d0752cccc21e4898",
+      "challenge": "BulksketchBridge.WorkSchedule.ReconstructCostRefines",
+      "theorem": "BulksketchBridge.WorkSchedule.reconstruct_refines",
+      "scope": "The Reconstruct tag returns checked three-times-capacity pricing for every usize capacity."
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:163:method:bulksketch::decode::stages::Execution < F , K >::charge",
+      "source_line_span_sha256": "c85b466d07cf465f50bdc27c0df4e64d1ac1025d75374d04c6500b16fbf1c127",
+      "challenge": "BulksketchBridge.StageCharge.ChargeRefines",
+      "theorem": "BulksketchBridge.StageCharge.charge_refines",
+      "scope": "All pricing control outcomes propagate. Every normal price produces the exact source Rust result and meter state."
+    }
+  ],
+  "same_body_composition": {
+    "challenge": "BulksketchBridge.StageCharge.ReconstructChargeRefines",
+    "theorem": "BulksketchBridge.StageCharge.reconstruct_refines",
+    "scope": "The exact Reconstruct price feeds the source charge wrapper. Cost overflow preserves the incoming meter and successful pricing uses the existing finite-word meter transition."
+  },
+  "source_projection": "extraction/work-schedule/project.py",
+  "native_source_edited": false,
+  "retained_functions": 12,
+  "retained_types": 3,
+  "runtime_bindings": [
+    "checked unsigned usize to u64 conversion",
+    "checked u64 left shift"
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "targeted_projection_checks": {
+    "valid_modes": [
+      "ordinary",
+      "optimized"
+    ],
+    "mutations": [
+      "compiled-reconstruct-factor",
+      "shared-meter-used-read",
+      "shared-meter-exhaustion-type",
+      "raw-reconstruct-factor",
+      "raw-llbc-drift"
+    ],
+    "expected_rejections": 10,
+    "log": "/Users/junbug/bulk/bulksketch-proof-tools/work-schedule/projection-controls.log"
+  },
+  "files_sha256": {
+    "bridge/Arithmetic/WorkScheduleGenerated.lean": "b2be6d0dea4f1a2b02500d28164110241d634d5c288bc5dfd56a5b770c9410e7",
+    "bridge/Arithmetic/WorkScheduleRuntime.lean": "c21724d9bd85ac23d548260a389d54716b751aa238210dd4374d94606b10845b",
+    "bridge/BulksketchBridge/WorkScheduleSpec.lean": "33cb84e0507be8419260668ec6a62650f30d08475d0f4277b96d29963fd15958",
+    "bridge/BulksketchBridge/WorkSchedule.lean": "303fd2cc5ac6364f13e9bccc980c7e33521220004318d1ac58546c3cf0719cd2",
+    "bridge/BulksketchBridge/StageChargeSpec.lean": "47439c96dee61dd89e4f575421898b3de2632bc9555a0c6d9255ceee0ddcf3f3",
+    "bridge/BulksketchBridge/StageCharge.lean": "b208bd4741dc04ff828ccfb52985c5f7ff48918f642125f8912b31c9247d5fca",
+    "extraction/work-schedule/project.py": "1b33cd493a9903bde09535c9e0358fd756b50d88c3ef32b9e78874ba8fcb2d31",
+    "extraction/work-schedule/receipt.json": "9d1fcf4ccc8be4d96df4d240319142ebd2a35c56da60142757545ea7396d6d6d",
+    "extraction/work-schedule/axiom-audit.log": "550af88d0bb2a7fa4bc7a4ad11c3f5468da739ddbf2105b2ab5b2e3a48a6ce3e",
+    "extraction/work-schedule/README.md": "fd26bcbe0ab13f0498e4b12f8ac44f0dba5718b685c5837ac4e73271971cdeb1"
+  }
+}

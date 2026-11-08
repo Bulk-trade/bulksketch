@@ -36,7 +36,7 @@
     "audit/core-maps-proof-independent-review.md": "aed4509f239a8e3db59c7a9f0d95ca20286d8a6df50372e3f59c172572101124",
     "audit/field-algebra-accounting-review.md": "55d3cd81a3f03185992e3272994c04b13b5e7ea34ff85e5d8e2cfced90f240be",
     "audit/field-algebra-checkpoint.json": "e93b65ffd57dcdb5c4c987c76f96d48b8917e82f52969853dbb979c049a4220e",
-    "scripts/check_projection_fixtures.py": "bbd0db19b779ee0cded10eb18188914619976447eb87425ee37a35749a68594a",
+    "scripts/check_projection_fixtures.py": "45c5a1e8cec4ab58ca9e4e326d7449128fa4718badc02c7dd85ac765e785b4d3",
     "audit/quotient-field-checkpoint.json": "c14a8dd2f0d747079f64b40c3dc9e52db3373ddfc1414b62667727444a82825e",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
     "audit/word-quotient-independent-review.md": "311018cf261231ef631f59867defc66cf7a13e5eba60d414f88b9d4e922dc823",
@@ -55,7 +55,9 @@
     "audit/native-stateful-checkpoint.json": "2c41ee402642341add52703d90795de97eff7b0656c4a4db9cd3e675332f0210",
     "NATIVE_CALLER_CHAINS.md": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
     "audit/native-caller-checkpoint.json": "837788fd6bb6f20d3c18e69b74e0610177fc4b9aec084f1ec313c271f4771cf2",
-    "README.md": "bde01fde764fc747ffe1e21bb78ef84071284812020f577e0fa94cafbc649b38"
+    "README.md": "f61a0838b77dad79e9b204d2ce04c620924bb185badcd818d02f0b2adb7c97a4",
+    "NATIVE_RECONSTRUCTION.md": "3a1955592353708b30df40c5fb5443a743451002275c4da8164c37a3344746b2",
+    "audit/native-reconstruction-checkpoint.json": "13745cfcf6c9161fb460c8165365bb767a672f474cd14d06edecf6b5fb428562"
   },
   "reviewed_policy_revisions": [
     {
@@ -411,6 +413,28 @@
       "new_sha256": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
       "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements.",
       "old_sha256": "1b2ff1126fbb8b27f8f04f71793c57304b2805ae7e82bcc3a8be37be7f5f6c5f"
+    },
+    {
+      "path": "NATIVE_RECONSTRUCTION.md",
+      "new_sha256": "3a1955592353708b30df40c5fb5443a743451002275c4da8164c37a3344746b2",
+      "reason": "Freeze original reconstruction, work schedule and charge refinements, and exact read-only workspace LLBC admission."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "f61a0838b77dad79e9b204d2ce04c620924bb185badcd818d02f0b2adb7c97a4",
+      "reason": "Freeze original reconstruction, work schedule and charge refinements, and exact read-only workspace LLBC admission.",
+      "old_sha256": "bde01fde764fc747ffe1e21bb78ef84071284812020f577e0fa94cafbc649b38"
+    },
+    {
+      "path": "audit/native-reconstruction-checkpoint.json",
+      "new_sha256": "13745cfcf6c9161fb460c8165365bb767a672f474cd14d06edecf6b5fb428562",
+      "reason": "Freeze original reconstruction, work schedule and charge refinements, and exact read-only workspace LLBC admission."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "45c5a1e8cec4ab58ca9e4e326d7449128fa4718badc02c7dd85ac765e785b4d3",
+      "reason": "Freeze original reconstruction, work schedule and charge refinements, and exact read-only workspace LLBC admission.",
+      "old_sha256": "bbd0db19b779ee0cded10eb18188914619976447eb87425ee37a35749a68594a"
     }
   ]
 }

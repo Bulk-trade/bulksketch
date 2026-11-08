@@ -69,7 +69,10 @@ proofs for the masked-memory lowering. The coverage ledger retains all
 records two separate masked-memory LLBC contracts, accelerated field maps,
 feature detection and the cubic helper. The [caller checkpoint](../NATIVE_CALLER_CHAINS.md)
 adds PCLMUL slice and Horner refinements, the stateful AVX XOR assignment and
-difference callers, and the original degree-3/4 certificate.
+difference callers, and the original degree-3/4 certificate. The
+[reconstruction checkpoint](../NATIVE_RECONSTRUCTION.md) adds the original
+stage wrapper, both loops, the reconstruction charge and separate LLBC
+workspace admission, with a power-sum theorem for the actual stage.
 
 From the parent Lean directory:
 

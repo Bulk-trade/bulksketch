@@ -184,6 +184,18 @@ PROJECTIONS = [
      "if x = 0#u64", "if x = 1#u64", "compiled certificate projection differs",
      None, None, ["bridge/Arithmetic/CertificateRuntime.lean", "bridge/Arithmetic/RebuiltLfsrGenerated.lean",
                   "bridge/Arithmetic/SliceKernelTypes.lean", "tooling/aeneas-ended-projector/ended-projector-leaf.patch"]),
+    ("work-schedule", "extraction/work-schedule/project.py", "extraction/work-schedule/receipt.json",
+     "extraction/work-schedule/Arithmetic/Funs.lean", "bridge/Arithmetic/WorkScheduleGenerated.lean",
+     "decode.work.mul 3#u64 val", "decode.work.mul 4#u64 val", "compiled work schedule projection differs",
+     None, None, ["bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/WorkScheduleRuntime.lean",
+                  "bridge/Workmeter/Types.lean", "bridge/Workmeter/Funs.lean"]),
+    ("reconstruction", "extraction/reconstruction/project.py", "extraction/reconstruction/receipt.json",
+     "extraction/reconstruction/Arithmetic/Funs.lean", "bridge/Arithmetic/ReconstructionGenerated.lean",
+     "let i1 ← 2#usize * capacity", "let i1 ← 3#usize * capacity", "compiled reconstruction projection differs",
+     None, None, ["bridge/Arithmetic/ReconstructionTypes.lean", "bridge/Arithmetic/SliceKernelTypes.lean",
+                  "bridge/Arithmetic/WorkScheduleGenerated.lean", "bridge/Workmeter/Types.lean",
+                  "bridge/Workmeter/Funs.lean", "tooling/aeneas-ended-projector/receipt.json",
+                  "tooling/aeneas-ended-projector/ended-projector-leaf.patch"]),
 ]
 
 
@@ -199,7 +211,13 @@ def main():
         receipt = json.loads((ROOT / receipt_path).read_text())
         files = [receipt_path, active_path, "bridge/Arithmetic/Types.lean", "bridge/Arithmetic/Funs.lean"]
         artifact_key = "artifacts" if "artifacts" in receipt else "generated"
-        files += [item["path"] for item in receipt[artifact_key]] + extra_files
+        artifacts = receipt[artifact_key]
+        if isinstance(artifacts, dict):
+            artifact_paths = [name if name.startswith("extraction/") else str(Path(receipt_path).parent / name)
+                              for name in artifacts]
+        else:
+            artifact_paths = [item["path"] for item in artifacts]
+        files += artifact_paths + extra_files
         cases = [
             ("compiled-body-edit", active_path, before, after, changed),
             ("raw-extraction-edit", raw_path, before, after, raw_path),
@@ -285,11 +303,23 @@ def main():
         if label == "cubic":
             cases.append(("shared-cube-root-edit", "bridge/Arithmetic/CubeRootGenerated.lean",
                           "«end» := 10#i32", "«end» := 9#i32", "shared cube root declarations differ"))
+        if label == "reconstruction":
+            cases.extend([
+                ("compiled-workspace-field-edit", "bridge/Arithmetic/ReconstructionTypes.lean",
+                 "syndromes : Slice Std.U64", "syndromes : Slice Std.U32", "compiled reconstruction types differ"),
+                ("unchecked-extraction", receipt_path, '"-checks"', '"-no-checks"',
+                 "reconstruction checked and unchecked controls changed"),
+                ("changed-variant", receipt_path, '"checked-ended-projector-leaf-v1"', '"checked-ended-shared-scalar-v1"',
+                 "reconstruction lost checked translator provenance"),
+            ])
+        if label == "work-schedule":
+            cases.append(("shared-meter-type-edit", "bridge/Workmeter/Types.lean",
+                          "used : types.WorkUnits", "used : Std.U32", "shared work schedule type differs"))
         for name, path, before, after, diagnostic in cases:
             name = label + "/" + name
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:
                 shadow = Path(directory)
-                if label == "degree-certificate":
+                if label in {"degree-certificate", "reconstruction"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

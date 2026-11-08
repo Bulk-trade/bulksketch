@@ -1,0 +1,21 @@
+BulksketchBridge.WorkSchedule.number_refines : BulksketchBridge.WorkSchedule.NumberRefines
+BulksketchBridge.WorkSchedule.mul_refines : BulksketchBridge.WorkSchedule.CheckedMultiplyRefines
+BulksketchBridge.WorkSchedule.reconstruct_refines : BulksketchBridge.WorkSchedule.ReconstructCostRefines
+fun {F K} =>
+  BulksketchBridge.StageCharge.charge_refines : ∀ {F K : Type} (field : bulksketch.field.BinaryField F)
+  (kernels : bulksketch.backend.contract.BulkKernels K F) (meter : bulksketch.types.WorkMeter)
+  (operation : bulksketch.decode.work.Charge),
+  bulksketch.decode.stages.Execution.charge field kernels meter operation = do
+    let cost ← bulksketch.decode.work.WorkScheduleV1.cost operation
+    Aeneas.Std.Result.ok (BulksketchBridge.StageCharge.chargeResult meter cost)
+fun {F K} =>
+  BulksketchBridge.StageCharge.reconstruct_refines : ∀ {F K : Type} (field : bulksketch.field.BinaryField F)
+  (kernels : bulksketch.backend.contract.BulkKernels K F) (meter : bulksketch.types.WorkMeter)
+  (capacity : Aeneas.Std.Usize),
+  bulksketch.decode.stages.Execution.charge field kernels meter (bulksketch.decode.work.Charge.Reconstruct capacity) =
+    Aeneas.Std.Result.ok (BulksketchBridge.StageCharge.reconstructCharge meter capacity)
+'BulksketchBridge.WorkSchedule.number_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.WorkSchedule.mul_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.WorkSchedule.reconstruct_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.StageCharge.charge_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.StageCharge.reconstruct_refines' depends on axioms: [propext, Classical.choice, Quot.sound]

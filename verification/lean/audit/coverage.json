@@ -5026,7 +5026,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.StageCharge.charge_refines",
+        "scope": "Every tag composes the original pricing result with the exact WorkMeter transition and preserves the meter on a pricing error. Reconstruct separately has an independently proved price.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:166:method:bulksketch::decode::stages::Execution < F , K >::execute",
@@ -5066,7 +5073,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Reconstruction.reconstruct_refines",
+        "scope": "Original reconstruction wrapper and both inclusive-range loops. Exact zero path, pricing and meter failure, post-charge workspace rejection, syndrome recurrence, stage result and frame under the exact GF64 square callback.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:25:struct:bulksketch::decode::stages::BinaryDecoder",
@@ -5286,7 +5300,12 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "stateful_llbc_refinement_evidence": {
+        "theorem": "BulksketchBridge.WorkspaceAdmission.check_workspace_refines",
+        "program": "BulksketchBridge.WorkspaceAdmission.runOriginal",
+        "scope": "Exact checked original read-only LLBC workspace admission, including all nine length reads, arithmetic overflow, short circuit rejection, and preservation of the complete workspace."
+      }
     },
     {
       "id": "src/decode/stages.rs:55:associated_type:bulksketch::decode::stages::<BinaryDecoder as RowDecoder < F , K >>::Execution",
@@ -5507,7 +5526,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.WorkSchedule.reconstruct_refines",
+        "scope": "Reconstruct tag only. Exact checked cost of three times capacity and work-limit error on overflow.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/work.rs:18:enum:bulksketch::decode::work::Charge",
@@ -5667,7 +5693,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.WorkSchedule.number_refines",
+        "scope": "Exact checked usize-to-u64 conversion for every source input.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/work.rs:305:function:bulksketch::decode::work::add",
@@ -5707,7 +5740,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.WorkSchedule.mul_refines",
+        "scope": "Exact checked u64 product and work-limit error on overflow for every input pair.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/work.rs:313:function:bulksketch::decode::work::sum_costs",
@@ -11623,8 +11663,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Original PCLMUL slice kernels and Horner have exact generated-body refinements. Original AVX XOR assignment and difference have checked stateful LLBC contracts. Original degree-3/4 certificate checks exact acceptance, reconstruction scratch and the root polynomial. Physical memory and compiler-expanded native contracts remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 82,
+    "note": "All 344 native executable declarations retained. Original reconstruction, both loop instances and the Reconstruct price and stage charge are checked. Original workspace admission uses a separate checked LLBC contract. Full decoder and physical memory and ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 87,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11662,7 +11702,9 @@
       "portable_seed_to_full_comparison": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_portable_seed_refines",
       "direct_two_soundness": "BulksketchBridge.DirectTwo.direct_two_sound",
       "native_cube_root": "BulksketchBridge.CubeRoot.cube_root_refines",
-      "native_cubic_soundness": "BulksketchBridge.Cubic.cubic_refines"
+      "native_cubic_soundness": "BulksketchBridge.Cubic.cubic_refines",
+      "native_reconstruction_power_sums": "BulksketchBridge.Reconstruction.reconstruct_returns_power_sums",
+      "native_workspace_admission": "BulksketchBridge.WorkspaceAdmission.check_workspace_refines"
     },
     "masked_memory_evidence": {
       "store_obstruction": "BulksketchBridge.X86MaskedMemory.PureExtraction.pure_store_cannot_writeback",
@@ -11677,6 +11719,6 @@
         "BulksketchBridge.X86MaskedMemory.Difference.difference_refines"
       ]
     },
-    "checked_stateful_llbc_refinements": 4
+    "checked_stateful_llbc_refinements": 5
   }
 }

@@ -616,6 +616,46 @@
     {
       "challenge": "BulksketchBridge.Certificate.ActualCertificateAcceptsRootPolynomial",
       "theorem": "BulksketchBridge.Certificate.certificate_accepts_root_polynomial"
+    },
+    {
+      "challenge": "BulksketchBridge.Reconstruction.ActualReconstructionReturnsExactFrame",
+      "theorem": "BulksketchBridge.Reconstruction.reconstruct_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Reconstruction.ActualReconstructionLoop0",
+      "theorem": "BulksketchBridge.Reconstruction.reconstruct_loop0_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Reconstruction.ActualReconstructionLoop1",
+      "theorem": "BulksketchBridge.Reconstruction.reconstruct_loop1_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Reconstruction.ActualReconstructionReturnsPowerSums",
+      "theorem": "BulksketchBridge.Reconstruction.reconstruct_returns_power_sums"
+    },
+    {
+      "challenge": "BulksketchBridge.WorkSchedule.NumberRefines",
+      "theorem": "BulksketchBridge.WorkSchedule.number_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.WorkSchedule.CheckedMultiplyRefines",
+      "theorem": "BulksketchBridge.WorkSchedule.mul_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.WorkSchedule.ReconstructCostRefines",
+      "theorem": "BulksketchBridge.WorkSchedule.reconstruct_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.StageCharge.ChargeRefines",
+      "theorem": "BulksketchBridge.StageCharge.charge_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.StageCharge.ReconstructChargeRefines",
+      "theorem": "BulksketchBridge.StageCharge.reconstruct_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.WorkspaceAdmission.ActualWorkspaceAdmissionReturnsExactFrame",
+      "theorem": "BulksketchBridge.WorkspaceAdmission.check_workspace_refines"
     }
   ],
   "refinements": [
@@ -2012,6 +2052,78 @@
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Original degree-3/4 certificate over exact GF64 multiplication with admitted usize and path-conditional scratch bounds. Checks malformed roots, the rebuilt coefficient prefix and preservation of the scratch suffix.",
       "translator_variant": "checked-ended-projector-leaf-v1"
+    },
+    {
+      "label": "Execution::reconstruct [original stage]",
+      "native_item_id": "src/decode/stages.rs:241:method:bulksketch::decode::stages::Execution < F , K >::reconstruct",
+      "source_line_span_sha256": "2d4eab6e8d19dfaed6b486629048dac65d7253ddd6af4a7aa17e952f7d448a24",
+      "theorem": "BulksketchBridge.Reconstruction.reconstruct_refines",
+      "challenge": "BulksketchBridge.Reconstruction.ActualReconstructionReturnsExactFrame",
+      "generated_declaration": "bulksketch.decode.stages.Execution.reconstruct",
+      "generated_file": "bridge/Arithmetic/ReconstructionGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/WorkScheduleGenerated.lean",
+        "bridge/Arithmetic/ReconstructionGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original reconstruction wrapper and both inclusive-range loops. Exact zero path, pricing and meter failure, post-charge workspace rejection, syndrome recurrence, stage result and frame under the exact GF64 square callback.",
+      "translator_variant": "checked-ended-projector-leaf-v1"
+    },
+    {
+      "label": "work::number [original source]",
+      "native_item_id": "src/decode/work.rs:301:function:bulksketch::decode::work::number",
+      "source_line_span_sha256": "422cac1edc8b8c574aa4cf2eb93615fc754167d462d9d65b1b138b2ecec15188",
+      "theorem": "BulksketchBridge.WorkSchedule.number_refines",
+      "challenge": "BulksketchBridge.WorkSchedule.NumberRefines",
+      "generated_declaration": "bulksketch.decode.work.number",
+      "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/WorkScheduleGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact checked usize-to-u64 conversion for every source input."
+    },
+    {
+      "label": "work::mul [original source]",
+      "native_item_id": "src/decode/work.rs:309:function:bulksketch::decode::work::mul",
+      "source_line_span_sha256": "90113ed0fba9e59d28a9ffba01cf9a51137fe1b9c5dfca33bee23cd10fc298e0",
+      "theorem": "BulksketchBridge.WorkSchedule.mul_refines",
+      "challenge": "BulksketchBridge.WorkSchedule.CheckedMultiplyRefines",
+      "generated_declaration": "bulksketch.decode.work.mul",
+      "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/WorkScheduleGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact checked u64 product and work-limit error on overflow for every input pair."
+    },
+    {
+      "label": "work::WorkScheduleV1::cost [original source]",
+      "native_item_id": "src/decode/work.rs:104:method:bulksketch::decode::work::WorkScheduleV1::cost",
+      "source_line_span_sha256": "091eb72e922361b1e1fd8ebf57b06dc36163767b6e8a8b29d0752cccc21e4898",
+      "theorem": "BulksketchBridge.WorkSchedule.reconstruct_refines",
+      "challenge": "BulksketchBridge.WorkSchedule.ReconstructCostRefines",
+      "generated_declaration": "bulksketch.decode.work.WorkScheduleV1.cost",
+      "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/WorkScheduleGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Reconstruct tag only. Exact checked cost of three times capacity and work-limit error on overflow."
+    },
+    {
+      "label": "stages::Execution::charge [original source]",
+      "native_item_id": "src/decode/stages.rs:163:method:bulksketch::decode::stages::Execution < F , K >::charge",
+      "source_line_span_sha256": "c85b466d07cf465f50bdc27c0df4e64d1ac1025d75374d04c6500b16fbf1c127",
+      "theorem": "BulksketchBridge.StageCharge.charge_refines",
+      "challenge": "BulksketchBridge.StageCharge.ChargeRefines",
+      "generated_declaration": "bulksketch.decode.stages.Execution.charge",
+      "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/WorkScheduleGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every tag composes the original pricing result with the exact WorkMeter transition and preserves the meter on a pricing error. Reconstruct separately has an independently proved price."
     }
   ],
   "stateful_llbc_refinements": [
@@ -2054,6 +2166,16 @@
       "theorem": "BulksketchBridge.X86MaskedMemory.Difference.difference_refines",
       "challenge": "BulksketchBridge.X86MaskedMemory.Difference.DifferenceContract",
       "scope": "Exact original AVX difference caller with equal local and destination word counts, exactly eight mapped little-endian remote bytes per word, mapped local words and separated writable destination. The proof covers every full block and short tail, the exact destination XOR, the mismatch bit, and all outside bytes."
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:454:function:bulksketch::decode::stages::check_workspace",
+      "source_line_span_sha256": "25334a51be864564cb27ac9051d82186660bc7a5216c07e0d1c1dc75df805645",
+      "llbc_sha256": "2839bcdd234dc0ba589b89dc4f98a72a20c3206ab2a3f43e3f589710fe02c947",
+      "program": "BulksketchBridge.WorkspaceAdmission.runOriginal",
+      "program_file": "bridge/BulksketchBridge/WorkspaceAdmissionGenerated.lean",
+      "theorem": "BulksketchBridge.WorkspaceAdmission.check_workspace_refines",
+      "challenge": "BulksketchBridge.WorkspaceAdmission.ActualWorkspaceAdmissionReturnsExactFrame",
+      "scope": "Exact checked original read-only LLBC workspace admission, including all nine length reads, arithmetic overflow, short circuit rejection, and preservation of the complete workspace."
     }
   ]
 }
