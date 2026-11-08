@@ -958,7 +958,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86FeatureDetect.supported_refines",
+        "scope": "The original support helper returns the conjunction of CPU and OS predicates for every Boolean pair.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/mod.rs:10:module:bulksketch::backend::x86_vpclmul512",
@@ -1719,7 +1726,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86PclmulMaps.frobenius_refines",
+        "scope": "All GF64 words and every U32 power. The exact table hit and fallback iteration yield the full unmodded Frobenius iterate by the independent period theorem. Both generated loop copies are related to the checked portable loop on their bounded suffixes.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:261:function:bulksketch::backend::x86_pclmul::inverse",
@@ -1737,7 +1751,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86Pclmul.inverse_refines",
+        "scope": "All GF64 inputs, exact None for zero and Some of the unique field inverse for every nonzero word. Original unit guard, fixed map lookups, and full accelerated exponent chain.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:297:function:bulksketch::backend::x86_pclmul::solve_quadratic",
@@ -1755,7 +1776,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86PclmulMaps.solve_quadratic_refines",
+        "scope": "All GF64 words. Trace one returns None; trace zero executes the original hardware square and checked assertion and returns the exact normalized matrix solution.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:35:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::mul",
@@ -1823,7 +1851,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86PclmulMaps.frobenius_entry_refines",
+        "scope": "Original trait entry forwards every GF64 word and U32 exponent to the proved native helper.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:50:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::inverse",
@@ -1841,7 +1876,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86Pclmul.inverse_entry_refines",
+        "scope": "Original entry forwards every GF64 word to the verified accelerated inversion helper.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:59:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::trace",
@@ -1877,7 +1919,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86PclmulMaps.solve_quadratic_entry_refines",
+        "scope": "Original trait entry forwards every GF64 word to the proved native helper.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:68:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::raw_mul",
@@ -2161,7 +2210,12 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "stateful_llbc_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86MaskedMemory.Llbc.llbc_load_refines",
+        "program": "BulksketchBridge.X86MaskedMemory.Llbc.loadProgram",
+        "scope": "Original LLBC normal path on an admitted mapped byte slice. Exact active lanes, zero inactive lanes and unchanged heap. Frozen target and call correspondence with explicit modeled memory-view premises."
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:202:function:bulksketch::backend::x86_vpclmul512::store",
@@ -2179,7 +2233,12 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "stateful_llbc_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86MaskedMemory.Llbc.llbc_store_refines",
+        "program": "BulksketchBridge.X86MaskedMemory.Llbc.storeProgram",
+        "scope": "Original LLBC normal path on an admitted writable mapped byte slice. Returns Unit, exact written register payload on readback, and preserves all addresses outside the prefix. Frozen target and call correspondence with explicit modeled memory-view premises."
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:208:function:bulksketch::backend::x86_vpclmul512::raw",
@@ -2477,7 +2536,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86FeatureDetect.detect_refines",
+        "scope": "Exact original Boolean detection from modeled CPUID and XCR0 observations, including both CPU bits, all five OS state bits, and safe short-circuit of the XGETBV call on a false XSAVE guard.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:371:function:bulksketch::backend::x86_vpclmul512::horner_many",
@@ -3466,7 +3532,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Cubic.quadratic_refines",
+        "scope": "The original helper returns the exact normalized quadratic option for every GF64 input under the exact square and quadratic callback contracts.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/deg34.rs:7:constant:bulksketch::decode::deg34::OMEGA",
@@ -3533,7 +3606,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Cubic.cubic_refines",
+        "scope": "The original helper returns normally for every input under exact GF64 callback contracts. Every returned word is a root of the given monic cubic. The proof uses the previously verified inverse wrapper under checked-frozen-capture-v1.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/deg34.rs:9:function:bulksketch::decode::deg34::guard",
@@ -11477,8 +11557,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Nine original scalar PCLMUL bodies, four original AVX-512 register bodies, and the native cube-root helper have exact refinements. Masked pointer load and store source behavior and compiler-expanded native contracts remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 64,
+    "note": "All 344 native executable declarations retained. The original accelerated scalar field methods and feature tests have exact Aeneas body refinements, as do the original quadratic and cubic helpers. Two original masked-memory LLBC paths have separate checked interpreter contracts. Physical memory and compiler-expanded native contracts remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 74,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11498,7 +11578,9 @@
       "dense_mul_polynomial": "The normalized active output of the original Dense multiplication is the GF64 polynomial product. All three original loops and both scratch frames are linked.",
       "portable_horner": "Original Portable Horner evaluates the ascending GF64 polynomial at each input point.",
       "x86_low_lane_mask": "Original x86 mask enables exactly lanes below an admitted length in 0..8. Physical memory and instruction semantics remain separate.",
-      "x86_register_kernels": "Original PCLMUL raw multiplication and reduced scalar entry methods, plus the original AVX-512 raw, two reduction and multiply bodies. Exact register values under scoped instruction and byte models."
+      "x86_register_kernels": "Original PCLMUL raw multiplication and reduced scalar entry methods, plus the original AVX-512 raw, two reduction and multiply bodies. Exact register values under scoped instruction and byte models.",
+      "pclmul_field_maps": "Original PCLMUL Frobenius, quadratic solve and inverse and their Arithmetic entry methods return their exact GF64 results.",
+      "x86_feature_gate": "Original feature detection returns the exact AVX-512 and VPCLMUL predicate and checks XSAVE and OSXSAVE before the modeled XGETBV read."
     },
     "reconciliation_algebra_evidence": {
       "sparse_support_uniqueness": "BulksketchBridge.Reconciliation.gf64_sparse_support_unique",
@@ -11512,14 +11594,20 @@
       "rebuilt_wrapper_to_full_comparison": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_iff_direct",
       "portable_seed_to_full_comparison": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_portable_seed_refines",
       "direct_two_soundness": "BulksketchBridge.DirectTwo.direct_two_sound",
-      "native_cube_root": "BulksketchBridge.CubeRoot.cube_root_refines"
+      "native_cube_root": "BulksketchBridge.CubeRoot.cube_root_refines",
+      "native_cubic_soundness": "BulksketchBridge.Cubic.cubic_refines"
     },
     "masked_memory_evidence": {
       "store_obstruction": "BulksketchBridge.X86MaskedMemory.PureExtraction.pure_store_cannot_writeback",
       "load_obstruction": "BulksketchBridge.X86MaskedMemory.PureExtraction.pure_load_cannot_read_two_words",
       "byte_addressed_register_payload": "BulksketchBridge.X86MaskedMemory.store_register_payload",
       "native_body_proof_credit": 0,
-      "remaining": "Source lowering with heap effects or checked writeback, machine address and provenance conditions, and physical instruction semantics."
-    }
+      "remaining": "Physical machine address and pointer provenance, stdarch/ISA primitive correspondence and composition through outer masked-memory callers. The pure Aeneas wrapper remains separately diagnosed.",
+      "stateful_llbc_contracts": [
+        "BulksketchBridge.X86MaskedMemory.Llbc.llbc_load_refines",
+        "BulksketchBridge.X86MaskedMemory.Llbc.llbc_store_refines"
+      ]
+    },
+    "checked_stateful_llbc_refinements": 2
   }
 }

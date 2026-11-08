@@ -520,6 +520,58 @@
     {
       "challenge": "BulksketchBridge.X86MaskedMemory.StatefulRegisterPayload",
       "theorem": "BulksketchBridge.X86MaskedMemory.store_register_payload"
+    },
+    {
+      "challenge": "BulksketchBridge.X86PclmulMapsChallenges.FrobeniusRefines",
+      "theorem": "BulksketchBridge.X86PclmulMaps.frobenius_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86PclmulMapsChallenges.FrobeniusEntryRefines",
+      "theorem": "BulksketchBridge.X86PclmulMaps.frobenius_entry_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86PclmulMapsChallenges.SolveQuadraticRefines",
+      "theorem": "BulksketchBridge.X86PclmulMaps.solve_quadratic_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86PclmulMapsChallenges.SolveQuadraticEntryRefines",
+      "theorem": "BulksketchBridge.X86PclmulMaps.solve_quadratic_entry_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86Pclmul.InverseRefines",
+      "theorem": "BulksketchBridge.X86Pclmul.inverse_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86Pclmul.InverseEntryRefines",
+      "theorem": "BulksketchBridge.X86Pclmul.inverse_entry_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86Pclmul.Map7Refines",
+      "theorem": "BulksketchBridge.X86Pclmul.map7_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86FeatureDetect.DetectRefines",
+      "theorem": "BulksketchBridge.X86FeatureDetect.detect_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86FeatureDetect.SupportedRefines",
+      "theorem": "BulksketchBridge.X86FeatureDetect.supported_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86MaskedMemory.Llbc.LlbcLoadContract",
+      "theorem": "BulksketchBridge.X86MaskedMemory.Llbc.llbc_load_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86MaskedMemory.Llbc.LlbcStoreContract",
+      "theorem": "BulksketchBridge.X86MaskedMemory.Llbc.llbc_store_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Cubic.ActualQuadraticHelperReturnsExactOption",
+      "theorem": "BulksketchBridge.Cubic.quadratic_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Cubic.ActualCubicReturnsOnlyRoots",
+      "theorem": "BulksketchBridge.Cubic.cubic_refines"
     }
   ],
   "refinements": [
@@ -1589,6 +1641,216 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "For exact GF64 multiply, square and Frobenius callbacks, the original chain returns None exactly when no nonzero cube root exists, otherwise its exact chain exponent and a nonzero cubing witness."
+    },
+    {
+      "label": "x86_pclmul::frobenius [original x86 helper]",
+      "native_item_id": "src/backend/x86_pclmul.rs:247:function:bulksketch::backend::x86_pclmul::frobenius",
+      "source_line_span_sha256": "b99e8ca0e594bc28c7071203a0a56c7ddd3818b1b2618f37bc753571172cafc5",
+      "theorem": "BulksketchBridge.X86PclmulMaps.frobenius_refines",
+      "challenge": "BulksketchBridge.X86PclmulMapsChallenges.FrobeniusRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.frobenius",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean",
+        "bridge/Arithmetic/FrobeniusTablesGenerated.lean",
+        "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+        "bridge/Arithmetic/InverseGenerated.lean",
+        "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "All GF64 words and every U32 power. The exact table hit and fallback iteration yield the full unmodded Frobenius iterate by the independent period theorem. Both generated loop copies are related to the checked portable loop on their bounded suffixes."
+    },
+    {
+      "label": "x86_pclmul::frobenius [original x86 entry]",
+      "native_item_id": "src/backend/x86_pclmul.rs:45:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::frobenius",
+      "source_line_span_sha256": "2c3b20f674c2acb249247088a9aa1bcde6de34d2a7d7b1011bcad0193207bb8c",
+      "theorem": "BulksketchBridge.X86PclmulMaps.frobenius_entry_refines",
+      "challenge": "BulksketchBridge.X86PclmulMapsChallenges.FrobeniusEntryRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.frobenius",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean",
+        "bridge/Arithmetic/FrobeniusTablesGenerated.lean",
+        "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+        "bridge/Arithmetic/InverseGenerated.lean",
+        "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original trait entry forwards every GF64 word and U32 exponent to the proved native helper."
+    },
+    {
+      "label": "x86_pclmul::solve_quadratic [original x86 helper]",
+      "native_item_id": "src/backend/x86_pclmul.rs:297:function:bulksketch::backend::x86_pclmul::solve_quadratic",
+      "source_line_span_sha256": "7aa7c00035e08f87dd1e16da8a776caac04ab8f925790464341cb12795e95d4a",
+      "theorem": "BulksketchBridge.X86PclmulMaps.solve_quadratic_refines",
+      "challenge": "BulksketchBridge.X86PclmulMapsChallenges.SolveQuadraticRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean",
+        "bridge/Arithmetic/FrobeniusTablesGenerated.lean",
+        "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+        "bridge/Arithmetic/InverseGenerated.lean",
+        "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "All GF64 words. Trace one returns None; trace zero executes the original hardware square and checked assertion and returns the exact normalized matrix solution."
+    },
+    {
+      "label": "x86_pclmul::solve_quadratic [original x86 entry]",
+      "native_item_id": "src/backend/x86_pclmul.rs:63:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::solve_quadratic",
+      "source_line_span_sha256": "8c5afdd0a7ef84619224e7e1bda0c9f1cca91387749e1d583d9e4b405edfbf94",
+      "theorem": "BulksketchBridge.X86PclmulMaps.solve_quadratic_entry_refines",
+      "challenge": "BulksketchBridge.X86PclmulMapsChallenges.SolveQuadraticEntryRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean",
+        "bridge/Arithmetic/FrobeniusTablesGenerated.lean",
+        "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+        "bridge/Arithmetic/InverseGenerated.lean",
+        "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original trait entry forwards every GF64 word to the proved native helper."
+    },
+    {
+      "label": "x86_pclmul::inverse [original x86 helper]",
+      "native_item_id": "src/backend/x86_pclmul.rs:261:function:bulksketch::backend::x86_pclmul::inverse",
+      "source_line_span_sha256": "8f7d8c75012c282c559b73b7f986aabed6c6b249bdd226ab773f6eb56e6d68d6",
+      "theorem": "BulksketchBridge.X86Pclmul.inverse_refines",
+      "challenge": "BulksketchBridge.X86Pclmul.InverseRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.inverse",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean",
+        "bridge/Arithmetic/FrobeniusTablesGenerated.lean",
+        "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+        "bridge/Arithmetic/InverseGenerated.lean",
+        "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "All GF64 inputs, exact None for zero and Some of the unique field inverse for every nonzero word. Original unit guard, fixed map lookups, and full accelerated exponent chain."
+    },
+    {
+      "label": "x86_pclmul::inverse [original x86 entry]",
+      "native_item_id": "src/backend/x86_pclmul.rs:50:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::inverse",
+      "source_line_span_sha256": "5df6a4555e1b73dcc5a1e122048f999dcce807ffcaa24cd6296628986baf7c6c",
+      "theorem": "BulksketchBridge.X86Pclmul.inverse_entry_refines",
+      "challenge": "BulksketchBridge.X86Pclmul.InverseEntryRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.inverse",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean",
+        "bridge/Arithmetic/FrobeniusTablesGenerated.lean",
+        "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+        "bridge/Arithmetic/InverseGenerated.lean",
+        "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original entry forwards every GF64 word to the verified accelerated inversion helper."
+    },
+    {
+      "label": "x86_vpclmul512::detect [original x86 source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:36:function:bulksketch::backend::x86_vpclmul512::detect",
+      "source_line_span_sha256": "89f20659b0ba7573a77f4124f42ed398d048ece9b388453081615f967c056d6e",
+      "theorem": "BulksketchBridge.X86FeatureDetect.detect_refines",
+      "challenge": "BulksketchBridge.X86FeatureDetect.DetectRefines",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.detect",
+      "generated_file": "bridge/Arithmetic/X86FeatureDetectGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/X86FeatureDetectGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original Boolean detection from modeled CPUID and XCR0 observations, including both CPU bits, all five OS state bits, and safe short-circuit of the XGETBV call on a false XSAVE guard."
+    },
+    {
+      "label": "detect::vpclmul512_supported [original x86 source]",
+      "native_item_id": "src/backend/detect.rs:98:function:bulksketch::backend::detect::vpclmul512_supported",
+      "source_line_span_sha256": "53f9e1bef458993df435be95bb6c212c3c1420d124609ef0eca7584d3e66e981",
+      "theorem": "BulksketchBridge.X86FeatureDetect.supported_refines",
+      "challenge": "BulksketchBridge.X86FeatureDetect.SupportedRefines",
+      "generated_declaration": "bulksketch.backend.detect.vpclmul512_supported",
+      "generated_file": "bridge/Arithmetic/X86FeatureDetectGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/X86FeatureDetectGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "The original support helper returns the conjunction of CPU and OS predicates for every Boolean pair."
+    },
+    {
+      "label": "decode::deg34::quadratic [original source]",
+      "native_item_id": "src/decode/deg34.rs:79:function:bulksketch::decode::deg34::quadratic",
+      "source_line_span_sha256": "9683bbdb0ff93d978cceef618cb0b739381bd3db08affd5c267b07cd3a996ff2",
+      "theorem": "BulksketchBridge.Cubic.quadratic_refines",
+      "challenge": "BulksketchBridge.Cubic.ActualQuadraticHelperReturnsExactOption",
+      "generated_declaration": "bulksketch.decode.deg34.quadratic",
+      "generated_file": "bridge/Arithmetic/CubicGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/SliceKernelTypes.lean",
+        "bridge/Arithmetic/CubeRootGenerated.lean",
+        "bridge/Arithmetic/CubicGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "The original helper returns the exact normalized quadratic option for every GF64 input under the exact square and quadratic callback contracts."
+    },
+    {
+      "label": "decode::deg34::cubic [original source]",
+      "native_item_id": "src/decode/deg34.rs:95:function:bulksketch::decode::deg34::cubic",
+      "source_line_span_sha256": "33ad6086c24308e55f7b6443136710dc2a9148a67c67abf4fd36be03bcd54bb9",
+      "theorem": "BulksketchBridge.Cubic.cubic_refines",
+      "challenge": "BulksketchBridge.Cubic.ActualCubicReturnsOnlyRoots",
+      "generated_declaration": "bulksketch.decode.deg34.cubic",
+      "generated_file": "bridge/Arithmetic/CubicGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/SliceKernelTypes.lean",
+        "bridge/Arithmetic/CubeRootGenerated.lean",
+        "bridge/Arithmetic/InverseGenerated.lean",
+        "bridge/Arithmetic/InverseUsingTypes.lean",
+        "bridge/Arithmetic/InverseUsingGenerated.lean",
+        "bridge/Arithmetic/CubicGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "The original helper returns normally for every input under exact GF64 callback contracts. Every returned word is a root of the given monic cubic. The proof uses the previously verified inverse wrapper under checked-frozen-capture-v1.",
+      "translator_variant": "checked-frozen-capture-v1"
+    }
+  ],
+  "stateful_llbc_refinements": [
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:195:function:bulksketch::backend::x86_vpclmul512::load",
+      "source_line_span_sha256": "b58c0ad527ca2790ac725adc23ba58edc715cebeac4a9c8404d88ab172fbda07",
+      "llbc_sha256": "986307e55be3936bb3d50bee8227e663f12a91abb7897e424fb37844697f6275",
+      "program": "BulksketchBridge.X86MaskedMemory.Llbc.loadProgram",
+      "program_file": "bridge/BulksketchBridge/X86MaskedMemoryLlbcGenerated.lean",
+      "theorem": "BulksketchBridge.X86MaskedMemory.Llbc.llbc_load_refines",
+      "challenge": "BulksketchBridge.X86MaskedMemory.Llbc.LlbcLoadContract",
+      "scope": "Original LLBC normal path on an admitted mapped byte slice. Exact active lanes, zero inactive lanes and unchanged heap. Frozen target and call correspondence with explicit modeled memory-view premises."
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:202:function:bulksketch::backend::x86_vpclmul512::store",
+      "source_line_span_sha256": "270b1b6384fbbe3bc897b4cedc4e2c70087166e1b1ebdfee02668633d639d87d",
+      "llbc_sha256": "986307e55be3936bb3d50bee8227e663f12a91abb7897e424fb37844697f6275",
+      "program": "BulksketchBridge.X86MaskedMemory.Llbc.storeProgram",
+      "program_file": "bridge/BulksketchBridge/X86MaskedMemoryLlbcGenerated.lean",
+      "theorem": "BulksketchBridge.X86MaskedMemory.Llbc.llbc_store_refines",
+      "challenge": "BulksketchBridge.X86MaskedMemory.Llbc.LlbcStoreContract",
+      "scope": "Original LLBC normal path on an admitted writable mapped byte slice. Returns Unit, exact written register payload on readback, and preserves all addresses outside the prefix. Frozen target and call correspondence with explicit modeled memory-view premises."
     }
   ]
 }

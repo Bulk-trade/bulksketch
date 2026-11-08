@@ -1,5 +1,7 @@
 # Native x86 register kernels and masked-memory boundary
 
+This checkpoint precedes the [checked stateful LLBC interpretation](NATIVE_STATEFUL.md).
+
 This checkpoint checks 64 original generated-body refinements under the
 recorded extraction and runtime boundary. All 344 executable obligations
 from the frozen native source revision remain in the ledger.

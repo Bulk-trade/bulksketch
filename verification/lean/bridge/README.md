@@ -65,7 +65,9 @@ adds full Dense multiplication, Portable Horner, direct two-root derivation, and
 The [x86 register checkpoint](../X86_REGISTER_MEMORY.md) adds the original
 PCLMUL and AVX-512 register kernels and cube-root helper, plus diagnostic
 proofs for the masked-memory lowering. The coverage ledger retains all
-344 executable source obligations.
+344 executable source obligations. The [stateful checkpoint](../NATIVE_STATEFUL.md)
+records two separate masked-memory LLBC contracts, accelerated field maps,
+feature detection and the cubic helper.
 
 From the parent Lean directory:
 

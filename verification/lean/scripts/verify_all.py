@@ -31,6 +31,7 @@ def main():
                "native_executable_declarations_in_scope": core["native_executable_declarations_in_scope"],
                "core_handwritten_theorem_declarations": core["handwritten_theorem_declarations"],
                "checked_generated_body_refinements": bridge["checked_generated_body_refinements"],
+               "checked_stateful_llbc_refinements": bridge["checked_stateful_llbc_refinements"],
                "matched_frozen_challenges": core["frozen_challenges_matched"] + bridge["frozen_challenges_matched"],
                "whole_native_coverage_achieved": False,
                "note": "Verified current proof milestones under recorded source/translator/runtime assumptions. Full native contracts/expanded-body closure remain open; no coverage percentage claimed."}

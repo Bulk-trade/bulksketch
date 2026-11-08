@@ -154,6 +154,19 @@ PROJECTIONS = [
      "extraction/masked-memory/Arithmetic/Funs.lean", "bridge/Arithmetic/X86MaskedMemoryPureGenerated.lean",
      "ok words1", "ok words", "compiled masked memory obstruction projection differs",
      None, None, ["bridge/Arithmetic/X86LaneMaskGenerated.lean"]),
+    ("pclmul-next", "extraction/pclmul-next/project.py", "extraction/pclmul-next/receipt.json",
+     "extraction/pclmul-next/Arithmetic/Funs.lean", "bridge/Arithmetic/X86PclmulNextGenerated.lean",
+     "lookup tupled_args 7#u32", "lookup tupled_args 6#u32", "compiled PCLMUL maps projection differs",
+     None, None, ["bridge/Arithmetic/X86PclmulGenerated.lean", "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+                  "bridge/Arithmetic/FrobeniusTablesGenerated.lean", "bridge/Arithmetic/InverseGenerated.lean"]),
+    ("x86-feature-detect", "extraction/x86-feature-detect/project.py", "extraction/x86-feature-detect/receipt.json",
+     "extraction/x86-feature-detect/Arithmetic/Funs.lean", "bridge/Arithmetic/X86FeatureDetectGenerated.lean",
+     "if i3 = i2", "if i3 != i2", "compiled x86 feature projection differs",
+     None, None, ["bridge/Arithmetic/X86FeatureDetectTypes.lean", "bridge/Arithmetic/X86FeatureDetectRuntime.lean"]),
+    ("cubic", "extraction/cubic/project.py", "extraction/cubic/receipt.json",
+     "extraction/cubic/Arithmetic/Funs.lean", "bridge/Arithmetic/CubicGenerated.lean",
+     "if q = 0#u64", "if q = 1#u64", "compiled cubic projection differs",
+     None, None, ["bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/CubeRootGenerated.lean"]),
 ]
 
 
@@ -246,6 +259,15 @@ def main():
             cases.append(("false-native-credit", receipt_path,
                           '"native_body_proof_credit": 0', '"native_body_proof_credit": 1',
                           "masked memory diagnostic receipt changed"))
+        if label == "pclmul-next":
+            cases.append(("shared-register-multiply-edit", "bridge/Arithmetic/X86PclmulGenerated.lean",
+                          "0#i32 mi mi1", "1#i32 mi mi1", "shared PCLMUL declaration differs"))
+        if label == "x86-feature-detect":
+            cases.append(("xgetbv-guard-edit", "bridge/Arithmetic/X86FeatureDetectRuntime.lean",
+                          "201326592#u32", "0#u32", "scoped x86 feature runtime mismatch"))
+        if label == "cubic":
+            cases.append(("shared-cube-root-edit", "bridge/Arithmetic/CubeRootGenerated.lean",
+                          "«end» := 10#i32", "«end» := 9#i32", "shared cube root declarations differ"))
         for name, path, before, after, diagnostic in cases:
             name = label + "/" + name
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:

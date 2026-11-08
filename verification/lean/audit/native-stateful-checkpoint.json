@@ -1,0 +1,14 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "previous_proof_commit": "6f4d5089c093d8f8087b89520b45e534a42a5813",
+  "retained_native_executable_obligations": 344,
+  "generated_body_refinements_under_recorded_TCB": 74,
+  "checked_stateful_llbc_refinements": 2,
+  "whole_native_coverage_achieved": false,
+  "open": [
+    "Physical address, provenance and intrinsic correspondence for the stateful memory contracts and remaining vector callers",
+    "Feature cache, dispatch and remaining accelerated paths",
+    "Native Berlekamp-Massey next expansion guard, reconstruction backedge and general root recovery",
+    "End-to-end decoder completeness and compiler-expanded closure"
+  ]
+}

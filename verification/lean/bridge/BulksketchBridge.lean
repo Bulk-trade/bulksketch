@@ -48,3 +48,8 @@ import BulksketchBridge.Avx512Register
 import BulksketchBridge.CubeRoot
 import BulksketchBridge.X86MaskedMemoryObstruction
 import BulksketchBridge.X86MaskedMemoryRegister
+import BulksketchBridge.X86PclmulMaps
+import BulksketchBridge.X86PclmulInverse
+import BulksketchBridge.X86FeatureDetect
+import BulksketchBridge.X86MaskedMemoryLlbc
+import BulksketchBridge.Cubic

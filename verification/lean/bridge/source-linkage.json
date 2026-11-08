@@ -351,6 +351,21 @@
       "path": "extraction/masked-memory/arithmetic.llbc",
       "sha256": "986307e55be3936bb3d50bee8227e663f12a91abb7897e424fb37844697f6275",
       "has_errors": false
+    },
+    {
+      "path": "extraction/pclmul-next/arithmetic.llbc",
+      "sha256": "eb24b53bade4c5d3719be4b254216181cf7e2c289a843c07a6d8c5155b213f28",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/x86-feature-detect/arithmetic.llbc",
+      "sha256": "451b177417da61aab700c7ab49b25b472a52ed4104e38fbb80eae9b8d1a3deaa",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/cubic/arithmetic.llbc",
+      "sha256": "8821346c8cc0e8664a5dc9665dacdc226a27e64986cf039196feabd53f08cf11",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -420,6 +435,10 @@
     {
       "functions": "bridge/Arithmetic/CubeRootRuntime.lean",
       "source_scope": "Value-level eager Bool::then_some with normal Some or None; existing scalar and range models."
+    },
+    {
+      "functions": "bridge/Arithmetic/X86FeatureDetectRuntime.lean",
+      "source_scope": "Immutable modeled observations from the original two CPUID calls and XCR0. XGETBV outside the required guard fails in the model. Physical feature observations and dispatch cache are separate."
     }
   ],
   "arithmetic_source_inputs": {
@@ -749,6 +768,56 @@
       "native_item_id": "src/decode/deg34.rs:84:function:bulksketch::decode::deg34::cube_root",
       "generated_declaration": "bulksketch.decode.deg34.cube_root",
       "generated_file": "bridge/Arithmetic/CubeRootGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:247:function:bulksketch::backend::x86_pclmul::frobenius",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.frobenius",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:45:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::frobenius",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.frobenius",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:297:function:bulksketch::backend::x86_pclmul::solve_quadratic",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:63:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::solve_quadratic",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:261:function:bulksketch::backend::x86_pclmul::inverse",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.inverse",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:50:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::inverse",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.inverse",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:36:function:bulksketch::backend::x86_vpclmul512::detect",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.detect",
+      "generated_file": "bridge/Arithmetic/X86FeatureDetectGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/detect.rs:98:function:bulksketch::backend::detect::vpclmul512_supported",
+      "generated_declaration": "bulksketch.backend.detect.vpclmul512_supported",
+      "generated_file": "bridge/Arithmetic/X86FeatureDetectGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:79:function:bulksketch::decode::deg34::quadratic",
+      "generated_declaration": "bulksketch.decode.deg34.quadratic",
+      "generated_file": "bridge/Arithmetic/CubicGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:95:function:bulksketch::decode::deg34::cubic",
+      "generated_declaration": "bulksketch.decode.deg34.cubic",
+      "generated_file": "bridge/Arithmetic/CubicGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1069,6 +1138,33 @@
       "checker": "extraction/cube-root/project.py",
       "declaration_count": 3,
       "scope": "Original cube-root chain and iterator loop with scoped Bool then_some."
+    },
+    {
+      "generated": "extraction/pclmul-next/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/X86PclmulNextGenerated.lean",
+      "sha256": "4298251c5d548d45ecfa729a12b41f0a38088dec1fb9fbf4a63c8441e33bfb25",
+      "raw_sha256": "4bf4d4cc9388b30332cb9a2a426012959975a0416fd15e50a5a6950a94de81b5",
+      "checker": "extraction/pclmul-next/project.py",
+      "declaration_count": 23,
+      "scope": "Verbatim PCLMUL field helpers, entry methods, lookup and fallback loops, and closure dictionaries and types. Reuses exact arithmetic, maps, and Frobenius dependencies."
+    },
+    {
+      "generated": "extraction/x86-feature-detect/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/X86FeatureDetectGenerated.lean",
+      "sha256": "00360be3705e62516c06965a40448103f83df0116a3a4b1fd2a3059b8edf08d6",
+      "raw_sha256": "0ca59301ee47516c796ee315bcf39e85e3ef9fe9f65d7bc6a1713653bd7709df",
+      "checker": "extraction/x86-feature-detect/project.py",
+      "declaration_count": 2,
+      "scope": "Exact AVX-512 detector, Boolean support helper and CPUID result type, with scoped modeled CPUID and XCR0 observations."
+    },
+    {
+      "generated": "extraction/cubic/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CubicGenerated.lean",
+      "sha256": "66e9bdbe0fe716107a43464d44e032fde6240b36b49e13aed62f252cb6d7652b",
+      "raw_sha256": "72f828764ffee03a3827a12d3f287ae78ff3293b1cdc3735f4f8d2f012ee47c6",
+      "checker": "extraction/cubic/project.py",
+      "declaration_count": 3,
+      "scope": "Verbatim quadratic and cubic helpers and root constant, with exact cube-root reuse and existing Bool and Option adapters."
     }
   ],
   "reviewed_translator_variants": [
@@ -1118,5 +1214,19 @@
       "native_body_proof_credit": 0,
       "scope": "Verbatim original pure masked load/store bodies, parameterized by the generated external signatures, used only for the two impossibility theorems."
     }
-  ]
+  ],
+  "stateful_llbc_projection": {
+    "checker": "extraction/masked-memory/project_stateful.py",
+    "controls": "extraction/masked-memory/check_stateful_controls.py",
+    "negative_control_count": 11,
+    "program_file": "bridge/BulksketchBridge/X86MaskedMemoryLlbcGenerated.lean",
+    "projection_sha256": "11cbdb61ae188c6f8f31612283bd4899036f6ddf7dbdcac1ec8eea20b6d43cf5",
+    "llbc_sha256": "986307e55be3936bb3d50bee8227e663f12a91abb7897e424fb37844697f6275",
+    "source_sha256": "7a9c29dff254508671aa4122b20644b21a9cfb40f86ba5eaadce02bf680475d4",
+    "programs": {
+      "src/backend/x86_vpclmul512.rs:195:function:bulksketch::backend::x86_vpclmul512::load": "BulksketchBridge.X86MaskedMemory.Llbc.loadProgram",
+      "src/backend/x86_vpclmul512.rs:202:function:bulksketch::backend::x86_vpclmul512::store": "BulksketchBridge.X86MaskedMemory.Llbc.storeProgram"
+    },
+    "scope": "Source-bound typed interpretation of the exact original masked-memory LLBC normal paths. No Aeneas generated-body credit or physical pointer provenance claim."
+  }
 }

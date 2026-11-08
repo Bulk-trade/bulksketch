@@ -197,6 +197,17 @@ def check_horner_match_variant(variant, receipt, runtime, runtime_head, linkage)
         raise RuntimeError("Horner matcher regression matrix is incomplete")
 
 
+def check_stateful_linkage(stateful, receipt, aeneas_projections):
+    """Bind checked LLBC program names to their source IDs, outside Aeneas credit."""
+    if (receipt["compiled_projection"] != stateful["program_file"] or
+            receipt["projection_sha256"] != stateful["projection_sha256"] or
+            receipt["llbc_sha256"] != stateful["llbc_sha256"] or
+            receipt["source_sha256"] != stateful["source_sha256"] or
+            receipt["programs"] != stateful["programs"] or receipt["native_body_proof_credit"] != 0 or
+            any(item["bridge_copy"] == stateful["program_file"] for item in aeneas_projections)):
+        raise RuntimeError("stateful LLBC projection lost its source or entered Aeneas body coverage")
+
+
 def main():
     scope = json.loads((ROOT / "scope.json").read_text())
     source = (ROOT / scope["source_repository"]).resolve()
@@ -341,6 +352,20 @@ def main():
                     for item in [*linkage["native_generated_copies"], *projections])):
             raise RuntimeError("diagnostic projection lost its provenance or entered native coverage")
         records.append(result)
+    stateful = linkage.get("stateful_llbc_projection")
+    if stateful:
+        result, output = run("check-stateful-llbc-projection",
+            ["python3", str(ROOT / stateful["checker"])], timeout=30, cwd=ROOT)
+        receipt = json.loads(output)
+        check_stateful_linkage(stateful, receipt, [*linkage["native_generated_copies"], *projections])
+        records.append(result)
+        for flags in ([], ["-O"]):
+            result, output = run("stateful-llbc-negative-controls" + ("-optimized" if flags else ""),
+                ["python3", *flags, str(ROOT / stateful["controls"])], timeout=60, cwd=ROOT)
+            rejected = [line for line in output.splitlines() if line.startswith("rejected ")]
+            if len(rejected) != stateful["negative_control_count"] or len(set(rejected)) != len(rejected):
+                raise RuntimeError("incomplete stateful LLBC mutation controls")
+            records.append(result)
     result, _ = run("build-replay-loader", ["elan", "run", CHAIN, "lake", "build", "replay_export"],
                     timeout=120, cwd=ROOT)
     records.append(result)
@@ -412,6 +437,32 @@ def main():
                 not re.search(r"^def\s+" + re.escape(declaration) + r"(?=\s|\(|\{)",
                               (ROOT / entry["generated_file"]).read_text(), re.MULTILINE):
             raise RuntimeError("generated declaration is not bound to the source-linked file: " + native_id)
+    stateful_entries = registry.get("stateful_llbc_refinements", [])
+    stateful_ids = {entry["native_item_id"] for entry in stateful_entries}
+    stateful_evidence = {item["id"] for item in coverage["items"] if item.get("stateful_llbc_refinement_evidence")}
+    if (bool(stateful) != bool(stateful_entries) or len(stateful_ids) != len(stateful_entries) or
+            stateful_evidence != stateful_ids or stateful_ids & set(refined) or
+            coverage["proof_progress"].get("checked_stateful_llbc_refinements", 0) != len(stateful_entries) or
+            (stateful and set(stateful["programs"]) != stateful_ids)):
+        raise RuntimeError("stateful LLBC evidence is missing, stale or double-counted")
+    for entry in stateful_entries:
+        native_id = entry["native_item_id"]
+        recorded = items[native_id]["stateful_llbc_refinement_evidence"]
+        match = next((event for event in events if event["kind"] == "challenge_match" and
+                      event["challenge"] == entry["challenge"] and event["theorem"] == entry["theorem"]), None)
+        program = entry["program"]
+        name = program.removeprefix("BulksketchBridge.X86MaskedMemory.Llbc.")
+        if (source_items[native_id]["kind"] != "function" or
+                entry["source_line_span_sha256"] != source_items[native_id]["source_line_span_sha256"] or
+                items[native_id]["source_line_span_sha256"] != source_items[native_id]["source_line_span_sha256"] or
+                entry["program_file"] != stateful["program_file"] or
+                entry["llbc_sha256"] != stateful["llbc_sha256"] or
+                program != stateful["programs"][native_id] or match is None or
+                program not in match["referenced_constants"] or
+                not re.search(r"^def\s+" + re.escape(name) + r"(?=\s|\()",
+                              (ROOT / entry["program_file"]).read_text(), re.MULTILINE) or
+                recorded != {key: entry[key] for key in ("theorem", "program", "scope")}):
+            raise RuntimeError("stateful LLBC contract lacks exact source/program/challenge linkage: " + native_id)
     for event in roots:
         if set(event["axioms"]) - set(scope["permitted_axioms"]):
             raise RuntimeError("nonstandard bridge axiom")
@@ -460,6 +511,7 @@ def main():
                "runtime_commit": runtime_head,
                "reviewed_translator_variants": [item["id"] for item in variants],
                "checked_generated_body_refinements": [entry["label"] for entry in registry["refinements"]],
+               "checked_stateful_llbc_refinements": [entry["native_item_id"] for entry in stateful_entries],
                "frozen_challenges_matched": len(challenges),
                "axioms_used": sorted({axiom for event in roots for axiom in event["axioms"]}),
                "kernel_replay_loader": {"source": "tooling/ReplayExport.lean",
@@ -470,7 +522,7 @@ def main():
                "trust_boundary": "pinned Charon/Aeneas translation, concrete Rust std Option/scalar models, source/extraction-compiler correspondence, Rust compiler and machine semantics; no application axioms"}
     (RESULTS / "verification.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(json.dumps({key: summary[key] for key in ["status", "checked_generated_body_refinements",
-        "frozen_challenges_matched", "axioms_used", "whole_native_coverage_achieved"]}, indent=2))
+        "checked_stateful_llbc_refinements", "frozen_challenges_matched", "axioms_used", "whole_native_coverage_achieved"]}, indent=2))
 
 
 if __name__ == "__main__":

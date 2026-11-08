@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "be4a9313d9b5aa8047446b772c8f67b5cd3b83c898a00661bf6a634dd7494445",
+    "bridge/BulksketchBridge/Audit.lean": "116302f25a8bc7526bde00c061d83a3a396565ef73ffc993abfb4699f1f97143",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,9 +13,9 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "f456bfce6962c8f28c2de207bba7106ae4fa2ef1ecaf8258f74281ebf58bcf69",
-    "audit/frozen-inputs.json": "01d72d3c4a50eb9ef6c12fcf71df4f3e54ddbb404c45536f89b9371adf179df1",
-    "bridge/BulksketchBridge.lean": "fa9f7cd1c52841956c4fee1db3fd6842259db2dcadd41c4e5c8b1cf19eeeb646",
+    "scripts/verify_bridge.py": "919a45c9e7a439524033dce02bc9d086a00b9e1a5d5a769e56a265e5a2f13b45",
+    "audit/frozen-inputs.json": "39c9d1752c232373b665df0535750ad176d1c344d06ecbc757e2a12cb3686161",
+    "bridge/BulksketchBridge.lean": "8684863cb9374626c98e4a9af0bd775e7d228b1de704a002d39b6529b8bc58f2",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "a1b1815fe6c1250b7ad15eab410ef27087819e3279f645c429926fcc7a808fa0",
-    "bridge/obligations.json": "d5006e7d2f0c31d5b5aae4266ecc5f9b62b3345fe30f43a0129b646ede271cef",
+    "bridge/source-linkage.json": "26088bf9729189cfb2a029a98c0298e9270d8ff76cf4746eaf6e2a829727b932",
+    "bridge/obligations.json": "031e5a79d0261dfc7eeeb6f55e73610d7c156854788095e02b568eb3d829db64",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "e896833f87f6054e5c7618352ef02c836cecd3952afeb725baf927b8c753f906",
+    "scripts/check_projection_fixtures.py": "f913b4c0fb7ed2ba26cbd5c61d305fd64f3a9164cbc6ef9380a9574aeac3aa46",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "4e966cf55ce50759ecc02b8722d8a05b0d5912e2973cc44bf4854d73cee0adf5",
+    "README.md": "5eb5c57de567a4a9b3bbdcf77d85f5a48fad2d07d4ec1a4a262ba9ce1330d68a",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "b195b8b8fb1280b09847212075f6a43a3b0164d2d6e2a15d23b18d9d96152e1c",
+    "audit/coverage.json": "b189629548e42bb2dc8cc00170dc9b7326ab980231747e96d2e33e85ce58e07b",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -319,7 +319,7 @@
     "bridge/BulksketchBridge/SyndromeUniquenessSpec.lean": "0fb7dd6f308fa79337dce13cbd73c522f78c75024d86e05b7c5fd7d2d0ceff3c",
     "bridge/BulksketchBridge/VerifyDispatch.lean": "38d817777987c9d3e97ee3155717d243b545f42e976afa8fbcdb9b9c8e7b917c",
     "bridge/BulksketchBridge/VerifyDispatchSpec.lean": "d609a22b3daf8816de9afdc60f1e293bf4efdf6ed37d19efafd190b70217fb06",
-    "bridge/README.md": "382e7b74478c74678f1b7cb7e607dd65f99e8b87f8c83db9ae1e82085dcce568",
+    "bridge/README.md": "71e7a78b66f863436e3fb4d04e823e9fbac66cd9088ebbe511577b9cfd3819ae",
     "extraction/dense-square/Arithmetic/Funs.lean": "7ff7bf02a64fb62cb3d28154514ad7b426018c4380dc56b4d101dee3d73bd505",
     "extraction/dense-square/Arithmetic/FunsExternal_Template.lean": "9d47cb5223b7a3a784065947ca87ceea2b65fb72423eb973c18862af9f72a5c8",
     "extraction/dense-square/Arithmetic/Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
@@ -500,7 +500,7 @@
     "tooling/aeneas-horner-match/tests/Cargo.lock": "373d27af87c071b00c07a78a04d086a1ecdcc4573753e020e2453a177c49fc80",
     "tooling/aeneas-horner-match/tests/Cargo.toml": "57c2e7cfdd06bc6ae7cfc07ea4b6c45069b8eb0d07b5f7cbb4cdcefc84e86d93",
     "tooling/aeneas-horner-match/tests/src/lib.rs": "7ece47c0d239ab96aebbf5a226f87f6b317afb10cd1a7e7e298f7d1e0186fb9f",
-    "X86_REGISTER_MEMORY.md": "9edd4cc172bb56ca7ec13c77152a71e19fe7f6551a6fe299a4cce9abebc41c01",
+    "X86_REGISTER_MEMORY.md": "d44b6f5944111224e27e775b8e7f5de07e107fd2abbb0d969b169b0f5156e0db",
     "audit/x86-register-checkpoint.json": "ef525dc9780d883dca83d20dde6e0c64077aa502b1208f583fd326a506f4bc10",
     "bridge/Arithmetic/Avx512RegisterGenerated.lean": "671fe8eb15890499b45174fa832221a7e32b1c1db19eef8112bc5e476ad2c14f",
     "bridge/Arithmetic/Avx512RegisterRuntime.lean": "3615bb72464790c8193f7b88e054fff142377dcc86b7fa3ad49f359173d8f99f",
@@ -559,7 +559,55 @@
     "extraction/pclmul-register/arithmetic.llbc": "1e7ed4fd12a75c6d8cea780150bd3b8caebf10f45ad96e96811dff8d0b09d484",
     "extraction/pclmul-register/charon.log": "85ea220ce10bfd62f45c917fb6e85a0cfbda49ed30cb73b0220f35357ec0bbd1",
     "extraction/pclmul-register/project.py": "10ee4753421949a4680e9ce12f0b0f7f56b839132b3d2130ce715686a8485788",
-    "extraction/pclmul-register/receipt.json": "11aa3f69b5fb6bac8f0408fb3406e5e1aa28885eb07595484841a977182696cb"
+    "extraction/pclmul-register/receipt.json": "11aa3f69b5fb6bac8f0408fb3406e5e1aa28885eb07595484841a977182696cb",
+    "NATIVE_STATEFUL.md": "5da7d66e1bcc81cf8230569086dfaafe73782459ffba4ac6b77ba9a7211abbd4",
+    "audit/native-stateful-checkpoint.json": "2c41ee402642341add52703d90795de97eff7b0656c4a4db9cd3e675332f0210",
+    "bridge/Arithmetic/CubicGenerated.lean": "66e9bdbe0fe716107a43464d44e032fde6240b36b49e13aed62f252cb6d7652b",
+    "bridge/Arithmetic/X86FeatureDetectGenerated.lean": "00360be3705e62516c06965a40448103f83df0116a3a4b1fd2a3059b8edf08d6",
+    "bridge/Arithmetic/X86FeatureDetectRuntime.lean": "d03c8254dfda15a7f73a71f32f6df3df5c8ec58823191742eb7a0a6242fe159d",
+    "bridge/Arithmetic/X86FeatureDetectTypes.lean": "4e8bf7269bfb9aa4601860fb5937c5085df8502d87398930222619b066685b69",
+    "bridge/Arithmetic/X86PclmulNextGenerated.lean": "4298251c5d548d45ecfa729a12b41f0a38088dec1fb9fbf4a63c8441e33bfb25",
+    "bridge/BulksketchBridge/Cubic.lean": "b6e713235ca0788a2df61ebd3d94b94a1fcdc337415d0c1af7136724eecbbe4b",
+    "bridge/BulksketchBridge/CubicAlgebra.lean": "534c99294217a0f636965e332927950efc579002e9c3d8a4cd54725ad7e22150",
+    "bridge/BulksketchBridge/CubicSpec.lean": "e6ff8131535fe0a0eb886c831de6783523758c407316d01250e9c23c91a0e2fe",
+    "bridge/BulksketchBridge/X86FeatureDetect.lean": "b3abc7092e43f77d80ddf65260a40a61a03409844be017f9e025ce11b991a708",
+    "bridge/BulksketchBridge/X86MaskedMemoryLlbc.lean": "527232f3a9ad8e9de109c9c36ccd33b72ee9eff06b74e27420e863ada0670046",
+    "bridge/BulksketchBridge/X86MaskedMemoryLlbcGenerated.lean": "11cbdb61ae188c6f8f31612283bd4899036f6ddf7dbdcac1ec8eea20b6d43cf5",
+    "bridge/BulksketchBridge/X86MaskedMemoryLlbcRuntime.lean": "ab2f4253e5eaa6fd1b425ce92bfb6d64b1a71c017254904423e9e1c945e10e02",
+    "bridge/BulksketchBridge/X86PclmulInverse.lean": "f5710487d6b599d9ac1d16860f6fb46563c386e1b167c240522a09f160689d43",
+    "bridge/BulksketchBridge/X86PclmulInverseMath.lean": "a93b972cb40f229e6b74b9adf11d4f2c0cfd08235aec9479d7c4075a86e6caa5",
+    "bridge/BulksketchBridge/X86PclmulMaps.lean": "5e9c70f75eaa56d55da215dde2cebdcd2b80d7d0d7b00f7cc242137e785dcf27",
+    "bridge/BulksketchBridge/X86PclmulMapsChallenges.lean": "1677a194f4ef525cf41fde44fd4604a38c84535a5ffcedf8a67fab43d7782413",
+    "extraction/cubic/Arithmetic/Funs.lean": "72f828764ffee03a3827a12d3f287ae78ff3293b1cdc3735f4f8d2f012ee47c6",
+    "extraction/cubic/Arithmetic/FunsExternal_Template.lean": "9506979759dfd68418de57c868b5f31cdec5324bb97e709c917d27dc91c34739",
+    "extraction/cubic/Arithmetic/Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+    "extraction/cubic/aeneas.log": "76927f56e468bafadbf6c1269a687c34857af8ab02797ef50b5166192fa467ac",
+    "extraction/cubic/arithmetic.llbc": "8821346c8cc0e8664a5dc9665dacdc226a27e64986cf039196feabd53f08cf11",
+    "extraction/cubic/charon.log": "b2058f588c3330c6bdebf12c2b400ca66fc162a4da3a2f0b8f836052e1921271",
+    "extraction/cubic/project.py": "076920e0a38df3ccfd416efeba294106bebe0be1d1c45b5102dbc2ccf40d7b1c",
+    "extraction/cubic/receipt.json": "140f27616e6d7433b3743c3cef638ceaf976546e36a6de04b18f1710d5486ecb",
+    "extraction/masked-memory/STATEFUL_LLBC.md": "f98b7ae2173c9069ee10710bd0fe1ddf182b75face79cabb607e99d15f600b56",
+    "extraction/masked-memory/check_stateful_controls.py": "6b1ec272011a095c50e2f360521c4161711f268bf35ca0792f739f068536e12b",
+    "extraction/masked-memory/project_stateful.py": "de1216aba4d0c721434c9c878ebf6c56d4b4ce30dda74616230cd20a1a514598",
+    "extraction/pclmul-next/Arithmetic/Funs.lean": "4bf4d4cc9388b30332cb9a2a426012959975a0416fd15e50a5a6950a94de81b5",
+    "extraction/pclmul-next/Arithmetic/FunsExternal_Template.lean": "642cd869b2f49290c93bcb33e578f158f62c7f513baeba9f6c08019d00a4db5b",
+    "extraction/pclmul-next/Arithmetic/Types.lean": "fd6b34385076d522a2fe946ae94eec614bed7c11b378c49cc84f80ddeb952b21",
+    "extraction/pclmul-next/Arithmetic/TypesExternal_Template.lean": "a1e7a1d84b947daa18ecec5a47226ab87de975dc5e2a6ca2f99059d1e76d5d82",
+    "extraction/pclmul-next/aeneas.log": "2780958c8ac7042a0326d99a0ef3310d53f164f186ce32d785448a75cf0f39ee",
+    "extraction/pclmul-next/arithmetic.llbc": "eb24b53bade4c5d3719be4b254216181cf7e2c289a843c07a6d8c5155b213f28",
+    "extraction/pclmul-next/charon.log": "808633352ed973474d43fe202f868aa3f382abedba4b7ed6f0b6499b044af0b6",
+    "extraction/pclmul-next/maps-refinement-receipt.json": "98b65cd4c0eb61f6c4147551735d229c004f627afe1d381fa276cccff7e3cb79",
+    "extraction/pclmul-next/project.py": "d9171cdd4c01507fbdafba24db8006f0454db3439f8d9fe15d0e48a8568a5914",
+    "extraction/pclmul-next/receipt.json": "f178954dab43f43d5af77c4df68710efc3af51d7b4b1ce6eae94413655e0607a",
+    "extraction/x86-feature-detect/Arithmetic/Funs.lean": "0ca59301ee47516c796ee315bcf39e85e3ef9fe9f65d7bc6a1713653bd7709df",
+    "extraction/x86-feature-detect/Arithmetic/FunsExternal_Template.lean": "50124fb1c67de1f4cc941ac73f4cc96c93d0bd8f77f24c55e4e6ce1a30657052",
+    "extraction/x86-feature-detect/Arithmetic/Types.lean": "4e8bf7269bfb9aa4601860fb5937c5085df8502d87398930222619b066685b69",
+    "extraction/x86-feature-detect/aeneas.log": "acd5d9233867b278c5bcc9898fe5ee15b997d5c43fd0134f717d6b6d658ac3f7",
+    "extraction/x86-feature-detect/arithmetic.llbc": "451b177417da61aab700c7ab49b25b472a52ed4104e38fbb80eae9b8d1a3deaa",
+    "extraction/x86-feature-detect/charon.log": "79e4e9155989b834e480d45e9bcf90c4257dc710fee7f7fe19fe666c718122ec",
+    "extraction/x86-feature-detect/project.py": "e5a5c0e116129047cbf133e4a5f3edcbba3e6ff291514c3645b6fe663da290d5",
+    "extraction/x86-feature-detect/receipt.json": "c5860a08b1f51642c534b16bbac09a707a8e1259f930fe2a4f33889602cbe0ab",
+    "scripts/verify_all.py": "c1a90ea1aeda9ca314899ff89f7df17ddfb9ea636e917be439e7639f54c19323"
   },
   "reviewed_policy_revisions": [
     {
@@ -3507,7 +3555,313 @@
       "new_sha256": "f456bfce6962c8f28c2de207bba7106ae4fa2ef1ecaf8258f74281ebf58bcf69",
       "old_sha256": "8534bfb737f4021a475d0febe93229f8d629c6ff75de37455cf328c3eea1f520",
       "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins."
+    },
+    {
+      "path": "NATIVE_STATEFUL.md",
+      "new_sha256": "5da7d66e1bcc81cf8230569086dfaafe73782459ffba4ac6b77ba9a7211abbd4",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "5eb5c57de567a4a9b3bbdcf77d85f5a48fad2d07d4ec1a4a262ba9ce1330d68a",
+      "old_sha256": "4e966cf55ce50759ecc02b8722d8a05b0d5912e2973cc44bf4854d73cee0adf5",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "X86_REGISTER_MEMORY.md",
+      "new_sha256": "d44b6f5944111224e27e775b8e7f5de07e107fd2abbb0d969b169b0f5156e0db",
+      "old_sha256": "9edd4cc172bb56ca7ec13c77152a71e19fe7f6551a6fe299a4cce9abebc41c01",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "b189629548e42bb2dc8cc00170dc9b7326ab980231747e96d2e33e85ce58e07b",
+      "old_sha256": "b195b8b8fb1280b09847212075f6a43a3b0164d2d6e2a15d23b18d9d96152e1c",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "39c9d1752c232373b665df0535750ad176d1c344d06ecbc757e2a12cb3686161",
+      "old_sha256": "01d72d3c4a50eb9ef6c12fcf71df4f3e54ddbb404c45536f89b9371adf179df1",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "audit/native-stateful-checkpoint.json",
+      "new_sha256": "2c41ee402642341add52703d90795de97eff7b0656c4a4db9cd3e675332f0210",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/CubicGenerated.lean",
+      "new_sha256": "66e9bdbe0fe716107a43464d44e032fde6240b36b49e13aed62f252cb6d7652b",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/X86FeatureDetectGenerated.lean",
+      "new_sha256": "00360be3705e62516c06965a40448103f83df0116a3a4b1fd2a3059b8edf08d6",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/X86FeatureDetectRuntime.lean",
+      "new_sha256": "d03c8254dfda15a7f73a71f32f6df3df5c8ec58823191742eb7a0a6242fe159d",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/X86FeatureDetectTypes.lean",
+      "new_sha256": "4e8bf7269bfb9aa4601860fb5937c5085df8502d87398930222619b066685b69",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/X86PclmulNextGenerated.lean",
+      "new_sha256": "4298251c5d548d45ecfa729a12b41f0a38088dec1fb9fbf4a63c8441e33bfb25",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "8684863cb9374626c98e4a9af0bd775e7d228b1de704a002d39b6529b8bc58f2",
+      "old_sha256": "fa9f7cd1c52841956c4fee1db3fd6842259db2dcadd41c4e5c8b1cf19eeeb646",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "116302f25a8bc7526bde00c061d83a3a396565ef73ffc993abfb4699f1f97143",
+      "old_sha256": "be4a9313d9b5aa8047446b772c8f67b5cd3b83c898a00661bf6a634dd7494445",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Cubic.lean",
+      "new_sha256": "b6e713235ca0788a2df61ebd3d94b94a1fcdc337415d0c1af7136724eecbbe4b",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CubicAlgebra.lean",
+      "new_sha256": "534c99294217a0f636965e332927950efc579002e9c3d8a4cd54725ad7e22150",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CubicSpec.lean",
+      "new_sha256": "e6ff8131535fe0a0eb886c831de6783523758c407316d01250e9c23c91a0e2fe",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86FeatureDetect.lean",
+      "new_sha256": "b3abc7092e43f77d80ddf65260a40a61a03409844be017f9e025ce11b991a708",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86MaskedMemoryLlbc.lean",
+      "new_sha256": "527232f3a9ad8e9de109c9c36ccd33b72ee9eff06b74e27420e863ada0670046",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86MaskedMemoryLlbcGenerated.lean",
+      "new_sha256": "11cbdb61ae188c6f8f31612283bd4899036f6ddf7dbdcac1ec8eea20b6d43cf5",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86MaskedMemoryLlbcRuntime.lean",
+      "new_sha256": "ab2f4253e5eaa6fd1b425ce92bfb6d64b1a71c017254904423e9e1c945e10e02",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86PclmulInverse.lean",
+      "new_sha256": "f5710487d6b599d9ac1d16860f6fb46563c386e1b167c240522a09f160689d43",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86PclmulInverseMath.lean",
+      "new_sha256": "a93b972cb40f229e6b74b9adf11d4f2c0cfd08235aec9479d7c4075a86e6caa5",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86PclmulMaps.lean",
+      "new_sha256": "5e9c70f75eaa56d55da215dde2cebdcd2b80d7d0d7b00f7cc242137e785dcf27",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86PclmulMapsChallenges.lean",
+      "new_sha256": "1677a194f4ef525cf41fde44fd4604a38c84535a5ffcedf8a67fab43d7782413",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/README.md",
+      "new_sha256": "71e7a78b66f863436e3fb4d04e823e9fbac66cd9088ebbe511577b9cfd3819ae",
+      "old_sha256": "382e7b74478c74678f1b7cb7e607dd65f99e8b87f8c83db9ae1e82085dcce568",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "031e5a79d0261dfc7eeeb6f55e73610d7c156854788095e02b568eb3d829db64",
+      "old_sha256": "d5006e7d2f0c31d5b5aae4266ecc5f9b62b3345fe30f43a0129b646ede271cef",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "26088bf9729189cfb2a029a98c0298e9270d8ff76cf4746eaf6e2a829727b932",
+      "old_sha256": "a1b1815fe6c1250b7ad15eab410ef27087819e3279f645c429926fcc7a808fa0",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/cubic/Arithmetic/Funs.lean",
+      "new_sha256": "72f828764ffee03a3827a12d3f287ae78ff3293b1cdc3735f4f8d2f012ee47c6",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/cubic/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "9506979759dfd68418de57c868b5f31cdec5324bb97e709c917d27dc91c34739",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/cubic/Arithmetic/Types.lean",
+      "new_sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/cubic/aeneas.log",
+      "new_sha256": "76927f56e468bafadbf6c1269a687c34857af8ab02797ef50b5166192fa467ac",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/cubic/arithmetic.llbc",
+      "new_sha256": "8821346c8cc0e8664a5dc9665dacdc226a27e64986cf039196feabd53f08cf11",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/cubic/charon.log",
+      "new_sha256": "b2058f588c3330c6bdebf12c2b400ca66fc162a4da3a2f0b8f836052e1921271",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/cubic/project.py",
+      "new_sha256": "076920e0a38df3ccfd416efeba294106bebe0be1d1c45b5102dbc2ccf40d7b1c",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/cubic/receipt.json",
+      "new_sha256": "140f27616e6d7433b3743c3cef638ceaf976546e36a6de04b18f1710d5486ecb",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/masked-memory/STATEFUL_LLBC.md",
+      "new_sha256": "f98b7ae2173c9069ee10710bd0fe1ddf182b75face79cabb607e99d15f600b56",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/masked-memory/check_stateful_controls.py",
+      "new_sha256": "6b1ec272011a095c50e2f360521c4161711f268bf35ca0792f739f068536e12b",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/masked-memory/project_stateful.py",
+      "new_sha256": "de1216aba4d0c721434c9c878ebf6c56d4b4ce30dda74616230cd20a1a514598",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/pclmul-next/Arithmetic/Funs.lean",
+      "new_sha256": "4bf4d4cc9388b30332cb9a2a426012959975a0416fd15e50a5a6950a94de81b5",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/pclmul-next/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "642cd869b2f49290c93bcb33e578f158f62c7f513baeba9f6c08019d00a4db5b",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/pclmul-next/Arithmetic/Types.lean",
+      "new_sha256": "fd6b34385076d522a2fe946ae94eec614bed7c11b378c49cc84f80ddeb952b21",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/pclmul-next/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "a1e7a1d84b947daa18ecec5a47226ab87de975dc5e2a6ca2f99059d1e76d5d82",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/pclmul-next/aeneas.log",
+      "new_sha256": "2780958c8ac7042a0326d99a0ef3310d53f164f186ce32d785448a75cf0f39ee",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/pclmul-next/arithmetic.llbc",
+      "new_sha256": "eb24b53bade4c5d3719be4b254216181cf7e2c289a843c07a6d8c5155b213f28",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/pclmul-next/charon.log",
+      "new_sha256": "808633352ed973474d43fe202f868aa3f382abedba4b7ed6f0b6499b044af0b6",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/pclmul-next/maps-refinement-receipt.json",
+      "new_sha256": "98b65cd4c0eb61f6c4147551735d229c004f627afe1d381fa276cccff7e3cb79",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/pclmul-next/project.py",
+      "new_sha256": "d9171cdd4c01507fbdafba24db8006f0454db3439f8d9fe15d0e48a8568a5914",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/pclmul-next/receipt.json",
+      "new_sha256": "f178954dab43f43d5af77c4df68710efc3af51d7b4b1ce6eae94413655e0607a",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/x86-feature-detect/Arithmetic/Funs.lean",
+      "new_sha256": "0ca59301ee47516c796ee315bcf39e85e3ef9fe9f65d7bc6a1713653bd7709df",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/x86-feature-detect/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "50124fb1c67de1f4cc941ac73f4cc96c93d0bd8f77f24c55e4e6ce1a30657052",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/x86-feature-detect/Arithmetic/Types.lean",
+      "new_sha256": "4e8bf7269bfb9aa4601860fb5937c5085df8502d87398930222619b066685b69",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/x86-feature-detect/aeneas.log",
+      "new_sha256": "acd5d9233867b278c5bcc9898fe5ee15b997d5c43fd0134f717d6b6d658ac3f7",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/x86-feature-detect/arithmetic.llbc",
+      "new_sha256": "451b177417da61aab700c7ab49b25b472a52ed4104e38fbb80eae9b8d1a3deaa",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/x86-feature-detect/charon.log",
+      "new_sha256": "79e4e9155989b834e480d45e9bcf90c4257dc710fee7f7fe19fe666c718122ec",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/x86-feature-detect/project.py",
+      "new_sha256": "e5a5c0e116129047cbf133e4a5f3edcbba3e6ff291514c3645b6fe663da290d5",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "extraction/x86-feature-detect/receipt.json",
+      "new_sha256": "c5860a08b1f51642c534b16bbac09a707a8e1259f930fe2a4f33889602cbe0ab",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "f913b4c0fb7ed2ba26cbd5c61d305fd64f3a9164cbc6ef9380a9574aeac3aa46",
+      "old_sha256": "e896833f87f6054e5c7618352ef02c836cecd3952afeb725baf927b8c753f906",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "scripts/verify_all.py",
+      "new_sha256": "c1a90ea1aeda9ca314899ff89f7df17ddfb9ea636e917be439e7639f54c19323",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "919a45c9e7a439524033dce02bc9d086a00b9e1a5d5a769e56a265e5a2f13b45",
+      "old_sha256": "f456bfce6962c8f28c2de207bba7106ae4fa2ef1ecaf8258f74281ebf58bcf69",
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations."
     }
   ],
-  "challenge_count": 130
+  "challenge_count": 143
 }
