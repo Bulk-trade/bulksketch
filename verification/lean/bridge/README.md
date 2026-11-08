@@ -75,7 +75,9 @@ stage wrapper, both loops, the reconstruction charge and separate LLBC
 workspace admission, with a power-sum theorem for the actual stage. The
 [quartic checkpoint](../NATIVE_QUARTIC.md) adds exact affine and reciprocal
 quartic recovery gates and root theorems, the original batch inversion loops,
-and the degree-three/four candidate output frame.
+and the degree-three/four candidate output frame. The
+[closed-leaf checkpoint](../NATIVE_CLOSED_LEAF.md) adds the original caller
+phases, certificate acceptance, stack advance, and Newton normalization.
 
 From the parent Lean directory:
 

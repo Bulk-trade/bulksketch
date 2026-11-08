@@ -3599,7 +3599,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Normalize.normalize_refines",
+        "scope": "Exact original degree-three/four Newton normalization loop and wrapper under a nonzero denominator, admitted slices and exact GF64 callbacks. Exact full scratch words and independent field coefficients.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/deg34.rs:79:function:bulksketch::decode::deg34::quadratic",
@@ -4327,7 +4334,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.ClosedLeafAdvance.advance_refines",
+        "scope": "Empty stack returns Verification and unchanged state. An admitted pending frame gives exact pop, coefficient prefix, state, affine base/rank, stage and identity backward continuation.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/roots.rs:128:method:bulksketch::decode::roots::Roots::run",
@@ -4387,7 +4401,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.ClosedLeaf.closed_leaf_refines",
+        "scope": "Original closed-leaf phase equation on degree three/four with admitted scratch and root output bounds. Exact price and charge, solver candidate writeback, product-certificate scratch writeback, append accepted roots and invoke the original advance. Accepted empty and admitted pending-frame returns checked separately.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/roots.rs:274:method:bulksketch::decode::roots::Roots::prepare_affine",
@@ -4547,7 +4568,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.ClosedLeafAdvance.charge_refines",
+        "scope": "Exact original charge wrapper for every operation and incoming meter, preserving the original pricing result.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/roots.rs:74:method:bulksketch::decode::roots::Roots::enable_v3",
@@ -4647,7 +4675,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.ClosedLeafAdvance.stage_refines",
+        "scope": "Exact original stage selection for every degree and closed-form flag.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/row.rs:13:enum:bulksketch::decode::row::RowResult",
@@ -11684,8 +11719,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Original affine and general quartic helpers have exact root and native gate refinements. Original degree-three/four solve copies the exact candidate prefix and preserves the output suffix. Native Berlekamp\u2013Massey, general root recovery and end-to-end decoder completeness remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 90,
+    "note": "All 344 native executable declarations retained. Original degree-three/four normalization and the closed-leaf phase equation are checked, with exact certificate semantics and normal accepted advances on admitted stack states. General recovery and end-to-end decoder completeness remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 95,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11727,7 +11762,9 @@
       "native_reconstruction_power_sums": "BulksketchBridge.Reconstruction.reconstruct_returns_power_sums",
       "native_workspace_admission": "BulksketchBridge.WorkspaceAdmission.check_workspace_refines",
       "native_affine_quartic": "BulksketchBridge.AffineQuartic.affine_quartic_refines",
-      "native_general_quartic": "BulksketchBridge.QuarticSemantics.quartic_refines"
+      "native_general_quartic": "BulksketchBridge.QuarticSemantics.quartic_refines",
+      "native_closed_leaf_certificate": "BulksketchBridge.ClosedLeaf.certificate_meaning",
+      "native_newton_normalization": "BulksketchBridge.Normalize.normalize_field_coefficients"
     },
     "masked_memory_evidence": {
       "store_obstruction": "BulksketchBridge.X86MaskedMemory.PureExtraction.pure_store_cannot_writeback",

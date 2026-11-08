@@ -207,6 +207,18 @@ PROJECTIONS = [
      None, None, ["bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/AffineQuarticGenerated.lean",
                   "bridge/Arithmetic/CubicGenerated.lean", "bridge/Arithmetic/CubeRootGenerated.lean",
                   "bridge/Arithmetic/CertificateGenerated.lean"]),
+    ("closed-leaf", "extraction/closed-leaf/project.py", "extraction/closed-leaf/receipt.json",
+     "extraction/closed-leaf/Arithmetic/Funs.lean", "bridge/Arithmetic/ClosedLeafGenerated.lean",
+     "decode.roots.charge meter decode.work.Charge.LeafThree",
+     "decode.roots.charge meter decode.work.Charge.LeafFour", "compiled closed-leaf projection differs",
+     None, None, ["bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/ReconstructionTypes.lean",
+                  "bridge/Arithmetic/RebuiltLfsrTypes.lean", "bridge/Arithmetic/WorkScheduleGenerated.lean",
+                  "bridge/Arithmetic/QuarticGenerated.lean", "bridge/Arithmetic/CertificateGenerated.lean",
+                  "bridge/Workmeter/Types.lean", "bridge/Workmeter/Funs.lean"]),
+    ("deg34-normalize", "extraction/deg34-normalize/project.py", "extraction/deg34-normalize/receipt.json",
+     "extraction/deg34-normalize/Arithmetic/Funs.lean", "bridge/Arithmetic/NormalizeGenerated.lean",
+     "Slice.index_usize cleared 5#usize", "Slice.index_usize cleared 4#usize",
+     "compiled normalization projection differs", None, None, ["bridge/Arithmetic/SliceKernelTypes.lean"]),
 ]
 
 
@@ -326,11 +338,23 @@ def main():
         if label == "work-schedule":
             cases.append(("shared-meter-type-edit", "bridge/Workmeter/Types.lean",
                           "used : types.WorkUnits", "used : Std.U32", "shared work schedule type differs"))
+        if label == "closed-leaf":
+            cases.extend([
+                ("wrong-source-revision", receipt_path, "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+                 "0" * 40, "invalid checked closed-leaf receipt"),
+                ("wrong-aeneas-command", receipt_path, receipt["aeneas_command"][0],
+                 "/tmp/fake-aeneas", "closed-leaf checked replay linkage differs"),
+                ("wrong-replay-input", receipt_path, receipt["aeneas_command"][-1],
+                 "/tmp/unrelated/closed-leaf/arithmetic.llbc", "closed-leaf checked replay linkage differs"),
+            ])
+        if label == "deg34-normalize":
+            cases.append(("unchecked-original-extraction", receipt_path, '"-checks"', '"-no-checks"',
+                          "normalization checked replay linkage differs"))
         for name, path, before, after, diagnostic in cases:
             name = label + "/" + name
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:
                 shadow = Path(directory)
-                if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic"}:
+                if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic", "closed-leaf", "deg34-normalize"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

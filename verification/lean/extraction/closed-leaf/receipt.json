@@ -1,0 +1,99 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "734c54b",
+  "source_path": "src/decode/roots.rs",
+  "source_sha256": "4697d5874fd1eb03c0210371fdac83a8dc7171de2724da046613f59c879f4fb6",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "selector": "bulksketch::decode::roots::_::closed_leaf",
+  "native_source_edited": false,
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "opaque_application_bodies": [
+    "bulksketch::decode::deg34::solve",
+    "bulksketch::decode::deg34::certificate"
+  ],
+  "verified_call_bindings": [
+    {
+      "generated_declaration": "decode.deg34.solve",
+      "generated_file": "bridge/Arithmetic/QuarticGenerated.lean",
+      "theorem": "BulksketchBridge.QuarticSolve.solve_candidate_frames",
+      "declaration_sha256": "68248f0f901cecedb5eafdf47551bd2a56fa420008b14ba6c49cadca994952ae"
+    },
+    {
+      "generated_declaration": "decode.deg34.certificate",
+      "generated_file": "bridge/Arithmetic/CertificateGenerated.lean",
+      "theorem": "BulksketchBridge.Certificate.certificate_refines",
+      "declaration_sha256": "e08fb17acaec516bf32227a28d74b587fbbdc4e8e9aae639f2ce7b8a4627ecb7"
+    }
+  ],
+  "checked_exit": 0,
+  "aeneas_command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-checks",
+    "-sequential",
+    "-no-progress-bar",
+    "-print-error-emitters",
+    "-split-files",
+    "-dest",
+    "/Users/junbug/bulk/bulksketch-proof-tools/recovery-callers/closed-leaf/stock",
+    "/Users/junbug/bulk/bulksketch-proof-tools/recovery-callers/closed-leaf/arithmetic.llbc"
+  ],
+  "files_sha256": {
+    "extraction/closed-leaf/Arithmetic/Funs.lean": "1396e42dabeeae148231918ce04f97c8c068f1f1a9cc42421347354eff2cca60",
+    "extraction/closed-leaf/Arithmetic/FunsExternal_Template.lean": "4baa30f0e58e6ab1178052de400850f9d76f35efc49a6491fdfd22bee2517890",
+    "extraction/closed-leaf/Arithmetic/Types.lean": "e1a55947922a09df3fdb8fa8128f287f336945901b4a9730bec0b2046410c0a4",
+    "extraction/closed-leaf/aeneas.log": "4c4f5526de0364c5803deda59c23d6571e5f38d77b7515652b697762f8913132",
+    "extraction/closed-leaf/arithmetic.llbc": "969b9516c844a19a4307fda39bcc7e971bc73a1a9da80981d910a34635c21520",
+    "extraction/closed-leaf/charon.log": "0f9135aa5595b408e269884ddc88fc5f5eb03ca1b74ae5601fac234bee1172ca",
+    "extraction/closed-leaf/replay.log": "3c768316b88cee7b459474c28774978f90f82a5fcd5c68baa1a977d02a26094e"
+  },
+  "input_sha256": "969b9516c844a19a4307fda39bcc7e971bc73a1a9da80981d910a34635c21520",
+  "charon_command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/Users/junbug/bulk/bulksketch-proof-tools/recovery-callers/closed-leaf/arithmetic.llbc",
+    "--start-from=bulksketch::decode::roots::_::closed_leaf",
+    "--opaque=bulksketch::decode::deg34::solve",
+    "--opaque=bulksketch::decode::deg34::certificate",
+    "--",
+    "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "binary_sha256": {
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe"
+  },
+  "replay": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-closed-leaf/closed-leaf-replay",
+      "/Users/junbug/bulk/bulksketch-proof-tools/recovery-callers/closed-leaf/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "input_sha256": "969b9516c844a19a4307fda39bcc7e971bc73a1a9da80981d910a34635c21520",
+    "log_sha256": "3c768316b88cee7b459474c28774978f90f82a5fcd5c68baa1a977d02a26094e",
+    "outputs": {
+      "Types.lean": "e1a55947922a09df3fdb8fa8128f287f336945901b4a9730bec0b2046410c0a4",
+      "Funs.lean": "1396e42dabeeae148231918ce04f97c8c068f1f1a9cc42421347354eff2cca60",
+      "FunsExternal_Template.lean": "4baa30f0e58e6ab1178052de400850f9d76f35efc49a6491fdfd22bee2517890"
+    }
+  }
+}

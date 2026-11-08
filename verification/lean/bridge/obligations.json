@@ -680,6 +680,38 @@
     {
       "challenge": "BulksketchBridge.QuarticLoops.ActualQuarticReverseWords",
       "theorem": "BulksketchBridge.QuarticLoops.reverse_words_refine"
+    },
+    {
+      "challenge": "BulksketchBridge.ClosedLeafAdvance.ActualRootsChargeRefines",
+      "theorem": "BulksketchBridge.ClosedLeafAdvance.charge_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.ClosedLeafAdvance.ActualStageRefines",
+      "theorem": "BulksketchBridge.ClosedLeafAdvance.stage_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.ClosedLeafAdvance.ActualAdvanceRefines",
+      "theorem": "BulksketchBridge.ClosedLeafAdvance.advance_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.ClosedLeaf.ActualClosedLeafRefines",
+      "theorem": "BulksketchBridge.ClosedLeaf.closed_leaf_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Normalize.ActualNormalizeReturnsExactFrame",
+      "theorem": "BulksketchBridge.Normalize.normalize_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.ClosedLeaf.ActualClosedLeafCertificateMeaning",
+      "theorem": "BulksketchBridge.ClosedLeaf.certificate_meaning"
+    },
+    {
+      "challenge": "BulksketchBridge.ClosedLeaf.ActualClosedLeafAcceptedAdvance",
+      "theorem": "BulksketchBridge.ClosedLeaf.accepted_advance"
+    },
+    {
+      "challenge": "BulksketchBridge.Normalize.ActualNormalizeFieldCoefficients",
+      "theorem": "BulksketchBridge.Normalize.normalize_field_coefficients"
     }
   ],
   "refinements": [
@@ -2192,6 +2224,76 @@
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Original solve normal return for factor lengths four and five under exact GF64 callbacks and output room. A miss leaves the output unchanged. A hit copies the exact candidate words from the selected original solver into the prefix and returns the degree.",
       "translator_variant": "checked-fixedpoint-scalar-array-loan-retry-v1"
+    },
+    {
+      "label": "roots::charge [original source]",
+      "native_item_id": "src/decode/roots.rs:70:function:bulksketch::decode::roots::charge",
+      "source_line_span_sha256": "ebf24c97ff516b9f8eb4b236a8e6bca43bd125e519f8107754084f8b0f46ab79",
+      "theorem": "BulksketchBridge.ClosedLeafAdvance.charge_refines",
+      "challenge": "BulksketchBridge.ClosedLeafAdvance.ActualRootsChargeRefines",
+      "generated_declaration": "bulksketch.decode.roots.charge",
+      "generated_file": "bridge/Arithmetic/ClosedLeafGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/ClosedLeafGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original charge wrapper for every operation and incoming meter, preserving the original pricing result."
+    },
+    {
+      "label": "Roots::stage [original source]",
+      "native_item_id": "src/decode/roots.rs:99:method:bulksketch::decode::roots::Roots::stage",
+      "source_line_span_sha256": "bce9bccf08f6198021d74d47e9d7344390feb308d547717c5523b5e93c24574c",
+      "theorem": "BulksketchBridge.ClosedLeafAdvance.stage_refines",
+      "challenge": "BulksketchBridge.ClosedLeafAdvance.ActualStageRefines",
+      "generated_declaration": "bulksketch.decode.roots.Roots.stage",
+      "generated_file": "bridge/Arithmetic/ClosedLeafGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/ClosedLeafGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original stage selection for every degree and closed-form flag."
+    },
+    {
+      "label": "Roots::advance [original source]",
+      "native_item_id": "src/decode/roots.rs:110:method:bulksketch::decode::roots::Roots::advance",
+      "source_line_span_sha256": "f6b977dd0e60e38a9b0a98a1edd9a29dca2b829f98bd07c4666d1b3a0a4ccb89",
+      "theorem": "BulksketchBridge.ClosedLeafAdvance.advance_refines",
+      "challenge": "BulksketchBridge.ClosedLeafAdvance.ActualAdvanceRefines",
+      "generated_declaration": "bulksketch.decode.roots.Roots.advance",
+      "generated_file": "bridge/Arithmetic/ClosedLeafGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/ClosedLeafGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Empty stack returns Verification and unchanged state. An admitted pending frame gives exact pop, coefficient prefix, state, affine base/rank, stage and identity backward continuation."
+    },
+    {
+      "label": "Roots::closed_leaf [original source]",
+      "native_item_id": "src/decode/roots.rs:237:method:bulksketch::decode::roots::Roots::closed_leaf",
+      "source_line_span_sha256": "5361f965f04c728396470b974408a5efd5f89f86f424f7a41a4ff82e4044e2d9",
+      "theorem": "BulksketchBridge.ClosedLeaf.closed_leaf_refines",
+      "challenge": "BulksketchBridge.ClosedLeaf.ActualClosedLeafRefines",
+      "generated_declaration": "bulksketch.decode.roots.Roots.closed_leaf",
+      "generated_file": "bridge/Arithmetic/ClosedLeafGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/ClosedLeafGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original closed-leaf phase equation on degree three/four with admitted scratch and root output bounds. Exact price and charge, solver candidate writeback, product-certificate scratch writeback, append accepted roots and invoke the original advance. Accepted empty and admitted pending-frame returns checked separately."
+    },
+    {
+      "label": "deg34::normalize [original source]",
+      "native_item_id": "src/decode/deg34.rs:65:function:bulksketch::decode::deg34::normalize",
+      "source_line_span_sha256": "bd725cda9c35f14d7f1433b2510ba2b767e0176921d06a9abcac09461f9d162f",
+      "theorem": "BulksketchBridge.Normalize.normalize_refines",
+      "challenge": "BulksketchBridge.Normalize.ActualNormalizeReturnsExactFrame",
+      "generated_declaration": "bulksketch.decode.deg34.normalize",
+      "generated_file": "bridge/Arithmetic/NormalizeGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/NormalizeGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original degree-three/four Newton normalization loop and wrapper under a nonzero denominator, admitted slices and exact GF64 callbacks. Exact full scratch words and independent field coefficients."
     }
   ],
   "stateful_llbc_refinements": [

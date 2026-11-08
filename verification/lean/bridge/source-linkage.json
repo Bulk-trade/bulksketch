@@ -416,6 +416,16 @@
       "path": "extraction/quartic/arithmetic.llbc",
       "sha256": "da84d56163344d55e94fad671dddc1318e2bd80051fdd6f07067fd77ae4db090",
       "has_errors": false
+    },
+    {
+      "path": "extraction/closed-leaf/arithmetic.llbc",
+      "sha256": "969b9516c844a19a4307fda39bcc7e971bc73a1a9da80981d910a34635c21520",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/deg34-normalize/arithmetic.llbc",
+      "sha256": "0d65ab80c0f8696138fa7201a8d4a705d373e75a9d6b51df4090bc835d85d5b9",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -948,6 +958,31 @@
       "native_item_id": "src/decode/deg34.rs:197:function:bulksketch::decode::deg34::solve",
       "generated_declaration": "bulksketch.decode.deg34.solve",
       "generated_file": "bridge/Arithmetic/QuarticGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:70:function:bulksketch::decode::roots::charge",
+      "generated_declaration": "bulksketch.decode.roots.charge",
+      "generated_file": "bridge/Arithmetic/ClosedLeafGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:99:method:bulksketch::decode::roots::Roots::stage",
+      "generated_declaration": "bulksketch.decode.roots.Roots.stage",
+      "generated_file": "bridge/Arithmetic/ClosedLeafGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:110:method:bulksketch::decode::roots::Roots::advance",
+      "generated_declaration": "bulksketch.decode.roots.Roots.advance",
+      "generated_file": "bridge/Arithmetic/ClosedLeafGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:237:method:bulksketch::decode::roots::Roots::closed_leaf",
+      "generated_declaration": "bulksketch.decode.roots.Roots.closed_leaf",
+      "generated_file": "bridge/Arithmetic/ClosedLeafGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:65:function:bulksketch::decode::deg34::normalize",
+      "generated_declaration": "bulksketch.decode.deg34.normalize",
+      "generated_file": "bridge/Arithmetic/NormalizeGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1362,6 +1397,24 @@
       "declaration_count": 6,
       "scope": "Original general quartic normal return for factor length at least four. Under exact GF64 callbacks, success is equivalent to the native recovery gate and existence of a root, with four distinct roots from the original affine or reciprocal and batch-inversion path.",
       "translator_variant": "checked-fixedpoint-scalar-array-loan-retry-v1"
+    },
+    {
+      "generated": "extraction/closed-leaf/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/ClosedLeafGenerated.lean",
+      "sha256": "e518164928bbbb40b467f0a8631749c248be73c18fb2e55a6ba1000544257e7d",
+      "raw_sha256": "1396e42dabeeae148231918ce04f97c8c068f1f1a9cc42421347354eff2cca60",
+      "checker": "extraction/closed-leaf/project.py",
+      "declaration_count": 6,
+      "scope": "Original closed-leaf phase equation on degree three/four with admitted scratch and root output bounds. Exact price and charge, solver candidate writeback, product-certificate scratch writeback, append accepted roots and invoke the original advance. Accepted empty and admitted pending-frame returns checked separately."
+    },
+    {
+      "generated": "extraction/deg34-normalize/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/NormalizeGenerated.lean",
+      "sha256": "3d3e32a36c05ff30ad3657d224440dd0bd8dedda19f862b57937bbdeeceff15d",
+      "raw_sha256": "2070052f9f725db6dc4a7a9ba97212f40028c6a6c57877d0f7598967dfd3193e",
+      "checker": "extraction/deg34-normalize/project.py",
+      "declaration_count": 3,
+      "scope": "Exact original degree-three/four Newton normalization loop and wrapper under a nonzero denominator, admitted slices and exact GF64 callbacks. Exact full scratch words and independent field coefficients."
     }
   ],
   "reviewed_translator_variants": [

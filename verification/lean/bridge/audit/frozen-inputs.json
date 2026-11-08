@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "ce696ffbd3a945e89015a3e10f99c6db1cf0e096647ad2e5020b9731d3070360",
+    "bridge/BulksketchBridge/Audit.lean": "3134d6a064407d7dfb8d68903ccf0607b3e118926b618593233f2c3eb28e9e2f",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "4677a8b810a294faa687d1965c9fbe4e5fa758259278b391889d805accbfc959",
-    "audit/frozen-inputs.json": "bc411b7b074673cde142512242940248b64de67977f02f5553a2f13d361a904a",
-    "bridge/BulksketchBridge.lean": "9e7ed0b3ae765fa8bcb6bdcd0204c8965934ebfe72350ba00ba69b26bbc89c5f",
+    "audit/frozen-inputs.json": "3fc2dcf98e7b9880b38ae2ed5e0090d4f08c3b26800bd5996f304838d6a1c397",
+    "bridge/BulksketchBridge.lean": "f94be8a4d5c168253bb01230cef7f154f0ef0c7f4576c944f89b7db8016134a3",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "f4bd987ab0278465f8e08953a73c5d59ea6651be4bc8ccdb57fc948ac22e4e0f",
-    "bridge/obligations.json": "e60e5b7fea5b536647254bd6b9e51231d731bf01ab7cb6c114c19e2ee62e0d1e",
+    "bridge/source-linkage.json": "23d68a50606ba10fa500ae1ba847e6361b822cdbab3d3dd774a001dedaa7c8b0",
+    "bridge/obligations.json": "46343d1b7e5786ac3c4e9ff8c051e2b2ecdaf7e982fca2b44b5bf871a00b9e5a",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "35a400b026d1c441da5ab5261899dc1a90d2b6b932268117d9c157e2e3fb18c8",
+    "scripts/check_projection_fixtures.py": "10ea349d01a6672a94c6b0b1f5e03a990ce98522801580a230193de64521edc2",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "ff981a4e1aab3edb5e340910538245bbc31efc29bb8817a21697ee0c72ce9422",
+    "README.md": "0ad9be2b237e1dfdf7f378ecba8952b7a9ece4dfa124cf11f03f450610c0bc80",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "824485b646fcf38128012ac2b44a930232cc37c5891586710edaf22109a0a746",
+    "audit/coverage.json": "3fa60e00b5012adc81bdc77984faa5dfd8a2abca3fd692f7a8fbe938171645de",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -319,7 +319,7 @@
     "bridge/BulksketchBridge/SyndromeUniquenessSpec.lean": "0fb7dd6f308fa79337dce13cbd73c522f78c75024d86e05b7c5fd7d2d0ceff3c",
     "bridge/BulksketchBridge/VerifyDispatch.lean": "38d817777987c9d3e97ee3155717d243b545f42e976afa8fbcdb9b9c8e7b917c",
     "bridge/BulksketchBridge/VerifyDispatchSpec.lean": "d609a22b3daf8816de9afdc60f1e293bf4efdf6ed37d19efafd190b70217fb06",
-    "bridge/README.md": "dbae94a5e9b8ecad9d831a9ae245df82055660f8ea1a027c30ea9c579b246645",
+    "bridge/README.md": "4a6d537a38d7c45748f3dc9033ca1e34ea81f2bb3381456ae933d84149773111",
     "extraction/dense-square/Arithmetic/Funs.lean": "7ff7bf02a64fb62cb3d28154514ad7b426018c4380dc56b4d101dee3d73bd505",
     "extraction/dense-square/Arithmetic/FunsExternal_Template.lean": "9d47cb5223b7a3a784065947ca87ceea2b65fb72423eb973c18862af9f72a5c8",
     "extraction/dense-square/Arithmetic/Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
@@ -792,7 +792,42 @@
     "extraction/quartic/translator/guards/array_loan_controls.ml": "b639874afedd6e062ab2a564f75c9a586ef13b124695fd076d7710f1fafe204b",
     "extraction/quartic/translator/guards/dune": "26dcb8e1fdef2773627dbb71a6e2b73737931b02fa3a49d2a9f731d3ad37f9c6",
     "extraction/quartic/translator/narrow.log": "7e6bde84b7d150f3d1a9dfbbf6a7749e187287a22e441e2fd0c3656ba81a0e65",
-    "extraction/quartic/unchecked.log": "309ec8cf18ff0c33589ae3f563eba904d0fcfca79ec5049293a651a13616e339"
+    "extraction/quartic/unchecked.log": "309ec8cf18ff0c33589ae3f563eba904d0fcfca79ec5049293a651a13616e339",
+    "NATIVE_CLOSED_LEAF.md": "89b20e2b1ea0c3d71bd27a50dbd8f9538ce5fd02d653c87268692459787dd0b8",
+    "audit/native-closed-leaf-checkpoint.json": "a5da0d10fb9d07a297c8bba2c128b854527a4e92990eb933f871e193216ea2e1",
+    "bridge/Arithmetic/ClosedLeafGenerated.lean": "e518164928bbbb40b467f0a8631749c248be73c18fb2e55a6ba1000544257e7d",
+    "bridge/Arithmetic/NormalizeGenerated.lean": "3d3e32a36c05ff30ad3657d224440dd0bd8dedda19f862b57937bbdeeceff15d",
+    "bridge/BulksketchBridge/ClosedLeaf.lean": "612365921c1092ad03aa4442b62ff575e0ca359607a295e13f1af73969d178a7",
+    "bridge/BulksketchBridge/ClosedLeafAcceptance.lean": "9db06b340c0cc9d6cd222d05f1009857ef7f0aae8d25b700da5b18c01027091e",
+    "bridge/BulksketchBridge/ClosedLeafAcceptanceSpec.lean": "d389654d5384185a53400b9d7fb353193eb993bfa3a7dcb0ad561c51c8565dfb",
+    "bridge/BulksketchBridge/ClosedLeafAdvance.lean": "a0603447aa06cb2beee0f4c32732189a66ba0920810c56d4c8135579c1e76481",
+    "bridge/BulksketchBridge/ClosedLeafAdvanceSpec.lean": "49fb70a91c3f2a2f780afa9c921475306e3d368dce45fd3ca01827aff2eb3e32",
+    "bridge/BulksketchBridge/ClosedLeafPrices.lean": "55286319e261335f8b54e606278e71734426a2b41c837a8e431723c251232412",
+    "bridge/BulksketchBridge/ClosedLeafSpec.lean": "6e83a98ad8540a27a198df346d34e27b77c7e3b2a763b586cf61f60ba52e134e",
+    "bridge/BulksketchBridge/ClosedLeafWindows.lean": "5a0bb4fdec36379f84ad69cc4db018919d434f3c6f98a56b60fb526437889e73",
+    "bridge/BulksketchBridge/Normalize.lean": "9804ba90866c574d0f291d9461e2f8d75697431061d6a76de4c9640cd14d21dd",
+    "bridge/BulksketchBridge/NormalizeSpec.lean": "1b918c8c60ecad7557a0f23f018349065179813f0b65aad507fbbf93e80b6941",
+    "extraction/closed-leaf/Arithmetic/Funs.lean": "1396e42dabeeae148231918ce04f97c8c068f1f1a9cc42421347354eff2cca60",
+    "extraction/closed-leaf/Arithmetic/FunsExternal_Template.lean": "4baa30f0e58e6ab1178052de400850f9d76f35efc49a6491fdfd22bee2517890",
+    "extraction/closed-leaf/Arithmetic/Types.lean": "e1a55947922a09df3fdb8fa8128f287f336945901b4a9730bec0b2046410c0a4",
+    "extraction/closed-leaf/README.md": "f3d770d5304105d782477a6f187de388c8e0de42258cd02c30d303864502ddc6",
+    "extraction/closed-leaf/aeneas.log": "4c4f5526de0364c5803deda59c23d6571e5f38d77b7515652b697762f8913132",
+    "extraction/closed-leaf/arithmetic.llbc": "969b9516c844a19a4307fda39bcc7e971bc73a1a9da80981d910a34635c21520",
+    "extraction/closed-leaf/charon.log": "0f9135aa5595b408e269884ddc88fc5f5eb03ca1b74ae5601fac234bee1172ca",
+    "extraction/closed-leaf/project.py": "02bd703a98773daf4c13a9efb19ee8964f8f219f435ab3f81429d26d867d441a",
+    "extraction/closed-leaf/receipt.json": "5712962049fff4dec78fcbf88a266b49afc28c80ce40467f53b2a864e201368d",
+    "extraction/closed-leaf/replay.log": "3c768316b88cee7b459474c28774978f90f82a5fcd5c68baa1a977d02a26094e",
+    "extraction/deg34-normalize/Arithmetic/Funs.lean": "2070052f9f725db6dc4a7a9ba97212f40028c6a6c57877d0f7598967dfd3193e",
+    "extraction/deg34-normalize/Arithmetic/FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+    "extraction/deg34-normalize/Arithmetic/Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+    "extraction/deg34-normalize/README.md": "cbcad02ec387971b445284e0c1eb80da232465e75e91869fdbf94fb3db160ce7",
+    "extraction/deg34-normalize/aeneas.log": "844fb9cd3a79d8e1c56bce32bdbfb7f240b02d2e5a137408e1fe9eeee97a039e",
+    "extraction/deg34-normalize/arithmetic.llbc": "0d65ab80c0f8696138fa7201a8d4a705d373e75a9d6b51df4090bc835d85d5b9",
+    "extraction/deg34-normalize/charon.log": "933c00a1846356b41210dc4fc18b3520461006af5f6762d8be9984bed0b96885",
+    "extraction/deg34-normalize/check_controls.py": "8736c844193a7b375e0e4356a81731460b3535b861bfc546da137541f8d7ea39",
+    "extraction/deg34-normalize/project.py": "ae6c7434e87c9e1f818d1c801e5d90fdaa8002c46ead13cb56ba9de7ca6faef4",
+    "extraction/deg34-normalize/receipt.json": "cbf8ec8ea63b17771e5d02eedbae67f1dc218259368f6814c2db57851e2fa4d4",
+    "extraction/deg34-normalize/replay.log": "34d5d74d1cafb3f2f0d161384c87669cbabdcf7958bcad89eed2422f482ac039"
   },
   "reviewed_policy_revisions": [
     {
@@ -5229,7 +5264,236 @@
       "new_sha256": "4677a8b810a294faa687d1965c9fbe4e5fa758259278b391889d805accbfc959",
       "reason": "Freeze the original affine and general quartic, both batch inversion loops, and the exact degree-three and degree-four solve frames.",
       "old_sha256": "2990d3fb84fe0721daeb690a88edd3398ef287419f5f2837e575d6dda917e1f2"
+    },
+    {
+      "path": "NATIVE_CLOSED_LEAF.md",
+      "new_sha256": "89b20e2b1ea0c3d71bd27a50dbd8f9538ce5fd02d653c87268692459787dd0b8",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "0ad9be2b237e1dfdf7f378ecba8952b7a9ece4dfa124cf11f03f450610c0bc80",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization.",
+      "old_sha256": "ff981a4e1aab3edb5e340910538245bbc31efc29bb8817a21697ee0c72ce9422"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "3fa60e00b5012adc81bdc77984faa5dfd8a2abca3fd692f7a8fbe938171645de",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization.",
+      "old_sha256": "824485b646fcf38128012ac2b44a930232cc37c5891586710edaf22109a0a746"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "3fc2dcf98e7b9880b38ae2ed5e0090d4f08c3b26800bd5996f304838d6a1c397",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization.",
+      "old_sha256": "bc411b7b074673cde142512242940248b64de67977f02f5553a2f13d361a904a"
+    },
+    {
+      "path": "audit/native-closed-leaf-checkpoint.json",
+      "new_sha256": "a5da0d10fb9d07a297c8bba2c128b854527a4e92990eb933f871e193216ea2e1",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "bridge/Arithmetic/ClosedLeafGenerated.lean",
+      "new_sha256": "e518164928bbbb40b467f0a8631749c248be73c18fb2e55a6ba1000544257e7d",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "bridge/Arithmetic/NormalizeGenerated.lean",
+      "new_sha256": "3d3e32a36c05ff30ad3657d224440dd0bd8dedda19f862b57937bbdeeceff15d",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "f94be8a4d5c168253bb01230cef7f154f0ef0c7f4576c944f89b7db8016134a3",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization.",
+      "old_sha256": "9e7ed0b3ae765fa8bcb6bdcd0204c8965934ebfe72350ba00ba69b26bbc89c5f"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "3134d6a064407d7dfb8d68903ccf0607b3e118926b618593233f2c3eb28e9e2f",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization.",
+      "old_sha256": "ce696ffbd3a945e89015a3e10f99c6db1cf0e096647ad2e5020b9731d3070360"
+    },
+    {
+      "path": "bridge/BulksketchBridge/ClosedLeaf.lean",
+      "new_sha256": "612365921c1092ad03aa4442b62ff575e0ca359607a295e13f1af73969d178a7",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ClosedLeafAcceptance.lean",
+      "new_sha256": "9db06b340c0cc9d6cd222d05f1009857ef7f0aae8d25b700da5b18c01027091e",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ClosedLeafAcceptanceSpec.lean",
+      "new_sha256": "d389654d5384185a53400b9d7fb353193eb993bfa3a7dcb0ad561c51c8565dfb",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ClosedLeafAdvance.lean",
+      "new_sha256": "a0603447aa06cb2beee0f4c32732189a66ba0920810c56d4c8135579c1e76481",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ClosedLeafAdvanceSpec.lean",
+      "new_sha256": "49fb70a91c3f2a2f780afa9c921475306e3d368dce45fd3ca01827aff2eb3e32",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ClosedLeafPrices.lean",
+      "new_sha256": "55286319e261335f8b54e606278e71734426a2b41c837a8e431723c251232412",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ClosedLeafSpec.lean",
+      "new_sha256": "6e83a98ad8540a27a198df346d34e27b77c7e3b2a763b586cf61f60ba52e134e",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ClosedLeafWindows.lean",
+      "new_sha256": "5a0bb4fdec36379f84ad69cc4db018919d434f3c6f98a56b60fb526437889e73",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Normalize.lean",
+      "new_sha256": "9804ba90866c574d0f291d9461e2f8d75697431061d6a76de4c9640cd14d21dd",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NormalizeSpec.lean",
+      "new_sha256": "1b918c8c60ecad7557a0f23f018349065179813f0b65aad507fbbf93e80b6941",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "bridge/README.md",
+      "new_sha256": "4a6d537a38d7c45748f3dc9033ca1e34ea81f2bb3381456ae933d84149773111",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization.",
+      "old_sha256": "dbae94a5e9b8ecad9d831a9ae245df82055660f8ea1a027c30ea9c579b246645"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "46343d1b7e5786ac3c4e9ff8c051e2b2ecdaf7e982fca2b44b5bf871a00b9e5a",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization.",
+      "old_sha256": "e60e5b7fea5b536647254bd6b9e51231d731bf01ab7cb6c114c19e2ee62e0d1e"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "23d68a50606ba10fa500ae1ba847e6361b822cdbab3d3dd774a001dedaa7c8b0",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization.",
+      "old_sha256": "f4bd987ab0278465f8e08953a73c5d59ea6651be4bc8ccdb57fc948ac22e4e0f"
+    },
+    {
+      "path": "extraction/closed-leaf/Arithmetic/Funs.lean",
+      "new_sha256": "1396e42dabeeae148231918ce04f97c8c068f1f1a9cc42421347354eff2cca60",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/closed-leaf/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "4baa30f0e58e6ab1178052de400850f9d76f35efc49a6491fdfd22bee2517890",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/closed-leaf/Arithmetic/Types.lean",
+      "new_sha256": "e1a55947922a09df3fdb8fa8128f287f336945901b4a9730bec0b2046410c0a4",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/closed-leaf/README.md",
+      "new_sha256": "f3d770d5304105d782477a6f187de388c8e0de42258cd02c30d303864502ddc6",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/closed-leaf/aeneas.log",
+      "new_sha256": "4c4f5526de0364c5803deda59c23d6571e5f38d77b7515652b697762f8913132",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/closed-leaf/arithmetic.llbc",
+      "new_sha256": "969b9516c844a19a4307fda39bcc7e971bc73a1a9da80981d910a34635c21520",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/closed-leaf/charon.log",
+      "new_sha256": "0f9135aa5595b408e269884ddc88fc5f5eb03ca1b74ae5601fac234bee1172ca",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/closed-leaf/project.py",
+      "new_sha256": "02bd703a98773daf4c13a9efb19ee8964f8f219f435ab3f81429d26d867d441a",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/closed-leaf/receipt.json",
+      "new_sha256": "5712962049fff4dec78fcbf88a266b49afc28c80ce40467f53b2a864e201368d",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/closed-leaf/replay.log",
+      "new_sha256": "3c768316b88cee7b459474c28774978f90f82a5fcd5c68baa1a977d02a26094e",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/deg34-normalize/Arithmetic/Funs.lean",
+      "new_sha256": "2070052f9f725db6dc4a7a9ba97212f40028c6a6c57877d0f7598967dfd3193e",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/deg34-normalize/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/deg34-normalize/Arithmetic/Types.lean",
+      "new_sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/deg34-normalize/README.md",
+      "new_sha256": "cbcad02ec387971b445284e0c1eb80da232465e75e91869fdbf94fb3db160ce7",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/deg34-normalize/aeneas.log",
+      "new_sha256": "844fb9cd3a79d8e1c56bce32bdbfb7f240b02d2e5a137408e1fe9eeee97a039e",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/deg34-normalize/arithmetic.llbc",
+      "new_sha256": "0d65ab80c0f8696138fa7201a8d4a705d373e75a9d6b51df4090bc835d85d5b9",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/deg34-normalize/charon.log",
+      "new_sha256": "933c00a1846356b41210dc4fc18b3520461006af5f6762d8be9984bed0b96885",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/deg34-normalize/check_controls.py",
+      "new_sha256": "8736c844193a7b375e0e4356a81731460b3535b861bfc546da137541f8d7ea39",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/deg34-normalize/project.py",
+      "new_sha256": "ae6c7434e87c9e1f818d1c801e5d90fdaa8002c46ead13cb56ba9de7ca6faef4",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/deg34-normalize/receipt.json",
+      "new_sha256": "cbf8ec8ea63b17771e5d02eedbae67f1dc218259368f6814c2db57851e2fa4d4",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "extraction/deg34-normalize/replay.log",
+      "new_sha256": "34d5d74d1cafb3f2f0d161384c87669cbabdcf7958bcad89eed2422f482ac039",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "10ea349d01a6672a94c6b0b1f5e03a990ce98522801580a230193de64521edc2",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization.",
+      "old_sha256": "35a400b026d1c441da5ab5261899dc1a90d2b6b932268117d9c157e2e3fb18c8"
     }
   ],
-  "challenge_count": 170
+  "challenge_count": 178
 }

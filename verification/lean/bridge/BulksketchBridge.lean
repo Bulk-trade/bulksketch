@@ -61,3 +61,5 @@ import BulksketchBridge.CertificatePolynomial
 import BulksketchBridge.ReconstructionPowerSums
 import BulksketchBridge.QuarticSemantics
 import BulksketchBridge.QuarticSolve
+import BulksketchBridge.ClosedLeafAcceptance
+import BulksketchBridge.Normalize

@@ -36,7 +36,7 @@
     "audit/core-maps-proof-independent-review.md": "aed4509f239a8e3db59c7a9f0d95ca20286d8a6df50372e3f59c172572101124",
     "audit/field-algebra-accounting-review.md": "55d3cd81a3f03185992e3272994c04b13b5e7ea34ff85e5d8e2cfced90f240be",
     "audit/field-algebra-checkpoint.json": "e93b65ffd57dcdb5c4c987c76f96d48b8917e82f52969853dbb979c049a4220e",
-    "scripts/check_projection_fixtures.py": "35a400b026d1c441da5ab5261899dc1a90d2b6b932268117d9c157e2e3fb18c8",
+    "scripts/check_projection_fixtures.py": "10ea349d01a6672a94c6b0b1f5e03a990ce98522801580a230193de64521edc2",
     "audit/quotient-field-checkpoint.json": "c14a8dd2f0d747079f64b40c3dc9e52db3373ddfc1414b62667727444a82825e",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
     "audit/word-quotient-independent-review.md": "311018cf261231ef631f59867defc66cf7a13e5eba60d414f88b9d4e922dc823",
@@ -55,11 +55,13 @@
     "audit/native-stateful-checkpoint.json": "2c41ee402642341add52703d90795de97eff7b0656c4a4db9cd3e675332f0210",
     "NATIVE_CALLER_CHAINS.md": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
     "audit/native-caller-checkpoint.json": "837788fd6bb6f20d3c18e69b74e0610177fc4b9aec084f1ec313c271f4771cf2",
-    "README.md": "ff981a4e1aab3edb5e340910538245bbc31efc29bb8817a21697ee0c72ce9422",
+    "README.md": "0ad9be2b237e1dfdf7f378ecba8952b7a9ece4dfa124cf11f03f450610c0bc80",
     "NATIVE_RECONSTRUCTION.md": "3a1955592353708b30df40c5fb5443a743451002275c4da8164c37a3344746b2",
     "audit/native-reconstruction-checkpoint.json": "13745cfcf6c9161fb460c8165365bb767a672f474cd14d06edecf6b5fb428562",
     "NATIVE_QUARTIC.md": "0f7a4311accbf944b75a6792955da66ae548891ce2dc1a7e53a167aed892a381",
-    "audit/native-quartic-checkpoint.json": "f09aa083b80b560c60bb7dda9cebfc3a823c3bd791f630678c28a1630d42b536"
+    "audit/native-quartic-checkpoint.json": "f09aa083b80b560c60bb7dda9cebfc3a823c3bd791f630678c28a1630d42b536",
+    "NATIVE_CLOSED_LEAF.md": "89b20e2b1ea0c3d71bd27a50dbd8f9538ce5fd02d653c87268692459787dd0b8",
+    "audit/native-closed-leaf-checkpoint.json": "a5da0d10fb9d07a297c8bba2c128b854527a4e92990eb933f871e193216ea2e1"
   },
   "reviewed_policy_revisions": [
     {
@@ -465,6 +467,28 @@
       "new_sha256": "fc0933dcfee5448943a3a32c5755ffa50780c9812f4daa2e86f5736aedf16555",
       "reason": "Freeze the original affine and general quartic, both batch inversion loops, and the exact degree-three and degree-four solve frames.",
       "old_sha256": "03f66e170551b2abb439bbba18999b6508b6a0ec56c1e6bd603e1105e1500365"
+    },
+    {
+      "path": "NATIVE_CLOSED_LEAF.md",
+      "new_sha256": "89b20e2b1ea0c3d71bd27a50dbd8f9538ce5fd02d653c87268692459787dd0b8",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "0ad9be2b237e1dfdf7f378ecba8952b7a9ece4dfa124cf11f03f450610c0bc80",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization.",
+      "old_sha256": "ff981a4e1aab3edb5e340910538245bbc31efc29bb8817a21697ee0c72ce9422"
+    },
+    {
+      "path": "audit/native-closed-leaf-checkpoint.json",
+      "new_sha256": "a5da0d10fb9d07a297c8bba2c128b854527a4e92990eb933f871e193216ea2e1",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "10ea349d01a6672a94c6b0b1f5e03a990ce98522801580a230193de64521edc2",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization.",
+      "old_sha256": "35a400b026d1c441da5ab5261899dc1a90d2b6b932268117d9c157e2e3fb18c8"
     }
   ]
 }

@@ -27,11 +27,11 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The bridge now has 90 original Aeneas generated-body refinements under their
+The bridge now has 95 original Aeneas generated-body refinements under their
 recorded contracts. Five source-linked LLBC execution contracts are checked
-separately. The latest checkpoint covers affine and general quartic recovery
-and the original degree-three and degree-four solve frames. Full native
-implementation contracts remain open.
+separately. The latest checkpoint covers native closed-leaf recovery,
+its stack advance, and the degree-three/four Newton normalization. Full
+native implementation contracts remain open.
 
 The [core proofs](BulksketchProofs.lean) and [generated-body bridge](bridge/README.md)
 use frozen proposition definitions, transitive axiom audits and exported-term
@@ -58,6 +58,7 @@ reviewed frontend variant and explains the Portable and const-square proofs.
 [NATIVE_CALLER_CHAINS.md](NATIVE_CALLER_CHAINS.md) records the x86 caller and native certificate checkpoint.
 [NATIVE_RECONSTRUCTION.md](NATIVE_RECONSTRUCTION.md) records the original reconstruction stage, pricing and workspace admission.
 [NATIVE_QUARTIC.md](NATIVE_QUARTIC.md) records the original affine and general quartic and candidate solve frames.
+[NATIVE_CLOSED_LEAF.md](NATIVE_CLOSED_LEAF.md) records closed-leaf certification, accepted advance, and Newton normalization.
 
 The [coverage ledger](audit/coverage.json) keeps every native item in scope,
 including unsupported and unproved items. Related mathematical model evidence

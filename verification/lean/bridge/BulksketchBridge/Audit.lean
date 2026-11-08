@@ -376,7 +376,23 @@ run_cmd do
     (``BulksketchBridge.QuarticLoops.ActualQuarticReverseWords,
       ``BulksketchBridge.QuarticLoops.reverse_words_refine),
     (``BulksketchBridge.QuarticSolve.ActualSolveReturnsExactFrame,
-      ``BulksketchBridge.QuarticSolve.solve_refines)
+      ``BulksketchBridge.QuarticSolve.solve_refines),
+    (``BulksketchBridge.ClosedLeafAdvance.ActualRootsChargeRefines,
+      ``BulksketchBridge.ClosedLeafAdvance.charge_refines),
+    (``BulksketchBridge.ClosedLeafAdvance.ActualStageRefines,
+      ``BulksketchBridge.ClosedLeafAdvance.stage_refines),
+    (``BulksketchBridge.ClosedLeafAdvance.ActualAdvanceRefines,
+      ``BulksketchBridge.ClosedLeafAdvance.advance_refines),
+    (``BulksketchBridge.ClosedLeaf.ActualClosedLeafRefines,
+      ``BulksketchBridge.ClosedLeaf.closed_leaf_refines),
+    (``BulksketchBridge.Normalize.ActualNormalizeReturnsExactFrame,
+      ``BulksketchBridge.Normalize.normalize_refines),
+    (``BulksketchBridge.ClosedLeaf.ActualClosedLeafCertificateMeaning,
+      ``BulksketchBridge.ClosedLeaf.certificate_meaning),
+    (``BulksketchBridge.ClosedLeaf.ActualClosedLeafAcceptedAdvance,
+      ``BulksketchBridge.ClosedLeaf.accepted_advance),
+    (``BulksketchBridge.Normalize.ActualNormalizeFieldCoefficients,
+      ``BulksketchBridge.Normalize.normalize_field_coefficients)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge
