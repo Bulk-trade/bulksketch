@@ -1,0 +1,93 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "selectors": [
+    "bulksketch::decode::roots::_::new",
+    "bulksketch::decode::roots::_::start",
+    "bulksketch::decode::roots::_::enable_v3",
+    "bulksketch::decode::roots::_::enable_closed_form",
+    "bulksketch::decode::roots::_::set_splitter_seed"
+  ],
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "binary_sha256": {
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe"
+  },
+  "native_source_edited": false,
+  "opaque_application_bodies": [],
+  "checked_exit": 0,
+  "sources_sha256": {
+    "src/decode/roots.rs": "4697d5874fd1eb03c0210371fdac83a8dc7171de2724da046613f59c879f4fb6",
+    "src/decode/affine.rs": "a7c45498717202aec291b4c4acdd6f819edf16bcdf478500a8c74a3492c4e11d",
+    "src/decode/scratch.rs": "97016cadabf021829b567ff1472a9f11136f54059d78e457d58896cc318e50f6",
+    "src/field/mod.rs": "035dc6193ebb50b324527525c0ee47cbe06ca325db16aa5f8ee55b0e79baa723",
+    "src/types.rs": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
+  },
+  "charon_command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-root-traversal/root-setup/arithmetic.llbc",
+    "--start-from=bulksketch::decode::roots::_::new",
+    "--start-from=bulksketch::decode::roots::_::start",
+    "--start-from=bulksketch::decode::roots::_::enable_v3",
+    "--start-from=bulksketch::decode::roots::_::enable_closed_form",
+    "--start-from=bulksketch::decode::roots::_::set_splitter_seed",
+    "--",
+    "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "aeneas_command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-checks",
+    "-sequential",
+    "-no-progress-bar",
+    "-print-error-emitters",
+    "-split-files",
+    "-dest",
+    "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-root-traversal/root-setup/stock",
+    "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-root-traversal/root-setup/arithmetic.llbc"
+  ],
+  "files_sha256": {
+    "extraction/root-setup/Arithmetic/Funs.lean": "3e235eff55e6b5f680cf5be59e7cfeeb9c2f5424b5e03fec5e02423238f85e93",
+    "extraction/root-setup/Arithmetic/FunsExternal_Template.lean": "3d006e2b57fdda69c0c5aaa656f2a981134421a8815e42736bec3493da0cdf9f",
+    "extraction/root-setup/Arithmetic/Types.lean": "9aa7ad59e592fdf85ad6cc4bbf95c2cc2e96b1d3f7246eb7cf52885b9e02c98d",
+    "extraction/root-setup/aeneas.log": "b691ca2bef16e30fcaca5addb3c049d07a13e8e116a3b1d3816c8a5fb162774c",
+    "extraction/root-setup/arithmetic.llbc": "05df991ff8f122b3b64a0900b4661c311610d61ab0c3264c33c5d7aeb19bd21c",
+    "extraction/root-setup/charon.log": "1a6f4ea34bef13a761fc12e7edb3a52b5190bcbe224a956286dd5cc3027d894e",
+    "extraction/root-setup/replay.log": "9afc041bea3a6f85fc79e41f517f5172407f70cf832edd835520b0b96ea92e63"
+  },
+  "replay": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-root-traversal/root-setup/replay",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-root-traversal/root-setup/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "input_sha256": "05df991ff8f122b3b64a0900b4661c311610d61ab0c3264c33c5d7aeb19bd21c",
+    "log_sha256": "9afc041bea3a6f85fc79e41f517f5172407f70cf832edd835520b0b96ea92e63",
+    "outputs": {
+      "Funs.lean": "3e235eff55e6b5f680cf5be59e7cfeeb9c2f5424b5e03fec5e02423238f85e93",
+      "FunsExternal_Template.lean": "3d006e2b57fdda69c0c5aaa656f2a981134421a8815e42736bec3493da0cdf9f",
+      "Types.lean": "9aa7ad59e592fdf85ad6cc4bbf95c2cc2e96b1d3f7246eb7cf52885b9e02c98d"
+    }
+  }
+}

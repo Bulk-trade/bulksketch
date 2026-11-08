@@ -249,6 +249,25 @@ PROJECTIONS = [
                   "bridge/Arithmetic/QuarticGenerated.lean", "bridge/Arithmetic/CertificateGenerated.lean",
                   "bridge/Arithmetic/AffineQuarticGenerated.lean", "bridge/Arithmetic/ReconstructionTypes.lean",
                   "bridge/Arithmetic/RebuiltLfsrGenerated.lean", "bridge/Workmeter/Funs.lean"]),
+    ("root-setup", "extraction/root-setup/project.py", "extraction/root-setup/receipt.json",
+     "extraction/root-setup/Arithmetic/Funs.lean", "bridge/Arithmetic/RootSetupGenerated.lean",
+     "let i ← degree + 1#usize", "let i ← degree + 2#usize", "compiled root setup projection differs",
+     None, None, ["bridge/Arithmetic/RebuiltLfsrTypes.lean", "bridge/Arithmetic/ReconstructionTypes.lean",
+                  "bridge/Arithmetic/ClosedLeafGenerated.lean"]),
+    ("execution-verify", "extraction/execution-verify/project.py", "extraction/execution-verify/receipt.json",
+     "extraction/execution-verify/Arithmetic/Funs.lean", "bridge/Arithmetic/ExecutionVerifyGenerated.lean",
+     "Charge.VerifyLfsr capacity self.budget.total r.count",
+     "Charge.VerifyLfsr capacity self.budget.total 0#usize", "compiled execution verify projection differs",
+     None, None, ["extraction/reconstruction/receipt.json", "bridge/Arithmetic/DegreeProbeGenerated.lean",
+                  "bridge/Arithmetic/VerifyDispatchGenerated.lean", "bridge/Arithmetic/RebuiltLfsrGenerated.lean",
+                  "bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/WorkScheduleGenerated.lean",
+                  "bridge/Arithmetic/ReconstructionTypes.lean", "bridge/Workmeter/Types.lean"]),
+    ("root-leaf", "extraction/root-leaf/project.py", "extraction/root-leaf/receipt.json",
+     "extraction/root-leaf/Arithmetic/Funs.lean", "bridge/Arithmetic/RootLeafGenerated.lean",
+     "let i ← self.count + self.degree", "let i ← self.count + 1#usize", "compiled root leaf projection differs",
+     None, None, ["bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/ReconstructionTypes.lean",
+                  "bridge/Arithmetic/WorkScheduleGenerated.lean", "bridge/Workmeter/Types.lean",
+                  "bridge/Arithmetic/ClosedLeafGenerated.lean"]),
 ]
 
 
@@ -377,6 +396,16 @@ def main():
                 ("wrong-replay-input", receipt_path, receipt["aeneas_command"][-1],
                  "/tmp/unrelated/closed-leaf/arithmetic.llbc", "closed-leaf checked replay linkage differs"),
             ])
+        if label == "root-setup":
+            cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
+                          "root setup checked replay differs"))
+        if label == "root-leaf":
+            cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
+                          "root leaf checked replay differs"))
+        if label == "execution-verify":
+            cases[1] = (*cases[1][:-1], "raw execution verify artifact differs: Arithmetic/Funs.lean")
+            cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
+                          "execution verify capture or checked Lean command changed"))
         if label == "deg34-normalize":
             cases.append(("unchecked-original-extraction", receipt_path, '"-checks"', '"-no-checks"',
                           "normalization checked replay linkage differs"))
@@ -385,7 +414,7 @@ def main():
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:
                 shadow = Path(directory)
                 if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic", "closed-leaf", "deg34-normalize", "deg34-guard",
-                             "bm-locator", "degree-probe"}:
+                             "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

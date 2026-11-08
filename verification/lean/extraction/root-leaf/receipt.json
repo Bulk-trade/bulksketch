@@ -1,0 +1,93 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "selector": "bulksketch::decode::roots::_::leaf",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "binary_sha256": {
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe"
+  },
+  "native_source_edited": false,
+  "opaque_application_bodies": [
+    "bulksketch::decode::roots::charge",
+    "bulksketch::decode::roots::_::advance"
+  ],
+  "checked_exit": 0,
+  "charon_command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-root-traversal/root-leaf/arithmetic.llbc",
+    "--start-from=bulksketch::decode::roots::_::leaf",
+    "--opaque=bulksketch::decode::roots::charge",
+    "--opaque=bulksketch::decode::roots::_::advance",
+    "--",
+    "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "aeneas_command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-checks",
+    "-sequential",
+    "-no-progress-bar",
+    "-print-error-emitters",
+    "-split-files",
+    "-dest",
+    "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-root-traversal/root-leaf/stock",
+    "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-root-traversal/root-leaf/arithmetic.llbc"
+  ],
+  "files_sha256": {
+    "extraction/root-leaf/Arithmetic/Funs.lean": "609ec6a09271c34305484e389a8de97a2e3aeabbb5f793e4b9a61538b10532d5",
+    "extraction/root-leaf/Arithmetic/FunsExternal_Template.lean": "1ee36f4681305f8b00d93d64a73a7afde6469be836f4dd130f232ee9c8313688",
+    "extraction/root-leaf/Arithmetic/Types.lean": "28ad9477f800c7b739aa5d7c25e79509ad1b1a6899c0fef821921efa1fdcfd7c",
+    "extraction/root-leaf/aeneas.log": "9b6308610d9446c471e444d847b1d90fa1d1473312843a734e219d4dbf13da4c",
+    "extraction/root-leaf/arithmetic.llbc": "38ed5331163b8f2742efd886a6fd9a53fc8dab117eddf5ae414b4f3d54da4045",
+    "extraction/root-leaf/charon.log": "b1134081ea8f903b3f874a3dd95348b0611aabf5bd45f9c8754655b1225847ca",
+    "extraction/root-leaf/replay.log": "6d08ed0c14f2fb025bc48504e100f09e881275c5b84db10c8e62c6716d42244c"
+  },
+  "replay": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-root-traversal/root-leaf/replay",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-root-traversal/root-leaf/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "input_sha256": "38ed5331163b8f2742efd886a6fd9a53fc8dab117eddf5ae414b4f3d54da4045",
+    "log_sha256": "6d08ed0c14f2fb025bc48504e100f09e881275c5b84db10c8e62c6716d42244c",
+    "outputs": {
+      "Funs.lean": "609ec6a09271c34305484e389a8de97a2e3aeabbb5f793e4b9a61538b10532d5",
+      "FunsExternal_Template.lean": "1ee36f4681305f8b00d93d64a73a7afde6469be836f4dd130f232ee9c8313688",
+      "Types.lean": "28ad9477f800c7b739aa5d7c25e79509ad1b1a6899c0fef821921efa1fdcfd7c"
+    }
+  },
+  "verified_call_bindings": {
+    "decode.roots.charge": {
+      "file": "bridge/Arithmetic/ClosedLeafGenerated.lean",
+      "theorem": "BulksketchBridge.ClosedLeafAdvance.charge_refines",
+      "sha256": "300e688ce1ff3b3e510b9d816e0a41b8667d08b33b2a2181b35f138689e229d1"
+    },
+    "decode.roots.Roots.advance": {
+      "file": "bridge/Arithmetic/ClosedLeafGenerated.lean",
+      "theorem": "BulksketchBridge.ClosedLeafAdvance.advance_refines",
+      "sha256": "6313cba42bfb73a08ae1afd88b6a1a499a40b48da0ac93388b8d658c8c80075f"
+    }
+  }
+}

@@ -58,7 +58,7 @@ private theorem add (left right : Usize) (fits : left.val + right.val ≤ Usize.
     (Usize.add_spec (x := left) (y := right) fits)
   rw [normal, word_eq value _ exactValue]
 
-private theorem word_val (value : Nat) (fits : value ≤ Usize.max) :
+theorem word_val (value : Nat) (fits : value ≤ Usize.max) :
     (usizeWord value).val = value := by
   rw [← Usize.bv_toNat]
   change (BitVec.ofNat System.Platform.numBits value).toNat = value

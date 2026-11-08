@@ -3471,7 +3471,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.BmLocator.locator_refines",
+        "scope": "Exact original GF64 locator body under the checked source-scoped translator and admitted scratch, syndrome and budget bounds on the paid path. The finite recurrence accounts for all branches, exact meter and workspace, and termination. Reconstructed residual and anchor invariant checked separately.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/deg34.rs:111:function:bulksketch::decode::deg34::certificate",
@@ -4216,7 +4223,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.ProbeVerification.verified_refines",
+        "scope": "Exact original tiny-root short-circuits and admitted full encoding comparison with the exact scratch frame and callback laws.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/probe.rs:17:struct:bulksketch::decode::probe::Probe",
@@ -4510,7 +4524,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RootLeaf.root_leaf_refines",
+        "scope": "Original zero, linear, and quadratic leaf paths under admitted workspace and GF64 callback laws. Exact pricing, meter, solver, rejected zero root, scratch append, state count and original advance.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/roots.rs:384:method:bulksketch::decode::roots::Roots::trace",
@@ -4590,7 +4611,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RootSetup.factor_work_refines",
+        "scope": "Exact admitted factor scratch partitions and all three mutable split writebacks, table prefix, raw scratch and basis.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/roots.rs:70:function:bulksketch::decode::roots::charge",
@@ -4637,7 +4665,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RootSetup.root_configuration_refines",
+        "scope": "Exact write of the original version flag with the complete original state frame.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/roots.rs:78:method:bulksketch::decode::roots::Roots::enable_closed_form",
@@ -4657,7 +4692,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RootSetup.root_configuration_refines",
+        "scope": "Exact write of the original closed-form flag with the complete original state frame.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/roots.rs:82:method:bulksketch::decode::roots::Roots::set_splitter_seed",
@@ -4677,7 +4719,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RootSetup.root_configuration_refines",
+        "scope": "Exact write of the supplied seed with the complete original state frame.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/roots.rs:86:method:bulksketch::decode::roots::Roots::start",
@@ -4697,7 +4746,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RootSetup.root_start_refines",
+        "scope": "Exact root setup, cache reset, admitted prefix copy and stage dispatch. The original affine preference is retained as an exact source call.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/roots.rs:99:method:bulksketch::decode::roots::Roots::stage",
@@ -5278,7 +5334,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.ExecutionVerify.verify_with_prices_refines",
+        "scope": "Exact original verification stage with both selected paths, pricing, metering, errors, scratch and returned row stage under stated input and kernel contracts.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:35:struct:bulksketch::decode::stages::Execution",
@@ -11768,8 +11831,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Original DegreeProbe exact phase and state refinements and checked work addition. Original BM complete checked projection, bounded loop and branch refinements including both accepted nonzero update paths, and polynomial parity and scalar bounds. Full locator recurrence and complete native decoder contracts remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 102,
+    "note": "All 344 native executable declarations retained. Exact original GF64 BM locator and reconstructed and honest-support induction, native root traversal setup and small leaf, and exact verification dispatch with checked pricing. General root traversal, decoder completeness and physical memory/ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 111,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11828,6 +11891,10 @@
         "BulksketchBridge.BmParity.skipped_discrepancy",
         "BulksketchBridge.BmParity.update_residual_prefix",
         "BulksketchBridge.BmSyndromePolynomials.reconstructed_skip"
+      ],
+      "native_bm_locator": [
+        "BulksketchBridge.BmLocator.locator_refines",
+        "BulksketchBridge.BmLocator.reconstructed_locator_refines"
       ]
     },
     "masked_memory_evidence": {

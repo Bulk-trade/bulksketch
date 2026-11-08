@@ -62,6 +62,8 @@ reviewed frontend variant and explains the Portable and const-square proofs.
 [NATIVE_NEWTON_GUARD.md](NATIVE_NEWTON_GUARD.md) records the original guard, residual loop and field recurrence proofs.
 [NATIVE_BM_DEGREE_PROBE.md](NATIVE_BM_DEGREE_PROBE.md) records the admitted DegreeProbe stages and original BM subloop and branch proofs.
 
+[NATIVE_BM_LOCATOR.md](NATIVE_BM_LOCATOR.md) records the original BM locator, root setup and small leaf, and verification-stage composition.
+
 The [coverage ledger](audit/coverage.json) keeps every native item in scope,
 including unsupported and unproved items. Related mathematical model evidence
 and actual-generated-body refinement evidence have separate fields. Conservative

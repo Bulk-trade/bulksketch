@@ -441,6 +441,21 @@
       "path": "extraction/degree-probe/arithmetic.llbc",
       "sha256": "b010a67637623252e9d20d228faa43cd55aeeab7056aefd40ab1b6efb3463cb3",
       "has_errors": false
+    },
+    {
+      "path": "extraction/root-setup/arithmetic.llbc",
+      "sha256": "05df991ff8f122b3b64a0900b4661c311610d61ab0c3264c33c5d7aeb19bd21c",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/root-leaf/arithmetic.llbc",
+      "sha256": "38ed5331163b8f2742efd886a6fd9a53fc8dab117eddf5ae414b4f3d54da4045",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/execution-verify/arithmetic.llbc",
+      "sha256": "d09e25d9769d8b533c1870bcf4ad2c99eb7b37571fdc11049749e2dfcb248e24",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1033,6 +1048,51 @@
       "native_item_id": "src/decode/work.rs:305:function:bulksketch::decode::work::add",
       "generated_declaration": "bulksketch.decode.work.add",
       "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/bm.rs:13:function:bulksketch::decode::bm::locator",
+      "generated_declaration": "bulksketch.decode.bm.locator",
+      "generated_file": "bridge/Arithmetic/BmLocatorGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:49:method:bulksketch::decode::roots::FactorWork < 'a >::new",
+      "generated_declaration": "bulksketch.decode.roots.FactorWork.new",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:74:method:bulksketch::decode::roots::Roots::enable_v3",
+      "generated_declaration": "bulksketch.decode.roots.Roots.enable_v3",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:78:method:bulksketch::decode::roots::Roots::enable_closed_form",
+      "generated_declaration": "bulksketch.decode.roots.Roots.enable_closed_form",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:82:method:bulksketch::decode::roots::Roots::set_splitter_seed",
+      "generated_declaration": "bulksketch.decode.roots.Roots.set_splitter_seed",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:86:method:bulksketch::decode::roots::Roots::start",
+      "generated_declaration": "bulksketch.decode.roots.Roots.start",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/probe.rs:167:function:bulksketch::decode::probe::verified",
+      "generated_declaration": "bulksketch.decode.probe.verified",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:347:method:bulksketch::decode::roots::Roots::leaf",
+      "generated_declaration": "bulksketch.decode.roots.Roots.leaf",
+      "generated_file": "bridge/Arithmetic/RootLeafGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:334:method:bulksketch::decode::stages::Execution < F , K >::verify",
+      "generated_declaration": "bulksketch.decode.stages.Execution.verify",
+      "generated_file": "bridge/Arithmetic/ExecutionVerifyGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1483,7 +1543,7 @@
       "raw_sha256": "f1ab4c3aa80ecf7fb22de25a3b34a56b6adb765f1a9311739d4ad4e454e0dc1a",
       "checker": "extraction/bm-locator/project.py",
       "declaration_count": 25,
-      "scope": "Original locator and all 24 loop declarations. Entry, loop kernels, exhaustion and all named active branches including the accepted nonzero update are checked under their stated bounds. The full locator recurrence remains open.",
+      "scope": "Exact original GF64 locator body under the checked source-scoped translator and admitted scratch, syndrome and budget bounds on the paid path. The finite recurrence accounts for all branches, exact meter and workspace, and termination. Reconstructed residual and anchor invariant checked separately.",
       "translator_variant": "checked-bm-locator-v1"
     },
     {
@@ -1495,6 +1555,33 @@
       "declaration_count": 14,
       "scope": "Exact original DegreeProbe run under phase-specific admitted degree, slice and count bounds, GF64 arithmetic and exact verification encoding callbacks. Original price and work errors, six stage results, rejection, scratch and state frames are exact. Portable encoding specialization checked separately.",
       "translator_variant": "checked-fixedpoint-nested-scalar-slice-retry-v1"
+    },
+    {
+      "generated": "extraction/root-setup/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootSetupGenerated.lean",
+      "sha256": "bb7da33e4cc8120bc17c2d73b84bcc8013d2f7e9f6f90aa7c54072dc356366b6",
+      "raw_sha256": "3e235eff55e6b5f680cf5be59e7cfeeb9c2f5424b5e03fec5e02423238f85e93",
+      "checker": "extraction/root-setup/project.py",
+      "declaration_count": 16,
+      "scope": "Original FactorWork partition and root setup under pinned stock checked extraction."
+    },
+    {
+      "generated": "extraction/root-leaf/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootLeafGenerated.lean",
+      "sha256": "e25fd58ed7ff39553f9c84cc508c70cf2a4473a9476fa51c55ca199a71d7dd2c",
+      "raw_sha256": "609ec6a09271c34305484e389a8de97a2e3aeabbb5f793e4b9a61538b10532d5",
+      "checker": "extraction/root-leaf/project.py",
+      "declaration_count": 1,
+      "scope": "Original small-factor leaf with checked stock extraction and exact source charge and advance bindings."
+    },
+    {
+      "generated": "extraction/execution-verify/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/ExecutionVerifyGenerated.lean",
+      "sha256": "e28f2b7d84ce2367f71ac93c19b3dcf319406808c9beb78bcd86e7e5ae31f457",
+      "raw_sha256": "81ead7bd1b18fc51774accc6bcdffaeaaf9a2170b8939f36e2fe662e669883e2",
+      "checker": "extraction/execution-verify/project.py",
+      "declaration_count": 1,
+      "scope": "Original row verification stage, with its existing exact source-linked verification and pricing callees."
     }
   ],
   "reviewed_translator_variants": [
@@ -1568,7 +1655,7 @@
       "patch_sha256": "b263b8addc49358cd0bd444828fdec8c77d70a00e6eb231b6605e4ee18d9b353",
       "receipt": "extraction/bm-locator/receipt.json",
       "mandatory_checks": true,
-      "scope": "Checked explicit BM flag and exact source scope. Stock shared/mutable ending and typed loop/mirror writebacks preserved for the original locator. No full locator body credit."
+      "scope": "Checked explicit BM flag and exact source scope. Stock shared/mutable ending and typed loop/mirror writebacks preserved for the original locator."
     }
   ],
   "diagnostic_generated_projections": [

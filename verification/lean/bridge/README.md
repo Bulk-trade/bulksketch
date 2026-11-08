@@ -85,6 +85,11 @@ quotient-field semantics of the cleared words and recurrence. The
 admitted probe transitions and original BM subloop, entry and branch
 refinements.
 
+The [original BM locator checkpoint](../NATIVE_BM_LOCATOR.md) closes the
+finite native recurrence and proves the monic returned locator on honest
+reconstructed moments. It also adds root setup, small leaves and the
+verification-stage wrapper.
+
 From the parent Lean directory:
 
 ```sh

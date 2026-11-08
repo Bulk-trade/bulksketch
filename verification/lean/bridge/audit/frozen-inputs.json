@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "1995d7d41ea1a7ed0b1b28fd381b12acc133324b1f2301da6c4b4ba317cc2c8b",
+    "bridge/BulksketchBridge/Audit.lean": "af28550388f925b270e464a7d71d3963d0136ac5d2c88b5ba50137a67e0c4bb2",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "7b3a819c39a78733098c8d64c8ef437e08613979737c889def4bb6fba3af88a2",
-    "audit/frozen-inputs.json": "bb64e23dfff28c9d2f86bae97676be01edf53b91d927ad0fbb470d2dbee8e0a2",
-    "bridge/BulksketchBridge.lean": "f84e2111ed5494bbbd7d0d33432b3550636bc1a692be0e463b8dad8a820acf82",
+    "audit/frozen-inputs.json": "eb2249a0855d5c1cb8d7cca5cbf9bf1f035217f988758ee26d3b2d7998708371",
+    "bridge/BulksketchBridge.lean": "bff4ee6644d3a9a30d388086104e5c1f0304f90fd1cf632ea61ecafdc42a6445",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "ba2432f65627a213065f3cd7910375cc729084287a56b2faeb4736cf0f5be9e9",
-    "bridge/obligations.json": "80425d963332916fc877a65df4d85cc598c4632f4e5f6c1d4e40cd9983dd7a62",
+    "bridge/source-linkage.json": "62d3164c308d6821b863227c6f0db2ce221ace7969563f68e4be72c90f26b3ba",
+    "bridge/obligations.json": "a7c662c36d028bfad31181df0008771059b26ef31fba04d6aebc95e75483937e",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "2c67002992e449733e009027f7ef1adc2fc9c58d6cb4b653dfc6f66d384804fb",
+    "scripts/check_projection_fixtures.py": "089b4dec48ea733e0248560ba2af2633c895ae266955bb8191096e8af6e23748",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "c1897670fe1a181b109289462ebb9dd93011d3e29e8d7bf78dc9110c59538abb",
+    "README.md": "f4b081cfafb5000db4c0d119a6d9c6fdce7235cea15b52656441b93edef0e82d",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "5f67ba99dc353a4a9ab32bfb64a2e223ad6c01a8d1478ad9a95174823742bd3a",
+    "audit/coverage.json": "be719d9e9fd4c99a432e41aa7f8c7f0fde261dcee660029e919c2a17c417484c",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -319,7 +319,7 @@
     "bridge/BulksketchBridge/SyndromeUniquenessSpec.lean": "0fb7dd6f308fa79337dce13cbd73c522f78c75024d86e05b7c5fd7d2d0ceff3c",
     "bridge/BulksketchBridge/VerifyDispatch.lean": "38d817777987c9d3e97ee3155717d243b545f42e976afa8fbcdb9b9c8e7b917c",
     "bridge/BulksketchBridge/VerifyDispatchSpec.lean": "d609a22b3daf8816de9afdc60f1e293bf4efdf6ed37d19efafd190b70217fb06",
-    "bridge/README.md": "b328850057ec0e319a836268515d02ba27a4fe88bef3deae26020442173fb7af",
+    "bridge/README.md": "848166d1ed69068b575697cfd9045892c011bb1ed180822c2f25d49a31080563",
     "extraction/dense-square/Arithmetic/Funs.lean": "7ff7bf02a64fb62cb3d28154514ad7b426018c4380dc56b4d101dee3d73bd505",
     "extraction/dense-square/Arithmetic/FunsExternal_Template.lean": "9d47cb5223b7a3a784065947ca87ceea2b65fb72423eb973c18862af9f72a5c8",
     "extraction/dense-square/Arithmetic/Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
@@ -800,7 +800,7 @@
     "bridge/BulksketchBridge/ClosedLeaf.lean": "612365921c1092ad03aa4442b62ff575e0ca359607a295e13f1af73969d178a7",
     "bridge/BulksketchBridge/ClosedLeafAcceptance.lean": "9db06b340c0cc9d6cd222d05f1009857ef7f0aae8d25b700da5b18c01027091e",
     "bridge/BulksketchBridge/ClosedLeafAcceptanceSpec.lean": "d389654d5384185a53400b9d7fb353193eb993bfa3a7dcb0ad561c51c8565dfb",
-    "bridge/BulksketchBridge/ClosedLeafAdvance.lean": "a0603447aa06cb2beee0f4c32732189a66ba0920810c56d4c8135579c1e76481",
+    "bridge/BulksketchBridge/ClosedLeafAdvance.lean": "f3ae31f78b93617be1b8d32660e78f2ab1cfe1f8a7dcea647c40af16ae0363c7",
     "bridge/BulksketchBridge/ClosedLeafAdvanceSpec.lean": "49fb70a91c3f2a2f780afa9c921475306e3d368dce45fd3ca01827aff2eb3e32",
     "bridge/BulksketchBridge/ClosedLeafPrices.lean": "55286319e261335f8b54e606278e71734426a2b41c837a8e431723c251232412",
     "bridge/BulksketchBridge/ClosedLeafSpec.lean": "6e83a98ad8540a27a198df346d34e27b77c7e3b2a763b586cf61f60ba52e134e",
@@ -933,7 +933,68 @@
     "bridge/BulksketchBridge/BmAcceptedSpec.lean": "64c3f35c16d8dcc918f5b748ae47e804d2138aaa477bcf484c72e39a240fb75e",
     "bridge/BulksketchBridge/BmParity.lean": "4b87bb1154ed3662a7019c4b186ef54f26a368ca198e72fe8301608982f7500c",
     "bridge/BulksketchBridge/BmParitySpec.lean": "b4fe9d1d29bd8eae1162e3884c85fb33c4bc31c1708c1dd44685db51e563a8a9",
-    "bridge/BulksketchBridge/BmSyndromePolynomials.lean": "3103b006bc8400ad53bc78d9353a75279acf5acb6c383645f208c07b18bceda8"
+    "bridge/BulksketchBridge/BmSyndromePolynomials.lean": "3103b006bc8400ad53bc78d9353a75279acf5acb6c383645f208c07b18bceda8",
+    "NATIVE_BM_LOCATOR.md": "2b330a3ca4841689cf58af8be9df209e2fb39b30bc1f442054be74ff3f08aed2",
+    "audit/native-bm-locator-checkpoint.json": "eed1ea6a781225abb5526757187a33a2dc2a12d09d440c2ac8fd8e8f5360b398",
+    "bridge/Arithmetic/ExecutionVerifyGenerated.lean": "e28f2b7d84ce2367f71ac93c19b3dcf319406808c9beb78bcd86e7e5ae31f457",
+    "bridge/Arithmetic/RootLeafGenerated.lean": "e25fd58ed7ff39553f9c84cc508c70cf2a4473a9476fa51c55ca199a71d7dd2c",
+    "bridge/Arithmetic/RootSetupGenerated.lean": "bb7da33e4cc8120bc17c2d73b84bcc8013d2f7e9f6f90aa7c54072dc356366b6",
+    "bridge/BulksketchBridge/BmBufferLayout.lean": "a8dab93e522e68da6160b199a117bd0b239924cfcd954cfbdbf63e178bf46742",
+    "bridge/BulksketchBridge/BmCurrentDiscrepancy.lean": "abb24e9c69b36698cbafc45c828d236381229d81faeb0534b323a14c2885f93c",
+    "bridge/BulksketchBridge/BmHonestLocator.lean": "cd362174a5ef2d1bc6e0522c02ce09880f1e9c08789ca5045ea3e39aed0acd7b",
+    "bridge/BulksketchBridge/BmHonestLocatorSpec.lean": "f5e4091311228fa85d4c0c4f730ebaedb45708deff7022ab2c3330dd7822ff0b",
+    "bridge/BulksketchBridge/BmLocator.lean": "7d4c34ec1fdc1ff608cfd6c87441da3b7a2a14db3e1ea1541ff04d27eddc80e8",
+    "bridge/BulksketchBridge/BmLocatorResidual.lean": "2b543097a9435dd0e9fb681f3f56b350007151e8063f2634dd225c81496fcf0a",
+    "bridge/BulksketchBridge/BmLocatorResidualSpec.lean": "a1d3c4e04f5394517d8537ab3fc264ff5e657861aafa37fdbebf812f54e9ddf2",
+    "bridge/BulksketchBridge/BmLocatorSpec.lean": "1537c82a13be00459186944fe94ac938b1a9d1195471421ff73d1386f0c4187a",
+    "bridge/BulksketchBridge/BmLoop.lean": "6462521f74f49263600cfc36a344da9ba4371a6f1b599a7cb65df8df6371e58c",
+    "bridge/BulksketchBridge/BmLoopFrames.lean": "6ea04228c39b6628e127032e36464222f5eea1b31cfd9320f40fcbe6dff75e2a",
+    "bridge/BulksketchBridge/BmLoopResidual.lean": "a60f7bc5cba9e892c6aebe023044972bcb6512917f6aab93384a91d2e99a8176",
+    "bridge/BulksketchBridge/BmLoopResidualSpec.lean": "8a841c20dc4fe5565bd1d9a8971104c410e73e30dc5c3b4f5de5d88ef153973a",
+    "bridge/BulksketchBridge/BmLoopSpec.lean": "c03c937cd42dff2cd8168b04f0cdffa08386fd5b74bb4c0a63a2cf55553e0be2",
+    "bridge/BulksketchBridge/BmReciprocalMeaning.lean": "007ca8c84731323526b1f3931ecbeff2421db36398f0cb72e7e1fc96d3b77260",
+    "bridge/BulksketchBridge/BmResidualInvariant.lean": "25a209b5f6559c33602c8f0babb4cc104b54f2a6762cbd215e71d4fbaa711575",
+    "bridge/BulksketchBridge/BmSupportBounds.lean": "f7a209bd4d88472d74fa0a58b1214a784ec9d9daabe73d26405cb0d7047c1c23",
+    "bridge/BulksketchBridge/BmUpdatePolynomial.lean": "152653e81c353d4b7034dd7618a210b9d7049df595ee7e92c512304c79b95645",
+    "bridge/BulksketchBridge/ExecutionVerify.lean": "8824c235c57a659f789a03c4d9395793161475feb3c4f6d7c52eda6d0b4aeaf4",
+    "bridge/BulksketchBridge/ExecutionVerifyPrice.lean": "466f774bf4ac14864679462b583a38ba38fb37f854f6a8f38ab4489ab54c0edd",
+    "bridge/BulksketchBridge/ExecutionVerifyPriceSpec.lean": "1137276722615ac9380d3b743869f57710c03669e3752d14f9857346fa3efcf5",
+    "bridge/BulksketchBridge/ExecutionVerifySpec.lean": "5ccac49c5615ed79b7e7d78cb0ee1dec687f48496a9a9baf9a18f2df220b6ba6",
+    "bridge/BulksketchBridge/ProbeVerification.lean": "99dbf49b71254a55b514da197cd52681241d9e8c2437efbe7572658a6bd76829",
+    "bridge/BulksketchBridge/ProbeVerificationSpec.lean": "90248999db75004d738f648a26b22c45303d7226636daeb7b3946e44983c1c56",
+    "bridge/BulksketchBridge/RootLeaf.lean": "aeb1918deaf6a6d37907ac607ca83c811a0f695397b708645bf98909924e7efb",
+    "bridge/BulksketchBridge/RootLeafSpec.lean": "6a0d8e72949605cfcfb41a65e780f1fc0428c4f7ca56a5115074d43f1c3cc50f",
+    "bridge/BulksketchBridge/RootSetup.lean": "4953826b9bf229e6d9d849dadb2976ab1d46c92bcdd921b079e924beb2afc1f3",
+    "bridge/BulksketchBridge/RootSetupSpec.lean": "1adeee3e0c9b4d32334ea5ce1f04e89a7f5508d8bf6c5cce162a03e19eb5c1cb",
+    "extraction/execution-verify/Arithmetic/Funs.lean": "81ead7bd1b18fc51774accc6bcdffaeaaf9a2170b8939f36e2fe662e669883e2",
+    "extraction/execution-verify/Arithmetic/FunsExternal_Template.lean": "954d34c787c30e628ca159c164e3577d62a4352e5ac34393add7edac98e5916b",
+    "extraction/execution-verify/Arithmetic/Types.lean": "8254935be313eb1dc586f4589a4a8571f35a39b0ce9f331b3733787793a743d7",
+    "extraction/execution-verify/README.md": "41a8b297a879d88b032fb37668101b4b2725bb0b6ca8a95e571f922da6a22178",
+    "extraction/execution-verify/arithmetic.llbc": "d09e25d9769d8b533c1870bcf4ad2c99eb7b37571fdc11049749e2dfcb248e24",
+    "extraction/execution-verify/charon.log": "933c00a1846356b41210dc4fc18b3520461006af5f6762d8be9984bed0b96885",
+    "extraction/execution-verify/pinned.log": "25baa4f567b9375cb667ce740f5fa71c1308b2816a3d9bca54485a5e211e319c",
+    "extraction/execution-verify/project.py": "5d04c9f1c2dcd7cc7e86c3a36e0fc6c6a5897bf551c5778f4e1d8c14436f1a7d",
+    "extraction/execution-verify/receipt.json": "11346807c6cced984ac9f9ede3d382de9d52ce8e5bd9056fd85929e677be6627",
+    "extraction/root-leaf/Arithmetic/Funs.lean": "609ec6a09271c34305484e389a8de97a2e3aeabbb5f793e4b9a61538b10532d5",
+    "extraction/root-leaf/Arithmetic/FunsExternal_Template.lean": "1ee36f4681305f8b00d93d64a73a7afde6469be836f4dd130f232ee9c8313688",
+    "extraction/root-leaf/Arithmetic/Types.lean": "28ad9477f800c7b739aa5d7c25e79509ad1b1a6899c0fef821921efa1fdcfd7c",
+    "extraction/root-leaf/README.md": "90dd787143ea30148540370e67a37bc4711ebe9167fb200ebd933d74844c7fe1",
+    "extraction/root-leaf/aeneas.log": "9b6308610d9446c471e444d847b1d90fa1d1473312843a734e219d4dbf13da4c",
+    "extraction/root-leaf/arithmetic.llbc": "38ed5331163b8f2742efd886a6fd9a53fc8dab117eddf5ae414b4f3d54da4045",
+    "extraction/root-leaf/charon.log": "b1134081ea8f903b3f874a3dd95348b0611aabf5bd45f9c8754655b1225847ca",
+    "extraction/root-leaf/project.py": "59469ecae9177c056ab7c1ebfd75919cdf7be3617e5e44aff6f44bac35fd420f",
+    "extraction/root-leaf/receipt.json": "8a0432e9dd69f2009d997e1c2856d4c610a4d39b93703dc7c2e5a6d7aa88c6a5",
+    "extraction/root-leaf/replay.log": "6d08ed0c14f2fb025bc48504e100f09e881275c5b84db10c8e62c6716d42244c",
+    "extraction/root-setup/Arithmetic/Funs.lean": "3e235eff55e6b5f680cf5be59e7cfeeb9c2f5424b5e03fec5e02423238f85e93",
+    "extraction/root-setup/Arithmetic/FunsExternal_Template.lean": "3d006e2b57fdda69c0c5aaa656f2a981134421a8815e42736bec3493da0cdf9f",
+    "extraction/root-setup/Arithmetic/Types.lean": "9aa7ad59e592fdf85ad6cc4bbf95c2cc2e96b1d3f7246eb7cf52885b9e02c98d",
+    "extraction/root-setup/README.md": "4b1c715cd5eaef01ccd11fbde9bce86b3f6afe1478f75c26a507afc9dddb72b7",
+    "extraction/root-setup/aeneas.log": "b691ca2bef16e30fcaca5addb3c049d07a13e8e116a3b1d3816c8a5fb162774c",
+    "extraction/root-setup/arithmetic.llbc": "05df991ff8f122b3b64a0900b4661c311610d61ab0c3264c33c5d7aeb19bd21c",
+    "extraction/root-setup/charon.log": "1a6f4ea34bef13a761fc12e7edb3a52b5190bcbe224a956286dd5cc3027d894e",
+    "extraction/root-setup/project.py": "1035b07e486b90809e7e3bab62ec981ee790339087ae2ae7d6f6c7a6caf902a7",
+    "extraction/root-setup/receipt.json": "2f6aa0838213a6964d030bbd7b461d71f7b9be46c76da06767f162f47641c98c",
+    "extraction/root-setup/replay.log": "9afc041bea3a6f85fc79e41f517f5172407f70cf832edd835520b0b96ea92e63"
   },
   "reviewed_policy_revisions": [
     {
@@ -6327,7 +6388,372 @@
       "new_sha256": "ba2432f65627a213065f3cd7910375cc729084287a56b2faeb4736cf0f5be9e9",
       "reason": "Freeze the accepted original BM branches and characteristic-two parity proof.",
       "old_sha256": "ec783ee728fab78e87d2d4f5036fbc11c217e579cba87991e30a9771102afc54"
+    },
+    {
+      "path": "NATIVE_BM_LOCATOR.md",
+      "new_sha256": "2b330a3ca4841689cf58af8be9df209e2fb39b30bc1f442054be74ff3f08aed2",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "f4b081cfafb5000db4c0d119a6d9c6fdce7235cea15b52656441b93edef0e82d",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing.",
+      "old_sha256": "c1897670fe1a181b109289462ebb9dd93011d3e29e8d7bf78dc9110c59538abb"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "be719d9e9fd4c99a432e41aa7f8c7f0fde261dcee660029e919c2a17c417484c",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing.",
+      "old_sha256": "5f67ba99dc353a4a9ab32bfb64a2e223ad6c01a8d1478ad9a95174823742bd3a"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "eb2249a0855d5c1cb8d7cca5cbf9bf1f035217f988758ee26d3b2d7998708371",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing.",
+      "old_sha256": "bb64e23dfff28c9d2f86bae97676be01edf53b91d927ad0fbb470d2dbee8e0a2"
+    },
+    {
+      "path": "audit/native-bm-locator-checkpoint.json",
+      "new_sha256": "eed1ea6a781225abb5526757187a33a2dc2a12d09d440c2ac8fd8e8f5360b398",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/Arithmetic/ExecutionVerifyGenerated.lean",
+      "new_sha256": "e28f2b7d84ce2367f71ac93c19b3dcf319406808c9beb78bcd86e7e5ae31f457",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/Arithmetic/RootLeafGenerated.lean",
+      "new_sha256": "e25fd58ed7ff39553f9c84cc508c70cf2a4473a9476fa51c55ca199a71d7dd2c",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/Arithmetic/RootSetupGenerated.lean",
+      "new_sha256": "bb7da33e4cc8120bc17c2d73b84bcc8013d2f7e9f6f90aa7c54072dc356366b6",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "bff4ee6644d3a9a30d388086104e5c1f0304f90fd1cf632ea61ecafdc42a6445",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing.",
+      "old_sha256": "f84e2111ed5494bbbd7d0d33432b3550636bc1a692be0e463b8dad8a820acf82"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "af28550388f925b270e464a7d71d3963d0136ac5d2c88b5ba50137a67e0c4bb2",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing.",
+      "old_sha256": "1995d7d41ea1a7ed0b1b28fd381b12acc133324b1f2301da6c4b4ba317cc2c8b"
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmBufferLayout.lean",
+      "new_sha256": "a8dab93e522e68da6160b199a117bd0b239924cfcd954cfbdbf63e178bf46742",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmCurrentDiscrepancy.lean",
+      "new_sha256": "abb24e9c69b36698cbafc45c828d236381229d81faeb0534b323a14c2885f93c",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmHonestLocator.lean",
+      "new_sha256": "cd362174a5ef2d1bc6e0522c02ce09880f1e9c08789ca5045ea3e39aed0acd7b",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmHonestLocatorSpec.lean",
+      "new_sha256": "f5e4091311228fa85d4c0c4f730ebaedb45708deff7022ab2c3330dd7822ff0b",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmLocator.lean",
+      "new_sha256": "7d4c34ec1fdc1ff608cfd6c87441da3b7a2a14db3e1ea1541ff04d27eddc80e8",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmLocatorResidual.lean",
+      "new_sha256": "2b543097a9435dd0e9fb681f3f56b350007151e8063f2634dd225c81496fcf0a",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmLocatorResidualSpec.lean",
+      "new_sha256": "a1d3c4e04f5394517d8537ab3fc264ff5e657861aafa37fdbebf812f54e9ddf2",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmLocatorSpec.lean",
+      "new_sha256": "1537c82a13be00459186944fe94ac938b1a9d1195471421ff73d1386f0c4187a",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmLoop.lean",
+      "new_sha256": "6462521f74f49263600cfc36a344da9ba4371a6f1b599a7cb65df8df6371e58c",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmLoopFrames.lean",
+      "new_sha256": "6ea04228c39b6628e127032e36464222f5eea1b31cfd9320f40fcbe6dff75e2a",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmLoopResidual.lean",
+      "new_sha256": "a60f7bc5cba9e892c6aebe023044972bcb6512917f6aab93384a91d2e99a8176",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmLoopResidualSpec.lean",
+      "new_sha256": "8a841c20dc4fe5565bd1d9a8971104c410e73e30dc5c3b4f5de5d88ef153973a",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmLoopSpec.lean",
+      "new_sha256": "c03c937cd42dff2cd8168b04f0cdffa08386fd5b74bb4c0a63a2cf55553e0be2",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmReciprocalMeaning.lean",
+      "new_sha256": "007ca8c84731323526b1f3931ecbeff2421db36398f0cb72e7e1fc96d3b77260",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmResidualInvariant.lean",
+      "new_sha256": "25a209b5f6559c33602c8f0babb4cc104b54f2a6762cbd215e71d4fbaa711575",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmSupportBounds.lean",
+      "new_sha256": "f7a209bd4d88472d74fa0a58b1214a784ec9d9daabe73d26405cb0d7047c1c23",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmUpdatePolynomial.lean",
+      "new_sha256": "152653e81c353d4b7034dd7618a210b9d7049df595ee7e92c512304c79b95645",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ClosedLeafAdvance.lean",
+      "new_sha256": "f3ae31f78b93617be1b8d32660e78f2ab1cfe1f8a7dcea647c40af16ae0363c7",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing.",
+      "old_sha256": "a0603447aa06cb2beee0f4c32732189a66ba0920810c56d4c8135579c1e76481"
+    },
+    {
+      "path": "bridge/BulksketchBridge/ExecutionVerify.lean",
+      "new_sha256": "8824c235c57a659f789a03c4d9395793161475feb3c4f6d7c52eda6d0b4aeaf4",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ExecutionVerifyPrice.lean",
+      "new_sha256": "466f774bf4ac14864679462b583a38ba38fb37f854f6a8f38ab4489ab54c0edd",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ExecutionVerifyPriceSpec.lean",
+      "new_sha256": "1137276722615ac9380d3b743869f57710c03669e3752d14f9857346fa3efcf5",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ExecutionVerifySpec.lean",
+      "new_sha256": "5ccac49c5615ed79b7e7d78cb0ee1dec687f48496a9a9baf9a18f2df220b6ba6",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ProbeVerification.lean",
+      "new_sha256": "99dbf49b71254a55b514da197cd52681241d9e8c2437efbe7572658a6bd76829",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ProbeVerificationSpec.lean",
+      "new_sha256": "90248999db75004d738f648a26b22c45303d7226636daeb7b3946e44983c1c56",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootLeaf.lean",
+      "new_sha256": "aeb1918deaf6a6d37907ac607ca83c811a0f695397b708645bf98909924e7efb",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootLeafSpec.lean",
+      "new_sha256": "6a0d8e72949605cfcfb41a65e780f1fc0428c4f7ca56a5115074d43f1c3cc50f",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootSetup.lean",
+      "new_sha256": "4953826b9bf229e6d9d849dadb2976ab1d46c92bcdd921b079e924beb2afc1f3",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootSetupSpec.lean",
+      "new_sha256": "1adeee3e0c9b4d32334ea5ce1f04e89a7f5508d8bf6c5cce162a03e19eb5c1cb",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "bridge/README.md",
+      "new_sha256": "848166d1ed69068b575697cfd9045892c011bb1ed180822c2f25d49a31080563",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing.",
+      "old_sha256": "b328850057ec0e319a836268515d02ba27a4fe88bef3deae26020442173fb7af"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "a7c662c36d028bfad31181df0008771059b26ef31fba04d6aebc95e75483937e",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing.",
+      "old_sha256": "80425d963332916fc877a65df4d85cc598c4632f4e5f6c1d4e40cd9983dd7a62"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "62d3164c308d6821b863227c6f0db2ce221ace7969563f68e4be72c90f26b3ba",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing.",
+      "old_sha256": "ba2432f65627a213065f3cd7910375cc729084287a56b2faeb4736cf0f5be9e9"
+    },
+    {
+      "path": "extraction/execution-verify/Arithmetic/Funs.lean",
+      "new_sha256": "81ead7bd1b18fc51774accc6bcdffaeaaf9a2170b8939f36e2fe662e669883e2",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/execution-verify/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "954d34c787c30e628ca159c164e3577d62a4352e5ac34393add7edac98e5916b",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/execution-verify/Arithmetic/Types.lean",
+      "new_sha256": "8254935be313eb1dc586f4589a4a8571f35a39b0ce9f331b3733787793a743d7",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/execution-verify/README.md",
+      "new_sha256": "41a8b297a879d88b032fb37668101b4b2725bb0b6ca8a95e571f922da6a22178",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/execution-verify/arithmetic.llbc",
+      "new_sha256": "d09e25d9769d8b533c1870bcf4ad2c99eb7b37571fdc11049749e2dfcb248e24",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/execution-verify/charon.log",
+      "new_sha256": "933c00a1846356b41210dc4fc18b3520461006af5f6762d8be9984bed0b96885",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/execution-verify/pinned.log",
+      "new_sha256": "25baa4f567b9375cb667ce740f5fa71c1308b2816a3d9bca54485a5e211e319c",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/execution-verify/project.py",
+      "new_sha256": "5d04c9f1c2dcd7cc7e86c3a36e0fc6c6a5897bf551c5778f4e1d8c14436f1a7d",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/execution-verify/receipt.json",
+      "new_sha256": "11346807c6cced984ac9f9ede3d382de9d52ce8e5bd9056fd85929e677be6627",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-leaf/Arithmetic/Funs.lean",
+      "new_sha256": "609ec6a09271c34305484e389a8de97a2e3aeabbb5f793e4b9a61538b10532d5",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-leaf/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "1ee36f4681305f8b00d93d64a73a7afde6469be836f4dd130f232ee9c8313688",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-leaf/Arithmetic/Types.lean",
+      "new_sha256": "28ad9477f800c7b739aa5d7c25e79509ad1b1a6899c0fef821921efa1fdcfd7c",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-leaf/README.md",
+      "new_sha256": "90dd787143ea30148540370e67a37bc4711ebe9167fb200ebd933d74844c7fe1",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-leaf/aeneas.log",
+      "new_sha256": "9b6308610d9446c471e444d847b1d90fa1d1473312843a734e219d4dbf13da4c",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-leaf/arithmetic.llbc",
+      "new_sha256": "38ed5331163b8f2742efd886a6fd9a53fc8dab117eddf5ae414b4f3d54da4045",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-leaf/charon.log",
+      "new_sha256": "b1134081ea8f903b3f874a3dd95348b0611aabf5bd45f9c8754655b1225847ca",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-leaf/project.py",
+      "new_sha256": "59469ecae9177c056ab7c1ebfd75919cdf7be3617e5e44aff6f44bac35fd420f",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-leaf/receipt.json",
+      "new_sha256": "8a0432e9dd69f2009d997e1c2856d4c610a4d39b93703dc7c2e5a6d7aa88c6a5",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-leaf/replay.log",
+      "new_sha256": "6d08ed0c14f2fb025bc48504e100f09e881275c5b84db10c8e62c6716d42244c",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-setup/Arithmetic/Funs.lean",
+      "new_sha256": "3e235eff55e6b5f680cf5be59e7cfeeb9c2f5424b5e03fec5e02423238f85e93",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-setup/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "3d006e2b57fdda69c0c5aaa656f2a981134421a8815e42736bec3493da0cdf9f",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-setup/Arithmetic/Types.lean",
+      "new_sha256": "9aa7ad59e592fdf85ad6cc4bbf95c2cc2e96b1d3f7246eb7cf52885b9e02c98d",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-setup/README.md",
+      "new_sha256": "4b1c715cd5eaef01ccd11fbde9bce86b3f6afe1478f75c26a507afc9dddb72b7",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-setup/aeneas.log",
+      "new_sha256": "b691ca2bef16e30fcaca5addb3c049d07a13e8e116a3b1d3816c8a5fb162774c",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-setup/arithmetic.llbc",
+      "new_sha256": "05df991ff8f122b3b64a0900b4661c311610d61ab0c3264c33c5d7aeb19bd21c",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-setup/charon.log",
+      "new_sha256": "1a6f4ea34bef13a761fc12e7edb3a52b5190bcbe224a956286dd5cc3027d894e",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-setup/project.py",
+      "new_sha256": "1035b07e486b90809e7e3bab62ec981ee790339087ae2ae7d6f6c7a6caf902a7",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-setup/receipt.json",
+      "new_sha256": "2f6aa0838213a6964d030bbd7b461d71f7b9be46c76da06767f162f47641c98c",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "extraction/root-setup/replay.log",
+      "new_sha256": "9afc041bea3a6f85fc79e41f517f5172407f70cf832edd835520b0b96ea92e63",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "089b4dec48ea733e0248560ba2af2633c895ae266955bb8191096e8af6e23748",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing.",
+      "old_sha256": "2c67002992e449733e009027f7ef1adc2fc9c58d6cb4b653dfc6f66d384804fb"
     }
   ],
-  "challenge_count": 218
+  "challenge_count": 231
 }
