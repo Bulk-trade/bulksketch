@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "8a5881cdd37dd168ba908a93b6c2de5b537bbdbe1c976305ed124dcc93ad81c0",
+    "bridge/BulksketchBridge/Audit.lean": "1995d7d41ea1a7ed0b1b28fd381b12acc133324b1f2301da6c4b4ba317cc2c8b",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "7b3a819c39a78733098c8d64c8ef437e08613979737c889def4bb6fba3af88a2",
-    "audit/frozen-inputs.json": "6267680b816d1b7c51df1554a26ace34fc953ba72b18651a473974fe5c9ecbe7",
-    "bridge/BulksketchBridge.lean": "0e99ae4473f3731e034615a97a778630ff1ab339c01dafbba64709d246a6dbae",
+    "audit/frozen-inputs.json": "bb64e23dfff28c9d2f86bae97676be01edf53b91d927ad0fbb470d2dbee8e0a2",
+    "bridge/BulksketchBridge.lean": "f84e2111ed5494bbbd7d0d33432b3550636bc1a692be0e463b8dad8a820acf82",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "ec783ee728fab78e87d2d4f5036fbc11c217e579cba87991e30a9771102afc54",
-    "bridge/obligations.json": "5df1f14789a667eede0e8015369a3c8007c941b174a615434bab707f67db58f7",
+    "bridge/source-linkage.json": "ba2432f65627a213065f3cd7910375cc729084287a56b2faeb4736cf0f5be9e9",
+    "bridge/obligations.json": "80425d963332916fc877a65df4d85cc598c4632f4e5f6c1d4e40cd9983dd7a62",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -290,7 +290,7 @@
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
     "README.md": "c1897670fe1a181b109289462ebb9dd93011d3e29e8d7bf78dc9110c59538abb",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "a57bcc18fea5697b2b727b55312d0f61194f77b7e29c5ac02f1d30fe3058c30e",
+    "audit/coverage.json": "5f67ba99dc353a4a9ab32bfb64a2e223ad6c01a8d1478ad9a95174823742bd3a",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -862,8 +862,8 @@
     "extraction/deg34-guard/translator/normalize-control.log": "4b9165e971014eb2302f3701146aee476db2301507b2df78b7859023b47665b4",
     "extraction/deg34-guard/translator/quartic-control.log": "3f643d4d9209e3baf679c8b06e50363457d83679a0529aebb143c60ba1655ce5",
     "extraction/deg34-guard/unchecked.log": "56f61264fca297b5fc9be466da3d517cd65cc36d7e6882fda5168cb0998ad683",
-    "NATIVE_BM_DEGREE_PROBE.md": "88aba3a7969ce04b91c26dd25c95421ee98d97e57782354312f86007d560c5a6",
-    "audit/native-bm-degree-probe-checkpoint.json": "e29d5fe040a92b729b4f6f52522557baa393c340ed4ee0c5758098c3fbb3efdd",
+    "NATIVE_BM_DEGREE_PROBE.md": "348262e809a74c48d237059f90c04a4415dbf95ef704dcd79af2e4c08eab40c4",
+    "audit/native-bm-degree-probe-checkpoint.json": "2cb8fc9c0f9f7ae7dbbfb3d4806e2d4b01262b67a6bb7201a3ebbb5165575efd",
     "bridge/Arithmetic/BmLocatorGenerated.lean": "d0459135c4470df60f0b5ad313e55677c9bb031585120aa263d8a4fbba48792a",
     "bridge/Arithmetic/BmLocatorRuntime.lean": "3b8c81d0240691dac93019365c48602feb0ef5556271477dd55db30256b74118",
     "bridge/Arithmetic/DegreeProbeGenerated.lean": "ad84c3b68aa3e296db6e8b318e97b576a79a432ec89b11e29de5bcc1e6968674",
@@ -928,7 +928,12 @@
     "extraction/degree-probe/pinned.log": "11bbe5e428babe5500de3e2b56cd399ec139689ca63df9b15f927a8508d80bb6",
     "extraction/degree-probe/project.py": "5c054b74d895689942084af156f019c26cdedfe8d0b72dca28dd5d1644555fef",
     "extraction/degree-probe/receipt.json": "1e77bb760d4b48f4f594007e36ec7405ec42fff211f171a285e385aed469816d",
-    "extraction/degree-probe/unchecked.log": "91f06cbd178dca6def61409a65a1f19455334d223fdf25fb63b38437dddefb78"
+    "extraction/degree-probe/unchecked.log": "91f06cbd178dca6def61409a65a1f19455334d223fdf25fb63b38437dddefb78",
+    "bridge/BulksketchBridge/BmAccepted.lean": "10c01ee3152fdbb8afe19385b3b41a203619408453df58f46bb1b26334dd016a",
+    "bridge/BulksketchBridge/BmAcceptedSpec.lean": "64c3f35c16d8dcc918f5b748ae47e804d2138aaa477bcf484c72e39a240fb75e",
+    "bridge/BulksketchBridge/BmParity.lean": "4b87bb1154ed3662a7019c4b186ef54f26a368ca198e72fe8301608982f7500c",
+    "bridge/BulksketchBridge/BmParitySpec.lean": "b4fe9d1d29bd8eae1162e3884c85fb33c4bc31c1708c1dd44685db51e563a8a9",
+    "bridge/BulksketchBridge/BmSyndromePolynomials.lean": "3103b006bc8400ad53bc78d9353a75279acf5acb6c383645f208c07b18bceda8"
   },
   "reviewed_policy_revisions": [
     {
@@ -6249,7 +6254,80 @@
       "new_sha256": "7b3a819c39a78733098c8d64c8ef437e08613979737c889def4bb6fba3af88a2",
       "reason": "Freeze original DegreeProbe stages, BM entry and scoped loop and branch proofs, and the checked locator variant.",
       "old_sha256": "278bef74f3ac6f83374aa683f15eab28e5f6896de634c580cbf5913b9cc21d21"
+    },
+    {
+      "path": "NATIVE_BM_DEGREE_PROBE.md",
+      "new_sha256": "348262e809a74c48d237059f90c04a4415dbf95ef704dcd79af2e4c08eab40c4",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof.",
+      "old_sha256": "88aba3a7969ce04b91c26dd25c95421ee98d97e57782354312f86007d560c5a6"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "5f67ba99dc353a4a9ab32bfb64a2e223ad6c01a8d1478ad9a95174823742bd3a",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof.",
+      "old_sha256": "a57bcc18fea5697b2b727b55312d0f61194f77b7e29c5ac02f1d30fe3058c30e"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "bb64e23dfff28c9d2f86bae97676be01edf53b91d927ad0fbb470d2dbee8e0a2",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof.",
+      "old_sha256": "6267680b816d1b7c51df1554a26ace34fc953ba72b18651a473974fe5c9ecbe7"
+    },
+    {
+      "path": "audit/native-bm-degree-probe-checkpoint.json",
+      "new_sha256": "2cb8fc9c0f9f7ae7dbbfb3d4806e2d4b01262b67a6bb7201a3ebbb5165575efd",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof.",
+      "old_sha256": "e29d5fe040a92b729b4f6f52522557baa393c340ed4ee0c5758098c3fbb3efdd"
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "f84e2111ed5494bbbd7d0d33432b3550636bc1a692be0e463b8dad8a820acf82",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof.",
+      "old_sha256": "0e99ae4473f3731e034615a97a778630ff1ab339c01dafbba64709d246a6dbae"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "1995d7d41ea1a7ed0b1b28fd381b12acc133324b1f2301da6c4b4ba317cc2c8b",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof.",
+      "old_sha256": "8a5881cdd37dd168ba908a93b6c2de5b537bbdbe1c976305ed124dcc93ad81c0"
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmAccepted.lean",
+      "new_sha256": "10c01ee3152fdbb8afe19385b3b41a203619408453df58f46bb1b26334dd016a",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmAcceptedSpec.lean",
+      "new_sha256": "64c3f35c16d8dcc918f5b748ae47e804d2138aaa477bcf484c72e39a240fb75e",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmParity.lean",
+      "new_sha256": "4b87bb1154ed3662a7019c4b186ef54f26a368ca198e72fe8301608982f7500c",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmParitySpec.lean",
+      "new_sha256": "b4fe9d1d29bd8eae1162e3884c85fb33c4bc31c1708c1dd44685db51e563a8a9",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmSyndromePolynomials.lean",
+      "new_sha256": "3103b006bc8400ad53bc78d9353a75279acf5acb6c383645f208c07b18bceda8",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "80425d963332916fc877a65df4d85cc598c4632f4e5f6c1d4e40cd9983dd7a62",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof.",
+      "old_sha256": "5df1f14789a667eede0e8015369a3c8007c941b174a615434bab707f67db58f7"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "ba2432f65627a213065f3cd7910375cc729084287a56b2faeb4736cf0f5be9e9",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof.",
+      "old_sha256": "ec783ee728fab78e87d2d4f5036fbc11c217e579cba87991e30a9771102afc54"
     }
   ],
-  "challenge_count": 215
+  "challenge_count": 218
 }

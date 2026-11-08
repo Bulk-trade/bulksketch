@@ -860,6 +860,18 @@
     {
       "challenge": "BulksketchBridge.BmScalar.ShiftWindowBounds",
       "theorem": "BulksketchBridge.BmScalar.shifted_window_bounds"
+    },
+    {
+      "challenge": "BulksketchBridge.BmAccepted.ActualBmAcceptedUpdate",
+      "theorem": "BulksketchBridge.BmAccepted.accepted_update_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.BmParity.SkippedDiscrepancy",
+      "theorem": "BulksketchBridge.BmParity.skipped_discrepancy"
+    },
+    {
+      "challenge": "BulksketchBridge.BmParity.UpdateResidualPrefix",
+      "theorem": "BulksketchBridge.BmParity.update_residual_prefix"
     }
   ],
   "refinements": [

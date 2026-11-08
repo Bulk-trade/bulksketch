@@ -64,8 +64,8 @@
     "audit/native-closed-leaf-checkpoint.json": "a5da0d10fb9d07a297c8bba2c128b854527a4e92990eb933f871e193216ea2e1",
     "NATIVE_NEWTON_GUARD.md": "f8d13ab202dd6dc1cda482af41c06eca338711bf59e4b45622f3567aeb072d0f",
     "audit/native-newton-guard-checkpoint.json": "79c5608388f208a9b107d682147d48029a6c67e5953a6ef5feb46ae4fdac6321",
-    "NATIVE_BM_DEGREE_PROBE.md": "88aba3a7969ce04b91c26dd25c95421ee98d97e57782354312f86007d560c5a6",
-    "audit/native-bm-degree-probe-checkpoint.json": "e29d5fe040a92b729b4f6f52522557baa393c340ed4ee0c5758098c3fbb3efdd"
+    "NATIVE_BM_DEGREE_PROBE.md": "348262e809a74c48d237059f90c04a4415dbf95ef704dcd79af2e4c08eab40c4",
+    "audit/native-bm-degree-probe-checkpoint.json": "2cb8fc9c0f9f7ae7dbbfb3d4806e2d4b01262b67a6bb7201a3ebbb5165575efd"
   },
   "reviewed_policy_revisions": [
     {
@@ -549,6 +549,18 @@
       "new_sha256": "cc17e2a0661ed53a4df7401c3280bba2e8f7ba9a87ac0e490bc2ff85b1527c33",
       "reason": "Freeze original DegreeProbe stages, BM entry and scoped loop and branch proofs, and the checked locator variant.",
       "old_sha256": "0c6cf2dc380fa26a969ffe7bc6ce039e31aeaecf36cf111927115b03db148bcb"
+    },
+    {
+      "path": "NATIVE_BM_DEGREE_PROBE.md",
+      "new_sha256": "348262e809a74c48d237059f90c04a4415dbf95ef704dcd79af2e4c08eab40c4",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof.",
+      "old_sha256": "88aba3a7969ce04b91c26dd25c95421ee98d97e57782354312f86007d560c5a6"
+    },
+    {
+      "path": "audit/native-bm-degree-probe-checkpoint.json",
+      "new_sha256": "2cb8fc9c0f9f7ae7dbbfb3d4806e2d4b01262b67a6bb7201a3ebbb5165575efd",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof.",
+      "old_sha256": "e29d5fe040a92b729b4f6f52522557baa393c340ed4ee0c5758098c3fbb3efdd"
     }
   ]
 }

@@ -11768,7 +11768,7 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Original DegreeProbe exact phase and state refinements and checked work addition. Original BM complete checked projection, bounded loop and phase refinements, and scalar interval bounds. Full locator recurrence and complete native decoder contracts remain open.",
+    "note": "All 344 native executable declarations retained. Original DegreeProbe exact phase and state refinements and checked work addition. Original BM complete checked projection, bounded loop and branch refinements including both accepted nonzero update paths, and polynomial parity and scalar bounds. Full locator recurrence and complete native decoder contracts remain open.",
     "checked_generated_body_refinements_under_recorded_TCB": 102,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
@@ -11823,7 +11823,11 @@
         "BulksketchBridge.BmMutable.scale_loops_refine",
         "BulksketchBridge.BmMutable.shifted_xor_loops_refine",
         "BulksketchBridge.BmTerminal.loop_refines",
-        "BulksketchBridge.BmEvenStep.degree_exceeds_refines"
+        "BulksketchBridge.BmEvenStep.degree_exceeds_refines",
+        "BulksketchBridge.BmAccepted.accepted_update_refines",
+        "BulksketchBridge.BmParity.skipped_discrepancy",
+        "BulksketchBridge.BmParity.update_residual_prefix",
+        "BulksketchBridge.BmSyndromePolynomials.reconstructed_skip"
       ]
     },
     "masked_memory_evidence": {

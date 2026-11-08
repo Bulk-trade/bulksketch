@@ -466,7 +466,13 @@ run_cmd do
     (``BulksketchBridge.BmRuntimeFrames.ZipSharedSliceRefines,
       ``BulksketchBridge.BmRuntimeFrames.zip_shared_slice_normal),
     (``BulksketchBridge.BmScalar.ShiftWindowBounds,
-      ``BulksketchBridge.BmScalar.shifted_window_bounds)
+      ``BulksketchBridge.BmScalar.shifted_window_bounds),
+    (``BulksketchBridge.BmAccepted.ActualBmAcceptedUpdate,
+      ``BulksketchBridge.BmAccepted.accepted_update_refines),
+    (``BulksketchBridge.BmParity.SkippedDiscrepancy,
+      ``BulksketchBridge.BmParity.skipped_discrepancy),
+    (``BulksketchBridge.BmParity.UpdateResidualPrefix,
+      ``BulksketchBridge.BmParity.update_residual_prefix)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

@@ -6,7 +6,7 @@
   "checked_stateful_llbc_refinements": 5,
   "whole_native_coverage_achieved": false,
   "open": [
-    "Native Berlekamp–Massey successful nonzero update and complete outer recurrence",
+    "Native Berlekamp\u2013Massey outer recurrence and preservation of the residual and anchor invariants",
     "Caller admission, general recovery and end-to-end decoder completeness",
     "Remaining stage callers and accelerated kernels",
     "Physical memory, ISA and compiler-expanded correspondence"

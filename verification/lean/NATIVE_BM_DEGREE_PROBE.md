@@ -55,6 +55,8 @@ The checked source endpoints cover:
 - The accepted connection-row update composes the original scaling,
   inclusive zero-fill and shifted-XOR loops in source order. Its exact
   slice equation includes an empty fill interval and both writebacks.
+- Both accepted nonzero branches return exact connection, previous and
+  saved rows, the four scalar state values, and the charged meter.
 - The exhausted-range branch, invalid-locator guards, normalization,
   reversal and buffer restoration. Active branches check charge failure,
   odd-index skipping, even zero discrepancy and degree-budget rejection.
@@ -63,11 +65,13 @@ The checked source endpoints cover:
   growth relations. Linking that invariant to the entire native outer
   loop remains open.
 
-Saving and restoring the previous row, the full successful
-nonzero-discrepancy transition and the outer connection recurrence still
-require proofs. The locator therefore has
-zero full-body coverage credit. The verified subloops and branch
-theorems are recorded separately.
+The parity proof shows that the true skipped discrepancy vanishes for
+any reconstructed GF64 row satisfying the square relation, given a vanishing
+residual at all earlier powers. The polynomial update preserves that
+residual condition under the anchor equations, including the bootstrap
+case. These equations still need to be linked to every native loop state.
+The locator has zero full-body coverage credit. The verified subloops
+and branch theorems are recorded separately.
 
 ## Verification and remaining coverage
 

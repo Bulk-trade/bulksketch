@@ -72,3 +72,6 @@ import BulksketchBridge.BmConnectionUpdate
 import BulksketchBridge.BmEvenStep
 import BulksketchBridge.BmScalar
 import BulksketchBridge.BmTerminal
+import BulksketchBridge.BmAccepted
+import BulksketchBridge.BmParity
+import BulksketchBridge.BmSyndromePolynomials

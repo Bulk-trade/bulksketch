@@ -1483,7 +1483,7 @@
       "raw_sha256": "f1ab4c3aa80ecf7fb22de25a3b34a56b6adb765f1a9311739d4ad4e454e0dc1a",
       "checker": "extraction/bm-locator/project.py",
       "declaration_count": 25,
-      "scope": "Original locator and all 24 loop declarations. Entry, loop kernels, exhaustion and named active branches checked. Successful nonzero update composition and the full locator recurrence remain open.",
+      "scope": "Original locator and all 24 loop declarations. Entry, loop kernels, exhaustion and all named active branches including the accepted nonzero update are checked under their stated bounds. The full locator recurrence remains open.",
       "translator_variant": "checked-bm-locator-v1"
     },
     {
