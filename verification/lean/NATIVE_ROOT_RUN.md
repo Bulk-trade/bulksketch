@@ -2,18 +2,24 @@
 
 All 344 native executable obligations remain in scope. This checkpoint
 adds exact original Aeneas body refinements for `Roots::run`,
-`Roots::divide`, and the affine subspace offset. Production Rust and
-Cargo inputs are unchanged.
+`Roots::divide`, the affine subspace offset, and `affine::splitter`.
+Production Rust and Cargo inputs are unchanged.
 
 The stock root-run projection retains the original dispatcher and
 subspace offset helper. Its theorem checks the stage decisions, exact
 workspace frames, and all admitted branches. The original leaf,
-closed-leaf, trace, reducer table, GCD and factor division bodies are
-bound in the projection. The affine preparation, enumeration and
-splitter calls retain explicit typed slots. The GCD stage uses the
+closed-leaf, trace, reducer table, GCD, factor division and splitter
+bodies are bound in the projection. Affine preparation and enumeration
+retain explicit typed slots. The GCD stage uses the
 admitted div/rem law and normalized remainder and retry conditions.
 Table, GCD and affine split prices follow the original order of
 checked operations, including intermediate overflow.
+
+The splitter theorem checks the original setup, the complete coefficient
+loop, prefix normalization and all slice writebacks. It binds the
+original linear evaluation and Dense modular square bodies under the
+field, reducer table and backend contracts. Relating the splitter result
+to the affine coset maintained by the complete traversal remains open.
 
 The original divide theorem checks both charge results, a nonexact
 division, both checked offset overflows, and the affine and non-affine

@@ -70,7 +70,7 @@ def reducer {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64)
       dictionary kernels buffers.modulus buffers.table buffers.work
     .ok (frame (.Ok (.Ok (tableStage roots))) roots roots workspace { buffers with table, work } paid)
 
-def affineSplit (calls : Calls) {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64)
+def affineSplit {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64)
     (roots : Roots) (workspace : RowWorkspace) (meter : WorkMeter) : Result Frame := do
   let buffers := buffersFor roots workspace
   let (charged, paid) ← charge meter (.AffineSplit roots.degree roots.affine_rank)
@@ -81,8 +81,9 @@ def affineSplit (calls : Calls) {K : Type} (kernels : BulkKernels K bulksketch.f
       .ok (frame (.Ok (.Err .NotSplit)) roots roots workspace buffers paid)
     else do
       let subspaces := ClosedLeaf.region workspace.factors (affineStart roots) (affineStop roots)
-      let (length, trace, work, raw) ← calls.splitter dictionary kernels buffers.modulus buffers.table subspaces
-        roots.affine_base buffers.trace buffers.work buffers.raw
+      let (length, trace, work, raw) ← bulksketch.decode.affine.splitter
+        bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.square_mod_into
+        dictionary kernels buffers.modulus buffers.table subspaces roots.affine_base buffers.trace buffers.work buffers.raw
       .ok (frame (.Ok (.Ok .Gcd)) roots { roots with trace_len := length } workspace
         { buffers with trace, work, raw } paid)
 
@@ -110,7 +111,7 @@ def expected (calls : Calls) (division : DivRem) {K : Type}
   | .AffinePreparation => calls.prepareAffine dictionary kernels roots workspace meter
   | .AffineEnumeration => calls.enumerateAffine dictionary kernels roots workspace meter
   | .ReducerPreparation => reducer kernels roots workspace meter
-  | .AffineSplit => affineSplit calls kernels roots workspace meter
+  | .AffineSplit => affineSplit kernels roots workspace meter
   | .Gcd => gcdStage division kernels roots workspace meter
   | .Trace => do
       let (reply, updated, buffers, back, paid) ← Roots.trace

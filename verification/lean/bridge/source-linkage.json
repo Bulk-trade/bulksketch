@@ -498,13 +498,18 @@
       "has_errors": false
     },
     {
+      "path": "extraction/root-divide/arithmetic.llbc",
+      "sha256": "832941622e17afa4b0120d50046c88726da66c693dddd5c1f324d9d2ce36f5b1",
+      "has_errors": false
+    },
+    {
       "path": "extraction/root-run/arithmetic.llbc",
       "sha256": "6a925fe406ccd8bbf20bad9d6e28b5e8b427941c25637a4a6ad6f179528355b2",
       "has_errors": false
     },
     {
-      "path": "extraction/root-divide/arithmetic.llbc",
-      "sha256": "832941622e17afa4b0120d50046c88726da66c693dddd5c1f324d9d2ce36f5b1",
+      "path": "extraction/affine-splitter/arithmetic.llbc",
+      "sha256": "3c0ffb403ac22a397fc026c36fc59dca6c2252ccebf98e09494a7452a56f09f3",
       "has_errors": false
     }
   ],
@@ -1198,6 +1203,11 @@
       "native_item_id": "src/decode/roots.rs:444:method:bulksketch::decode::roots::Roots::divide",
       "generated_declaration": "bulksketch.decode.roots.Roots.divide",
       "generated_file": "bridge/Arithmetic/RootDivideGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:268:function:bulksketch::decode::affine::splitter",
+      "generated_declaration": "bulksketch.decode.affine.splitter",
+      "generated_file": "bridge/Arithmetic/AffineSplitterGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1763,15 +1773,6 @@
       "scope": "Original Vpclmul512 square selector with scoped exact original free-kernel callee."
     },
     {
-      "generated": "extraction/root-run/Arithmetic/Funs.lean",
-      "bridge_copy": "bridge/Arithmetic/RootRunGenerated.lean",
-      "sha256": "618300e9560cf52f8ddb9e56c1f1dd79c374772be9452f64ee20981cbddc4363",
-      "raw_sha256": "8eb87055b6f02b4317a73a4143bd6f31eac1fd147b762658d0211872dc39f584",
-      "checker": "extraction/root-run/project.py",
-      "declaration_count": 2,
-      "scope": "Original traversal stage dispatcher and affine subspace offset; original leaf, trace, table, divide and GCD callees are bound and remaining affine calls explicit."
-    },
-    {
       "generated": "extraction/root-divide/Arithmetic/Funs.lean",
       "bridge_copy": "bridge/Arithmetic/RootDivideGenerated.lean",
       "sha256": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
@@ -1779,6 +1780,24 @@
       "checker": "extraction/root-divide/project.py",
       "declaration_count": 1,
       "scope": "Original factor division with checked charge, quotient/remainder scratch, and pending-frame assembly."
+    },
+    {
+      "generated": "extraction/root-run/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootRunGenerated.lean",
+      "sha256": "4da97692f95e7d81153aa3c65ca29ef612d61430473503169329af024d8bd152",
+      "raw_sha256": "8eb87055b6f02b4317a73a4143bd6f31eac1fd147b762658d0211872dc39f584",
+      "checker": "extraction/root-run/project.py",
+      "declaration_count": 2,
+      "scope": "Original stage dispatcher and affine subspace offset; original leaf, trace, table, divide, GCD and affine splitter bodies are bound. Affine preparation and enumeration retain typed contracts."
+    },
+    {
+      "generated": "extraction/affine-splitter/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AffineSplitterGenerated.lean",
+      "sha256": "044b1c2fbb15ea34ae4779c68c24305d2ef407f0854fc1293d5a04a27848450b",
+      "raw_sha256": "4a1e1a13827ea38655bd055b65e579e17052f91a8e92ea82a72bbddb6c6f876a",
+      "checker": "extraction/affine-splitter/project.py",
+      "declaration_count": 11,
+      "scope": "Original stock affine splitter, its coefficient loop and normalization callbacks. Original linear evaluation and Dense modular square are bound at the native endpoint."
     }
   ],
   "reviewed_translator_variants": [

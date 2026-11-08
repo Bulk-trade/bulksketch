@@ -3272,7 +3272,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AffineSplitter.native_splitter_refines",
+        "scope": "Exact original setup, coefficient loop, prefix normalization and output, work and raw slice frames. Original linear evaluation and Dense square compose under admitted input, table and backend laws.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/affine.rs:26:function:bulksketch::decode::affine::predicted_affine",
@@ -11908,8 +11915,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. Original root stage dispatch, factor division, and affine triangular offsets checked under explicit callee and readiness contracts. The full original AVX square finite-heap effects are checked under exact capture layout and allocation premises. Original div/rem linkage, affine and depth-first traversal completeness, decoder completeness, Rust provenance and compiler/ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 122,
+    "note": "All 344 native executable obligations retained. Original root dispatcher, factor division, affine triangular offsets and affine splitter checked under explicit contracts. The full original AVX square finite-heap effects are checked under exact capture layout and allocation premises. Original div/rem linkage, affine preparation and enumeration, depth-first traversal and decoder completeness, Rust provenance and compiler/ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 123,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11999,7 +12006,8 @@
       ],
       "native_root_traversal": [
         "BulksketchBridge.RootRun.run_refines",
-        "BulksketchBridge.RootDivide.native_divide_refines"
+        "BulksketchBridge.RootDivide.native_divide_refines",
+        "BulksketchBridge.AffineSplitter.native_splitter_refines"
       ]
     },
     "masked_memory_evidence": {

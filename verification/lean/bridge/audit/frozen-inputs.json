@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "9b4e57a29489fae69b9e2eeed397f8ce1cca75c38ca13fbab7a6901325914c30",
+    "bridge/BulksketchBridge/Audit.lean": "552a527dfe87f2c195762ad98477afbad6a3eba53532516ccd09664c23199eaf",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "a91cf58c91dd2c10f0c613e9426d276b91442906d045dca49c667f2bdf31561e",
-    "audit/frozen-inputs.json": "bd3b068c1acb43467fd5f9909405b4edd609771c87df0c8d388cc8ddec1ca9b4",
-    "bridge/BulksketchBridge.lean": "5568021489860423a4ed431428175aec7e4b79e8ddf8dbeb594d40656e0dccb8",
+    "audit/frozen-inputs.json": "46813752c54a09765b45c904cb7fd2c14906045c23b1bcf8b41d2463f07f9214",
+    "bridge/BulksketchBridge.lean": "94737ebc5633b2d9deeab186971aa87d06414c127a894aff6c806fffba1b08ff",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "c8291831a4a7383f6e194ce5bd2dce42e6479021e39151d3a3be68515e10af12",
-    "bridge/obligations.json": "880c2ecceb5bf458a60d0a93f9d205375c77b3f9ebb4e17155313379e28c4016",
+    "bridge/source-linkage.json": "88eb9501544bd3ad2631f58889cf55d0a5311c25510d564c3447f8ca2870dc74",
+    "bridge/obligations.json": "978398cfc0b58fb8bc4c2db0fa348c021b89f8b2ec58032186422efd9f28eb2f",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "857a68a1f0dc57f8f8d127b20780ff909b3b6eb17e2ffcc8a5eb385cc71f8a72",
+    "scripts/check_projection_fixtures.py": "624891b7fb03c54afb925bdf1522722fe6a7f7af1a0a7be7d64db7d656c8aba2",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "0b18a44e0016a00b50d24a4b4952ea8b15f218e8806f99b24b8623d9a255b2e4",
+    "README.md": "cc5c7df06e53bcd8f15fe1c8d2119f6f66864493e7b9a909e8ec80560b0df282",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "5d847b04d5ba3fb499df4c3a6734734167ef375ba1af810c1f8fe63ec84431c5",
+    "audit/coverage.json": "4a3623bd2dad0b3724059f62d1b8bfdbc010eaf9f34d7315d8dd818e393124d1",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,10 +1154,10 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "8b85b4bd9e5435022c72159b8c746957c70646e1637d4a2537ca394fdc5b0256",
-    "audit/native-root-run-checkpoint.json": "23c755da7595538633126411d779afa8caf65fe29a6b9fc62bbd584a7a40a15d",
+    "NATIVE_ROOT_RUN.md": "45af1fd6ffa546257c4554e8f25bcfbdad25679e89d8c24706d7722ab50adec8",
+    "audit/native-root-run-checkpoint.json": "35140ca93b274d0f847caf0e940590088a18a811a6605655924277c5086b265c",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
-    "bridge/Arithmetic/RootRunGenerated.lean": "618300e9560cf52f8ddb9e56c1f1dd79c374772be9452f64ee20981cbddc4363",
+    "bridge/Arithmetic/RootRunGenerated.lean": "4da97692f95e7d81153aa3c65ca29ef612d61430473503169329af024d8bd152",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
     "bridge/BulksketchBridge/AvxSquareScalarMemory.lean": "fb7140785bd4cfda9017e8c06799c724823e87cfe87f6b8f51a03be4483fe194",
     "bridge/BulksketchBridge/AvxSquareWindows.lean": "b77a569f6cf0f01ed3eaf0a1727381dbfeb6fb7a8d842a3ef793a72dff010ca4",
@@ -1167,10 +1167,10 @@
     "bridge/BulksketchBridge/RootDivideNativeSpec.lean": "41e8c14ba00d6cb7bba2e5e16d3a5f00447fcbe6755518c406ed94748a995929",
     "bridge/BulksketchBridge/RootDivideSpec.lean": "5f3297cc5f7b1f876b080907b96206956ec4ab3ee7bb8aa4dedb5033d864c05e",
     "bridge/BulksketchBridge/RootDivideStages.lean": "17a44e2ff02d82ee1d0c266186b4224cf017c6233969120773ed60b5d06d3061",
-    "bridge/BulksketchBridge/RootRun.lean": "e0831c2162dbbf60f6d6a59a15ec8630a1aa0d5826d54afdf3b95dad9be02821",
+    "bridge/BulksketchBridge/RootRun.lean": "5c8ae42f28dcd69ede2ae0548587e4aeb24549f519f2afb29afcd8f3c383f828",
     "bridge/BulksketchBridge/RootRunGcd.lean": "d63ae5062a68caeb50d8a09486f22946ce35cbe7604709e02f39f6adb44f37f8",
     "bridge/BulksketchBridge/RootRunPrice.lean": "edff2bc28045bfa18adbed0912843b0a028c850ddf67ac27feacdac298cb2776",
-    "bridge/BulksketchBridge/RootRunSpec.lean": "e4ff87be298b1cf6490e0b2821e342f5672c6fb965948291947d1d82dcfa34f6",
+    "bridge/BulksketchBridge/RootRunSpec.lean": "b39807069f34203ef0c2525e47c4be1e0e4de39a4415a90ae473d684e5943542",
     "extraction/avx-square/HEAP.md": "79a3b8fabda602fe11a434ab6d97bf76608b1d11dbee69a4c63b5de19f8f0735",
     "extraction/avx-square/check_seed_layout.py": "4e1fa8dc6f9398b035d6fcaef4394c57f5961a91d0dc49c449cbbf06443a60b7",
     "extraction/root-divide/Arithmetic/Funs.lean": "d0356c2374cf3c0c873eeb45f47b9381a1410f80d277de32467b9ae0fbfd64a1",
@@ -1190,9 +1190,20 @@
     "extraction/root-run/aeneas.log": "32cc0721231a0273e2fa60fcf729082942d2a5d3dc1a20c3e4280d142cce1db5",
     "extraction/root-run/arithmetic.llbc": "6a925fe406ccd8bbf20bad9d6e28b5e8b427941c25637a4a6ad6f179528355b2",
     "extraction/root-run/charon.log": "54f8b010ce595513bf4e1d04ce848c3f0dd18ec4af4aa9707c6afd9e9b16b2dd",
-    "extraction/root-run/project.py": "c11c9a7c5b20e9b15168d3bb67ec7d8fa023011e58b22d46573ca27ce17ca647",
+    "extraction/root-run/project.py": "bd5d894c9aefd22fed511364787d045d202c3d527b95629ad36c2dd922c4907e",
     "extraction/root-run/receipt.json": "7c74338364987ee1f5ccff91cdf699a51d765c44b7e7d3e3e0de4ebbb7176e6a",
-    "extraction/root-run/replay.log": "2a98b03981ff61e31b8f8a1515f4535c65397c68d9007ee7bfdf94e9307351f0"
+    "extraction/root-run/replay.log": "2a98b03981ff61e31b8f8a1515f4535c65397c68d9007ee7bfdf94e9307351f0",
+    "bridge/Arithmetic/AffineSplitterGenerated.lean": "044b1c2fbb15ea34ae4779c68c24305d2ef407f0854fc1293d5a04a27848450b",
+    "bridge/BulksketchBridge/AffineSplitter.lean": "be1ec912f03e15985fec20646f34c6b35ba7e048ca13d5c4a69c8a280efbda67",
+    "extraction/affine-splitter/Arithmetic/Funs.lean": "4a1e1a13827ea38655bd055b65e579e17052f91a8e92ea82a72bbddb6c6f876a",
+    "extraction/affine-splitter/Arithmetic/FunsExternal_Template.lean": "4c59046b038ddb5906a108fac743d2bfdafa10499b04405679623a05e331ef6d",
+    "extraction/affine-splitter/Arithmetic/Types.lean": "c1c3706fc639ac3c460be5b0043a2b49afa6b36f37172c27e5aca26f08c59abb",
+    "extraction/affine-splitter/aeneas.log": "d63e2a4f9b5326faa4580655a4c59f9152b227be1624e8a844434cb28e83d67f",
+    "extraction/affine-splitter/arithmetic.llbc": "3c0ffb403ac22a397fc026c36fc59dca6c2252ccebf98e09494a7452a56f09f3",
+    "extraction/affine-splitter/charon.log": "5530121a497287afd5ad61d6421f8f822f3ebbc22cf965b00e2d0ccbe5c363f9",
+    "extraction/affine-splitter/project.py": "a0ca445e56aa28c59a1794d99d34f7f6b9539b7f1be6c02a0da7bd5793feff7e",
+    "extraction/affine-splitter/receipt.json": "f8fb4ffbe20751f5c9e7eee455de400448021eac6592893447f35c9a43ea085a",
+    "extraction/affine-splitter/replay.log": "507ae028fb85e1e3d3dd9b8916c63c88bf0cf593257a82731f1f661da1f4e917"
   },
   "reviewed_policy_revisions": [
     {
@@ -8241,7 +8252,146 @@
       "new_sha256": "a91cf58c91dd2c10f0c613e9426d276b91442906d045dca49c667f2bdf31561e",
       "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects.",
       "old_sha256": "16833d8a9a8879b120ac004032b74ebb9465637937b3470fe214f7361eb34104"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "45af1fd6ffa546257c4554e8f25bcfbdad25679e89d8c24706d7722ab50adec8",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "8b85b4bd9e5435022c72159b8c746957c70646e1637d4a2537ca394fdc5b0256"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "cc5c7df06e53bcd8f15fe1c8d2119f6f66864493e7b9a909e8ec80560b0df282",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "0b18a44e0016a00b50d24a4b4952ea8b15f218e8806f99b24b8623d9a255b2e4"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "4a3623bd2dad0b3724059f62d1b8bfdbc010eaf9f34d7315d8dd818e393124d1",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "5d847b04d5ba3fb499df4c3a6734734167ef375ba1af810c1f8fe63ec84431c5"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "46813752c54a09765b45c904cb7fd2c14906045c23b1bcf8b41d2463f07f9214",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "bd3b068c1acb43467fd5f9909405b4edd609771c87df0c8d388cc8ddec1ca9b4"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "35140ca93b274d0f847caf0e940590088a18a811a6605655924277c5086b265c",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "23c755da7595538633126411d779afa8caf65fe29a6b9fc62bbd584a7a40a15d"
+    },
+    {
+      "path": "bridge/Arithmetic/AffineSplitterGenerated.lean",
+      "new_sha256": "044b1c2fbb15ea34ae4779c68c24305d2ef407f0854fc1293d5a04a27848450b",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch."
+    },
+    {
+      "path": "bridge/Arithmetic/RootRunGenerated.lean",
+      "new_sha256": "4da97692f95e7d81153aa3c65ca29ef612d61430473503169329af024d8bd152",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "618300e9560cf52f8ddb9e56c1f1dd79c374772be9452f64ee20981cbddc4363"
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "94737ebc5633b2d9deeab186971aa87d06414c127a894aff6c806fffba1b08ff",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "5568021489860423a4ed431428175aec7e4b79e8ddf8dbeb594d40656e0dccb8"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSplitter.lean",
+      "new_sha256": "be1ec912f03e15985fec20646f34c6b35ba7e048ca13d5c4a69c8a280efbda67",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "552a527dfe87f2c195762ad98477afbad6a3eba53532516ccd09664c23199eaf",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "9b4e57a29489fae69b9e2eeed397f8ce1cca75c38ca13fbab7a6901325914c30"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootRun.lean",
+      "new_sha256": "5c8ae42f28dcd69ede2ae0548587e4aeb24549f519f2afb29afcd8f3c383f828",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "e0831c2162dbbf60f6d6a59a15ec8630a1aa0d5826d54afdf3b95dad9be02821"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootRunSpec.lean",
+      "new_sha256": "b39807069f34203ef0c2525e47c4be1e0e4de39a4415a90ae473d684e5943542",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "e4ff87be298b1cf6490e0b2821e342f5672c6fb965948291947d1d82dcfa34f6"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "978398cfc0b58fb8bc4c2db0fa348c021b89f8b2ec58032186422efd9f28eb2f",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "880c2ecceb5bf458a60d0a93f9d205375c77b3f9ebb4e17155313379e28c4016"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "88eb9501544bd3ad2631f58889cf55d0a5311c25510d564c3447f8ca2870dc74",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "c8291831a4a7383f6e194ce5bd2dce42e6479021e39151d3a3be68515e10af12"
+    },
+    {
+      "path": "extraction/affine-splitter/Arithmetic/Funs.lean",
+      "new_sha256": "4a1e1a13827ea38655bd055b65e579e17052f91a8e92ea82a72bbddb6c6f876a",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch."
+    },
+    {
+      "path": "extraction/affine-splitter/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "4c59046b038ddb5906a108fac743d2bfdafa10499b04405679623a05e331ef6d",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch."
+    },
+    {
+      "path": "extraction/affine-splitter/Arithmetic/Types.lean",
+      "new_sha256": "c1c3706fc639ac3c460be5b0043a2b49afa6b36f37172c27e5aca26f08c59abb",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch."
+    },
+    {
+      "path": "extraction/affine-splitter/aeneas.log",
+      "new_sha256": "d63e2a4f9b5326faa4580655a4c59f9152b227be1624e8a844434cb28e83d67f",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch."
+    },
+    {
+      "path": "extraction/affine-splitter/arithmetic.llbc",
+      "new_sha256": "3c0ffb403ac22a397fc026c36fc59dca6c2252ccebf98e09494a7452a56f09f3",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch."
+    },
+    {
+      "path": "extraction/affine-splitter/charon.log",
+      "new_sha256": "5530121a497287afd5ad61d6421f8f822f3ebbc22cf965b00e2d0ccbe5c363f9",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch."
+    },
+    {
+      "path": "extraction/affine-splitter/project.py",
+      "new_sha256": "a0ca445e56aa28c59a1794d99d34f7f6b9539b7f1be6c02a0da7bd5793feff7e",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch."
+    },
+    {
+      "path": "extraction/affine-splitter/receipt.json",
+      "new_sha256": "f8fb4ffbe20751f5c9e7eee455de400448021eac6592893447f35c9a43ea085a",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch."
+    },
+    {
+      "path": "extraction/affine-splitter/replay.log",
+      "new_sha256": "507ae028fb85e1e3d3dd9b8916c63c88bf0cf593257a82731f1f661da1f4e917",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch."
+    },
+    {
+      "path": "extraction/root-run/project.py",
+      "new_sha256": "bd5d894c9aefd22fed511364787d045d202c3d527b95629ad36c2dd922c4907e",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "c11c9a7c5b20e9b15168d3bb67ec7d8fa023011e58b22d46573ca27ce17ca647"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "624891b7fb03c54afb925bdf1522722fe6a7f7af1a0a7be7d64db7d656c8aba2",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "857a68a1f0dc57f8f8d127b20780ff909b3b6eb17e2ffcc8a5eb385cc71f8a72"
     }
   ],
-  "challenge_count": 265
+  "challenge_count": 268
 }

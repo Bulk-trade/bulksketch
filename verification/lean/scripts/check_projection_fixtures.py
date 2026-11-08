@@ -329,6 +329,12 @@ PROJECTIONS = [
      None, None, ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean",
                   "bridge/Arithmetic/ReconstructionTypes.lean", "bridge/Arithmetic/RootSetupGenerated.lean",
                   "bridge/Arithmetic/WorkScheduleGenerated.lean", "bridge/Arithmetic/ClosedLeafGenerated.lean"]),
+    ("affine-splitter", "extraction/affine-splitter/project.py", "extraction/affine-splitter/receipt.json",
+     "extraction/affine-splitter/Arithmetic/Funs.lean", "bridge/Arithmetic/AffineSplitterGenerated.lean",
+     "let s3 ← Slice.update residue1 1#usize 1#u64", "let s3 ← Slice.update residue1 0#usize 1#u64",
+     "compiled affine splitter projection differs", None, None,
+     ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean",
+      "bridge/Arithmetic/DenseNormalizationGenerated.lean"]),
 ]
 
 
@@ -520,6 +526,9 @@ def main():
                           "root run checked capture command differs"))
             cases.append(("wrong-affine-callee", active_path, "=> calls.prepareAffine", "=> calls.enumerateAffine",
                           "compiled root run projection differs"))
+        if label == "affine-splitter":
+            cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
+                          "affine splitter checked replay differs"))
         if label == "deg34-normalize":
             cases.append(("unchecked-original-extraction", receipt_path, '"-checks"', '"-no-checks"',
                           "normalization checked replay linkage differs"))
@@ -528,7 +537,7 @@ def main():
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:
                 shadow = Path(directory)
                 if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic", "closed-leaf", "deg34-normalize", "deg34-guard",
-                             "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry", "root-divide", "root-run"}:
+                             "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry", "root-divide", "root-run", "affine-splitter"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

@@ -1060,6 +1060,18 @@
     {
       "challenge": "BulksketchBridge.AvxSquare.ActualAllocatedAvxSquare",
       "theorem": "BulksketchBridge.AvxSquare.allocated_square_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineSplitter.ActualNativeSplitter",
+      "theorem": "BulksketchBridge.AffineSplitter.native_splitter_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineSplitter.ActualSplitterLoop",
+      "theorem": "BulksketchBridge.AffineSplitter.loop_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineSplitter.ActualSplitter",
+      "theorem": "BulksketchBridge.AffineSplitter.splitter_refines"
     }
   ],
   "refinements": [
@@ -3030,6 +3042,20 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original price and charge paths, division result and work frame, checked offsets and pending-factor assembly. Original exact-division wrapper bound with explicit div/rem model law."
+    },
+    {
+      "label": "affine::splitter [original source]",
+      "native_item_id": "src/decode/affine.rs:268:function:bulksketch::decode::affine::splitter",
+      "source_line_span_sha256": "2480353b8935d6e9e8a0c57dd859716cbdc632b6bdd47610e4e2c446ec91be3a",
+      "theorem": "BulksketchBridge.AffineSplitter.native_splitter_refines",
+      "challenge": "BulksketchBridge.AffineSplitter.ActualNativeSplitter",
+      "generated_declaration": "bulksketch.decode.affine.splitter",
+      "generated_file": "bridge/Arithmetic/AffineSplitterGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AffineSplitterGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original setup, coefficient loop, prefix normalization and output, work and raw slice frames. Original linear evaluation and Dense square compose under admitted input, table and backend laws."
     }
   ],
   "stateful_llbc_refinements": [

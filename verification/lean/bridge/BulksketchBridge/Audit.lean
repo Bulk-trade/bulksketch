@@ -566,7 +566,13 @@ run_cmd do
     (``BulksketchBridge.AvxSquare.ActualAllocatedAvxBlockScan,
       ``BulksketchBridge.AvxSquare.allocated_block_scan),
     (``BulksketchBridge.AvxSquare.ActualAllocatedAvxSquare,
-      ``BulksketchBridge.AvxSquare.allocated_square_refines)
+      ``BulksketchBridge.AvxSquare.allocated_square_refines),
+    (``BulksketchBridge.AffineSplitter.ActualNativeSplitter,
+      ``BulksketchBridge.AffineSplitter.native_splitter_refines),
+    (``BulksketchBridge.AffineSplitter.ActualSplitterLoop,
+      ``BulksketchBridge.AffineSplitter.loop_refines),
+    (``BulksketchBridge.AffineSplitter.ActualSplitter,
+      ``BulksketchBridge.AffineSplitter.splitter_refines)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

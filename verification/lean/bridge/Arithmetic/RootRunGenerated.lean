@@ -6,6 +6,7 @@ import Arithmetic.RootLeafGenerated
 import Arithmetic.RootTraceGenerated
 import Arithmetic.RootSetupGenerated
 import Arithmetic.RootDivideGenerated
+import Arithmetic.AffineSplitterGenerated
 
 open Aeneas Aeneas.Std Result Error
 
@@ -13,13 +14,8 @@ namespace Aeneas.Std.RootRunRuntime
 
 open bulksketch
 
-/-- Explicit application slots that still need source linkage. The
-leaf, closed-leaf, trace, divide, table and GCD calls use their original bodies. -/
+/-- Affine preparation and enumeration still need source linkage. -/
 structure OtherCallees where
-  splitter : ∀ {F K : Type}, field.BinaryField F → backend.contract.BulkKernels K F →
-  Slice Std.U64 → Slice Std.U64 → Slice Std.U64 → Std.U64 → Slice
-    Std.U64 → Slice Std.U64 → Slice types.RawProduct → Result (Std.Usize
-    × (Slice Std.U64) × (Slice Std.U64) × (Slice types.RawProduct))
   enumerateAffine : ∀ {F K : Type}, field.BinaryField F → backend.contract.BulkKernels K F →
   decode.roots.Roots → decode.scratch.RowWorkspace → types.WorkMeter →
     Result ((core.result.Result (core.result.Result types.Stage
@@ -43,7 +39,8 @@ namespace bulksketch
 variable (calls : RootRunRuntime.OtherCallees) (division : DenseDivisionRuntime.DivRem)
 
 local notation "core.option.Option.as_ref" => RootRunRuntime.optionAsRef
-local notation "decode.affine.splitter" => calls.splitter
+local notation "decode.affine.splitter" =>
+  (decode.affine.splitter poly.Dense.Insts.BulksketchPolyPolynomial.square_mod_into)
 local notation "decode.roots.Roots.divide" =>
   (decode.roots.Roots.divide (poly.Dense.Insts.BulksketchPolyPolynomial.exact_divide_into division))
 local notation "decode.roots.Roots.trace" =>

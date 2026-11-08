@@ -107,7 +107,7 @@ private theorem affine_stage (calls : Calls) (division : DivRem) {K : Type}
     (kernels : BulkKernels K bulksketch.field.Gf64) (roots : Roots) (workspace : RowWorkspace)
     (meter : WorkMeter) (ready : Ready division kernels roots .AffineSplit workspace meter) :
     Roots.run calls division dictionary kernels roots .AffineSplit workspace meter =
-      affineSplit calls kernels roots workspace meter := by
+      affineSplit kernels roots workspace meter := by
   obtain ⟨factor, paidReady⟩ := ready
   have made := made_buffers roots workspace factor
   have charged := roots_charge_returns meter (.AffineSplit roots.degree roots.affine_rank)

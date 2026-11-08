@@ -27,11 +27,11 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The bridge now has 102 original Aeneas generated-body refinements under
+The bridge now has 123 original Aeneas generated-body refinements under
 their recorded contracts. Five source-linked LLBC execution contracts are
-checked separately. The latest checkpoint covers the original DegreeProbe
-stages and checked BM entry, subloops and branch frames. Full native
-implementation contracts remain open.
+checked separately. The latest checkpoint covers the original root stage
+dispatcher, factor division, affine splitter, and AVX square heap effects.
+Full native implementation contracts remain open.
 
 The [core proofs](BulksketchProofs.lean) and [generated-body bridge](bridge/README.md)
 use frozen proposition definitions, transitive axiom audits and exported-term
@@ -68,7 +68,7 @@ reviewed frontend variant and explains the Portable and const-square proofs.
 
 [NATIVE_DENSE_DIVISION.md](NATIVE_DENSE_DIVISION.md) records the original exact-division and GCD wrappers, descending division model and accelerated square.
 
-[NATIVE_ROOT_RUN.md](NATIVE_ROOT_RUN.md) records the original root dispatcher, factor division, and AVX square heap effects.
+[NATIVE_ROOT_RUN.md](NATIVE_ROOT_RUN.md) records the original root dispatcher, factor division, affine splitter, and AVX square heap effects.
 
 The [coverage ledger](audit/coverage.json) keeps every native item in scope,
 including unsupported and unproved items. Related mathematical model evidence
