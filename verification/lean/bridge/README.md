@@ -90,6 +90,10 @@ finite native recurrence and proves the monic returned locator on honest
 reconstructed moments. It also adds root setup, small leaves and the
 verification-stage wrapper.
 
+The [Dense reducer checkpoint](../NATIVE_DENSE_REDUCER.md) adds the
+original modular shift and table, the exact trace seed and loops, and
+finite-address and allocation refinements for masked memory.
+
 From the parent Lean directory:
 
 ```sh

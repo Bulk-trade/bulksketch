@@ -268,6 +268,24 @@ PROJECTIONS = [
      None, None, ["bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/ReconstructionTypes.lean",
                   "bridge/Arithmetic/WorkScheduleGenerated.lean", "bridge/Workmeter/Types.lean",
                   "bridge/Arithmetic/ClosedLeafGenerated.lean"]),
+    ("times-x-mod", "extraction/times-x-mod/project.py", "extraction/times-x-mod/receipt.json",
+     "extraction/times-x-mod/Arithmetic/Funs.lean", "bridge/Arithmetic/TimesXModGenerated.lean",
+     "let i ← len - 1#usize", "let i ← len - 2#usize", "compiled modular shift projection differs",
+     None, None, ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean",
+                  "bridge/Arithmetic/TimesXModRuntime.lean"]),
+    ("dense-reducer-table", "extraction/dense-reducer-table/project.py", "extraction/dense-reducer-table/receipt.json",
+     "extraction/dense-reducer-table/Arithmetic/Funs.lean", "bridge/Arithmetic/DenseReducerTableGenerated.lean",
+     "let rows ← degree / 2#usize", "let rows ← degree / 3#usize", "compiled Dense reducer table projection differs",
+     None, None, ["extraction/root-setup/receipt.json", "extraction/portable-xor/arithmetic.llbc",
+                  "bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/TimesXModGenerated.lean",
+                  "bridge/Arithmetic/TimesXModRuntime.lean", "bridge/Arithmetic/DenseReducerTableRuntime.lean"]),
+    ("root-trace", "extraction/root-trace/project.py", "extraction/root-trace/receipt.json",
+     "extraction/root-trace/Arithmetic/Funs.lean", "bridge/Arithmetic/RootTraceGenerated.lean",
+     "buffers.basis.directions (self.splitter_seed, buffers.basis.len)",
+     "buffers.basis.directions (1#u64, buffers.basis.len)", "compiled root trace projection differs",
+     None, None, ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean",
+                  "bridge/Arithmetic/RootSetupGenerated.lean", "bridge/Arithmetic/ReconstructionTypes.lean",
+                  "bridge/Arithmetic/WorkScheduleGenerated.lean", "bridge/Workmeter/Types.lean"]),
 ]
 
 
@@ -406,6 +424,27 @@ def main():
             cases[1] = (*cases[1][:-1], "raw execution verify artifact differs: Arithmetic/Funs.lean")
             cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
                           "execution verify capture or checked Lean command changed"))
+        if label == "times-x-mod":
+            cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
+                          "modular shift checked capture or replay differs"))
+            cases.append(("wrong-copy-offset", "bridge/Arithmetic/TimesXModRuntime.lean",
+                          "destination.val + stop.val", "destination.val + stop.val + 1",
+                          "modular shift runtime binding differs"))
+        if label == "dense-reducer-table":
+            cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
+                          "Dense reducer checked command or control differs"))
+            cases.append(("wrong-binary-digest", receipt_path, receipt["patched_binary_sha256"], "0" * 64,
+                          "invalid Dense reducer table receipt"))
+            cases.append(("wrong-matcher-source", receipt_path, next(iter(receipt["modified_sources"].values())),
+                          "0" * 64, "invalid Dense reducer table receipt"))
+            cases.append(("wrong-checkout", receipt_path, receipt["commands"]["checked"]["command"][-1],
+                          "/tmp/unrelated/verification/lean/extraction/dense-reducer-table/arithmetic.llbc",
+                          "Dense reducer checked command or control differs"))
+        if label == "root-trace":
+            cases.append(("wrong-manifest", receipt_path, receipt["charon_command"][10],
+                          "--manifest-path=/tmp/unrelated/Cargo.toml", "root trace recorded Charon command differs"))
+            cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
+                          "root trace checked replay differs"))
         if label == "deg34-normalize":
             cases.append(("unchecked-original-extraction", receipt_path, '"-checks"', '"-no-checks"',
                           "normalization checked replay linkage differs"))
@@ -414,7 +453,7 @@ def main():
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:
                 shadow = Path(directory)
                 if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic", "closed-leaf", "deg34-normalize", "deg34-guard",
-                             "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf"}:
+                             "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

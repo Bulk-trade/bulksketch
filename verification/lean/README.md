@@ -64,6 +64,8 @@ reviewed frontend variant and explains the Portable and const-square proofs.
 
 [NATIVE_BM_LOCATOR.md](NATIVE_BM_LOCATOR.md) records the original BM locator, root setup and small leaf, and verification-stage composition.
 
+[NATIVE_DENSE_REDUCER.md](NATIVE_DENSE_REDUCER.md) records the original reducer table, trace loops and finite-address memory proofs.
+
 The [coverage ledger](audit/coverage.json) keeps every native item in scope,
 including unsupported and unproved items. Related mathematical model evidence
 and actual-generated-body refinement evidence have separate fields. Conservative

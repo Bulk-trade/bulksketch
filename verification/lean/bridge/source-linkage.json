@@ -456,6 +456,21 @@
       "path": "extraction/execution-verify/arithmetic.llbc",
       "sha256": "d09e25d9769d8b533c1870bcf4ad2c99eb7b37571fdc11049749e2dfcb248e24",
       "has_errors": false
+    },
+    {
+      "path": "extraction/times-x-mod/arithmetic.llbc",
+      "sha256": "cba2ee8e973d6c90a92a7cd7421dc35421bdaf5ca8883945b806ead272c1de1c",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/dense-reducer-table/arithmetic.llbc",
+      "sha256": "863d72fda18ece91c0006d3ac45f2aeabb7480104ac60ae6f029ee3600d9ac4d",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/root-trace/arithmetic.llbc",
+      "sha256": "4364507f274a66aecc5c294a78faa3fd91792d3c7cca8f132619149831bc9d1c",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1093,6 +1108,16 @@
       "native_item_id": "src/decode/stages.rs:334:method:bulksketch::decode::stages::Execution < F , K >::verify",
       "generated_declaration": "bulksketch.decode.stages.Execution.verify",
       "generated_file": "bridge/Arithmetic/ExecutionVerifyGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:234:function:bulksketch::poly::dense::times_x_mod",
+      "generated_declaration": "bulksketch.poly.dense.times_x_mod",
+      "generated_file": "bridge/Arithmetic/TimesXModGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:167:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::prepare_square_table",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.prepare_square_table",
+      "generated_file": "bridge/Arithmetic/DenseReducerTableGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1582,6 +1607,34 @@
       "checker": "extraction/execution-verify/project.py",
       "declaration_count": 1,
       "scope": "Original row verification stage, with its existing exact source-linked verification and pricing callees."
+    },
+    {
+      "generated": "extraction/times-x-mod/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/TimesXModGenerated.lean",
+      "sha256": "04673a41172b0a945fec43a01068c20281edad7287ed8cc090e54707aeb05071",
+      "raw_sha256": "7a75d5bcbc3f7cf27a5105e150e92beef6a869a940dadb5c35fe5ea8c2831219",
+      "checker": "extraction/times-x-mod/project.py",
+      "declaration_count": 4,
+      "scope": "Original native modular shift with stock exact RangeTo dictionary and scoped overlapping-copy binding."
+    },
+    {
+      "generated": "extraction/dense-reducer-table/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseReducerTableGenerated.lean",
+      "sha256": "c3d3324aec9054c53be3e3dd3e659aaf6f7c5503e8ffe887f0f317207a6a6f85",
+      "raw_sha256": "9970d0a25094d24d618bede15877037394c1dcf70630cded587111bc2887045f",
+      "checker": "extraction/dense-reducer-table/project.py",
+      "declaration_count": 3,
+      "scope": "Original Dense table entry and loop, exact table and work writebacks with the checked scoped variant.",
+      "translator_variant": "checked-dense-reducer-option-v1"
+    },
+    {
+      "generated": "extraction/root-trace/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootTraceGenerated.lean",
+      "sha256": "55674af0982c79f8f26e5759cfd69a63a7307c11d6014523460ac76d8e671ff7",
+      "raw_sha256": "3003c3b0a82b95a1ed6683855b694a32f392fb3f9217cf32c3970b70e8a3d7cb",
+      "checker": "extraction/root-trace/project.py",
+      "declaration_count": 8,
+      "scope": "Original trace closure and loops with explicit modular-square contract. The full trace stage has no source-body credit."
     }
   ],
   "reviewed_translator_variants": [
@@ -1656,6 +1709,15 @@
       "receipt": "extraction/bm-locator/receipt.json",
       "mandatory_checks": true,
       "scope": "Checked explicit BM flag and exact source scope. Stock shared/mutable ending and typed loop/mirror writebacks preserved for the original locator."
+    },
+    {
+      "id": "checked-dense-reducer-option-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/dense-reducer-table/checked-dense-reducer-option.patch",
+      "patch_sha256": "81907bda4f607f3e8fb81875482012a151c9f6ec1488873f75b450e9596bfbb1",
+      "receipt": "extraction/dense-reducer-table/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact checked Dense reducer spans and identical marker-free Option<&u64> shared loan and empty ignored projector. Stock mapping and mutable writebacks retained."
     }
   ],
   "diagnostic_generated_projections": [

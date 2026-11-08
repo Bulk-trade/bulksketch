@@ -82,3 +82,7 @@ import BulksketchBridge.ProbeVerification
 import BulksketchBridge.ExecutionVerify
 import BulksketchBridge.RootLeaf
 import BulksketchBridge.ExecutionVerifyPrice
+import BulksketchBridge.DenseReducerTableAlgebra
+import BulksketchBridge.RootTraceBasis
+import BulksketchBridge.RootTraceField
+import BulksketchBridge.X86Allocation

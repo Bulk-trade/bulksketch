@@ -7112,7 +7112,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.DenseReducerTable.prepare_square_table_refines",
+        "scope": "Exact original table seed, row loop, work and table writebacks under admitted widths, monic shape and exact GF64 scale-XOR. Correct high even power table proved separately.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/poly/dense.rs:188:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::square_mod_into",
@@ -7179,7 +7186,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.TimesXMod.times_x_mod_refines",
+        "scope": "Exact original overlapping move, zero constant, modulus prefix and scale-XOR call for an admitted nonempty residue. Quotient-ring multiplication checked separately.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/poly/dense.rs:30:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::square_into",
@@ -11831,8 +11845,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Exact original GF64 BM locator and reconstructed and honest-support induction, native root traversal setup and small leaf, and exact verification dispatch with checked pricing. General root traversal, decoder completeness and physical memory/ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 111,
+    "note": "All 344 native executable declarations retained. Original Dense reducer shift and table are exact, including the native high even powers. Original trace seed and both loops are checked under their scoped contracts. AVX-512 finite-address and one-allocation LLBC contracts strengthen four existing stateful endpoints. General traversal, decoder completeness and actual Rust/ISA/compiler correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 113,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11895,6 +11909,17 @@
       "native_bm_locator": [
         "BulksketchBridge.BmLocator.locator_refines",
         "BulksketchBridge.BmLocator.reconstructed_locator_refines"
+      ],
+      "dense_reducer": [
+        "BulksketchBridge.TimesXMod.times_x_mod_polynomial",
+        "BulksketchBridge.DenseReducerTable.prepare_square_table_algebra",
+        "BulksketchBridge.DenseReducerAlgebra.square_remainder"
+      ],
+      "native_root_trace_scoped": [
+        "BulksketchBridge.RootTrace.seed_closure_refines",
+        "BulksketchBridge.RootTrace.basis_extension_refines",
+        "BulksketchBridge.RootTrace.trace_loop_refines",
+        "BulksketchBridge.RootTrace.trace_at_is_algebra_trace"
       ]
     },
     "masked_memory_evidence": {
@@ -11910,6 +11935,17 @@
         "BulksketchBridge.X86MaskedMemory.Difference.difference_refines"
       ]
     },
-    "checked_stateful_llbc_refinements": 5
+    "checked_stateful_llbc_refinements": 5,
+    "additional_stateful_llbc_address_contracts": [
+      "BulksketchBridge.X86MaskedMemory.llbc_load_finite_address",
+      "BulksketchBridge.X86MaskedMemory.llbc_store_finite_address",
+      "BulksketchBridge.X86MaskedMemory.llbc_xor_finite_address",
+      "BulksketchBridge.X86MaskedMemory.llbc_difference_finite_address",
+      "BulksketchBridge.X86MaskedMemory.Allocation.allocated_mask_footprint",
+      "BulksketchBridge.X86MaskedMemory.Allocation.allocated_load_refines",
+      "BulksketchBridge.X86MaskedMemory.Allocation.allocated_store_refines",
+      "BulksketchBridge.X86MaskedMemory.Allocation.allocated_xor_refines",
+      "BulksketchBridge.X86MaskedMemory.Allocation.allocated_difference_refines"
+    ]
   }
 }

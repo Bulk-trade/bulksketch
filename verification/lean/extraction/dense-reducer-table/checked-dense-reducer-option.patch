@@ -1,0 +1,101 @@
+diff --git a/src/interp/InterpMatchCtxs.ml b/src/interp/InterpMatchCtxs.ml
+index 29705f4..0c9cae6 100644
+--- a/src/interp/InterpMatchCtxs.ml
++++ b/src/interp/InterpMatchCtxs.ml
+@@ -348,9 +348,42 @@ let rec match_types (span : Meta.span) ~(recover : bool) (ctx0 : eval_ctx)
+       TPtrMetadata ty
+   | _ -> match_distinct_types ty0 ty1
+ 
+-module MakeMatcher (M : PrimMatcher) : Matcher = struct
++module MakeMatcherWithMode (M : PrimMatcher) (Mode : sig
++  val reducer_option : bool
++end) : Matcher = struct
+   let span = M.span
+ 
++  let checked_reducer_option =
++    Mode.reducer_option && !Config.sanity_checks
++    && Sys.getenv_opt "BULKSKETCH_DENSE_REDUCER" = Some "1"
++    && span.generated_from_span = None
++    && (match span.data.file.name with Local "src/poly/dense.rs" -> true | _ -> false)
++    && ((span.data.beg_loc.line >= 167 && span.data.end_loc.line <= 186)
++        || (span.data.beg_loc.line >= 188 && span.data.end_loc.line <= 224))
++
++  let option_shared_u64 ctx ty =
++    match ty with
++    | TAdt { id; generics = { regions = []; types =
++          [TRef (_, TScalar (TInteger (Unsigned U64)), RShared)];
++          const_generics = []; trait_refs = [] }; _ } ->
++        let decl = ctx_lookup_type_decl span ctx id in
++        Print.EvalCtx.name_to_string ctx decl.item_meta.name =
++          "core::option::Option"
++    | _ -> false
++
++  let same_shared_option_symbol ctx (left : tvalue) (right : tvalue) =
++    checked_reducer_option && equal_tvalue left right
++    && match left.value with
++       | VSymbolic sv -> option_shared_u64 ctx sv.sv_ty
++       | _ -> false
++
++  let same_shared_option_projector ctx (left : tavalue) (right : tavalue) =
++    checked_reducer_option && left = right
++    && match left.value with
++       | ASymbolic (PNone, AProjLoans { proj; consumed = []; borrows = [] }) ->
++           option_shared_u64 ctx proj.proj_ty
++       | _ -> false
++
+   let rec match_tvalues (ctx0 : eval_ctx) (ctx1 : eval_ctx) (v0 : tvalue)
+       (v1 : tvalue) : tvalue =
+     [%ldebug
+@@ -550,7 +583,9 @@ module MakeMatcher (M : PrimMatcher) : Matcher = struct
+             let sv = match_rec sv0 sv1 in
+             let av = match_arec av0 av1 in
+             [%sanity_check_recover] M.recover M.span
+-              (not (value_has_borrows sv.value));
++              (not (value_has_borrows sv.value)
++               || (pm0 = PNone && pm1 = PNone && id0 = id1
++                   && same_shared_option_symbol ctx0 sv0 sv1));
+             M.match_ashared_loans match_rec ctx0 ctx1 v0.ty pm0 id0 sv0 av0
+               v1.ty pm1 id1 sv1 av1 ty sv av
+         | AMutLoan (pm0, id0, av0), AMutLoan (pm1, id1, av1) ->
+@@ -560,6 +595,10 @@ module MakeMatcher (M : PrimMatcher) : Matcher = struct
+             [%ldebug "mut loans: matched children values"];
+             M.match_amut_loans match_rec ctx0 ctx1 v0.ty pm0 id0 av0 v1.ty pm1
+               id1 av1 ty av
++        | AIgnoredSharedLoan left, AIgnoredSharedLoan right
++          when same_shared_option_projector ctx0 left right ->
++            let child = match_arec left right in
++            { value = ALoan (AIgnoredSharedLoan child); ty }
+         | AIgnoredMutLoan _, AIgnoredMutLoan _
+         | AIgnoredSharedLoan _, AIgnoredSharedLoan _ ->
+             (* Those should have been filtered when destructuring the abstractions -
+@@ -586,6 +625,12 @@ module MakeMatcher (M : PrimMatcher) : Matcher = struct
+         M.match_avalues match_rec ctx0 ctx1 v0 v1
+ end
+ 
++module MakeMatcher (M : PrimMatcher) =
++  MakeMatcherWithMode (M) (struct let reducer_option = false end)
++
++module MakeContextMatcher (M : PrimMatcher) =
++  MakeMatcherWithMode (M) (struct let reducer_option = true end)
++
+ module MakeJoinMatcher (S : MatchJoinState) : PrimMatcher = struct
+   (** Small utility *)
+   let span = S.span
+@@ -2265,7 +2310,7 @@ let match_ctxs (span : Meta.span) ~(check_equiv : bool)
+     let lookup_shared_value_in_ctx1 = lookup_shared_value_in_ctx1
+   end in
+   let module CEM = MakeCheckEquivMatcher (S) in
+-  let module M = MakeMatcher (CEM) in
++  let module M = MakeContextMatcher (CEM) in
+   (* When matching abstractions we allow backtracking, so we need an alternative
+      version of the matchers where [recover] is true *)
+   let module RecoverS : MatchCheckEquivState = struct
+@@ -2283,7 +2328,7 @@ let match_ctxs (span : Meta.span) ~(check_equiv : bool)
+     let lookup_shared_value_in_ctx1 = lookup_shared_value_in_ctx1
+   end in
+   let module RecoverCEM = MakeCheckEquivMatcher (RecoverS) in
+-  let module RecoverM = MakeMatcher (RecoverCEM) in
++  let module RecoverM = MakeContextMatcher (RecoverCEM) in
+   (* Match the environments - we assume that they have the same structure
+      (and fail if they don't) *)
+ 

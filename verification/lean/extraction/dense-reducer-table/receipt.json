@@ -1,0 +1,227 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "selector": "{impl bulksketch::poly::Polynomial for bulksketch::poly::Dense}::prepare_square_table",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "variant_id": "checked-dense-reducer-option-v1",
+  "native_source_edited": false,
+  "variant_patch": "extraction/dense-reducer-table/checked-dense-reducer-option.patch",
+  "variant_patch_sha256": "81907bda4f607f3e8fb81875482012a151c9f6ec1488873f75b450e9596bfbb1",
+  "base_binary_sha256": {
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe"
+  },
+  "patched_binary_sha256": "282f3f7a0dfa84185fb4a376a42bb40510a83a5e625a1aed64667eb570857122",
+  "base_sources": {
+    "src/interp/InterpMatchCtxs.ml": "a97bd2650a71ec0795f570dac17a8a1f1f52ae2b6feb4619984e6f1d61fde264"
+  },
+  "modified_sources": {
+    "src/interp/InterpMatchCtxs.ml": "b250146dc8d9a8ce2d9ea24e1e959e45a82e0138e4d92f328c87eb8468c037e1"
+  },
+  "charon_command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-root-traversal/dense-square-table/arithmetic.llbc",
+    "--start-from={impl bulksketch::poly::Polynomial for bulksketch::poly::Dense}::prepare_square_table",
+    "--",
+    "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "runtime_sha256": "742887dfed177a7c3d6561cbb7ecf9dbafe24aa5fe7c7bffa5cc5b3ff109eae1",
+  "files_sha256": {
+    "extraction/dense-reducer-table/Arithmetic/Funs.lean": "9970d0a25094d24d618bede15877037394c1dcf70630cded587111bc2887045f",
+    "extraction/dense-reducer-table/Arithmetic/FunsExternal_Template.lean": "d71f8360ec358317842cf7a4ac54fbc2736fad5926b11f5b4a8a5beaa8df93bc",
+    "extraction/dense-reducer-table/Arithmetic/Types.lean": "60b67a1a6b409429060cc341dec947da79aff03f7397fb963acb9d7a3ce270a6",
+    "extraction/dense-reducer-table/Axioms.lean": "cc18560df8eb24c5277fa212f78c97167ecacac59d9e6ed0465ba8e8da6c0c72",
+    "extraction/dense-reducer-table/arithmetic.llbc": "863d72fda18ece91c0006d3ac45f2aeabb7480104ac60ae6f029ee3600d9ac4d",
+    "extraction/dense-reducer-table/axioms.log": "bcdf60bfebd32b716d4416e419bd272b6e43058a94ad3b0c56c6128db39aab59",
+    "extraction/dense-reducer-table/charon.log": "f1098cb4c34f28ed8b0515bf29c1f8d90bd03a831c1691faa8d0eb2b933dea5a",
+    "extraction/dense-reducer-table/checked-dense-reducer-option.patch": "81907bda4f607f3e8fb81875482012a151c9f6ec1488873f75b450e9596bfbb1",
+    "extraction/dense-reducer-table/checked.log": "1ce8c88194b8b8c2065ace9e3f23084c250fbe5efec8591174724dad59a05b0b",
+    "extraction/dense-reducer-table/disabled.log": "04d7d12d1aa52d1cb18756843c21502e432c99a505d46a773fb2c37d66454678",
+    "extraction/dense-reducer-table/portable-xor-stock.log": "723c04828a4340b6809aa839805ee5618e2e88005d631f7a8baf934475fe2461",
+    "extraction/dense-reducer-table/portable-xor.log": "e8c6128252fe607b9251187a5450bbf87224f4ba8e943681a2f6e175bb7ce579",
+    "extraction/dense-reducer-table/replay.log": "12589ce42771f82b98c219112248f0b965ecb7d9b416ba1b78bab11d21636995",
+    "extraction/dense-reducer-table/stock.log": "04b68faef2698ae8cabc506c8254063e7a687ab95a8658aaed25b4c5ca2e5836",
+    "extraction/dense-reducer-table/unchecked.log": "645d115c322f8cbcad064302f514380cd2a1e8bf52375d279088e8292954877c"
+  },
+  "commands": {
+    "checked": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-dense-reducer-join/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-reducer/final-controls/checked",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/dense-reducer-table/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "environment": {
+        "BULKSKETCH_DENSE_REDUCER": "1"
+      },
+      "input_sha256": "863d72fda18ece91c0006d3ac45f2aeabb7480104ac60ae6f029ee3600d9ac4d",
+      "outputs": {
+        "Funs.lean": "9970d0a25094d24d618bede15877037394c1dcf70630cded587111bc2887045f",
+        "FunsExternal_Template.lean": "d71f8360ec358317842cf7a4ac54fbc2736fad5926b11f5b4a8a5beaa8df93bc",
+        "Types.lean": "60b67a1a6b409429060cc341dec947da79aff03f7397fb963acb9d7a3ce270a6"
+      }
+    },
+    "replay": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-dense-reducer-join/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-reducer/final-controls/replay",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/dense-reducer-table/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "environment": {
+        "BULKSKETCH_DENSE_REDUCER": "1"
+      },
+      "input_sha256": "863d72fda18ece91c0006d3ac45f2aeabb7480104ac60ae6f029ee3600d9ac4d",
+      "outputs": {
+        "Funs.lean": "9970d0a25094d24d618bede15877037394c1dcf70630cded587111bc2887045f",
+        "FunsExternal_Template.lean": "d71f8360ec358317842cf7a4ac54fbc2736fad5926b11f5b4a8a5beaa8df93bc",
+        "Types.lean": "60b67a1a6b409429060cc341dec947da79aff03f7397fb963acb9d7a3ce270a6"
+      }
+    },
+    "stock": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-reducer/final-controls/stock",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/dense-reducer-table/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "environment": {},
+      "input_sha256": "863d72fda18ece91c0006d3ac45f2aeabb7480104ac60ae6f029ee3600d9ac4d",
+      "outputs": {
+        "Funs.lean": "9aee4d3b92d4db9a48d010d69a17f12a13ca13cec713a29dc997b82bf18912de",
+        "FunsExternal_Template.lean": "d71f8360ec358317842cf7a4ac54fbc2736fad5926b11f5b4a8a5beaa8df93bc",
+        "Types.lean": "60b67a1a6b409429060cc341dec947da79aff03f7397fb963acb9d7a3ce270a6"
+      }
+    },
+    "disabled": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-dense-reducer-join/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-reducer/final-controls/disabled",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/dense-reducer-table/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "environment": {},
+      "input_sha256": "863d72fda18ece91c0006d3ac45f2aeabb7480104ac60ae6f029ee3600d9ac4d",
+      "outputs": {
+        "Funs.lean": "9aee4d3b92d4db9a48d010d69a17f12a13ca13cec713a29dc997b82bf18912de",
+        "FunsExternal_Template.lean": "d71f8360ec358317842cf7a4ac54fbc2736fad5926b11f5b4a8a5beaa8df93bc",
+        "Types.lean": "60b67a1a6b409429060cc341dec947da79aff03f7397fb963acb9d7a3ce270a6"
+      }
+    },
+    "unchecked": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-dense-reducer-join/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-reducer/final-controls/unchecked",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/dense-reducer-table/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "environment": {
+        "BULKSKETCH_DENSE_REDUCER": "1"
+      },
+      "input_sha256": "863d72fda18ece91c0006d3ac45f2aeabb7480104ac60ae6f029ee3600d9ac4d",
+      "outputs": {
+        "Funs.lean": "9aee4d3b92d4db9a48d010d69a17f12a13ca13cec713a29dc997b82bf18912de",
+        "FunsExternal_Template.lean": "d71f8360ec358317842cf7a4ac54fbc2736fad5926b11f5b4a8a5beaa8df93bc",
+        "Types.lean": "60b67a1a6b409429060cc341dec947da79aff03f7397fb963acb9d7a3ce270a6"
+      }
+    },
+    "portable-xor": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-dense-reducer-join/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-reducer/final-controls/portable-xor",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/portable-xor/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "environment": {
+        "BULKSKETCH_DENSE_REDUCER": "1"
+      },
+      "input_sha256": "0aa39e2d8ef67aac06067391af16361ba2cc588bc1e8fcff82cafdb251ad2d28",
+      "outputs": {
+        "Funs.lean": "2de32175a7ff8f0bfcebfa5ad4ed9814965136fff08e0bd5b804e8d9250763f2",
+        "FunsExternal_Template.lean": "fca2fe70ab4b973fb5bbbc5f1644826e71abb99c0245cd04c3a63eff88326ed4",
+        "Types.lean": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef"
+      }
+    },
+    "portable-xor-stock": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-reducer/final-controls/portable-xor-stock",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/portable-xor/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "environment": {},
+      "input_sha256": "0aa39e2d8ef67aac06067391af16361ba2cc588bc1e8fcff82cafdb251ad2d28",
+      "outputs": {
+        "Funs.lean": "2de32175a7ff8f0bfcebfa5ad4ed9814965136fff08e0bd5b804e8d9250763f2",
+        "FunsExternal_Template.lean": "fca2fe70ab4b973fb5bbbc5f1644826e71abb99c0245cd04c3a63eff88326ed4",
+        "Types.lean": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef"
+      }
+    }
+  }
+}

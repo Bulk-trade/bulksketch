@@ -924,6 +924,70 @@
     {
       "challenge": "BulksketchBridge.ExecutionVerify.ActualExecutionVerifyWithPrices",
       "theorem": "BulksketchBridge.ExecutionVerify.verify_with_prices_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.TimesXMod.ActualTimesXMod",
+      "theorem": "BulksketchBridge.TimesXMod.times_x_mod_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseReducerTable.ActualPrepareSquareTable",
+      "theorem": "BulksketchBridge.DenseReducerTable.prepare_square_table_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.TimesXMod.TimesXModPolynomial",
+      "theorem": "BulksketchBridge.TimesXMod.times_x_mod_polynomial"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseReducerTable.ActualDenseTableAlgebra",
+      "theorem": "BulksketchBridge.DenseReducerTable.prepare_square_table_algebra"
+    },
+    {
+      "challenge": "BulksketchBridge.RootTrace.ActualSeedClosure",
+      "theorem": "BulksketchBridge.RootTrace.seed_closure_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootTrace.ActualBasisExtension",
+      "theorem": "BulksketchBridge.RootTrace.basis_extension_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootTrace.ActualTraceLoop",
+      "theorem": "BulksketchBridge.RootTrace.trace_loop_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86MaskedMemory.LlbcFiniteLoadContract",
+      "theorem": "BulksketchBridge.X86MaskedMemory.llbc_load_finite_address"
+    },
+    {
+      "challenge": "BulksketchBridge.X86MaskedMemory.LlbcFiniteStoreContract",
+      "theorem": "BulksketchBridge.X86MaskedMemory.llbc_store_finite_address"
+    },
+    {
+      "challenge": "BulksketchBridge.X86MaskedMemory.LlbcFiniteXorContract",
+      "theorem": "BulksketchBridge.X86MaskedMemory.llbc_xor_finite_address"
+    },
+    {
+      "challenge": "BulksketchBridge.X86MaskedMemory.LlbcFiniteDifferenceContract",
+      "theorem": "BulksketchBridge.X86MaskedMemory.llbc_difference_finite_address"
+    },
+    {
+      "challenge": "BulksketchBridge.X86MaskedMemory.Allocation.ActualAllocatedMaskFootprint",
+      "theorem": "BulksketchBridge.X86MaskedMemory.Allocation.allocated_mask_footprint"
+    },
+    {
+      "challenge": "BulksketchBridge.X86MaskedMemory.Allocation.AllocatedLoadContract",
+      "theorem": "BulksketchBridge.X86MaskedMemory.Allocation.allocated_load_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86MaskedMemory.Allocation.AllocatedStoreContract",
+      "theorem": "BulksketchBridge.X86MaskedMemory.Allocation.allocated_store_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86MaskedMemory.Allocation.AllocatedXorContract",
+      "theorem": "BulksketchBridge.X86MaskedMemory.Allocation.allocated_xor_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86MaskedMemory.Allocation.AllocatedDifferenceContract",
+      "theorem": "BulksketchBridge.X86MaskedMemory.Allocation.allocated_difference_refines"
     }
   ],
   "refinements": [
@@ -2738,6 +2802,35 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original verification stage with both selected paths, pricing, metering, errors, scratch and returned row stage under stated input and kernel contracts."
+    },
+    {
+      "label": "dense::times_x_mod [original source]",
+      "native_item_id": "src/poly/dense.rs:234:function:bulksketch::poly::dense::times_x_mod",
+      "source_line_span_sha256": "fd4cfdc0586d2e9a914ecd02e83479048b2f11e20e291bae36eea502f06334e4",
+      "theorem": "BulksketchBridge.TimesXMod.times_x_mod_refines",
+      "challenge": "BulksketchBridge.TimesXMod.ActualTimesXMod",
+      "generated_declaration": "bulksketch.poly.dense.times_x_mod",
+      "generated_file": "bridge/Arithmetic/TimesXModGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/TimesXModGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original overlapping move, zero constant, modulus prefix and scale-XOR call for an admitted nonempty residue. Quotient-ring multiplication checked separately."
+    },
+    {
+      "label": "Dense::prepare_square_table [original source]",
+      "native_item_id": "src/poly/dense.rs:167:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::prepare_square_table",
+      "source_line_span_sha256": "acabef96a6c47589d15ee535ce7f5727ed2c0c89f7fd88a6e226d290d15f7025",
+      "theorem": "BulksketchBridge.DenseReducerTable.prepare_square_table_refines",
+      "challenge": "BulksketchBridge.DenseReducerTable.ActualPrepareSquareTable",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.prepare_square_table",
+      "generated_file": "bridge/Arithmetic/DenseReducerTableGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/DenseReducerTableGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original table seed, row loop, work and table writebacks under admitted widths, monic shape and exact GF64 scale-XOR. Correct high even power table proved separately.",
+      "translator_variant": "checked-dense-reducer-option-v1"
     }
   ],
   "stateful_llbc_refinements": [
