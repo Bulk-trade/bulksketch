@@ -1020,6 +1020,22 @@
     {
       "challenge": "BulksketchBridge.DenseGcd.ActualMonicGcdMeaning",
       "theorem": "BulksketchBridge.DenseGcd.monic_gcd_meaning"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSquare.ActualAvxSquareDispatch",
+      "theorem": "BulksketchBridge.AvxSquare.square_mod_entry_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSquare.ActualAvxSquareRemainder",
+      "theorem": "BulksketchBridge.AvxSquare.square_mod_remainder"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSquare.ActualAvxDenseModularSquare",
+      "theorem": "BulksketchBridge.AvxSquare.avx_dense_modular_square"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseGcd.ActualMonicGcdSize",
+      "theorem": "BulksketchBridge.DenseGcd.native_gcd_size"
     }
   ],
   "refinements": [
@@ -2934,6 +2950,20 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original AVX-512 free kernel, register arithmetic, masked slice loads and stores, three loops and full scratch/output under admitted memory contracts. Physical ISA/trait dispatcher remain separate."
+    },
+    {
+      "label": "Vpclmul512::square_mod [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:106:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::square_mod",
+      "source_line_span_sha256": "24ad1f8b563c1c248ab42b9d0b21b7e64a239febde172fbaef7eec52f9ec545d",
+      "theorem": "BulksketchBridge.AvxSquare.square_mod_entry_refines",
+      "challenge": "BulksketchBridge.AvxSquare.ActualAvxSquareDispatch",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.square_mod",
+      "generated_file": "bridge/Arithmetic/AvxSquareEntryGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxSquareEntryGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original field bit test and false frame, or original accelerated free kernel result on the GF64 path."
     }
   ],
   "stateful_llbc_refinements": [

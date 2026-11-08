@@ -491,6 +491,11 @@
       "path": "extraction/avx-square/arithmetic.llbc",
       "sha256": "e3d517686a396b28257d5c13481d65eae23fdf5d2dea7c577b604f3e9492d25f",
       "has_errors": false
+    },
+    {
+      "path": "extraction/avx-square-entry/arithmetic.llbc",
+      "sha256": "fd9a8f24bffe829025f4a318e4b51d8c6f5b68ca3290486fe6217a0ae565cdf6",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1163,6 +1168,11 @@
       "native_item_id": "src/backend/x86_vpclmul512.rs:217:function:bulksketch::backend::x86_vpclmul512::square_mod",
       "generated_declaration": "bulksketch.backend.x86_vpclmul512.square_mod",
       "generated_file": "bridge/Arithmetic/AvxSquareGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:106:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::square_mod",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.square_mod",
+      "generated_file": "bridge/Arithmetic/AvxSquareEntryGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1717,6 +1727,15 @@
       "checker": "extraction/avx-square/project.py",
       "declaration_count": 7,
       "scope": "Original AVX-512 free square and six loop declarations with exact admitted slice load and store contracts."
+    },
+    {
+      "generated": "extraction/avx-square-entry/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxSquareEntryGenerated.lean",
+      "sha256": "7e8ae3de78e450c9d95ad31299bc05c6b42fe77ecefc3daaed641aef2c3288de",
+      "raw_sha256": "f713ca550d6c46f5733302c4a3c67b76e62d097020a6a3b8c648d46d48f2e7e0",
+      "checker": "extraction/avx-square-entry/project.py",
+      "declaration_count": 1,
+      "scope": "Original Vpclmul512 square selector with scoped exact original free-kernel callee."
     }
   ],
   "reviewed_translator_variants": [

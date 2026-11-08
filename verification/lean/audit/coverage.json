@@ -2090,7 +2090,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxSquare.square_mod_entry_refines",
+        "scope": "Exact original field bit test and false frame, or original accelerated free kernel result on the GF64 path.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:116:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::multiply_linear",
@@ -11880,8 +11887,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Original exact division and monic GCD wrappers are checked under explicit div/rem laws, with the descending model proved algebraically. Original AVX-512 free square is exact under the stated masked slice laws. Native div/rem linkage, accelerated dispatcher and general traversal, decoder completeness and actual Rust/ISA/compiler correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 118,
+    "note": "All 344 native executable declarations retained. Original exact division and monic GCD wrappers are checked under explicit div/rem laws, with the descending model proved algebraically. Original AVX-512 square and selector discharge the Dense monic remainder law when installed with the stated masked slice laws. Native div/rem linkage, general traversal, decoder completeness and actual Rust/ISA/compiler correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 119,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11962,7 +11969,12 @@
         "BulksketchBridge.DenseDivision.model_meaning",
         "BulksketchBridge.DenseDivision.model_gcd_law",
         "BulksketchBridge.DenseDivision.model_gcd_meaning",
-        "BulksketchBridge.DenseGcd.monic_gcd_meaning"
+        "BulksketchBridge.DenseGcd.monic_gcd_meaning",
+        "BulksketchBridge.DenseGcd.native_gcd_size"
+      ],
+      "native_accelerated_square": [
+        "BulksketchBridge.AvxSquare.square_mod_remainder",
+        "BulksketchBridge.AvxSquare.avx_dense_modular_square"
       ]
     },
     "masked_memory_evidence": {

@@ -312,6 +312,10 @@ PROJECTIONS = [
      "let first_high ← core.num.Usize.div_ceil degree 3#usize", "compiled AVX square projection differs",
      None, None, ["extraction/dense-reducer-square/receipt.json", "bridge/Arithmetic/AvxSquareRuntime.lean",
                   "bridge/Arithmetic/Avx512RegisterGenerated.lean", "bridge/Arithmetic/X86PclmulGenerated.lean"]),
+    ("avx-square-entry", "extraction/avx-square-entry/project.py", "extraction/avx-square-entry/receipt.json",
+     "extraction/avx-square-entry/Arithmetic/Funs.lean", "bridge/Arithmetic/AvxSquareEntryGenerated.lean",
+     "if i != 64#u32", "if i != 32#u32", "compiled AVX square selector projection differs",
+     None, None, ["extraction/avx-square/receipt.json"]),
 ]
 
 
@@ -492,6 +496,9 @@ def main():
                           "AVX square checked command differs"))
             cases.append(("wrong-skip-count", "bridge/Arithmetic/AvxSquareRuntime.lean",
                           "state.count.val", "state.count.val + 1", "AVX square runtime binding differs"))
+        if label == "avx-square-entry":
+            cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
+                          "AVX square selector checked command differs"))
         if label == "deg34-normalize":
             cases.append(("unchecked-original-extraction", receipt_path, '"-checks"', '"-no-checks"',
                           "normalization checked replay linkage differs"))
@@ -500,7 +507,7 @@ def main():
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:
                 shadow = Path(directory)
                 if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic", "closed-leaf", "deg34-normalize", "deg34-guard",
-                             "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square"}:
+                             "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

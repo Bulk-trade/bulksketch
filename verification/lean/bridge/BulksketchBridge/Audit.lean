@@ -546,7 +546,15 @@ run_cmd do
     (``BulksketchBridge.AvxSquare.ActualAvxSquare,
       ``BulksketchBridge.AvxSquare.square_mod_refines),
     (``BulksketchBridge.DenseGcd.ActualMonicGcdMeaning,
-      ``BulksketchBridge.DenseGcd.monic_gcd_meaning)
+      ``BulksketchBridge.DenseGcd.monic_gcd_meaning),
+    (``BulksketchBridge.AvxSquare.ActualAvxSquareDispatch,
+      ``BulksketchBridge.AvxSquare.square_mod_entry_refines),
+    (``BulksketchBridge.AvxSquare.ActualAvxSquareRemainder,
+      ``BulksketchBridge.AvxSquare.square_mod_remainder),
+    (``BulksketchBridge.AvxSquare.ActualAvxDenseModularSquare,
+      ``BulksketchBridge.AvxSquare.avx_dense_modular_square),
+    (``BulksketchBridge.DenseGcd.ActualMonicGcdSize,
+      ``BulksketchBridge.DenseGcd.native_gcd_size)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

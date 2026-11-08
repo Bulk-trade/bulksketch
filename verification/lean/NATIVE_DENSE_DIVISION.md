@@ -2,7 +2,7 @@
 
 The ledger retains all 344 native executable obligations. This checkpoint
 adds the original Dense exact-division and monic-GCD bodies and the
-original AVX-512 free square kernel under their recorded contracts.
+original AVX-512 free square kernel and trait selector under their recorded contracts.
 Production Rust is unchanged.
 
 The original exact-division wrapper preserves the quotient on zero
@@ -11,7 +11,9 @@ quotient prefix and retains the returned remainder and raw scratch.
 The native GCD wrapper rotates the three borrowed work slots in the
 original order, uses a decreasing normalized remainder length, and
 returns Mathlib's canonical monic GCD in its destination prefix.
-Both wrapper projections pass an explicit original div/rem callee slot.
+The returned size is zero exactly for zero GCD, and otherwise equals
+the canonical GCD degree plus one. Both wrapper projections pass an
+explicit original div/rem callee slot.
 
 The descending div/rem model handles the zero-factor skip, unit XOR and
 general carryless product paths. Its residual polynomial uses only the
@@ -27,9 +29,14 @@ high row fold, and eight-word block scan including the final short
 block. The result preserves raw scratch widths and high words, writes
 the exact coefficient squares in the admitted low words, and checks
 the exact destination under the stated masked load and store laws.
-The accelerated trait selector and field remainder linkage have
-separate proof obligations. Rust pointer provenance, hardware ISA
-execution and full compiler correspondence remain open.
+The original trait selector declines non-64-bit fields with both
+slices preserved and otherwise invokes the proved kernel. Its GF64
+result is the exact monic remainder. Installing that typed selector
+with the masked memory laws discharges Dense's accelerated remainder
+and frame premise. The individual allocation-scoped load and store
+results are tied to the existing original LLBC contracts. Rust pointer
+provenance, hardware ISA execution and full compiler correspondence
+remain open.
 
 Run the aggregate from `verification/lean`.
 

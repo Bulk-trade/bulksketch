@@ -90,3 +90,5 @@ import BulksketchBridge.NativeRootTrace
 import BulksketchBridge.RootTraceGenerator
 import BulksketchBridge.DenseDivisionComposition
 import BulksketchBridge.AvxSquare
+import BulksketchBridge.AvxDenseSquareComposition
+import BulksketchBridge.DenseGcdSize
