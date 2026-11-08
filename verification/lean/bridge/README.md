@@ -80,7 +80,10 @@ and the degree-three/four candidate output frame. The
 phases, certificate acceptance, stack advance, and Newton normalization.
 The [Newton guard checkpoint](../NATIVE_NEWTON_GUARD.md) adds the exact
 original guard, both instances of its residual loop nest, and the
-quotient-field semantics of the cleared words and recurrence.
+quotient-field semantics of the cleared words and recurrence. The
+[BM and degree-probe checkpoint](../NATIVE_BM_DEGREE_PROBE.md) adds exact
+admitted probe transitions and original BM subloop, entry and branch
+refinements.
 
 From the parent Lean directory:
 

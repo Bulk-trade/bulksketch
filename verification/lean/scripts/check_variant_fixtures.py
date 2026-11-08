@@ -299,6 +299,68 @@ for name, mutate in newton_cases:
     results.append({"case": name, "status": status})
     print(name, status)
 
+bm = next(entry for entry in link["reviewed_translator_variants"] if entry["id"] == "checked-bm-locator-v1")
+bm_original = json.loads((ROOT / bm["receipt"]).read_text())
+bm_check = runpy.run_path(str(ROOT / "scripts/verify_bridge.py"))["check_bm_locator_variant"]
+bm_cases = [
+    ("bm-positive", lambda receipt: None),
+    ("bm-replay-lost-flag", lambda receipt: receipt["replay"].update(environment={})),
+    ("bm-wrong-backend", lambda receipt: receipt["replay"]["command"].__setitem__(2, "fstar")),
+    ("bm-replay-wrong-input", lambda receipt: receipt["replay"]["command"].__setitem__(-1, "/tmp/unrelated.llbc")),
+    ("bm-unchecked-accepted", lambda receipt: receipt["controls"]["unchecked"].update(exit_code=0)),
+    ("bm-portable-xor-short-replay", lambda receipt: receipt.update(portable_xor_exact_artifacts=2)),
+    ("bm-wrong-patched-source", lambda receipt: receipt["modified_sources"].update({"src/Config.ml": "0" * 64})),
+]
+for name, mutate in bm_cases:
+    receipt = copy.deepcopy(bm_original)
+    mutate(receipt)
+    try:
+        bm_check(bm, receipt, runtime, runtime_head, link)
+        status = "accepted"
+    except (RuntimeError, KeyError, ValueError):
+        status = "rejected"
+    results.append({"case": name, "status": status})
+    print(name, status)
+
+probe = link["reviewed_degree_probe_extensions"][0]
+probe_original = json.loads((ROOT / probe["receipt"]).read_text())
+probe_check = runpy.run_path(str(ROOT / "scripts/verify_bridge.py"))["check_degree_probe_extension"]
+def redirect_probe_capture(receipt):
+    redirected = "/tmp/synthetic/bulksketch-proof-evidence-20261109-closed-leaf/degree-probe-run/arithmetic.llbc"
+    for row in receipt["checks"]:
+        if row["name"] == "charon":
+            row["command"][4] = "--dest-file=" + redirected
+            row["command"][7] = "--manifest-path=/tmp/synthetic/bulksketch/Cargo.toml"
+        else:
+            row["command"][-1] = redirected
+
+
+probe_cases = [
+    ("degree-probe-positive", lambda receipt: None),
+    ("degree-probe-wrong-backend", lambda receipt: next(row for row in receipt["checks"]
+        if row["name"] == "replay")["command"].__setitem__(2, "fstar")),
+    ("degree-probe-missing-tool-digests", lambda receipt: receipt.update(tool_binary_sha256={})),
+    ("degree-probe-joint-capture-redirect", redirect_probe_capture),
+    ("degree-probe-wrong-variant", lambda receipt: receipt.update(candidate_variant="wrong")),
+    ("degree-probe-wrong-guard-digest", lambda receipt: receipt.update(guard_projection_receipt_sha256="0" * 64)),
+    ("degree-probe-replay-wrong-input", lambda receipt: next(row for row in receipt["checks"]
+        if row["name"] == "replay")["command"].__setitem__(-1, "/tmp/unrelated.llbc")),
+    ("degree-probe-replay-omits-checks", lambda receipt: next(row for row in receipt["checks"]
+        if row["name"] == "replay")["command"].remove("-checks")),
+    ("degree-probe-wrong-replay-log", lambda receipt: next(row for row in receipt["checks"]
+        if row["name"] == "replay").update(log_sha256="0" * 64)),
+]
+for name, mutate in probe_cases:
+    receipt = copy.deepcopy(probe_original)
+    mutate(receipt)
+    try:
+        probe_check(probe, receipt, link["reviewed_translator_variants"], runtime_head, link)
+        status = "accepted"
+    except (RuntimeError, KeyError, ValueError):
+        status = "rejected"
+    results.append({"case": name, "status": status})
+    print(name, status)
+
 # Exercise the exact per-refinement attribution statements from the same main AST.
 refine_loop=next(n for n in main.body if isinstance(n,ast.For) and isinstance(n.target,ast.Tuple) and any(isinstance(x,ast.Name) and x.id=='native_id' for x in n.target.elts))
 assignment=next(n for n in refine_loop.body if isinstance(n,ast.Assign) and any(isinstance(x,ast.Name) and x.id=='used_variants' for x in n.targets))
@@ -323,7 +385,7 @@ for name,entry,mutate in attribution_cases:
  results.append({'case':name,'status':status});print(name,status)
 
 for row in results:
- expected = 'accepted' if row['case'] in {'positive','dense-positive','dense-mul-positive','horner-positive','pclmul-horner-positive','certificate-positive','quartic-positive','newton-positive','valid-patched','valid-pinned','valid-dense-source'} else 'rejected'
+ expected = 'accepted' if row['case'] in {'positive','dense-positive','dense-mul-positive','horner-positive','pclmul-horner-positive','certificate-positive','quartic-positive','newton-positive','bm-positive','degree-probe-positive','valid-patched','valid-pinned','valid-dense-source'} else 'rejected'
  if row['status'] != expected:
   raise RuntimeError('variant/attribution gate outcome differs: '+row['case'])
 valid_count = sum(row["status"] == "accepted" for row in results)

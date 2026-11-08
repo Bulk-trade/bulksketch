@@ -66,3 +66,4 @@ verification/lean/tooling/aeneas-horner-match/*.patch whitespace=-trailing-space
 verification/lean/tooling/aeneas-ended-projector/*.patch whitespace=-trailing-space
 verification/lean/extraction/quartic/translator/*.patch whitespace=-trailing-space
 verification/lean/extraction/deg34-guard/translator/*.patch whitespace=-trailing-space
+verification/lean/extraction/bm-locator/*.patch whitespace=-trailing-space

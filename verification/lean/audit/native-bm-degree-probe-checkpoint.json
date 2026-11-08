@@ -1,0 +1,14 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "previous_proof_commit": "20d2ab66f19dbec9eab1d93647b731841756c415",
+  "retained_native_executable_obligations": 344,
+  "generated_body_refinements_under_recorded_TCB": 102,
+  "checked_stateful_llbc_refinements": 5,
+  "whole_native_coverage_achieved": false,
+  "open": [
+    "Native Berlekamp–Massey successful nonzero update and complete outer recurrence",
+    "Caller admission, general recovery and end-to-end decoder completeness",
+    "Remaining stage callers and accelerated kernels",
+    "Physical memory, ISA and compiler-expanded correspondence"
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "variant_id": "checked-bm-locator-v1",
+  "target": "aarch64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "llbc_has_errors": false,
+  "llbc_sha256": "fe142482151f5de52ee35b51279587bef08887ae6f70f118f099f83be72a523c",
+  "variant_patch": "extraction/bm-locator/checked-bm-locator.patch",
+  "variant_patch_sha256": "b263b8addc49358cd0bd444828fdec8c77d70a00e6eb231b6605e4ee18d9b353",
+  "native_body_proof_credit": 0,
+  "native_source_edited": false,
+  "source_selector": "bulksketch::decode::bm::locator",
+  "modified_sources": {
+    "src/Config.ml": "19a263e6164f4051540731edc2b4a82b8ecad647df4be708641fdc487a695c95",
+    "src/PrePasses.ml": "01ef2a75a79bff2a10517d52c3e587312db717c65ff4adda8e637e3f67f4e33d",
+    "src/interp/InterpMatchCtxs.ml": "4537faff891441c975925d4d6ae73e0e8cc2e1478de6b0090ec9227d75a4c87f",
+    "src/interp/InterpStatements.ml": "2e2598c829df6eac48d86fc8d7749933f6c8e8c70f2c38dd2901e56f6a3e149f",
+    "src/symbolic/SymbolicToPureExpressions.ml": "7440014d5cd5778f14ce201cb2b3040c5182aaf605454e3fb07a90dd745de6ec"
+  },
+  "base_sources": {
+    "src/Config.ml": "3b8bb65d67e53f87948a1161027764795ffd02a6a4fd91c4bca0adfa588ed88c",
+    "src/PrePasses.ml": "ae752eeef3227b7566611fa7d3ace71fd64fbf24c088bc7ce16699a243772165",
+    "src/interp/InterpMatchCtxs.ml": "a97bd2650a71ec0795f570dac17a8a1f1f52ae2b6feb4619984e6f1d61fde264",
+    "src/interp/InterpStatements.ml": "52ff1eb23a3b02b969fbbd38849f58e27d8652253a3c7bf996e7a19e747f32a0",
+    "src/symbolic/SymbolicToPureExpressions.ml": "250813689915257fcab9850a12804d6a0b3a6f7ec5dd7a854dd33a849419c023"
+  },
+  "runtime_files_sha256": {
+    "bridge/Arithmetic/BmLocatorRuntime.lean": "3b8c81d0240691dac93019365c48602feb0ef5556271477dd55db30256b74118",
+    "bridge/Arithmetic/MutableZipRuntime.lean": "683a48af92e8c4f992d4f0893ed18679122344714cdda9a2293c07029b85776d",
+    "bridge/Arithmetic/PortableEncodingRuntime.lean": "1c53f83009843ec3f7ccec47f91b257580039314bc20417bd3dfdc37057b0cd7",
+    "bridge/Arithmetic/RebuiltLfsrRuntime.lean": "6fdef76755089ae0966294b4ba4ea7138b86780136ecd5083920ba49a022f2a2",
+    "bridge/Arithmetic/WorkScheduleRuntime.lean": "c21724d9bd85ac23d548260a389d54716b751aa238210dd4374d94606b10845b",
+    "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3"
+  },
+  "tool_binary_sha256": {
+    "aeneas": "87cb462ec8314b62964f1e35daca6cfaaa5ba4bd3e7c29f1c02a3745d39daceb",
+    "aeneas_pinned": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "checked_extraction": {
+    "name": "checked",
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-bm-locator-v1/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-checks",
+      "-abort-on-error",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109/bm-locator-package/replay/checked",
+      "/Users/junbug/bulk/bulksketch/verification/lean/extraction/bm-locator/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "environment": {
+      "BULKSKETCH_BM_LOCATOR": "1"
+    },
+    "log_sha256": "cb5a5341d886c585421e3e8dfa5afddf127e537349db5f0d5a96c030cd14f95b",
+    "input": "extraction/bm-locator/arithmetic.llbc",
+    "input_sha256": "fe142482151f5de52ee35b51279587bef08887ae6f70f118f099f83be72a523c",
+    "required_flags": [
+      "-checks",
+      "-sequential"
+    ],
+    "generated": [
+      {
+        "path": "extraction/bm-locator/Arithmetic/Funs.lean",
+        "sha256": "f1ab4c3aa80ecf7fb22de25a3b34a56b6adb765f1a9311739d4ad4e454e0dc1a"
+      },
+      {
+        "path": "extraction/bm-locator/Arithmetic/FunsExternal_Template.lean",
+        "sha256": "144d65c132cd1c6bb12e2f14fe3aff2f15d58ab4deb9f78756781f8bc73e65b1"
+      },
+      {
+        "path": "extraction/bm-locator/Arithmetic/Types.lean",
+        "sha256": "5e7c3ad9d86315466f493c7a38c91dac37ef0a92471c4cfcc502e46f95b53b26"
+      }
+    ]
+  },
+  "replay": {
+    "name": "replay",
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-bm-locator-v1/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-checks",
+      "-abort-on-error",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109/bm-locator-package/replay/replay",
+      "/Users/junbug/bulk/bulksketch/verification/lean/extraction/bm-locator/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "environment": {
+      "BULKSKETCH_BM_LOCATOR": "1"
+    },
+    "log_sha256": "f69ac6328e6fed237d339a74afe92ed3897f0f3faaecd58ce26510c33fa9b6c9",
+    "exact_generated_artifacts": 3
+  },
+  "controls": {
+    "disabled": {
+      "name": "disabled",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-bm-locator-v1/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109/bm-locator-package/replay/disabled",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/bm-locator/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "environment": {},
+      "log_sha256": "fac510a1b6767d6bdabe2177544f14c115c10600026dc944ab6580daab93ca4d"
+    },
+    "unchecked": {
+      "name": "unchecked",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-bm-locator-v1/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109/bm-locator-package/replay/unchecked",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/bm-locator/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "environment": {
+        "BULKSKETCH_BM_LOCATOR": "1"
+      },
+      "log_sha256": "f113a6faa1105f765e1715b26166f0f53345a692d47a53fdcd34b082a471304d"
+    },
+    "portable-xor": {
+      "name": "portable-xor",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-bm-locator-v1/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-abort-on-error",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109/bm-locator-package/replay/portable-xor",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/portable-xor/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "environment": {
+        "BULKSKETCH_BM_LOCATOR": "1"
+      },
+      "log_sha256": "a2d3d57bf49c2c4f116b882cdfe30ccf0f870dd242d3a934de87f0b78226e8d6"
+    },
+    "portable-xor-baseline": {
+      "name": "portable-xor-baseline",
+      "command": [
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-abort-on-error",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109/bm-locator-package/replay/portable-xor-baseline",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/portable-xor/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "environment": {},
+      "log_sha256": "3c8898b91de4fcd429cf3da2680c28ee7ea27d853b7cce096b720c3695580372"
+    }
+  },
+  "portable_xor_exact_artifacts": 3,
+  "checked_event_counts": {
+    "BM-DYNAMIC-SHARED-PRE": 10,
+    "BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true": 20,
+    "BM-EXACT-DENSE-ERASE": 2,
+    "BM-ZIP-MIRROR-MATCH": 4,
+    "BM-ZIP-MIRROR-WRITEBACK": 8
+  },
+  "artifacts": [
+    {
+      "path": "extraction/bm-locator/Arithmetic/Funs.lean",
+      "sha256": "f1ab4c3aa80ecf7fb22de25a3b34a56b6adb765f1a9311739d4ad4e454e0dc1a"
+    },
+    {
+      "path": "extraction/bm-locator/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "144d65c132cd1c6bb12e2f14fe3aff2f15d58ab4deb9f78756781f8bc73e65b1"
+    },
+    {
+      "path": "extraction/bm-locator/Arithmetic/Types.lean",
+      "sha256": "5e7c3ad9d86315466f493c7a38c91dac37ef0a92471c4cfcc502e46f95b53b26"
+    },
+    {
+      "path": "extraction/bm-locator/arithmetic.llbc",
+      "sha256": "fe142482151f5de52ee35b51279587bef08887ae6f70f118f099f83be72a523c"
+    },
+    {
+      "path": "extraction/bm-locator/charon.log",
+      "sha256": "5b11b050796317834ef183df5245ee1289f32c7e5f9b224e2a31d8929d0079e1"
+    },
+    {
+      "path": "extraction/bm-locator/checked.log",
+      "sha256": "cb5a5341d886c585421e3e8dfa5afddf127e537349db5f0d5a96c030cd14f95b"
+    },
+    {
+      "path": "extraction/bm-locator/disabled.log",
+      "sha256": "fac510a1b6767d6bdabe2177544f14c115c10600026dc944ab6580daab93ca4d"
+    },
+    {
+      "path": "extraction/bm-locator/portable-xor-baseline.log",
+      "sha256": "3c8898b91de4fcd429cf3da2680c28ee7ea27d853b7cce096b720c3695580372"
+    },
+    {
+      "path": "extraction/bm-locator/portable-xor.log",
+      "sha256": "a2d3d57bf49c2c4f116b882cdfe30ccf0f870dd242d3a934de87f0b78226e8d6"
+    },
+    {
+      "path": "extraction/bm-locator/replay.log",
+      "sha256": "f69ac6328e6fed237d339a74afe92ed3897f0f3faaecd58ce26510c33fa9b6c9"
+    },
+    {
+      "path": "extraction/bm-locator/unchecked.log",
+      "sha256": "f113a6faa1105f765e1715b26166f0f53345a692d47a53fdcd34b082a471304d"
+    }
+  ],
+  "axiom_audit": {
+    "exit_code": 0,
+    "source_sha256": "cf749a56e57fcaf2215d1f387e3f5385baed81b8dfcb992657f6ef0a12953abb",
+    "log_sha256": "c88466e098f44820b0fce3d122a7bc00ac33aa402b21718a9e9c6a4bb30442db"
+  }
+}

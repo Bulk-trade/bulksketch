@@ -1,0 +1,253 @@
+{
+  "status": "checked_original_closure_extracted",
+  "native_source_edited": false,
+  "native_body_proof_credit": 0,
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "734c54b3da749a2302d93527f6ae200c3789ccc7",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "transparent_application_bodies": true,
+  "native_files_checked": 41,
+  "native_build_inputs_checked": 3,
+  "llbc_has_errors": false,
+  "candidate_variant": "checked-fixedpoint-nested-scalar-slice-retry-v1",
+  "full_patch_sha256": "7c8426703fb5220a89039735f8f92677e14b7b93efa344851deaa5232bbf6fae",
+  "tool_binary_sha256": {
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "/Users/junbug/bulk/bulksketch-proof-tools/deg34-slice-loan-retry/src/_build/default/main.exe": "656ad7c927561d91b8d1e752c829abd557ed32808dec1a776b3796fed525f90b",
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "/Users/junbug/bulk/bulksketch-proof-tools/quartic-array-loan-retry/src/_build/default/main.exe": "99c2c9f4db95a14cc0178b7373c247419e6ac6a424d8f7e5eda3e063ddcaf3d0"
+  },
+  "selected_root": "bulksketch::decode::degree_probe",
+  "source_path": "src/decode/degree_probe.rs",
+  "source_span": "51:4-139:5",
+  "source_sha256": "60d72b0aa11f311c4359bfe94f0d6fede00723602b3251492cbdb10ee51752ed",
+  "compiled_run_name": "bulksketch.decode.degree_probe.DegreeProbe.run",
+  "guard_receipt_sha256": "461e56ae45d0b1ec7be342f92664d998e2b84f06b7c822795ed282a342053e4d",
+  "guard_declarations_byte_identical": 13,
+  "checks": [
+    {
+      "name": "charon",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-closed-leaf/degree-probe-run/arithmetic.llbc",
+        "--start-from=bulksketch::decode::degree_probe",
+        "--",
+        "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "environment": {
+        "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+        "CARGO_TARGET_DIR": "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-closed-leaf/degree-probe-run/target",
+        "CARGO_BUILD_JOBS": "1",
+        "CARGO_NET_OFFLINE": "true"
+      },
+      "cwd": "/Users/junbug/bulk/bulksketch",
+      "exit_code": 0
+    },
+    {
+      "name": "Arithmetic",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/deg34-slice-loan-retry/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-closed-leaf/degree-probe-run/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-closed-leaf/degree-probe-run/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "b010a67637623252e9d20d228faa43cd55aeeab7056aefd40ab1b6efb3463cb3",
+      "log_sha256": "faea697da2760361b1257d4153735ac977b4a5c35eb364755dc4d60648247480"
+    },
+    {
+      "name": "replay",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/deg34-slice-loan-retry/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-closed-leaf/degree-probe-run/replay",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-closed-leaf/degree-probe-run/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "b010a67637623252e9d20d228faa43cd55aeeab7056aefd40ab1b6efb3463cb3",
+      "log_sha256": "5d32cb8bed70b10fd7a09d797e646ee76c12fa713cb3c88d6a38af0e20037eaf"
+    },
+    {
+      "name": "pinned",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-closed-leaf/degree-probe-run/pinned",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-closed-leaf/degree-probe-run/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "b010a67637623252e9d20d228faa43cd55aeeab7056aefd40ab1b6efb3463cb3",
+      "log_sha256": "11bbe5e428babe5500de3e2b56cd399ec139689ca63df9b15f927a8508d80bb6"
+    },
+    {
+      "name": "unchecked",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/deg34-slice-loan-retry/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-closed-leaf/degree-probe-run/unchecked",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-closed-leaf/degree-probe-run/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "b010a67637623252e9d20d228faa43cd55aeeab7056aefd40ab1b6efb3463cb3",
+      "log_sha256": "91f06cbd178dca6def61409a65a1f19455334d223fdf25fb63b38437dddefb78"
+    }
+  ],
+  "replayed_files_byte_identical": 3,
+  "generated_probe_declarations_sha256": {
+    "decode.degree_probe.DegreeProbe.Insts.CoreFmtDebug.fmt": "51a5f7ee3ca1ee59984f7ea6ae98b8c1371298625a9b82ea8cf80f883fa05cb3",
+    "decode.degree_probe.DegreeProbe.Insts.CoreFmtDebug": "62d2bebf73fe4cc14bdade476ec579f1225d326cd872408ce77755f6f7ec9353",
+    "decode.degree_probe.DegreeProbe.new": "00e1b68454067cd143652581564757f0d04c25d899056e3cffb2b12ba849b677",
+    "decode.degree_probe.DegreeProbe.next_stage": "76602f7e03e044d019395f1d0705b86b66be9616bc30b75280505b2064a40707",
+    "decode.degree_probe.DegreeProbe.impl.count": "8cb788cd33e9a45f52ece71110d4b8a9443ae50290de175544fdca05e960e958",
+    "decode.degree_probe.DegreeProbe.reject": "5de86deac3f06255d5b09717d74701df496c2dc2f20d3184975669f3768d0c52",
+    "decode.degree_probe.DegreeProbe.run": "7952805616875d727d11a7722da6577f08984e3419b303311bfbec34333eff08"
+  },
+  "artifacts": {
+    "arithmetic.llbc": "b010a67637623252e9d20d228faa43cd55aeeab7056aefd40ab1b6efb3463cb3",
+    "charon.log": "5530121a497287afd5ad61d6421f8f822f3ebbc22cf965b00e2d0ccbe5c363f9",
+    "aeneas.log": "faea697da2760361b1257d4153735ac977b4a5c35eb364755dc4d60648247480",
+    "replay.log": "5d32cb8bed70b10fd7a09d797e646ee76c12fa713cb3c88d6a38af0e20037eaf",
+    "pinned.log": "11bbe5e428babe5500de3e2b56cd399ec139689ca63df9b15f927a8508d80bb6",
+    "unchecked.log": "91f06cbd178dca6def61409a65a1f19455334d223fdf25fb63b38437dddefb78",
+    "Arithmetic/Funs.lean": "1dab09435d29c36fe07cf5887424d9ad2e9ac337087ab04708876131bae87528",
+    "Arithmetic/FunsExternal_Template.lean": "2adae927dc588c553bf117f9e93b792710fd5d97dfc2151742e00695c68b134e",
+    "Arithmetic/Types.lean": "5bc708d7550ebf317f6c944888457df3034371edfe9165a444e1ef18cf357056"
+  },
+  "files_sha256": {
+    "extraction/degree-probe/unchecked.log": "91f06cbd178dca6def61409a65a1f19455334d223fdf25fb63b38437dddefb78",
+    "extraction/degree-probe/aeneas.log": "5d32cb8bed70b10fd7a09d797e646ee76c12fa713cb3c88d6a38af0e20037eaf",
+    "extraction/degree-probe/pinned.log": "11bbe5e428babe5500de3e2b56cd399ec139689ca63df9b15f927a8508d80bb6",
+    "extraction/degree-probe/charon.log": "5530121a497287afd5ad61d6421f8f822f3ebbc22cf965b00e2d0ccbe5c363f9",
+    "extraction/degree-probe/arithmetic.llbc": "b010a67637623252e9d20d228faa43cd55aeeab7056aefd40ab1b6efb3463cb3",
+    "extraction/degree-probe/controls/baseline.log": "4fd9cb4db1e704c39c6950d7fbb17feff930a339473914d19f06a893e5229348",
+    "extraction/degree-probe/controls/native-sort.log": "91dc4b0e66f8416fa2e46cc8e8fc109ac5ed66669c7163b3916c770fff8f27b3",
+    "extraction/degree-probe/controls/unsigned-sort-control.rs": "50877734ad306288853f21b202ec90a1b1bedf1c1e2b39f00ace4ff8eef81d3a",
+    "extraction/degree-probe/Arithmetic/Funs.lean": "1dab09435d29c36fe07cf5887424d9ad2e9ac337087ab04708876131bae87528",
+    "extraction/degree-probe/Arithmetic/FunsExternal_Template.lean": "2adae927dc588c553bf117f9e93b792710fd5d97dfc2151742e00695c68b134e",
+    "extraction/degree-probe/Arithmetic/Types.lean": "5bc708d7550ebf317f6c944888457df3034371edfe9165a444e1ef18cf357056"
+  },
+  "guard_projection_receipt_sha256": "29296a5a863eb198622f7a66203f4185c7c7f36fbe2f244a76e53a3cf102d988",
+  "scoped_runtime_sha256": "b4660ff42f0a56adfcbd4a9cdeae191e27c17f56d61feeea1a5f2010158bc271",
+  "binding_probe_receipt_sha256": "735cf674c2e6b9d3cf9a44b7d9b51640f2ef26ef3bc7eead68d118364cd2e033",
+  "integration_replay": {
+    "charon": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-closed-leaf/degree-probe-run/integration-replay/arithmetic.llbc",
+        "--start-from=bulksketch::decode::degree_probe",
+        "--",
+        "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "environment": {
+        "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+        "CARGO_TARGET_DIR": "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-closed-leaf/degree-probe-run/target",
+        "CARGO_BUILD_JOBS": "1",
+        "CARGO_NET_OFFLINE": "true"
+      },
+      "exit_code": 0,
+      "log_sha256": "fbb7bd16e1122febb3908ee181131b8f451e3e6b7e6737de7c1a8120e912b82e"
+    },
+    "aeneas": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/deg34-slice-loan-retry/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-closed-leaf/degree-probe-run/integration-replay/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-closed-leaf/degree-probe-run/integration-replay/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "log_sha256": "ed39ff5bd5061d4c1c65ac1d8b831d0aebf2708c9b60f2931a9dd33e8313db42"
+    },
+    "llbc_only_differs_by_output_path": true,
+    "byte_identical_generated_files": 3
+  },
+  "projection_controls": {
+    "file": "extraction/degree-probe/check_controls.py",
+    "sha256": "04b60b6aad4c06eeb2ea8c8e4682e35db28205d10adbff7f06c767c3e5acd614",
+    "modes": [
+      "standard",
+      "optimized"
+    ],
+    "negative_count": 6
+  },
+  "std_binding_provenance": {
+    "rustc_version": "rustc 1.100.0-nightly (923c95cdf 2026-09-16)\nbinary: rustc\ncommit-hash: 923c95cdf5ba65cea505aa2ea829f578e1506ed8\ncommit-date: 2026-09-16\nhost: aarch64-apple-darwin\nrelease: 1.100.0-nightly\nLLVM version: 23.1.1",
+    "std_source": [
+      {
+        "path": "/Users/junbug/.rustup/toolchains/nightly-2026-09-17-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/slice/mod.rs",
+        "sha256": "d97f830fde0310298bcfc8f93d6e82bdb6e59b7ff48323152015b48091d86083",
+        "source_lines": "3097\u20133156"
+      },
+      {
+        "path": "/Users/junbug/.rustup/toolchains/nightly-2026-09-17-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/slice/iter/macros.rs",
+        "sha256": "8db181ab6087b436dcc4c350efc7283ecc4912e34ca20d8bf7460fca5084c26c",
+        "source_lines": "254\u2013282"
+      },
+      {
+        "path": "/Users/junbug/.rustup/toolchains/nightly-2026-09-17-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/convert/num.rs",
+        "sha256": "8dbf6c64681e2dee556e0844eef3e53d62a40df0280d25f469352870a401e034",
+        "source_lines": "514,536,561"
+      },
+      {
+        "path": "/Users/junbug/.rustup/toolchains/nightly-2026-09-17-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/cmp.rs",
+        "sha256": "aa1d810f0c36798492e3b17b10a85ac91c047c0020b9be5db86f1111b34e94be",
+        "source_lines": "2224"
+      }
+    ],
+    "scope": "shared slice fold; checked usize to U8; ascending unsigned permutation from the exact OrdU64 sort call"
+  }
+}

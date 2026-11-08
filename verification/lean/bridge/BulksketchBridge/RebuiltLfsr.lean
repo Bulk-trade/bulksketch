@@ -5,7 +5,7 @@ namespace BulksketchBridge.RebuiltLfsr
 open Aeneas Aeneas.Std Aeneas.Std.WP DenseCoefficient
 open bulksketch.decode.verify
 
-private theorem inclusive_prefix (words : Slice U64) (last : Usize) (bound : last.val < words.length) :
+theorem inclusive_prefix (words : Slice U64) (last : Usize) (bound : last.val < words.length) :
     (RebuiltLfsrRuntime.inclusive U64).index_mut ⟨last⟩ words =
       Result.ok (prefixSlice words (last.val + 1), restorePrefix words) := by
   have sizeBound : words.length ≤ Usize.max := words.length_ineq

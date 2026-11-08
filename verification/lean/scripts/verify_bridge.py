@@ -412,6 +412,122 @@ def check_newton_slice_retry_variant(variant, receipt, runtime, runtime_head, li
             raise RuntimeError("Newton guard full and incremental patches differ")
 
 
+def check_bm_locator_variant(variant, receipt, runtime, runtime_head, linkage):
+    directory = "extraction/bm-locator/"
+    patch = directory + "checked-bm-locator.patch"
+    names = {"src/Config.ml", "src/PrePasses.ml", "src/interp/InterpMatchCtxs.ml",
+             "src/interp/InterpStatements.ml", "src/symbolic/SymbolicToPureExpressions.ml"}
+    if (variant["receipt"] != directory + "receipt.json" or variant["patch"] != patch or
+            variant["base_commit"] != runtime_head or variant["mandatory_checks"] is not True or
+            receipt["variant_id"] != variant["id"] or receipt["aeneas_commit"] != runtime_head or
+            receipt["charon_commit"] != linkage["charon_commit"] or receipt["source_commit"] != linkage["source_commit"] or
+            receipt["native_body_proof_credit"] != 0 or receipt["native_source_edited"] is not False or
+            receipt["variant_patch"] != patch or receipt["variant_patch_sha256"] != variant["patch_sha256"] or
+            sha(ROOT / patch) != variant["patch_sha256"] or
+            receipt["base_sources"] != {name: sha(runtime / name) for name in names} or
+            set(receipt["modified_sources"]) != names):
+        raise RuntimeError("BM locator variant lost its checked source provenance")
+    checked = receipt["checked_extraction"]
+    replay = receipt["replay"]
+    controls = receipt["controls"]
+    flags = {"-checks", "-sequential"}
+    env = {"BULKSKETCH_BM_LOCATOR": "1"}
+    original = directory + "arithmetic.llbc"
+    linked = {item["path"]: item["sha256"] for item in linkage["extractions"]}
+    binary = checked["command"][0]
+    source_path = Path(checked["command"][-1])
+    guard = json.loads((ROOT / "extraction/deg34-guard/receipt.json").read_text())
+    capture = next(item["command"] for item in guard["checks"] if item["name"] == "charon")
+    manifest = Path(capture[7].removeprefix("--manifest-path="))
+    recorded_input = manifest.parent / "verification/lean" / original
+    if (checked["input"] != original or checked["input_sha256"] != linked[original] or
+            linked[original] != sha(ROOT / original) or
+            source_path != recorded_input or
+            Path(binary).parts[-5:] != ("aeneas-bm-locator-v1", "src", "_build", "default", "main.exe") or
+            receipt["tool_binary_sha256"] != {
+                "aeneas": "87cb462ec8314b62964f1e35daca6cfaaa5ba4bd3e7c29f1c02a3745d39daceb",
+                "aeneas_pinned": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"} or
+            any(item["exit_code"] != 0 or item["environment"] != env or
+                not flags <= set(item["command"]) or item["command"][0] != binary or
+                item["command"][1:3] != ["-backend", "lean"] or
+                Path(item["command"][-1]) != source_path for item in (checked, replay)) or
+            replay["exact_generated_artifacts"] != 3 or receipt["portable_xor_exact_artifacts"] != 3 or
+            set(controls) != {"disabled", "unchecked", "portable-xor", "portable-xor-baseline"}):
+        raise RuntimeError("BM locator checked replay linkage changed")
+    xor_input = source_path.parent.parent / "portable-xor/arithmetic.llbc"
+    xor_path = "extraction/portable-xor/arithmetic.llbc"
+    if linked[xor_path] != sha(ROOT / xor_path):
+        raise RuntimeError("BM locator compatibility LLBC changed")
+    for name, enabled, with_checks, code in (("disabled", False, True, 1), ("unchecked", True, False, 1),
+                                             ("portable-xor", True, True, 0), ("portable-xor-baseline", False, True, 0)):
+        row = controls[name]
+        command = row["command"]
+        if (row["name"] != name or row["exit_code"] != code or row["environment"] != (env if enabled else {}) or
+                command[1:3] != ["-backend", "lean"] or
+                "-sequential" not in command or ("-checks" in command) != with_checks or
+                (command[0] != binary if name != "portable-xor-baseline" else
+                    Path(command[0]).parts[-6:] != ("tooling", "aeneas", "src", "_build", "default", "main.exe")) or
+                Path(command[-1]) != (source_path if code else xor_input) or
+                sha(ROOT / directory / (name + ".log")) != row["log_sha256"]):
+            raise RuntimeError("BM locator control linkage changed: " + name)
+    with tempfile.TemporaryDirectory(prefix="checked-bm-locator-") as temporary:
+        work = Path(temporary)
+        for name in names:
+            path = work / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes((runtime / name).read_bytes())
+        applied = subprocess.run(["git", "apply", str(ROOT / patch)], cwd=work,
+                                 capture_output=True, timeout=30)
+        if applied.returncode or receipt["modified_sources"] != {name: sha(work / name) for name in names}:
+            raise RuntimeError("BM locator patched sources changed")
+
+
+def check_degree_probe_extension(extension, receipt, variants, runtime_head, linkage):
+    directory = "extraction/degree-probe/"
+    variant = next((entry for entry in variants if entry["id"] == "checked-fixedpoint-nested-scalar-slice-retry-v1"), None)
+    if (variant is None or extension["variant"] != variant["id"] or
+            extension["receipt"] != directory + "receipt.json" or receipt["candidate_variant"] != variant["id"] or
+            receipt["full_patch_sha256"] != variant["patch_sha256"] or receipt["aeneas_commit"] != runtime_head or
+            receipt["charon_commit"] != linkage["charon_commit"] or receipt["source_commit"] != linkage["source_commit"] or
+            receipt["native_body_proof_credit"] != 0 or receipt["native_source_edited"] is not False or
+            receipt["transparent_application_bodies"] is not True or receipt["guard_declarations_byte_identical"] != 13):
+        raise RuntimeError("DegreeProbe lost the reviewed nested-slice extension")
+    guard = json.loads((ROOT / variant["receipt"]).read_text())
+    parent_checks = {item["name"]: item for item in guard["checks"]}
+    commands = {row["name"]: row for row in receipt["checks"]}
+    codes = {"charon": 0, "Arithmetic": 0, "replay": 0, "pinned": 1, "unchecked": 1}
+    if (len(commands) != len(receipt["checks"]) or
+            {name: row["exit_code"] for name, row in commands.items()} != codes or
+            receipt["replayed_files_byte_identical"] != 3 or
+            receipt["tool_binary_sha256"] != guard["tool_binary_sha256"] or
+            receipt["guard_projection_receipt_sha256"] != sha(ROOT / variant["receipt"])):
+        raise RuntimeError("DegreeProbe replay matrix changed")
+    charon = commands["charon"]["command"]
+    manifest = Path(charon[7].removeprefix("--manifest-path="))
+    captured = manifest.parent.parent / "bulksketch-proof-evidence-20261109-closed-leaf/degree-probe-run/arithmetic.llbc"
+    if (charon[0] != parent_checks["charon"]["command"][0] or
+            charon[1:4] != ["cargo", "--preset=aeneas", "--sysroot=default"] or
+            charon[4:7] != ["--dest-file=" + str(captured), "--start-from=bulksketch::decode::degree_probe", "--"] or
+            charon[7] != parent_checks["charon"]["command"][7] or
+            charon[8:] != ["-p", "bulksketch", "--lib", "--locked", "--target", "x86_64-apple-darwin"]):
+        raise RuntimeError("DegreeProbe recorded Charon command changed")
+    path = directory + "arithmetic.llbc"
+    linked = {row["path"]: row["sha256"] for row in linkage["extractions"]}
+    if linked[path] != sha(ROOT / path):
+        raise RuntimeError("DegreeProbe checked input fingerprint changed")
+    for name, log in (("Arithmetic", "aeneas.log"), ("replay", "aeneas.log"),
+                      ("pinned", "pinned.log"), ("unchecked", "unchecked.log")):
+        row = commands[name]
+        command = row["command"]
+        parent = name if name == "pinned" else "replay"
+        if (command[0] != parent_checks[parent]["command"][0] or Path(command[-1]) != captured or
+                command[1:3] != ["-backend", "lean"] or
+                "-sequential" not in command or ("-checks" in command) != (name != "unchecked") or
+                row["input_sha256"] != linked[path] or
+                (name != "Arithmetic" and row["log_sha256"] != sha(ROOT / directory / log))):
+            raise RuntimeError("DegreeProbe replay command lost its input or log linkage: " + name)
+
+
 def check_pclmul_horner_extension(extension, receipt, variants, runtime_head, linkage):
     """Bind the second original Horner extraction to the reviewed matcher."""
     variant = next((entry for entry in variants if entry["id"] == "checked-ended-shared-scalar-v1"), None)
@@ -528,6 +644,12 @@ def main():
                             str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
             records.append(result)
             continue
+        if variant["id"] == "checked-bm-locator-v1":
+            check_bm_locator_variant(variant, receipt, runtime, runtime_head, linkage)
+            result, _ = run("checked-bm-locator-patch-applies", ["git", "apply", "--check",
+                            str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
+            records.append(result)
+            continue
         if variant["id"] != "checked-frozen-capture-v1":
             raise RuntimeError("unknown reviewed translator variant")
         extraction = receipt["extraction"]
@@ -601,6 +723,16 @@ def main():
         check_pclmul_horner_extension(extension, receipt, variants, runtime_head, linkage)
         if horner_projections[0].get("translator_variant") != extension["variant"]:
             raise RuntimeError("PCLMUL Horner projection hides its translator variant")
+    probe_extensions = linkage.get("reviewed_degree_probe_extensions", [])
+    probe_projections = [item for item in projections
+                         if item["bridge_copy"] == "bridge/Arithmetic/DegreeProbeGenerated.lean"]
+    if len(probe_extensions) != len(probe_projections) or len(probe_extensions) > 1:
+        raise RuntimeError("DegreeProbe projection lacks a unique checked extension")
+    for extension in probe_extensions:
+        receipt = json.loads((ROOT / extension["receipt"]).read_text())
+        check_degree_probe_extension(extension, receipt, variants, runtime_head, linkage)
+        if probe_projections[0].get("translator_variant") != extension["variant"]:
+            raise RuntimeError("DegreeProbe projection hides its translator variant")
     for projection in projections:
         result, output = run("check-projection-" + Path(projection["bridge_copy"]).stem,
             ["python3", str(ROOT / projection["checker"]), *projection.get("checker_args", [])],

@@ -1,0 +1,788 @@
+diff --git a/src/Config.ml b/src/Config.ml
+index 87e3469..19eec18 100644
+--- a/src/Config.ml
++++ b/src/Config.ml
+@@ -97,6 +97,10 @@ let print_unknown_externals = ref false
+     but very efficient to catch mistakes early. *)
+ let sanity_checks = ref false
+ 
++(** Scope the experimental locator extraction to explicitly checked runs. *)
++let bm_locator_enabled () =
++  !sanity_checks && Sys.getenv_opt "BULKSKETCH_BM_LOCATOR" = Some "1"
++
+ (** Expand all symbolic values containing borrows upon introduction - allows to
+     use restrict ourselves to a simpler model for the projectors over symbolic
+     values. The interpreter fails if doing this requires to do a branching
+diff --git a/src/PrePasses.ml b/src/PrePasses.ml
+index d2e01f5..145e4b3 100644
+--- a/src/PrePasses.ml
++++ b/src/PrePasses.ml
+@@ -659,11 +659,54 @@ let update_loops (crate : crate) (f : fun_decl) : fun_decl =
+     end
+   in
+ 
++  (* Expose a shared terminal return to tail-position loops before lowering
++     their local exits. A final switch may have hoisted the common return and
++     storage-dead statements outside its arms. Appending this exact epilogue
++     to each fallthrough arm preserves its execution and local lifetimes.
++     Do not descend into a loop or move a nontrivial continuation. *)
++  let rec split_dead suffix = function
++    | ({ kind = StorageDead _; _ } as st) :: rest -> split_dead (st :: suffix) rest
++    | rest -> (rest, suffix)
++  in
++  let has_return block =
++    let visitor = object
++      inherit [_] iter_statement
++      method! visit_Return _ = raise Found
++    end in
++    try visitor#visit_block () block; false with Found -> true
++  in
++  let rec needs_local_return block =
++    match fst (split_dead [] (List.rev block.statements)) with
++    | { kind = Loop body; _ } :: _ -> has_return body
++    | { kind = Switch (_, arms); _ } :: _ -> List.exists needs_local_return arms
++    | _ -> false
++  in
++  let rec expose_return block =
++    match List.rev block.statements with
++    | ({ kind = Return; _ } as ret) :: rev -> (
++        match split_dead [ret] rev with
++        | ({ kind = Switch (data, arms); _ } as switch) :: prefix, suffix
++          when List.exists needs_local_return arms ->
++            let add_epilogue arm =
++              match List.rev arm.statements with
++              | { kind = (Return | Panic _ | UnwindTerminate | UndefinedBehavior | UnwindResume); _ } :: _ -> arm
++              | _ -> expose_return { arm with statements = arm.statements @ suffix }
++            in
++            { block with statements =
++                List.rev ({ switch with kind = Switch (data, List.map add_epilogue arms) } :: prefix) }
++        | _ -> block)
++    | _ -> block
++  in
+   (* Map  *)
+   let body =
+     match f.body with
+     | StructuredBody body ->
+-        StructuredBody { body with body = visitor#visit_block 0 body.body }
++        let block =
++          if Config.bm_locator_enabled () &&
++             Errors.raw_span_to_string span = "'src/decode/bm.rs', lines 14:0-98:1"
++          then expose_return body.body else body.body
++        in
++        StructuredBody { body with body = visitor#visit_block 0 block }
+     | other -> other
+   in
+ 
+diff --git a/src/interp/InterpMatchCtxs.ml b/src/interp/InterpMatchCtxs.ml
+index 29705f4..99ed34d 100644
+--- a/src/interp/InterpMatchCtxs.ml
++++ b/src/interp/InterpMatchCtxs.ml
+@@ -348,7 +348,11 @@ let rec match_types (span : Meta.span) ~(recover : bool) (ctx0 : eval_ctx)
+       TPtrMetadata ty
+   | _ -> match_distinct_types ty0 ty1
+ 
+-module MakeMatcher (M : PrimMatcher) : Matcher = struct
++module MakeMatcherWithMode
++    (M : PrimMatcher)
++    (Mode : sig
++      val match_ended_bm_loans : bool
++    end) : Matcher = struct
+   let span = M.span
+ 
+   let rec match_tvalues (ctx0 : eval_ctx) (ctx1 : eval_ctx) (v0 : tvalue)
+@@ -553,6 +557,54 @@ module MakeMatcher (M : PrimMatcher) : Matcher = struct
+               (not (value_has_borrows sv.value));
+             M.match_ashared_loans match_rec ctx0 ctx1 v0.ty pm0 id0 sv0 av0
+               v1.ty pm1 id1 sv1 av1 ty sv av
++        | AEndedSharedLoan (sv0, av0), AEndedSharedLoan (sv1, av1)
++          when Mode.match_ended_bm_loans && Config.bm_locator_enabled ()
++               && String.starts_with ~prefix:"'src/decode/bm.rs', lines "
++                    (Errors.raw_span_to_string M.span)
++               && equal_tvalue sv0 sv1 && av0.ty = sv0.ty && av1.ty = sv1.ty
++               && (match (sv0.ty, sv0.value) with
++                   | TScalar _, VLiteral _ -> true
++                   | TScalar _, VSymbolic sv -> sv.sv_ty = sv0.ty
++                   | _ -> false)
++               && (match (av0.value, av1.value) with
++                   | AIgnored None, AIgnored None -> true
++                   | AIgnored (Some child0), AIgnored (Some child1) ->
++                       equal_tvalue child0 sv0 && equal_tvalue child1 sv1
++                   | _ -> false) ->
++            (* A scalar loan already ended in both contexts. The ignored child
++               carries either no metadata or the very same scalar. Validate
++               both before matching, and preserve the optional child payload. *)
++            let sv = match_rec sv0 sv1 in
++            let av = { (match_arec av0 av1) with value = av0.value } in
++            { value = ALoan (AEndedSharedLoan (sv, av)); ty }
++        | AEndedMutLoan left, AEndedMutLoan right
++          when Mode.match_ended_bm_loans && Config.bm_locator_enabled ()
++               && String.starts_with ~prefix:"'src/decode/bm.rs', lines "
++                    (Errors.raw_span_to_string M.span) ->
++            let meta = left.given_back_meta in
++            let ignored (a : tavalue) (b : tavalue) =
++              a.ty = meta.ty && b.ty = meta.ty
++              && (match (a.value, b.value) with
++                  | AIgnored None, AIgnored None -> true
++                  | AIgnored (Some x), AIgnored (Some y) ->
++                      equal_tvalue x meta && equal_tvalue y meta
++                  | _ -> false)
++            in
++            let symbolic_slice =
++              match (meta.ty, meta.value) with
++              | TSlice (TScalar _, None), VSymbolic sv -> sv.sv_ty = meta.ty
++              | _ -> false
++            in
++            [%cassert_recover] M.recover M.span
++              (v0.ty = v1.ty && symbolic_slice
++               && equal_tvalue meta right.given_back_meta
++               && ignored left.child right.child
++               && ignored left.given_back right.given_back)
++              "Ended mutable slice loans differ or carry projections";
++            let _ = match_arec left.child right.child in
++            let _ = match_arec left.given_back right.given_back in
++            let _ = match_rec meta right.given_back_meta in
++            { value = ALoan (AEndedMutLoan left); ty }
+         | AMutLoan (pm0, id0, av0), AMutLoan (pm1, id1, av1) ->
+             [%ldebug "mut loans"];
+             [%ldebug "mut loans: matching children values"];
+@@ -586,6 +638,12 @@ module MakeMatcher (M : PrimMatcher) : Matcher = struct
+         M.match_avalues match_rec ctx0 ctx1 v0 v1
+ end
+ 
++module MakeMatcher (M : PrimMatcher) =
++  MakeMatcherWithMode (M) (struct let match_ended_bm_loans = false end)
++
++module MakeContextMatcher (M : PrimMatcher) =
++  MakeMatcherWithMode (M) (struct let match_ended_bm_loans = true end)
++
+ module MakeJoinMatcher (S : MatchJoinState) : PrimMatcher = struct
+   (** Small utility *)
+   let span = S.span
+@@ -2265,7 +2323,7 @@ let match_ctxs (span : Meta.span) ~(check_equiv : bool)
+     let lookup_shared_value_in_ctx1 = lookup_shared_value_in_ctx1
+   end in
+   let module CEM = MakeCheckEquivMatcher (S) in
+-  let module M = MakeMatcher (CEM) in
++  let module M = MakeContextMatcher (CEM) in
+   (* When matching abstractions we allow backtracking, so we need an alternative
+      version of the matchers where [recover] is true *)
+   let module RecoverS : MatchCheckEquivState = struct
+@@ -2283,7 +2341,7 @@ let match_ctxs (span : Meta.span) ~(check_equiv : bool)
+     let lookup_shared_value_in_ctx1 = lookup_shared_value_in_ctx1
+   end in
+   let module RecoverCEM = MakeCheckEquivMatcher (RecoverS) in
+-  let module RecoverM = MakeMatcher (RecoverCEM) in
++  let module RecoverM = MakeContextMatcher (RecoverCEM) in
+   (* Match the environments - we assume that they have the same structure
+      (and fail if they don't) *)
+ 
+diff --git a/src/interp/InterpStatements.ml b/src/interp/InterpStatements.ml
+index 559169e..24bb7ad 100644
+--- a/src/interp/InterpStatements.ml
++++ b/src/interp/InterpStatements.ml
+@@ -15,6 +15,213 @@ open InterpExpressions
+ module Subst = Substitute
+ module S = SynthesizeSymbolic
+ 
++module SA = SymbolicAst
++
++(* Structural selector for the line-80 indexed connection
++   writeback. The source place is pinned, but symbolic IDs may be refreshed. *)
++let bm_mutable_component span (ctx : eval_ctx) =
++  let ( let* ) = Option.bind in
++  let unique f xs = match List.filter_map f xs with [x] -> Some x | _ -> None in
++  let active (abs : abs) =
++    abs.can_end && AbsId.Set.is_empty abs.parents && not (abs_has_markers abs)
++    && (match RegionSet.elements abs.regions.owned with
++        | [RVar (Free id)] -> not (RegionId.Set.mem id ctx.ended_regions)
++        | _ -> false)
++  in
++  let abses = List.filter active (AbsId.Map.values (ctx_get_abs ctx)) in
++  let same_slot (a : abs) (p : symbolic_proj) (b : abs) (q : symbolic_proj) =
++    p.sv_id = q.sv_id
++    && Subst.erase_regions p.proj_ty = Subst.erase_regions q.proj_ty
++    && InterpBorrowsCore.projection_contains span ctx a.regions.owned p.proj_ty
++         b.regions.owned q.proj_ty
++    && InterpBorrowsCore.projection_contains span ctx b.regions.owned q.proj_ty
++         a.regions.owned p.proj_ty
++  in
++  let mut_view (abs : abs) (proj : symbolic_proj) =
++    ty_has_mut_borrow_for_region_in_set ctx.type_ctx.type_infos
++      abs.regions.owned proj.proj_ty
++  in
++  let exact_child (label : mconsumed_symb) (child : symbolic_proj) =
++    label.sv_id = child.sv_id && label.proj_ty = child.proj_ty
++  in
++  let find f = unique (fun (abs : abs) -> Option.map (fun v -> (abs, v)) (f abs)) abses in
++  let field (abs : abs) f = unique (fun (av : tavalue) -> f av.value) abs.avalues in
++  let fun_call (abs : abs) = match abs.kind with FunCall _ -> true | _ -> false in
++  let* loop, (owner, label, leaf) = find (fun abs ->
++    match abs.kind with
++    | Loop _ -> field abs (function
++        | ASymbolic (PNone, AProjBorrows { proj; loans = [
++            (label, AProjLoans { proj = leaf; consumed = []; borrows = [] }) ] })
++          when exact_child label leaf && proj.sv_id <> leaf.sv_id
++               && proj.proj_ty = leaf.proj_ty && mut_view abs proj ->
++            Some (proj, label, leaf)
++        | _ -> None)
++    | _ -> None) in
++  let* zip, () = find (fun abs ->
++    if not (fun_call abs) then None
++    else field abs (function
++      | ASymbolic (PNone, AProjLoans { proj; consumed = []; borrows = [
++          (tag, AProjBorrows { proj = back; loans = [] }) ] })
++        when tag = label && same_slot loop owner abs proj
++             && same_slot loop leaf abs back && mut_view abs proj -> Some ()
++      | _ -> None)) in
++  let* iterator_borrow = field zip (function
++    | ASymbolic (PNone, AProjBorrows { proj; loans = [] })
++      when mut_view zip proj && proj.sv_id <> owner.sv_id && proj.sv_id <> leaf.sv_id -> Some proj
++    | _ -> None) in
++  let* iterator, () = find (fun abs ->
++    if not (fun_call abs) then None
++    else field abs (function
++      | ASymbolic (PNone, AProjLoans { proj; consumed = []; borrows = [] })
++        when same_slot zip iterator_borrow abs proj && mut_view abs proj -> Some ()
++      | _ -> None)) in
++  let* inner = field iterator (function
++    | ABorrow (AMutBorrow (PNone, bid, { ty = TSlice (TScalar _, _); _ })) -> Some bid
++    | _ -> None) in
++  let* bridge, outer = unique (function
++    | (EBinding (BDummy _, { value = VBorrow (VMutBorrow (bid,
++        { value = VLoan (VMutLoan lid); _ })); _ }) as binding) when lid = inner ->
++        Some (binding, bid)
++    | _ -> None) ctx.env in
++  let* prefix, () = find (fun abs ->
++    if not (fun_call abs) then None
++    else field abs (function
++      | ALoan (AMutLoan (PNone, lid, { ty = TSlice (TScalar _, _); _ }))
++        when lid = outer -> Some ()
++      | _ -> None)) in
++  let* root = field prefix (function
++    | ABorrow (AMutBorrow (PNone, bid, { ty = TSlice (TScalar _, _); _ })) -> Some bid
++    | _ -> None) in
++  let (connection_id, current_loan) =
++    match (ctx_lookup_var_value span ctx (LocalId.of_int 24)).value with
++    | VBorrow (VMutBorrow (id, { value = VLoan (VMutLoan loan); _ })) -> (Some id, Some loan)
++    | _ -> (None, None)
++  in
++  let ids = AbsId.Set.of_list [loop.abs_id; zip.abs_id; iterator.abs_id; prefix.abs_id] in
++  match connection_id, current_loan with
++  | Some connection_id, Some loan
++    when loan = root && root <> inner && root <> outer && inner <> outer
++         && AbsId.Set.cardinal ids = 4 ->
++      Some (loop, ids, bridge, inner, outer, connection_id)
++  | _ -> None
++
++(* Selector for the preceding read-only discrepancy chain. *)
++let bm_shared_component span (ctx : eval_ctx) =
++  let ( let* ) = Option.bind in
++  let unique f xs = match List.filter_map f xs with [x] -> Some x | _ -> None in
++  let active (abs : abs) =
++    abs.can_end && AbsId.Set.is_empty abs.parents && not (abs_has_markers abs)
++    && (match RegionSet.elements abs.regions.owned with
++        | [RVar (Free id)] -> not (RegionId.Set.mem id ctx.ended_regions)
++        | _ -> false)
++  in
++  let abses = List.filter active (AbsId.Map.values (ctx_get_abs ctx)) in
++  let same_slot (a : abs) (p : symbolic_proj) (b : abs) (q : symbolic_proj) =
++    p.sv_id = q.sv_id
++    && Subst.erase_regions p.proj_ty = Subst.erase_regions q.proj_ty
++    && InterpBorrowsCore.projection_contains span ctx a.regions.owned p.proj_ty
++         b.regions.owned q.proj_ty
++    && InterpBorrowsCore.projection_contains span ctx b.regions.owned q.proj_ty
++         a.regions.owned p.proj_ty
++  in
++  let shared_view (abs : abs) (proj : symbolic_proj) =
++    not (ty_has_mut_borrows ctx.type_ctx.type_infos proj.proj_ty)
++    && ty_has_regions_in_set ctx.type_ctx.type_infos abs.regions.owned proj.proj_ty
++  in
++  let find f = unique (fun (abs : abs) -> Option.map (fun v -> (abs, v)) (f abs)) abses in
++  let field (abs : abs) f = unique (fun (av : tavalue) -> f av.value) abs.avalues in
++  let fun_call (abs : abs) = match abs.kind with FunCall _ -> true | _ -> false in
++  let* loop, (owner, label, leaf) = find (fun abs ->
++    match abs.kind, abs.avalues with
++    | Loop _, [{ value = ASymbolic (PNone, AProjBorrows { proj; loans = [
++          ((label : mconsumed_symb), AProjLoans { proj = leaf; consumed = []; borrows = [] }) ] }); _ }]
++      when label.sv_id = leaf.sv_id && label.proj_ty = leaf.proj_ty
++           && proj.sv_id <> leaf.sv_id && proj.proj_ty = leaf.proj_ty
++           && shared_view abs proj -> Some (proj, label, leaf)
++    | _ -> None) in
++  let* zip, () = find (fun abs ->
++    if not (fun_call abs) then None
++    else field abs (function
++      | ASymbolic (PNone, AProjLoans { proj; consumed = []; borrows = [
++          (tag, AProjBorrows { proj = back; loans = [] }) ] })
++        when tag = label && same_slot loop owner abs proj
++             && same_slot loop leaf abs back && shared_view abs proj -> Some ()
++      | _ -> None)) in
++  let predecessor (abs : abs) =
++    let* borrowed = field abs (function
++      | ASymbolic (PNone, AProjBorrows { proj; loans = [] })
++        when shared_view abs proj -> Some proj
++      | _ -> None) in
++    find (fun upstream ->
++      if not (fun_call upstream) then None
++      else field upstream (function
++        | ASymbolic (PNone, AProjLoans { proj; consumed = []; borrows = [] })
++          when same_slot abs borrowed upstream proj && shared_view upstream proj -> Some ()
++        | _ -> None))
++  in
++  let* reverse, () = predecessor zip in
++  let* iterator, () = predecessor reverse in
++  let* slice_borrow = field iterator (function
++    | ABorrow (ASharedBorrow (PNone, bid, _)) -> Some bid
++    | _ -> None) in
++  let* slice, () = find (fun abs ->
++    if not (fun_call abs) then None
++    else field abs (function
++      | ALoan (ASharedLoan (PNone, bid,
++          { value = VSymbolic { sv_ty = TSlice (TScalar _, _); _ }; _ }, _))
++        when bid = slice_borrow -> Some ()
++      | _ -> None)) in
++  let ids = AbsId.Set.of_list [loop.abs_id; zip.abs_id; reverse.abs_id; iterator.abs_id; slice.abs_id] in
++  if AbsId.Set.cardinal ids = 5 then Some (ids, slice_borrow) else None
++
++let diagnose_bm_shared_ending (config : config) (span : Meta.span) : cm_fun =
++ fun ctx ->
++  if Config.bm_locator_enabled () &&
++     Errors.raw_span_to_string span = "'src/decode/bm.rs', lines 69:48-69:49"
++  then (
++    match bm_shared_component span ctx with
++    | None -> (ctx, fun expr -> expr)
++    | Some (ids, loan) ->
++        let scope, env = List.partition (function
++          | EAbs abs -> AbsId.Set.mem abs.abs_id ids
++          | _ -> false) ctx.env in
++        let component, _ = compute_env_ids scope in
++        let outside = { ctx with env } in
++        let outside_ids, _ = compute_ctx_ids outside in
++        let isolated = SymbolicValueId.Set.disjoint component.sids outside_ids.sids
++          && not (BorrowId.Set.mem loan outside_ids.blids)
++          && AbsId.Map.for_all (fun _ (abs : abs) ->
++            AbsId.Set.disjoint abs.parents ids) (ctx_get_abs outside) in
++        Format.eprintf "BM-DYNAMIC-SHARED-PRE ids=%s isolated=%b
++%!"
++          (String.concat "," (List.map AbsId.to_string (AbsId.Set.elements ids))) isolated;
++        [%cassert] span (isolated && List.length scope = 5)
++          "BM shared diagnostic found a live external use";
++        let targets = AbsIdWithLevelSet.of_list
++          (List.map (fun abs_id -> { abs_id; level = 0 }) (AbsId.Set.elements ids)) in
++        let ended, backward = InterpBorrows.end_abs_set config span targets ctx in
++        let real_bindings (ctx : eval_ctx) = List.filter (function
++          | EBinding (BVar _, _) -> true | _ -> false) ctx.env in
++        [%cassert] span (List.equal equal_env_elem (real_bindings ctx) (real_bindings ended)
++            && AbsId.Set.for_all (fun aid -> Option.is_none (ctx_lookup_abs_opt ended aid)) ids)
++          "BM shared stock ending changed real bindings or retained selected abstractions";
++        Invariants.check_invariants span ended;
++        let rec inspect = function
++          | SA.EndAbs (_, abs, level, rest) ->
++              Format.eprintf "BM-DYNAMIC-SHARED-AST abs=%s level=%d
++%!"
++                (AbsId.to_string abs.abs_id) level;
++              inspect rest
++          | SA.Meta (_, rest) -> inspect rest
++          | SA.Return (after, None) when after == ended ->
++              Format.eprintf "BM-DYNAMIC-SHARED-AST exact return sentinel preserved
++%!"
++          | _ -> [%craise] span "Unexpected shared stock continuation shape"
++        in
++        inspect (backward (SA.Return (ended, None)));
++        (ended, backward))
++  else (ctx, fun expr -> expr)
++
+ (** The local logger *)
+ let log = L.statements_log
+ 
+@@ -653,6 +860,76 @@ let rec eval_statement (config : config) (st : statement) : stl_cm_fun =
+ 
+   (* Take a snapshot of the current context for the purpose of generating pretty names *)
+   let cc = S.save_snapshot ctx in
++  let ctx, cc =
++    comp cc (diagnose_bm_shared_ending config st.span ctx)
++  in
++  let ctx, cc =
++    if Config.bm_locator_enabled () &&
++       Errors.raw_span_to_string st.span = "'src/decode/bm.rs', lines 80:12-80:27"
++    then (
++      match bm_mutable_component st.span ctx with
++      | None -> (ctx, cc)
++      | Some (_, selected, _, _, _, _) ->
++          let updated, simplify =
++            InterpBorrows.simplify_dummy_values_useless_abs config st.span ctx in
++          let updated, cc = comp cc (updated, simplify) in
++          let loop, ids, bridge, inner, outer, connection_id =
++            match bm_mutable_component st.span updated with
++            | Some ((_, ids, _, _, _, _) as component) when AbsId.Set.equal ids selected ->
++                component
++            | _ -> [%craise] st.span "BM dynamic component changed during stock simplification"
++          in
++          let scope, outside_env = List.partition (function
++            | EAbs abs -> AbsId.Set.mem abs.abs_id ids
++            | e -> equal_env_elem bridge e) updated.env in
++          let component_ids, _ = compute_env_ids scope in
++          let outside = { updated with env = outside_env } in
++          let outside_ids, _ = compute_ctx_ids outside in
++          let no_live_output = List.for_all (fun (av : tavalue) ->
++            match av.value with ASymbolic (_, AProjLoans _) -> false | _ -> true) loop.avalues in
++          let isolated = SymbolicValueId.Set.disjoint component_ids.sids outside_ids.sids
++            && not (BorrowId.Set.mem inner outside_ids.blids)
++            && not (BorrowId.Set.mem outer outside_ids.blids)
++            && AbsId.Map.for_all (fun _ (abs : abs) ->
++              AbsId.Set.disjoint abs.parents ids) (ctx_get_abs outside) in
++          Format.eprintf "BM-DYNAMIC-LATER-PRE ids=%s inactive=%b isolated=%b\n%!"
++            (String.concat "," (List.map AbsId.to_string (AbsId.Set.elements ids)))
++            no_live_output isolated;
++          [%cassert] st.span (no_live_output && isolated && List.length scope = 5)
++            "BM dynamic mutable component retains outside uses or unended output";
++          let targets = AbsIdWithLevelSet.of_list
++            (List.map (fun abs_id -> { abs_id; level = 0 }) (AbsId.Set.elements ids)) in
++          let ended, writeback = InterpBorrows.end_abs_set config st.span targets updated in
++          let connection ctx = ctx_lookup_var_value st.span ctx (LocalId.of_int 24) in
++          let is_restored = match (connection ended).value with
++            | VBorrow (VMutBorrow (id, { value = VSymbolic _; _ })) -> id = connection_id
++            | _ -> false in
++          let other_bindings (ctx : eval_ctx) =
++            List.filter (function
++              | EBinding (BVar b, _) -> b.index <> LocalId.of_int 24
++              | _ -> false) ctx.env in
++          let other_values_preserved =
++            List.equal equal_env_elem (other_bindings updated) (other_bindings ended) in
++          [%cassert] st.span
++            (is_restored && other_values_preserved &&
++             AbsId.Set.for_all (fun aid -> Option.is_none (ctx_lookup_abs_opt ended aid)) ids)
++            "BM dynamic stock ending failed to restore the connection or preserve other bindings";
++          Invariants.check_invariants st.span ended;
++          let rec inspect = function
++            | SA.EndAbs (_, abs, level, rest) ->
++                Format.eprintf "BM-DYNAMIC-LATER-AST abs=%s level=%d\n%!"
++                  (AbsId.to_string abs.abs_id) level;
++                inspect rest
++            | SA.Meta (_, rest) -> inspect rest
++            | SA.Return (after, None) when after == ended ->
++                Format.eprintf "BM-DYNAMIC-LATER-AST exact return sentinel preserved\n%!"
++            | _ -> [%craise] st.span "Unexpected dynamic stock continuation shape"
++          in
++          inspect (writeback (SA.Return (ended, None)));
++          Format.eprintf "BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true\n%!";
++          comp cc (ended, writeback))
++    else (ctx, cc)
++  in
+   (* Expand the symbolic values if necessary - we need to do that before
+      checking the invariants *)
+   let ctx, cc = comp cc (greedy_expand_symbolic_values st.span ctx) in
+diff --git a/src/symbolic/SymbolicToPureExpressions.ml b/src/symbolic/SymbolicToPureExpressions.ml
+index e9c181a..f3e5118 100644
+--- a/src/symbolic/SymbolicToPureExpressions.ml
++++ b/src/symbolic/SymbolicToPureExpressions.ml
+@@ -9,6 +9,43 @@ open SymbolicToPureAbs
+ (** The local logger *)
+ let log = Logging.symbolic_to_pure_expressions_log
+ 
++(** Checked erasure of a level-one loop ending with no pure continuation.
++    Inspect child payload types directly because the ordinary projection-kind
++    classifier only classifies their enclosing symbolic value. *)
++let can_erase_shared_loop_end type_infos ~ignored ~has_continuation
++    (abs : V.abs) (level : V.abs_level) : bool =
++  !Config.sanity_checks && level = 1 && ignored && not has_continuation
++  && V.AbsLevelSet.mem level abs.ended_subabs
++  && (match (abs.kind, abs.cont) with
++      | ( V.Loop loop_id,
++          Some { output = Some output;
++                 input = Some { value = V.EApp (V.ELoop (aid, lid), [[]]); ty } } ) ->
++          aid = abs.abs_id && lid = loop_id && ty = TypesUtils.mk_unit_ty
++          && V.equal_tevalue output (ValuesUtils.mk_etuple ~borrow_proj:true [])
++      | _ -> false)
++  &&
++  let shared ty =
++    TypesUtils.ty_is_rty ty
++    && not (TypesUtils.ty_has_mut_borrow_for_region_in_set type_infos abs.regions.owned ty)
++  in
++  let rec projection ~top = function
++    | V.AEmpty -> true
++    | V.AProjLoans { proj; consumed; borrows } when top ->
++        shared proj.proj_ty && payloads consumed && payloads borrows
++    | V.AProjBorrows { proj; loans } when top -> shared proj.proj_ty && payloads loans
++    | V.AProjLoans _ | V.AProjBorrows _ -> false
++    | V.AEndedProjLoans { consumed; borrows; _ } -> payloads consumed && payloads borrows
++    | V.AEndedProjBorrows { mvalues; loans } ->
++        shared mvalues.given_back.sv_ty && payloads loans
++  and payloads children =
++    List.for_all (fun ((meta : V.mconsumed_symb), child) ->
++        shared meta.proj_ty && projection ~top:false child) children
++  in
++  List.for_all (fun (av : V.tavalue) ->
++      shared av.ty &&
++      match av.value with V.ASymbolic (V.PNone, proj) -> projection ~top:true proj | _ -> false)
++    abs.avalues
++
+ let translate_fn_ptr_kind (ctx : bs_ctx) (id : A.fn_ptr_kind) : fn_ptr_kind =
+   match id with
+   | T.Fun fun_id -> FunId fun_id
+@@ -1284,7 +1321,18 @@ and translate_end_abstraction_synth_ret (ectx : C.eval_ctx) (abs : V.abs)
+ 
+ and translate_end_abstraction_join_or_loop (ectx : C.eval_ctx) (abs : V.abs)
+     (abs_level : abs_level) (e : S.expr) (ctx : bs_ctx) : texpr =
+-  let span = ctx.span in
++  if Config.bm_locator_enabled () &&
++     Errors.raw_span_to_string ctx.span = "'src/decode/bm.rs', lines 14:0-98:1" &&
++     can_erase_shared_loop_end ctx.type_ctx.type_infos
++       ~ignored:(V.AbsId.Set.mem abs.abs_id ctx.ignored_abs_ids)
++       ~has_continuation:(V.AbsId.Map.mem abs.abs_id ctx.abs_id_to_info)
++       abs abs_level then (
++    Format.eprintf "BM-EXACT-DENSE-ERASE id=%s kind=%s level=%d\n%!"
++      (V.AbsId.to_string abs.abs_id) (V.show_abs_kind abs.kind) abs_level;
++    translate_expr e ctx)
++  else match try_translate_bm_zip_pair ectx abs abs_level e ctx with
++  | Some lowered -> lowered
++  | None -> let span = ctx.span in
+   [%cassert] span (abs_level = 0) "Unimplemented";
+   (* Compute the input and output values *)
+   let back_inputs = abs_to_consumed ctx ectx abs abs_level in
+@@ -1337,6 +1385,227 @@ and translate_end_abstraction_join_or_loop (ectx : C.eval_ctx) (abs : V.abs)
+         ^ "\n- next:\n" ^ texpr_to_string ctx next_e];
+       [%add_loc] mk_closed_checked_let ctx can_fail output call next_e
+ 
++(* Exact original BM case: a data-free level-one end followed by its
++   level-zero explicit Zip backward call.  Keep the old guards for every
++   other case. This is scoped diagnostic code, not an admitted lowering. *)
++and try_translate_bm_zip_pair (ectx : C.eval_ctx) (abs : V.abs)
++    (level : abs_level) (e : S.expr) (ctx : bs_ctx) : texpr option =
++  let span = ctx.span in
++  let ( let* ) = Option.bind in
++  let valid b = if b then Some () else None in
++  let u64 = TLiteral (TUInt U64) in
++  let adt index types =
++    TAdt (TAdtId (T.TypeDeclId.of_int index),
++      { types; const_generics = []; trait_refs = [] }) in
++  let zip = adt 15 [adt 20 [u64]; adt 16 [u64]] in
++  let* () = valid (Config.bm_locator_enabled () && level = 1 &&
++    Errors.raw_span_to_string span = "'src/decode/bm.rs', lines 14:0-98:1" &&
++    not (V.AbsId.Set.mem abs.abs_id ctx.ignored_abs_ids)) in
++  let* loop = match abs.kind with V.Loop id -> Some id | _ -> None in
++  let* { fvar; can_fail } = V.AbsId.Map.find_opt abs.abs_id ctx.abs_id_to_info in
++  let* () = valid (not can_fail && fvar.ty = TArrow (zip, zip)) in
++  let* snapshot, next_ctx, next_abs, rest = match e with
++    | S.Meta ((S.Snapshot _ as snapshot), S.EndAbs (next_ctx, next_abs, 0, rest)) ->
++        Some (snapshot, next_ctx, next_abs, rest)
++    | _ -> None in
++  let* () = valid (
++    V.AbsLevelSet.equal abs.ended_subabs (V.AbsLevelSet.singleton 1) &&
++    V.AbsLevelSet.equal next_abs.ended_subabs (V.AbsLevelSet.of_list [0; 1]) &&
++    { next_abs with ended_subabs = abs.ended_subabs } = abs) in
++  let* av_ty, mv, loan_tag, child, consumed_tag =
++    match next_abs.avalues with
++    | [{ V.ty = ty; value = V.ASymbolic (V.PNone, V.AEndedProjBorrows {
++            mvalues = mv; loans = [(loan_tag, V.AEndedProjLoans {
++              proj = child; consumed = [(consumed_tag, V.AEmpty)]; borrows = [] })] }) }] ->
++        Some (ty, mv, loan_tag, child, consumed_tag)
++    | _ -> None in
++  let* cont = next_abs.cont in
++  let* input, output = match cont.input, cont.output with
++    | Some input, Some output -> Some (input, output)
++    | _ -> None in
++  let* input_id, input_ty = match input.value with
++    | V.EApp (V.ELoop (aid, lid), [[{ V.ty = ty; value = V.ESymbolic (V.PNone,
++          V.EEndedProjLoans { proj; consumed = []; borrows = [] }) }]])
++      when aid = abs.abs_id && lid = loop -> Some (proj, ty)
++    | _ -> None in
++  let* out_adt, out_field =
++    match output.value with
++    | V.EAdt ({ borrow_proj = true; variant_id = None; fields = [out_field] } as out_adt) ->
++        Some (out_adt, out_field)
++    | _ -> None in
++  let* () = valid (match out_field.value with
++    | V.ESymbolic (V.PNone, V.EEndedProjBorrows {
++        mvalues; loans = [(label, V.EEndedProjLoans {
++          proj; consumed = [(consumed, V.EEmpty)]; borrows = [] })] }) ->
++        mvalues = mv && label = loan_tag && proj = child && consumed = consumed_tag
++    | _ -> false) in
++  let* () = valid (loan_tag.sv_id = child
++    && av_ty = mv.given_back.sv_ty && out_field.ty = av_ty && input_ty = av_ty
++    && loan_tag.proj_ty = av_ty && consumed_tag.proj_ty = av_ty
++    && ctx_translate_fwd_ty ctx av_ty = zip
++    && TypesUtils.ty_has_mut_borrow_for_region_in_set ctx.type_ctx.type_infos
++         abs.regions.owned av_ty
++    && V.SymbolicValueId.Set.cardinal (V.SymbolicValueId.Set.of_list
++        [mv.consumed; mv.given_back.sv_id; input_id; child; consumed_tag.sv_id]) = 5) in
++  let rec mirror_ending snapshots = function
++    | S.Meta ((S.Snapshot _ as snapshot), rest) -> mirror_ending (snapshot :: snapshots) rest
++    | S.EndAbs (mirror_ctx, mirror_abs, 0, after_mirror) ->
++        Some (List.rev snapshots, mirror_ctx, mirror_abs, after_mirror)
++    | _ -> None in
++  let* snapshots, mirror_ctx, mirror, after_mirror = mirror_ending [] rest in
++  let* () = valid (match mirror.kind with
++    | V.FunCall _ -> mirror.abs_id <> abs.abs_id
++    | _ -> false) in
++  let* () = valid (V.AbsLevelSet.equal mirror.ended_subabs (V.AbsLevelSet.of_list [0; 1])) in
++  let* { fvar = mirror_fvar; can_fail = mirror_can_fail } =
++    V.AbsId.Map.find_opt mirror.abs_id ctx.abs_id_to_info in
++  let iter_mut = adt 20 [u64] in
++  let* () = valid (not mirror_can_fail && mirror_fvar.ty = TArrow (zip, iter_mut)) in
++  let* iter_ty, iter_mv, mirror_zip_ty, zip_tag, mirror_tag, nested_mv =
++    match mirror.avalues with
++    | [{ V.ty = iter_ty; value = V.ASymbolic (V.PNone, V.AEndedProjBorrows {
++           mvalues = iter_mv; loans = [] }) };
++       { value = V.AIgnored _; _ };
++       { V.ty = mirror_zip_ty; value = V.ASymbolic (V.PNone, V.AEndedProjLoans {
++           proj; consumed = [(zip_tag, V.AEmpty)]; borrows = [
++             (mirror_tag, V.AEndedProjBorrows { mvalues = nested_mv; loans = [] })] }) }]
++      when proj = mv.consumed ->
++        Some (iter_ty, iter_mv, mirror_zip_ty, zip_tag, mirror_tag, nested_mv)
++    | _ -> None in
++  let* () = valid (
++    mirror_tag = loan_tag && nested_mv.consumed = child &&
++    nested_mv.given_back.sv_id = consumed_tag.sv_id && nested_mv.given_back.sv_ty = mirror_zip_ty &&
++    zip_tag.sv_id = mv.given_back.sv_id && zip_tag.proj_ty = mirror_zip_ty &&
++    iter_ty = iter_mv.given_back.sv_ty &&
++    ctx_translate_fwd_ty ctx mirror_zip_ty = zip && ctx_translate_fwd_ty ctx iter_ty = iter_mut &&
++    T.RegionSet.disjoint abs.regions.owned mirror.regions.owned &&
++    InterpBorrowsCore.projection_contains span mirror_ctx abs.regions.owned av_ty
++      mirror.regions.owned mirror_zip_ty &&
++    InterpBorrowsCore.projection_contains span mirror_ctx mirror.regions.owned mirror_zip_ty
++      abs.regions.owned av_ty &&
++    V.SymbolicValueId.Set.cardinal (V.SymbolicValueId.Set.of_list
++      [mv.consumed; mv.given_back.sv_id; input_id; child; consumed_tag.sv_id;
++       iter_mv.consumed; iter_mv.given_back.sv_id]) = 7) in
++  let* mirror_cont = mirror.cont in
++  let* mirror_input, mirror_output = match mirror_cont.input, mirror_cont.output with
++    | Some input, Some output -> Some (input, output)
++    | _ -> None in
++  let* mirror_app_id, mirror_arg = match mirror_input.value with
++    | V.EApp (V.EFunCall aid, [[({ V.ty = ty; value = V.ESymbolic (V.PNone,
++        V.EEndedProjLoans { proj; consumed = [(tag, V.EEmpty)]; borrows = [
++          (label, V.EEndedProjBorrows { mvalues; loans = [] })] }) } as arg)]])
++      when aid = mirror.abs_id && proj = mv.consumed && tag = zip_tag
++           && label = mirror_tag && mvalues = nested_mv && ty = mirror_zip_ty ->
++        Some (aid, arg)
++    | _ -> None in
++  let* () = valid (match mirror_output.value with
++    | V.EAdt { borrow_proj = true; variant_id = None;
++        fields = [{ V.ty = ty; value = V.ESymbolic (V.PNone,
++          V.EEndedProjBorrows { mvalues; loans = [] }) };
++          { value = V.EIgnored _; _ }] } -> ty = iter_ty && mvalues = iter_mv
++    | _ -> false) in
++  Format.eprintf "BM-ZIP-MIRROR-MATCH loop=%s mirror=%s snapshots=%d
++%!"
++    (V.AbsId.to_string abs.abs_id) (V.AbsId.to_string mirror.abs_id)
++    (List.length snapshots);
++  let data_ids = V.SymbolicValueId.Set.of_list [child; consumed_tag.sv_id] in
++  let active (id : V.symbolic_value_id) = V.SymbolicValueId.Set.mem id data_ids in
++  let unused_in e =
++    let exception Nested_use in
++    let visitor =
++      object (self)
++        inherit [_] S.iter_expr as super
++        method! visit_expr path expr =
++          let path =
++            match expr with
++            | S.EndAbs (_, a, level, _) ->
++                "EndAbs " ^ V.AbsId.to_string a.abs_id ^ " level " ^ string_of_int level
++            | S.FunCall _ -> "FunCall"
++            | S.IntroSymbolic (_, _, sv, _, _) ->
++                "IntroSymbolic " ^ V.SymbolicValueId.to_string sv.sv_id
++            | S.Return _ -> "Return"
++            | S.Expansion _ -> "Expansion"
++            | _ -> path
++          in
++          super#visit_expr path expr
++        method! visit_symbolic_value_id path sid =
++          if active sid then (
++            Format.eprintf "BM-ZIP-PAIR-NESTED-USE sid=%s path=%s\n%!"
++              (V.SymbolicValueId.to_string sid) path;
++            raise Nested_use)
++        method! visit_abs path abs =
++          super#visit_abs (path ^ " in abs " ^ V.AbsId.to_string abs.abs_id) abs
++        method! visit_msymbolic_value_id path sid =
++          self#visit_symbolic_value_id (path ^ "/msymbolic_value_id") sid
++        method! visit_mconsumed_symb path (tag : V.mconsumed_symb) =
++          self#visit_symbolic_value_id (path ^ "/mconsumed_symb") tag.sv_id
++        method! visit_mgiven_back_symb path (tag : V.mgiven_back_symb) =
++          self#visit_symbolic_value_id (path ^ "/mgiven_back_symb") tag.sv_id
++        method! visit_msymbolic_value path (sv : V.msymbolic_value) =
++          self#visit_symbolic_value_id (path ^ "/msymbolic_value") sv.sv_id
++        method! visit_call path call =
++          List.iter (self#visit_tvalue (path ^ "/argument")) call.args;
++          self#visit_symbolic_value (path ^ "/destination") call.dest
++        method! visit_emeta path = function
++          | S.Assignment (_, _, value, _) -> self#visit_tvalue (path ^ "/assignment") value
++          | S.Snapshot _ -> ()
++      end in
++    try visitor#visit_expr "suffix" e; true with Nested_use -> false
++  in
++  let contexts =
++    next_ctx :: mirror_ctx :: List.filter_map (function S.Snapshot (_, ctx) -> Some ctx | _ -> None)
++      (snapshot :: snapshots)
++  in
++  let context_unused =
++    List.for_all (fun ctx ->
++      let ids, _ = compute_ctx_ids ctx in
++      V.SymbolicValueId.Set.disjoint data_ids ids.sids) contexts in
++  let suffix_unused = unused_in after_mirror in
++  let nested_unused = context_unused && suffix_unused in
++  Format.eprintf
++    "BM-ZIP-MIRROR-USE loop=%s mirror=%s context_unused=%b suffix_unused=%b\n%!"
++    (V.AbsId.to_string abs.abs_id) (V.AbsId.to_string mirror.abs_id)
++    context_unused suffix_unused;
++  let* () = valid nested_unused in
++  let* () = valid (abs_to_consumed ctx ectx abs 1 = []) in
++  let ctx, level_one_outputs = abs_to_given_back None abs 1 ctx in
++  let* () = valid (level_one_outputs = []) in
++  let out_field = { out_field with value = V.ESymbolic (V.PNone,
++      V.EEndedProjBorrows { mvalues = mv; loans = [] }) } in
++  let output = { output with value = V.EAdt { out_adt with fields = [out_field] } } in
++  let normalized = { next_abs with cont = Some { cont with output = Some output } } in
++  let mirror_arg = { mirror_arg with value = V.ESymbolic (V.PNone,
++    V.EEndedProjLoans { proj = mv.consumed; consumed = [(zip_tag, V.EEmpty)]; borrows = [] }) } in
++  let mirror_input = { mirror_input with value = V.EApp (V.EFunCall mirror_app_id, [[mirror_arg]]) } in
++  let normalized_mirror = { mirror with cont =
++    Some { input = Some mirror_input; output = Some mirror_output } } in
++  let lower_call abs_id ectx normalized fvar input_id input_ty output_id out_ty next ctx =
++    let input = symbolic_value_to_texpr ctx { sv_id = input_id; sv_ty = input_ty } in
++    let ctx, can_fail, output_pat, call = translate_ended_abs_to_texpr ctx ectx normalized 0 in
++    let applied, args = destruct_apps call in
++    let result_pattern =
++      match V.SymbolicValueId.Map.find_opt output_id ctx.sv_to_var with
++      | None -> false
++      | Some var -> output_pat = mk_tpat_from_fvar None var
++    in
++    [%cassert] span (not can_fail && applied = fvar && args = [input] &&
++      input.ty = zip && call.ty = out_ty && output_pat.ty = out_ty && result_pattern)
++      "BM mutable continuation lost its exact input or writeback";
++    Format.eprintf "BM-ZIP-MIRROR-WRITEBACK id=%s input=%s output=%s call=%s\n%!"
++      (V.AbsId.to_string abs_id) (V.SymbolicValueId.to_string input_id)
++      (V.SymbolicValueId.to_string output_id) (texpr_to_string ctx call);
++    let next = next ctx in
++    [%add_loc] mk_closed_checked_let ctx can_fail output_pat call next in
++  let mirror_call = lower_call mirror.abs_id mirror_ctx normalized_mirror
++      mirror_fvar mv.given_back.sv_id mirror_zip_ty iter_mv.given_back.sv_id
++      iter_mut (translate_expr after_mirror) in
++  let after_loop =
++    List.fold_right (fun snapshot next ctx -> translate_emeta_with snapshot next ctx)
++      snapshots mirror_call in
++  let loop_call = lower_call abs.abs_id next_ctx normalized
++      fvar input_id input_ty mv.given_back.sv_id zip after_loop in
++  Some (translate_emeta_with snapshot loop_call ctx)
++
+ and translate_end_abstraction_with_cont (ectx : C.eval_ctx) (abs : V.abs)
+     (abs_level : abs_level) (e : S.expr) (ctx : bs_ctx) : texpr =
+   [%ldebug "abs:\n" ^ abs_to_string ctx abs];
+@@ -2225,6 +2494,9 @@ and translate_substitute_abs_ids (ctx : bs_ctx) (eid : S.symbolic_expr_id)
+   translate_expr e ctx
+ 
+ and translate_emeta (meta : S.emeta) (e : S.expr) (ctx : bs_ctx) : texpr =
++  translate_emeta_with meta (translate_expr e) ctx
++
++and translate_emeta_with (meta : S.emeta) (next : bs_ctx -> texpr) (ctx : bs_ctx) : texpr =
+   let ctx, meta =
+     match meta with
+     | S.Assignment (ectx, lp, rv, rp) ->
+@@ -2255,7 +2527,7 @@ and translate_emeta (meta : S.emeta) (e : S.expr) (ctx : bs_ctx) : texpr =
+         let infos = if infos <> [] then Some (SymbolicPlaces infos) else None in
+         (ctx, infos)
+   in
+-  let next_e = translate_expr e ctx in
++  let next_e = next ctx in
+   match meta with
+   | Some meta ->
+       let e = Meta (meta, next_e) in

@@ -11,6 +11,16 @@ open Aeneas Aeneas.Std
   cases meter
   simp only [meterOfModel, WorkMeter.toModel, WorkMeter.toUInt64]
 
+theorem meter_charge_refines (meter : bulksketch.types.WorkMeter) (amount : U64) :
+    bulksketch.types.WorkMeter.charge meter amount = Result.ok (chargeResult meter (.Ok amount)) := by
+  obtain ⟨final, charged, state⟩ := WorkMeter.charge_refines meter amount
+  have exactState : final = meterOfModel ((WorkMeter.toModel meter).charge (WorkMeter.toUInt64 amount)).1 := by
+    apply WorkMeter.toModel_injective
+    rw [toModel_meterOfModel]
+    exact state
+  rw [charged, exactState]
+  rfl
+
 /-- The exact source wrapper either propagates the pricing error with the
 input meter or executes the already verified WorkMeter charge. -/
 theorem charge_refines : ChargeRefines := by
@@ -23,13 +33,8 @@ theorem charge_refines : ChargeRefines := by
     simp [core.result.Result.Insts.CoreOpsTry.branch,
       core.result.Result.Insts.CoreOpsTry_traitFromResidualResult.from_residual, chargeResult]
   | Ok amount =>
-    obtain ⟨final, charged, state⟩ := WorkMeter.charge_refines meter amount
-    have exactState : final = meterOfModel ((WorkMeter.toModel meter).charge (WorkMeter.toUInt64 amount)).1 := by
-      apply WorkMeter.toModel_injective
-      rw [toModel_meterOfModel]
-      exact state
-    simp only [bind_ok, core.result.Result.Insts.CoreOpsTry.branch, chargeResult]
-    rw [charged, exactState]
+    simp only [bind_ok, core.result.Result.Insts.CoreOpsTry.branch]
+    exact meter_charge_refines meter amount
 
 theorem charge_refines_with_cost {F K : Type} (field : bulksketch.field.BinaryField F)
     (kernels : bulksketch.backend.contract.BulkKernels K F)

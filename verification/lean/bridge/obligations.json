@@ -752,6 +752,114 @@
     {
       "challenge": "BulksketchBridge.NewtonGuard.ActualGuardAcceptsSupport",
       "theorem": "BulksketchBridge.NewtonGuard.guard_accepts_support"
+    },
+    {
+      "challenge": "BulksketchBridge.DegreeProbeRuntime.ActualDegreeProbeNew",
+      "theorem": "BulksketchBridge.DegreeProbeRuntime.new_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DegreeProbeRuntime.ActualDegreeProbeNextStage",
+      "theorem": "BulksketchBridge.DegreeProbeRuntime.next_stage_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DegreeProbeRuntime.ActualDegreeProbeCount",
+      "theorem": "BulksketchBridge.DegreeProbeRuntime.count_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DegreeProbeRuntime.ActualDegreeProbeReject",
+      "theorem": "BulksketchBridge.DegreeProbeRuntime.reject_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DegreeProbeRuntime.ActualDegreeProbeRun",
+      "theorem": "BulksketchBridge.DegreeProbeRuntime.run_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.BmPrice.CheckedAddRefines",
+      "theorem": "BulksketchBridge.BmPrice.add_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.BmPrice.ActualBmPriceRefines",
+      "theorem": "BulksketchBridge.BmPrice.bm_price_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.BmEntry.ActualBmEntryRefines",
+      "theorem": "BulksketchBridge.BmEntry.entry_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.BmMutable.ActualBmScaleLoops",
+      "theorem": "BulksketchBridge.BmMutable.scale_loops_refine"
+    },
+    {
+      "challenge": "BulksketchBridge.BmMutable.ActualBmNormalizeLoop",
+      "theorem": "BulksketchBridge.BmMutable.normalize_loop_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.BmMutable.ActualBmShiftedXorLoops",
+      "theorem": "BulksketchBridge.BmMutable.shifted_xor_loops_refine"
+    },
+    {
+      "challenge": "BulksketchBridge.BmMutable.ActualBmShiftRestore",
+      "theorem": "BulksketchBridge.BmMutable.shift_restore_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.BmMutable.ActualBmScaleRestore",
+      "theorem": "BulksketchBridge.BmMutable.scale_restore_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.BmDiscrepancy.ActualBmRawDiscrepancy",
+      "theorem": "BulksketchBridge.BmDiscrepancy.raw_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.BmDiscrepancy.ActualBmSourceDiscrepancy",
+      "theorem": "BulksketchBridge.BmDiscrepancy.source_dot_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.BmTerminal.ActualBmTerminalBody",
+      "theorem": "BulksketchBridge.BmTerminal.body_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.BmTerminal.ActualBmTerminalLoop",
+      "theorem": "BulksketchBridge.BmTerminal.loop_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.BmStepControl.ActualBmChargeFailure",
+      "theorem": "BulksketchBridge.BmStepControl.charge_failure_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.BmStepControl.ActualBmOddSkip",
+      "theorem": "BulksketchBridge.BmStepControl.odd_skip_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.BmEvenStep.ActualBmEvenZero",
+      "theorem": "BulksketchBridge.BmEvenStep.even_zero_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.BmEvenStep.ActualBmDegreeExceedsBudget",
+      "theorem": "BulksketchBridge.BmEvenStep.degree_exceeds_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.BmRuntimeFrames.InclusiveSharedRefines",
+      "theorem": "BulksketchBridge.BmRuntimeFrames.inclusive_shared_normal"
+    },
+    {
+      "challenge": "BulksketchBridge.BmRuntimeFrames.InclusiveMutableRefines",
+      "theorem": "BulksketchBridge.BmRuntimeFrames.inclusive_mutable_normal"
+    },
+    {
+      "challenge": "BulksketchBridge.BmRuntimeFrames.InclusiveWritebackRefines",
+      "theorem": "BulksketchBridge.BmRuntimeFrames.inclusive_writeback_frame"
+    },
+    {
+      "challenge": "BulksketchBridge.BmRuntimeFrames.ZipIteratorRefines",
+      "theorem": "BulksketchBridge.BmRuntimeFrames.zip_iterator_normal"
+    },
+    {
+      "challenge": "BulksketchBridge.BmRuntimeFrames.ZipSharedSliceRefines",
+      "theorem": "BulksketchBridge.BmRuntimeFrames.zip_shared_slice_normal"
+    },
+    {
+      "challenge": "BulksketchBridge.BmScalar.ShiftWindowBounds",
+      "theorem": "BulksketchBridge.BmScalar.shifted_window_bounds"
     }
   ],
   "refinements": [
@@ -2349,6 +2457,95 @@
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Original degree-three/four guard, with admitted odd words and scratch on the writing branch. Exact zero-denominator rejection, six cleared scratch words and original suffix, exact early residual boolean under verified GF64 callbacks. Residual and word meanings checked separately.",
       "translator_variant": "checked-fixedpoint-nested-scalar-slice-retry-v1"
+    },
+    {
+      "label": "DegreeProbe::new [original source]",
+      "native_item_id": "src/decode/degree_probe.rs:27:method:bulksketch::decode::degree_probe::DegreeProbe::new",
+      "source_line_span_sha256": "2bb0637549aa2d5c3df18dddbd59507c089d1b970c7c0b4daac915b4d04d35e9",
+      "theorem": "BulksketchBridge.DegreeProbeRuntime.new_refines",
+      "challenge": "BulksketchBridge.DegreeProbeRuntime.ActualDegreeProbeNew",
+      "generated_declaration": "bulksketch.decode.degree_probe.DegreeProbe.new",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/DegreeProbeGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original admission and initial stage for degree three/four.",
+      "translator_variant": "checked-fixedpoint-nested-scalar-slice-retry-v1"
+    },
+    {
+      "label": "DegreeProbe::next_stage [original source]",
+      "native_item_id": "src/decode/degree_probe.rs:34:method:bulksketch::decode::degree_probe::DegreeProbe::next_stage",
+      "source_line_span_sha256": "3cd92803a82ca31dde2795f4a071009b7ac1d49f081134d3a6ad0fc63f85ec7e",
+      "theorem": "BulksketchBridge.DegreeProbeRuntime.next_stage_refines",
+      "challenge": "BulksketchBridge.DegreeProbeRuntime.ActualDegreeProbeNextStage",
+      "generated_declaration": "bulksketch.decode.degree_probe.DegreeProbe.next_stage",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/DegreeProbeGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact next-stage projection for every original probe state.",
+      "translator_variant": "checked-fixedpoint-nested-scalar-slice-retry-v1"
+    },
+    {
+      "label": "DegreeProbe::count [original source]",
+      "native_item_id": "src/decode/degree_probe.rs:37:method:bulksketch::decode::degree_probe::DegreeProbe::count",
+      "source_line_span_sha256": "8eceb7ef8464b274ce39274ddb7266f60af24829496855396ad3673c179a9922",
+      "theorem": "BulksketchBridge.DegreeProbeRuntime.count_refines",
+      "challenge": "BulksketchBridge.DegreeProbeRuntime.ActualDegreeProbeCount",
+      "generated_declaration": "bulksketch.decode.degree_probe.DegreeProbe.impl.count",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/DegreeProbeGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original lossless count conversion from U8 to usize.",
+      "translator_variant": "checked-fixedpoint-nested-scalar-slice-retry-v1"
+    },
+    {
+      "label": "DegreeProbe::reject [original source]",
+      "native_item_id": "src/decode/degree_probe.rs:40:method:bulksketch::decode::degree_probe::DegreeProbe::reject",
+      "source_line_span_sha256": "a326ac215431a9d31195d4553ce227a98f14fea35d06683bdbda7fb88a1b56b0",
+      "theorem": "BulksketchBridge.DegreeProbeRuntime.reject_refines",
+      "challenge": "BulksketchBridge.DegreeProbeRuntime.ActualDegreeProbeReject",
+      "generated_declaration": "bulksketch.decode.degree_probe.DegreeProbe.reject",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/DegreeProbeGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original fallback to the next admitted degree probe or no remaining stage.",
+      "translator_variant": "checked-fixedpoint-nested-scalar-slice-retry-v1"
+    },
+    {
+      "label": "DegreeProbe::run [original source]",
+      "native_item_id": "src/decode/degree_probe.rs:51:method:bulksketch::decode::degree_probe::DegreeProbe::run",
+      "source_line_span_sha256": "627c26a466a2a36d8adc1c01ba47d583a175aa4a9d7f1054c99b8c1fedefe409",
+      "theorem": "BulksketchBridge.DegreeProbeRuntime.run_refines",
+      "challenge": "BulksketchBridge.DegreeProbeRuntime.ActualDegreeProbeRun",
+      "generated_declaration": "bulksketch.decode.degree_probe.DegreeProbe.run",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/DegreeProbeGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original DegreeProbe run under phase-specific admitted degree, slice and count bounds, GF64 arithmetic and exact verification encoding callbacks. Original price and work errors, six stage results, rejection, scratch and state frames are exact. Portable encoding specialization checked separately.",
+      "translator_variant": "checked-fixedpoint-nested-scalar-slice-retry-v1"
+    },
+    {
+      "label": "work::add [original source]",
+      "native_item_id": "src/decode/work.rs:305:function:bulksketch::decode::work::add",
+      "source_line_span_sha256": "279c6fa58c0c8b55695d121dbd23f8a84a490403bb4266678880a469f383702b",
+      "theorem": "BulksketchBridge.BmPrice.add_refines",
+      "challenge": "BulksketchBridge.BmPrice.CheckedAddRefines",
+      "generated_declaration": "bulksketch.decode.work.add",
+      "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/WorkScheduleGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact checked u64 sum or the original work-limit error on overflow for every pair of inputs."
     }
   ],
   "stateful_llbc_refinements": [

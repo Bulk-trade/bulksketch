@@ -32,7 +32,7 @@ theorem checked_cost_ok_iff (units : Nat) (word : U64) :
       exact UScalar.eq_of_val_eq value.symm
   · simp [checkedCost, bounded]
 
-private theorem checked_operation (result : Option U64) (units : Nat)
+theorem checked_operation (result : Option U64) (units : Nat)
     (correct : match result with
       | some word => units ≤ U64.max ∧ word.val = units
       | none => U64.max < units) :

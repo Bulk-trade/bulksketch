@@ -431,6 +431,16 @@
       "path": "extraction/deg34-guard/arithmetic.llbc",
       "sha256": "7ab0bf33c6a6eb90f9fb5bb93f7bae8bfa939e1fbf0c14688e7ee2df476f30ae",
       "has_errors": false
+    },
+    {
+      "path": "extraction/bm-locator/arithmetic.llbc",
+      "sha256": "fe142482151f5de52ee35b51279587bef08887ae6f70f118f099f83be72a523c",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/degree-probe/arithmetic.llbc",
+      "sha256": "b010a67637623252e9d20d228faa43cd55aeeab7056aefd40ab1b6efb3463cb3",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -993,6 +1003,36 @@
       "native_item_id": "src/decode/deg34.rs:9:function:bulksketch::decode::deg34::guard",
       "generated_declaration": "bulksketch.decode.deg34.guard",
       "generated_file": "bridge/Arithmetic/NewtonGuardGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/degree_probe.rs:27:method:bulksketch::decode::degree_probe::DegreeProbe::new",
+      "generated_declaration": "bulksketch.decode.degree_probe.DegreeProbe.new",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/degree_probe.rs:34:method:bulksketch::decode::degree_probe::DegreeProbe::next_stage",
+      "generated_declaration": "bulksketch.decode.degree_probe.DegreeProbe.next_stage",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/degree_probe.rs:37:method:bulksketch::decode::degree_probe::DegreeProbe::count",
+      "generated_declaration": "bulksketch.decode.degree_probe.DegreeProbe.impl.count",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/degree_probe.rs:40:method:bulksketch::decode::degree_probe::DegreeProbe::reject",
+      "generated_declaration": "bulksketch.decode.degree_probe.DegreeProbe.reject",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/degree_probe.rs:51:method:bulksketch::decode::degree_probe::DegreeProbe::run",
+      "generated_declaration": "bulksketch.decode.degree_probe.DegreeProbe.run",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:305:function:bulksketch::decode::work::add",
+      "generated_declaration": "bulksketch.decode.work.add",
+      "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1435,6 +1475,26 @@
       "declaration_count": 13,
       "scope": "Original degree-three/four guard, with admitted odd words and scratch on the writing branch. Exact zero-denominator rejection, six cleared scratch words and original suffix, exact early residual boolean under verified GF64 callbacks. Residual and word meanings checked separately.",
       "translator_variant": "checked-fixedpoint-nested-scalar-slice-retry-v1"
+    },
+    {
+      "generated": "extraction/bm-locator/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/BmLocatorGenerated.lean",
+      "sha256": "d0459135c4470df60f0b5ad313e55677c9bb031585120aa263d8a4fbba48792a",
+      "raw_sha256": "f1ab4c3aa80ecf7fb22de25a3b34a56b6adb765f1a9311739d4ad4e454e0dc1a",
+      "checker": "extraction/bm-locator/project.py",
+      "declaration_count": 25,
+      "scope": "Original locator and all 24 loop declarations. Entry, loop kernels, exhaustion and named active branches checked. Successful nonzero update composition and the full locator recurrence remain open.",
+      "translator_variant": "checked-bm-locator-v1"
+    },
+    {
+      "generated": "extraction/degree-probe/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DegreeProbeGenerated.lean",
+      "sha256": "ad84c3b68aa3e296db6e8b318e97b576a79a432ec89b11e29de5bcc1e6968674",
+      "raw_sha256": "1dab09435d29c36fe07cf5887424d9ad2e9ac337087ab04708876131bae87528",
+      "checker": "extraction/degree-probe/project.py",
+      "declaration_count": 14,
+      "scope": "Exact original DegreeProbe run under phase-specific admitted degree, slice and count bounds, GF64 arithmetic and exact verification encoding callbacks. Original price and work errors, six stage results, rejection, scratch and state frames are exact. Portable encoding specialization checked separately.",
+      "translator_variant": "checked-fixedpoint-nested-scalar-slice-retry-v1"
     }
   ],
   "reviewed_translator_variants": [
@@ -1500,6 +1560,15 @@
       "receipt": "extraction/deg34-guard/receipt.json",
       "mandatory_checks": true,
       "scope": "The existing checked continuation-free loop fixedpoint list matcher may retry a mixed concrete loan only for an immediate child of the same mutable borrow ID, exact U64 slice type and same typed symbolic shared payload. It requests ending the shared loan through stock machinery. Other modes retain the original behavior."
+    },
+    {
+      "id": "checked-bm-locator-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/bm-locator/checked-bm-locator.patch",
+      "patch_sha256": "b263b8addc49358cd0bd444828fdec8c77d70a00e6eb231b6605e4ee18d9b353",
+      "receipt": "extraction/bm-locator/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Checked explicit BM flag and exact source scope. Stock shared/mutable ending and typed loop/mirror writebacks preserved for the original locator. No full locator body credit."
     }
   ],
   "diagnostic_generated_projections": [
@@ -1571,6 +1640,12 @@
         "src/decode/stages.rs:454:function:bulksketch::decode::stages::check_workspace": "BulksketchBridge.WorkspaceAdmission.runOriginal"
       },
       "scope": "Exact checked original read-only LLBC workspace admission, including all nine length reads, arithmetic overflow, short circuit rejection, and preservation of the complete workspace."
+    }
+  ],
+  "reviewed_degree_probe_extensions": [
+    {
+      "variant": "checked-fixedpoint-nested-scalar-slice-retry-v1",
+      "receipt": "extraction/degree-probe/receipt.json"
     }
   ]
 }

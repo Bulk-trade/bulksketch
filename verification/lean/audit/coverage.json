@@ -3774,7 +3774,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.DegreeProbeRuntime.new_refines",
+        "scope": "Exact original admission and initial stage for degree three/four.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/degree_probe.rs:34:method:bulksketch::decode::degree_probe::DegreeProbe::next_stage",
@@ -3794,7 +3801,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.DegreeProbeRuntime.next_stage_refines",
+        "scope": "Exact next-stage projection for every original probe state.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/degree_probe.rs:37:method:bulksketch::decode::degree_probe::DegreeProbe::count",
@@ -3814,7 +3828,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.DegreeProbeRuntime.count_refines",
+        "scope": "Exact original lossless count conversion from U8 to usize.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/degree_probe.rs:40:method:bulksketch::decode::degree_probe::DegreeProbe::reject",
@@ -3834,7 +3855,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.DegreeProbeRuntime.reject_refines",
+        "scope": "Exact original fallback to the next admitted degree probe or no remaining stage.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/degree_probe.rs:51:method:bulksketch::decode::degree_probe::DegreeProbe::run",
@@ -3854,7 +3882,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.DegreeProbeRuntime.run_refines",
+        "scope": "Exact original DegreeProbe run under phase-specific admitted degree, slice and count bounds, GF64 arithmetic and exact verification encoding callbacks. Original price and work errors, six stage results, rejection, scratch and state frames are exact. Portable encoding specialization checked separately.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/direct.rs:22:function:bulksketch::decode::direct::two",
@@ -5783,7 +5818,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.BmPrice.add_refines",
+        "scope": "Exact checked u64 sum or the original work-limit error on overflow for every pair of inputs.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/work.rs:309:function:bulksketch::decode::work::mul",
@@ -11726,8 +11768,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Original degree-three/four Newton guard now has exact cleared word, scratch and residual semantics, with separate finite-field transport. The whole probe and decoder composition remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 96,
+    "note": "All 344 native executable declarations retained. Original DegreeProbe exact phase and state refinements and checked work addition. Original BM complete checked projection, bounded loop and phase refinements, and scalar interval bounds. Full locator recurrence and complete native decoder contracts remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 102,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11773,7 +11815,16 @@
       "native_closed_leaf_certificate": "BulksketchBridge.ClosedLeaf.certificate_meaning",
       "native_newton_normalization": "BulksketchBridge.Normalize.normalize_field_coefficients",
       "native_newton_guard": "BulksketchBridge.NewtonGuard.guard_refines",
-      "native_newton_residual_meaning": "BulksketchBridge.NewtonGuard.residual_moment_meaning"
+      "native_newton_residual_meaning": "BulksketchBridge.NewtonGuard.residual_moment_meaning",
+      "native_degree_probe": "BulksketchBridge.DegreeProbeRuntime.run_refines",
+      "native_bm_scoped": [
+        "BulksketchBridge.BmEntry.entry_refines",
+        "BulksketchBridge.BmDiscrepancy.source_dot_refines",
+        "BulksketchBridge.BmMutable.scale_loops_refine",
+        "BulksketchBridge.BmMutable.shifted_xor_loops_refine",
+        "BulksketchBridge.BmTerminal.loop_refines",
+        "BulksketchBridge.BmEvenStep.degree_exceeds_refines"
+      ]
     },
     "masked_memory_evidence": {
       "store_obstruction": "BulksketchBridge.X86MaskedMemory.PureExtraction.pure_store_cannot_writeback",

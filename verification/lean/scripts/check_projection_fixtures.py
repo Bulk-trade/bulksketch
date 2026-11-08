@@ -228,6 +228,27 @@ PROJECTIONS = [
                   "extraction/deg34-normalize/arithmetic.llbc", "extraction/deg34-normalize/Arithmetic/Funs.lean",
                   "extraction/deg34-normalize/Arithmetic/Types.lean",
                   "extraction/deg34-normalize/Arithmetic/FunsExternal_Template.lean"]),
+    ("bm-locator", "extraction/bm-locator/project.py", "extraction/bm-locator/receipt.json",
+     "extraction/bm-locator/Arithmetic/Funs.lean", "bridge/Arithmetic/BmLocatorGenerated.lean",
+     "let width ← capacity + 1#usize", "let width ← capacity + 2#usize", "compiled BM locator projection differs",
+     None, None, ["extraction/bm-locator/checked-bm-locator.patch", "extraction/bm-locator/Axioms.lean",
+                  "extraction/bm-locator/axioms.log", "bridge/Arithmetic/SliceKernelTypes.lean",
+                  "bridge/Arithmetic/BmLocatorRuntime.lean", "bridge/Arithmetic/MutableZipRuntime.lean",
+                  "bridge/Arithmetic/RebuiltLfsrRuntime.lean", "bridge/Arithmetic/PortableEncodingRuntime.lean",
+                  "bridge/Arithmetic/WorkScheduleRuntime.lean", "bridge/Workmeter/FunsExternal.lean",
+                  "bridge/Arithmetic/RebuiltLfsrTypes.lean", "bridge/Arithmetic/ReconstructionTypes.lean",
+                  "bridge/Arithmetic/DenseNormalizationGenerated.lean", "bridge/Arithmetic/WorkScheduleGenerated.lean",
+                  "bridge/Workmeter/Types.lean", "bridge/Workmeter/Funs.lean"]),
+    ("degree-probe", "extraction/degree-probe/project.py", "extraction/degree-probe/receipt.json",
+     "extraction/degree-probe/Arithmetic/Funs.lean", "bridge/Arithmetic/DegreeProbeGenerated.lean",
+     "let stage ←", "let wrongStage ←", "compiled DegreeProbe projection differs",
+     None, None, ["extraction/deg34-guard/receipt.json",
+                  "extraction/deg34-guard/translator/checked-nested-slice-loan-retry.patch",
+                  "bridge/Arithmetic/DegreeProbeRuntime.lean", "bridge/Arithmetic/WorkScheduleGenerated.lean",
+                  "bridge/Arithmetic/NewtonGuardGenerated.lean", "bridge/Arithmetic/NormalizeGenerated.lean",
+                  "bridge/Arithmetic/QuarticGenerated.lean", "bridge/Arithmetic/CertificateGenerated.lean",
+                  "bridge/Arithmetic/AffineQuarticGenerated.lean", "bridge/Arithmetic/ReconstructionTypes.lean",
+                  "bridge/Arithmetic/RebuiltLfsrGenerated.lean", "bridge/Workmeter/Funs.lean"]),
 ]
 
 
@@ -363,7 +384,8 @@ def main():
             name = label + "/" + name
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:
                 shadow = Path(directory)
-                if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic", "closed-leaf", "deg34-normalize", "deg34-guard"}:
+                if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic", "closed-leaf", "deg34-normalize", "deg34-guard",
+                             "bm-locator", "degree-probe"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:
