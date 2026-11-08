@@ -197,6 +197,84 @@ def check_horner_match_variant(variant, receipt, runtime, runtime_head, linkage)
         raise RuntimeError("Horner matcher regression matrix is incomplete")
 
 
+def check_certificate_match_variant(variant, receipt, runtime, runtime_head, linkage):
+    directory = "tooling/aeneas-ended-projector/"
+    source = "src/interp/InterpMatchCtxs.ml"
+    patch = directory + "ended-projector-leaf.patch"
+    extraction_dir = "extraction/degree-certificate/"
+    if (receipt["status"] != "passed" or receipt["variant_id"] != variant["id"] or
+            receipt["native_source_changed"] is not False or receipt["new_native_coverage_credit_from_tests"] != 0 or
+            variant["receipt"] != directory + "receipt.json" or variant["base_commit"] != runtime_head or
+            receipt["base_aeneas_commit"] != runtime_head or receipt["charon_commit"] != linkage["charon_commit"] or
+            variant["mandatory_checks"] is not True or variant["patch"] != patch or receipt["patch"] != patch or
+            receipt["patch_sha256"] != variant["patch_sha256"] or sha(ROOT / patch) != variant["patch_sha256"] or
+            set(receipt["modified_sources"]) != {source} or receipt["base_sources"] != {source: sha(runtime / source)} or
+            re.findall(r"(?m)^--- a/(\S+)\n\+\+\+ b/(\S+)$", (ROOT / patch).read_text()) != [(source, source)]):
+        raise RuntimeError("Certificate matcher lost pinned provenance")
+    extraction = receipt["extraction"]
+    outputs = {extraction_dir + "Arithmetic/" + name for name in
+               ("Funs.lean", "Types.lean", "FunsExternal_Template.lean")}
+    flags = {"-checks", "-sequential"}
+    if (extraction["input"] != extraction_dir + "arithmetic.llbc" or
+            sha(ROOT / extraction["input"]) != extraction["input_sha256"] or extraction["exit_code"] != 0 or
+            set(extraction["required_flags"]) != flags or not flags <= set(extraction["command"]) or
+            len(extraction["generated"]) != len(outputs) or {item["path"] for item in extraction["generated"]} != outputs or
+            any(sha(ROOT / item["path"]) != item["sha256"] for item in extraction["generated"])):
+        raise RuntimeError("Certificate matcher lost checked original extraction")
+    controls = {directory + name for name in ("guards/dune", "guards/ended_projector_guards.ml",
+                                               "guard-controls.log", "unchecked.log")}
+    rejection = receipt["pinned_rejection"]
+    if (set(receipt["regression_sources"]) != controls or
+            any(sha(ROOT / path) != digest for path, digest in receipt["regression_sources"].items()) or
+            rejection["log"] != extraction_dir + "aeneas-pinned-rejection.log" or rejection["exit_code"] != 1 or
+            sha(ROOT / rejection["log"]) != rejection["sha256"]):
+        raise RuntimeError("Certificate matcher rejection evidence changed")
+    cases = {item["case"]: item["status"] for item in receipt["regressions"]}
+    commands = {item["name"]: item for item in receipt["commands"]}
+    if (len(cases) != len(receipt["regressions"]) or cases != {
+            **dict.fromkeys(("identical-mapping", "identical-equivalence"), "passed"),
+            **dict.fromkeys(("different-ended-id", "different-type", "identical-consumed-child",
+                             "identical-borrow-child", "identical-marked-projector", "unchecked-identical"),
+                            "expected_rejection_confirmed"),
+            } or len(commands) != len(receipt["commands"]) or
+            {name: item["exit_code"] for name, item in commands.items()} != {
+                "original-certificate": 0, "without-checks": 1, "ended-projector-guards": 0} or
+            commands["original-certificate"]["command"] != extraction["command"] or
+            "-checks" in commands["without-checks"]["command"]):
+        raise RuntimeError("Certificate matcher regression matrix is incomplete")
+
+
+def check_pclmul_horner_extension(extension, receipt, variants, runtime_head, linkage):
+    """Bind the second original Horner extraction to the reviewed matcher."""
+    variant = next((entry for entry in variants if entry["id"] == "checked-ended-shared-scalar-v1"), None)
+    directory = "extraction/pclmul-horner/"
+    extraction = receipt["checked_extraction"]
+    outputs = {directory + "Arithmetic/" + name for name in
+               ("Funs.lean", "Types.lean", "FunsExternal_Template.lean", "TypesExternal_Template.lean")}
+    if (variant is None or extension["variant"] != variant["id"] or
+            extension["receipt"] != directory + "receipt.json" or receipt["aeneas_variant"] != variant["id"] or
+            receipt["variant_patch"] != variant["patch"] or receipt["variant_patch_sha256"] != variant["patch_sha256"] or
+            receipt["status"] != "generated" or receipt["native_source_edited"] is not False or
+            receipt["target"] != "x86_64-apple-darwin" or receipt["aeneas_commit"] != runtime_head or
+            receipt["charon_commit"] != linkage["charon_commit"] or receipt["source_commit"] != linkage["source_commit"] or
+            extraction["input"] != directory + "arithmetic.llbc" or
+            sha(ROOT / extraction["input"]) != extraction["input_sha256"] or
+            extraction["input_sha256"] != receipt["llbc_sha256"] or extraction["exit_code"] != 0 or
+            set(extraction["required_flags"]) != {"-checks", "-sequential"} or
+            not set(extraction["required_flags"]) <= set(extraction["command"]) or
+            len(extraction["generated"]) != len(outputs) or {item["path"] for item in extraction["generated"]} != outputs or
+            any(sha(ROOT / item["path"]) != item["sha256"] for item in extraction["generated"])):
+        raise RuntimeError("PCLMUL Horner lost checked extraction provenance")
+    rejected = receipt["rejections"]
+    replay = receipt["replay"]
+    if (set(rejected) != {"pinned", "unchecked"} or
+            any(entry["exit_code"] != 1 for entry in rejected.values()) or
+            "-checks" not in rejected["pinned"]["command"] or "-checks" in rejected["unchecked"]["command"] or
+            replay["exit_code"] != 0 or replay["exact_generated_artifacts"] != len(outputs) or
+            not set(extraction["required_flags"]) <= set(replay["command"])):
+        raise RuntimeError("PCLMUL Horner checked replay controls changed")
+
+
 def check_stateful_linkage(stateful, receipt, aeneas_projections):
     """Bind checked LLBC program names to their source IDs, outside Aeneas credit."""
     if (receipt["compiled_projection"] != stateful["program_file"] or
@@ -264,6 +342,12 @@ def main():
                             str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
             records.append(result)
             continue
+        if variant["id"] == "checked-ended-projector-leaf-v1":
+            check_certificate_match_variant(variant, receipt, runtime, runtime_head, linkage)
+            result, _ = run("checked-certificate-matcher-patch-applies", ["git", "apply", "--check",
+                            str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
+            records.append(result)
+            continue
         if variant["id"] != "checked-frozen-capture-v1":
             raise RuntimeError("unknown reviewed translator variant")
         extraction = receipt["extraction"]
@@ -326,7 +410,17 @@ def main():
         result, _ = run("reviewed-translator-patch-applies", ["git", "apply", "--check",
                          str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
         records.append(result)
+    extensions = linkage.get("reviewed_pclmul_horner_extensions", [])
     projections = linkage.get("native_generated_projections", [])
+    horner_projections = [item for item in projections
+                          if item["bridge_copy"] == "bridge/Arithmetic/X86PclmulHornerGenerated.lean"]
+    if len(extensions) != len(horner_projections) or len(extensions) > 1:
+        raise RuntimeError("PCLMUL Horner projection lacks a unique checked extraction receipt")
+    for extension in extensions:
+        receipt = json.loads((ROOT / extension["receipt"]).read_text())
+        check_pclmul_horner_extension(extension, receipt, variants, runtime_head, linkage)
+        if horner_projections[0].get("translator_variant") != extension["variant"]:
+            raise RuntimeError("PCLMUL Horner projection hides its translator variant")
     for projection in projections:
         result, output = run("check-projection-" + Path(projection["bridge_copy"]).stem,
             ["python3", str(ROOT / projection["checker"]), *projection.get("checker_args", [])],
@@ -352,15 +446,23 @@ def main():
                     for item in [*linkage["native_generated_copies"], *projections])):
             raise RuntimeError("diagnostic projection lost its provenance or entered native coverage")
         records.append(result)
-    stateful = linkage.get("stateful_llbc_projection")
-    if stateful:
-        result, output = run("check-stateful-llbc-projection",
+    stateful_projections = list(linkage.get("stateful_llbc_caller_projections", []))
+    if linkage.get("stateful_llbc_projection"):
+        stateful_projections.insert(0, linkage["stateful_llbc_projection"])
+    stateful_by_id = {}
+    for stateful in stateful_projections:
+        suffix = Path(stateful["program_file"]).stem
+        result, output = run("check-stateful-llbc-" + suffix,
             ["python3", str(ROOT / stateful["checker"])], timeout=30, cwd=ROOT)
         receipt = json.loads(output)
         check_stateful_linkage(stateful, receipt, [*linkage["native_generated_copies"], *projections])
         records.append(result)
+        for ident in stateful["programs"]:
+            if ident in stateful_by_id:
+                raise RuntimeError("duplicate stateful LLBC source association")
+            stateful_by_id[ident] = stateful
         for flags in ([], ["-O"]):
-            result, output = run("stateful-llbc-negative-controls" + ("-optimized" if flags else ""),
+            result, output = run("stateful-llbc-negative-controls-" + suffix + ("-optimized" if flags else ""),
                 ["python3", *flags, str(ROOT / stateful["controls"])], timeout=60, cwd=ROOT)
             rejected = [line for line in output.splitlines() if line.startswith("rejected ")]
             if len(rejected) != stateful["negative_control_count"] or len(set(rejected)) != len(rejected):
@@ -440,18 +542,18 @@ def main():
     stateful_entries = registry.get("stateful_llbc_refinements", [])
     stateful_ids = {entry["native_item_id"] for entry in stateful_entries}
     stateful_evidence = {item["id"] for item in coverage["items"] if item.get("stateful_llbc_refinement_evidence")}
-    if (bool(stateful) != bool(stateful_entries) or len(stateful_ids) != len(stateful_entries) or
+    if (len(stateful_ids) != len(stateful_entries) or stateful_ids != set(stateful_by_id) or
             stateful_evidence != stateful_ids or stateful_ids & set(refined) or
-            coverage["proof_progress"].get("checked_stateful_llbc_refinements", 0) != len(stateful_entries) or
-            (stateful and set(stateful["programs"]) != stateful_ids)):
+            coverage["proof_progress"].get("checked_stateful_llbc_refinements", 0) != len(stateful_entries)):
         raise RuntimeError("stateful LLBC evidence is missing, stale or double-counted")
     for entry in stateful_entries:
         native_id = entry["native_item_id"]
+        stateful = stateful_by_id[native_id]
         recorded = items[native_id]["stateful_llbc_refinement_evidence"]
         match = next((event for event in events if event["kind"] == "challenge_match" and
                       event["challenge"] == entry["challenge"] and event["theorem"] == entry["theorem"]), None)
         program = entry["program"]
-        name = program.removeprefix("BulksketchBridge.X86MaskedMemory.Llbc.")
+        name = program.rsplit(".", 1)[-1]
         if (source_items[native_id]["kind"] != "function" or
                 entry["source_line_span_sha256"] != source_items[native_id]["source_line_span_sha256"] or
                 items[native_id]["source_line_span_sha256"] != source_items[native_id]["source_line_span_sha256"] or

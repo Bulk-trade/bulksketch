@@ -1,0 +1,60 @@
+--- a/src/interp/InterpMatchCtxs.ml
++++ b/src/interp/InterpMatchCtxs.ml
+@@ -348,7 +348,11 @@
+       TPtrMetadata ty
+   | _ -> match_distinct_types ty0 ty1
+ 
+-module MakeMatcher (M : PrimMatcher) : Matcher = struct
++module MakeMatcherWithMode
++    (M : PrimMatcher)
++    (Mode : sig
++      val match_ended_projector_leaves : bool
++    end) : Matcher = struct
+   let span = M.span
+ 
+   let rec match_tvalues (ctx0 : eval_ctx) (ctx1 : eval_ctx) (v0 : tvalue)
+@@ -579,6 +583,13 @@
+             let proj_ty = M.match_rtys ctx0 ctx1 proj0.proj_ty proj1.proj_ty in
+             M.match_aproj_loans match_rec ctx0 ctx1 v0.ty pm0 ploans0 v1.ty pm1
+               ploans1 ty proj_ty
++        | ( AEndedProjLoans ({ proj = id0; consumed = []; borrows = [] } as ended),
++            AEndedProjLoans { proj = id1; consumed = []; borrows = [] } )
++          when Mode.match_ended_projector_leaves && !Config.sanity_checks
++               && pm0 = PNone && pm1 = PNone && id0 = id1 && v0.ty = v1.ty ->
++            (* The two ended projectors contain only identical synthesis metadata.
++               Retain the node. No live mapping or descendant is skipped. *)
++            { value = ASymbolic (PNone, AEndedProjLoans ended); ty }
+         | _ -> [%craise_recover] M.recover M.span "Unreachable"
+       end
+     | _ ->
+@@ -586,6 +597,12 @@
+         M.match_avalues match_rec ctx0 ctx1 v0 v1
+ end
+ 
++module MakeMatcher (M : PrimMatcher) =
++  MakeMatcherWithMode (M) (struct let match_ended_projector_leaves = false end)
++
++module MakeContextMatcher (M : PrimMatcher) =
++  MakeMatcherWithMode (M) (struct let match_ended_projector_leaves = true end)
++
+ module MakeJoinMatcher (S : MatchJoinState) : PrimMatcher = struct
+   (** Small utility *)
+   let span = S.span
+@@ -2265,7 +2282,7 @@
+     let lookup_shared_value_in_ctx1 = lookup_shared_value_in_ctx1
+   end in
+   let module CEM = MakeCheckEquivMatcher (S) in
+-  let module M = MakeMatcher (CEM) in
++  let module M = MakeContextMatcher (CEM) in
+   (* When matching abstractions we allow backtracking, so we need an alternative
+      version of the matchers where [recover] is true *)
+   let module RecoverS : MatchCheckEquivState = struct
+@@ -2283,7 +2300,7 @@
+     let lookup_shared_value_in_ctx1 = lookup_shared_value_in_ctx1
+   end in
+   let module RecoverCEM = MakeCheckEquivMatcher (RecoverS) in
+-  let module RecoverM = MakeMatcher (RecoverCEM) in
++  let module RecoverM = MakeContextMatcher (RecoverCEM) in
+   (* Match the environments - we assume that they have the same structure
+      (and fail if they don't) *)
+ 

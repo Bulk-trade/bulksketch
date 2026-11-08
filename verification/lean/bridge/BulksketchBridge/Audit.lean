@@ -322,7 +322,29 @@ run_cmd do
     (``BulksketchBridge.Cubic.ActualQuadraticHelperReturnsExactOption,
       ``BulksketchBridge.Cubic.quadratic_refines),
     (``BulksketchBridge.Cubic.ActualCubicReturnsOnlyRoots,
-      ``BulksketchBridge.Cubic.cubic_refines)
+      ``BulksketchBridge.Cubic.cubic_refines),
+    (``BulksketchBridge.X86PclmulSliceChallenges.ScaleRefines,
+      ``BulksketchBridge.X86PclmulSlice.scale_xor_refines),
+    (``BulksketchBridge.X86PclmulSliceChallenges.SquareRefines,
+      ``BulksketchBridge.X86PclmulSlice.square_slice_refines),
+    (``BulksketchBridge.X86PclmulSliceChallenges.ScaleEntryRefines,
+      ``BulksketchBridge.X86PclmulSlice.scale_xor_entry_refines),
+    (``BulksketchBridge.X86PclmulSliceChallenges.SquareEntryRefines,
+      ``BulksketchBridge.X86PclmulSlice.square_slice_entry_refines),
+    (``BulksketchBridge.X86PclmulSliceChallenges.XorEntryRefines,
+      ``BulksketchBridge.X86PclmulSlice.xor_assign_refines),
+    (``BulksketchBridge.X86PclmulHornerChallenges.HornerRefines,
+      ``BulksketchBridge.X86PclmulHorner.horner_refines),
+    (``BulksketchBridge.X86PclmulHornerChallenges.HornerEntryRefines,
+      ``BulksketchBridge.X86PclmulHorner.horner_entry_refines),
+    (``BulksketchBridge.AvxXorLlbc.XorAssignContract,
+      ``BulksketchBridge.AvxXorLlbc.xor_assign_refines),
+    (``BulksketchBridge.X86MaskedMemory.Difference.DifferenceContract,
+      ``BulksketchBridge.X86MaskedMemory.Difference.difference_refines),
+    (``BulksketchBridge.Certificate.ActualCertificateReturnsExactFrame,
+      ``BulksketchBridge.Certificate.certificate_refines),
+    (``BulksketchBridge.Certificate.ActualCertificateAcceptsRootPolynomial,
+      ``BulksketchBridge.Certificate.certificate_accepts_root_polynomial)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

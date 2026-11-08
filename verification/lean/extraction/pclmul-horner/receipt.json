@@ -1,0 +1,178 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "84cb187f3d3c18fbc5d966b68760d0bd120aba2e",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "aeneas_variant": "checked-ended-shared-scalar-v1",
+  "variant_patch": "tooling/aeneas-horner-match/ended-shared-scalar.patch",
+  "variant_patch_sha256": "b0d2bd6b087d0d376351469e20f97a150033a57e2a7b48aedf9e966f56f6562c",
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "cb4287c07bdcac9179b6120f680dfd8ac17b875d1895ed8f6f1024e1f322de8b",
+    "aeneas_pinned": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "selected_roots": [
+    "{impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::x86_pclmul::Pclmul}::horner_many"
+  ],
+  "llbc_has_errors": false,
+  "llbc_sha256": "34f355c0cd9c2fd62b40f679d0394b907b8bea057b02ca224ef7666dc312fd04",
+  "native_source_edited": false,
+  "runtime_files_sha256": {
+    "bridge/Arithmetic/X86PclmulRuntime.lean": "527522b826c35bd0bc841d4106bed3aed1e32cba17f48f08b75145c09713d808",
+    "bridge/Arithmetic/MutableZipRuntime.lean": "683a48af92e8c4f992d4f0893ed18679122344714cdda9a2293c07029b85776d",
+    "bridge/Arithmetic/PortableHornerRuntime.lean": "b3a4497de2c55f4acb0638b3bd57bc7fd75f9e0c9741751cf49d5cb9e3219bea"
+  },
+  "charon_command": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-isa/pclmul-horner/arithmetic.llbc",
+      "--start-from={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::x86_pclmul::Pclmul}::horner_many",
+      "--",
+      "--manifest-path",
+      "/Users/junbug/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked",
+      "--offline",
+      "--target",
+      "x86_64-apple-darwin"
+    ],
+    "exit_code": 0
+  },
+  "checked_extraction": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-horner-match/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-isa/pclmul-horner/Arithmetic",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-isa/pclmul-horner/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "input": "extraction/pclmul-horner/arithmetic.llbc",
+    "input_sha256": "34f355c0cd9c2fd62b40f679d0394b907b8bea057b02ca224ef7666dc312fd04",
+    "required_flags": [
+      "-checks",
+      "-sequential"
+    ],
+    "generated": [
+      {
+        "path": "extraction/pclmul-horner/Arithmetic/Funs.lean",
+        "sha256": "da288314271fc67a65d8bafd604c38b757e429902adc3d61fc0ddcb71cad718e"
+      },
+      {
+        "path": "extraction/pclmul-horner/Arithmetic/FunsExternal_Template.lean",
+        "sha256": "efb466a0a1b6a0fc4bc86fe3eac3daa8fa9895c2377fc950dc30ba499130b5ad"
+      },
+      {
+        "path": "extraction/pclmul-horner/Arithmetic/Types.lean",
+        "sha256": "d85fc6fef598ee48e95ca16c4955e9352bf9a9ce33b572b78f91d46f5b8db9f5"
+      },
+      {
+        "path": "extraction/pclmul-horner/Arithmetic/TypesExternal_Template.lean",
+        "sha256": "a1e7a1d84b947daa18ecec5a47226ab87de975dc5e2a6ca2f99059d1e76d5d82"
+      }
+    ]
+  },
+  "rejections": {
+    "pinned": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-isa/pclmul-horner/Pinned",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-isa/pclmul-horner/arithmetic.llbc"
+      ],
+      "exit_code": 1
+    },
+    "unchecked": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-horner-match/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-isa/pclmul-horner/Unchecked",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-isa/pclmul-horner/arithmetic.llbc"
+      ],
+      "exit_code": 1
+    }
+  },
+  "artifacts": [
+    {
+      "path": "extraction/pclmul-horner/Arithmetic/Funs.lean",
+      "sha256": "da288314271fc67a65d8bafd604c38b757e429902adc3d61fc0ddcb71cad718e"
+    },
+    {
+      "path": "extraction/pclmul-horner/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "efb466a0a1b6a0fc4bc86fe3eac3daa8fa9895c2377fc950dc30ba499130b5ad"
+    },
+    {
+      "path": "extraction/pclmul-horner/Arithmetic/Types.lean",
+      "sha256": "d85fc6fef598ee48e95ca16c4955e9352bf9a9ce33b572b78f91d46f5b8db9f5"
+    },
+    {
+      "path": "extraction/pclmul-horner/Arithmetic/TypesExternal_Template.lean",
+      "sha256": "a1e7a1d84b947daa18ecec5a47226ab87de975dc5e2a6ca2f99059d1e76d5d82"
+    },
+    {
+      "path": "extraction/pclmul-horner/aeneas.log",
+      "sha256": "d53dbe6a20759a3a7effc699b7aba554eee791c299caf4ee37356f6f7c55e3a1"
+    },
+    {
+      "path": "extraction/pclmul-horner/arithmetic.llbc",
+      "sha256": "34f355c0cd9c2fd62b40f679d0394b907b8bea057b02ca224ef7666dc312fd04"
+    },
+    {
+      "path": "extraction/pclmul-horner/charon.log",
+      "sha256": "36cc2237f16c39c3ece24ee5baccc750ce2e7887225db9829148d70baf9335a7"
+    },
+    {
+      "path": "extraction/pclmul-horner/pinned.log",
+      "sha256": "8bc082801e7f82b82baa5fc9413ec5ad286bb4bc7caaf5ccbca4543da6ef5720"
+    },
+    {
+      "path": "extraction/pclmul-horner/unchecked.log",
+      "sha256": "f311620c9df51cf7cacd84b28063a68ca21294310b32e44dfb74dfa3524aca10"
+    }
+  ],
+  "replay": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-horner-match/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-isa/pclmul-horner/replay",
+      "/Users/junbug/bulk/bulksketch/verification/lean/extraction/pclmul-horner/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "exact_generated_artifacts": 4,
+    "log_sha256": "48088c390c80ff95f610f9ee23a8b8553cb73f6ae4cf2a0e3139fe499dcfba38"
+  }
+}

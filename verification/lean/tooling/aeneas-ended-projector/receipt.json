@@ -1,0 +1,153 @@
+{
+  "status": "passed",
+  "variant_id": "checked-ended-projector-leaf-v1",
+  "base_aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "patch": "tooling/aeneas-ended-projector/ended-projector-leaf.patch",
+  "patch_sha256": "087d4f3aec35bdeeb3d3d6ddef5a685d60c7765b11ffd05382eacaeefed0d90e",
+  "modified_sources": {
+    "src/interp/InterpMatchCtxs.ml": "1331da5e216ef15e30ca4b029d6b508110ca9aa564a97816cec9edfa4a03baa3"
+  },
+  "base_sources": {
+    "src/interp/InterpMatchCtxs.ml": "a97bd2650a71ec0795f570dac17a8a1f1f52ae2b6feb4619984e6f1d61fde264"
+  },
+  "baseline_binary_sha256": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+  "patched_binary_sha256": "7482e094f6a3afbd01403fb072a284e9656ef3732e2fbeed5d030deccf323e19",
+  "extraction": {
+    "input": "extraction/degree-certificate/arithmetic.llbc",
+    "input_sha256": "95ab2b5d88dbb5c9a3f258f8f6370c42f0152d63eef269711311c043a8b285ca",
+    "required_flags": [
+      "-checks",
+      "-sequential"
+    ],
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proof-tools/certificate-ended-projector/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/guard",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-next/next-extractions/certificate/arithmetic.llbc"
+    ],
+    "generated": [
+      {
+        "path": "extraction/degree-certificate/Arithmetic/Types.lean",
+        "sha256": "c9a7b0fd09b8ece583fadda5865342ac70b4fb043eeeb4165bd89432bc685f48"
+      },
+      {
+        "path": "extraction/degree-certificate/Arithmetic/Funs.lean",
+        "sha256": "eb400afed2af3073c9eb76370bf617c9b6adb0128988510247b64ece531e4e55"
+      },
+      {
+        "path": "extraction/degree-certificate/Arithmetic/FunsExternal_Template.lean",
+        "sha256": "ea6b5454758a635c256befe630f8951adc942962f92e9d9e673458ce5dfdb570"
+      }
+    ],
+    "exit_code": 0
+  },
+  "commands": [
+    {
+      "name": "original-certificate",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/certificate-ended-projector/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/guard",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-next/next-extractions/certificate/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "without-checks",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/certificate-ended-projector/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/unchecked",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-next/next-extractions/certificate/arithmetic.llbc"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "ended-projector-guards",
+      "command": [
+        "opam",
+        "exec",
+        "--root=/Users/junbug/bulk/bulksketch-proofs/tooling/opam-root",
+        "--switch=aeneas-5.3.0",
+        "--",
+        "dune",
+        "exec",
+        "-j",
+        "2",
+        "./ended_projector_guards/ended_projector_guards.exe",
+        "--",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-next/next-extractions/certificate/arithmetic.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch-proof-tools/certificate-ended-projector/src",
+      "exit_code": 0
+    }
+  ],
+  "pinned_rejection": {
+    "log": "extraction/degree-certificate/aeneas-pinned-rejection.log",
+    "sha256": "a955e4d63e22baf1420e970330bebf202635fb109877b093c75400ba895bc477",
+    "exit_code": 1
+  },
+  "regression_sources": {
+    "tooling/aeneas-ended-projector/guards/dune": "32cd3495b2afd7e7e313865272907ff3527f6e363d20c9423c739daa65ccf644",
+    "tooling/aeneas-ended-projector/guards/ended_projector_guards.ml": "b953ffa2165a1323b53c928366d13441b524e5120a59c8260ec4a3b5298f220f",
+    "tooling/aeneas-ended-projector/guard-controls.log": "335698299c2e006f2c72930f69d6abf095f5bb4ff33bb8cf59230fae13fbb3db",
+    "tooling/aeneas-ended-projector/unchecked.log": "eaf2f2f32c1097c4e13417b7b8ea1e8304775b20407f60c2063da0cdb0a54dc2"
+  },
+  "regressions": [
+    {
+      "case": "identical-mapping",
+      "status": "passed"
+    },
+    {
+      "case": "identical-equivalence",
+      "status": "passed"
+    },
+    {
+      "case": "different-ended-id",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "different-type",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "identical-consumed-child",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "identical-borrow-child",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "identical-marked-projector",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "unchecked-identical",
+      "status": "expected_rejection_confirmed"
+    }
+  ],
+  "native_source_changed": false,
+  "new_native_coverage_credit_from_tests": 0
+}

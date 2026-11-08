@@ -167,6 +167,23 @@ PROJECTIONS = [
      "extraction/cubic/Arithmetic/Funs.lean", "bridge/Arithmetic/CubicGenerated.lean",
      "if q = 0#u64", "if q = 1#u64", "compiled cubic projection differs",
      None, None, ["bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/CubeRootGenerated.lean"]),
+    ("pclmul-slice", "extraction/pclmul-slice/project.py", "extraction/pclmul-slice/receipt.json",
+     "extraction/pclmul-slice/Arithmetic/Funs.lean", "bridge/Arithmetic/X86PclmulSliceGenerated.lean",
+     "lift (target ^^^ source)", "lift (target ^^^ target)", "compiled PCLMUL slice projection differs",
+     None, None, ["bridge/Arithmetic/X86PclmulGenerated.lean", "bridge/Arithmetic/X86PclmulRuntime.lean",
+                  "bridge/Arithmetic/MutableZipRuntime.lean", "extraction/affine-linear-eval/Arithmetic/Funs.lean"]),
+    ("pclmul-horner", "extraction/pclmul-horner/project.py", "extraction/pclmul-horner/receipt.json",
+     "extraction/pclmul-horner/Arithmetic/Funs.lean", "bridge/Arithmetic/X86PclmulHornerGenerated.lean",
+     "if left_val = right_val", "if left_val != right_val", "compiled PCLMUL Horner projection differs",
+     None, None, ["bridge/Arithmetic/X86PclmulGenerated.lean", "bridge/Arithmetic/X86PclmulRuntime.lean",
+                  "bridge/Arithmetic/MutableZipRuntime.lean", "bridge/Arithmetic/DenseNormalizationGenerated.lean",
+                  "bridge/Arithmetic/PortableHornerRuntime.lean", "extraction/affine-linear-eval/Arithmetic/Funs.lean",
+                  "tooling/aeneas-horner-match/ended-shared-scalar.patch"]),
+    ("degree-certificate", "extraction/degree-certificate/project.py", "extraction/degree-certificate/receipt.json",
+     "extraction/degree-certificate/Arithmetic/Funs.lean", "bridge/Arithmetic/CertificateGenerated.lean",
+     "if x = 0#u64", "if x = 1#u64", "compiled certificate projection differs",
+     None, None, ["bridge/Arithmetic/CertificateRuntime.lean", "bridge/Arithmetic/RebuiltLfsrGenerated.lean",
+                  "bridge/Arithmetic/SliceKernelTypes.lean", "tooling/aeneas-ended-projector/ended-projector-leaf.patch"]),
 ]
 
 
@@ -272,6 +289,9 @@ def main():
             name = label + "/" + name
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:
                 shadow = Path(directory)
+                if label == "degree-certificate":
+                    (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
+                    shadow = shadow / "verification" / "lean"
                 for file in files:
                     (shadow / file).parent.mkdir(parents=True, exist_ok=True)
                     shutil.copy2(ROOT / file, shadow / file)

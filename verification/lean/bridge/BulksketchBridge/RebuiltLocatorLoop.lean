@@ -64,7 +64,7 @@ theorem fill_zero (shape : Slice U64) :
 
 abbrev RootIterator := core.iter.adapters.enumerate.Enumerate (core.slice.iter.Iter U64)
 
-private theorem root_next (roots : Slice U64) (index : Usize) (active : index.val < roots.length) :
+theorem root_next (roots : Slice U64) (index : Usize) (active : index.val < roots.length) :
     ∃ next : Usize,
       core.iter.adapters.enumerate.IteratorEnumerate.next (core.iter.traits.iterator.IteratorSliceIter U64)
           (⟨⟨roots, index.val⟩, index⟩ : RootIterator) =
@@ -94,7 +94,7 @@ private theorem root_next (roots : Slice U64) (index : Usize) (active : index.va
   rw [normal]
   conv => lhs; rw [exactState]
 
-private theorem root_done (roots : Slice U64) (index : Usize) (stop : index.val = roots.length) :
+theorem root_done (roots : Slice U64) (index : Usize) (stop : index.val = roots.length) :
     ∃ terminal : RootIterator,
       core.iter.adapters.enumerate.IteratorEnumerate.next (core.iter.traits.iterator.IteratorSliceIter U64)
           (⟨⟨roots, index.val⟩, index⟩ : RootIterator) = Result.ok (none, terminal) := by

@@ -10,6 +10,7 @@ import copy
 import hashlib
 import json
 import re
+import runpy
 import subprocess
 import tempfile
 ROOT=Path(__file__).resolve().parents[1]
@@ -181,6 +182,53 @@ for name, mutate in horner_cases:
     results.append({"case": name, "status": status})
     print(name, status)
 
+pclmul = link["reviewed_pclmul_horner_extensions"][0]
+pclmul_original = json.loads((ROOT / pclmul["receipt"]).read_text())
+pclmul_check = runpy.run_path(str(ROOT / "scripts/verify_bridge.py"))["check_pclmul_horner_extension"]
+pclmul_cases = [
+    ("pclmul-horner-positive", lambda receipt, variants: None),
+    ("pclmul-horner-omits-checks", lambda receipt, variants: receipt["checked_extraction"]["command"].remove("-checks")),
+    ("pclmul-horner-wrong-patch", lambda receipt, variants: receipt.update(variant_patch_sha256="wrong")),
+    ("pclmul-horner-unreviewed", lambda receipt, variants: variants.clear()),
+    ("pclmul-horner-unchecked-accepted", lambda receipt, variants: receipt["rejections"]["unchecked"].update(exit_code=0)),
+    ("pclmul-horner-missing-type-artifact", lambda receipt, variants: receipt["checked_extraction"]["generated"].pop()),
+    ("pclmul-horner-short-replay", lambda receipt, variants: receipt["replay"].update(exact_generated_artifacts=3)),
+]
+for name, mutate in pclmul_cases:
+    receipt = copy.deepcopy(pclmul_original)
+    variants = copy.deepcopy(link["reviewed_translator_variants"])
+    mutate(receipt, variants)
+    try:
+        pclmul_check(pclmul, receipt, variants, runtime_head, link)
+        status = "accepted"
+    except (RuntimeError, KeyError, ValueError):
+        status = "rejected"
+    results.append({"case": name, "status": status})
+    print(name, status)
+
+certificate = next(entry for entry in link["reviewed_translator_variants"]
+                   if entry["id"] == "checked-ended-projector-leaf-v1")
+certificate_original = json.loads((ROOT / certificate["receipt"]).read_text())
+certificate_check = runpy.run_path(str(ROOT / "scripts/verify_bridge.py"))["check_certificate_match_variant"]
+certificate_cases = [
+    ("certificate-positive", lambda receipt: None),
+    ("certificate-omits-checks", lambda receipt: receipt["extraction"]["command"].remove("-checks")),
+    ("certificate-extra-source", lambda receipt: receipt["modified_sources"].update(other="wrong")),
+    ("certificate-missing-output", lambda receipt: receipt["extraction"]["generated"].pop()),
+    ("certificate-pinned-accepted", lambda receipt: receipt["pinned_rejection"].update(exit_code=0)),
+    ("certificate-missing-child-control", lambda receipt: receipt["regressions"].pop(4)),
+]
+for name, mutate in certificate_cases:
+    receipt = copy.deepcopy(certificate_original)
+    mutate(receipt)
+    try:
+        certificate_check(certificate, receipt, runtime, runtime_head, link)
+        status = "accepted"
+    except (RuntimeError, KeyError, ValueError):
+        status = "rejected"
+    results.append({"case": name, "status": status})
+    print(name, status)
+
 # Exercise the exact per-refinement attribution statements from the same main AST.
 refine_loop=next(n for n in main.body if isinstance(n,ast.For) and isinstance(n.target,ast.Tuple) and any(isinstance(x,ast.Name) and x.id=='native_id' for x in n.target.elts))
 assignment=next(n for n in refine_loop.body if isinstance(n,ast.Assign) and any(isinstance(x,ast.Name) and x.id=='used_variants' for x in n.targets))
@@ -205,7 +253,7 @@ for name,entry,mutate in attribution_cases:
  results.append({'case':name,'status':status});print(name,status)
 
 for row in results:
- expected = 'accepted' if row['case'] in {'positive','dense-positive','dense-mul-positive','horner-positive','valid-patched','valid-pinned','valid-dense-source'} else 'rejected'
+ expected = 'accepted' if row['case'] in {'positive','dense-positive','dense-mul-positive','horner-positive','pclmul-horner-positive','certificate-positive','valid-patched','valid-pinned','valid-dense-source'} else 'rejected'
  if row['status'] != expected:
   raise RuntimeError('variant/attribution gate outcome differs: '+row['case'])
 valid_count = sum(row["status"] == "accepted" for row in results)

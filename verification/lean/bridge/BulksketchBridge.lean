@@ -53,3 +53,8 @@ import BulksketchBridge.X86PclmulInverse
 import BulksketchBridge.X86FeatureDetect
 import BulksketchBridge.X86MaskedMemoryLlbc
 import BulksketchBridge.Cubic
+import BulksketchBridge.X86PclmulSlice
+import BulksketchBridge.X86PclmulHorner
+import BulksketchBridge.AvxXorLlbc
+import BulksketchBridge.X86Difference
+import BulksketchBridge.CertificatePolynomial

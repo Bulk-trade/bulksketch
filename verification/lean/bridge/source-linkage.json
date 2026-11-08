@@ -366,6 +366,31 @@
       "path": "extraction/cubic/arithmetic.llbc",
       "sha256": "8821346c8cc0e8664a5dc9665dacdc226a27e64986cf039196feabd53f08cf11",
       "has_errors": false
+    },
+    {
+      "path": "extraction/pclmul-slice/arithmetic.llbc",
+      "sha256": "684a7420f48daa0f90d78c08eae1ba68120f0041373378481e02f07284e163d0",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/pclmul-horner/arithmetic.llbc",
+      "sha256": "34f355c0cd9c2fd62b40f679d0394b907b8bea057b02ca224ef7666dc312fd04",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-xor-assign/arithmetic.llbc",
+      "sha256": "e45bb1164507f4d66a98db52107ecdd9fc4949ae4b2c34d516a7323a40177140",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-difference/arithmetic.llbc",
+      "sha256": "6f539421e66546c804fb813d073bb7466ddaf0de8fa01122a0812af82ee076d8",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/degree-certificate/arithmetic.llbc",
+      "sha256": "95ab2b5d88dbb5c9a3f258f8f6370c42f0152d63eef269711311c043a8b285ca",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -818,6 +843,46 @@
       "native_item_id": "src/decode/deg34.rs:95:function:bulksketch::decode::deg34::cubic",
       "generated_declaration": "bulksketch.decode.deg34.cubic",
       "generated_file": "bridge/Arithmetic/CubicGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:177:function:bulksketch::backend::x86_pclmul::scale_xor",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.scale_xor",
+      "generated_file": "bridge/Arithmetic/X86PclmulSliceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:196:function:bulksketch::backend::x86_pclmul::square_slice",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.square_slice",
+      "generated_file": "bridge/Arithmetic/X86PclmulSliceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:84:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::scale_xor",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.scale_xor",
+      "generated_file": "bridge/Arithmetic/X86PclmulSliceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:90:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::square_slice",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.square_slice",
+      "generated_file": "bridge/Arithmetic/X86PclmulSliceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:103:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::xor_assign",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractBulkKernels.xor_assign",
+      "generated_file": "bridge/Arithmetic/X86PclmulSliceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:225:function:bulksketch::backend::x86_pclmul::horner",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.horner",
+      "generated_file": "bridge/Arithmetic/X86PclmulHornerGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:110:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::horner_many",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractBulkKernels.horner_many",
+      "generated_file": "bridge/Arithmetic/X86PclmulHornerGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:111:function:bulksketch::decode::deg34::certificate",
+      "generated_declaration": "bulksketch.decode.deg34.certificate",
+      "generated_file": "bridge/Arithmetic/CertificateGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1165,6 +1230,35 @@
       "checker": "extraction/cubic/project.py",
       "declaration_count": 3,
       "scope": "Verbatim quadratic and cubic helpers and root constant, with exact cube-root reuse and existing Bool and Option adapters."
+    },
+    {
+      "generated": "extraction/pclmul-slice/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/X86PclmulSliceGenerated.lean",
+      "sha256": "0ea46ba5d29c2afa8beea386592abb689cca853c12c8463108d5fc8d0b314827",
+      "raw_sha256": "7f2a40cffd24c0507f005847aa240d9d58f396113e339d3ab3c9287534c5636c",
+      "checker": "extraction/pclmul-slice/project.py",
+      "declaration_count": 13,
+      "scope": "Exact original PCLMUL slice kernels and entries with checked shared arithmetic and Zip dependencies."
+    },
+    {
+      "generated": "extraction/pclmul-horner/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/X86PclmulHornerGenerated.lean",
+      "sha256": "bb506ce12a105908c6a08817b4e7a1f4d31db19118e9675d0cb3761f3b766828",
+      "raw_sha256": "da288314271fc67a65d8bafd604c38b757e429902adc3d61fc0ddcb71cad718e",
+      "checker": "extraction/pclmul-horner/project.py",
+      "declaration_count": 6,
+      "scope": "Exact original PCLMUL Horner loops and entry using the checked ended shared-scalar context matcher.",
+      "translator_variant": "checked-ended-shared-scalar-v1"
+    },
+    {
+      "generated": "extraction/degree-certificate/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CertificateGenerated.lean",
+      "sha256": "a448ce5c50ab97713c112da4a6824e0be583722a29e51f937276862d3f9c6180",
+      "raw_sha256": "eb400afed2af3073c9eb76370bf617c9b6adb0128988510247b64ece531e4e55",
+      "checker": "extraction/degree-certificate/project.py",
+      "declaration_count": 10,
+      "scope": "Original degree-3/4 certificate over exact GF64 multiplication with admitted usize and path-conditional scratch bounds. Checks malformed roots, the rebuilt coefficient prefix and preservation of the scratch suffix.",
+      "translator_variant": "checked-ended-projector-leaf-v1"
     }
   ],
   "reviewed_translator_variants": [
@@ -1203,6 +1297,15 @@
       "receipt": "tooling/aeneas-horner-match/receipt.json",
       "mandatory_checks": true,
       "scope": "In the checked context matcher only, match two already ended shared loans carrying identical typed scalar metadata and either both absent ignored children or exactly repeated scalar child payloads."
+    },
+    {
+      "id": "checked-ended-projector-leaf-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "tooling/aeneas-ended-projector/ended-projector-leaf.patch",
+      "patch_sha256": "087d4f3aec35bdeeb3d3d6ddef5a685d60c7765b11ffd05382eacaeefed0d90e",
+      "receipt": "tooling/aeneas-ended-projector/receipt.json",
+      "mandatory_checks": true,
+      "scope": "In checked context matching, preserve identical unmarked ended projector leaves with equal types, no consumed or borrowed descendants and the same symbolic ID."
     }
   ],
   "diagnostic_generated_projections": [
@@ -1228,5 +1331,39 @@
       "src/backend/x86_vpclmul512.rs:202:function:bulksketch::backend::x86_vpclmul512::store": "BulksketchBridge.X86MaskedMemory.Llbc.storeProgram"
     },
     "scope": "Source-bound typed interpretation of the exact original masked-memory LLBC normal paths. No Aeneas generated-body credit or physical pointer provenance claim."
-  }
+  },
+  "reviewed_pclmul_horner_extensions": [
+    {
+      "variant": "checked-ended-shared-scalar-v1",
+      "receipt": "extraction/pclmul-horner/receipt.json"
+    }
+  ],
+  "stateful_llbc_caller_projections": [
+    {
+      "checker": "extraction/avx-xor-assign/project.py",
+      "controls": "extraction/avx-xor-assign/check_controls.py",
+      "negative_control_count": 8,
+      "program_file": "bridge/BulksketchBridge/AvxXorLlbcGenerated.lean",
+      "projection_sha256": "a67d6ce4afb96a41672ff20ec606bedf4f0fd0132368ca8fde5db8d23d38657e",
+      "llbc_sha256": "e45bb1164507f4d66a98db52107ecdd9fc4949ae4b2c34d516a7323a40177140",
+      "source_sha256": "7a9c29dff254508671aa4122b20644b21a9cfb40f86ba5eaadce02bf680475d4",
+      "programs": {
+        "src/backend/x86_vpclmul512.rs:364:function:bulksketch::backend::x86_vpclmul512::xor_assign": "BulksketchBridge.AvxXorLlbc.program"
+      },
+      "scope": "Exact original chunked XOR caller with equal lengths, mapped words, writable destination and separated source. Checked normal paths compose original masked LLBC primitives, preserve source bytes and all addresses outside the destination, and write exact XOR including short tails."
+    },
+    {
+      "checker": "extraction/avx-difference/project.py",
+      "controls": "extraction/avx-difference/check_controls.py",
+      "negative_control_count": 9,
+      "program_file": "bridge/BulksketchBridge/X86DifferenceGenerated.lean",
+      "projection_sha256": "4a534fbcd84b08d8afb5110055d8ad2ec61b0b350b6592d185136bdc60839093",
+      "llbc_sha256": "6f539421e66546c804fb813d073bb7466ddaf0de8fa01122a0812af82ee076d8",
+      "source_sha256": "7a9c29dff254508671aa4122b20644b21a9cfb40f86ba5eaadce02bf680475d4",
+      "programs": {
+        "src/backend/x86_vpclmul512.rs:800:function:bulksketch::backend::x86_vpclmul512::difference": "BulksketchBridge.X86MaskedMemory.Difference.differenceProgram"
+      },
+      "scope": "Exact original AVX difference caller with equal local and destination word counts, exactly eight mapped little-endian remote bytes per word, mapped local words and separated writable destination. The proof covers every full block and short tail, the exact destination XOR, the mismatch bit, and all outside bytes."
+    }
+  ]
 }

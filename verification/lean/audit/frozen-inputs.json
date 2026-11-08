@@ -36,12 +36,12 @@
     "audit/core-maps-proof-independent-review.md": "aed4509f239a8e3db59c7a9f0d95ca20286d8a6df50372e3f59c172572101124",
     "audit/field-algebra-accounting-review.md": "55d3cd81a3f03185992e3272994c04b13b5e7ea34ff85e5d8e2cfced90f240be",
     "audit/field-algebra-checkpoint.json": "e93b65ffd57dcdb5c4c987c76f96d48b8917e82f52969853dbb979c049a4220e",
-    "scripts/check_projection_fixtures.py": "f913b4c0fb7ed2ba26cbd5c61d305fd64f3a9164cbc6ef9380a9574aeac3aa46",
+    "scripts/check_projection_fixtures.py": "bbd0db19b779ee0cded10eb18188914619976447eb87425ee37a35749a68594a",
     "audit/quotient-field-checkpoint.json": "c14a8dd2f0d747079f64b40c3dc9e52db3373ddfc1414b62667727444a82825e",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
     "audit/word-quotient-independent-review.md": "311018cf261231ef631f59867defc66cf7a13e5eba60d414f88b9d4e922dc823",
     "audit/inverse-enclosing-translator-investigation.md": "1c1efaa84c0c7fa8efa502689e4f5d8b71b6bac588e25dc310caa9e8e4097d5f",
-    "scripts/check_variant_fixtures.py": "8dca0f8f385a1898538da709228a3dbdd23f1d6c6b9027204f7d0d8be5045197",
+    "scripts/check_variant_fixtures.py": "03f66e170551b2abb439bbba18999b6508b6a0ec56c1e6bd603e1105e1500365",
     "audit/native-coverage-checkpoint.json": "b8317d30100e2ce80f6e5905b8d37d8019f51a7f18c4da48a5524caf62f8e4e1",
     "audit/aeneas-capture-independent-review.md": "7b82b268d8c4dc108cd1378ec6065432074be9ea323a87fdc3adf6162cb6e68a",
     "audit/frobenius-const-independent-review.md": "1fa3167209409d3508febc2d25e991de8dc67c3e6fa8a7717b0e6958377ba3cd",
@@ -52,7 +52,10 @@
     "audit/native-verifier-checkpoint.json": "9f43fec3294df6daf59f96f5687cea0b2de6738e243b6d56988cf955577f013c",
     "audit/dense-product-checkpoint.json": "fe219c06a58310128bc55c5ca9b2e96652c4faf2a587bc6e11968b1cde19e48e",
     "audit/x86-register-checkpoint.json": "ef525dc9780d883dca83d20dde6e0c64077aa502b1208f583fd326a506f4bc10",
-    "audit/native-stateful-checkpoint.json": "2c41ee402642341add52703d90795de97eff7b0656c4a4db9cd3e675332f0210"
+    "audit/native-stateful-checkpoint.json": "2c41ee402642341add52703d90795de97eff7b0656c4a4db9cd3e675332f0210",
+    "NATIVE_CALLER_CHAINS.md": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
+    "audit/native-caller-checkpoint.json": "837788fd6bb6f20d3c18e69b74e0610177fc4b9aec084f1ec313c271f4771cf2",
+    "README.md": "bde01fde764fc747ffe1e21bb78ef84071284812020f577e0fa94cafbc649b38"
   },
   "reviewed_policy_revisions": [
     {
@@ -363,6 +366,51 @@
           "old_sha256": "0b325db81eaff28df6b6c71c3ece2e4fc2420a38f67fa7af7a92ae72234a8c53"
         }
       ]
+    },
+    {
+      "path": "NATIVE_CALLER_CHAINS.md",
+      "new_sha256": "9fd1dde2703c297253afee07c5533b2eac61233e90434824536e0cce113b7722",
+      "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements."
+    },
+    {
+      "path": "audit/native-caller-checkpoint.json",
+      "new_sha256": "6ec09ba0b80b0d79189f00fa405a1e9857f7192de2d116dd6a2269d68684915f",
+      "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "bbd0db19b779ee0cded10eb18188914619976447eb87425ee37a35749a68594a",
+      "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements.",
+      "old_sha256": "f913b4c0fb7ed2ba26cbd5c61d305fd64f3a9164cbc6ef9380a9574aeac3aa46"
+    },
+    {
+      "path": "scripts/check_variant_fixtures.py",
+      "new_sha256": "03f66e170551b2abb439bbba18999b6508b6a0ec56c1e6bd603e1105e1500365",
+      "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements.",
+      "old_sha256": "8dca0f8f385a1898538da709228a3dbdd23f1d6c6b9027204f7d0d8be5045197"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "bde01fde764fc747ffe1e21bb78ef84071284812020f577e0fa94cafbc649b38",
+      "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements."
+    },
+    {
+      "path": "NATIVE_CALLER_CHAINS.md",
+      "new_sha256": "1b2ff1126fbb8b27f8f04f71793c57304b2805ae7e82bcc3a8be37be7f5f6c5f",
+      "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements.",
+      "old_sha256": "9fd1dde2703c297253afee07c5533b2eac61233e90434824536e0cce113b7722"
+    },
+    {
+      "path": "audit/native-caller-checkpoint.json",
+      "new_sha256": "837788fd6bb6f20d3c18e69b74e0610177fc4b9aec084f1ec313c271f4771cf2",
+      "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements.",
+      "old_sha256": "6ec09ba0b80b0d79189f00fa405a1e9857f7192de2d116dd6a2269d68684915f"
+    },
+    {
+      "path": "NATIVE_CALLER_CHAINS.md",
+      "new_sha256": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
+      "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements.",
+      "old_sha256": "1b2ff1126fbb8b27f8f04f71793c57304b2805ae7e82bcc3a8be37be7f5f6c5f"
     }
   ]
 }

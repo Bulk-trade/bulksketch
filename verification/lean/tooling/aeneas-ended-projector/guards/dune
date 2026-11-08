@@ -1,0 +1,2 @@
+(include_subdirs no)
+(executable (name ended_projector_guards) (libraries aeneas))

@@ -572,6 +572,50 @@
     {
       "challenge": "BulksketchBridge.Cubic.ActualCubicReturnsOnlyRoots",
       "theorem": "BulksketchBridge.Cubic.cubic_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86PclmulSliceChallenges.ScaleRefines",
+      "theorem": "BulksketchBridge.X86PclmulSlice.scale_xor_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86PclmulSliceChallenges.SquareRefines",
+      "theorem": "BulksketchBridge.X86PclmulSlice.square_slice_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86PclmulSliceChallenges.ScaleEntryRefines",
+      "theorem": "BulksketchBridge.X86PclmulSlice.scale_xor_entry_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86PclmulSliceChallenges.SquareEntryRefines",
+      "theorem": "BulksketchBridge.X86PclmulSlice.square_slice_entry_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86PclmulSliceChallenges.XorEntryRefines",
+      "theorem": "BulksketchBridge.X86PclmulSlice.xor_assign_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86PclmulHornerChallenges.HornerRefines",
+      "theorem": "BulksketchBridge.X86PclmulHorner.horner_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86PclmulHornerChallenges.HornerEntryRefines",
+      "theorem": "BulksketchBridge.X86PclmulHorner.horner_entry_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxXorLlbc.XorAssignContract",
+      "theorem": "BulksketchBridge.AvxXorLlbc.xor_assign_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86MaskedMemory.Difference.DifferenceContract",
+      "theorem": "BulksketchBridge.X86MaskedMemory.Difference.difference_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Certificate.ActualCertificateReturnsExactFrame",
+      "theorem": "BulksketchBridge.Certificate.certificate_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Certificate.ActualCertificateAcceptsRootPolynomial",
+      "theorem": "BulksketchBridge.Certificate.certificate_accepts_root_polynomial"
     }
   ],
   "refinements": [
@@ -1829,6 +1873,145 @@
       "source_linkage": "bridge/source-linkage.json",
       "scope": "The original helper returns normally for every input under exact GF64 callback contracts. Every returned word is a root of the given monic cubic. The proof uses the previously verified inverse wrapper under checked-frozen-capture-v1.",
       "translator_variant": "checked-frozen-capture-v1"
+    },
+    {
+      "label": "x86_pclmul::scale_xor [original x86 helper]",
+      "native_item_id": "src/backend/x86_pclmul.rs:177:function:bulksketch::backend::x86_pclmul::scale_xor",
+      "source_line_span_sha256": "fa6b682ad447d81c93da99ec83d19d2e1b9423fefa6085ba93bd0c8d646f38f5",
+      "theorem": "BulksketchBridge.X86PclmulSlice.scale_xor_refines",
+      "challenge": "BulksketchBridge.X86PclmulSliceChallenges.ScaleRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.scale_xor",
+      "generated_file": "bridge/Arithmetic/X86PclmulSliceGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean",
+        "bridge/Arithmetic/X86PclmulSliceGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "All GF64 input words, both reduction selectors and every slice length. Zero scale preserves every slot, one scale uses the source XOR loop, and other scalars multiply and XOR each common-prefix word. The unmatched destination tail is unchanged."
+    },
+    {
+      "label": "x86_pclmul::square_slice [original x86 helper]",
+      "native_item_id": "src/backend/x86_pclmul.rs:196:function:bulksketch::backend::x86_pclmul::square_slice",
+      "source_line_span_sha256": "3df6c7708f3982c884c0a4794368fb0cbb3952e5a5412077cd5e22bcc8b89dc6",
+      "theorem": "BulksketchBridge.X86PclmulSlice.square_slice_refines",
+      "challenge": "BulksketchBridge.X86PclmulSliceChallenges.SquareRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.square_slice",
+      "generated_file": "bridge/Arithmetic/X86PclmulSliceGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean",
+        "bridge/Arithmetic/X86PclmulSliceGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Both reduction selectors and all slice lengths. Each common-prefix destination word is replaced by the exact square of its paired input, with the unmatched tail preserved."
+    },
+    {
+      "label": "x86_pclmul::scale_xor [original x86 entry]",
+      "native_item_id": "src/backend/x86_pclmul.rs:84:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::scale_xor",
+      "source_line_span_sha256": "5203c1d1b03c017f6dc3af286e8bf68653f7cba3336a27be2c0c3e368cc1873a",
+      "theorem": "BulksketchBridge.X86PclmulSlice.scale_xor_entry_refines",
+      "challenge": "BulksketchBridge.X86PclmulSliceChallenges.ScaleEntryRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.scale_xor",
+      "generated_file": "bridge/Arithmetic/X86PclmulSliceGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean",
+        "bridge/Arithmetic/X86PclmulSliceGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Equal slice lengths run the original accelerated helper with the carry-less selector. Unequal lengths panic before any write."
+    },
+    {
+      "label": "x86_pclmul::square_slice [original x86 entry]",
+      "native_item_id": "src/backend/x86_pclmul.rs:90:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::square_slice",
+      "source_line_span_sha256": "99f02c0a75c2efe36c7a1129a056b55a1aa7d5af8110d286efdf45b53776baea",
+      "theorem": "BulksketchBridge.X86PclmulSlice.square_slice_entry_refines",
+      "challenge": "BulksketchBridge.X86PclmulSliceChallenges.SquareEntryRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.square_slice",
+      "generated_file": "bridge/Arithmetic/X86PclmulSliceGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean",
+        "bridge/Arithmetic/X86PclmulSliceGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Equal slice lengths run the original accelerated helper with the carry-less selector. Unequal lengths panic before any write."
+    },
+    {
+      "label": "x86_pclmul::xor_assign [original x86 entry]",
+      "native_item_id": "src/backend/x86_pclmul.rs:103:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::xor_assign",
+      "source_line_span_sha256": "f4516c457f493b6551d14ac81ccdfcc80e0df36987771339cd4accb91c81e3b1",
+      "theorem": "BulksketchBridge.X86PclmulSlice.xor_assign_refines",
+      "challenge": "BulksketchBridge.X86PclmulSliceChallenges.XorEntryRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractBulkKernels.xor_assign",
+      "generated_file": "bridge/Arithmetic/X86PclmulSliceGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean",
+        "bridge/Arithmetic/X86PclmulSliceGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Equal lengths return the exact pairwise XOR of all destination words. Unequal lengths panic before any write."
+    },
+    {
+      "label": "x86_pclmul::horner [original x86 helper]",
+      "native_item_id": "src/backend/x86_pclmul.rs:225:function:bulksketch::backend::x86_pclmul::horner",
+      "source_line_span_sha256": "d52b1928a177f0ef3376b0c1ac82bab163895c2df528047798de82f28f2ecc77",
+      "theorem": "BulksketchBridge.X86PclmulHorner.horner_refines",
+      "challenge": "BulksketchBridge.X86PclmulHornerChallenges.HornerRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.horner",
+      "generated_file": "bridge/Arithmetic/X86PclmulHornerGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean",
+        "bridge/Arithmetic/DenseNormalizationGenerated.lean",
+        "bridge/Arithmetic/X86PclmulHornerGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "All GF64 coefficients and points, every input/output length, both original CL values. Empty coefficients clear the entire destination. Nonempty coefficients update exactly the common Zip prefix by reverse Horner evaluation and preserve the unmatched destination tail. The inner loop retains its full XMM state, with the exact low word used by each following CLMUL and the final output.",
+      "translator_variant": "checked-ended-shared-scalar-v1"
+    },
+    {
+      "label": "x86_pclmul::horner_many [original x86 entry]",
+      "native_item_id": "src/backend/x86_pclmul.rs:110:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::horner_many",
+      "source_line_span_sha256": "ac782d45fa86ced5056f4e9ad99ff450e6105fa52163debfccb198b4cb131476",
+      "theorem": "BulksketchBridge.X86PclmulHorner.horner_entry_refines",
+      "challenge": "BulksketchBridge.X86PclmulHornerChallenges.HornerEntryRefines",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractBulkKernels.horner_many",
+      "generated_file": "bridge/Arithmetic/X86PclmulHornerGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/X86PclmulGenerated.lean",
+        "bridge/Arithmetic/DenseNormalizationGenerated.lean",
+        "bridge/Arithmetic/X86PclmulHornerGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Equal lengths run the original accelerated helper with the carry-less selector. Unequal lengths panic before any write.",
+      "translator_variant": "checked-ended-shared-scalar-v1"
+    },
+    {
+      "label": "deg34::certificate [original native verifier]",
+      "native_item_id": "src/decode/deg34.rs:111:function:bulksketch::decode::deg34::certificate",
+      "source_line_span_sha256": "ff55efcff101ba773c474b72b5dbc22972ccd058ad9157ff8a34e414f8143e3a",
+      "theorem": "BulksketchBridge.Certificate.certificate_refines",
+      "challenge": "BulksketchBridge.Certificate.ActualCertificateReturnsExactFrame",
+      "generated_declaration": "bulksketch.decode.deg34.certificate",
+      "generated_file": "bridge/Arithmetic/CertificateGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RebuiltLfsrGenerated.lean",
+        "bridge/Arithmetic/CertificateGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original degree-3/4 certificate over exact GF64 multiplication with admitted usize and path-conditional scratch bounds. Checks malformed roots, the rebuilt coefficient prefix and preservation of the scratch suffix.",
+      "translator_variant": "checked-ended-projector-leaf-v1"
     }
   ],
   "stateful_llbc_refinements": [
@@ -1851,6 +2034,26 @@
       "theorem": "BulksketchBridge.X86MaskedMemory.Llbc.llbc_store_refines",
       "challenge": "BulksketchBridge.X86MaskedMemory.Llbc.LlbcStoreContract",
       "scope": "Original LLBC normal path on an admitted writable mapped byte slice. Returns Unit, exact written register payload on readback, and preserves all addresses outside the prefix. Frozen target and call correspondence with explicit modeled memory-view premises."
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:364:function:bulksketch::backend::x86_vpclmul512::xor_assign",
+      "source_line_span_sha256": "c6d2902fe32571049b51fc22a0a73b34227878642093c90cc70cc275eb89d81d",
+      "llbc_sha256": "e45bb1164507f4d66a98db52107ecdd9fc4949ae4b2c34d516a7323a40177140",
+      "program": "BulksketchBridge.AvxXorLlbc.program",
+      "program_file": "bridge/BulksketchBridge/AvxXorLlbcGenerated.lean",
+      "theorem": "BulksketchBridge.AvxXorLlbc.xor_assign_refines",
+      "challenge": "BulksketchBridge.AvxXorLlbc.XorAssignContract",
+      "scope": "Exact original chunked XOR caller with equal lengths, mapped words, writable destination and separated source. Checked normal paths compose original masked LLBC primitives, preserve source bytes and all addresses outside the destination, and write exact XOR including short tails."
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:800:function:bulksketch::backend::x86_vpclmul512::difference",
+      "source_line_span_sha256": "f2f9cc575dff04731cd917011382e16ab63afc8b7f310296302ab4cd8fe78d9f",
+      "llbc_sha256": "6f539421e66546c804fb813d073bb7466ddaf0de8fa01122a0812af82ee076d8",
+      "program": "BulksketchBridge.X86MaskedMemory.Difference.differenceProgram",
+      "program_file": "bridge/BulksketchBridge/X86DifferenceGenerated.lean",
+      "theorem": "BulksketchBridge.X86MaskedMemory.Difference.difference_refines",
+      "challenge": "BulksketchBridge.X86MaskedMemory.Difference.DifferenceContract",
+      "scope": "Exact original AVX difference caller with equal local and destination word counts, exactly eight mapped little-endian remote bytes per word, mapped local words and separated writable destination. The proof covers every full block and short tail, the exact destination XOR, the mismatch bit, and all outside bytes."
     }
   ]
 }

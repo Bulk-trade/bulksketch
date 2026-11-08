@@ -1,0 +1,95 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "6f4d5089c093d8f8087b89520b45e534a42a5813",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "selected_roots": [
+    "bulksketch::decode::deg34::certificate"
+  ],
+  "llbc_has_errors": false,
+  "native_source_edited": false,
+  "source_directory": "/Users/junbug/bulk/bulksketch",
+  "target": "x86_64-apple-darwin",
+  "translator_variant": "checked-ended-projector-leaf-v1",
+  "patch_sha256": "087d4f3aec35bdeeb3d3d6ddef5a685d60c7765b11ffd05382eacaeefed0d90e",
+  "runtime_sha256": "a9328f9501c105c6b1743de456a164efed7ab23e8a9ba5a03c1bbbdbfcd6c293",
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "7482e094f6a3afbd01403fb072a284e9656ef3732e2fbeed5d030deccf323e19"
+  },
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+    "CARGO_TARGET_DIR": "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-next/next-extractions/certificate/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true"
+  },
+  "commands": [
+    {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-next/next-extractions/certificate/arithmetic.llbc",
+        "--start-from=bulksketch::decode::deg34::certificate",
+        "--",
+        "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/certificate-ended-projector/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/guard",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-next/next-extractions/certificate/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "extraction/degree-certificate/arithmetic.llbc",
+      "sha256": "95ab2b5d88dbb5c9a3f258f8f6370c42f0152d63eef269711311c043a8b285ca"
+    },
+    {
+      "path": "extraction/degree-certificate/charon.log",
+      "sha256": "6e7f168a9a8132f8e2a6bdbb656611db65e011004d7d12d141ee6e7b095747f4"
+    },
+    {
+      "path": "extraction/degree-certificate/aeneas.log",
+      "sha256": "ae900d8a034bf8699ca359ab841eba192542431797f6b91d2d240361b34af048"
+    },
+    {
+      "path": "extraction/degree-certificate/aeneas-pinned-rejection.log",
+      "sha256": "a955e4d63e22baf1420e970330bebf202635fb109877b093c75400ba895bc477"
+    },
+    {
+      "path": "extraction/degree-certificate/Arithmetic/Types.lean",
+      "sha256": "c9a7b0fd09b8ece583fadda5865342ac70b4fb043eeeb4165bd89432bc685f48"
+    },
+    {
+      "path": "extraction/degree-certificate/Arithmetic/Funs.lean",
+      "sha256": "eb400afed2af3073c9eb76370bf617c9b6adb0128988510247b64ece531e4e55"
+    },
+    {
+      "path": "extraction/degree-certificate/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "ea6b5454758a635c256befe630f8951adc942962f92e9d9e673458ce5dfdb570"
+    }
+  ]
+}

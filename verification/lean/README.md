@@ -27,10 +27,11 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The bridge now has 74 distinct original Aeneas generated-body refinements
-under the recorded trust boundary. Two source-linked masked-memory LLBC
-execution contracts are checked separately. The latest checkpoint includes
-the accelerated scalar field maps, feature detection and cubic helper.
+The bridge now has 82 distinct original Aeneas generated-body refinements
+under the recorded trust boundary. Four source-linked stateful LLBC execution
+contracts are checked separately. The latest checkpoint covers scalar PCLMUL
+slice and Horner paths, AVX XOR assignment and difference, and the native
+degree-3/4 certificate.
 Full native implementation contracts remain open.
 
 The [core proofs](BulksketchProofs.lean) and [generated-body bridge](bridge/README.md)
@@ -55,6 +56,7 @@ reviewed frontend variant and explains the Portable and const-square proofs.
 [DENSE_PRODUCT.md](DENSE_PRODUCT.md) records the full Dense product, Portable Horner and direct two-root checkpoint.
 [X86_REGISTER_MEMORY.md](X86_REGISTER_MEMORY.md) records the native x86 register kernels and pure masked-memory boundary.
 [NATIVE_STATEFUL.md](NATIVE_STATEFUL.md) records the stateful LLBC contracts, accelerated field maps and cubic helper.
+[NATIVE_CALLER_CHAINS.md](NATIVE_CALLER_CHAINS.md) records the x86 caller and native certificate checkpoint.
 
 The [coverage ledger](audit/coverage.json) keeps every native item in scope,
 including unsupported and unproved items. Related mathematical model evidence

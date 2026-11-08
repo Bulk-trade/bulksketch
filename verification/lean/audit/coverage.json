@@ -1450,7 +1450,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86PclmulSlice.xor_assign_refines",
+        "scope": "Equal lengths return the exact pairwise XOR of all destination words. Unequal lengths panic before any write.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:110:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::horner_many",
@@ -1468,7 +1475,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86PclmulHorner.horner_entry_refines",
+        "scope": "Equal lengths run the original accelerated helper with the carry-less selector. Unequal lengths panic before any write.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:117:function:bulksketch::backend::x86_pclmul::word",
@@ -1636,7 +1650,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86PclmulSlice.scale_xor_refines",
+        "scope": "All GF64 input words, both reduction selectors and every slice length. Zero scale preserves every slot, one scale uses the source XOR loop, and other scalars multiply and XOR each common-prefix word. The unmatched destination tail is unchanged.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:18:struct:bulksketch::backend::x86_pclmul::Pclmul",
@@ -1672,7 +1693,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86PclmulSlice.square_slice_refines",
+        "scope": "Both reduction selectors and all slice lengths. Each common-prefix destination word is replaced by the exact square of its paired input, with the unmatched tail preserved.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:206:function:bulksketch::backend::x86_pclmul::insert",
@@ -1708,7 +1736,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86PclmulHorner.horner_refines",
+        "scope": "All GF64 coefficients and points, every input/output length, both original CL values. Empty coefficients clear the entire destination. Nonempty coefficients update exactly the common Zip prefix by reverse Horner evaluation and preserve the unmatched destination tail. The inner loop retains its full XMM state, with the exact low word used by each following CLMUL and the final output.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:247:function:bulksketch::backend::x86_pclmul::frobenius",
@@ -1987,7 +2022,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86PclmulSlice.scale_xor_entry_refines",
+        "scope": "Equal slice lengths run the original accelerated helper with the carry-less selector. Unequal lengths panic before any write.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:90:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::square_slice",
@@ -2005,7 +2047,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86PclmulSlice.square_slice_entry_refines",
+        "scope": "Equal slice lengths run the original accelerated helper with the carry-less selector. Unequal lengths panic before any write.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:98:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::insert_nonzero",
@@ -2518,7 +2567,12 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "stateful_llbc_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxXorLlbc.xor_assign_refines",
+        "program": "BulksketchBridge.AvxXorLlbc.program",
+        "scope": "Exact original chunked XOR caller with equal lengths, mapped words, writable destination and separated source. Checked normal paths compose original masked LLBC primitives, preserve source bytes and all addresses outside the destination, and write exact XOR including short tails."
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:36:function:bulksketch::backend::x86_vpclmul512::detect",
@@ -2993,7 +3047,12 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "stateful_llbc_refinement_evidence": {
+        "theorem": "BulksketchBridge.X86MaskedMemory.Difference.difference_refines",
+        "program": "BulksketchBridge.X86MaskedMemory.Difference.differenceProgram",
+        "scope": "Exact original AVX difference caller with equal local and destination word counts, exactly eight mapped little-endian remote bytes per word, mapped local words and separated writable destination. The proof covers every full block and short tail, the exact destination XOR, the mismatch bit, and all outside bytes."
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:819:function:bulksketch::backend::x86_vpclmul512::multiply_linear",
@@ -3432,7 +3491,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Certificate.certificate_refines",
+        "scope": "Original degree-3/4 certificate over exact GF64 multiplication with admitted usize and path-conditional scratch bounds. Checks malformed roots, the rebuilt coefficient prefix and preservation of the scratch suffix.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/deg34.rs:138:function:bulksketch::decode::deg34::affine_quartic",
@@ -11557,8 +11623,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. The original accelerated scalar field methods and feature tests have exact Aeneas body refinements, as do the original quadratic and cubic helpers. Two original masked-memory LLBC paths have separate checked interpreter contracts. Physical memory and compiler-expanded native contracts remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 74,
+    "note": "All 344 native executable declarations retained. Original PCLMUL slice kernels and Horner have exact generated-body refinements. Original AVX XOR assignment and difference have checked stateful LLBC contracts. Original degree-3/4 certificate checks exact acceptance, reconstruction scratch and the root polynomial. Physical memory and compiler-expanded native contracts remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 82,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11580,7 +11646,8 @@
       "x86_low_lane_mask": "Original x86 mask enables exactly lanes below an admitted length in 0..8. Physical memory and instruction semantics remain separate.",
       "x86_register_kernels": "Original PCLMUL raw multiplication and reduced scalar entry methods, plus the original AVX-512 raw, two reduction and multiply bodies. Exact register values under scoped instruction and byte models.",
       "pclmul_field_maps": "Original PCLMUL Frobenius, quadratic solve and inverse and their Arithmetic entry methods return their exact GF64 results.",
-      "x86_feature_gate": "Original feature detection returns the exact AVX-512 and VPCLMUL predicate and checks XSAVE and OSXSAVE before the modeled XGETBV read."
+      "x86_feature_gate": "Original feature detection returns the exact AVX-512 and VPCLMUL predicate and checks XSAVE and OSXSAVE before the modeled XGETBV read.",
+      "pclmul_slice_kernels": "Original scale-XOR, square, XOR and Horner have exact slice frames and arithmetic under recorded register value models."
     },
     "reconciliation_algebra_evidence": {
       "sparse_support_uniqueness": "BulksketchBridge.Reconciliation.gf64_sparse_support_unique",
@@ -11605,9 +11672,11 @@
       "remaining": "Physical machine address and pointer provenance, stdarch/ISA primitive correspondence and composition through outer masked-memory callers. The pure Aeneas wrapper remains separately diagnosed.",
       "stateful_llbc_contracts": [
         "BulksketchBridge.X86MaskedMemory.Llbc.llbc_load_refines",
-        "BulksketchBridge.X86MaskedMemory.Llbc.llbc_store_refines"
+        "BulksketchBridge.X86MaskedMemory.Llbc.llbc_store_refines",
+        "BulksketchBridge.AvxXorLlbc.xor_assign_refines",
+        "BulksketchBridge.X86MaskedMemory.Difference.difference_refines"
       ]
     },
-    "checked_stateful_llbc_refinements": 2
+    "checked_stateful_llbc_refinements": 4
   }
 }

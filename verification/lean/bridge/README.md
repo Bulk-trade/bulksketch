@@ -67,7 +67,9 @@ PCLMUL and AVX-512 register kernels and cube-root helper, plus diagnostic
 proofs for the masked-memory lowering. The coverage ledger retains all
 344 executable source obligations. The [stateful checkpoint](../NATIVE_STATEFUL.md)
 records two separate masked-memory LLBC contracts, accelerated field maps,
-feature detection and the cubic helper.
+feature detection and the cubic helper. The [caller checkpoint](../NATIVE_CALLER_CHAINS.md)
+adds PCLMUL slice and Horner refinements, the stateful AVX XOR assignment and
+difference callers, and the original degree-3/4 certificate.
 
 From the parent Lean directory:
 

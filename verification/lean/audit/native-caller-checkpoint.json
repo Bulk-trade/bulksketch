@@ -1,0 +1,14 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "previous_proof_commit": "84cb187f3d3c18fbc5d966b68760d0bd120aba2e",
+  "retained_native_executable_obligations": 344,
+  "generated_body_refinements_under_recorded_TCB": 82,
+  "checked_stateful_llbc_refinements": 4,
+  "whole_native_coverage_achieved": false,
+  "open": [
+    "Verify the isolated original reconstruction wrapper and both loop bodies, including workspace admission",
+    "Native Berlekamp–Massey, general root recovery, and end-to-end decoder completeness",
+    "Remaining accelerated slice and Horner paths, dispatch and feature cache",
+    "Physical address and provenance, intrinsic correspondence and compiler-expanded closure"
+  ]
+}

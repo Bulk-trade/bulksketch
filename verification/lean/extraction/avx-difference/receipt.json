@@ -1,0 +1,48 @@
+{
+  "target": "x86_64-apple-darwin",
+  "registry_sha256": "9e4765ab5f0c9088f3e4cd73af021742ff3c7c4365ae8c9dc348af680995e042",
+  "native_body_proof_credit": 0,
+  "artifacts": [
+    {
+      "path": "extraction/avx-difference/arithmetic.llbc",
+      "sha256": "6f539421e66546c804fb813d073bb7466ddaf0de8fa01122a0812af82ee076d8"
+    },
+    {
+      "path": "extraction/avx-difference/charon.log",
+      "sha256": "6e7f168a9a8132f8e2a6bdbb656611db65e011004d7d12d141ee6e7b095747f4"
+    },
+    {
+      "path": "extraction/avx-difference/aeneas.log",
+      "sha256": "e25dbcc6cb803d916992cb0769475c3a37979362033d770cac745a90e7094fa8"
+    },
+    {
+      "path": "extraction/avx-difference/Arithmetic/Funs.lean",
+      "sha256": "ac8bfdfca2dd711e8e34effb6fdddcf9634c8cb0b7f9f251ab8bf4dbf5f1a6b2"
+    },
+    {
+      "path": "extraction/avx-difference/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "00e2dc7f829c416c85adfff6510f5f404a7230dee55849ad412cfdc5263e79cd"
+    },
+    {
+      "path": "extraction/avx-difference/Arithmetic/Types.lean",
+      "sha256": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f"
+    },
+    {
+      "path": "extraction/avx-difference/Arithmetic/TypesExternal_Template.lean",
+      "sha256": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e"
+    }
+  ],
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "6f4d5089c093d8f8087b89520b45e534a42a5813",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "llbc_sha256": "6f539421e66546c804fb813d073bb7466ddaf0de8fa01122a0812af82ee076d8",
+  "selected_root": "bulksketch::backend::x86_vpclmul512::difference",
+  "checks": [
+    "-checks",
+    "-sequential"
+  ],
+  "evidence": "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-next/next-extractions/diagnostic-receipt.json",
+  "instruction_reference": "https://www.intel.com/content/dam/develop/external/us/en/documents/319433-024-697869.pdf"
+}

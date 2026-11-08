@@ -1,0 +1,63 @@
+{
+  "status": "targeted build and exact source challenge audit passed",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_item_ids": [
+    "src/backend/x86_pclmul.rs:225:function:bulksketch::backend::x86_pclmul::horner",
+    "src/backend/x86_pclmul.rs:110:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::horner_many"
+  ],
+  "generated_file": "bridge/Arithmetic/X86PclmulHornerGenerated.lean",
+  "generated_files": [
+    "bridge/Arithmetic/X86PclmulHornerGenerated.lean",
+    "bridge/Arithmetic/Types.lean",
+    "bridge/Arithmetic/Funs.lean",
+    "bridge/Arithmetic/X86PclmulGenerated.lean",
+    "bridge/Arithmetic/DenseNormalizationGenerated.lean"
+  ],
+  "refinements": [
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:225:function:bulksketch::backend::x86_pclmul::horner",
+      "source_line_span_sha256": "d52b1928a177f0ef3376b0c1ac82bab163895c2df528047798de82f28f2ecc77",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.horner",
+      "challenge": "BulksketchBridge.X86PclmulHornerChallenges.HornerRefines",
+      "theorem": "BulksketchBridge.X86PclmulHorner.horner_refines",
+      "scope": "All GF64 coefficients and points, every input/output length, both original CL values. Empty coefficients clear the entire destination. Nonempty coefficients update exactly the common Zip prefix by reverse Horner evaluation and preserve the unmatched destination tail. The inner loop retains its full XMM state, with the exact low word used by each following CLMUL and the final output.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "translator_variant": "checked-ended-shared-scalar-v1"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:110:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::horner_many",
+      "source_line_span_sha256": "ac782d45fa86ced5056f4e9ad99ff450e6105fa52163debfccb198b4cb131476",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractBulkKernels.horner_many",
+      "challenge": "BulksketchBridge.X86PclmulHornerChallenges.HornerEntryRefines",
+      "theorem": "BulksketchBridge.X86PclmulHorner.horner_entry_refines",
+      "scope": "Equal lengths run the original accelerated helper with the carry-less selector. Unequal lengths panic before any write.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "translator_variant": "checked-ended-shared-scalar-v1"
+    }
+  ],
+  "native_body_refinements_added": 2,
+  "verbatim_functions": 6,
+  "shared_declarations_checked": 16,
+  "runtime_trust_boundary": "Same reviewed checked-ended-shared-scalar-v1 translator as Portable Horner. Existing x86 PCLMUL XMM register, shared slice split_last, reverse iteration and mutable Zip value models. Native pointers, feature dispatch, LLVM code generation and hardware execution are separate.",
+  "native_source_edited": false,
+  "full_native_coverage_achieved": false,
+  "files_sha256": {
+    "bridge/Arithmetic/X86PclmulHornerGenerated.lean": "bb506ce12a105908c6a08817b4e7a1f4d31db19118e9675d0cb3761f3b766828",
+    "bridge/BulksketchBridge/X86PclmulHorner.lean": "48fbbd308271f6c6ac2d04890f3b801454aa8125f825e1960b537eb2f32edd4a",
+    "bridge/BulksketchBridge/X86PclmulHornerChallenges.lean": "623fd9e60982ed2164bed393a1ad03412ddea0af54d7e83a4f5a8a7a6270d529",
+    "bridge/BulksketchBridge/MutableZipPrefix.lean": "79f797894bd766d9b2453bcfb0081710556230a8fa00f73918a9d7a320e867bd",
+    "extraction/pclmul-horner/project.py": "dd901fc147c48899ce6b09ad277a5b9c648c26a52b5cc2b9839db4351b321443",
+    "extraction/pclmul-horner/receipt.json": "970edbe30b24f84d3a4931db40762f34c7b0bb1baf74a791f2b5e80e01933383",
+    "bridge/Arithmetic/X86PclmulRuntime.lean": "527522b826c35bd0bc841d4106bed3aed1e32cba17f48f08b75145c09713d808",
+    "bridge/Arithmetic/MutableZipRuntime.lean": "683a48af92e8c4f992d4f0893ed18679122344714cdda9a2293c07029b85776d",
+    "bridge/Arithmetic/PortableHornerRuntime.lean": "b3a4497de2c55f4acb0638b3bd57bc7fd75f9e0c9741751cf49d5cb9e3219bea"
+  }
+}
