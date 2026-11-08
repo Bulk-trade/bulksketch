@@ -1004,6 +1004,22 @@
     {
       "challenge": "BulksketchBridge.RootTrace.ActualTraceWrapper",
       "theorem": "BulksketchBridge.RootTrace.trace_wrapper_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseExactDivide.ActualExactDivide",
+      "theorem": "BulksketchBridge.DenseExactDivide.exact_divide_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseGcd.ActualMonicGcd",
+      "theorem": "BulksketchBridge.DenseGcd.monic_gcd_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSquare.ActualAvxSquare",
+      "theorem": "BulksketchBridge.AvxSquare.square_mod_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseGcd.ActualMonicGcdMeaning",
+      "theorem": "BulksketchBridge.DenseGcd.monic_gcd_meaning"
     }
   ],
   "refinements": [
@@ -2876,6 +2892,48 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original trace with the original Dense modular-square body, exact first and split charges, seed and cache, all 64 Frobenius terms, scratch, and checked GCD or NotSplit transition."
+    },
+    {
+      "label": "Dense::exact_divide_into [original source]",
+      "native_item_id": "src/poly/dense.rs:98:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::exact_divide_into",
+      "source_line_span_sha256": "4dc2b9e2e0ef33fff1271618870726fe6e91f42280f43d22092421de0b7fd037",
+      "theorem": "BulksketchBridge.DenseExactDivide.exact_divide_refines",
+      "challenge": "BulksketchBridge.DenseExactDivide.ActualExactDivide",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.exact_divide_into",
+      "generated_file": "bridge/Arithmetic/DenseExactDivideGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/DenseExactDivideGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original zero-remainder and nonzero-remainder branches, quotient clearing, remainder and raw frames under the explicit div/rem result."
+    },
+    {
+      "label": "Dense::monic_gcd_into [original source]",
+      "native_item_id": "src/poly/dense.rs:113:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::monic_gcd_into",
+      "source_line_span_sha256": "0972cbc670c8b5e802372b467a2f5dec4df16a7c8bf65d8cad1f850b547d4a7e",
+      "theorem": "BulksketchBridge.DenseGcd.monic_gcd_refines",
+      "challenge": "BulksketchBridge.DenseGcd.ActualMonicGcd",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.monic_gcd_into",
+      "generated_file": "bridge/Arithmetic/DenseGcdGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/DenseGcdGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original scratch partition, Euclidean rotation, termination and monic destination under explicit div/rem normality, inverse and scale-XOR laws."
+    },
+    {
+      "label": "avx512::square_mod [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:217:function:bulksketch::backend::x86_vpclmul512::square_mod",
+      "source_line_span_sha256": "1fc1c09b79aa231fe9d4a46e02b1ce95dba6541235ae770abd98c75dbf1a622a",
+      "theorem": "BulksketchBridge.AvxSquare.square_mod_refines",
+      "challenge": "BulksketchBridge.AvxSquare.ActualAvxSquare",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.square_mod",
+      "generated_file": "bridge/Arithmetic/AvxSquareGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxSquareGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original AVX-512 free kernel, register arithmetic, masked slice loads and stores, three loops and full scratch/output under admitted memory contracts. Physical ISA/trait dispatcher remain separate."
     }
   ],
   "stateful_llbc_refinements": [

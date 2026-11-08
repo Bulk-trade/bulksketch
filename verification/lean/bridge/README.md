@@ -94,6 +94,10 @@ The [Dense reducer checkpoint](../NATIVE_DENSE_REDUCER.md) adds the
 original modular shift, table and square, the exact trace stage, and
 finite-address and allocation refinements for masked memory.
 
+The [Dense division checkpoint](../NATIVE_DENSE_DIVISION.md) adds the
+original exact-division and GCD wrappers, their algebraic division model,
+and the original AVX-512 square kernel.
+
 From the parent Lean directory:
 
 ```sh

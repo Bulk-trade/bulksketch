@@ -2330,7 +2330,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxSquare.square_mod_refines",
+        "scope": "Exact original AVX-512 free kernel, register arithmetic, masked slice loads and stores, three loops and full scratch/output under admitted memory contracts. Physical ISA/trait dispatcher remain separate.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:252:function:bulksketch::backend::x86_vpclmul512::horizontal_xor",
@@ -7052,7 +7059,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.DenseGcd.monic_gcd_refines",
+        "scope": "Exact original scratch partition, Euclidean rotation, termination and monic destination under explicit div/rem normality, inverse and scale-XOR laws.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/poly/dense.rs:155:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::eval_many_into",
@@ -7302,7 +7316,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.DenseExactDivide.exact_divide_refines",
+        "scope": "Exact original zero-remainder and nonzero-remainder branches, quotient clearing, remainder and raw frames under the explicit div/rem result.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/poly/mod.rs:21:trait:bulksketch::poly::Polynomial",
@@ -11859,8 +11880,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Original modular shift, reducer table and square prove the native monic remainder, with the accelerated backend law stated separately. Original trace uses the proved Dense callback and checks charges, basis, trace and split decisions. Finite-address and allocation LLBC contracts retain their explicit premises. General traversal and decoder and actual Rust/ISA/compiler correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 115,
+    "note": "All 344 native executable declarations retained. Original exact division and monic GCD wrappers are checked under explicit div/rem laws, with the descending model proved algebraically. Original AVX-512 free square is exact under the stated masked slice laws. Native div/rem linkage, accelerated dispatcher and general traversal, decoder completeness and actual Rust/ISA/compiler correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 118,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11936,6 +11957,12 @@
         "BulksketchBridge.RootTrace.trace_loop_refines",
         "BulksketchBridge.RootTrace.trace_at_is_algebra_trace",
         "BulksketchBridge.RootTrace.native_trace_refines"
+      ],
+      "native_dense_division": [
+        "BulksketchBridge.DenseDivision.model_meaning",
+        "BulksketchBridge.DenseDivision.model_gcd_law",
+        "BulksketchBridge.DenseDivision.model_gcd_meaning",
+        "BulksketchBridge.DenseGcd.monic_gcd_meaning"
       ]
     },
     "masked_memory_evidence": {

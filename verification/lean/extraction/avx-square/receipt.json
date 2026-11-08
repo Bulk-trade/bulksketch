@@ -1,0 +1,83 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "commands": {
+    "charon": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-square/free-only/arithmetic.llbc",
+        "--start-from=bulksketch::backend::x86_vpclmul512::square_mod",
+        "--opaque=bulksketch::backend::x86_vpclmul512::load",
+        "--opaque=bulksketch::backend::x86_vpclmul512::store",
+        "--",
+        "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    "aeneas": {
+      "name": "stock",
+      "command": [
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-square/free-only/stock",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-square/free-only/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    },
+    "replay": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-square/free-only/replay",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-square/free-only/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  },
+  "source_sha256": {
+    "src/backend/x86_vpclmul512.rs": "7a9c29dff254508671aa4122b20644b21a9cfb40f86ba5eaadce02bf680475d4",
+    "src/backend/x86_pclmul.rs": "8cf4abd4ed47aa63b2d050928c37a5cdc93f49e8cd07b2f7c8ffddb56b7b4fff"
+  },
+  "artifacts": {
+    "extraction/avx-square/Arithmetic/Types.lean": "c0faa9753062c3fb9b3cc935f3aaa2a509e0470aa65e908669a25e119b2fa84c",
+    "extraction/avx-square/Arithmetic/Funs.lean": "44ada153ec36930424a2c3161478f1ca38f849e50dc937ef3a92c087555abb8f",
+    "extraction/avx-square/Arithmetic/FunsExternal_Template.lean": "d3d7ebd83b62cb840b74856c1004fd937de208ceddc05a348ded4cb3731abfd5",
+    "extraction/avx-square/arithmetic.llbc": "e3d517686a396b28257d5c13481d65eae23fdf5d2dea7c577b604f3e9492d25f",
+    "extraction/avx-square/charon.log": "5530121a497287afd5ad61d6421f8f822f3ebbc22cf965b00e2d0ccbe5c363f9",
+    "extraction/avx-square/aeneas.log": "d27b32afa2871968112ae71d90d06a8bb926f3b46b097c56f58727f99e6fb4e4",
+    "extraction/avx-square/replay.log": "c2eb7c41f30cdf3c9d981cdb4fb08268753df94ca9f183c2506eb5da79931121"
+  },
+  "runtime_sha256": "3cba580416043b3dda5f80d810729009a493ec211e0e03813552c5b4df10bcda",
+  "native_source_edited": false
+}

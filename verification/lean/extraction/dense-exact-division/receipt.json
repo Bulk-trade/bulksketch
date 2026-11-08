@@ -1,0 +1,84 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "native_source_edited": false,
+  "binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "commands": [
+    {
+      "name": "charon",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-reducer/exact_divide_into-isolated/arithmetic.llbc",
+        "--start-from=bulksketch::poly::dense",
+        "--opaque=bulksketch::poly::dense::_::_",
+        "--include=bulksketch::poly::dense::_::exact_divide_into",
+        "--opaque=bulksketch::poly::dense::normalized_len",
+        "--",
+        "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "aeneas",
+      "command": [
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-reducer/exact_divide_into-isolated/stock",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-reducer/exact_divide_into-isolated/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "replay": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-checks",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-division/exact-divide-replay",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-reducer/exact_divide_into-isolated/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "outputs": {
+      "Funs.lean": "237b400140c66a2cdce828255f8fa0bd78bd163652576554bb5b587ff2412254",
+      "FunsExternal_Template.lean": "6e817bd4492137e08915d8fd388ed7fe7f602cb85d7d5771fc797389baece2a6",
+      "Types.lean": "9a7a964259a46b9e4f4db7fc2edff4d731d1b92c805bcc1e895b2a1474b54364"
+    }
+  },
+  "files_sha256": {
+    "extraction/dense-exact-division/Arithmetic/Funs.lean": "237b400140c66a2cdce828255f8fa0bd78bd163652576554bb5b587ff2412254",
+    "extraction/dense-exact-division/Arithmetic/FunsExternal_Template.lean": "6e817bd4492137e08915d8fd388ed7fe7f602cb85d7d5771fc797389baece2a6",
+    "extraction/dense-exact-division/Arithmetic/Types.lean": "9a7a964259a46b9e4f4db7fc2edff4d731d1b92c805bcc1e895b2a1474b54364",
+    "extraction/dense-exact-division/aeneas.log": "b1bc12cb0bd5eab6e300ff2176fe76baf0c350dffab59a7fb7f6d5dcc0ccd171",
+    "extraction/dense-exact-division/arithmetic.llbc": "a832a0db684f57c42b1451959ed67537c08a943d54e9270a3690f38954fd97fe",
+    "extraction/dense-exact-division/charon.log": "4842b4a32465bd204784362d0833292fefd6192592b6dded8318863ca2841131",
+    "extraction/dense-exact-division/replay.log": "fbd524fb6025fea8fa90fb4bfe7af15fe5fa68dd56ec8dc88b59282048931bb9"
+  }
+}

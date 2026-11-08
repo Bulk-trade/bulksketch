@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "b06f3745f2e89486a9e7d46ba626708573ff6ba8111f963fbb85756a5b012347",
+    "bridge/BulksketchBridge/Audit.lean": "76ee14516ba2c6221d8918232665e28156228c7b12e1407e7b3df57efae798c0",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "16833d8a9a8879b120ac004032b74ebb9465637937b3470fe214f7361eb34104",
-    "audit/frozen-inputs.json": "b527001feaeaff61e68b4a2ab1a0cdbc7228dba0a7ba6a652c655d5a59a68a3d",
-    "bridge/BulksketchBridge.lean": "6081f686be878e950869667c9bfda038c169fa6dccaa9ecc9a3ed1c5005cd1b1",
+    "audit/frozen-inputs.json": "fb9bba2c2b65ce4f1bf149f5b897e5d857e1b481fc7943b149ea78d237c08413",
+    "bridge/BulksketchBridge.lean": "b21c158ef9b3e829ecfd65682de1337e16137b0e09c2fc18c79affa317f22f2c",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "02bde8a42e403999c92cd9bba85628207d4e5ca9b4bda8040915eb0b379e6b72",
-    "bridge/obligations.json": "13daa585bc91eebce3e9f982dc3489e8c01f979c6b005f393a4ce5871f5ce1fb",
+    "bridge/source-linkage.json": "a8cfff0065278def391ba4da47d118e7a1fe2a0a5251bff224dcae6bcaa52d1c",
+    "bridge/obligations.json": "6173e447ccf595d1b7b71b55fce352f723bceb525b729297c15b891409cf14c2",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "87b79b142eefcaca6c5611169021294d50e0ff28abc91eb198ecfbe332e36edf",
+    "scripts/check_projection_fixtures.py": "f3a094e9b504cde2d0b731a7b597b2c7a70d42d7226ea3b30ec8c90af7f53bb0",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "c89a9e135dd5d6f3f45ba22d8df885ade252812d452f5dea5bb5ace576ab22dd",
+    "README.md": "dd0b5f4577171b3cb976a1ed4358b56f702fb83d8fd23fdde5894d39b1d0f2bf",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "0f0031391c592ebf86a0939b4d177668c1173200038d5b304cc662ea137a8d0a",
+    "audit/coverage.json": "8ff1c510308a89a01e0d2fa6c9aa9fdb228c3ba3ee7b6cb30a6850d3a41ed423",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -319,7 +319,7 @@
     "bridge/BulksketchBridge/SyndromeUniquenessSpec.lean": "0fb7dd6f308fa79337dce13cbd73c522f78c75024d86e05b7c5fd7d2d0ceff3c",
     "bridge/BulksketchBridge/VerifyDispatch.lean": "38d817777987c9d3e97ee3155717d243b545f42e976afa8fbcdb9b9c8e7b917c",
     "bridge/BulksketchBridge/VerifyDispatchSpec.lean": "d609a22b3daf8816de9afdc60f1e293bf4efdf6ed37d19efafd190b70217fb06",
-    "bridge/README.md": "3727d1a8858c62dd714c6836e8f35063bc95872dbe1e32906973e6b3d670cdef",
+    "bridge/README.md": "68c63374f4d714051f905bb9c78b6463db61ea4ba10e106d1a68c73e1d94c293",
     "extraction/dense-square/Arithmetic/Funs.lean": "7ff7bf02a64fb62cb3d28154514ad7b426018c4380dc56b4d101dee3d73bd505",
     "extraction/dense-square/Arithmetic/FunsExternal_Template.lean": "9d47cb5223b7a3a784065947ca87ceea2b65fb72423eb973c18862af9f72a5c8",
     "extraction/dense-square/Arithmetic/Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
@@ -1084,7 +1084,59 @@
     "extraction/dense-reducer-square/replay.log": "a28743506489ff82c654200b55706284fae149822fa8efff7ba3247034a19b15",
     "extraction/dense-reducer-square/replay.py": "194f2bff868aea6787b798874abf8a26f563dbe121674b9fb2bfb4fc699a7399",
     "extraction/dense-reducer-square/stock.log": "502b5abf8bbd920999f67dea1f1463afc72cb58be8010859ee1e0b3df32558ac",
-    "extraction/dense-reducer-square/unchecked.log": "dc975793852165fb024b58dfea3cffd152a86545a0fe168812602665819277f4"
+    "extraction/dense-reducer-square/unchecked.log": "dc975793852165fb024b58dfea3cffd152a86545a0fe168812602665819277f4",
+    "NATIVE_DENSE_DIVISION.md": "a43dfefa75558fed3d418c0aaee254c7b47c7b97e839a1fe387d8ebe2f9b5b21",
+    "audit/native-dense-division-checkpoint.json": "d04765b958cd1ae261f8137de3ddb612e6057a4cf91c7bf2d7a8233815a7370b",
+    "bridge/Arithmetic/AvxSquareGenerated.lean": "2d465d47c7ddef1a834575174050005bbd328e0a6f44fafae852bd461669e168",
+    "bridge/Arithmetic/AvxSquareRuntime.lean": "3cba580416043b3dda5f80d810729009a493ec211e0e03813552c5b4df10bcda",
+    "bridge/Arithmetic/DenseExactDivideGenerated.lean": "48dbea4948163f4edc35ae72cdee5bca3ebf369b2deb4cdc0e5ca3951c781cd9",
+    "bridge/Arithmetic/DenseGcdGenerated.lean": "f99c8048aa2b07e1397913b7971332e15fd1b6c516d78d0bb3a947d6f9c68600",
+    "bridge/BulksketchBridge/AvxSquare.lean": "4f8812fb9b03c35a8146f013c87096ad41b6788205ac4c7a4f7e916ec3c43617",
+    "bridge/BulksketchBridge/AvxSquareBlocks.lean": "b1b59034b8bc12698b32c89dc30bf38fdf278ac6bd5716699761bfa0e6c32a7e",
+    "bridge/BulksketchBridge/AvxSquareRows.lean": "e4013301e94f7c4d2723d499f0d9b85f00d77fe1150e0ca028d9bcd5f848b690",
+    "bridge/BulksketchBridge/AvxSquareSeed.lean": "df82c184652e7ad66b882745910bda170933a4cd05194fe23b16b1f7e13b1d57",
+    "bridge/BulksketchBridge/DenseDivisionAlgebra.lean": "8c394faae07d7cbf14df0f0afcc797c7092572c662820014a5aed2f557412129",
+    "bridge/BulksketchBridge/DenseDivisionComposition.lean": "86b586fa6d85a60e6c416cca0158d13e44e349d1c5adea3acaeaeb991621bba5",
+    "bridge/BulksketchBridge/DenseDivisionModel.lean": "4b7af1f2ffc846b3047baf6425879db6f6a44dea886bf1470179ad5a57f4e89a",
+    "bridge/BulksketchBridge/DenseDivisionNormalized.lean": "87d0c13881a3d0a1d15bafdd1e4fb422790868597be25e9ebe88937bcd271e36",
+    "bridge/BulksketchBridge/DenseExactDivide.lean": "7818e3c1494f0a1e37929211dd55946bf8bd22fe36960924385e4e7e419cf33e",
+    "bridge/BulksketchBridge/DenseExactDivideSpec.lean": "ef6a59cf9f5f3ea0ce5fd48b584f313f4cac2147ce8bc086ffdf8267f04a1ea2",
+    "bridge/BulksketchBridge/DenseGcd.lean": "95abf7ba6c427701669296445d1465fb22acd7ac95ba79e9f9108915850bc990",
+    "bridge/BulksketchBridge/DenseGcdAlgebra.lean": "97f7508b917c71b173d3f86067518ee2fb74c133bf2e336747617a53b4c9708d",
+    "bridge/BulksketchBridge/DenseGcdSpec.lean": "260a29982b9f93a455975fb90d3e06a6241d465418ce487ca685628923020837",
+    "extraction/avx-square/Arithmetic/Funs.lean": "44ada153ec36930424a2c3161478f1ca38f849e50dc937ef3a92c087555abb8f",
+    "extraction/avx-square/Arithmetic/FunsExternal_Template.lean": "d3d7ebd83b62cb840b74856c1004fd937de208ceddc05a348ded4cb3731abfd5",
+    "extraction/avx-square/Arithmetic/Types.lean": "c0faa9753062c3fb9b3cc935f3aaa2a509e0470aa65e908669a25e119b2fa84c",
+    "extraction/avx-square/Axioms.lean": "2a414bfd920b3f820d8659dac1b853c95e94f91af594173bff479e0e0f2549ed",
+    "extraction/avx-square/README.md": "af06fef6a5823a8bd40f321e6896fee90b2e0b713352c3f388118d58599814bb",
+    "extraction/avx-square/aeneas.log": "d27b32afa2871968112ae71d90d06a8bb926f3b46b097c56f58727f99e6fb4e4",
+    "extraction/avx-square/arithmetic.llbc": "e3d517686a396b28257d5c13481d65eae23fdf5d2dea7c577b604f3e9492d25f",
+    "extraction/avx-square/axioms.log": "e0d0860de24bd08ad5a5c6f4c8f27cb0004a35b884ce0354961bc4e649429ab1",
+    "extraction/avx-square/charon.log": "5530121a497287afd5ad61d6421f8f822f3ebbc22cf965b00e2d0ccbe5c363f9",
+    "extraction/avx-square/project.py": "54da13a0af063bfce24751c1e5e732a6cd19bc60a6744d23ae66001ff79488b2",
+    "extraction/avx-square/receipt.json": "d1a9953138dea14451cb6e980322fe59e8c6368960927bc3b645974df0fb41e1",
+    "extraction/avx-square/replay.log": "c2eb7c41f30cdf3c9d981cdb4fb08268753df94ca9f183c2506eb5da79931121",
+    "extraction/dense-exact-division/Arithmetic/Funs.lean": "237b400140c66a2cdce828255f8fa0bd78bd163652576554bb5b587ff2412254",
+    "extraction/dense-exact-division/Arithmetic/FunsExternal_Template.lean": "6e817bd4492137e08915d8fd388ed7fe7f602cb85d7d5771fc797389baece2a6",
+    "extraction/dense-exact-division/Arithmetic/Types.lean": "9a7a964259a46b9e4f4db7fc2edff4d731d1b92c805bcc1e895b2a1474b54364",
+    "extraction/dense-exact-division/README.md": "015a57ef3412c12e61b1c9d7bb11f97f37c4ad76e92d8d4fdf612a7a86bf25f7",
+    "extraction/dense-exact-division/aeneas.log": "b1bc12cb0bd5eab6e300ff2176fe76baf0c350dffab59a7fb7f6d5dcc0ccd171",
+    "extraction/dense-exact-division/arithmetic.llbc": "a832a0db684f57c42b1451959ed67537c08a943d54e9270a3690f38954fd97fe",
+    "extraction/dense-exact-division/charon.log": "4842b4a32465bd204784362d0833292fefd6192592b6dded8318863ca2841131",
+    "extraction/dense-exact-division/project.py": "d7cef333b777c870866d21cce42a640f43a151fda365170af0a07bf158035071",
+    "extraction/dense-exact-division/receipt.json": "5e4ba7a3ef9e2be1527c2c0bea3e82e5ed97659f55b57d87211d5af92df9e6a5",
+    "extraction/dense-exact-division/replay.log": "fbd524fb6025fea8fa90fb4bfe7af15fe5fa68dd56ec8dc88b59282048931bb9",
+    "extraction/dense-monic-gcd/Arithmetic/Funs.lean": "224aba3671b52e4d558b9b6e043d74a7bed4690260ed3ae64f16478b02fdb74f",
+    "extraction/dense-monic-gcd/Arithmetic/FunsExternal_Template.lean": "b179ecfe5556b321caeddffd4bcbbe66941929684203bacaa7fb477f4ec79670",
+    "extraction/dense-monic-gcd/Arithmetic/Types.lean": "b6663988addfd0cf350d5238df1478f63b2735281058099c3ffd399630ae70f0",
+    "extraction/dense-monic-gcd/Axioms.lean": "0e61de5e59dfb83390f4fc5d59c60deb38ef147aba64b89bbe249bdca721d24e",
+    "extraction/dense-monic-gcd/README.md": "1a827b6b0203653c0076ca1350ebcd96d0c42c3eb1faf75047dce3b416a9eacb",
+    "extraction/dense-monic-gcd/aeneas.log": "9b42f54f50040fd2c14cff4139edf0c39d538db9fbaba8f747106df73c8688a3",
+    "extraction/dense-monic-gcd/arithmetic.llbc": "78e6b5c11b3f633dda04191507ade8bb07797125e258822daea9b4bd10f15539",
+    "extraction/dense-monic-gcd/charon.log": "4842b4a32465bd204784362d0833292fefd6192592b6dded8318863ca2841131",
+    "extraction/dense-monic-gcd/project.py": "959e055aee5f4e421ad07e8f6c1f781b4c61427df8cd5f19711a4999deae715c",
+    "extraction/dense-monic-gcd/receipt.json": "955d3f51c50b9bfd7c2940e9eae6137398f0c003330c57d0164d6b1e034c6924",
+    "extraction/dense-monic-gcd/replay.log": "725dbdf65da7a23356974b9d8a2166eb8d94e2f7d0820f4004e1961789a88951"
   },
   "reviewed_policy_revisions": [
     {
@@ -7425,7 +7477,321 @@
       "new_sha256": "16833d8a9a8879b120ac004032b74ebb9465637937b3470fe214f7361eb34104",
       "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
       "old_sha256": "3fc0b17ed8a09b16490225bc06cc4e61aab2a20e2753307c089d1041cf524d94"
+    },
+    {
+      "path": "NATIVE_DENSE_DIVISION.md",
+      "new_sha256": "a43dfefa75558fed3d418c0aaee254c7b47c7b97e839a1fe387d8ebe2f9b5b21",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "dd0b5f4577171b3cb976a1ed4358b56f702fb83d8fd23fdde5894d39b1d0f2bf",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics.",
+      "old_sha256": "c89a9e135dd5d6f3f45ba22d8df885ade252812d452f5dea5bb5ace576ab22dd"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "8ff1c510308a89a01e0d2fa6c9aa9fdb228c3ba3ee7b6cb30a6850d3a41ed423",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics.",
+      "old_sha256": "0f0031391c592ebf86a0939b4d177668c1173200038d5b304cc662ea137a8d0a"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "fb9bba2c2b65ce4f1bf149f5b897e5d857e1b481fc7943b149ea78d237c08413",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics.",
+      "old_sha256": "b527001feaeaff61e68b4a2ab1a0cdbc7228dba0a7ba6a652c655d5a59a68a3d"
+    },
+    {
+      "path": "audit/native-dense-division-checkpoint.json",
+      "new_sha256": "d04765b958cd1ae261f8137de3ddb612e6057a4cf91c7bf2d7a8233815a7370b",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/Arithmetic/AvxSquareGenerated.lean",
+      "new_sha256": "2d465d47c7ddef1a834575174050005bbd328e0a6f44fafae852bd461669e168",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/Arithmetic/AvxSquareRuntime.lean",
+      "new_sha256": "3cba580416043b3dda5f80d810729009a493ec211e0e03813552c5b4df10bcda",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/Arithmetic/DenseExactDivideGenerated.lean",
+      "new_sha256": "48dbea4948163f4edc35ae72cdee5bca3ebf369b2deb4cdc0e5ca3951c781cd9",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/Arithmetic/DenseGcdGenerated.lean",
+      "new_sha256": "f99c8048aa2b07e1397913b7971332e15fd1b6c516d78d0bb3a947d6f9c68600",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "b21c158ef9b3e829ecfd65682de1337e16137b0e09c2fc18c79affa317f22f2c",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics.",
+      "old_sha256": "6081f686be878e950869667c9bfda038c169fa6dccaa9ecc9a3ed1c5005cd1b1"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "76ee14516ba2c6221d8918232665e28156228c7b12e1407e7b3df57efae798c0",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics.",
+      "old_sha256": "b06f3745f2e89486a9e7d46ba626708573ff6ba8111f963fbb85756a5b012347"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSquare.lean",
+      "new_sha256": "4f8812fb9b03c35a8146f013c87096ad41b6788205ac4c7a4f7e916ec3c43617",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSquareBlocks.lean",
+      "new_sha256": "b1b59034b8bc12698b32c89dc30bf38fdf278ac6bd5716699761bfa0e6c32a7e",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSquareRows.lean",
+      "new_sha256": "e4013301e94f7c4d2723d499f0d9b85f00d77fe1150e0ca028d9bcd5f848b690",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSquareSeed.lean",
+      "new_sha256": "df82c184652e7ad66b882745910bda170933a4cd05194fe23b16b1f7e13b1d57",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseDivisionAlgebra.lean",
+      "new_sha256": "8c394faae07d7cbf14df0f0afcc797c7092572c662820014a5aed2f557412129",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseDivisionComposition.lean",
+      "new_sha256": "86b586fa6d85a60e6c416cca0158d13e44e349d1c5adea3acaeaeb991621bba5",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseDivisionModel.lean",
+      "new_sha256": "4b7af1f2ffc846b3047baf6425879db6f6a44dea886bf1470179ad5a57f4e89a",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseDivisionNormalized.lean",
+      "new_sha256": "87d0c13881a3d0a1d15bafdd1e4fb422790868597be25e9ebe88937bcd271e36",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseExactDivide.lean",
+      "new_sha256": "7818e3c1494f0a1e37929211dd55946bf8bd22fe36960924385e4e7e419cf33e",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseExactDivideSpec.lean",
+      "new_sha256": "ef6a59cf9f5f3ea0ce5fd48b584f313f4cac2147ce8bc086ffdf8267f04a1ea2",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseGcd.lean",
+      "new_sha256": "95abf7ba6c427701669296445d1465fb22acd7ac95ba79e9f9108915850bc990",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseGcdAlgebra.lean",
+      "new_sha256": "97f7508b917c71b173d3f86067518ee2fb74c133bf2e336747617a53b4c9708d",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseGcdSpec.lean",
+      "new_sha256": "260a29982b9f93a455975fb90d3e06a6241d465418ce487ca685628923020837",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "bridge/README.md",
+      "new_sha256": "68c63374f4d714051f905bb9c78b6463db61ea4ba10e106d1a68c73e1d94c293",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics.",
+      "old_sha256": "3727d1a8858c62dd714c6836e8f35063bc95872dbe1e32906973e6b3d670cdef"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "6173e447ccf595d1b7b71b55fce352f723bceb525b729297c15b891409cf14c2",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics.",
+      "old_sha256": "13daa585bc91eebce3e9f982dc3489e8c01f979c6b005f393a4ce5871f5ce1fb"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "a8cfff0065278def391ba4da47d118e7a1fe2a0a5251bff224dcae6bcaa52d1c",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics.",
+      "old_sha256": "02bde8a42e403999c92cd9bba85628207d4e5ca9b4bda8040915eb0b379e6b72"
+    },
+    {
+      "path": "extraction/avx-square/Arithmetic/Funs.lean",
+      "new_sha256": "44ada153ec36930424a2c3161478f1ca38f849e50dc937ef3a92c087555abb8f",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/avx-square/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "d3d7ebd83b62cb840b74856c1004fd937de208ceddc05a348ded4cb3731abfd5",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/avx-square/Arithmetic/Types.lean",
+      "new_sha256": "c0faa9753062c3fb9b3cc935f3aaa2a509e0470aa65e908669a25e119b2fa84c",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/avx-square/Axioms.lean",
+      "new_sha256": "2a414bfd920b3f820d8659dac1b853c95e94f91af594173bff479e0e0f2549ed",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/avx-square/README.md",
+      "new_sha256": "af06fef6a5823a8bd40f321e6896fee90b2e0b713352c3f388118d58599814bb",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/avx-square/aeneas.log",
+      "new_sha256": "d27b32afa2871968112ae71d90d06a8bb926f3b46b097c56f58727f99e6fb4e4",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/avx-square/arithmetic.llbc",
+      "new_sha256": "e3d517686a396b28257d5c13481d65eae23fdf5d2dea7c577b604f3e9492d25f",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/avx-square/axioms.log",
+      "new_sha256": "e0d0860de24bd08ad5a5c6f4c8f27cb0004a35b884ce0354961bc4e649429ab1",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/avx-square/charon.log",
+      "new_sha256": "5530121a497287afd5ad61d6421f8f822f3ebbc22cf965b00e2d0ccbe5c363f9",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/avx-square/project.py",
+      "new_sha256": "54da13a0af063bfce24751c1e5e732a6cd19bc60a6744d23ae66001ff79488b2",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/avx-square/receipt.json",
+      "new_sha256": "d1a9953138dea14451cb6e980322fe59e8c6368960927bc3b645974df0fb41e1",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/avx-square/replay.log",
+      "new_sha256": "c2eb7c41f30cdf3c9d981cdb4fb08268753df94ca9f183c2506eb5da79931121",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-exact-division/Arithmetic/Funs.lean",
+      "new_sha256": "237b400140c66a2cdce828255f8fa0bd78bd163652576554bb5b587ff2412254",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-exact-division/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "6e817bd4492137e08915d8fd388ed7fe7f602cb85d7d5771fc797389baece2a6",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-exact-division/Arithmetic/Types.lean",
+      "new_sha256": "9a7a964259a46b9e4f4db7fc2edff4d731d1b92c805bcc1e895b2a1474b54364",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-exact-division/README.md",
+      "new_sha256": "015a57ef3412c12e61b1c9d7bb11f97f37c4ad76e92d8d4fdf612a7a86bf25f7",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-exact-division/aeneas.log",
+      "new_sha256": "b1bc12cb0bd5eab6e300ff2176fe76baf0c350dffab59a7fb7f6d5dcc0ccd171",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-exact-division/arithmetic.llbc",
+      "new_sha256": "a832a0db684f57c42b1451959ed67537c08a943d54e9270a3690f38954fd97fe",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-exact-division/charon.log",
+      "new_sha256": "4842b4a32465bd204784362d0833292fefd6192592b6dded8318863ca2841131",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-exact-division/project.py",
+      "new_sha256": "d7cef333b777c870866d21cce42a640f43a151fda365170af0a07bf158035071",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-exact-division/receipt.json",
+      "new_sha256": "5e4ba7a3ef9e2be1527c2c0bea3e82e5ed97659f55b57d87211d5af92df9e6a5",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-exact-division/replay.log",
+      "new_sha256": "fbd524fb6025fea8fa90fb4bfe7af15fe5fa68dd56ec8dc88b59282048931bb9",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-monic-gcd/Arithmetic/Funs.lean",
+      "new_sha256": "224aba3671b52e4d558b9b6e043d74a7bed4690260ed3ae64f16478b02fdb74f",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-monic-gcd/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "b179ecfe5556b321caeddffd4bcbbe66941929684203bacaa7fb477f4ec79670",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-monic-gcd/Arithmetic/Types.lean",
+      "new_sha256": "b6663988addfd0cf350d5238df1478f63b2735281058099c3ffd399630ae70f0",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-monic-gcd/Axioms.lean",
+      "new_sha256": "0e61de5e59dfb83390f4fc5d59c60deb38ef147aba64b89bbe249bdca721d24e",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-monic-gcd/README.md",
+      "new_sha256": "1a827b6b0203653c0076ca1350ebcd96d0c42c3eb1faf75047dce3b416a9eacb",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-monic-gcd/aeneas.log",
+      "new_sha256": "9b42f54f50040fd2c14cff4139edf0c39d538db9fbaba8f747106df73c8688a3",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-monic-gcd/arithmetic.llbc",
+      "new_sha256": "78e6b5c11b3f633dda04191507ade8bb07797125e258822daea9b4bd10f15539",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-monic-gcd/charon.log",
+      "new_sha256": "4842b4a32465bd204784362d0833292fefd6192592b6dded8318863ca2841131",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-monic-gcd/project.py",
+      "new_sha256": "959e055aee5f4e421ad07e8f6c1f781b4c61427df8cd5f19711a4999deae715c",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-monic-gcd/receipt.json",
+      "new_sha256": "955d3f51c50b9bfd7c2940e9eae6137398f0c003330c57d0164d6b1e034c6924",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "extraction/dense-monic-gcd/replay.log",
+      "new_sha256": "725dbdf65da7a23356974b9d8a2166eb8d94e2f7d0820f4004e1961789a88951",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "f3a094e9b504cde2d0b731a7b597b2c7a70d42d7226ea3b30ec8c90af7f53bb0",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics.",
+      "old_sha256": "87b79b142eefcaca6c5611169021294d50e0ff28abc91eb198ecfbe332e36edf"
     }
   ],
-  "challenge_count": 251
+  "challenge_count": 255
 }

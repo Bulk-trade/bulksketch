@@ -296,6 +296,22 @@ PROJECTIONS = [
                   "bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/DenseNormalizationTypes.lean",
                   "bridge/Arithmetic/DenseNormalizationGenerated.lean", "bridge/Arithmetic/DenseMulConvolutionGenerated.lean",
                   "bridge/Arithmetic/OddRecurrenceGenerated.lean", "bridge/Arithmetic/DenseReducerSquareRuntime.lean"]),
+    ("dense-exact-division", "extraction/dense-exact-division/project.py", "extraction/dense-exact-division/receipt.json",
+     "extraction/dense-exact-division/Arithmetic/Funs.lean", "bridge/Arithmetic/DenseExactDivideGenerated.lean",
+     "if rem_len != 0#usize", "if rem_len != 1#usize", "compiled exact division projection differs",
+     None, None, ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean",
+                  "bridge/Arithmetic/RebuiltLfsrTypes.lean"]),
+    ("dense-monic-gcd", "extraction/dense-monic-gcd/project.py", "extraction/dense-monic-gcd/receipt.json",
+     "extraction/dense-monic-gcd/Arithmetic/Funs.lean", "bridge/Arithmetic/DenseGcdGenerated.lean",
+     "let i6 ← 2#usize * width", "let i6 ← 3#usize * width", "compiled monic GCD projection differs",
+     None, None, ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean",
+                  "bridge/Arithmetic/DenseExactDivideGenerated.lean"]),
+    ("avx-square", "extraction/avx-square/project.py", "extraction/avx-square/receipt.json",
+     "extraction/avx-square/Arithmetic/Funs.lean", "bridge/Arithmetic/AvxSquareGenerated.lean",
+     "let first_high ← core.num.Usize.div_ceil degree 2#usize",
+     "let first_high ← core.num.Usize.div_ceil degree 3#usize", "compiled AVX square projection differs",
+     None, None, ["extraction/dense-reducer-square/receipt.json", "bridge/Arithmetic/AvxSquareRuntime.lean",
+                  "bridge/Arithmetic/Avx512RegisterGenerated.lean", "bridge/Arithmetic/X86PclmulGenerated.lean"]),
 ]
 
 
@@ -463,6 +479,19 @@ def main():
             cases.append(("wrong-compatibility-input", receipt_path, receipt["commands"]["portable-xor"]["command"][-1],
                           "/tmp/unrelated/verification/lean/extraction/portable-xor/arithmetic.llbc",
                           "Dense modular square checked command or control differs"))
+        if label == "dense-exact-division":
+            cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
+                          "exact division checked extraction command differs"))
+        if label == "dense-monic-gcd":
+            cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
+                          "monic GCD checked extraction command differs"))
+            cases.append(("wrong-swap", active_path, "(right, left, Prod.swap)", "(left, right, Prod.swap)",
+                          "compiled monic GCD projection differs"))
+        if label == "avx-square":
+            cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
+                          "AVX square checked command differs"))
+            cases.append(("wrong-skip-count", "bridge/Arithmetic/AvxSquareRuntime.lean",
+                          "state.count.val", "state.count.val + 1", "AVX square runtime binding differs"))
         if label == "deg34-normalize":
             cases.append(("unchecked-original-extraction", receipt_path, '"-checks"', '"-no-checks"',
                           "normalization checked replay linkage differs"))
@@ -471,7 +500,7 @@ def main():
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:
                 shadow = Path(directory)
                 if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic", "closed-leaf", "deg34-normalize", "deg34-guard",
-                             "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square"}:
+                             "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

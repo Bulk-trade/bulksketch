@@ -1,0 +1,13 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "previous_proof_commit": "ce6a20b6b9cc19bff8ddb56f4e7b6d18b0d80f18",
+  "retained_native_executable_obligations": 344,
+  "generated_body_refinements_under_recorded_TCB": 118,
+  "checked_stateful_llbc_refinements": 5,
+  "whole_native_coverage_achieved": false,
+  "open": [
+    "Original div/rem body linkage and general factor traversal",
+    "Candidate evaluation, deflation, caller-wide admission and end-to-end decoder completeness",
+    "Accelerated square dispatcher and field remainder, and Rust provenance, ISA execution and compiler correspondence"
+  ]
+}

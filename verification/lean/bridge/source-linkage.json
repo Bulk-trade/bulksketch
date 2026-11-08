@@ -476,6 +476,21 @@
       "path": "extraction/dense-reducer-square/arithmetic.llbc",
       "sha256": "983b5fcc24bc4ff884b76268edcf8071e1fc3362565896012c091717595f1bc6",
       "has_errors": false
+    },
+    {
+      "path": "extraction/dense-exact-division/arithmetic.llbc",
+      "sha256": "a832a0db684f57c42b1451959ed67537c08a943d54e9270a3690f38954fd97fe",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/dense-monic-gcd/arithmetic.llbc",
+      "sha256": "78e6b5c11b3f633dda04191507ade8bb07797125e258822daea9b4bd10f15539",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-square/arithmetic.llbc",
+      "sha256": "e3d517686a396b28257d5c13481d65eae23fdf5d2dea7c577b604f3e9492d25f",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1133,6 +1148,21 @@
       "native_item_id": "src/decode/roots.rs:384:method:bulksketch::decode::roots::Roots::trace",
       "generated_declaration": "bulksketch.decode.roots.Roots.trace",
       "generated_file": "bridge/Arithmetic/RootTraceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:98:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::exact_divide_into",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.exact_divide_into",
+      "generated_file": "bridge/Arithmetic/DenseExactDivideGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:113:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::monic_gcd_into",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.monic_gcd_into",
+      "generated_file": "bridge/Arithmetic/DenseGcdGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:217:function:bulksketch::backend::x86_vpclmul512::square_mod",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.square_mod",
+      "generated_file": "bridge/Arithmetic/AvxSquareGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1660,6 +1690,33 @@
       "declaration_count": 7,
       "scope": "Original modular square entry and six loops with exact checked cumulative source-scoped lowering.",
       "translator_variant": "checked-dense-reducer-square-v1"
+    },
+    {
+      "generated": "extraction/dense-exact-division/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseExactDivideGenerated.lean",
+      "sha256": "48dbea4948163f4edc35ae72cdee5bca3ebf369b2deb4cdc0e5ca3951c781cd9",
+      "raw_sha256": "237b400140c66a2cdce828255f8fa0bd78bd163652576554bb5b587ff2412254",
+      "checker": "extraction/dense-exact-division/project.py",
+      "declaration_count": 1,
+      "scope": "Original exact-division wrapper, with explicit stock div/rem slot and original quotient prefix clearing."
+    },
+    {
+      "generated": "extraction/dense-monic-gcd/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseGcdGenerated.lean",
+      "sha256": "f99c8048aa2b07e1397913b7971332e15fd1b6c516d78d0bb3a947d6f9c68600",
+      "raw_sha256": "224aba3671b52e4d558b9b6e043d74a7bed4690260ed3ae64f16478b02fdb74f",
+      "checker": "extraction/dense-monic-gcd/project.py",
+      "declaration_count": 3,
+      "scope": "Original monic GCD wrapper and both loop declarations, exact scratch rotation and explicit div/rem slot."
+    },
+    {
+      "generated": "extraction/avx-square/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxSquareGenerated.lean",
+      "sha256": "2d465d47c7ddef1a834575174050005bbd328e0a6f44fafae852bd461669e168",
+      "raw_sha256": "44ada153ec36930424a2c3161478f1ca38f849e50dc937ef3a92c087555abb8f",
+      "checker": "extraction/avx-square/project.py",
+      "declaration_count": 7,
+      "scope": "Original AVX-512 free square and six loop declarations with exact admitted slice load and store contracts."
     }
   ],
   "reviewed_translator_variants": [

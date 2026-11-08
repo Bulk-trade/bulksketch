@@ -1,0 +1,90 @@
+{
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "binary_sha256": {
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe"
+  },
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "commands": [
+    {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-reducer/monic_gcd_into-isolated/arithmetic.llbc",
+        "--start-from=bulksketch::poly::dense",
+        "--opaque=bulksketch::poly::dense::_::_",
+        "--include=bulksketch::poly::dense::_::monic_gcd_into",
+        "--opaque=bulksketch::poly::dense::normalized_len",
+        "--",
+        "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0,
+      "name": "charon"
+    },
+    {
+      "command": [
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-reducer/monic_gcd_into-isolated/stock",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-reducer/monic_gcd_into-isolated/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "name": "aeneas"
+    }
+  ],
+  "environment": {
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true",
+    "CARGO_TARGET_DIR": "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-reducer/monic_gcd_into-isolated/target",
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17"
+  },
+  "files_sha256": {
+    "extraction/dense-monic-gcd/Arithmetic/Funs.lean": "224aba3671b52e4d558b9b6e043d74a7bed4690260ed3ae64f16478b02fdb74f",
+    "extraction/dense-monic-gcd/Arithmetic/FunsExternal_Template.lean": "b179ecfe5556b321caeddffd4bcbbe66941929684203bacaa7fb477f4ec79670",
+    "extraction/dense-monic-gcd/Arithmetic/Types.lean": "b6663988addfd0cf350d5238df1478f63b2735281058099c3ffd399630ae70f0",
+    "extraction/dense-monic-gcd/aeneas.log": "9b42f54f50040fd2c14cff4139edf0c39d538db9fbaba8f747106df73c8688a3",
+    "extraction/dense-monic-gcd/arithmetic.llbc": "78e6b5c11b3f633dda04191507ade8bb07797125e258822daea9b4bd10f15539",
+    "extraction/dense-monic-gcd/charon.log": "4842b4a32465bd204784362d0833292fefd6192592b6dded8318863ca2841131",
+    "extraction/dense-monic-gcd/replay.log": "725dbdf65da7a23356974b9d8a2166eb8d94e2f7d0820f4004e1961789a88951"
+  },
+  "native_source_edited": false,
+  "replay": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-checks",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-division/monic-gcd-replay",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-dense-reducer/monic_gcd_into-isolated/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "outputs": {
+      "Funs.lean": "224aba3671b52e4d558b9b6e043d74a7bed4690260ed3ae64f16478b02fdb74f",
+      "FunsExternal_Template.lean": "b179ecfe5556b321caeddffd4bcbbe66941929684203bacaa7fb477f4ec79670",
+      "Types.lean": "b6663988addfd0cf350d5238df1478f63b2735281058099c3ffd399630ae70f0"
+    }
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "target": "x86_64-apple-darwin"
+}

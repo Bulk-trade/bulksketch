@@ -88,3 +88,5 @@ import BulksketchBridge.RootTraceField
 import BulksketchBridge.X86Allocation
 import BulksketchBridge.NativeRootTrace
 import BulksketchBridge.RootTraceGenerator
+import BulksketchBridge.DenseDivisionComposition
+import BulksketchBridge.AvxSquare
