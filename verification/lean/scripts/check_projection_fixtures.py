@@ -286,6 +286,16 @@ PROJECTIONS = [
      None, None, ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean",
                   "bridge/Arithmetic/RootSetupGenerated.lean", "bridge/Arithmetic/ReconstructionTypes.lean",
                   "bridge/Arithmetic/WorkScheduleGenerated.lean", "bridge/Workmeter/Types.lean"]),
+    ("dense-reducer-square", "extraction/dense-reducer-square/project.py", "extraction/dense-reducer-square/receipt.json",
+     "extraction/dense-reducer-square/Arithmetic/Funs.lean", "bridge/Arithmetic/DenseReducerSquareGenerated.lean",
+     "let first_high ← core.num.Usize.div_ceil degree 2#usize",
+     "let first_high ← core.num.Usize.div_ceil degree 3#usize", "compiled Dense modular square projection differs",
+     None, None, ["extraction/root-setup/receipt.json", "extraction/portable-xor/arithmetic.llbc",
+                  "extraction/dense-reducer-table/checked-dense-reducer-option.patch",
+                  "tooling/aeneas-dense-mul/shared-loop-erasure.patch",
+                  "bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/DenseNormalizationTypes.lean",
+                  "bridge/Arithmetic/DenseNormalizationGenerated.lean", "bridge/Arithmetic/DenseMulConvolutionGenerated.lean",
+                  "bridge/Arithmetic/OddRecurrenceGenerated.lean", "bridge/Arithmetic/DenseReducerSquareRuntime.lean"]),
 ]
 
 
@@ -445,6 +455,14 @@ def main():
                           "--manifest-path=/tmp/unrelated/Cargo.toml", "root trace recorded Charon command differs"))
             cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
                           "root trace checked replay differs"))
+        if label == "dense-reducer-square":
+            cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
+                          "Dense modular square checked command or control differs"))
+            cases.append(("wrong-binary-digest", receipt_path, receipt["patched_binary_sha256"], "0" * 64,
+                          "invalid Dense modular square receipt"))
+            cases.append(("wrong-compatibility-input", receipt_path, receipt["commands"]["portable-xor"]["command"][-1],
+                          "/tmp/unrelated/verification/lean/extraction/portable-xor/arithmetic.llbc",
+                          "Dense modular square checked command or control differs"))
         if label == "deg34-normalize":
             cases.append(("unchecked-original-extraction", receipt_path, '"-checks"', '"-no-checks"',
                           "normalization checked replay linkage differs"))
@@ -453,7 +471,7 @@ def main():
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:
                 shadow = Path(directory)
                 if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic", "closed-leaf", "deg34-normalize", "deg34-guard",
-                             "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace"}:
+                             "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

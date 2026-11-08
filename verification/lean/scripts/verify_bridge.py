@@ -483,9 +483,17 @@ def check_bm_locator_variant(variant, receipt, runtime, runtime_head, linkage):
 
 
 def check_dense_reducer_variant(variant, receipt, runtime, runtime_head, linkage):
-    directory = "extraction/dense-reducer-table/"
-    patch = directory + "checked-dense-reducer-option.patch"
-    source = "src/interp/InterpMatchCtxs.ml"
+    files = {
+        "checked-dense-reducer-option-v1": (
+            "extraction/dense-reducer-table/", "checked-dense-reducer-option.patch",
+            {"src/interp/InterpMatchCtxs.ml"}),
+        "checked-dense-reducer-square-v1": (
+            "extraction/dense-reducer-square/", "checked-dense-reducer-square.patch",
+            {"src/interp/InterpMatchCtxs.ml", "src/interp/InterpExpansion.ml",
+             "src/symbolic/SymbolicToPureExpressions.ml"}),
+    }
+    directory, name, sources = files[variant["id"]]
+    patch = directory + name
     if (variant["receipt"] != directory + "receipt.json" or variant["patch"] != patch or
             variant["base_commit"] != runtime_head or variant["mandatory_checks"] is not True or
             receipt["variant_id"] != variant["id"] or receipt["aeneas_commit"] != runtime_head or
@@ -493,17 +501,19 @@ def check_dense_reducer_variant(variant, receipt, runtime, runtime_head, linkage
             receipt["native_source_edited"] is not False or receipt["variant_patch"] != patch or
             receipt["variant_patch_sha256"] != variant["patch_sha256"] or
             sha(ROOT / patch) != variant["patch_sha256"] or
-            receipt["base_sources"] != {source: sha(runtime / source)} or set(receipt["modified_sources"]) != {source}):
+            receipt["base_sources"] != {source: sha(runtime / source) for source in sources} or
+            set(receipt["modified_sources"]) != sources):
         raise RuntimeError("Dense reducer variant lost its checked source provenance")
     with tempfile.TemporaryDirectory(prefix="checked-dense-reducer-") as temporary:
         work = Path(temporary)
-        copied = work / source
-        copied.parent.mkdir(parents=True)
-        copied.write_bytes((runtime / source).read_bytes())
+        for source in sources:
+            copied = work / source
+            copied.parent.mkdir(parents=True, exist_ok=True)
+            copied.write_bytes((runtime / source).read_bytes())
         applied = subprocess.run(["git", "apply", str(ROOT / patch)], cwd=work,
                                  capture_output=True, timeout=30)
-        if applied.returncode or receipt["modified_sources"][source] != sha(copied):
-            raise RuntimeError("Dense reducer patched matcher differs")
+        if applied.returncode or receipt["modified_sources"] != {source: sha(work / source) for source in sources}:
+            raise RuntimeError("Dense reducer patched sources differ")
 
 
 def check_degree_probe_extension(extension, receipt, variants, runtime_head, linkage):
@@ -674,9 +684,9 @@ def main():
                             str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
             records.append(result)
             continue
-        if variant["id"] == "checked-dense-reducer-option-v1":
+        if variant["id"] in {"checked-dense-reducer-option-v1", "checked-dense-reducer-square-v1"}:
             check_dense_reducer_variant(variant, receipt, runtime, runtime_head, linkage)
-            result, _ = run("checked-dense-reducer-option-patch-applies", ["git", "apply", "--check",
+            result, _ = run(variant["id"] + "-patch-applies", ["git", "apply", "--check",
                             str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
             records.append(result)
             continue

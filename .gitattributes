@@ -68,3 +68,4 @@ verification/lean/extraction/quartic/translator/*.patch whitespace=-trailing-spa
 verification/lean/extraction/deg34-guard/translator/*.patch whitespace=-trailing-space
 verification/lean/extraction/bm-locator/*.patch whitespace=-trailing-space
 verification/lean/extraction/dense-reducer-table/*.patch whitespace=-trailing-space
+verification/lean/extraction/dense-reducer-square/*.patch whitespace=-trailing-space

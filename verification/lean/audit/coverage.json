@@ -4551,7 +4551,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RootTrace.native_trace_refines",
+        "scope": "Exact original trace with the original Dense modular-square body, exact first and split charges, seed and cache, all 64 Frobenius terms, scratch, and checked GCD or NotSplit transition.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/roots.rs:39:struct:bulksketch::decode::roots::FactorWork",
@@ -7139,7 +7146,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.DenseReducerSquare.square_mod_into_refines",
+        "scope": "Exact original assertions, kernel dispatch, every low/high coefficient accumulation, final reduction and normalized scratch result under stated contracts.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/poly/dense.rs:227:function:bulksketch::poly::dense::normalized_len",
@@ -11845,8 +11859,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Original Dense reducer shift and table are exact, including the native high even powers. Original trace seed and both loops are checked under their scoped contracts. AVX-512 finite-address and one-allocation LLBC contracts strengthen four existing stateful endpoints. General traversal, decoder completeness and actual Rust/ISA/compiler correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 113,
+    "note": "All 344 native executable declarations retained. Original modular shift, reducer table and square prove the native monic remainder, with the accelerated backend law stated separately. Original trace uses the proved Dense callback and checks charges, basis, trace and split decisions. Finite-address and allocation LLBC contracts retain their explicit premises. General traversal and decoder and actual Rust/ISA/compiler correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 115,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11913,13 +11927,15 @@
       "dense_reducer": [
         "BulksketchBridge.TimesXMod.times_x_mod_polynomial",
         "BulksketchBridge.DenseReducerTable.prepare_square_table_algebra",
-        "BulksketchBridge.DenseReducerAlgebra.square_remainder"
+        "BulksketchBridge.DenseReducerAlgebra.square_remainder",
+        "BulksketchBridge.DenseReducerSquare.native_modular_square"
       ],
       "native_root_trace_scoped": [
         "BulksketchBridge.RootTrace.seed_closure_refines",
         "BulksketchBridge.RootTrace.basis_extension_refines",
         "BulksketchBridge.RootTrace.trace_loop_refines",
-        "BulksketchBridge.RootTrace.trace_at_is_algebra_trace"
+        "BulksketchBridge.RootTrace.trace_at_is_algebra_trace",
+        "BulksketchBridge.RootTrace.native_trace_refines"
       ]
     },
     "masked_memory_evidence": {

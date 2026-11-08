@@ -86,3 +86,5 @@ import BulksketchBridge.DenseReducerTableAlgebra
 import BulksketchBridge.RootTraceBasis
 import BulksketchBridge.RootTraceField
 import BulksketchBridge.X86Allocation
+import BulksketchBridge.NativeRootTrace
+import BulksketchBridge.RootTraceGenerator

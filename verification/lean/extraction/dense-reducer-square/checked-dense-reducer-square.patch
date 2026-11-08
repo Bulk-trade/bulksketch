@@ -1,0 +1,240 @@
+diff --git a/src/interp/InterpExpansion.ml b/src/interp/InterpExpansion.ml
+index ded98d0..73ac03c 100644
+--- a/src/interp/InterpExpansion.ml
++++ b/src/interp/InterpExpansion.ml
+@@ -21,6 +21,17 @@ let log = Logging.expansion_log
+ (** Projector kind *)
+ type proj_kind = LoanProj | BorrowProj
+ 
++(** A shared expansion may encounter an unrelated borrow projector carrying
++    loans from an ended ancestor. Preserve that owner and traverse its children
++    so the checked visitor still rejects a target hidden inside its payload.
++    Matching owners and unchecked or non-shared expansions retain the existing
++    empty-loans requirement. *)
++let check_borrow_projection_loans span ~shared_expansion target owner loans =
++  [%cassert] span
++    (loans = []
++    || (!Config.sanity_checks && shared_expansion && owner <> target))
++    "Unreachable"
++
+ (** Auxiliary function. Apply a symbolic expansion to avalues in a context,
+     targetting a specific kind of projectors.
+ 
+@@ -50,6 +61,7 @@ let apply_symbolic_expansion_to_target_aevalues (span : Meta.span)
+     (expansion : symbolic_expansion) (ctx : eval_ctx) : eval_ctx =
+   (* Symbolic values contained in the expansion might contain already ended regions *)
+   let check_symbolic_no_ended = false in
++  let shared_expansion = match expansion with SeSharedRef _ -> true | _ -> false in
+   (* Visitor to apply the expansion *)
+   let obj =
+     object (self)
+@@ -122,7 +134,8 @@ let apply_symbolic_expansion_to_target_aevalues (span : Meta.span)
+                by region abstractions, and is thus inaccessible: such a value can't
+                be expanded)
+             *)
+-            [%cassert] span (loans = []) "Unreachable";
++            check_borrow_projection_loans span ~shared_expansion
++              original_sv.sv_id proj.sv_id loans;
+             (* Check if this is the symbolic value we are looking for *)
+             if proj.sv_id = original_sv.sv_id then
+               (* Convert the symbolic expansion to a value on which we can
+@@ -184,7 +197,8 @@ let apply_symbolic_expansion_to_target_aevalues (span : Meta.span)
+                by region abstractions, and is thus inaccessible: such a value can't
+                be expanded)
+             *)
+-            [%cassert] span (loans = []) "Unreachable";
++            check_borrow_projection_loans span ~shared_expansion
++              original_sv.sv_id proj.sv_id loans;
+             (* Check if this is the symbolic value we are looking for *)
+             if proj.sv_id = original_sv.sv_id then
+               (* Convert the symbolic expansion to a value on which we can
+@@ -446,7 +460,8 @@ let expand_symbolic_value_shared_borrow (span : Meta.span)
+                by region abstractions, and is thus inaccessible: such a value can't
+                be expanded)
+             *)
+-            [%cassert] span (loans = []) "Unreachable";
++            check_borrow_projection_loans span ~shared_expansion:true
++              original_sv.sv_id proj.sv_id loans;
+             (* Check if we need to reborrow *)
+             match reborrow_ashared (Option.get proj_regions) proj with
+             | None -> super#visit_ASymbolic proj_regions pm aproj
+@@ -464,13 +479,14 @@ let expand_symbolic_value_shared_borrow (span : Meta.span)
+         | EProjLoans _ ->
+             (* Loans are handled later *)
+             ESymbolic (pm, aproj)
+-        | EProjBorrows { proj = _; loans } ->
++        | EProjBorrows { proj; loans } ->
+             (* We should never expand a symbolic value which has consumed given
+                back values (because then it means the symbolic value was consumed
+                by region abstractions, and is thus inaccessible: such a value can't
+                be expanded)
+             *)
+-            [%cassert] span (loans = []) "Unreachable";
++            check_borrow_projection_loans span ~shared_expansion:true
++              original_sv.sv_id proj.sv_id loans;
+             (* No need to check for reborrows of shared values: we don't track
+                them in abstraction expressions *)
+             super#visit_ESymbolic proj_regions pm aproj
+diff --git a/src/interp/InterpMatchCtxs.ml b/src/interp/InterpMatchCtxs.ml
+index 29705f4..0c9cae6 100644
+--- a/src/interp/InterpMatchCtxs.ml
++++ b/src/interp/InterpMatchCtxs.ml
+@@ -348,9 +348,42 @@ let rec match_types (span : Meta.span) ~(recover : bool) (ctx0 : eval_ctx)
+       TPtrMetadata ty
+   | _ -> match_distinct_types ty0 ty1
+ 
+-module MakeMatcher (M : PrimMatcher) : Matcher = struct
++module MakeMatcherWithMode (M : PrimMatcher) (Mode : sig
++  val reducer_option : bool
++end) : Matcher = struct
+   let span = M.span
+ 
++  let checked_reducer_option =
++    Mode.reducer_option && !Config.sanity_checks
++    && Sys.getenv_opt "BULKSKETCH_DENSE_REDUCER" = Some "1"
++    && span.generated_from_span = None
++    && (match span.data.file.name with Local "src/poly/dense.rs" -> true | _ -> false)
++    && ((span.data.beg_loc.line >= 167 && span.data.end_loc.line <= 186)
++        || (span.data.beg_loc.line >= 188 && span.data.end_loc.line <= 224))
++
++  let option_shared_u64 ctx ty =
++    match ty with
++    | TAdt { id; generics = { regions = []; types =
++          [TRef (_, TScalar (TInteger (Unsigned U64)), RShared)];
++          const_generics = []; trait_refs = [] }; _ } ->
++        let decl = ctx_lookup_type_decl span ctx id in
++        Print.EvalCtx.name_to_string ctx decl.item_meta.name =
++          "core::option::Option"
++    | _ -> false
++
++  let same_shared_option_symbol ctx (left : tvalue) (right : tvalue) =
++    checked_reducer_option && equal_tvalue left right
++    && match left.value with
++       | VSymbolic sv -> option_shared_u64 ctx sv.sv_ty
++       | _ -> false
++
++  let same_shared_option_projector ctx (left : tavalue) (right : tavalue) =
++    checked_reducer_option && left = right
++    && match left.value with
++       | ASymbolic (PNone, AProjLoans { proj; consumed = []; borrows = [] }) ->
++           option_shared_u64 ctx proj.proj_ty
++       | _ -> false
++
+   let rec match_tvalues (ctx0 : eval_ctx) (ctx1 : eval_ctx) (v0 : tvalue)
+       (v1 : tvalue) : tvalue =
+     [%ldebug
+@@ -550,7 +583,9 @@ module MakeMatcher (M : PrimMatcher) : Matcher = struct
+             let sv = match_rec sv0 sv1 in
+             let av = match_arec av0 av1 in
+             [%sanity_check_recover] M.recover M.span
+-              (not (value_has_borrows sv.value));
++              (not (value_has_borrows sv.value)
++               || (pm0 = PNone && pm1 = PNone && id0 = id1
++                   && same_shared_option_symbol ctx0 sv0 sv1));
+             M.match_ashared_loans match_rec ctx0 ctx1 v0.ty pm0 id0 sv0 av0
+               v1.ty pm1 id1 sv1 av1 ty sv av
+         | AMutLoan (pm0, id0, av0), AMutLoan (pm1, id1, av1) ->
+@@ -560,6 +595,10 @@ module MakeMatcher (M : PrimMatcher) : Matcher = struct
+             [%ldebug "mut loans: matched children values"];
+             M.match_amut_loans match_rec ctx0 ctx1 v0.ty pm0 id0 av0 v1.ty pm1
+               id1 av1 ty av
++        | AIgnoredSharedLoan left, AIgnoredSharedLoan right
++          when same_shared_option_projector ctx0 left right ->
++            let child = match_arec left right in
++            { value = ALoan (AIgnoredSharedLoan child); ty }
+         | AIgnoredMutLoan _, AIgnoredMutLoan _
+         | AIgnoredSharedLoan _, AIgnoredSharedLoan _ ->
+             (* Those should have been filtered when destructuring the abstractions -
+@@ -586,6 +625,12 @@ module MakeMatcher (M : PrimMatcher) : Matcher = struct
+         M.match_avalues match_rec ctx0 ctx1 v0 v1
+ end
+ 
++module MakeMatcher (M : PrimMatcher) =
++  MakeMatcherWithMode (M) (struct let reducer_option = false end)
++
++module MakeContextMatcher (M : PrimMatcher) =
++  MakeMatcherWithMode (M) (struct let reducer_option = true end)
++
+ module MakeJoinMatcher (S : MatchJoinState) : PrimMatcher = struct
+   (** Small utility *)
+   let span = S.span
+@@ -2265,7 +2310,7 @@ let match_ctxs (span : Meta.span) ~(check_equiv : bool)
+     let lookup_shared_value_in_ctx1 = lookup_shared_value_in_ctx1
+   end in
+   let module CEM = MakeCheckEquivMatcher (S) in
+-  let module M = MakeMatcher (CEM) in
++  let module M = MakeContextMatcher (CEM) in
+   (* When matching abstractions we allow backtracking, so we need an alternative
+      version of the matchers where [recover] is true *)
+   let module RecoverS : MatchCheckEquivState = struct
+@@ -2283,7 +2328,7 @@ let match_ctxs (span : Meta.span) ~(check_equiv : bool)
+     let lookup_shared_value_in_ctx1 = lookup_shared_value_in_ctx1
+   end in
+   let module RecoverCEM = MakeCheckEquivMatcher (RecoverS) in
+-  let module RecoverM = MakeMatcher (RecoverCEM) in
++  let module RecoverM = MakeContextMatcher (RecoverCEM) in
+   (* Match the environments - we assume that they have the same structure
+      (and fail if they don't) *)
+ 
+diff --git a/src/symbolic/SymbolicToPureExpressions.ml b/src/symbolic/SymbolicToPureExpressions.ml
+index e9c181a..0fe1a9d 100644
+--- a/src/symbolic/SymbolicToPureExpressions.ml
++++ b/src/symbolic/SymbolicToPureExpressions.ml
+@@ -9,6 +9,43 @@ open SymbolicToPureAbs
+ (** The local logger *)
+ let log = Logging.symbolic_to_pure_expressions_log
+ 
++(** Checked erasure of a level-one loop ending with no pure continuation.
++    Inspect child payload types directly because the ordinary projection-kind
++    classifier only classifies their enclosing symbolic value. *)
++let can_erase_shared_loop_end type_infos ~ignored ~has_continuation
++    (abs : V.abs) (level : V.abs_level) : bool =
++  !Config.sanity_checks && level = 1 && ignored && not has_continuation
++  && V.AbsLevelSet.mem level abs.ended_subabs
++  && (match (abs.kind, abs.cont) with
++      | ( V.Loop loop_id,
++          Some { output = Some output;
++                 input = Some { value = V.EApp (V.ELoop (aid, lid), [[]]); ty } } ) ->
++          aid = abs.abs_id && lid = loop_id && ty = TypesUtils.mk_unit_ty
++          && V.equal_tevalue output (ValuesUtils.mk_etuple ~borrow_proj:true [])
++      | _ -> false)
++  &&
++  let shared ty =
++    TypesUtils.ty_is_rty ty
++    && not (TypesUtils.ty_has_mut_borrow_for_region_in_set type_infos abs.regions.owned ty)
++  in
++  let rec projection ~top = function
++    | V.AEmpty -> true
++    | V.AProjLoans { proj; consumed; borrows } when top ->
++        shared proj.proj_ty && payloads consumed && payloads borrows
++    | V.AProjBorrows { proj; loans } when top -> shared proj.proj_ty && payloads loans
++    | V.AProjLoans _ | V.AProjBorrows _ -> false
++    | V.AEndedProjLoans { consumed; borrows; _ } -> payloads consumed && payloads borrows
++    | V.AEndedProjBorrows { mvalues; loans } ->
++        shared mvalues.given_back.sv_ty && payloads loans
++  and payloads children =
++    List.for_all (fun ((meta : V.mconsumed_symb), child) ->
++        shared meta.proj_ty && projection ~top:false child) children
++  in
++  List.for_all (fun (av : V.tavalue) ->
++      shared av.ty &&
++      match av.value with V.ASymbolic (V.PNone, proj) -> projection ~top:true proj | _ -> false)
++    abs.avalues
++
+ let translate_fn_ptr_kind (ctx : bs_ctx) (id : A.fn_ptr_kind) : fn_ptr_kind =
+   match id with
+   | T.Fun fun_id -> FunId fun_id
+@@ -1284,7 +1321,12 @@ and translate_end_abstraction_synth_ret (ectx : C.eval_ctx) (abs : V.abs)
+ 
+ and translate_end_abstraction_join_or_loop (ectx : C.eval_ctx) (abs : V.abs)
+     (abs_level : abs_level) (e : S.expr) (ctx : bs_ctx) : texpr =
+-  let span = ctx.span in
++  if can_erase_shared_loop_end ctx.type_ctx.type_infos
++       ~ignored:(V.AbsId.Set.mem abs.abs_id ctx.ignored_abs_ids)
++       ~has_continuation:(V.AbsId.Map.mem abs.abs_id ctx.abs_id_to_info)
++       abs abs_level then
++    translate_expr e ctx
++  else let span = ctx.span in
+   [%cassert] span (abs_level = 0) "Unimplemented";
+   (* Compute the input and output values *)
+   let back_inputs = abs_to_consumed ctx ectx abs abs_level in

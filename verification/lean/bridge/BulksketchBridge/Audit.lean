@@ -530,7 +530,15 @@ run_cmd do
     (``BulksketchBridge.X86MaskedMemory.Allocation.AllocatedXorContract,
       ``BulksketchBridge.X86MaskedMemory.Allocation.allocated_xor_refines),
     (``BulksketchBridge.X86MaskedMemory.Allocation.AllocatedDifferenceContract,
-      ``BulksketchBridge.X86MaskedMemory.Allocation.allocated_difference_refines)
+      ``BulksketchBridge.X86MaskedMemory.Allocation.allocated_difference_refines),
+    (``BulksketchBridge.DenseReducerSquare.ActualSquareModInto,
+      ``BulksketchBridge.DenseReducerSquare.square_mod_into_refines),
+    (``BulksketchBridge.RootTrace.ActualNativeTrace,
+      ``BulksketchBridge.RootTrace.native_trace_refines),
+    (``BulksketchBridge.DenseReducerSquare.ActualNativeModularSquare,
+      ``BulksketchBridge.DenseReducerSquare.native_modular_square),
+    (``BulksketchBridge.RootTrace.ActualTraceWrapper,
+      ``BulksketchBridge.RootTrace.trace_wrapper_refines)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

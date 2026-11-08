@@ -471,6 +471,11 @@
       "path": "extraction/root-trace/arithmetic.llbc",
       "sha256": "4364507f274a66aecc5c294a78faa3fd91792d3c7cca8f132619149831bc9d1c",
       "has_errors": false
+    },
+    {
+      "path": "extraction/dense-reducer-square/arithmetic.llbc",
+      "sha256": "983b5fcc24bc4ff884b76268edcf8071e1fc3362565896012c091717595f1bc6",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1118,6 +1123,16 @@
       "native_item_id": "src/poly/dense.rs:167:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::prepare_square_table",
       "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.prepare_square_table",
       "generated_file": "bridge/Arithmetic/DenseReducerTableGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:188:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::square_mod_into",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.square_mod_into",
+      "generated_file": "bridge/Arithmetic/DenseReducerSquareGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:384:method:bulksketch::decode::roots::Roots::trace",
+      "generated_declaration": "bulksketch.decode.roots.Roots.trace",
+      "generated_file": "bridge/Arithmetic/RootTraceGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1634,7 +1649,17 @@
       "raw_sha256": "3003c3b0a82b95a1ed6683855b694a32f392fb3f9217cf32c3970b70e8a3d7cb",
       "checker": "extraction/root-trace/project.py",
       "declaration_count": 8,
-      "scope": "Original trace closure and loops with explicit modular-square contract. The full trace stage has no source-body credit."
+      "scope": "Original trace entry, closure and loops. The explicit Dense square slot is instantiated by its original checked body and modular correctness theorem."
+    },
+    {
+      "generated": "extraction/dense-reducer-square/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseReducerSquareGenerated.lean",
+      "sha256": "a381cdfdb38ae9e5982020dfbbe0a6335dcc89c6a30337561a9174cad7088ec5",
+      "raw_sha256": "bfb8c077f8c7172988d6b6d11183929211a2eed0bc804e4fe2af586aa4d8075e",
+      "checker": "extraction/dense-reducer-square/project.py",
+      "declaration_count": 7,
+      "scope": "Original modular square entry and six loops with exact checked cumulative source-scoped lowering.",
+      "translator_variant": "checked-dense-reducer-square-v1"
     }
   ],
   "reviewed_translator_variants": [
@@ -1718,6 +1743,15 @@
       "receipt": "extraction/dense-reducer-table/receipt.json",
       "mandatory_checks": true,
       "scope": "Exact checked Dense reducer spans and identical marker-free Option<&u64> shared loan and empty ignored projector. Stock mapping and mutable writebacks retained."
+    },
+    {
+      "id": "checked-dense-reducer-square-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/dense-reducer-square/checked-dense-reducer-square.patch",
+      "patch_sha256": "fa5418ecb9e225609ff7362bdc64647ffc346aab0fb142f9ae70c39b5aca7cc9",
+      "receipt": "extraction/dense-reducer-square/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact cumulative Option join matcher, shared expansion owner guard, and shared-only level-1 erasure. Original mutable Zip writebacks retained."
     }
   ],
   "diagnostic_generated_projections": [

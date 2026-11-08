@@ -1,0 +1,6 @@
+import BulksketchBridge.DenseReducerSquare
+
+#print axioms BulksketchBridge.DenseReducerSquare.high_zip_is_convolution
+#print axioms BulksketchBridge.DenseReducerSquare.reduction_zip_is_convolution
+#print axioms BulksketchBridge.DenseReducerSquare.coefficient_loop_refines
+#print axioms BulksketchBridge.DenseReducerSquare.square_mod_into_refines

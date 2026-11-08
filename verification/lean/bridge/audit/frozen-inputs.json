@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "bdb730baf10af0699f2094c3a3ca4b78722a828bff016bf13237c40b870d9535",
+    "bridge/BulksketchBridge/Audit.lean": "b06f3745f2e89486a9e7d46ba626708573ff6ba8111f963fbb85756a5b012347",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,9 +13,9 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "3fc0b17ed8a09b16490225bc06cc4e61aab2a20e2753307c089d1041cf524d94",
-    "audit/frozen-inputs.json": "5fb174ecbe65da32c16a55a3c44308d2de2d5d02bc4df1c670f9405e7f750c0e",
-    "bridge/BulksketchBridge.lean": "43afd1e4b6746d1edd6e740a89dcb7d9d6b33db4e72c897fc388f01d3af69416",
+    "scripts/verify_bridge.py": "16833d8a9a8879b120ac004032b74ebb9465637937b3470fe214f7361eb34104",
+    "audit/frozen-inputs.json": "b527001feaeaff61e68b4a2ab1a0cdbc7228dba0a7ba6a652c655d5a59a68a3d",
+    "bridge/BulksketchBridge.lean": "6081f686be878e950869667c9bfda038c169fa6dccaa9ecc9a3ed1c5005cd1b1",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "8615db337dc7b2cda3f53f22453cf4ae6ba21d7a318451e0585943b121f20ce8",
-    "bridge/obligations.json": "a34abb2d87559b31fb45d700138482de0647e88579731d1a86353e68493d2dd3",
+    "bridge/source-linkage.json": "02bde8a42e403999c92cd9bba85628207d4e5ca9b4bda8040915eb0b379e6b72",
+    "bridge/obligations.json": "13daa585bc91eebce3e9f982dc3489e8c01f979c6b005f393a4ce5871f5ce1fb",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "2e2c0b5448bde5502b02ec44ed20851ed4b1be3db54db97dfa8a4783b6ac9924",
+    "scripts/check_projection_fixtures.py": "87b79b142eefcaca6c5611169021294d50e0ff28abc91eb198ecfbe332e36edf",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "1e687602357de561be7b79a28ae19eda6d2ba6f35beda8eb955017392f5663e6",
+    "README.md": "c89a9e135dd5d6f3f45ba22d8df885ade252812d452f5dea5bb5ace576ab22dd",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "72199444beaa9f5bedeae174783f2b32cb55031f9bd3015439ff865253c741ad",
+    "audit/coverage.json": "0f0031391c592ebf86a0939b4d177668c1173200038d5b304cc662ea137a8d0a",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -319,7 +319,7 @@
     "bridge/BulksketchBridge/SyndromeUniquenessSpec.lean": "0fb7dd6f308fa79337dce13cbd73c522f78c75024d86e05b7c5fd7d2d0ceff3c",
     "bridge/BulksketchBridge/VerifyDispatch.lean": "38d817777987c9d3e97ee3155717d243b545f42e976afa8fbcdb9b9c8e7b917c",
     "bridge/BulksketchBridge/VerifyDispatchSpec.lean": "d609a22b3daf8816de9afdc60f1e293bf4efdf6ed37d19efafd190b70217fb06",
-    "bridge/README.md": "b38c5386dc71f05dd43c4a4d211da141966c932409199a7a64853d3336e6ba5c",
+    "bridge/README.md": "3727d1a8858c62dd714c6836e8f35063bc95872dbe1e32906973e6b3d670cdef",
     "extraction/dense-square/Arithmetic/Funs.lean": "7ff7bf02a64fb62cb3d28154514ad7b426018c4380dc56b4d101dee3d73bd505",
     "extraction/dense-square/Arithmetic/FunsExternal_Template.lean": "9d47cb5223b7a3a784065947ca87ceea2b65fb72423eb973c18862af9f72a5c8",
     "extraction/dense-square/Arithmetic/Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
@@ -995,8 +995,8 @@
     "extraction/root-setup/project.py": "1035b07e486b90809e7e3bab62ec981ee790339087ae2ae7d6f6c7a6caf902a7",
     "extraction/root-setup/receipt.json": "2f6aa0838213a6964d030bbd7b461d71f7b9be46c76da06767f162f47641c98c",
     "extraction/root-setup/replay.log": "9afc041bea3a6f85fc79e41f517f5172407f70cf832edd835520b0b96ea92e63",
-    "NATIVE_DENSE_REDUCER.md": "f0640a2ca3e32980df3bc36b3b4948bd9bf67d54d093a501460cb432cefc823c",
-    "audit/native-dense-reducer-checkpoint.json": "6542cf0f0f3d56d1ab9e8bbc1102e098ace008b22641099882930798ae996298",
+    "NATIVE_DENSE_REDUCER.md": "1e507a052eda6ffab691e8e3d78c9904cafd2498edccbd46b8164de89248531a",
+    "audit/native-dense-reducer-checkpoint.json": "41da787e360070eaa0ee57a31380362d9a3a4642c085a1334ba9293acb37fceb",
     "bridge/Arithmetic/DenseReducerTableGenerated.lean": "c3d3324aec9054c53be3e3dd3e659aaf6f7c5503e8ffe887f0f317207a6a6f85",
     "bridge/Arithmetic/DenseReducerTableRuntime.lean": "742887dfed177a7c3d6561cbb7ecf9dbafe24aa5fe7c7bffa5cc5b3ff109eae1",
     "bridge/Arithmetic/RootTraceGenerated.lean": "55674af0982c79f8f26e5759cfd69a63a7307c11d6014523460ac76d8e671ff7",
@@ -1055,7 +1055,36 @@
     "extraction/times-x-mod/charon.log": "efc9fc13ee3b7f17abebde957091c30d4b5bffa385086e7b10c813a6708ecf57",
     "extraction/times-x-mod/project.py": "286d59b82eb5392d4b136bc827351caea526fe87f6fd58af4a79c6dddd219632",
     "extraction/times-x-mod/receipt.json": "0c8ce65f2a7e3420ae3b7d1f3a36ae2c8dc26bab2a4b4f8149cacaf09e6c2488",
-    "extraction/times-x-mod/replay.log": "8bd581c8c0c47c8f3a76be8fdc4abbcd19076ac20c4fc950b11dc7096c082acb"
+    "extraction/times-x-mod/replay.log": "8bd581c8c0c47c8f3a76be8fdc4abbcd19076ac20c4fc950b11dc7096c082acb",
+    "bridge/Arithmetic/DenseReducerSquareGenerated.lean": "a381cdfdb38ae9e5982020dfbbe0a6335dcc89c6a30337561a9174cad7088ec5",
+    "bridge/Arithmetic/DenseReducerSquareRuntime.lean": "bb515d3056d7f5f197820dd859a3b0ee9d908a4a64e34c5a28cd1e73486c1585",
+    "bridge/BulksketchBridge/DenseRawSquareMeaning.lean": "1fc35ca3a69d5faea67f94eb9cc8e8df9ec9ccba7a0107309b9a35a3ec79cbf0",
+    "bridge/BulksketchBridge/DenseReducerSquare.lean": "2f83b60599f2e21913d073de5f504ad329b5ee8bb487c485824d77e06abf14e8",
+    "bridge/BulksketchBridge/DenseReducerSquareAlgebra.lean": "1680d4649cbcdcb76110fd5ae5e6d2eb6f77dd5dcf8fb998b348c05a5d813971",
+    "bridge/BulksketchBridge/DenseReducerSquareSpec.lean": "6a9f225a3f09bb0fd21660062405692de7b63af77c7996c4e61f79dd493b9d07",
+    "bridge/BulksketchBridge/NativeRootTrace.lean": "8ea77cde69890a542dc90631ccbe76747b146ce6c7fb00fa98c72d35faa3cbc5",
+    "bridge/BulksketchBridge/RootTraceGenerator.lean": "6aec0a3ba4a885a4810a047876bb501660b1891c192e03d120fc5ed9edaf03a5",
+    "bridge/BulksketchBridge/RootTraceWrapper.lean": "544d9eddee2a984b2e8c069069ef83bccee5dd2e9ae2c0a13d1e758b5ddb6901",
+    "bridge/BulksketchBridge/RootTraceWrapperSpec.lean": "91dbda331d95e41dc7392d493141b5b7fb5c8f63ab4de5593fd8c4a8131e8e25",
+    "extraction/dense-reducer-square/Arithmetic/Funs.lean": "bfb8c077f8c7172988d6b6d11183929211a2eed0bc804e4fe2af586aa4d8075e",
+    "extraction/dense-reducer-square/Arithmetic/FunsExternal_Template.lean": "e70580d958e57d0416a230a8c2d299d1c5906d2c64a1804f1f3bfeb0922b3b71",
+    "extraction/dense-reducer-square/Arithmetic/Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
+    "extraction/dense-reducer-square/Axioms.lean": "2cfb277bce8338d714080d364d2a75a17aa9c63d0e4cb364be93482af3f7fae6",
+    "extraction/dense-reducer-square/README.md": "62d26cab5565295a60f712d731fbfad5819186f6d049a443c373db4a3a2b11ac",
+    "extraction/dense-reducer-square/arithmetic.llbc": "983b5fcc24bc4ff884b76268edcf8071e1fc3362565896012c091717595f1bc6",
+    "extraction/dense-reducer-square/axioms.log": "a2eba6d35d2ee3834e78182d998078701f36e64e38b5d14cbbb37834fc12d2db",
+    "extraction/dense-reducer-square/charon.log": "8ab2a9d859a666276d340f5246337d933b9a07dca6c037d7de72c914630d6bae",
+    "extraction/dense-reducer-square/checked-dense-reducer-square.patch": "fa5418ecb9e225609ff7362bdc64647ffc346aab0fb142f9ae70c39b5aca7cc9",
+    "extraction/dense-reducer-square/checked.log": "01a033436b1cf9cacacca040bb035f7e9d608137f57b7e5e761590fb4da83dbf",
+    "extraction/dense-reducer-square/disabled.log": "caaffd90f04fd6b0619ab291422769163f7a452d5ca48ed3d43e5bba6b4abdab",
+    "extraction/dense-reducer-square/portable-xor-stock.log": "334a15823df5459f867c13e9ccf5646bef82cfb387669ffa4c74b3bc68970903",
+    "extraction/dense-reducer-square/portable-xor.log": "77371c7fa5d9580e28d34e2ebeffe0f9b6da51253d0446baa5abf3223ddb9022",
+    "extraction/dense-reducer-square/project.py": "77a647b32b5938e5cd0aa1e1f6952eee722f4fbc4086e0ec57c12ae2d80f7e8b",
+    "extraction/dense-reducer-square/receipt.json": "add44dcfdc40847f47fd93694b47fa2fe439a7c8425f60dd64d075b4f6a2529e",
+    "extraction/dense-reducer-square/replay.log": "a28743506489ff82c654200b55706284fae149822fa8efff7ba3247034a19b15",
+    "extraction/dense-reducer-square/replay.py": "194f2bff868aea6787b798874abf8a26f563dbe121674b9fb2bfb4fc699a7399",
+    "extraction/dense-reducer-square/stock.log": "502b5abf8bbd920999f67dea1f1463afc72cb58be8010859ee1e0b3df32558ac",
+    "extraction/dense-reducer-square/unchecked.log": "dc975793852165fb024b58dfea3cffd152a86545a0fe168812602665819277f4"
   },
   "reviewed_policy_revisions": [
     {
@@ -7179,7 +7208,224 @@
       "new_sha256": "3fc0b17ed8a09b16490225bc06cc4e61aab2a20e2753307c089d1041cf524d94",
       "reason": "Freeze exact original Dense modular shift and table, trace seed and loops, and finite-address and allocation contracts.",
       "old_sha256": "7b3a819c39a78733098c8d64c8ef437e08613979737c889def4bb6fba3af88a2"
+    },
+    {
+      "path": "NATIVE_DENSE_REDUCER.md",
+      "new_sha256": "1e507a052eda6ffab691e8e3d78c9904cafd2498edccbd46b8164de89248531a",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
+      "old_sha256": "f0640a2ca3e32980df3bc36b3b4948bd9bf67d54d093a501460cb432cefc823c"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "c89a9e135dd5d6f3f45ba22d8df885ade252812d452f5dea5bb5ace576ab22dd",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
+      "old_sha256": "1e687602357de561be7b79a28ae19eda6d2ba6f35beda8eb955017392f5663e6"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "0f0031391c592ebf86a0939b4d177668c1173200038d5b304cc662ea137a8d0a",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
+      "old_sha256": "72199444beaa9f5bedeae174783f2b32cb55031f9bd3015439ff865253c741ad"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "b527001feaeaff61e68b4a2ab1a0cdbc7228dba0a7ba6a652c655d5a59a68a3d",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
+      "old_sha256": "5fb174ecbe65da32c16a55a3c44308d2de2d5d02bc4df1c670f9405e7f750c0e"
+    },
+    {
+      "path": "audit/native-dense-reducer-checkpoint.json",
+      "new_sha256": "41da787e360070eaa0ee57a31380362d9a3a4642c085a1334ba9293acb37fceb",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
+      "old_sha256": "6542cf0f0f3d56d1ab9e8bbc1102e098ace008b22641099882930798ae996298"
+    },
+    {
+      "path": "bridge/Arithmetic/DenseReducerSquareGenerated.lean",
+      "new_sha256": "a381cdfdb38ae9e5982020dfbbe0a6335dcc89c6a30337561a9174cad7088ec5",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "bridge/Arithmetic/DenseReducerSquareRuntime.lean",
+      "new_sha256": "bb515d3056d7f5f197820dd859a3b0ee9d908a4a64e34c5a28cd1e73486c1585",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "6081f686be878e950869667c9bfda038c169fa6dccaa9ecc9a3ed1c5005cd1b1",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
+      "old_sha256": "43afd1e4b6746d1edd6e740a89dcb7d9d6b33db4e72c897fc388f01d3af69416"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "b06f3745f2e89486a9e7d46ba626708573ff6ba8111f963fbb85756a5b012347",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
+      "old_sha256": "bdb730baf10af0699f2094c3a3ca4b78722a828bff016bf13237c40b870d9535"
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseRawSquareMeaning.lean",
+      "new_sha256": "1fc35ca3a69d5faea67f94eb9cc8e8df9ec9ccba7a0107309b9a35a3ec79cbf0",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseReducerSquare.lean",
+      "new_sha256": "2f83b60599f2e21913d073de5f504ad329b5ee8bb487c485824d77e06abf14e8",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseReducerSquareAlgebra.lean",
+      "new_sha256": "1680d4649cbcdcb76110fd5ae5e6d2eb6f77dd5dcf8fb998b348c05a5d813971",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseReducerSquareSpec.lean",
+      "new_sha256": "6a9f225a3f09bb0fd21660062405692de7b63af77c7996c4e61f79dd493b9d07",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeRootTrace.lean",
+      "new_sha256": "8ea77cde69890a542dc90631ccbe76747b146ce6c7fb00fa98c72d35faa3cbc5",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraceGenerator.lean",
+      "new_sha256": "6aec0a3ba4a885a4810a047876bb501660b1891c192e03d120fc5ed9edaf03a5",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraceWrapper.lean",
+      "new_sha256": "544d9eddee2a984b2e8c069069ef83bccee5dd2e9ae2c0a13d1e758b5ddb6901",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraceWrapperSpec.lean",
+      "new_sha256": "91dbda331d95e41dc7392d493141b5b7fb5c8f63ab4de5593fd8c4a8131e8e25",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "bridge/README.md",
+      "new_sha256": "3727d1a8858c62dd714c6836e8f35063bc95872dbe1e32906973e6b3d670cdef",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
+      "old_sha256": "b38c5386dc71f05dd43c4a4d211da141966c932409199a7a64853d3336e6ba5c"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "13daa585bc91eebce3e9f982dc3489e8c01f979c6b005f393a4ce5871f5ce1fb",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
+      "old_sha256": "a34abb2d87559b31fb45d700138482de0647e88579731d1a86353e68493d2dd3"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "02bde8a42e403999c92cd9bba85628207d4e5ca9b4bda8040915eb0b379e6b72",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
+      "old_sha256": "8615db337dc7b2cda3f53f22453cf4ae6ba21d7a318451e0585943b121f20ce8"
+    },
+    {
+      "path": "extraction/dense-reducer-square/Arithmetic/Funs.lean",
+      "new_sha256": "bfb8c077f8c7172988d6b6d11183929211a2eed0bc804e4fe2af586aa4d8075e",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "e70580d958e57d0416a230a8c2d299d1c5906d2c64a1804f1f3bfeb0922b3b71",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/Arithmetic/Types.lean",
+      "new_sha256": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/Axioms.lean",
+      "new_sha256": "2cfb277bce8338d714080d364d2a75a17aa9c63d0e4cb364be93482af3f7fae6",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/README.md",
+      "new_sha256": "62d26cab5565295a60f712d731fbfad5819186f6d049a443c373db4a3a2b11ac",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/arithmetic.llbc",
+      "new_sha256": "983b5fcc24bc4ff884b76268edcf8071e1fc3362565896012c091717595f1bc6",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/axioms.log",
+      "new_sha256": "a2eba6d35d2ee3834e78182d998078701f36e64e38b5d14cbbb37834fc12d2db",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/charon.log",
+      "new_sha256": "8ab2a9d859a666276d340f5246337d933b9a07dca6c037d7de72c914630d6bae",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/checked-dense-reducer-square.patch",
+      "new_sha256": "fa5418ecb9e225609ff7362bdc64647ffc346aab0fb142f9ae70c39b5aca7cc9",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/checked.log",
+      "new_sha256": "01a033436b1cf9cacacca040bb035f7e9d608137f57b7e5e761590fb4da83dbf",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/disabled.log",
+      "new_sha256": "caaffd90f04fd6b0619ab291422769163f7a452d5ca48ed3d43e5bba6b4abdab",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/portable-xor-stock.log",
+      "new_sha256": "334a15823df5459f867c13e9ccf5646bef82cfb387669ffa4c74b3bc68970903",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/portable-xor.log",
+      "new_sha256": "77371c7fa5d9580e28d34e2ebeffe0f9b6da51253d0446baa5abf3223ddb9022",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/project.py",
+      "new_sha256": "77a647b32b5938e5cd0aa1e1f6952eee722f4fbc4086e0ec57c12ae2d80f7e8b",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/receipt.json",
+      "new_sha256": "add44dcfdc40847f47fd93694b47fa2fe439a7c8425f60dd64d075b4f6a2529e",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/replay.log",
+      "new_sha256": "a28743506489ff82c654200b55706284fae149822fa8efff7ba3247034a19b15",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/replay.py",
+      "new_sha256": "194f2bff868aea6787b798874abf8a26f563dbe121674b9fb2bfb4fc699a7399",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/stock.log",
+      "new_sha256": "502b5abf8bbd920999f67dea1f1463afc72cb58be8010859ee1e0b3df32558ac",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "extraction/dense-reducer-square/unchecked.log",
+      "new_sha256": "dc975793852165fb024b58dfea3cffd152a86545a0fe168812602665819277f4",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "87b79b142eefcaca6c5611169021294d50e0ff28abc91eb198ecfbe332e36edf",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
+      "old_sha256": "2e2c0b5448bde5502b02ec44ed20851ed4b1be3db54db97dfa8a4783b6ac9924"
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "16833d8a9a8879b120ac004032b74ebb9465637937b3470fe214f7361eb34104",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
+      "old_sha256": "3fc0b17ed8a09b16490225bc06cc4e61aab2a20e2753307c089d1041cf524d94"
     }
   ],
-  "challenge_count": 247
+  "challenge_count": 251
 }

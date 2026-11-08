@@ -988,6 +988,22 @@
     {
       "challenge": "BulksketchBridge.X86MaskedMemory.Allocation.AllocatedDifferenceContract",
       "theorem": "BulksketchBridge.X86MaskedMemory.Allocation.allocated_difference_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseReducerSquare.ActualSquareModInto",
+      "theorem": "BulksketchBridge.DenseReducerSquare.square_mod_into_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootTrace.ActualNativeTrace",
+      "theorem": "BulksketchBridge.RootTrace.native_trace_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseReducerSquare.ActualNativeModularSquare",
+      "theorem": "BulksketchBridge.DenseReducerSquare.native_modular_square"
+    },
+    {
+      "challenge": "BulksketchBridge.RootTrace.ActualTraceWrapper",
+      "theorem": "BulksketchBridge.RootTrace.trace_wrapper_refines"
     }
   ],
   "refinements": [
@@ -2831,6 +2847,35 @@
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original table seed, row loop, work and table writebacks under admitted widths, monic shape and exact GF64 scale-XOR. Correct high even power table proved separately.",
       "translator_variant": "checked-dense-reducer-option-v1"
+    },
+    {
+      "label": "Dense::square_mod_into [original source]",
+      "native_item_id": "src/poly/dense.rs:188:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::square_mod_into",
+      "source_line_span_sha256": "0dd2487da1ebb617ba529dd66942545a7a42a6ccb5effefbba7999a7e5c91007",
+      "theorem": "BulksketchBridge.DenseReducerSquare.square_mod_into_refines",
+      "challenge": "BulksketchBridge.DenseReducerSquare.ActualSquareModInto",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.square_mod_into",
+      "generated_file": "bridge/Arithmetic/DenseReducerSquareGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/DenseReducerSquareGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original assertions, kernel dispatch, every low/high coefficient accumulation, final reduction and normalized scratch result under stated contracts.",
+      "translator_variant": "checked-dense-reducer-square-v1"
+    },
+    {
+      "label": "Roots::trace [original source]",
+      "native_item_id": "src/decode/roots.rs:384:method:bulksketch::decode::roots::Roots::trace",
+      "source_line_span_sha256": "259c19879f03af5487cc19eaafdfa63f748ea41b28ad990487453cfb70642c53",
+      "theorem": "BulksketchBridge.RootTrace.native_trace_refines",
+      "challenge": "BulksketchBridge.RootTrace.ActualNativeTrace",
+      "generated_declaration": "bulksketch.decode.roots.Roots.trace",
+      "generated_file": "bridge/Arithmetic/RootTraceGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RootTraceGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original trace with the original Dense modular-square body, exact first and split charges, seed and cache, all 64 Frobenius terms, scratch, and checked GCD or NotSplit transition."
     }
   ],
   "stateful_llbc_refinements": [
