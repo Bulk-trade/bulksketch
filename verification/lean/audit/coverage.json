@@ -3727,7 +3727,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.NewtonGuard.guard_refines",
+        "scope": "Original degree-three/four guard, with admitted odd words and scratch on the writing branch. Exact zero-denominator rejection, six cleared scratch words and original suffix, exact early residual boolean under verified GF64 callbacks. Residual and word meanings checked separately.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/degree_probe.rs:18:struct:bulksketch::decode::degree_probe::DegreeProbe",
@@ -11719,8 +11726,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Original degree-three/four normalization and the closed-leaf phase equation are checked, with exact certificate semantics and normal accepted advances on admitted stack states. General recovery and end-to-end decoder completeness remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 95,
+    "note": "All 344 native executable declarations retained. Original degree-three/four Newton guard now has exact cleared word, scratch and residual semantics, with separate finite-field transport. The whole probe and decoder composition remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 96,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11764,7 +11771,9 @@
       "native_affine_quartic": "BulksketchBridge.AffineQuartic.affine_quartic_refines",
       "native_general_quartic": "BulksketchBridge.QuarticSemantics.quartic_refines",
       "native_closed_leaf_certificate": "BulksketchBridge.ClosedLeaf.certificate_meaning",
-      "native_newton_normalization": "BulksketchBridge.Normalize.normalize_field_coefficients"
+      "native_newton_normalization": "BulksketchBridge.Normalize.normalize_field_coefficients",
+      "native_newton_guard": "BulksketchBridge.NewtonGuard.guard_refines",
+      "native_newton_residual_meaning": "BulksketchBridge.NewtonGuard.residual_moment_meaning"
     },
     "masked_memory_evidence": {
       "store_obstruction": "BulksketchBridge.X86MaskedMemory.PureExtraction.pure_store_cannot_writeback",

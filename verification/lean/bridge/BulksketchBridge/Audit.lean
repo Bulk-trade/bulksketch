@@ -392,7 +392,27 @@ run_cmd do
     (``BulksketchBridge.ClosedLeaf.ActualClosedLeafAcceptedAdvance,
       ``BulksketchBridge.ClosedLeaf.accepted_advance),
     (``BulksketchBridge.Normalize.ActualNormalizeFieldCoefficients,
-      ``BulksketchBridge.Normalize.normalize_field_coefficients)
+      ``BulksketchBridge.Normalize.normalize_field_coefficients),
+    (``BulksketchBridge.NewtonGuard.ActualNewtonGuardRefines,
+      ``BulksketchBridge.NewtonGuard.guard_refines),
+    (``BulksketchBridge.NewtonGuardResidual.ActualGuardSquareLoops,
+      ``BulksketchBridge.NewtonGuardResidual.square_loops_refine),
+    (``BulksketchBridge.NewtonGuardResidual.ActualGuardLagLoops,
+      ``BulksketchBridge.NewtonGuardResidual.lag_loops_refine),
+    (``BulksketchBridge.NewtonGuardResidual.ActualGuardResidualLoops,
+      ``BulksketchBridge.NewtonGuardResidual.residual_loops_refine),
+    (``BulksketchBridge.NewtonGuard.CubicClearedWordsMeaning,
+      ``BulksketchBridge.NewtonGuard.cubic_cleared_words),
+    (``BulksketchBridge.NewtonGuard.QuarticClearedWordsMeaning,
+      ``BulksketchBridge.NewtonGuard.quartic_cleared_words),
+    (``BulksketchBridge.NewtonGuard.CubicDenominatorMeaning,
+      ``BulksketchBridge.NewtonGuard.cubic_denominator),
+    (``BulksketchBridge.NewtonGuard.QuarticDenominatorMeaning,
+      ``BulksketchBridge.NewtonGuard.quartic_denominator),
+    (``BulksketchBridge.NewtonGuard.ResidualMomentMeaning,
+      ``BulksketchBridge.NewtonGuard.residual_moment_meaning),
+    (``BulksketchBridge.NewtonGuard.ActualGuardAcceptsSupport,
+      ``BulksketchBridge.NewtonGuard.guard_accepts_support)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

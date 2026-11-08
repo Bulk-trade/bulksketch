@@ -426,6 +426,11 @@
       "path": "extraction/deg34-normalize/arithmetic.llbc",
       "sha256": "0d65ab80c0f8696138fa7201a8d4a705d373e75a9d6b51df4090bc835d85d5b9",
       "has_errors": false
+    },
+    {
+      "path": "extraction/deg34-guard/arithmetic.llbc",
+      "sha256": "7ab0bf33c6a6eb90f9fb5bb93f7bae8bfa939e1fbf0c14688e7ee2df476f30ae",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -983,6 +988,11 @@
       "native_item_id": "src/decode/deg34.rs:65:function:bulksketch::decode::deg34::normalize",
       "generated_declaration": "bulksketch.decode.deg34.normalize",
       "generated_file": "bridge/Arithmetic/NormalizeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:9:function:bulksketch::decode::deg34::guard",
+      "generated_declaration": "bulksketch.decode.deg34.guard",
+      "generated_file": "bridge/Arithmetic/NewtonGuardGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1415,6 +1425,16 @@
       "checker": "extraction/deg34-normalize/project.py",
       "declaration_count": 3,
       "scope": "Exact original degree-three/four Newton normalization loop and wrapper under a nonzero denominator, admitted slices and exact GF64 callbacks. Exact full scratch words and independent field coefficients."
+    },
+    {
+      "generated": "extraction/deg34-guard/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/NewtonGuardGenerated.lean",
+      "sha256": "2f062f7c44839001c7894370ba642850434faefedadac724f0d1e9ad3964d5a1",
+      "raw_sha256": "296dfd1887805a7a59f4774ac7bbe82a55bf118b174bddc37b866e971be1067a",
+      "checker": "extraction/deg34-guard/project.py",
+      "declaration_count": 13,
+      "scope": "Original degree-three/four guard, with admitted odd words and scratch on the writing branch. Exact zero-denominator rejection, six cleared scratch words and original suffix, exact early residual boolean under verified GF64 callbacks. Residual and word meanings checked separately.",
+      "translator_variant": "checked-fixedpoint-nested-scalar-slice-retry-v1"
     }
   ],
   "reviewed_translator_variants": [
@@ -1471,6 +1491,15 @@
       "receipt": "extraction/quartic/receipt.json",
       "mandatory_checks": true,
       "scope": "Checked continuation-free loop fixed-point list join only. Mixed concrete shared/mutable scalar arrays with matching borrow-free shared payload cause a stock retry ending the shared loan only. Context matching, collapse, and synthesis joins keep old mode. The original checked path still synthesizes and validates both sides."
+    },
+    {
+      "id": "checked-fixedpoint-nested-scalar-slice-retry-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/deg34-guard/translator/checked-nested-slice-loan-retry.patch",
+      "patch_sha256": "7c8426703fb5220a89039735f8f92677e14b7b93efa344851deaa5232bbf6fae",
+      "receipt": "extraction/deg34-guard/receipt.json",
+      "mandatory_checks": true,
+      "scope": "The existing checked continuation-free loop fixedpoint list matcher may retry a mixed concrete loan only for an immediate child of the same mutable borrow ID, exact U64 slice type and same typed symbolic shared payload. It requests ending the shared loan through stock machinery. Other modes retain the original behavior."
     }
   ],
   "diagnostic_generated_projections": [

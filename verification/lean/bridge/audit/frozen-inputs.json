@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "3134d6a064407d7dfb8d68903ccf0607b3e118926b618593233f2c3eb28e9e2f",
+    "bridge/BulksketchBridge/Audit.lean": "535d446b15354b64f86c7119927b057c5ddce14a63893387ed07a615e2e25be5",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,9 +13,9 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "4677a8b810a294faa687d1965c9fbe4e5fa758259278b391889d805accbfc959",
-    "audit/frozen-inputs.json": "3fc2dcf98e7b9880b38ae2ed5e0090d4f08c3b26800bd5996f304838d6a1c397",
-    "bridge/BulksketchBridge.lean": "f94be8a4d5c168253bb01230cef7f154f0ef0c7f4576c944f89b7db8016134a3",
+    "scripts/verify_bridge.py": "278bef74f3ac6f83374aa683f15eab28e5f6896de634c580cbf5913b9cc21d21",
+    "audit/frozen-inputs.json": "5a361653166dd36036562d2dcf1fc7cde1fcbe34f695b431b3230b7824642e35",
+    "bridge/BulksketchBridge.lean": "70a43d392b1a9233ae6a74e240fda4622994c7bc1726ebcda59e15b6b31ce9ac",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "23d68a50606ba10fa500ae1ba847e6361b822cdbab3d3dd774a001dedaa7c8b0",
-    "bridge/obligations.json": "46343d1b7e5786ac3c4e9ff8c051e2b2ecdaf7e982fca2b44b5bf871a00b9e5a",
+    "bridge/source-linkage.json": "97326d44dcc85188938c8631978d7e68bc9aa0ccfe871dda77cf65cef0f2908e",
+    "bridge/obligations.json": "0139733e9e851fc5c32d1bee5d70c67197d6b9894f8c540ce893353ac3d6e88b",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "10ea349d01a6672a94c6b0b1f5e03a990ce98522801580a230193de64521edc2",
+    "scripts/check_projection_fixtures.py": "8e091c58f4151646623a21056bafbfb002ac41fb224114110fd4434d424c74c1",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -130,7 +130,7 @@
     "bridge/audit/quotient-trace-independent-review.md": "0b09b3d6298e8dae500dfe5f9db1665b2891c3ca15de4d8c6c5797d6137b96f2",
     "bridge/audit/inverse-independent-review.md": "ae678a02595c01159f9623f88a3694f09747d6d19b0c7f87ded1e728cf629d95",
     "extraction/inverse-chain/monomorphization-pilot-receipt.json": "103658a02c5f0c750bdfa0bc3e4e35512d1838a116ca2952d7f16be552e7a3e1",
-    "scripts/check_variant_fixtures.py": "fc0933dcfee5448943a3a32c5755ffa50780c9812f4daa2e86f5736aedf16555",
+    "scripts/check_variant_fixtures.py": "0c6cf2dc380fa26a969ffe7bc6ce039e31aeaecf36cf111927115b03db148bcb",
     "audit/native-coverage-checkpoint.json": "b8317d30100e2ce80f6e5905b8d37d8019f51a7f18c4da48a5524caf62f8e4e1",
     "audit/aeneas-capture-independent-review.md": "7b82b268d8c4dc108cd1378ec6065432074be9ea323a87fdc3adf6162cb6e68a",
     "audit/frobenius-const-independent-review.md": "1fa3167209409d3508febc2d25e991de8dc67c3e6fa8a7717b0e6958377ba3cd",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "0ad9be2b237e1dfdf7f378ecba8952b7a9ece4dfa124cf11f03f450610c0bc80",
+    "README.md": "5a9017cbcd8057faf46bb595b36373805f56c823ef00b47555a12c7b885c45af",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "3fa60e00b5012adc81bdc77984faa5dfd8a2abca3fd692f7a8fbe938171645de",
+    "audit/coverage.json": "819c18093b0ca8fac33b3f5697cf961e24504357bfe0b36819de2d32721c9668",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -319,7 +319,7 @@
     "bridge/BulksketchBridge/SyndromeUniquenessSpec.lean": "0fb7dd6f308fa79337dce13cbd73c522f78c75024d86e05b7c5fd7d2d0ceff3c",
     "bridge/BulksketchBridge/VerifyDispatch.lean": "38d817777987c9d3e97ee3155717d243b545f42e976afa8fbcdb9b9c8e7b917c",
     "bridge/BulksketchBridge/VerifyDispatchSpec.lean": "d609a22b3daf8816de9afdc60f1e293bf4efdf6ed37d19efafd190b70217fb06",
-    "bridge/README.md": "4a6d537a38d7c45748f3dc9033ca1e34ea81f2bb3381456ae933d84149773111",
+    "bridge/README.md": "b8d6a2e973ffc959a249092a9a0979b01f3b496db5edc50a58615166726a4901",
     "extraction/dense-square/Arithmetic/Funs.lean": "7ff7bf02a64fb62cb3d28154514ad7b426018c4380dc56b4d101dee3d73bd505",
     "extraction/dense-square/Arithmetic/FunsExternal_Template.lean": "9d47cb5223b7a3a784065947ca87ceea2b65fb72423eb973c18862af9f72a5c8",
     "extraction/dense-square/Arithmetic/Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
@@ -827,7 +827,41 @@
     "extraction/deg34-normalize/check_controls.py": "8736c844193a7b375e0e4356a81731460b3535b861bfc546da137541f8d7ea39",
     "extraction/deg34-normalize/project.py": "ae6c7434e87c9e1f818d1c801e5d90fdaa8002c46ead13cb56ba9de7ca6faef4",
     "extraction/deg34-normalize/receipt.json": "cbf8ec8ea63b17771e5d02eedbae67f1dc218259368f6814c2db57851e2fa4d4",
-    "extraction/deg34-normalize/replay.log": "34d5d74d1cafb3f2f0d161384c87669cbabdcf7958bcad89eed2422f482ac039"
+    "extraction/deg34-normalize/replay.log": "34d5d74d1cafb3f2f0d161384c87669cbabdcf7958bcad89eed2422f482ac039",
+    "NATIVE_NEWTON_GUARD.md": "f8d13ab202dd6dc1cda482af41c06eca338711bf59e4b45622f3567aeb072d0f",
+    "audit/native-newton-guard-checkpoint.json": "79c5608388f208a9b107d682147d48029a6c67e5953a6ef5feb46ae4fdac6321",
+    "bridge/Arithmetic/NewtonGuardGenerated.lean": "2f062f7c44839001c7894370ba642850434faefedadac724f0d1e9ad3964d5a1",
+    "bridge/BulksketchBridge/NewtonClearing.lean": "53c4f8b2e8309a4e05807a7ac8e8016fc4b2fe717fecdd99a4cac03d5444d1a6",
+    "bridge/BulksketchBridge/NewtonGuard.lean": "481431763a85347e2303e99c3be79fc4f23355f1b36c07e4a8ac8b27d130c257",
+    "bridge/BulksketchBridge/NewtonGuardMath.lean": "dc8b2ca152914b9359df6e229f72b1ee55ecc021f98e771c17ffe0b380c230fc",
+    "bridge/BulksketchBridge/NewtonGuardMathSpec.lean": "fcaac7f07aaa669965566ea09c3c50679cb0c829a46f70d1cca10252bbad5f2a",
+    "bridge/BulksketchBridge/NewtonGuardMomentSpec.lean": "fe3d0fed77319b83f43f7ac9fdc0a172f530b28b5cfbae5b960a2af7c51bb12b",
+    "bridge/BulksketchBridge/NewtonGuardMoments.lean": "18dd2b286b79a7563c2ba4cd7bb8883a63e598765ed1d0b5ae791d27c48bdaa3",
+    "bridge/BulksketchBridge/NewtonGuardPreparation.lean": "1f13fc583d4609a26c7e934243216948d32a8f84c5f168819cdcff888e8b8642",
+    "bridge/BulksketchBridge/NewtonGuardResidual.lean": "33f86e1dabfea2403fad53385d50412538c5933da460818bad3f4e88870acbb5",
+    "bridge/BulksketchBridge/NewtonGuardResidualSpec.lean": "4846a0258801ebf184a1d4fbc35aa8b9a422d3ef925cf8a09c241dd4d5012510",
+    "bridge/BulksketchBridge/NewtonGuardSpec.lean": "8cb3ccce3b952f18fc4c6af3407d69a4561b8eac959d812b89bca6aa58cd2c95",
+    "bridge/BulksketchBridge/NewtonGuardSupport.lean": "bd9574013611a20e0192e28035880819b591cbb8720d23fe2e4c6846ca01a8a5",
+    "bridge/BulksketchBridge/NewtonGuardSupportSpec.lean": "0e87762cff1ed56ef77acc79e42ab68721bde73a550110ca8214562e77bc2917",
+    "extraction/deg34-guard/Arithmetic/Funs.lean": "296dfd1887805a7a59f4774ac7bbe82a55bf118b174bddc37b866e971be1067a",
+    "extraction/deg34-guard/Arithmetic/FunsExternal_Template.lean": "e53106d47220543fc8f75aed399164f51f03c18ce88f390afece9285aa2896bf",
+    "extraction/deg34-guard/Arithmetic/Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+    "extraction/deg34-guard/README.md": "0929b6c6d09265d4d2c109a70c31630add8ad2484e561708a960d8c741eb63f5",
+    "extraction/deg34-guard/aeneas.log": "d536b1c98e668b5ea5f978e8fa8360cd3955a483918a3371f286aed0ab5c6a36",
+    "extraction/deg34-guard/arithmetic.llbc": "7ab0bf33c6a6eb90f9fb5bb93f7bae8bfa939e1fbf0c14688e7ee2df476f30ae",
+    "extraction/deg34-guard/charon.log": "0de00ad8c6a05c7dd57cebbdfece5f300dcf32f574d62f9536c5abebb8cd3da3",
+    "extraction/deg34-guard/check_controls.py": "190469b21aa409cbd0362ef78a97d4b9003c291342c44024e3ea59cd563ebb3e",
+    "extraction/deg34-guard/pinned.log": "6b1ed383e35b2655bb174c3accc3016ea157fd37e482efd809b45802ce3a12d5",
+    "extraction/deg34-guard/project.py": "920120a10e8634fdf4d0e57142f88796c099886e3bac36cca51bc0acd8403098",
+    "extraction/deg34-guard/receipt.json": "29296a5a863eb198622f7a66203f4185c7c7f36fbe2f244a76e53a3cf102d988",
+    "extraction/deg34-guard/translator/checked-nested-slice-loan-retry.patch": "7c8426703fb5220a89039735f8f92677e14b7b93efa344851deaa5232bbf6fae",
+    "extraction/deg34-guard/translator/controls.log": "f11c94e834c87e4ab591356844bb3b26d7f2115bd6a3956ee93f12743a372e1c",
+    "extraction/deg34-guard/translator/guards/dune": "c4a78300d6daf4bc8c2d1e2b65ebb9f465fbea15356e83451cfe7a27b9c03349",
+    "extraction/deg34-guard/translator/guards/nested_slice_loan_controls.ml": "a52f6e0625285231dd56be4e5fc8ebb510d158ba0d2f96fee4a41cd61feabcf1",
+    "extraction/deg34-guard/translator/nested-slice-loan-retry-delta.patch": "b5af23f0e681407135f8b289fc861a8e494cd8d5a110495434d0e3d2e5e3fc0e",
+    "extraction/deg34-guard/translator/normalize-control.log": "4b9165e971014eb2302f3701146aee476db2301507b2df78b7859023b47665b4",
+    "extraction/deg34-guard/translator/quartic-control.log": "3f643d4d9209e3baf679c8b06e50363457d83679a0529aebb143c60ba1655ce5",
+    "extraction/deg34-guard/unchecked.log": "56f61264fca297b5fc9be466da3d517cd65cc36d7e6882fda5168cb0998ad683"
   },
   "reviewed_policy_revisions": [
     {
@@ -5493,7 +5527,243 @@
       "new_sha256": "10ea349d01a6672a94c6b0b1f5e03a990ce98522801580a230193de64521edc2",
       "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization.",
       "old_sha256": "35a400b026d1c441da5ab5261899dc1a90d2b6b932268117d9c157e2e3fb18c8"
+    },
+    {
+      "path": "NATIVE_NEWTON_GUARD.md",
+      "new_sha256": "f8d13ab202dd6dc1cda482af41c06eca338711bf59e4b45622f3567aeb072d0f",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "5a9017cbcd8057faf46bb595b36373805f56c823ef00b47555a12c7b885c45af",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics.",
+      "old_sha256": "0ad9be2b237e1dfdf7f378ecba8952b7a9ece4dfa124cf11f03f450610c0bc80"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "819c18093b0ca8fac33b3f5697cf961e24504357bfe0b36819de2d32721c9668",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics.",
+      "old_sha256": "3fa60e00b5012adc81bdc77984faa5dfd8a2abca3fd692f7a8fbe938171645de"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "5a361653166dd36036562d2dcf1fc7cde1fcbe34f695b431b3230b7824642e35",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics.",
+      "old_sha256": "3fc2dcf98e7b9880b38ae2ed5e0090d4f08c3b26800bd5996f304838d6a1c397"
+    },
+    {
+      "path": "audit/native-newton-guard-checkpoint.json",
+      "new_sha256": "79c5608388f208a9b107d682147d48029a6c67e5953a6ef5feb46ae4fdac6321",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "bridge/Arithmetic/NewtonGuardGenerated.lean",
+      "new_sha256": "2f062f7c44839001c7894370ba642850434faefedadac724f0d1e9ad3964d5a1",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "70a43d392b1a9233ae6a74e240fda4622994c7bc1726ebcda59e15b6b31ce9ac",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics.",
+      "old_sha256": "f94be8a4d5c168253bb01230cef7f154f0ef0c7f4576c944f89b7db8016134a3"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "535d446b15354b64f86c7119927b057c5ddce14a63893387ed07a615e2e25be5",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics.",
+      "old_sha256": "3134d6a064407d7dfb8d68903ccf0607b3e118926b618593233f2c3eb28e9e2f"
+    },
+    {
+      "path": "bridge/BulksketchBridge/NewtonClearing.lean",
+      "new_sha256": "53c4f8b2e8309a4e05807a7ac8e8016fc4b2fe717fecdd99a4cac03d5444d1a6",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NewtonGuard.lean",
+      "new_sha256": "481431763a85347e2303e99c3be79fc4f23355f1b36c07e4a8ac8b27d130c257",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NewtonGuardMath.lean",
+      "new_sha256": "dc8b2ca152914b9359df6e229f72b1ee55ecc021f98e771c17ffe0b380c230fc",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NewtonGuardMathSpec.lean",
+      "new_sha256": "fcaac7f07aaa669965566ea09c3c50679cb0c829a46f70d1cca10252bbad5f2a",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NewtonGuardMomentSpec.lean",
+      "new_sha256": "fe3d0fed77319b83f43f7ac9fdc0a172f530b28b5cfbae5b960a2af7c51bb12b",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NewtonGuardMoments.lean",
+      "new_sha256": "18dd2b286b79a7563c2ba4cd7bb8883a63e598765ed1d0b5ae791d27c48bdaa3",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NewtonGuardPreparation.lean",
+      "new_sha256": "1f13fc583d4609a26c7e934243216948d32a8f84c5f168819cdcff888e8b8642",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NewtonGuardResidual.lean",
+      "new_sha256": "33f86e1dabfea2403fad53385d50412538c5933da460818bad3f4e88870acbb5",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NewtonGuardResidualSpec.lean",
+      "new_sha256": "4846a0258801ebf184a1d4fbc35aa8b9a422d3ef925cf8a09c241dd4d5012510",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NewtonGuardSpec.lean",
+      "new_sha256": "8cb3ccce3b952f18fc4c6af3407d69a4561b8eac959d812b89bca6aa58cd2c95",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NewtonGuardSupport.lean",
+      "new_sha256": "bd9574013611a20e0192e28035880819b591cbb8720d23fe2e4c6846ca01a8a5",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NewtonGuardSupportSpec.lean",
+      "new_sha256": "0e87762cff1ed56ef77acc79e42ab68721bde73a550110ca8214562e77bc2917",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "bridge/README.md",
+      "new_sha256": "b8d6a2e973ffc959a249092a9a0979b01f3b496db5edc50a58615166726a4901",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics.",
+      "old_sha256": "4a6d537a38d7c45748f3dc9033ca1e34ea81f2bb3381456ae933d84149773111"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "0139733e9e851fc5c32d1bee5d70c67197d6b9894f8c540ce893353ac3d6e88b",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics.",
+      "old_sha256": "46343d1b7e5786ac3c4e9ff8c051e2b2ecdaf7e982fca2b44b5bf871a00b9e5a"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "97326d44dcc85188938c8631978d7e68bc9aa0ccfe871dda77cf65cef0f2908e",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics.",
+      "old_sha256": "23d68a50606ba10fa500ae1ba847e6361b822cdbab3d3dd774a001dedaa7c8b0"
+    },
+    {
+      "path": "extraction/deg34-guard/Arithmetic/Funs.lean",
+      "new_sha256": "296dfd1887805a7a59f4774ac7bbe82a55bf118b174bddc37b866e971be1067a",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "e53106d47220543fc8f75aed399164f51f03c18ce88f390afece9285aa2896bf",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/Arithmetic/Types.lean",
+      "new_sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/README.md",
+      "new_sha256": "0929b6c6d09265d4d2c109a70c31630add8ad2484e561708a960d8c741eb63f5",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/aeneas.log",
+      "new_sha256": "d536b1c98e668b5ea5f978e8fa8360cd3955a483918a3371f286aed0ab5c6a36",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/arithmetic.llbc",
+      "new_sha256": "7ab0bf33c6a6eb90f9fb5bb93f7bae8bfa939e1fbf0c14688e7ee2df476f30ae",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/charon.log",
+      "new_sha256": "0de00ad8c6a05c7dd57cebbdfece5f300dcf32f574d62f9536c5abebb8cd3da3",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/check_controls.py",
+      "new_sha256": "190469b21aa409cbd0362ef78a97d4b9003c291342c44024e3ea59cd563ebb3e",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/pinned.log",
+      "new_sha256": "6b1ed383e35b2655bb174c3accc3016ea157fd37e482efd809b45802ce3a12d5",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/project.py",
+      "new_sha256": "920120a10e8634fdf4d0e57142f88796c099886e3bac36cca51bc0acd8403098",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/receipt.json",
+      "new_sha256": "29296a5a863eb198622f7a66203f4185c7c7f36fbe2f244a76e53a3cf102d988",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/translator/checked-nested-slice-loan-retry.patch",
+      "new_sha256": "7c8426703fb5220a89039735f8f92677e14b7b93efa344851deaa5232bbf6fae",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/translator/controls.log",
+      "new_sha256": "f11c94e834c87e4ab591356844bb3b26d7f2115bd6a3956ee93f12743a372e1c",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/translator/guards/dune",
+      "new_sha256": "c4a78300d6daf4bc8c2d1e2b65ebb9f465fbea15356e83451cfe7a27b9c03349",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/translator/guards/nested_slice_loan_controls.ml",
+      "new_sha256": "a52f6e0625285231dd56be4e5fc8ebb510d158ba0d2f96fee4a41cd61feabcf1",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/translator/nested-slice-loan-retry-delta.patch",
+      "new_sha256": "b5af23f0e681407135f8b289fc861a8e494cd8d5a110495434d0e3d2e5e3fc0e",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/translator/normalize-control.log",
+      "new_sha256": "4b9165e971014eb2302f3701146aee476db2301507b2df78b7859023b47665b4",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/translator/quartic-control.log",
+      "new_sha256": "3f643d4d9209e3baf679c8b06e50363457d83679a0529aebb143c60ba1655ce5",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "extraction/deg34-guard/unchecked.log",
+      "new_sha256": "56f61264fca297b5fc9be466da3d517cd65cc36d7e6882fda5168cb0998ad683",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "8e091c58f4151646623a21056bafbfb002ac41fb224114110fd4434d424c74c1",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics.",
+      "old_sha256": "10ea349d01a6672a94c6b0b1f5e03a990ce98522801580a230193de64521edc2"
+    },
+    {
+      "path": "scripts/check_variant_fixtures.py",
+      "new_sha256": "0c6cf2dc380fa26a969ffe7bc6ce039e31aeaecf36cf111927115b03db148bcb",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics.",
+      "old_sha256": "fc0933dcfee5448943a3a32c5755ffa50780c9812f4daa2e86f5736aedf16555"
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "278bef74f3ac6f83374aa683f15eab28e5f6896de634c580cbf5913b9cc21d21",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics.",
+      "old_sha256": "4677a8b810a294faa687d1965c9fbe4e5fa758259278b391889d805accbfc959"
     }
   ],
-  "challenge_count": 178
+  "challenge_count": 188
 }

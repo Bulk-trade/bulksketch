@@ -321,6 +321,97 @@ def check_quartic_array_retry_variant(variant, receipt, runtime, runtime_head, l
             raise RuntimeError("quartic retry patched translator sources changed")
 
 
+def check_newton_slice_retry_variant(variant, receipt, runtime, runtime_head, linkage):
+    directory = "extraction/deg34-guard/"
+    patch = directory + "translator/checked-nested-slice-loan-retry.patch"
+    delta = directory + "translator/nested-slice-loan-retry-delta.patch"
+    base = next((entry for entry in linkage["reviewed_translator_variants"]
+                 if entry["id"] == "checked-fixedpoint-scalar-array-loan-retry-v1"), None)
+    if (base is None or variant["receipt"] != directory + "receipt.json" or variant["patch"] != patch or
+            variant["base_commit"] != runtime_head or variant["mandatory_checks"] is not True or
+            receipt["candidate_variant"] != variant["id"] or receipt["extension_of"] != base["id"] or
+            receipt["aeneas_commit"] != runtime_head or receipt["charon_commit"] != linkage["charon_commit"] or
+            receipt["source_commit"] != linkage["source_commit"] or
+            receipt["native_body_proof_credit"] != 0 or receipt["native_source_edited"] is not False or
+            receipt["full_patch_sha256"] != variant["patch_sha256"] or
+            sha(ROOT / patch) != variant["patch_sha256"] or sha(ROOT / delta) != receipt["delta_patch_sha256"] or
+            receipt["delta_modified_source"] != "src/interp/InterpMatchCtxs.ml" or
+            sha(ROOT / base["patch"]) != base["patch_sha256"]):
+        raise RuntimeError("Newton guard slice retry lost checked variant provenance")
+    checks = {entry["name"]: entry for entry in receipt["checks"]}
+    codes = {"charon": 0, "build": 0, "Arithmetic": 1, "slice-retry": 0, "replay": 0, "pinned": 1,
+             "unchecked": 1, "quartic-control": 0, "normalize-control": 0, "guard-controls": 0}
+    if len(checks) != len(receipt["checks"]) or {name: entry["exit_code"] for name, entry in checks.items()} != codes:
+        raise RuntimeError("Newton guard slice retry regression matrix changed")
+    destinations = [arg.removeprefix("--dest-file=") for arg in checks["charon"]["command"]
+                    if arg.startswith("--dest-file=")]
+    charon = checks["charon"]["command"]
+    if (charon[1:4] != ["cargo", "--preset=aeneas", "--sysroot=default"] or
+            Path(charon[0]).parts[-4:] != ("tooling", "charon", "bin", "charon") or
+            charon[5:7] != ["--start-from=bulksketch::decode::deg34::guard", "--"] or
+            not charon[7].startswith("--manifest-path=") or
+            charon[8:] != ["-p", "bulksketch", "--lib", "--locked", "--target", "x86_64-apple-darwin"]):
+        raise RuntimeError("Newton guard recorded Charon selector or tool role changed")
+    manifest = Path(charon[7].removeprefix("--manifest-path="))
+    captured = manifest.parent.parent / "bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/arithmetic.llbc"
+    if destinations != [str(captured)]:
+        raise RuntimeError("Newton guard recorded Charon destination changed")
+    slice_binary = checks["slice-retry"]["command"][0]
+    pinned_binary = checks["pinned"]["command"][0]
+    array_binary = checks["Arithmetic"]["command"][0]
+    if (Path(slice_binary).parts[-5:] != ("deg34-slice-loan-retry", "src", "_build", "default", "main.exe") or
+            Path(pinned_binary).parts[-6:] != ("tooling", "aeneas", "src", "_build", "default", "main.exe") or
+            Path(array_binary).parts[-5:] != ("quartic-array-loan-retry", "src", "_build", "default", "main.exe") or
+            any(checks[name]["command"][0] != slice_binary for name in
+                ("replay", "unchecked", "quartic-control", "normalize-control")) or
+            receipt["tool_binary_sha256"] != {
+                charon[0]: "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+                slice_binary: "656ad7c927561d91b8d1e752c829abd557ed32808dec1a776b3796fed525f90b",
+                pinned_binary: "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+                array_binary: "99c2c9f4db95a14cc0178b7373c247419e6ac6a424d8f7e5eda3e063ddcaf3d0"}):
+        raise RuntimeError("Newton guard recorded translator binaries changed")
+    original = directory + "arithmetic.llbc"
+    paths = dict.fromkeys(("Arithmetic", "slice-retry", "replay", "pinned", "unchecked"), original)
+    paths.update({"quartic-control": "extraction/quartic/arithmetic.llbc",
+                  "normalize-control": "extraction/deg34-normalize/arithmetic.llbc"})
+    linked = {entry["path"]: entry["sha256"] for entry in linkage["extractions"]}
+    for name, path in paths.items():
+        entry = checks[name]
+        arg = Path(entry["command"][-1])
+        expected = Path(path)
+        if (len(destinations) != 1 or
+                (str(arg) != destinations[0] if path == original else arg.parts[-len(expected.parts):] != expected.parts) or
+                entry["input_sha256"] != linked[path] or linked[path] != sha(ROOT / path) or
+                "-sequential" not in entry["command"] or ("-checks" in entry["command"]) != (name != "unchecked")):
+            raise RuntimeError("Newton guard retry command lost its LLBC input: " + name)
+    base_receipt = json.loads((ROOT / base["receipt"]).read_text())
+    files = base_receipt["base_sources"]
+    source = receipt["delta_modified_source"]
+    if files != {name: sha(runtime / name) for name in files}:
+        raise RuntimeError("Newton guard retry base sources changed")
+    with tempfile.TemporaryDirectory(prefix="checked-newton-slice-retry-") as directory_path:
+        temp = Path(directory_path)
+        combined = temp / "combined"
+        incremental = temp / "incremental"
+        for tree in (combined, incremental):
+            for name in files:
+                path = tree / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes((runtime / name).read_bytes())
+        for tree, relative in ((combined, patch), (incremental, base["patch"])):
+            applied = subprocess.run(["git", "apply", str(ROOT / relative)], cwd=tree,
+                                     capture_output=True, timeout=30)
+            if applied.returncode:
+                raise RuntimeError("Newton guard retry patch no longer applies: " + relative)
+        if sha(incremental / source) != receipt["delta_base_sha256"]:
+            raise RuntimeError("Newton guard retry delta base differs")
+        applied = subprocess.run(["git", "apply", str(ROOT / delta)], cwd=incremental,
+                                 capture_output=True, timeout=30)
+        if (applied.returncode or sha(incremental / source) != receipt["delta_modified_sha256"] or
+                any(sha(combined / name) != sha(incremental / name) for name in files)):
+            raise RuntimeError("Newton guard full and incremental patches differ")
+
+
 def check_pclmul_horner_extension(extension, receipt, variants, runtime_head, linkage):
     """Bind the second original Horner extraction to the reviewed matcher."""
     variant = next((entry for entry in variants if entry["id"] == "checked-ended-shared-scalar-v1"), None)
@@ -428,6 +519,12 @@ def main():
         if variant["id"] == "checked-fixedpoint-scalar-array-loan-retry-v1":
             check_quartic_array_retry_variant(variant, receipt, runtime, runtime_head, linkage)
             result, _ = run("checked-quartic-array-retry-patch-applies", ["git", "apply", "--check",
+                            str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
+            records.append(result)
+            continue
+        if variant["id"] == "checked-fixedpoint-nested-scalar-slice-retry-v1":
+            check_newton_slice_retry_variant(variant, receipt, runtime, runtime_head, linkage)
+            result, _ = run("checked-newton-slice-retry-patch-applies", ["git", "apply", "--check",
                             str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
             records.append(result)
             continue

@@ -78,6 +78,9 @@ quartic recovery gates and root theorems, the original batch inversion loops,
 and the degree-three/four candidate output frame. The
 [closed-leaf checkpoint](../NATIVE_CLOSED_LEAF.md) adds the original caller
 phases, certificate acceptance, stack advance, and Newton normalization.
+The [Newton guard checkpoint](../NATIVE_NEWTON_GUARD.md) adds the exact
+original guard, both instances of its residual loop nest, and the
+quotient-field semantics of the cleared words and recurrence.
 
 From the parent Lean directory:
 

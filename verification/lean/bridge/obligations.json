@@ -712,6 +712,46 @@
     {
       "challenge": "BulksketchBridge.Normalize.ActualNormalizeFieldCoefficients",
       "theorem": "BulksketchBridge.Normalize.normalize_field_coefficients"
+    },
+    {
+      "challenge": "BulksketchBridge.NewtonGuard.ActualNewtonGuardRefines",
+      "theorem": "BulksketchBridge.NewtonGuard.guard_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.NewtonGuardResidual.ActualGuardSquareLoops",
+      "theorem": "BulksketchBridge.NewtonGuardResidual.square_loops_refine"
+    },
+    {
+      "challenge": "BulksketchBridge.NewtonGuardResidual.ActualGuardLagLoops",
+      "theorem": "BulksketchBridge.NewtonGuardResidual.lag_loops_refine"
+    },
+    {
+      "challenge": "BulksketchBridge.NewtonGuardResidual.ActualGuardResidualLoops",
+      "theorem": "BulksketchBridge.NewtonGuardResidual.residual_loops_refine"
+    },
+    {
+      "challenge": "BulksketchBridge.NewtonGuard.CubicClearedWordsMeaning",
+      "theorem": "BulksketchBridge.NewtonGuard.cubic_cleared_words"
+    },
+    {
+      "challenge": "BulksketchBridge.NewtonGuard.QuarticClearedWordsMeaning",
+      "theorem": "BulksketchBridge.NewtonGuard.quartic_cleared_words"
+    },
+    {
+      "challenge": "BulksketchBridge.NewtonGuard.CubicDenominatorMeaning",
+      "theorem": "BulksketchBridge.NewtonGuard.cubic_denominator"
+    },
+    {
+      "challenge": "BulksketchBridge.NewtonGuard.QuarticDenominatorMeaning",
+      "theorem": "BulksketchBridge.NewtonGuard.quartic_denominator"
+    },
+    {
+      "challenge": "BulksketchBridge.NewtonGuard.ResidualMomentMeaning",
+      "theorem": "BulksketchBridge.NewtonGuard.residual_moment_meaning"
+    },
+    {
+      "challenge": "BulksketchBridge.NewtonGuard.ActualGuardAcceptsSupport",
+      "theorem": "BulksketchBridge.NewtonGuard.guard_accepts_support"
     }
   ],
   "refinements": [
@@ -2294,6 +2334,21 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original degree-three/four Newton normalization loop and wrapper under a nonzero denominator, admitted slices and exact GF64 callbacks. Exact full scratch words and independent field coefficients."
+    },
+    {
+      "label": "deg34::guard [original source]",
+      "native_item_id": "src/decode/deg34.rs:9:function:bulksketch::decode::deg34::guard",
+      "source_line_span_sha256": "75ff6c971f3560ce239c829a09a8aa1f3eeeaf3fba8b50c22053a56d6874c36b",
+      "theorem": "BulksketchBridge.NewtonGuard.guard_refines",
+      "challenge": "BulksketchBridge.NewtonGuard.ActualNewtonGuardRefines",
+      "generated_declaration": "bulksketch.decode.deg34.guard",
+      "generated_file": "bridge/Arithmetic/NewtonGuardGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/NewtonGuardGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original degree-three/four guard, with admitted odd words and scratch on the writing branch. Exact zero-denominator rejection, six cleared scratch words and original suffix, exact early residual boolean under verified GF64 callbacks. Residual and word meanings checked separately.",
+      "translator_variant": "checked-fixedpoint-nested-scalar-slice-retry-v1"
     }
   ],
   "stateful_llbc_refinements": [

@@ -219,6 +219,15 @@ PROJECTIONS = [
      "extraction/deg34-normalize/Arithmetic/Funs.lean", "bridge/Arithmetic/NormalizeGenerated.lean",
      "Slice.index_usize cleared 5#usize", "Slice.index_usize cleared 4#usize",
      "compiled normalization projection differs", None, None, ["bridge/Arithmetic/SliceKernelTypes.lean"]),
+    ("deg34-guard", "extraction/deg34-guard/project.py", "extraction/deg34-guard/receipt.json",
+     "extraction/deg34-guard/Arithmetic/Funs.lean", "bridge/Arithmetic/NewtonGuardGenerated.lean",
+     "if a = 0#u64", "if a = 1#u64", "compiled Newton guard projection differs",
+     None, None, ["bridge/Arithmetic/SliceKernelTypes.lean",
+                  "extraction/quartic/arithmetic.llbc", "extraction/quartic/Arithmetic/Funs.lean",
+                  "extraction/quartic/Arithmetic/Types.lean", "extraction/quartic/Arithmetic/FunsExternal_Template.lean",
+                  "extraction/deg34-normalize/arithmetic.llbc", "extraction/deg34-normalize/Arithmetic/Funs.lean",
+                  "extraction/deg34-normalize/Arithmetic/Types.lean",
+                  "extraction/deg34-normalize/Arithmetic/FunsExternal_Template.lean"]),
 ]
 
 
@@ -354,7 +363,7 @@ def main():
             name = label + "/" + name
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:
                 shadow = Path(directory)
-                if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic", "closed-leaf", "deg34-normalize"}:
+                if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic", "closed-leaf", "deg34-normalize", "deg34-guard"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

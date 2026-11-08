@@ -266,6 +266,39 @@ for name, mutate in quartic_cases:
     results.append({"case": name, "status": status})
     print(name, status)
 
+newton = next(entry for entry in link["reviewed_translator_variants"]
+              if entry["id"] == "checked-fixedpoint-nested-scalar-slice-retry-v1")
+newton_original = json.loads((ROOT / newton["receipt"]).read_text())
+newton_check = runpy.run_path(str(ROOT / "scripts/verify_bridge.py"))["check_newton_slice_retry_variant"]
+newton_cases = [
+    ("newton-positive", lambda receipt: None),
+    ("newton-wrong-extension", lambda receipt: receipt.update(extension_of="wrong")),
+    ("newton-wrong-input", lambda receipt: next(row for row in receipt["checks"]
+        if row["name"] == "replay")["command"].__setitem__(-1, "/tmp/unrelated/arithmetic.llbc")),
+    ("newton-unchecked-accepted", lambda receipt: next(row for row in receipt["checks"]
+        if row["name"] == "unchecked").update(exit_code=0)),
+    ("newton-replay-omits-checks", lambda receipt: next(row for row in receipt["checks"]
+        if row["name"] == "replay")["command"].remove("-checks")),
+    ("newton-wrong-delta-source-hash", lambda receipt: receipt.update(delta_modified_sha256="0" * 64)),
+    ("newton-fake-translator", lambda receipt: next(row for row in receipt["checks"]
+        if row["name"] == "replay")["command"].__setitem__(0, "/tmp/fake-aeneas")),
+    ("newton-wrong-selector", lambda receipt: next(row for row in receipt["checks"]
+        if row["name"] == "charon")["command"].__setitem__(5, "--start-from=unrelated")),
+    ("newton-missing-tool-digests", lambda receipt: receipt.update(tool_binary_sha256={})),
+    ("newton-wrong-destination", lambda receipt: next(row for row in receipt["checks"]
+        if row["name"] == "charon")["command"].__setitem__(4, "--dest-file=/tmp/unrelated.llbc")),
+]
+for name, mutate in newton_cases:
+    receipt = copy.deepcopy(newton_original)
+    mutate(receipt)
+    try:
+        newton_check(newton, receipt, runtime, runtime_head, link)
+        status = "accepted"
+    except (RuntimeError, KeyError, ValueError):
+        status = "rejected"
+    results.append({"case": name, "status": status})
+    print(name, status)
+
 # Exercise the exact per-refinement attribution statements from the same main AST.
 refine_loop=next(n for n in main.body if isinstance(n,ast.For) and isinstance(n.target,ast.Tuple) and any(isinstance(x,ast.Name) and x.id=='native_id' for x in n.target.elts))
 assignment=next(n for n in refine_loop.body if isinstance(n,ast.Assign) and any(isinstance(x,ast.Name) and x.id=='used_variants' for x in n.targets))
@@ -290,7 +323,7 @@ for name,entry,mutate in attribution_cases:
  results.append({'case':name,'status':status});print(name,status)
 
 for row in results:
- expected = 'accepted' if row['case'] in {'positive','dense-positive','dense-mul-positive','horner-positive','pclmul-horner-positive','certificate-positive','quartic-positive','valid-patched','valid-pinned','valid-dense-source'} else 'rejected'
+ expected = 'accepted' if row['case'] in {'positive','dense-positive','dense-mul-positive','horner-positive','pclmul-horner-positive','certificate-positive','quartic-positive','newton-positive','valid-patched','valid-pinned','valid-dense-source'} else 'rejected'
  if row['status'] != expected:
   raise RuntimeError('variant/attribution gate outcome differs: '+row['case'])
 valid_count = sum(row["status"] == "accepted" for row in results)

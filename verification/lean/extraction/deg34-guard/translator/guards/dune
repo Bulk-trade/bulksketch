@@ -1,0 +1,2 @@
+(include_subdirs no)
+(executable (name nested_slice_loan_controls) (libraries aeneas))

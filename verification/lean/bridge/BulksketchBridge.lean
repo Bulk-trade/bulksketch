@@ -63,3 +63,5 @@ import BulksketchBridge.QuarticSemantics
 import BulksketchBridge.QuarticSolve
 import BulksketchBridge.ClosedLeafAcceptance
 import BulksketchBridge.Normalize
+import BulksketchBridge.NewtonGuardSupport
+import BulksketchBridge.NewtonGuardMath
