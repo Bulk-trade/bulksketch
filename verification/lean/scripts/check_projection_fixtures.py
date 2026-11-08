@@ -316,6 +316,19 @@ PROJECTIONS = [
      "extraction/avx-square-entry/Arithmetic/Funs.lean", "bridge/Arithmetic/AvxSquareEntryGenerated.lean",
      "if i != 64#u32", "if i != 32#u32", "compiled AVX square selector projection differs",
      None, None, ["extraction/avx-square/receipt.json"]),
+    ("root-divide", "extraction/root-divide/project.py", "extraction/root-divide/receipt.json",
+     "extraction/root-divide/Arithmetic/Funs.lean", "bridge/Arithmetic/RootDivideGenerated.lean",
+     "let i ← self.degree + 2#usize", "let i ← self.degree + 3#usize", "compiled root divide projection differs",
+     None, None, ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean",
+                  "bridge/Arithmetic/ReconstructionTypes.lean", "bridge/Arithmetic/RootSetupGenerated.lean",
+                  "bridge/Arithmetic/WorkScheduleGenerated.lean", "bridge/Arithmetic/ClosedLeafGenerated.lean",
+                  "bridge/Workmeter/Types.lean"]),
+    ("root-run", "extraction/root-run/project.py", "extraction/root-run/receipt.json",
+     "extraction/root-run/Arithmetic/Funs.lean", "bridge/Arithmetic/RootRunGenerated.lean",
+     "let i ← self.stride * self.stride", "let i ← self.stride + self.stride", "compiled root run projection differs",
+     None, None, ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean",
+                  "bridge/Arithmetic/ReconstructionTypes.lean", "bridge/Arithmetic/RootSetupGenerated.lean",
+                  "bridge/Arithmetic/WorkScheduleGenerated.lean", "bridge/Arithmetic/ClosedLeafGenerated.lean"]),
 ]
 
 
@@ -499,6 +512,14 @@ def main():
         if label == "avx-square-entry":
             cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
                           "AVX square selector checked command differs"))
+        if label == "root-divide":
+            cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
+                          "root divide checked replay differs"))
+        if label == "root-run":
+            cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
+                          "root run checked capture command differs"))
+            cases.append(("wrong-affine-callee", active_path, "=> calls.prepareAffine", "=> calls.enumerateAffine",
+                          "compiled root run projection differs"))
         if label == "deg34-normalize":
             cases.append(("unchecked-original-extraction", receipt_path, '"-checks"', '"-no-checks"',
                           "normalization checked replay linkage differs"))
@@ -507,7 +528,7 @@ def main():
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:
                 shadow = Path(directory)
                 if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic", "closed-leaf", "deg34-normalize", "deg34-guard",
-                             "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry"}:
+                             "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry", "root-divide", "root-run"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

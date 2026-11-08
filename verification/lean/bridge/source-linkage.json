@@ -496,6 +496,16 @@
       "path": "extraction/avx-square-entry/arithmetic.llbc",
       "sha256": "fd9a8f24bffe829025f4a318e4b51d8c6f5b68ca3290486fe6217a0ae565cdf6",
       "has_errors": false
+    },
+    {
+      "path": "extraction/root-run/arithmetic.llbc",
+      "sha256": "6a925fe406ccd8bbf20bad9d6e28b5e8b427941c25637a4a6ad6f179528355b2",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/root-divide/arithmetic.llbc",
+      "sha256": "832941622e17afa4b0120d50046c88726da66c693dddd5c1f324d9d2ce36f5b1",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1173,6 +1183,21 @@
       "native_item_id": "src/backend/x86_vpclmul512.rs:106:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::square_mod",
       "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.square_mod",
       "generated_file": "bridge/Arithmetic/AvxSquareEntryGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:128:method:bulksketch::decode::roots::Roots::run",
+      "generated_declaration": "bulksketch.decode.roots.Roots.run",
+      "generated_file": "bridge/Arithmetic/RootRunGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:245:function:bulksketch::decode::affine::subspace_start",
+      "generated_declaration": "bulksketch.decode.affine.subspace_start",
+      "generated_file": "bridge/Arithmetic/RootRunGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:444:method:bulksketch::decode::roots::Roots::divide",
+      "generated_declaration": "bulksketch.decode.roots.Roots.divide",
+      "generated_file": "bridge/Arithmetic/RootDivideGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1736,6 +1761,24 @@
       "checker": "extraction/avx-square-entry/project.py",
       "declaration_count": 1,
       "scope": "Original Vpclmul512 square selector with scoped exact original free-kernel callee."
+    },
+    {
+      "generated": "extraction/root-run/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootRunGenerated.lean",
+      "sha256": "618300e9560cf52f8ddb9e56c1f1dd79c374772be9452f64ee20981cbddc4363",
+      "raw_sha256": "8eb87055b6f02b4317a73a4143bd6f31eac1fd147b762658d0211872dc39f584",
+      "checker": "extraction/root-run/project.py",
+      "declaration_count": 2,
+      "scope": "Original traversal stage dispatcher and affine subspace offset; original leaf, trace, table, divide and GCD callees are bound and remaining affine calls explicit."
+    },
+    {
+      "generated": "extraction/root-divide/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootDivideGenerated.lean",
+      "sha256": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
+      "raw_sha256": "d0356c2374cf3c0c873eeb45f47b9381a1410f80d277de32467b9ae0fbfd64a1",
+      "checker": "extraction/root-divide/project.py",
+      "declaration_count": 1,
+      "scope": "Original factor division with checked charge, quotient/remainder scratch, and pending-frame assembly."
     }
   ],
   "reviewed_translator_variants": [

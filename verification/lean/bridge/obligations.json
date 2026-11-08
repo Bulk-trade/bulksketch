@@ -1036,6 +1036,30 @@
     {
       "challenge": "BulksketchBridge.DenseGcd.ActualMonicGcdSize",
       "theorem": "BulksketchBridge.DenseGcd.native_gcd_size"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualRootRun",
+      "theorem": "BulksketchBridge.RootRun.run_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualSubspaceStart",
+      "theorem": "BulksketchBridge.RootRun.subspace_start_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootDivide.ActualNativeRootDivide",
+      "theorem": "BulksketchBridge.RootDivide.native_divide_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootDivide.ActualRootDivide",
+      "theorem": "BulksketchBridge.RootDivide.divide_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSquare.ActualAllocatedAvxBlockScan",
+      "theorem": "BulksketchBridge.AvxSquare.allocated_block_scan"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSquare.ActualAllocatedAvxSquare",
+      "theorem": "BulksketchBridge.AvxSquare.allocated_square_refines"
     }
   ],
   "refinements": [
@@ -2964,6 +2988,48 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original field bit test and false frame, or original accelerated free kernel result on the GF64 path."
+    },
+    {
+      "label": "Roots::run [original source]",
+      "native_item_id": "src/decode/roots.rs:128:method:bulksketch::decode::roots::Roots::run",
+      "source_line_span_sha256": "730b199d24702f4f56a9b3dd2a62182834bf636f88ccf581e6c4c0b845813282",
+      "theorem": "BulksketchBridge.RootRun.run_refines",
+      "challenge": "BulksketchBridge.RootRun.ActualRootRun",
+      "generated_declaration": "bulksketch.decode.roots.Roots.run",
+      "generated_file": "bridge/Arithmetic/RootRunGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RootRunGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original stage dispatcher, charge and transition outcomes, workspace frames and all admitted branch behaviors. Explicit remaining affine slots."
+    },
+    {
+      "label": "affine::subspace_start [original source]",
+      "native_item_id": "src/decode/affine.rs:245:function:bulksketch::decode::affine::subspace_start",
+      "source_line_span_sha256": "ea726253e39bca2c174f7a596d6b55e5e3bc31845d07a1a1af1865f6b920c8d1",
+      "theorem": "BulksketchBridge.RootRun.subspace_start_refines",
+      "challenge": "BulksketchBridge.RootRun.ActualSubspaceStart",
+      "generated_declaration": "bulksketch.decode.affine.subspace_start",
+      "generated_file": "bridge/Arithmetic/RootRunGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RootRunGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original checked triangular offset over the admitted GF64 rank range."
+    },
+    {
+      "label": "Roots::divide [original source]",
+      "native_item_id": "src/decode/roots.rs:444:method:bulksketch::decode::roots::Roots::divide",
+      "source_line_span_sha256": "1ef6b421351879b0e883791fb5cb1641b4d0fff44ff6c0dd459852dd5b15a660",
+      "theorem": "BulksketchBridge.RootDivide.native_divide_refines",
+      "challenge": "BulksketchBridge.RootDivide.ActualNativeRootDivide",
+      "generated_declaration": "bulksketch.decode.roots.Roots.divide",
+      "generated_file": "bridge/Arithmetic/RootDivideGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RootDivideGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original price and charge paths, division result and work frame, checked offsets and pending-factor assembly. Original exact-division wrapper bound with explicit div/rem model law."
     }
   ],
   "stateful_llbc_refinements": [

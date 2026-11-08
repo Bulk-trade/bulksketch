@@ -68,6 +68,8 @@ reviewed frontend variant and explains the Portable and const-square proofs.
 
 [NATIVE_DENSE_DIVISION.md](NATIVE_DENSE_DIVISION.md) records the original exact-division and GCD wrappers, descending division model and accelerated square.
 
+[NATIVE_ROOT_RUN.md](NATIVE_ROOT_RUN.md) records the original root dispatcher, factor division, and AVX square heap effects.
+
 The [coverage ledger](audit/coverage.json) keeps every native item in scope,
 including unsupported and unproved items. Related mathematical model evidence
 and actual-generated-body refinement evidence have separate fields. Conservative

@@ -92,3 +92,6 @@ import BulksketchBridge.DenseDivisionComposition
 import BulksketchBridge.AvxSquare
 import BulksketchBridge.AvxDenseSquareComposition
 import BulksketchBridge.DenseGcdSize
+import BulksketchBridge.RootRun
+import BulksketchBridge.RootDivideNative
+import BulksketchBridge.AvxSquareHeap

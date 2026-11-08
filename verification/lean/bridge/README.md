@@ -98,6 +98,9 @@ The [Dense division checkpoint](../NATIVE_DENSE_DIVISION.md) adds the
 original exact-division and GCD wrappers, their algebraic division model,
 and the original AVX-512 square kernel.
 
+The [root traversal checkpoint](../NATIVE_ROOT_RUN.md) adds the original
+root dispatcher, factor division, affine offset and AVX square heap effects.
+
 From the parent Lean directory:
 
 ```sh

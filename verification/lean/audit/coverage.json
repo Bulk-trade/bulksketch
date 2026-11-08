@@ -3225,7 +3225,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RootRun.subspace_start_refines",
+        "scope": "Exact original checked triangular offset over the admitted GF64 rank range.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/affine.rs:249:function:bulksketch::decode::affine::subspaces",
@@ -4431,7 +4438,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RootRun.run_refines",
+        "scope": "Exact original stage dispatcher, charge and transition outcomes, workspace frames and all admitted branch behaviors. Explicit remaining affine slots.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/roots.rs:17:struct:bulksketch::decode::roots::Roots",
@@ -4612,7 +4626,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RootDivide.native_divide_refines",
+        "scope": "Exact original price and charge paths, division result and work frame, checked offsets and pending-factor assembly. Original exact-division wrapper bound with explicit div/rem model law.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/roots.rs:49:method:bulksketch::decode::roots::FactorWork < 'a >::new",
@@ -11887,8 +11908,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Original exact division and monic GCD wrappers are checked under explicit div/rem laws, with the descending model proved algebraically. Original AVX-512 square and selector discharge the Dense monic remainder law when installed with the stated masked slice laws. Native div/rem linkage, general traversal, decoder completeness and actual Rust/ISA/compiler correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 119,
+    "note": "All 344 native executable obligations retained. Original root stage dispatch, factor division, and affine triangular offsets checked under explicit callee and readiness contracts. The full original AVX square finite-heap effects are checked under exact capture layout and allocation premises. Original div/rem linkage, affine and depth-first traversal completeness, decoder completeness, Rust provenance and compiler/ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 122,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11975,6 +11996,10 @@
       "native_accelerated_square": [
         "BulksketchBridge.AvxSquare.square_mod_remainder",
         "BulksketchBridge.AvxSquare.avx_dense_modular_square"
+      ],
+      "native_root_traversal": [
+        "BulksketchBridge.RootRun.run_refines",
+        "BulksketchBridge.RootDivide.native_divide_refines"
       ]
     },
     "masked_memory_evidence": {
@@ -12000,7 +12025,9 @@
       "BulksketchBridge.X86MaskedMemory.Allocation.allocated_load_refines",
       "BulksketchBridge.X86MaskedMemory.Allocation.allocated_store_refines",
       "BulksketchBridge.X86MaskedMemory.Allocation.allocated_xor_refines",
-      "BulksketchBridge.X86MaskedMemory.Allocation.allocated_difference_refines"
+      "BulksketchBridge.X86MaskedMemory.Allocation.allocated_difference_refines",
+      "BulksketchBridge.AvxSquare.allocated_block_scan",
+      "BulksketchBridge.AvxSquare.allocated_square_refines"
     ]
   }
 }

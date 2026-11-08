@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "3923d9542d30b88d5c70686e54aa191ce7cc5a85fdabfbbb118bd1609ceb9371",
+    "bridge/BulksketchBridge/Audit.lean": "9b4e57a29489fae69b9e2eeed397f8ce1cca75c38ca13fbab7a6901325914c30",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,9 +13,9 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "16833d8a9a8879b120ac004032b74ebb9465637937b3470fe214f7361eb34104",
-    "audit/frozen-inputs.json": "e1f923a1bb6c2dffa1c318224e36af945576dfcd53febc11c4ed95f6fa46d0a2",
-    "bridge/BulksketchBridge.lean": "44c08ee30909d6e1a20bb5eb92b4680718eb1a926fad9e1d01a1a535dadc618e",
+    "scripts/verify_bridge.py": "a91cf58c91dd2c10f0c613e9426d276b91442906d045dca49c667f2bdf31561e",
+    "audit/frozen-inputs.json": "bd3b068c1acb43467fd5f9909405b4edd609771c87df0c8d388cc8ddec1ca9b4",
+    "bridge/BulksketchBridge.lean": "5568021489860423a4ed431428175aec7e4b79e8ddf8dbeb594d40656e0dccb8",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "f3d8c301860fefac0f35be0aca9e3c8fb8ec7055befd939c9803a4d9be270b37",
-    "bridge/obligations.json": "f9121be86ad308c008e24e826deaf49ff351e382aa931ab5d99256a5fa2d8bea",
+    "bridge/source-linkage.json": "c8291831a4a7383f6e194ce5bd2dce42e6479021e39151d3a3be68515e10af12",
+    "bridge/obligations.json": "880c2ecceb5bf458a60d0a93f9d205375c77b3f9ebb4e17155313379e28c4016",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "655b42d153d5d1d7daff7e59493f71964d07986aabbd2e2404163534e6da6832",
+    "scripts/check_projection_fixtures.py": "857a68a1f0dc57f8f8d127b20780ff909b3b6eb17e2ffcc8a5eb385cc71f8a72",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "dd0b5f4577171b3cb976a1ed4358b56f702fb83d8fd23fdde5894d39b1d0f2bf",
+    "README.md": "0b18a44e0016a00b50d24a4b4952ea8b15f218e8806f99b24b8623d9a255b2e4",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "0def1685a178a2bc2096653615d36424d65056758685ba91e181c028e2500e79",
+    "audit/coverage.json": "5d847b04d5ba3fb499df4c3a6734734167ef375ba1af810c1f8fe63ec84431c5",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -319,7 +319,7 @@
     "bridge/BulksketchBridge/SyndromeUniquenessSpec.lean": "0fb7dd6f308fa79337dce13cbd73c522f78c75024d86e05b7c5fd7d2d0ceff3c",
     "bridge/BulksketchBridge/VerifyDispatch.lean": "38d817777987c9d3e97ee3155717d243b545f42e976afa8fbcdb9b9c8e7b917c",
     "bridge/BulksketchBridge/VerifyDispatchSpec.lean": "d609a22b3daf8816de9afdc60f1e293bf4efdf6ed37d19efafd190b70217fb06",
-    "bridge/README.md": "68c63374f4d714051f905bb9c78b6463db61ea4ba10e106d1a68c73e1d94c293",
+    "bridge/README.md": "0b9686ba09e82a1bcf692d3ebe8a5511c24c1ef4081fc0369154b835959e83a5",
     "extraction/dense-square/Arithmetic/Funs.lean": "7ff7bf02a64fb62cb3d28154514ad7b426018c4380dc56b4d101dee3d73bd505",
     "extraction/dense-square/Arithmetic/FunsExternal_Template.lean": "9d47cb5223b7a3a784065947ca87ceea2b65fb72423eb973c18862af9f72a5c8",
     "extraction/dense-square/Arithmetic/Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
@@ -1153,7 +1153,46 @@
     "extraction/avx-square-entry/charon.log": "0de00ad8c6a05c7dd57cebbdfece5f300dcf32f574d62f9536c5abebb8cd3da3",
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
-    "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c"
+    "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
+    "NATIVE_ROOT_RUN.md": "8b85b4bd9e5435022c72159b8c746957c70646e1637d4a2537ca394fdc5b0256",
+    "audit/native-root-run-checkpoint.json": "23c755da7595538633126411d779afa8caf65fe29a6b9fc62bbd584a7a40a15d",
+    "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
+    "bridge/Arithmetic/RootRunGenerated.lean": "618300e9560cf52f8ddb9e56c1f1dd79c374772be9452f64ee20981cbddc4363",
+    "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
+    "bridge/BulksketchBridge/AvxSquareScalarMemory.lean": "fb7140785bd4cfda9017e8c06799c724823e87cfe87f6b8f51a03be4483fe194",
+    "bridge/BulksketchBridge/AvxSquareWindows.lean": "b77a569f6cf0f01ed3eaf0a1727381dbfeb6fb7a8d842a3ef793a72dff010ca4",
+    "bridge/BulksketchBridge/RootDivide.lean": "f38d218df1b5b721f3288917325ea13e2348aa31fbc56a9839fbd75acdd7a7c6",
+    "bridge/BulksketchBridge/RootDivideArithmetic.lean": "2ece3a86e47a7fcbdc262e09e35982c5c53e83e40499fe356378216de51454b1",
+    "bridge/BulksketchBridge/RootDivideNative.lean": "422a996a45a074c764e78b83a69f655d2234f07bb54b89b74a8d4922da8e0a77",
+    "bridge/BulksketchBridge/RootDivideNativeSpec.lean": "41e8c14ba00d6cb7bba2e5e16d3a5f00447fcbe6755518c406ed94748a995929",
+    "bridge/BulksketchBridge/RootDivideSpec.lean": "5f3297cc5f7b1f876b080907b96206956ec4ab3ee7bb8aa4dedb5033d864c05e",
+    "bridge/BulksketchBridge/RootDivideStages.lean": "17a44e2ff02d82ee1d0c266186b4224cf017c6233969120773ed60b5d06d3061",
+    "bridge/BulksketchBridge/RootRun.lean": "e0831c2162dbbf60f6d6a59a15ec8630a1aa0d5826d54afdf3b95dad9be02821",
+    "bridge/BulksketchBridge/RootRunGcd.lean": "d63ae5062a68caeb50d8a09486f22946ce35cbe7604709e02f39f6adb44f37f8",
+    "bridge/BulksketchBridge/RootRunPrice.lean": "edff2bc28045bfa18adbed0912843b0a028c850ddf67ac27feacdac298cb2776",
+    "bridge/BulksketchBridge/RootRunSpec.lean": "e4ff87be298b1cf6490e0b2821e342f5672c6fb965948291947d1d82dcfa34f6",
+    "extraction/avx-square/HEAP.md": "79a3b8fabda602fe11a434ab6d97bf76608b1d11dbee69a4c63b5de19f8f0735",
+    "extraction/avx-square/check_seed_layout.py": "4e1fa8dc6f9398b035d6fcaef4394c57f5961a91d0dc49c449cbbf06443a60b7",
+    "extraction/root-divide/Arithmetic/Funs.lean": "d0356c2374cf3c0c873eeb45f47b9381a1410f80d277de32467b9ae0fbfd64a1",
+    "extraction/root-divide/Arithmetic/FunsExternal_Template.lean": "894af40a29e80ad202d464d6b8926ab44735c988973262266238450bcc017226",
+    "extraction/root-divide/Arithmetic/Types.lean": "4f401d90c68d8e3941baf57387207b018a7f047a65245892ef62ae2a01c4bb14",
+    "extraction/root-divide/README.md": "4891b46262b749b0219db9ef0405ed38b3334cc7dfec5af4c5c9ef1258c1862f",
+    "extraction/root-divide/aeneas.log": "8c995dcd058b22bd71fde5e73cbb6251f99de22f49ae79024b18b35c6da0e1f8",
+    "extraction/root-divide/arithmetic.llbc": "832941622e17afa4b0120d50046c88726da66c693dddd5c1f324d9d2ce36f5b1",
+    "extraction/root-divide/charon.log": "1eff5a6cf349f045e90c10154b204b4bb4bd0fceab1765c395a960684257066a",
+    "extraction/root-divide/project.py": "3569ad21976fe6f10388e72b306bf3078c0cd9d5cbd9e904c521590599aaf4cc",
+    "extraction/root-divide/receipt.json": "ee28766aed1de72ebcde46988616f0d10f33141cfe31c5825e3446119da87365",
+    "extraction/root-divide/replay.log": "60a99bfbe4868008f72b8350d4947e0d2fa264a667e3b5aacd546c077076da98",
+    "extraction/root-run/Arithmetic/Funs.lean": "8eb87055b6f02b4317a73a4143bd6f31eac1fd147b762658d0211872dc39f584",
+    "extraction/root-run/Arithmetic/FunsExternal_Template.lean": "d88b12ca83f1f47162def256050e04ea360ea4a6d3ffce5d2da3e2694eca203c",
+    "extraction/root-run/Arithmetic/Types.lean": "8e60f427b52e8189626149f13baa92802e3a84388b111eb3dfce62e9c6a88e94",
+    "extraction/root-run/README.md": "c250f754ac67a8858785d201dec255bcf20e0ad0f724954b29401a025a7494b9",
+    "extraction/root-run/aeneas.log": "32cc0721231a0273e2fa60fcf729082942d2a5d3dc1a20c3e4280d142cce1db5",
+    "extraction/root-run/arithmetic.llbc": "6a925fe406ccd8bbf20bad9d6e28b5e8b427941c25637a4a6ad6f179528355b2",
+    "extraction/root-run/charon.log": "54f8b010ce595513bf4e1d04ce848c3f0dd18ec4af4aa9707c6afd9e9b16b2dd",
+    "extraction/root-run/project.py": "c11c9a7c5b20e9b15168d3bb67ec7d8fa023011e58b22d46573ca27ce17ca647",
+    "extraction/root-run/receipt.json": "7c74338364987ee1f5ccff91cdf699a51d765c44b7e7d3e3e0de4ebbb7176e6a",
+    "extraction/root-run/replay.log": "2a98b03981ff61e31b8f8a1515f4535c65397c68d9007ee7bfdf94e9307351f0"
   },
   "reviewed_policy_revisions": [
     {
@@ -7947,7 +7986,262 @@
       "new_sha256": "655b42d153d5d1d7daff7e59493f71964d07986aabbd2e2404163534e6da6832",
       "reason": "Freeze the original AVX modular-square selector and its Dense remainder law, and the native GCD size theorem.",
       "old_sha256": "f3a094e9b504cde2d0b731a7b597b2c7a70d42d7226ea3b30ec8c90af7f53bb0"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "8b85b4bd9e5435022c72159b8c746957c70646e1637d4a2537ca394fdc5b0256",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "0b18a44e0016a00b50d24a4b4952ea8b15f218e8806f99b24b8623d9a255b2e4",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects.",
+      "old_sha256": "dd0b5f4577171b3cb976a1ed4358b56f702fb83d8fd23fdde5894d39b1d0f2bf"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "5d847b04d5ba3fb499df4c3a6734734167ef375ba1af810c1f8fe63ec84431c5",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects.",
+      "old_sha256": "0def1685a178a2bc2096653615d36424d65056758685ba91e181c028e2500e79"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "bd3b068c1acb43467fd5f9909405b4edd609771c87df0c8d388cc8ddec1ca9b4",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects.",
+      "old_sha256": "e1f923a1bb6c2dffa1c318224e36af945576dfcd53febc11c4ed95f6fa46d0a2"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "23c755da7595538633126411d779afa8caf65fe29a6b9fc62bbd584a7a40a15d",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "bridge/Arithmetic/RootDivideGenerated.lean",
+      "new_sha256": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "bridge/Arithmetic/RootRunGenerated.lean",
+      "new_sha256": "618300e9560cf52f8ddb9e56c1f1dd79c374772be9452f64ee20981cbddc4363",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "5568021489860423a4ed431428175aec7e4b79e8ddf8dbeb594d40656e0dccb8",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects.",
+      "old_sha256": "44c08ee30909d6e1a20bb5eb92b4680718eb1a926fad9e1d01a1a535dadc618e"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "9b4e57a29489fae69b9e2eeed397f8ce1cca75c38ca13fbab7a6901325914c30",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects.",
+      "old_sha256": "3923d9542d30b88d5c70686e54aa191ce7cc5a85fdabfbbb118bd1609ceb9371"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSquareHeap.lean",
+      "new_sha256": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSquareScalarMemory.lean",
+      "new_sha256": "fb7140785bd4cfda9017e8c06799c724823e87cfe87f6b8f51a03be4483fe194",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSquareWindows.lean",
+      "new_sha256": "b77a569f6cf0f01ed3eaf0a1727381dbfeb6fb7a8d842a3ef793a72dff010ca4",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootDivide.lean",
+      "new_sha256": "f38d218df1b5b721f3288917325ea13e2348aa31fbc56a9839fbd75acdd7a7c6",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootDivideArithmetic.lean",
+      "new_sha256": "2ece3a86e47a7fcbdc262e09e35982c5c53e83e40499fe356378216de51454b1",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootDivideNative.lean",
+      "new_sha256": "422a996a45a074c764e78b83a69f655d2234f07bb54b89b74a8d4922da8e0a77",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootDivideNativeSpec.lean",
+      "new_sha256": "41e8c14ba00d6cb7bba2e5e16d3a5f00447fcbe6755518c406ed94748a995929",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootDivideSpec.lean",
+      "new_sha256": "5f3297cc5f7b1f876b080907b96206956ec4ab3ee7bb8aa4dedb5033d864c05e",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootDivideStages.lean",
+      "new_sha256": "17a44e2ff02d82ee1d0c266186b4224cf017c6233969120773ed60b5d06d3061",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootRun.lean",
+      "new_sha256": "e0831c2162dbbf60f6d6a59a15ec8630a1aa0d5826d54afdf3b95dad9be02821",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootRunGcd.lean",
+      "new_sha256": "d63ae5062a68caeb50d8a09486f22946ce35cbe7604709e02f39f6adb44f37f8",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootRunPrice.lean",
+      "new_sha256": "edff2bc28045bfa18adbed0912843b0a028c850ddf67ac27feacdac298cb2776",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootRunSpec.lean",
+      "new_sha256": "e4ff87be298b1cf6490e0b2821e342f5672c6fb965948291947d1d82dcfa34f6",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "bridge/README.md",
+      "new_sha256": "0b9686ba09e82a1bcf692d3ebe8a5511c24c1ef4081fc0369154b835959e83a5",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects.",
+      "old_sha256": "68c63374f4d714051f905bb9c78b6463db61ea4ba10e106d1a68c73e1d94c293"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "880c2ecceb5bf458a60d0a93f9d205375c77b3f9ebb4e17155313379e28c4016",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects.",
+      "old_sha256": "f9121be86ad308c008e24e826deaf49ff351e382aa931ab5d99256a5fa2d8bea"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "c8291831a4a7383f6e194ce5bd2dce42e6479021e39151d3a3be68515e10af12",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects.",
+      "old_sha256": "f3d8c301860fefac0f35be0aca9e3c8fb8ec7055befd939c9803a4d9be270b37"
+    },
+    {
+      "path": "extraction/avx-square/HEAP.md",
+      "new_sha256": "79a3b8fabda602fe11a434ab6d97bf76608b1d11dbee69a4c63b5de19f8f0735",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/avx-square/check_seed_layout.py",
+      "new_sha256": "4e1fa8dc6f9398b035d6fcaef4394c57f5961a91d0dc49c449cbbf06443a60b7",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-divide/Arithmetic/Funs.lean",
+      "new_sha256": "d0356c2374cf3c0c873eeb45f47b9381a1410f80d277de32467b9ae0fbfd64a1",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-divide/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "894af40a29e80ad202d464d6b8926ab44735c988973262266238450bcc017226",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-divide/Arithmetic/Types.lean",
+      "new_sha256": "4f401d90c68d8e3941baf57387207b018a7f047a65245892ef62ae2a01c4bb14",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-divide/README.md",
+      "new_sha256": "4891b46262b749b0219db9ef0405ed38b3334cc7dfec5af4c5c9ef1258c1862f",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-divide/aeneas.log",
+      "new_sha256": "8c995dcd058b22bd71fde5e73cbb6251f99de22f49ae79024b18b35c6da0e1f8",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-divide/arithmetic.llbc",
+      "new_sha256": "832941622e17afa4b0120d50046c88726da66c693dddd5c1f324d9d2ce36f5b1",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-divide/charon.log",
+      "new_sha256": "1eff5a6cf349f045e90c10154b204b4bb4bd0fceab1765c395a960684257066a",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-divide/project.py",
+      "new_sha256": "3569ad21976fe6f10388e72b306bf3078c0cd9d5cbd9e904c521590599aaf4cc",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-divide/receipt.json",
+      "new_sha256": "ee28766aed1de72ebcde46988616f0d10f33141cfe31c5825e3446119da87365",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-divide/replay.log",
+      "new_sha256": "60a99bfbe4868008f72b8350d4947e0d2fa264a667e3b5aacd546c077076da98",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-run/Arithmetic/Funs.lean",
+      "new_sha256": "8eb87055b6f02b4317a73a4143bd6f31eac1fd147b762658d0211872dc39f584",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-run/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "d88b12ca83f1f47162def256050e04ea360ea4a6d3ffce5d2da3e2694eca203c",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-run/Arithmetic/Types.lean",
+      "new_sha256": "8e60f427b52e8189626149f13baa92802e3a84388b111eb3dfce62e9c6a88e94",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-run/README.md",
+      "new_sha256": "c250f754ac67a8858785d201dec255bcf20e0ad0f724954b29401a025a7494b9",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-run/aeneas.log",
+      "new_sha256": "32cc0721231a0273e2fa60fcf729082942d2a5d3dc1a20c3e4280d142cce1db5",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-run/arithmetic.llbc",
+      "new_sha256": "6a925fe406ccd8bbf20bad9d6e28b5e8b427941c25637a4a6ad6f179528355b2",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-run/charon.log",
+      "new_sha256": "54f8b010ce595513bf4e1d04ce848c3f0dd18ec4af4aa9707c6afd9e9b16b2dd",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-run/project.py",
+      "new_sha256": "c11c9a7c5b20e9b15168d3bb67ec7d8fa023011e58b22d46573ca27ce17ca647",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-run/receipt.json",
+      "new_sha256": "7c74338364987ee1f5ccff91cdf699a51d765c44b7e7d3e3e0de4ebbb7176e6a",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "extraction/root-run/replay.log",
+      "new_sha256": "2a98b03981ff61e31b8f8a1515f4535c65397c68d9007ee7bfdf94e9307351f0",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "857a68a1f0dc57f8f8d127b20780ff909b3b6eb17e2ffcc8a5eb385cc71f8a72",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects.",
+      "old_sha256": "655b42d153d5d1d7daff7e59493f71964d07986aabbd2e2404163534e6da6832"
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "a91cf58c91dd2c10f0c613e9426d276b91442906d045dca49c667f2bdf31561e",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects.",
+      "old_sha256": "16833d8a9a8879b120ac004032b74ebb9465637937b3470fe214f7361eb34104"
     }
   ],
-  "challenge_count": 259
+  "challenge_count": 265
 }

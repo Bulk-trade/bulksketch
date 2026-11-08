@@ -788,6 +788,20 @@ def main():
                  receipt["translator_variant"] != projection.get("translator_variant")):
             raise RuntimeError("declaration projection lost exact source provenance")
         records.append(result)
+    for flags in ([], ["-O"]):
+        suffix = "-optimized" if flags else ""
+        result, output = run("check-avx-square-seed-layout" + suffix,
+            ["python3", *flags, str(ROOT / "extraction/avx-square/check_seed_layout.py")],
+            timeout=30, cwd=ROOT)
+        layout = json.loads(output)
+        if (layout["llbc_sha256"] != sha(ROOT / "extraction/avx-square/arithmetic.llbc") or
+                layout["captured_raw_product"] != {"stride_bytes": 16, "alignment_bytes": 8,
+                                                   "lo_bytes": 0, "hi_bytes": 8} or
+                layout["rejected_layout_controls"] != ["big-endian", "narrow-word", "overlapping-raw-words"] or
+                layout["rust_layout_guarantee"] is not False or
+                layout["compiler_instruction_correspondence_proved"] is not False):
+            raise RuntimeError("AVX square seed layout lost its exact capture and control scope")
+        records.append(result)
     for diagnostic in linkage.get("diagnostic_generated_projections", []):
         result, output = run("check-diagnostic-" + Path(diagnostic["bridge_copy"]).stem,
             ["python3", str(ROOT / diagnostic["checker"])], timeout=30, cwd=ROOT)
