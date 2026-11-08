@@ -388,6 +388,34 @@
     {
       "challenge": "BulksketchBridge.Reconciliation.GF64PositiveLocatorUnique",
       "theorem": "BulksketchBridge.Reconciliation.gf64_positive_locator_unique"
+    },
+    {
+      "challenge": "BulksketchBridge.PortableEncodingChallenges.actualInsertNonzeroReturnsFrame",
+      "theorem": "BulksketchBridge.PortableEncoding.insert_nonzero_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.PortableEncodingChallenges.actualEncodeNonzeroReturnsFrame",
+      "theorem": "BulksketchBridge.PortableEncoding.encode_nonzero_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineLinearEval.ActualLinearEvaluation",
+      "theorem": "BulksketchBridge.AffineLinearEval.linear_eval_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrReturnsFrames",
+      "theorem": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrIffDirect",
+      "theorem": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_iff_direct"
+    },
+    {
+      "challenge": "BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrWithPortableSeed",
+      "theorem": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_portable_seed_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseMulReductionSpec.finalReductionFrame",
+      "theorem": "BulksketchBridge.DenseMulReduction.loop_refines"
     }
   ],
   "refinements": [
@@ -1091,6 +1119,77 @@
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original generated frame: checked scalar overflow and both buffer guards, even slots squared, odd slots cleared, destination tail and raw scratch preserved, and returned canonical length. Explicit native square callback equality. Requires the recorded checks-enabled Dense-prefix frontend variant.",
       "translator_variant": "checked-shared-expansion-owner-v1"
+    },
+    {
+      "label": "Portable::insert_nonzero [original source]",
+      "native_item_id": "src/backend/portable.rs:85:method:bulksketch::backend::portable::<Portable as BulkKernels < F >>::insert_nonzero",
+      "source_line_span_sha256": "35de69e032509ca9c7adb4d236978721438fec5dc8f2b80dd98d2b5372abecda",
+      "theorem": "BulksketchBridge.PortableEncoding.insert_nonzero_refines",
+      "challenge": "BulksketchBridge.PortableEncodingChallenges.actualInsertNonzeroReturnsFrame",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractBulkKernels.insert_nonzero",
+      "generated_file": "bridge/Arithmetic/PortableInsertionGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/PortableGenerated.lean",
+        "bridge/Arithmetic/PortableInsertionGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every destination length and ID slice. Empty destination returns immediately. Otherwise the original nested loops apply one odd GF64 power per ID and slot, with original destination as the initial word and all backwards writes checked. Exact length and every output coefficient are preserved by the frame theorem."
+    },
+    {
+      "label": "BulkKernels::encode_nonzero [original default]",
+      "native_item_id": "src/backend/contract.rs:87:trait_default:bulksketch::backend::contract::BulkKernels::encode_nonzero",
+      "source_line_span_sha256": "4c7b295449d285375f27d50d553a68037d0dfa4167e00dbe3ec780a8ba1c86da",
+      "theorem": "BulksketchBridge.PortableEncoding.encode_nonzero_refines",
+      "challenge": "BulksketchBridge.PortableEncodingChallenges.actualEncodeNonzeroReturnsFrame",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.encode_nonzero.default",
+      "generated_file": "bridge/Arithmetic/PortableEncodingGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/PortableGenerated.lean",
+        "bridge/Arithmetic/PortableInsertionGenerated.lean",
+        "bridge/Arithmetic/SliceKernelTypes.lean",
+        "bridge/Arithmetic/PortableEncodingGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every destination length and ID slice, with an explicit equality between the supplied insertion callback and original Portable insertion. Clears destination before insertion. The <=2 singleton path and larger batch path compute the same exact zero-initialized fold and preserve destination length."
+    },
+    {
+      "label": "decode::affine::linear_eval [original source]",
+      "native_item_id": "src/decode/affine.rs:234:function:bulksketch::decode::affine::linear_eval",
+      "source_line_span_sha256": "baafdd52d7bd8e57d0c3c64532d8d11bd742607f265d8a9ba8652b382bc24942",
+      "theorem": "BulksketchBridge.AffineLinearEval.linear_eval_refines",
+      "challenge": "BulksketchBridge.AffineLinearEval.ActualLinearEvaluation",
+      "generated_declaration": "bulksketch.decode.affine.linear_eval",
+      "generated_file": "bridge/Arithmetic/AffineLinearEvalGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/SliceKernelTypes.lean",
+        "bridge/Arithmetic/AffineLinearEvalGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "For all coefficient slices and input words under exact GF64 multiplication and square callbacks, the original loop returns normally and evaluates the linearized polynomial with exponents 2^i. Checked bounds and final skipped square included."
+    },
+    {
+      "label": "decode::verify::rebuilt_lfsr [original source]",
+      "native_item_id": "src/decode/verify.rs:69:function:bulksketch::decode::verify::rebuilt_lfsr",
+      "source_line_span_sha256": "85ac7bcde47bc203d00421d37b26eb1bfa07656a653f4d7b091d5603b0053631",
+      "theorem": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_refines",
+      "challenge": "BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrReturnsFrames",
+      "generated_declaration": "bulksketch.decode.verify.rebuilt_lfsr",
+      "generated_file": "bridge/Arithmetic/RebuiltLfsrGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/SliceKernelTypes.lean",
+        "bridge/Arithmetic/RebuiltLfsrTypes.lean",
+        "bridge/Arithmetic/RebuiltLfsrGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "For adequate buffers and explicit callback equations, both original loops and both comparison branches return normally with exact scratch frames. A seed mismatch returns false before squaring or recurrence. A matching seed squares the locator tail and returns the exact continuation result."
     }
   ]
 }

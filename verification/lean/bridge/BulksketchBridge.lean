@@ -34,3 +34,8 @@ import BulksketchBridge.ReconciliationLocator
 import BulksketchBridge.OddRecurrence
 import BulksketchBridge.OddRecurrenceReconciliation
 import BulksketchBridge.DenseSquarePolynomial
+import BulksketchBridge.RebuiltLfsrAcceptance
+import BulksketchBridge.PortableEncoding
+import BulksketchBridge.AffineLinearEval
+import BulksketchBridge.DenseMulReduction
+import BulksketchBridge.RebuiltLfsrPortable

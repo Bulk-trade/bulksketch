@@ -1,0 +1,4 @@
+'BulksketchBridge.PortableEncoding.insert_nonzero_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.PortableEncoding.encode_nonzero_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.PortableEncoding.oddPower_field' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.PortableEncoding.foldColumn_field' depends on axioms: [propext, Classical.choice, Quot.sound]

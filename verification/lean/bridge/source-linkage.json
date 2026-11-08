@@ -291,6 +291,31 @@
       "path": "extraction/odd-recurrence/arithmetic.llbc",
       "sha256": "e9f422a6cf5c5a8571f71c5371f14d239d501579e8271e0563533273e625af0d",
       "has_errors": false
+    },
+    {
+      "path": "extraction/rebuilt-lfsr/arithmetic.llbc",
+      "sha256": "5e5d9bcb5e3a40db18e563c5e06bb947bfe13aabfdb0371a9b38bb5ab9ada76c",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/affine-linear-eval/arithmetic.llbc",
+      "sha256": "a094560c0c0d7272bf1e469b3d4b75582d3acb8b74a5a87b8377ce7a590ec939",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/portable-encoding/insert/arithmetic.llbc",
+      "sha256": "3a95ffaf9e1650a9a3950ee9cdc3cddf312684c65ae7b7ceb186dfe4833fe64b",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/portable-encoding/encode/arithmetic.llbc",
+      "sha256": "b57a3a0d0fec26e258e20b29b4d50d003af951b080045be5a5ff87c1d44fbf36",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/dense-mul/arithmetic.llbc",
+      "sha256": "b74d34b6736b12f5c0c81dfbde762ede76c1781fb960069c8685d8420bbb9b30",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -332,6 +357,14 @@
     {
       "functions": "bridge/Arithmetic/DenseSquareRuntime.lean",
       "source_scope": "Concrete mutable slice StepBy and shared-right Zip value models. StepBy advances the cursor by the stride. The backward continuation updates the original yielded index on the later state. Pointer, alias and drop correspondence remain trusted."
+    },
+    {
+      "functions": "bridge/Arithmetic/RebuiltLfsrRuntime.lean",
+      "source_scope": "Checked inclusive prefix via exclusive indexing and pinned mutable slice iterator plus heterogeneous reference inequality forwarding. Raw pointer operations inherit the pinned undefined value model and are outside the proof."
+    },
+    {
+      "functions": "bridge/Arithmetic/PortableEncodingRuntime.lean",
+      "source_scope": "Head/tail slice views and restoration, mutable IntoIterator through the pinned slice iterator and shared singleton slice. Memory correspondence remains a trust boundary."
     }
   ],
   "arithmetic_source_inputs": {
@@ -551,6 +584,26 @@
       "native_item_id": "src/poly/dense.rs:30:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::square_into",
       "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.square_into",
       "generated_file": "bridge/Arithmetic/DenseSquareGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:85:method:bulksketch::backend::portable::<Portable as BulkKernels < F >>::insert_nonzero",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractBulkKernels.insert_nonzero",
+      "generated_file": "bridge/Arithmetic/PortableInsertionGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/contract.rs:87:trait_default:bulksketch::backend::contract::BulkKernels::encode_nonzero",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.encode_nonzero.default",
+      "generated_file": "bridge/Arithmetic/PortableEncodingGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:234:function:bulksketch::decode::affine::linear_eval",
+      "generated_declaration": "bulksketch.decode.affine.linear_eval",
+      "generated_file": "bridge/Arithmetic/AffineLinearEvalGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/verify.rs:69:function:bulksketch::decode::verify::rebuilt_lfsr",
+      "generated_declaration": "bulksketch.decode.verify.rebuilt_lfsr",
+      "generated_file": "bridge/Arithmetic/RebuiltLfsrGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -744,6 +797,68 @@
       "declaration_count": 3,
       "scope": "Original square body and both loop declarations, with exact shared types, normalized_len and scoped iterator bindings checked.",
       "translator_variant": "checked-shared-expansion-owner-v1"
+    },
+    {
+      "generated": "extraction/rebuilt-lfsr/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RebuiltLfsrGenerated.lean",
+      "sha256": "592c7f8c0f35728f58e0a36a865ddab16c5bde10c89c61d0ab159f2bd9a85d97",
+      "raw_sha256": "0980f9fccb4786d69397028c460618b6895b39c82b76d4d6b3bd6ba9d82e5595",
+      "checker": "extraction/rebuilt-lfsr/project.py",
+      "declaration_count": 6,
+      "scope": "Original rebuilt verifier, both loops and slice equality dictionary with scoped inclusive prefix and mutable borrow bindings."
+    },
+    {
+      "generated": "extraction/rebuilt-lfsr/Arithmetic/Types.lean",
+      "bridge_copy": "bridge/Arithmetic/RebuiltLfsrTypes.lean",
+      "sha256": "7c68075cd73c39686e248864ef40910da1ad95d9405778ef850dc38a5809770e",
+      "raw_sha256": "8a93715ef2336aafd7a6e2441962da32c9298cbfcc57058f0cbea7e3d1718471",
+      "checker": "extraction/rebuilt-lfsr/project.py",
+      "declaration_count": 1,
+      "scope": "Verbatim RangeToInclusive type.",
+      "checker_args": [
+        "--types"
+      ]
+    },
+    {
+      "generated": "extraction/affine-linear-eval/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AffineLinearEvalGenerated.lean",
+      "sha256": "e7e8e6de1cee6fd98571f2c9fb41d0abb8b96c0e06a98a769d7c540ad89f7aa7",
+      "raw_sha256": "1ad1dbb2088a62e4cc6a3d7167314b676da60198b46453cf42bf6f836e0e3c12",
+      "checker": "extraction/affine-linear-eval/project.py",
+      "declaration_count": 3,
+      "scope": "Original affine evaluator and loop with existing shared types."
+    },
+    {
+      "generated": "extraction/portable-encoding/insert/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PortableInsertionGenerated.lean",
+      "sha256": "e8d1221520720ef83740ce0be68240f16fd7ac669493a6e9dd2742a441f9cbe4",
+      "raw_sha256": "30a69a641cebc1e5dad7fc99fa8edd051970cd36f5d9d8ca010db1afe0ceb6b1",
+      "checker": "extraction/portable-encoding/project.py",
+      "declaration_count": 5,
+      "scope": "Original Portable insertion and nested loops with verified scalar arithmetic and scoped mutable slice models."
+    },
+    {
+      "generated": "extraction/portable-encoding/encode/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PortableEncodingGenerated.lean",
+      "sha256": "91c48a3cb627826bc4cdf358b0e8cc2c82dfc197235d7692093e5f9910d0a894",
+      "raw_sha256": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739",
+      "checker": "extraction/portable-encoding/project.py",
+      "declaration_count": 3,
+      "scope": "Original default encoder and singleton loop.",
+      "checker_args": [
+        "--kind",
+        "encode"
+      ]
+    },
+    {
+      "generated": "extraction/dense-mul/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseMulReductionGenerated.lean",
+      "sha256": "f45c2279b424f15bd5c0cb1a35202ae5b307ae0c4d62767b7574a584658510e3",
+      "raw_sha256": "7b50a133f18cd4c5fea896f35f0f4093cd1af6a7e1619b51c845a67733078ad6",
+      "checker": "extraction/dense-mul/project.py",
+      "declaration_count": 2,
+      "scope": "Verbatim final reduction loop and loop body from complete original Dense multiplication extraction.",
+      "translator_variant": "checked-shared-loop-erasure-v1"
     }
   ],
   "reviewed_translator_variants": [
@@ -764,6 +879,15 @@
       "receipt": "tooling/aeneas-dense-prefix/receipt.json",
       "mandatory_checks": true,
       "scope": "In checked shared symbolic expansion only, skip the empty-loan requirement on unrelated owners while still traversing their children. Matching, non-shared and unchecked paths retain the original guard. No formal translation-soundness claim."
+    },
+    {
+      "id": "checked-shared-loop-erasure-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "tooling/aeneas-dense-mul/shared-loop-erasure.patch",
+      "patch_sha256": "05ea19806c2e3b3b1709661f8cd662caaf275c24dfb0460c352a7182d8fef9d3",
+      "receipt": "tooling/aeneas-dense-mul/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Cumulative shared-owner patch and checked erasure of an already-ended level-one Loop only when its abstraction ID is ignored, its continuation is absent, the continuation expression is the unit self call, and its owned-region nested projections carry no mutable state. Complete Dense multiplication extraction, with only the final loop proved."
     }
   ]
 }

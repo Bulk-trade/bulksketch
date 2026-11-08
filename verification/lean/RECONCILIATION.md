@@ -1,5 +1,7 @@
 # Decoder dispatch and reconciliation
 
+This checkpoint precedes the [native verifier and Dense multiplication work](NATIVE_VERIFIER.md).
+
 The checked source baseline remains `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`.
 The coverage ledger retains all 344 executable native declarations. Each
 generated-body credit names an original source span, an exact generated

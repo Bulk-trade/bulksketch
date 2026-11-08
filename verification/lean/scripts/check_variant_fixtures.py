@@ -97,6 +97,51 @@ for name, mutate in dense_cases:
     results.append({"case": name, "status": status})
     print(name, status)
 
+dense_mul = next(item for item in link["reviewed_translator_variants"]
+                 if item["id"] == "checked-shared-loop-erasure-v1")
+mul_original = json.loads((ROOT / dense_mul["receipt"]).read_text())
+mul_check = next(node for node in tree.body if isinstance(node, ast.FunctionDef)
+                 and node.name == "check_dense_mul_variant")
+mul_code = compile(ast.fix_missing_locations(ast.Module(body=[mul_check, loop], type_ignores=[])),
+                   "actual-verify-bridge-dense-mul-gate", "exec")
+mul_cases = [
+    ("dense-mul-positive", lambda receipt: None),
+    ("dense-mul-wrong-parent", lambda receipt: receipt.update(parent_patch_sha256="wrong")),
+    ("dense-mul-wrong-baseline", lambda receipt: receipt.update(baseline_binary_sha256="wrong")),
+    ("dense-mul-omits-checks", lambda receipt: receipt["extraction"]["command"].remove("-checks")),
+    ("dense-mul-missing-mutable-control", lambda receipt: receipt["regressions"].__setitem__(
+        slice(None), [item for item in receipt["regressions"] if item["case"] != "mutable-given-back-payload"])),
+    ("dense-mul-unchecked-accepted", lambda receipt: next(item for item in receipt["commands"]
+        if item["name"] == "without-checks").update(exit_code=0)),
+    ("dense-mul-square-control-failed", lambda receipt: next(item for item in receipt["commands"]
+        if item["name"] == "square-control").update(exit_code=1)),
+    ("dense-mul-wrong-generated-hash", lambda receipt: receipt["extraction"]["generated"][1].update(sha256="wrong")),
+]
+for name, mutate in mul_cases:
+    receipt = copy.deepcopy(mul_original)
+    mutate(receipt)
+    with tempfile.TemporaryDirectory() as temp:
+        shadow = Path(temp)
+        (shadow / "extraction").symlink_to(ROOT / "extraction", target_is_directory=True)
+        (shadow / "tooling").mkdir()
+        (shadow / "tooling/aeneas-dense-prefix").symlink_to(
+            ROOT / "tooling/aeneas-dense-prefix", target_is_directory=True)
+        for rel in set(mul_original["regression_sources"]) | {dense_mul["patch"]}:
+            dest = shadow / rel
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.symlink_to(ROOT / rel)
+        (shadow / dense_mul["receipt"]).write_text(json.dumps(receipt))
+        env = dict(ROOT=shadow, variants=[dense_mul], runtime=runtime, runtime_head=runtime_head,
+                   linkage=link, records=[], sha=lambda p: hashlib.sha256(p.read_bytes()).hexdigest(),
+                   run=run, re=re, json=json)
+        try:
+            exec(mul_code, env)
+            status = "accepted"
+        except (RuntimeError, KeyError, ValueError):
+            status = "rejected"
+    results.append({"case": name, "status": status})
+    print(name, status)
+
 # Exercise the exact per-refinement attribution statements from the same main AST.
 refine_loop=next(n for n in main.body if isinstance(n,ast.For) and isinstance(n.target,ast.Tuple) and any(isinstance(x,ast.Name) and x.id=='native_id' for x in n.target.elts))
 assignment=next(n for n in refine_loop.body if isinstance(n,ast.Assign) and any(isinstance(x,ast.Name) and x.id=='used_variants' for x in n.targets))
@@ -121,7 +166,7 @@ for name,entry,mutate in attribution_cases:
  results.append({'case':name,'status':status});print(name,status)
 
 for row in results:
- expected = 'accepted' if row['case'] in {'positive','dense-positive','valid-patched','valid-pinned','valid-dense-source'} else 'rejected'
+ expected = 'accepted' if row['case'] in {'positive','dense-positive','dense-mul-positive','valid-patched','valid-pinned','valid-dense-source'} else 'rejected'
  if row['status'] != expected:
   raise RuntimeError('variant/attribution gate outcome differs: '+row['case'])
 valid_count = sum(row["status"] == "accepted" for row in results)

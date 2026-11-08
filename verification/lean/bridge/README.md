@@ -58,7 +58,11 @@ checkpoints cover the original table generation, lookups, Portable slice
 operations and Dense coefficient normalization. The
 [reconciliation checkpoint](../RECONCILIATION.md) adds exact decoder dispatch
 and wire-size admission, the original scalar recurrence check and Dense square, with separate GF64 locator theorems.
-The coverage ledger retains all 344 executable source obligations.
+The [native verifier checkpoint](../NATIVE_VERIFIER.md) adds the rebuilt
+verifier and its Portable seed composition, Portable insertion, default
+encoding and affine linear evaluation. The Dense multiplication final loop
+has a separate frame proof. The coverage ledger retains all 344 executable
+source obligations.
 
 From the parent Lean directory:
 

@@ -1,0 +1,53 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "77ba2e2",
+  "selected_roots": [
+    "bulksketch::backend::contract::BulkKernels::encode_nonzero"
+  ],
+  "native_files_checked": 41,
+  "build_inputs_checked": 3,
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  },
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "llbc_has_errors": false,
+  "llbc_sha256": "b57a3a0d0fec26e258e20b29b4d50d003af951b080045be5a5ff87c1d44fbf36",
+  "recorded_output_directory": "/Users/junbug/bulk/bulksketch-proof-evidence-20261108/portable-next/encode",
+  "artifacts": [
+    {
+      "path": "extraction/portable-encoding/encode/arithmetic.llbc",
+      "sha256": "b57a3a0d0fec26e258e20b29b4d50d003af951b080045be5a5ff87c1d44fbf36"
+    },
+    {
+      "path": "extraction/portable-encoding/encode/charon.log",
+      "sha256": "f12ee587767f5292cb9de7423a727881ffd8564105101d7414e0d238c86a54ed"
+    },
+    {
+      "path": "extraction/portable-encoding/encode/aeneas.log",
+      "sha256": "9192a716c5475bd3ef60b71cc53720376bb32b9646748250d37cadff1f005b3f"
+    },
+    {
+      "path": "extraction/portable-encoding/encode/Arithmetic/Funs.lean",
+      "sha256": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739"
+    },
+    {
+      "path": "extraction/portable-encoding/encode/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829"
+    },
+    {
+      "path": "extraction/portable-encoding/encode/Arithmetic/Types.lean",
+      "sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1"
+    }
+  ],
+  "native_source_edited": false,
+  "command_recipe": [
+    "charon cargo --preset=aeneas --sysroot=default --dest-file=<output>/arithmetic.llbc --start-from=<selected_root> -- --manifest-path=<repo>/Cargo.toml -p bulksketch --lib --locked",
+    "aeneas -backend lean -checks -sequential -print-error-emitters -split-files -dest <output>/Pinned <output>/arithmetic.llbc"
+  ]
+}

@@ -91,6 +91,62 @@ def check_dense_prefix_variant(variant, receipt, runtime, runtime_head, linkage)
         raise RuntimeError("dense-prefix regression matrix is incomplete")
 
 
+def check_dense_mul_variant(variant, receipt, runtime, runtime_head, linkage):
+    """Check the cumulative variant without widening the prior owner-only gate."""
+    directory = "tooling/aeneas-dense-mul/"
+    patch = directory + "shared-loop-erasure.patch"
+    parent = "tooling/aeneas-dense-prefix/owner-guard.patch"
+    sources = {"src/interp/InterpExpansion.ml", "src/symbolic/SymbolicToPureExpressions.ml"}
+    input_path = "extraction/dense-mul/arithmetic.llbc"
+    output = {"extraction/dense-mul/Arithmetic/" + name for name in ("Types.lean", "Funs.lean")}
+    guard_sources = {directory + name for name in ("run.py", "guards/dune", "guards/dense_mul_guards.ml")}
+    parent_receipt = json.loads((ROOT / "tooling/aeneas-dense-prefix/receipt.json").read_text())
+    if (receipt["status"] != "passed" or receipt["variant_id"] != variant["id"] or
+            receipt["native_source_changed"] is not False or receipt["new_native_coverage_credit_from_tests"] != 0 or
+            variant["receipt"] != directory + "receipt.json" or variant["base_commit"] != runtime_head or
+            receipt["base_aeneas_commit"] != runtime_head or receipt["charon_commit"] != linkage["charon_commit"] or
+            variant["mandatory_checks"] is not True or receipt["patch"] != patch or variant["patch"] != patch or
+            receipt["patch_sha256"] != variant["patch_sha256"] or sha(ROOT / patch) != variant["patch_sha256"] or
+            receipt["parent_patch"] != parent or receipt["parent_patch_sha256"] != sha(ROOT / parent) or
+            receipt["parent_patch_sha256"] != parent_receipt["patch_sha256"] or
+            receipt["baseline_binary_sha256"] != parent_receipt["patched_binary_sha256"] or
+            not (ROOT / patch).read_bytes().startswith((ROOT / parent).read_bytes()) or
+            set(receipt["modified_sources"]) != sources or
+            receipt["base_sources"] != {source: sha(runtime / source) for source in sources} or
+            sorted(re.findall(r"(?m)^diff --git a/(\S+) b/(\S+)$", (ROOT / patch).read_text())) !=
+            [(source, source) for source in sorted(sources)] or
+            sha(runtime / "src/interp/InterpReduceCollapse.ml") != receipt["unchanged_collapse_guard_source_sha256"]):
+        raise RuntimeError("dense-mul variant lost pinned provenance")
+    extraction = receipt["extraction"]
+    if (extraction["input"] != input_path or sha(ROOT / input_path) != extraction["input_sha256"] or
+            extraction["exit_code"] != 0 or set(extraction["required_flags"]) != {"-checks", "-sequential"} or
+            not set(extraction["required_flags"]) <= set(extraction["command"]) or
+            len(extraction["generated"]) != len(output) or
+            {item["path"] for item in extraction["generated"]} != output or
+            any(sha(ROOT / item["path"]) != item["sha256"] for item in extraction["generated"])):
+        raise RuntimeError("dense-mul variant lost checked original extraction")
+    if (set(receipt["regression_sources"]) != guard_sources or
+            any(sha(ROOT / path) != digest for path, digest in receipt["regression_sources"].items())):
+        raise RuntimeError("dense-mul regression sources changed")
+
+    positives = {"original-mul", "square-control", "shared-owned-region"}
+    negatives = {"without-checks", "active-child-loan", "data-continuation", "join-ending", "level-two",
+                 "level-zero", "mutable-consumed-payload", "mutable-given-back-payload", "mutable-loan-payload",
+                 "registered-continuation", "unchecked", "unended-level", "unregistered-erasure"}
+    expected_codes = {"owner-only": 1, "without-checks": 1, "original-mul": 0, "square-control": 0, "erasure-guards": 0}
+    cases = {item["case"]: item for item in receipt["regressions"]}
+    commands = {item["name"]: item for item in receipt["commands"]}
+    if (set(cases) != positives | negatives or len(cases) != len(receipt["regressions"]) or
+            any(cases[key]["status"] != "passed" for key in positives) or
+            any(cases[key]["status"] != "expected_rejection_confirmed" for key in negatives) or
+            (cases["original-mul"]["baseline_exit_code"], cases["original-mul"]["patched_exit_code"]) != (1, 0) or
+            cases["without-checks"]["exit_code"] != 1 or len(commands) != len(receipt["commands"]) or
+            {name: item["exit_code"] for name, item in commands.items()} != expected_codes or
+            commands["original-mul"]["command"] != extraction["command"] or
+            "-checks" in commands["without-checks"]["command"] or "-checks" not in commands["square-control"]["command"]):
+        raise RuntimeError("dense-mul regression matrix is incomplete")
+
+
 def main():
     scope = json.loads((ROOT / "scope.json").read_text())
     source = (ROOT / scope["source_repository"]).resolve()
@@ -132,6 +188,12 @@ def main():
         if variant["id"] == "checked-shared-expansion-owner-v1":
             check_dense_prefix_variant(variant, receipt, runtime, runtime_head, linkage)
             result, _ = run("checked-dense-prefix-patch-applies", ["git", "apply", "--check",
+                            str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
+            records.append(result)
+            continue
+        if variant["id"] == "checked-shared-loop-erasure-v1":
+            check_dense_mul_variant(variant, receipt, runtime, runtime_head, linkage)
+            result, _ = run("checked-dense-mul-patch-applies", ["git", "apply", "--check",
                             str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
             records.append(result)
             continue

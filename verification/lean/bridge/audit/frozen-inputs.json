@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "38521395efc634483a21d4f418c4918deda41e1264fe8bd37c4cb0c8c8fb73be",
+    "bridge/BulksketchBridge/Audit.lean": "fa7895d2ccd2e2f8d5f3030edc64b12e21483775cd004db72eacf93849a68812",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,9 +13,9 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "7f15d6028695237da26c993b50b32339c4e5a089bde4a00018b7934cab01d79b",
-    "audit/frozen-inputs.json": "dc7f1a08121fb367482ce0d80a5edd9700fcf4cb3713528a5b30459a48aa0a1f",
-    "bridge/BulksketchBridge.lean": "680284578cecd309c245a231133a963573e6cab7d17ab290733f1a618a872ac3",
+    "scripts/verify_bridge.py": "f474f3534e3760e8df30ff152a9e65de5e4bfed36b9c8aaa0dff6a7c532a957c",
+    "audit/frozen-inputs.json": "0ae42e951fccd736ff2daab1139ec53fc9dae8978318b880decd71f68d6424d5",
+    "bridge/BulksketchBridge.lean": "075ed4e49d96a124f6e57d65e6457d235b3ad5f63fdf784669aa88e0bd188376",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "e6ed7e2afe04486552c4a67467dda2e7fb8134959c6d8d1fdb5c4fb7b5a4ad33",
-    "bridge/obligations.json": "6c8bc7801527a8cf77e1b82191cd39cee5a730658023b516e47b791db9452d23",
+    "bridge/source-linkage.json": "e353b748c6dbd9345b5f7b600955209a3d9e67af8d1d4989d3bfea9fddd864d3",
+    "bridge/obligations.json": "1efd65fe9dc75ad7339354bc9014f2b2f810ce72fecab83856f78c05b5231537",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "5299558730273df4bc1e44794746e29d31e2abae933d927c36750ae26b2680c8",
+    "scripts/check_projection_fixtures.py": "a992d8203bbf35538b4d30b8fce41126efd5a1f551e13f3cf5140d93743ab3da",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -130,7 +130,7 @@
     "bridge/audit/quotient-trace-independent-review.md": "0b09b3d6298e8dae500dfe5f9db1665b2891c3ca15de4d8c6c5797d6137b96f2",
     "bridge/audit/inverse-independent-review.md": "ae678a02595c01159f9623f88a3694f09747d6d19b0c7f87ded1e728cf629d95",
     "extraction/inverse-chain/monomorphization-pilot-receipt.json": "103658a02c5f0c750bdfa0bc3e4e35512d1838a116ca2952d7f16be552e7a3e1",
-    "scripts/check_variant_fixtures.py": "115f159400d4d6dbebc01f220e74acfadf21ab942bcba2b6060547718a223260",
+    "scripts/check_variant_fixtures.py": "5cd4df885362acef3ac067f0268bbf35a4ea1f0a674703cd291c106309bf3b75",
     "audit/native-coverage-checkpoint.json": "b8317d30100e2ce80f6e5905b8d37d8019f51a7f18c4da48a5524caf62f8e4e1",
     "audit/aeneas-capture-independent-review.md": "7b82b268d8c4dc108cd1378ec6065432074be9ea323a87fdc3adf6162cb6e68a",
     "audit/frobenius-const-independent-review.md": "1fa3167209409d3508febc2d25e991de8dc67c3e6fa8a7717b0e6958377ba3cd",
@@ -207,7 +207,7 @@
     "bridge/BulksketchBridge/FrobeniusTablesSupport.lean": "2770d62af3ae35cdbdb2fb5031a652dc9f1d53a714d974a04f0884e8b98de47c",
     "bridge/BulksketchBridge/SliceKernelChallenges.lean": "e2fec1a3b7e56388da39896b8e99d6e5ee3b7d3a91035875fc849216dc997134",
     "bridge/BulksketchBridge/SliceKernels.lean": "aa524a1df259ffcd439f29878cd89228ea3b2e0912274296e6d50df3549592d3",
-    "bridge/BulksketchBridge/SlicePolynomial.lean": "0b4245441338ad8fa2f4b3dde905e2f9bcb6272c6fc4dc5b594c66147767045c",
+    "bridge/BulksketchBridge/SlicePolynomial.lean": "41dd2eca414fa1b47af5c6ca47070cc53e5d034f0af568afd849893f9f97020c",
     "extraction/frobenius-const/tables-lookup/Arithmetic/Funs.lean": "d143693a61179995a0190dbc143da1b6915cdd0ae8b9acb7300cf4c823eb564d",
     "extraction/frobenius-const/tables-lookup/Arithmetic/FunsExternal_Template.lean": "1658129ecab6b06f49c42d41be323e62e37943626ea194a735656ad6cd881de0",
     "extraction/frobenius-const/tables-lookup/Arithmetic/Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
@@ -247,7 +247,7 @@
     "bridge/BulksketchBridge/PortableSliceChallenges.lean": "4c48cb6708e3dde37218ee623d1795c4834d93064b4c4c614247567eff0b9433",
     "bridge/BulksketchBridge/PortableXor.lean": "0ae910b96101b63800f3fb6781f82eb2b96609b47e24be7caf6bb9c03253b5c3",
     "bridge/BulksketchBridge/PortableXorChallenges.lean": "774cf83c647087ccbef1c9c48bb167e700fd422bdf513ee2ae5d432483457d9c",
-    "bridge/BulksketchBridge/PortableZipMap.lean": "b347c30b1a807dd998d7700bb0ddd069f1846a13813effd8c6b3a436cda6d61a",
+    "bridge/BulksketchBridge/PortableZipMap.lean": "5985b26f6831f83088d3f13e1b37cc3daab2efb6157c172dfe77d7e3b53d623d",
     "bridge/BulksketchBridge/ReversePosition.lean": "6218f4de9a6e6e835f3803174d4298e0175b90a413a8ee4550da920b86531d33",
     "extraction/dense-coefficient/axiom-audit.log": "d68a90f9ee203862fb0a51a5f66ac1d4eae3cbed4f6b8ba0d659f12fa37b2cbc",
     "extraction/dense-coefficient/project.py": "42170fcf21167cb803fa3b6290c2bd0aa17edbd47a6ea83b7814a5ae30e964cc",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "ff3eff353b7fe900f6662d8eb8c51a558f072026c2973bf3734a6c37f04f487b",
-    "RECONCILIATION.md": "ae6373f6602ff25cce3dd6e70aedab37e586d4f678fb45dcae5388710feac2bb",
-    "audit/coverage.json": "9763a4e2a0ac38ed98a3d12a3f6ca1e47cbf0f8b0369a1afa3493ae7a09b8dbe",
+    "README.md": "6101be96939611a06a896513a5aa8858995f107ed097c21c96360399352c5603",
+    "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
+    "audit/coverage.json": "02a386aa3ba158057e9345bb82b58017882e4a5c87f986baa6fd3a66966620e1",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -319,7 +319,7 @@
     "bridge/BulksketchBridge/SyndromeUniquenessSpec.lean": "0fb7dd6f308fa79337dce13cbd73c522f78c75024d86e05b7c5fd7d2d0ceff3c",
     "bridge/BulksketchBridge/VerifyDispatch.lean": "38d817777987c9d3e97ee3155717d243b545f42e976afa8fbcdb9b9c8e7b917c",
     "bridge/BulksketchBridge/VerifyDispatchSpec.lean": "d609a22b3daf8816de9afdc60f1e293bf4efdf6ed37d19efafd190b70217fb06",
-    "bridge/README.md": "ae60a9d2afe2bc52507724666ba9464a2230f6406466ff51f3d429128e011644",
+    "bridge/README.md": "02245d476979058cfe4d9d5bd1bff541e2e98923d155dc01641e45e727dcde5f",
     "extraction/dense-square/Arithmetic/Funs.lean": "7ff7bf02a64fb62cb3d28154514ad7b426018c4380dc56b4d101dee3d73bd505",
     "extraction/dense-square/Arithmetic/FunsExternal_Template.lean": "9d47cb5223b7a3a784065947ca87ceea2b65fb72423eb973c18862af9f72a5c8",
     "extraction/dense-square/Arithmetic/Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
@@ -364,7 +364,84 @@
     "tooling/aeneas-dense-prefix/run.py": "f0c6822035a19f7e9098f03db0b759d40fc8013a071ba6dffe6022c489a0bd41",
     "tooling/aeneas-dense-prefix/tests/Cargo.lock": "da99c8ef1525545496cbc525c6444088338ceb98ee74900bf8df75c4a066b5b8",
     "tooling/aeneas-dense-prefix/tests/Cargo.toml": "c4786210846407c975ca8745c71f96212c8b36f0f9e048fdf1f2b954e9c64af2",
-    "tooling/aeneas-dense-prefix/tests/src/lib.rs": "843a9ae6635be7dde241a8ebc75e7585983c0ed3825e9e400facf5e76ea30b77"
+    "tooling/aeneas-dense-prefix/tests/src/lib.rs": "843a9ae6635be7dde241a8ebc75e7585983c0ed3825e9e400facf5e76ea30b77",
+    "NATIVE_VERIFIER.md": "028bc85bdaf97cf482166f9c8b5b4261c89e2126544307188a67f5f5241c0dbf",
+    "audit/native-verifier-checkpoint.json": "9f43fec3294df6daf59f96f5687cea0b2de6738e243b6d56988cf955577f013c",
+    "bridge/Arithmetic/AffineLinearEvalGenerated.lean": "e7e8e6de1cee6fd98571f2c9fb41d0abb8b96c0e06a98a769d7c540ad89f7aa7",
+    "bridge/Arithmetic/DenseMulReductionGenerated.lean": "f45c2279b424f15bd5c0cb1a35202ae5b307ae0c4d62767b7574a584658510e3",
+    "bridge/Arithmetic/PortableEncodingGenerated.lean": "91c48a3cb627826bc4cdf358b0e8cc2c82dfc197235d7692093e5f9910d0a894",
+    "bridge/Arithmetic/PortableEncodingRuntime.lean": "1c53f83009843ec3f7ccec47f91b257580039314bc20417bd3dfdc37057b0cd7",
+    "bridge/Arithmetic/PortableInsertionGenerated.lean": "e8d1221520720ef83740ce0be68240f16fd7ac669493a6e9dd2742a441f9cbe4",
+    "bridge/Arithmetic/RebuiltLfsrGenerated.lean": "592c7f8c0f35728f58e0a36a865ddab16c5bde10c89c61d0ab159f2bd9a85d97",
+    "bridge/Arithmetic/RebuiltLfsrRuntime.lean": "6fdef76755089ae0966294b4ba4ea7138b86780136ecd5083920ba49a022f2a2",
+    "bridge/Arithmetic/RebuiltLfsrTypes.lean": "7c68075cd73c39686e248864ef40910da1ad95d9405778ef850dc38a5809770e",
+    "bridge/BulksketchBridge/AffineLinearEval.lean": "e71938c45cdd986f062c9ed454928c7ae1cd4ff114adb0dcb5920fba3d5e0473",
+    "bridge/BulksketchBridge/AffineLinearEvalSpec.lean": "92e8ee064dd0411b805ff0b735ce3714260e6b959cab00b522a019a0bbea8302",
+    "bridge/BulksketchBridge/DenseMulReduction.lean": "69e82cd913c4bea50d03950bd97b83803324c6d56878a2a38d2e7f1ad63aaea5",
+    "bridge/BulksketchBridge/DenseMulReductionSpec.lean": "31f92333c57d99deba60853db52a8a9d99822fd578220d1538386b805ce76fd5",
+    "bridge/BulksketchBridge/PortableEncoding.lean": "917b2a7c87ddfc81f9518f6d2e79c17e3651870da3e7285903350b2de5c6ec2c",
+    "bridge/BulksketchBridge/PortableEncodingChallenges.lean": "5a85d16a77577607eba7339c0061381a4eeb48de72ccade332209a4e4b7dd82d",
+    "bridge/BulksketchBridge/PortableInsertion.lean": "7bf4c8bfdff6274639a3a6e2a7265bba8d69e79dfad650f89c9d50251150ca4d",
+    "bridge/BulksketchBridge/PortableInsertionLoop.lean": "16eccbd341f24f233fef71aca3e3b57ca6626d5082d53b2a0a15e04c1404eb4c",
+    "bridge/BulksketchBridge/PortableRebuiltSeed.lean": "17fc0ccc7cf8c9027550485d5be74fdccd66d048cd252cf0ab7a2552bfd7c58d",
+    "bridge/BulksketchBridge/RebuiltLfsr.lean": "1e459eceef8552b6fb558b2f204858a6f6b9f993768db4dc59142fa41423acfd",
+    "bridge/BulksketchBridge/RebuiltLfsrAcceptance.lean": "998a5a157002a96fd7bba64061dcd7103b783d4a126bd547bb12ace24c5bd718",
+    "bridge/BulksketchBridge/RebuiltLfsrPortable.lean": "11c76fe35d129cbc2fca90258cb1763952db040c1db0fb2cc005cb0d7f62da4c",
+    "bridge/BulksketchBridge/RebuiltLfsrSpec.lean": "39961ba7915de048358fe75a41999da98a70d5abe05037cc6fcc8c2baef1af19",
+    "bridge/BulksketchBridge/RebuiltLocatorLoop.lean": "3f9601ded134735ebdff59ad35e74902e1e1daecf604736124c01f7eeed97118",
+    "bridge/BulksketchBridge/RebuiltLocatorPolynomial.lean": "174b5db643d2e5c6da8d7e4e9c488e140c75779888ed583ada3df4bc03a44c62",
+    "bridge/BulksketchBridge/RebuiltSquareLoop.lean": "38c30f519d347746e63033d5aa738e21dff7150ccda2adad51b173465a20d8f6",
+    "extraction/affine-linear-eval/Arithmetic/Funs.lean": "1ad1dbb2088a62e4cc6a3d7167314b676da60198b46453cf42bf6f836e0e3c12",
+    "extraction/affine-linear-eval/Arithmetic/FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+    "extraction/affine-linear-eval/Arithmetic/Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+    "extraction/affine-linear-eval/aeneas.log": "e18a5bbb1db4480c7c1c42fde140cd5877f4de01e7685b635e431acbbdcae358",
+    "extraction/affine-linear-eval/arithmetic.llbc": "a094560c0c0d7272bf1e469b3d4b75582d3acb8b74a5a87b8377ce7a590ec939",
+    "extraction/affine-linear-eval/charon.log": "122921aced06efe701a05b9bdc76a332c42d7d1a1bbe45c14d8ce564e75ffb24",
+    "extraction/affine-linear-eval/project.py": "982225e67f341022d808d63987e66cf2a9f4859a08a2b5e812ca3b5d961ae4bd",
+    "extraction/affine-linear-eval/receipt.json": "f431559ba9982566a200157c7423ae3fee9ba4b3daa4940cceb79be114269717",
+    "extraction/dense-mul/Arithmetic/Funs.lean": "7b50a133f18cd4c5fea896f35f0f4093cd1af6a7e1619b51c845a67733078ad6",
+    "extraction/dense-mul/Arithmetic/FunsExternal_Template.lean": "9d47cb5223b7a3a784065947ca87ceea2b65fb72423eb973c18862af9f72a5c8",
+    "extraction/dense-mul/Arithmetic/Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
+    "extraction/dense-mul/aeneas.log": "75884ebaf71e014d1234777165b89d3dc45a7169590bd9bb96cc0d8853d0559e",
+    "extraction/dense-mul/arithmetic.llbc": "b74d34b6736b12f5c0c81dfbde762ede76c1781fb960069c8685d8420bbb9b30",
+    "extraction/dense-mul/axiom-audit.log": "fb02ed3cd28a4d944fb43433194afa1078bb1ec02f55c487906a3eca002509bc",
+    "extraction/dense-mul/charon.log": "5401533cbbe30cd991cc7914f6c282105c237fef5c7f41cc9697465c07b95910",
+    "extraction/dense-mul/project.py": "6871850a3b1a3835afa8cc00029949db3c79e18b201074b904440c686174d03a",
+    "extraction/dense-mul/receipt.json": "fd7f4d8ca730021fb2000eb1423c6d5be67c6025f148cc5f440755218c14a3ef",
+    "extraction/dense-mul/refinement-receipt.json": "ea6a8efb6812a08d8c2d4bb6ea9390158c7a04c3a79773ad33c18155fce1a9c6",
+    "extraction/portable-encoding/axiom-audit.log": "a30d36745f7aa8cad1d4325f65bccca1271309e9f83688cb5d5c89010c030ce4",
+    "extraction/portable-encoding/encode/Arithmetic/Funs.lean": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739",
+    "extraction/portable-encoding/encode/Arithmetic/FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+    "extraction/portable-encoding/encode/Arithmetic/Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+    "extraction/portable-encoding/encode/aeneas.log": "9192a716c5475bd3ef60b71cc53720376bb32b9646748250d37cadff1f005b3f",
+    "extraction/portable-encoding/encode/arithmetic.llbc": "b57a3a0d0fec26e258e20b29b4d50d003af951b080045be5a5ff87c1d44fbf36",
+    "extraction/portable-encoding/encode/charon.log": "f12ee587767f5292cb9de7423a727881ffd8564105101d7414e0d238c86a54ed",
+    "extraction/portable-encoding/encode/receipt.json": "3743464690afde991edcd9482930dd1c08d0f6ec52ca1eb43bb42c08ce638327",
+    "extraction/portable-encoding/encode/refinement-receipt.json": "7a3cddb5cb90d0520f3a31e259498c46683c0b612ec17b22a0305b17f8aa1fe9",
+    "extraction/portable-encoding/insert/Arithmetic/Funs.lean": "30a69a641cebc1e5dad7fc99fa8edd051970cd36f5d9d8ca010db1afe0ceb6b1",
+    "extraction/portable-encoding/insert/Arithmetic/FunsExternal_Template.lean": "8ca8c96487a6ba9518d4f38ced0d28bb8f104c202265afcb63f84f0f8f23030d",
+    "extraction/portable-encoding/insert/Arithmetic/Types.lean": "d85fc6fef598ee48e95ca16c4955e9352bf9a9ce33b572b78f91d46f5b8db9f5",
+    "extraction/portable-encoding/insert/Arithmetic/TypesExternal_Template.lean": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582",
+    "extraction/portable-encoding/insert/aeneas.log": "0299034dea0b4b0db3acd3d0bf0cb496e540a43c68612ab718a0f91075dd3979",
+    "extraction/portable-encoding/insert/arithmetic.llbc": "3a95ffaf9e1650a9a3950ee9cdc3cddf312684c65ae7b7ceb186dfe4833fe64b",
+    "extraction/portable-encoding/insert/charon.log": "fbf6f6b1c2f1c200f16836453fca2eb5aa4efb1402ea600378abb0c3bc41e03e",
+    "extraction/portable-encoding/insert/receipt.json": "02318fbbc20ff623b3d75dc14f11a4d51d403932e3d47ae3a735c6968dcee33d",
+    "extraction/portable-encoding/insert/refinement-receipt.json": "b4200a37883bee861c83d8fc7794e02b0dd51b98a2682dcbf8c9b9585ec68e92",
+    "extraction/portable-encoding/project.py": "d40ca3311af450e4e44dd3473a4451606ffe0697cbbd3e437c26253f292d1a86",
+    "extraction/rebuilt-lfsr/Arithmetic/Funs.lean": "0980f9fccb4786d69397028c460618b6895b39c82b76d4d6b3bd6ba9d82e5595",
+    "extraction/rebuilt-lfsr/Arithmetic/FunsExternal_Template.lean": "8ab9bd644e3572ce7ac5062eea1e31b99e38dca06b528e93e93de53db6f2f088",
+    "extraction/rebuilt-lfsr/Arithmetic/Types.lean": "8a93715ef2336aafd7a6e2441962da32c9298cbfcc57058f0cbea7e3d1718471",
+    "extraction/rebuilt-lfsr/aeneas.log": "6df9ebad7d7f9f07a5a3421f78bad4bc582b2475344d3719cd3debb32a467249",
+    "extraction/rebuilt-lfsr/arithmetic.llbc": "5e5d9bcb5e3a40db18e563c5e06bb947bfe13aabfdb0371a9b38bb5ab9ada76c",
+    "extraction/rebuilt-lfsr/charon.log": "d3587ebb38c62505b4d830964e2440d89a4a78a00b87d711b8f0741251b68882",
+    "extraction/rebuilt-lfsr/project.py": "1d90a7c741276f5a71e6df07e69ec9a32b5e42e2a51174c32ad180cdb88ee6a2",
+    "extraction/rebuilt-lfsr/receipt.json": "f7c4d200ab4243b6fef2817f7f40d3f5cf2b1f36d7a442095a9dd187c147acbc",
+    "tooling/aeneas-dense-mul/README.md": "804b860b6bdcc687c5bef261d27a924fd95d60c4faa8af41d8c78d0bfc5aa6a8",
+    "tooling/aeneas-dense-mul/guards/dense_mul_guards.ml": "caf9b6189fa2d2c0a66c5d74ac350938511d470bb85d277b50091c8f4cd85a70",
+    "tooling/aeneas-dense-mul/guards/dune": "b531e918c4e272f90ea6d35f42877d927331e0eb1317a96c981cc98b7189c017",
+    "tooling/aeneas-dense-mul/receipt.json": "178c371b46478b1c67a385b601bef13ba0bd404dd00c3907bad4a2d37fc23983",
+    "tooling/aeneas-dense-mul/run.py": "9684667f143511e651ed355294e2846818880fd681e5f98870297e8607a85740",
+    "tooling/aeneas-dense-mul/shared-loop-erasure.patch": "05ea19806c2e3b3b1709661f8cd662caaf275c24dfb0460c352a7182d8fef9d3"
   },
   "reviewed_policy_revisions": [
     {
@@ -2121,7 +2198,476 @@
       "path": "tooling/aeneas-dense-prefix/tests/src/lib.rs",
       "new_sha256": "843a9ae6635be7dde241a8ebc75e7585983c0ed3825e9e400facf5e76ea30b77",
       "reason": "Freeze original Dense square, decoder dispatch and scalar recurrence, wire sizing and reconciliation contracts. Check the independent Dense-prefix translator receipt and preserve the previous translator gate and source denominator."
+    },
+    {
+      "path": "NATIVE_VERIFIER.md",
+      "new_sha256": "028bc85bdaf97cf482166f9c8b5b4261c89e2126544307188a67f5f5241c0dbf",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "6101be96939611a06a896513a5aa8858995f107ed097c21c96360399352c5603",
+      "old_sha256": "ff3eff353b7fe900f6662d8eb8c51a558f072026c2973bf3734a6c37f04f487b",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "RECONCILIATION.md",
+      "new_sha256": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
+      "old_sha256": "ae6373f6602ff25cce3dd6e70aedab37e586d4f678fb45dcae5388710feac2bb",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "02a386aa3ba158057e9345bb82b58017882e4a5c87f986baa6fd3a66966620e1",
+      "old_sha256": "9763a4e2a0ac38ed98a3d12a3f6ca1e47cbf0f8b0369a1afa3493ae7a09b8dbe",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "0ae42e951fccd736ff2daab1139ec53fc9dae8978318b880decd71f68d6424d5",
+      "old_sha256": "dc7f1a08121fb367482ce0d80a5edd9700fcf4cb3713528a5b30459a48aa0a1f",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "audit/native-verifier-checkpoint.json",
+      "new_sha256": "9f43fec3294df6daf59f96f5687cea0b2de6738e243b6d56988cf955577f013c",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/Arithmetic/AffineLinearEvalGenerated.lean",
+      "new_sha256": "e7e8e6de1cee6fd98571f2c9fb41d0abb8b96c0e06a98a769d7c540ad89f7aa7",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/Arithmetic/DenseMulReductionGenerated.lean",
+      "new_sha256": "f45c2279b424f15bd5c0cb1a35202ae5b307ae0c4d62767b7574a584658510e3",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/Arithmetic/PortableEncodingGenerated.lean",
+      "new_sha256": "91c48a3cb627826bc4cdf358b0e8cc2c82dfc197235d7692093e5f9910d0a894",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/Arithmetic/PortableEncodingRuntime.lean",
+      "new_sha256": "1c53f83009843ec3f7ccec47f91b257580039314bc20417bd3dfdc37057b0cd7",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/Arithmetic/PortableInsertionGenerated.lean",
+      "new_sha256": "e8d1221520720ef83740ce0be68240f16fd7ac669493a6e9dd2742a441f9cbe4",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/Arithmetic/RebuiltLfsrGenerated.lean",
+      "new_sha256": "592c7f8c0f35728f58e0a36a865ddab16c5bde10c89c61d0ab159f2bd9a85d97",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/Arithmetic/RebuiltLfsrRuntime.lean",
+      "new_sha256": "6fdef76755089ae0966294b4ba4ea7138b86780136ecd5083920ba49a022f2a2",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/Arithmetic/RebuiltLfsrTypes.lean",
+      "new_sha256": "7c68075cd73c39686e248864ef40910da1ad95d9405778ef850dc38a5809770e",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "075ed4e49d96a124f6e57d65e6457d235b3ad5f63fdf784669aa88e0bd188376",
+      "old_sha256": "680284578cecd309c245a231133a963573e6cab7d17ab290733f1a618a872ac3",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineLinearEval.lean",
+      "new_sha256": "e71938c45cdd986f062c9ed454928c7ae1cd4ff114adb0dcb5920fba3d5e0473",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineLinearEvalSpec.lean",
+      "new_sha256": "92e8ee064dd0411b805ff0b735ce3714260e6b959cab00b522a019a0bbea8302",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "fa7895d2ccd2e2f8d5f3030edc64b12e21483775cd004db72eacf93849a68812",
+      "old_sha256": "38521395efc634483a21d4f418c4918deda41e1264fe8bd37c4cb0c8c8fb73be",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseMulReduction.lean",
+      "new_sha256": "69e82cd913c4bea50d03950bd97b83803324c6d56878a2a38d2e7f1ad63aaea5",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseMulReductionSpec.lean",
+      "new_sha256": "31f92333c57d99deba60853db52a8a9d99822fd578220d1538386b805ce76fd5",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PortableEncoding.lean",
+      "new_sha256": "917b2a7c87ddfc81f9518f6d2e79c17e3651870da3e7285903350b2de5c6ec2c",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PortableEncodingChallenges.lean",
+      "new_sha256": "5a85d16a77577607eba7339c0061381a4eeb48de72ccade332209a4e4b7dd82d",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PortableInsertion.lean",
+      "new_sha256": "7bf4c8bfdff6274639a3a6e2a7265bba8d69e79dfad650f89c9d50251150ca4d",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PortableInsertionLoop.lean",
+      "new_sha256": "16eccbd341f24f233fef71aca3e3b57ca6626d5082d53b2a0a15e04c1404eb4c",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PortableRebuiltSeed.lean",
+      "new_sha256": "17fc0ccc7cf8c9027550485d5be74fdccd66d048cd252cf0ab7a2552bfd7c58d",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PortableZipMap.lean",
+      "new_sha256": "5985b26f6831f83088d3f13e1b37cc3daab2efb6157c172dfe77d7e3b53d623d",
+      "old_sha256": "b347c30b1a807dd998d7700bb0ddd069f1846a13813effd8c6b3a436cda6d61a",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RebuiltLfsr.lean",
+      "new_sha256": "1e459eceef8552b6fb558b2f204858a6f6b9f993768db4dc59142fa41423acfd",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RebuiltLfsrAcceptance.lean",
+      "new_sha256": "998a5a157002a96fd7bba64061dcd7103b783d4a126bd547bb12ace24c5bd718",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RebuiltLfsrPortable.lean",
+      "new_sha256": "11c76fe35d129cbc2fca90258cb1763952db040c1db0fb2cc005cb0d7f62da4c",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RebuiltLfsrSpec.lean",
+      "new_sha256": "39961ba7915de048358fe75a41999da98a70d5abe05037cc6fcc8c2baef1af19",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RebuiltLocatorLoop.lean",
+      "new_sha256": "3f9601ded134735ebdff59ad35e74902e1e1daecf604736124c01f7eeed97118",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RebuiltLocatorPolynomial.lean",
+      "new_sha256": "174b5db643d2e5c6da8d7e4e9c488e140c75779888ed583ada3df4bc03a44c62",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RebuiltSquareLoop.lean",
+      "new_sha256": "38c30f519d347746e63033d5aa738e21dff7150ccda2adad51b173465a20d8f6",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/BulksketchBridge/SlicePolynomial.lean",
+      "new_sha256": "41dd2eca414fa1b47af5c6ca47070cc53e5d034f0af568afd849893f9f97020c",
+      "old_sha256": "0b4245441338ad8fa2f4b3dde905e2f9bcb6272c6fc4dc5b594c66147767045c",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/README.md",
+      "new_sha256": "02245d476979058cfe4d9d5bd1bff541e2e98923d155dc01641e45e727dcde5f",
+      "old_sha256": "ae60a9d2afe2bc52507724666ba9464a2230f6406466ff51f3d429128e011644",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "1efd65fe9dc75ad7339354bc9014f2b2f810ce72fecab83856f78c05b5231537",
+      "old_sha256": "6c8bc7801527a8cf77e1b82191cd39cee5a730658023b516e47b791db9452d23",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "e353b748c6dbd9345b5f7b600955209a3d9e67af8d1d4989d3bfea9fddd864d3",
+      "old_sha256": "e6ed7e2afe04486552c4a67467dda2e7fb8134959c6d8d1fdb5c4fb7b5a4ad33",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/affine-linear-eval/Arithmetic/Funs.lean",
+      "new_sha256": "1ad1dbb2088a62e4cc6a3d7167314b676da60198b46453cf42bf6f836e0e3c12",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/affine-linear-eval/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/affine-linear-eval/Arithmetic/Types.lean",
+      "new_sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/affine-linear-eval/aeneas.log",
+      "new_sha256": "e18a5bbb1db4480c7c1c42fde140cd5877f4de01e7685b635e431acbbdcae358",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/affine-linear-eval/arithmetic.llbc",
+      "new_sha256": "a094560c0c0d7272bf1e469b3d4b75582d3acb8b74a5a87b8377ce7a590ec939",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/affine-linear-eval/charon.log",
+      "new_sha256": "122921aced06efe701a05b9bdc76a332c42d7d1a1bbe45c14d8ce564e75ffb24",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/affine-linear-eval/project.py",
+      "new_sha256": "982225e67f341022d808d63987e66cf2a9f4859a08a2b5e812ca3b5d961ae4bd",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/affine-linear-eval/receipt.json",
+      "new_sha256": "f431559ba9982566a200157c7423ae3fee9ba4b3daa4940cceb79be114269717",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/dense-mul/Arithmetic/Funs.lean",
+      "new_sha256": "7b50a133f18cd4c5fea896f35f0f4093cd1af6a7e1619b51c845a67733078ad6",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/dense-mul/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "9d47cb5223b7a3a784065947ca87ceea2b65fb72423eb973c18862af9f72a5c8",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/dense-mul/Arithmetic/Types.lean",
+      "new_sha256": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/dense-mul/aeneas.log",
+      "new_sha256": "75884ebaf71e014d1234777165b89d3dc45a7169590bd9bb96cc0d8853d0559e",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/dense-mul/arithmetic.llbc",
+      "new_sha256": "b74d34b6736b12f5c0c81dfbde762ede76c1781fb960069c8685d8420bbb9b30",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/dense-mul/axiom-audit.log",
+      "new_sha256": "fb02ed3cd28a4d944fb43433194afa1078bb1ec02f55c487906a3eca002509bc",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/dense-mul/charon.log",
+      "new_sha256": "5401533cbbe30cd991cc7914f6c282105c237fef5c7f41cc9697465c07b95910",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/dense-mul/project.py",
+      "new_sha256": "6871850a3b1a3835afa8cc00029949db3c79e18b201074b904440c686174d03a",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/dense-mul/receipt.json",
+      "new_sha256": "fd7f4d8ca730021fb2000eb1423c6d5be67c6025f148cc5f440755218c14a3ef",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/dense-mul/refinement-receipt.json",
+      "new_sha256": "ea6a8efb6812a08d8c2d4bb6ea9390158c7a04c3a79773ad33c18155fce1a9c6",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/axiom-audit.log",
+      "new_sha256": "a30d36745f7aa8cad1d4325f65bccca1271309e9f83688cb5d5c89010c030ce4",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/encode/Arithmetic/Funs.lean",
+      "new_sha256": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/encode/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/encode/Arithmetic/Types.lean",
+      "new_sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/encode/aeneas.log",
+      "new_sha256": "9192a716c5475bd3ef60b71cc53720376bb32b9646748250d37cadff1f005b3f",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/encode/arithmetic.llbc",
+      "new_sha256": "b57a3a0d0fec26e258e20b29b4d50d003af951b080045be5a5ff87c1d44fbf36",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/encode/charon.log",
+      "new_sha256": "f12ee587767f5292cb9de7423a727881ffd8564105101d7414e0d238c86a54ed",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/encode/receipt.json",
+      "new_sha256": "3743464690afde991edcd9482930dd1c08d0f6ec52ca1eb43bb42c08ce638327",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/encode/refinement-receipt.json",
+      "new_sha256": "7a3cddb5cb90d0520f3a31e259498c46683c0b612ec17b22a0305b17f8aa1fe9",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/insert/Arithmetic/Funs.lean",
+      "new_sha256": "30a69a641cebc1e5dad7fc99fa8edd051970cd36f5d9d8ca010db1afe0ceb6b1",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/insert/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "8ca8c96487a6ba9518d4f38ced0d28bb8f104c202265afcb63f84f0f8f23030d",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/insert/Arithmetic/Types.lean",
+      "new_sha256": "d85fc6fef598ee48e95ca16c4955e9352bf9a9ce33b572b78f91d46f5b8db9f5",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/insert/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/insert/aeneas.log",
+      "new_sha256": "0299034dea0b4b0db3acd3d0bf0cb496e540a43c68612ab718a0f91075dd3979",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/insert/arithmetic.llbc",
+      "new_sha256": "3a95ffaf9e1650a9a3950ee9cdc3cddf312684c65ae7b7ceb186dfe4833fe64b",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/insert/charon.log",
+      "new_sha256": "fbf6f6b1c2f1c200f16836453fca2eb5aa4efb1402ea600378abb0c3bc41e03e",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/insert/receipt.json",
+      "new_sha256": "02318fbbc20ff623b3d75dc14f11a4d51d403932e3d47ae3a735c6968dcee33d",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/insert/refinement-receipt.json",
+      "new_sha256": "b4200a37883bee861c83d8fc7794e02b0dd51b98a2682dcbf8c9b9585ec68e92",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/portable-encoding/project.py",
+      "new_sha256": "d40ca3311af450e4e44dd3473a4451606ffe0697cbbd3e437c26253f292d1a86",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/rebuilt-lfsr/Arithmetic/Funs.lean",
+      "new_sha256": "0980f9fccb4786d69397028c460618b6895b39c82b76d4d6b3bd6ba9d82e5595",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/rebuilt-lfsr/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "8ab9bd644e3572ce7ac5062eea1e31b99e38dca06b528e93e93de53db6f2f088",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/rebuilt-lfsr/Arithmetic/Types.lean",
+      "new_sha256": "8a93715ef2336aafd7a6e2441962da32c9298cbfcc57058f0cbea7e3d1718471",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/rebuilt-lfsr/aeneas.log",
+      "new_sha256": "6df9ebad7d7f9f07a5a3421f78bad4bc582b2475344d3719cd3debb32a467249",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/rebuilt-lfsr/arithmetic.llbc",
+      "new_sha256": "5e5d9bcb5e3a40db18e563c5e06bb947bfe13aabfdb0371a9b38bb5ab9ada76c",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/rebuilt-lfsr/charon.log",
+      "new_sha256": "d3587ebb38c62505b4d830964e2440d89a4a78a00b87d711b8f0741251b68882",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/rebuilt-lfsr/project.py",
+      "new_sha256": "1d90a7c741276f5a71e6df07e69ec9a32b5e42e2a51174c32ad180cdb88ee6a2",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "extraction/rebuilt-lfsr/receipt.json",
+      "new_sha256": "f7c4d200ab4243b6fef2817f7f40d3f5cf2b1f36d7a442095a9dd187c147acbc",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "a992d8203bbf35538b4d30b8fce41126efd5a1f551e13f3cf5140d93743ab3da",
+      "old_sha256": "5299558730273df4bc1e44794746e29d31e2abae933d927c36750ae26b2680c8",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "scripts/check_variant_fixtures.py",
+      "new_sha256": "5cd4df885362acef3ac067f0268bbf35a4ea1f0a674703cd291c106309bf3b75",
+      "old_sha256": "115f159400d4d6dbebc01f220e74acfadf21ab942bcba2b6060547718a223260",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "f474f3534e3760e8df30ff152a9e65de5e4bfed36b9c8aaa0dff6a7c532a957c",
+      "old_sha256": "7f15d6028695237da26c993b50b32339c4e5a089bde4a00018b7934cab01d79b",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "tooling/aeneas-dense-mul/README.md",
+      "new_sha256": "804b860b6bdcc687c5bef261d27a924fd95d60c4faa8af41d8c78d0bfc5aa6a8",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "tooling/aeneas-dense-mul/guards/dense_mul_guards.ml",
+      "new_sha256": "caf9b6189fa2d2c0a66c5d74ac350938511d470bb85d277b50091c8f4cd85a70",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "tooling/aeneas-dense-mul/guards/dune",
+      "new_sha256": "b531e918c4e272f90ea6d35f42877d927331e0eb1317a96c981cc98b7189c017",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "tooling/aeneas-dense-mul/receipt.json",
+      "new_sha256": "178c371b46478b1c67a385b601bef13ba0bd404dd00c3907bad4a2d37fc23983",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "tooling/aeneas-dense-mul/run.py",
+      "new_sha256": "9684667f143511e651ed355294e2846818880fd681e5f98870297e8607a85740",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "tooling/aeneas-dense-mul/shared-loop-erasure.patch",
+      "new_sha256": "05ea19806c2e3b3b1709661f8cd662caaf275c24dfb0460c352a7182d8fef9d3",
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
     }
   ],
-  "challenge_count": 97
+  "challenge_count": 104
 }

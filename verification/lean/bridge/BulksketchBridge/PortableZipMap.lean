@@ -32,7 +32,7 @@ theorem mapFrom_full_length {α β : Type} [Inhabited α] [Inhabited β]
   rw [Slice.Inhabited_getElem_eq_getElem! _ i mappedBound, Slice.Inhabited_getElem_eq_getElem! left i bound,
     mapFrom_word left right transform _ i bound, ite_eq_right (by omega)]
 
-private theorem apply_step {α β : Type} [Inhabited α] [Inhabited β]
+theorem apply_step {α β : Type} [Inhabited α] [Inhabited β]
     (left : Slice α) (right : Slice β) (transform : α → β → α)
     (i : Nat) (bound : i < left.length) :
     replaceLeft (stateAt (mapFrom left right transform (i + 1)) right left.length)

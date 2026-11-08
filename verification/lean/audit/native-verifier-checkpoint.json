@@ -1,0 +1,15 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "previous_proof_commit": "77ba2e2474b13e07108973ab713b55c329f6ca27",
+  "retained_native_executable_obligations": 344,
+  "generated_body_refinements_under_recorded_TCB": 46,
+  "whole_native_coverage_achieved": false,
+  "dense_mul_translator_variant": "checked-shared-loop-erasure-v1",
+  "dense_mul_final_loop_generated_body_credit": 0,
+  "open": [
+    "Dense::mul_into original convolution loops and full normalized product",
+    "Portable Horner ended-shared-loan match and reconstruction loop backedge match",
+    "Native Berlekamp-Massey early-return lowering, locator fit, root recovery and decoder completeness",
+    "Compiler-expanded closure and remaining runtime, memory and ISA contracts"
+  ]
+}

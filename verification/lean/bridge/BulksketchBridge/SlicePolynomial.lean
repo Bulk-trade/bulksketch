@@ -29,7 +29,7 @@ theorem slicePolynomial_coeff (words : Slice U64) (index : Nat) :
     simp [show ¬index < words.length by simpa using absent]
     exact toField_zero
 
-private theorem exact_product (original output : Slice U64) (root : U64)
+theorem exact_product (original output : Slice U64) (root : U64)
     (lengthEq : output.length = original.length)
     (frame : ∀ i : Nat, i < original.length →
       output[i]! = SliceKernelChallenges.coefficientAfter original root i)

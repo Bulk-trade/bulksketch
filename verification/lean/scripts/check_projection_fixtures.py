@@ -91,6 +91,31 @@ PROJECTIONS = [
                   "bridge/Arithmetic/DenseSquareRuntime.lean", "bridge/Arithmetic/SliceKernelTypes.lean",
                   "bridge/Arithmetic/DenseNormalizationTypes.lean",
                   "bridge/Arithmetic/DenseNormalizationGenerated.lean"]),
+    ("rebuilt-lfsr", "extraction/rebuilt-lfsr/project.py", "extraction/rebuilt-lfsr/receipt.json",
+     "extraction/rebuilt-lfsr/Arithmetic/Funs.lean", "bridge/Arithmetic/RebuiltLfsrGenerated.lean",
+     "let i ← index + 2#usize", "let i ← index + 1#usize", "compiled rebuilt verifier projection differs",
+     None, None, ["bridge/Arithmetic/RebuiltLfsrTypes.lean", "bridge/Arithmetic/SliceKernelTypes.lean",
+                  "bridge/Arithmetic/RebuiltLfsrRuntime.lean"]),
+    ("affine-linear-eval", "extraction/affine-linear-eval/project.py", "extraction/affine-linear-eval/receipt.json",
+     "extraction/affine-linear-eval/Arithmetic/Funs.lean", "bridge/Arithmetic/AffineLinearEvalGenerated.lean",
+     "if i2 != i3", "if i2 = i3", "compiled linear evaluation projection differs",
+     None, None, ["bridge/Arithmetic/SliceKernelTypes.lean"]),
+    ("portable-insert", "extraction/portable-encoding/project.py", "extraction/portable-encoding/insert/receipt.json",
+     "extraction/portable-encoding/insert/Arithmetic/Funs.lean", "bridge/Arithmetic/PortableInsertionGenerated.lean",
+     "syndrome ^^^ power1", "syndrome ^^^ syndrome", "compiled Portable encoding projection differs",
+     None, None, ["bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/PortableGenerated.lean",
+                  "bridge/Arithmetic/PortableEncodingRuntime.lean",
+                  "extraction/portable-encoding/insert/refinement-receipt.json"]),
+    ("portable-encode", "extraction/portable-encoding/project.py", "extraction/portable-encoding/encode/receipt.json",
+     "extraction/portable-encoding/encode/Arithmetic/Funs.lean", "bridge/Arithmetic/PortableEncodingGenerated.lean",
+     "if i <= 2#usize", "if i <= 1#usize", "compiled Portable encoding projection differs",
+     None, None, ["bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/PortableGenerated.lean",
+                  "bridge/Arithmetic/PortableEncodingRuntime.lean",
+                  "extraction/portable-encoding/encode/refinement-receipt.json"]),
+    ("dense-mul-reduction", "extraction/dense-mul/project.py", "extraction/dense-mul/receipt.json",
+     "extraction/dense-mul/Arithmetic/Funs.lean", "bridge/Arithmetic/DenseMulReductionGenerated.lean",
+     "next_back z (some (target, product))", "next_back z none", "compiled Dense reduction projection differs",
+     None, None, ["bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/DenseNormalizationTypes.lean"]),
 ]
 
 
@@ -101,10 +126,11 @@ def main():
         spec = importlib.util.spec_from_file_location(label + "_projection", ROOT / checker)
         projector = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(projector)
-        originals[label] = projector.check()["source_declarations_retained_verbatim"]
+        kwargs = {"kind": "encode"} if label == "portable-encode" else {}
+        originals[label] = projector.check(**kwargs)["source_declarations_retained_verbatim"]
         receipt = json.loads((ROOT / receipt_path).read_text())
         files = [receipt_path, active_path, "bridge/Arithmetic/Types.lean", "bridge/Arithmetic/Funs.lean"]
-        artifact_key = "artifacts" if label in {"dense-normalization", "verify-dispatch", "odd-recurrence", "dense-square"} else "generated"
+        artifact_key = "artifacts" if "artifacts" in receipt else "generated"
         files += [item["path"] for item in receipt[artifact_key]] + extra_files
         cases = [
             ("compiled-body-edit", active_path, before, after, changed),
@@ -152,6 +178,13 @@ def main():
             cases.append(("shared-normalization-edit", "bridge/Arithmetic/DenseNormalizationGenerated.lean",
                           "def poly.dense.normalized_len\n", "def poly.dense.normalized_len_edited\n",
                           "shared normalization declaration mismatch"))
+        if label == "rebuilt-lfsr":
+            cases.append(("inclusive-bound-edit", "bridge/Arithmetic/RebuiltLfsrRuntime.lean",
+                          "if range.end.val < slice.length", "if range.end.val ≤ slice.length",
+                          "scoped rebuilt verifier runtime mismatch"))
+            cases.append(("inclusive-range-type-edit", "bridge/Arithmetic/RebuiltLfsrTypes.lean",
+                          "  «end» : Idx", "  «end» : Nat",
+                          "compiled rebuilt verifier inclusive range type differs"))
         for name, path, before, after, diagnostic in cases:
             name = label + "/" + name
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:
@@ -159,13 +192,13 @@ def main():
                 for file in files:
                     (shadow / file).parent.mkdir(parents=True, exist_ok=True)
                     shutil.copy2(ROOT / file, shadow / file)
-                projector.check(shadow)
+                projector.check(shadow, **kwargs)
                 text = (shadow / path).read_text()
                 if before not in text:
                     raise RuntimeError("fixture did not find mutation target: " + name)
                 (shadow / path).write_text(text.replace(before, after, 1))
                 try:
-                    projector.check(shadow)
+                    projector.check(shadow, **kwargs)
                 except ValueError as error:
                     if diagnostic not in str(error):
                         raise RuntimeError("wrong rejection for " + name + ": " + str(error)) from error
@@ -173,9 +206,9 @@ def main():
                 else:
                     raise RuntimeError("edited extraction boundary was accepted: " + name)
                 optimized = subprocess.run([sys.executable, "-O", "-c",
-                    "from pathlib import Path; import runpy,sys; "
-                    "runpy.run_path(sys.argv[1])['check'](Path(sys.argv[2]))",
-                    str(ROOT / checker), str(shadow)],
+                    "from pathlib import Path; import json,runpy,sys; "
+                    "runpy.run_path(sys.argv[1])['check'](Path(sys.argv[2]), **json.loads(sys.argv[3]))",
+                    str(ROOT / checker), str(shadow), json.dumps(kwargs)],
                     stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                     text=True, timeout=10)
                 if optimized.returncode == 0 or diagnostic not in optimized.stdout:

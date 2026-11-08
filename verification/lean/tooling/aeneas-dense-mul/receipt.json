@@ -1,0 +1,226 @@
+{
+  "status": "passed",
+  "variant_id": "checked-shared-loop-erasure-v1",
+  "base_aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "patch": "tooling/aeneas-dense-mul/shared-loop-erasure.patch",
+  "patch_sha256": "05ea19806c2e3b3b1709661f8cd662caaf275c24dfb0460c352a7182d8fef9d3",
+  "parent_patch": "tooling/aeneas-dense-prefix/owner-guard.patch",
+  "parent_patch_sha256": "8d3b307160f0309621cc3971b01cf1a18b8d78b09d1631ebee6da30e9b442150",
+  "modified_sources": {
+    "src/interp/InterpExpansion.ml": "a6f3b2621f0836c20add44395fad2ccac5e350aa51bf5d670d593e22f1d35df0",
+    "src/symbolic/SymbolicToPureExpressions.ml": "ce26b83927530c663e28448d734dcc07a5a6f422ba67e1b4895d8c58eda7f7a4"
+  },
+  "base_sources": {
+    "src/interp/InterpExpansion.ml": "c3672499de02ee3ed411bbbe2f6a85e7a24c33df9ec12b84e409327b4c6fc6dc",
+    "src/symbolic/SymbolicToPureExpressions.ml": "250813689915257fcab9850a12804d6a0b3a6f7ec5dd7a854dd33a849419c023"
+  },
+  "unchanged_collapse_guard_source_sha256": "bd02b5094799b93f14f29e962b3371db7ccde9eda496ae444aef41995c4948e7",
+  "baseline_binary_sha256": "67d90faba0a8001c3df2f3de63c7102a00252e5573ee741b2c7b0e790d4b9529",
+  "patched_binary_sha256": "3ba62efab8baaa8e43bf719cb202744c4479d35ed11eeb30c7ff9d33df91539c",
+  "extraction": {
+    "input": "extraction/dense-mul/arithmetic.llbc",
+    "input_sha256": "b74d34b6736b12f5c0c81dfbde762ede76c1781fb960069c8685d8420bbb9b30",
+    "required_flags": [
+      "-checks",
+      "-sequential"
+    ],
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-dense-mul/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-split-files",
+      "-sequential",
+      "-print-error-emitters",
+      "-checks",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-tools/dense-mul-investigation/regressions/original-mul",
+      "/Users/junbug/bulk/bulksketch/verification/lean/extraction/dense-mul/arithmetic.llbc"
+    ],
+    "generated": [
+      {
+        "path": "extraction/dense-mul/Arithmetic/Types.lean",
+        "sha256": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557"
+      },
+      {
+        "path": "extraction/dense-mul/Arithmetic/Funs.lean",
+        "sha256": "7b50a133f18cd4c5fea896f35f0f4093cd1af6a7e1619b51c845a67733078ad6"
+      }
+    ],
+    "exit_code": 0
+  },
+  "regression_sources": {
+    "tooling/aeneas-dense-mul/run.py": "9684667f143511e651ed355294e2846818880fd681e5f98870297e8607a85740",
+    "tooling/aeneas-dense-mul/guards/dense_mul_guards.ml": "caf9b6189fa2d2c0a66c5d74ac350938511d470bb85d277b50091c8f4cd85a70",
+    "tooling/aeneas-dense-mul/guards/dune": "b531e918c4e272f90ea6d35f42877d927331e0eb1317a96c981cc98b7189c017"
+  },
+  "regressions": [
+    {
+      "case": "original-mul",
+      "baseline_exit_code": 1,
+      "patched_exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "case": "square-control",
+      "status": "passed"
+    },
+    {
+      "case": "shared-owned-region",
+      "status": "passed"
+    },
+    {
+      "case": "without-checks",
+      "exit_code": 1,
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "active-child-loan",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "data-continuation",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "join-ending",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "level-two",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "level-zero",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "mutable-consumed-payload",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "mutable-given-back-payload",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "mutable-loan-payload",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "registered-continuation",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "unchecked",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "unended-level",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "unregistered-erasure",
+      "status": "expected_rejection_confirmed"
+    }
+  ],
+  "commands": [
+    {
+      "name": "owner-only",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-dense-prefix/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-sequential",
+        "-print-error-emitters",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/dense-mul-investigation/regressions/owner-only",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/dense-mul/arithmetic.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 3.173558458001935,
+      "log_sha256": "44abbb193703d23435178e4c05b80ece4b7abbb09544293767f610e39f4c8715"
+    },
+    {
+      "name": "without-checks",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-dense-mul/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-sequential",
+        "-print-error-emitters",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/dense-mul-investigation/regressions/without-checks",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/dense-mul/arithmetic.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 1.4798796249961015,
+      "log_sha256": "97bb360dbece69c36ec0d0f9a01516dbcb47ef02147412a1afbb26570af9e25a"
+    },
+    {
+      "name": "original-mul",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-dense-mul/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-sequential",
+        "-print-error-emitters",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/dense-mul-investigation/regressions/original-mul",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/dense-mul/arithmetic.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 3.5180685840023216,
+      "log_sha256": "f2cc8cc641062d69ff93c92748c6219543d4236543235556f7228024f9975a82"
+    },
+    {
+      "name": "square-control",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-dense-mul/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-sequential",
+        "-print-error-emitters",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/dense-mul-investigation/regressions/square-control",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/dense-square/arithmetic.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 2.148997958007385,
+      "log_sha256": "c34b291ac6901914c1c567c6acfb58fed6eeec3ed42c2c97ffee61af57345aa4"
+    },
+    {
+      "name": "erasure-guards",
+      "command": [
+        "opam",
+        "exec",
+        "--root=/Users/junbug/bulk/bulksketch-proofs/tooling/opam-root",
+        "--switch=aeneas-5.3.0",
+        "--",
+        "dune",
+        "exec",
+        "--root",
+        "src",
+        "-j",
+        "2",
+        "./dense_mul_guard_tests/dense_mul_guards.exe"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-dense-mul",
+      "exit_code": 0,
+      "elapsed_seconds": 1.8640581670042593,
+      "log_sha256": "7a5f1255ff3a48c2d195b318b7333b1da4aa9eb088a0d008d921249e1fd4b015"
+    }
+  ],
+  "native_source_changed": false,
+  "new_native_coverage_credit_from_tests": 0
+}

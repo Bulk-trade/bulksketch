@@ -1,0 +1,54 @@
+{
+  "status": "targeted Lean build, exact challenge assignment and standard-only axiom audit passed",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_item_id": "src/backend/portable.rs:85:method:bulksketch::backend::portable::<Portable as BulkKernels < F >>::insert_nonzero",
+  "source_line_span_sha256": "35de69e032509ca9c7adb4d236978721438fec5dc8f2b80dd98d2b5372abecda",
+  "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractBulkKernels.insert_nonzero",
+  "generated_file": "bridge/Arithmetic/PortableInsertionGenerated.lean",
+  "generated_files": [
+    "bridge/Arithmetic/Types.lean",
+    "bridge/Arithmetic/Funs.lean",
+    "bridge/Arithmetic/PortableGenerated.lean",
+    "bridge/Arithmetic/PortableInsertionGenerated.lean"
+  ],
+  "challenge": "BulksketchBridge.PortableEncodingChallenges.actualInsertNonzeroReturnsFrame",
+  "theorem": "BulksketchBridge.PortableEncoding.insert_nonzero_refines",
+  "native_body_refinements_added": 1,
+  "verbatim_functions": 5,
+  "scope": "Every destination length and ID slice. Empty destination returns immediately. Otherwise the original nested loops apply one odd GF64 power per ID and slot, with original destination as the initial word and all backwards writes checked. Exact length and every output coefficient are preserved by the frame theorem.",
+  "quotient_field_meaning": "BulksketchBridge.PortableEncoding.foldColumn_field",
+  "scoped_runtime_module": "bridge/Arithmetic/PortableEncodingRuntime.lean",
+  "runtime_trust_boundary": "Borrow correspondence for head/tail slice views and restoration, mutable slice IntoIterator using the pinned iter_mut model, and shared singleton from_ref. Standard-library memory/source correspondence remains trusted. The encoder callback equality is explicit.",
+  "rust_std_source_references": [
+    {
+      "file": "library/core/src/slice/mod.rs",
+      "sha256": "d97f830fde0310298bcfc8f93d6e82bdb6e59b7ff48323152015b48091d86083",
+      "lines": "222\u2013228",
+      "scope": "head/tail mutable split and restoration"
+    },
+    {
+      "file": "library/core/src/slice/raw.rs",
+      "sha256": "0914968067f7e2bc798680c1edd72bcb032a9fd44ebb2b6fbc082a3a2b16941f",
+      "lines": "203\u2013206",
+      "scope": "shared singleton slice"
+    },
+    {
+      "file": "library/core/src/slice/iter/macros.rs",
+      "sha256": "8db181ab6087b436dcc4c350efc7283ecc4912e34ca20d8bf7460fca5084c26c",
+      "lines": "153\u2013169",
+      "scope": "mutable and shared slice iterator next operations"
+    }
+  ],
+  "native_source_edited": false,
+  "full_native_coverage_achieved": false,
+  "files_sha256": {
+    "bridge/Arithmetic/PortableEncodingRuntime.lean": "1c53f83009843ec3f7ccec47f91b257580039314bc20417bd3dfdc37057b0cd7",
+    "bridge/Arithmetic/PortableInsertionGenerated.lean": "e8d1221520720ef83740ce0be68240f16fd7ac669493a6e9dd2742a441f9cbe4",
+    "bridge/Arithmetic/PortableEncodingGenerated.lean": "91c48a3cb627826bc4cdf358b0e8cc2c82dfc197235d7692093e5f9910d0a894",
+    "bridge/BulksketchBridge/PortableEncodingChallenges.lean": "5a85d16a77577607eba7339c0061381a4eeb48de72ccade332209a4e4b7dd82d",
+    "bridge/BulksketchBridge/PortableInsertionLoop.lean": "16eccbd341f24f233fef71aca3e3b57ca6626d5082d53b2a0a15e04c1404eb4c",
+    "bridge/BulksketchBridge/PortableInsertion.lean": "7bf4c8bfdff6274639a3a6e2a7265bba8d69e79dfad650f89c9d50251150ca4d",
+    "bridge/BulksketchBridge/PortableEncoding.lean": "917b2a7c87ddfc81f9518f6d2e79c17e3651870da3e7285903350b2de5c6ec2c",
+    "extraction/portable-encoding/project.py": "d40ca3311af450e4e44dd3473a4451606ffe0697cbbd3e437c26253f292d1a86"
+  }
+}

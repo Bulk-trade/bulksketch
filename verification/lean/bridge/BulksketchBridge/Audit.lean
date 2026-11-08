@@ -230,7 +230,21 @@ run_cmd do
     (``BulksketchBridge.DenseSquareChallenges.actualSquareIntoReturnsExactFrame,
       ``BulksketchBridge.DenseSquare.square_into_refines),
     (``BulksketchBridge.DenseSquare.SquareIntoPolynomialRefines,
-      ``BulksketchBridge.DenseSquare.square_into_polynomial_refines)
+      ``BulksketchBridge.DenseSquare.square_into_polynomial_refines),
+    (``BulksketchBridge.PortableEncodingChallenges.actualInsertNonzeroReturnsFrame,
+      ``BulksketchBridge.PortableEncoding.insert_nonzero_refines),
+    (``BulksketchBridge.PortableEncodingChallenges.actualEncodeNonzeroReturnsFrame,
+      ``BulksketchBridge.PortableEncoding.encode_nonzero_refines),
+    (``BulksketchBridge.AffineLinearEval.ActualLinearEvaluation,
+      ``BulksketchBridge.AffineLinearEval.linear_eval_refines),
+    (``BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrReturnsFrames,
+      ``BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_refines),
+    (``BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrIffDirect,
+      ``BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_iff_direct),
+    (``BulksketchBridge.DenseMulReductionSpec.finalReductionFrame,
+      ``BulksketchBridge.DenseMulReduction.loop_refines),
+    (``BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrWithPortableSeed,
+      ``BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_portable_seed_refines)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

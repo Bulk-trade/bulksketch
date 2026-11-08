@@ -833,7 +833,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.PortableEncoding.encode_nonzero_refines",
+        "scope": "Every destination length and ID slice, with an explicit equality between the supplied insertion callback and original Portable insertion. Clears destination before insertion. The <=2 singleton path and larger batch path compute the same exact zero-initialized fold and preserve destination length.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/contract.rs:99:trait_contract:bulksketch::backend::contract::BulkKernels::xor_assign",
@@ -1404,7 +1411,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.PortableEncoding.insert_nonzero_refines",
+        "scope": "Every destination length and ID slice. Empty destination returns immediately. Otherwise the original nested loops apply one odd GF64 power per ID and slot, with original destination as the initial word and all backwards writes checked. Exact length and every output coefficient are preserved by the frame theorem.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:103:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::xor_assign",
@@ -2940,7 +2954,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AffineLinearEval.linear_eval_refines",
+        "scope": "For all coefficient slices and input words under exact GF64 multiplication and square callbacks, the original loop returns normally and evaluates the linearized polynomial with exponents 2^i. Checked bounds and final skipped square included.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/affine.rs:245:function:bulksketch::decode::affine::subspace_start",
@@ -5154,7 +5175,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_refines",
+        "scope": "For adequate buffers and explicit callback equations, both original loops and both comparison branches return normally with exact scratch frames. A seed mismatch returns false before squaring or recurrence. A matching seed squares the locator tail and returns the exact continuation result.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/verify.rs:6:struct:bulksketch::decode::verify::ProductCounts",
@@ -11323,8 +11351,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable declarations retained. Exact decoder dispatch, default odd recurrence, record-size admission and Dense square are linked to original generated bodies. GF64 reconciliation theorems establish sparse uniqueness, rebuilt recurrence equivalence and minimal locator uniqueness, with zero additional source-body credit. Complete native decoder, compiler-expanded closure, memory and ISA contracts remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 42,
+    "note": "All 344 native executable declarations retained. The original rebuilt verifier, Portable insertion, default encoder, and affine evaluator add four source-body refinements. The original Dense multiplication extracts fully and its final reduction loop is verified, with no whole-body credit. Compiler-expanded native contracts remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 46,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -11349,7 +11377,18 @@
       "scalar_continuation_to_full_comparison": "BulksketchBridge.Reconciliation.gf64_scalar_continuation_iff_direct",
       "locator_minimal": "BulksketchBridge.Reconciliation.gf64_positive_locator_minimal",
       "locator_unique": "BulksketchBridge.Reconciliation.gf64_positive_locator_unique",
-      "native_body_credit": 0
+      "native_body_credit": 0,
+      "rebuilt_locator_words": "BulksketchBridge.RebuiltLfsr.locator_words_product",
+      "rebuilt_wrapper_to_full_comparison": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_iff_direct",
+      "portable_seed_to_full_comparison": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_portable_seed_refines"
+    },
+    "partial_dense_mul_evidence": {
+      "native_item_id": "src/poly/dense.rs:7:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::mul_into",
+      "translator_variant": "checked-shared-loop-erasure-v1",
+      "generated_file": "bridge/Arithmetic/DenseMulReductionGenerated.lean",
+      "theorem": "BulksketchBridge.DenseMulReduction.loop_refines",
+      "generated_body_credit": 0,
+      "remaining": "Original two convolution loops, composition and exact normalized polynomial product."
     }
   }
 }
