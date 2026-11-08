@@ -1,0 +1,253 @@
+{
+  "status": "passed",
+  "variant_id": "checked-ended-shared-scalar-v1",
+  "base_aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "patch": "tooling/aeneas-horner-match/ended-shared-scalar.patch",
+  "patch_sha256": "b0d2bd6b087d0d376351469e20f97a150033a57e2a7b48aedf9e966f56f6562c",
+  "modified_sources": {
+    "src/interp/InterpMatchCtxs.ml": "df7c6752abc7ffd21748133d351a804626822a111c95e086af47e17a18a4c24e"
+  },
+  "base_sources": {
+    "src/interp/InterpMatchCtxs.ml": "a97bd2650a71ec0795f570dac17a8a1f1f52ae2b6feb4619984e6f1d61fde264"
+  },
+  "baseline_binary_sha256": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+  "patched_binary_sha256": "cb4287c07bdcac9179b6120f680dfd8ac17b875d1895ed8f6f1024e1f322de8b",
+  "charon_binary_sha256": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+  "extraction": {
+    "input": "extraction/portable-horner/arithmetic.llbc",
+    "input_sha256": "45d579b229bcbb2796eaf633e39813e387a51b31d83cb1c2551d2cd7ed50a54d",
+    "required_flags": [
+      "-checks",
+      "-sequential"
+    ],
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-horner-match/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-split-files",
+      "-sequential",
+      "-print-error-emitters",
+      "-checks",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-tools/horner-match-investigation/regressions/original-horner",
+      "/Users/junbug/bulk/bulksketch/verification/lean/extraction/portable-horner/arithmetic.llbc"
+    ],
+    "generated": [
+      {
+        "path": "extraction/portable-horner/Arithmetic/Types.lean",
+        "sha256": "6c75cf2ec0d1b2219401976b4626400b5d24b18abc171f525d8e1bb099ec4a4b"
+      },
+      {
+        "path": "extraction/portable-horner/Arithmetic/Funs.lean",
+        "sha256": "c75cd779d7f3f57f806f87b791371c534a57a9a6d1f3872055e136cb0724f96e"
+      },
+      {
+        "path": "extraction/portable-horner/Arithmetic/TypesExternal_Template.lean",
+        "sha256": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582"
+      },
+      {
+        "path": "extraction/portable-horner/Arithmetic/FunsExternal_Template.lean",
+        "sha256": "0c0189dfd533d8957de19899709849ad96d95efb8393ea331bea7c941b4cf723"
+      }
+    ],
+    "exit_code": 0
+  },
+  "regression_sources": {
+    "tooling/aeneas-horner-match/run.py": "8f6560bfcd2c101c0d250c743e6f462532bc999ef13c0d9c3f64f6dc23afc750",
+    "tooling/aeneas-horner-match/tests/Cargo.toml": "57c2e7cfdd06bc6ae7cfc07ea4b6c45069b8eb0d07b5f7cbb4cdcefc84e86d93",
+    "tooling/aeneas-horner-match/tests/Cargo.lock": "373d27af87c071b00c07a78a04d086a1ecdcc4573753e020e2453a177c49fc80",
+    "tooling/aeneas-horner-match/tests/src/lib.rs": "7ece47c0d239ab96aebbf5a226f87f6b317afb10cd1a7e7e298f7d1e0186fb9f",
+    "tooling/aeneas-horner-match/guards/dune": "44e9d33436d717ab27b9bc5927a0510302bdf11fda47c31ccefcf1d93da3b02e",
+    "tooling/aeneas-horner-match/guards/horner_match_guards.ml": "97a98dd14c83d2fffee2d58a16e4024efbffa2e85e30ff3d24d0eb90f1cf7776"
+  },
+  "regressions": [
+    {
+      "case": "split-then-zip",
+      "baseline_exit_code": 1,
+      "patched_exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "case": "zip-without-split",
+      "status": "passed"
+    },
+    {
+      "case": "without-checks",
+      "exit_code": 1,
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "original-horner",
+      "baseline_exit_code": 1,
+      "patched_exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "case": "distinct-child-payload",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "loan-child",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "nonempty-child-mismatch",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "nonscalar-metadata",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "same-scalar-equivalence",
+      "status": "passed"
+    },
+    {
+      "case": "same-scalar-mapping",
+      "status": "passed"
+    },
+    {
+      "case": "same-scalar-unchecked",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "unequal-symbolic-id",
+      "status": "expected_rejection_confirmed"
+    }
+  ],
+  "commands": [
+    {
+      "name": "charon-fixture",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-tools/horner-match-investigation/regressions/repro.llbc",
+        "--",
+        "--manifest-path",
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas-horner-match/tests/Cargo.toml",
+        "--lib",
+        "--locked",
+        "--offline"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "log_sha256": "f9f99385f88f7df31faf896e04ed39310f37fc680b69bd1d158d0235b243987b"
+    },
+    {
+      "name": "fixture-baseline",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-sequential",
+        "-print-error-emitters",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/horner-match-investigation/regressions/fixture-baseline",
+        "/Users/junbug/bulk/bulksketch-proof-tools/horner-match-investigation/regressions/repro.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "log_sha256": "145fbfd1c3987b2ebc30fce8291b3fb20e36033b2ec41a335df1246be4699fe0"
+    },
+    {
+      "name": "fixture-checked",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-horner-match/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-sequential",
+        "-print-error-emitters",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/horner-match-investigation/regressions/fixture-checked",
+        "/Users/junbug/bulk/bulksketch-proof-tools/horner-match-investigation/regressions/repro.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "log_sha256": "f8cc4af0cfa6ad69df442e425f9f333d0805dd14e83045d31429a4239c7cc986"
+    },
+    {
+      "name": "fixture-without-checks",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-horner-match/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-sequential",
+        "-print-error-emitters",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/horner-match-investigation/regressions/fixture-without-checks",
+        "/Users/junbug/bulk/bulksketch-proof-tools/horner-match-investigation/regressions/repro.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "log_sha256": "46779067a1d2c32a8a3b038d19f78c8bb0797e7d4016d25e240e3a35242601a0"
+    },
+    {
+      "name": "original-baseline",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-sequential",
+        "-print-error-emitters",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/horner-match-investigation/regressions/original-baseline",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/portable-horner/arithmetic.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "log_sha256": "a3eed775f3186b1a3fcfbd515a4cf2ae5f19453f62fd559b66d6a820a2e1208f"
+    },
+    {
+      "name": "original-horner",
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-horner-match/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-sequential",
+        "-print-error-emitters",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-tools/horner-match-investigation/regressions/original-horner",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/portable-horner/arithmetic.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "log_sha256": "e2d178978ed5420b607c89a32f960158a6b2cab78da1390a3bfe9924fd4442fa"
+    },
+    {
+      "name": "context-matcher-guards",
+      "command": [
+        "opam",
+        "exec",
+        "--root=/Users/junbug/bulk/bulksketch-proofs/tooling/opam-root",
+        "--switch=aeneas-5.3.0",
+        "--",
+        "dune",
+        "exec",
+        "--root",
+        "src",
+        "-j",
+        "2",
+        "./horner_match_guard_tests/horner_match_guards.exe",
+        "--",
+        "/Users/junbug/bulk/bulksketch-proof-tools/horner-match-investigation/regressions/repro.llbc"
+      ],
+      "cwd": "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-horner-match",
+      "exit_code": 0,
+      "log_sha256": "333b8d7960e5d3bcb9400d6f2ee47a9fecc87fd3a0edeecf01f89c7fe3bf1641"
+    }
+  ],
+  "native_source_changed": false,
+  "new_native_coverage_credit_from_tests": 0
+}

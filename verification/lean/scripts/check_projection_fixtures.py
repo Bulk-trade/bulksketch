@@ -116,6 +116,27 @@ PROJECTIONS = [
      "extraction/dense-mul/Arithmetic/Funs.lean", "bridge/Arithmetic/DenseMulReductionGenerated.lean",
      "next_back z (some (target, product))", "next_back z none", "compiled Dense reduction projection differs",
      None, None, ["bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/DenseNormalizationTypes.lean"]),
+    ("dense-convolution", "extraction/dense-mul/project-convolution.py", "extraction/dense-mul/receipt.json",
+     "extraction/dense-mul/Arithmetic/Funs.lean", "bridge/Arithmetic/DenseMulConvolutionGenerated.lean",
+     "slot.lo ^^^ product.lo", "slot.lo ^^^ product.hi", "compiled Dense convolution projection differs",
+     None, None, ["bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/DenseNormalizationTypes.lean",
+                  "bridge/Arithmetic/DenseMulReductionGenerated.lean", "bridge/Arithmetic/OddRecurrenceGenerated.lean",
+                  "bridge/Arithmetic/DenseNormalizationGenerated.lean"]),
+    ("direct-two", "extraction/direct-two/project.py", "extraction/direct-two/receipt.json",
+     "extraction/direct-two/Arithmetic/Funs.lean", "bridge/Arithmetic/DirectTwoGenerated.lean",
+     "if product = 0#u64", "if product = 1#u64", "compiled direct-two projection differs",
+     None, None, ["bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Arithmetic/DirectTwoRuntime.lean",
+                  "bridge/Arithmetic/ShapeWireRuntime.lean"]),
+    ("portable-horner", "extraction/portable-horner/project.py", "extraction/portable-horner/receipt.json",
+     "extraction/portable-horner/Arithmetic/Funs.lean", "bridge/Arithmetic/PortableHornerGenerated.lean",
+     "i ^^^ coefficient", "i ^^^ i", "compiled Portable Horner projection differs",
+     None, None, ["bridge/Arithmetic/PortableHornerRuntime.lean", "bridge/Arithmetic/PortableGenerated.lean",
+                  "bridge/Arithmetic/DenseNormalizationGenerated.lean", "extraction/portable-xor/Arithmetic/Funs.lean",
+                  "extraction/portable-horner/refinement-receipt.json"]),
+    ("x86-lane-mask", "extraction/x86-lane-mask/project.py", "extraction/x86-lane-mask/receipt.json",
+     "extraction/x86-lane-mask/Arithmetic/Funs.lean", "bridge/Arithmetic/X86LaneMaskGenerated.lean",
+     "8#usize - len", "7#usize - len", "compiled x86 mask projection differs",
+     None, None, []),
 ]
 
 
@@ -185,6 +206,16 @@ def main():
             cases.append(("inclusive-range-type-edit", "bridge/Arithmetic/RebuiltLfsrTypes.lean",
                           "  «end» : Idx", "  «end» : Nat",
                           "compiled rebuilt verifier inclusive range type differs"))
+        if label == "dense-convolution":
+            cases.append(("shared-raw-default-edit", "bridge/Arithmetic/OddRecurrenceGenerated.lean",
+                          "lo := (core.default.DefaultU64.default)", "lo := 1#u64",
+                          "shared RawProduct default changed"))
+        if label == "direct-two":
+            cases.append(("shared-any-runtime-edit", "bridge/Arithmetic/DirectTwoRuntime.lean",
+                          "then", "else", "scoped direct-two runtime mismatch"))
+        if label == "portable-horner":
+            cases.append(("reverse-fold-runtime-edit", "bridge/Arithmetic/PortableHornerRuntime.lean",
+                          "reverseFold", "forwardFold", "scoped Portable Horner runtime mismatch"))
         for name, path, before, after, diagnostic in cases:
             name = label + "/" + name
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:

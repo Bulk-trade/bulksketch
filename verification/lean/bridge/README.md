@@ -60,9 +60,9 @@ operations and Dense coefficient normalization. The
 and wire-size admission, the original scalar recurrence check and Dense square, with separate GF64 locator theorems.
 The [native verifier checkpoint](../NATIVE_VERIFIER.md) adds the rebuilt
 verifier and its Portable seed composition, Portable insertion, default
-encoding and affine linear evaluation. The Dense multiplication final loop
-has a separate frame proof. The coverage ledger retains all 344 executable
-source obligations.
+encoding and affine linear evaluation. The [Dense product checkpoint](../DENSE_PRODUCT.md)
+adds full Dense multiplication, Portable Horner, direct two-root derivation, and the x86 lane-mask helper.
+The coverage ledger retains all 344 executable source obligations.
 
 From the parent Lean directory:
 

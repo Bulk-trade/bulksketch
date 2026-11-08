@@ -147,6 +147,56 @@ def check_dense_mul_variant(variant, receipt, runtime, runtime_head, linkage):
         raise RuntimeError("dense-mul regression matrix is incomplete")
 
 
+def check_horner_match_variant(variant, receipt, runtime, runtime_head, linkage):
+    """Validate the checked context matcher variant and all guard controls."""
+    directory = "tooling/aeneas-horner-match/"
+    patch = directory + "ended-shared-scalar.patch"
+    source = "src/interp/InterpMatchCtxs.ml"
+    input_path = "extraction/portable-horner/arithmetic.llbc"
+    outputs = {"extraction/portable-horner/Arithmetic/" + name for name in
+               ("Types.lean", "Funs.lean", "TypesExternal_Template.lean", "FunsExternal_Template.lean")}
+    controls = {directory + name for name in ("run.py", "guards/dune", "guards/horner_match_guards.ml",
+                "tests/Cargo.toml", "tests/Cargo.lock", "tests/src/lib.rs")}
+    if (receipt["status"] != "passed" or receipt["variant_id"] != variant["id"] or
+            receipt["native_source_changed"] is not False or receipt["new_native_coverage_credit_from_tests"] != 0 or
+            variant["receipt"] != directory + "receipt.json" or variant["base_commit"] != runtime_head or
+            receipt["base_aeneas_commit"] != runtime_head or receipt["charon_commit"] != linkage["charon_commit"] or
+            variant["mandatory_checks"] is not True or variant["patch"] != patch or receipt["patch"] != patch or
+            receipt["patch_sha256"] != variant["patch_sha256"] or sha(ROOT / patch) != variant["patch_sha256"] or
+            set(receipt["modified_sources"]) != {source} or receipt["base_sources"] != {source: sha(runtime / source)} or
+            re.findall(r"(?m)^diff --git a/(\S+) b/(\S+)$", (ROOT / patch).read_text()) != [(source, source)]):
+        raise RuntimeError("Horner matcher lost pinned provenance")
+    extraction = receipt["extraction"]
+    if (extraction["input"] != input_path or sha(ROOT / input_path) != extraction["input_sha256"] or
+            extraction["exit_code"] != 0 or set(extraction["required_flags"]) != {"-checks", "-sequential"} or
+            not set(extraction["required_flags"]) <= set(extraction["command"]) or
+            len(extraction["generated"]) != len(outputs) or
+            {item["path"] for item in extraction["generated"]} != outputs or
+            any(sha(ROOT / item["path"]) != item["sha256"] for item in extraction["generated"])):
+        raise RuntimeError("Horner matcher lost checked original extraction")
+    if (set(receipt["regression_sources"]) != controls or
+            any(sha(ROOT / path) != digest for path, digest in receipt["regression_sources"].items())):
+        raise RuntimeError("Horner matcher regression sources changed")
+    positives = {"split-then-zip", "zip-without-split", "original-horner", "same-scalar-equivalence", "same-scalar-mapping"}
+    negatives = {"without-checks", "distinct-child-payload", "loan-child", "nonempty-child-mismatch",
+                 "nonscalar-metadata", "same-scalar-unchecked", "unequal-symbolic-id"}
+    codes = {"charon-fixture": 0, "fixture-baseline": 1, "fixture-checked": 0, "fixture-without-checks": 1,
+             "original-baseline": 1, "original-horner": 0, "context-matcher-guards": 0}
+    cases = {item["case"]: item for item in receipt["regressions"]}
+    commands = {item["name"]: item for item in receipt["commands"]}
+    if (set(cases) != positives | negatives or len(cases) != len(receipt["regressions"]) or
+            any(cases[key]["status"] != "passed" for key in positives) or
+            any(cases[key]["status"] != "expected_rejection_confirmed" for key in negatives) or
+            any((cases[key]["baseline_exit_code"], cases[key]["patched_exit_code"]) != (1, 0)
+                for key in ("split-then-zip", "original-horner")) or cases["without-checks"]["exit_code"] != 1 or
+            len(commands) != len(receipt["commands"]) or
+            {name: item["exit_code"] for name, item in commands.items()} != codes or
+            commands["original-horner"]["command"] != extraction["command"] or
+            "-checks" not in commands["fixture-checked"]["command"] or
+            "-checks" in commands["fixture-without-checks"]["command"]):
+        raise RuntimeError("Horner matcher regression matrix is incomplete")
+
+
 def main():
     scope = json.loads((ROOT / "scope.json").read_text())
     source = (ROOT / scope["source_repository"]).resolve()
@@ -194,6 +244,12 @@ def main():
         if variant["id"] == "checked-shared-loop-erasure-v1":
             check_dense_mul_variant(variant, receipt, runtime, runtime_head, linkage)
             result, _ = run("checked-dense-mul-patch-applies", ["git", "apply", "--check",
+                            str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
+            records.append(result)
+            continue
+        if variant["id"] == "checked-ended-shared-scalar-v1":
+            check_horner_match_variant(variant, receipt, runtime, runtime_head, linkage)
+            result, _ = run("checked-horner-matcher-patch-applies", ["git", "apply", "--check",
                             str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
             records.append(result)
             continue

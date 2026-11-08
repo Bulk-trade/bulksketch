@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "fa7895d2ccd2e2f8d5f3030edc64b12e21483775cd004db72eacf93849a68812",
+    "bridge/BulksketchBridge/Audit.lean": "c21047d034caebc1b667a4da39735bb4bc30382bb3bdd7c4c50b627094aa6fc7",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,9 +13,9 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "f474f3534e3760e8df30ff152a9e65de5e4bfed36b9c8aaa0dff6a7c532a957c",
-    "audit/frozen-inputs.json": "0ae42e951fccd736ff2daab1139ec53fc9dae8978318b880decd71f68d6424d5",
-    "bridge/BulksketchBridge.lean": "075ed4e49d96a124f6e57d65e6457d235b3ad5f63fdf784669aa88e0bd188376",
+    "scripts/verify_bridge.py": "8534bfb737f4021a475d0febe93229f8d629c6ff75de37455cf328c3eea1f520",
+    "audit/frozen-inputs.json": "c57e2de190694d11009f880cb7760e5eee06d4f3ab6d1c6aa4b5ec437c731bf8",
+    "bridge/BulksketchBridge.lean": "e81d85bd8fb119557ca31c8d6d137777203efd5b4ee51673aa88991cef1cf53f",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "e353b748c6dbd9345b5f7b600955209a3d9e67af8d1d4989d3bfea9fddd864d3",
-    "bridge/obligations.json": "1efd65fe9dc75ad7339354bc9014f2b2f810ce72fecab83856f78c05b5231537",
+    "bridge/source-linkage.json": "0cfbbe07273121e3bfb0be43e42cd6fef9bf7fbf61faf6130ebb9f09330ffc12",
+    "bridge/obligations.json": "73343d3d72e2e7b88d5f7f00875b73576451838c0f7335cfbef2c17fdcaf210b",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "a992d8203bbf35538b4d30b8fce41126efd5a1f551e13f3cf5140d93743ab3da",
+    "scripts/check_projection_fixtures.py": "1e2ebb7ee1b29ad23e159523323a00c7b7188423ad946cffb19bb78d01890e22",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -130,7 +130,7 @@
     "bridge/audit/quotient-trace-independent-review.md": "0b09b3d6298e8dae500dfe5f9db1665b2891c3ca15de4d8c6c5797d6137b96f2",
     "bridge/audit/inverse-independent-review.md": "ae678a02595c01159f9623f88a3694f09747d6d19b0c7f87ded1e728cf629d95",
     "extraction/inverse-chain/monomorphization-pilot-receipt.json": "103658a02c5f0c750bdfa0bc3e4e35512d1838a116ca2952d7f16be552e7a3e1",
-    "scripts/check_variant_fixtures.py": "5cd4df885362acef3ac067f0268bbf35a4ea1f0a674703cd291c106309bf3b75",
+    "scripts/check_variant_fixtures.py": "8dca0f8f385a1898538da709228a3dbdd23f1d6c6b9027204f7d0d8be5045197",
     "audit/native-coverage-checkpoint.json": "b8317d30100e2ce80f6e5905b8d37d8019f51a7f18c4da48a5524caf62f8e4e1",
     "audit/aeneas-capture-independent-review.md": "7b82b268d8c4dc108cd1378ec6065432074be9ea323a87fdc3adf6162cb6e68a",
     "audit/frobenius-const-independent-review.md": "1fa3167209409d3508febc2d25e991de8dc67c3e6fa8a7717b0e6958377ba3cd",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "6101be96939611a06a896513a5aa8858995f107ed097c21c96360399352c5603",
+    "README.md": "77fcb802ec343a3d8207f682c700fb7abb4bf846b67fd2049ad3456f03da690c",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "02a386aa3ba158057e9345bb82b58017882e4a5c87f986baa6fd3a66966620e1",
+    "audit/coverage.json": "b5272dbffe47361792ba14a9a8e435e242f571d56a8908aff1a760b5a3580693",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -319,7 +319,7 @@
     "bridge/BulksketchBridge/SyndromeUniquenessSpec.lean": "0fb7dd6f308fa79337dce13cbd73c522f78c75024d86e05b7c5fd7d2d0ceff3c",
     "bridge/BulksketchBridge/VerifyDispatch.lean": "38d817777987c9d3e97ee3155717d243b545f42e976afa8fbcdb9b9c8e7b917c",
     "bridge/BulksketchBridge/VerifyDispatchSpec.lean": "d609a22b3daf8816de9afdc60f1e293bf4efdf6ed37d19efafd190b70217fb06",
-    "bridge/README.md": "02245d476979058cfe4d9d5bd1bff541e2e98923d155dc01641e45e727dcde5f",
+    "bridge/README.md": "aa620c49e9f608cdea7bb9b6f871d616da2616aa36441333224f62cac3bfb6cf",
     "extraction/dense-square/Arithmetic/Funs.lean": "7ff7bf02a64fb62cb3d28154514ad7b426018c4380dc56b4d101dee3d73bd505",
     "extraction/dense-square/Arithmetic/FunsExternal_Template.lean": "9d47cb5223b7a3a784065947ca87ceea2b65fb72423eb973c18862af9f72a5c8",
     "extraction/dense-square/Arithmetic/Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
@@ -365,7 +365,7 @@
     "tooling/aeneas-dense-prefix/tests/Cargo.lock": "da99c8ef1525545496cbc525c6444088338ceb98ee74900bf8df75c4a066b5b8",
     "tooling/aeneas-dense-prefix/tests/Cargo.toml": "c4786210846407c975ca8745c71f96212c8b36f0f9e048fdf1f2b954e9c64af2",
     "tooling/aeneas-dense-prefix/tests/src/lib.rs": "843a9ae6635be7dde241a8ebc75e7585983c0ed3825e9e400facf5e76ea30b77",
-    "NATIVE_VERIFIER.md": "028bc85bdaf97cf482166f9c8b5b4261c89e2126544307188a67f5f5241c0dbf",
+    "NATIVE_VERIFIER.md": "8e7c373cf04d2236cc50321624b4372edf282da9ad4c00c8ad80abc3fa29663d",
     "audit/native-verifier-checkpoint.json": "9f43fec3294df6daf59f96f5687cea0b2de6738e243b6d56988cf955577f013c",
     "bridge/Arithmetic/AffineLinearEvalGenerated.lean": "e7e8e6de1cee6fd98571f2c9fb41d0abb8b96c0e06a98a769d7c540ad89f7aa7",
     "bridge/Arithmetic/DenseMulReductionGenerated.lean": "f45c2279b424f15bd5c0cb1a35202ae5b307ae0c4d62767b7574a584658510e3",
@@ -441,7 +441,65 @@
     "tooling/aeneas-dense-mul/guards/dune": "b531e918c4e272f90ea6d35f42877d927331e0eb1317a96c981cc98b7189c017",
     "tooling/aeneas-dense-mul/receipt.json": "178c371b46478b1c67a385b601bef13ba0bd404dd00c3907bad4a2d37fc23983",
     "tooling/aeneas-dense-mul/run.py": "9684667f143511e651ed355294e2846818880fd681e5f98870297e8607a85740",
-    "tooling/aeneas-dense-mul/shared-loop-erasure.patch": "05ea19806c2e3b3b1709661f8cd662caaf275c24dfb0460c352a7182d8fef9d3"
+    "tooling/aeneas-dense-mul/shared-loop-erasure.patch": "05ea19806c2e3b3b1709661f8cd662caaf275c24dfb0460c352a7182d8fef9d3",
+    "DENSE_PRODUCT.md": "c16c89c7e3d3ae16a62072ac131d91d42b238fd0bc24de385cd8009344cb2f8a",
+    "audit/dense-product-checkpoint.json": "fe219c06a58310128bc55c5ca9b2e96652c4faf2a587bc6e11968b1cde19e48e",
+    "bridge/Arithmetic/DenseMulConvolutionGenerated.lean": "833933b1c40e180072b889c7db4528983194014e5a3ad914b5b15975c237e104",
+    "bridge/Arithmetic/DirectTwoGenerated.lean": "2166a8951a66bc37e91f16b34f34fec04288d5e33dba60ce78629e7af78cf1cd",
+    "bridge/Arithmetic/DirectTwoRuntime.lean": "32d055f4cba42204333b6375646eb2e41be65950e1b0aff8a75ec5412b0a555c",
+    "bridge/Arithmetic/PortableHornerGenerated.lean": "cf6735c9a9d3863d8523f8a9f936eb31e25d02bb788247883df79d38b6bed073",
+    "bridge/Arithmetic/PortableHornerRuntime.lean": "b3a4497de2c55f4acb0638b3bd57bc7fd75f9e0c9741751cf49d5cb9e3219bea",
+    "bridge/Arithmetic/X86LaneMaskGenerated.lean": "6ae2bc88b9c91551501be0e279f57385334226a8a06caaead231e1acf9e77336",
+    "bridge/BulksketchBridge/DenseMul.lean": "c2d82c94bf5c45a03f9f70f708619b8c07cd17e89ad2444eadb08faa34aeb1a0",
+    "bridge/BulksketchBridge/DenseMulCoefficients.lean": "f38675917115646a8fa5704e005a13c3fdf6e2e4952ac404cef5182650f91ad6",
+    "bridge/BulksketchBridge/DenseMulConvolution.lean": "2598a21f3e4825eda83d07496432a23b9afbcb5ea0bfbff4b2a8d0ba3a8701bd",
+    "bridge/BulksketchBridge/DenseMulConvolutionSpec.lean": "9580798d9dca26f3727ac8d297df6d588a20679bc2b69f096d64b5e2baaf193d",
+    "bridge/BulksketchBridge/DenseMulPolynomial.lean": "0b2bc1d5ef5dd52f4d43e3c527f72816432909dc83897c3240ccba333491fb8f",
+    "bridge/BulksketchBridge/DenseMulSpec.lean": "9b76a1ef87ab45a1c3e0a9d80851260eba9fe12c574dbbdb4186263bb3a53005",
+    "bridge/BulksketchBridge/DirectTwo.lean": "5d4d83dcc3ccb8217d3ec662434bf0c278da650ab9d854ef4541ef7bd8e0315b",
+    "bridge/BulksketchBridge/DirectTwoSpec.lean": "cae9efd6286837fa79005719f72ea6a6c3a561abb5e86572352ff24068fc754e",
+    "bridge/BulksketchBridge/HornerPolynomial.lean": "8ad01cae781e481d9f0cf19ba9ae2efbac3fca11b1cdd6a982c6b09d471c9633",
+    "bridge/BulksketchBridge/PortableHorner.lean": "451c6f55463db0d74355b9e7c868e54344987de1a002f193c2a6908e54ad8f8a",
+    "bridge/BulksketchBridge/PortableHornerChallenges.lean": "41265a31a00a53f6700cf7792eef91ab8d5e47847536e2bf4387155e604965f2",
+    "bridge/BulksketchBridge/X86LaneMask.lean": "84f87b78b43edd90704e8664f7f2626bfdc0db4221a700941d260ff69de14c48",
+    "bridge/BulksketchBridge/X86LaneMaskSpec.lean": "8362b640683a4e4610e9f7e88ff90120ed65e0bcbb1f034257f186bc57143c53",
+    "extraction/dense-mul/convolution-axiom-audit.log": "131db0a73be9d48bdeef5b24de1ea55f30a3a425fc8227e68bbc6d78bef14c55",
+    "extraction/dense-mul/convolution-refinement-receipt.json": "f99234ce8922468f6380fbbabecf96d029c7d107ac5ded4497588b899bcbb3b0",
+    "extraction/dense-mul/project-convolution.py": "02fd73c517e335becbcd1c9d99c25b8c7a5ba26174cd5d380b1434388029c0f4",
+    "extraction/direct-two/Arithmetic/Funs.lean": "6c8a8ae9b7930d6abfea3461618faf9d379de1fd7dfc5ae901cd2c658128c6fc",
+    "extraction/direct-two/Arithmetic/FunsExternal_Template.lean": "3448af2a38beaca4cf6c85878052ac5061aea8deb596dbdefe531809812d43fe",
+    "extraction/direct-two/Arithmetic/Types.lean": "625d89076b6a2f7636fba06f0b5095b7ba6d23c61b09cf2756b8d511f3c527de",
+    "extraction/direct-two/aeneas.log": "3e091744f542b26c78b97df0ed8ad33a3344c75b225569e37af698c9f020f1b2",
+    "extraction/direct-two/arithmetic.llbc": "1239e86fea9531ef9e64abcb77085bbc5a18c374edf0576adf8c194b81ab37f4",
+    "extraction/direct-two/charon.log": "7ac73caf3af502556d4fa8f871bcfb750c06a3646f4a165149e3d304160ebbf9",
+    "extraction/direct-two/project.py": "91417802e9870269fc48bbe58d449773d585b2a691374cb7ab394e65ad871975",
+    "extraction/direct-two/receipt.json": "e8127ed21348d5b1d7b6638a9acadc7c69fccba0c6a6f4e9e68eeac5ba0d051f",
+    "extraction/portable-horner/Arithmetic/Funs.lean": "c75cd779d7f3f57f806f87b791371c534a57a9a6d1f3872055e136cb0724f96e",
+    "extraction/portable-horner/Arithmetic/FunsExternal_Template.lean": "0c0189dfd533d8957de19899709849ad96d95efb8393ea331bea7c941b4cf723",
+    "extraction/portable-horner/Arithmetic/Types.lean": "6c75cf2ec0d1b2219401976b4626400b5d24b18abc171f525d8e1bb099ec4a4b",
+    "extraction/portable-horner/Arithmetic/TypesExternal_Template.lean": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582",
+    "extraction/portable-horner/aeneas.log": "74950d1fb08607eefedddfff7a0c10c8d1d56e97e9301d62fed5ed3195c5f696",
+    "extraction/portable-horner/arithmetic.llbc": "45d579b229bcbb2796eaf633e39813e387a51b31d83cb1c2551d2cd7ed50a54d",
+    "extraction/portable-horner/charon.log": "c1281d8c1b1f4b7b90babbaf568de484ecab0a9d3d098a185975aee1ae3896d2",
+    "extraction/portable-horner/project.py": "f1028f1f744bcb43dbda2d9ea0fd75c303ac890fbd6cc84b7d18069b3f651f5f",
+    "extraction/portable-horner/receipt.json": "ffe1344d4f0a14a14af189a39d695e3d7e91775c1e0b70150e4684980f200a68",
+    "extraction/portable-horner/refinement-receipt.json": "603fdb30273d23145a28cb865f6585ce50040c1a7943a0367d7a1cd0537ae1d4",
+    "extraction/x86-lane-mask/Arithmetic/Funs.lean": "1734d7fd2265fd71eb2682d6069c2aceff3272ce0ef8fde76a8925a675c1c10f",
+    "extraction/x86-lane-mask/Arithmetic/Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+    "extraction/x86-lane-mask/aeneas.log": "7befe020755a2af00e262947f0cce0601e563ea82ce45410d9a17aba5aa41c88",
+    "extraction/x86-lane-mask/arithmetic.llbc": "6e84bb95450c4e490481684011417a7d7a29442df7c94aae97c27712c6209198",
+    "extraction/x86-lane-mask/charon.log": "61bd40d65c05d278963cc265ffe93984407e65ab6b854e5977ae703d2bda4220",
+    "extraction/x86-lane-mask/project.py": "d2bb572fc8777ae99c253a3f21e53bb9b5e351ca17c39d50c91f4b8f05750094",
+    "extraction/x86-lane-mask/receipt.json": "f5bb6841cb277fdc0a85a6d3aa77793d3c3eaadf254953d62965748df2a0b378",
+    "tooling/aeneas-horner-match/README.md": "7352aee7ddb29cf8bc99968abd924be444b80d738b04ddd39e7dac6ae7605014",
+    "tooling/aeneas-horner-match/ended-shared-scalar.patch": "b0d2bd6b087d0d376351469e20f97a150033a57e2a7b48aedf9e966f56f6562c",
+    "tooling/aeneas-horner-match/guards/dune": "44e9d33436d717ab27b9bc5927a0510302bdf11fda47c31ccefcf1d93da3b02e",
+    "tooling/aeneas-horner-match/guards/horner_match_guards.ml": "97a98dd14c83d2fffee2d58a16e4024efbffa2e85e30ff3d24d0eb90f1cf7776",
+    "tooling/aeneas-horner-match/receipt.json": "6a7b49f0f98ea1cedda1825bc5e5eae42860f9c89fe9b316665561c91b6bef31",
+    "tooling/aeneas-horner-match/run.py": "8f6560bfcd2c101c0d250c743e6f462532bc999ef13c0d9c3f64f6dc23afc750",
+    "tooling/aeneas-horner-match/tests/Cargo.lock": "373d27af87c071b00c07a78a04d086a1ecdcc4573753e020e2453a177c49fc80",
+    "tooling/aeneas-horner-match/tests/Cargo.toml": "57c2e7cfdd06bc6ae7cfc07ea4b6c45069b8eb0d07b5f7cbb4cdcefc84e86d93",
+    "tooling/aeneas-horner-match/tests/src/lib.rs": "7ece47c0d239ab96aebbf5a226f87f6b317afb10cd1a7e7e298f7d1e0186fb9f"
   },
   "reviewed_policy_revisions": [
     {
@@ -2667,7 +2725,369 @@
       "path": "tooling/aeneas-dense-mul/shared-loop-erasure.patch",
       "new_sha256": "05ea19806c2e3b3b1709661f8cd662caaf275c24dfb0460c352a7182d8fef9d3",
       "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries."
+    },
+    {
+      "path": "DENSE_PRODUCT.md",
+      "new_sha256": "c16c89c7e3d3ae16a62072ac131d91d42b238fd0bc24de385cd8009344cb2f8a",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "NATIVE_VERIFIER.md",
+      "new_sha256": "8e7c373cf04d2236cc50321624b4372edf282da9ad4c00c8ad80abc3fa29663d",
+      "old_sha256": "028bc85bdaf97cf482166f9c8b5b4261c89e2126544307188a67f5f5241c0dbf",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "77fcb802ec343a3d8207f682c700fb7abb4bf846b67fd2049ad3456f03da690c",
+      "old_sha256": "6101be96939611a06a896513a5aa8858995f107ed097c21c96360399352c5603",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "b5272dbffe47361792ba14a9a8e435e242f571d56a8908aff1a760b5a3580693",
+      "old_sha256": "02a386aa3ba158057e9345bb82b58017882e4a5c87f986baa6fd3a66966620e1",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "audit/dense-product-checkpoint.json",
+      "new_sha256": "fe219c06a58310128bc55c5ca9b2e96652c4faf2a587bc6e11968b1cde19e48e",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "c57e2de190694d11009f880cb7760e5eee06d4f3ab6d1c6aa4b5ec437c731bf8",
+      "old_sha256": "0ae42e951fccd736ff2daab1139ec53fc9dae8978318b880decd71f68d6424d5",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/DenseMulConvolutionGenerated.lean",
+      "new_sha256": "833933b1c40e180072b889c7db4528983194014e5a3ad914b5b15975c237e104",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/DirectTwoGenerated.lean",
+      "new_sha256": "2166a8951a66bc37e91f16b34f34fec04288d5e33dba60ce78629e7af78cf1cd",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/DirectTwoRuntime.lean",
+      "new_sha256": "32d055f4cba42204333b6375646eb2e41be65950e1b0aff8a75ec5412b0a555c",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/PortableHornerGenerated.lean",
+      "new_sha256": "cf6735c9a9d3863d8523f8a9f936eb31e25d02bb788247883df79d38b6bed073",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/PortableHornerRuntime.lean",
+      "new_sha256": "b3a4497de2c55f4acb0638b3bd57bc7fd75f9e0c9741751cf49d5cb9e3219bea",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/Arithmetic/X86LaneMaskGenerated.lean",
+      "new_sha256": "6ae2bc88b9c91551501be0e279f57385334226a8a06caaead231e1acf9e77336",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "e81d85bd8fb119557ca31c8d6d137777203efd5b4ee51673aa88991cef1cf53f",
+      "old_sha256": "075ed4e49d96a124f6e57d65e6457d235b3ad5f63fdf784669aa88e0bd188376",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "c21047d034caebc1b667a4da39735bb4bc30382bb3bdd7c4c50b627094aa6fc7",
+      "old_sha256": "fa7895d2ccd2e2f8d5f3030edc64b12e21483775cd004db72eacf93849a68812",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseMul.lean",
+      "new_sha256": "c2d82c94bf5c45a03f9f70f708619b8c07cd17e89ad2444eadb08faa34aeb1a0",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseMulCoefficients.lean",
+      "new_sha256": "f38675917115646a8fa5704e005a13c3fdf6e2e4952ac404cef5182650f91ad6",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseMulConvolution.lean",
+      "new_sha256": "2598a21f3e4825eda83d07496432a23b9afbcb5ea0bfbff4b2a8d0ba3a8701bd",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseMulConvolutionSpec.lean",
+      "new_sha256": "9580798d9dca26f3727ac8d297df6d588a20679bc2b69f096d64b5e2baaf193d",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseMulPolynomial.lean",
+      "new_sha256": "0b2bc1d5ef5dd52f4d43e3c527f72816432909dc83897c3240ccba333491fb8f",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseMulSpec.lean",
+      "new_sha256": "9b76a1ef87ab45a1c3e0a9d80851260eba9fe12c574dbbdb4186263bb3a53005",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DirectTwo.lean",
+      "new_sha256": "5d4d83dcc3ccb8217d3ec662434bf0c278da650ab9d854ef4541ef7bd8e0315b",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DirectTwoSpec.lean",
+      "new_sha256": "cae9efd6286837fa79005719f72ea6a6c3a561abb5e86572352ff24068fc754e",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/HornerPolynomial.lean",
+      "new_sha256": "8ad01cae781e481d9f0cf19ba9ae2efbac3fca11b1cdd6a982c6b09d471c9633",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PortableHorner.lean",
+      "new_sha256": "451c6f55463db0d74355b9e7c868e54344987de1a002f193c2a6908e54ad8f8a",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PortableHornerChallenges.lean",
+      "new_sha256": "41265a31a00a53f6700cf7792eef91ab8d5e47847536e2bf4387155e604965f2",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86LaneMask.lean",
+      "new_sha256": "84f87b78b43edd90704e8664f7f2626bfdc0db4221a700941d260ff69de14c48",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86LaneMaskSpec.lean",
+      "new_sha256": "8362b640683a4e4610e9f7e88ff90120ed65e0bcbb1f034257f186bc57143c53",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/README.md",
+      "new_sha256": "aa620c49e9f608cdea7bb9b6f871d616da2616aa36441333224f62cac3bfb6cf",
+      "old_sha256": "02245d476979058cfe4d9d5bd1bff541e2e98923d155dc01641e45e727dcde5f",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "73343d3d72e2e7b88d5f7f00875b73576451838c0f7335cfbef2c17fdcaf210b",
+      "old_sha256": "1efd65fe9dc75ad7339354bc9014f2b2f810ce72fecab83856f78c05b5231537",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "0cfbbe07273121e3bfb0be43e42cd6fef9bf7fbf61faf6130ebb9f09330ffc12",
+      "old_sha256": "e353b748c6dbd9345b5f7b600955209a3d9e67af8d1d4989d3bfea9fddd864d3",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/dense-mul/convolution-axiom-audit.log",
+      "new_sha256": "131db0a73be9d48bdeef5b24de1ea55f30a3a425fc8227e68bbc6d78bef14c55",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/dense-mul/convolution-refinement-receipt.json",
+      "new_sha256": "f99234ce8922468f6380fbbabecf96d029c7d107ac5ded4497588b899bcbb3b0",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/dense-mul/project-convolution.py",
+      "new_sha256": "02fd73c517e335becbcd1c9d99c25b8c7a5ba26174cd5d380b1434388029c0f4",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/direct-two/Arithmetic/Funs.lean",
+      "new_sha256": "6c8a8ae9b7930d6abfea3461618faf9d379de1fd7dfc5ae901cd2c658128c6fc",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/direct-two/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "3448af2a38beaca4cf6c85878052ac5061aea8deb596dbdefe531809812d43fe",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/direct-two/Arithmetic/Types.lean",
+      "new_sha256": "625d89076b6a2f7636fba06f0b5095b7ba6d23c61b09cf2756b8d511f3c527de",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/direct-two/aeneas.log",
+      "new_sha256": "3e091744f542b26c78b97df0ed8ad33a3344c75b225569e37af698c9f020f1b2",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/direct-two/arithmetic.llbc",
+      "new_sha256": "1239e86fea9531ef9e64abcb77085bbc5a18c374edf0576adf8c194b81ab37f4",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/direct-two/charon.log",
+      "new_sha256": "7ac73caf3af502556d4fa8f871bcfb750c06a3646f4a165149e3d304160ebbf9",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/direct-two/project.py",
+      "new_sha256": "91417802e9870269fc48bbe58d449773d585b2a691374cb7ab394e65ad871975",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/direct-two/receipt.json",
+      "new_sha256": "e8127ed21348d5b1d7b6638a9acadc7c69fccba0c6a6f4e9e68eeac5ba0d051f",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/portable-horner/Arithmetic/Funs.lean",
+      "new_sha256": "c75cd779d7f3f57f806f87b791371c534a57a9a6d1f3872055e136cb0724f96e",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/portable-horner/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "0c0189dfd533d8957de19899709849ad96d95efb8393ea331bea7c941b4cf723",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/portable-horner/Arithmetic/Types.lean",
+      "new_sha256": "6c75cf2ec0d1b2219401976b4626400b5d24b18abc171f525d8e1bb099ec4a4b",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/portable-horner/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/portable-horner/aeneas.log",
+      "new_sha256": "74950d1fb08607eefedddfff7a0c10c8d1d56e97e9301d62fed5ed3195c5f696",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/portable-horner/arithmetic.llbc",
+      "new_sha256": "45d579b229bcbb2796eaf633e39813e387a51b31d83cb1c2551d2cd7ed50a54d",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/portable-horner/charon.log",
+      "new_sha256": "c1281d8c1b1f4b7b90babbaf568de484ecab0a9d3d098a185975aee1ae3896d2",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/portable-horner/project.py",
+      "new_sha256": "f1028f1f744bcb43dbda2d9ea0fd75c303ac890fbd6cc84b7d18069b3f651f5f",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/portable-horner/receipt.json",
+      "new_sha256": "ffe1344d4f0a14a14af189a39d695e3d7e91775c1e0b70150e4684980f200a68",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/portable-horner/refinement-receipt.json",
+      "new_sha256": "603fdb30273d23145a28cb865f6585ce50040c1a7943a0367d7a1cd0537ae1d4",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/x86-lane-mask/Arithmetic/Funs.lean",
+      "new_sha256": "1734d7fd2265fd71eb2682d6069c2aceff3272ce0ef8fde76a8925a675c1c10f",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/x86-lane-mask/Arithmetic/Types.lean",
+      "new_sha256": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/x86-lane-mask/aeneas.log",
+      "new_sha256": "7befe020755a2af00e262947f0cce0601e563ea82ce45410d9a17aba5aa41c88",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/x86-lane-mask/arithmetic.llbc",
+      "new_sha256": "6e84bb95450c4e490481684011417a7d7a29442df7c94aae97c27712c6209198",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/x86-lane-mask/charon.log",
+      "new_sha256": "61bd40d65c05d278963cc265ffe93984407e65ab6b854e5977ae703d2bda4220",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/x86-lane-mask/project.py",
+      "new_sha256": "d2bb572fc8777ae99c253a3f21e53bb9b5e351ca17c39d50c91f4b8f05750094",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "extraction/x86-lane-mask/receipt.json",
+      "new_sha256": "f5bb6841cb277fdc0a85a6d3aa77793d3c3eaadf254953d62965748df2a0b378",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "1e2ebb7ee1b29ad23e159523323a00c7b7188423ad946cffb19bb78d01890e22",
+      "old_sha256": "a992d8203bbf35538b4d30b8fce41126efd5a1f551e13f3cf5140d93743ab3da",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "scripts/check_variant_fixtures.py",
+      "new_sha256": "8dca0f8f385a1898538da709228a3dbdd23f1d6c6b9027204f7d0d8be5045197",
+      "old_sha256": "5cd4df885362acef3ac067f0268bbf35a4ea1f0a674703cd291c106309bf3b75",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "8534bfb737f4021a475d0febe93229f8d629c6ff75de37455cf328c3eea1f520",
+      "old_sha256": "f474f3534e3760e8df30ff152a9e65de5e4bfed36b9c8aaa0dff6a7c532a957c",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "tooling/aeneas-horner-match/README.md",
+      "new_sha256": "7352aee7ddb29cf8bc99968abd924be444b80d738b04ddd39e7dac6ae7605014",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "tooling/aeneas-horner-match/ended-shared-scalar.patch",
+      "new_sha256": "b0d2bd6b087d0d376351469e20f97a150033a57e2a7b48aedf9e966f56f6562c",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "tooling/aeneas-horner-match/guards/dune",
+      "new_sha256": "44e9d33436d717ab27b9bc5927a0510302bdf11fda47c31ccefcf1d93da3b02e",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "tooling/aeneas-horner-match/guards/horner_match_guards.ml",
+      "new_sha256": "97a98dd14c83d2fffee2d58a16e4024efbffa2e85e30ff3d24d0eb90f1cf7776",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "tooling/aeneas-horner-match/receipt.json",
+      "new_sha256": "6a7b49f0f98ea1cedda1825bc5e5eae42860f9c89fe9b316665561c91b6bef31",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "tooling/aeneas-horner-match/run.py",
+      "new_sha256": "8f6560bfcd2c101c0d250c743e6f462532bc999ef13c0d9c3f64f6dc23afc750",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "tooling/aeneas-horner-match/tests/Cargo.lock",
+      "new_sha256": "373d27af87c071b00c07a78a04d086a1ecdcc4573753e020e2453a177c49fc80",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "tooling/aeneas-horner-match/tests/Cargo.toml",
+      "new_sha256": "57c2e7cfdd06bc6ae7cfc07ea4b6c45069b8eb0d07b5f7cbb4cdcefc84e86d93",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
+    },
+    {
+      "path": "tooling/aeneas-horner-match/tests/src/lib.rs",
+      "new_sha256": "7ece47c0d239ab96aebbf5a226f87f6b317afb10cd1a7e7e298f7d1e0186fb9f",
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations."
     }
   ],
-  "challenge_count": 104
+  "challenge_count": 113
 }

@@ -1,0 +1,4 @@
+'BulksketchBridge.DenseMulConvolution.inner_loop_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.DenseMulConvolution.outer_loop_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.DenseMulConvolutionSpec.accumulate_word' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.DenseMulConvolutionSpec.accumulate_frame' depends on axioms: [propext, Classical.choice, Quot.sound]

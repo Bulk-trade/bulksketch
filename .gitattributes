@@ -62,3 +62,4 @@ verification/lean/extraction/dense-coefficient/** linguist-generated=true
 verification/lean/extraction/dense-coefficient/*.py linguist-generated=false
 verification/lean/tooling/aeneas-dense-prefix/*.patch whitespace=-trailing-space
 verification/lean/tooling/aeneas-dense-mul/*.patch whitespace=-trailing-space
+verification/lean/tooling/aeneas-horner-match/*.patch whitespace=-trailing-space

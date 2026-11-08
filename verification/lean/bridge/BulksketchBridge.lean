@@ -39,3 +39,7 @@ import BulksketchBridge.PortableEncoding
 import BulksketchBridge.AffineLinearEval
 import BulksketchBridge.DenseMulReduction
 import BulksketchBridge.RebuiltLfsrPortable
+import BulksketchBridge.DenseMulPolynomial
+import BulksketchBridge.DirectTwo
+import BulksketchBridge.HornerPolynomial
+import BulksketchBridge.X86LaneMask

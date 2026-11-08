@@ -244,7 +244,25 @@ run_cmd do
     (``BulksketchBridge.DenseMulReductionSpec.finalReductionFrame,
       ``BulksketchBridge.DenseMulReduction.loop_refines),
     (``BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrWithPortableSeed,
-      ``BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_portable_seed_refines)
+      ``BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_portable_seed_refines),
+    (``BulksketchBridge.DenseMul.ActualDenseMulReturnsExactFrames,
+      ``BulksketchBridge.DenseMul.mul_into_refines),
+    (``BulksketchBridge.DenseMulConvolutionSpec.innerLoopFrame,
+      ``BulksketchBridge.DenseMulConvolution.inner_loop_refines),
+    (``BulksketchBridge.DenseMulConvolutionSpec.outerLoopFrame,
+      ``BulksketchBridge.DenseMulConvolution.outer_loop_refines),
+    (``BulksketchBridge.DenseMul.ActualDenseMulPolynomialProduct,
+      ``BulksketchBridge.DenseMul.mul_into_polynomial_refines),
+    (``BulksketchBridge.DirectTwo.ActualDirectTwoReturnsNormalizedPair,
+      ``BulksketchBridge.DirectTwo.direct_two_refines),
+    (``BulksketchBridge.DirectTwo.ActualDirectTwoSound,
+      ``BulksketchBridge.DirectTwo.direct_two_sound),
+    (``BulksketchBridge.PortableHornerChallenges.hornerRefines,
+      ``BulksketchBridge.PortableHorner.horner_many_refines),
+    (``BulksketchBridge.PortableHorner.ActualPortableHornerEvaluatesPolynomial,
+      ``BulksketchBridge.PortableHorner.horner_many_polynomial_refines),
+    (``BulksketchBridge.X86LaneMask.ActualMaskReturnsLowLanes,
+      ``BulksketchBridge.X86LaneMask.mask_refines)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

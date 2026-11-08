@@ -27,11 +27,10 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The bridge now has 46 distinct generated-body refinements under the recorded
-trust boundary. The latest checkpoint adds the original rebuilt verifier,
-Portable insertion and default encoder, and the affine linear evaluator.
-Dense multiplication extracts completely and its final reduction loop has
-a frame proof. The full native implementation contracts remain open.
+The bridge now has 50 distinct generated-body refinements under the recorded
+trust boundary. The latest checkpoint covers full original Dense multiplication,
+Portable Horner, direct two-root derivation, and the original x86 lane mask. Full native implementation
+contracts remain open.
 
 The [core proofs](BulksketchProofs.lean) and [generated-body bridge](bridge/README.md)
 use frozen proposition definitions, transitive axiom audits and exported-term
@@ -51,7 +50,8 @@ reviewed frontend variant and explains the Portable and const-square proofs.
 [FROBENIUS_TABLES.md](FROBENIUS_TABLES.md) records the table, lookup and slice checkpoint.
 [SLICE_NORMALIZATION.md](SLICE_NORMALIZATION.md) records the mutable Zip and Dense proofs.
 [RECONCILIATION.md](RECONCILIATION.md) records decoder dispatch, wire sizing and reconciliation.
-[NATIVE_VERIFIER.md](NATIVE_VERIFIER.md) records the rebuilt verifier and Dense multiplication checkpoint.
+[NATIVE_VERIFIER.md](NATIVE_VERIFIER.md) records the rebuilt verifier and Dense multiplication extraction.
+[DENSE_PRODUCT.md](DENSE_PRODUCT.md) records the full Dense product, Portable Horner and direct two-root checkpoint.
 
 The [coverage ledger](audit/coverage.json) keeps every native item in scope,
 including unsupported and unproved items. Related mathematical model evidence

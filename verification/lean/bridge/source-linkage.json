@@ -316,6 +316,21 @@
       "path": "extraction/dense-mul/arithmetic.llbc",
       "sha256": "b74d34b6736b12f5c0c81dfbde762ede76c1781fb960069c8685d8420bbb9b30",
       "has_errors": false
+    },
+    {
+      "path": "extraction/direct-two/arithmetic.llbc",
+      "sha256": "1239e86fea9531ef9e64abcb77085bbc5a18c374edf0576adf8c194b81ab37f4",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/portable-horner/arithmetic.llbc",
+      "sha256": "45d579b229bcbb2796eaf633e39813e387a51b31d83cb1c2551d2cd7ed50a54d",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/x86-lane-mask/arithmetic.llbc",
+      "sha256": "6e84bb95450c4e490481684011417a7d7a29442df7c94aae97c27712c6209198",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -365,6 +380,14 @@
     {
       "functions": "bridge/Arithmetic/PortableEncodingRuntime.lean",
       "source_scope": "Head/tail slice views and restoration, mutable IntoIterator through the pinned slice iterator and shared singleton slice. Memory correspondence remains a trust boundary."
+    },
+    {
+      "functions": "bridge/Arithmetic/DirectTwoRuntime.lean",
+      "source_scope": "Shared-slice any consumes values in order, short circuits at the first true callback, and reuses the pinned Option Try adapter. Pointer and alias correspondence remains a trust boundary."
+    },
+    {
+      "functions": "bridge/Arithmetic/PortableHornerRuntime.lean",
+      "source_scope": "Shared split_last and reverse fold through the pinned iterator cursor and original FnMut callback, plus checked mutable Zip reuse. Physical alias correspondence remains a trust boundary."
     }
   ],
   "arithmetic_source_inputs": {
@@ -604,6 +627,26 @@
       "native_item_id": "src/decode/verify.rs:69:function:bulksketch::decode::verify::rebuilt_lfsr",
       "generated_declaration": "bulksketch.decode.verify.rebuilt_lfsr",
       "generated_file": "bridge/Arithmetic/RebuiltLfsrGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:7:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::mul_into",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.mul_into",
+      "generated_file": "bridge/Arithmetic/DenseMulConvolutionGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/direct.rs:22:function:bulksketch::decode::direct::two",
+      "generated_declaration": "bulksketch.decode.direct.two",
+      "generated_file": "bridge/Arithmetic/DirectTwoGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:109:method:bulksketch::backend::portable::<Portable as BulkKernels < F >>::horner_many",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractBulkKernels.horner_many",
+      "generated_file": "bridge/Arithmetic/PortableHornerGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:190:function:bulksketch::backend::x86_vpclmul512::mask",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.mask",
+      "generated_file": "bridge/Arithmetic/X86LaneMaskGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -859,6 +902,44 @@
       "declaration_count": 2,
       "scope": "Verbatim final reduction loop and loop body from complete original Dense multiplication extraction.",
       "translator_variant": "checked-shared-loop-erasure-v1"
+    },
+    {
+      "generated": "extraction/dense-mul/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseMulConvolutionGenerated.lean",
+      "sha256": "833933b1c40e180072b889c7db4528983194014e5a3ad914b5b15975c237e104",
+      "raw_sha256": "7b50a133f18cd4c5fea896f35f0f4093cd1af6a7e1619b51c845a67733078ad6",
+      "checker": "extraction/dense-mul/project-convolution.py",
+      "declaration_count": 7,
+      "scope": "Verbatim main multiplication, inner and outer convolution loops, and derived clone, with original raw default, normalization and final reduction dependencies checked.",
+      "translator_variant": "checked-shared-loop-erasure-v1"
+    },
+    {
+      "generated": "extraction/direct-two/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DirectTwoGenerated.lean",
+      "sha256": "2166a8951a66bc37e91f16b34f34fec04288d5e33dba60ce78629e7af78cf1cd",
+      "raw_sha256": "6c8a8ae9b7930d6abfea3461618faf9d379de1fd7dfc5ae901cd2c658128c6fc",
+      "checker": "extraction/direct-two/project.py",
+      "declaration_count": 7,
+      "scope": "Pinned direct two-root body, closure and exact types with scoped shared-slice any and Option Try bindings."
+    },
+    {
+      "generated": "extraction/portable-horner/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PortableHornerGenerated.lean",
+      "sha256": "cf6735c9a9d3863d8523f8a9f936eb31e25d02bb788247883df79d38b6bed073",
+      "raw_sha256": "c75cd779d7f3f57f806f87b791371c534a57a9a6d1f3872055e136cb0724f96e",
+      "checker": "extraction/portable-horner/project.py",
+      "declaration_count": 7,
+      "scope": "Original Portable Horner, outer loop, captured callback, trait dictionaries and closure type with scoped split_last and reverse-fold bindings.",
+      "translator_variant": "checked-ended-shared-scalar-v1"
+    },
+    {
+      "generated": "extraction/x86-lane-mask/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/X86LaneMaskGenerated.lean",
+      "sha256": "6ae2bc88b9c91551501be0e279f57385334226a8a06caaead231e1acf9e77336",
+      "raw_sha256": "1734d7fd2265fd71eb2682d6069c2aceff3272ce0ef8fde76a8925a675c1c10f",
+      "checker": "extraction/x86-lane-mask/project.py",
+      "declaration_count": 1,
+      "scope": "Original x86 target lane mask body with checked arithmetic and no additional runtime bindings."
     }
   ],
   "reviewed_translator_variants": [
@@ -888,6 +969,15 @@
       "receipt": "tooling/aeneas-dense-mul/receipt.json",
       "mandatory_checks": true,
       "scope": "Cumulative shared-owner patch and checked erasure of an already-ended level-one Loop only when its abstraction ID is ignored, its continuation is absent, the continuation expression is the unit self call, and its owned-region nested projections carry no mutable state. Complete Dense multiplication extraction, with only the final loop proved."
+    },
+    {
+      "id": "checked-ended-shared-scalar-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "tooling/aeneas-horner-match/ended-shared-scalar.patch",
+      "patch_sha256": "b0d2bd6b087d0d376351469e20f97a150033a57e2a7b48aedf9e966f56f6562c",
+      "receipt": "tooling/aeneas-horner-match/receipt.json",
+      "mandatory_checks": true,
+      "scope": "In the checked context matcher only, match two already ended shared loans carrying identical typed scalar metadata and either both absent ignored children or exactly repeated scalar child payloads."
     }
   ]
 }

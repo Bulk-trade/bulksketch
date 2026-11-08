@@ -1,0 +1,15 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "previous_proof_commit": "6d6c82732855633305285910d4969df40410741e",
+  "retained_native_executable_obligations": 344,
+  "generated_body_refinements_under_recorded_TCB": 50,
+  "whole_native_coverage_achieved": false,
+  "dense_mul_translator_variant": "checked-shared-loop-erasure-v1",
+  "portable_horner_translator_variant": "checked-ended-shared-scalar-v1",
+  "open": [
+    "Reconstruction mandatory loop-backedge match",
+    "Native Berlekamp-Massey normalization context match after isolated early-return repair",
+    "General locator fitting, root recovery and end-to-end decoder completeness",
+    "Accelerated kernels and compiler-expanded runtime, memory and ISA contracts"
+  ]
+}

@@ -416,6 +416,42 @@
     {
       "challenge": "BulksketchBridge.DenseMulReductionSpec.finalReductionFrame",
       "theorem": "BulksketchBridge.DenseMulReduction.loop_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseMul.ActualDenseMulReturnsExactFrames",
+      "theorem": "BulksketchBridge.DenseMul.mul_into_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseMulConvolutionSpec.innerLoopFrame",
+      "theorem": "BulksketchBridge.DenseMulConvolution.inner_loop_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseMulConvolutionSpec.outerLoopFrame",
+      "theorem": "BulksketchBridge.DenseMulConvolution.outer_loop_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseMul.ActualDenseMulPolynomialProduct",
+      "theorem": "BulksketchBridge.DenseMul.mul_into_polynomial_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DirectTwo.ActualDirectTwoReturnsNormalizedPair",
+      "theorem": "BulksketchBridge.DirectTwo.direct_two_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DirectTwo.ActualDirectTwoSound",
+      "theorem": "BulksketchBridge.DirectTwo.direct_two_sound"
+    },
+    {
+      "challenge": "BulksketchBridge.PortableHornerChallenges.hornerRefines",
+      "theorem": "BulksketchBridge.PortableHorner.horner_many_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.PortableHorner.ActualPortableHornerEvaluatesPolynomial",
+      "theorem": "BulksketchBridge.PortableHorner.horner_many_polynomial_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.X86LaneMask.ActualMaskReturnsLowLanes",
+      "theorem": "BulksketchBridge.X86LaneMask.mask_refines"
     }
   ],
   "refinements": [
@@ -1190,6 +1226,84 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "For adequate buffers and explicit callback equations, both original loops and both comparison branches return normally with exact scratch frames. A seed mismatch returns false before squaring or recurrence. A matching seed squares the locator tail and returns the exact continuation result."
+    },
+    {
+      "label": "Dense::mul_into [original source, reviewed checked frontend]",
+      "native_item_id": "src/poly/dense.rs:7:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::mul_into",
+      "source_line_span_sha256": "5e2aedce1b0696ae7b4285b879c95e9eddf370591fb7695eb0cd4e8fe6e19d20",
+      "theorem": "BulksketchBridge.DenseMul.mul_into_refines",
+      "challenge": "BulksketchBridge.DenseMul.ActualDenseMulReturnsExactFrames",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.mul_into",
+      "generated_file": "bridge/Arithmetic/DenseMulConvolutionGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/SliceKernelTypes.lean",
+        "bridge/Arithmetic/OddRecurrenceGenerated.lean",
+        "bridge/Arithmetic/DenseNormalizationTypes.lean",
+        "bridge/Arithmetic/DenseNormalizationGenerated.lean",
+        "bridge/Arithmetic/DenseMulReductionGenerated.lean",
+        "bridge/Arithmetic/DenseMulConvolutionGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original full wrapper, all three loops, empty input, checked size overflow and both buffer assertions in the generated scalar model, initialized scratch prefix and preserved inactive tails, reduction and returned normalized length. Explicit exact GF64 raw multiplication and reduction callback equations.",
+      "translator_variant": "checked-shared-loop-erasure-v1"
+    },
+    {
+      "label": "decode::direct::two [original pinned source]",
+      "native_item_id": "src/decode/direct.rs:22:function:bulksketch::decode::direct::two",
+      "source_line_span_sha256": "c46d891c72c651d8d61061184c5f946523c7eea61a61ac83d802d4f57e0665b2",
+      "theorem": "BulksketchBridge.DirectTwo.direct_two_refines",
+      "challenge": "BulksketchBridge.DirectTwo.ActualDirectTwoReturnsNormalizedPair",
+      "generated_declaration": "bulksketch.decode.direct.two",
+      "generated_file": "bridge/Arithmetic/DirectTwoGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/SliceKernelTypes.lean",
+        "bridge/Arithmetic/InverseGenerated.lean",
+        "bridge/Arithmetic/InverseUsingTypes.lean",
+        "bridge/Arithmetic/InverseUsingGenerated.lean",
+        "bridge/Arithmetic/DirectTwoGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact Some or None and normalized pair for nonzero S1 and proved GF64 multiply, square, inverse and quadratic callback equalities. The pinned two-root extraction uses the previously verified inverse wrapper as a proof dependency under checked-frozen-capture-v1.",
+      "translator_variant": "checked-frozen-capture-v1"
+    },
+    {
+      "label": "Portable::horner_many [original source, reviewed checked frontend]",
+      "native_item_id": "src/backend/portable.rs:109:method:bulksketch::backend::portable::<Portable as BulkKernels < F >>::horner_many",
+      "source_line_span_sha256": "07f2978c6272a4217ebf8086f717d7edb327260d48d5aed5406586d668682414",
+      "theorem": "BulksketchBridge.PortableHorner.horner_many_refines",
+      "challenge": "BulksketchBridge.PortableHornerChallenges.hornerRefines",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractBulkKernels.horner_many",
+      "generated_file": "bridge/Arithmetic/PortableHornerGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/PortableGenerated.lean",
+        "bridge/Arithmetic/PortableXorGenerated.lean",
+        "bridge/Arithmetic/DenseNormalizationTypes.lean",
+        "bridge/Arithmetic/DenseNormalizationGenerated.lean",
+        "bridge/Arithmetic/PortableHornerGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "The original empty coefficient and full reverse fold paths give the exact output frame on equal lengths. Unequal lengths follow the original panic path. Actual Portable GF64 multiplication and original closure are proved, under the reviewed checked context matcher and scoped iterator model.",
+      "translator_variant": "checked-ended-shared-scalar-v1"
+    },
+    {
+      "label": "x86_vpclmul512::mask [original x86 source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:190:function:bulksketch::backend::x86_vpclmul512::mask",
+      "source_line_span_sha256": "c2e15435349260f03f45320857e7c29582f0e559333583b05e7f50826dda1926",
+      "theorem": "BulksketchBridge.X86LaneMask.mask_refines",
+      "challenge": "BulksketchBridge.X86LaneMask.ActualMaskReturnsLowLanes",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.mask",
+      "generated_file": "bridge/Arithmetic/X86LaneMaskGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/X86LaneMaskGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every admitted length at most eight returns the exact low-lane byte and each bit is set exactly for a lane below the length. Includes zero and full masks and the checked shift bound. Value semantics only."
     }
   ]
 }

@@ -142,6 +142,45 @@ for name, mutate in mul_cases:
     results.append({"case": name, "status": status})
     print(name, status)
 
+horner = next(item for item in link["reviewed_translator_variants"]
+              if item["id"] == "checked-ended-shared-scalar-v1")
+horner_original = json.loads((ROOT / horner["receipt"]).read_text())
+horner_check = next(node for node in tree.body if isinstance(node, ast.FunctionDef)
+                    and node.name == "check_horner_match_variant")
+horner_code = compile(ast.fix_missing_locations(ast.Module(body=[horner_check, loop], type_ignores=[])),
+                      "actual-verify-bridge-horner-matcher-gate", "exec")
+horner_cases = [
+    ("horner-positive", lambda receipt: None),
+    ("horner-omits-checks", lambda receipt: receipt["extraction"]["command"].remove("-checks")),
+    ("horner-missing-child-control", lambda receipt: receipt["regressions"].remove(
+        next(item for item in receipt["regressions"] if item["case"] == "distinct-child-payload"))),
+    ("horner-unchecked-accepted", lambda receipt: next(item for item in receipt["commands"]
+        if item["name"] == "fixture-without-checks").update(exit_code=0)),
+    ("horner-omits-external-template", lambda receipt: receipt["extraction"]["generated"].pop()),
+    ("horner-extra-translator-source", lambda receipt: receipt["modified_sources"].update(other="wrong")),
+]
+for name, mutate in horner_cases:
+    receipt = copy.deepcopy(horner_original)
+    mutate(receipt)
+    with tempfile.TemporaryDirectory() as temp:
+        shadow = Path(temp)
+        (shadow / "extraction").symlink_to(ROOT / "extraction", target_is_directory=True)
+        for rel in set(horner_original["regression_sources"]) | {horner["patch"]}:
+            dest = shadow / rel
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.symlink_to(ROOT / rel)
+        (shadow / horner["receipt"]).write_text(json.dumps(receipt))
+        env = dict(ROOT=shadow, variants=[horner], runtime=runtime, runtime_head=runtime_head,
+                   linkage=link, records=[], sha=lambda p: hashlib.sha256(p.read_bytes()).hexdigest(),
+                   run=run, re=re, json=json)
+        try:
+            exec(horner_code, env)
+            status = "accepted"
+        except (RuntimeError, KeyError, ValueError):
+            status = "rejected"
+    results.append({"case": name, "status": status})
+    print(name, status)
+
 # Exercise the exact per-refinement attribution statements from the same main AST.
 refine_loop=next(n for n in main.body if isinstance(n,ast.For) and isinstance(n.target,ast.Tuple) and any(isinstance(x,ast.Name) and x.id=='native_id' for x in n.target.elts))
 assignment=next(n for n in refine_loop.body if isinstance(n,ast.Assign) and any(isinstance(x,ast.Name) and x.id=='used_variants' for x in n.targets))
@@ -166,7 +205,7 @@ for name,entry,mutate in attribution_cases:
  results.append({'case':name,'status':status});print(name,status)
 
 for row in results:
- expected = 'accepted' if row['case'] in {'positive','dense-positive','dense-mul-positive','valid-patched','valid-pinned','valid-dense-source'} else 'rejected'
+ expected = 'accepted' if row['case'] in {'positive','dense-positive','dense-mul-positive','horner-positive','valid-patched','valid-pinned','valid-dense-source'} else 'rejected'
  if row['status'] != expected:
   raise RuntimeError('variant/attribution gate outcome differs: '+row['case'])
 valid_count = sum(row["status"] == "accepted" for row in results)

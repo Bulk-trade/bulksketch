@@ -1,5 +1,7 @@
 # Native rebuilt verifier and Dense multiplication checkpoint
 
+This checkpoint precedes the [complete Dense multiplication and Portable Horner proofs](DENSE_PRODUCT.md).
+
 The audit retains all 344 executable obligations from the frozen native
 source revision. It now checks 46 original generated-body refinements.
 This checkpoint adds the original rebuilt verifier, Portable insertion,
