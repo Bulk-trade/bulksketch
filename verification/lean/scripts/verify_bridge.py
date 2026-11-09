@@ -732,6 +732,34 @@ def main():
                             str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
             records.append(result)
             continue
+        if variant["id"] == "checked-dispatch-completed-frozen-shared-v1":
+            completed = receipt["completed"]
+            patch = ROOT / variant["patch"]
+            source_file = "src/interp/InterpJoin.ml"
+            if (variant["mandatory_checks"] is not True or variant["base_commit"] != runtime_head or
+                    completed["variant_id"] != variant["id"] or completed["aeneas_commit"] != runtime_head or
+                    completed["charon_commit"] != linkage["charon_commit"] or
+                    completed["base_source_sha256"] != {source_file: sha(runtime / source_file)} or
+                    sha(patch) != variant["patch_sha256"] or
+                    re.findall(r"(?m)^--- a/(\S+)\n\+\+\+ b/(\S+)$", patch.read_text()) != [(source_file, source_file)]):
+                raise RuntimeError("dispatch completion variant lost exact scope")
+            result, _ = run(variant["id"] + "-patch-applies", ["git", "apply", "--check", str(patch)],
+                            timeout=30, cwd=runtime)
+            records.append(result)
+            result, _ = run("checked-dispatch-completion-receipt-fixtures",
+                ["python3", str(ROOT / "extraction/public-lifecycle/projection_fixtures.py")],
+                timeout=30, cwd=ROOT)
+            records.append(result)
+            continue
+        if variant["id"] == "checked-sum-costs-try-fold-v1":
+            if (variant["mandatory_checks"] is not True or variant["base_commit"] != runtime_head or
+                    receipt["variant_id"] != variant["id"] or receipt["aeneas_commit"] != runtime_head or
+                    receipt["charon_commit"] != linkage["charon_commit"] or
+                    variant["specialization_sha256"] != sha(ROOT / variant["specialization"]) or
+                    variant["raw_input_sha256"] != receipt["artifacts"]["arithmetic.llbc"] or
+                    variant["specialized_input_sha256"] != receipt["artifacts"]["specialized.llbc"]):
+                raise RuntimeError("checked sum_costs LLBC specialization lost exact scope")
+            continue
         if variant["id"] != "checked-frozen-capture-v1":
             raise RuntimeError("unknown reviewed translator variant")
         extraction = receipt["extraction"]
@@ -820,11 +848,15 @@ def main():
             ["python3", str(ROOT / projection["checker"]), *projection.get("checker_args", [])],
             timeout=30, cwd=ROOT)
         receipt = json.loads(output)
+        explicit_callees = projection.get("explicit_callee_parameters", [])
+        retained = (receipt["source_declarations_retained_with_explicit_callee"] if explicit_callees else
+                    receipt["source_declarations_retained_verbatim"])
         if receipt["compiled_projection"] != projection["bridge_copy"] or \
                 receipt["raw_generated_file"] != projection["generated"] or \
                 receipt["projection_file_sha256"] != projection["sha256"] or \
                 receipt["raw_file_sha256"] != projection["raw_sha256"] or \
-                receipt["source_declarations_retained_verbatim"] != projection["declaration_count"] or \
+                retained != projection["declaration_count"] or \
+                receipt.get("explicit_callee_parameters", []) != explicit_callees or \
                 receipt["shared_types_and_function_dictionary_declarations_checked"] is not True or \
                 ("translator_variant" in receipt and
                  receipt["translator_variant"] != projection.get("translator_variant")):

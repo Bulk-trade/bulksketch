@@ -299,6 +299,17 @@ admitted root prefix. The original public report outcome and bucket
 count, combined with the exact writer and finalizer, expose the
 committed decoded row and its optional leading zero.
 
+An emitted honest support locator determines the exact selected root
+support and its distinct nonzero prefix. Native workspace admission
+supplies both verifier scratch bounds. After the original two paid
+stages, the sorted returned words represent precisely that support.
+The original tiny probe and public completion dispatch have checked
+source refinements. The original shape permission guard returns the
+precise bucket membership rule before publication. The original
+ordered sum-cost caller binds the V1 and V2 work wrappers through the
+scoped checked standard-library slice fold. V2 preserves both separately
+checked probe reserves.
+
 Run the complete gate from `verification/lean`.
 
 ```sh

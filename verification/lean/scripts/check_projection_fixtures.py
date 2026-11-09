@@ -497,6 +497,31 @@ PROJECTIONS = [
       'bridge/Arithmetic/AvxLinearEntryGenerated.lean',
       'bridge/Arithmetic/MutableZipRuntime.lean',
       'bridge/Arithmetic/RowDispatchGenerated.lean']),
+    ('shape-permission',
+     'extraction/shape-permission/project.py', 'extraction/shape-permission/receipt.json',
+     'extraction/shape-permission/Arithmetic/Funs.lean', 'bridge/Arithmetic/ShapePermissionGenerated.lean',
+     'ok (i1 = bucket)', 'ok (i1 != bucket)', 'Compiled shape permission projection differs', None, None,
+     ['bridge/Arithmetic/ReconstructionTypes.lean', 'bridge/Arithmetic/CandidateCompactGenerated.lean']),
+    ('public-lifecycle',
+     'extraction/public-lifecycle/project.py', 'extraction/public-lifecycle/receipt.json',
+     'extraction/public-lifecycle/probe/Arithmetic/Funs.lean', 'bridge/Arithmetic/TinyProbeGenerated.lean',
+     'let stage ← core.option.Option.expect self.next', 'let stage ← core.option.Option.expect none',
+     'public lifecycle compiled projection differs', None, None,
+     ['bridge/Arithmetic/DispatchCompletedGenerated.lean',
+      *[f'bridge/Arithmetic/{name}.lean' for name in (
+          'RowDispatchGenerated', 'CompletedResultGenerated', 'CanonicalizeGenerated', 'ReconstructionRuntime',
+          'DegreeProbeGenerated', 'DirectTwoGenerated', 'ReconstructionTypes')],
+      *[f'extraction/row-dispatch/Arithmetic/{name}.lean' for name in ('Funs', 'Types', 'FunsExternal_Template')]]),
+    ('sum-costs',
+     'extraction/sum-costs/project.py', 'extraction/sum-costs/receipt.json',
+     'extraction/sum-costs/Arithmetic/Funs.lean', 'bridge/Arithmetic/SumCostsGenerated.lean',
+     '0#u64', '1#u64', 'active sum_costs source body changed', None, None,
+     ['extraction/work-schedule/receipt.json', 'bridge/Arithmetic/WorkScheduleGenerated.lean']),
+    ('row-work-budget-v2',
+     'extraction/row-work-budget-v2/project.py', 'extraction/row-work-budget-v1/receipt.json',
+     'extraction/row-work-budget-v1/Arithmetic/Funs.lean', 'bridge/Arithmetic/RowWorkBudgetV2Generated.lean',
+     'decode.work.Charge.DirectOne', 'decode.work.Charge.DirectTwo',
+     'active original V2 row body changed', None, None, []),
     ('decode-report',
      'extraction/decode-report/project.py',
      'extraction/decode-report/receipt.json',
@@ -740,7 +765,9 @@ def main():
             kwargs = {"kind": label.removeprefix("candidate-normalize-")}
         if label.startswith("candidates-"):
             kwargs = {"kind": label.removeprefix("candidates-")}
-        originals[label] = projector.check(**kwargs)["source_declarations_retained_verbatim"]
+        projection = projector.check(**kwargs)
+        originals[label] = (projection["source_declarations_retained_with_explicit_callee"]
+                            if label == "row-work-budget-v2" else projection["source_declarations_retained_verbatim"])
         receipt = json.loads((ROOT / receipt_path).read_text())
         files = [receipt_path, active_path, "bridge/Arithmetic/Types.lean", "bridge/Arithmetic/Funs.lean"]
         artifact_key = next(key for key in ("files_sha256", "artifacts", "generated") if key in receipt)
@@ -1031,7 +1058,7 @@ def main():
                              "affine-enumerate", "affine-selector", "avx-multiply-linear", "affine-solve-map",
                              "avx-horner", "affine-multiple", "avx-tile", "avx-recurrence", "avx-sparse-insert", "avx-slice-kernel", "avx-slice-entry", "avx-scalar-delegates", "avx-recurrence-entry", "avx-linear-entry", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
                              "avx-insert-insert18", "avx-insert-horizontal", "avx-insert-dispatch", "native-driver", "candidate-row", "completed-result",
-                             "native-finish", "canonicalize", "row-dispatch", "pclmul-insert", "publication-write", "publication-frame", "decode-report",
+                             "native-finish", "canonicalize", "row-dispatch", "pclmul-insert", "publication-write", "publication-frame", "decode-report", "shape-permission", "public-lifecycle", "sum-costs",
                              "root-work-budget", "row-work-budget-v1", "default-wire-difference", "row-configuration", "candidate-normalize-rows", "candidate-normalize-compact", "candidate-normalize-merge"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"

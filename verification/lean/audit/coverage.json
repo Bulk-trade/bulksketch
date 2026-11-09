@@ -4572,7 +4572,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.TinyProbe.tiny_probe_run_charged",
+        "scope": "All four original charged stages, exact scratch and progress, canonicalization guard and panic under stage-local admission.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/probe.rs:167:function:bulksketch::decode::probe::verified",
@@ -4740,7 +4747,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.TinyProbe.tiny_probe_run_next",
+        "scope": "Exact paid original charged call and rejected charge with unchanged slices and probe frame.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/probe.rs:82:method:bulksketch::decode::probe::Probe::charge",
@@ -4760,7 +4774,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.TinyProbe.tiny_probe_charge",
+        "scope": "All original active probe stage prices, Rust charge result, and exact meter including terminal panic.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/roots.rs:110:method:bulksketch::decode::roots::Roots::advance",
@@ -6338,7 +6359,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RootWorkBudget.native_v2_row_bound",
+        "scope": "Exact original V1 result, both checked probe reserves, price ordering and overflow under the explicit V1 sum callback.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/work.rs:293:function:bulksketch::decode::work::square_mod",
@@ -6479,7 +6507,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RootWorkBudget.native_sum_costs",
+        "scope": "All original ordered charge prices, checked additions, first failure and exact result under scoped std slice fold semantics.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/work.rs:319:function:bulksketch::decode::work::log2_ceil",
@@ -8838,7 +8873,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RowDispatch.dispatch_completed_result",
+        "scope": "Original live-probe assertion, exact shared roots prefix, and actual completed-result delegation for all original row backends.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/dispatch.rs:188:method:bulksketch::sketch::dispatch::DecodeExecution < F >::next_stage",
@@ -8932,7 +8974,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.TinyProbe.run_probe_dispatch",
+        "scope": "Exact original backend dispatch for all source tags, including the reserved variant panic.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/dispatch.rs:246:type_alias:bulksketch::sketch::dispatch::Toggle",
@@ -11199,7 +11248,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.ShapePermission.shape_permits_id_refines",
+        "scope": "The original bounds guard short-circuits before modulo; every admitted bucket accepts exactly its own IDs.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/shape.rs:120:function:bulksketch::sketch::shape::record_bytes",
@@ -11326,7 +11382,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.ShapePermission.shape_bucket_count_refines",
+        "scope": "The original shape bucket count is the exact capacity slice length.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/shape.rs:92:method:bulksketch::sketch::shape::SketchShape < F >::total_syndrome_words",
@@ -12536,8 +12599,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. Original row driver dispatch, default wire XOR, ordered publication and proper factor-tree budget are checked. AVX, PCLMUL and Portable rebuilt verification compose at all admitted GF64 degrees. Concrete Portable and PCLMUL dictionaries select the checked callbacks. The source V1 row envelope retains the explicit sum-cost fold contract. Global traversal readiness and exact charged-run accounting, remaining admission and wire/API bindings, Rust provenance and compiler-to-ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 210,
+    "note": "All 344 native executable obligations retained. Original row driver dispatch, default wire XOR, ordered publication and proper factor-tree budget are checked. AVX, PCLMUL and Portable rebuilt verification compose at all admitted GF64 degrees. Concrete Portable and PCLMUL dictionaries select the checked callbacks. The original ordered sum-cost fold now supplies the V1 row envelope's explicit callback. V2 verifies both checked probe reserves. Global traversal readiness and exact charged-run accounting, remaining admission and wire/API bindings, Rust provenance and compiler-to-ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 219,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12588,8 +12651,15 @@
       "native_verification_finish": "BulksketchBridge.ExecutionDriver.native_paid_verification_finish",
       "native_publication_readback": [
         "BulksketchBridge.PublicationWrite.canonical_publication_admission",
-        "BulksketchBridge.PublicationWrite.decoded_publication_readback"
-      ]
+        "BulksketchBridge.PublicationWrite.decoded_publication_readback",
+        "BulksketchBridge.PublicationWrite.status_publication_readback",
+        "BulksketchBridge.PublicationWrite.canonical_publication_readback"
+      ],
+      "native_row_work_with_sum": [
+        "BulksketchBridge.RootWorkBudget.native_v1_row_bound_with_sum",
+        "BulksketchBridge.RootWorkBudget.native_v2_row_bound_with_sum"
+      ],
+      "native_recovered_support_finish": "BulksketchBridge.ExecutionDriver.native_recovered_support_finish"
     },
     "reconciliation_algebra_evidence": {
       "sparse_support_uniqueness": "BulksketchBridge.Reconciliation.gf64_sparse_support_unique",

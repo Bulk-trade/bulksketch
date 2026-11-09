@@ -1,3 +1,11 @@
+import BulksketchBridge.ShapePermission
+import BulksketchBridge.NativeRowWorkBindings
+import BulksketchBridge.TinyProbeCharged
+import BulksketchBridge.DispatchCompleted
+import BulksketchBridge.SumCostsNative
+import BulksketchBridge.RowWorkBudgetV2
+import BulksketchBridge.PublicationStatusReadback
+import BulksketchBridge.CanonicalPublicationReadback
 import BulksketchBridge.NativePaidVerificationFinish
 import BulksketchBridge.RootClosedLeafTraversal
 import BulksketchBridge.NativePublicationAdmission
@@ -881,6 +889,34 @@ run_cmd do
       ``BulksketchBridge.PublicationWrite.canonical_publication_admission),
     (``BulksketchBridge.PublicationWrite.ActualDecodedPublicationReadback,
       ``BulksketchBridge.PublicationWrite.decoded_publication_readback),
+    (``BulksketchBridge.TinyProbe.ActualTinyProbeCharge,
+      ``BulksketchBridge.TinyProbe.tiny_probe_charge),
+    (``BulksketchBridge.TinyProbe.ActualTinyProbeRunNext,
+      ``BulksketchBridge.TinyProbe.tiny_probe_run_next),
+    (``BulksketchBridge.TinyProbe.ActualTinyProbeRunCharged,
+      ``BulksketchBridge.TinyProbe.tiny_probe_run_charged),
+    (``BulksketchBridge.TinyProbe.ActualRunProbeDispatch,
+      ``BulksketchBridge.TinyProbe.run_probe_dispatch),
+    (``BulksketchBridge.RowDispatch.ActualDispatchCompletedResult,
+      ``BulksketchBridge.RowDispatch.dispatch_completed_result),
+    (``BulksketchBridge.RootWorkBudget.ActualNativeSumCosts,
+      ``BulksketchBridge.RootWorkBudget.native_sum_costs),
+    (``BulksketchBridge.RootWorkBudget.ActualNativeV2RowBound,
+      ``BulksketchBridge.RootWorkBudget.native_v2_row_bound),
+    (``BulksketchBridge.PublicationWrite.ActualStatusPublicationReadback,
+      ``BulksketchBridge.PublicationWrite.status_publication_readback),
+    (``BulksketchBridge.PublicationWrite.ActualCanonicalPublicationReadback,
+      ``BulksketchBridge.PublicationWrite.canonical_publication_readback),
+    (``BulksketchBridge.ShapePermission.ActualShapeBucketCount,
+      ``BulksketchBridge.ShapePermission.shape_bucket_count_refines),
+    (``BulksketchBridge.ShapePermission.ActualShapePermitsId,
+      ``BulksketchBridge.ShapePermission.shape_permits_id_refines),
+    (``BulksketchBridge.RootWorkBudget.ActualNativeV1RowBoundWithSum,
+      ``BulksketchBridge.RootWorkBudget.native_v1_row_bound_with_sum),
+    (``BulksketchBridge.RootWorkBudget.ActualNativeV2RowBoundWithSum,
+      ``BulksketchBridge.RootWorkBudget.native_v2_row_bound_with_sum),
+    (``BulksketchBridge.ExecutionDriver.ActualNativeRecoveredSupportFinish,
+      ``BulksketchBridge.ExecutionDriver.native_recovered_support_finish),
     (``BulksketchBridge.ExecutionDriver.ActualNativeVerificationStartFinish,
       ``BulksketchBridge.ExecutionDriver.native_verification_start_finish),
     (``BulksketchBridge.RowConfiguration.ActualRowBegin,

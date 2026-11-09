@@ -16,7 +16,7 @@ def committedReport (after : Publication) (work : WorkUnits) (peak : Usize) : De
     work := work
     peak_scratch_bytes := peak }
 
-private theorem finish_committed (after : Publication) (work : WorkUnits) (peak : Usize)
+theorem finish_committed (after : Publication) (work : WorkUnits) (peak : Usize)
     (clear : after.failure = none) (complete : after.written = after.rows)
     (rowRoom : after.rows.val ≤ after.results.outcomes.length)
     (idRoom : after.used_ids.val ≤ after.results.ids.length) :
@@ -25,7 +25,7 @@ private theorem finish_committed (after : Publication) (work : WorkUnits) (peak 
   simp only [PublicationFrame.expectedFinish, clear, complete, rowRoom, idRoom, true_and, ite_true]
   rfl
 
-private theorem row_readback (outcomes : Slice StoredOutcome) (bucket rows : Usize)
+theorem row_readback (outcomes : Slice StoredOutcome) (bucket rows : Usize)
     (entry : StoredOutcome) (row : bucket.val < rows.val) (inside : bucket.val < outcomes.length) :
     (DenseMul.takeSlice (outcomes.set bucket entry) rows.val).val[bucket.val]? = some entry := by
   simp only [DenseMul.takeSlice, Slice.from_val, Slice.set_val_eq, List.getElem?_take_of_lt row]

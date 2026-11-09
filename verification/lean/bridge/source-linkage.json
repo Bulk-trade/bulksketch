@@ -761,6 +761,31 @@
       "path": "extraction/decode-report/arithmetic.llbc",
       "sha256": "bc78525112df1b889439d3b6dc8899d2322401131f9b99195090829a0a3f0e7f",
       "has_errors": false
+    },
+    {
+      "path": "extraction/public-lifecycle/probe/arithmetic.llbc",
+      "sha256": "f1fb7e847938ba86ed7b2f03a8e4a4c8f679ced4116cca30f2bb437ddc158521",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/public-lifecycle/wrapper/arithmetic.llbc",
+      "sha256": "3c6435431ed8b23e78c2591c645a63bbb19b67e2d5c6dee0ed0daa96bf5d631c",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/public-lifecycle/completed/arithmetic.llbc",
+      "sha256": "3714abe472c6d46a5445215955cf8c6c46ad5ff6eeb0e072cfa103c075c202fb",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/sum-costs/arithmetic.llbc",
+      "sha256": "9167b753cf5f80a9df9d1a80a083e6881da1c86a7bbccd224d659698c3fe6320",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/shape-permission/arithmetic.llbc",
+      "sha256": "706354f4fb75d9a0a8cca1accbe5abacdd79a122ec5804bc3dc06f00d2afe987",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1893,6 +1918,51 @@
       "native_item_id": "src/sketch/api.rs:84:method:bulksketch::sketch::api::DecodeReport < '_ >::bucket_count",
       "generated_declaration": "bulksketch.sketch.api.DecodeReport.bucket_count",
       "generated_file": "bridge/Arithmetic/DecodeReportGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/probe.rs:82:method:bulksketch::decode::probe::Probe::charge",
+      "generated_declaration": "bulksketch.decode.probe.Probe.charge",
+      "generated_file": "bridge/Arithmetic/TinyProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/probe.rs:68:method:bulksketch::decode::probe::Probe::run_next",
+      "generated_declaration": "bulksketch.decode.probe.Probe.run_next",
+      "generated_file": "bridge/Arithmetic/TinyProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/probe.rs:105:method:bulksketch::decode::probe::Probe::run_charged",
+      "generated_declaration": "bulksketch.decode.probe.Probe.run_charged",
+      "generated_file": "bridge/Arithmetic/TinyProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/dispatch.rs:223:function:bulksketch::sketch::dispatch::run_probe",
+      "generated_declaration": "bulksketch.sketch.dispatch.run_probe",
+      "generated_file": "bridge/Arithmetic/TinyProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/dispatch.rs:171:method:bulksketch::sketch::dispatch::DecodeExecution < F >::completed_result",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.completed_result",
+      "generated_file": "bridge/Arithmetic/DispatchCompletedGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:313:function:bulksketch::decode::work::sum_costs",
+      "generated_declaration": "bulksketch.decode.work.sum_costs",
+      "generated_file": "bridge/Arithmetic/SumCostsGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:264:method:bulksketch::decode::work::WorkScheduleV2::row_bound",
+      "generated_declaration": "bulksketch.decode.work.WorkScheduleV2.row_bound",
+      "generated_file": "bridge/Arithmetic/RowWorkBudgetV2Generated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/shape.rs:86:method:bulksketch::sketch::shape::SketchShape < F >::bucket_count",
+      "generated_declaration": "bulksketch.sketch.shape.SketchShape.bucket_count",
+      "generated_file": "bridge/Arithmetic/CandidateCompactGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/shape.rs:113:method:bulksketch::sketch::shape::SketchShape < F >::permits_id",
+      "generated_declaration": "bulksketch.sketch.shape.SketchShape.permits_id",
+      "generated_file": "bridge/Arithmetic/ShapePermissionGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2942,6 +3012,60 @@
       "checker": "extraction/decode-report/project.py",
       "declaration_count": 2,
       "scope": "Original stock-checked public report count and outcome."
+    },
+    {
+      "generated": "extraction/public-lifecycle/probe/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/TinyProbeGenerated.lean",
+      "sha256": "570f90f3baa9abd6d8c0735ea25e7c6e809e49abf518ebedd4384b87e99480a5",
+      "raw_sha256": "dba7b0e8301534b34901515c5ec6f1d4c9c078debc65ee960196c81a8122417f",
+      "checker": "extraction/public-lifecycle/project.py",
+      "declaration_count": 14,
+      "scope": "Original probe work, charged branches, and checked backend wrapper."
+    },
+    {
+      "generated": "extraction/public-lifecycle/completed/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DispatchCompletedGenerated.lean",
+      "sha256": "8f0ca7abd890eb7e75ce09f5f6c64389f5bb5f569c77d829052738eca258b76b",
+      "raw_sha256": "096778048a93fc27fb1285a6f2e52957306543548e8c9ee679d752aab6244daf",
+      "checker": "extraction/public-lifecycle/project.py",
+      "declaration_count": 1,
+      "scope": "Original checked public completed-result branch and exact probe roots borrow.",
+      "translator_variant": "checked-dispatch-completed-frozen-shared-v1",
+      "checker_args": [
+        "--entry",
+        "completed"
+      ]
+    },
+    {
+      "generated": "extraction/sum-costs/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/SumCostsGenerated.lean",
+      "sha256": "5e1cd0ef8651f5682b80ea0f12785a1cf71aff360dc4727fcef12b67a3e19111",
+      "raw_sha256": "9536a3955e53528b9c8d345f05a6b430123b95bb9d6fc14d685ef550b3d8d524",
+      "checker": "extraction/sum-costs/project.py",
+      "declaration_count": 5,
+      "scope": "Original sum caller and closure with a typed shared-slice std fold slot.",
+      "translator_variant": "checked-sum-costs-try-fold-v1"
+    },
+    {
+      "generated": "extraction/row-work-budget-v1/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RowWorkBudgetV2Generated.lean",
+      "sha256": "bce075701945ff5966f2acc7fc3ecbc18ff4eb0097aa1057a31843116171781f",
+      "raw_sha256": "d7c2c37fb260538b2c172e315aacd2f1ca51bc9b4321bb132451be35cc46c609",
+      "checker": "extraction/row-work-budget-v2/project.py",
+      "declaration_count": 1,
+      "scope": "Original V2 row wrapper with exact explicit forwarding of the V1 sum callback.",
+      "explicit_callee_parameters": [
+        "sumCosts"
+      ]
+    },
+    {
+      "generated": "extraction/shape-permission/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/ShapePermissionGenerated.lean",
+      "sha256": "b5e3195bed31973068c424bfeb580406a7504a254f52551f6b36bb4bd29bdd13",
+      "raw_sha256": "2f5dd760e5ce0e2a43dcb1529642ccce9e4f541f9741a970d672c0f9ff1854c1",
+      "checker": "extraction/shape-permission/project.py",
+      "declaration_count": 2,
+      "scope": "Original stock-checked shape permission and exact shared bucket count."
     }
   ],
   "reviewed_translator_variants": [
@@ -3133,6 +3257,26 @@
       "receipt": "extraction/publication-write/receipt.json",
       "mandatory_checks": true,
       "scope": "Exact original publication write with guarded slice metadata lowering and source-scoped checked branch preservation."
+    },
+    {
+      "id": "checked-dispatch-completed-frozen-shared-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/public-lifecycle/completed/checked-dispatch-result.patch",
+      "patch_sha256": "bb8a1b98d1f263072d61379f471bd94e8a774e78d359022aa0aa3a03bf95518c",
+      "receipt": "extraction/public-lifecycle/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Guarded shared workspace join in original DecodeExecution completion, restricted to the original match and probe assertion."
+    },
+    {
+      "id": "checked-sum-costs-try-fold-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "specialization": "extraction/sum-costs/specialize.py",
+      "specialization_sha256": "c3f26a92464214e46452d6360d1921f7814febc2624d45f7918a93b4cb0df680",
+      "raw_input_sha256": "9167b753cf5f80a9df9d1a80a083e6881da1c86a7bbccd224d659698c3fe6320",
+      "specialized_input_sha256": "38eb3a97b30ceef9e7ecb04f70b82f8a1a9d9f3cb24f289e39304d66a47085a3",
+      "receipt": "extraction/sum-costs/receipt.json",
+      "mandatory_checks": true,
+      "scope": "One original shared Slice<Charge> Iterator::try_fold call specialized to a typed std slot with both original borrows and exact original closure."
     }
   ],
   "diagnostic_generated_projections": [

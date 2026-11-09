@@ -1940,6 +1940,62 @@
     {
       "challenge": "BulksketchBridge.PublicationWrite.ActualPublicationWriteDecodedRejects",
       "theorem": "BulksketchBridge.PublicationWrite.write_invalid_decoded"
+    },
+    {
+      "challenge": "BulksketchBridge.TinyProbe.ActualTinyProbeCharge",
+      "theorem": "BulksketchBridge.TinyProbe.tiny_probe_charge"
+    },
+    {
+      "challenge": "BulksketchBridge.TinyProbe.ActualTinyProbeRunNext",
+      "theorem": "BulksketchBridge.TinyProbe.tiny_probe_run_next"
+    },
+    {
+      "challenge": "BulksketchBridge.TinyProbe.ActualTinyProbeRunCharged",
+      "theorem": "BulksketchBridge.TinyProbe.tiny_probe_run_charged"
+    },
+    {
+      "challenge": "BulksketchBridge.TinyProbe.ActualRunProbeDispatch",
+      "theorem": "BulksketchBridge.TinyProbe.run_probe_dispatch"
+    },
+    {
+      "challenge": "BulksketchBridge.RowDispatch.ActualDispatchCompletedResult",
+      "theorem": "BulksketchBridge.RowDispatch.dispatch_completed_result"
+    },
+    {
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeSumCosts",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_sum_costs"
+    },
+    {
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeV2RowBound",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_v2_row_bound"
+    },
+    {
+      "challenge": "BulksketchBridge.PublicationWrite.ActualStatusPublicationReadback",
+      "theorem": "BulksketchBridge.PublicationWrite.status_publication_readback"
+    },
+    {
+      "challenge": "BulksketchBridge.PublicationWrite.ActualCanonicalPublicationReadback",
+      "theorem": "BulksketchBridge.PublicationWrite.canonical_publication_readback"
+    },
+    {
+      "challenge": "BulksketchBridge.ShapePermission.ActualShapeBucketCount",
+      "theorem": "BulksketchBridge.ShapePermission.shape_bucket_count_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.ShapePermission.ActualShapePermitsId",
+      "theorem": "BulksketchBridge.ShapePermission.shape_permits_id_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeV1RowBoundWithSum",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_v1_row_bound_with_sum"
+    },
+    {
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeV2RowBoundWithSum",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_v2_row_bound_with_sum"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeRecoveredSupportFinish",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_recovered_support_finish"
     }
   ],
   "refinements": [
@@ -5167,6 +5223,134 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Original count of the published outcome slice."
+    },
+    {
+      "label": "decode.probe.Probe.charge [original source]",
+      "native_item_id": "src/decode/probe.rs:82:method:bulksketch::decode::probe::Probe::charge",
+      "source_line_span_sha256": "a4766a627fd1a59bd22ac83be024f5aa6bfed2a8a0a7091b60bf3024707ca288",
+      "challenge": "BulksketchBridge.TinyProbe.ActualTinyProbeCharge",
+      "theorem": "BulksketchBridge.TinyProbe.tiny_probe_charge",
+      "generated_declaration": "bulksketch.decode.probe.Probe.charge",
+      "generated_file": "bridge/Arithmetic/TinyProbeGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/TinyProbeGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "All original active probe stage prices, Rust charge result, and exact meter including terminal panic."
+    },
+    {
+      "label": "decode.probe.Probe.run_next [original source]",
+      "native_item_id": "src/decode/probe.rs:68:method:bulksketch::decode::probe::Probe::run_next",
+      "source_line_span_sha256": "3aebeb3f2a5fbeac9393b07e81852c1373cfde78700284d2fcc580f74a1575ae",
+      "challenge": "BulksketchBridge.TinyProbe.ActualTinyProbeRunNext",
+      "theorem": "BulksketchBridge.TinyProbe.tiny_probe_run_next",
+      "generated_declaration": "bulksketch.decode.probe.Probe.run_next",
+      "generated_file": "bridge/Arithmetic/TinyProbeGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/TinyProbeGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact paid original charged call and rejected charge with unchanged slices and probe frame."
+    },
+    {
+      "label": "decode.probe.Probe.run_charged [original source]",
+      "native_item_id": "src/decode/probe.rs:105:method:bulksketch::decode::probe::Probe::run_charged",
+      "source_line_span_sha256": "dc3029be7e49741945b3c722639585a127d6cb7b464e4fd2ec8feeeca1c6d070",
+      "challenge": "BulksketchBridge.TinyProbe.ActualTinyProbeRunCharged",
+      "theorem": "BulksketchBridge.TinyProbe.tiny_probe_run_charged",
+      "generated_declaration": "bulksketch.decode.probe.Probe.run_charged",
+      "generated_file": "bridge/Arithmetic/TinyProbeGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/TinyProbeGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "All four original charged stages, exact scratch and progress, canonicalization guard and panic under stage-local admission."
+    },
+    {
+      "label": "sketch.dispatch.run_probe [original source]",
+      "native_item_id": "src/sketch/dispatch.rs:223:function:bulksketch::sketch::dispatch::run_probe",
+      "source_line_span_sha256": "59bf2a360e9c499ea3b512bb62fb61f7fb7c3e0bb6fe898ca2f87031510134d7",
+      "challenge": "BulksketchBridge.TinyProbe.ActualRunProbeDispatch",
+      "theorem": "BulksketchBridge.TinyProbe.run_probe_dispatch",
+      "generated_declaration": "bulksketch.sketch.dispatch.run_probe",
+      "generated_file": "bridge/Arithmetic/TinyProbeGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/TinyProbeGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original backend dispatch for all source tags, including the reserved variant panic."
+    },
+    {
+      "label": "sketch.dispatch.DecodeExecution.completed_result [original source]",
+      "native_item_id": "src/sketch/dispatch.rs:171:method:bulksketch::sketch::dispatch::DecodeExecution < F >::completed_result",
+      "source_line_span_sha256": "096c1bed944698466ffacf0605a6cb1a4ff4ea4389aad4b7164653b50ccf7824",
+      "challenge": "BulksketchBridge.RowDispatch.ActualDispatchCompletedResult",
+      "theorem": "BulksketchBridge.RowDispatch.dispatch_completed_result",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.completed_result",
+      "generated_file": "bridge/Arithmetic/DispatchCompletedGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/DispatchCompletedGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original live-probe assertion, exact shared roots prefix, and actual completed-result delegation for all original row backends.",
+      "translator_variant": "checked-dispatch-completed-frozen-shared-v1"
+    },
+    {
+      "label": "decode.work.sum_costs [original source]",
+      "native_item_id": "src/decode/work.rs:313:function:bulksketch::decode::work::sum_costs",
+      "source_line_span_sha256": "d83718943b1fa0e74495c2ed79feea8ef20df652f8e23ea4d72143be23a791c5",
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeSumCosts",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_sum_costs",
+      "generated_declaration": "bulksketch.decode.work.sum_costs",
+      "generated_file": "bridge/Arithmetic/SumCostsGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/SumCostsGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "All original ordered charge prices, checked additions, first failure and exact result under scoped std slice fold semantics.",
+      "translator_variant": "checked-sum-costs-try-fold-v1"
+    },
+    {
+      "label": "decode.work.WorkScheduleV2.row_bound [original source]",
+      "native_item_id": "src/decode/work.rs:264:method:bulksketch::decode::work::WorkScheduleV2::row_bound",
+      "source_line_span_sha256": "27ad5166a12747661906680d97f1cfd66b27ad80a54f92de19380e6d3988e286",
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeV2RowBound",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_v2_row_bound",
+      "generated_declaration": "bulksketch.decode.work.WorkScheduleV2.row_bound",
+      "generated_file": "bridge/Arithmetic/RowWorkBudgetV2Generated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowWorkBudgetV2Generated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original V1 result, both checked probe reserves, price ordering and overflow under the explicit V1 sum callback."
+    },
+    {
+      "label": "SketchShape::bucket_count [original source]",
+      "native_item_id": "src/sketch/shape.rs:86:method:bulksketch::sketch::shape::SketchShape < F >::bucket_count",
+      "source_line_span_sha256": "ce98e77838faf62e43ff6edc8853f52d08c1cea05563ffca3103d50b0a1a2973",
+      "challenge": "BulksketchBridge.ShapePermission.ActualShapeBucketCount",
+      "theorem": "BulksketchBridge.ShapePermission.shape_bucket_count_refines",
+      "generated_declaration": "bulksketch.sketch.shape.SketchShape.bucket_count",
+      "generated_file": "bridge/Arithmetic/CandidateCompactGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/CandidateCompactGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "The original shape bucket count is the exact capacity slice length."
+    },
+    {
+      "label": "SketchShape::permits_id [original source]",
+      "native_item_id": "src/sketch/shape.rs:113:method:bulksketch::sketch::shape::SketchShape < F >::permits_id",
+      "source_line_span_sha256": "b5d3343ae8f022c9023cc5f6d53aeee6af529fcf5b924434f275e99a55dee5a6",
+      "challenge": "BulksketchBridge.ShapePermission.ActualShapePermitsId",
+      "theorem": "BulksketchBridge.ShapePermission.shape_permits_id_refines",
+      "generated_declaration": "bulksketch.sketch.shape.SketchShape.permits_id",
+      "generated_file": "bridge/Arithmetic/ShapePermissionGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/ShapePermissionGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "The original bounds guard short-circuits before modulo; every admitted bucket accepts exactly its own IDs."
     }
   ],
   "stateful_llbc_refinements": [
