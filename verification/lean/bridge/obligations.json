@@ -1788,6 +1788,106 @@
     {
       "challenge": "BulksketchBridge.RootDivide.ActualNativeTraceDivideHandoff",
       "theorem": "BulksketchBridge.RootDivide.native_trace_divide_handoff"
+    },
+    {
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeRootsBound",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_roots_bound"
+    },
+    {
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeV1RowBound",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_v1_row_bound"
+    },
+    {
+      "challenge": "BulksketchBridge.RowDispatch.ActualDecodeEnableV3",
+      "theorem": "BulksketchBridge.RowDispatch.decode_enable_v3_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RowDispatch.ActualDecodeStartDegrees",
+      "theorem": "BulksketchBridge.RowDispatch.decode_start_degrees_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RowDispatch.ActualDecodeVerificationCount",
+      "theorem": "BulksketchBridge.RowDispatch.decode_verification_count_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RowDispatch.ActualDecodeRejectUpper",
+      "theorem": "BulksketchBridge.RowDispatch.decode_reject_upper_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RowDispatch.ActualDecodeNextStage",
+      "theorem": "BulksketchBridge.RowDispatch.decode_next_stage_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RowDispatch.ActualDecodeRunNext",
+      "theorem": "BulksketchBridge.RowDispatch.decode_run_next_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RowDispatch.ActualProbeNextStage",
+      "theorem": "BulksketchBridge.RowDispatch.probe_next_stage_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RowDispatch.ActualProbeCount",
+      "theorem": "BulksketchBridge.RowDispatch.probe_count_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RowDispatch.ActualProbeReject",
+      "theorem": "BulksketchBridge.RowDispatch.probe_reject_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DefaultWireDifference.ActualDefaultWireDifference",
+      "theorem": "BulksketchBridge.DefaultWireDifference.default_wire_difference"
+    },
+    {
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeProperFactorTreeBudget",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_proper_factor_tree_budget"
+    },
+    {
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeRootNodePrices",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_root_node_prices"
+    },
+    {
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeRootLeafPrice",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_root_leaf_price"
+    },
+    {
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeV1RowBoundFromPrices",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_v1_row_bound_from_prices"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionFinish.ActualNativeFinishFromRankedChunks",
+      "theorem": "BulksketchBridge.ExecutionFinish.native_finish_from_ranked_chunks"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeRootPairChunk",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_root_pair_chunk"
+    },
+    {
+      "challenge": "BulksketchBridge.DefaultWireDifference.ActualDefaultWireDifferenceGuards",
+      "theorem": "BulksketchBridge.DefaultWireDifference.default_wire_difference_guards"
+    },
+    {
+      "challenge": "BulksketchBridge.DefaultWireDifference.ActualDefaultWireDifferenceBindings",
+      "theorem": "BulksketchBridge.DefaultWireDifference.default_wire_difference_bindings"
+    },
+    {
+      "challenge": "BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrConcretePortableAllDegrees",
+      "theorem": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_concrete_portable_all_degrees"
+    },
+    {
+      "challenge": "BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrConcretePclmulAllDegrees",
+      "theorem": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_concrete_pclmul_all_degrees"
+    },
+    {
+      "challenge": "BulksketchBridge.PublicationWrite.ActualPublicationWrite",
+      "theorem": "BulksketchBridge.PublicationWrite.write_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.PublicationWrite.ActualPublicationWriteRowRejects",
+      "theorem": "BulksketchBridge.PublicationWrite.write_invalid_row"
+    },
+    {
+      "challenge": "BulksketchBridge.PublicationWrite.ActualPublicationWriteDecodedRejects",
+      "theorem": "BulksketchBridge.PublicationWrite.write_invalid_decoded"
     }
   ],
   "refinements": [
@@ -4804,6 +4904,189 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original GF64 trait entry selects the original XMM seed loop in the production const mode."
+    },
+    {
+      "label": "WorkScheduleV1::roots_bound [original source]",
+      "native_item_id": "src/decode/work.rs:199:method:bulksketch::decode::work::WorkScheduleV1::roots_bound",
+      "source_line_span_sha256": "1b4678495fa63b29899c9999174f1ab058abbd1f3bebdbb40849505fb24aea2d",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_roots_bound",
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeRootsBound",
+      "generated_declaration": "bulksketch.decode.work.WorkScheduleV1.roots_bound",
+      "generated_file": "bridge/Arithmetic/RootWorkBudgetGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RootWorkBudgetGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact checked arithmetic returns the proper split-tree envelope for every admitted u16 root budget."
+    },
+    {
+      "label": "WorkScheduleV1::row_bound [original source]",
+      "native_item_id": "src/decode/work.rs:229:method:bulksketch::decode::work::WorkScheduleV1::row_bound",
+      "source_line_span_sha256": "144cb2986839efcd87397b4a9e3ff5a4bda8af89651d138169f1c66c40f1f7e5",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_v1_row_bound",
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeV1RowBound",
+      "generated_declaration": "bulksketch.decode.work.WorkScheduleV1.row_bound",
+      "generated_file": "bridge/Arithmetic/RowWorkBudgetGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowWorkBudgetGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original six-charge order, BM, root envelope and overflow handling, under the explicit ordered checked sum-cost fold contract."
+    },
+    {
+      "label": "DecodeExecution::enable_v3 [original source]",
+      "native_item_id": "src/sketch/dispatch.rs:129:method:bulksketch::sketch::dispatch::DecodeExecution < F >::enable_v3",
+      "source_line_span_sha256": "2b1148d1a41ee172b418fdb9007e8925195fdec2bf040f2f2585c52166831eb0",
+      "theorem": "BulksketchBridge.RowDispatch.decode_enable_v3_refines",
+      "challenge": "BulksketchBridge.RowDispatch.ActualDecodeEnableV3",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.enable_v3",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowDispatchGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original backend tag selection and returned frame under the typed backend dictionaries and native probe contract."
+    },
+    {
+      "label": "DecodeExecution::start_degrees [original source]",
+      "native_item_id": "src/sketch/dispatch.rs:140:method:bulksketch::sketch::dispatch::DecodeExecution < F >::start_degrees",
+      "source_line_span_sha256": "05f7a08dafb84208aa61a5b26f8cc11d1890aa5943bd3fd4fd4e5d0c9f16e9b3",
+      "theorem": "BulksketchBridge.RowDispatch.decode_start_degrees_refines",
+      "challenge": "BulksketchBridge.RowDispatch.ActualDecodeStartDegrees",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.start_degrees",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowDispatchGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original backend tag selection and returned frame under the typed backend dictionaries and native probe contract."
+    },
+    {
+      "label": "DecodeExecution::verification_count [original source]",
+      "native_item_id": "src/sketch/dispatch.rs:150:method:bulksketch::sketch::dispatch::DecodeExecution < F >::verification_count",
+      "source_line_span_sha256": "802cc70c36059a93907c80b0cb2877f953bc855111e15f5bffb70f7ace398e58",
+      "theorem": "BulksketchBridge.RowDispatch.decode_verification_count_refines",
+      "challenge": "BulksketchBridge.RowDispatch.ActualDecodeVerificationCount",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.verification_count",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowDispatchGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original backend tag selection and returned frame under the typed backend dictionaries and native probe contract."
+    },
+    {
+      "label": "DecodeExecution::reject_upper [original source]",
+      "native_item_id": "src/sketch/dispatch.rs:160:method:bulksketch::sketch::dispatch::DecodeExecution < F >::reject_upper",
+      "source_line_span_sha256": "a4f09deab9bacf19589a7b38d751df92c1ba3f7bafd17bc7ecfaa9b0d1d287ce",
+      "theorem": "BulksketchBridge.RowDispatch.decode_reject_upper_refines",
+      "challenge": "BulksketchBridge.RowDispatch.ActualDecodeRejectUpper",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.reject_upper",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowDispatchGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original backend tag selection and returned frame under the typed backend dictionaries and native probe contract."
+    },
+    {
+      "label": "DecodeExecution::next_stage [original source]",
+      "native_item_id": "src/sketch/dispatch.rs:188:method:bulksketch::sketch::dispatch::DecodeExecution < F >::next_stage",
+      "source_line_span_sha256": "26c1cd57161f26adecb9a824a46a582b6eaa366c431bdbdcc2c9c332c3c651cc",
+      "theorem": "BulksketchBridge.RowDispatch.decode_next_stage_refines",
+      "challenge": "BulksketchBridge.RowDispatch.ActualDecodeNextStage",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.next_stage",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowDispatchGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original backend tag selection and returned frame under the typed backend dictionaries and native probe contract."
+    },
+    {
+      "label": "DecodeExecution::run_next [original source]",
+      "native_item_id": "src/sketch/dispatch.rs:199:method:bulksketch::sketch::dispatch::DecodeExecution < F >::run_next",
+      "source_line_span_sha256": "bd0b06f34860291e86a6b83002ce98bcde308a5ea7c0c4ccca45d314dcb9b43f",
+      "theorem": "BulksketchBridge.RowDispatch.decode_run_next_refines",
+      "challenge": "BulksketchBridge.RowDispatch.ActualDecodeRunNext",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.run_next",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowDispatchGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original backend tag selection and returned frame under the typed backend dictionaries and native probe contract."
+    },
+    {
+      "label": "Probe::next_stage [original source]",
+      "native_item_id": "src/decode/probe.rs:47:method:bulksketch::decode::probe::Probe::next_stage",
+      "source_line_span_sha256": "204acdfb7ad83b479b328115aebb410f91fab04656ce1a9b3eade69997d7b9e9",
+      "theorem": "BulksketchBridge.RowDispatch.probe_next_stage_refines",
+      "challenge": "BulksketchBridge.RowDispatch.ActualProbeNextStage",
+      "generated_declaration": "bulksketch.decode.probe.Probe.next_stage",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowDispatchGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original tiny-probe metadata and fallback stage, including count reset on rejection."
+    },
+    {
+      "label": "Probe::count [original source]",
+      "native_item_id": "src/decode/probe.rs:50:method:bulksketch::decode::probe::Probe::count",
+      "source_line_span_sha256": "190b3741f0146d3cbe1a6d2bbafd286a72f479b381eb6133297920f0712ff15b",
+      "theorem": "BulksketchBridge.RowDispatch.probe_count_refines",
+      "challenge": "BulksketchBridge.RowDispatch.ActualProbeCount",
+      "generated_declaration": "bulksketch.decode.probe.Probe.impl.count",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowDispatchGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original tiny-probe metadata and fallback stage, including count reset on rejection."
+    },
+    {
+      "label": "Probe::reject [original source]",
+      "native_item_id": "src/decode/probe.rs:58:method:bulksketch::decode::probe::Probe::reject",
+      "source_line_span_sha256": "13d16e786be4b2d4feb3ee94f02627c9eb8961df268e69b024effec85973e464",
+      "theorem": "BulksketchBridge.RowDispatch.probe_reject_refines",
+      "challenge": "BulksketchBridge.RowDispatch.ActualProbeReject",
+      "generated_declaration": "bulksketch.decode.probe.Probe.reject",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowDispatchGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original tiny-probe metadata and fallback stage, including count reset on rejection."
+    },
+    {
+      "label": "BulkKernels::difference [original source]",
+      "native_item_id": "src/backend/contract.rs:101:trait_default:bulksketch::backend::contract::BulkKernels::difference",
+      "source_line_span_sha256": "1ee43cd71155c619e7b54e5b1cc6b0e596399b7d032490b6e4f1ddb98ff2fa94",
+      "theorem": "BulksketchBridge.DefaultWireDifference.default_wire_difference",
+      "challenge": "BulksketchBridge.DefaultWireDifference.ActualDefaultWireDifference",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.difference.default",
+      "generated_file": "bridge/Arithmetic/DefaultWireDifferenceGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/DefaultWireDifferenceGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original little-endian wire XOR and nonzero Boolean for admitted row sizes, with checked original nested iterator writeback."
+    },
+    {
+      "label": "Publication::write [original source]",
+      "native_item_id": "src/sketch/api.rs:259:method:bulksketch::sketch::api::Publication < 's >::write",
+      "source_line_span_sha256": "4da4ea063072677adca6c9b793cd928abb5949f771b5b4a3793860c2914c0adf",
+      "theorem": "BulksketchBridge.PublicationWrite.write_refines",
+      "challenge": "BulksketchBridge.PublicationWrite.ActualPublicationWrite",
+      "generated_declaration": "bulksketch.sketch.api.Publication.write",
+      "generated_file": "bridge/Arithmetic/PublicationWriteGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/PublicationWriteGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original admitted status, validation, optional zero prefix, exact decoded copies and metadata commit, with the original backward result frame.",
+      "translator_variant": "checked-publication-write-branches-v1"
     }
   ],
   "stateful_llbc_refinements": [

@@ -27,7 +27,7 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The bridge now has 195 original Aeneas generated-body refinements under
+The bridge now has 208 original Aeneas generated-body refinements under
 their recorded contracts. Five source-linked LLBC execution contracts are
 checked separately. The latest checkpoint covers the original root stage
 dispatcher, Dense div/rem, factor division, affine enumeration
@@ -73,8 +73,12 @@ locator-product and charge premises. Global traversal
 induction and remaining native implementation contracts are open.
 The checked row-local normalizer returns each row's exact sorted,
 distinct, nonzero candidate slice under the admitted scratch bounds.
-The publication constructor, first-error latch and finalizer return
-the exact result storage and report prefixes. The original AVX scale,
+The original row dispatch preserves its backend tag and exact result
+frame. The default wire difference checks every little-endian word
+and the original guard results. The publication constructor, ordered
+write, error latch and finalizer return exact storage and report views.
+The original root budget bounds every proper binary factor tree, and
+the V1 row budget uses the recorded checked sum-cost fold contract. The original AVX scale,
 square and block update have checked finite-heap effects under the
 admitted separated byte views.
 

@@ -1,0 +1,194 @@
+{
+  "status": "passed",
+  "compiler_binary_sha256": "47a448fc06cc1e150329a82cf278543ead61c12b7812fdb3836e1f08dcb014ba",
+  "runs": {
+    "checked": {
+      "command": [
+        "env",
+        "BULKSKETCH_PUBLICATION_WRITE_JOIN=1",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-publication-write-next/compiler/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/checked",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-closure/publication/write/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "1320a5882963b137fd70d2ffd64c1f164dbdb37db7e9737dfe36bdd2b09ffa26",
+      "log_sha256": "83ee1714e40fc2ccb47af7b22efd569131a061019ea0efa8c383e3918ff61619",
+      "output_sha256": {
+        "Funs.lean": "eaa265277ccf2d24946d463f800a38d6327b703a1ca5c3fcb72b9ebbfc141a1b",
+        "FunsExternal_Template.lean": "ab2175406e0f8312c98e665fb47d071a9715f011144ca4a81ccc99435992f3cd",
+        "Types.lean": "840a71521c68ecccaf8a9400bbb9ee9b0bbabf708259261f621a9d9493909cbc",
+        "TypesExternal_Template.lean": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d"
+      },
+      "diagnostic": null
+    },
+    "strict": {
+      "command": [
+        "env",
+        "BULKSKETCH_PUBLICATION_WRITE_JOIN=1",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-publication-write-next/compiler/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-strict-joins",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/strict",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-closure/publication/write/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "1320a5882963b137fd70d2ffd64c1f164dbdb37db7e9737dfe36bdd2b09ffa26",
+      "log_sha256": "030d4b6cbd598e0691e3b9404e2f636521ba63d6da2ea53ef1b0a4f5936645c2",
+      "output_sha256": {
+        "Funs.lean": "eaa265277ccf2d24946d463f800a38d6327b703a1ca5c3fcb72b9ebbfc141a1b",
+        "FunsExternal_Template.lean": "ab2175406e0f8312c98e665fb47d071a9715f011144ca4a81ccc99435992f3cd",
+        "Types.lean": "840a71521c68ecccaf8a9400bbb9ee9b0bbabf708259261f621a9d9493909cbc",
+        "TypesExternal_Template.lean": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d"
+      },
+      "diagnostic": null
+    },
+    "stock": {
+      "command": [
+        "env",
+        "BULKSKETCH_PUBLICATION_WRITE_JOIN=1",
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/stock",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-closure/publication/write/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "1320a5882963b137fd70d2ffd64c1f164dbdb37db7e9737dfe36bdd2b09ffa26",
+      "log_sha256": "c851ef37b93fbb96e8f95ec04672da1d3b5b5df0b730c0c773400f96c8b6e096",
+      "output_sha256": {
+        "Funs.lean": "c13d2bf976d32adc107a71664367afdb1ab35cd7b9ba249cfa937b2b0fa71e6b",
+        "FunsExternal_Template.lean": "ab2175406e0f8312c98e665fb47d071a9715f011144ca4a81ccc99435992f3cd",
+        "Types.lean": "840a71521c68ecccaf8a9400bbb9ee9b0bbabf708259261f621a9d9493909cbc",
+        "TypesExternal_Template.lean": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d"
+      },
+      "diagnostic": "Could not match the contexts"
+    },
+    "disabled": {
+      "command": [
+        "env",
+        "BULKSKETCH_PUBLICATION_WRITE_JOIN=0",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-publication-write-next/compiler/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/disabled",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-closure/publication/write/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "1320a5882963b137fd70d2ffd64c1f164dbdb37db7e9737dfe36bdd2b09ffa26",
+      "log_sha256": "c295d4065f8675959414b0c6d98199069b3d03bcf63a4ac9068d62a63bfc33b9",
+      "output_sha256": {
+        "Funs.lean": "c13d2bf976d32adc107a71664367afdb1ab35cd7b9ba249cfa937b2b0fa71e6b",
+        "FunsExternal_Template.lean": "ab2175406e0f8312c98e665fb47d071a9715f011144ca4a81ccc99435992f3cd",
+        "Types.lean": "840a71521c68ecccaf8a9400bbb9ee9b0bbabf708259261f621a9d9493909cbc",
+        "TypesExternal_Template.lean": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d"
+      },
+      "diagnostic": "Could not match the contexts"
+    },
+    "unchecked": {
+      "command": [
+        "env",
+        "BULKSKETCH_PUBLICATION_WRITE_JOIN=1",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-publication-write-next/compiler/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/unchecked",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-closure/publication/write/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "1320a5882963b137fd70d2ffd64c1f164dbdb37db7e9737dfe36bdd2b09ffa26",
+      "log_sha256": "26d7c70ccf7c23c6c98666a49b2cc6a3f4ce1a34cb512701590fe2bd68cb0c67",
+      "output_sha256": {
+        "Funs.lean": "973d9037cbbd2db9937bed8932d6e25d26487dcaed835706ec85670da420f681",
+        "FunsExternal_Template.lean": "2d77cf4334c3dc618f26c655c27a3e8e90f6b7366641cf29e79300b8ee0eecdc",
+        "Types.lean": "840a71521c68ecccaf8a9400bbb9ee9b0bbabf708259261f621a9d9493909cbc",
+        "TypesExternal_Template.lean": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d"
+      },
+      "diagnostic": "symbolic and Rust borrow checks must be enabled"
+    },
+    "wrong-metadata": {
+      "command": [
+        "env",
+        "BULKSKETCH_PUBLICATION_WRITE_JOIN=1",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-publication-write-next/compiler/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-strict-joins",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/wrong-metadata",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/wrong-metadata.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "fb4b296a41a4e902a4f6946920d73a6e2c6017e79289222c3958e80c4e0a0e73",
+      "log_sha256": "e30cbb06382bdb4d1671e68298c913dfff7e54301aaef9ab6ebb79b041b06331",
+      "output_sha256": {
+        "Funs.lean": "379163003d08dc866b26bc011edb7055b969148f5bccef724f165f6ef039cf3c",
+        "FunsExternal_Template.lean": "a6a1f242c4087116301165d9e1df7df17746992b12a16b7b7d18801964adda8e",
+        "Types.lean": "f31ca792fcec7208385dccfdce3fbe50aca93b2fac2575f129db1042070d3999",
+        "TypesExternal_Template.lean": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d"
+      },
+      "diagnostic": "original length read differs"
+    },
+    "unrelated-frame": {
+      "command": [
+        "env",
+        "BULKSKETCH_PUBLICATION_WRITE_JOIN=1",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-publication-write-next/compiler/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/unrelated-frame",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-closure/publication/frame/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "4cbc93f3062404e91b4be1c91420a31d814beb1992aa6d5bb8eeb2c9f77d94e8",
+      "log_sha256": "e503c272751d21de84a68eb999ea0535c025d21eda0ea25f185ec34d95c18c76",
+      "output_sha256": {
+        "Funs.lean": "3fdb9756cc2ccebc58bc5536d29e46921bb4fe9646575c9d9b96fe026d2217df",
+        "Types.lean": "08bce9f7a297b6d6b6f22643809e431a493d13d60e22120f18bcac1f2c54da67"
+      },
+      "diagnostic": null
+    }
+  }
+}

@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "9971a92de88a8adb7f35d6744d0283a5dc020d2dc8b1cb442c42525ec81950f8",
+    "bridge/BulksketchBridge/Audit.lean": "3d938099c6d3d5ad7978f14498b660f519e23cbe63cbbe4cbe1a07303927f955",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,9 +13,9 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "2554c0454a37a6324bd410719f4a82a3f95c9ff315836964f4628ae5a5616a90",
-    "audit/frozen-inputs.json": "354d04adbf8a5c06b93a70ab952f01dcd23366d8888cde54e575966b3e721ac7",
-    "bridge/BulksketchBridge.lean": "ef8f2b1a88f68e3b0c96f3b825d76d19f8950fdb798b37a9a4e4080146e5d762",
+    "scripts/verify_bridge.py": "15acf4643715fc065fe5cf459fe27844a1ab21bd323e7a14486c91947fb6a989",
+    "audit/frozen-inputs.json": "8b31294cd93e63f4fedb1f7f544548f00d8dce61d803898f50fb10a5b135293d",
+    "bridge/BulksketchBridge.lean": "5dbd9b1fd933cd65fc227225c70ec885fecc1b5eaa061ec44ae76ecd4d5eb840",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "58542f43ee0f8746268f1b752dea2bcb7fd815374418b047e1e22751447be4aa",
-    "bridge/obligations.json": "15c224b4c12be9d3d66cf6b30453830729014e4ee87d6cc5264803a61d60f1b2",
+    "bridge/source-linkage.json": "c0cf140225a0e76a97df5047f3101be19365974fe590f727dd9123f33527a517",
+    "bridge/obligations.json": "9b6a9ba7d49aab7e622fee2d4680343a1fe0a3c0d5e746f9a6504db611b9f0a0",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "b153c6fd45bd0bac8772bf51e115003a38f1979f4eb698fdcffd3cdf2e6a8aaa",
+    "scripts/check_projection_fixtures.py": "2317cf3bb8719e7b9dcdac3dfe6a40ded4b5c6f6a583d683a435b4347933f9e7",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "2d41b8da0bd4383b52315061eafb30dc37dd57d0db5af2ea9d45209462441797",
+    "README.md": "2ba70c946295aa5328d8640f26e66044a7d4ec75ffc2f1352998a87262fdd931",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "ff1372fe30b3c0e022777f4b5e6141d2e21a3c94f755da2b5f9dcfe6980253ec",
+    "audit/coverage.json": "f5d207f7f40324ca2884e2b490d6129f1c64050d704ecc3824a16dff2b061fbf",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "b40fc22859385dda15123e0aeb142ef786b03aeef7fdd3d5231a23e5f1529a20",
-    "audit/native-root-run-checkpoint.json": "f3132732b19af9d7f124032a8f0bf8002360c9c993c5c4c4d0c77fe232828228",
+    "NATIVE_ROOT_RUN.md": "b535491215e6200e4b3244424e5f64c06052059d37e8ce78abbba189144201ae",
+    "audit/native-root-run-checkpoint.json": "f5d59fb1b2cfb3743152fe056db338acbd1fe7b61f2cf74a73dcaf4b14529aa6",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -2003,7 +2003,89 @@
     "extraction/pclmul-insert/charon.log": "c2ec0d1a4f72f257467779dfb6b6000d187d0d27db5e90c15afdbfc5b7b2793a",
     "extraction/pclmul-insert/project.py": "99d7c5d15ceaab41a3683910045574e4aa206437fa1fc32614326f6346248352",
     "extraction/pclmul-insert/receipt.json": "138b40e6591c62cda6e8245a8f1140cee04c6d8d7650d5d1946ce3231f04c06d",
-    "extraction/pclmul-insert/replay.log": "57f278f3ccbdaac976edcce1f395ccd47750d76968bfeb9a4c56b643cea178f2"
+    "extraction/pclmul-insert/replay.log": "57f278f3ccbdaac976edcce1f395ccd47750d76968bfeb9a4c56b643cea178f2",
+    "bridge/Arithmetic/DefaultWireDifferenceDictionariesGenerated.lean": "1dc3b41534a58267d311f50e3994b3b761996afb7a929e5e7653bb2a9ba5f89b",
+    "bridge/Arithmetic/DefaultWireDifferenceGenerated.lean": "b113f33f3cf0bc938c19c89bbc33f1bb7601d70615ed0ae7c96be8dc364ff133",
+    "bridge/Arithmetic/DefaultWireDifferenceRuntime.lean": "c6bea85f5144425a63d52af417ce72b7a62882e6a33a3389e7d3b1912cfee070",
+    "bridge/Arithmetic/PublicationWriteGenerated.lean": "f53dd46ec6bd2f53e3429ea0dbaff7f91f06b33aa957aca075b831f4c910dab8",
+    "bridge/Arithmetic/PublicationWriteRuntime.lean": "cf47db8de2d4c318820536334cad1cb81d0c42dff72c9f1ddaaf180754b24781",
+    "bridge/Arithmetic/RootWorkBudgetGenerated.lean": "a2066ab753bb2879f0bc24cc63b2c9082ecbd0b0037a193cb1579a41e3bf2222",
+    "bridge/Arithmetic/RowDispatchGenerated.lean": "de60227771f7750d386c272b845c5ca1e7717daa74267f313e0130141553755b",
+    "bridge/Arithmetic/RowWorkBudgetGenerated.lean": "82614189a63339bd31de0de5ba36e9849cd09cc582ec0765fc3633f56ce11178",
+    "bridge/BulksketchBridge/ConcreteRebuiltDictionaries.lean": "a9ef20385b92be9c03dfffd83b022126d4f0a8b2e73e85981af890ae760bb2ab",
+    "bridge/BulksketchBridge/DefaultWireDifference.lean": "fe6d3bc70bc0f2ff26ffbf525e452b1fd55fde5d23177635b524abbeb09da1ba",
+    "bridge/BulksketchBridge/DefaultWireDifferenceDictionaries.lean": "2ac81984bdcda41cf7090fb0949014492b5c7cd4e9b5eac4d43d8951bae0950c",
+    "bridge/BulksketchBridge/NativeRootChunks.lean": "dde97aa6535b583676e47f4163b88c4a6339f5b7ae0f23c2445e22180dfd08eb",
+    "bridge/BulksketchBridge/PublicationWrite.lean": "950ed310efb4d2984e9a6eef111ec49f60b9dceefaac9ae06204a82055f73562",
+    "bridge/BulksketchBridge/PublicationWriteDecoded.lean": "5691ff041ad12b6e159713608fad715dd36252bdae2bbbb67043ed6e38dbf8bc",
+    "bridge/BulksketchBridge/PublicationWriteValidation.lean": "f12bccf95e045248676eeb8887b374554d1cbb05f08331e9bf3940d1b0f81e30",
+    "bridge/BulksketchBridge/RankedExecutionChunks.lean": "6ce93d37cb2bbcb6deb65faa2a490735fa381a896e15e15295a0ecf3543316af",
+    "bridge/BulksketchBridge/RootWorkBudgetMath.lean": "f2180008b7b780ac9de419a9581824e01a5a14dd345e71b4cb1c08b9e1234e68",
+    "bridge/BulksketchBridge/RootWorkBudgetNative.lean": "12dc904ad56828f8ebaefa0a0a4b1404400281a902142b1a0c2369756ccac85e",
+    "bridge/BulksketchBridge/RowDispatch.lean": "41cba7fa172fbb207e0c7c7c397dae7408bf3cd0bd0ab1de0ba1cb978df70d4f",
+    "bridge/BulksketchBridge/RowWorkBudgetV1.lean": "39485f0f7e1ace9781222a645a903fd52751421781de9b3f0661b56e63b76ade",
+    "extraction/default-wire-difference/default/Arithmetic/Funs.lean": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739",
+    "extraction/default-wire-difference/default/Arithmetic/FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+    "extraction/default-wire-difference/default/Arithmetic/Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+    "extraction/default-wire-difference/default/aeneas.log": "ec8664f4b7b8ea0f82c5f1881e7cb47f57247795bc76f7fc5561ad0927f7c422",
+    "extraction/default-wire-difference/default/arithmetic.llbc": "b706608a5e358c135fa7963617285964977d808c154db31d9993ef1016800345",
+    "extraction/default-wire-difference/default/charon.log": "1cb01f89c9f311451eedae9abf9ca0bc605dd175b2402b94370a3de5e4198f93",
+    "extraction/default-wire-difference/default/replay.log": "6589076f308703bc0bc3a7b06750ca8f73fd21bd4f4f1d5cd87a3407bdab1cbe",
+    "extraction/default-wire-difference/dictionaries/Arithmetic/Funs.lean": "a7bf2e963f6a2103022ff05f7a3c54368df4d3d83749eb684e61253bcc0aa0fc",
+    "extraction/default-wire-difference/dictionaries/Arithmetic/FunsExternal_Template.lean": "476e52c3f2bc81ea43bbdb061b56d4dfdbae4cf61b2df3a9ab9ead110ff5fc77",
+    "extraction/default-wire-difference/dictionaries/Arithmetic/Types.lean": "1ae7eb1ef058ee71c66565e90e0709754e402e003138ccbd46f10f9d011160b7",
+    "extraction/default-wire-difference/dictionaries/Arithmetic/TypesExternal_Template.lean": "a1e7a1d84b947daa18ecec5a47226ab87de975dc5e2a6ca2f99059d1e76d5d82",
+    "extraction/default-wire-difference/dictionaries/aeneas.log": "b641ad9f5efff5eb5dbdab3484dc1cd96c7b553b93b4f1d90b371e6260acd58b",
+    "extraction/default-wire-difference/dictionaries/arithmetic.llbc": "85e42f39b074415b2b4c6d63c2b66d9088f00faa4eb8b080d0e888fb905eceb7",
+    "extraction/default-wire-difference/dictionaries/charon.log": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828",
+    "extraction/default-wire-difference/dictionaries/replay.log": "47e9b5b3fc09c923b10039f41fbf2c94e3715002885eb1b5ef7c57755d585bb0",
+    "extraction/default-wire-difference/project.py": "39e72403fe29a3ed65ce43988b3aa2649f4d5ec5bac71c531f239cc07a111c0a",
+    "extraction/default-wire-difference/receipt.json": "4821fa95b6e36406143db23a141bff049a1d487ef73624fcbc8b270000990619",
+    "extraction/publication-write/Arithmetic/Funs.lean": "eaa265277ccf2d24946d463f800a38d6327b703a1ca5c3fcb72b9ebbfc141a1b",
+    "extraction/publication-write/Arithmetic/FunsExternal_Template.lean": "ab2175406e0f8312c98e665fb47d071a9715f011144ca4a81ccc99435992f3cd",
+    "extraction/publication-write/Arithmetic/Types.lean": "840a71521c68ecccaf8a9400bbb9ee9b0bbabf708259261f621a9d9493909cbc",
+    "extraction/publication-write/Arithmetic/TypesExternal_Template.lean": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d",
+    "extraction/publication-write/README.md": "1c57ba66ad6102657be1a0ce0c76e1a6389c6575e6dbfb29e62417ebe3c13709",
+    "extraction/publication-write/arithmetic.llbc": "1320a5882963b137fd70d2ffd64c1f164dbdb37db7e9737dfe36bdd2b09ffa26",
+    "extraction/publication-write/charon.log": "c2ec0d1a4f72f257467779dfb6b6000d187d0d27db5e90c15afdbfc5b7b2793a",
+    "extraction/publication-write/checked-publication-write-branches.patch": "d3674c545b1960ff86c0a738254e072085656f1369680eb286173105ccca979c",
+    "extraction/publication-write/checked.log": "83ee1714e40fc2ccb47af7b22efd569131a061019ea0efa8c383e3918ff61619",
+    "extraction/publication-write/controls.json": "c61731dbfeefb52fe39e0449d59571438848ed353a42788d56edab2e3a0d15ff",
+    "extraction/publication-write/disabled.log": "c295d4065f8675959414b0c6d98199069b3d03bcf63a4ac9068d62a63bfc33b9",
+    "extraction/publication-write/project.py": "a9ca94a4d10cb3a7ef11f5dc1e6437a9c34349379071b5ac6900add4f0990683",
+    "extraction/publication-write/receipt.json": "ce044da3a9ceda065c393281258a9a111795f57251a8ef1923aa3e716c7e584e",
+    "extraction/publication-write/stock.log": "c851ef37b93fbb96e8f95ec04672da1d3b5b5df0b730c0c773400f96c8b6e096",
+    "extraction/publication-write/strict.log": "030d4b6cbd598e0691e3b9404e2f636521ba63d6da2ea53ef1b0a4f5936645c2",
+    "extraction/publication-write/unchecked.log": "26d7c70ccf7c23c6c98666a49b2cc6a3f4ce1a34cb512701590fe2bd68cb0c67",
+    "extraction/publication-write/unrelated-frame.log": "e503c272751d21de84a68eb999ea0535c025d21eda0ea25f185ec34d95c18c76",
+    "extraction/publication-write/wrong-metadata.log": "e30cbb06382bdb4d1671e68298c913dfff7e54301aaef9ab6ebb79b041b06331",
+    "extraction/root-work-budget/Arithmetic/Funs.lean": "01914c65130d040f4a1000e53020a3131d023bba9739e49440edc6316135b3a4",
+    "extraction/root-work-budget/Arithmetic/FunsExternal_Template.lean": "d17c30d5aab6c1a7fe4203e28f267e4e1f2db032a95b3edcb759e9445e6e1e89",
+    "extraction/root-work-budget/Arithmetic/Types.lean": "b70ef8f42fe271208359552c5aaacb565969d1f22527cd7d2f9cb839e62da4e3",
+    "extraction/root-work-budget/README.md": "f1477a4148406800513c19aa01f002096f556d12f0fce3e2dc8e3d5917079c0c",
+    "extraction/root-work-budget/aeneas.log": "2d15bb08381b7911ddefb13a7a19c95744a648783624f68730a7cac88c48791c",
+    "extraction/root-work-budget/arithmetic.llbc": "f447eaf390901e58b5aa360e511a71a3eeeaca9b87243a0c41ed726287d3e548",
+    "extraction/root-work-budget/charon.log": "a963df76826198ba2c474cbdfa4c5992bb5cb167de99ecd441b0fe146f4691bc",
+    "extraction/root-work-budget/project.py": "6bde90186567dc75a93fc9aa06a181ca388e9d08c4add6ca7e7aace94c229c7e",
+    "extraction/root-work-budget/receipt.json": "e0b0c3cbc21d7babdb233c5ca98b6ddbf80fe3307de1a2a93b1ebf83a7da527a",
+    "extraction/row-dispatch/Arithmetic/Funs.lean": "62dcdfc4e66f5fd620dac9514ac26b78bf7ac92e1ecbf49278c58c398f5a784f",
+    "extraction/row-dispatch/Arithmetic/FunsExternal_Template.lean": "afde1bee08c948de30bacac28a034eee8b72f0016950b3bbf0cd47719cf36d4a",
+    "extraction/row-dispatch/Arithmetic/Types.lean": "63f2cedcf5f938290576d2df5cb2b2dab3760bfeb1d3a8ff06c5976572046a80",
+    "extraction/row-dispatch/arithmetic.llbc": "85423fa09fe1b13478c9fae7ffc187be6a6b9fea73386ea088bac89d9f8376eb",
+    "extraction/row-dispatch/charon.log": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828",
+    "extraction/row-dispatch/project.py": "754154bd822db745ca3e6a6bb52a169936e93b0ab0bab51011df2509589d7c66",
+    "extraction/row-dispatch/receipt.json": "f1a872e631b69e4055a93c5bf6fa4e02ecf3eb1980b8f406404fe9aa50b5f447",
+    "extraction/row-dispatch/replay.log": "43d10962928f9359c12e789ab48ec973fd0cba308842b1f815570609b5d8c9fc",
+    "extraction/row-dispatch/stock.log": "c60825e508dee617f2c9b300fb369e48fa2cfd0d7a0a9c5e4595cddef5841a5f",
+    "extraction/row-work-budget-v1/Arithmetic/Funs.lean": "d7c2c37fb260538b2c172e315aacd2f1ca51bc9b4321bb132451be35cc46c609",
+    "extraction/row-work-budget-v1/Arithmetic/FunsExternal_Template.lean": "4ba1e326c0a0a045c18a14003ed5f299361ab74ab40c1d083dba3a5c1e292e7a",
+    "extraction/row-work-budget-v1/Arithmetic/Types.lean": "d65276807397c03492f8fd84452095cae4beac9f959c9d96ba947d11a2f994d9",
+    "extraction/row-work-budget-v1/README.md": "ecad6289cfd27bbd611011a7e5ea160426698d80caa83b83690546b36328d119",
+    "extraction/row-work-budget-v1/aeneas.log": "683d2bfd2d4d73646880ea2ca0fb785e72e95d6df77dffdac92c39a851b5695d",
+    "extraction/row-work-budget-v1/arithmetic.llbc": "b10f2f54d4a554f5eef15f2dbc67a862873f2bde5dbc2039be172afcc6a5fb47",
+    "extraction/row-work-budget-v1/charon.log": "c2ec0d1a4f72f257467779dfb6b6000d187d0d27db5e90c15afdbfc5b7b2793a",
+    "extraction/row-work-budget-v1/project.py": "494c0e184adfaeaceb23e2b2d5cc34446a4a59f527a7a724f441ecd74283e3ce",
+    "extraction/row-work-budget-v1/receipt.json": "512075c890c807e163873c2569b1bd302a209e92e350e513c154483e7ca67bb5"
   },
   "reviewed_policy_revisions": [
     {
@@ -15027,7 +15109,483 @@
       "new_sha256": "b153c6fd45bd0bac8772bf51e115003a38f1979f4eb698fdcffd3cdf2e6a8aaa",
       "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
       "old_sha256": "44a7f864a8fcb1c495afbded3d4c6d0fefe1676d967f521cf4dee236341f5b59"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "b535491215e6200e4b3244424e5f64c06052059d37e8ce78abbba189144201ae",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "b40fc22859385dda15123e0aeb142ef786b03aeef7fdd3d5231a23e5f1529a20"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "2ba70c946295aa5328d8640f26e66044a7d4ec75ffc2f1352998a87262fdd931",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "2d41b8da0bd4383b52315061eafb30dc37dd57d0db5af2ea9d45209462441797"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "f5d207f7f40324ca2884e2b490d6129f1c64050d704ecc3824a16dff2b061fbf",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "ff1372fe30b3c0e022777f4b5e6141d2e21a3c94f755da2b5f9dcfe6980253ec"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "8b31294cd93e63f4fedb1f7f544548f00d8dce61d803898f50fb10a5b135293d",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "354d04adbf8a5c06b93a70ab952f01dcd23366d8888cde54e575966b3e721ac7"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "f5d59fb1b2cfb3743152fe056db338acbd1fe7b61f2cf74a73dcaf4b14529aa6",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "f3132732b19af9d7f124032a8f0bf8002360c9c993c5c4c4d0c77fe232828228"
+    },
+    {
+      "path": "bridge/Arithmetic/DefaultWireDifferenceDictionariesGenerated.lean",
+      "new_sha256": "1dc3b41534a58267d311f50e3994b3b761996afb7a929e5e7653bb2a9ba5f89b",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/Arithmetic/DefaultWireDifferenceGenerated.lean",
+      "new_sha256": "b113f33f3cf0bc938c19c89bbc33f1bb7601d70615ed0ae7c96be8dc364ff133",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/Arithmetic/DefaultWireDifferenceRuntime.lean",
+      "new_sha256": "c6bea85f5144425a63d52af417ce72b7a62882e6a33a3389e7d3b1912cfee070",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/Arithmetic/PublicationWriteGenerated.lean",
+      "new_sha256": "f53dd46ec6bd2f53e3429ea0dbaff7f91f06b33aa957aca075b831f4c910dab8",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/Arithmetic/PublicationWriteRuntime.lean",
+      "new_sha256": "cf47db8de2d4c318820536334cad1cb81d0c42dff72c9f1ddaaf180754b24781",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/Arithmetic/RootWorkBudgetGenerated.lean",
+      "new_sha256": "a2066ab753bb2879f0bc24cc63b2c9082ecbd0b0037a193cb1579a41e3bf2222",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/Arithmetic/RowDispatchGenerated.lean",
+      "new_sha256": "de60227771f7750d386c272b845c5ca1e7717daa74267f313e0130141553755b",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/Arithmetic/RowWorkBudgetGenerated.lean",
+      "new_sha256": "82614189a63339bd31de0de5ba36e9849cd09cc582ec0765fc3633f56ce11178",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "5dbd9b1fd933cd65fc227225c70ec885fecc1b5eaa061ec44ae76ecd4d5eb840",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "ef8f2b1a88f68e3b0c96f3b825d76d19f8950fdb798b37a9a4e4080146e5d762"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "3d938099c6d3d5ad7978f14498b660f519e23cbe63cbbe4cbe1a07303927f955",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "9971a92de88a8adb7f35d6744d0283a5dc020d2dc8b1cb442c42525ec81950f8"
+    },
+    {
+      "path": "bridge/BulksketchBridge/ConcreteRebuiltDictionaries.lean",
+      "new_sha256": "a9ef20385b92be9c03dfffd83b022126d4f0a8b2e73e85981af890ae760bb2ab",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DefaultWireDifference.lean",
+      "new_sha256": "fe6d3bc70bc0f2ff26ffbf525e452b1fd55fde5d23177635b524abbeb09da1ba",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DefaultWireDifferenceDictionaries.lean",
+      "new_sha256": "2ac81984bdcda41cf7090fb0949014492b5c7cd4e9b5eac4d43d8951bae0950c",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeRootChunks.lean",
+      "new_sha256": "dde97aa6535b583676e47f4163b88c4a6339f5b7ae0f23c2445e22180dfd08eb",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PublicationWrite.lean",
+      "new_sha256": "950ed310efb4d2984e9a6eef111ec49f60b9dceefaac9ae06204a82055f73562",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PublicationWriteDecoded.lean",
+      "new_sha256": "5691ff041ad12b6e159713608fad715dd36252bdae2bbbb67043ed6e38dbf8bc",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PublicationWriteValidation.lean",
+      "new_sha256": "f12bccf95e045248676eeb8887b374554d1cbb05f08331e9bf3940d1b0f81e30",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RankedExecutionChunks.lean",
+      "new_sha256": "6ce93d37cb2bbcb6deb65faa2a490735fa381a896e15e15295a0ecf3543316af",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootWorkBudgetMath.lean",
+      "new_sha256": "f2180008b7b780ac9de419a9581824e01a5a14dd345e71b4cb1c08b9e1234e68",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootWorkBudgetNative.lean",
+      "new_sha256": "12dc904ad56828f8ebaefa0a0a4b1404400281a902142b1a0c2369756ccac85e",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RowDispatch.lean",
+      "new_sha256": "41cba7fa172fbb207e0c7c7c397dae7408bf3cd0bd0ab1de0ba1cb978df70d4f",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RowWorkBudgetV1.lean",
+      "new_sha256": "39485f0f7e1ace9781222a645a903fd52751421781de9b3f0661b56e63b76ade",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "9b6a9ba7d49aab7e622fee2d4680343a1fe0a3c0d5e746f9a6504db611b9f0a0",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "15c224b4c12be9d3d66cf6b30453830729014e4ee87d6cc5264803a61d60f1b2"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "c0cf140225a0e76a97df5047f3101be19365974fe590f727dd9123f33527a517",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "58542f43ee0f8746268f1b752dea2bcb7fd815374418b047e1e22751447be4aa"
+    },
+    {
+      "path": "extraction/default-wire-difference/default/Arithmetic/Funs.lean",
+      "new_sha256": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/default-wire-difference/default/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/default-wire-difference/default/Arithmetic/Types.lean",
+      "new_sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/default-wire-difference/default/aeneas.log",
+      "new_sha256": "ec8664f4b7b8ea0f82c5f1881e7cb47f57247795bc76f7fc5561ad0927f7c422",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/default-wire-difference/default/arithmetic.llbc",
+      "new_sha256": "b706608a5e358c135fa7963617285964977d808c154db31d9993ef1016800345",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/default-wire-difference/default/charon.log",
+      "new_sha256": "1cb01f89c9f311451eedae9abf9ca0bc605dd175b2402b94370a3de5e4198f93",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/default-wire-difference/default/replay.log",
+      "new_sha256": "6589076f308703bc0bc3a7b06750ca8f73fd21bd4f4f1d5cd87a3407bdab1cbe",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/default-wire-difference/dictionaries/Arithmetic/Funs.lean",
+      "new_sha256": "a7bf2e963f6a2103022ff05f7a3c54368df4d3d83749eb684e61253bcc0aa0fc",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/default-wire-difference/dictionaries/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "476e52c3f2bc81ea43bbdb061b56d4dfdbae4cf61b2df3a9ab9ead110ff5fc77",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/default-wire-difference/dictionaries/Arithmetic/Types.lean",
+      "new_sha256": "1ae7eb1ef058ee71c66565e90e0709754e402e003138ccbd46f10f9d011160b7",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/default-wire-difference/dictionaries/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "a1e7a1d84b947daa18ecec5a47226ab87de975dc5e2a6ca2f99059d1e76d5d82",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/default-wire-difference/dictionaries/aeneas.log",
+      "new_sha256": "b641ad9f5efff5eb5dbdab3484dc1cd96c7b553b93b4f1d90b371e6260acd58b",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/default-wire-difference/dictionaries/arithmetic.llbc",
+      "new_sha256": "85e42f39b074415b2b4c6d63c2b66d9088f00faa4eb8b080d0e888fb905eceb7",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/default-wire-difference/dictionaries/charon.log",
+      "new_sha256": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/default-wire-difference/dictionaries/replay.log",
+      "new_sha256": "47e9b5b3fc09c923b10039f41fbf2c94e3715002885eb1b5ef7c57755d585bb0",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/default-wire-difference/project.py",
+      "new_sha256": "39e72403fe29a3ed65ce43988b3aa2649f4d5ec5bac71c531f239cc07a111c0a",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/default-wire-difference/receipt.json",
+      "new_sha256": "4821fa95b6e36406143db23a141bff049a1d487ef73624fcbc8b270000990619",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/Arithmetic/Funs.lean",
+      "new_sha256": "eaa265277ccf2d24946d463f800a38d6327b703a1ca5c3fcb72b9ebbfc141a1b",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "ab2175406e0f8312c98e665fb47d071a9715f011144ca4a81ccc99435992f3cd",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/Arithmetic/Types.lean",
+      "new_sha256": "840a71521c68ecccaf8a9400bbb9ee9b0bbabf708259261f621a9d9493909cbc",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/README.md",
+      "new_sha256": "1c57ba66ad6102657be1a0ce0c76e1a6389c6575e6dbfb29e62417ebe3c13709",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/arithmetic.llbc",
+      "new_sha256": "1320a5882963b137fd70d2ffd64c1f164dbdb37db7e9737dfe36bdd2b09ffa26",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/charon.log",
+      "new_sha256": "c2ec0d1a4f72f257467779dfb6b6000d187d0d27db5e90c15afdbfc5b7b2793a",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/checked-publication-write-branches.patch",
+      "new_sha256": "d3674c545b1960ff86c0a738254e072085656f1369680eb286173105ccca979c",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/checked.log",
+      "new_sha256": "83ee1714e40fc2ccb47af7b22efd569131a061019ea0efa8c383e3918ff61619",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/controls.json",
+      "new_sha256": "c61731dbfeefb52fe39e0449d59571438848ed353a42788d56edab2e3a0d15ff",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/disabled.log",
+      "new_sha256": "c295d4065f8675959414b0c6d98199069b3d03bcf63a4ac9068d62a63bfc33b9",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/project.py",
+      "new_sha256": "a9ca94a4d10cb3a7ef11f5dc1e6437a9c34349379071b5ac6900add4f0990683",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/receipt.json",
+      "new_sha256": "ce044da3a9ceda065c393281258a9a111795f57251a8ef1923aa3e716c7e584e",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/stock.log",
+      "new_sha256": "c851ef37b93fbb96e8f95ec04672da1d3b5b5df0b730c0c773400f96c8b6e096",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/strict.log",
+      "new_sha256": "030d4b6cbd598e0691e3b9404e2f636521ba63d6da2ea53ef1b0a4f5936645c2",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/unchecked.log",
+      "new_sha256": "26d7c70ccf7c23c6c98666a49b2cc6a3f4ce1a34cb512701590fe2bd68cb0c67",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/unrelated-frame.log",
+      "new_sha256": "e503c272751d21de84a68eb999ea0535c025d21eda0ea25f185ec34d95c18c76",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/publication-write/wrong-metadata.log",
+      "new_sha256": "e30cbb06382bdb4d1671e68298c913dfff7e54301aaef9ab6ebb79b041b06331",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/root-work-budget/Arithmetic/Funs.lean",
+      "new_sha256": "01914c65130d040f4a1000e53020a3131d023bba9739e49440edc6316135b3a4",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/root-work-budget/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "d17c30d5aab6c1a7fe4203e28f267e4e1f2db032a95b3edcb759e9445e6e1e89",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/root-work-budget/Arithmetic/Types.lean",
+      "new_sha256": "b70ef8f42fe271208359552c5aaacb565969d1f22527cd7d2f9cb839e62da4e3",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/root-work-budget/README.md",
+      "new_sha256": "f1477a4148406800513c19aa01f002096f556d12f0fce3e2dc8e3d5917079c0c",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/root-work-budget/aeneas.log",
+      "new_sha256": "2d15bb08381b7911ddefb13a7a19c95744a648783624f68730a7cac88c48791c",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/root-work-budget/arithmetic.llbc",
+      "new_sha256": "f447eaf390901e58b5aa360e511a71a3eeeaca9b87243a0c41ed726287d3e548",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/root-work-budget/charon.log",
+      "new_sha256": "a963df76826198ba2c474cbdfa4c5992bb5cb167de99ecd441b0fe146f4691bc",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/root-work-budget/project.py",
+      "new_sha256": "6bde90186567dc75a93fc9aa06a181ca388e9d08c4add6ca7e7aace94c229c7e",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/root-work-budget/receipt.json",
+      "new_sha256": "e0b0c3cbc21d7babdb233c5ca98b6ddbf80fe3307de1a2a93b1ebf83a7da527a",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-dispatch/Arithmetic/Funs.lean",
+      "new_sha256": "62dcdfc4e66f5fd620dac9514ac26b78bf7ac92e1ecbf49278c58c398f5a784f",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-dispatch/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "afde1bee08c948de30bacac28a034eee8b72f0016950b3bbf0cd47719cf36d4a",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-dispatch/Arithmetic/Types.lean",
+      "new_sha256": "63f2cedcf5f938290576d2df5cb2b2dab3760bfeb1d3a8ff06c5976572046a80",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-dispatch/arithmetic.llbc",
+      "new_sha256": "85423fa09fe1b13478c9fae7ffc187be6a6b9fea73386ea088bac89d9f8376eb",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-dispatch/charon.log",
+      "new_sha256": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-dispatch/project.py",
+      "new_sha256": "754154bd822db745ca3e6a6bb52a169936e93b0ab0bab51011df2509589d7c66",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-dispatch/receipt.json",
+      "new_sha256": "f1a872e631b69e4055a93c5bf6fa4e02ecf3eb1980b8f406404fe9aa50b5f447",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-dispatch/replay.log",
+      "new_sha256": "43d10962928f9359c12e789ab48ec973fd0cba308842b1f815570609b5d8c9fc",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-dispatch/stock.log",
+      "new_sha256": "c60825e508dee617f2c9b300fb369e48fa2cfd0d7a0a9c5e4595cddef5841a5f",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-work-budget-v1/Arithmetic/Funs.lean",
+      "new_sha256": "d7c2c37fb260538b2c172e315aacd2f1ca51bc9b4321bb132451be35cc46c609",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-work-budget-v1/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "4ba1e326c0a0a045c18a14003ed5f299361ab74ab40c1d083dba3a5c1e292e7a",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-work-budget-v1/Arithmetic/Types.lean",
+      "new_sha256": "d65276807397c03492f8fd84452095cae4beac9f959c9d96ba947d11a2f994d9",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-work-budget-v1/README.md",
+      "new_sha256": "ecad6289cfd27bbd611011a7e5ea160426698d80caa83b83690546b36328d119",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-work-budget-v1/aeneas.log",
+      "new_sha256": "683d2bfd2d4d73646880ea2ca0fb785e72e95d6df77dffdac92c39a851b5695d",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-work-budget-v1/arithmetic.llbc",
+      "new_sha256": "b10f2f54d4a554f5eef15f2dbc67a862873f2bde5dbc2039be172afcc6a5fb47",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-work-budget-v1/charon.log",
+      "new_sha256": "c2ec0d1a4f72f257467779dfb6b6000d187d0d27db5e90c15afdbfc5b7b2793a",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-work-budget-v1/project.py",
+      "new_sha256": "494c0e184adfaeaceb23e2b2d5cc34446a4a59f527a7a724f441ecd74283e3ce",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "extraction/row-work-budget-v1/receipt.json",
+      "new_sha256": "512075c890c807e163873c2569b1bd302a209e92e350e513c154483e7ca67bb5",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "2317cf3bb8719e7b9dcdac3dfe6a40ded4b5c6f6a583d683a435b4347933f9e7",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "b153c6fd45bd0bac8772bf51e115003a38f1979f4eb698fdcffd3cdf2e6a8aaa"
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "15acf4643715fc065fe5cf459fe27844a1ab21bd323e7a14486c91947fb6a989",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "2554c0454a37a6324bd410719f4a82a3f95c9ff315836964f4628ae5a5616a90"
     }
   ],
-  "challenge_count": 447
+  "challenge_count": 472
 }

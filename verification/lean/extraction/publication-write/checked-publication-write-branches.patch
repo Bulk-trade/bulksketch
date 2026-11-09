@@ -1,0 +1,143 @@
+--- a/src/PrePasses.ml
++++ b/src/PrePasses.ml
+@@ -2361,6 +2361,84 @@
+     }
+   else f
+ 
++(** The two length guards in the original shared ID slice pattern read only
++    fat-pointer metadata. Use the original core shared slice length method
++    with an identical value argument. *)
++let lower_publication_write_metadata (crate : crate) (f : fun_decl) : fun_decl =
++  let fmt = Print.crate_to_fmt_env crate in
++  let name (d : fun_decl) = Print.name_to_string fmt d.item_meta.name in
++  let enabled = Sys.getenv_opt "BULKSKETCH_PUBLICATION_WRITE_JOIN" = Some "1" in
++  let span = f.item_meta.span in
++  let exact_source =
++    enabled
++    && span.data.file.name = Meta.Local "src/sketch/api.rs"
++    && span.data.beg_loc.line = 262 && span.data.beg_loc.col = 4
++    && span.data.end_loc.line = 312 && span.data.end_loc.col = 5
++    && String.starts_with ~prefix:"bulksketch::sketch::api::" (name f)
++    && String.ends_with ~suffix:"::write" (name f)
++  in
++  match f.body with
++  | StructuredBody body when exact_source ->
++      let require condition message =
++        [%cassert] span condition ("publication write metadata: " ^ message)
++      in
++      require (!Config.sanity_checks && not crate.options.skip_borrowck)
++        "symbolic and Rust borrow checks must be enabled";
++      let local i : place =
++        let l : local = List.nth body.locals.locals i in
++        { kind = PlaceLocal l.index; ty = l.local_ty }
++      in
++      let ids = local 19 in
++      let lifetime, word =
++        match ids.ty with
++        | TRef (lifetime, TSlice ((TScalar (TInteger (Unsigned U64)) as word), None), RShared) ->
++            (lifetime, word)
++        | _ -> [%craise] span "publication write metadata: shared ID slice type differs"
++      in
++      let candidates =
++        FunDeclId.Map.values crate.fun_decls
++        |> List.filter (fun d -> String.starts_with ~prefix:"core::slice::" (name d)
++                              && String.ends_with ~suffix:"::len" (name d))
++      in
++      let len = match candidates with
++        | [len] -> len
++        | _ -> [%craise] span "publication write metadata: core slice len declaration differs"
++      in
++      require (len.body = OpaqueBody && not len.signature.is_unsafe &&
++        match len.signature.inputs with
++        | [TRef (_, TSlice (TVar _, None), RShared)] -> len.signature.output = mk_usize_ty
++        | _ -> false) "core slice len signature differs";
++      let metadata : place = {kind = PlaceProjection (ids, PtrMetadata); ty = mk_usize_ty} in
++      let touched = ref [] in
++      let visitor =
++        object
++          inherit [_] map_statement as super
++          method! visit_statement () st =
++            let id = StatementId.to_int st.statement_id in
++            match List.assoc_opt id [(949, 66); (969, 62); (2154, 66); (2174, 62)] with
++            | None -> super#visit_statement () st
++            | Some destination ->
++                let dst = local destination in
++                require (dst.ty = mk_usize_ty &&
++                         st.kind = Assign (dst, Use (Copy metadata, NoRetag)))
++                  "original length read differs";
++                let generics =
++                  { regions = [lifetime]; types = [word]; const_generics = []; trait_refs = [] }
++                in
++                let call =
++                  { func = FnOpRegular { kind = Fun len.def_id; generics };
++                    args = [Copy ids]; safety = Inherit }
++                in
++                let unwind = { span = st.span; block_id = BlockId.zero; statements = [] } in
++                touched := id :: !touched;
++                { st with kind = Call (call, dst, unwind) }
++        end
++      in
++      let lowered = visitor#visit_block () body.body in
++      require (List.sort compare !touched = [949; 969; 2154; 2174]) "exact rewrite count differs";
++      { f with body = StructuredBody { body with body = lowered } }
++  | _ -> f
++
+ let apply_passes (crate : crate) : crate =
+   (* Passes that apply to the whole crate *)
+   let crate = update_array_default crate in
+@@ -2368,6 +2446,7 @@
+   (* Passes that apply to individual function bodies *)
+   let function_passes =
+     [
++      ("lower_publication_write_metadata", lower_publication_write_metadata);
+       ("fix_closure_lifetimes", fix_closure_lifetimes);
+       ("fix_closure_signature_regions", fix_closure_signature_regions);
+       ("fix_anon_const_initializers", fix_anon_const_initializers);
+--- a/src/interp/InterpStatements.ml
++++ b/src/interp/InterpStatements.ml
+@@ -903,9 +903,24 @@
+                 (S.mk_opt_place_from_op span op ctx)
+                 ctx
+             in
++            (* The original publication prefix/copy branches carry
++               disjoint shared projection histories. Keep each checked
++               branch and its original continuation instead of synthesizing
++               an unsupported join between these exact scopes. *)
++            let publication_scope =
++              Sys.getenv_opt "BULKSKETCH_PUBLICATION_WRITE_JOIN" = Some "1"
++              && List.mem (Errors.raw_span_to_string span)
++                  [ "'src/sketch/api.rs', lines 279:16-308:13";
++                    "'src/sketch/api.rs', lines 292:16-294:17";
++                    "'src/sketch/api.rs', lines 297:20-302:57";
++                    "'src/sketch/api.rs', lines 298:20-302:57" ]
++            in
++            if publication_scope && not !Config.sanity_checks then
++              [%craise] span "publication write joins require checked symbolic execution";
+             (* Check if we should join the states after the if then else *)
+             let join =
+-              (not (block_has_break_continue_return true_block))
++              not publication_scope
++              && (not (block_has_break_continue_return true_block))
+               && not (block_has_break_continue_return false_block)
+             in
+             let resl_true = eval_block config true_block true_ctx in
+@@ -1028,9 +1043,18 @@
+                 (fun ctx -> (eval_switch config span data branches) ctx)
+                 ctxl
+             in
++            (* The decoded publication arm keeps its shared ID input
++               and mutable destination return, separately from status-only arms. *)
++            let publication_scope =
++              Sys.getenv_opt "BULKSKETCH_PUBLICATION_WRITE_JOIN" = Some "1"
++              && Errors.raw_span_to_string span = "'src/sketch/api.rs', lines 270:21-308:13"
++            in
++            if publication_scope && not !Config.sanity_checks then
++              [%craise] span "publication write joins require checked symbolic execution";
+             (* Should we join the contexts after the match? *)
+             let join =
+-              not (List.exists block_has_break_continue_return branches)
++              not publication_scope
++              && not (List.exists block_has_break_continue_return branches)
+             in
+             let ctx_resl, cf = comp_seqs __FILE__ __LINE__ span resl in
+             let cc = cc_comp cf_expand cf in

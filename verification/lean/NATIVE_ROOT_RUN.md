@@ -271,7 +271,11 @@ the actual masked memory calls and frame bytes outside each admitted
 destination window. The original trace and affine split each pass
 their exact normalized window into GCD. The resulting state supplies
 the proper-division frame or retains its reducer and direction
-invariant for the next retry.
+invariant for the next retry. Both consecutive root calls become
+a successful segment of the original driver trace. The ranked drain
+preserves their exact returned state, meter and callback composition.
+The checked original root budget bounds every proper split tree under
+the admitted u16 budget, using the six exact node prices.
 
 Run the complete gate from `verification/lean`.
 

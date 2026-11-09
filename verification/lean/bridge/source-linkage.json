@@ -726,6 +726,36 @@
       "path": "extraction/pclmul-insert/arithmetic.llbc",
       "sha256": "5a796646cd2f8a83adc8d858b2a71569acdb036041c7b6015dece8db263ebcdb",
       "has_errors": false
+    },
+    {
+      "path": "extraction/root-work-budget/arithmetic.llbc",
+      "sha256": "f447eaf390901e58b5aa360e511a71a3eeeaca9b87243a0c41ed726287d3e548",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/row-work-budget-v1/arithmetic.llbc",
+      "sha256": "b10f2f54d4a554f5eef15f2dbc67a862873f2bde5dbc2039be172afcc6a5fb47",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/row-dispatch/arithmetic.llbc",
+      "sha256": "85423fa09fe1b13478c9fae7ffc187be6a6b9fea73386ea088bac89d9f8376eb",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/default-wire-difference/default/arithmetic.llbc",
+      "sha256": "b706608a5e358c135fa7963617285964977d808c154db31d9993ef1016800345",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/default-wire-difference/dictionaries/arithmetic.llbc",
+      "sha256": "85e42f39b074415b2b4c6d63c2b66d9088f00faa4eb8b080d0e888fb905eceb7",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/publication-write/arithmetic.llbc",
+      "sha256": "1320a5882963b137fd70d2ffd64c1f164dbdb37db7e9737dfe36bdd2b09ffa26",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1783,6 +1813,71 @@
       "native_item_id": "src/backend/x86_pclmul.rs:98:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::insert_nonzero",
       "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractBulkKernels.insert_nonzero",
       "generated_file": "bridge/Arithmetic/X86PclmulInsertGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:199:method:bulksketch::decode::work::WorkScheduleV1::roots_bound",
+      "generated_declaration": "bulksketch.decode.work.WorkScheduleV1.roots_bound",
+      "generated_file": "bridge/Arithmetic/RootWorkBudgetGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:229:method:bulksketch::decode::work::WorkScheduleV1::row_bound",
+      "generated_declaration": "bulksketch.decode.work.WorkScheduleV1.row_bound",
+      "generated_file": "bridge/Arithmetic/RowWorkBudgetGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/dispatch.rs:129:method:bulksketch::sketch::dispatch::DecodeExecution < F >::enable_v3",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.enable_v3",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/dispatch.rs:140:method:bulksketch::sketch::dispatch::DecodeExecution < F >::start_degrees",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.start_degrees",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/dispatch.rs:150:method:bulksketch::sketch::dispatch::DecodeExecution < F >::verification_count",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.verification_count",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/dispatch.rs:160:method:bulksketch::sketch::dispatch::DecodeExecution < F >::reject_upper",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.reject_upper",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/dispatch.rs:188:method:bulksketch::sketch::dispatch::DecodeExecution < F >::next_stage",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.next_stage",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/dispatch.rs:199:method:bulksketch::sketch::dispatch::DecodeExecution < F >::run_next",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.run_next",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/probe.rs:47:method:bulksketch::decode::probe::Probe::next_stage",
+      "generated_declaration": "bulksketch.decode.probe.Probe.next_stage",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/probe.rs:50:method:bulksketch::decode::probe::Probe::count",
+      "generated_declaration": "bulksketch.decode.probe.Probe.impl.count",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/probe.rs:58:method:bulksketch::decode::probe::Probe::reject",
+      "generated_declaration": "bulksketch.decode.probe.Probe.reject",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/contract.rs:101:trait_default:bulksketch::backend::contract::BulkKernels::difference",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.difference.default",
+      "generated_file": "bridge/Arithmetic/DefaultWireDifferenceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/api.rs:259:method:bulksketch::sketch::api::Publication < 's >::write",
+      "generated_declaration": "bulksketch.sketch.api.Publication.write",
+      "generated_file": "bridge/Arithmetic/PublicationWriteGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2777,6 +2872,52 @@
       "checker": "extraction/pclmul-insert/project.py",
       "declaration_count": 6,
       "scope": "Original PCLMUL seed inner and outer loops and exact trait entry."
+    },
+    {
+      "generated": "extraction/root-work-budget/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootWorkBudgetGenerated.lean",
+      "sha256": "a2066ab753bb2879f0bc24cc63b2c9082ecbd0b0037a193cb1579a41e3bf2222",
+      "raw_sha256": "01914c65130d040f4a1000e53020a3131d023bba9739e49440edc6316135b3a4",
+      "checker": "extraction/root-work-budget/project.py",
+      "declaration_count": 1,
+      "scope": "Original checked root schedule and proper split tree budget."
+    },
+    {
+      "generated": "extraction/row-work-budget-v1/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RowWorkBudgetGenerated.lean",
+      "sha256": "82614189a63339bd31de0de5ba36e9849cd09cc582ec0765fc3633f56ce11178",
+      "raw_sha256": "d7c2c37fb260538b2c172e315aacd2f1ca51bc9b4321bb132451be35cc46c609",
+      "checker": "extraction/row-work-budget-v1/project.py",
+      "declaration_count": 1,
+      "scope": "Original checked V1 row envelope with the explicit typed ordered sum-cost slot."
+    },
+    {
+      "generated": "extraction/row-dispatch/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RowDispatchGenerated.lean",
+      "sha256": "de60227771f7750d386c272b845c5ca1e7717daa74267f313e0130141553755b",
+      "raw_sha256": "62dcdfc4e66f5fd620dac9514ac26b78bf7ac92e1ecbf49278c58c398f5a784f",
+      "checker": "extraction/row-dispatch/project.py",
+      "declaration_count": 14,
+      "scope": "Original backend-tagged row driver and tiny-probe control bodies."
+    },
+    {
+      "generated": "extraction/default-wire-difference/default/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DefaultWireDifferenceGenerated.lean",
+      "sha256": "b113f33f3cf0bc938c19c89bbc33f1bb7601d70615ed0ae7c96be8dc364ff133",
+      "raw_sha256": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739",
+      "checker": "extraction/default-wire-difference/project.py",
+      "declaration_count": 13,
+      "scope": "Original default wire difference including exact bytes, bounds, guarded comparison and ordered nested iterator writes."
+    },
+    {
+      "generated": "extraction/publication-write/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PublicationWriteGenerated.lean",
+      "sha256": "f53dd46ec6bd2f53e3429ea0dbaff7f91f06b33aa957aca075b831f4c910dab8",
+      "raw_sha256": "eaa265277ccf2d24946d463f800a38d6327b703a1ca5c3fcb72b9ebbfc141a1b",
+      "checker": "extraction/publication-write/project.py",
+      "declaration_count": 10,
+      "scope": "Original publication row write and preserved result storage callback.",
+      "translator_variant": "checked-publication-write-branches-v1"
     }
   ],
   "reviewed_translator_variants": [
@@ -2959,6 +3100,15 @@
       "receipt": "extraction/candidate-normalize-rows/receipt.json",
       "mandatory_checks": true,
       "scope": "Exact original row-local normalize. Preserve frozen shared row owner and isolate the checked unused read-only iterator around scalar compaction."
+    },
+    {
+      "id": "checked-publication-write-branches-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/publication-write/checked-publication-write-branches.patch",
+      "patch_sha256": "d3674c545b1960ff86c0a738254e072085656f1369680eb286173105ccca979c",
+      "receipt": "extraction/publication-write/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact original publication write with guarded slice metadata lowering and source-scoped checked branch preservation."
     }
   ],
   "diagnostic_generated_projections": [

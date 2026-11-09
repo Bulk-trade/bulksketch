@@ -1,0 +1,125 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "native_source_edited": false,
+  "commands": [
+    {
+      "step": "charon",
+      "argv": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-closure/row-dispatch/linked/arithmetic.llbc",
+        "--start-from=bulksketch::sketch::dispatch::_::enable_v3",
+        "--start-from=bulksketch::sketch::dispatch::_::start_degrees",
+        "--start-from=bulksketch::sketch::dispatch::_::verification_count",
+        "--start-from=bulksketch::sketch::dispatch::_::reject_upper",
+        "--start-from=bulksketch::sketch::dispatch::_::next_stage",
+        "--start-from=bulksketch::sketch::dispatch::_::run_next",
+        "--include=bulksketch::sketch::dispatch::_::enable_v3",
+        "--include=bulksketch::sketch::dispatch::_::start_degrees",
+        "--include=bulksketch::sketch::dispatch::_::verification_count",
+        "--include=bulksketch::sketch::dispatch::_::reject_upper",
+        "--include=bulksketch::sketch::dispatch::_::next_stage",
+        "--include=bulksketch::sketch::dispatch::_::run_next",
+        "--opaque=bulksketch::decode::stages::_::enable_v3",
+        "--opaque=bulksketch::decode::stages::_::start_degrees",
+        "--opaque=bulksketch::decode::stages::_::verification_count",
+        "--opaque=bulksketch::decode::stages::_::reject_upper",
+        "--opaque=bulksketch::decode::stages::_::completed_result",
+        "--opaque=bulksketch::decode::stages::_::restart",
+        "--opaque=bulksketch::decode::stages::_::execute",
+        "--opaque={impl bulksketch::decode::row::RowExecution for bulksketch::decode::stages::Execution}::next_stage",
+        "--opaque={impl bulksketch::decode::row::RowExecution for bulksketch::decode::stages::Execution}::run_next",
+        "--opaque={impl bulksketch::decode::row::RowExecution for bulksketch::decode::stages::Execution}::finish",
+        "--opaque=bulksketch::decode::probe::_::run_next",
+        "--opaque=bulksketch::sketch::dispatch::_::completed_result",
+        "--opaque=bulksketch::sketch::dispatch::run_probe",
+        "--opaque=bulksketch::backend::portable::_::_",
+        "--opaque=bulksketch::backend::x86_pclmul::_::_",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::_",
+        "--",
+        "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "environment": {
+        "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+        "CARGO_BUILD_JOBS": "1",
+        "CARGO_TARGET_DIR": "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-decoder-deflation/target"
+      },
+      "exit_code": 0
+    },
+    {
+      "step": "stock",
+      "argv": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-closure/row-dispatch/linked/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-closure/row-dispatch/linked/arithmetic.llbc"
+      ],
+      "environment": {},
+      "exit_code": 0
+    }
+  ],
+  "replay": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-closure/row-dispatch/linked/replay",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-closure/row-dispatch/linked/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "outputs_sha256": {
+      "Funs.lean": "62dcdfc4e66f5fd620dac9514ac26b78bf7ac92e1ecbf49278c58c398f5a784f",
+      "FunsExternal_Template.lean": "afde1bee08c948de30bacac28a034eee8b72f0016950b3bbf0cd47719cf36d4a",
+      "Types.lean": "63f2cedcf5f938290576d2df5cb2b2dab3760bfeb1d3a8ff06c5976572046a80"
+    }
+  },
+  "source_sha256": {
+    "src/sketch/dispatch.rs": "4d506d82339b3294a8ab28e0476e55c8f4b1e80bf85f409430d7e52a82e01e56",
+    "src/decode/probe.rs": "14a478d93b2b55ac2803c40bed0aa93226bb53d82d35b3ea8bfa4c11b6ca460f"
+  },
+  "shared_sha256": {
+    "bridge/Arithmetic/RowConfigurationGenerated.lean": "f485da026f5b19a4473a6f5015eaeb8dfeed4ddd9aea3a5230a2233e24d5c4fa",
+    "bridge/Arithmetic/AvxLinearEntryGenerated.lean": "b46278669a8e5508e4d265faad26d7195dd9d5b9ff7e6f4ba665d218f2c70ab8",
+    "bridge/Arithmetic/ExecutionDriverGenerated.lean": "055859eb1ffaefb6a5519ac02f84a4e5ee06060bf9d2e0e4447139834b24025c",
+    "bridge/Arithmetic/ReconstructionTypes.lean": "830fb3235ff9baf053aa13a5bf0e4844a57077a154ac51b94ec4e9e1403f5c6d"
+  },
+  "artifacts": {
+    "extraction/row-dispatch/arithmetic.llbc": "85423fa09fe1b13478c9fae7ffc187be6a6b9fea73386ea088bac89d9f8376eb",
+    "extraction/row-dispatch/charon.log": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828",
+    "extraction/row-dispatch/stock.log": "c60825e508dee617f2c9b300fb369e48fa2cfd0d7a0a9c5e4595cddef5841a5f",
+    "extraction/row-dispatch/replay.log": "43d10962928f9359c12e789ab48ec973fd0cba308842b1f815570609b5d8c9fc",
+    "extraction/row-dispatch/Arithmetic/Funs.lean": "62dcdfc4e66f5fd620dac9514ac26b78bf7ac92e1ecbf49278c58c398f5a784f",
+    "extraction/row-dispatch/Arithmetic/FunsExternal_Template.lean": "afde1bee08c948de30bacac28a034eee8b72f0016950b3bbf0cd47719cf36d4a",
+    "extraction/row-dispatch/Arithmetic/Types.lean": "63f2cedcf5f938290576d2df5cb2b2dab3760bfeb1d3a8ff06c5976572046a80"
+  }
+}

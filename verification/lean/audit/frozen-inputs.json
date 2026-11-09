@@ -36,7 +36,7 @@
     "audit/core-maps-proof-independent-review.md": "aed4509f239a8e3db59c7a9f0d95ca20286d8a6df50372e3f59c172572101124",
     "audit/field-algebra-accounting-review.md": "55d3cd81a3f03185992e3272994c04b13b5e7ea34ff85e5d8e2cfced90f240be",
     "audit/field-algebra-checkpoint.json": "e93b65ffd57dcdb5c4c987c76f96d48b8917e82f52969853dbb979c049a4220e",
-    "scripts/check_projection_fixtures.py": "b153c6fd45bd0bac8772bf51e115003a38f1979f4eb698fdcffd3cdf2e6a8aaa",
+    "scripts/check_projection_fixtures.py": "2317cf3bb8719e7b9dcdac3dfe6a40ded4b5c6f6a583d683a435b4347933f9e7",
     "audit/quotient-field-checkpoint.json": "c14a8dd2f0d747079f64b40c3dc9e52db3373ddfc1414b62667727444a82825e",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
     "audit/word-quotient-independent-review.md": "311018cf261231ef631f59867defc66cf7a13e5eba60d414f88b9d4e922dc823",
@@ -55,7 +55,7 @@
     "audit/native-stateful-checkpoint.json": "2c41ee402642341add52703d90795de97eff7b0656c4a4db9cd3e675332f0210",
     "NATIVE_CALLER_CHAINS.md": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
     "audit/native-caller-checkpoint.json": "837788fd6bb6f20d3c18e69b74e0610177fc4b9aec084f1ec313c271f4771cf2",
-    "README.md": "2d41b8da0bd4383b52315061eafb30dc37dd57d0db5af2ea9d45209462441797",
+    "README.md": "2ba70c946295aa5328d8640f26e66044a7d4ec75ffc2f1352998a87262fdd931",
     "NATIVE_RECONSTRUCTION.md": "3a1955592353708b30df40c5fb5443a743451002275c4da8164c37a3344746b2",
     "audit/native-reconstruction-checkpoint.json": "13745cfcf6c9161fb460c8165365bb767a672f474cd14d06edecf6b5fb428562",
     "NATIVE_QUARTIC.md": "0f7a4311accbf944b75a6792955da66ae548891ce2dc1a7e53a167aed892a381",
@@ -72,8 +72,8 @@
     "audit/native-dense-reducer-checkpoint.json": "41da787e360070eaa0ee57a31380362d9a3a4642c085a1334ba9293acb37fceb",
     "NATIVE_DENSE_DIVISION.md": "7bc66fd0e205e372f4492b801782b7af8a5cf59bd300896e4b7633612da6b9bc",
     "audit/native-dense-division-checkpoint.json": "d7fb2cc4e1014accb335dc7532561026c4c6906194c6cffec11ecead264c01cc",
-    "NATIVE_ROOT_RUN.md": "b40fc22859385dda15123e0aeb142ef786b03aeef7fdd3d5231a23e5f1529a20",
-    "audit/native-root-run-checkpoint.json": "f3132732b19af9d7f124032a8f0bf8002360c9c993c5c4c4d0c77fe232828228"
+    "NATIVE_ROOT_RUN.md": "b535491215e6200e4b3244424e5f64c06052059d37e8ce78abbba189144201ae",
+    "audit/native-root-run-checkpoint.json": "f5d59fb1b2cfb3743152fe056db338acbd1fe7b61f2cf74a73dcaf4b14529aa6"
   },
   "reviewed_policy_revisions": [
     {
@@ -1311,6 +1311,30 @@
       "new_sha256": "b153c6fd45bd0bac8772bf51e115003a38f1979f4eb698fdcffd3cdf2e6a8aaa",
       "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
       "old_sha256": "44a7f864a8fcb1c495afbded3d4c6d0fefe1676d967f521cf4dee236341f5b59"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "b535491215e6200e4b3244424e5f64c06052059d37e8ce78abbba189144201ae",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "b40fc22859385dda15123e0aeb142ef786b03aeef7fdd3d5231a23e5f1529a20"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "2ba70c946295aa5328d8640f26e66044a7d4ec75ffc2f1352998a87262fdd931",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "2d41b8da0bd4383b52315061eafb30dc37dd57d0db5af2ea9d45209462441797"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "f5d59fb1b2cfb3743152fe056db338acbd1fe7b61f2cf74a73dcaf4b14529aa6",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "f3132732b19af9d7f124032a8f0bf8002360c9c993c5c4c4d0c77fe232828228"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "2317cf3bb8719e7b9dcdac3dfe6a40ded4b5c6f6a583d683a435b4347933f9e7",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "b153c6fd45bd0bac8772bf51e115003a38f1979f4eb698fdcffd3cdf2e6a8aaa"
     }
   ]
 }

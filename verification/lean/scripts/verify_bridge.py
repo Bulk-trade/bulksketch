@@ -501,6 +501,9 @@ def check_dense_reducer_variant(variant, receipt, runtime, runtime_head, linkage
             "extraction/candidates/", "checked-candidates-nested-return.patch", {"src/PrePasses.ml"}),
         "checked-completed-result-frozen-shared-v1": (
             "extraction/completed-result/", "checked-completed-result-frozen-shared.patch", {"src/interp/InterpJoin.ml"}),
+        "checked-publication-write-branches-v1": (
+            "extraction/publication-write/", "checked-publication-write-branches.patch",
+            {"src/PrePasses.ml", "src/interp/InterpStatements.ml"}),
         "checked-candidate-normalize-rows-v1": (
             "extraction/candidate-normalize-rows/", "checked-candidate-normalize-rows.patch",
             {"src/PrePasses.ml", "src/interp/InterpJoin.ml", "src/interp/InterpLoops.ml",
@@ -722,7 +725,8 @@ def main():
                             "checked-affine-multiple-zip-ends-v1", "checked-native-deflate-loan-retry-v1",
                             "checked-candidates-nested-return-v1", "checked-completed-result-frozen-shared-v1",
                             "checked-finish-return-boundary-v1", "checked-canonicalize-slice-pattern-v1",
-                            "checked-avx-tile-history-v1", "checked-candidate-normalize-rows-v1"}:
+                            "checked-avx-tile-history-v1", "checked-candidate-normalize-rows-v1",
+                            "checked-publication-write-branches-v1"}:
             check_dense_reducer_variant(variant, receipt, runtime, runtime_head, linkage)
             result, _ = run(variant["id"] + "-patch-applies", ["git", "apply", "--check",
                             str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
