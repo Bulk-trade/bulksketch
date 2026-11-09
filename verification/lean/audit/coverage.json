@@ -12186,7 +12186,7 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. Original shared candidate normalization, bucket routing, canonicalization and finish are checked under their exact local contracts. Native divide and reducer preserve the locator and traversal invariant with separate affine table framing. Full traversal induction, work-budget termination, row-local normalization, wire/API composition, remaining backend bodies, Rust provenance and compiler-to-ISA correspondence remain open.",
+    "note": "All 344 native executable obligations retained. Honest native BM returns the exact support locator or latches a work error. Candidate and deflation calls establish the full initial traversal invariant. Given the terminal emitted locator product and a paid canonicalization, the actual driver returns a sorted borrowed prefix with exactly those roots. Global traversal induction, work-budget termination, row-local normalization, wire/API composition, remaining backend bodies, provenance and compiler-to-ISA correspondence remain open.",
     "checked_generated_body_refinements_under_recorded_TCB": 160,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
@@ -12352,7 +12352,11 @@
         "BulksketchBridge.CandidateNormalization.native_candidate_bucket",
         "BulksketchBridge.RootDivide.native_proper_divide_invariant",
         "BulksketchBridge.RootRun.native_reducer_invariant",
-        "BulksketchBridge.CompletedResult.native_completed_locator"
+        "BulksketchBridge.CompletedResult.native_completed_locator",
+        "BulksketchBridge.ExecutionDriver.native_honest_bm_driver",
+        "BulksketchBridge.ExecutionDriver.native_traversal_admission",
+        "BulksketchBridge.ExecutionDriver.canonical_stage_refines",
+        "BulksketchBridge.ExecutionDriver.native_canonical_completed_locator"
       ]
     },
     "masked_memory_evidence": {

@@ -1476,6 +1476,22 @@
     {
       "challenge": "BulksketchBridge.CompletedResult.ActualNativeCompletedLocator",
       "theorem": "BulksketchBridge.CompletedResult.native_completed_locator"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeHonestBmDriver",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_honest_bm_driver"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeTraversalAdmission",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_traversal_admission"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualCanonicalStage",
+      "theorem": "BulksketchBridge.ExecutionDriver.canonical_stage_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualCanonicalCompletedLocator",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_canonical_completed_locator"
     }
   ],
   "refinements": [

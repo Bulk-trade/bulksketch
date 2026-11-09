@@ -774,7 +774,15 @@ run_cmd do
     (``BulksketchBridge.RootRun.ActualNativeReducerInvariant,
       ``BulksketchBridge.RootRun.native_reducer_invariant),
     (``BulksketchBridge.CompletedResult.ActualNativeCompletedLocator,
-      ``BulksketchBridge.CompletedResult.native_completed_locator)
+      ``BulksketchBridge.CompletedResult.native_completed_locator),
+    (``BulksketchBridge.ExecutionDriver.ActualNativeHonestBmDriver,
+      ``BulksketchBridge.ExecutionDriver.native_honest_bm_driver),
+    (``BulksketchBridge.ExecutionDriver.ActualNativeTraversalAdmission,
+      ``BulksketchBridge.ExecutionDriver.native_traversal_admission),
+    (``BulksketchBridge.ExecutionDriver.ActualCanonicalStage,
+      ``BulksketchBridge.ExecutionDriver.canonical_stage_refines),
+    (``BulksketchBridge.ExecutionDriver.ActualCanonicalCompletedLocator,
+      ``BulksketchBridge.ExecutionDriver.native_canonical_completed_locator)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

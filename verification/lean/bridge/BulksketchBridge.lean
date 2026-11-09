@@ -154,3 +154,6 @@ import BulksketchBridge.CandidateNormalize
 import BulksketchBridge.RootDivideInvariant
 import BulksketchBridge.RootReducerInvariant
 import BulksketchBridge.CompletedLocator
+import BulksketchBridge.NativeHonestBmDriver
+import BulksketchBridge.NativeTraversalAdmission
+import BulksketchBridge.NativeCanonicalCompleted

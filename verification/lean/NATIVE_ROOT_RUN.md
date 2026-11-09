@@ -172,6 +172,12 @@ and reducer preparation preserve a common locator-product invariant,
 including the validity of every live factor and separation of the affine
 table from the pending-factor slots. The completed-result theorem gives
 exact locator root membership under the represented emitted product.
+The original BM driver either latches its exact charge error or
+accepts the exact support locator at the native constant-word guard.
+The original candidate and deflate calls establish the full initial
+traversal invariant. Given the terminal emitted product of a simple
+nonzero locator, a paid canonicalization step and completed-result
+borrow return its exact sorted roots.
 
 The AVX square finite-heap theorem composes the zero fill, scalar
 coefficient seeds, and the original masked LLBC load/store block

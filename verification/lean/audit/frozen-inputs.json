@@ -55,7 +55,7 @@
     "audit/native-stateful-checkpoint.json": "2c41ee402642341add52703d90795de97eff7b0656c4a4db9cd3e675332f0210",
     "NATIVE_CALLER_CHAINS.md": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
     "audit/native-caller-checkpoint.json": "837788fd6bb6f20d3c18e69b74e0610177fc4b9aec084f1ec313c271f4771cf2",
-    "README.md": "19c71e53a19ae17ecd8b1fcc47edade44207cbbbdbf7a3bb5d54675c771dfb2b",
+    "README.md": "f6785f28dfe4d50b2b4d0dbf02488c959d9bccf1e1da76194b18b7b85bbda95b",
     "NATIVE_RECONSTRUCTION.md": "3a1955592353708b30df40c5fb5443a743451002275c4da8164c37a3344746b2",
     "audit/native-reconstruction-checkpoint.json": "13745cfcf6c9161fb460c8165365bb767a672f474cd14d06edecf6b5fb428562",
     "NATIVE_QUARTIC.md": "0f7a4311accbf944b75a6792955da66ae548891ce2dc1a7e53a167aed892a381",
@@ -72,8 +72,8 @@
     "audit/native-dense-reducer-checkpoint.json": "41da787e360070eaa0ee57a31380362d9a3a4642c085a1334ba9293acb37fceb",
     "NATIVE_DENSE_DIVISION.md": "7bc66fd0e205e372f4492b801782b7af8a5cf59bd300896e4b7633612da6b9bc",
     "audit/native-dense-division-checkpoint.json": "d7fb2cc4e1014accb335dc7532561026c4c6906194c6cffec11ecead264c01cc",
-    "NATIVE_ROOT_RUN.md": "e83e391ea7d2c9c371870173f2407dcdb72164988711b48effe1e85e37d810f5",
-    "audit/native-root-run-checkpoint.json": "985e37c6646d9713bc1c99f806dddb2c140028e7dbc2619b1be5d20ce10c69e4"
+    "NATIVE_ROOT_RUN.md": "751e98e01ed1aa111b395fe1dc1e9f6d388a3b3119fce96030a22645161610df",
+    "audit/native-root-run-checkpoint.json": "4a8f869af98bc3196062a3d74d91e04fbb5dacb55be8c8ae7ca5771cd2cd410a"
   },
   "reviewed_policy_revisions": [
     {
@@ -1077,6 +1077,24 @@
       "new_sha256": "beed7da2f0964168a161dac591c4d41bbb003f2c21ca876baf716439a5e995a6",
       "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
       "old_sha256": "c41f0fb7cd70a17aac817afe92d1edc1fa24cd8565c00bcb9446bcb8925fa9dc"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "751e98e01ed1aa111b395fe1dc1e9f6d388a3b3119fce96030a22645161610df",
+      "reason": "Freeze exact native BM, traversal admission and completed canonical locator composition.",
+      "old_sha256": "e83e391ea7d2c9c371870173f2407dcdb72164988711b48effe1e85e37d810f5"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "f6785f28dfe4d50b2b4d0dbf02488c959d9bccf1e1da76194b18b7b85bbda95b",
+      "reason": "Freeze exact native BM, traversal admission and completed canonical locator composition.",
+      "old_sha256": "19c71e53a19ae17ecd8b1fcc47edade44207cbbbdbf7a3bb5d54675c771dfb2b"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "4a8f869af98bc3196062a3d74d91e04fbb5dacb55be8c8ae7ca5771cd2cd410a",
+      "reason": "Freeze exact native BM, traversal admission and completed canonical locator composition.",
+      "old_sha256": "985e37c6646d9713bc1c99f806dddb2c140028e7dbc2619b1be5d20ce10c69e4"
     }
   ]
 }

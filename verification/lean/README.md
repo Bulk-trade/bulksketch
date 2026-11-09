@@ -57,7 +57,11 @@ The original shared candidate normalizer and modulo bucket selector
 establish distinct nonzero candidate slices. The original canonicalizer
 checks the sort boundary, work charge and root validation. The original
 finish loop consumes a finite native driver trace, composes workspace
-writebacks, and returns the exact terminal result. Global traversal
+writebacks, and returns the exact terminal result. The honest BM guard
+accepts the exact support locator, and the native candidate and
+deflation calls establish the full initial traversal invariant.
+Canonicalization returns the exact sorted roots under the terminal
+locator-product and charge premises. Global traversal
 induction, row-local hint normalization and native implementation
 contracts remain open.
 
