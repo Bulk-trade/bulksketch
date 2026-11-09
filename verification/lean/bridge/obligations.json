@@ -1492,6 +1492,14 @@
     {
       "challenge": "BulksketchBridge.ExecutionDriver.ActualCanonicalCompletedLocator",
       "theorem": "BulksketchBridge.ExecutionDriver.native_canonical_completed_locator"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceInvariant",
+      "theorem": "BulksketchBridge.RootRun.native_trace_invariant"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeGcdInvariant",
+      "theorem": "BulksketchBridge.RootRun.native_gcd_invariant"
     }
   ],
   "refinements": [

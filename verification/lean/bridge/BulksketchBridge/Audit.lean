@@ -782,7 +782,11 @@ run_cmd do
     (``BulksketchBridge.ExecutionDriver.ActualCanonicalStage,
       ``BulksketchBridge.ExecutionDriver.canonical_stage_refines),
     (``BulksketchBridge.ExecutionDriver.ActualCanonicalCompletedLocator,
-      ``BulksketchBridge.ExecutionDriver.native_canonical_completed_locator)
+      ``BulksketchBridge.ExecutionDriver.native_canonical_completed_locator),
+    (``BulksketchBridge.RootRun.ActualNativeTraceInvariant,
+      ``BulksketchBridge.RootRun.native_trace_invariant),
+    (``BulksketchBridge.RootRun.ActualNativeGcdInvariant,
+      ``BulksketchBridge.RootRun.native_gcd_invariant)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

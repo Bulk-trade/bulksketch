@@ -157,3 +157,5 @@ import BulksketchBridge.CompletedLocator
 import BulksketchBridge.NativeHonestBmDriver
 import BulksketchBridge.NativeTraversalAdmission
 import BulksketchBridge.NativeCanonicalCompleted
+import BulksketchBridge.RootTraceInvariant
+import BulksketchBridge.RootGcdInvariant

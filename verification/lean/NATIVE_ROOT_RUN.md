@@ -178,6 +178,11 @@ The original candidate and deflate calls establish the full initial
 traversal invariant. Given the terminal emitted product of a simple
 nonzero locator, a paid canonicalization step and completed-result
 borrow return its exact sorted roots.
+The paid Trace stage also preserves the live traversal product and
+table, extends the direction cache, and supplies the exact normalized
+GCD trace prefix. Paid GCD preserves the same invariant on writeback
+and decreases the continuation rank on every admitted successful
+return, including the non-affine retry with the next trace direction.
 
 The AVX square finite-heap theorem composes the zero fill, scalar
 coefficient seeds, and the original masked LLBC load/store block

@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "0beced8a1829fbbfee11a0bc98a1006377a090e78f6ecec71db92ac27845e78e",
+    "bridge/BulksketchBridge/Audit.lean": "c0ae2a710f799810a91d00a07bf3c598559a7afe69cc46cfc7a539c3e1f020fa",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "e487ca306dc0577d3cf480fba920fe3df38af4e3b9da69870869406d90e0cecf",
-    "audit/frozen-inputs.json": "d0fbc7814a293397cea06fa0896651bd2f214852cb56a8182f0a6925c10c14f8",
-    "bridge/BulksketchBridge.lean": "6f468042bb8127cbf4a5b9feb70ffd629e3adea2b3563fe5cda16349328e1d17",
+    "audit/frozen-inputs.json": "f2972d5e4f72ed600d703ed41b0b25d91bbeef042067118901b459cd7976e390",
+    "bridge/BulksketchBridge.lean": "a2cb82e72d42872892cfa930459d672a79b009a152d192a49885604e7c53b3a6",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -31,7 +31,7 @@
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
     "bridge/source-linkage.json": "4b30681b941ba08e3628467e0a36a7f9367343935911fec41bf597d01c313250",
-    "bridge/obligations.json": "6812053f4641532aaa18ae7976530e3eef14793c011659550fd7008c81589910",
+    "bridge/obligations.json": "c66230a7756c2ce5832e2fcbd8c48eb11a53cd1452784ef0c6fd68b0085ff43f",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -290,7 +290,7 @@
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
     "README.md": "f6785f28dfe4d50b2b4d0dbf02488c959d9bccf1e1da76194b18b7b85bbda95b",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "1d6f0a4ad34b63518ae9cb38b5844611be71ee46df4b28986df24fc95612e556",
+    "audit/coverage.json": "8364184d7dddd508075ecc7dbdf99cf53a9186f86d9a8d4956d62ef20aea663f",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "751e98e01ed1aa111b395fe1dc1e9f6d388a3b3119fce96030a22645161610df",
-    "audit/native-root-run-checkpoint.json": "4a8f869af98bc3196062a3d74d91e04fbb5dacb55be8c8ae7ca5771cd2cd410a",
+    "NATIVE_ROOT_RUN.md": "dfa3ddd4cb28988b39ae4747d8c647556f2d3dac6a75e268221f8a12173d7bb7",
+    "audit/native-root-run-checkpoint.json": "8e2c6a3fffb0d74be2a92a5cdfb659566a801743783fe0d1e3f7aa5f18c1d8b1",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1777,7 +1777,10 @@
     "bridge/BulksketchBridge/NativeCanonicalizeDriver.lean": "043e9881530dda181d84c4d345139987c7f435d1a0a765229495cb6945ab9fed",
     "bridge/BulksketchBridge/NativeHonestBmDriver.lean": "e9934aedcb5bb67977101714e36fe7218fbb6c22a261d9c5d6da74f21e61bf48",
     "bridge/BulksketchBridge/NativeTraversalAdmission.lean": "d67b344e3445da36bb9079ddf0e0354504cb46d9c7489854f7d0574bf8560b5c",
-    "bridge/BulksketchBridge/RootEmittedValidity.lean": "2ec623f7f8370ee26bf80307d180820303a72b5146d0f05d4660935d24932e23"
+    "bridge/BulksketchBridge/RootEmittedValidity.lean": "2ec623f7f8370ee26bf80307d180820303a72b5146d0f05d4660935d24932e23",
+    "bridge/BulksketchBridge/RootGcdInvariant.lean": "4146186957a2cafa624f94d4b6bdcb13cc739892665dd23c134804ba6546c0e0",
+    "bridge/BulksketchBridge/RootInvariantReborrow.lean": "4577ca3d1e41a08aca521002e6106f8f98bddb37fc175a7a33dbab26e0551500",
+    "bridge/BulksketchBridge/RootTraceInvariant.lean": "10497da6ab35d04a96437ac54891a67b3892140476aa6307071ec3d13e6d0cf1"
   },
   "reviewed_policy_revisions": [
     {
@@ -13065,7 +13068,64 @@
       "new_sha256": "6812053f4641532aaa18ae7976530e3eef14793c011659550fd7008c81589910",
       "reason": "Freeze exact native BM, traversal admission and completed canonical locator composition.",
       "old_sha256": "20e7a4163f006d12980a66a9f452cf9be95f4775eac0ac14d79cf097f37790d2"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "dfa3ddd4cb28988b39ae4747d8c647556f2d3dac6a75e268221f8a12173d7bb7",
+      "reason": "Freeze the exact paid native Trace and GCD traversal invariant and rank.",
+      "old_sha256": "751e98e01ed1aa111b395fe1dc1e9f6d388a3b3119fce96030a22645161610df"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "8364184d7dddd508075ecc7dbdf99cf53a9186f86d9a8d4956d62ef20aea663f",
+      "reason": "Freeze the exact paid native Trace and GCD traversal invariant and rank.",
+      "old_sha256": "1d6f0a4ad34b63518ae9cb38b5844611be71ee46df4b28986df24fc95612e556"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "f2972d5e4f72ed600d703ed41b0b25d91bbeef042067118901b459cd7976e390",
+      "reason": "Freeze the exact paid native Trace and GCD traversal invariant and rank.",
+      "old_sha256": "d0fbc7814a293397cea06fa0896651bd2f214852cb56a8182f0a6925c10c14f8"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "8e2c6a3fffb0d74be2a92a5cdfb659566a801743783fe0d1e3f7aa5f18c1d8b1",
+      "reason": "Freeze the exact paid native Trace and GCD traversal invariant and rank.",
+      "old_sha256": "4a8f869af98bc3196062a3d74d91e04fbb5dacb55be8c8ae7ca5771cd2cd410a"
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "a2cb82e72d42872892cfa930459d672a79b009a152d192a49885604e7c53b3a6",
+      "reason": "Freeze the exact paid native Trace and GCD traversal invariant and rank.",
+      "old_sha256": "6f468042bb8127cbf4a5b9feb70ffd629e3adea2b3563fe5cda16349328e1d17"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "c0ae2a710f799810a91d00a07bf3c598559a7afe69cc46cfc7a539c3e1f020fa",
+      "reason": "Freeze the exact paid native Trace and GCD traversal invariant and rank.",
+      "old_sha256": "0beced8a1829fbbfee11a0bc98a1006377a090e78f6ecec71db92ac27845e78e"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootGcdInvariant.lean",
+      "new_sha256": "4146186957a2cafa624f94d4b6bdcb13cc739892665dd23c134804ba6546c0e0",
+      "reason": "Freeze the exact paid native Trace and GCD traversal invariant and rank."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootInvariantReborrow.lean",
+      "new_sha256": "4577ca3d1e41a08aca521002e6106f8f98bddb37fc175a7a33dbab26e0551500",
+      "reason": "Freeze the exact paid native Trace and GCD traversal invariant and rank."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraceInvariant.lean",
+      "new_sha256": "10497da6ab35d04a96437ac54891a67b3892140476aa6307071ec3d13e6d0cf1",
+      "reason": "Freeze the exact paid native Trace and GCD traversal invariant and rank."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "c66230a7756c2ce5832e2fcbd8c48eb11a53cd1452784ef0c6fd68b0085ff43f",
+      "reason": "Freeze the exact paid native Trace and GCD traversal invariant and rank.",
+      "old_sha256": "6812053f4641532aaa18ae7976530e3eef14793c011659550fd7008c81589910"
     }
   ],
-  "challenge_count": 373
+  "challenge_count": 375
 }
