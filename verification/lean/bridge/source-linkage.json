@@ -571,6 +571,11 @@
       "path": "extraction/affine-multiple/arithmetic.llbc",
       "sha256": "5c052e41228ab5a9a3bfe259389d2e1d5333bf09a063608bde61b66a105145d6",
       "has_errors": false
+    },
+    {
+      "path": "extraction/avx-encode-18/arithmetic.llbc",
+      "sha256": "f0a26cef92fd60562b04ad63901983eaa0bf665bb7cd98081e1d4c615ab3e5a8",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1343,6 +1348,16 @@
       "native_item_id": "src/decode/affine.rs:97:function:bulksketch::decode::affine::multiple",
       "generated_declaration": "bulksketch.decode.affine.multiple",
       "generated_file": "bridge/Arithmetic/AffineMultipleGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:551:function:bulksketch::backend::x86_vpclmul512::encode_18",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.encode_18",
+      "generated_file": "bridge/Arithmetic/AvxEncode18Generated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:567:function:bulksketch::backend::x86_vpclmul512::powers_18",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.powers_18",
+      "generated_file": "bridge/Arithmetic/AvxEncode18Generated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2027,6 +2042,15 @@
       "declaration_count": 9,
       "scope": "Exact original affine multiple wrapper and all four source loops under the scoped checked row and witness Zip cleanup.",
       "translator_variant": "checked-affine-multiple-zip-ends-v1"
+    },
+    {
+      "generated": "extraction/avx-encode-18/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxEncode18Generated.lean",
+      "sha256": "609aed937110c817b258cd614e9e2ce723fed265766d3155e096670f95fae800",
+      "raw_sha256": "abc37047ccc494592c4afab789b12fcf5c5301432c1dc5d03d2dc3a8fc368421",
+      "checker": "extraction/avx-encode-18/project.py",
+      "declaration_count": 2,
+      "scope": "Original stock capacity-18 encoder and odd-power register packer. Original register arithmetic bound, with explicit single-base table and masked-store models."
     }
   ],
   "reviewed_translator_variants": [

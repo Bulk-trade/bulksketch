@@ -5,7 +5,7 @@ adds exact original Aeneas body refinements for `Roots::run`,
 `Roots::divide`, the affine subspace offset, `affine::splitter`,
 `affine::subspaces`, the preparation and enumeration wrappers, the
 inner enumerator and selector, the affine multiple, the GF64 solve map and its table
-construction, and the original AVX linear update and Horner paths.
+construction, and the original AVX linear update, Horner paths and capacity-18 encoder.
 Production Rust and Cargo inputs are unchanged.
 
 The stock root-run projection retains the original dispatcher and
@@ -53,21 +53,31 @@ both scratch widths.
 The original GF64 solve-map proof checks native table construction,
 the coefficient fold, pivot insertion and reduction, and exact kernel,
 image and preimage writes. Its field interpretation proves the
-returned base maps to the constant term and each written kernel
-direction maps to zero. The original sweep gives the returned kernel
-directions distinct increasing leading bits, which proves their
-independence. Showing that they span the entire kernel remains open.
+returned base maps to the constant term. The complete image and kernel
+span invariants prove that the original result is empty exactly when
+the equation has no solution. A successful result gives independent
+directions and represents the entire solution fiber. For a split
+simple factor, divisibility by the returned affine multiple puts every
+factor root in that fiber. The complete paid preparation theorem
+excludes the zero linear coefficient guard, an empty solve, both rank
+rejections, selector failure, and subspace table bounds failure.
+It returns the original enumeration or splitting stage with
+independent directions and a coset containing every factor root.
 
 The original affine-multiple proof checks its buffer setup, pivot
 search, both normalization loops, modular square, and returned
 coefficient and scratch frames against a finite column trace. The
 scoped checked translation closes only the matching row and witness
-Zip lifetimes in the frozen capture. The operational result includes
-the original exhaustion panic. Separate algebra proves divisibility
-from a zero-residue witness, and proves the zero linear coefficient
-criterion for a least affine multiple of a squarefree input.
-The loop invariant that establishes leastness and rules out exhaustion
-still needs a proof.
+Zip lifetimes in the frozen capture. The occupied-diagonal invariant
+rules out the original exhaustion panic and bounds the returned length
+by the original polynomial width. A separate quotient-ring invariant
+tracks the exact packed row witnesses through each native pivot and
+store. It proves that the emitted polynomial is monic and divisible
+by the input factor. The occupied quotient rows are independent
+and span the earlier columns, so the first dependent column gives the
+least-degree nonzero affine multiple. Over GF(2⁶⁴), a zero linear
+coefficient would make that witness a square. For a squarefree input
+its square root would be a smaller affine multiple, a contradiction.
 
 The enumeration selector and its square-products helper check all
 scalar inputs. Their proofs preserve the checked operation order,
@@ -79,8 +89,14 @@ division, both checked offset overflows, and the affine and non-affine
 commits. It returns the exact quotient and remainder scratch, pending
 right-child coefficients, stack record, left modulus, meter, and stage.
 The original Dense exact-division wrapper is bound to the proved div/rem
-body in the specialization. Depth-first and affine traversal invariants
-remain open.
+body in the specialization. The push proof preserves every earlier
+pending coefficient word. The pop proof restores exactly the top
+factor and preserves the remaining frames. The workspace budget
+supplies the GCD scratch, affine matrices, and subspace table.
+For a proper GCD, exact division returns a normalized positive-degree
+quotient. The factor degrees sum to the parent degree and the live
+degree budget bounds the next pending slot. The complete
+depth-first traversal still needs to compose these steps.
 
 The AVX square finite-heap theorem composes the zero fill, scalar
 coefficient seeds, and the original masked LLBC load/store block
@@ -104,6 +120,14 @@ the final short masked chunk. Its allocated proof preserves every
 byte outside the output and keeps the shared point view valid.
 The existing scoped translator variant applies to the exact inner
 kernel capture. The two wrapper captures use stock Aeneas.
+
+The original AVX-512 capacity-18 encoder packs the 18 odd powers in
+three registers and applies either one input or the XOR sum of two
+inputs. Its proof checks all lane selectors, the 8/8/2 masked stores,
+and preservation of every byte outside the written prefix. The
+original single-base table is bound by an explicit value contract.
+The checked finite-heap store model is specific to the captured x86
+target and admitted allocation view.
 
 Run the complete gate from `verification/lean`.
 

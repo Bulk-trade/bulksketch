@@ -389,6 +389,12 @@ PROJECTIONS = [
                   "tooling/aeneas-horner-match/receipt.json", "tooling/aeneas-horner-match/ended-shared-scalar.patch",
                   "bridge/Arithmetic/AvxHornerChunkRuntime.lean", "bridge/Arithmetic/Avx512RegisterGenerated.lean",
                   "bridge/Arithmetic/DenseNormalizationGenerated.lean"]),
+    ("avx-encode-18", "extraction/avx-encode-18/project.py", "extraction/avx-encode-18/receipt.json",
+     "extraction/avx-encode-18/Arithmetic/Funs.lean", "bridge/Arithmetic/AvxEncode18Generated.lean",
+     "0#i64 10#i64 9#i64 2#i64 8#i64", "1#i64 10#i64 9#i64 2#i64 8#i64",
+     "compiled AVX capacity-18 encoder projection differs", None, None,
+     ["extraction/avx-square/receipt.json", "bridge/Arithmetic/AvxEncode18Runtime.lean",
+      "bridge/Arithmetic/Avx512RegisterGenerated.lean"]),
     ("affine-multiple", "extraction/affine-multiple/project.py", "extraction/affine-multiple/receipt.json",
      "extraction/affine-multiple/Arithmetic/Funs.lean", "bridge/Arithmetic/AffineMultipleGenerated.lean",
      "let i1 ← d * d", "let i1 ← d + d", "compiled affine multiple projection differs",
@@ -619,6 +625,9 @@ def main():
         if label == "avx-horner":
             cases.append(("wrong-kernel-binary", receipt_path, receipt["variant_binary_sha256"], "0" * 64,
                           "invalid AVX Horner receipt"))
+        if label == "avx-encode-18":
+            cases.append(("wrong-target", receipt_path, '"x86_64-apple-darwin"', '"aarch64-apple-darwin"',
+                          "invalid AVX capacity-18 encoder receipt"))
         if label == "affine-multiple":
             cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false', '"native_llbc_edited": true',
                           "invalid affine multiple receipt"))
@@ -636,7 +645,7 @@ def main():
                              "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry", "root-divide", "root-run", "affine-splitter",
                              "affine-subspaces", "root-prepare-affine", "root-enumerate-affine", "dense-div-rem",
                              "affine-enumerate", "affine-selector", "avx-multiply-linear", "affine-solve-map",
-                             "avx-horner", "affine-multiple"}:
+                             "avx-horner", "affine-multiple", "avx-encode-18"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

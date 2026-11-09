@@ -1,13 +1,13 @@
 {
   "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
-  "previous_proof_commit": "54bc1be1691458a3be00cd1f03c1e0f7ad8cafc6",
+  "previous_proof_commit": "8ee77d5548b796481cef6e0a2db5bc9e304d554a",
   "retained_native_executable_obligations": 344,
-  "generated_body_refinements_under_recorded_TCB": 138,
+  "generated_body_refinements_under_recorded_TCB": 140,
   "checked_stateful_llbc_refinements": 5,
   "whole_native_coverage_achieved": false,
   "open": [
-    "Affine multiple minimum and exhaustion exclusion, full GF64 kernel span, and general depth-first factor traversal",
-    "Candidate evaluation, deflation, caller-wide admission and end-to-end decoder completeness",
-    "Rust pointer provenance, remaining ISA execution and compiler correspondence"
+    "Complete depth-first traversal, strict progress through affine splitting, and caller-wide admission",
+    "Candidate evaluation, deflation, and end-to-end decoder completeness",
+    "Remaining AVX and NEON bodies, Rust pointer provenance, and compiler-to-ISA correspondence"
   ]
 }

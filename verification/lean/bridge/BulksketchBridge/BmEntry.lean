@@ -16,6 +16,16 @@ set_option maxHeartbeats 1200000
     (tail words split).length = words.length - split := by
   simp [tail, Slice.length]
 
+theorem splitBack_length (words : Slice U64) (split : Nat) (parts : Slice U64 × Slice U64) :
+    (splitBack words split parts).length = words.length := by
+  unfold splitBack
+  split
+  · rename_i equal
+    simp only [Slice.length, Slice.from_val, List.length_append]
+    change parts.1.length + parts.2.length = words.length
+    omega
+  · rfl
+
 /-- Exact pinned split and its complete two-piece backward function. -/
 theorem split_refines (words : Slice U64) (split : Usize) (fits : split.val ≤ words.length) :
     core.slice.Slice.split_at_mut words split =

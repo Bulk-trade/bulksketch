@@ -8,16 +8,6 @@ open bulksketch.backend.contract bulksketch.types
 set_option maxRecDepth 4096
 set_option maxHeartbeats 1600000
 
-private theorem joined_length (work : Slice U64) (half : Nat) (parts : Slice U64 × Slice U64) :
-    (splitBack work half parts).length = work.length := by
-  unfold splitBack
-  split
-  · rename_i equal
-    simp only [Slice.length, Slice.from_val, List.length_append]
-    change parts.1.length + parts.2.length = work.length
-    omega
-  · rfl
-
 /-- The finite recurrence returns normally on every admitted batch schedule.
 Both result branches preserve the lengths of the root and work slices. -/
 theorem batches_frame {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64)
@@ -118,7 +108,7 @@ theorem native_enumeration_frame {K : Type} (kernels : BulkKernels K bulksketch.
     unfold batchWidth
     split <;> omega
   obtain ⟨reply, written, scratch, normal, rootLength, workLength, exactCount⟩ :=
-    batches_frame kernels horner (splitBack work half) work.length (joined_length work half)
+    batches_frame kernels horner (splitBack work half) work.length (splitBack_length work half)
       polynomial basis (polynomial.length - 1) (batchWidth half) (2 ^ basis.length) 0
       roots (prefixSlice work half) (tail work half) base 0 batchBounds.1
       (by rw [prefix_length, Nat.min_eq_left halfFits]; exact batchBounds.2)

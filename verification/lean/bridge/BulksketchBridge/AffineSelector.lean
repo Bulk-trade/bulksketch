@@ -191,6 +191,38 @@ theorem enumerate_preferred_refines : ActualEnumeratePreferred := by
     · simp only [checked, lanesFit, ite_false, bind_fail]
   · simp only [core.num.U64.checked_shl, small, ite_false, bind_ok, ← narrowVal]
 
+/-- The native selector always returns a decision at a GF64 decoder degree
+and rank. Oversized enumeration estimates take the original split branch. -/
+theorem enumerate_preferred_returns (degree rank : Usize)
+    (degreeBound : degree.val ≤ 64) (rankBound : rank.val ≤ 64) :
+    ∃ decision, enumerate_preferred degree rank = .ok decision := by
+  rw [enumerate_preferred_refines degree rank]
+  unfold enumerationModel
+  rw [Nat.mod_eq_of_lt (by omega : rank.val < 2 ^ 32)]
+  dsimp only
+  split
+  · have lanes : 6 * degree.val ≤ U64.max := by rw [U64.max_eq]; omega
+    have squareBound : squareCount degree.val ≤ 704 := by
+      unfold squareCount
+      have prod : (2 * (degree.val / 2)) * ((degree.val + 7) / 8) ≤ 64 * 8 :=
+        Nat.mul_le_mul (by omega) (by omega)
+      omega
+    have squares : squareCount degree.val ≤ U64.max := by rw [U64.max_eq]; omega
+    have rankPrice : rank.val * squareCount degree.val ≤ 64 * 704 :=
+      Nat.mul_le_mul rankBound squareBound
+    have rankFit : rank.val * squareCount degree.val ≤ U64.max := by rw [U64.max_eq]; omega
+    have extra : 85 * degree.val ≤ U64.max := by rw [U64.max_eq]; omega
+    have splitFit : rank.val * squareCount degree.val + 85 * degree.val ≤ U64.max := by
+      rw [U64.max_eq]
+      omega
+    simp only [checked, lanes, ite_true, bind_ok, word_val _ lanes]
+    split
+    · simp only [ite_true, bind_ok, word_val _ squares, rankFit, word_val _ rankFit,
+        word_val _ extra, splitFit]
+      exact ⟨_, rfl⟩
+    · exact ⟨false, rfl⟩
+  · exact ⟨false, rfl⟩
+
 #print axioms square_products_refines
 #print axioms enumerate_preferred_refines
 

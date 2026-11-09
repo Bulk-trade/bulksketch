@@ -111,3 +111,10 @@ import BulksketchBridge.AvxHornerAllocatedKernel
 import BulksketchBridge.NativeRootRun
 import BulksketchBridge.AffineMultipleAlgebra
 import BulksketchBridge.AffineSolveMapTriangular
+import BulksketchBridge.RootAffineAdmission
+import BulksketchBridge.RootAffineFactorFiber
+import BulksketchBridge.RootPendingBudget
+import BulksketchBridge.AvxEncode18Heap
+import BulksketchBridge.RootAffineCoset
+import BulksketchBridge.RootDivideDegree
+import BulksketchBridge.RootDivideCommitDegree

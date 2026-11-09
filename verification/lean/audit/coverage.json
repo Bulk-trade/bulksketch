@@ -2866,7 +2866,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxEncode18.encode_refines",
+        "scope": "Exact normal return for one or two inputs, all 18 GF64 odd-power sums, and suffix and length preservation, under admitted base and store contracts.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:567:function:bulksketch::backend::x86_vpclmul512::powers_18",
@@ -2884,7 +2891,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxEncode18.powers_refines",
+        "scope": "Exact lane ordering and 18 GF64 odd powers under the admitted single-base table law.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:56:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::frobenius",
@@ -12020,8 +12034,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. Original affine multiple operational trace, native dispatcher specialization, and solve-map kernel independence check. Affine multiple minimum and exhaustion exclusion, kernel spanning, caller-wide admission, general traversal and decoder completeness, remaining Rust provenance and compiler/ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 138,
+    "note": "All 344 native executable obligations retained. This checkpoint adds two original AVX capacity-18 bodies and strengthens original affine multiple, GF64 solve-map, and root traversal evidence. Complete native caller admission, depth-first traversal, decoder completeness, Rust provenance, and compiler-to-ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 140,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12127,7 +12141,20 @@
         "BulksketchBridge.AffineSolveMap.native_solve_map_sound",
         "BulksketchBridge.RootRun.original_root_run_refines",
         "BulksketchBridge.AffineMultiple.native_multiple_refines",
-        "BulksketchBridge.AffineSolveMap.native_kernel_independent"
+        "BulksketchBridge.AffineSolveMap.native_kernel_independent",
+        "BulksketchBridge.AffineMultiple.native_multiple_returns",
+        "BulksketchBridge.RootAffinePreparation.native_preparation_refines",
+        "BulksketchBridge.RootAffinePreparation.native_factor_fiber",
+        "BulksketchBridge.RootRun.advance_with_pending_layout",
+        "BulksketchBridge.RootRun.commit_with_pending_layout",
+        "BulksketchBridge.RootRun.advance_restores_factor",
+        "BulksketchBridge.AffineSolveMap.native_solve_map_fibers",
+        "BulksketchBridge.AffineMultiple.native_multiple_returned_witness",
+        "BulksketchBridge.RootAffinePreparation.native_preparation_coset",
+        "BulksketchBridge.RootDivide.native_call_degree",
+        "BulksketchBridge.AffineMultiple.native_multiple_returned_packed_least",
+        "BulksketchBridge.AffineMultiple.native_multiple_squarefree_nonzero_X",
+        "BulksketchBridge.RootDivide.native_committed_degree_mass"
       ]
     },
     "masked_memory_evidence": {
@@ -12157,7 +12184,8 @@
       "BulksketchBridge.AvxSquare.allocated_block_scan",
       "BulksketchBridge.AvxSquare.allocated_square_refines",
       "BulksketchBridge.AvxMultiplyLinear.allocated_multiply_linear_refines",
-      "BulksketchBridge.AvxHorner.allocated_kernel_refines"
+      "BulksketchBridge.AvxHorner.allocated_kernel_refines",
+      "BulksketchBridge.AvxEncode18.allocated_encode_refines"
     ]
   }
 }

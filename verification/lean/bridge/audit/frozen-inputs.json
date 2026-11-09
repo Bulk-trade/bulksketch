@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "1b4ba1566b1fa6408d94a97fed112614c599fc454d71b14398fa6d5bb8786641",
+    "bridge/BulksketchBridge/Audit.lean": "fd854ed27c04d0fd8da937030f4003ead959caf65121392660b6b632d4fb9c59",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "6091117abdc8a309b8ed788546806ad708619ea361599dd5435bab45d92c7cba",
-    "audit/frozen-inputs.json": "7907b01687ae4c32654f723e980320d2e0efc9541ecb9789ea5b67c5ed560def",
-    "bridge/BulksketchBridge.lean": "07046859d15347d5a9b9282bf2d07e2f5af62b073df1cf0453ea4f691489b364",
+    "audit/frozen-inputs.json": "579fc474cdeba2ac16eadc2c0d389b150badbc4d2d0ddbfa52e3240aa9619b53",
+    "bridge/BulksketchBridge.lean": "4ec0ca92d83d82262adf584f766c259038be67d9e69ccfdb5fec6d7493935bd2",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "f65d70ef5dc2347dc2c13690492f572cc4e9471950d2351fc9fabd68a8c9e88d",
-    "bridge/obligations.json": "063290adc8c23f1cb31c62ef8d4954d43670809a06397b3e78451d637ce467e4",
+    "bridge/source-linkage.json": "929366966b49e78e3f00b8f7d2c6af9ca63f7c369ee72516ba9eda41b8921418",
+    "bridge/obligations.json": "1c3d26383a4baf3017982ca80624dfffc20696ba79e2060855caf35dd6f05670",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "8bcb657f97144ca651a5a45b5d1d74c4c88375009990669f025541c6bc86043f",
+    "scripts/check_projection_fixtures.py": "296a252460631b2cb8be26a783ed95ba4c114bc01c74daea13d525b215ebcbf3",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "7480a55379bb1d620bfd34adef127a8040aebddbec1ae4cd5ba4ceeb64d40e05",
+    "README.md": "b6a287462ad3be03a09782e66b1d021c6d5dd7eb7297ec90a39b91c6c7f7cbc6",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "33d0c85b86fac1bc8b20af805cbf93c94b061da42512841a8ba8c72d52653025",
+    "audit/coverage.json": "529eb7491d6cfb610afb835005189e24c430339fa3a7f602b58641da99597408",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -871,7 +871,7 @@
     "bridge/BulksketchBridge/BmConnectionUpdate.lean": "375e8f79ef423b4523cea94990aa769bce76c67d72bc354c074b445ab168076f",
     "bridge/BulksketchBridge/BmDiscrepancy.lean": "4f36d1b8705d5ca0aadaa8543f9cbc3815bd80e2472706336b95477b31e3972f",
     "bridge/BulksketchBridge/BmDiscrepancySpec.lean": "2e3d1d7814946106e52e81e1a508e13c1a091262f281cc84aec2b878f8161cd2",
-    "bridge/BulksketchBridge/BmEntry.lean": "d733a14d2872d1c862287dcd3f9f0ef70a5cca0ec65808c485cbd53e581e83b6",
+    "bridge/BulksketchBridge/BmEntry.lean": "4c7f7e50736b20a96bdded9f773a16aaabaae32d9fc4e501509b5ef3ca2cecfa",
     "bridge/BulksketchBridge/BmEntrySpec.lean": "e6dca2c26b95c42b43742b09b1dbb5d99e5f95350b192e7fa89b60785ee5bf31",
     "bridge/BulksketchBridge/BmEvenStep.lean": "d11c2487e5a026c0ce65a103104e83ed249aeeef5e6e20d0f564ad58dbb91e0d",
     "bridge/BulksketchBridge/BmEvenStepSpec.lean": "34cdd71fd64ce03a28f883e160d6137e864e8e6792fb623cf917a5613f0c8033",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "b6902c65e948eac74ecf32bb8aa4921eaea1b145bea19629cfa75b89bb5b7b22",
-    "audit/native-root-run-checkpoint.json": "a5cc7a1d63f7ddcc25300a878449de91e6be6c850a7922ce939645240208ddaf",
+    "NATIVE_ROOT_RUN.md": "2f95a49a790bd440cd20d2f1186af47dd68a6eb0512aa77660235e56440a418c",
+    "audit/native-root-run-checkpoint.json": "8f04f4b8e94685c36032548da512100c282b0e2ccc26034d1db7071f65fa487f",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1281,10 +1281,10 @@
     "bridge/Arithmetic/AvxMultiplyLinearGenerated.lean": "8f8180be98885dc58012cc6ac8634e901b4032c2f775538ba3ba3fb326a0820d",
     "bridge/BulksketchBridge/AffineCandidateScan.lean": "165286589ccb51754b73336ba67725d9a00da7461ee80bbc689c0ebad2fc982a",
     "bridge/BulksketchBridge/AffineEnumerationBatch.lean": "3c4ae325eed4894f4d19eea943defc3a11c4266508b52a7d556fbdbb6c2cfa18",
-    "bridge/BulksketchBridge/AffineEnumerationFrame.lean": "88dd05180ac5875cb6e988ddd7478cd3930dadd11159fb9f984fa1942acd01b8",
+    "bridge/BulksketchBridge/AffineEnumerationFrame.lean": "ecb20e8e9ee39fe4952b6a4438485a8d72faa69e13fa3ba4b4b1bf0c371d2aa6",
     "bridge/BulksketchBridge/AffineEnumerationHorner.lean": "52726dc1e76ee00cded853014ebf8a911103d0d5438b64951cafaaa53b0bfa71",
     "bridge/BulksketchBridge/AffineGrayFill.lean": "714d7939b3ba16f47c98424fecfd4f705e75c0bb64070cc806b925e75a9e26a0",
-    "bridge/BulksketchBridge/AffineSelector.lean": "f5700d86ba22c39b15a6a8b4c7c4045d6ce29e0a860725a488eeee32e5e98316",
+    "bridge/BulksketchBridge/AffineSelector.lean": "904422487e07f3bae8ea484e9b2c01f8ab78b3ad105eb807dc16a25d426065a9",
     "bridge/BulksketchBridge/AvxMultiplyLinear.lean": "a4ab70f3b92edbe064b21d8a5a7dd7c7870a3ba18be7d4f91bf4f5015cf4aa3c",
     "bridge/BulksketchBridge/AvxMultiplyLinearHeap.lean": "db435bd58c2d735d5a147a0cabbb9ada71aa788b72a66c70574f9fcaec4291d2",
     "extraction/affine-enumerate/Arithmetic/Funs.lean": "7d2317640c55722bd5472bbaad51f84a0af5449faaa9f2508af83ce6c42dc481",
@@ -1415,7 +1415,50 @@
     "extraction/affine-multiple/unchecked.log": "df21670f82b4bf1fe5857006a97d1906d4d2b6f513115577f7122ae8434ee479",
     "extraction/affine-multiple/wrong-lifetime.log": "0f5083e5213c348e054b51dcf3b33fe4b41ea6430beca641a56335da25c07b41",
     "extraction/affine-multiple/zip-lifetimes.log": "4ff0dab374e81a8a2b4370c8b11566fdf32aa93dba885a8ee1532d4108c08be4",
-    "extraction/affine-multiple/zip_lifetimes.py": "7a9e7967c71afb92290ada02a61947b6d828e1f13120e6090c41069e413e02de"
+    "extraction/affine-multiple/zip_lifetimes.py": "7a9e7967c71afb92290ada02a61947b6d828e1f13120e6090c41069e413e02de",
+    "bridge/Arithmetic/AvxEncode18Generated.lean": "609aed937110c817b258cd614e9e2ce723fed265766d3155e096670f95fae800",
+    "bridge/Arithmetic/AvxEncode18Runtime.lean": "c7a922106760ed60a46843ecda1ad47f6312655ff79cdb41d0b595163303bfed",
+    "bridge/BulksketchBridge/AffineMultipleDependentWitness.lean": "1a48701136e7c301acd814d6ba80b381eaf516b4dd4c1cecee3caae897a62d48",
+    "bridge/BulksketchBridge/AffineMultipleIndependence.lean": "da8e6f889a78fde09c67a601ce8fb0cb4f5ef3100e810646b3a34640d8d65791",
+    "bridge/BulksketchBridge/AffineMultipleLeastTrace.lean": "e69d1603b74021f11e038da8d3a362987bb795742bb0f67f2465f62032fb3be6",
+    "bridge/BulksketchBridge/AffineMultipleMinimum.lean": "859738ebf99e2a4250a68f26d9433a9d9bbceb0aeb2724cd8b84cc79ede8956d",
+    "bridge/BulksketchBridge/AffineMultipleNativeWitness.lean": "df754aa5d70385de7cde81578a69bf28debe2adb05eb0a2cb0dda9e7f09bdd4f",
+    "bridge/BulksketchBridge/AffineMultipleNoExhaustion.lean": "1c4386358b80b7884a2e98351ca6b1926dca58c04a223260d46ae0077a844296",
+    "bridge/BulksketchBridge/AffineMultipleQuotientTrace.lean": "89c4cf621988ef56eef04f3d8ec4c9231e92e7acc9db41a6f87e2a715d62577e",
+    "bridge/BulksketchBridge/AffineMultipleSquarefreeX.lean": "c4b7acbcd6e820e198a9fe2809d03a3695fe3a8b496db265a966218ae185471e",
+    "bridge/BulksketchBridge/AffineMultipleStoredWitness.lean": "119f3142ea0230d988b4f2a1f87fc83de7a44e8d572429783963f644aa0da09a",
+    "bridge/BulksketchBridge/AffineMultipleWitness.lean": "c185ce4b4db53929bfb7a4a1e7efca9e2df55a5d294bbc5c117c2d8fd99bea38",
+    "bridge/BulksketchBridge/AffineMultipleWitnessWords.lean": "2ab49708049ebb0ebe377ea1370a45a7a944cddedcde0cf59440e705b7d73eb1",
+    "bridge/BulksketchBridge/AffineSolveMapComplete.lean": "a6d708a1b8249616b72966527feac46f8c1f48b33f758d4e6281a51e7dc9d098",
+    "bridge/BulksketchBridge/AffineSolveMapFiberAlgebra.lean": "2f80c75cc312f876984c480275e6f2ab916af99b9d9ac5b2dc105eb7f5eb5f55",
+    "bridge/BulksketchBridge/AffineSolveMapImageSpan.lean": "702321b4bb178d8291ccdc1ff886a1487bd4fb3aa8e3a5f3137bafc7f891ceb7",
+    "bridge/BulksketchBridge/AffineSolveMapImageThrough.lean": "cde47129d897839f001a415ddc6dbb75eca05b93ea79b873d2daa967e315ece6",
+    "bridge/BulksketchBridge/AffineSolveMapKernelSpan.lean": "95d7900b7634f2366c920fd34dd00fa216c56adc7dbac8f28531363794a10f0d",
+    "bridge/BulksketchBridge/AffineSolveMapPivotSpan.lean": "0efbda617081c42ddc73745f61fa6b1deebe4c9d9183e312435a2688ea453625",
+    "bridge/BulksketchBridge/AvxEncode18.lean": "b61013c0cd5bea06da79ad272e3d3b27fadebac4d9cf9871ebc413d81b6b4af5",
+    "bridge/BulksketchBridge/AvxEncode18Heap.lean": "537da43fde83d987a720c13b6c09f837fa1f5bd6785bb1a17a97a21e1b6e6ff3",
+    "bridge/BulksketchBridge/AvxEncode18Powers.lean": "d7c53efadff9d0fc64a0d8ccddae1f3641424f66010c6b59e31930326d0a7d36",
+    "bridge/BulksketchBridge/AvxEncode18Stores.lean": "cec62703daa95eff9eec86468815e4aebeadfa445172023a89dcd9c90273d244",
+    "bridge/BulksketchBridge/RootAffineAdmission.lean": "3e85c11d80952f3bf9eec5555f58bfd6bc7499192f1e7cba450d1f08966360de",
+    "bridge/BulksketchBridge/RootAffineCoset.lean": "a17a1ebdddfea2c3822a77bc201d493f03e9dd10bb5093c83048ce6f1378ba52",
+    "bridge/BulksketchBridge/RootAffineFactorFiber.lean": "0b0214764cab703830920bf35bbae864116a60e8c9a2e61fde5e51fa3519c61c",
+    "bridge/BulksketchBridge/RootAffineGuards.lean": "c88aff49737769a9841cdf5eeb89c15fd39fa79a9d225975f55e7757ba0d9590",
+    "bridge/BulksketchBridge/RootDivideCommitDegree.lean": "af29a8c331fbdc8ccc6ee7207cf4bb8808ebf6889b4d7c6393d6c20f093e118d",
+    "bridge/BulksketchBridge/RootDivideDegree.lean": "a091b331290caf52c1b5a77d3daf02098c548a7ce01982e9f9d78811c2ef50af",
+    "bridge/BulksketchBridge/RootPendingBudget.lean": "d0cf468190bad5ede987f4949ee52f954ceca12e1c10550ded71efcf9147a55d",
+    "bridge/BulksketchBridge/RootPendingFactors.lean": "75e6d35ab423ed23cdf98c2b8f25a590dba0d3709dd7694ced8cdee0a7ec4137",
+    "bridge/BulksketchBridge/RootPendingLayout.lean": "015b69b84e2d2684e14f8aa8cb4de64837236ee361d22461ac99bc9469a41e0f",
+    "bridge/BulksketchBridge/RootWorkspaceBudget.lean": "938bcfaca39658d25fc5be5a54634896dadb8c9df51576c05d0e5979b941d5f4",
+    "extraction/avx-encode-18/Arithmetic/Funs.lean": "abc37047ccc494592c4afab789b12fcf5c5301432c1dc5d03d2dc3a8fc368421",
+    "extraction/avx-encode-18/Arithmetic/FunsExternal_Template.lean": "eadfc432ba8ab58ab00234620d2d495578dad31300d75145ebc8c000aad30198",
+    "extraction/avx-encode-18/Arithmetic/Types.lean": "9eed91c2cd665f33c198ae5aaee275052307a0f271867751d7ff7a0c7c0fc5b9",
+    "extraction/avx-encode-18/Arithmetic/TypesExternal_Template.lean": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e",
+    "extraction/avx-encode-18/aeneas.log": "879167d4a2fad422ee5b6d46773c9ec020c7ced56f1d26ac6b3cac2776d4dc50",
+    "extraction/avx-encode-18/arithmetic.llbc": "f0a26cef92fd60562b04ad63901983eaa0bf665bb7cd98081e1d4c615ab3e5a8",
+    "extraction/avx-encode-18/charon.log": "9ebe1ecf2dbafba9703e9b136f22261398af6c94ee05c48cbb798c22dbc8a78f",
+    "extraction/avx-encode-18/project.py": "fa0b7306778351fa8c0aebf8e44bbe379ad64a4ff843e2833531e4e5c02a1398",
+    "extraction/avx-encode-18/receipt.json": "d6f46872d896ef202a26317591cb3783e47136402f0d184b23ef1e68a83557c9",
+    "extraction/avx-encode-18/replay.log": "d17526e36e642522033c6689609b318cf7ba9e4682c63795cdf8f39c4c00f2ee"
   },
   "reviewed_policy_revisions": [
     {
@@ -10077,7 +10120,312 @@
       "new_sha256": "6091117abdc8a309b8ed788546806ad708619ea361599dd5435bab45d92c7cba",
       "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence.",
       "old_sha256": "50de9c90cb9d4e0a75e44761ac4c611086b1831c229c6a2bd2a556303535c8a3"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "2f95a49a790bd440cd20d2f1186af47dd68a6eb0512aa77660235e56440a418c",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "b6902c65e948eac74ecf32bb8aa4921eaea1b145bea19629cfa75b89bb5b7b22"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "b6a287462ad3be03a09782e66b1d021c6d5dd7eb7297ec90a39b91c6c7f7cbc6",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "7480a55379bb1d620bfd34adef127a8040aebddbec1ae4cd5ba4ceeb64d40e05"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "529eb7491d6cfb610afb835005189e24c430339fa3a7f602b58641da99597408",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "33d0c85b86fac1bc8b20af805cbf93c94b061da42512841a8ba8c72d52653025"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "579fc474cdeba2ac16eadc2c0d389b150badbc4d2d0ddbfa52e3240aa9619b53",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "7907b01687ae4c32654f723e980320d2e0efc9541ecb9789ea5b67c5ed560def"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "8f04f4b8e94685c36032548da512100c282b0e2ccc26034d1db7071f65fa487f",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "a5cc7a1d63f7ddcc25300a878449de91e6be6c850a7922ce939645240208ddaf"
+    },
+    {
+      "path": "bridge/Arithmetic/AvxEncode18Generated.lean",
+      "new_sha256": "609aed937110c817b258cd614e9e2ce723fed265766d3155e096670f95fae800",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/Arithmetic/AvxEncode18Runtime.lean",
+      "new_sha256": "c7a922106760ed60a46843ecda1ad47f6312655ff79cdb41d0b595163303bfed",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "4ec0ca92d83d82262adf584f766c259038be67d9e69ccfdb5fec6d7493935bd2",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "07046859d15347d5a9b9282bf2d07e2f5af62b073df1cf0453ea4f691489b364"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineEnumerationFrame.lean",
+      "new_sha256": "ecb20e8e9ee39fe4952b6a4438485a8d72faa69e13fa3ba4b4b1bf0c371d2aa6",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "88dd05180ac5875cb6e988ddd7478cd3930dadd11159fb9f984fa1942acd01b8"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleDependentWitness.lean",
+      "new_sha256": "1a48701136e7c301acd814d6ba80b381eaf516b4dd4c1cecee3caae897a62d48",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleIndependence.lean",
+      "new_sha256": "da8e6f889a78fde09c67a601ce8fb0cb4f5ef3100e810646b3a34640d8d65791",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleLeastTrace.lean",
+      "new_sha256": "e69d1603b74021f11e038da8d3a362987bb795742bb0f67f2465f62032fb3be6",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleMinimum.lean",
+      "new_sha256": "859738ebf99e2a4250a68f26d9433a9d9bbceb0aeb2724cd8b84cc79ede8956d",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleNativeWitness.lean",
+      "new_sha256": "df754aa5d70385de7cde81578a69bf28debe2adb05eb0a2cb0dda9e7f09bdd4f",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleNoExhaustion.lean",
+      "new_sha256": "1c4386358b80b7884a2e98351ca6b1926dca58c04a223260d46ae0077a844296",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleQuotientTrace.lean",
+      "new_sha256": "89c4cf621988ef56eef04f3d8ec4c9231e92e7acc9db41a6f87e2a715d62577e",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleSquarefreeX.lean",
+      "new_sha256": "c4b7acbcd6e820e198a9fe2809d03a3695fe3a8b496db265a966218ae185471e",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleStoredWitness.lean",
+      "new_sha256": "119f3142ea0230d988b4f2a1f87fc83de7a44e8d572429783963f644aa0da09a",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleWitness.lean",
+      "new_sha256": "c185ce4b4db53929bfb7a4a1e7efca9e2df55a5d294bbc5c117c2d8fd99bea38",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleWitnessWords.lean",
+      "new_sha256": "2ab49708049ebb0ebe377ea1370a45a7a944cddedcde0cf59440e705b7d73eb1",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSelector.lean",
+      "new_sha256": "904422487e07f3bae8ea484e9b2c01f8ab78b3ad105eb807dc16a25d426065a9",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "f5700d86ba22c39b15a6a8b4c7c4045d6ce29e0a860725a488eeee32e5e98316"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSolveMapComplete.lean",
+      "new_sha256": "a6d708a1b8249616b72966527feac46f8c1f48b33f758d4e6281a51e7dc9d098",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSolveMapFiberAlgebra.lean",
+      "new_sha256": "2f80c75cc312f876984c480275e6f2ab916af99b9d9ac5b2dc105eb7f5eb5f55",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSolveMapImageSpan.lean",
+      "new_sha256": "702321b4bb178d8291ccdc1ff886a1487bd4fb3aa8e3a5f3137bafc7f891ceb7",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSolveMapImageThrough.lean",
+      "new_sha256": "cde47129d897839f001a415ddc6dbb75eca05b93ea79b873d2daa967e315ece6",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSolveMapKernelSpan.lean",
+      "new_sha256": "95d7900b7634f2366c920fd34dd00fa216c56adc7dbac8f28531363794a10f0d",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSolveMapPivotSpan.lean",
+      "new_sha256": "0efbda617081c42ddc73745f61fa6b1deebe4c9d9183e312435a2688ea453625",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "fd854ed27c04d0fd8da937030f4003ead959caf65121392660b6b632d4fb9c59",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "1b4ba1566b1fa6408d94a97fed112614c599fc454d71b14398fa6d5bb8786641"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxEncode18.lean",
+      "new_sha256": "b61013c0cd5bea06da79ad272e3d3b27fadebac4d9cf9871ebc413d81b6b4af5",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxEncode18Heap.lean",
+      "new_sha256": "537da43fde83d987a720c13b6c09f837fa1f5bd6785bb1a17a97a21e1b6e6ff3",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxEncode18Powers.lean",
+      "new_sha256": "d7c53efadff9d0fc64a0d8ccddae1f3641424f66010c6b59e31930326d0a7d36",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxEncode18Stores.lean",
+      "new_sha256": "cec62703daa95eff9eec86468815e4aebeadfa445172023a89dcd9c90273d244",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/BmEntry.lean",
+      "new_sha256": "4c7f7e50736b20a96bdded9f773a16aaabaae32d9fc4e501509b5ef3ca2cecfa",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "d733a14d2872d1c862287dcd3f9f0ef70a5cca0ec65808c485cbd53e581e83b6"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootAffineAdmission.lean",
+      "new_sha256": "3e85c11d80952f3bf9eec5555f58bfd6bc7499192f1e7cba450d1f08966360de",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootAffineCoset.lean",
+      "new_sha256": "370b2b8b01f0c421884482c5e79243224013d3b2b5e0cc3d633f4b4de277abf3",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootAffineFactorFiber.lean",
+      "new_sha256": "0b0214764cab703830920bf35bbae864116a60e8c9a2e61fde5e51fa3519c61c",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootAffineGuards.lean",
+      "new_sha256": "c88aff49737769a9841cdf5eeb89c15fd39fa79a9d225975f55e7757ba0d9590",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootDivideCommitDegree.lean",
+      "new_sha256": "af29a8c331fbdc8ccc6ee7207cf4bb8808ebf6889b4d7c6393d6c20f093e118d",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootDivideDegree.lean",
+      "new_sha256": "a091b331290caf52c1b5a77d3daf02098c548a7ce01982e9f9d78811c2ef50af",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootPendingBudget.lean",
+      "new_sha256": "d0cf468190bad5ede987f4949ee52f954ceca12e1c10550ded71efcf9147a55d",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootPendingFactors.lean",
+      "new_sha256": "75e6d35ab423ed23cdf98c2b8f25a590dba0d3709dd7694ced8cdee0a7ec4137",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootPendingLayout.lean",
+      "new_sha256": "015b69b84e2d2684e14f8aa8cb4de64837236ee361d22461ac99bc9469a41e0f",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootWorkspaceBudget.lean",
+      "new_sha256": "938bcfaca39658d25fc5be5a54634896dadb8c9df51576c05d0e5979b941d5f4",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "1c3d26383a4baf3017982ca80624dfffc20696ba79e2060855caf35dd6f05670",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "063290adc8c23f1cb31c62ef8d4954d43670809a06397b3e78451d637ce467e4"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "929366966b49e78e3f00b8f7d2c6af9ca63f7c369ee72516ba9eda41b8921418",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "f65d70ef5dc2347dc2c13690492f572cc4e9471950d2351fc9fabd68a8c9e88d"
+    },
+    {
+      "path": "extraction/avx-encode-18/Arithmetic/Funs.lean",
+      "new_sha256": "abc37047ccc494592c4afab789b12fcf5c5301432c1dc5d03d2dc3a8fc368421",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "extraction/avx-encode-18/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "eadfc432ba8ab58ab00234620d2d495578dad31300d75145ebc8c000aad30198",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "extraction/avx-encode-18/Arithmetic/Types.lean",
+      "new_sha256": "9eed91c2cd665f33c198ae5aaee275052307a0f271867751d7ff7a0c7c0fc5b9",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "extraction/avx-encode-18/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "extraction/avx-encode-18/aeneas.log",
+      "new_sha256": "879167d4a2fad422ee5b6d46773c9ec020c7ced56f1d26ac6b3cac2776d4dc50",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "extraction/avx-encode-18/arithmetic.llbc",
+      "new_sha256": "f0a26cef92fd60562b04ad63901983eaa0bf665bb7cd98081e1d4c615ab3e5a8",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "extraction/avx-encode-18/charon.log",
+      "new_sha256": "9ebe1ecf2dbafba9703e9b136f22261398af6c94ee05c48cbb798c22dbc8a78f",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "extraction/avx-encode-18/project.py",
+      "new_sha256": "fa0b7306778351fa8c0aebf8e44bbe379ad64a4ff843e2833531e4e5c02a1398",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "extraction/avx-encode-18/receipt.json",
+      "new_sha256": "d6f46872d896ef202a26317591cb3783e47136402f0d184b23ef1e68a83557c9",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "extraction/avx-encode-18/replay.log",
+      "new_sha256": "d17526e36e642522033c6689609b318cf7ba9e4682c63795cdf8f39c4c00f2ee",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "296a252460631b2cb8be26a783ed95ba4c114bc01c74daea13d525b215ebcbf3",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "8bcb657f97144ca651a5a45b5d1d74c4c88375009990669f025541c6bc86043f"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootAffineCoset.lean",
+      "new_sha256": "1af52ec119a90246c68b506d6ce8d69b25f2d70f5d1e726404240af077c7bdef",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "370b2b8b01f0c421884482c5e79243224013d3b2b5e0cc3d633f4b4de277abf3"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootAffineCoset.lean",
+      "new_sha256": "a17a1ebdddfea2c3822a77bc201d493f03e9dd10bb5093c83048ce6f1378ba52",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "1af52ec119a90246c68b506d6ce8d69b25f2d70f5d1e726404240af077c7bdef"
     }
   ],
-  "challenge_count": 293
+  "challenge_count": 309
 }

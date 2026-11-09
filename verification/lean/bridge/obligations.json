@@ -1172,6 +1172,70 @@
     {
       "challenge": "BulksketchBridge.AffineSolveMap.ActualNativeKernelIndependent",
       "theorem": "BulksketchBridge.AffineSolveMap.native_kernel_independent"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxEncode18.ActualEncode18",
+      "theorem": "BulksketchBridge.AvxEncode18.encode_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxEncode18.ActualPowers18",
+      "theorem": "BulksketchBridge.AvxEncode18.powers_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxEncode18.ActualAllocatedEncode18",
+      "theorem": "BulksketchBridge.AvxEncode18.allocated_encode_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineMultiple.ActualNativeMultipleReturns",
+      "theorem": "BulksketchBridge.AffineMultiple.native_multiple_returns"
+    },
+    {
+      "challenge": "BulksketchBridge.RootAffinePreparation.ActualNativeAffinePreparation",
+      "theorem": "BulksketchBridge.RootAffinePreparation.native_preparation_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootAffinePreparation.ActualNativeFactorFiber",
+      "theorem": "BulksketchBridge.RootAffinePreparation.native_factor_fiber"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualAdvanceWithPendingLayout",
+      "theorem": "BulksketchBridge.RootRun.advance_with_pending_layout"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualCommitWithPendingLayout",
+      "theorem": "BulksketchBridge.RootRun.commit_with_pending_layout"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualAdvanceRestoresFactor",
+      "theorem": "BulksketchBridge.RootRun.advance_restores_factor"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineSolveMap.ActualNativeSolveMapFibers",
+      "theorem": "BulksketchBridge.AffineSolveMap.native_solve_map_fibers"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineMultiple.ActualNativeReturnedWitness",
+      "theorem": "BulksketchBridge.AffineMultiple.native_multiple_returned_witness"
+    },
+    {
+      "challenge": "BulksketchBridge.RootAffinePreparation.ActualNativePreparationCoset",
+      "theorem": "BulksketchBridge.RootAffinePreparation.native_preparation_coset"
+    },
+    {
+      "challenge": "BulksketchBridge.RootDivide.ActualNativeDivideDegree",
+      "theorem": "BulksketchBridge.RootDivide.native_call_degree"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineMultiple.ActualNativeReturnedLeast",
+      "theorem": "BulksketchBridge.AffineMultiple.native_multiple_returned_packed_least"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineMultiple.ActualNativeSquarefreeNonzeroX",
+      "theorem": "BulksketchBridge.AffineMultiple.native_multiple_squarefree_nonzero_X"
+    },
+    {
+      "challenge": "BulksketchBridge.RootDivide.ActualNativeCommittedDegreeMass",
+      "theorem": "BulksketchBridge.RootDivide.native_committed_degree_mass"
     }
   ],
   "refinements": [
@@ -3372,6 +3436,34 @@
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original arena setup, pivot search, normalization, bounded column trace and scratch result under admitted GF64 backend and table laws. Includes original exhaustion panic. Minimum and algebraic unreachability are separate.",
       "translator_variant": "checked-affine-multiple-zip-ends-v1"
+    },
+    {
+      "label": "AVX-512 encode_18 [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:551:function:bulksketch::backend::x86_vpclmul512::encode_18",
+      "source_line_span_sha256": "3a721e7ff6a1937a78a2fac3ba6f973b2ab3dc86de523024b51522ec3feb17e9",
+      "theorem": "BulksketchBridge.AvxEncode18.encode_refines",
+      "challenge": "BulksketchBridge.AvxEncode18.ActualEncode18",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.encode_18",
+      "generated_file": "bridge/Arithmetic/AvxEncode18Generated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxEncode18Generated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact normal return for one or two inputs, all 18 GF64 odd-power sums, and suffix and length preservation, under admitted base and store contracts."
+    },
+    {
+      "label": "AVX-512 powers_18 [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:567:function:bulksketch::backend::x86_vpclmul512::powers_18",
+      "source_line_span_sha256": "16b4c79355ae5915d6274523897acdcd2c759e0925aab87c2dae66d57b22aa11",
+      "theorem": "BulksketchBridge.AvxEncode18.powers_refines",
+      "challenge": "BulksketchBridge.AvxEncode18.ActualPowers18",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.powers_18",
+      "generated_file": "bridge/Arithmetic/AvxEncode18Generated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxEncode18Generated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact lane ordering and 18 GF64 odd powers under the admitted single-base table law."
     }
   ],
   "stateful_llbc_refinements": [
