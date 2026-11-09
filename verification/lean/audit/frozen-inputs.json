@@ -36,7 +36,7 @@
     "audit/core-maps-proof-independent-review.md": "aed4509f239a8e3db59c7a9f0d95ca20286d8a6df50372e3f59c172572101124",
     "audit/field-algebra-accounting-review.md": "55d3cd81a3f03185992e3272994c04b13b5e7ea34ff85e5d8e2cfced90f240be",
     "audit/field-algebra-checkpoint.json": "e93b65ffd57dcdb5c4c987c76f96d48b8917e82f52969853dbb979c049a4220e",
-    "scripts/check_projection_fixtures.py": "04bb63f1dbcea0d2e66ab6d8de1c4b2e897a43e79d2cbd928d1207984df3a2d7",
+    "scripts/check_projection_fixtures.py": "e0e1b213d83bc0e0f19217cd25f19e2577e8417ea3e608816ade929aa8e92044",
     "audit/quotient-field-checkpoint.json": "c14a8dd2f0d747079f64b40c3dc9e52db3373ddfc1414b62667727444a82825e",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
     "audit/word-quotient-independent-review.md": "311018cf261231ef631f59867defc66cf7a13e5eba60d414f88b9d4e922dc823",
@@ -55,7 +55,7 @@
     "audit/native-stateful-checkpoint.json": "2c41ee402642341add52703d90795de97eff7b0656c4a4db9cd3e675332f0210",
     "NATIVE_CALLER_CHAINS.md": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
     "audit/native-caller-checkpoint.json": "837788fd6bb6f20d3c18e69b74e0610177fc4b9aec084f1ec313c271f4771cf2",
-    "README.md": "57c55da3aa5cdeff1c350b50cb0ac3787a1254eb78d12dd1fb1ec4a24127dc07",
+    "README.md": "816c565b00f3a02a19e081cebe863a6f4e4fb28b90de0885c3f22f646127af82",
     "NATIVE_RECONSTRUCTION.md": "3a1955592353708b30df40c5fb5443a743451002275c4da8164c37a3344746b2",
     "audit/native-reconstruction-checkpoint.json": "13745cfcf6c9161fb460c8165365bb767a672f474cd14d06edecf6b5fb428562",
     "NATIVE_QUARTIC.md": "0f7a4311accbf944b75a6792955da66ae548891ce2dc1a7e53a167aed892a381",
@@ -72,8 +72,8 @@
     "audit/native-dense-reducer-checkpoint.json": "41da787e360070eaa0ee57a31380362d9a3a4642c085a1334ba9293acb37fceb",
     "NATIVE_DENSE_DIVISION.md": "7bc66fd0e205e372f4492b801782b7af8a5cf59bd300896e4b7633612da6b9bc",
     "audit/native-dense-division-checkpoint.json": "d7fb2cc4e1014accb335dc7532561026c4c6906194c6cffec11ecead264c01cc",
-    "NATIVE_ROOT_RUN.md": "6b8c7f89d42be0064df5c02b971115c7ae025c8dcf005493276e2d5731f7dfb5",
-    "audit/native-root-run-checkpoint.json": "bd05383a4443f598013ce8e02e53767181c02f06c5f17aa447f47293744af4f3"
+    "NATIVE_ROOT_RUN.md": "9274a01f64c222dfaae7e3f833ca917ef515ecb86fbd4ac3225c820debf5dff8",
+    "audit/native-root-run-checkpoint.json": "9419224aa1f262e8c7f8953daef04fd2626a0e7bf1da8fd68ca11fd631acb969"
   },
   "reviewed_policy_revisions": [
     {
@@ -921,6 +921,30 @@
       "new_sha256": "04bb63f1dbcea0d2e66ab6d8de1c4b2e897a43e79d2cbd928d1207984df3a2d7",
       "reason": "Freeze native traversal admission, exact affine table writeback and split rows, and original AVX insertion table generation.",
       "old_sha256": "88c4ea95e73ef0ecd6bc5693ff313b8bc191a44d0f537cb22a869aed2a86139d"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "9274a01f64c222dfaae7e3f833ca917ef515ecb86fbd4ac3225c820debf5dff8",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "6b8c7f89d42be0064df5c02b971115c7ae025c8dcf005493276e2d5731f7dfb5"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "816c565b00f3a02a19e081cebe863a6f4e4fb28b90de0885c3f22f646127af82",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "57c55da3aa5cdeff1c350b50cb0ac3787a1254eb78d12dd1fb1ec4a24127dc07"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "9419224aa1f262e8c7f8953daef04fd2626a0e7bf1da8fd68ca11fd631acb969",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "bd05383a4443f598013ce8e02e53767181c02f06c5f17aa447f47293744af4f3"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "e0e1b213d83bc0e0f19217cd25f19e2577e8417ea3e608816ade929aa8e92044",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "04bb63f1dbcea0d2e66ab6d8de1c4b2e897a43e79d2cbd928d1207984df3a2d7"
     }
   ]
 }

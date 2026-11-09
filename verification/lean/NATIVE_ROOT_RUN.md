@@ -106,7 +106,18 @@ and preserves the recorded child bases and rank. The complete
 depth-first traversal still needs to compose these steps. From the
 admitted incoming count, degree and pending state, the original
 Roots::start establishes the empty pending layout, root budget, basis
-reset and exact locator copy.
+reset and exact locator copy. The native predictor proves both checked
+Gaussian cost loops and computes the preferred degree mask as 0x7fff8.
+Traversal start uses the original V3 preference for degrees 3 through 18.
+
+The native paid proper-division dispatcher derives the exact quotient
+from GCD divisibility. The live degree budget supplies both checked offsets,
+the next pending slot and the affine base cell. Its returned state preserves
+degree mass and strictly lowers the sum of squared live factor degrees.
+For the non-affine trace branch, two distinct roots have different binary
+trace bits in at least one of the 64 cached directions. On a nonproper GCD
+the current trace bit agrees across the entire factor, extending the
+earlier-direction invariant and excluding the terminal retry rejection.
 
 The AVX square finite-heap theorem composes the zero fill, scalar
 coefficient seeds, and the original masked LLBC load/store block
@@ -140,10 +151,10 @@ windows of the input word and XORs their rows. Its finite-heap proof
 checks the captured contiguous insertion-table layout and every
 masked read. The original static table generator now refines the exact
 zero-initialized cell fold across its three nested loops, including the
-original Frobenius square. The field interpretation of those generated
-cells remains a table-value premise for the allocated lookup theorem.
-The heap contracts use the captured x86 layout and admitted live
-allocation views.
+original Frobenius square. The per-cell field proof and exact immutable
+INSERT_BASES initializer supply the lookup and encoder's field values.
+The allocated encoder proof composes the admitted table and output views,
+keeps the table bytes unchanged and frames bytes outside the output prefix.
 
 Run the complete gate from `verification/lean`.
 

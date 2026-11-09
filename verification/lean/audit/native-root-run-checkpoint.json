@@ -1,13 +1,13 @@
 {
   "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
-  "previous_proof_commit": "aa940db8d0fb2e4aa82a5bd738c425ac206e87de",
+  "previous_proof_commit": "471820c970a4c61c39493d546f403e9aee7075b4",
   "retained_native_executable_obligations": 344,
-  "generated_body_refinements_under_recorded_TCB": 142,
+  "generated_body_refinements_under_recorded_TCB": 144,
   "checked_stateful_llbc_refinements": 5,
   "whole_native_coverage_achieved": false,
   "open": [
-    "Complete depth-first traversal and caller-wide admission",
+    "Complete depth-first traversal and caller-wide admission, including native trace split check and leaf emission",
     "Candidate evaluation, deflation, and end-to-end decoder completeness",
-    "Static insertion table field interpretation, remaining AVX and NEON bodies, Rust pointer provenance, and compiler-to-ISA correspondence"
+    "Remaining AVX and NEON bodies, Rust pointer provenance, and compiler-to-ISA correspondence"
   ]
 }

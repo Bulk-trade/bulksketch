@@ -1,5 +1,6 @@
 import BulksketchBridge.RootSetup
 import BulksketchBridge.RootPendingBudget
+import BulksketchBridge.AffinePredictor
 
 namespace BulksketchBridge.RootRun
 
@@ -30,16 +31,15 @@ theorem started_workspace_lengths (degree : Usize) (workspace : RowWorkspace) :
   · simp only [workspaceLengths, startedWorkspace, zero, ite_false, restore_length]
 
 /-- The original start prepares the traversal for an already counted row.
-The source-selected affine flag is explicit. Positive budgets have full traversal
-storage, including the polynomial room needed by the pending-layout invariant. -/
+The original GF64 preference selects the affine flag. Positive budgets have
+full traversal storage, including room for the pending layout. -/
 def ActualRootTraversalStart : Prop :=
-  ∀ (roots : Roots) (degree : Usize) (workspace : RowWorkspace) (capacity budget : Nat) (affine : Bool),
+  ∀ (roots : Roots) (degree : Usize) (workspace : RowWorkspace) (capacity budget : Nat),
     WorkspaceAdmission.Admitted (workspaceLengths workspace) capacity budget →
     budget ≤ capacity →
     roots.pending = 0#usize →
     roots.count.val + degree.val ≤ budget →
-    (if roots.v3 then bulksketch.decode.affine.preferred gf64Dictionary degree
-      else .ok false) = .ok affine →
+    let affine := roots.v3 && decide (3 ≤ degree.val ∧ degree.val ≤ 18)
     let next := startedRoots roots degree affine
     let written := startedWorkspace degree workspace
     Roots.start roots degree workspace = .ok (ClosedLeafAdvance.stageFor next, next, written, id) ∧
@@ -56,8 +56,11 @@ def ActualRootTraversalStart : Prop :=
     (2 ≤ degree.val → factorReady next written)
 
 theorem native_root_traversal_start : ActualRootTraversalStart := by
-  intro roots degree workspace capacity budget affine admitted budgetCap empty mass choice
-  dsimp only
+  intro roots degree workspace capacity budget admitted budgetCap empty mass affine next written
+  have choice := AffinePreferred.root_start_preference roots degree
+  change _ = Result.ok affine at choice
+  change _ ∧ _
+  dsimp only [next, written]
   have degreeBound : degree.val ≤ budget := by omega
   have bounds := root_start_bounds_of_admitted degree workspace capacity budget degreeBound budgetCap admitted
   have admittedWritten : WorkspaceAdmission.Admitted

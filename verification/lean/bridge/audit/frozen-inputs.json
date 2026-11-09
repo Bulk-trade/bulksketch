@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "f3cd8a63aa180e7c329b2d473cebb1c1076ac8dd564e13865abaa14735df3daf",
+    "bridge/BulksketchBridge/Audit.lean": "fd0b05cae64997b16f430729e6c400b8c3776755d84e1d2382c55984e3d1ffd9",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "6091117abdc8a309b8ed788546806ad708619ea361599dd5435bab45d92c7cba",
-    "audit/frozen-inputs.json": "b4f14069a4c06e05fef8b5461894922986e630b22d001d3a8bf1829c3887ce09",
-    "bridge/BulksketchBridge.lean": "f90f125182557511b965820defd34f98a20d0b688401b587f9201bef6b6e0ace",
+    "audit/frozen-inputs.json": "a0265e318aa6405d991ae69441db3d2232022a27564ee89cbd3840ea7f673719",
+    "bridge/BulksketchBridge.lean": "4e1b5d77ede94739d48ca699d49c4acb556ab410c6ac99cbdc46a22acffa64d5",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "195989958fdb64e30f04683c23233a08b56224f2d7093cb7514441be36107a39",
-    "bridge/obligations.json": "47e88c663cf48b6bd3355c2ad278efcc714b4c4984a2bd1c38909f97c5d22fd4",
+    "bridge/source-linkage.json": "9aef72380e2fab35a1f89ed54972cecc88e6e4c10b7e0742f6e85b940b03e1b0",
+    "bridge/obligations.json": "e0b4e49a071cad138a4a26476b4b5081e1a4c895a65bd4aceccab7867093937a",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "04bb63f1dbcea0d2e66ab6d8de1c4b2e897a43e79d2cbd928d1207984df3a2d7",
+    "scripts/check_projection_fixtures.py": "e0e1b213d83bc0e0f19217cd25f19e2577e8417ea3e608816ade929aa8e92044",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "57c55da3aa5cdeff1c350b50cb0ac3787a1254eb78d12dd1fb1ec4a24127dc07",
+    "README.md": "816c565b00f3a02a19e081cebe863a6f4e4fb28b90de0885c3f22f646127af82",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "bab50a02e6102a810869760cee6064c979cecc2b3a9f3ec2ea254a9a7483d856",
+    "audit/coverage.json": "fa1959412982beba217413a0ef5b7f4724ed12aada96bcb3b2445998e331a510",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "6b8c7f89d42be0064df5c02b971115c7ae025c8dcf005493276e2d5731f7dfb5",
-    "audit/native-root-run-checkpoint.json": "bd05383a4443f598013ce8e02e53767181c02f06c5f17aa447f47293744af4f3",
+    "NATIVE_ROOT_RUN.md": "9274a01f64c222dfaae7e3f833ca917ef515ecb86fbd4ac3225c820debf5dff8",
+    "audit/native-root-run-checkpoint.json": "9419224aa1f262e8c7f8953daef04fd2626a0e7bf1da8fd68ca11fd631acb969",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1482,7 +1482,7 @@
     "bridge/BulksketchBridge/AvxInsertionBasesInner.lean": "1d43e89dbdfa9a9005c6db3160f3e93f1b26d47135d2fb0446aeec4b5ffec242",
     "bridge/BulksketchBridge/RootAffineTableWindow.lean": "e8e5a8076e7d0345963a250a4934f87f91f9bce60b8011a8843c2ef631159a23",
     "bridge/BulksketchBridge/RootNativeAffineSplit.lean": "8ade55241ccd4a34efab92596e05dd293ded4727a15da4df2131550e9339b4cd",
-    "bridge/BulksketchBridge/RootTraversalStart.lean": "983c067cd8a792f2f726687d6dd3e2d54530e9c3c91e84beffff70e9a656033e",
+    "bridge/BulksketchBridge/RootTraversalStart.lean": "d472b40a73cb2d6881656a745cf83a93c9be12a1717629a7d95615cfcc21d9e5",
     "extraction/avx-insertion-bases/Arithmetic/Funs.lean": "263b8f81e3e589fff3192220c03c9534aa7089f0098cba654e86992522745fb2",
     "extraction/avx-insertion-bases/Arithmetic/FunsExternal_Template.lean": "a8a988b12909ca8b3bd9f65e98f881c6bbe4b81df06264b6ef15d0f044b36f87",
     "extraction/avx-insertion-bases/Arithmetic/Types.lean": "3b5e42228aa7786e9a2ac62d15e0ebdb51101ab666637a72145d5342c3532fa6",
@@ -1491,7 +1491,28 @@
     "extraction/avx-insertion-bases/charon.log": "36cc2237f16c39c3ece24ee5baccc750ce2e7887225db9829148d70baf9335a7",
     "extraction/avx-insertion-bases/project.py": "f1a93a6fc865f730d0c1cae860477cea052487a3fd48d26f55e1a6eebba1f911",
     "extraction/avx-insertion-bases/receipt.json": "5ba31d20a19c7481dabd3d9e982cd4ce34c2d198c0c2d968f9212d36ff1e0445",
-    "extraction/avx-insertion-bases/replay.log": "c85850baed8bd697c0977941141df7952655cf72fa5235992f8b67f1aa577bd9"
+    "extraction/avx-insertion-bases/replay.log": "c85850baed8bd697c0977941141df7952655cf72fa5235992f8b67f1aa577bd9",
+    "bridge/Arithmetic/AvxInsertionBasesStaticGenerated.lean": "2e18c1cc905343dabf017540bc76c5688845e752556190723b834894bc0584fe",
+    "bridge/BulksketchBridge/AffinePredictor.lean": "27fbc4520c454baf5cecef18a70b787d81df6822a7948e4ab307fc11a261a7b2",
+    "bridge/BulksketchBridge/AffinePreferred.lean": "be41eac19280868489188e9268a1e8b47744bd04dd1cfd8cf70cb36c7a78d1e9",
+    "bridge/BulksketchBridge/AvxInsertionBasesBitCells.lean": "728ca407d1154b9e5f31f104f3f9a4c1ebd2bf237d8e8d6370ea126ca11d6293",
+    "bridge/BulksketchBridge/AvxInsertionBasesPowerCells.lean": "591fa305ffb04a0df53bc02bc2d514b17ea8a1bf4681dbfba36170c78dfc4998",
+    "bridge/BulksketchBridge/AvxInsertionBasesStatic.lean": "1fc2e3fc23726ead9ea77ca36cb7b6ac4717e037ff10b1b00f49fdbef52fffaf",
+    "bridge/BulksketchBridge/AvxInsertionBasesTableLaw.lean": "26f8328f375ed54763c21bdee86975259ceab876febf09023ca027671f014e60",
+    "bridge/BulksketchBridge/RootDivideArena.lean": "d8c342b2a6d0ea787afe2c746524119e9d8410ef4eea47698abdb3c3fd68be20",
+    "bridge/BulksketchBridge/RootDivideGcdExact.lean": "15d18fb028ff2154df2270bf3dd7c18cb19dc77711c1bfaeb91da03fa5156889",
+    "bridge/BulksketchBridge/RootNativeProperDivide.lean": "f3e85c232a42e1a59c81470cb35e17513cf163ae2466e136fb3be8a0b7ec281f",
+    "bridge/BulksketchBridge/RootTraceProgress.lean": "78ac4692236f9c055a757bf7dc518801d0bafa2e4ffe53c9966ba1227bb7d9c3",
+    "bridge/BulksketchBridge/RootTraversalPotential.lean": "749a1c5d868f65aa025db9b9176a3e996bc36b0a2ffb829608ded0a9050b558a",
+    "extraction/avx-insertion-bases-static/Arithmetic/Funs.lean": "e803915a0b577be92377c0c58f5eb438a1cb298c53631f592a31b2ee338f0ce3",
+    "extraction/avx-insertion-bases-static/Arithmetic/FunsExternal_Template.lean": "a8a988b12909ca8b3bd9f65e98f881c6bbe4b81df06264b6ef15d0f044b36f87",
+    "extraction/avx-insertion-bases-static/Arithmetic/Types.lean": "3b5e42228aa7786e9a2ac62d15e0ebdb51101ab666637a72145d5342c3532fa6",
+    "extraction/avx-insertion-bases-static/aeneas.log": "93080a54f26a0b8e6e01d4ae4e9a781fa659fa73e3033080bd640e38f2025fa9",
+    "extraction/avx-insertion-bases-static/arithmetic.llbc": "a2b5079a66fd837ec5d6a7e25792028a9d007007a8810c6762943dc076cfca8f",
+    "extraction/avx-insertion-bases-static/charon.log": "952963e47852f5d157a28f4602ed15fc4b41f9f3019db30a0870aab192cffa9b",
+    "extraction/avx-insertion-bases-static/project.py": "71f5872b209201a18e07a1e18942dcaad587505d960477b34098fc8e94e06f3b",
+    "extraction/avx-insertion-bases-static/receipt.json": "33bdec05e8bc749eecbb5500d009b3418b3c1beecb5988a03f230d2280963e07",
+    "extraction/avx-insertion-bases-static/replay.log": "8c3668e8dd7a232f1dd9cf8aa556c08c6708f51c1ef976521e4ba0f24ad67ddc"
   },
   "reviewed_policy_revisions": [
     {
@@ -10749,7 +10770,178 @@
       "new_sha256": "04bb63f1dbcea0d2e66ab6d8de1c4b2e897a43e79d2cbd928d1207984df3a2d7",
       "reason": "Freeze native traversal admission, exact affine table writeback and split rows, and original AVX insertion table generation.",
       "old_sha256": "88c4ea95e73ef0ecd6bc5693ff313b8bc191a44d0f537cb22a869aed2a86139d"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "9274a01f64c222dfaae7e3f833ca917ef515ecb86fbd4ac3225c820debf5dff8",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "6b8c7f89d42be0064df5c02b971115c7ae025c8dcf005493276e2d5731f7dfb5"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "816c565b00f3a02a19e081cebe863a6f4e4fb28b90de0885c3f22f646127af82",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "57c55da3aa5cdeff1c350b50cb0ac3787a1254eb78d12dd1fb1ec4a24127dc07"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "fa1959412982beba217413a0ef5b7f4724ed12aada96bcb3b2445998e331a510",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "bab50a02e6102a810869760cee6064c979cecc2b3a9f3ec2ea254a9a7483d856"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "a0265e318aa6405d991ae69441db3d2232022a27564ee89cbd3840ea7f673719",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "b4f14069a4c06e05fef8b5461894922986e630b22d001d3a8bf1829c3887ce09"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "9419224aa1f262e8c7f8953daef04fd2626a0e7bf1da8fd68ca11fd631acb969",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "bd05383a4443f598013ce8e02e53767181c02f06c5f17aa447f47293744af4f3"
+    },
+    {
+      "path": "bridge/Arithmetic/AvxInsertionBasesStaticGenerated.lean",
+      "new_sha256": "2e18c1cc905343dabf017540bc76c5688845e752556190723b834894bc0584fe",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "4e1b5d77ede94739d48ca699d49c4acb556ab410c6ac99cbdc46a22acffa64d5",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "f90f125182557511b965820defd34f98a20d0b688401b587f9201bef6b6e0ace"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffinePredictor.lean",
+      "new_sha256": "27fbc4520c454baf5cecef18a70b787d81df6822a7948e4ab307fc11a261a7b2",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffinePreferred.lean",
+      "new_sha256": "be41eac19280868489188e9268a1e8b47744bd04dd1cfd8cf70cb36c7a78d1e9",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "fd0b05cae64997b16f430729e6c400b8c3776755d84e1d2382c55984e3d1ffd9",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "f3cd8a63aa180e7c329b2d473cebb1c1076ac8dd564e13865abaa14735df3daf"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxInsertionBasesBitCells.lean",
+      "new_sha256": "728ca407d1154b9e5f31f104f3f9a4c1ebd2bf237d8e8d6370ea126ca11d6293",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxInsertionBasesPowerCells.lean",
+      "new_sha256": "591fa305ffb04a0df53bc02bc2d514b17ea8a1bf4681dbfba36170c78dfc4998",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxInsertionBasesStatic.lean",
+      "new_sha256": "1fc2e3fc23726ead9ea77ca36cb7b6ac4717e037ff10b1b00f49fdbef52fffaf",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxInsertionBasesTableLaw.lean",
+      "new_sha256": "26f8328f375ed54763c21bdee86975259ceab876febf09023ca027671f014e60",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootDivideArena.lean",
+      "new_sha256": "d8c342b2a6d0ea787afe2c746524119e9d8410ef4eea47698abdb3c3fd68be20",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootDivideGcdExact.lean",
+      "new_sha256": "15d18fb028ff2154df2270bf3dd7c18cb19dc77711c1bfaeb91da03fa5156889",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootNativeProperDivide.lean",
+      "new_sha256": "f3e85c232a42e1a59c81470cb35e17513cf163ae2466e136fb3be8a0b7ec281f",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraceProgress.lean",
+      "new_sha256": "78ac4692236f9c055a757bf7dc518801d0bafa2e4ffe53c9966ba1227bb7d9c3",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraversalPotential.lean",
+      "new_sha256": "749a1c5d868f65aa025db9b9176a3e996bc36b0a2ffb829608ded0a9050b558a",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraversalStart.lean",
+      "new_sha256": "d472b40a73cb2d6881656a745cf83a93c9be12a1717629a7d95615cfcc21d9e5",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "983c067cd8a792f2f726687d6dd3e2d54530e9c3c91e84beffff70e9a656033e"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "e0b4e49a071cad138a4a26476b4b5081e1a4c895a65bd4aceccab7867093937a",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "47e88c663cf48b6bd3355c2ad278efcc714b4c4984a2bd1c38909f97c5d22fd4"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "9aef72380e2fab35a1f89ed54972cecc88e6e4c10b7e0742f6e85b940b03e1b0",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "195989958fdb64e30f04683c23233a08b56224f2d7093cb7514441be36107a39"
+    },
+    {
+      "path": "extraction/avx-insertion-bases-static/Arithmetic/Funs.lean",
+      "new_sha256": "e803915a0b577be92377c0c58f5eb438a1cb298c53631f592a31b2ee338f0ce3",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "extraction/avx-insertion-bases-static/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "a8a988b12909ca8b3bd9f65e98f881c6bbe4b81df06264b6ef15d0f044b36f87",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "extraction/avx-insertion-bases-static/Arithmetic/Types.lean",
+      "new_sha256": "3b5e42228aa7786e9a2ac62d15e0ebdb51101ab666637a72145d5342c3532fa6",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "extraction/avx-insertion-bases-static/aeneas.log",
+      "new_sha256": "93080a54f26a0b8e6e01d4ae4e9a781fa659fa73e3033080bd640e38f2025fa9",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "extraction/avx-insertion-bases-static/arithmetic.llbc",
+      "new_sha256": "a2b5079a66fd837ec5d6a7e25792028a9d007007a8810c6762943dc076cfca8f",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "extraction/avx-insertion-bases-static/charon.log",
+      "new_sha256": "952963e47852f5d157a28f4602ed15fc4b41f9f3019db30a0870aab192cffa9b",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "extraction/avx-insertion-bases-static/project.py",
+      "new_sha256": "71f5872b209201a18e07a1e18942dcaad587505d960477b34098fc8e94e06f3b",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "extraction/avx-insertion-bases-static/receipt.json",
+      "new_sha256": "33bdec05e8bc749eecbb5500d009b3418b3c1beecb5988a03f230d2280963e07",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "extraction/avx-insertion-bases-static/replay.log",
+      "new_sha256": "8c3668e8dd7a232f1dd9cf8aa556c08c6708f51c1ef976521e4ba0f24ad67ddc",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "e0e1b213d83bc0e0f19217cd25f19e2577e8417ea3e608816ade929aa8e92044",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "04bb63f1dbcea0d2e66ab6d8de1c4b2e897a43e79d2cbd928d1207984df3a2d7"
     }
   ],
-  "challenge_count": 316
+  "challenge_count": 326
 }

@@ -586,6 +586,11 @@
       "path": "extraction/avx-insertion-bases/arithmetic.llbc",
       "sha256": "d23a74fb976f06aa487ead7b90961353b6bd938cdea499bf66abcabd8e236108",
       "has_errors": false
+    },
+    {
+      "path": "extraction/avx-insertion-bases-static/arithmetic.llbc",
+      "sha256": "a2b5079a66fd837ec5d6a7e25792028a9d007007a8810c6762943dc076cfca8f",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1378,6 +1383,16 @@
       "native_item_id": "src/backend/x86_vpclmul512.rs:482:function:bulksketch::backend::x86_vpclmul512::insertion_bases",
       "generated_declaration": "bulksketch.backend.x86_vpclmul512.insertion_bases",
       "generated_file": "bridge/Arithmetic/AvxInsertionBasesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:26:function:bulksketch::decode::affine::predicted_affine",
+      "generated_declaration": "bulksketch.decode.affine.predicted_affine",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:64:function:bulksketch::decode::affine::preferred",
+      "generated_declaration": "bulksketch.decode.affine.preferred",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2089,6 +2104,15 @@
       "checker": "extraction/avx-insertion-bases/project.py",
       "declaration_count": 7,
       "scope": "Original stock static insertion-base generator, with all three nested loops and the original Frobenius square bound."
+    },
+    {
+      "generated": "extraction/avx-insertion-bases-static/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxInsertionBasesStaticGenerated.lean",
+      "sha256": "2e18c1cc905343dabf017540bc76c5688845e752556190723b834894bc0584fe",
+      "raw_sha256": "e803915a0b577be92377c0c58f5eb438a1cb298c53631f592a31b2ee338f0ce3",
+      "checker": "extraction/avx-insertion-bases-static/project.py",
+      "declaration_count": 1,
+      "scope": "Original immutable INSERT_BASES initializer, retaining the exact original call to the stock table generator."
     }
   ],
   "reviewed_translator_variants": [

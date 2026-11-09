@@ -668,7 +668,27 @@ run_cmd do
     (``BulksketchBridge.RootRun.ActualNativeAffineSplit,
       ``BulksketchBridge.RootRun.native_affine_split),
     (``BulksketchBridge.RootRun.ActualRootTraversalStart,
-      ``BulksketchBridge.RootRun.native_root_traversal_start)
+      ``BulksketchBridge.RootRun.native_root_traversal_start),
+    (``BulksketchBridge.AffinePreferred.ActualNativeAffinePrediction,
+      ``BulksketchBridge.AffinePreferred.native_affine_prediction),
+    (``BulksketchBridge.AffinePreferred.ActualNativePreferred,
+      ``BulksketchBridge.AffinePreferred.native_preferred_refines),
+    (``BulksketchBridge.AffinePreferred.ActualNativeGaussianPrice,
+      ``BulksketchBridge.AffinePreferred.native_gaussian_price),
+    (``BulksketchBridge.AffinePreferred.ActualNativePreferredMask,
+      ``BulksketchBridge.AffinePreferred.native_preferred_mask),
+    (``BulksketchBridge.RootDivide.ActualNativeProperGcdQuotient,
+      ``BulksketchBridge.RootDivide.native_proper_gcd_has_quotient),
+    (``BulksketchBridge.RootDivide.ActualNativeProperDivide,
+      ``BulksketchBridge.RootDivide.native_proper_divide),
+    (``BulksketchBridge.RootRun.ActualTraceGcdRetry,
+      ``BulksketchBridge.RootRun.trace_gcd_retry),
+    (``BulksketchBridge.AvxInsertionBases.ActualInsertionBasesStatic,
+      ``BulksketchBridge.AvxInsertionBases.insertion_static_refines),
+    (``BulksketchBridge.AvxInsertionBases.ActualStaticEncode18,
+      ``BulksketchBridge.AvxInsertionBases.static_encode_refines),
+    (``BulksketchBridge.AvxInsertionBases.ActualAllocatedStaticEncode18,
+      ``BulksketchBridge.AvxInsertionBases.allocated_static_encode_refines)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

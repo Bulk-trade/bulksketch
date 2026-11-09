@@ -1264,6 +1264,46 @@
     {
       "challenge": "BulksketchBridge.RootRun.ActualRootTraversalStart",
       "theorem": "BulksketchBridge.RootRun.native_root_traversal_start"
+    },
+    {
+      "challenge": "BulksketchBridge.AffinePreferred.ActualNativeAffinePrediction",
+      "theorem": "BulksketchBridge.AffinePreferred.native_affine_prediction"
+    },
+    {
+      "challenge": "BulksketchBridge.AffinePreferred.ActualNativePreferred",
+      "theorem": "BulksketchBridge.AffinePreferred.native_preferred_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffinePreferred.ActualNativeGaussianPrice",
+      "theorem": "BulksketchBridge.AffinePreferred.native_gaussian_price"
+    },
+    {
+      "challenge": "BulksketchBridge.AffinePreferred.ActualNativePreferredMask",
+      "theorem": "BulksketchBridge.AffinePreferred.native_preferred_mask"
+    },
+    {
+      "challenge": "BulksketchBridge.RootDivide.ActualNativeProperGcdQuotient",
+      "theorem": "BulksketchBridge.RootDivide.native_proper_gcd_has_quotient"
+    },
+    {
+      "challenge": "BulksketchBridge.RootDivide.ActualNativeProperDivide",
+      "theorem": "BulksketchBridge.RootDivide.native_proper_divide"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualTraceGcdRetry",
+      "theorem": "BulksketchBridge.RootRun.trace_gcd_retry"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxInsertionBases.ActualInsertionBasesStatic",
+      "theorem": "BulksketchBridge.AvxInsertionBases.insertion_static_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxInsertionBases.ActualStaticEncode18",
+      "theorem": "BulksketchBridge.AvxInsertionBases.static_encode_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxInsertionBases.ActualAllocatedStaticEncode18",
+      "theorem": "BulksketchBridge.AvxInsertionBases.allocated_static_encode_refines"
     }
   ],
   "refinements": [
@@ -3520,6 +3560,34 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original zero-initialized 64-bit, seven-power and selected-value loops with all cell writes, bounds and original Frobenius square."
+    },
+    {
+      "label": "affine::predicted_affine [original source]",
+      "native_item_id": "src/decode/affine.rs:26:function:bulksketch::decode::affine::predicted_affine",
+      "source_line_span_sha256": "76690e7fb723ae626f724fb36ee40ea73d5f5b8c642b0ca719b29a52ff8c1105",
+      "theorem": "BulksketchBridge.AffinePreferred.native_affine_prediction",
+      "challenge": "BulksketchBridge.AffinePreferred.ActualNativeAffinePrediction",
+      "generated_declaration": "bulksketch.decode.affine.predicted_affine",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RootSetupGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original degree guard and complete checked cost comparison, with both original Gaussian loops and all scalar bounds."
+    },
+    {
+      "label": "affine::preferred [original source]",
+      "native_item_id": "src/decode/affine.rs:64:function:bulksketch::decode::affine::preferred",
+      "source_line_span_sha256": "23a790a105f1e1e7bf043252c0377938b26fa195963e60446fae7cf2c84bb9d4",
+      "theorem": "BulksketchBridge.AffinePreferred.native_preferred_refines",
+      "challenge": "BulksketchBridge.AffinePreferred.ActualNativePreferred",
+      "generated_declaration": "bulksketch.decode.affine.preferred",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RootSetupGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original GF64 selection on every usize degree, including exact mask 0x7fff8 and the degree interval 3 through 18."
     }
   ],
   "stateful_llbc_refinements": [

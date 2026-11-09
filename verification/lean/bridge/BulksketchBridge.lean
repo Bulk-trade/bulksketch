@@ -124,3 +124,7 @@ import BulksketchBridge.RootAffineChildren
 import BulksketchBridge.AvxInsertionBases
 import BulksketchBridge.RootNativeAffineSplit
 import BulksketchBridge.RootTraversalStart
+import BulksketchBridge.AffinePredictor
+import BulksketchBridge.RootNativeProperDivide
+import BulksketchBridge.RootTraceProgress
+import BulksketchBridge.AvxInsertionBasesStatic
