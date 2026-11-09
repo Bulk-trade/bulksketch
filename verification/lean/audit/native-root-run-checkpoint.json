@@ -1,6 +1,6 @@
 {
   "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
-  "previous_proof_commit": "16913e849c908c4e5b187baaca2f828f0f797278",
+  "previous_proof_commit": "a03921a7461b68975c7c47c41a04d6c7bff09344",
   "retained_native_executable_obligations": 344,
   "generated_body_refinements_under_recorded_TCB": 160,
   "checked_stateful_llbc_refinements": 5,
@@ -8,6 +8,6 @@
   "open": [
     "Row-local hint normalization, global traversal induction and source work-budget termination",
     "Native decoder completeness through a constructed finite finish trace and complete wire/API composition",
-    "Remaining original AVX tile and NEON bodies, Rust pointer provenance, and compiler-to-ISA correspondence"
+    "Remaining original AVX tile, continuation, and other backend bodies, Rust pointer provenance, and compiler-to-ISA correspondence"
   ]
 }

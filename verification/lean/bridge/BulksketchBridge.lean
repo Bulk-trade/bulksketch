@@ -159,3 +159,6 @@ import BulksketchBridge.NativeTraversalAdmission
 import BulksketchBridge.NativeCanonicalCompleted
 import BulksketchBridge.RootTraceInvariant
 import BulksketchBridge.RootGcdInvariant
+import BulksketchBridge.RootAffineSplitInvariant
+import BulksketchBridge.RootAffineGcdInvariant
+import BulksketchBridge.RootNativeLeafInvariant

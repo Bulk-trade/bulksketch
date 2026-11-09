@@ -183,6 +183,15 @@ table, extends the direction cache, and supplies the exact normalized
 GCD trace prefix. Paid GCD preserves the same invariant on writeback
 and decreases the continuation rank on every admitted successful
 return, including the non-affine retry with the next trace direction.
+The affine splitter supplies both child-coset tests in its exact GCD
+window. Affine GCD supplies a proper division or a smaller positive-rank
+coset preserving every active root. The ordinary leaf handles the zero,
+linear, and quadratic cases, transferring the complete emitted product
+to verification or restoring the exact pending factor at lower potential.
+A ranked interface constructs the original finite drain trace, including
+its error latch and ordered workspace callbacks. It bounds the root tail
+by 208 times the square of the admitted degree budget plus 211 calls.
+Complete per-stage readiness and charge induction remain open.
 
 The AVX square finite-heap theorem composes the zero fill, scalar
 coefficient seeds, and the original masked LLBC load/store block

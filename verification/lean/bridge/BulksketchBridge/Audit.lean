@@ -786,7 +786,19 @@ run_cmd do
     (``BulksketchBridge.RootRun.ActualNativeTraceInvariant,
       ``BulksketchBridge.RootRun.native_trace_invariant),
     (``BulksketchBridge.RootRun.ActualNativeGcdInvariant,
-      ``BulksketchBridge.RootRun.native_gcd_invariant)
+      ``BulksketchBridge.RootRun.native_gcd_invariant),
+    (``BulksketchBridge.RootRun.ActualNativeAffineSplitInvariant,
+      ``BulksketchBridge.RootRun.native_affine_split_invariant),
+    (``BulksketchBridge.RootRun.ActualNativeAffineGcdInvariant,
+      ``BulksketchBridge.RootRun.native_affine_gcd_invariant),
+    (``BulksketchBridge.ExecutionFinish.ActualRankedNativeFinish,
+      ``BulksketchBridge.ExecutionFinish.ranked_native_finish),
+    (``BulksketchBridge.RootLeaf.ActualNativeEmptyLeaf,
+      ``BulksketchBridge.RootLeaf.native_empty_leaf),
+    (``BulksketchBridge.RootLeaf.ActualNativeLeafTraversalStep,
+      ``BulksketchBridge.RootLeaf.native_leaf_traversal_step),
+    (``BulksketchBridge.RootLeaf.ActualNativeLeafRankedStep,
+      ``BulksketchBridge.RootLeaf.native_leaf_ranked_step)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

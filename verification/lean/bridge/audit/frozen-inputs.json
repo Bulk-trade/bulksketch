@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "c0ae2a710f799810a91d00a07bf3c598559a7afe69cc46cfc7a539c3e1f020fa",
+    "bridge/BulksketchBridge/Audit.lean": "568d8b6f67f64ddff9febee63941c26c32eb8d6c3b35e300aa90037f97a5bd3c",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "e487ca306dc0577d3cf480fba920fe3df38af4e3b9da69870869406d90e0cecf",
-    "audit/frozen-inputs.json": "f2972d5e4f72ed600d703ed41b0b25d91bbeef042067118901b459cd7976e390",
-    "bridge/BulksketchBridge.lean": "a2cb82e72d42872892cfa930459d672a79b009a152d192a49885604e7c53b3a6",
+    "audit/frozen-inputs.json": "5207c2186412473c63c50bdfffae7fb0300c6408229d8759108f0167ce08115f",
+    "bridge/BulksketchBridge.lean": "43560ab8ba07caf7fd4157dd71f6eae1ed6e1fa73874525fe4b11a3f160a4b12",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -31,7 +31,7 @@
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
     "bridge/source-linkage.json": "4b30681b941ba08e3628467e0a36a7f9367343935911fec41bf597d01c313250",
-    "bridge/obligations.json": "c66230a7756c2ce5832e2fcbd8c48eb11a53cd1452784ef0c6fd68b0085ff43f",
+    "bridge/obligations.json": "b4bf725943c67b5399d54fe9124d8619d1c1360eb74b713444d8e25eaa2bd9cc",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -290,7 +290,7 @@
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
     "README.md": "f6785f28dfe4d50b2b4d0dbf02488c959d9bccf1e1da76194b18b7b85bbda95b",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "8364184d7dddd508075ecc7dbdf99cf53a9186f86d9a8d4956d62ef20aea663f",
+    "audit/coverage.json": "c8fd8525d539628e3eedb4e5b22a3ab316f6e9e647c868073857ebc020ee7767",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "dfa3ddd4cb28988b39ae4747d8c647556f2d3dac6a75e268221f8a12173d7bb7",
-    "audit/native-root-run-checkpoint.json": "8e2c6a3fffb0d74be2a92a5cdfb659566a801743783fe0d1e3f7aa5f18c1d8b1",
+    "NATIVE_ROOT_RUN.md": "619cd4da26f7101d86e72461e0e01e5c1397cf547e0ceed3082c8aec7deadfe7",
+    "audit/native-root-run-checkpoint.json": "87166fb77124946f37eb975f94daad688b40249d09b30471b14b4d24c0b02419",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1481,7 +1481,7 @@
     "bridge/BulksketchBridge/AvxInsertionBasesCells.lean": "71f1bd8ffd9dc1a8f040735dc7e1b58ca0b6c9fee690336e9eb41081d358c0a6",
     "bridge/BulksketchBridge/AvxInsertionBasesInner.lean": "1d43e89dbdfa9a9005c6db3160f3e93f1b26d47135d2fb0446aeec4b5ffec242",
     "bridge/BulksketchBridge/RootAffineTableWindow.lean": "e8e5a8076e7d0345963a250a4934f87f91f9bce60b8011a8843c2ef631159a23",
-    "bridge/BulksketchBridge/RootNativeAffineSplit.lean": "baed9f4eec6a399dcc9b8c34bfdb2ca39a3fd47fe8d621d967fa0f10f5e0efe6",
+    "bridge/BulksketchBridge/RootNativeAffineSplit.lean": "af5842aa55bb0da55df6034feeb5dad9053a885982a001919ddcf242f13b0832",
     "bridge/BulksketchBridge/RootTraversalStart.lean": "d472b40a73cb2d6881656a745cf83a93c9be12a1717629a7d95615cfcc21d9e5",
     "extraction/avx-insertion-bases/Arithmetic/Funs.lean": "263b8f81e3e589fff3192220c03c9534aa7089f0098cba654e86992522745fb2",
     "extraction/avx-insertion-bases/Arithmetic/FunsExternal_Template.lean": "a8a988b12909ca8b3bd9f65e98f881c6bbe4b81df06264b6ef15d0f044b36f87",
@@ -1780,7 +1780,14 @@
     "bridge/BulksketchBridge/RootEmittedValidity.lean": "2ec623f7f8370ee26bf80307d180820303a72b5146d0f05d4660935d24932e23",
     "bridge/BulksketchBridge/RootGcdInvariant.lean": "4146186957a2cafa624f94d4b6bdcb13cc739892665dd23c134804ba6546c0e0",
     "bridge/BulksketchBridge/RootInvariantReborrow.lean": "4577ca3d1e41a08aca521002e6106f8f98bddb37fc175a7a33dbab26e0551500",
-    "bridge/BulksketchBridge/RootTraceInvariant.lean": "10497da6ab35d04a96437ac54891a67b3892140476aa6307071ec3d13e6d0cf1"
+    "bridge/BulksketchBridge/RootTraceInvariant.lean": "10497da6ab35d04a96437ac54891a67b3892140476aa6307071ec3d13e6d0cf1",
+    "bridge/BulksketchBridge/RankedExecutionDrain.lean": "359542749873a6a4489ef361cf115455590a14cac23104538e55f80dc65f9477",
+    "bridge/BulksketchBridge/RankedRootDrainAdapter.lean": "1cbcd093756a4728ee0aa4490a0f6ac0b4bea02b7dcbf40a9b01a96b0129001f",
+    "bridge/BulksketchBridge/RootAffineGcdInvariant.lean": "93376c6a85bf90b2f2ebb0c2fe3e2429421c1964de497f79e88ef8e701e296eb",
+    "bridge/BulksketchBridge/RootAffineSplitInvariant.lean": "26b125340c36212a4eb93b2c7258ac3f6ff5a9bacaca61d622564cc99144a374",
+    "bridge/BulksketchBridge/RootNativeLeafInvariant.lean": "b4b75f4c70e2143ddbc43a3e19d475f3a2ecc60654834693c81433d4262e5acc",
+    "bridge/BulksketchBridge/RootPopInvariant.lean": "c6f632c4d02d3c7e4ce9cc313938249acf496f09e4db067191fc48c4cb726e94",
+    "bridge/BulksketchBridge/RootTraversalFactor.lean": "41e66122354121ccaed6ab6fdb7095e438c3000a5bb455fe90ef8034dea3f95a"
   },
   "reviewed_policy_revisions": [
     {
@@ -13125,7 +13132,90 @@
       "new_sha256": "c66230a7756c2ce5832e2fcbd8c48eb11a53cd1452784ef0c6fd68b0085ff43f",
       "reason": "Freeze the exact paid native Trace and GCD traversal invariant and rank.",
       "old_sha256": "6812053f4641532aaa18ae7976530e3eef14793c011659550fd7008c81589910"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "619cd4da26f7101d86e72461e0e01e5c1397cf547e0ceed3082c8aec7deadfe7",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition.",
+      "old_sha256": "dfa3ddd4cb28988b39ae4747d8c647556f2d3dac6a75e268221f8a12173d7bb7"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "c8fd8525d539628e3eedb4e5b22a3ab316f6e9e647c868073857ebc020ee7767",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition.",
+      "old_sha256": "8364184d7dddd508075ecc7dbdf99cf53a9186f86d9a8d4956d62ef20aea663f"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "5207c2186412473c63c50bdfffae7fb0300c6408229d8759108f0167ce08115f",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition.",
+      "old_sha256": "f2972d5e4f72ed600d703ed41b0b25d91bbeef042067118901b459cd7976e390"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "87166fb77124946f37eb975f94daad688b40249d09b30471b14b4d24c0b02419",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition.",
+      "old_sha256": "8e2c6a3fffb0d74be2a92a5cdfb659566a801743783fe0d1e3f7aa5f18c1d8b1"
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "43560ab8ba07caf7fd4157dd71f6eae1ed6e1fa73874525fe4b11a3f160a4b12",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition.",
+      "old_sha256": "a2cb82e72d42872892cfa930459d672a79b009a152d192a49885604e7c53b3a6"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "568d8b6f67f64ddff9febee63941c26c32eb8d6c3b35e300aa90037f97a5bd3c",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition.",
+      "old_sha256": "c0ae2a710f799810a91d00a07bf3c598559a7afe69cc46cfc7a539c3e1f020fa"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RankedExecutionDrain.lean",
+      "new_sha256": "359542749873a6a4489ef361cf115455590a14cac23104538e55f80dc65f9477",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RankedRootDrainAdapter.lean",
+      "new_sha256": "1cbcd093756a4728ee0aa4490a0f6ac0b4bea02b7dcbf40a9b01a96b0129001f",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootAffineGcdInvariant.lean",
+      "new_sha256": "93376c6a85bf90b2f2ebb0c2fe3e2429421c1964de497f79e88ef8e701e296eb",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootAffineSplitInvariant.lean",
+      "new_sha256": "26b125340c36212a4eb93b2c7258ac3f6ff5a9bacaca61d622564cc99144a374",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootNativeAffineSplit.lean",
+      "new_sha256": "af5842aa55bb0da55df6034feeb5dad9053a885982a001919ddcf242f13b0832",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition.",
+      "old_sha256": "baed9f4eec6a399dcc9b8c34bfdb2ca39a3fd47fe8d621d967fa0f10f5e0efe6"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootNativeLeafInvariant.lean",
+      "new_sha256": "b4b75f4c70e2143ddbc43a3e19d475f3a2ecc60654834693c81433d4262e5acc",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootPopInvariant.lean",
+      "new_sha256": "c6f632c4d02d3c7e4ce9cc313938249acf496f09e4db067191fc48c4cb726e94",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraversalFactor.lean",
+      "new_sha256": "41e66122354121ccaed6ab6fdb7095e438c3000a5bb455fe90ef8034dea3f95a",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "b4bf725943c67b5399d54fe9124d8619d1c1360eb74b713444d8e25eaa2bd9cc",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition.",
+      "old_sha256": "c66230a7756c2ce5832e2fcbd8c48eb11a53cd1452784ef0c6fd68b0085ff43f"
     }
   ],
-  "challenge_count": 375
+  "challenge_count": 381
 }

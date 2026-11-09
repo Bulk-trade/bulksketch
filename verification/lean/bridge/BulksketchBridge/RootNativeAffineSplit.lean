@@ -41,6 +41,7 @@ def ActualNativeAffineSplit : Prop :=
     ∃ (size : Usize) (trace work : Slice U64) (raw : Slice RawProduct),
       Roots.run nativeCalls nativeDivRem dictionary kernels roots .AffineSplit workspace meter =
         .ok (frame (.Ok (.Ok .Gcd)) roots { roots with trace_len := size } workspace { buffers with trace, work, raw } paid) ∧
+      raw.length = buffers.raw.length ∧
       size.val ≤ roots.degree.val ∧ DenseGcd.Normal (prefixSlice trace size.val) ∧
       buffersFor { roots with trace_len := size }
         (rebuild workspace roots { buffers with trace, work, raw }) = { buffers with trace, work, raw } ∧
@@ -64,7 +65,7 @@ theorem native_affine_split : ActualNativeAffineSplit := by
   have paidReady := affine_window_of_budget roots workspace capacity budget sized stride rankBudget rankMax
   have ready : Ready nativeDivRem kernels roots .AffineSplit workspace meter :=
     ⟨factorReady, fun _ _ => paidReady⟩
-  obtain ⟨size, trace, work, raw, splitter, sizeBound, normal, outputWidth, workWidth, _, eval⟩ :=
+  obtain ⟨size, trace, work, raw, splitter, sizeBound, normal, outputWidth, workWidth, rawWidth, eval⟩ :=
     AffineSplitter.native_splitter_at_roots kernels rawLaw squareLaw reduceLaw arithmetic scale buffers.modulus
       buffers.table (row table rank) roots.affine_base buffers.trace buffers.work buffers.raw roots.degree.val
       modulusWidth (by omega) (by omega) (by omega) (by omega) monic tableWidth correct backend
@@ -72,7 +73,7 @@ theorem native_affine_split : ActualNativeAffineSplit := by
     intro zero
     rw [zero] at rankPositive
     exact Nat.not_lt_zero 0 rankPositive
-  refine ⟨size, trace, work, raw, ?_, sizeBound, normal, ?_, ?_⟩
+  refine ⟨size, trace, work, raw, ?_, rawWidth, sizeBound, normal, ?_, ?_⟩
   · rw [original_root_run_refines kernels roots .AffineSplit workspace meter ready]
     simp only [expected, affineSplit, charged, bind_ok]
     dsimp! only

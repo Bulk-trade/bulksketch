@@ -1500,6 +1500,30 @@
     {
       "challenge": "BulksketchBridge.RootRun.ActualNativeGcdInvariant",
       "theorem": "BulksketchBridge.RootRun.native_gcd_invariant"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeAffineSplitInvariant",
+      "theorem": "BulksketchBridge.RootRun.native_affine_split_invariant"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeAffineGcdInvariant",
+      "theorem": "BulksketchBridge.RootRun.native_affine_gcd_invariant"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionFinish.ActualRankedNativeFinish",
+      "theorem": "BulksketchBridge.ExecutionFinish.ranked_native_finish"
+    },
+    {
+      "challenge": "BulksketchBridge.RootLeaf.ActualNativeEmptyLeaf",
+      "theorem": "BulksketchBridge.RootLeaf.native_empty_leaf"
+    },
+    {
+      "challenge": "BulksketchBridge.RootLeaf.ActualNativeLeafTraversalStep",
+      "theorem": "BulksketchBridge.RootLeaf.native_leaf_traversal_step"
+    },
+    {
+      "challenge": "BulksketchBridge.RootLeaf.ActualNativeLeafRankedStep",
+      "theorem": "BulksketchBridge.RootLeaf.native_leaf_ranked_step"
     }
   ],
   "refinements": [
