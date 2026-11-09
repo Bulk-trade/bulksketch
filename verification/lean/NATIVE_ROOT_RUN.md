@@ -286,6 +286,19 @@ short-root guards before touching its scratch. The original Portable and
 PCLMUL dictionaries supply the complete verification laws. The AVX
 version retains masked load and store premises and the full encoder law.
 
+The exact paid Verification tail drains through the original source
+finish. A mismatch returns VerificationFailed after one paid call. An
+accepted row with a valid distinct root prefix pays canonicalization and
+returns the original Equal or sorted Decoded view with exact scratch.
+The degree-three and degree-four solver handoff preserves the live
+factor, supplies the exact candidate count on success and lowers phase
+rank on fallback. The paid certificate either retains the live factor
+for the reducer or emits the factor and restores the exact pending
+continuation. Canonicalized completion supplies the publication writer's
+admitted root prefix. The original public report outcome and bucket
+count, combined with the exact writer and finalizer, expose the
+committed decoded row and its optional leading zero.
+
 Run the complete gate from `verification/lean`.
 
 ```sh

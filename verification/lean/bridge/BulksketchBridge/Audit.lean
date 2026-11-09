@@ -1,3 +1,7 @@
+import BulksketchBridge.NativePaidVerificationFinish
+import BulksketchBridge.RootClosedLeafTraversal
+import BulksketchBridge.NativePublicationAdmission
+import BulksketchBridge.PublicationReadback
 import BulksketchBridge.NativeFirstTraceEntry
 import BulksketchBridge.NativeVerificationBackendAcceptance
 import BulksketchBridge
@@ -863,6 +867,20 @@ run_cmd do
       ``BulksketchBridge.ExecutionDriver.native_pclmul_paid_verification),
     (``BulksketchBridge.ExecutionDriver.ActualNativeAvxPaidVerification,
       ``BulksketchBridge.ExecutionDriver.native_avx_paid_verification),
+    (``BulksketchBridge.ExecutionDriver.ActualNativePaidVerificationFinish,
+      ``BulksketchBridge.ExecutionDriver.native_paid_verification_finish),
+    (``BulksketchBridge.ClosedLeaf.ActualNativeClosedLeafSolveTraversal,
+      ``BulksketchBridge.ClosedLeaf.native_closed_leaf_solve_traversal),
+    (``BulksketchBridge.ClosedLeaf.ActualNativeClosedLeafCertificateTraversal,
+      ``BulksketchBridge.ClosedLeaf.native_closed_leaf_certificate_traversal),
+    (``BulksketchBridge.DecodeReport.ActualDecodeReportOutcome,
+      ``BulksketchBridge.DecodeReport.outcome_refines),
+    (``BulksketchBridge.DecodeReport.ActualDecodeReportBucketCount,
+      ``BulksketchBridge.DecodeReport.bucket_count_refines),
+    (``BulksketchBridge.PublicationWrite.ActualCanonicalPublicationAdmission,
+      ``BulksketchBridge.PublicationWrite.canonical_publication_admission),
+    (``BulksketchBridge.PublicationWrite.ActualDecodedPublicationReadback,
+      ``BulksketchBridge.PublicationWrite.decoded_publication_readback),
     (``BulksketchBridge.ExecutionDriver.ActualNativeVerificationStartFinish,
       ``BulksketchBridge.ExecutionDriver.native_verification_start_finish),
     (``BulksketchBridge.RowConfiguration.ActualRowBegin,

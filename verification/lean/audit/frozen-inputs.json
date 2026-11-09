@@ -36,7 +36,7 @@
     "audit/core-maps-proof-independent-review.md": "aed4509f239a8e3db59c7a9f0d95ca20286d8a6df50372e3f59c172572101124",
     "audit/field-algebra-accounting-review.md": "55d3cd81a3f03185992e3272994c04b13b5e7ea34ff85e5d8e2cfced90f240be",
     "audit/field-algebra-checkpoint.json": "e93b65ffd57dcdb5c4c987c76f96d48b8917e82f52969853dbb979c049a4220e",
-    "scripts/check_projection_fixtures.py": "2317cf3bb8719e7b9dcdac3dfe6a40ded4b5c6f6a583d683a435b4347933f9e7",
+    "scripts/check_projection_fixtures.py": "b7f9feacfaa87eeb5ab3e5d618771ba8da9b531a24679e0273cce9312cf712ff",
     "audit/quotient-field-checkpoint.json": "c14a8dd2f0d747079f64b40c3dc9e52db3373ddfc1414b62667727444a82825e",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
     "audit/word-quotient-independent-review.md": "311018cf261231ef631f59867defc66cf7a13e5eba60d414f88b9d4e922dc823",
@@ -55,7 +55,7 @@
     "audit/native-stateful-checkpoint.json": "2c41ee402642341add52703d90795de97eff7b0656c4a4db9cd3e675332f0210",
     "NATIVE_CALLER_CHAINS.md": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
     "audit/native-caller-checkpoint.json": "837788fd6bb6f20d3c18e69b74e0610177fc4b9aec084f1ec313c271f4771cf2",
-    "README.md": "2ba70c946295aa5328d8640f26e66044a7d4ec75ffc2f1352998a87262fdd931",
+    "README.md": "710c4df0b4d07673036fc28e4ae2024d28d0330aa4e03a3d2ce2ced739af81e0",
     "NATIVE_RECONSTRUCTION.md": "3a1955592353708b30df40c5fb5443a743451002275c4da8164c37a3344746b2",
     "audit/native-reconstruction-checkpoint.json": "13745cfcf6c9161fb460c8165365bb767a672f474cd14d06edecf6b5fb428562",
     "NATIVE_QUARTIC.md": "0f7a4311accbf944b75a6792955da66ae548891ce2dc1a7e53a167aed892a381",
@@ -72,8 +72,8 @@
     "audit/native-dense-reducer-checkpoint.json": "41da787e360070eaa0ee57a31380362d9a3a4642c085a1334ba9293acb37fceb",
     "NATIVE_DENSE_DIVISION.md": "7bc66fd0e205e372f4492b801782b7af8a5cf59bd300896e4b7633612da6b9bc",
     "audit/native-dense-division-checkpoint.json": "d7fb2cc4e1014accb335dc7532561026c4c6906194c6cffec11ecead264c01cc",
-    "NATIVE_ROOT_RUN.md": "c2f255055eb009be3209514bbc95e3a479c5d338e05a24bfcae71db8010e9f2e",
-    "audit/native-root-run-checkpoint.json": "7a0878a183f86f100fe638484a5f228dccfd6fa876d77533bfa9f2c774a8b0c3"
+    "NATIVE_ROOT_RUN.md": "0e223d4258e3287e170a25cedead6d7e9adbfeb5c278b90d6005bbca1df1ddae",
+    "audit/native-root-run-checkpoint.json": "6889186cdeb85688472cdef4ecc7ec1e4e5ff911c1b230bf9038f056c4047da9"
   },
   "reviewed_policy_revisions": [
     {
@@ -1347,6 +1347,30 @@
       "new_sha256": "7a0878a183f86f100fe638484a5f228dccfd6fa876d77533bfa9f2c774a8b0c3",
       "reason": "Freeze exact paid verification acceptance on native backends and first non-affine Trace entry.",
       "old_sha256": "f5d59fb1b2cfb3743152fe056db338acbd1fe7b61f2cf74a73dcaf4b14529aa6"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "0e223d4258e3287e170a25cedead6d7e9adbfeb5c278b90d6005bbca1df1ddae",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "c2f255055eb009be3209514bbc95e3a479c5d338e05a24bfcae71db8010e9f2e"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "710c4df0b4d07673036fc28e4ae2024d28d0330aa4e03a3d2ce2ced739af81e0",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "2ba70c946295aa5328d8640f26e66044a7d4ec75ffc2f1352998a87262fdd931"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "6889186cdeb85688472cdef4ecc7ec1e4e5ff911c1b230bf9038f056c4047da9",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "7a0878a183f86f100fe638484a5f228dccfd6fa876d77533bfa9f2c774a8b0c3"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "b7f9feacfaa87eeb5ab3e5d618771ba8da9b531a24679e0273cce9312cf712ff",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "2317cf3bb8719e7b9dcdac3dfe6a40ded4b5c6f6a583d683a435b4347933f9e7"
     }
   ]
 }

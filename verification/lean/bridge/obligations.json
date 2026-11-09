@@ -1650,6 +1650,34 @@
       "theorem": "BulksketchBridge.ExecutionDriver.native_avx_paid_verification"
     },
     {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativePaidVerificationFinish",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_paid_verification_finish"
+    },
+    {
+      "challenge": "BulksketchBridge.ClosedLeaf.ActualNativeClosedLeafSolveTraversal",
+      "theorem": "BulksketchBridge.ClosedLeaf.native_closed_leaf_solve_traversal"
+    },
+    {
+      "challenge": "BulksketchBridge.ClosedLeaf.ActualNativeClosedLeafCertificateTraversal",
+      "theorem": "BulksketchBridge.ClosedLeaf.native_closed_leaf_certificate_traversal"
+    },
+    {
+      "challenge": "BulksketchBridge.DecodeReport.ActualDecodeReportOutcome",
+      "theorem": "BulksketchBridge.DecodeReport.outcome_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.DecodeReport.ActualDecodeReportBucketCount",
+      "theorem": "BulksketchBridge.DecodeReport.bucket_count_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.PublicationWrite.ActualCanonicalPublicationAdmission",
+      "theorem": "BulksketchBridge.PublicationWrite.canonical_publication_admission"
+    },
+    {
+      "challenge": "BulksketchBridge.PublicationWrite.ActualDecodedPublicationReadback",
+      "theorem": "BulksketchBridge.PublicationWrite.decoded_publication_readback"
+    },
+    {
       "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeVerificationStartFinish",
       "theorem": "BulksketchBridge.ExecutionDriver.native_verification_start_finish"
     },
@@ -5111,6 +5139,34 @@
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Original admitted status, validation, optional zero prefix, exact decoded copies and metadata commit, with the original backward result frame.",
       "translator_variant": "checked-publication-write-branches-v1"
+    },
+    {
+      "label": "DecodeReport::outcome [original source]",
+      "native_item_id": "src/sketch/api.rs:90:method:bulksketch::sketch::api::DecodeReport < '_ >::outcome",
+      "source_line_span_sha256": "e807685d497656d490bb61d29985bad6fb0eb759da2ef49cf8384e4e754e61d7",
+      "challenge": "BulksketchBridge.DecodeReport.ActualDecodeReportOutcome",
+      "theorem": "BulksketchBridge.DecodeReport.outcome_refines",
+      "generated_declaration": "bulksketch.sketch.api.DecodeReport.outcome",
+      "generated_file": "bridge/Arithmetic/DecodeReportGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/DecodeReportGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "All original report outcomes, absent bucket, Unset panic, checked offset and length conversions, addition, and exact shared decoded prefix."
+    },
+    {
+      "label": "DecodeReport::bucket_count [original source]",
+      "native_item_id": "src/sketch/api.rs:84:method:bulksketch::sketch::api::DecodeReport < '_ >::bucket_count",
+      "source_line_span_sha256": "1808e9dc243610191d3b91fd5c9105fd018bee86bd0f4b7caf03e43a60b6301f",
+      "challenge": "BulksketchBridge.DecodeReport.ActualDecodeReportBucketCount",
+      "theorem": "BulksketchBridge.DecodeReport.bucket_count_refines",
+      "generated_declaration": "bulksketch.sketch.api.DecodeReport.bucket_count",
+      "generated_file": "bridge/Arithmetic/DecodeReportGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/DecodeReportGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original count of the published outcome slice."
     }
   ],
   "stateful_llbc_refinements": [

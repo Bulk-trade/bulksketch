@@ -8415,7 +8415,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.DecodeReport.bucket_count_refines",
+        "scope": "Original count of the published outcome slice.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/api.rs:90:method:bulksketch::sketch::api::DecodeReport < '_ >::outcome",
@@ -8435,7 +8442,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.DecodeReport.outcome_refines",
+        "scope": "All original report outcomes, absent bucket, Unset panic, checked offset and length conversions, addition, and exact shared decoded prefix.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/candidates.rs:65:function:bulksketch::sketch::candidates::row",
@@ -12523,7 +12537,7 @@
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
     "note": "All 344 native executable obligations retained. Original row driver dispatch, default wire XOR, ordered publication and proper factor-tree budget are checked. AVX, PCLMUL and Portable rebuilt verification compose at all admitted GF64 degrees. Concrete Portable and PCLMUL dictionaries select the checked callbacks. The source V1 row envelope retains the explicit sum-cost fold contract. Global traversal readiness and exact charged-run accounting, remaining admission and wire/API bindings, Rust provenance and compiler-to-ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 208,
+    "checked_generated_body_refinements_under_recorded_TCB": 210,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12566,7 +12580,16 @@
         "pclmul": "BulksketchBridge.ExecutionDriver.native_pclmul_paid_verification",
         "avx": "BulksketchBridge.ExecutionDriver.native_avx_paid_verification"
       },
-      "native_first_trace_entry": "BulksketchBridge.RootRun.native_first_trace_entry"
+      "native_first_trace_entry": "BulksketchBridge.RootRun.native_first_trace_entry",
+      "native_closed_leaf_traversal": [
+        "BulksketchBridge.ClosedLeaf.native_closed_leaf_solve_traversal",
+        "BulksketchBridge.ClosedLeaf.native_closed_leaf_certificate_traversal"
+      ],
+      "native_verification_finish": "BulksketchBridge.ExecutionDriver.native_paid_verification_finish",
+      "native_publication_readback": [
+        "BulksketchBridge.PublicationWrite.canonical_publication_admission",
+        "BulksketchBridge.PublicationWrite.decoded_publication_readback"
+      ]
     },
     "reconciliation_algebra_evidence": {
       "sparse_support_uniqueness": "BulksketchBridge.Reconciliation.gf64_sparse_support_unique",

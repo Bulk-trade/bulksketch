@@ -1,8 +1,8 @@
 {
   "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
-  "previous_proof_commit": "d87e108c7e18e4cd277c71012ca13f2bcb3e3066",
+  "previous_proof_commit": "6d4d98cb5494f53527cedc5b60e3ec9404d47217",
   "retained_native_executable_obligations": 344,
-  "generated_body_refinements_under_recorded_TCB": 208,
+  "generated_body_refinements_under_recorded_TCB": 210,
   "checked_stateful_llbc_refinements": 5,
   "whole_native_coverage_achieved": false,
   "open": [

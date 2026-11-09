@@ -497,6 +497,19 @@ PROJECTIONS = [
       'bridge/Arithmetic/AvxLinearEntryGenerated.lean',
       'bridge/Arithmetic/MutableZipRuntime.lean',
       'bridge/Arithmetic/RowDispatchGenerated.lean']),
+    ('decode-report',
+     'extraction/decode-report/project.py',
+     'extraction/decode-report/receipt.json',
+     'extraction/decode-report/Arithmetic/Funs.lean',
+     'bridge/Arithmetic/DecodeReportGenerated.lean',
+     'ok (Slice.len self.outcomes)',
+     'ok (Slice.len self.ids)',
+     'Compiled report projection differs',
+     None,
+     None,
+     ['bridge/Arithmetic/ReconstructionTypes.lean', 'bridge/Workmeter/Types.lean',
+      'bridge/Arithmetic/PublicationFrameGenerated.lean', 'bridge/Arithmetic/PublicationWriteGenerated.lean',
+      'bridge/Arithmetic/MapsRuntime.lean', 'bridge/Arithmetic/ShapeWireRuntime.lean']),
     ('publication-write',
      'extraction/publication-write/project.py',
      'extraction/publication-write/receipt.json',
@@ -1018,7 +1031,7 @@ def main():
                              "affine-enumerate", "affine-selector", "avx-multiply-linear", "affine-solve-map",
                              "avx-horner", "affine-multiple", "avx-tile", "avx-recurrence", "avx-sparse-insert", "avx-slice-kernel", "avx-slice-entry", "avx-scalar-delegates", "avx-recurrence-entry", "avx-linear-entry", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
                              "avx-insert-insert18", "avx-insert-horizontal", "avx-insert-dispatch", "native-driver", "candidate-row", "completed-result",
-                             "native-finish", "canonicalize", "row-dispatch", "pclmul-insert", "publication-write", "publication-frame",
+                             "native-finish", "canonicalize", "row-dispatch", "pclmul-insert", "publication-write", "publication-frame", "decode-report",
                              "root-work-budget", "row-work-budget-v1", "default-wire-difference", "row-configuration", "candidate-normalize-rows", "candidate-normalize-compact", "candidate-normalize-merge"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"

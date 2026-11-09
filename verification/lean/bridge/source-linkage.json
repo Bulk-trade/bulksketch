@@ -756,6 +756,11 @@
       "path": "extraction/publication-write/arithmetic.llbc",
       "sha256": "1320a5882963b137fd70d2ffd64c1f164dbdb37db7e9737dfe36bdd2b09ffa26",
       "has_errors": false
+    },
+    {
+      "path": "extraction/decode-report/arithmetic.llbc",
+      "sha256": "bc78525112df1b889439d3b6dc8899d2322401131f9b99195090829a0a3f0e7f",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1878,6 +1883,16 @@
       "native_item_id": "src/sketch/api.rs:259:method:bulksketch::sketch::api::Publication < 's >::write",
       "generated_declaration": "bulksketch.sketch.api.Publication.write",
       "generated_file": "bridge/Arithmetic/PublicationWriteGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/api.rs:90:method:bulksketch::sketch::api::DecodeReport < '_ >::outcome",
+      "generated_declaration": "bulksketch.sketch.api.DecodeReport.outcome",
+      "generated_file": "bridge/Arithmetic/DecodeReportGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/api.rs:84:method:bulksketch::sketch::api::DecodeReport < '_ >::bucket_count",
+      "generated_declaration": "bulksketch.sketch.api.DecodeReport.bucket_count",
+      "generated_file": "bridge/Arithmetic/DecodeReportGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2918,6 +2933,15 @@
       "declaration_count": 10,
       "scope": "Original publication row write and preserved result storage callback.",
       "translator_variant": "checked-publication-write-branches-v1"
+    },
+    {
+      "generated": "extraction/decode-report/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DecodeReportGenerated.lean",
+      "sha256": "28f4fbc2573386934dca334f948efa4cd9d2efa8865db673e0795ae9d8770218",
+      "raw_sha256": "2da248903638770ce232e3661728b16431a0bc4741efd03c6c5ab7c63f4de656",
+      "checker": "extraction/decode-report/project.py",
+      "declaration_count": 2,
+      "scope": "Original stock-checked public report count and outcome."
     }
   ],
   "reviewed_translator_variants": [

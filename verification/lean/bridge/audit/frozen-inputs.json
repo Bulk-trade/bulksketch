@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "90abf4698adcca3c29dd48f6b8aff093b705b5bf50fd1364d89f6aca27ed8259",
+    "bridge/BulksketchBridge/Audit.lean": "35b3f8f523d0c5341f830e48ce6ba71bbf820937396f1b0e4be9c66d0e2eeae6",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,7 +14,7 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "15acf4643715fc065fe5cf459fe27844a1ab21bd323e7a14486c91947fb6a989",
-    "audit/frozen-inputs.json": "b80d23bf14b1018cde6c7551ba016999c688a27a3b84d2d303aa7222e4d5fc1a",
+    "audit/frozen-inputs.json": "286742f1e6dc67aeba1aa11b151e9bdf5875e930909e4bbbe6db2fbfabb4b886",
     "bridge/BulksketchBridge.lean": "5dbd9b1fd933cd65fc227225c70ec885fecc1b5eaa061ec44ae76ecd4d5eb840",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "c0cf140225a0e76a97df5047f3101be19365974fe590f727dd9123f33527a517",
-    "bridge/obligations.json": "d6c2ab3ca7729d5f517d05a3194f28919d1e15a2eab0f3c50dabf86b615fcd75",
+    "bridge/source-linkage.json": "9927e2128878db493048bf922dc744c7b8065c3765ae2c3d0c5ae9fe552d6c3c",
+    "bridge/obligations.json": "27a5e6bdafd3efa563475ca02b1e4f382c5d6856c3e2880acee9e94f9a8f37bf",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "2317cf3bb8719e7b9dcdac3dfe6a40ded4b5c6f6a583d683a435b4347933f9e7",
+    "scripts/check_projection_fixtures.py": "b7f9feacfaa87eeb5ab3e5d618771ba8da9b531a24679e0273cce9312cf712ff",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "2ba70c946295aa5328d8640f26e66044a7d4ec75ffc2f1352998a87262fdd931",
+    "README.md": "710c4df0b4d07673036fc28e4ae2024d28d0330aa4e03a3d2ce2ced739af81e0",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "e0162371e26bd3aaf1cb8a565e7c367c8b71e685211ee4dc6818547d1a476542",
+    "audit/coverage.json": "1b8801efb14680295d9257099cc71f80852863d0a275cbc3cb99f49e6b468215",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "c2f255055eb009be3209514bbc95e3a479c5d338e05a24bfcae71db8010e9f2e",
-    "audit/native-root-run-checkpoint.json": "7a0878a183f86f100fe638484a5f228dccfd6fa876d77533bfa9f2c774a8b0c3",
+    "NATIVE_ROOT_RUN.md": "0e223d4258e3287e170a25cedead6d7e9adbfeb5c278b90d6005bbca1df1ddae",
+    "audit/native-root-run-checkpoint.json": "6889186cdeb85688472cdef4ecc7ec1e4e5ff911c1b230bf9038f056c4047da9",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -2089,7 +2089,23 @@
     "bridge/BulksketchBridge/NativeFirstTraceEntry.lean": "6068e9ec814ca85eb1087e99f8256b22861fd5a634aeac101948dec79406816f",
     "bridge/BulksketchBridge/NativeFullVerificationAcceptance.lean": "b701919bee9b6228a8f0b491db92bf3f44ff46d738c7fb2d790d3081dafcbd56",
     "bridge/BulksketchBridge/NativeRebuiltVerificationAcceptance.lean": "09a7ef8b7a66259ed397f47ea37f8c059ced60fba3b638b089a37763eab360ba",
-    "bridge/BulksketchBridge/NativeVerificationBackendAcceptance.lean": "081e7f72c5c1d049c15c2c8b68f8a68aff9763b50549443481605669a44bc127"
+    "bridge/BulksketchBridge/NativeVerificationBackendAcceptance.lean": "081e7f72c5c1d049c15c2c8b68f8a68aff9763b50549443481605669a44bc127",
+    "bridge/Arithmetic/DecodeReportGenerated.lean": "28f4fbc2573386934dca334f948efa4cd9d2efa8865db673e0795ae9d8770218",
+    "bridge/BulksketchBridge/DecodeReport.lean": "b72cdb1ddf8ed561e41ad4acc4966bac56b2f8f1a80deb5843b3737033a6eecb",
+    "bridge/BulksketchBridge/NativePaidVerificationFinish.lean": "ceb5a734ef84d2addad1978f87104ba5a28d61964a398edcf0d196bd28af18a1",
+    "bridge/BulksketchBridge/NativePublicationAdmission.lean": "ef3cdc127906ef8ad2673d232586f6a28d23ab6f6bf47a66892966e24776daa0",
+    "bridge/BulksketchBridge/PublicationReadback.lean": "56cdcf8ae3c91229fabd8fc9c9d9b03c09e09d658387856cf8423f34633cfb7e",
+    "bridge/BulksketchBridge/PublicationWriteAdmission.lean": "f7f673ba57330a6810cd723aeca8eb266e23847146a5645634313d7e2da23b92",
+    "bridge/BulksketchBridge/RootClosedLeafTraversal.lean": "94506daaae93d3629bcdd6f776a677789803b31b6dc92d9acb137de6fb98648a",
+    "extraction/decode-report/Arithmetic/Funs.lean": "2da248903638770ce232e3661728b16431a0bc4741efd03c6c5ab7c63f4de656",
+    "extraction/decode-report/Arithmetic/FunsExternal_Template.lean": "870f1b70783d6d319cdf3cafddbebcec22eee1342c26f8cd58fadc577dcc537c",
+    "extraction/decode-report/Arithmetic/Types.lean": "19f7f2ca816b2a152db0daaaad69e807e63c5a8e9b56f97c92334a18508b237d",
+    "extraction/decode-report/aeneas.log": "2adb0f86c2ef14843ae5d1ec30369bf04bd7f2fd045791055a73219d321b8bdc",
+    "extraction/decode-report/arithmetic.llbc": "bc78525112df1b889439d3b6dc8899d2322401131f9b99195090829a0a3f0e7f",
+    "extraction/decode-report/charon.log": "c2ec0d1a4f72f257467779dfb6b6000d187d0d27db5e90c15afdbfc5b7b2793a",
+    "extraction/decode-report/project.py": "9f74e5219864b01f1d6f110562703f5d26d4d3881b48af13eb1a968d5321647a",
+    "extraction/decode-report/receipt.json": "0745130ba096311753b1d72261601f5ba70e18273df91d6686985e73c179e871",
+    "extraction/decode-report/replay.log": "98ad771b84881d37cdb9ec38ef181cf7b51ed03fa63a6b65a2cae585598ebceb"
   },
   "reviewed_policy_revisions": [
     {
@@ -15645,7 +15661,141 @@
       "new_sha256": "d6c2ab3ca7729d5f517d05a3194f28919d1e15a2eab0f3c50dabf86b615fcd75",
       "reason": "Freeze exact paid verification acceptance on native backends and first non-affine Trace entry.",
       "old_sha256": "9b6a9ba7d49aab7e622fee2d4680343a1fe0a3c0d5e746f9a6504db611b9f0a0"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "0e223d4258e3287e170a25cedead6d7e9adbfeb5c278b90d6005bbca1df1ddae",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "c2f255055eb009be3209514bbc95e3a479c5d338e05a24bfcae71db8010e9f2e"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "710c4df0b4d07673036fc28e4ae2024d28d0330aa4e03a3d2ce2ced739af81e0",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "2ba70c946295aa5328d8640f26e66044a7d4ec75ffc2f1352998a87262fdd931"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "1b8801efb14680295d9257099cc71f80852863d0a275cbc3cb99f49e6b468215",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "e0162371e26bd3aaf1cb8a565e7c367c8b71e685211ee4dc6818547d1a476542"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "286742f1e6dc67aeba1aa11b151e9bdf5875e930909e4bbbe6db2fbfabb4b886",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "b80d23bf14b1018cde6c7551ba016999c688a27a3b84d2d303aa7222e4d5fc1a"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "6889186cdeb85688472cdef4ecc7ec1e4e5ff911c1b230bf9038f056c4047da9",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "7a0878a183f86f100fe638484a5f228dccfd6fa876d77533bfa9f2c774a8b0c3"
+    },
+    {
+      "path": "bridge/Arithmetic/DecodeReportGenerated.lean",
+      "new_sha256": "28f4fbc2573386934dca334f948efa4cd9d2efa8865db673e0795ae9d8770218",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "35b3f8f523d0c5341f830e48ce6ba71bbf820937396f1b0e4be9c66d0e2eeae6",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "90abf4698adcca3c29dd48f6b8aff093b705b5bf50fd1364d89f6aca27ed8259"
+    },
+    {
+      "path": "bridge/BulksketchBridge/DecodeReport.lean",
+      "new_sha256": "b72cdb1ddf8ed561e41ad4acc4966bac56b2f8f1a80deb5843b3737033a6eecb",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativePaidVerificationFinish.lean",
+      "new_sha256": "ceb5a734ef84d2addad1978f87104ba5a28d61964a398edcf0d196bd28af18a1",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativePublicationAdmission.lean",
+      "new_sha256": "ef3cdc127906ef8ad2673d232586f6a28d23ab6f6bf47a66892966e24776daa0",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PublicationReadback.lean",
+      "new_sha256": "56cdcf8ae3c91229fabd8fc9c9d9b03c09e09d658387856cf8423f34633cfb7e",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PublicationWriteAdmission.lean",
+      "new_sha256": "f7f673ba57330a6810cd723aeca8eb266e23847146a5645634313d7e2da23b92",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootClosedLeafTraversal.lean",
+      "new_sha256": "94506daaae93d3629bcdd6f776a677789803b31b6dc92d9acb137de6fb98648a",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "27a5e6bdafd3efa563475ca02b1e4f382c5d6856c3e2880acee9e94f9a8f37bf",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "d6c2ab3ca7729d5f517d05a3194f28919d1e15a2eab0f3c50dabf86b615fcd75"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "9927e2128878db493048bf922dc744c7b8065c3765ae2c3d0c5ae9fe552d6c3c",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "c0cf140225a0e76a97df5047f3101be19365974fe590f727dd9123f33527a517"
+    },
+    {
+      "path": "extraction/decode-report/Arithmetic/Funs.lean",
+      "new_sha256": "2da248903638770ce232e3661728b16431a0bc4741efd03c6c5ab7c63f4de656",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback."
+    },
+    {
+      "path": "extraction/decode-report/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "870f1b70783d6d319cdf3cafddbebcec22eee1342c26f8cd58fadc577dcc537c",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback."
+    },
+    {
+      "path": "extraction/decode-report/Arithmetic/Types.lean",
+      "new_sha256": "19f7f2ca816b2a152db0daaaad69e807e63c5a8e9b56f97c92334a18508b237d",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback."
+    },
+    {
+      "path": "extraction/decode-report/aeneas.log",
+      "new_sha256": "2adb0f86c2ef14843ae5d1ec30369bf04bd7f2fd045791055a73219d321b8bdc",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback."
+    },
+    {
+      "path": "extraction/decode-report/arithmetic.llbc",
+      "new_sha256": "bc78525112df1b889439d3b6dc8899d2322401131f9b99195090829a0a3f0e7f",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback."
+    },
+    {
+      "path": "extraction/decode-report/charon.log",
+      "new_sha256": "c2ec0d1a4f72f257467779dfb6b6000d187d0d27db5e90c15afdbfc5b7b2793a",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback."
+    },
+    {
+      "path": "extraction/decode-report/project.py",
+      "new_sha256": "9f74e5219864b01f1d6f110562703f5d26d4d3881b48af13eb1a968d5321647a",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback."
+    },
+    {
+      "path": "extraction/decode-report/receipt.json",
+      "new_sha256": "0745130ba096311753b1d72261601f5ba70e18273df91d6686985e73c179e871",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback."
+    },
+    {
+      "path": "extraction/decode-report/replay.log",
+      "new_sha256": "98ad771b84881d37cdb9ec38ef181cf7b51ed03fa63a6b65a2cae585598ebceb",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "b7f9feacfaa87eeb5ab3e5d618771ba8da9b531a24679e0273cce9312cf712ff",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "2317cf3bb8719e7b9dcdac3dfe6a40ded4b5c6f6a583d683a435b4347933f9e7"
     }
   ],
-  "challenge_count": 478
+  "challenge_count": 485
 }
