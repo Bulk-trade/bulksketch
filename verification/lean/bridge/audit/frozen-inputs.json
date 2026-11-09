@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "a7d03d55c8fd78940f9074828b80adfb6ab64832044a89afcba30aaa254f8859",
+    "bridge/BulksketchBridge/Audit.lean": "9971a92de88a8adb7f35d6744d0283a5dc020d2dc8b1cb442c42525ec81950f8",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "2554c0454a37a6324bd410719f4a82a3f95c9ff315836964f4628ae5a5616a90",
-    "audit/frozen-inputs.json": "00c413efbb7409d703f29bcb844ea2c4e0430e233d4883feef72bd8eec8739c4",
-    "bridge/BulksketchBridge.lean": "b9aabc44b2275251e1ef2de373eb74f26243c884acdb27bbfbe2709c53a63d14",
+    "audit/frozen-inputs.json": "354d04adbf8a5c06b93a70ab952f01dcd23366d8888cde54e575966b3e721ac7",
+    "bridge/BulksketchBridge.lean": "ef8f2b1a88f68e3b0c96f3b825d76d19f8950fdb798b37a9a4e4080146e5d762",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "3b6c34c5496249b8bf4a6871b03d78f15b22ca14a899f6a6810e00f5acb0ed4e",
-    "bridge/obligations.json": "939a0f9cb41477b8dba15c2a4089c716874ba8d1369e7c82d17ee8285c51f187",
+    "bridge/source-linkage.json": "58542f43ee0f8746268f1b752dea2bcb7fd815374418b047e1e22751447be4aa",
+    "bridge/obligations.json": "15c224b4c12be9d3d66cf6b30453830729014e4ee87d6cc5264803a61d60f1b2",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "44a7f864a8fcb1c495afbded3d4c6d0fefe1676d967f521cf4dee236341f5b59",
+    "scripts/check_projection_fixtures.py": "b153c6fd45bd0bac8772bf51e115003a38f1979f4eb698fdcffd3cdf2e6a8aaa",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "d150b36d0fb016d20206376d8a21be97ad5139c996fe7af12aa1246e07b477f2",
+    "README.md": "2d41b8da0bd4383b52315061eafb30dc37dd57d0db5af2ea9d45209462441797",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "800c29e0074341eb9a895ee00d73f75eabde4d0ba504fc02c5d8b5758b94ba59",
+    "audit/coverage.json": "ff1372fe30b3c0e022777f4b5e6141d2e21a3c94f755da2b5f9dcfe6980253ec",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "54caeb676fd8fb7b9556b82a955b441a8f7aee589ce15428219465c038589104",
-    "audit/native-root-run-checkpoint.json": "514760e0e0ec814e629d6e320532234932d1babe46e9d965569c0737e3ea76ac",
+    "NATIVE_ROOT_RUN.md": "b40fc22859385dda15123e0aeb142ef786b03aeef7fdd3d5231a23e5f1529a20",
+    "audit/native-root-run-checkpoint.json": "f3132732b19af9d7f124032a8f0bf8002360c9c993c5c4c4d0c77fe232828228",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1780,7 +1780,7 @@
     "bridge/BulksketchBridge/RootEmittedValidity.lean": "2ec623f7f8370ee26bf80307d180820303a72b5146d0f05d4660935d24932e23",
     "bridge/BulksketchBridge/RootGcdInvariant.lean": "4146186957a2cafa624f94d4b6bdcb13cc739892665dd23c134804ba6546c0e0",
     "bridge/BulksketchBridge/RootInvariantReborrow.lean": "4577ca3d1e41a08aca521002e6106f8f98bddb37fc175a7a33dbab26e0551500",
-    "bridge/BulksketchBridge/RootTraceInvariant.lean": "10497da6ab35d04a96437ac54891a67b3892140476aa6307071ec3d13e6d0cf1",
+    "bridge/BulksketchBridge/RootTraceInvariant.lean": "cae29a82a182c8d5440a45bebb1625fa80c8bcf21e16a60f8a3fab004a376c6a",
     "bridge/BulksketchBridge/RankedExecutionDrain.lean": "359542749873a6a4489ef361cf115455590a14cac23104538e55f80dc65f9477",
     "bridge/BulksketchBridge/RankedRootDrainAdapter.lean": "1cbcd093756a4728ee0aa4490a0f6ac0b4bea02b7dcbf40a9b01a96b0129001f",
     "bridge/BulksketchBridge/RootAffineGcdInvariant.lean": "93376c6a85bf90b2f2ebb0c2fe3e2429421c1964de497f79e88ef8e701e296eb",
@@ -1986,7 +1986,24 @@
     "extraction/publication-frame/project.py": "4a2626f1632dd9890264aa8cd6878c4b501c12b1bb850ba2f9110cbbe15dce3f",
     "extraction/publication-frame/receipt.json": "72ba252b733f5b51b3dae16ce16fce5fb4ea0ee820e71a97ffb31ef63034feae",
     "extraction/publication-frame/replay.log": "18b712427fd08d5663029295a46864269f9f15331e557191f0311d562329914d",
-    "extraction/publication-frame/stock.log": "d9a13f4c0d091963e41144fbd9cbcd32dd0d427494ed8d79714a66ecde7489be"
+    "extraction/publication-frame/stock.log": "d9a13f4c0d091963e41144fbd9cbcd32dd0d427494ed8d79714a66ecde7489be",
+    "bridge/Arithmetic/X86PclmulInsertGenerated.lean": "3e154f42a6b5b90c47192c49af7b42dc589331fe88cc9c9c1bc0dbdd6d271689",
+    "bridge/BulksketchBridge/RebuiltLfsrNativePclmulAllDegrees.lean": "80c963887215ee85cb5fe5be17bf01dc405f659e4809ac4bcac423a69064e59a",
+    "bridge/BulksketchBridge/RootAffineGcdPair.lean": "edc394fabefe40b5389f61fd26b4b395b1858f18fb40748fba2f0eeb4ed9903a",
+    "bridge/BulksketchBridge/RootAffinePreparedSplit.lean": "84f25165c433fab5277cb20c1da5ba967b164900513edbede812f60405812a69",
+    "bridge/BulksketchBridge/RootTraceDivideHandoff.lean": "afd35b8ecf6f22b56c1314ae029b8666c5b440d3ade655f475d58e15fef4dde9",
+    "bridge/BulksketchBridge/RootTraceGcdPair.lean": "bd3716685baf50adc0a56d501f99d9360bb5b520d3a0fbc563e35757fa414131",
+    "bridge/BulksketchBridge/X86PclmulInsert.lean": "d30f713639d68bfbb595fec7699d466dd52da2437323938f94d7091605c24bf5",
+    "extraction/pclmul-insert/Arithmetic/Funs.lean": "58f95ae2cdbdbc511316d8244e3ad52c27a3923d8e86ae05668408e331ebe0d5",
+    "extraction/pclmul-insert/Arithmetic/FunsExternal_Template.lean": "e0f4a0763a557dda34b2a934ec6a859111a80e0b7dce4a47dbdef46c665691d9",
+    "extraction/pclmul-insert/Arithmetic/Types.lean": "4b58153f82fbdc6bc3db617f8616324adc6d3c52fd8410fddac95a1628a5d4b6",
+    "extraction/pclmul-insert/Arithmetic/TypesExternal_Template.lean": "9dd7e2fa06b73375fc329511b44871a0bd5981b179d3102d50cbf205be1ab815",
+    "extraction/pclmul-insert/aeneas.log": "cb099385142cfa97370fd10522af10ee7f72eecba4262b9cc708ac80f82c16bf",
+    "extraction/pclmul-insert/arithmetic.llbc": "5a796646cd2f8a83adc8d858b2a71569acdb036041c7b6015dece8db263ebcdb",
+    "extraction/pclmul-insert/charon.log": "c2ec0d1a4f72f257467779dfb6b6000d187d0d27db5e90c15afdbfc5b7b2793a",
+    "extraction/pclmul-insert/project.py": "99d7c5d15ceaab41a3683910045574e4aa206437fa1fc32614326f6346248352",
+    "extraction/pclmul-insert/receipt.json": "138b40e6591c62cda6e8245a8f1140cee04c6d8d7650d5d1946ce3231f04c06d",
+    "extraction/pclmul-insert/replay.log": "57f278f3ccbdaac976edcce1f395ccd47750d76968bfeb9a4c56b643cea178f2"
   },
   "reviewed_policy_revisions": [
     {
@@ -14859,7 +14876,158 @@
       "new_sha256": "44a7f864a8fcb1c495afbded3d4c6d0fefe1676d967f521cf4dee236341f5b59",
       "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits.",
       "old_sha256": "8277bced24240ddbad21c78c593cb61ce946a39d2b07c61bc669f7b24ed36cea"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "b40fc22859385dda15123e0aeb142ef786b03aeef7fdd3d5231a23e5f1529a20",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
+      "old_sha256": "54caeb676fd8fb7b9556b82a955b441a8f7aee589ce15428219465c038589104"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "2d41b8da0bd4383b52315061eafb30dc37dd57d0db5af2ea9d45209462441797",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
+      "old_sha256": "d150b36d0fb016d20206376d8a21be97ad5139c996fe7af12aa1246e07b477f2"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "ff1372fe30b3c0e022777f4b5e6141d2e21a3c94f755da2b5f9dcfe6980253ec",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
+      "old_sha256": "800c29e0074341eb9a895ee00d73f75eabde4d0ba504fc02c5d8b5758b94ba59"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "354d04adbf8a5c06b93a70ab952f01dcd23366d8888cde54e575966b3e721ac7",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
+      "old_sha256": "00c413efbb7409d703f29bcb844ea2c4e0430e233d4883feef72bd8eec8739c4"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "f3132732b19af9d7f124032a8f0bf8002360c9c993c5c4c4d0c77fe232828228",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
+      "old_sha256": "514760e0e0ec814e629d6e320532234932d1babe46e9d965569c0737e3ea76ac"
+    },
+    {
+      "path": "bridge/Arithmetic/X86PclmulInsertGenerated.lean",
+      "new_sha256": "3e154f42a6b5b90c47192c49af7b42dc589331fe88cc9c9c1bc0dbdd6d271689",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "ef8f2b1a88f68e3b0c96f3b825d76d19f8950fdb798b37a9a4e4080146e5d762",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
+      "old_sha256": "b9aabc44b2275251e1ef2de373eb74f26243c884acdb27bbfbe2709c53a63d14"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "9971a92de88a8adb7f35d6744d0283a5dc020d2dc8b1cb442c42525ec81950f8",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
+      "old_sha256": "a7d03d55c8fd78940f9074828b80adfb6ab64832044a89afcba30aaa254f8859"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RebuiltLfsrNativePclmulAllDegrees.lean",
+      "new_sha256": "80c963887215ee85cb5fe5be17bf01dc405f659e4809ac4bcac423a69064e59a",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootAffineGcdPair.lean",
+      "new_sha256": "edc394fabefe40b5389f61fd26b4b395b1858f18fb40748fba2f0eeb4ed9903a",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootAffinePreparedSplit.lean",
+      "new_sha256": "84f25165c433fab5277cb20c1da5ba967b164900513edbede812f60405812a69",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraceDivideHandoff.lean",
+      "new_sha256": "afd35b8ecf6f22b56c1314ae029b8666c5b440d3ade655f475d58e15fef4dde9",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraceGcdPair.lean",
+      "new_sha256": "bd3716685baf50adc0a56d501f99d9360bb5b520d3a0fbc563e35757fa414131",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraceInvariant.lean",
+      "new_sha256": "cae29a82a182c8d5440a45bebb1625fa80c8bcf21e16a60f8a3fab004a376c6a",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
+      "old_sha256": "10497da6ab35d04a96437ac54891a67b3892140476aa6307071ec3d13e6d0cf1"
+    },
+    {
+      "path": "bridge/BulksketchBridge/X86PclmulInsert.lean",
+      "new_sha256": "d30f713639d68bfbb595fec7699d466dd52da2437323938f94d7091605c24bf5",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "15c224b4c12be9d3d66cf6b30453830729014e4ee87d6cc5264803a61d60f1b2",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
+      "old_sha256": "939a0f9cb41477b8dba15c2a4089c716874ba8d1369e7c82d17ee8285c51f187"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "58542f43ee0f8746268f1b752dea2bcb7fd815374418b047e1e22751447be4aa",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
+      "old_sha256": "3b6c34c5496249b8bf4a6871b03d78f15b22ca14a899f6a6810e00f5acb0ed4e"
+    },
+    {
+      "path": "extraction/pclmul-insert/Arithmetic/Funs.lean",
+      "new_sha256": "58f95ae2cdbdbc511316d8244e3ad52c27a3923d8e86ae05668408e331ebe0d5",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "extraction/pclmul-insert/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "e0f4a0763a557dda34b2a934ec6a859111a80e0b7dce4a47dbdef46c665691d9",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "extraction/pclmul-insert/Arithmetic/Types.lean",
+      "new_sha256": "4b58153f82fbdc6bc3db617f8616324adc6d3c52fd8410fddac95a1628a5d4b6",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "extraction/pclmul-insert/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "9dd7e2fa06b73375fc329511b44871a0bd5981b179d3102d50cbf205be1ab815",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "extraction/pclmul-insert/aeneas.log",
+      "new_sha256": "cb099385142cfa97370fd10522af10ee7f72eecba4262b9cc708ac80f82c16bf",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "extraction/pclmul-insert/arithmetic.llbc",
+      "new_sha256": "5a796646cd2f8a83adc8d858b2a71569acdb036041c7b6015dece8db263ebcdb",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "extraction/pclmul-insert/charon.log",
+      "new_sha256": "c2ec0d1a4f72f257467779dfb6b6000d187d0d27db5e90c15afdbfc5b7b2793a",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "extraction/pclmul-insert/project.py",
+      "new_sha256": "99d7c5d15ceaab41a3683910045574e4aa206437fa1fc32614326f6346248352",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "extraction/pclmul-insert/receipt.json",
+      "new_sha256": "138b40e6591c62cda6e8245a8f1140cee04c6d8d7650d5d1946ce3231f04c06d",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "extraction/pclmul-insert/replay.log",
+      "new_sha256": "57f278f3ccbdaac976edcce1f395ccd47750d76968bfeb9a4c56b643cea178f2",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "b153c6fd45bd0bac8772bf51e115003a38f1979f4eb698fdcffd3cdf2e6a8aaa",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
+      "old_sha256": "44a7f864a8fcb1c495afbded3d4c6d0fefe1676d967f521cf4dee236341f5b59"
     }
   ],
-  "challenge_count": 440
+  "challenge_count": 447
 }

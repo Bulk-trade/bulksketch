@@ -1,0 +1,108 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "native_source_edited": false,
+  "source_sha256": {
+    "src/backend/x86_pclmul.rs": "8cf4abd4ed47aa63b2d050928c37a5cdc93f49e8cd07b2f7c8ffddb56b7b4fff"
+  },
+  "commands": {
+    "charon": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-traversal-stages/pclmul-all-degree-seed/arithmetic.llbc",
+        "--start-from={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::x86_pclmul::Pclmul}::insert_nonzero",
+        "--include={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::x86_pclmul::Pclmul}::insert_nonzero",
+        "--include=bulksketch::backend::x86_pclmul::insert",
+        "--opaque=bulksketch::backend::x86_pclmul::word",
+        "--opaque=bulksketch::backend::x86_pclmul::low",
+        "--opaque=bulksketch::backend::x86_pclmul::multiply",
+        "--opaque=bulksketch::backend::x86_pclmul::reduced",
+        "--opaque=bulksketch::backend::x86_pclmul::_::mul",
+        "--opaque=bulksketch::backend::x86_pclmul::_::square",
+        "--opaque=bulksketch::backend::x86_pclmul::_::frobenius",
+        "--opaque=bulksketch::backend::x86_pclmul::_::inverse",
+        "--opaque=bulksketch::backend::x86_pclmul::_::trace",
+        "--opaque=bulksketch::backend::x86_pclmul::_::solve_quadratic",
+        "--opaque=bulksketch::backend::x86_pclmul::_::raw_mul",
+        "--opaque=bulksketch::backend::x86_pclmul::_::reduce",
+        "--opaque=bulksketch::backend::x86_pclmul::_::scale_xor",
+        "--opaque=bulksketch::backend::x86_pclmul::_::square_slice",
+        "--opaque=bulksketch::backend::x86_pclmul::_::xor_assign",
+        "--opaque=bulksketch::backend::x86_pclmul::_::horner_many",
+        "--",
+        "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    "aeneas": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-traversal-stages/pclmul-all-degree-seed/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-traversal-stages/pclmul-all-degree-seed/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  },
+  "replay": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-traversal-stages/pclmul-all-degree-seed/replay",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-traversal-stages/pclmul-all-degree-seed/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "identical_outputs": true,
+    "outputs_sha256": {
+      "Funs.lean": "58f95ae2cdbdbc511316d8244e3ad52c27a3923d8e86ae05668408e331ebe0d5",
+      "Types.lean": "4b58153f82fbdc6bc3db617f8616324adc6d3c52fd8410fddac95a1628a5d4b6",
+      "FunsExternal_Template.lean": "e0f4a0763a557dda34b2a934ec6a859111a80e0b7dce4a47dbdef46c665691d9",
+      "TypesExternal_Template.lean": "9dd7e2fa06b73375fc329511b44871a0bd5981b179d3102d50cbf205be1ab815"
+    }
+  },
+  "artifacts": {
+    "extraction/pclmul-insert/aeneas.log": "cb099385142cfa97370fd10522af10ee7f72eecba4262b9cc708ac80f82c16bf",
+    "extraction/pclmul-insert/charon.log": "c2ec0d1a4f72f257467779dfb6b6000d187d0d27db5e90c15afdbfc5b7b2793a",
+    "extraction/pclmul-insert/arithmetic.llbc": "5a796646cd2f8a83adc8d858b2a71569acdb036041c7b6015dece8db263ebcdb",
+    "extraction/pclmul-insert/replay.log": "57f278f3ccbdaac976edcce1f395ccd47750d76968bfeb9a4c56b643cea178f2",
+    "extraction/pclmul-insert/Arithmetic/Funs.lean": "58f95ae2cdbdbc511316d8244e3ad52c27a3923d8e86ae05668408e331ebe0d5",
+    "extraction/pclmul-insert/Arithmetic/FunsExternal_Template.lean": "e0f4a0763a557dda34b2a934ec6a859111a80e0b7dce4a47dbdef46c665691d9",
+    "extraction/pclmul-insert/Arithmetic/Types.lean": "4b58153f82fbdc6bc3db617f8616324adc6d3c52fd8410fddac95a1628a5d4b6",
+    "extraction/pclmul-insert/Arithmetic/TypesExternal_Template.lean": "9dd7e2fa06b73375fc329511b44871a0bd5981b179d3102d50cbf205be1ab815"
+  },
+  "shared_sha256": {
+    "bridge/Arithmetic/PortableInsertionGenerated.lean": "e8d1221520720ef83740ce0be68240f16fd7ac669493a6e9dd2742a441f9cbe4",
+    "bridge/Arithmetic/X86PclmulGenerated.lean": "dc418d8fb3549ba684ddfe5cc26712890d43c6f9c801975048826fedd1e55963"
+  }
+}

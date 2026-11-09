@@ -36,6 +36,8 @@ def ActualNativeTraceInvariant : Prop :=
       Roots.run nativeCalls nativeDivRem dictionary kernels roots .Trace workspace meter =
         .ok (.Ok (.Ok .Gcd), after, written, id, finalMeter) ∧
       RootTraversalInvariant locator after written capacity budget ∧
+      activeFactor after written = activeFactor roots workspace ∧
+      buffersFor after written = frame.2.2.1 ∧
       CorrectTable next.modulus next.table after.degree.val ∧
       cacheWellFormed after next ∧ after.attempts.val = roots.attempts.val + 1 ∧
       after.trace_len.val ≤ after.degree.val ∧ DenseGcd.Normal trace ∧
@@ -76,7 +78,10 @@ theorem native_trace_invariant : ActualNativeTraceInvariant := by
   have preserved : RootTraversalInvariant locator after written capacity budget :=
     rebuild_preserves_traversal locator roots after workspace frame.2.2.1 capacity budget invariant
       rfl rfl rfl rfl rfl restored rfl rawWidth
-  refine ⟨writes, ran, preserved, ?_, ?_, correct.1, ?_, ?_, ?_, ?_⟩
+  refine ⟨writes, ran, preserved, ?_, restored, ?_, ?_, correct.1, ?_, ?_, ?_, ?_⟩
+  · change slicePolynomial (buffersFor after written).modulus = slicePolynomial before.modulus
+    rw [restored]
+    rfl
   · rw [restored]
     exact table
   · rw [restored]

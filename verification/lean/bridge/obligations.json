@@ -1760,6 +1760,34 @@
     {
       "challenge": "BulksketchBridge.RootRun.ActualNativeTraceSplitChargeExit",
       "theorem": "BulksketchBridge.RootRun.native_trace_split_charge_exit"
+    },
+    {
+      "challenge": "BulksketchBridge.X86Pclmul.ActualNativePclmulInsertHelper",
+      "theorem": "BulksketchBridge.X86Pclmul.native_pclmul_insert_helper"
+    },
+    {
+      "challenge": "BulksketchBridge.X86Pclmul.ActualNativePclmulInsert",
+      "theorem": "BulksketchBridge.X86Pclmul.native_pclmul_insert"
+    },
+    {
+      "challenge": "BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrNativePclmulAllDegrees",
+      "theorem": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_pclmul_all_degrees"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceGcdPair",
+      "theorem": "BulksketchBridge.RootRun.native_trace_gcd_pair"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeAffineSplitGcdPair",
+      "theorem": "BulksketchBridge.RootRun.native_affine_split_gcd_pair"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualAffineSplitReadyAfterPreparation",
+      "theorem": "BulksketchBridge.RootRun.affine_split_ready_after_preparation"
+    },
+    {
+      "challenge": "BulksketchBridge.RootDivide.ActualNativeTraceDivideHandoff",
+      "theorem": "BulksketchBridge.RootDivide.native_trace_divide_handoff"
     }
   ],
   "refinements": [
@@ -4748,6 +4776,34 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original sparse loop invokes the native insert callback once per singleton in original order."
+    },
+    {
+      "label": "PCLMUL insert [original source]",
+      "native_item_id": "src/backend/x86_pclmul.rs:206:function:bulksketch::backend::x86_pclmul::insert",
+      "source_line_span_sha256": "a6e8e3cbea2946fa9f938eec0d132919f14f9e0deb3648da6b2a916b88fb854b",
+      "theorem": "BulksketchBridge.X86Pclmul.native_pclmul_insert_helper",
+      "challenge": "BulksketchBridge.X86Pclmul.ActualNativePclmulInsertHelper",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.insert",
+      "generated_file": "bridge/Arithmetic/X86PclmulInsertGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/X86PclmulInsertGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact GF64 XMM inner and outer insertion and backward slice writes for both original const modes."
+    },
+    {
+      "label": "PCLMUL insert_nonzero [original source]",
+      "native_item_id": "src/backend/x86_pclmul.rs:98:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::insert_nonzero",
+      "source_line_span_sha256": "fd43a273a3bbf47edca077ab607ab8f2bd40143a82be2e43acf7bc57186ac907",
+      "theorem": "BulksketchBridge.X86Pclmul.native_pclmul_insert",
+      "challenge": "BulksketchBridge.X86Pclmul.ActualNativePclmulInsert",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractBulkKernels.insert_nonzero",
+      "generated_file": "bridge/Arithmetic/X86PclmulInsertGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/X86PclmulInsertGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original GF64 trait entry selects the original XMM seed loop in the production const mode."
     }
   ],
   "stateful_llbc_refinements": [

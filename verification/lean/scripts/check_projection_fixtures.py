@@ -440,6 +440,13 @@ PROJECTIONS = [
      ["extraction/avx-square/receipt.json", "extraction/avx-insert/horizontal/arithmetic.llbc"] +
      [f"extraction/avx-insert/horizontal/Arithmetic/{name}"
       for name in ("Funs.lean", "FunsExternal_Template.lean", "Types.lean", "TypesExternal_Template.lean")]),
+    ("pclmul-insert", "extraction/pclmul-insert/project.py", "extraction/pclmul-insert/receipt.json",
+     "extraction/pclmul-insert/Arithmetic/Funs.lean", "bridge/Arithmetic/X86PclmulInsertGenerated.lean",
+     "backend.x86_pclmul.insert true fieldBinaryFieldInst odd ids",
+     "backend.x86_pclmul.insert false fieldBinaryFieldInst odd ids",
+     "compiled PCLMUL insertion projection differs", None, None,
+     ["extraction/avx-recurrence/receipt.json", "bridge/Arithmetic/PortableInsertionGenerated.lean",
+      "bridge/Arithmetic/X86PclmulGenerated.lean"]),
     ('publication-frame',
      'extraction/publication-frame/project.py',
      'extraction/publication-frame/receipt.json',
@@ -864,6 +871,9 @@ def main():
         if label == "completed-result":
             cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false',
                           '"native_llbc_edited": true', "invalid completed_result translator receipt"))
+        if label == "pclmul-insert":
+            cases.append(("missing-checks", receipt_path, '"-checks"', '"-no-checks"',
+                          "PCLMUL insertion checked replay differs"))
         if label == "publication-frame":
             cases.append(("missing-checks", receipt_path, '"-checks"', '"-no-checks"',
                           "publication frame checked replay differs"))
@@ -928,7 +938,7 @@ def main():
                              "affine-enumerate", "affine-selector", "avx-multiply-linear", "affine-solve-map",
                              "avx-horner", "affine-multiple", "avx-tile", "avx-recurrence", "avx-sparse-insert", "avx-slice-kernel", "avx-slice-entry", "avx-scalar-delegates", "avx-recurrence-entry", "avx-linear-entry", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
                              "avx-insert-insert18", "avx-insert-horizontal", "avx-insert-dispatch", "native-driver", "candidate-row", "completed-result",
-                             "native-finish", "canonicalize", "publication-frame", "row-configuration", "candidate-normalize-rows", "candidate-normalize-compact", "candidate-normalize-merge"}:
+                             "native-finish", "canonicalize", "pclmul-insert", "publication-frame", "row-configuration", "candidate-normalize-rows", "candidate-normalize-compact", "candidate-normalize-merge"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

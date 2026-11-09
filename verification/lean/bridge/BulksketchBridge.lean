@@ -187,3 +187,7 @@ import BulksketchBridge.AvxSliceEntry
 import BulksketchBridge.AvxSparseInsert18
 import BulksketchBridge.RootAffineDivideHandoff
 import BulksketchBridge.RootSecondChargeExit
+import BulksketchBridge.RebuiltLfsrNativePclmulAllDegrees
+import BulksketchBridge.RootTraceGcdPair
+import BulksketchBridge.RootAffinePreparedSplit
+import BulksketchBridge.RootTraceDivideHandoff

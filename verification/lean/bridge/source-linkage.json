@@ -721,6 +721,11 @@
       "path": "extraction/avx-sparse-insert/arithmetic.llbc",
       "sha256": "b613319d953cde06deaa4d13056aad3f06b8dcd241c09a61bd9c21a9d2cdd913",
       "has_errors": false
+    },
+    {
+      "path": "extraction/pclmul-insert/arithmetic.llbc",
+      "sha256": "5a796646cd2f8a83adc8d858b2a71569acdb036041c7b6015dece8db263ebcdb",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1768,6 +1773,16 @@
       "native_item_id": "src/backend/x86_vpclmul512.rs:429:function:bulksketch::backend::x86_vpclmul512::insert_sparse",
       "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert_sparse",
       "generated_file": "bridge/Arithmetic/AvxSparseInsertGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:206:function:bulksketch::backend::x86_pclmul::insert",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.insert",
+      "generated_file": "bridge/Arithmetic/X86PclmulInsertGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:98:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::insert_nonzero",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractBulkKernels.insert_nonzero",
+      "generated_file": "bridge/Arithmetic/X86PclmulInsertGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2753,6 +2768,15 @@
       "checker": "extraction/avx-sparse-insert/project.py",
       "declaration_count": 3,
       "scope": "Original sparse repeat insertion in exact input order."
+    },
+    {
+      "generated": "extraction/pclmul-insert/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/X86PclmulInsertGenerated.lean",
+      "sha256": "3e154f42a6b5b90c47192c49af7b42dc589331fe88cc9c9c1bc0dbdd6d271689",
+      "raw_sha256": "58f95ae2cdbdbc511316d8244e3ad52c27a3923d8e86ae05668408e331ebe0d5",
+      "checker": "extraction/pclmul-insert/project.py",
+      "declaration_count": 6,
+      "scope": "Original PCLMUL seed inner and outer loops and exact trait entry."
     }
   ],
   "reviewed_translator_variants": [

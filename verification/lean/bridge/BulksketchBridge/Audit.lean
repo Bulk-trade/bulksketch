@@ -916,7 +916,21 @@ run_cmd do
     (``BulksketchBridge.RootRun.ActualNativeDivideAssemblyChargeExit,
       ``BulksketchBridge.RootRun.native_divide_assembly_charge_exit),
     (``BulksketchBridge.RootRun.ActualNativeTraceSplitChargeExit,
-      ``BulksketchBridge.RootRun.native_trace_split_charge_exit)
+      ``BulksketchBridge.RootRun.native_trace_split_charge_exit),
+    (``BulksketchBridge.X86Pclmul.ActualNativePclmulInsertHelper,
+      ``BulksketchBridge.X86Pclmul.native_pclmul_insert_helper),
+    (``BulksketchBridge.X86Pclmul.ActualNativePclmulInsert,
+      ``BulksketchBridge.X86Pclmul.native_pclmul_insert),
+    (``BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrNativePclmulAllDegrees,
+      ``BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_pclmul_all_degrees),
+    (``BulksketchBridge.RootRun.ActualNativeTraceGcdPair,
+      ``BulksketchBridge.RootRun.native_trace_gcd_pair),
+    (``BulksketchBridge.RootRun.ActualNativeAffineSplitGcdPair,
+      ``BulksketchBridge.RootRun.native_affine_split_gcd_pair),
+    (``BulksketchBridge.RootRun.ActualAffineSplitReadyAfterPreparation,
+      ``BulksketchBridge.RootRun.affine_split_ready_after_preparation),
+    (``BulksketchBridge.RootDivide.ActualNativeTraceDivideHandoff,
+      ``BulksketchBridge.RootDivide.native_trace_divide_handoff)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge
