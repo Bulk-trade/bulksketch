@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "b644330962bd5aaf7cd538e422f3ce3dd5d9fa93ba2f1a6059cf22c51d446b3b",
+    "bridge/BulksketchBridge/Audit.lean": "65cea1ff703da96345bb193687906ec3bb734ab1e95ddd16c467ed80406aadca",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,8 +13,8 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "e303503f5385e6c58cde43f7a14e665e7cd2422d5b233a73ef2b163b1cf4fd09",
-    "audit/frozen-inputs.json": "d24ccce775cd88f8004363e685752eebb12a17f9bdebca816b1e709149296972",
+    "scripts/verify_bridge.py": "2b4c43715bb677d439fc8eb99564e093d041bea1fdb8ec5567ba470275ec8485",
+    "audit/frozen-inputs.json": "ba8a1fa1714be2531ae16323ce25747de44f0df56faa3f5dd5b1924d05c1c9f2",
     "bridge/BulksketchBridge.lean": "5dbd9b1fd933cd65fc227225c70ec885fecc1b5eaa061ec44ae76ecd4d5eb840",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "511981d459e2324090cf4d5220dbf35b6357a0a4323363a6921d9c59da97a63a",
-    "bridge/obligations.json": "5ef3dc512aa7882c237d68f560ba2e20d99d1b052be00caf7770e0339faef52a",
+    "bridge/source-linkage.json": "99209efab0c9239bb0ad579e63c92f2dcddb50b4464648c7b8a5f6233bec8e58",
+    "bridge/obligations.json": "7f7281c750137b7898e1619f5ddc32eea2e6b5e30923e78a630f316047aae063",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "ef8b1378437c79ebc3b15fbde495e2774efb6057cfec1b8f461db3501606814a",
+    "scripts/check_projection_fixtures.py": "ac4f90450d7ace64611c95c73a213900c3d705f7877bc2424910a6a1a8eff45c",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "c909486ca2ceaa01f6f1ddde775f65ff06fe36ec3176460fae61c62bd52c6c36",
+    "README.md": "62d745a05d5b1e1a6b36a9537814b7848a1a85d76f8c24e8b3acea908512a7b1",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "4793edde0cdf4bd1de23db8ee3d2b992a32052a91c63abc85a41c51ca38f742f",
+    "audit/coverage.json": "d641a2f5440be2f02643e697e2db1392f9e09a9ec94a4fc65fe9b1ffd7f07d5a",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "5289a6000ab503954e4bb7a011940fc1383b37bbdefd64c2210f4c27761b5743",
-    "audit/native-root-run-checkpoint.json": "cafc87f19f6bd07ff8842599c1a3a978505b05278737cb45d0a7c377cc1809ec",
+    "NATIVE_ROOT_RUN.md": "bcd75379e569e1a1873270ee74f0d3bd979c9a2b9e7721bb4d0069a74e6e8539",
+    "audit/native-root-run-checkpoint.json": "67af0abd5c984246964d95a9ad9a15323a94729465c6ef814a1f3000543c574c",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1992,7 +1992,7 @@
     "bridge/BulksketchBridge/RootAffineGcdPair.lean": "edc394fabefe40b5389f61fd26b4b395b1858f18fb40748fba2f0eeb4ed9903a",
     "bridge/BulksketchBridge/RootAffinePreparedSplit.lean": "84f25165c433fab5277cb20c1da5ba967b164900513edbede812f60405812a69",
     "bridge/BulksketchBridge/RootTraceDivideHandoff.lean": "afd35b8ecf6f22b56c1314ae029b8666c5b440d3ade655f475d58e15fef4dde9",
-    "bridge/BulksketchBridge/RootTraceGcdPair.lean": "bd3716685baf50adc0a56d501f99d9360bb5b520d3a0fbc563e35757fa414131",
+    "bridge/BulksketchBridge/RootTraceGcdPair.lean": "6ac2afd8d3be557bdae3330f167913c004de773637886531552f3df6e0ce2b40",
     "bridge/BulksketchBridge/X86PclmulInsert.lean": "d30f713639d68bfbb595fec7699d466dd52da2437323938f94d7091605c24bf5",
     "extraction/pclmul-insert/Arithmetic/Funs.lean": "58f95ae2cdbdbc511316d8244e3ad52c27a3923d8e86ae05668408e331ebe0d5",
     "extraction/pclmul-insert/Arithmetic/FunsExternal_Template.lean": "e0f4a0763a557dda34b2a934ec6a859111a80e0b7dce4a47dbdef46c665691d9",
@@ -2178,7 +2178,77 @@
     "extraction/sum-costs/project.py": "a892c217155ac957a3cae6e560de0c2d8613d7e1a66b0c19b9133b7643e7d957",
     "extraction/sum-costs/receipt.json": "fa7e8b31af811f30156a4c75da84d3d12a9d84885bfa019fd811ac6420958296",
     "extraction/sum-costs/specialize.py": "c3f26a92464214e46452d6360d1921f7814febc2624d45f7918a93b4cb0df680",
-    "extraction/sum-costs/specialized.llbc": "38eb3a97b30ceef9e7ecb04f70b82f8a1a9d9f3cb24f289e39304d66a47085a3"
+    "extraction/sum-costs/specialized.llbc": "38eb3a97b30ceef9e7ecb04f70b82f8a1a9d9f3cb24f289e39304d66a47085a3",
+    "bridge/Arithmetic/AvxEncodeEntryGenerated.lean": "4abd68d41739e79961acffa8cdc4118418714c03c33c51df41a0e52c4169b242",
+    "bridge/Arithmetic/AvxSingletonGenerated.lean": "332e8f2b136fc122fd8e90fb96a2bd416c282273774af91d345d296c3ee42bdb",
+    "bridge/Arithmetic/FrozenShapeGenerated.lean": "828ec87463c23b3906b1ec790108340933918b8fa9e1dadb880351115ad09afd",
+    "bridge/Arithmetic/RequestPermissionGenerated.lean": "c7cab7b51a1e205aca3e8d7bd1975f7b5c52f9735fea4a7e6666adeef90831ac",
+    "bridge/BulksketchBridge/AvxEncodeConcrete.lean": "dae41d6ee2386c032fc8c8bf2a2f7b247df44636bb41c230ff4db6d86186d180",
+    "bridge/BulksketchBridge/AvxEncodeCorrect.lean": "babd2beedd57cdfe9be0df8ef63e92cd5954b698f4cac2a978d12c042bda3f3a",
+    "bridge/BulksketchBridge/AvxEncodeEntry.lean": "8a6bc3713fb2eb7f84e55242b364e0773fb808ca5c7e7bfe2ec1d3182a0b2224",
+    "bridge/BulksketchBridge/AvxEncodeInsert.lean": "eae2de0b4d6b4f7f8666f24f970c2f536544a5eb87291ee67e3d39f7c98f65b5",
+    "bridge/BulksketchBridge/AvxEncodeVerification.lean": "e246cc60e59da407a749022259de157ca50cee87140a2ca4b598b839ae863d2d",
+    "bridge/BulksketchBridge/AvxSingleton.lean": "3ecdda82b07f8e91995f226f13e65d73bc27fb09b13db0ab08cc4a81e78a3f0b",
+    "bridge/BulksketchBridge/AvxSingletonBlocks.lean": "43cf7bb03755ce93d5dbd007f52c4c5933986061187bfcd2b3296f60bb328469",
+    "bridge/BulksketchBridge/AvxSingletonLanes.lean": "5ec283168f6681a342b209b6d66f6071512fffa23cbaa70772a07b68db092015",
+    "bridge/BulksketchBridge/AvxSingletonSchedules.lean": "a6317d5b941f4b7c83b071744ab97d9cb032910f4d707c89f857830f49fa7fde",
+    "bridge/BulksketchBridge/FrozenShape.lean": "c4594175feba79538ba3e17ad0c2e46c3542df0f3ddc871ab4f48b7bee6d3f44",
+    "bridge/BulksketchBridge/NativeTraceSearch.lean": "ce78e2a789bc1f1c7cb85f6ad5780404e9206aa567148de21db93eeab8b1e745",
+    "bridge/BulksketchBridge/RequestPermission.lean": "4361386a78b1667ec3011ee3c98200ac8ae4dac4cb1bd3c7b5568987ff30f094",
+    "bridge/BulksketchBridge/RootTraceCharge.lean": "c20eca19eda176ce2a425680263adcc9c9d10236624a870c66a7b466de47ce17",
+    "extraction/avx-encode-entry/encode/Arithmetic/Funs.lean": "4be01e703bacd3e785f9aee162b61645bffe6d8db454aa7ee243a1e87c0f6527",
+    "extraction/avx-encode-entry/encode/Arithmetic/FunsExternal_Template.lean": "31435511f1289e3b2a90a5fb3dba72c29f9a54cdf31b22d8ac09b15d8c988183",
+    "extraction/avx-encode-entry/encode/Arithmetic/Types.lean": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef",
+    "extraction/avx-encode-entry/encode/aeneas.log": "a393f000935662b40fda7ea8c63b2ea60cf02b57264aa408885c3e1c2f39f40a",
+    "extraction/avx-encode-entry/encode/arithmetic.llbc": "27283c2fc5c2f81015d026ce062e8d750504273ffe8bc2d3e0cff8e354c6c5e0",
+    "extraction/avx-encode-entry/encode/charon.log": "f1098cb4c34f28ed8b0515bf29c1f8d90bd03a831c1691faa8d0eb2b933dea5a",
+    "extraction/avx-encode-entry/encode/replay.log": "9a7689cf43b0decded8879d3e9f7b27539fd68827ad7ff97c5a0cfaa0cae7889",
+    "extraction/avx-encode-entry/insert-32/Arithmetic/Funs.lean": "d4fedfb6db7353d4e81c027e39d09bafe8200c9b3729d6e843b2245151d342c4",
+    "extraction/avx-encode-entry/insert-32/Arithmetic/FunsExternal_Template.lean": "bd5c1c2bb7631a69c3e7b60b4200bae134358d829f96d6285d6dfdc4883655e0",
+    "extraction/avx-encode-entry/insert-32/Arithmetic/Types.lean": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+    "extraction/avx-encode-entry/insert-32/Arithmetic/TypesExternal_Template.lean": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e",
+    "extraction/avx-encode-entry/insert-32/aeneas.log": "1bfcf6713ace3f4912214ac3dc83daff139b1107b100b2512298f508a5ec381d",
+    "extraction/avx-encode-entry/insert-32/arithmetic.llbc": "8850dae3433945dd57b7ed5a9a8f67264b2660099434afae6d4839bad933089e",
+    "extraction/avx-encode-entry/insert-32/charon.log": "7979486de1eb2402da8f27ed62f9626be6950ac6710c56054043f61b7d1d035f",
+    "extraction/avx-encode-entry/insert-32/replay.log": "8ea6da58ed2936aa413ed43cf9e45fdb89b166a8f8fdffac6a084833c9b20f84",
+    "extraction/avx-encode-entry/insert-single-broadcast/Arithmetic/Funs.lean": "e71a439c0691aacb322a7335ea2a15ece631a30586eea58a08641706e7d30611",
+    "extraction/avx-encode-entry/insert-single-broadcast/Arithmetic/FunsExternal_Template.lean": "7869ef2832638bc350eca9b27f5a5993c627841f0e678b7a12667f44343e841c",
+    "extraction/avx-encode-entry/insert-single-broadcast/Arithmetic/Types.lean": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+    "extraction/avx-encode-entry/insert-single-broadcast/Arithmetic/TypesExternal_Template.lean": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e",
+    "extraction/avx-encode-entry/insert-single-broadcast/aeneas.log": "ec1a28829bfae229a3839712c562206156f8a15208c19e66c367b3650625bbf7",
+    "extraction/avx-encode-entry/insert-single-broadcast/arithmetic.llbc": "074d6eb52a64700f1f8253221c13bdf4ed73c43c3baab6a4afb3fa9a937d03fd",
+    "extraction/avx-encode-entry/insert-single-broadcast/charon.log": "b4ed751c86e03fe94b1c6700f80862eed285000dfb06a375396cf039d4f5a28f",
+    "extraction/avx-encode-entry/insert-single-broadcast/replay.log": "36879491a8adad6120d299c151d377a439be7f62410fb75210f1fbf5b5d7aa3c",
+    "extraction/avx-encode-entry/project.py": "51ae7db49118da102ef9f456b7b87cd7707e256df253df393222926ede1ff4b3",
+    "extraction/avx-encode-entry/projection_fixtures.py": "827d981b5ca27f50551e3770411d94870044ded21bc8cfa42d6c6a0c3a2c0c0e",
+    "extraction/avx-encode-entry/receipt.json": "05ff36d8357b225bd19d82bc20954764edd444fbf23b8b8cd9f4dae221b49a7a",
+    "extraction/frozen-shape/Arithmetic/Funs.lean": "a2b25d502437c3f9f6f8136dff3acce5c46b0b5ca1a42d8c10765e07a4d0e1d3",
+    "extraction/frozen-shape/Arithmetic/FunsExternal_Template.lean": "10c0b33cad38bb4504cb3e25325bf2505bae6fb38297ff7afaa4c45cb9038188",
+    "extraction/frozen-shape/Arithmetic/Types.lean": "46322a1b76a60c5df4fa252f8f88905d85105bd5c3dd9ccac22770caf52a2b5d",
+    "extraction/frozen-shape/Arithmetic/TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea",
+    "extraction/frozen-shape/README.md": "4251d0effc050854ecdd5efa9f71c5685583f853d0810db0e136469214d3917d",
+    "extraction/frozen-shape/aeneas.log": "621ecdf2b78954e6ac7b92976a558fa51e8dc60c9c535f94206bdfa812cf9aaa",
+    "extraction/frozen-shape/arithmetic.llbc": "3b15e5bf053a5b600e1a3d337b2b2b09e3e34d26243a0b4ac42855afdd32f5cc",
+    "extraction/frozen-shape/charon.log": "c9e61bcbb57ae6d2618a81dade1f442ecbf11b138c1febf1888a6a0555fe5416",
+    "extraction/frozen-shape/project.py": "b635e65e3e019a63cb7c9a5fa95eb311e3a2fb3bb6cec1adb37f961b7242fad8",
+    "extraction/frozen-shape/receipt.json": "aee89b2388798553170aae091f061c0a91827118b155710b6bd6ab8621f8480f",
+    "extraction/frozen-shape/replay.log": "7445b1438bd1274a91138893079030c3be8ea064f65413c1c3ef35ea81132173",
+    "extraction/request-permission/Arithmetic/Funs.lean": "c252587cc3f06e4a23f277f5173ed2d665c0abc99d26db77c7d9587b0aa0ced1",
+    "extraction/request-permission/Arithmetic/FunsExternal_Template.lean": "2b0901e9bdee73ab8a60be5b2d5bbcf2e4bb6cc7ec7b8adcfcb584a70ccfc68b",
+    "extraction/request-permission/Arithmetic/Types.lean": "1a5807056481e0d20750fc2254f3a311f26e77d1bb9abb365798ad35c16ee819",
+    "extraction/request-permission/Arithmetic/TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea",
+    "extraction/request-permission/README.md": "e406e47aec4d9981c69faa7c653a2f8514c4b39ee28da9ce30c97fdd600b015f",
+    "extraction/request-permission/arithmetic.llbc": "2c0ec144ebe54f68b56f277acd973d218d747823e3d5174ec6e4c372381c29a5",
+    "extraction/request-permission/charon.log": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828",
+    "extraction/request-permission/checked-selective-lift.patch": "5efdb51e5a14db2e98c1519f9d1159e191b43df2ea1377c7e3c7528ac94f7a3e",
+    "extraction/request-permission/checked.log": "1b7226de50b986e71bd16e7c3c22150f4fc0d5a9a97210abb717920adcb1ea7c",
+    "extraction/request-permission/no-check.log": "c661c944ccc2e9744d7a9a344cec1bcc954f91e3357ba78e0128653e54a4d822",
+    "extraction/request-permission/project.py": "f7d7fd5a51e1c8244449e396c6d1f5e5861543d08d5157378a155c1e7da76612",
+    "extraction/request-permission/rebuild.sh": "bc197d969f69e35f6e2f8feb635ed91448e16a35e76cc93fbf9478b3bd556b04",
+    "extraction/request-permission/receipt.json": "0f10ce2d331dac2b561ade01bfd1e27b41f13f2d9833b28a61d9ae43ea73567c",
+    "extraction/request-permission/replay.log": "3fe0fd4f7acc990c64834d797c469daa4c3895671e2101f66284107e8d7db7e6",
+    "extraction/request-permission/scoped-status": "b0be56028421fdc0b57272c86186fc52e901d33393ab3e6d949db0d518ae05bb",
+    "extraction/request-permission/wrong-scope.log": "3cae912a2af451c5d3c99d3a5c4245fa1a80fe2fb928d737156119399c76ba2a"
   },
   "reviewed_policy_revisions": [
     {
@@ -16305,7 +16375,423 @@
       "new_sha256": "e303503f5385e6c58cde43f7a14e665e7cd2422d5b233a73ef2b163b1cf4fd09",
       "reason": "Freeze original probe, completion, shape and ordered budget bodies and recovered support finish.",
       "old_sha256": "15acf4643715fc065fe5cf459fe27844a1ab21bd323e7a14486c91947fb6a989"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "bcd75379e569e1a1873270ee74f0d3bd979c9a2b9e7721bb4d0069a74e6e8539",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search.",
+      "old_sha256": "5289a6000ab503954e4bb7a011940fc1383b37bbdefd64c2210f4c27761b5743"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "62d745a05d5b1e1a6b36a9537814b7848a1a85d76f8c24e8b3acea908512a7b1",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search.",
+      "old_sha256": "c909486ca2ceaa01f6f1ddde775f65ff06fe36ec3176460fae61c62bd52c6c36"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "d641a2f5440be2f02643e697e2db1392f9e09a9ec94a4fc65fe9b1ffd7f07d5a",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search.",
+      "old_sha256": "4793edde0cdf4bd1de23db8ee3d2b992a32052a91c63abc85a41c51ca38f742f"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "ba8a1fa1714be2531ae16323ce25747de44f0df56faa3f5dd5b1924d05c1c9f2",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search.",
+      "old_sha256": "d24ccce775cd88f8004363e685752eebb12a17f9bdebca816b1e709149296972"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "67af0abd5c984246964d95a9ad9a15323a94729465c6ef814a1f3000543c574c",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search.",
+      "old_sha256": "cafc87f19f6bd07ff8842599c1a3a978505b05278737cb45d0a7c377cc1809ec"
+    },
+    {
+      "path": "bridge/Arithmetic/AvxEncodeEntryGenerated.lean",
+      "new_sha256": "4abd68d41739e79961acffa8cdc4118418714c03c33c51df41a0e52c4169b242",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/Arithmetic/AvxSingletonGenerated.lean",
+      "new_sha256": "332e8f2b136fc122fd8e90fb96a2bd416c282273774af91d345d296c3ee42bdb",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/Arithmetic/FrozenShapeGenerated.lean",
+      "new_sha256": "828ec87463c23b3906b1ec790108340933918b8fa9e1dadb880351115ad09afd",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/Arithmetic/RequestPermissionGenerated.lean",
+      "new_sha256": "c7cab7b51a1e205aca3e8d7bd1975f7b5c52f9735fea4a7e6666adeef90831ac",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "65cea1ff703da96345bb193687906ec3bb734ab1e95ddd16c467ed80406aadca",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search.",
+      "old_sha256": "b644330962bd5aaf7cd538e422f3ce3dd5d9fa93ba2f1a6059cf22c51d446b3b"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxEncodeConcrete.lean",
+      "new_sha256": "dae41d6ee2386c032fc8c8bf2a2f7b247df44636bb41c230ff4db6d86186d180",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxEncodeCorrect.lean",
+      "new_sha256": "babd2beedd57cdfe9be0df8ef63e92cd5954b698f4cac2a978d12c042bda3f3a",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxEncodeEntry.lean",
+      "new_sha256": "8a6bc3713fb2eb7f84e55242b364e0773fb808ca5c7e7bfe2ec1d3182a0b2224",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxEncodeInsert.lean",
+      "new_sha256": "eae2de0b4d6b4f7f8666f24f970c2f536544a5eb87291ee67e3d39f7c98f65b5",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxEncodeVerification.lean",
+      "new_sha256": "e246cc60e59da407a749022259de157ca50cee87140a2ca4b598b839ae863d2d",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSingleton.lean",
+      "new_sha256": "3ecdda82b07f8e91995f226f13e65d73bc27fb09b13db0ab08cc4a81e78a3f0b",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSingletonBlocks.lean",
+      "new_sha256": "43cf7bb03755ce93d5dbd007f52c4c5933986061187bfcd2b3296f60bb328469",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSingletonLanes.lean",
+      "new_sha256": "5ec283168f6681a342b209b6d66f6071512fffa23cbaa70772a07b68db092015",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSingletonSchedules.lean",
+      "new_sha256": "a6317d5b941f4b7c83b071744ab97d9cb032910f4d707c89f857830f49fa7fde",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/BulksketchBridge/FrozenShape.lean",
+      "new_sha256": "c4594175feba79538ba3e17ad0c2e46c3542df0f3ddc871ab4f48b7bee6d3f44",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeTraceSearch.lean",
+      "new_sha256": "ce78e2a789bc1f1c7cb85f6ad5780404e9206aa567148de21db93eeab8b1e745",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RequestPermission.lean",
+      "new_sha256": "4361386a78b1667ec3011ee3c98200ac8ae4dac4cb1bd3c7b5568987ff30f094",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraceCharge.lean",
+      "new_sha256": "c20eca19eda176ce2a425680263adcc9c9d10236624a870c66a7b466de47ce17",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraceGcdPair.lean",
+      "new_sha256": "6ac2afd8d3be557bdae3330f167913c004de773637886531552f3df6e0ce2b40",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search.",
+      "old_sha256": "bd3716685baf50adc0a56d501f99d9360bb5b520d3a0fbc563e35757fa414131"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "7f7281c750137b7898e1619f5ddc32eea2e6b5e30923e78a630f316047aae063",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search.",
+      "old_sha256": "5ef3dc512aa7882c237d68f560ba2e20d99d1b052be00caf7770e0339faef52a"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "99209efab0c9239bb0ad579e63c92f2dcddb50b4464648c7b8a5f6233bec8e58",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search.",
+      "old_sha256": "511981d459e2324090cf4d5220dbf35b6357a0a4323363a6921d9c59da97a63a"
+    },
+    {
+      "path": "extraction/avx-encode-entry/encode/Arithmetic/Funs.lean",
+      "new_sha256": "4be01e703bacd3e785f9aee162b61645bffe6d8db454aa7ee243a1e87c0f6527",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/encode/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "31435511f1289e3b2a90a5fb3dba72c29f9a54cdf31b22d8ac09b15d8c988183",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/encode/Arithmetic/Types.lean",
+      "new_sha256": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/encode/aeneas.log",
+      "new_sha256": "a393f000935662b40fda7ea8c63b2ea60cf02b57264aa408885c3e1c2f39f40a",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/encode/arithmetic.llbc",
+      "new_sha256": "27283c2fc5c2f81015d026ce062e8d750504273ffe8bc2d3e0cff8e354c6c5e0",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/encode/charon.log",
+      "new_sha256": "f1098cb4c34f28ed8b0515bf29c1f8d90bd03a831c1691faa8d0eb2b933dea5a",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/encode/replay.log",
+      "new_sha256": "9a7689cf43b0decded8879d3e9f7b27539fd68827ad7ff97c5a0cfaa0cae7889",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-32/Arithmetic/Funs.lean",
+      "new_sha256": "d4fedfb6db7353d4e81c027e39d09bafe8200c9b3729d6e843b2245151d342c4",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-32/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "bd5c1c2bb7631a69c3e7b60b4200bae134358d829f96d6285d6dfdc4883655e0",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-32/Arithmetic/Types.lean",
+      "new_sha256": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-32/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-32/aeneas.log",
+      "new_sha256": "1bfcf6713ace3f4912214ac3dc83daff139b1107b100b2512298f508a5ec381d",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-32/arithmetic.llbc",
+      "new_sha256": "8850dae3433945dd57b7ed5a9a8f67264b2660099434afae6d4839bad933089e",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-32/charon.log",
+      "new_sha256": "7979486de1eb2402da8f27ed62f9626be6950ac6710c56054043f61b7d1d035f",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-32/replay.log",
+      "new_sha256": "8ea6da58ed2936aa413ed43cf9e45fdb89b166a8f8fdffac6a084833c9b20f84",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-single-broadcast/Arithmetic/Funs.lean",
+      "new_sha256": "e71a439c0691aacb322a7335ea2a15ece631a30586eea58a08641706e7d30611",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-single-broadcast/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "7869ef2832638bc350eca9b27f5a5993c627841f0e678b7a12667f44343e841c",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-single-broadcast/Arithmetic/Types.lean",
+      "new_sha256": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-single-broadcast/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-single-broadcast/aeneas.log",
+      "new_sha256": "ec1a28829bfae229a3839712c562206156f8a15208c19e66c367b3650625bbf7",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-single-broadcast/arithmetic.llbc",
+      "new_sha256": "074d6eb52a64700f1f8253221c13bdf4ed73c43c3baab6a4afb3fa9a937d03fd",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-single-broadcast/charon.log",
+      "new_sha256": "b4ed751c86e03fe94b1c6700f80862eed285000dfb06a375396cf039d4f5a28f",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-single-broadcast/replay.log",
+      "new_sha256": "36879491a8adad6120d299c151d377a439be7f62410fb75210f1fbf5b5d7aa3c",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/project.py",
+      "new_sha256": "51ae7db49118da102ef9f456b7b87cd7707e256df253df393222926ede1ff4b3",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/projection_fixtures.py",
+      "new_sha256": "827d981b5ca27f50551e3770411d94870044ded21bc8cfa42d6c6a0c3a2c0c0e",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/avx-encode-entry/receipt.json",
+      "new_sha256": "05ff36d8357b225bd19d82bc20954764edd444fbf23b8b8cd9f4dae221b49a7a",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/frozen-shape/Arithmetic/Funs.lean",
+      "new_sha256": "a2b25d502437c3f9f6f8136dff3acce5c46b0b5ca1a42d8c10765e07a4d0e1d3",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/frozen-shape/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "10c0b33cad38bb4504cb3e25325bf2505bae6fb38297ff7afaa4c45cb9038188",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/frozen-shape/Arithmetic/Types.lean",
+      "new_sha256": "46322a1b76a60c5df4fa252f8f88905d85105bd5c3dd9ccac22770caf52a2b5d",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/frozen-shape/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/frozen-shape/README.md",
+      "new_sha256": "4251d0effc050854ecdd5efa9f71c5685583f853d0810db0e136469214d3917d",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/frozen-shape/aeneas.log",
+      "new_sha256": "621ecdf2b78954e6ac7b92976a558fa51e8dc60c9c535f94206bdfa812cf9aaa",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/frozen-shape/arithmetic.llbc",
+      "new_sha256": "3b15e5bf053a5b600e1a3d337b2b2b09e3e34d26243a0b4ac42855afdd32f5cc",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/frozen-shape/charon.log",
+      "new_sha256": "c9e61bcbb57ae6d2618a81dade1f442ecbf11b138c1febf1888a6a0555fe5416",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/frozen-shape/project.py",
+      "new_sha256": "b635e65e3e019a63cb7c9a5fa95eb311e3a2fb3bb6cec1adb37f961b7242fad8",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/frozen-shape/receipt.json",
+      "new_sha256": "aee89b2388798553170aae091f061c0a91827118b155710b6bd6ab8621f8480f",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/frozen-shape/replay.log",
+      "new_sha256": "7445b1438bd1274a91138893079030c3be8ea064f65413c1c3ef35ea81132173",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/request-permission/Arithmetic/Funs.lean",
+      "new_sha256": "c252587cc3f06e4a23f277f5173ed2d665c0abc99d26db77c7d9587b0aa0ced1",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/request-permission/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "2b0901e9bdee73ab8a60be5b2d5bbcf2e4bb6cc7ec7b8adcfcb584a70ccfc68b",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/request-permission/Arithmetic/Types.lean",
+      "new_sha256": "1a5807056481e0d20750fc2254f3a311f26e77d1bb9abb365798ad35c16ee819",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/request-permission/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/request-permission/README.md",
+      "new_sha256": "e406e47aec4d9981c69faa7c653a2f8514c4b39ee28da9ce30c97fdd600b015f",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/request-permission/arithmetic.llbc",
+      "new_sha256": "2c0ec144ebe54f68b56f277acd973d218d747823e3d5174ec6e4c372381c29a5",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/request-permission/charon.log",
+      "new_sha256": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/request-permission/checked-selective-lift.patch",
+      "new_sha256": "5efdb51e5a14db2e98c1519f9d1159e191b43df2ea1377c7e3c7528ac94f7a3e",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/request-permission/checked.log",
+      "new_sha256": "1b7226de50b986e71bd16e7c3c22150f4fc0d5a9a97210abb717920adcb1ea7c",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/request-permission/no-check.log",
+      "new_sha256": "c661c944ccc2e9744d7a9a344cec1bcc954f91e3357ba78e0128653e54a4d822",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/request-permission/project.py",
+      "new_sha256": "f7d7fd5a51e1c8244449e396c6d1f5e5861543d08d5157378a155c1e7da76612",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/request-permission/rebuild.sh",
+      "new_sha256": "bc197d969f69e35f6e2f8feb635ed91448e16a35e76cc93fbf9478b3bd556b04",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/request-permission/receipt.json",
+      "new_sha256": "0f10ce2d331dac2b561ade01bfd1e27b41f13f2d9833b28a61d9ae43ea73567c",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/request-permission/replay.log",
+      "new_sha256": "3fe0fd4f7acc990c64834d797c469daa4c3895671e2101f66284107e8d7db7e6",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/request-permission/scoped-status",
+      "new_sha256": "b0be56028421fdc0b57272c86186fc52e901d33393ab3e6d949db0d518ae05bb",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "extraction/request-permission/wrong-scope.log",
+      "new_sha256": "3cae912a2af451c5d3c99d3a5c4245fa1a80fe2fb928d737156119399c76ba2a",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "ac4f90450d7ace64611c95c73a213900c3d705f7877bc2424910a6a1a8eff45c",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search.",
+      "old_sha256": "ef8b1378437c79ebc3b15fbde495e2774efb6057cfec1b8f461db3501606814a"
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "2b4c43715bb677d439fc8eb99564e093d041bea1fdb8ec5567ba470275ec8485",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search.",
+      "old_sha256": "e303503f5385e6c58cde43f7a14e665e7cd2422d5b233a73ef2b163b1cf4fd09"
     }
   ],
-  "challenge_count": 499
+  "challenge_count": 514
 }

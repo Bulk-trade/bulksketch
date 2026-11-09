@@ -1,0 +1,4 @@
+checked exit 0
+replay exit 0
+no-check exit 1
+wrong-scope exit 1

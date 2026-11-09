@@ -55,11 +55,52 @@ def ActualNativeTraceGcdPair : Prop :=
         RootDivide.ProperGcdFrame after buffers (slicePolynomial (prefixSlice buffers.trace after.trace_len.val)) ∨
        next = .Trace ∧ TraceAgreement (activeFactor after written) after.splitter_seed after.direction.val)
 
-theorem native_trace_gcd_pair : ActualNativeTraceGcdPair := by
+/-- The exact Trace/GCD pair preserves both the original retry charge
+schedule and the trace classification needed by proper division. -/
+def ActualNativeTraceGcdDivisionReady : Prop :=
+  ∀ {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64)
+    (locator : Polynomial Field) (roots : Roots) (workspace : RowWorkspace)
+    (meter paid traced finalMeter : WorkMeter) (capacity budget : Nat),
+    RootTraversalInvariant locator roots workspace capacity budget → 3 ≤ roots.degree.val →
+    roots.affine = false → roots.attempts.val + 1 ≤ Usize.max →
+    charge meter (.Trace roots.degree) = .ok (.Ok (), paid) →
+    (if roots.checked then traced = paid
+      else charge paid (.SplitCheck roots.degree) = .ok (.Ok (), traced)) →
+    charge traced (.Gcd roots.degree) = .ok (.Ok (), finalMeter) →
+    RawMulAgrees kernels → SquareAgrees kernels → DenseMul.reduceAgrees kernels →
+    DenseDivRem.MulWordLaw kernels → BmTerminal.NativeInverse kernels → TimesXMod.ExactScaleXor kernels →
+    let before := buffersFor roots workspace
+    cacheWellFormed roots before → CorrectTable before.modulus before.table roots.degree.val →
+    BackendSquareLaw kernels before.modulus before.table roots.degree.val →
+    TraceAgreement (activeFactor roots workspace) roots.splitter_seed roots.direction.val →
+    ∃ (tracedRoots after : Roots) (tracedWorkspace written : RowWorkspace) (next : Stage),
+      Roots.run nativeCalls nativeDivRem dictionary kernels roots .Trace workspace meter =
+        .ok (.Ok (.Ok .Gcd), tracedRoots, tracedWorkspace, id, traced) ∧
+      Roots.run nativeCalls nativeDivRem dictionary kernels tracedRoots .Gcd tracedWorkspace traced =
+        .ok (.Ok (.Ok next), after, written, id, finalMeter) ∧
+      RootTraversalInvariant locator after written capacity budget ∧
+      activeFactor after written = activeFactor roots workspace ∧
+      after.splitter_seed = roots.splitter_seed ∧ after.affine = false ∧
+      traversalRank next after written < traversalRank .Trace roots workspace ∧
+      after.degree = roots.degree ∧ after.attempts.val = roots.attempts.val + 1 ∧ after.checked = true ∧
+      written.stack = workspace.stack ∧ written.factors = workspace.factors ∧
+      let buffers := buffersFor after written
+      let trace := slicePolynomial (prefixSlice buffers.trace after.trace_len.val)
+      CorrectTable buffers.modulus buffers.table after.degree.val ∧ cacheWellFormed after buffers ∧
+      BackendSquareLaw kernels buffers.modulus buffers.table after.degree.val ∧
+      (next = .FactorDivision ∧ after.direction = roots.direction ∧
+        RootDivide.ProperGcdFrame after buffers trace ∧
+        TraceAgreement (activeFactor after written) after.splitter_seed after.direction.val ∧
+        (∀ point, (activeFactor after written).IsRoot point →
+          (trace.IsRoot point ↔ traceBit after.splitter_seed after.direction.val point = 0)) ∨
+       next = .Trace ∧ after.direction.val = roots.direction.val + 1 ∧
+        TraceAgreement (activeFactor after written) after.splitter_seed after.direction.val)
+
+theorem native_trace_gcd_division_ready : ActualNativeTraceGcdDivisionReady := by
   intro K kernels locator roots workspace meter paid traced finalMeter capacity budget invariant minimum
     nonAffine counter chargeTrace splitCharge chargeGcd rawLaw squareLaw reduceLaw mul inverse scale
     before cache table backend agreement
-  obtain ⟨writes, traceRan, traceInvariant, traceFactor, _, traceTable, traceCache, _, traceRoom, normal,
+  obtain ⟨writes, traceRan, traceInvariant, traceFactor, traceReborrow, traceTable, traceCache, traceAttempts, traceRoom, normal,
     traceRank, classifies⟩ :=
     native_trace_invariant kernels locator roots workspace meter paid traced capacity budget invariant
       minimum counter chargeTrace splitCharge rawLaw squareLaw reduceLaw cache table backend agreement
@@ -104,25 +145,83 @@ theorem native_trace_gcd_pair : ActualNativeTraceGcdPair := by
     unfold cacheWellFormed
     rw [seed]
     exact traceCache
+  have tracedAffine : tracedRoots.affine = false := nonAffine
+  have noAffine : ¬ tracedRoots.affine = true := by rw [tracedAffine]; decide
+  have keep : after.attempts = tracedRoots.attempts ∧ after.checked = tracedRoots.checked := by
+    change (outcome tracedRoots tracedBuffers size).2.attempts = tracedRoots.attempts ∧
+      (outcome tracedRoots tracedBuffers size).2.checked = tracedRoots.checked
+    by_cases condition : 0 < size.val - 1 ∧ size.val - 1 < tracedRoots.degree.val
+    · rw [outcome, ite_eq_left condition]
+      exact ⟨rfl, rfl⟩
+    · rw [outcome, ite_eq_right condition, ite_eq_right noAffine]
+      exact ⟨rfl, rfl⟩
+  have checked : after.checked = true := keep.2.trans rfl
+  change tracedBuffers = tracedFrame.2.2.1 at traceReborrow
+  have backendAfter : BackendSquareLaw kernels (buffersFor after written).modulus
+      (buffersFor after written).table after.degree.val := by
+    rw [gcdReborrow, degree]
+    have tableFrame : tracedBuffers.table = before.table := by rw [traceReborrow]; rfl
+    have modulusFrame : tracedBuffers.modulus = before.modulus := by rw [traceReborrow]; rfl
+    rw [tableFrame, modulusFrame]
+    exact backend
+  have tracedDirection : tracedRoots.direction = roots.direction := rfl
+  have sameTrace : slicePolynomial (prefixSlice (buffersFor after written).trace after.trace_len.val) = trace := by
+    rw [gcdReborrow, traceLen]
   by_cases divides : Proper tracedRoots size
   · obtain ⟨chosen, frame⟩ := proper divides
+    have sameDirection : after.direction = roots.direction := by
+      have condition : 0 < size.val - 1 ∧ size.val - 1 < tracedRoots.degree.val := divides
+      change (outcome tracedRoots tracedBuffers size).2.direction = roots.direction
+      rw [outcome, ite_eq_left condition]
+      exact tracedDirection
     refine ⟨tracedRoots, after, tracedWorkspace, written, .FactorDivision, traceRan, ?_, gcdInvariant,
       sameFactor.trans traceFactor, seed, affine, (gcdRank _ chosen).trans traceRank,
-      correct, cached, Or.inl ⟨rfl, ?_⟩⟩
+      degree, (congrArg UScalar.val keep.1).trans traceAttempts, checked, rfl, rfl,
+      correct, cached, backendAfter, Or.inl ⟨rfl, sameDirection, ?_, ?_, ?_⟩⟩
     · rw [← chosen]
       exact gcdRan
-    · have sameTrace : slicePolynomial (prefixSlice (buffersFor after written).trace after.trace_len.val) = trace := by
-        rw [gcdReborrow, traceLen]
-      rwa [sameTrace]
+    · rwa [sameTrace]
+    · rw [sameFactor, seed, sameDirection, traceFactor]
+      exact agreement
+    · intro point isRoot
+      rw [sameTrace, seed, sameDirection]
+      exact classifies point (sameFactor ▸ isRoot)
   · obtain ⟨chosen, _, valid⟩ := retry nonAffine divides split simple traceAgreement classifies
+    have condition : ¬ (0 < size.val - 1 ∧ size.val - 1 < tracedRoots.degree.val) := divides
+    have stepped : after.direction = nextDirection tracedRoots := by
+      change (outcome tracedRoots tracedBuffers size).2.direction = nextDirection tracedRoots
+      rw [outcome, ite_eq_right condition, ite_eq_right noAffine]
+    have nextVal : after.direction.val = roots.direction.val + 1 := by
+      rw [stepped, ← U32.bv_toNat]
+      change (BitVec.ofNat 32 (tracedRoots.direction.val + 1)).toNat = _
+      rw [BitVec.toNat_ofNat, tracedDirection, Nat.mod_eq_of_lt]
+      rw [tracedDirection] at direction
+      omega
     refine ⟨tracedRoots, after, tracedWorkspace, written, .Trace, traceRan, ?_, gcdInvariant,
       sameFactor.trans traceFactor, seed, affine, (gcdRank _ chosen).trans traceRank,
-      correct, cached, Or.inr ⟨rfl, ?_⟩⟩
+      degree, (congrArg UScalar.val keep.1).trans traceAttempts, checked, rfl, rfl,
+      correct, cached, backendAfter, Or.inr ⟨rfl, nextVal, ?_⟩⟩
     · rw [← chosen]
       exact gcdRan
     · rw [sameFactor, seed]
       exact valid
 
+theorem native_trace_gcd_pair : ActualNativeTraceGcdPair := by
+  intro K kernels locator roots workspace meter paid traced finalMeter capacity budget invariant minimum
+    nonAffine counter chargeTrace splitCharge chargeGcd rawLaw squareLaw reduceLaw mul inverse scale
+    before cache table backend agreement
+  obtain ⟨tracedRoots, after, tracedWorkspace, written, next, traceRan, gcdRan, retained,
+    factor, seed, affine, rank, _, _, _, _, _, correct, cached, _, outcome⟩ :=
+    native_trace_gcd_division_ready kernels locator roots workspace meter paid traced finalMeter capacity budget
+      invariant minimum nonAffine counter chargeTrace splitCharge chargeGcd rawLaw squareLaw reduceLaw
+      mul inverse scale cache table backend agreement
+  refine ⟨tracedRoots, after, tracedWorkspace, written, next, traceRan, gcdRan, retained,
+    factor, seed, affine, rank, correct, cached, ?_⟩
+  rcases outcome with ⟨proper, _, frame, _, _⟩ | ⟨retry, _, history⟩
+  · exact Or.inl ⟨proper, frame⟩
+  · exact Or.inr ⟨retry, history⟩
+
+#print axioms native_trace_gcd_division_ready
 #print axioms native_trace_gcd_pair
 
 end BulksketchBridge.RootRun

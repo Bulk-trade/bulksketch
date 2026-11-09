@@ -1996,6 +1996,66 @@
     {
       "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeRecoveredSupportFinish",
       "theorem": "BulksketchBridge.ExecutionDriver.native_recovered_support_finish"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxEncodeEntry.ActualAvxEncodeEntry",
+      "theorem": "BulksketchBridge.AvxEncodeEntry.avx_encode_entry"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSingleton.ActualNativeAvxSingleton32",
+      "theorem": "BulksketchBridge.AvxSingleton.native_avx_singleton32"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSingleton.ActualNativeAvxSingleton",
+      "theorem": "BulksketchBridge.AvxSingleton.native_avx_singleton"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSingleton.ActualNativeAvxBroadcast",
+      "theorem": "BulksketchBridge.AvxSingleton.native_avx_broadcast"
+    },
+    {
+      "challenge": "BulksketchBridge.FrozenShape.ActualFrozenShape",
+      "theorem": "BulksketchBridge.FrozenShape.frozen_shape_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RequestPermission.ActualDecodeRequestPermits",
+      "theorem": "BulksketchBridge.RequestPermission.decode_request_permits_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RequestPermission.ActualDecodeRowsRequestPermits",
+      "theorem": "BulksketchBridge.RequestPermission.decode_rows_request_permits_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxEncodeEntry.ActualConcreteNativeAvxEncoding",
+      "theorem": "BulksketchBridge.AvxEncodeEntry.concrete_native_avx_encoding"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeAvxPaidVerificationConcreteEncoder",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_avx_paid_verification_concrete_encoder"
+    },
+    {
+      "challenge": "BulksketchBridge.WorkMeter.ActualNativeWorkMeterPaid",
+      "theorem": "BulksketchBridge.WorkMeter.native_work_meter_paid"
+    },
+    {
+      "challenge": "BulksketchBridge.WorkMeter.ActualNativeWorkMeterDenied",
+      "theorem": "BulksketchBridge.WorkMeter.native_work_meter_denied"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceSearchPrices",
+      "theorem": "BulksketchBridge.RootRun.native_trace_search_prices"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceAttemptCharges",
+      "theorem": "BulksketchBridge.RootRun.native_trace_attempt_charges"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceGcdDivisionReady",
+      "theorem": "BulksketchBridge.RootRun.native_trace_gcd_division_ready"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceSearch",
+      "theorem": "BulksketchBridge.RootRun.native_trace_search"
     }
   ],
   "refinements": [
@@ -5351,6 +5411,106 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "The original bounds guard short-circuits before modulo; every admitted bucket accepts exactly its own IDs."
+    },
+    {
+      "label": "backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.encode_nonzero [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:144:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::encode_nonzero",
+      "source_line_span_sha256": "35da66f4c1ca5acb9fe29c63ce3a7480424608063f82735e46f926b7c180e0ee",
+      "challenge": "BulksketchBridge.AvxEncodeEntry.ActualAvxEncodeEntry",
+      "theorem": "BulksketchBridge.AvxEncodeEntry.avx_encode_entry",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.encode_nonzero",
+      "generated_file": "bridge/Arithmetic/AvxEncodeEntryGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxEncodeEntryGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original field/width/count dispatch, native fast18 guard, and exact fallback zero and insertion folds."
+    },
+    {
+      "label": "backend.x86_vpclmul512.insert_32 [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:615:function:bulksketch::backend::x86_vpclmul512::insert_32",
+      "source_line_span_sha256": "fdc5f187f877f243c63e2d314803a9c00e101891cf23bf2b241449cd76894143",
+      "challenge": "BulksketchBridge.AvxSingleton.ActualNativeAvxSingleton32",
+      "theorem": "BulksketchBridge.AvxSingleton.native_avx_singleton32",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert_32",
+      "generated_file": "bridge/Arithmetic/AvxSingletonGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxSingletonGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original width-32 singleton kernel with exact four output chunks, register ordering and admitted masked memory."
+    },
+    {
+      "label": "backend.x86_vpclmul512.insert_single [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:711:function:bulksketch::backend::x86_vpclmul512::insert_single",
+      "source_line_span_sha256": "8bd337fc8b552fbdd196a0235b7c2d679e266de425331e5596dc4cdc24b5dd2c",
+      "challenge": "BulksketchBridge.AvxSingleton.ActualNativeAvxSingleton",
+      "theorem": "BulksketchBridge.AvxSingleton.native_avx_singleton",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert_single",
+      "generated_file": "bridge/Arithmetic/AvxSingletonGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxSingletonGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Both original supported const widths 72 and 89, exact powers, blocks, and final one-lane writeback."
+    },
+    {
+      "label": "backend.x86_vpclmul512.broadcast [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:749:function:bulksketch::backend::x86_vpclmul512::broadcast",
+      "source_line_span_sha256": "a22c3b1d7a3ea8fc9807ec52395a36f5a75e12ae55b3508f6a0aed83cd89727e",
+      "challenge": "BulksketchBridge.AvxSingleton.ActualNativeAvxBroadcast",
+      "theorem": "BulksketchBridge.AvxSingleton.native_avx_broadcast",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.broadcast",
+      "generated_file": "bridge/Arithmetic/AvxSingletonGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxSingletonGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original broadcast and lane permutation for every signed selector and register."
+    },
+    {
+      "label": "sketch.state.FrozenSketch.shape [original source]",
+      "native_item_id": "src/sketch/state.rs:231:method:bulksketch::sketch::state::FrozenSketch < F >::shape",
+      "source_line_span_sha256": "19a6e89dcc45f530291d6a82623911631249cb83436032cff8c07bcd20e9646d",
+      "challenge": "BulksketchBridge.FrozenShape.ActualFrozenShape",
+      "theorem": "BulksketchBridge.FrozenShape.frozen_shape_refines",
+      "generated_declaration": "bulksketch.sketch.state.FrozenSketch.shape",
+      "generated_file": "bridge/Arithmetic/FrozenShapeGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/FrozenShapeGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact immutable shape payload of the original nested Arc accessor under the recorded value abstraction."
+    },
+    {
+      "label": "sketch.api.DecodeRequest.Insts.BulksketchSketchInputRequestInput.permits_id [original source]",
+      "native_item_id": "src/sketch/input.rs:132:method:bulksketch::sketch::input::<DecodeRequest < '_ , F > as RequestInput < F >>::permits_id",
+      "source_line_span_sha256": "6d6ff70815b7cfda07e60fc13ea23cbb30cd9353536232f9ffe36acee9736b2b",
+      "challenge": "BulksketchBridge.RequestPermission.ActualDecodeRequestPermits",
+      "theorem": "BulksketchBridge.RequestPermission.decode_request_permits_refines",
+      "generated_declaration": "bulksketch.sketch.api.DecodeRequest.Insts.BulksketchSketchInputRequestInput.permits_id",
+      "generated_file": "bridge/Arithmetic/RequestPermissionGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RequestPermissionGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original request uses its actual local shape and the caller bucket for exact native permission.",
+      "translator_variant": "checked-request-selective-lift-v1"
+    },
+    {
+      "label": "sketch.input.DecodeRowsRequest.Insts.BulksketchSketchInputRequestInput.permits_id [original source]",
+      "native_item_id": "src/sketch/input.rs:196:method:bulksketch::sketch::input::<DecodeRowsRequest < '_ , F > as RequestInput < F >>::permits_id",
+      "source_line_span_sha256": "c6027588bfad07e531538c29144023754151db2eee60b42cd276498340f0e4cd",
+      "challenge": "BulksketchBridge.RequestPermission.ActualDecodeRowsRequestPermits",
+      "theorem": "BulksketchBridge.RequestPermission.decode_rows_request_permits_refines",
+      "generated_declaration": "bulksketch.sketch.input.DecodeRowsRequest.Insts.BulksketchSketchInputRequestInput.permits_id",
+      "generated_file": "bridge/Arithmetic/RequestPermissionGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RequestPermissionGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original borrowed request checks row bounds then uses that row's local shape and bucket zero.",
+      "translator_variant": "checked-request-selective-lift-v1"
     }
   ],
   "stateful_llbc_refinements": [

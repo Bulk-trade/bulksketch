@@ -310,6 +310,21 @@ ordered sum-cost caller binds the V1 and V2 work wrappers through the
 scoped checked standard-library slice fold. V2 preserves both separately
 checked probe reserves.
 
+The non-affine splitter search follows the exact original Trace and
+GCD calls until the first proper divisor. Every failed split advances
+one direction. The source meter charges one pair per attempt and one
+initial split check when required. The reservation proof accounts for
+the exact remaining direction count, and the returned divisor frame
+retains the trace classification and agreement needed by division.
+
+The full original AVX encoder binds the width-18 fast path, width-32
+singleton, and width-72 and width-89 const singleton kernels, plus
+the proved sparse and tile paths. Paid full and rebuilt verification
+now use these actual routes with explicit backend dictionary and
+masked-memory contracts. The original frozen shape accessor and both
+request permission methods supply the native publication predicate for
+ordinary and independent borrowed rows.
+
 Run the complete gate from `verification/lean`.
 
 ```sh

@@ -2225,7 +2225,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxEncodeEntry.avx_encode_entry",
+        "scope": "Original field/width/count dispatch, native fast18 guard, and exact fallback zero and insertion folds.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:160:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::xor_assign",
@@ -3119,7 +3126,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxSingleton.native_avx_singleton32",
+        "scope": "Original width-32 singleton kernel with exact four output chunks, register ordering and admitted masked memory.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:62:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::trace",
@@ -3212,7 +3226,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxSingleton.native_avx_singleton",
+        "scope": "Both original supported const widths 72 and 89, exact powers, blocks, and final one-lane writeback.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:71:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::reduce",
@@ -3255,7 +3276,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxSingleton.native_avx_broadcast",
+        "scope": "Exact original broadcast and lane permutation for every signed selector and register.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:754:function:bulksketch::backend::x86_vpclmul512::update_single_block",
@@ -9261,7 +9289,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RequestPermission.decode_request_permits_refines",
+        "scope": "Original request uses its actual local shape and the caller bucket for exact native permission.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/input.rs:135:method:bulksketch::sketch::input::<DecodeRequest < '_ , F > as RequestInput < F >>::cached_shape",
@@ -9501,7 +9536,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RequestPermission.decode_rows_request_permits_refines",
+        "scope": "Original borrowed request checks row bounds then uses that row's local shape and bucket zero.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/input.rs:199:method:bulksketch::sketch::input::<DecodeRowsRequest < '_ , F > as RequestInput < F >>::cached_shape",
@@ -11629,7 +11671,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.FrozenShape.frozen_shape_refines",
+        "scope": "Exact immutable shape payload of the original nested Arc accessor under the recorded value abstraction.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/state.rs:31:method:bulksketch::sketch::state::<State < F > as Clone>::clone",
@@ -12600,7 +12649,7 @@
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
     "note": "All 344 native executable obligations retained. Original row driver dispatch, default wire XOR, ordered publication and proper factor-tree budget are checked. AVX, PCLMUL and Portable rebuilt verification compose at all admitted GF64 degrees. Concrete Portable and PCLMUL dictionaries select the checked callbacks. The original ordered sum-cost fold now supplies the V1 row envelope's explicit callback. V2 verifies both checked probe reserves. Global traversal readiness and exact charged-run accounting, remaining admission and wire/API bindings, Rust provenance and compiler-to-ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 219,
+    "checked_generated_body_refinements_under_recorded_TCB": 226,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12659,7 +12708,17 @@
         "BulksketchBridge.RootWorkBudget.native_v1_row_bound_with_sum",
         "BulksketchBridge.RootWorkBudget.native_v2_row_bound_with_sum"
       ],
-      "native_recovered_support_finish": "BulksketchBridge.ExecutionDriver.native_recovered_support_finish"
+      "native_recovered_support_finish": "BulksketchBridge.ExecutionDriver.native_recovered_support_finish",
+      "native_nonaffine_paid_trace_search": [
+        "BulksketchBridge.RootRun.native_trace_search_prices",
+        "BulksketchBridge.RootRun.native_trace_attempt_charges",
+        "BulksketchBridge.RootRun.native_trace_gcd_division_ready",
+        "BulksketchBridge.RootRun.native_trace_search"
+      ],
+      "native_avx_full_encoder": [
+        "BulksketchBridge.AvxEncodeEntry.concrete_native_avx_encoding",
+        "BulksketchBridge.ExecutionDriver.native_avx_paid_verification_concrete_encoder"
+      ]
     },
     "reconciliation_algebra_evidence": {
       "sparse_support_uniqueness": "BulksketchBridge.Reconciliation.gf64_sparse_support_unique",

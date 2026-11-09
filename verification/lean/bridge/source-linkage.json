@@ -786,6 +786,31 @@
       "path": "extraction/shape-permission/arithmetic.llbc",
       "sha256": "706354f4fb75d9a0a8cca1accbe5abacdd79a122ec5804bc3dc06f00d2afe987",
       "has_errors": false
+    },
+    {
+      "path": "extraction/avx-encode-entry/encode/arithmetic.llbc",
+      "sha256": "27283c2fc5c2f81015d026ce062e8d750504273ffe8bc2d3e0cff8e354c6c5e0",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-32/arithmetic.llbc",
+      "sha256": "8850dae3433945dd57b7ed5a9a8f67264b2660099434afae6d4839bad933089e",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-single-broadcast/arithmetic.llbc",
+      "sha256": "074d6eb52a64700f1f8253221c13bdf4ed73c43c3baab6a4afb3fa9a937d03fd",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/frozen-shape/arithmetic.llbc",
+      "sha256": "3b15e5bf053a5b600e1a3d337b2b2b09e3e34d26243a0b4ac42855afdd32f5cc",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/request-permission/arithmetic.llbc",
+      "sha256": "2c0ec144ebe54f68b56f277acd973d218d747823e3d5174ec6e4c372381c29a5",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1963,6 +1988,41 @@
       "native_item_id": "src/sketch/shape.rs:113:method:bulksketch::sketch::shape::SketchShape < F >::permits_id",
       "generated_declaration": "bulksketch.sketch.shape.SketchShape.permits_id",
       "generated_file": "bridge/Arithmetic/ShapePermissionGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:144:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::encode_nonzero",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.encode_nonzero",
+      "generated_file": "bridge/Arithmetic/AvxEncodeEntryGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:615:function:bulksketch::backend::x86_vpclmul512::insert_32",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert_32",
+      "generated_file": "bridge/Arithmetic/AvxSingletonGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:711:function:bulksketch::backend::x86_vpclmul512::insert_single",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert_single",
+      "generated_file": "bridge/Arithmetic/AvxSingletonGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:749:function:bulksketch::backend::x86_vpclmul512::broadcast",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.broadcast",
+      "generated_file": "bridge/Arithmetic/AvxSingletonGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/state.rs:231:method:bulksketch::sketch::state::FrozenSketch < F >::shape",
+      "generated_declaration": "bulksketch.sketch.state.FrozenSketch.shape",
+      "generated_file": "bridge/Arithmetic/FrozenShapeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/input.rs:132:method:bulksketch::sketch::input::<DecodeRequest < '_ , F > as RequestInput < F >>::permits_id",
+      "generated_declaration": "bulksketch.sketch.api.DecodeRequest.Insts.BulksketchSketchInputRequestInput.permits_id",
+      "generated_file": "bridge/Arithmetic/RequestPermissionGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/input.rs:196:method:bulksketch::sketch::input::<DecodeRowsRequest < '_ , F > as RequestInput < F >>::permits_id",
+      "generated_declaration": "bulksketch.sketch.input.DecodeRowsRequest.Insts.BulksketchSketchInputRequestInput.permits_id",
+      "generated_file": "bridge/Arithmetic/RequestPermissionGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -3066,6 +3126,47 @@
       "checker": "extraction/shape-permission/project.py",
       "declaration_count": 2,
       "scope": "Original stock-checked shape permission and exact shared bucket count."
+    },
+    {
+      "generated": "extraction/avx-encode-entry/encode/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxEncodeEntryGenerated.lean",
+      "sha256": "4abd68d41739e79961acffa8cdc4118418714c03c33c51df41a0e52c4169b242",
+      "raw_sha256": "4be01e703bacd3e785f9aee162b61645bffe6d8db454aa7ee243a1e87c0f6527",
+      "checker": "extraction/avx-encode-entry/project.py",
+      "declaration_count": 7,
+      "scope": "Original AVX encoder and every original singleton fold loop."
+    },
+    {
+      "generated": "extraction/avx-encode-entry/insert-single-broadcast/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxSingletonGenerated.lean",
+      "sha256": "332e8f2b136fc122fd8e90fb96a2bd416c282273774af91d345d296c3ee42bdb",
+      "raw_sha256": "e71a439c0691aacb322a7335ea2a15ece631a30586eea58a08641706e7d30611",
+      "checker": "extraction/avx-encode-entry/project.py",
+      "declaration_count": 3,
+      "scope": "Original width-32 and width-72/89 updates and native broadcast.",
+      "checker_args": [
+        "--entry",
+        "singleton"
+      ]
+    },
+    {
+      "generated": "extraction/frozen-shape/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/FrozenShapeGenerated.lean",
+      "sha256": "828ec87463c23b3906b1ec790108340933918b8fa9e1dadb880351115ad09afd",
+      "raw_sha256": "a2b25d502437c3f9f6f8136dff3acce5c46b0b5ca1a42d8c10765e07a4d0e1d3",
+      "checker": "extraction/frozen-shape/project.py",
+      "declaration_count": 1,
+      "scope": "Original FrozenSketch accessor with exact immutable shared payload."
+    },
+    {
+      "generated": "extraction/request-permission/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RequestPermissionGenerated.lean",
+      "sha256": "c7cab7b51a1e205aca3e8d7bd1975f7b5c52f9735fea4a7e6666adeef90831ac",
+      "raw_sha256": "c252587cc3f06e4a23f277f5173ed2d665c0abc99d26db77c7d9587b0aa0ced1",
+      "checker": "extraction/request-permission/project.py",
+      "declaration_count": 2,
+      "scope": "Both original request permission methods with exact shape, bucket, and slice boundaries.",
+      "translator_variant": "checked-request-selective-lift-v1"
     }
   ],
   "reviewed_translator_variants": [
@@ -3277,6 +3378,16 @@
       "receipt": "extraction/sum-costs/receipt.json",
       "mandatory_checks": true,
       "scope": "One original shared Slice<Charge> Iterator::try_fold call specialized to a typed std slot with both original borrows and exact original closure."
+    },
+    {
+      "id": "checked-request-selective-lift-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "base_source_sha256": "41e7556907d3a134efc33c777035958d56bf1e30f1e988bed2a6dec8cba37def",
+      "patch": "extraction/request-permission/checked-selective-lift.patch",
+      "patch_sha256": "5efdb51e5a14db2e98c1519f9d1159e191b43df2ea1377c7e3c7528ac94f7a3e",
+      "receipt": "extraction/request-permission/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Only the original two request permission methods and frozen accessor with exact selective Deref and SliceIndex lifting."
     }
   ],
   "diagnostic_generated_projections": [

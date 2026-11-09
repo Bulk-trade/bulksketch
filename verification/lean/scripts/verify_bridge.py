@@ -751,6 +751,20 @@ def main():
                 timeout=30, cwd=ROOT)
             records.append(result)
             continue
+        if variant["id"] == "checked-request-selective-lift-v1":
+            patch = ROOT / variant["patch"]
+            source_file = "src/Main.ml"
+            if (variant["mandatory_checks"] is not True or variant["base_commit"] != runtime_head or
+                    receipt["aeneas_commit"] != runtime_head or receipt["charon_commit"] != linkage["charon_commit"] or
+                    variant["base_source_sha256"] != sha(runtime / source_file) or
+                    sha(patch) != variant["patch_sha256"] or
+                    receipt["compiler_patch_sha256"] != variant["patch_sha256"] or
+                    re.findall(r"(?m)^--- a/(\S+)\n\+\+\+ b/(\S+)$", patch.read_text()) != [(source_file, source_file)]):
+                raise RuntimeError("request-permission variant lost exact scope")
+            result, _ = run(variant["id"] + "-patch-applies", ["git", "apply", "--check", str(patch)],
+                            timeout=30, cwd=runtime)
+            records.append(result)
+            continue
         if variant["id"] == "checked-sum-costs-try-fold-v1":
             if (variant["mandatory_checks"] is not True or variant["base_commit"] != runtime_head or
                     receipt["variant_id"] != variant["id"] or receipt["aeneas_commit"] != runtime_head or

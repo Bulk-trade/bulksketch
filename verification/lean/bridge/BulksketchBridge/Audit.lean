@@ -1,3 +1,6 @@
+import BulksketchBridge.AvxEncodeConcrete
+import BulksketchBridge.RequestPermission
+import BulksketchBridge.NativeTraceSearch
 import BulksketchBridge.ShapePermission
 import BulksketchBridge.NativeRowWorkBindings
 import BulksketchBridge.TinyProbeCharged
@@ -917,6 +920,36 @@ run_cmd do
       ``BulksketchBridge.RootWorkBudget.native_v2_row_bound_with_sum),
     (``BulksketchBridge.ExecutionDriver.ActualNativeRecoveredSupportFinish,
       ``BulksketchBridge.ExecutionDriver.native_recovered_support_finish),
+    (``BulksketchBridge.AvxEncodeEntry.ActualAvxEncodeEntry,
+      ``BulksketchBridge.AvxEncodeEntry.avx_encode_entry),
+    (``BulksketchBridge.AvxSingleton.ActualNativeAvxSingleton32,
+      ``BulksketchBridge.AvxSingleton.native_avx_singleton32),
+    (``BulksketchBridge.AvxSingleton.ActualNativeAvxSingleton,
+      ``BulksketchBridge.AvxSingleton.native_avx_singleton),
+    (``BulksketchBridge.AvxSingleton.ActualNativeAvxBroadcast,
+      ``BulksketchBridge.AvxSingleton.native_avx_broadcast),
+    (``BulksketchBridge.FrozenShape.ActualFrozenShape,
+      ``BulksketchBridge.FrozenShape.frozen_shape_refines),
+    (``BulksketchBridge.RequestPermission.ActualDecodeRequestPermits,
+      ``BulksketchBridge.RequestPermission.decode_request_permits_refines),
+    (``BulksketchBridge.RequestPermission.ActualDecodeRowsRequestPermits,
+      ``BulksketchBridge.RequestPermission.decode_rows_request_permits_refines),
+    (``BulksketchBridge.AvxEncodeEntry.ActualConcreteNativeAvxEncoding,
+      ``BulksketchBridge.AvxEncodeEntry.concrete_native_avx_encoding),
+    (``BulksketchBridge.ExecutionDriver.ActualNativeAvxPaidVerificationConcreteEncoder,
+      ``BulksketchBridge.ExecutionDriver.native_avx_paid_verification_concrete_encoder),
+    (``BulksketchBridge.WorkMeter.ActualNativeWorkMeterPaid,
+      ``BulksketchBridge.WorkMeter.native_work_meter_paid),
+    (``BulksketchBridge.WorkMeter.ActualNativeWorkMeterDenied,
+      ``BulksketchBridge.WorkMeter.native_work_meter_denied),
+    (``BulksketchBridge.RootRun.ActualNativeTraceSearchPrices,
+      ``BulksketchBridge.RootRun.native_trace_search_prices),
+    (``BulksketchBridge.RootRun.ActualNativeTraceAttemptCharges,
+      ``BulksketchBridge.RootRun.native_trace_attempt_charges),
+    (``BulksketchBridge.RootRun.ActualNativeTraceGcdDivisionReady,
+      ``BulksketchBridge.RootRun.native_trace_gcd_division_ready),
+    (``BulksketchBridge.RootRun.ActualNativeTraceSearch,
+      ``BulksketchBridge.RootRun.native_trace_search),
     (``BulksketchBridge.ExecutionDriver.ActualNativeVerificationStartFinish,
       ``BulksketchBridge.ExecutionDriver.native_verification_start_finish),
     (``BulksketchBridge.RowConfiguration.ActualRowBegin,
