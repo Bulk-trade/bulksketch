@@ -389,6 +389,11 @@ PROJECTIONS = [
                   "tooling/aeneas-horner-match/receipt.json", "tooling/aeneas-horner-match/ended-shared-scalar.patch",
                   "bridge/Arithmetic/AvxHornerChunkRuntime.lean", "bridge/Arithmetic/Avx512RegisterGenerated.lean",
                   "bridge/Arithmetic/DenseNormalizationGenerated.lean"]),
+    ("avx-insertion-bases", "extraction/avx-insertion-bases/project.py", "extraction/avx-insertion-bases/receipt.json",
+     "extraction/avx-insertion-bases/Arithmetic/Funs.lean", "bridge/Arithmetic/AvxInsertionBasesGenerated.lean",
+     "let column ← 1#u64 <<< bit", "let column ← 2#u64 <<< bit", "compiled insertion-bases generator projection differs",
+     None, None, ["extraction/avx-square/receipt.json", "extraction/avx-single-bases/Arithmetic/Types.lean",
+                  "extraction/frobenius-const/square/Arithmetic/Funs.lean", "bridge/Arithmetic/FrobeniusConstGenerated.lean"]),
     ("avx-single-bases", "extraction/avx-single-bases/project.py", "extraction/avx-single-bases/receipt.json",
      "extraction/avx-single-bases/Arithmetic/Funs.lean", "bridge/Arithmetic/AvxSingleBasesGenerated.lean",
      "id >>> 6#i32", "id >>> 7#i32", "compiled AVX single-bases projection differs", None, None,
@@ -652,7 +657,7 @@ def main():
                              "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry", "root-divide", "root-run", "affine-splitter",
                              "affine-subspaces", "root-prepare-affine", "root-enumerate-affine", "dense-div-rem",
                              "affine-enumerate", "affine-selector", "avx-multiply-linear", "affine-solve-map",
-                             "avx-horner", "affine-multiple", "avx-encode-18", "avx-single-bases"}:
+                             "avx-horner", "affine-multiple", "avx-encode-18", "avx-single-bases", "avx-insertion-bases"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

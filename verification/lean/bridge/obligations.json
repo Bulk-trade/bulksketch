@@ -1252,6 +1252,18 @@
     {
       "challenge": "BulksketchBridge.RootDivide.ActualNativeCommittedAffineChildren",
       "theorem": "BulksketchBridge.RootDivide.native_committed_affine_children"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxInsertionBases.ActualInsertionBases",
+      "theorem": "BulksketchBridge.AvxInsertionBases.insertion_bases_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeAffineSplit",
+      "theorem": "BulksketchBridge.RootRun.native_affine_split"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualRootTraversalStart",
+      "theorem": "BulksketchBridge.RootRun.native_root_traversal_start"
     }
   ],
   "refinements": [
@@ -3494,6 +3506,20 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original eleven table loads, six-bit index windows, and three returned XOR groups under typed load semantics and the explicit static-table value contract."
+    },
+    {
+      "label": "AVX-512 insertion_bases [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:482:function:bulksketch::backend::x86_vpclmul512::insertion_bases",
+      "source_line_span_sha256": "fabaeb87204da3105852e85154fc5f5f277d06847294f62dd1871e5751b6ff82",
+      "theorem": "BulksketchBridge.AvxInsertionBases.insertion_bases_refines",
+      "challenge": "BulksketchBridge.AvxInsertionBases.ActualInsertionBases",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insertion_bases",
+      "generated_file": "bridge/Arithmetic/AvxInsertionBasesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxInsertionBasesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original zero-initialized 64-bit, seven-power and selected-value loops with all cell writes, bounds and original Frobenius square."
     }
   ],
   "stateful_llbc_refinements": [

@@ -63,6 +63,9 @@ excludes the zero linear coefficient guard, an empty solve, both rank
 rejections, selector failure, and subspace table bounds failure.
 It returns the original enumeration or splitting stage with
 independent directions and a coset containing every factor root.
+The split branch preserves the factor polynomial and writes back the
+exact prefix annihilator rows. The paid split stage reads the original
+rank row and returns the GCD-stage frame with both child root tests.
 
 The original affine-multiple proof checks its buffer setup, pivot
 search, both normalization loops, modular square, and returned
@@ -100,7 +103,10 @@ stage, the exact native coefficient count selects either proper
 division or a retry in a smaller positive-rank coset. The successful
 divide commit partitions the parent's root set by the split classifier
 and preserves the recorded child bases and rank. The complete
-depth-first traversal still needs to compose these steps.
+depth-first traversal still needs to compose these steps. From the
+admitted incoming count, degree and pending state, the original
+Roots::start establishes the empty pending layout, root budget, basis
+reset and exact locator copy.
 
 The AVX square finite-heap theorem composes the zero fill, scalar
 coefficient seeds, and the original masked LLBC load/store block
@@ -132,9 +138,12 @@ and preservation of every byte outside the written prefix. The
 original single-base lookup reads eleven exact six- or five-bit
 windows of the input word and XORs their rows. Its finite-heap proof
 checks the captured contiguous insertion-table layout and every
-masked read. A table-value contract supplies the field lane values
-until the static table generator is proved. The heap contracts use
-the captured x86 layout and admitted live allocation views.
+masked read. The original static table generator now refines the exact
+zero-initialized cell fold across its three nested loops, including the
+original Frobenius square. The field interpretation of those generated
+cells remains a table-value premise for the allocated lookup theorem.
+The heap contracts use the captured x86 layout and admitted live
+allocation views.
 
 Run the complete gate from `verification/lean`.
 

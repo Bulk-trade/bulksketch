@@ -581,6 +581,11 @@
       "path": "extraction/avx-single-bases/arithmetic.llbc",
       "sha256": "390f631a8d62968ee84e09730922a06a8288f3f37cd877753ec24a35b7d7c51d",
       "has_errors": false
+    },
+    {
+      "path": "extraction/avx-insertion-bases/arithmetic.llbc",
+      "sha256": "d23a74fb976f06aa487ead7b90961353b6bd938cdea499bf66abcabd8e236108",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1368,6 +1373,11 @@
       "native_item_id": "src/backend/x86_vpclmul512.rs:521:function:bulksketch::backend::x86_vpclmul512::single_bases",
       "generated_declaration": "bulksketch.backend.x86_vpclmul512.single_bases",
       "generated_file": "bridge/Arithmetic/AvxSingleBasesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:482:function:bulksketch::backend::x86_vpclmul512::insertion_bases",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insertion_bases",
+      "generated_file": "bridge/Arithmetic/AvxInsertionBasesGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2070,6 +2080,15 @@
       "checker": "extraction/avx-single-bases/project.py",
       "declaration_count": 2,
       "scope": "Original stock insertion-table lookup, with exact target layout and explicit static-table value premise."
+    },
+    {
+      "generated": "extraction/avx-insertion-bases/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxInsertionBasesGenerated.lean",
+      "sha256": "bfdd540ab42cf77f641963aa99514324099031c4400a31491eeb583b8aff3f71",
+      "raw_sha256": "263b8f81e3e589fff3192220c03c9534aa7089f0098cba654e86992522745fb2",
+      "checker": "extraction/avx-insertion-bases/project.py",
+      "declaration_count": 7,
+      "scope": "Original stock static insertion-base generator, with all three nested loops and the original Frobenius square bound."
     }
   ],
   "reviewed_translator_variants": [

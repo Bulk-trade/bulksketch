@@ -16,6 +16,20 @@ open bulksketch.decode.scratch bulksketch.decode.roots.Roots bulksketch.types
 set_option maxRecDepth 4096
 set_option maxHeartbeats 1600000
 
+private theorem tail_set_full (words replacement : Slice U64) (offset : Nat)
+    (bound : offset ≤ words.length) (width : replacement.length = words.length - offset) :
+    tail (words.setSlice! offset replacement.val) offset = replacement := by
+  apply Slice.ext
+  change offset ≤ words.val.length at bound
+  change replacement.val.length = words.val.length - offset at width
+  simp only [tail, Slice.from_val, Slice.setSlice!_val, List.setSlice!, ← width,
+    Nat.min_self, List.take_length, List.append_assoc]
+  have dropRest : List.drop (offset + replacement.val.length) words.val = [] := by
+    apply List.drop_eq_nil_iff.mpr
+    omega
+  rw [dropRest, List.append_nil, List.drop_append, List.length_take, Nat.min_eq_left bound,
+    Nat.sub_self, List.drop_zero, List.drop_eq_nil_iff.mpr (by simp [List.length_take, bound]), List.nil_append]
+
 /-- With the input factor split and simple, the original affine stage
     prepares a complete factor coset after the charge succeeds. Minimality
     excludes the zero-X guard and the full solve-map fiber excludes both
@@ -39,6 +53,8 @@ def ActualNativePreparationCoset : Prop :=
       written.basis.directions = some directions ∧ written.basis.len = UScalar.cast .U32 rank ∧
       let basis := prefixSlice directions.to_slice rank.val
       rank.val ≤ roots.degree.val ∧ basis.length = rank.val ∧ IndependentDirections basis ∧
+      written.polynomials = workspace.polynomials ∧
+      (stage = .AffineSplit → ExactThrough basis (tail written.factors (roots.stride.val * roots.stride.val)) rank.val) ∧
       ∀ point, factor.IsRoot point → point ∈ coset (toField base.bv) (prefixDirections basis basis.length))
 
 theorem native_preparation_coset : ActualNativePreparationCoset := by
@@ -107,7 +123,10 @@ theorem native_preparation_coset : ActualNativePreparationCoset := by
       (ran : expected RootRun.nativeCalls.preparation kernels roots workspace meter =
         .ok (.Ok (.Ok stage), { roots with affine_ready := true, affine_base := base, affine_rank := rank },
           written, id, paid))
-      (dirs : written.basis.directions = some directions) (len : written.basis.len = UScalar.cast .U32 rank) :
+      (dirs : written.basis.directions = some directions) (len : written.basis.len = UScalar.cast .U32 rank)
+      (polyFrame : written.polynomials = workspace.polynomials)
+      (tableFrame : stage = .AffineSplit →
+        ExactThrough basis (tail written.factors (roots.stride.val * roots.stride.val)) rank.val) :
       ∃ (stage : Stage) (base : U64) (rank : Usize) (directions : Array U64 64#usize) (written : RowWorkspace),
         (stage = .AffineEnumeration ∨ stage = .AffineSplit) ∧
         expected RootRun.nativeCalls.preparation kernels roots workspace meter =
@@ -116,8 +135,10 @@ theorem native_preparation_coset : ActualNativePreparationCoset := by
         written.basis.directions = some directions ∧ written.basis.len = UScalar.cast .U32 rank ∧
         let basis := prefixSlice directions.to_slice rank.val
         rank.val ≤ roots.degree.val ∧ basis.length = rank.val ∧ IndependentDirections basis ∧
+        written.polynomials = workspace.polynomials ∧
+        (stage = .AffineSplit → ExactThrough basis (tail written.factors (roots.stride.val * roots.stride.val)) rank.val) ∧
         ∀ point, factor.IsRoot point → point ∈ coset (toField base.bv) (prefixDirections basis basis.length) :=
-    ⟨stage, base, rank, directions, written, choice, ran, dirs, len, rankDegree, basisLen, independent, contains⟩
+    ⟨stage, base, rank, directions, written, choice, ran, dirs, len, rankDegree, basisLen, independent, polyFrame, tableFrame, contains⟩
   let prepared : RowWorkspace := {
     workspace with
     bm := splitBack workspace.bm (roots.degree.val + 1) (coefficients, work)
@@ -127,7 +148,7 @@ theorem native_preparation_coset : ActualNativePreparationCoset := by
   }
   cases enumerate with
   | true =>
-    apply shape .AffineEnumeration prepared (Or.inl rfl) _ rfl rfl
+    apply shape .AffineEnumeration prepared (Or.inl rfl) _ rfl rfl rfl (fun impossible => by cases impossible)
     simp only [expected, paidModel, normal, bind_ok]
     dsimp! only
     simp only [zero, ite_false, mapNormal, bind_ok]
@@ -142,10 +163,19 @@ theorem native_preparation_coset : ActualNativePreparationCoset := by
       rw [basisLen, tail_length, factorWidth]
       change offset + AffineSubspaces.offset (rank.val + 1) ≤ workspace.factors.length at tableRoom
       omega
-    obtain ⟨updated, table, _, _⟩ :=
-      subspaces_refines kernels subspaceArithmetic basis (tail factors offset) (by rwa [basisLen]) tailRoom
+    obtain ⟨updated, table, tableWidth, exactRows⟩ :=
+      subspaces_annihilators kernels subspaceArithmetic basis (tail factors offset) (by rwa [basisLen]) tailRoom
     have built : subspaces dictionary kernels basis (tail factors offset) = .ok updated := table
-    apply shape .AffineSplit { prepared with factors := factors.setSlice! offset updated.val } (Or.inr rfl) _ rfl rfl
+    have offsetRoom : offset ≤ factors.length := by
+      change offset + AffineSubspaces.offset (rank.val + 1) ≤ workspace.factors.length at tableRoom
+      rw [factorWidth]
+      omega
+    have restored := tail_set_full factors updated offset offsetRoom (tableWidth.trans (tail_length ..))
+    have writtenRows : ExactThrough basis (tail (factors.setSlice! offset updated.val) offset) rank.val := by
+      rw [restored, ← basisLen]
+      exact exactRows
+    apply shape .AffineSplit { prepared with factors := factors.setSlice! offset updated.val }
+      (Or.inr rfl) _ rfl rfl rfl (fun _ => writtenRows)
     simp only [expected, paidModel, normal, bind_ok]
     dsimp! only
     simp only [zero, ite_false, mapNormal, bind_ok]

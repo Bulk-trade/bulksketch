@@ -662,7 +662,13 @@ run_cmd do
     (``BulksketchBridge.RootRun.ActualNativeAffineGcd,
       ``BulksketchBridge.RootRun.native_affine_gcd),
     (``BulksketchBridge.RootDivide.ActualNativeCommittedAffineChildren,
-      ``BulksketchBridge.RootDivide.native_committed_affine_children)
+      ``BulksketchBridge.RootDivide.native_committed_affine_children),
+    (``BulksketchBridge.AvxInsertionBases.ActualInsertionBases,
+      ``BulksketchBridge.AvxInsertionBases.insertion_bases_refines),
+    (``BulksketchBridge.RootRun.ActualNativeAffineSplit,
+      ``BulksketchBridge.RootRun.native_affine_split),
+    (``BulksketchBridge.RootRun.ActualRootTraversalStart,
+      ``BulksketchBridge.RootRun.native_root_traversal_start)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

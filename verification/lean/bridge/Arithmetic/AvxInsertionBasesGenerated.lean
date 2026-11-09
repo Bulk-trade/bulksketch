@@ -1,0 +1,181 @@
+-- The seven original generator declarations from checked stock extraction.
+import Arithmetic.AvxSingleBasesGenerated
+import Arithmetic.FrobeniusConstGenerated
+
+open Aeneas Aeneas.Std Result ControlFlow Error
+set_option linter.dupNamespace false
+set_option linter.unusedVariables false
+
+namespace bulksketch
+
+/-- [bulksketch::backend::x86_vpclmul512::insertion_bases]: loop body 2:
+    Source: 'src/backend/x86_vpclmul512.rs', lines 503:12-512:13 -/
+@[rust_loop_body]
+def backend.x86_vpclmul512.insertion_bases_loop0_loop0_loop0.body
+  (bit : Std.Usize) (column : Std.U64) (power : Std.Usize) (chunk : Std.Usize)
+  (shift : Std.Usize) (count : Std.Usize)
+  (a : Array (Array (Array Std.U64 8#usize) 64#usize) 9#usize)
+  (a1 : Array (Array (Array Std.U64 8#usize) 32#usize) 2#usize)
+  (value : Std.Usize) :
+  Result (ControlFlow ((Array (Array (Array Std.U64 8#usize) 64#usize) 9#usize)
+    × (Array (Array (Array Std.U64 8#usize) 32#usize) 2#usize) × Std.Usize)
+    ((Array (Array (Array Std.U64 8#usize) 64#usize) 9#usize) × (Array (Array
+    (Array Std.U64 8#usize) 32#usize) 2#usize)))
+  := do
+  if value < count
+  then
+    let i ← 1#usize <<< shift
+    let i1 ← lift (value &&& i)
+    let (a2, a3) ←
+      if i1 != 0#usize
+      then
+        if bit < 54#usize
+        then
+          do
+          let a4 ← Array.index_usize a chunk
+          let a5 ← Array.index_usize a4 value
+          let i2 ← Array.index_usize a5 power
+          let i3 ← lift (i2 ^^^ column)
+          let (a6, index_mut_back) ← Array.index_mut_usize a chunk
+          let (a7, index_mut_back1) ← Array.index_mut_usize a6 value
+          let a8 ← Array.update a7 power i3
+          let a9 := index_mut_back1 a8
+          let a10 := index_mut_back a9
+          ok (a10, a1)
+        else
+          do
+          let a4 ← Array.index_usize a1 chunk
+          let a5 ← Array.index_usize a4 value
+          let i2 ← Array.index_usize a5 power
+          let i3 ← lift (i2 ^^^ column)
+          let (a6, index_mut_back) ← Array.index_mut_usize a1 chunk
+          let (a7, index_mut_back1) ← Array.index_mut_usize a6 value
+          let a8 ← Array.update a7 power i3
+          let a9 := index_mut_back1 a8
+          let a10 := index_mut_back a9
+          ok (a, a10)
+      else ok (a, a1)
+    let value1 ← value + 1#usize
+    ok (cont (a2, a3, value1))
+  else ok (done (a, a1))
+
+/-- [bulksketch::backend::x86_vpclmul512::insertion_bases]: loop 2:
+    Source: 'src/backend/x86_vpclmul512.rs', lines 503:12-512:13 -/
+@[rust_loop]
+def backend.x86_vpclmul512.insertion_bases_loop0_loop0_loop0
+  (a : Array (Array (Array Std.U64 8#usize) 64#usize) 9#usize)
+  (a1 : Array (Array (Array Std.U64 8#usize) 32#usize) 2#usize)
+  (bit : Std.Usize) (column : Std.U64) (power : Std.Usize) (chunk : Std.Usize)
+  (shift : Std.Usize) (count : Std.Usize) (value : Std.Usize) :
+  Result ((Array (Array (Array Std.U64 8#usize) 64#usize) 9#usize) × (Array
+    (Array (Array Std.U64 8#usize) 32#usize) 2#usize))
+  := do
+  loop
+    (fun (a2, a3, value1) =>
+      backend.x86_vpclmul512.insertion_bases_loop0_loop0_loop0.body bit column
+      power chunk shift count a2 a3 value1)
+    (a, a1, value)
+
+/-- [bulksketch::backend::x86_vpclmul512::insertion_bases]: loop body 1:
+    Source: 'src/backend/x86_vpclmul512.rs', lines 495:8-514:9 -/
+@[rust_loop_body]
+def backend.x86_vpclmul512.insertion_bases_loop0_loop0.body
+  (bit : Std.Usize)
+  (a : Array (Array (Array Std.U64 8#usize) 64#usize) 9#usize)
+  (a1 : Array (Array (Array Std.U64 8#usize) 32#usize) 2#usize)
+  (column : Std.U64) (power : Std.Usize) :
+  Result (ControlFlow ((Array (Array (Array Std.U64 8#usize) 64#usize) 9#usize)
+    × (Array (Array (Array Std.U64 8#usize) 32#usize) 2#usize) × Std.U64 ×
+    Std.Usize) ((Array (Array (Array Std.U64 8#usize) 64#usize) 9#usize) ×
+    (Array (Array (Array Std.U64 8#usize) 32#usize) 2#usize)))
+  := do
+  if power < 7#usize
+  then
+    let column1 ← field.frobenius.square column
+    let (chunk, shift, count) ←
+      if bit < 54#usize
+      then
+        do
+        let i ← bit / 6#usize
+        let i1 ← bit % 6#usize
+        ok (i, i1, 64#usize)
+      else
+        do
+        let i ← bit - 54#usize
+        let i1 ← i / 5#usize
+        let i2 ← i % 5#usize
+        ok (i1, i2, 32#usize)
+    let (a2, a3) ←
+      backend.x86_vpclmul512.insertion_bases_loop0_loop0_loop0 a a1 bit column1
+        power chunk shift count 1#usize
+    let power1 ← power + 1#usize
+    ok (cont (a2, a3, column1, power1))
+  else ok (done (a, a1))
+
+/-- [bulksketch::backend::x86_vpclmul512::insertion_bases]: loop 1:
+    Source: 'src/backend/x86_vpclmul512.rs', lines 495:8-514:9 -/
+@[rust_loop]
+def backend.x86_vpclmul512.insertion_bases_loop0_loop0
+  (a : Array (Array (Array Std.U64 8#usize) 64#usize) 9#usize)
+  (a1 : Array (Array (Array Std.U64 8#usize) 32#usize) 2#usize)
+  (bit : Std.Usize) (column : Std.U64) (power : Std.Usize) :
+  Result ((Array (Array (Array Std.U64 8#usize) 64#usize) 9#usize) × (Array
+    (Array (Array Std.U64 8#usize) 32#usize) 2#usize))
+  := do
+  loop
+    (fun (a2, a3, column1, power1) =>
+      backend.x86_vpclmul512.insertion_bases_loop0_loop0.body bit a2 a3 column1
+      power1)
+    (a, a1, column, power)
+
+/-- [bulksketch::backend::x86_vpclmul512::insertion_bases]: loop body 0:
+    Source: 'src/backend/x86_vpclmul512.rs', lines 492:4-516:5 -/
+@[rust_loop_body]
+def backend.x86_vpclmul512.insertion_bases_loop0.body
+  (a : Array (Array (Array Std.U64 8#usize) 64#usize) 9#usize)
+  (a1 : Array (Array (Array Std.U64 8#usize) 32#usize) 2#usize)
+  (bit : Std.Usize) :
+  Result (ControlFlow ((Array (Array (Array Std.U64 8#usize) 64#usize) 9#usize)
+    × (Array (Array (Array Std.U64 8#usize) 32#usize) 2#usize) × Std.Usize)
+    ((Array (Array (Array Std.U64 8#usize) 64#usize) 9#usize) × (Array (Array
+    (Array Std.U64 8#usize) 32#usize) 2#usize)))
+  := do
+  if bit < 64#usize
+  then
+    let column ← 1#u64 <<< bit
+    let (a2, a3) ←
+      backend.x86_vpclmul512.insertion_bases_loop0_loop0 a a1 bit column
+        0#usize
+    let bit1 ← bit + 1#usize
+    ok (cont (a2, a3, bit1))
+  else ok (done (a, a1))
+
+/-- [bulksketch::backend::x86_vpclmul512::insertion_bases]: loop 0:
+    Source: 'src/backend/x86_vpclmul512.rs', lines 492:4-516:5 -/
+@[rust_loop]
+def backend.x86_vpclmul512.insertion_bases_loop0
+  (a : Array (Array (Array Std.U64 8#usize) 64#usize) 9#usize)
+  (a1 : Array (Array (Array Std.U64 8#usize) 32#usize) 2#usize)
+  (bit : Std.Usize) :
+  Result ((Array (Array (Array Std.U64 8#usize) 64#usize) 9#usize) × (Array
+    (Array (Array Std.U64 8#usize) 32#usize) 2#usize))
+  := do
+  loop
+    (fun (a2, a3, bit1) => backend.x86_vpclmul512.insertion_bases_loop0.body a2
+      a3 bit1)
+    (a, a1, bit)
+
+/-- [bulksketch::backend::x86_vpclmul512::insertion_bases]:
+    Source: 'src/backend/x86_vpclmul512.rs', lines 486:0-518:1 -/
+def backend.x86_vpclmul512.insertion_bases
+  : Result backend.x86_vpclmul512.InsertionBases := do
+  let a := Array.repeat 8#usize 0#u64
+  let a1 := Array.repeat 64#usize a
+  let a2 := Array.repeat 9#usize a1
+  let a3 := Array.repeat 8#usize 0#u64
+  let a4 := Array.repeat 32#usize a3
+  let a5 := Array.repeat 2#usize a4
+  let (a6, a7) ← backend.x86_vpclmul512.insertion_bases_loop0 a2 a5 0#usize
+  ok { six := a6, five := a7 }
+
+end bulksketch

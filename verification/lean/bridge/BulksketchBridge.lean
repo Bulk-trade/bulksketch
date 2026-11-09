@@ -121,3 +121,6 @@ import BulksketchBridge.RootDivideCommitDegree
 import BulksketchBridge.AvxSingleBasesHeap
 import BulksketchBridge.RootNativeAffineGcd
 import BulksketchBridge.RootAffineChildren
+import BulksketchBridge.AvxInsertionBases
+import BulksketchBridge.RootNativeAffineSplit
+import BulksketchBridge.RootTraversalStart

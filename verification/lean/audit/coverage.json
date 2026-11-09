@@ -2758,7 +2758,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxInsertionBases.insertion_bases_refines",
+        "scope": "Exact original zero-initialized 64-bit, seven-power and selected-value loops with all cell writes, bounds and original Frobenius square.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:50:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::mul",
@@ -12041,8 +12048,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. This checkpoint adds three original AVX insertion-base and capacity-18 bodies and strengthens original affine multiple, GF64 solve-map, and root traversal evidence. Complete native caller admission, depth-first traversal, decoder completeness, Rust provenance, and compiler-to-ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 141,
+    "note": "All 344 native executable obligations retained. This continuation adds four original AVX capacity-18 and insertion-table bodies and strengthens native affine preparation, factor traversal and workspace admission evidence. Complete depth-first traversal, decoder completeness, remaining backend bodies, Rust provenance, and compiler-to-ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 142,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12163,7 +12170,9 @@
         "BulksketchBridge.AffineMultiple.native_multiple_squarefree_nonzero_X",
         "BulksketchBridge.RootDivide.native_committed_degree_mass",
         "BulksketchBridge.RootRun.native_affine_gcd",
-        "BulksketchBridge.RootDivide.native_committed_affine_children"
+        "BulksketchBridge.RootDivide.native_committed_affine_children",
+        "BulksketchBridge.RootRun.native_affine_split",
+        "BulksketchBridge.RootRun.native_root_traversal_start"
       ]
     },
     "masked_memory_evidence": {
