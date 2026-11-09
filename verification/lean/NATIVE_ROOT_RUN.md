@@ -20,13 +20,15 @@ checked operations, including intermediate overflow.
 The splitter theorem checks the original setup, the complete coefficient
 loop, prefix normalization and all slice writebacks. It binds the
 original linear evaluation and Dense modular square bodies under the
-field, reducer table and backend contracts. Relating the splitter result
-to the affine coset maintained by the complete traversal remains open.
+field, reducer table and backend contracts. The field proof relates the
+normalized output to both child cosets at every root of the factor in
+the parent coset. It requires independence of the new basis direction.
+The complete traversal still needs to establish and preserve those premises.
 
 The affine subspace table proof checks the seed, both loops and exact
 row writes. Over Mathlib's GF(2⁶⁴), each prefix row represents the
 polynomial whose zero set is the binary span of those directions. The
-proof starts with (A_0=X) and establishes (A_{r+1}=A_r^2+A_r(b_r)A_r).
+proof starts with `A₀ = X` and establishes `Aᵣ₊₁ = Aᵣ² + Aᵣ(bᵣ)Aᵣ`.
 
 Affine preparation checks the exact charge, the zero linear coefficient,
 the solve-map rejection, both rank guards, and both successful stages.
@@ -39,9 +41,9 @@ The original divide theorem checks both charge results, a nonexact
 division, both checked offset overflows, and the affine and non-affine
 commits. It returns the exact quotient and remainder scratch, pending
 right-child coefficients, stack record, left modulus, meter, and stage.
-The original Dense exact-division wrapper is bound under the explicit
-div/rem model law. The original div/rem body linkage and the
-depth-first and affine traversal invariants remain open.
+The original Dense exact-division wrapper is bound to the proved div/rem
+body in the specialization. Depth-first and affine traversal invariants
+remain open.
 
 The AVX square finite-heap theorem composes the zero fill, scalar
 coefficient seeds, and the original masked LLBC load/store block

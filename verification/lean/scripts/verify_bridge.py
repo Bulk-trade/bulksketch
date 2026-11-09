@@ -491,6 +491,12 @@ def check_dense_reducer_variant(variant, receipt, runtime, runtime_head, linkage
             "extraction/dense-reducer-square/", "checked-dense-reducer-square.patch",
             {"src/interp/InterpMatchCtxs.ml", "src/interp/InterpExpansion.ml",
              "src/symbolic/SymbolicToPureExpressions.ml"}),
+        "checked-dense-div-rem-v1": (
+            "extraction/dense-div-rem/", "checked-dense-div-rem.patch",
+            {"src/Translate.ml", "src/interp/InterpBorrows.ml", "src/interp/InterpBorrows.mli",
+             "src/interp/InterpBorrowsCore.ml", "src/interp/InterpExpansion.ml", "src/interp/InterpLoops.ml",
+             "src/interp/InterpMatchCtxs.ml", "src/interp/InterpStatements.ml",
+             "src/symbolic/SymbolicToPureCore.ml", "src/symbolic/SymbolicToPureExpressions.ml"}),
     }
     directory, name, sources = files[variant["id"]]
     patch = directory + name
@@ -684,7 +690,7 @@ def main():
                             str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
             records.append(result)
             continue
-        if variant["id"] in {"checked-dense-reducer-option-v1", "checked-dense-reducer-square-v1"}:
+        if variant["id"] in {"checked-dense-reducer-option-v1", "checked-dense-reducer-square-v1", "checked-dense-div-rem-v1"}:
             check_dense_reducer_variant(variant, receipt, runtime, runtime_head, linkage)
             result, _ = run(variant["id"] + "-patch-applies", ["git", "apply", "--check",
                             str(ROOT / variant["patch"])], timeout=30, cwd=runtime)

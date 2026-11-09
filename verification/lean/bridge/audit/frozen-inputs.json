@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "a9040e4f6ea7c6608cf7277146c20382dcdca1882d028088f88dc8f83f991d76",
+    "bridge/BulksketchBridge/Audit.lean": "346ba75b014c6f77ee5869465e9bcd97500e096239df6c98909713b2670a6db1",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,9 +13,9 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "a91cf58c91dd2c10f0c613e9426d276b91442906d045dca49c667f2bdf31561e",
-    "audit/frozen-inputs.json": "bb9fb7c80d1a358b46f6d55ef05755fec18e78306a2aa83bcb7da878981acebb",
-    "bridge/BulksketchBridge.lean": "d82e89c9a8060ca56fadb9bf930ef704071637c9bd82a985fc5affb113df38f2",
+    "scripts/verify_bridge.py": "cf02fd164dba9f559dbcf040a0ce8215d5d32d88698e01214640daccb0755c75",
+    "audit/frozen-inputs.json": "1a81030b63bcbaf894f1ed98362378fa1c635cf45a947f48596cc222b4e83074",
+    "bridge/BulksketchBridge.lean": "007acc2bfdbfa880bbeeb4641df583010114cb4a9ada5461e7c6a03cdbfc50b2",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "599aea26a3c69b4d211d5e858dcd246136d782d91600719895680c792f200e62",
-    "bridge/obligations.json": "2b06d6119062c5a6f2eb828def4a596dfd89e10dbafb422a0ecdce16fdb87b02",
+    "bridge/source-linkage.json": "76e8753d4ab0d968d2e212ab29f9ac0277e12982ef80ead3aa2689f29d0ace09",
+    "bridge/obligations.json": "95f7302743d5f28c668cf60caf39cb234867dcf91d7cedd44d6926bc2454a3e0",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "44913881c4e19916460e6bcda7c43dea53a41ce3438d91881c4cd9b80445a989",
+    "scripts/check_projection_fixtures.py": "167ea92d3d4049bb4cb0df61b7ffc9da0ed42bb05a3527f7d8d2f2c9f2d88552",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "229838c7730866a1ca214b5f90423cfcbdc28b80b8f486bbe370c7d976420d6b",
+    "README.md": "926579e1ddabc1d1a8bc0087a2bb4ce06bf74330d60777ad9fa5292ab47fbf03",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "688b16b8530d364d1b0768238894ff34172f5289a63da537ae4ba032c41137e6",
+    "audit/coverage.json": "8bd03c9fea66cffc7f18f6df629af413a2fd6dac4a3166d8bfa3e91bef5b40e1",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1085,7 +1085,7 @@
     "extraction/dense-reducer-square/replay.py": "194f2bff868aea6787b798874abf8a26f563dbe121674b9fb2bfb4fc699a7399",
     "extraction/dense-reducer-square/stock.log": "502b5abf8bbd920999f67dea1f1463afc72cb58be8010859ee1e0b3df32558ac",
     "extraction/dense-reducer-square/unchecked.log": "dc975793852165fb024b58dfea3cffd152a86545a0fe168812602665819277f4",
-    "NATIVE_DENSE_DIVISION.md": "6658b5cabf54ba63984229fb05b0fd5ba95ca75915f8ae3ad85c6454b04f6f5f",
+    "NATIVE_DENSE_DIVISION.md": "7bc66fd0e205e372f4492b801782b7af8a5cf59bd300896e4b7633612da6b9bc",
     "audit/native-dense-division-checkpoint.json": "d7fb2cc4e1014accb335dc7532561026c4c6906194c6cffec11ecead264c01cc",
     "bridge/Arithmetic/AvxSquareGenerated.lean": "2d465d47c7ddef1a834575174050005bbd328e0a6f44fafae852bd461669e168",
     "bridge/Arithmetic/AvxSquareRuntime.lean": "3cba580416043b3dda5f80d810729009a493ec211e0e03813552c5b4df10bcda",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "694e4031beeffcd5509db0794b2a8336f330b716d1bc036255a9d1decc95bcee",
-    "audit/native-root-run-checkpoint.json": "64a116dfde620ae797cc27708c68a9eae8733e9ea0102d314a3ce89362ac95ac",
+    "NATIVE_ROOT_RUN.md": "f67532fc38aea5f67abdb32b7bb41b3ca43f3354f1c7f4e38ba1220bf4d61e56",
+    "audit/native-root-run-checkpoint.json": "bbef1f95463308a366748efcb858ed3015b2c6c70525ebdf77c2bffe25aad241",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "3b262df943a7c1f5cf90c597146f022e485431e8f9cbc9c7105e18035a61aa0e",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1243,7 +1243,39 @@
     "extraction/root-prepare-affine/charon.log": "e87c8d79d5167da26d7dc3545ee29a9ff8f9fb251ae16638fd01c01219a9adeb",
     "extraction/root-prepare-affine/project.py": "7688cb5ffd69a3a5e2ad6bc25e3bfb004e3fb5d032aaff234199a52779c0274d",
     "extraction/root-prepare-affine/receipt.json": "949bd677e89c49cb1a60773c69b79ebfa7b42982f9b1663145d619e9bc3ab509",
-    "extraction/root-prepare-affine/replay.log": "fb5ceb1fb69d97937dc0f763bcdab57e081f3ca96a35f7da10343c2d8af4a63a"
+    "extraction/root-prepare-affine/replay.log": "fb5ceb1fb69d97937dc0f763bcdab57e081f3ca96a35f7da10343c2d8af4a63a",
+    "bridge/Arithmetic/DenseDivRemGenerated.lean": "8b8a2f298e58c3946adda864dff96ec9a461fdc555078a39e5d38d3e0121ba44",
+    "bridge/BulksketchBridge/AffineSplitterEvaluation.lean": "a489140d616a8d57e9bdc32c4a4383c10448d024bf83fe81aa54563f7003332c",
+    "bridge/BulksketchBridge/DenseDivRem.lean": "defde866dcddd881da7429b3c5b00f29d557bed22be9248902692405061cb809",
+    "bridge/BulksketchBridge/DenseDivRemComposition.lean": "c7040769e9bcbb66c633888972aa2168fc7f305ab8d92742ffb4b4bb057ae770",
+    "bridge/BulksketchBridge/DenseDivRemControl.lean": "3ab2ebee329a6ecd24a1ca4484dda24f123ca5d5302a330be6747ca857b410f3",
+    "bridge/BulksketchBridge/DenseDivRemCursor.lean": "2227116f89130b2939aa760c90a384c853cb566effc6d0e3ee0b006763fc8012",
+    "bridge/BulksketchBridge/DenseDivRemDescending.lean": "cd4c8a32e5626aedf4fa29c2b3677e100a27443170ff7ef02bb0d96473c54baf",
+    "bridge/BulksketchBridge/DenseDivRemFailures.lean": "9e23ccc4711457484625eb09cbce8cc5a229a475ab80f3dcf27c9fbd2553597a",
+    "bridge/BulksketchBridge/DenseDivRemReduction.lean": "64fd527f4f89b364c36a9249ad24de544e25b48936d3a4af0e74299aeadc8491",
+    "bridge/BulksketchBridge/DenseDivRemRows.lean": "617f8d51e7ca8e2c4b2b7d0912a28fbf3118338c5b6bf4d634bf8c84872363e0",
+    "bridge/BulksketchBridge/DenseDivRemWindows.lean": "63821a05c6a9a8e4349cda541a5a74d4ec4837c85e2c1bd8b3f0295b29a1092f",
+    "extraction/dense-div-rem/Arithmetic/Funs.lean": "ff01ae4fd04edb6d80855af016bca20ca56777b4b7174a07386ce13ca87c737a",
+    "extraction/dense-div-rem/Arithmetic/FunsExternal_Template.lean": "6f46396597320197cf5d207cca41f82f61ecea4ff4c36eef846026eb6d16d123",
+    "extraction/dense-div-rem/Arithmetic/Types.lean": "b6663988addfd0cf350d5238df1478f63b2735281058099c3ffd399630ae70f0",
+    "extraction/dense-div-rem/arithmetic.llbc": "1e565faa140b2f226dc3652de37ee8dcc0bfd5de2894b692e05a207d4c1d8b0c",
+    "extraction/dense-div-rem/charon.log": "81ea02b1305c2b0058573ddfc8d0f08c234fded078d8808f2867f20a57a07fde",
+    "extraction/dense-div-rem/checked-dense-div-rem.patch": "fbd95eba7f138b61635809eca867eca417b782b4f8701b39ca4c8e9038e4069c",
+    "extraction/dense-div-rem/checked.log": "9fa5cb5b06b5b926b5ebe63ad500a694812fa4d249a68d96545aa2c73902ff87",
+    "extraction/dense-div-rem/direct-negative-instrumentation.patch": "4ceb3188f921069a62cd2ff9464a703fd05e0c8a9cb862df27096a9d0a6a71a4",
+    "extraction/dense-div-rem/flag-disabled.log": "59d1a11c571074f19c1f93bfa6066b68a7104d7c4ea58ec662798a5b14db5ea1",
+    "extraction/dense-div-rem/fresh-build.log": "7a0bd4aef28fd907338c3ee17c1b8c8fe2c9dc99bd7372994b06f7e73179f433",
+    "extraction/dense-div-rem/project.py": "9b741ebbcc045b0c7abdbaec97bb83ac67033ab46d5c8abe70f91d489b8d292a",
+    "extraction/dense-div-rem/receipt.json": "52582466a7b02c4cfa4f689b9c3c4bacd16494cd1fbf7ddce2d88d3c9ae8f471",
+    "extraction/dense-div-rem/region_alias.log": "29d9b179a3cfd99f1a282e8b3ff28dbf44da2f827a43d8e6b7e004f90ff6d1b8",
+    "extraction/dense-div-rem/replay.log": "3923868af07331f0518beaa5695c80e0389872faf5aa6c76e9eea430ac410776",
+    "extraction/dense-div-rem/stock.log": "12d136e960cb4b54b0a01b59d4d91291b94bbe645f7186d53f96a4f7279a8bda",
+    "extraction/dense-div-rem/synthetic-wrong-owner.py": "85a7f3f3650362aad5eea9241fc3aa7871dc05cb9a8afaa307e7e87ab5c8f2b7",
+    "extraction/dense-div-rem/unchecked.log": "1d3fede2241c3456b79f605ded3f0858bd0b633fe3680928a6c0472fc97f94e7",
+    "extraction/dense-div-rem/wrong_owner.log": "b59e76562b95872fde672888f78ad818d25b4b02e456d06de442cf9cdd6f243f",
+    "extraction/dense-div-rem/wrong_terminal.log": "02a10e0ce3de521dba0b70694fa9dfe57806aaac4ff52a084085592133298458",
+    "extraction/dense-div-rem/xor-patched.log": "cc2aafec7f68278f50224167479108eaddba6cfa5522ab31b1a5fba7dad43ee1",
+    "extraction/dense-div-rem/xor-stock.log": "158aa9ed3a43d86b4b5b052c6704b5a6ebe4e328d5e5834cd8f876712c7714ca"
   },
   "reviewed_policy_revisions": [
     {
@@ -8715,7 +8747,239 @@
       "new_sha256": "44913881c4e19916460e6bcda7c43dea53a41ce3438d91881c4cd9b80445a989",
       "reason": "Freeze original affine subspace table and both affine root stage wrappers.",
       "old_sha256": "624891b7fb03c54afb925bdf1522722fe6a7f7af1a0a7be7d64db7d656c8aba2"
+    },
+    {
+      "path": "NATIVE_DENSE_DIVISION.md",
+      "new_sha256": "7bc66fd0e205e372f4492b801782b7af8a5cf59bd300896e4b7633612da6b9bc",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "6658b5cabf54ba63984229fb05b0fd5ba95ca75915f8ae3ad85c6454b04f6f5f"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "f67532fc38aea5f67abdb32b7bb41b3ca43f3354f1c7f4e38ba1220bf4d61e56",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "694e4031beeffcd5509db0794b2a8336f330b716d1bc036255a9d1decc95bcee"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "926579e1ddabc1d1a8bc0087a2bb4ce06bf74330d60777ad9fa5292ab47fbf03",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "229838c7730866a1ca214b5f90423cfcbdc28b80b8f486bbe370c7d976420d6b"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "8bd03c9fea66cffc7f18f6df629af413a2fd6dac4a3166d8bfa3e91bef5b40e1",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "688b16b8530d364d1b0768238894ff34172f5289a63da537ae4ba032c41137e6"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "1a81030b63bcbaf894f1ed98362378fa1c635cf45a947f48596cc222b4e83074",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "bb9fb7c80d1a358b46f6d55ef05755fec18e78306a2aa83bcb7da878981acebb"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "bbef1f95463308a366748efcb858ed3015b2c6c70525ebdf77c2bffe25aad241",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "64a116dfde620ae797cc27708c68a9eae8733e9ea0102d314a3ce89362ac95ac"
+    },
+    {
+      "path": "bridge/Arithmetic/DenseDivRemGenerated.lean",
+      "new_sha256": "8b8a2f298e58c3946adda864dff96ec9a461fdc555078a39e5d38d3e0121ba44",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "007acc2bfdbfa880bbeeb4641df583010114cb4a9ada5461e7c6a03cdbfc50b2",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "d82e89c9a8060ca56fadb9bf930ef704071637c9bd82a985fc5affb113df38f2"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSplitterEvaluation.lean",
+      "new_sha256": "a489140d616a8d57e9bdc32c4a4383c10448d024bf83fe81aa54563f7003332c",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "346ba75b014c6f77ee5869465e9bcd97500e096239df6c98909713b2670a6db1",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "a9040e4f6ea7c6608cf7277146c20382dcdca1882d028088f88dc8f83f991d76"
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseDivRem.lean",
+      "new_sha256": "defde866dcddd881da7429b3c5b00f29d557bed22be9248902692405061cb809",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseDivRemComposition.lean",
+      "new_sha256": "c7040769e9bcbb66c633888972aa2168fc7f305ab8d92742ffb4b4bb057ae770",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseDivRemControl.lean",
+      "new_sha256": "3ab2ebee329a6ecd24a1ca4484dda24f123ca5d5302a330be6747ca857b410f3",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseDivRemCursor.lean",
+      "new_sha256": "2227116f89130b2939aa760c90a384c853cb566effc6d0e3ee0b006763fc8012",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseDivRemDescending.lean",
+      "new_sha256": "cd4c8a32e5626aedf4fa29c2b3677e100a27443170ff7ef02bb0d96473c54baf",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseDivRemFailures.lean",
+      "new_sha256": "9e23ccc4711457484625eb09cbce8cc5a229a475ab80f3dcf27c9fbd2553597a",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseDivRemReduction.lean",
+      "new_sha256": "64fd527f4f89b364c36a9249ad24de544e25b48936d3a4af0e74299aeadc8491",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseDivRemRows.lean",
+      "new_sha256": "617f8d51e7ca8e2c4b2b7d0912a28fbf3118338c5b6bf4d634bf8c84872363e0",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DenseDivRemWindows.lean",
+      "new_sha256": "63821a05c6a9a8e4349cda541a5a74d4ec4837c85e2c1bd8b3f0295b29a1092f",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "95f7302743d5f28c668cf60caf39cb234867dcf91d7cedd44d6926bc2454a3e0",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "2b06d6119062c5a6f2eb828def4a596dfd89e10dbafb422a0ecdce16fdb87b02"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "76e8753d4ab0d968d2e212ab29f9ac0277e12982ef80ead3aa2689f29d0ace09",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "599aea26a3c69b4d211d5e858dcd246136d782d91600719895680c792f200e62"
+    },
+    {
+      "path": "extraction/dense-div-rem/Arithmetic/Funs.lean",
+      "new_sha256": "ff01ae4fd04edb6d80855af016bca20ca56777b4b7174a07386ce13ca87c737a",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "6f46396597320197cf5d207cca41f82f61ecea4ff4c36eef846026eb6d16d123",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/Arithmetic/Types.lean",
+      "new_sha256": "b6663988addfd0cf350d5238df1478f63b2735281058099c3ffd399630ae70f0",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/arithmetic.llbc",
+      "new_sha256": "1e565faa140b2f226dc3652de37ee8dcc0bfd5de2894b692e05a207d4c1d8b0c",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/charon.log",
+      "new_sha256": "81ea02b1305c2b0058573ddfc8d0f08c234fded078d8808f2867f20a57a07fde",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/checked-dense-div-rem.patch",
+      "new_sha256": "fbd95eba7f138b61635809eca867eca417b782b4f8701b39ca4c8e9038e4069c",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/checked.log",
+      "new_sha256": "9fa5cb5b06b5b926b5ebe63ad500a694812fa4d249a68d96545aa2c73902ff87",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/direct-negative-instrumentation.patch",
+      "new_sha256": "4ceb3188f921069a62cd2ff9464a703fd05e0c8a9cb862df27096a9d0a6a71a4",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/flag-disabled.log",
+      "new_sha256": "59d1a11c571074f19c1f93bfa6066b68a7104d7c4ea58ec662798a5b14db5ea1",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/fresh-build.log",
+      "new_sha256": "7a0bd4aef28fd907338c3ee17c1b8c8fe2c9dc99bd7372994b06f7e73179f433",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/project.py",
+      "new_sha256": "9b741ebbcc045b0c7abdbaec97bb83ac67033ab46d5c8abe70f91d489b8d292a",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/receipt.json",
+      "new_sha256": "52582466a7b02c4cfa4f689b9c3c4bacd16494cd1fbf7ddce2d88d3c9ae8f471",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/region_alias.log",
+      "new_sha256": "29d9b179a3cfd99f1a282e8b3ff28dbf44da2f827a43d8e6b7e004f90ff6d1b8",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/replay.log",
+      "new_sha256": "3923868af07331f0518beaa5695c80e0389872faf5aa6c76e9eea430ac410776",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/stock.log",
+      "new_sha256": "12d136e960cb4b54b0a01b59d4d91291b94bbe645f7186d53f96a4f7279a8bda",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/synthetic-wrong-owner.py",
+      "new_sha256": "85a7f3f3650362aad5eea9241fc3aa7871dc05cb9a8afaa307e7e87ab5c8f2b7",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/unchecked.log",
+      "new_sha256": "1d3fede2241c3456b79f605ded3f0858bd0b633fe3680928a6c0472fc97f94e7",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/wrong_owner.log",
+      "new_sha256": "b59e76562b95872fde672888f78ad818d25b4b02e456d06de442cf9cdd6f243f",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/wrong_terminal.log",
+      "new_sha256": "02a10e0ce3de521dba0b70694fa9dfe57806aaac4ff52a084085592133298458",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/xor-patched.log",
+      "new_sha256": "cc2aafec7f68278f50224167479108eaddba6cfa5522ab31b1a5fba7dad43ee1",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "extraction/dense-div-rem/xor-stock.log",
+      "new_sha256": "158aa9ed3a43d86b4b5b052c6704b5a6ebe4e328d5e5834cd8f876712c7714ca",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "167ea92d3d4049bb4cb0df61b7ffc9da0ed42bb05a3527f7d8d2f2c9f2d88552",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "44913881c4e19916460e6bcda7c43dea53a41ce3438d91881c4cd9b80445a989"
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "cf02fd164dba9f559dbcf040a0ce8215d5d32d88698e01214640daccb0755c75",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "a91cf58c91dd2c10f0c613e9426d276b91442906d045dca49c667f2bdf31561e"
     }
   ],
-  "challenge_count": 272
+  "challenge_count": 275
 }

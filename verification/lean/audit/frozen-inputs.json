@@ -36,7 +36,7 @@
     "audit/core-maps-proof-independent-review.md": "aed4509f239a8e3db59c7a9f0d95ca20286d8a6df50372e3f59c172572101124",
     "audit/field-algebra-accounting-review.md": "55d3cd81a3f03185992e3272994c04b13b5e7ea34ff85e5d8e2cfced90f240be",
     "audit/field-algebra-checkpoint.json": "e93b65ffd57dcdb5c4c987c76f96d48b8917e82f52969853dbb979c049a4220e",
-    "scripts/check_projection_fixtures.py": "44913881c4e19916460e6bcda7c43dea53a41ce3438d91881c4cd9b80445a989",
+    "scripts/check_projection_fixtures.py": "167ea92d3d4049bb4cb0df61b7ffc9da0ed42bb05a3527f7d8d2f2c9f2d88552",
     "audit/quotient-field-checkpoint.json": "c14a8dd2f0d747079f64b40c3dc9e52db3373ddfc1414b62667727444a82825e",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
     "audit/word-quotient-independent-review.md": "311018cf261231ef631f59867defc66cf7a13e5eba60d414f88b9d4e922dc823",
@@ -55,7 +55,7 @@
     "audit/native-stateful-checkpoint.json": "2c41ee402642341add52703d90795de97eff7b0656c4a4db9cd3e675332f0210",
     "NATIVE_CALLER_CHAINS.md": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
     "audit/native-caller-checkpoint.json": "837788fd6bb6f20d3c18e69b74e0610177fc4b9aec084f1ec313c271f4771cf2",
-    "README.md": "229838c7730866a1ca214b5f90423cfcbdc28b80b8f486bbe370c7d976420d6b",
+    "README.md": "926579e1ddabc1d1a8bc0087a2bb4ce06bf74330d60777ad9fa5292ab47fbf03",
     "NATIVE_RECONSTRUCTION.md": "3a1955592353708b30df40c5fb5443a743451002275c4da8164c37a3344746b2",
     "audit/native-reconstruction-checkpoint.json": "13745cfcf6c9161fb460c8165365bb767a672f474cd14d06edecf6b5fb428562",
     "NATIVE_QUARTIC.md": "0f7a4311accbf944b75a6792955da66ae548891ce2dc1a7e53a167aed892a381",
@@ -70,10 +70,10 @@
     "audit/native-bm-locator-checkpoint.json": "eed1ea6a781225abb5526757187a33a2dc2a12d09d440c2ac8fd8e8f5360b398",
     "NATIVE_DENSE_REDUCER.md": "1e507a052eda6ffab691e8e3d78c9904cafd2498edccbd46b8164de89248531a",
     "audit/native-dense-reducer-checkpoint.json": "41da787e360070eaa0ee57a31380362d9a3a4642c085a1334ba9293acb37fceb",
-    "NATIVE_DENSE_DIVISION.md": "6658b5cabf54ba63984229fb05b0fd5ba95ca75915f8ae3ad85c6454b04f6f5f",
+    "NATIVE_DENSE_DIVISION.md": "7bc66fd0e205e372f4492b801782b7af8a5cf59bd300896e4b7633612da6b9bc",
     "audit/native-dense-division-checkpoint.json": "d7fb2cc4e1014accb335dc7532561026c4c6906194c6cffec11ecead264c01cc",
-    "NATIVE_ROOT_RUN.md": "694e4031beeffcd5509db0794b2a8336f330b716d1bc036255a9d1decc95bcee",
-    "audit/native-root-run-checkpoint.json": "64a116dfde620ae797cc27708c68a9eae8733e9ea0102d314a3ce89362ac95ac"
+    "NATIVE_ROOT_RUN.md": "f67532fc38aea5f67abdb32b7bb41b3ca43f3354f1c7f4e38ba1220bf4d61e56",
+    "audit/native-root-run-checkpoint.json": "bbef1f95463308a366748efcb858ed3015b2c6c70525ebdf77c2bffe25aad241"
   },
   "reviewed_policy_revisions": [
     {
@@ -747,6 +747,36 @@
       "new_sha256": "44913881c4e19916460e6bcda7c43dea53a41ce3438d91881c4cd9b80445a989",
       "reason": "Freeze original affine subspace table and both affine root stage wrappers.",
       "old_sha256": "624891b7fb03c54afb925bdf1522722fe6a7f7af1a0a7be7d64db7d656c8aba2"
+    },
+    {
+      "path": "NATIVE_DENSE_DIVISION.md",
+      "new_sha256": "7bc66fd0e205e372f4492b801782b7af8a5cf59bd300896e4b7633612da6b9bc",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "6658b5cabf54ba63984229fb05b0fd5ba95ca75915f8ae3ad85c6454b04f6f5f"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "f67532fc38aea5f67abdb32b7bb41b3ca43f3354f1c7f4e38ba1220bf4d61e56",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "694e4031beeffcd5509db0794b2a8336f330b716d1bc036255a9d1decc95bcee"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "926579e1ddabc1d1a8bc0087a2bb4ce06bf74330d60777ad9fa5292ab47fbf03",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "229838c7730866a1ca214b5f90423cfcbdc28b80b8f486bbe370c7d976420d6b"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "bbef1f95463308a366748efcb858ed3015b2c6c70525ebdf77c2bffe25aad241",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "64a116dfde620ae797cc27708c68a9eae8733e9ea0102d314a3ce89362ac95ac"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "167ea92d3d4049bb4cb0df61b7ffc9da0ed42bb05a3527f7d8d2f2c9f2d88552",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "44913881c4e19916460e6bcda7c43dea53a41ce3438d91881c4cd9b80445a989"
     }
   ]
 }

@@ -1,0 +1,26 @@
+--- a/src/interp/InterpBorrows.ml
++++ b/src/interp/InterpBorrows.ml
+@@ -687,7 +687,9 @@
+       | Some (mut_region, TAdt { id; generics = { regions = []; types = [];
+                          const_generics = []; trait_refs = [] }; _ }),
+         Some (shared_region, TScalar (TInteger (Unsigned U64)))
+-        when mut_region <> shared_region && named id "bulksketch::types::RawProduct" ->
++        when mut_region <> (if Sys.getenv_opt "BULKSKETCH_DENSE_NEGATIVE" = Some "region-alias"
++                             then mut_region else shared_region)
++             && named id "bulksketch::types::RawProduct" ->
+           Some (mut_region, shared_region)
+       | _ -> None)
+   | _ -> None
+--- a/src/symbolic/SymbolicToPureExpressions.ml
++++ b/src/symbolic/SymbolicToPureExpressions.ml
+@@ -2060,7 +2060,9 @@
+                 && original.sv_id <> terminal.sv_id ->
+                 (match List.filter
+                     (fun (sv : V.symbolic_value) ->
+-                      sv.sv_id = terminal.sv_id && sv.sv_ty = terminal.proj_ty)
++                      sv.sv_id = (if Sys.getenv_opt "BULKSKETCH_DENSE_NEGATIVE" = Some "wrong-terminal"
++                                  then original.sv_id else terminal.sv_id)
++                      && sv.sv_ty = terminal.proj_ty)
+                     loop.break_svalues with
+                  | [sv] ->
+                      let seed = symbolic_value_to_texpr ctx sv in

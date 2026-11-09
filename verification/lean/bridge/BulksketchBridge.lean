@@ -99,3 +99,6 @@ import BulksketchBridge.AffineSplitter
 import BulksketchBridge.AffineSubspacesAnnihilators
 import BulksketchBridge.RootAffinePreparation
 import BulksketchBridge.RootEnumerate
+import BulksketchBridge.DenseDivRemComposition
+import BulksketchBridge.DenseDivRemFailures
+import BulksketchBridge.AffineSplitterEvaluation

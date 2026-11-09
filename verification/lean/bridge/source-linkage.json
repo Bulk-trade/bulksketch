@@ -526,6 +526,11 @@
       "path": "extraction/root-enumerate-affine/arithmetic.llbc",
       "sha256": "9e48e70b0d65df92e03b81b5bb47d14ba0ef976ca7a869c26bdb5a0ed60ccc07",
       "has_errors": false
+    },
+    {
+      "path": "extraction/dense-div-rem/arithmetic.llbc",
+      "sha256": "1e565faa140b2f226dc3652de37ee8dcc0bfd5de2894b692e05a207d4c1d8b0c",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1238,6 +1243,11 @@
       "native_item_id": "src/decode/roots.rs:321:method:bulksketch::decode::roots::Roots::enumerate_affine",
       "generated_declaration": "bulksketch.decode.roots.Roots.enumerate_affine",
       "generated_file": "bridge/Arithmetic/RootEnumerateGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:40:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::div_rem_into",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.div_rem_into",
+      "generated_file": "bridge/Arithmetic/DenseDivRemGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1855,6 +1865,16 @@
       "checker": "extraction/root-enumerate-affine/project.py",
       "declaration_count": 1,
       "scope": "Original affine enumeration wrapper, with original charge and advance and an explicit candidate enumeration slot."
+    },
+    {
+      "generated": "extraction/dense-div-rem/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseDivRemGenerated.lean",
+      "sha256": "8b8a2f298e58c3946adda864dff96ec9a461fdc555078a39e5d38d3e0121ba44",
+      "raw_sha256": "ff01ae4fd04edb6d80855af016bca20ca56777b4b7174a07386ce13ca87c737a",
+      "checker": "extraction/dense-div-rem/project.py",
+      "declaration_count": 15,
+      "scope": "Original unoutlined Dense div/rem entry and all six source loops, checked scoped translator, and existing arithmetic and mutable Zip bindings.",
+      "translator_variant": "checked-dense-div-rem-v1"
     }
   ],
   "reviewed_translator_variants": [
@@ -1947,6 +1967,15 @@
       "receipt": "extraction/dense-reducer-square/receipt.json",
       "mandatory_checks": true,
       "scope": "Exact cumulative Option join matcher, shared expansion owner guard, and shared-only level-1 erasure. Original mutable Zip writebacks retained."
+    },
+    {
+      "id": "checked-dense-div-rem-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/dense-div-rem/checked-dense-div-rem.patch",
+      "patch_sha256": "fbd95eba7f138b61635809eca867eca417b782b4f8701b39ca4c8e9038e4069c",
+      "receipt": "extraction/dense-div-rem/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact original Dense division LLBC. Checked Zip region and raw iterator ownership preflight, stock cleanup, and terminal seed by matching symbolic loan identity."
     }
   ],
   "diagnostic_generated_projections": [

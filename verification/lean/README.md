@@ -27,11 +27,11 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The bridge now has 126 original Aeneas generated-body refinements under
+The bridge now has 127 original Aeneas generated-body refinements under
 their recorded contracts. Five source-linked LLBC execution contracts are
 checked separately. The latest checkpoint covers the original root stage
-dispatcher, factor division, affine wrappers and subspace polynomials,
-and AVX square heap effects.
+dispatcher, Dense div/rem, factor division, affine wrappers and child
+cosets, and AVX square heap effects.
 Full native implementation contracts remain open.
 
 The [core proofs](BulksketchProofs.lean) and [generated-body bridge](bridge/README.md)

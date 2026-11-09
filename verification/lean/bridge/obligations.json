@@ -1088,6 +1088,18 @@
     {
       "challenge": "BulksketchBridge.AffineSubspaces.ActualSubspacesZeroSet",
       "theorem": "BulksketchBridge.AffineSubspaces.subspaces_zero_set"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseDivRem.ActualNativeDivRem",
+      "theorem": "BulksketchBridge.DenseDivRem.actual_native_div_rem"
+    },
+    {
+      "challenge": "BulksketchBridge.DenseDivRem.ActualRootDivideWithDivRem",
+      "theorem": "BulksketchBridge.DenseDivRem.original_root_divide_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineSplitter.ActualNativeSplitterChildren",
+      "theorem": "BulksketchBridge.AffineSplitter.native_splitter_children"
     }
   ],
   "refinements": [
@@ -3114,6 +3126,21 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact checked price, charge, candidate writes on both outcomes, bounded count update and original empty or popping advance. Explicit admitted inner candidate enumeration law."
+    },
+    {
+      "label": "Dense::div_rem_into [original source]",
+      "native_item_id": "src/poly/dense.rs:40:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::div_rem_into",
+      "source_line_span_sha256": "652099146c9a6a5447d64d5486eb740757a4b6d779e984ecc9e95e27b322800f",
+      "theorem": "BulksketchBridge.DenseDivRem.actual_native_div_rem",
+      "challenge": "BulksketchBridge.DenseDivRem.ActualNativeDivRem",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.div_rem_into",
+      "generated_file": "bridge/Arithmetic/DenseDivRemGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/DenseDivRemGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original raw initialization, descending factors and quotient, final reduction, normalized lengths and scratch under admitted bounds and backend laws. Separate checked model failure paths and original factor division composition.",
+      "translator_variant": "checked-dense-div-rem-v1"
     }
   ],
   "stateful_llbc_refinements": [

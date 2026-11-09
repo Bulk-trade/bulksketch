@@ -355,6 +355,11 @@ PROJECTIONS = [
      ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean",
       "bridge/Arithmetic/RebuiltLfsrTypes.lean", "bridge/Arithmetic/ReconstructionTypes.lean",
       "bridge/Arithmetic/WorkScheduleGenerated.lean", "bridge/Arithmetic/ClosedLeafGenerated.lean", "bridge/Workmeter/Types.lean"]),
+    ("dense-div-rem", "extraction/dense-div-rem/project.py", "extraction/dense-div-rem/receipt.json",
+     "extraction/dense-div-rem/Arithmetic/Funs.lean", "bridge/Arithmetic/DenseDivRemGenerated.lean",
+     "let (q2, raw2) ←", "let (raw2, q2) ←", "compiled direct Dense division projection differs",
+     None, None, ["extraction/dense-div-rem/checked-dense-div-rem.patch", "extraction/portable-xor/arithmetic.llbc",
+                  "bridge/Arithmetic/SliceKernelTypes.lean"]),
 ]
 
 
@@ -556,6 +561,15 @@ def main():
         if label == "root-enumerate-affine":
             cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
                           "checked capture or replay commands differ"))
+        if label == "dense-div-rem":
+            cases.extend([
+                ("wrong-llbc-mode", receipt_path, '"native_llbc_edited": false', '"native_llbc_edited": true',
+                 "invalid direct Dense division receipt"),
+                ("wrong-guard-diagnostic", receipt_path, "Unexpected Dense division terminal Zip provenance",
+                 "unexpected seed", "direct Dense division guard control differs: wrong_terminal"),
+                ("missing-checks", receipt_path, '"-checks"', '"-no-checks"',
+                 "direct Dense division control differs: stock"),
+            ])
         if label == "affine-splitter":
             cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
                           "affine splitter checked replay differs"))
@@ -568,7 +582,7 @@ def main():
                 shadow = Path(directory)
                 if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic", "closed-leaf", "deg34-normalize", "deg34-guard",
                              "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry", "root-divide", "root-run", "affine-splitter",
-                             "affine-subspaces", "root-prepare-affine", "root-enumerate-affine"}:
+                             "affine-subspaces", "root-prepare-affine", "root-enumerate-affine", "dense-div-rem"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

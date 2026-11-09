@@ -7325,7 +7325,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.DenseDivRem.actual_native_div_rem",
+        "scope": "Exact original raw initialization, descending factors and quotient, final reduction, normalized lengths and scratch under admitted bounds and backend laws. Separate checked model failure paths and original factor division composition.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/poly/dense.rs:7:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::mul_into",
@@ -11936,8 +11943,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. Original root dispatch, factor division, affine splitter, subspace table and preparation and enumeration wrappers checked under explicit contracts. Original div/rem proof linkage, lower-level affine kernels, depth-first traversal and decoder completeness, Rust pointer provenance and compiler/ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 126,
+    "note": "All 344 native executable obligations retained. Original Dense div/rem and its root factor-division composition check under admitted bounds and backend contracts. Original affine splitter output separates the child cosets under parent and independence premises. Lower-level affine kernels, depth-first traversal and decoder completeness, Rust provenance and compiler/ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 127,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12031,7 +12038,10 @@
         "BulksketchBridge.AffineSplitter.native_splitter_refines",
         "BulksketchBridge.AffineSubspaces.subspaces_zero_set",
         "BulksketchBridge.RootAffinePreparation.prepare_affine_refines",
-        "BulksketchBridge.RootEnumerate.enumerate_affine_refines"
+        "BulksketchBridge.RootEnumerate.enumerate_affine_refines",
+        "BulksketchBridge.DenseDivRem.original_gcd_laws",
+        "BulksketchBridge.DenseDivRem.original_root_divide_refines",
+        "BulksketchBridge.AffineSplitter.native_splitter_children"
       ]
     },
     "masked_memory_evidence": {
