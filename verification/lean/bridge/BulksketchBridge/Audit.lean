@@ -1,3 +1,5 @@
+import BulksketchBridge.RowWorkBudgetV3Complete
+import BulksketchBridge.NativeTraceNode
 import BulksketchBridge.AvxEncodeConcrete
 import BulksketchBridge.RequestPermission
 import BulksketchBridge.NativeTraceSearch
@@ -950,6 +952,14 @@ run_cmd do
       ``BulksketchBridge.RootRun.native_trace_gcd_division_ready),
     (``BulksketchBridge.RootRun.ActualNativeTraceSearch,
       ``BulksketchBridge.RootRun.native_trace_search),
+    (``BulksketchBridge.RootWorkBudget.ActualNativeV3U16RowBound,
+      ``BulksketchBridge.RootWorkBudget.native_v3_u16_row_bound),
+    (``BulksketchBridge.RootWorkBudget.ActualNativeMaxPreferredDegree,
+      ``BulksketchBridge.RootWorkBudget.native_max_preferred_degree),
+    (``BulksketchBridge.RootWorkBudget.ActualNativeCompleteV3RowBound,
+      ``BulksketchBridge.RootWorkBudget.native_complete_v3_row_bound),
+    (``BulksketchBridge.RootRun.ActualNativeTraceNode,
+      ``BulksketchBridge.RootRun.native_trace_node),
     (``BulksketchBridge.ExecutionDriver.ActualNativeVerificationStartFinish,
       ``BulksketchBridge.ExecutionDriver.native_verification_start_finish),
     (``BulksketchBridge.RowConfiguration.ActualRowBegin,

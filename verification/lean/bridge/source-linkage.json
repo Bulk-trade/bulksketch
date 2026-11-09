@@ -2023,6 +2023,11 @@
       "native_item_id": "src/sketch/input.rs:196:method:bulksketch::sketch::input::<DecodeRowsRequest < '_ , F > as RequestInput < F >>::permits_id",
       "generated_declaration": "bulksketch.sketch.input.DecodeRowsRequest.Insts.BulksketchSketchInputRequestInput.permits_id",
       "generated_file": "bridge/Arithmetic/RequestPermissionGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:331:method:bulksketch::decode::work::WorkScheduleV3::row_bound",
+      "generated_declaration": "bulksketch.decode.work.WorkScheduleV3.row_bound",
+      "generated_file": "bridge/Arithmetic/RowWorkBudgetV3Generated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -3167,6 +3172,27 @@
       "declaration_count": 2,
       "scope": "Both original request permission methods with exact shape, bucket, and slice boundaries.",
       "translator_variant": "checked-request-selective-lift-v1"
+    },
+    {
+      "generated": "extraction/row-work-budget-v1/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RowWorkBudgetV3Generated.lean",
+      "sha256": "ccce15fd71024dfda539c8c8cbf6c6d781781d194dbf2f5046bbd8a414d7ffde",
+      "raw_sha256": "d7c2c37fb260538b2c172e315aacd2f1ca51bc9b4321bb132451be35cc46c609",
+      "checker": "extraction/row-work-budget-v3/project.py",
+      "declaration_count": 1,
+      "explicit_callee_parameters": [
+        "sumCosts"
+      ],
+      "scope": "Exact original V3 row wrapper with explicit forwarding of the V2 sum callback."
+    },
+    {
+      "generated": "extraction/row-work-budget-v1/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/MaxAffineDegreeGenerated.lean",
+      "sha256": "0b6d1e7c7baccbbd17dc051831ec530a0b04f7e3d3ff3f20be4e7783ad0ade03",
+      "raw_sha256": "d7c2c37fb260538b2c172e315aacd2f1ca51bc9b4321bb132451be35cc46c609",
+      "checker": "extraction/max-affine-degree/project.py",
+      "declaration_count": 3,
+      "scope": "Exact original MAX_PREFERRED_DEGREE initializer and both emitted loop declarations."
     }
   ],
   "reviewed_translator_variants": [

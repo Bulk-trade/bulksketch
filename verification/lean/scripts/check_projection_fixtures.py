@@ -517,6 +517,15 @@ PROJECTIONS = [
      'extraction/sum-costs/Arithmetic/Funs.lean', 'bridge/Arithmetic/SumCostsGenerated.lean',
      '0#u64', '1#u64', 'active sum_costs source body changed', None, None,
      ['extraction/work-schedule/receipt.json', 'bridge/Arithmetic/WorkScheduleGenerated.lean']),
+    ('row-work-budget-v3',
+     'extraction/row-work-budget-v3/project.py', 'extraction/row-work-budget-v1/receipt.json',
+     'extraction/row-work-budget-v1/Arithmetic/Funs.lean', 'bridge/Arithmetic/RowWorkBudgetV3Generated.lean',
+     '671#u64', '672#u64', 'active original V3 row body changed', None, None, []),
+    ('max-affine-degree',
+     'extraction/max-affine-degree/project.py', 'extraction/row-work-budget-v1/receipt.json',
+     'extraction/row-work-budget-v1/Arithmetic/Funs.lean', 'bridge/Arithmetic/MaxAffineDegreeGenerated.lean',
+     'degree < 64#usize', 'degree < 18#usize', 'active original affine maximum body changed',
+     None, None, ['bridge/Arithmetic/RootSetupGenerated.lean']),
     ('row-work-budget-v2',
      'extraction/row-work-budget-v2/project.py', 'extraction/row-work-budget-v1/receipt.json',
      'extraction/row-work-budget-v1/Arithmetic/Funs.lean', 'bridge/Arithmetic/RowWorkBudgetV2Generated.lean',
@@ -788,7 +797,7 @@ def main():
             kwargs = {"kind": label.removeprefix("candidates-")}
         projection = projector.check(**kwargs)
         originals[label] = (projection["source_declarations_retained_with_explicit_callee"]
-                            if label == "row-work-budget-v2" else projection["source_declarations_retained_verbatim"])
+                            if label in {"row-work-budget-v2", "row-work-budget-v3"} else projection["source_declarations_retained_verbatim"])
         receipt = json.loads((ROOT / receipt_path).read_text())
         files = [receipt_path, active_path, "bridge/Arithmetic/Types.lean", "bridge/Arithmetic/Funs.lean"]
         artifact_key = next(key for key in ("files_sha256", "artifacts", "generated") if key in receipt)

@@ -325,6 +325,14 @@ masked-memory contracts. The original frozen shape accessor and both
 request permission methods supply the native publication predicate for
 ordinary and independent borrowed rows.
 
+The admitted original V3 row work wrapper now derives its verification
+and affine prices, computes the original maximum preferred degree of
+18, and checks every reserve guard and cumulative overflow in source
+order. Its V2 call is bound to the original ordered sum. The non-affine
+search and both paid division charges form one exact node trace,
+preserve both child trace histories and fit the original node envelope
+with the table allowance.
+
 Run the complete gate from `verification/lean`.
 
 ```sh

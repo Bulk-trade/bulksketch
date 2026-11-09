@@ -27,7 +27,7 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The bridge now has 226 original Aeneas generated-body refinements under
+The bridge now has 227 original Aeneas generated-body refinements under
 their recorded contracts. Five source-linked LLBC execution contracts are
 checked separately. The latest checkpoint covers the original root stage
 dispatcher, Dense div/rem, factor division, affine enumeration

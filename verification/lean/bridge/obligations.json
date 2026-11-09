@@ -2056,6 +2056,22 @@
     {
       "challenge": "BulksketchBridge.RootRun.ActualNativeTraceSearch",
       "theorem": "BulksketchBridge.RootRun.native_trace_search"
+    },
+    {
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeV3U16RowBound",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_v3_u16_row_bound"
+    },
+    {
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeMaxPreferredDegree",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_max_preferred_degree"
+    },
+    {
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeCompleteV3RowBound",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_complete_v3_row_bound"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceNode",
+      "theorem": "BulksketchBridge.RootRun.native_trace_node"
     }
   ],
   "refinements": [
@@ -5511,6 +5527,20 @@
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Original borrowed request checks row bounds then uses that row's local shape and bucket zero.",
       "translator_variant": "checked-request-selective-lift-v1"
+    },
+    {
+      "label": "WorkScheduleV3::row_bound [original admitted source]",
+      "native_item_id": "src/decode/work.rs:331:method:bulksketch::decode::work::WorkScheduleV3::row_bound",
+      "source_line_span_sha256": "00edf503f032458dc0513f7c83587674447b3caf73aa97b44aae34600d18217f",
+      "challenge": "BulksketchBridge.RootWorkBudget.ActualNativeV3U16RowBound",
+      "theorem": "BulksketchBridge.RootWorkBudget.native_v3_u16_row_bound",
+      "generated_declaration": "bulksketch.decode.work.WorkScheduleV3.row_bound",
+      "generated_file": "bridge/Arithmetic/RowWorkBudgetV3Generated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowWorkBudgetV3Generated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "All original guard combinations and cumulative overflow exits at admitted u16 capacity, budget and output dimensions, exact V2 result, and derived native Verify/VerifyLfsr and affine price quotes."
     }
   ],
   "stateful_llbc_refinements": [

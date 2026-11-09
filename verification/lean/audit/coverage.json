@@ -6602,7 +6602,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RootWorkBudget.native_v3_u16_row_bound",
+        "scope": "All original guard combinations and cumulative overflow exits at admitted u16 capacity, budget and output dimensions, exact V2 result, and derived native Verify/VerifyLfsr and affine price quotes.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/field/frobenius.rs:22:function:bulksketch::field::frobenius::inverse21",
@@ -12649,7 +12656,7 @@
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
     "note": "All 344 native executable obligations retained. Original row driver dispatch, default wire XOR, ordered publication and proper factor-tree budget are checked. AVX, PCLMUL and Portable rebuilt verification compose at all admitted GF64 degrees. Concrete Portable and PCLMUL dictionaries select the checked callbacks. The original ordered sum-cost fold now supplies the V1 row envelope's explicit callback. V2 verifies both checked probe reserves. Global traversal readiness and exact charged-run accounting, remaining admission and wire/API bindings, Rust provenance and compiler-to-ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 226,
+    "checked_generated_body_refinements_under_recorded_TCB": 227,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12706,19 +12713,22 @@
       ],
       "native_row_work_with_sum": [
         "BulksketchBridge.RootWorkBudget.native_v1_row_bound_with_sum",
-        "BulksketchBridge.RootWorkBudget.native_v2_row_bound_with_sum"
+        "BulksketchBridge.RootWorkBudget.native_v2_row_bound_with_sum",
+        "BulksketchBridge.RootWorkBudget.native_complete_v3_row_bound"
       ],
       "native_recovered_support_finish": "BulksketchBridge.ExecutionDriver.native_recovered_support_finish",
       "native_nonaffine_paid_trace_search": [
         "BulksketchBridge.RootRun.native_trace_search_prices",
         "BulksketchBridge.RootRun.native_trace_attempt_charges",
         "BulksketchBridge.RootRun.native_trace_gcd_division_ready",
-        "BulksketchBridge.RootRun.native_trace_search"
+        "BulksketchBridge.RootRun.native_trace_search",
+        "BulksketchBridge.RootRun.native_trace_node"
       ],
       "native_avx_full_encoder": [
         "BulksketchBridge.AvxEncodeEntry.concrete_native_avx_encoding",
         "BulksketchBridge.ExecutionDriver.native_avx_paid_verification_concrete_encoder"
-      ]
+      ],
+      "max_preferred_degree_initializer": "BulksketchBridge.RootWorkBudget.native_max_preferred_degree"
     },
     "reconciliation_algebra_evidence": {
       "sparse_support_uniqueness": "BulksketchBridge.Reconciliation.gf64_sparse_support_unique",
