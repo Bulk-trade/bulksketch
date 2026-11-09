@@ -1,0 +1,227 @@
+{
+  "variant": "checked-canonicalize-slice-pattern-v1",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "source_sha256": {
+    "src/decode/stages.rs": "93825fcb5054e98e9af060a81da72d4770c29354d79822ccfc949cc55f6e9b23"
+  },
+  "native_source_edited": false,
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "variant": "0efaed9c7d3221e50a33dd49850d8ebee5585a8903c20d6e76005cbe56b6e444"
+  },
+  "capture": {
+    "charon": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/linked-split-plain/arithmetic.llbc",
+      "--start-from=bulksketch::decode::stages::_::canonicalize",
+      "--opaque=core::slice::_::sort_unstable",
+      "--start-from=bulksketch::decode::affine::subspaces",
+      "--no-dedup-serialized-ast",
+      "--",
+      "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked",
+      "--offline",
+      "--target",
+      "x86_64-apple-darwin"
+    ],
+    "aeneas": [
+      "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/linked-split-plain/stock",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/linked-split-plain/arithmetic.llbc"
+    ],
+    "env": {
+      "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+      "CARGO_TARGET_DIR": "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/linked-split-plain/target",
+      "CARGO_NET_OFFLINE": "true"
+    },
+    "capture": 0,
+    "translation": 1
+  },
+  "primary": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/aeneas-canonicalize/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/variant/disjoint-diagnostic",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/linked-split-plain/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "input_sha256": "2dfff6b5a2cec785e9ec3ff19ba2faaace9228773d03dc211f32480a4aa5b0d8",
+    "output_sha256": {
+      "Funs.lean": "716bb06cc8681c3d43cd53d435a16f5e5e290426af638cbb32eb77365e5f9671",
+      "FunsExternal_Template.lean": "328454fccddb45724fc86e5dff9293a5a138f29bb509563806f10823fbcababc",
+      "Types.lean": "d2c265e1000f6cecf9ef58ede564b9dae8bad42265441ef8252fc87611bd6212",
+      "TypesExternal_Template.lean": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d"
+    }
+  },
+  "controls": {
+    "checked-replay": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/aeneas-canonicalize/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/variant-controls/checked-replay/disjoint-diagnostic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/linked-split-plain/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "2dfff6b5a2cec785e9ec3ff19ba2faaace9228773d03dc211f32480a4aa5b0d8",
+      "log_sha256": "931640e6cf67ee2ed7c77e6c0d34a99890a2d1b290ce4d5e327822c0735ef7c7",
+      "output_sha256": {
+        "Funs.lean": "716bb06cc8681c3d43cd53d435a16f5e5e290426af638cbb32eb77365e5f9671",
+        "FunsExternal_Template.lean": "328454fccddb45724fc86e5dff9293a5a138f29bb509563806f10823fbcababc",
+        "Types.lean": "d2c265e1000f6cecf9ef58ede564b9dae8bad42265441ef8252fc87611bd6212",
+        "TypesExternal_Template.lean": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d"
+      }
+    },
+    "stock": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/variant-controls/stock/disjoint-diagnostic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/linked-split-plain/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "2dfff6b5a2cec785e9ec3ff19ba2faaace9228773d03dc211f32480a4aa5b0d8",
+      "log_sha256": "c9cfb104e6a5af5c47d0b0762d200cfe282804fbdc3a2e96cf023a1c47756f4e",
+      "output_sha256": {
+        "Funs.lean": "a052673ee0fc63ebabb8067d4d86809ae9b261a2e92f0e950b6eaa04d7b63738",
+        "FunsExternal_Template.lean": "328454fccddb45724fc86e5dff9293a5a138f29bb509563806f10823fbcababc",
+        "Types.lean": "d2c265e1000f6cecf9ef58ede564b9dae8bad42265441ef8252fc87611bd6212",
+        "TypesExternal_Template.lean": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d"
+      }
+    },
+    "wrong-guard": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/aeneas-canonicalize/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/variant-controls/wrong-guard/disjoint-diagnostic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/controls/wrong-guard.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "dc6682971c26c6cd15cb0b7a9d6d498568a2a5a8d96eac022053112064c0852f",
+      "log_sha256": "f0ef11aa34c990e02ea2803b1a1fe955b167840cfcdc216d758ba0af1725a316",
+      "output_sha256": {
+        "Funs.lean": "1033cddcca8814970f2108c8af21a5d36a77bb4d96f937042bc5d6ca6f2d7017",
+        "FunsExternal_Template.lean": "9ef08933801e003d5847e77ad31a851d606da6192e8fbe008f5c235523188bba",
+        "Types.lean": "4db9965ab01f2232df39a43bd3a89e2f4ae118a95a3c82b163bafbe1bc054608",
+        "TypesExternal_Template.lean": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d"
+      }
+    },
+    "unchecked": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/aeneas-canonicalize/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/variant-controls/unchecked/disjoint-diagnostic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/linked-split-plain/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "2dfff6b5a2cec785e9ec3ff19ba2faaace9228773d03dc211f32480a4aa5b0d8",
+      "log_sha256": "34a3b063d4b14d6b7cb76c30842189c9c4de4cd8d737633b1a4c223dbc337d35",
+      "output_sha256": {
+        "Funs.lean": "8ffc9d3ecf973ff33cd7ac55e18046ef5812b2abc2b30f7ef7a29dd993bb90f2",
+        "FunsExternal_Template.lean": "c2140c396e29b3cb3fd42eb6113cd724ea0aacb2a93fc67b84ee71c2bc7b2ba7",
+        "Types.lean": "d2c265e1000f6cecf9ef58ede564b9dae8bad42265441ef8252fc87611bd6212",
+        "TypesExternal_Template.lean": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d"
+      }
+    },
+    "unrelated": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/aeneas-canonicalize/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-canonicalize/variant-controls/unrelated/stock",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-insert18/horizontal/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "c88e1b3c662ffaa9ada126b793098e2689c4e6fba6038c37e5ac108ef048bd9a",
+      "log_sha256": "b57026367772a84d083a5a0aab6a1bb7b94933fef4b2630078b65a39bb8c7108",
+      "output_sha256": {
+        "Funs.lean": "5d644bb10295a54e4f40a184805b4a579f6c10e8c0e8043921ca7b938644275a",
+        "FunsExternal_Template.lean": "7542934cb77a1763da034140e9e6ddc58b1d5abea2977b7cb2498b04c9b6e433",
+        "Types.lean": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+        "TypesExternal_Template.lean": "bc4d496196b2ec6aabc718d1d482d70aaac93aa2446ea030a5a361f2380d1938"
+      }
+    }
+  },
+  "artifacts": {
+    "extraction/canonicalize/Arithmetic/Funs.lean": "716bb06cc8681c3d43cd53d435a16f5e5e290426af638cbb32eb77365e5f9671",
+    "extraction/canonicalize/Arithmetic/FunsExternal_Template.lean": "328454fccddb45724fc86e5dff9293a5a138f29bb509563806f10823fbcababc",
+    "extraction/canonicalize/Arithmetic/Types.lean": "d2c265e1000f6cecf9ef58ede564b9dae8bad42265441ef8252fc87611bd6212",
+    "extraction/canonicalize/Arithmetic/TypesExternal_Template.lean": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d",
+    "extraction/canonicalize/arithmetic.llbc": "2dfff6b5a2cec785e9ec3ff19ba2faaace9228773d03dc211f32480a4aa5b0d8",
+    "extraction/canonicalize/charon.log": "89203a0f3c0da2bd4aa7308812425992943967a7cd985205e8badb0df829dabb",
+    "extraction/canonicalize/checked-canonicalize-slice.patch": "1cb0a6cd754a7385d5e12b30854da83252c3f96b9f509fb2cde93f5bc5a00700",
+    "extraction/canonicalize/checked-replay.log": "931640e6cf67ee2ed7c77e6c0d34a99890a2d1b290ce4d5e327822c0735ef7c7",
+    "extraction/canonicalize/checked.log": "588233c00ba0603947b97905329f16e8bfd7fe327f200c7c4421a0170f88e0e6",
+    "extraction/canonicalize/stock.log": "c9cfb104e6a5af5c47d0b0762d200cfe282804fbdc3a2e96cf023a1c47756f4e",
+    "extraction/canonicalize/unchecked.log": "34a3b063d4b14d6b7cb76c30842189c9c4de4cd8d737633b1a4c223dbc337d35",
+    "extraction/canonicalize/unrelated.log": "b57026367772a84d083a5a0aab6a1bb7b94933fef4b2630078b65a39bb8c7108",
+    "extraction/canonicalize/wrong-guard.log": "f0ef11aa34c990e02ea2803b1a1fe955b167840cfcdc216d758ba0af1725a316"
+  },
+  "variant_id": "checked-canonicalize-slice-pattern-v1",
+  "variant_patch": "extraction/canonicalize/checked-canonicalize-slice.patch",
+  "variant_patch_sha256": "1cb0a6cd754a7385d5e12b30854da83252c3f96b9f509fb2cde93f5bc5a00700",
+  "base_sources": {
+    "src/PrePasses.ml": "ae752eeef3227b7566611fa7d3ace71fd64fbf24c088bc7ce16699a243772165"
+  },
+  "modified_sources": {
+    "src/PrePasses.ml": "90a91b60ab148d73a5589b7195e6528dadb0a69e7b91fedb87d4ec8340de57d5"
+  }
+}

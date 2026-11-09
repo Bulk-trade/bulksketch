@@ -501,6 +501,10 @@ def check_dense_reducer_variant(variant, receipt, runtime, runtime_head, linkage
             "extraction/candidates/", "checked-candidates-nested-return.patch", {"src/PrePasses.ml"}),
         "checked-completed-result-frozen-shared-v1": (
             "extraction/completed-result/", "checked-completed-result-frozen-shared.patch", {"src/interp/InterpJoin.ml"}),
+        "checked-finish-return-boundary-v1": (
+            "extraction/native-finish/", "checked-finish-return-boundary.patch", {"src/PrePasses.ml"}),
+        "checked-canonicalize-slice-pattern-v1": (
+            "extraction/canonicalize/", "checked-canonicalize-slice.patch", {"src/PrePasses.ml"}),
         "checked-native-deflate-loan-retry-v1": (
             "extraction/native-deflate/", "checked-native-deflate-loan-retry.patch",
             {"src/interp/InterpMatchCtxs.ml"}),
@@ -706,7 +710,8 @@ def main():
         if variant["id"] in {"checked-dense-reducer-option-v1", "checked-dense-reducer-square-v1",
                             "checked-dense-div-rem-v1", "checked-affine-outer-continue-v1",
                             "checked-affine-multiple-zip-ends-v1", "checked-native-deflate-loan-retry-v1",
-                            "checked-candidates-nested-return-v1", "checked-completed-result-frozen-shared-v1"}:
+                            "checked-candidates-nested-return-v1", "checked-completed-result-frozen-shared-v1",
+                            "checked-finish-return-boundary-v1", "checked-canonicalize-slice-pattern-v1"}:
             check_dense_reducer_variant(variant, receipt, runtime, runtime_head, linkage)
             result, _ = run(variant["id"] + "-patch-applies", ["git", "apply", "--check",
                             str(ROOT / variant["patch"])], timeout=30, cwd=runtime)

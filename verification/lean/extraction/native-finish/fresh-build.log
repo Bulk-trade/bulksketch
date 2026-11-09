@@ -1,0 +1,4 @@
+Entering directory '/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/finish-stock/final-finish-tool/src'
+2026-11-09 12:30:07.953 xcodebuild[22771:6454305]  DVTFilePathFSEvents: Failed to start fs event stream.
+2026-11-09 12:30:08.105 xcodebuild[22771:6454302] [MT] DVTDeveloperPaths: Failed to get length of DARWIN_USER_CACHE_DIR from confstr(3), error = Error Domain=NSPOSIXErrorDomain Code=5 "Input/output error". Using NSCachesDirectory instead.
+Leaving directory '/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/finish-stock/final-finish-tool/src'

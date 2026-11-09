@@ -5638,7 +5638,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.CanonicalizeWrapper.canonicalize_refines",
+        "scope": "Exact source work charge and budget rejection, length-two swap, unsigned ordering, mask and adjacent-duplicate checks, and selected root prefix writeback. Standard library sort remains an explicit contract.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:408:method:bulksketch::decode::stages::<Execution < F , K > as RowExecution>::next_stage",
@@ -5712,7 +5719,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.ExecutionFinish.native_finish",
+        "scope": "Exact original drain under a finite native driver trace, including error precedence, terminal result and composition of workspace callbacks.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:454:function:bulksketch::decode::stages::check_workspace",
@@ -8181,7 +8195,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.CandidateNormalization.native_candidate_normalize",
+        "scope": "Exact shared candidate normalization under the bucket and scratch bounds, through stable merge, distinct nonzero packing, and each row accessor.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/candidates.rs:75:function:bulksketch::sketch::candidates::normalize_rows",
@@ -10801,7 +10822,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.CandidateNormalization.native_candidate_bucket",
+        "scope": "Exact checked modulo routing and usize/u64 conversions for every word and positive bucket count.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/shape.rs:113:method:bulksketch::sketch::shape::SketchShape < F >::permits_id",
@@ -12158,8 +12186,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. The original completed-result wrapper returns the exact shared root slice. Native root transitions preserve the active and emitted factor product at entry, divide and emission under their local assumptions, and the same-degree control ranking is checked. Complete traversal invariant induction, caller normalization, canonicalization, remaining backend bodies, Rust provenance and compiler-to-ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 156,
+    "note": "All 344 native executable obligations retained. Original shared candidate normalization, bucket routing, canonicalization and finish are checked under their exact local contracts. Native divide and reducer preserve the locator and traversal invariant with separate affine table framing. Full traversal induction, work-budget termination, row-local normalization, wire/API composition, remaining backend bodies, Rust provenance and compiler-to-ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 160,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12317,7 +12345,14 @@
         "BulksketchBridge.RootRun.native_reducer_preparation",
         "BulksketchBridge.ExecutionDriver.native_root_driver_return",
         "BulksketchBridge.RootRun.traversal_rank_decreases",
-        "BulksketchBridge.RootRun.gcd_outcome_phase_step"
+        "BulksketchBridge.RootRun.gcd_outcome_phase_step",
+        "BulksketchBridge.ExecutionFinish.native_finish",
+        "BulksketchBridge.CanonicalizeWrapper.canonicalize_refines",
+        "BulksketchBridge.CandidateNormalization.native_candidate_normalize",
+        "BulksketchBridge.CandidateNormalization.native_candidate_bucket",
+        "BulksketchBridge.RootDivide.native_proper_divide_invariant",
+        "BulksketchBridge.RootRun.native_reducer_invariant",
+        "BulksketchBridge.CompletedResult.native_completed_locator"
       ]
     },
     "masked_memory_evidence": {

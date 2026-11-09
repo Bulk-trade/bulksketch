@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "d8ceab0ed0b02ce7d80836b29ae55f830b7b622f00120945708c18fb0fef572a",
+    "bridge/BulksketchBridge/Audit.lean": "0e94dc1cea9b42a4b4ce366d61e9a02ea17abbad58a9aaaaa76eb7779f893c8e",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,9 +13,9 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "5a8f7a04c1097677d33acea82b88336e1d50e9e7882fe3a9eeae35353c07c3c2",
-    "audit/frozen-inputs.json": "32631528291229298bf7ad61c9d4c2e9f9ee4e466c17d3aae4f625013c4b28d2",
-    "bridge/BulksketchBridge.lean": "b696b514880bc6323e0dccba6db065c1ab3e6a03a8ac493651ae3b63f5268395",
+    "scripts/verify_bridge.py": "e487ca306dc0577d3cf480fba920fe3df38af4e3b9da69870869406d90e0cecf",
+    "audit/frozen-inputs.json": "7c0fbddc54480579c2578cda02288602a9d43d02d0a0fb5923b8c7474c44c93e",
+    "bridge/BulksketchBridge.lean": "8fb4be7d4a0bc8e78513dd3082a9a419ae8a11955887aaf8d61946ea227da693",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "d18e2e8d9a55e26abfeae446abc5697f60b94dc862a7f1bb099e9be77f6e0203",
-    "bridge/obligations.json": "1f091ebcd94d809958a5aa18cbbafee73890b13ab21f414ab1dfdb08ee8471f3",
+    "bridge/source-linkage.json": "4b30681b941ba08e3628467e0a36a7f9367343935911fec41bf597d01c313250",
+    "bridge/obligations.json": "20e7a4163f006d12980a66a9f452cf9be95f4775eac0ac14d79cf097f37790d2",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "b549eaee8117e367e7a1e221af0d16fe7c4cddeac2633aa32b470ad35c0b54bd",
+    "scripts/check_projection_fixtures.py": "beed7da2f0964168a161dac591c4d41bbb003f2c21ca876baf716439a5e995a6",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "0be2963a92222a6c845b579c4238a3733627735210659feaa7cc07059e7c263f",
+    "README.md": "19c71e53a19ae17ecd8b1fcc47edade44207cbbbdbf7a3bb5d54675c771dfb2b",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "b37741d4a984d823d71697560d000081cc60ff8c45af4490bea057643546b87b",
+    "audit/coverage.json": "92b66d7e87ce37b592fecd750c62162bceb60f9fc8de2e054c82cebd725b43fa",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "48faece86d6444b119311f0d2df1f12d5e06223936b67549a6304f387523bd99",
-    "audit/native-root-run-checkpoint.json": "124990d614e42856604ac9294355f847f2e3afff92ed23e7a418eb089ce9d80a",
+    "NATIVE_ROOT_RUN.md": "e83e391ea7d2c9c371870173f2407dcdb72164988711b48effe1e85e37d810f5",
+    "audit/native-root-run-checkpoint.json": "985e37c6646d9713bc1c99f806dddb2c140028e7dbc2619b1be5d20ce10c69e4",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1501,7 +1501,7 @@
     "bridge/BulksketchBridge/AvxInsertionBasesTableLaw.lean": "26f8328f375ed54763c21bdee86975259ceab876febf09023ca027671f014e60",
     "bridge/BulksketchBridge/RootDivideArena.lean": "d8c342b2a6d0ea787afe2c746524119e9d8410ef4eea47698abdb3c3fd68be20",
     "bridge/BulksketchBridge/RootDivideGcdExact.lean": "127554dc671f20e9bec6969a582f473326a1cd82d8a13ea14568edff1e0ff9cd",
-    "bridge/BulksketchBridge/RootNativeProperDivide.lean": "6b2490e3f76e7858488f18634e0020b801fc31e4583ecfd41b1a61fdb2f5eb42",
+    "bridge/BulksketchBridge/RootNativeProperDivide.lean": "6fd71a7fac68bae351a8db81b899db46e7e8068f17ecc0cace98202901baa35d",
     "bridge/BulksketchBridge/RootTraceProgress.lean": "78ac4692236f9c055a757bf7dc518801d0bafa2e4ffe53c9966ba1227bb7d9c3",
     "bridge/BulksketchBridge/RootTraversalPotential.lean": "749a1c5d868f65aa025db9b9176a3e996bc36b0a2ffb829608ded0a9050b558a",
     "extraction/avx-insertion-bases-static/Arithmetic/Funs.lean": "e803915a0b577be92377c0c58f5eb438a1cb298c53631f592a31b2ee338f0ce3",
@@ -1703,7 +1703,76 @@
     "extraction/completed-result/strict-joins.log": "a4045356b4e0382c2fb1e9a73e754347d19a1ff6f00b6e457ed1677486d37e4f",
     "extraction/completed-result/unchecked.log": "56bdc8788881a32d67ef0d69f716bdf5a4098e2663030042877cd7eef4066dda",
     "extraction/completed-result/wrong-site.log": "135db7b526a53529043960c11b8ccb82962e2dda7ade27d07c4f2bde3f22abcd",
-    "extraction/completed-result/wrong-workspace.log": "03983c49a1a69be85fb2156ac022cb56f0e54dda757fb45e34af58512411445b"
+    "extraction/completed-result/wrong-workspace.log": "03983c49a1a69be85fb2156ac022cb56f0e54dda757fb45e34af58512411445b",
+    "bridge/Arithmetic/CandidateCompactGenerated.lean": "d259a42979c247fb9f5691e7a9e9401d8cd9f2e2dfdff54742386ec557353d75",
+    "bridge/Arithmetic/CandidateMergeGenerated.lean": "12a1721defe3ba454a9ae3ee49e799492b054f8601fc881a8ebb35b21f956f3a",
+    "bridge/Arithmetic/CanonicalizeGenerated.lean": "bbd3ad2702570ec63cb096472f3926b5fc8016a9a878f0d7acb0e4ba3bb6037b",
+    "bridge/Arithmetic/FinishGenerated.lean": "8990d00ac1a73cb613f727d7221dd6158f0ad2db49cd13b60007714c0b25971a",
+    "bridge/BulksketchBridge/CandidateBucket.lean": "a885caf9c9739de25f466a7a9d6329031b0e47cdde276e1cd134d8d5dffeab0b",
+    "bridge/BulksketchBridge/CandidateCompactMeaning.lean": "80be0073d164f69e85e51a0bc0bcc33089945a27faca9fa27890506726eeac30",
+    "bridge/BulksketchBridge/CandidateCompactNative.lean": "4e203c61e2d8de3ebd00b5ddd7aeb9a683dc22ce08bdabce46b9ef247181ce6c",
+    "bridge/BulksketchBridge/CandidateCompactWords.lean": "32eeb5d2201848c9689f47265104163ba2bbad88869ebe4440f9a456fdf998d2",
+    "bridge/BulksketchBridge/CandidateHistogram.lean": "93bb2d4790ca679a1abb8313daf4c086374ffd5ee70ccad2e8b7b071a7c239ff",
+    "bridge/BulksketchBridge/CandidateMergeBlock.lean": "59641c412be2c2eb0ad45502534ab6ed11b530873cf72443e478a49bdb158033",
+    "bridge/BulksketchBridge/CandidateMergeInner.lean": "f9b6525cd89c14598ccd7dc18754d3bc3fe8196d33e817ae6e729897b4fe9c8a",
+    "bridge/BulksketchBridge/CandidateMergeOrder.lean": "584cb5ed924e74459d4f18327934b34e64af6f483f73cbafee4b3b789119c88e",
+    "bridge/BulksketchBridge/CandidateMergePassMath.lean": "3a2d2078c9f306a96d8a5cbe3843d2407dea8474ef12408d117cc1bed0c19260",
+    "bridge/BulksketchBridge/CandidateMergeSort.lean": "88bd8a4c201ad7414ef791e6bdfb48b375f2b2aad1456e6cb80d33c241df0f23",
+    "bridge/BulksketchBridge/CandidateNormalize.lean": "311ec55239e864628f732f25d5ab8edbebf6dd220b553203308028a60033a22f",
+    "bridge/BulksketchBridge/CandidateOffsets.lean": "88d26edab85e07406175572be202dd0159d842e70e9ffb233cfb1eeee423f44a",
+    "bridge/BulksketchBridge/CanonicalizeOrdering.lean": "34ff9c50f8be1d228fb3a1c33a7a3ef7f9615c80e68c73b438554f9faad163c2",
+    "bridge/BulksketchBridge/CanonicalizePrice.lean": "118afb9b4154b9050735346387274d6ce08379f7b7f7f06b0127923f0a6d2718",
+    "bridge/BulksketchBridge/CanonicalizeWrapper.lean": "ad29265492bef2704c3883dd399a139ef178fb324ce521b0d04b233bbd0e311b",
+    "bridge/BulksketchBridge/CompletedLocator.lean": "3297a0e3179ef417409fc33261c36cafefcd0b99b35a9c5941d3b84f0d2a6337",
+    "bridge/BulksketchBridge/NativeExecutionFinish.lean": "2e206dceb0618ccc790146766ba0e818809614e450ab47654908cac3693e958b",
+    "bridge/BulksketchBridge/RootAffineTableFrame.lean": "ddcf9de5312c246a9d4982bad60b5bd343562e62a176144198f68a59eec0b14f",
+    "bridge/BulksketchBridge/RootDivideInvariant.lean": "456f67cf3097bbd3bfbf215102e3c53c2c029a91b7f05a0f1e8bf214704986cf",
+    "bridge/BulksketchBridge/RootReducerInvariant.lean": "d4e3fe3841e2f452c55cbbaa5d2a890db07acf9c5af56b6e1a117ad8f9b658fd",
+    "bridge/BulksketchBridge/RootTraversalInvariant.lean": "58bdb3d34d1f0378fb2810b29a41adee8019b10249bcb6bdb1cc6064beb9a5fc",
+    "extraction/candidate-normalize/Arithmetic/Funs.lean": "4a61e533b878876bf78057c02ddbd540e2f8d9b2ce356edc3a450fc4fb3c7011",
+    "extraction/candidate-normalize/Arithmetic/FunsExternal_Template.lean": "7c771e1d10f5df8ca4541ca1255bd7ab521c91b84a159d3b11a6e7c228e8b4f7",
+    "extraction/candidate-normalize/Arithmetic/Types.lean": "2518484fd1c94d8442e510b34c506e05f7164c1b6cae11be4bbf1c8f621e9f30",
+    "extraction/candidate-normalize/README.md": "b77354948f723227055ac55f378d0c68190e35ca68178693fe05295835e48fd2",
+    "extraction/candidate-normalize/aeneas.log": "e274fec90e9b29a12b3fe05239609e6e0365c861f6df7913cdcfa8e3bca27882",
+    "extraction/candidate-normalize/arithmetic.llbc": "c0fe7095635029e3127680b0b0d7c5ad692588b875660d8f4f420608bc930999",
+    "extraction/candidate-normalize/charon.log": "520d0d407895c89bb2ac2c971a941db041910c7a1d0b4d3ad538332148b38b91",
+    "extraction/candidate-normalize/project.py": "d5627a5a3bf09d4c198639b8176e56d0552ed5b80438c772ae059e3600e4c111",
+    "extraction/candidate-normalize/receipt.json": "3b99ba59f1b5a1a683e93e0b97edb885f2f5acc754a2d43e1c0170ff18d4bcbb",
+    "extraction/candidate-normalize/replay.log": "3bcc91a3af6bb7396898ccf0e84f4821211b3c755bd335bae3120e1f7dd8c125",
+    "extraction/canonicalize/Arithmetic/Funs.lean": "716bb06cc8681c3d43cd53d435a16f5e5e290426af638cbb32eb77365e5f9671",
+    "extraction/canonicalize/Arithmetic/FunsExternal_Template.lean": "328454fccddb45724fc86e5dff9293a5a138f29bb509563806f10823fbcababc",
+    "extraction/canonicalize/Arithmetic/Types.lean": "d2c265e1000f6cecf9ef58ede564b9dae8bad42265441ef8252fc87611bd6212",
+    "extraction/canonicalize/Arithmetic/TypesExternal_Template.lean": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d",
+    "extraction/canonicalize/arithmetic.llbc": "2dfff6b5a2cec785e9ec3ff19ba2faaace9228773d03dc211f32480a4aa5b0d8",
+    "extraction/canonicalize/charon.log": "89203a0f3c0da2bd4aa7308812425992943967a7cd985205e8badb0df829dabb",
+    "extraction/canonicalize/checked-canonicalize-slice.patch": "1cb0a6cd754a7385d5e12b30854da83252c3f96b9f509fb2cde93f5bc5a00700",
+    "extraction/canonicalize/checked-replay.log": "931640e6cf67ee2ed7c77e6c0d34a99890a2d1b290ce4d5e327822c0735ef7c7",
+    "extraction/canonicalize/checked.log": "588233c00ba0603947b97905329f16e8bfd7fe327f200c7c4421a0170f88e0e6",
+    "extraction/canonicalize/project.py": "123599d85510d88b7614b21686929eb4ce4be50bbd9349d36a13ff73266f41f1",
+    "extraction/canonicalize/receipt.json": "18460f0d8588ef5253bb173ad12ceafd3dcb5f53c2d90cb202037334883e9d89",
+    "extraction/canonicalize/stock.log": "c9cfb104e6a5af5c47d0b0762d200cfe282804fbdc3a2e96cf023a1c47756f4e",
+    "extraction/canonicalize/unchecked.log": "34a3b063d4b14d6b7cb76c30842189c9c4de4cd8d737633b1a4c223dbc337d35",
+    "extraction/canonicalize/unrelated.log": "b57026367772a84d083a5a0aab6a1bb7b94933fef4b2630078b65a39bb8c7108",
+    "extraction/canonicalize/wrong-guard.log": "f0ef11aa34c990e02ea2803b1a1fe955b167840cfcdc216d758ba0af1725a316",
+    "extraction/native-finish/Arithmetic/Funs.lean": "c64f8a5741fb3879c03eeaca9b6aa8321f529fa9796ace98edd464d1986a0e60",
+    "extraction/native-finish/Arithmetic/FunsExternal_Template.lean": "1a9a5cc4c36f3314662b4f1612ad3a91bb53bcb2ddbe13deb1bb39c113cdd32c",
+    "extraction/native-finish/Arithmetic/Types.lean": "86fd0f48a0fd8b1e1f3b231bedafc7b956fec0748cbc2b76c1a5ed24b7d643ea",
+    "extraction/native-finish/README.md": "430d82db4326b7363ab445f04ac563c23c8f11af3e56b933e403a17f804c82ec",
+    "extraction/native-finish/arithmetic.llbc": "2a219e0dd210872071b3fa71ed3452482dfbad41c82fa176fd0913bc5f34b097",
+    "extraction/native-finish/charon.log": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828",
+    "extraction/native-finish/checked-finish-return-boundary.patch": "8dff3576cb08a725098b0605e85802752054e98aad35d30c14dd87270f3b32ae",
+    "extraction/native-finish/checked.log": "c56df70b95e297365b8cd0f255289b8a00b207a2af818192114bfb72f3a83326",
+    "extraction/native-finish/finish_controls.py": "b2ed5a687002fa3ef0b9735caa7183e9f0fc5915b63329aa6dd677f53b6adefd",
+    "extraction/native-finish/flag-off.log": "dfef941ded3b9f38a8b358dd933cef2a641b353f87a3bb65102c461f8803c2cd",
+    "extraction/native-finish/fresh-build.log": "d5eff734c0369315e92bd126b8994eb5a6b80d287819a36e22425ff38c8d53d9",
+    "extraction/native-finish/project.py": "cfb2c5922154568db38c8d224f1d0c5343af59c97295a4b45fb268e47e29e532",
+    "extraction/native-finish/receipt.json": "d7e78d72dfff6e4e41a9763067eb7db96b94b15d9f85caeca1df49ff634fa8b8",
+    "extraction/native-finish/run-next.log": "721284f3f8cb35ff0a55c3775942e9319ec461af74f5908d40b4c9196a7f6700",
+    "extraction/native-finish/stock.log": "ded5e94f94d149c3d3acab5cd7b25f74a7531a8d318a4cae7bcdaf06d5f57bb1",
+    "extraction/native-finish/strict-joins.log": "1ccbd347c15944ab7f887bddb0df6d844eeaccaac6c4d55ed780cb1ac6b0164d",
+    "extraction/native-finish/unchecked.log": "ceab94274127c600164c632addf0abc052239a658be6cf3551b007c51b58ffcc",
+    "extraction/native-finish/wrong-residual.log": "661ea52f0d103edf74094e60f86f0f1908ac8ab1a0e9ac1237f9b459fb7a3ada",
+    "extraction/native-finish/wrong-site.log": "7dfd00cc3a9af4505906600f4b6dbfb8904875f6d179a7d90fe848fcdfd5b24a"
   },
   "reviewed_policy_revisions": [
     {
@@ -12489,7 +12558,436 @@
       "new_sha256": "6b2490e3f76e7858488f18634e0020b801fc31e4583ecfd41b1a61fdb2f5eb42",
       "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
       "old_sha256": "f3459da3caafb21a4aa0b669bb8bf7925286bea5242276afffc4830745cc9987"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "e83e391ea7d2c9c371870173f2407dcdb72164988711b48effe1e85e37d810f5",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "48faece86d6444b119311f0d2df1f12d5e06223936b67549a6304f387523bd99"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "19c71e53a19ae17ecd8b1fcc47edade44207cbbbdbf7a3bb5d54675c771dfb2b",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "0be2963a92222a6c845b579c4238a3733627735210659feaa7cc07059e7c263f"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "92b66d7e87ce37b592fecd750c62162bceb60f9fc8de2e054c82cebd725b43fa",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "b37741d4a984d823d71697560d000081cc60ff8c45af4490bea057643546b87b"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "7ca52a7973053e358bb664554cbea4fc5a2c8bb6fa3a21b600932a3df52cab42",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "32631528291229298bf7ad61c9d4c2e9f9ee4e466c17d3aae4f625013c4b28d2"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "985e37c6646d9713bc1c99f806dddb2c140028e7dbc2619b1be5d20ce10c69e4",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "124990d614e42856604ac9294355f847f2e3afff92ed23e7a418eb089ce9d80a"
+    },
+    {
+      "path": "bridge/Arithmetic/CandidateCompactGenerated.lean",
+      "new_sha256": "d259a42979c247fb9f5691e7a9e9401d8cd9f2e2dfdff54742386ec557353d75",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/Arithmetic/CandidateMergeGenerated.lean",
+      "new_sha256": "12a1721defe3ba454a9ae3ee49e799492b054f8601fc881a8ebb35b21f956f3a",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/Arithmetic/CanonicalizeGenerated.lean",
+      "new_sha256": "bbd3ad2702570ec63cb096472f3926b5fc8016a9a878f0d7acb0e4ba3bb6037b",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/Arithmetic/FinishGenerated.lean",
+      "new_sha256": "8990d00ac1a73cb613f727d7221dd6158f0ad2db49cd13b60007714c0b25971a",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "8fb4be7d4a0bc8e78513dd3082a9a419ae8a11955887aaf8d61946ea227da693",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "b696b514880bc6323e0dccba6db065c1ab3e6a03a8ac493651ae3b63f5268395"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "0e94dc1cea9b42a4b4ce366d61e9a02ea17abbad58a9aaaaa76eb7779f893c8e",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "d8ceab0ed0b02ce7d80836b29ae55f830b7b622f00120945708c18fb0fef572a"
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateBucket.lean",
+      "new_sha256": "a885caf9c9739de25f466a7a9d6329031b0e47cdde276e1cd134d8d5dffeab0b",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateCompactMeaning.lean",
+      "new_sha256": "80be0073d164f69e85e51a0bc0bcc33089945a27faca9fa27890506726eeac30",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateCompactNative.lean",
+      "new_sha256": "4e203c61e2d8de3ebd00b5ddd7aeb9a683dc22ce08bdabce46b9ef247181ce6c",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateCompactWords.lean",
+      "new_sha256": "32eeb5d2201848c9689f47265104163ba2bbad88869ebe4440f9a456fdf998d2",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateHistogram.lean",
+      "new_sha256": "93bb2d4790ca679a1abb8313daf4c086374ffd5ee70ccad2e8b7b071a7c239ff",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateMergeBlock.lean",
+      "new_sha256": "59641c412be2c2eb0ad45502534ab6ed11b530873cf72443e478a49bdb158033",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateMergeInner.lean",
+      "new_sha256": "f9b6525cd89c14598ccd7dc18754d3bc3fe8196d33e817ae6e729897b4fe9c8a",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateMergeOrder.lean",
+      "new_sha256": "584cb5ed924e74459d4f18327934b34e64af6f483f73cbafee4b3b789119c88e",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateMergePassMath.lean",
+      "new_sha256": "3a2d2078c9f306a96d8a5cbe3843d2407dea8474ef12408d117cc1bed0c19260",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateMergeSort.lean",
+      "new_sha256": "88bd8a4c201ad7414ef791e6bdfb48b375f2b2aad1456e6cb80d33c241df0f23",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateNormalize.lean",
+      "new_sha256": "311ec55239e864628f732f25d5ab8edbebf6dd220b553203308028a60033a22f",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateOffsets.lean",
+      "new_sha256": "88d26edab85e07406175572be202dd0159d842e70e9ffb233cfb1eeee423f44a",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CanonicalizeOrdering.lean",
+      "new_sha256": "34ff9c50f8be1d228fb3a1c33a7a3ef7f9615c80e68c73b438554f9faad163c2",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CanonicalizePrice.lean",
+      "new_sha256": "118afb9b4154b9050735346387274d6ce08379f7b7f7f06b0127923f0a6d2718",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CanonicalizeWrapper.lean",
+      "new_sha256": "ad29265492bef2704c3883dd399a139ef178fb324ce521b0d04b233bbd0e311b",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CompletedLocator.lean",
+      "new_sha256": "3297a0e3179ef417409fc33261c36cafefcd0b99b35a9c5941d3b84f0d2a6337",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeExecutionFinish.lean",
+      "new_sha256": "2e206dceb0618ccc790146766ba0e818809614e450ab47654908cac3693e958b",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootAffineTableFrame.lean",
+      "new_sha256": "ddcf9de5312c246a9d4982bad60b5bd343562e62a176144198f68a59eec0b14f",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootDivideInvariant.lean",
+      "new_sha256": "456f67cf3097bbd3bfbf215102e3c53c2c029a91b7f05a0f1e8bf214704986cf",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootNativeProperDivide.lean",
+      "new_sha256": "6fd71a7fac68bae351a8db81b899db46e7e8068f17ecc0cace98202901baa35d",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "6b2490e3f76e7858488f18634e0020b801fc31e4583ecfd41b1a61fdb2f5eb42"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootReducerInvariant.lean",
+      "new_sha256": "d4e3fe3841e2f452c55cbbaa5d2a890db07acf9c5af56b6e1a117ad8f9b658fd",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraversalInvariant.lean",
+      "new_sha256": "58bdb3d34d1f0378fb2810b29a41adee8019b10249bcb6bdb1cc6064beb9a5fc",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "20e7a4163f006d12980a66a9f452cf9be95f4775eac0ac14d79cf097f37790d2",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "1f091ebcd94d809958a5aa18cbbafee73890b13ab21f414ab1dfdb08ee8471f3"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "4b30681b941ba08e3628467e0a36a7f9367343935911fec41bf597d01c313250",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "d18e2e8d9a55e26abfeae446abc5697f60b94dc862a7f1bb099e9be77f6e0203"
+    },
+    {
+      "path": "extraction/candidate-normalize/Arithmetic/Funs.lean",
+      "new_sha256": "4a61e533b878876bf78057c02ddbd540e2f8d9b2ce356edc3a450fc4fb3c7011",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/candidate-normalize/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "7c771e1d10f5df8ca4541ca1255bd7ab521c91b84a159d3b11a6e7c228e8b4f7",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/candidate-normalize/Arithmetic/Types.lean",
+      "new_sha256": "2518484fd1c94d8442e510b34c506e05f7164c1b6cae11be4bbf1c8f621e9f30",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/candidate-normalize/README.md",
+      "new_sha256": "b77354948f723227055ac55f378d0c68190e35ca68178693fe05295835e48fd2",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/candidate-normalize/aeneas.log",
+      "new_sha256": "e274fec90e9b29a12b3fe05239609e6e0365c861f6df7913cdcfa8e3bca27882",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/candidate-normalize/arithmetic.llbc",
+      "new_sha256": "c0fe7095635029e3127680b0b0d7c5ad692588b875660d8f4f420608bc930999",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/candidate-normalize/charon.log",
+      "new_sha256": "520d0d407895c89bb2ac2c971a941db041910c7a1d0b4d3ad538332148b38b91",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/candidate-normalize/project.py",
+      "new_sha256": "d5627a5a3bf09d4c198639b8176e56d0552ed5b80438c772ae059e3600e4c111",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/candidate-normalize/receipt.json",
+      "new_sha256": "3b99ba59f1b5a1a683e93e0b97edb885f2f5acc754a2d43e1c0170ff18d4bcbb",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/candidate-normalize/replay.log",
+      "new_sha256": "3bcc91a3af6bb7396898ccf0e84f4821211b3c755bd335bae3120e1f7dd8c125",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/canonicalize/Arithmetic/Funs.lean",
+      "new_sha256": "716bb06cc8681c3d43cd53d435a16f5e5e290426af638cbb32eb77365e5f9671",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/canonicalize/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "328454fccddb45724fc86e5dff9293a5a138f29bb509563806f10823fbcababc",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/canonicalize/Arithmetic/Types.lean",
+      "new_sha256": "d2c265e1000f6cecf9ef58ede564b9dae8bad42265441ef8252fc87611bd6212",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/canonicalize/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/canonicalize/arithmetic.llbc",
+      "new_sha256": "2dfff6b5a2cec785e9ec3ff19ba2faaace9228773d03dc211f32480a4aa5b0d8",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/canonicalize/charon.log",
+      "new_sha256": "89203a0f3c0da2bd4aa7308812425992943967a7cd985205e8badb0df829dabb",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/canonicalize/checked-canonicalize-slice.patch",
+      "new_sha256": "1cb0a6cd754a7385d5e12b30854da83252c3f96b9f509fb2cde93f5bc5a00700",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/canonicalize/checked-replay.log",
+      "new_sha256": "931640e6cf67ee2ed7c77e6c0d34a99890a2d1b290ce4d5e327822c0735ef7c7",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/canonicalize/checked.log",
+      "new_sha256": "588233c00ba0603947b97905329f16e8bfd7fe327f200c7c4421a0170f88e0e6",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/canonicalize/project.py",
+      "new_sha256": "123599d85510d88b7614b21686929eb4ce4be50bbd9349d36a13ff73266f41f1",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/canonicalize/receipt.json",
+      "new_sha256": "18460f0d8588ef5253bb173ad12ceafd3dcb5f53c2d90cb202037334883e9d89",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/canonicalize/stock.log",
+      "new_sha256": "c9cfb104e6a5af5c47d0b0762d200cfe282804fbdc3a2e96cf023a1c47756f4e",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/canonicalize/unchecked.log",
+      "new_sha256": "34a3b063d4b14d6b7cb76c30842189c9c4de4cd8d737633b1a4c223dbc337d35",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/canonicalize/unrelated.log",
+      "new_sha256": "b57026367772a84d083a5a0aab6a1bb7b94933fef4b2630078b65a39bb8c7108",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/canonicalize/wrong-guard.log",
+      "new_sha256": "f0ef11aa34c990e02ea2803b1a1fe955b167840cfcdc216d758ba0af1725a316",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/Arithmetic/Funs.lean",
+      "new_sha256": "c64f8a5741fb3879c03eeaca9b6aa8321f529fa9796ace98edd464d1986a0e60",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "1a9a5cc4c36f3314662b4f1612ad3a91bb53bcb2ddbe13deb1bb39c113cdd32c",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/Arithmetic/Types.lean",
+      "new_sha256": "86fd0f48a0fd8b1e1f3b231bedafc7b956fec0748cbc2b76c1a5ed24b7d643ea",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/README.md",
+      "new_sha256": "430d82db4326b7363ab445f04ac563c23c8f11af3e56b933e403a17f804c82ec",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/arithmetic.llbc",
+      "new_sha256": "2a219e0dd210872071b3fa71ed3452482dfbad41c82fa176fd0913bc5f34b097",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/charon.log",
+      "new_sha256": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/checked-finish-return-boundary.patch",
+      "new_sha256": "8dff3576cb08a725098b0605e85802752054e98aad35d30c14dd87270f3b32ae",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/checked.log",
+      "new_sha256": "c56df70b95e297365b8cd0f255289b8a00b207a2af818192114bfb72f3a83326",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/finish_controls.py",
+      "new_sha256": "b2ed5a687002fa3ef0b9735caa7183e9f0fc5915b63329aa6dd677f53b6adefd",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/flag-off.log",
+      "new_sha256": "dfef941ded3b9f38a8b358dd933cef2a641b353f87a3bb65102c461f8803c2cd",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/fresh-build.log",
+      "new_sha256": "d5eff734c0369315e92bd126b8994eb5a6b80d287819a36e22425ff38c8d53d9",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/project.py",
+      "new_sha256": "cfb2c5922154568db38c8d224f1d0c5343af59c97295a4b45fb268e47e29e532",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/receipt.json",
+      "new_sha256": "d7e78d72dfff6e4e41a9763067eb7db96b94b15d9f85caeca1df49ff634fa8b8",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/run-next.log",
+      "new_sha256": "721284f3f8cb35ff0a55c3775942e9319ec461af74f5908d40b4c9196a7f6700",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/stock.log",
+      "new_sha256": "ded5e94f94d149c3d3acab5cd7b25f74a7531a8d318a4cae7bcdaf06d5f57bb1",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/strict-joins.log",
+      "new_sha256": "1ccbd347c15944ab7f887bddb0df6d844eeaccaac6c4d55ed780cb1ac6b0164d",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/unchecked.log",
+      "new_sha256": "ceab94274127c600164c632addf0abc052239a658be6cf3551b007c51b58ffcc",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/wrong-residual.log",
+      "new_sha256": "661ea52f0d103edf74094e60f86f0f1908ac8ab1a0e9ac1237f9b459fb7a3ada",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "extraction/native-finish/wrong-site.log",
+      "new_sha256": "7dfd00cc3a9af4505906600f4b6dbfb8904875f6d179a7d90fe848fcdfd5b24a",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "c41f0fb7cd70a17aac817afe92d1edc1fa24cd8565c00bcb9446bcb8925fa9dc",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "b549eaee8117e367e7a1e221af0d16fe7c4cddeac2633aa32b470ad35c0b54bd"
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "e487ca306dc0577d3cf480fba920fe3df38af4e3b9da69870869406d90e0cecf",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "5a8f7a04c1097677d33acea82b88336e1d50e9e7882fe3a9eeae35353c07c3c2"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "7c0fbddc54480579c2578cda02288602a9d43d02d0a0fb5923b8c7474c44c93e",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "7ca52a7973053e358bb664554cbea4fc5a2c8bb6fa3a21b600932a3df52cab42"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "beed7da2f0964168a161dac591c4d41bbb003f2c21ca876baf716439a5e995a6",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "c41f0fb7cd70a17aac817afe92d1edc1fa24cd8565c00bcb9446bcb8925fa9dc"
     }
   ],
-  "challenge_count": 362
+  "challenge_count": 369
 }

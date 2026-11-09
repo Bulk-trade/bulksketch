@@ -155,9 +155,23 @@ fresh scan cannot overflow the locator degree. The exact candidate
 and deflation calls use the original driver transitions and return the
 admitted residual product. The checked stock driver also covers the
 degree probe, original BM guard, state commit, progress and latched
-error; the canonicalization call remains explicit. The completed-result
+error. The driver takes canonicalization as an explicit callable. The completed-result
 wrapper preserves the unique frozen shared workspace loan through the
 exact source switches and exposes only the admitted completed root prefix.
+The checked canonicalization wrapper preserves the work charge, budget
+rejection, exact two-word swap, mask and duplicate checks, and the
+root prefix writeback. Longer slices use an explicit unsigned standard
+library sort contract. The checked original finish loop follows a finite
+native driver trace, keeps the exact return residual and composes
+the mutable workspace callbacks in source order.
+
+The original shared candidate normalizer performs a stable merge and
+packs each modulo bucket as distinct nonzero hints. The row accessor
+returns the exact corresponding payload slice. Native proper divide
+and reducer preparation preserve a common locator-product invariant,
+including the validity of every live factor and separation of the affine
+table from the pending-factor slots. The completed-result theorem gives
+exact locator root membership under the represented emitted product.
 
 The AVX square finite-heap theorem composes the zero fill, scalar
 coefficient seeds, and the original masked LLBC load/store block

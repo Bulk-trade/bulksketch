@@ -1448,6 +1448,34 @@
     {
       "challenge": "BulksketchBridge.AvxTileChunkSum.ActualTileRowMath",
       "theorem": "BulksketchBridge.AvxTileChunkSum.tile_row_exact"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionFinish.ActualNativeFinish",
+      "theorem": "BulksketchBridge.ExecutionFinish.native_finish"
+    },
+    {
+      "challenge": "BulksketchBridge.CanonicalizeWrapper.CheckedCanonicalizeWrapper",
+      "theorem": "BulksketchBridge.CanonicalizeWrapper.canonicalize_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.CandidateNormalization.ActualNativeCandidateNormalize",
+      "theorem": "BulksketchBridge.CandidateNormalization.native_candidate_normalize"
+    },
+    {
+      "challenge": "BulksketchBridge.CandidateNormalization.ActualNativeCandidateBucket",
+      "theorem": "BulksketchBridge.CandidateNormalization.native_candidate_bucket"
+    },
+    {
+      "challenge": "BulksketchBridge.RootDivide.ActualNativeProperDivideInvariant",
+      "theorem": "BulksketchBridge.RootDivide.native_proper_divide_invariant"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeReducerInvariant",
+      "theorem": "BulksketchBridge.RootRun.native_reducer_invariant"
+    },
+    {
+      "challenge": "BulksketchBridge.CompletedResult.ActualNativeCompletedLocator",
+      "theorem": "BulksketchBridge.CompletedResult.native_completed_locator"
     }
   ],
   "refinements": [
@@ -3905,6 +3933,65 @@
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Every original result state, including Equal, Decoded of the exact roots prefix, Failed, Error and invalid count or state panic.",
       "translator_variant": "checked-completed-result-frozen-shared-v1"
+    },
+    {
+      "label": "Execution::finish [original source]",
+      "native_item_id": "src/decode/stages.rs:442:method:bulksketch::decode::stages::<Execution < F , K > as RowExecution>::finish",
+      "source_line_span_sha256": "5bc354831992a52fd34a2fa38bb784b115e7f7cbd76a6ed0caec76012880342f",
+      "theorem": "BulksketchBridge.ExecutionFinish.native_finish",
+      "challenge": "BulksketchBridge.ExecutionFinish.ActualNativeFinish",
+      "generated_declaration": "bulksketch.decode.stages.Execution.Insts.BulksketchDecodeRowRowExecution.finish",
+      "generated_file": "bridge/Arithmetic/FinishGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/FinishGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original drain under a finite native driver trace, including error precedence, terminal result and composition of workspace callbacks.",
+      "translator_variant": "checked-finish-return-boundary-v1"
+    },
+    {
+      "label": "Execution::canonicalize [original source]",
+      "native_item_id": "src/decode/stages.rs:373:method:bulksketch::decode::stages::Execution < F , K >::canonicalize",
+      "source_line_span_sha256": "d7c5d7053dfdf2ad0594bd15a862a36fefd805a6afc83d220ee69000876cf31f",
+      "theorem": "BulksketchBridge.CanonicalizeWrapper.canonicalize_refines",
+      "challenge": "BulksketchBridge.CanonicalizeWrapper.CheckedCanonicalizeWrapper",
+      "generated_declaration": "bulksketch.decode.stages.Execution.canonicalize",
+      "generated_file": "bridge/Arithmetic/CanonicalizeGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/CanonicalizeGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact source work charge and budget rejection, length-two swap, unsigned ordering, mask and adjacent-duplicate checks, and selected root prefix writeback. Standard library sort remains an explicit contract.",
+      "translator_variant": "checked-canonicalize-slice-pattern-v1"
+    },
+    {
+      "label": "sketch::candidates::normalize [original source]",
+      "native_item_id": "src/sketch/candidates.rs:6:function:bulksketch::sketch::candidates::normalize",
+      "source_line_span_sha256": "b1ef580067d422fbc473559239d175fd2a3aec37a422d281a8af6cccc0a1c473",
+      "theorem": "BulksketchBridge.CandidateNormalization.native_candidate_normalize",
+      "challenge": "BulksketchBridge.CandidateNormalization.ActualNativeCandidateNormalize",
+      "generated_declaration": "bulksketch.sketch.candidates.normalize",
+      "generated_file": "bridge/Arithmetic/CandidateMergeGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/CandidateMergeGenerated.lean",
+        "bridge/Arithmetic/CandidateCompactGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact shared candidate normalization under the bucket and scratch bounds, through stable merge, distinct nonzero packing, and each row accessor."
+    },
+    {
+      "label": "SketchShape::bucket_for [original source]",
+      "native_item_id": "src/sketch/shape.rs:104:method:bulksketch::sketch::shape::SketchShape < F >::bucket_for",
+      "source_line_span_sha256": "96d1a5c4e973234606215dffdc547f271955848dc11fc146962b4110df0c1ecf",
+      "theorem": "BulksketchBridge.CandidateNormalization.native_candidate_bucket",
+      "challenge": "BulksketchBridge.CandidateNormalization.ActualNativeCandidateBucket",
+      "generated_declaration": "bulksketch.sketch.shape.SketchShape.bucket_for",
+      "generated_file": "bridge/Arithmetic/CandidateCompactGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/CandidateCompactGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact checked modulo routing and usize/u64 conversions for every word and positive bucket count."
     }
   ],
   "stateful_llbc_refinements": [

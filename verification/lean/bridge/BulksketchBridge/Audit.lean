@@ -760,7 +760,21 @@ run_cmd do
     (``BulksketchBridge.RootRun.ActualGcdOutcomePhaseStep,
       ``BulksketchBridge.RootRun.gcd_outcome_phase_step),
     (``BulksketchBridge.AvxTileChunkSum.ActualTileRowMath,
-      ``BulksketchBridge.AvxTileChunkSum.tile_row_exact)
+      ``BulksketchBridge.AvxTileChunkSum.tile_row_exact),
+    (``BulksketchBridge.ExecutionFinish.ActualNativeFinish,
+      ``BulksketchBridge.ExecutionFinish.native_finish),
+    (``BulksketchBridge.CanonicalizeWrapper.CheckedCanonicalizeWrapper,
+      ``BulksketchBridge.CanonicalizeWrapper.canonicalize_refines),
+    (``BulksketchBridge.CandidateNormalization.ActualNativeCandidateNormalize,
+      ``BulksketchBridge.CandidateNormalization.native_candidate_normalize),
+    (``BulksketchBridge.CandidateNormalization.ActualNativeCandidateBucket,
+      ``BulksketchBridge.CandidateNormalization.native_candidate_bucket),
+    (``BulksketchBridge.RootDivide.ActualNativeProperDivideInvariant,
+      ``BulksketchBridge.RootDivide.native_proper_divide_invariant),
+    (``BulksketchBridge.RootRun.ActualNativeReducerInvariant,
+      ``BulksketchBridge.RootRun.native_reducer_invariant),
+    (``BulksketchBridge.CompletedResult.ActualNativeCompletedLocator,
+      ``BulksketchBridge.CompletedResult.native_completed_locator)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

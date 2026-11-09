@@ -3,6 +3,7 @@ import BulksketchBridge.RootDivideCommitDegree
 import BulksketchBridge.NativeRootRun
 import BulksketchBridge.RootPendingProduct
 import BulksketchBridge.RootFactorValidity
+import BulksketchBridge.RootAffineTableFrame
 
 namespace BulksketchBridge.RootDivide
 
@@ -74,6 +75,10 @@ def ActualNativeProperDivide : Prop :=
       traversalPotential after written.stack < traversalPotential roots workspace.stack ∧
       liveProduct after written = liveProduct roots workspace ∧
       workspaceLengths written = workspaceLengths workspace ∧
+      written.roots = workspace.roots ∧ written.basis = workspace.basis ∧
+      (liveDegree roots workspace.stack < roots.stride.val →
+        tail written.factors (roots.stride.val * roots.stride.val) =
+          tail workspace.factors (roots.stride.val * roots.stride.val)) ∧
       after.count = roots.count ∧ after.stride = roots.stride ∧ after.pending.val = roots.pending.val + 1 ∧
       (∀ index < start.val, written.factors[index]! = workspace.factors[index]!) ∧
       (∀ slot < roots.pending.val, written.stack.val[slot]? = workspace.stack.val[slot]?) ∧
@@ -183,8 +188,15 @@ theorem native_proper_divide : ActualNativeProperDivide := by
     exact valid_children (activeFactor roots workspace) (activeFactor output.2.1 written)
       (pendingFactor written frame) roots.degree.val output.2.1.degree.val (length.val - 1)
       valid childProduct activeMonic exactDegree childSum
+  have tableFrame (live : liveDegree roots workspace.stack < roots.stride.val) :
+      tail written.factors (roots.stride.val * roots.stride.val) =
+        tail workspace.factors (roots.stride.val * roots.stride.val) := by
+    have before := next_slot_before_affine_table roots workspace.stack positiveSlots (by omega) live
+    rw [← startVal] at before
+    exact committed_preserves_affine_table roots buffers workspace.factors call.2.1 call.2.2.1
+      workspace.stack finalMeter length start call.2.2.2 (by omega) lengthRoom.le newSlotEnd before
   refine ⟨length, start, output.1, output.2.1, written, exactStage, rfl, startVal, positive, afterDegree,
-    ?_, ?_, ?_, massEq, decreases, sameProduct, lengths, rfl, rfl, pendingCount, preserved, earlierStack,
+    ?_, ?_, ?_, massEq, decreases, sameProduct, lengths, rfl, rfl, tableFrame, rfl, rfl, pendingCount, preserved, earlierStack,
     frame, current, frameStart, frameLength, children⟩
   · rw [active, parent]
     exact prior.gcdExact

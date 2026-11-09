@@ -27,7 +27,7 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The bridge now has 156 original Aeneas generated-body refinements under
+The bridge now has 160 original Aeneas generated-body refinements under
 their recorded contracts. Five source-linked LLBC execution contracts are
 checked separately. The latest checkpoint covers the original root stage
 dispatcher, Dense div/rem, factor division, affine enumeration
@@ -53,7 +53,13 @@ initial residual traversal product, and paid affine enumeration emits
 the complete active factor. The original completed-result wrapper
 returns the exact verified root slice. The local traversal proofs
 preserve the represented locator product at division and emission.
-Full native implementation contracts remain open.
+The original shared candidate normalizer and modulo bucket selector
+establish distinct nonzero candidate slices. The original canonicalizer
+checks the sort boundary, work charge and root validation. The original
+finish loop consumes a finite native driver trace, composes workspace
+writebacks, and returns the exact terminal result. Global traversal
+induction, row-local hint normalization and native implementation
+contracts remain open.
 
 The [core proofs](BulksketchProofs.lean) and [generated-body bridge](bridge/README.md)
 use frozen proposition definitions, transitive axiom audits and exported-term

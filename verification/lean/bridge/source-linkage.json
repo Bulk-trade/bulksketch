@@ -651,6 +651,21 @@
       "path": "extraction/completed-result/arithmetic.llbc",
       "sha256": "130d24ce1409e5b672d4769dae554c84dfba2f846e5ec9bef0a719fd917909c0",
       "has_errors": false
+    },
+    {
+      "path": "extraction/native-finish/arithmetic.llbc",
+      "sha256": "2a219e0dd210872071b3fa71ed3452482dfbad41c82fa176fd0913bc5f34b097",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/canonicalize/arithmetic.llbc",
+      "sha256": "2dfff6b5a2cec785e9ec3ff19ba2faaace9228773d03dc211f32480a4aa5b0d8",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/candidate-normalize/arithmetic.llbc",
+      "sha256": "c0fe7095635029e3127680b0b0d7c5ad692588b875660d8f4f420608bc930999",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1513,6 +1528,26 @@
       "native_item_id": "src/decode/stages.rs:141:method:bulksketch::decode::stages::Execution < F , K >::completed_result",
       "generated_declaration": "bulksketch.decode.stages.Execution.completed_result",
       "generated_file": "bridge/Arithmetic/CompletedResultGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:442:method:bulksketch::decode::stages::<Execution < F , K > as RowExecution>::finish",
+      "generated_declaration": "bulksketch.decode.stages.Execution.Insts.BulksketchDecodeRowRowExecution.finish",
+      "generated_file": "bridge/Arithmetic/FinishGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:373:method:bulksketch::decode::stages::Execution < F , K >::canonicalize",
+      "generated_declaration": "bulksketch.decode.stages.Execution.canonicalize",
+      "generated_file": "bridge/Arithmetic/CanonicalizeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/candidates.rs:6:function:bulksketch::sketch::candidates::normalize",
+      "generated_declaration": "bulksketch.sketch.candidates.normalize",
+      "generated_file": "bridge/Arithmetic/CandidateMergeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/shape.rs:104:method:bulksketch::sketch::shape::SketchShape < F >::bucket_for",
+      "generated_declaration": "bulksketch.sketch.shape.SketchShape.bucket_for",
+      "generated_file": "bridge/Arithmetic/CandidateCompactGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2351,6 +2386,52 @@
       "declaration_count": 2,
       "scope": "Original checked completed_result and RowResult type, with exact returned shared roots slice.",
       "translator_variant": "checked-completed-result-frozen-shared-v1"
+    },
+    {
+      "generated": "extraction/native-finish/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/FinishGenerated.lean",
+      "sha256": "8990d00ac1a73cb613f727d7221dd6158f0ad2db49cd13b60007714c0b25971a",
+      "raw_sha256": "c64f8a5741fb3879c03eeaca9b6aa8321f529fa9796ace98edd464d1986a0e60",
+      "checker": "extraction/native-finish/project.py",
+      "declaration_count": 3,
+      "scope": "Original finish loop retains terminal residual and returns the shared result borrow with ordered workspace writebacks.",
+      "translator_variant": "checked-finish-return-boundary-v1"
+    },
+    {
+      "generated": "extraction/canonicalize/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CanonicalizeGenerated.lean",
+      "sha256": "bbd3ad2702570ec63cb096472f3926b5fc8016a9a878f0d7acb0e4ba3bb6037b",
+      "raw_sha256": "716bb06cc8681c3d43cd53d435a16f5e5e290426af638cbb32eb77365e5f9671",
+      "checker": "extraction/canonicalize/project.py",
+      "declaration_count": 11,
+      "scope": "Original canonicalization capture with checked metadata read and exact length-two slice-pattern lowering.",
+      "translator_variant": "checked-canonicalize-slice-pattern-v1"
+    },
+    {
+      "generated": "extraction/candidate-normalize/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CandidateCompactGenerated.lean",
+      "sha256": "d259a42979c247fb9f5691e7a9e9401d8cd9f2e2dfdff54742386ec557353d75",
+      "raw_sha256": "4a61e533b878876bf78057c02ddbd540e2f8d9b2ce356edc3a450fc4fb3c7011",
+      "checker": "extraction/candidate-normalize/project.py",
+      "checker_args": [
+        "--kind",
+        "compact"
+      ],
+      "declaration_count": 7,
+      "scope": "Stock original bucket routing, distinct nonzero compaction and cumulative offsets."
+    },
+    {
+      "generated": "extraction/candidate-normalize/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CandidateMergeGenerated.lean",
+      "sha256": "12a1721defe3ba454a9ae3ee49e799492b054f8601fc881a8ebb35b21f956f3a",
+      "raw_sha256": "4a61e533b878876bf78057c02ddbd540e2f8d9b2ce356edc3a450fc4fb3c7011",
+      "checker": "extraction/candidate-normalize/project.py",
+      "checker_args": [
+        "--kind",
+        "merge"
+      ],
+      "declaration_count": 9,
+      "scope": "Stock original shared normalization entry and stable merge loop nest."
     }
   ],
   "reviewed_translator_variants": [
@@ -2497,6 +2578,24 @@
       "receipt": "extraction/completed-result/receipt.json",
       "mandatory_checks": true,
       "scope": "Exact original return-only completed_result switches. Keep the unique frozen shared RowWorkspace input and ordinary self reborrows."
+    },
+    {
+      "id": "checked-finish-return-boundary-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/native-finish/checked-finish-return-boundary.patch",
+      "patch_sha256": "8dff3576cb08a725098b0605e85802752054e98aad35d30c14dd87270f3b32ae",
+      "receipt": "extraction/native-finish/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Original finish loop retains terminal residual and returns the shared result borrow with ordered workspace writebacks."
+    },
+    {
+      "id": "checked-canonicalize-slice-pattern-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/canonicalize/checked-canonicalize-slice.patch",
+      "patch_sha256": "1cb0a6cd754a7385d5e12b30854da83252c3f96b9f509fb2cde93f5bc5a00700",
+      "receipt": "extraction/canonicalize/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Original canonicalization capture with checked metadata read and exact length-two slice-pattern lowering."
     }
   ],
   "diagnostic_generated_projections": [

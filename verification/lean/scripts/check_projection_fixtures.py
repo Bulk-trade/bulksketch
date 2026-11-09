@@ -425,6 +425,35 @@ PROJECTIONS = [
                   "bridge/Arithmetic/ReconstructionTypes.lean"] +
      [f"extraction/execution-verify/Arithmetic/{name}"
       for name in ("Funs.lean", "FunsExternal_Template.lean", "Types.lean")]),
+    ("native-finish", "extraction/native-finish/project.py", "extraction/native-finish/receipt.json",
+     "extraction/native-finish/Arithmetic/Funs.lean", "bridge/Arithmetic/FinishGenerated.lean",
+     "if finish_normal", "if !finish_normal", "compiled finish projection differs", None, None,
+     ["extraction/root-setup/receipt.json", "extraction/native-driver/run-next/arithmetic.llbc",
+      "bridge/Workmeter/Types.lean", "bridge/Arithmetic/SliceKernelTypes.lean",
+      "bridge/Arithmetic/ReconstructionTypes.lean", "bridge/Arithmetic/CompletedResultGenerated.lean",
+      "bridge/Arithmetic/ExecutionDriverGenerated.lean"] +
+     [f"extraction/native-driver/run-next/Arithmetic/{name}"
+      for name in ("Funs.lean", "FunsExternal_Template.lean", "Types.lean")]),
+    ("canonicalize", "extraction/canonicalize/project.py", "extraction/canonicalize/receipt.json",
+     "extraction/canonicalize/Arithmetic/Funs.lean", "bridge/Arithmetic/CanonicalizeGenerated.lean",
+     "if left > right", "if left < right", "compiled canonicalize projection differs", None, None,
+     ["extraction/avx-square/receipt.json", "extraction/avx-insert/horizontal/arithmetic.llbc"] +
+     [f"extraction/avx-insert/horizontal/Arithmetic/{name}"
+      for name in ("Funs.lean", "FunsExternal_Template.lean", "Types.lean", "TypesExternal_Template.lean")]),
+    ("candidate-normalize-compact", "extraction/candidate-normalize/project.py",
+     "extraction/candidate-normalize/receipt.json", "extraction/candidate-normalize/Arithmetic/Funs.lean",
+     "bridge/Arithmetic/CandidateCompactGenerated.lean",
+     "let i4 ← Slice.index_usize offsets i3", "let i4 ← Slice.index_usize offsets i2",
+     "compiled candidate normalization projection differs", None, None,
+     [f"bridge/Arithmetic/{name}.lean"
+      for name in ("ReconstructionTypes", "MapsRuntime", "PortableEncodingRuntime", "DenseGcdGenerated")]),
+    ("candidate-normalize-merge", "extraction/candidate-normalize/project.py",
+     "extraction/candidate-normalize/receipt.json", "extraction/candidate-normalize/Arithmetic/Funs.lean",
+     "bridge/Arithmetic/CandidateMergeGenerated.lean",
+     "let width1 ← width * 2#usize", "let width1 ← width * 3#usize",
+     "compiled candidate normalization projection differs", None, None,
+     [f"bridge/Arithmetic/{name}.lean"
+      for name in ("ReconstructionTypes", "MapsRuntime", "PortableEncodingRuntime", "DenseGcdGenerated")]),
     ("native-driver", "extraction/native-driver/project.py", "extraction/native-driver/receipt.json",
      "extraction/native-driver/execute/Arithmetic/Funs.lean", "bridge/Arithmetic/ExecutionDriverGenerated.lean",
      "if i = 0#u64", "if i != 0#u64", "compiled decoder driver projection differs", None, None,
@@ -484,6 +513,8 @@ def main():
         kwargs = {"kind": "encode"} if label == "portable-encode" else {}
         if label.startswith("avx-insert-"):
             kwargs = {"entry": label.removeprefix("avx-insert-")}
+        if label.startswith("candidate-normalize-"):
+            kwargs = {"kind": label.removeprefix("candidate-normalize-")}
         if label.startswith("candidates-"):
             kwargs = {"kind": label.removeprefix("candidates-")}
         originals[label] = projector.check(**kwargs)["source_declarations_retained_verbatim"]
@@ -704,6 +735,12 @@ def main():
         if label == "completed-result":
             cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false',
                           '"native_llbc_edited": true', "invalid completed_result translator receipt"))
+        if label == "native-finish":
+            cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false',
+                          '"native_llbc_edited": true', "invalid finish checked translator receipt"))
+        if label == "canonicalize":
+            cases.append(("wrong-capture-mode", receipt_path, '"native_source_edited": false',
+                          '"native_source_edited": true', "invalid canonicalize tool receipt"))
         if label == "native-driver":
             cases.append(("unchecked-replay", receipt_path, '"-checks"', '"-no-checks"',
                           "decoder driver checked Aeneas command differs"))
@@ -734,7 +771,8 @@ def main():
                              "affine-subspaces", "root-prepare-affine", "root-enumerate-affine", "dense-div-rem",
                              "affine-enumerate", "affine-selector", "avx-multiply-linear", "affine-solve-map",
                              "avx-horner", "affine-multiple", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
-                             "avx-insert-insert18", "avx-insert-horizontal", "avx-insert-dispatch", "native-driver", "candidate-row", "completed-result"}:
+                             "avx-insert-insert18", "avx-insert-horizontal", "avx-insert-dispatch", "native-driver", "candidate-row", "completed-result",
+                             "native-finish", "canonicalize", "candidate-normalize-compact", "candidate-normalize-merge"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:
