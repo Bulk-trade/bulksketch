@@ -377,6 +377,18 @@ PROJECTIONS = [
      "multiply true mi1 root", "multiply false mi1 root", "compiled AVX linear-product projection differs",
      None, None, ["extraction/avx-square/receipt.json", "bridge/Arithmetic/AvxSquareRuntime.lean",
                   "bridge/Arithmetic/Avx512RegisterGenerated.lean"]),
+    ("affine-solve-map", "extraction/affine-solve-map/project.py", "extraction/affine-solve-map/receipt.json",
+     "extraction/affine-solve-map/Arithmetic/Funs.lean", "bridge/Arithmetic/AffineSolveMapGenerated.lean",
+     "Array.update kernel rank original1", "Array.update kernel rank column",
+     "compiled affine solve_map projection differs", None, None,
+     ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean"]),
+    ("avx-horner", "extraction/avx-horner/project.py", "extraction/avx-horner/receipt.json",
+     "extraction/avx-horner/kernel/Arithmetic/Funs.lean", "bridge/Arithmetic/AvxHornerGenerated.lean",
+     "multiply CL value points", "multiply true value points", "compiled AVX Horner projection differs",
+     None, None, ["extraction/avx-square/receipt.json", "extraction/avx-square-entry/receipt.json",
+                  "tooling/aeneas-horner-match/receipt.json", "tooling/aeneas-horner-match/ended-shared-scalar.patch",
+                  "bridge/Arithmetic/AvxHornerChunkRuntime.lean", "bridge/Arithmetic/Avx512RegisterGenerated.lean",
+                  "bridge/Arithmetic/DenseNormalizationGenerated.lean"]),
 ]
 
 
@@ -594,6 +606,12 @@ def main():
             cases.append(("wrong-shared-square-products", "bridge/Arithmetic/RootSetupGenerated.lean",
                           "let i ← 3#u64 * degree", "let i ← 4#u64 * degree",
                           "shared square_products differs"))
+        if label == "affine-solve-map":
+            cases.append(("missing-checks", receipt_path, '"-checks"', '"-no-checks"',
+                          "affine solve_map requires original checked extraction"))
+        if label == "avx-horner":
+            cases.append(("wrong-kernel-binary", receipt_path, receipt["variant_binary_sha256"], "0" * 64,
+                          "invalid AVX Horner receipt"))
         if label == "affine-splitter":
             cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
                           "affine splitter checked replay differs"))
@@ -607,7 +625,8 @@ def main():
                 if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic", "closed-leaf", "deg34-normalize", "deg34-guard",
                              "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry", "root-divide", "root-run", "affine-splitter",
                              "affine-subspaces", "root-prepare-affine", "root-enumerate-affine", "dense-div-rem",
-                             "affine-enumerate", "affine-selector", "avx-multiply-linear"}:
+                             "affine-enumerate", "affine-selector", "avx-multiply-linear", "affine-solve-map",
+                             "avx-horner"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

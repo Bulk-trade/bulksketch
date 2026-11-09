@@ -528,11 +528,6 @@
       "has_errors": false
     },
     {
-      "path": "extraction/root-prepare-affine/arithmetic.llbc",
-      "sha256": "dd81094edf438584a1c870dbcab26f8dec8d59df8d577ccb10783fe4be360c43",
-      "has_errors": false
-    },
-    {
       "path": "extraction/affine-enumerate/arithmetic.llbc",
       "sha256": "a507a5d00a56b0ae642627cd588722e8cec9095cc2f25690977534e361cea579",
       "has_errors": false
@@ -545,6 +540,31 @@
     {
       "path": "extraction/avx-multiply-linear/arithmetic.llbc",
       "sha256": "21246f91e18d7997f114453f4f80c08cf8a94baa5e57166cf6a9767aff13c7e0",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/root-prepare-affine/arithmetic.llbc",
+      "sha256": "dd81094edf438584a1c870dbcab26f8dec8d59df8d577ccb10783fe4be360c43",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/affine-solve-map/arithmetic.llbc",
+      "sha256": "8dfdd6e1bb4a8bcd2650950b8662abfa0ffe130781c08b9a9bba2897ce94668e",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-horner/kernel/arithmetic.llbc",
+      "sha256": "f1bf69d2b5c5088ed5a58c9508962897fb1b9ee5120d7fd418aa86c968c99126",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-horner/free-selector/arithmetic.llbc",
+      "sha256": "d21a9e66f1ab7738553b6455c8b0549d383892600bc986775996de3dfff65889",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-horner/trait-scoped/arithmetic.llbc",
+      "sha256": "13cc6b7dc88cbd4521fe05d9ab7480be0e7a7c2612d2d3307a9b091c7558fb4b",
       "has_errors": false
     }
   ],
@@ -1260,11 +1280,6 @@
       "generated_file": "bridge/Arithmetic/RootRunGenerated.lean"
     },
     {
-      "native_item_id": "src/decode/roots.rs:274:method:bulksketch::decode::roots::Roots::prepare_affine",
-      "generated_declaration": "bulksketch.decode.roots.Roots.prepare_affine",
-      "generated_file": "bridge/Arithmetic/RootAffinePreparationGenerated.lean"
-    },
-    {
       "native_item_id": "src/decode/affine.rs:299:function:bulksketch::decode::affine::enumerate",
       "generated_declaration": "bulksketch.decode.affine.enumerate",
       "generated_file": "bridge/Arithmetic/AffineEnumerateGenerated.lean"
@@ -1283,6 +1298,41 @@
       "native_item_id": "src/backend/x86_vpclmul512.rs:819:function:bulksketch::backend::x86_vpclmul512::multiply_linear",
       "generated_declaration": "bulksketch.backend.x86_vpclmul512.multiply_linear",
       "generated_file": "bridge/Arithmetic/AvxMultiplyLinearGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:274:method:bulksketch::decode::roots::Roots::prepare_affine",
+      "generated_declaration": "bulksketch.decode.roots.Roots.prepare_affine",
+      "generated_file": "bridge/Arithmetic/RootAffinePreparationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:172:function:bulksketch::decode::affine::solve_map",
+      "generated_declaration": "bulksketch.decode.affine.solve_map",
+      "generated_file": "bridge/Arithmetic/AffineSolveMapGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:353:function:bulksketch::decode::affine::frobenius_columns",
+      "generated_declaration": "bulksketch.decode.affine.frobenius_columns",
+      "generated_file": "bridge/Arithmetic/AffineSolveMapGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:372:function:bulksketch::decode::affine::square_column",
+      "generated_declaration": "bulksketch.decode.affine.square_column",
+      "generated_file": "bridge/Arithmetic/AffineSolveMapGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:376:function:bulksketch::backend::x86_vpclmul512::horner_kernel",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.horner_kernel",
+      "generated_file": "bridge/Arithmetic/AvxHornerGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:371:function:bulksketch::backend::x86_vpclmul512::horner_many",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.horner_many",
+      "generated_file": "bridge/Arithmetic/AvxHornerGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:180:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::horner_many",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.horner_many",
+      "generated_file": "bridge/Arithmetic/AvxHornerGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1903,15 +1953,6 @@
       "scope": "Original root stage dispatcher with the original enumeration wrapper and inner enumerator linked. Only affine multiple and solve map are lower-level affine slots."
     },
     {
-      "generated": "extraction/root-prepare-affine/Arithmetic/Funs.lean",
-      "bridge_copy": "bridge/Arithmetic/RootAffinePreparationGenerated.lean",
-      "sha256": "8d5945fd918805636fa53506e21388cfa084e9c321fdcc335e71730ab0bf2de7",
-      "raw_sha256": "04ecd15e87bfd5393b3e22f7fe6854cdafd79171db15e70c211738ee2a394566",
-      "checker": "extraction/root-prepare-affine/project.py",
-      "declaration_count": 4,
-      "scope": "Original affine preparation, count callback, subspace table, and original selector binding."
-    },
-    {
       "generated": "extraction/affine-enumerate/Arithmetic/Funs.lean",
       "bridge_copy": "bridge/Arithmetic/AffineEnumerateGenerated.lean",
       "sha256": "7984d3dff96ebf8f3a005a84a0030f0c50ecbe98dea7cad4110ee74914d521b5",
@@ -1938,6 +1979,34 @@
       "checker": "extraction/avx-multiply-linear/project.py",
       "declaration_count": 3,
       "scope": "Original AVX-512 linear update and descending loop with exact masked load, store and multiply bindings."
+    },
+    {
+      "generated": "extraction/root-prepare-affine/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootAffinePreparationGenerated.lean",
+      "sha256": "6d12c2d57f56cbf474bdda59d13a3193b6756eeec0f9b8f5b76a88ec72548169",
+      "raw_sha256": "04ecd15e87bfd5393b3e22f7fe6854cdafd79171db15e70c211738ee2a394566",
+      "checker": "extraction/root-prepare-affine/project.py",
+      "declaration_count": 4,
+      "scope": "Original affine preparation with the original subspace table, selector and GF64 solve map bound."
+    },
+    {
+      "generated": "extraction/affine-solve-map/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AffineSolveMapGenerated.lean",
+      "sha256": "f5fadc2c9c845715cc437f81d52d2294a5a3de6cf5dd84d4cc214449f74fcf53",
+      "raw_sha256": "6a9eb3243563ce128ae56d23bfb11a39f74cf6f4acda41817f59e673cb7a0d53",
+      "checker": "extraction/affine-solve-map/project.py",
+      "declaration_count": 26,
+      "scope": "Stock checked original GF64 solve map, affine Frobenius table constructor and scalar column square."
+    },
+    {
+      "generated": "extraction/avx-horner/kernel/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxHornerGenerated.lean",
+      "sha256": "726aab57b5ec5c8d30df6de975b039d970fd9d90cdf9f8b88d9919a011570b53",
+      "raw_sha256": "3ebe6cb2593e6c292c58dc047ca24719f0dec2520c40d6e046b934e4bdfc4c83",
+      "checker": "extraction/avx-horner/project.py",
+      "declaration_count": 7,
+      "scope": "Exact original AVX Horner kernel and both wrappers. The inner kernel uses the reviewed checked ended-shared variant. Both wrappers were extracted by stock Aeneas.",
+      "translator_variant": "checked-ended-shared-scalar-v1"
     }
   ],
   "reviewed_translator_variants": [

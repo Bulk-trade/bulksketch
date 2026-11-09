@@ -598,7 +598,25 @@ run_cmd do
     (``BulksketchBridge.AffineEnumerate.ActualCandidateScan,
       ``BulksketchBridge.AffineEnumerate.candidate_scan_refines),
     (``BulksketchBridge.AvxMultiplyLinear.ActualAllocatedMultiplyLinear,
-      ``BulksketchBridge.AvxMultiplyLinear.allocated_multiply_linear_refines)
+      ``BulksketchBridge.AvxMultiplyLinear.allocated_multiply_linear_refines),
+    (``BulksketchBridge.AffineSolveMap.ActualSolveMapGf64,
+      ``BulksketchBridge.AffineSolveMap.solve_map_gf64_refines),
+    (``BulksketchBridge.AffineSolveMap.ActualFrobeniusColumns,
+      ``BulksketchBridge.AffineSolveMap.frobenius_columns_refines),
+    (``BulksketchBridge.AffineSolveMap.ActualSquareColumn,
+      ``BulksketchBridge.AffineSolveMap.square_column_refines),
+    (``BulksketchBridge.AvxHorner.ActualAvxHornerKernel,
+      ``BulksketchBridge.AvxHorner.kernel_refines),
+    (``BulksketchBridge.AvxHorner.ActualAvxHornerFree,
+      ``BulksketchBridge.AvxHorner.free_refines),
+    (``BulksketchBridge.AvxHorner.ActualAvxHorner,
+      ``BulksketchBridge.AvxHorner.trait_refines),
+    (``BulksketchBridge.AvxHorner.ActualAvxHornerEvaluatesPolynomial,
+      ``BulksketchBridge.AvxHorner.trait_polynomial_refines),
+    (``BulksketchBridge.AvxHorner.ActualAllocatedAvxHornerKernel,
+      ``BulksketchBridge.AvxHorner.allocated_kernel_refines),
+    (``BulksketchBridge.AffineEnumerate.ActualNativeEnumerationComplete,
+      ``BulksketchBridge.AffineEnumerate.native_enumeration_complete)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

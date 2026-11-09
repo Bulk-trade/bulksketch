@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "bae9644bfc86abf9b10177eb624ea0888cd78b26929a9b6da757b1145fe46e23",
+    "bridge/BulksketchBridge/Audit.lean": "8cd828c85dd1e37a5c73cad4968fbcf68abefc695385d5a8054d2c3b8201779b",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "50de9c90cb9d4e0a75e44761ac4c611086b1831c229c6a2bd2a556303535c8a3",
-    "audit/frozen-inputs.json": "59f44ce4894d9e15eee382646fdd8d0e91a5e24f5c8f26c0be1f6c9e309498ba",
-    "bridge/BulksketchBridge.lean": "79c084c9f2e031b0fd17abf648f3d4d5511dc31f6ae94d6d62cf36fed22b6ccc",
+    "audit/frozen-inputs.json": "74f5870219053245f5cb054010d5737480f3f15821b7d44514268c15f6d78249",
+    "bridge/BulksketchBridge.lean": "0c92b00c10d3217fe5fd02f8183208f556c56abf6635d82d9a7e30f69f1c5e9a",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "ad73e61b2f5c00aedf9e6046655b5759df6826ec58b6f59f264d9e61a7c133b6",
-    "bridge/obligations.json": "5bdff58ceaf815ac74323381e804fa49ea233675b99d80f885512f317d7e3493",
+    "bridge/source-linkage.json": "f4f3c6c7bc32727961ddc21aef63d0de5ace93cc9327b04eeeffbd3a2eec35bc",
+    "bridge/obligations.json": "c6b0afdfd576c2e740b2343b42f08d707c3d1d317b89d99468ed813f6c59b023",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "aa27c30b9f8d5835f9750f085758afa38b11c7b76919bbd67354c48aff007109",
+    "scripts/check_projection_fixtures.py": "637b9d692082a29848c8cfbc47b70e14a8abe2770e4fb94282efa9604f1ff329",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "b5134eeed7300ce35559a4f61b667ebf772a5c2d6f24a3149f524bd7986a9216",
+    "README.md": "5bc188ff6be8eae0d0507dc816bb1eb5a2a1e1a3e2ec21319d233d9942c03c07",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "2fae6c8eaa7caf71dba9576529581861f6e2324cdead47de7576d67c9d62a8d3",
+    "audit/coverage.json": "4e0145a3b3b989f7f949e0134e916c700a0957cb5979ac94560280699be91c64",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "cafea1149952f64224096c3f1a1efd4dd38be4cb6b1ce71b2b7c42932e2d6f88",
-    "audit/native-root-run-checkpoint.json": "23acddffb13f48970f825cc3bf3109d4913fe394335e22d002ae5c36a0af7f83",
+    "NATIVE_ROOT_RUN.md": "b9c22e9d7ec9b5de35d4ce6972c6e6ed6fce88700efc87401e8b194fb262e8c7",
+    "audit/native-root-run-checkpoint.json": "151e33c60b933fc13c1a2f63f8081b7d3eaf2450ff054081f7574c1b9b1818a5",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1205,7 +1205,7 @@
     "extraction/affine-splitter/receipt.json": "f8fb4ffbe20751f5c9e7eee455de400448021eac6592893447f35c9a43ea085a",
     "extraction/affine-splitter/replay.log": "507ae028fb85e1e3d3dd9b8916c63c88bf0cf593257a82731f1f661da1f4e917",
     "bridge/Arithmetic/AffineSubspacesGenerated.lean": "7424c450af083f0817c133118340bac5f88feaf05dd275f56776c9824af8a17b",
-    "bridge/Arithmetic/RootAffinePreparationGenerated.lean": "8d5945fd918805636fa53506e21388cfa084e9c321fdcc335e71730ab0bf2de7",
+    "bridge/Arithmetic/RootAffinePreparationGenerated.lean": "6d12c2d57f56cbf474bdda59d13a3193b6756eeec0f9b8f5b76a88ec72548169",
     "bridge/Arithmetic/RootEnumerateGenerated.lean": "e7a0fca7b1b158e00b47b7b836849451c93aee794d112486e43bf4c1654e3662",
     "bridge/BulksketchBridge/AffineSubspaceAlgebra.lean": "42602e2969268f149f95b3f2db0cd2c0783a3d98130e7125ae7b54090ab35bae",
     "bridge/BulksketchBridge/AffineSubspaceStart.lean": "f45098e9fea4afb56f85f52a6e3250ddab11628977c0a71e7116d4c7ae602eaf",
@@ -1213,7 +1213,7 @@
     "bridge/BulksketchBridge/AffineSubspacesAnnihilators.lean": "78cb533ccd3401cf81be22a944956b5ffd9d3427b3ddc59fe3a158ef2c52df23",
     "bridge/BulksketchBridge/AffineSubspacesCoefficients.lean": "ab43d36f77a7ff7e3fe2a84f73f4127c6a5ce5acba4ac16aa03029be6459e445",
     "bridge/BulksketchBridge/AffineSubspacesPolynomial.lean": "de9982ba773682db34f518198e9baa170684f487180e887135bf207c1805d2b2",
-    "bridge/BulksketchBridge/RootAffinePreparation.lean": "ef5c0cbb8d8e698af6be0eb7d0d34b118cddde09fdd816f74dc15251b571524c",
+    "bridge/BulksketchBridge/RootAffinePreparation.lean": "f783cc03554035644157b03243335cbeee26071cb62f448fbd06644587b97dc8",
     "bridge/BulksketchBridge/RootAffinePreparationPrice.lean": "a049bc3d867a5e6041ffc3eb14e13f22059bf69d63f9390fbae1fe71d1a0aa1a",
     "bridge/BulksketchBridge/RootEnumerate.lean": "e51bc71eeb0689e7f22066e2e0573b3d516c05cd95fc3a884258cc4496e349d6",
     "bridge/BulksketchBridge/RootEnumeratePrice.lean": "b9fe0f1ec25b18a4f2ae18c245b808f54065950eadafa70e7f397d23263ca59b",
@@ -1241,7 +1241,7 @@
     "extraction/root-prepare-affine/aeneas.log": "975a1fdb8b9d69fcd5959e7f6879089d9d3de6f0af0c5cc68d849cf930b06779",
     "extraction/root-prepare-affine/arithmetic.llbc": "dd81094edf438584a1c870dbcab26f8dec8d59df8d577ccb10783fe4be360c43",
     "extraction/root-prepare-affine/charon.log": "e87c8d79d5167da26d7dc3545ee29a9ff8f9fb251ae16638fd01c01219a9adeb",
-    "extraction/root-prepare-affine/project.py": "12680b2906e599517aab52e770c27f8afbb34df07ffa7ac0304f178206b56f7d",
+    "extraction/root-prepare-affine/project.py": "f2427e2b035bc99020548d6a4890f3a371bc3b21c8962ec4f4597c860c1d21db",
     "extraction/root-prepare-affine/receipt.json": "949bd677e89c49cb1a60773c69b79ebfa7b42982f9b1663145d619e9bc3ab509",
     "extraction/root-prepare-affine/replay.log": "fb5ceb1fb69d97937dc0f763bcdab57e081f3ca96a35f7da10343c2d8af4a63a",
     "bridge/Arithmetic/DenseDivRemGenerated.lean": "8b8a2f298e58c3946adda864dff96ec9a461fdc555078a39e5d38d3e0121ba44",
@@ -1282,7 +1282,7 @@
     "bridge/BulksketchBridge/AffineCandidateScan.lean": "165286589ccb51754b73336ba67725d9a00da7461ee80bbc689c0ebad2fc982a",
     "bridge/BulksketchBridge/AffineEnumerationBatch.lean": "3c4ae325eed4894f4d19eea943defc3a11c4266508b52a7d556fbdbb6c2cfa18",
     "bridge/BulksketchBridge/AffineEnumerationFrame.lean": "88dd05180ac5875cb6e988ddd7478cd3930dadd11159fb9f984fa1942acd01b8",
-    "bridge/BulksketchBridge/AffineEnumerationHorner.lean": "5bb21cf5b0725b1b83966a01c64b525db0cded3e0fa1588f4d8569b68623d9b9",
+    "bridge/BulksketchBridge/AffineEnumerationHorner.lean": "52726dc1e76ee00cded853014ebf8a911103d0d5438b64951cafaaa53b0bfa71",
     "bridge/BulksketchBridge/AffineGrayFill.lean": "714d7939b3ba16f47c98424fecfd4f705e75c0bb64070cc806b925e75a9e26a0",
     "bridge/BulksketchBridge/AffineSelector.lean": "f5700d86ba22c39b15a6a8b4c7c4045d6ce29e0a860725a488eeee32e5e98316",
     "bridge/BulksketchBridge/AvxMultiplyLinear.lean": "a4ab70f3b92edbe064b21d8a5a7dd7c7870a3ba18be7d4f91bf4f5015cf4aa3c",
@@ -1330,7 +1330,62 @@
     "extraction/avx-multiply-linear/charon.log": "b95b81839f1ecc726c58456d7cd37261ff880655eb75afd5a0a2e5888b424c66",
     "extraction/avx-multiply-linear/project.py": "2db541b084c3380d18d3113350ab5ccfe67a5c954fc24d4e97b8955bba0f26a3",
     "extraction/avx-multiply-linear/receipt.json": "fd066ff0a6d4b8f2990c98ed865f3415553dd1fd3baeac2df943629731272108",
-    "extraction/avx-multiply-linear/replay.log": "4ffa7b999eb8b65d14e4241391d1d0d89e779e80be0c615b98745cfdf2a21b7b"
+    "extraction/avx-multiply-linear/replay.log": "4ffa7b999eb8b65d14e4241391d1d0d89e779e80be0c615b98745cfdf2a21b7b",
+    "bridge/Arithmetic/AffineSolveMapGenerated.lean": "f5fadc2c9c845715cc437f81d52d2294a5a3de6cf5dd84d4cc214449f74fcf53",
+    "bridge/Arithmetic/AvxHornerChunkRuntime.lean": "8b4b25334dd663935446930ae7de5d9f3a52252e7afe236ab431dd48608c41d2",
+    "bridge/Arithmetic/AvxHornerGenerated.lean": "726aab57b5ec5c8d30df6de975b039d970fd9d90cdf9f8b88d9919a011570b53",
+    "bridge/BulksketchBridge/AffineEnumerationCompleteness.lean": "d26dec32e6037ed16c73aba5735216c3dc9bb9ebd36c0bff98a5133a9750a8d9",
+    "bridge/BulksketchBridge/AffineEnumerationCoset.lean": "845aa540db7b22be8e70e5ad356d4e64a4e493e89309cedaf49bdab71fbe8df4",
+    "bridge/BulksketchBridge/AffineSolveMap.lean": "0a065927fc1f8fbd978a2eee00f95ae2f97f5fd6f3002a5b6bbb6dd6ecb77f76",
+    "bridge/BulksketchBridge/AffineSolveMapColumnMeaning.lean": "bf47876508328c1216fae7f1e17fe114734c98b9f23c256ac612fc8a8b47f408",
+    "bridge/BulksketchBridge/AffineSolveMapColumns.lean": "d6c4f374da293b5b05ef602116055ec5016f326cdab874cc88a778a1d81b1895",
+    "bridge/BulksketchBridge/AffineSolveMapGraph.lean": "de8912eaf8d2757d7436e2b7a4983dd6472889c2bec49d4f3af86de04258a44d",
+    "bridge/BulksketchBridge/AffineSolveMapPivots.lean": "42870e6f8ce4df5cb99b09fdf0c22de2b965ea98fadb754bcfa25bc9686331c4",
+    "bridge/BulksketchBridge/AffineSolveMapSoundness.lean": "356f801271ea9778693582c09e2f0f25b317a4a2aa65474964726492dae5f34b",
+    "bridge/BulksketchBridge/AffineSolveMapSquare.lean": "83ff685cb193a5d7386cd348e96ae8735457b29502067e4c41b47e951628feb2",
+    "bridge/BulksketchBridge/AffineSolveMapSweep.lean": "324b809fe7f68c244172668e0e7ede97eb8b4225d214964cfecb50783aeaf4f6",
+    "bridge/BulksketchBridge/AffineSolveMapTable.lean": "398b54a72d8fa20236361165dd57da1035d9ceb5b1d5bd91cbaff0c1a31b1714",
+    "bridge/BulksketchBridge/AvxHorner.lean": "3b3e86e465a391916fb7dc85a5682a3b587ae4f3f6554ce110224874ed43665a",
+    "bridge/BulksketchBridge/AvxHornerAllocatedKernel.lean": "e8112d511d248155fe8d9fd6e2b24e5ddb947464e6b439f65e1d7ee5447c3aac",
+    "bridge/BulksketchBridge/AvxHornerHeap.lean": "ef6e6c58366b4d5724e9f3b6a8e1d10b7030cde70a00326c30fa9f5e14ba21f9",
+    "bridge/BulksketchBridge/AvxHornerInner.lean": "c5c6ced5c3828b57fd0e9a8be0be582b1d2fd3eaa3a31465c3b316fb51ca27a3",
+    "bridge/BulksketchBridge/AvxHornerOuter.lean": "00999adb6f6486e034cb41aced479174e61d3fc090281655d33e53815e4f4569",
+    "extraction/affine-solve-map/Arithmetic/Funs.lean": "6a9eb3243563ce128ae56d23bfb11a39f74cf6f4acda41817f59e673cb7a0d53",
+    "extraction/affine-solve-map/Arithmetic/FunsExternal_Template.lean": "5ad04a275111888fca6d8242fa5f3753688eb0a3dac5fd0737c67894e682bf2b",
+    "extraction/affine-solve-map/Arithmetic/Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+    "extraction/affine-solve-map/aeneas.log": "0241befca3efe55b87b7053f3344e38b0d3bc9ab584dbde77d4b4b1f56734755",
+    "extraction/affine-solve-map/arithmetic.llbc": "8dfdd6e1bb4a8bcd2650950b8662abfa0ffe130781c08b9a9bba2897ce94668e",
+    "extraction/affine-solve-map/charon.log": "dfc610c5f697e76e6ce339b5f556b160ff6f4a72a73a556cfffd4d214ea00a0c",
+    "extraction/affine-solve-map/project.py": "18c1f00d6e7c2d117e407b1ed0db48d4832556ee975fc5c5c98b95fbe9ba7835",
+    "extraction/affine-solve-map/receipt.json": "274b92ff2eec8823cd92ab476ea58f9c8c2a4edc3f4b3742fbfa8353c65b4192",
+    "extraction/affine-solve-map/replay.log": "f1692111982bb71bd44686b6827f4a5124874b023a57082d47484361f32bba32",
+    "extraction/avx-horner/free-selector/Arithmetic/Funs.lean": "62ae82bf8468e085f094629e9415c1659c713e95890e79e8e6df733c8ebe7252",
+    "extraction/avx-horner/free-selector/Arithmetic/FunsExternal_Template.lean": "f23c6033c0b030fbe225645d637b2eaa32ca0ac9a1326a786103e80c2c830611",
+    "extraction/avx-horner/free-selector/Arithmetic/Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+    "extraction/avx-horner/free-selector/aeneas.log": "137b715e48c15dba51fd3ff444ccb5bf4cc133f4b2543e5ae327caddcd6ade26",
+    "extraction/avx-horner/free-selector/arithmetic.llbc": "d21a9e66f1ab7738553b6455c8b0549d383892600bc986775996de3dfff65889",
+    "extraction/avx-horner/free-selector/charon.log": "d3587ebb38c62505b4d830964e2440d89a4a78a00b87d711b8f0741251b68882",
+    "extraction/avx-horner/free-selector/replay.log": "6804354a590e90aa5af4a2a3a8179ec3039f972878dac6307636f37191afa95d",
+    "extraction/avx-horner/kernel/Arithmetic/Funs.lean": "3ebe6cb2593e6c292c58dc047ca24719f0dec2520c40d6e046b934e4bdfc4c83",
+    "extraction/avx-horner/kernel/Arithmetic/FunsExternal_Template.lean": "0e511c489438a90d8b824b9f67111287387d9781c68b1c9c43be5eade1b8d72e",
+    "extraction/avx-horner/kernel/Arithmetic/Types.lean": "9eed91c2cd665f33c198ae5aaee275052307a0f271867751d7ff7a0c7c0fc5b9",
+    "extraction/avx-horner/kernel/Arithmetic/TypesExternal_Template.lean": "53a1f77ea401e3bd79bd5c8aa608572ffcbaef870fef5e989bb21a59cc8ed985",
+    "extraction/avx-horner/kernel/aeneas.log": "cea70fbd37a02bc9763baf729666e96f7cefbc4131930d5c20a8bbcacf8137d6",
+    "extraction/avx-horner/kernel/arithmetic.llbc": "f1bf69d2b5c5088ed5a58c9508962897fb1b9ee5120d7fd418aa86c968c99126",
+    "extraction/avx-horner/kernel/charon.log": "d81d29ca1d433098b5f92c63686255685ba9b08673aacaf7137960d565cb3d9e",
+    "extraction/avx-horner/kernel/replay.log": "bc2c815fa63b31712c53ad6ec6aec49949d7cc1e8510772d7243c496728406a4",
+    "extraction/avx-horner/project.py": "48c9169707079d184e143e84b47f01d4ab234206330ac4161588b5e343f3f294",
+    "extraction/avx-horner/receipt.json": "7f1601534f1110161231125ef3a8d9083f26574344bd6b2d2aa2aef60827515f",
+    "extraction/avx-horner/rust-std.sha256": "fb75778de1f660c3bd9e7c45c4b4953f806cd0d84de0f0a81048400d69d992ec",
+    "extraction/avx-horner/stock-kernel-rejection.log": "ea13efaf2cb9e6aac2d85c84c6f1f28f412b34b6cf3d9ddeb640253c7dd428fc",
+    "extraction/avx-horner/trait-scoped/Arithmetic/Funs.lean": "ec2c09736a5b0526200dbb6458df966104d40622156acd7ee65bee0b5227208c",
+    "extraction/avx-horner/trait-scoped/Arithmetic/FunsExternal_Template.lean": "44924ee5cde7e18377c25bec8a51b5859426d9e88c6fd6ac1e521de29daaf2ce",
+    "extraction/avx-horner/trait-scoped/Arithmetic/Types.lean": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef",
+    "extraction/avx-horner/trait-scoped/aeneas.log": "531c80f8e66f285ce88aa8e92c6dc77c327447455dcbb7008d4190e257d34815",
+    "extraction/avx-horner/trait-scoped/arithmetic.llbc": "13cc6b7dc88cbd4521fe05d9ab7480be0e7a7c2612d2d3307a9b091c7558fb4b",
+    "extraction/avx-horner/trait-scoped/charon.log": "94a9fed93bf6f09ca16ae3d276b7593b4f3a90e045362eb36dae79bd38f3b9fb",
+    "extraction/avx-horner/trait-scoped/replay.log": "297c1de0d80471d12bcf339ea73b5794fef799e7088a44f79906bcee51a3e89b",
+    "extraction/avx-horner/unchecked-kernel-rejection.log": "b4b6c115f903c4ec9e0ae31cf2e257f0251214724ea77c6cff9082191df34bbf"
   },
   "reviewed_policy_revisions": [
     {
@@ -9417,7 +9472,366 @@
       "new_sha256": "50de9c90cb9d4e0a75e44761ac4c611086b1831c229c6a2bd2a556303535c8a3",
       "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
       "old_sha256": "cf02fd164dba9f559dbcf040a0ce8215d5d32d88698e01214640daccb0755c75"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "b9c22e9d7ec9b5de35d4ce6972c6e6ed6fce88700efc87401e8b194fb262e8c7",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "cafea1149952f64224096c3f1a1efd4dd38be4cb6b1ce71b2b7c42932e2d6f88"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "5bc188ff6be8eae0d0507dc816bb1eb5a2a1e1a3e2ec21319d233d9942c03c07",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "b5134eeed7300ce35559a4f61b667ebf772a5c2d6f24a3149f524bd7986a9216"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "4e0145a3b3b989f7f949e0134e916c700a0957cb5979ac94560280699be91c64",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "2fae6c8eaa7caf71dba9576529581861f6e2324cdead47de7576d67c9d62a8d3"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "74f5870219053245f5cb054010d5737480f3f15821b7d44514268c15f6d78249",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "59f44ce4894d9e15eee382646fdd8d0e91a5e24f5c8f26c0be1f6c9e309498ba"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "151e33c60b933fc13c1a2f63f8081b7d3eaf2450ff054081f7574c1b9b1818a5",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "23acddffb13f48970f825cc3bf3109d4913fe394335e22d002ae5c36a0af7f83"
+    },
+    {
+      "path": "bridge/Arithmetic/AffineSolveMapGenerated.lean",
+      "new_sha256": "f5fadc2c9c845715cc437f81d52d2294a5a3de6cf5dd84d4cc214449f74fcf53",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/Arithmetic/AvxHornerChunkRuntime.lean",
+      "new_sha256": "8b4b25334dd663935446930ae7de5d9f3a52252e7afe236ab431dd48608c41d2",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/Arithmetic/AvxHornerGenerated.lean",
+      "new_sha256": "726aab57b5ec5c8d30df6de975b039d970fd9d90cdf9f8b88d9919a011570b53",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/Arithmetic/RootAffinePreparationGenerated.lean",
+      "new_sha256": "6d12c2d57f56cbf474bdda59d13a3193b6756eeec0f9b8f5b76a88ec72548169",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "8d5945fd918805636fa53506e21388cfa084e9c321fdcc335e71730ab0bf2de7"
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "0c92b00c10d3217fe5fd02f8183208f556c56abf6635d82d9a7e30f69f1c5e9a",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "79c084c9f2e031b0fd17abf648f3d4d5511dc31f6ae94d6d62cf36fed22b6ccc"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineEnumerationCompleteness.lean",
+      "new_sha256": "d26dec32e6037ed16c73aba5735216c3dc9bb9ebd36c0bff98a5133a9750a8d9",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineEnumerationCoset.lean",
+      "new_sha256": "845aa540db7b22be8e70e5ad356d4e64a4e493e89309cedaf49bdab71fbe8df4",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineEnumerationHorner.lean",
+      "new_sha256": "52726dc1e76ee00cded853014ebf8a911103d0d5438b64951cafaaa53b0bfa71",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "5bb21cf5b0725b1b83966a01c64b525db0cded3e0fa1588f4d8569b68623d9b9"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSolveMap.lean",
+      "new_sha256": "0a065927fc1f8fbd978a2eee00f95ae2f97f5fd6f3002a5b6bbb6dd6ecb77f76",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSolveMapColumnMeaning.lean",
+      "new_sha256": "bf47876508328c1216fae7f1e17fe114734c98b9f23c256ac612fc8a8b47f408",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSolveMapColumns.lean",
+      "new_sha256": "d6c4f374da293b5b05ef602116055ec5016f326cdab874cc88a778a1d81b1895",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSolveMapGraph.lean",
+      "new_sha256": "de8912eaf8d2757d7436e2b7a4983dd6472889c2bec49d4f3af86de04258a44d",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSolveMapPivots.lean",
+      "new_sha256": "42870e6f8ce4df5cb99b09fdf0c22de2b965ea98fadb754bcfa25bc9686331c4",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSolveMapSoundness.lean",
+      "new_sha256": "356f801271ea9778693582c09e2f0f25b317a4a2aa65474964726492dae5f34b",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSolveMapSquare.lean",
+      "new_sha256": "83ff685cb193a5d7386cd348e96ae8735457b29502067e4c41b47e951628feb2",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSolveMapSweep.lean",
+      "new_sha256": "324b809fe7f68c244172668e0e7ede97eb8b4225d214964cfecb50783aeaf4f6",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSolveMapTable.lean",
+      "new_sha256": "398b54a72d8fa20236361165dd57da1035d9ceb5b1d5bd91cbaff0c1a31b1714",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "8cd828c85dd1e37a5c73cad4968fbcf68abefc695385d5a8054d2c3b8201779b",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "bae9644bfc86abf9b10177eb624ea0888cd78b26929a9b6da757b1145fe46e23"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxHorner.lean",
+      "new_sha256": "3b3e86e465a391916fb7dc85a5682a3b587ae4f3f6554ce110224874ed43665a",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxHornerAllocatedKernel.lean",
+      "new_sha256": "e8112d511d248155fe8d9fd6e2b24e5ddb947464e6b439f65e1d7ee5447c3aac",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxHornerHeap.lean",
+      "new_sha256": "ef6e6c58366b4d5724e9f3b6a8e1d10b7030cde70a00326c30fa9f5e14ba21f9",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxHornerInner.lean",
+      "new_sha256": "c5c6ced5c3828b57fd0e9a8be0be582b1d2fd3eaa3a31465c3b316fb51ca27a3",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxHornerOuter.lean",
+      "new_sha256": "00999adb6f6486e034cb41aced479174e61d3fc090281655d33e53815e4f4569",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootAffinePreparation.lean",
+      "new_sha256": "f783cc03554035644157b03243335cbeee26071cb62f448fbd06644587b97dc8",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "ef5c0cbb8d8e698af6be0eb7d0d34b118cddde09fdd816f74dc15251b571524c"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "c6b0afdfd576c2e740b2343b42f08d707c3d1d317b89d99468ed813f6c59b023",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "5bdff58ceaf815ac74323381e804fa49ea233675b99d80f885512f317d7e3493"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "f4f3c6c7bc32727961ddc21aef63d0de5ace93cc9327b04eeeffbd3a2eec35bc",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "ad73e61b2f5c00aedf9e6046655b5759df6826ec58b6f59f264d9e61a7c133b6"
+    },
+    {
+      "path": "extraction/affine-solve-map/Arithmetic/Funs.lean",
+      "new_sha256": "6a9eb3243563ce128ae56d23bfb11a39f74cf6f4acda41817f59e673cb7a0d53",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/affine-solve-map/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "5ad04a275111888fca6d8242fa5f3753688eb0a3dac5fd0737c67894e682bf2b",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/affine-solve-map/Arithmetic/Types.lean",
+      "new_sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/affine-solve-map/aeneas.log",
+      "new_sha256": "0241befca3efe55b87b7053f3344e38b0d3bc9ab584dbde77d4b4b1f56734755",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/affine-solve-map/arithmetic.llbc",
+      "new_sha256": "8dfdd6e1bb4a8bcd2650950b8662abfa0ffe130781c08b9a9bba2897ce94668e",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/affine-solve-map/charon.log",
+      "new_sha256": "dfc610c5f697e76e6ce339b5f556b160ff6f4a72a73a556cfffd4d214ea00a0c",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/affine-solve-map/project.py",
+      "new_sha256": "18c1f00d6e7c2d117e407b1ed0db48d4832556ee975fc5c5c98b95fbe9ba7835",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/affine-solve-map/receipt.json",
+      "new_sha256": "274b92ff2eec8823cd92ab476ea58f9c8c2a4edc3f4b3742fbfa8353c65b4192",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/affine-solve-map/replay.log",
+      "new_sha256": "f1692111982bb71bd44686b6827f4a5124874b023a57082d47484361f32bba32",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/free-selector/Arithmetic/Funs.lean",
+      "new_sha256": "62ae82bf8468e085f094629e9415c1659c713e95890e79e8e6df733c8ebe7252",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/free-selector/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "f23c6033c0b030fbe225645d637b2eaa32ca0ac9a1326a786103e80c2c830611",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/free-selector/Arithmetic/Types.lean",
+      "new_sha256": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/free-selector/aeneas.log",
+      "new_sha256": "137b715e48c15dba51fd3ff444ccb5bf4cc133f4b2543e5ae327caddcd6ade26",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/free-selector/arithmetic.llbc",
+      "new_sha256": "d21a9e66f1ab7738553b6455c8b0549d383892600bc986775996de3dfff65889",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/free-selector/charon.log",
+      "new_sha256": "d3587ebb38c62505b4d830964e2440d89a4a78a00b87d711b8f0741251b68882",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/free-selector/replay.log",
+      "new_sha256": "6804354a590e90aa5af4a2a3a8179ec3039f972878dac6307636f37191afa95d",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/kernel/Arithmetic/Funs.lean",
+      "new_sha256": "3ebe6cb2593e6c292c58dc047ca24719f0dec2520c40d6e046b934e4bdfc4c83",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/kernel/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "0e511c489438a90d8b824b9f67111287387d9781c68b1c9c43be5eade1b8d72e",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/kernel/Arithmetic/Types.lean",
+      "new_sha256": "9eed91c2cd665f33c198ae5aaee275052307a0f271867751d7ff7a0c7c0fc5b9",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/kernel/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "53a1f77ea401e3bd79bd5c8aa608572ffcbaef870fef5e989bb21a59cc8ed985",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/kernel/aeneas.log",
+      "new_sha256": "cea70fbd37a02bc9763baf729666e96f7cefbc4131930d5c20a8bbcacf8137d6",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/kernel/arithmetic.llbc",
+      "new_sha256": "f1bf69d2b5c5088ed5a58c9508962897fb1b9ee5120d7fd418aa86c968c99126",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/kernel/charon.log",
+      "new_sha256": "d81d29ca1d433098b5f92c63686255685ba9b08673aacaf7137960d565cb3d9e",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/kernel/replay.log",
+      "new_sha256": "bc2c815fa63b31712c53ad6ec6aec49949d7cc1e8510772d7243c496728406a4",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/project.py",
+      "new_sha256": "48c9169707079d184e143e84b47f01d4ab234206330ac4161588b5e343f3f294",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/receipt.json",
+      "new_sha256": "7f1601534f1110161231125ef3a8d9083f26574344bd6b2d2aa2aef60827515f",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/rust-std.sha256",
+      "new_sha256": "fb75778de1f660c3bd9e7c45c4b4953f806cd0d84de0f0a81048400d69d992ec",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/stock-kernel-rejection.log",
+      "new_sha256": "ea13efaf2cb9e6aac2d85c84c6f1f28f412b34b6cf3d9ddeb640253c7dd428fc",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/trait-scoped/Arithmetic/Funs.lean",
+      "new_sha256": "ec2c09736a5b0526200dbb6458df966104d40622156acd7ee65bee0b5227208c",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/trait-scoped/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "44924ee5cde7e18377c25bec8a51b5859426d9e88c6fd6ac1e521de29daaf2ce",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/trait-scoped/Arithmetic/Types.lean",
+      "new_sha256": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/trait-scoped/aeneas.log",
+      "new_sha256": "531c80f8e66f285ce88aa8e92c6dc77c327447455dcbb7008d4190e257d34815",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/trait-scoped/arithmetic.llbc",
+      "new_sha256": "13cc6b7dc88cbd4521fe05d9ab7480be0e7a7c2612d2d3307a9b091c7558fb4b",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/trait-scoped/charon.log",
+      "new_sha256": "94a9fed93bf6f09ca16ae3d276b7593b4f3a90e045362eb36dae79bd38f3b9fb",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/trait-scoped/replay.log",
+      "new_sha256": "297c1de0d80471d12bcf339ea73b5794fef799e7088a44f79906bcee51a3e89b",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/avx-horner/unchecked-kernel-rejection.log",
+      "new_sha256": "b4b6c115f903c4ec9e0ae31cf2e257f0251214724ea77c6cff9082191df34bbf",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects."
+    },
+    {
+      "path": "extraction/root-prepare-affine/project.py",
+      "new_sha256": "f2427e2b035bc99020548d6a4890f3a371bc3b21c8962ec4f4597c860c1d21db",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "12680b2906e599517aab52e770c27f8afbb34df07ffa7ac0304f178206b56f7d"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "637b9d692082a29848c8cfbc47b70e14a8abe2770e4fb94282efa9604f1ff329",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "aa27c30b9f8d5835f9750f085758afa38b11c7b76919bbd67354c48aff007109"
     }
   ],
-  "challenge_count": 281
+  "challenge_count": 290
 }

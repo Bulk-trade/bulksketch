@@ -1,6 +1,7 @@
 import BulksketchBridge.AffineEnumerationBatch
 import BulksketchBridge.HornerPolynomial
 import BulksketchBridge.X86PclmulHorner
+import BulksketchBridge.AvxHorner
 
 namespace BulksketchBridge.AffineEnumerate
 
@@ -51,5 +52,17 @@ theorem horner_law_of_pclmul {K : Type} (kernels : BulkKernels K bulksketch.fiel
   intro polynomial points values aligned
   rw [installed]
   exact pclmul_horner_polynomial polynomial points values aligned
+
+open Aeneas.Std.AvxSquareRuntime AvxSquare in
+/-- Install the original AVX-512 method under its masked slice contracts. -/
+theorem horner_law_of_avx {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64)
+    (loadModel : Load) (storeModel : Store)
+    (loadLaw : LoadLaw loadModel) (storeLaw : StoreLaw storeModel)
+    (installed : kernels.horner_many =
+      bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.horner_many
+        loadModel storeModel bulksketch.field.Gf64.Insts.BulksketchFieldBinaryField) : HornerLaw kernels := by
+  intro polynomial points values aligned
+  rw [installed]
+  exact AvxHorner.trait_polynomial_refines loadModel storeModel loadLaw storeLaw polynomial points values aligned.symm
 
 end BulksketchBridge.AffineEnumerate

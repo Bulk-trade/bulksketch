@@ -1,12 +1,12 @@
 {
   "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
-  "previous_proof_commit": "60376599a45c3cc30921b2fb62634b75d592fb53",
+  "previous_proof_commit": "a9389d05f932a387271ccdf56a288f96e87f08f4",
   "retained_native_executable_obligations": 344,
-  "generated_body_refinements_under_recorded_TCB": 131,
+  "generated_body_refinements_under_recorded_TCB": 137,
   "checked_stateful_llbc_refinements": 5,
   "whole_native_coverage_achieved": false,
   "open": [
-    "Affine multiple, binary solve-map proof, AVX-512 Horner, depth-first traversal and native caller admission",
+    "Affine multiple, GF64 kernel spanning and independence, and general depth-first factor traversal",
     "Candidate evaluation, deflation, caller-wide admission and end-to-end decoder completeness",
     "Rust pointer provenance, remaining ISA execution and compiler correspondence"
   ]

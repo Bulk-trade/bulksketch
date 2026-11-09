@@ -26,9 +26,10 @@ def multipleInput (calls : Calls) {K : Type} (kernels : BulkKernels K bulksketch
     (prefixSlice workspace.square_table (RootSetup.tableCount roots.degree.val)) workspace.factors
     (prefixSlice workspace.bm (roots.degree.val + 1)) (tail workspace.bm (roots.degree.val + 1)) workspace.raw
 
-def mapInput (calls : Calls) {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64)
+def mapInput {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64)
     (size : Usize) (coefficients : Slice U64) :=
-  calls.solveMap dictionary kernels (prefixSlice coefficients size.val) (Array.repeat 64#usize 0#u64)
+  bulksketch.decode.affine.solve_map dictionary kernels
+    (prefixSlice coefficients size.val) (Array.repeat 64#usize 0#u64)
 
 /-- Bounds for the paid stage, stated on the actual buffers returned by the
     affine multiple and solve-map calls. -/
@@ -42,7 +43,7 @@ def Ready (calls : Calls) {K : Type} (kernels : BulkKernels K bulksketch.field.G
     1 < coefficients.length ∧ (coefficients[(1 : Nat)]! ≠ 0#u64 →
       size.val ≤ coefficients.length ∧ 0 < size.val ∧
       ∃ solution directions,
-        mapInput calls kernels size coefficients = .ok (solution, directions) ∧
+        mapInput kernels size coefficients = .ok (solution, directions) ∧
         match solution with
         | none => True
         | some (_, rank) => rank.val ≤ 64 ∧ roots.stride.val * roots.stride.val ≤ factors.length)
@@ -61,7 +62,7 @@ def expected (calls : Calls) {K : Type} (kernels : BulkKernels K bulksketch.fiel
     if coefficients[(1 : Nat)]! = 0#u64 then
       .ok (.Ok (.Err .NotSplit), roots, written, id, paid)
     else do
-      let (solution, directions) ← mapInput calls kernels size coefficients
+      let (solution, directions) ← mapInput kernels size coefficients
       let based := { written with basis := { workspace.basis with directions := some directions } }
       match solution with
       | none => .ok (.Ok (.Err .NotSplit), roots, based, id, paid)

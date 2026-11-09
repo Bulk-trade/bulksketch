@@ -4,7 +4,8 @@ All 344 native executable obligations remain in scope. This checkpoint
 adds exact original Aeneas body refinements for `Roots::run`,
 `Roots::divide`, the affine subspace offset, `affine::splitter`,
 `affine::subspaces`, the preparation and enumeration wrappers, the
-inner enumerator and selector, and the original AVX linear update.
+inner enumerator and selector, the GF64 solve map and its table
+construction, and the original AVX linear update and Horner paths.
 Production Rust and Cargo inputs are unchanged.
 
 The stock root-run projection retains the original dispatcher and
@@ -12,9 +13,9 @@ subspace offset helper. Its theorem checks the stage decisions, exact
 workspace frames, and all admitted branches. The original leaf,
 closed-leaf, trace, reducer table, GCD, factor division, splitter,
 affine preparation and affine enumeration wrappers are bound in the
-projection. The original selector and candidate enumerator are bound
-directly. The affine multiple and binary solve map still have typed
-slots. The GCD stage uses the
+projection. The original selector, binary solve map, and candidate
+enumerator are bound directly. The affine multiple still has a typed
+slot. The GCD stage uses the
 admitted div/rem law and normalized remainder and retry conditions.
 Table, GCD and affine split prices follow the original order of
 checked operations, including intermediate overflow.
@@ -40,9 +41,20 @@ bounded count increment and the original advance after success. The
 inner enumerator proof checks the rank shift, scratch split, batch
 boundaries, Gray points, Horner calls, exact candidate writes and final
 count. The proved frame supplies the wrapper's candidate law under
-admitted scratch and rank bounds. The original Portable and PCLMUL
-Horner methods provide the field-evaluation law when installed in the
-backend slot. Gaussian elimination and AVX-512 Horner remain open.
+admitted scratch and rank bounds. The original Portable, PCLMUL, and
+AVX-512 Horner methods provide the field-evaluation law when installed
+in the backend slot under their contracts. The completeness theorem
+returns every factor root exactly once if the factor splits into
+distinct nonzero roots in the affine coset and the directions are
+independent. It verifies the count, the exact returned root set, and
+both scratch widths.
+
+The original GF64 solve-map proof checks native table construction,
+the coefficient fold, pivot insertion and reduction, and exact kernel,
+image and preimage writes. Its field interpretation proves the
+returned base maps to the constant term and each written kernel
+direction maps to zero. Showing that those directions span the entire
+kernel is still a separate obligation.
 
 The enumeration selector and its square-products helper check all
 scalar inputs. Their proofs preserve the checked operation order,
@@ -72,6 +84,13 @@ each descending write. Its slice theorem gives the exact GF64 linear
 coefficient update. The finite-heap theorem composes the checked
 load and store contracts for every block, including the short block,
 and preserves every byte outside the admitted slice.
+
+The original AVX-512 Horner kernel and both wrappers check the complete
+reverse coefficient fold in each lane, the empty-input zero fill, and
+the final short masked chunk. Its allocated proof preserves every
+byte outside the output and keeps the shared point view valid.
+The existing scoped translator variant applies to the exact inner
+kernel capture. The two wrapper captures use stock Aeneas.
 
 Run the complete gate from `verification/lean`.
 

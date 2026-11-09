@@ -1,0 +1,280 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "native_source_edited": false,
+  "translator_variant": "checked-ended-shared-scalar-v1",
+  "variant_patch_sha256": "b0d2bd6b087d0d376351469e20f97a150033a57e2a7b48aedf9e966f56f6562c",
+  "variant_binary_sha256": "cb4287c07bdcac9179b6120f680dfd8ac17b875d1895ed8f6f1024e1f322de8b",
+  "kernel_variant_command_binary": "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-horner-match/src/_build/default/main.exe",
+  "source_sha256": {
+    "src/backend/x86_vpclmul512.rs": "7a9c29dff254508671aa4122b20644b21a9cfb40f86ba5eaadce02bf680475d4",
+    "src/backend/portable.rs": "2c3543dc3c5a67d5343e292a1c7b4f0554ba15f68f45b9533d269e3f4ba9b8da"
+  },
+  "runtime_sha256": "8b4b25334dd663935446930ae7de5d9f3a52252e7afe236ab431dd48608c41d2",
+  "captures": {
+    "kernel": {
+      "capture": 0,
+      "charon": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/kernel/arithmetic.llbc",
+        "--start-from=bulksketch::backend::x86_vpclmul512::horner_kernel",
+        "--opaque=bulksketch::backend::x86_vpclmul512::load",
+        "--opaque=bulksketch::backend::x86_vpclmul512::store",
+        "--",
+        "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "checked_exit": 0,
+      "checked_command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-horner-match/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/kernel/ended-scalar",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/kernel/arithmetic.llbc"
+      ],
+      "replay": {
+        "command": [
+          "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-horner-match/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/kernel/replay",
+          "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/kernel/arithmetic.llbc"
+        ],
+        "exit_code": 0,
+        "input_sha256": "f1bf69d2b5c5088ed5a58c9508962897fb1b9ee5120d7fd418aa86c968c99126",
+        "binary_sha256": "cb4287c07bdcac9179b6120f680dfd8ac17b875d1895ed8f6f1024e1f322de8b",
+        "outputs": {
+          "Funs.lean": "3ebe6cb2593e6c292c58dc047ca24719f0dec2520c40d6e046b934e4bdfc4c83",
+          "FunsExternal_Template.lean": "0e511c489438a90d8b824b9f67111287387d9781c68b1c9c43be5eade1b8d72e",
+          "Types.lean": "9eed91c2cd665f33c198ae5aaee275052307a0f271867751d7ff7a0c7c0fc5b9",
+          "TypesExternal_Template.lean": "53a1f77ea401e3bd79bd5c8aa608572ffcbaef870fef5e989bb21a59cc8ed985"
+        }
+      }
+    },
+    "free-selector": {
+      "capture": 0,
+      "charon": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/free-selector/arithmetic.llbc",
+        "--start-from=bulksketch::backend::x86_vpclmul512::horner_many",
+        "--opaque=bulksketch::backend::x86_vpclmul512::horner_kernel",
+        "--",
+        "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "checked_exit": 0,
+      "checked_command": [
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/free-selector/stock",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/free-selector/arithmetic.llbc"
+      ],
+      "replay": {
+        "command": [
+          "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/free-selector/replay",
+          "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/free-selector/arithmetic.llbc"
+        ],
+        "exit_code": 0,
+        "input_sha256": "d21a9e66f1ab7738553b6455c8b0549d383892600bc986775996de3dfff65889",
+        "binary_sha256": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+        "outputs": {
+          "Funs.lean": "62ae82bf8468e085f094629e9415c1659c713e95890e79e8e6df733c8ebe7252",
+          "FunsExternal_Template.lean": "f23c6033c0b030fbe225645d637b2eaa32ca0ac9a1326a786103e80c2c830611",
+          "Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea"
+        }
+      }
+    },
+    "trait-scoped": {
+      "capture": 0,
+      "charon": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/trait-scoped/arithmetic.llbc",
+        "--start-from={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::x86_vpclmul512::Vpclmul512}::horner_many",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::mul",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::square",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::frobenius",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::inverse",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::trace",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::solve_quadratic",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::raw_mul",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::reduce",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::scale_xor",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::square_slice",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::multiply_linear",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::odd_recurrence_matches",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::insert_nonzero",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::encode_nonzero",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::xor_assign",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::difference",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::square_mod",
+        "--opaque=bulksketch::backend::x86_vpclmul512::horner_many",
+        "--opaque=bulksketch::backend::x86_vpclmul512::square_mod",
+        "--opaque=bulksketch::backend::portable::_::_",
+        "--opaque=bulksketch::backend::x86_pclmul::_::_",
+        "--include={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::x86_vpclmul512::Vpclmul512}::horner_many",
+        "--",
+        "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "checked_exit": 0,
+      "checked_command": [
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/trait-scoped/stock",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/trait-scoped/arithmetic.llbc"
+      ],
+      "replay": {
+        "command": [
+          "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/trait-scoped/replay",
+          "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/trait-scoped/arithmetic.llbc"
+        ],
+        "exit_code": 0,
+        "input_sha256": "13cc6b7dc88cbd4521fe05d9ab7480be0e7a7c2612d2d3307a9b091c7558fb4b",
+        "binary_sha256": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+        "outputs": {
+          "Funs.lean": "ec2c09736a5b0526200dbb6458df966104d40622156acd7ee65bee0b5227208c",
+          "FunsExternal_Template.lean": "44924ee5cde7e18377c25bec8a51b5859426d9e88c6fd6ac1e521de29daaf2ce",
+          "Types.lean": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef"
+        }
+      }
+    }
+  },
+  "kernel_controls": {
+    "stock": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/kernel/stock",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/kernel/arithmetic.llbc"
+      ],
+      "exit_code": 1
+    },
+    "unchecked": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-tools/aeneas-horner-match/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/kernel/without-checks",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-horner/kernel/arithmetic.llbc"
+      ],
+      "exit_code": 1
+    }
+  },
+  "artifacts": {
+    "extraction/avx-horner/free-selector/Arithmetic/Funs.lean": "62ae82bf8468e085f094629e9415c1659c713e95890e79e8e6df733c8ebe7252",
+    "extraction/avx-horner/free-selector/Arithmetic/FunsExternal_Template.lean": "f23c6033c0b030fbe225645d637b2eaa32ca0ac9a1326a786103e80c2c830611",
+    "extraction/avx-horner/free-selector/Arithmetic/Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+    "extraction/avx-horner/free-selector/aeneas.log": "137b715e48c15dba51fd3ff444ccb5bf4cc133f4b2543e5ae327caddcd6ade26",
+    "extraction/avx-horner/free-selector/arithmetic.llbc": "d21a9e66f1ab7738553b6455c8b0549d383892600bc986775996de3dfff65889",
+    "extraction/avx-horner/free-selector/charon.log": "d3587ebb38c62505b4d830964e2440d89a4a78a00b87d711b8f0741251b68882",
+    "extraction/avx-horner/free-selector/replay.log": "6804354a590e90aa5af4a2a3a8179ec3039f972878dac6307636f37191afa95d",
+    "extraction/avx-horner/kernel/Arithmetic/Funs.lean": "3ebe6cb2593e6c292c58dc047ca24719f0dec2520c40d6e046b934e4bdfc4c83",
+    "extraction/avx-horner/kernel/Arithmetic/FunsExternal_Template.lean": "0e511c489438a90d8b824b9f67111287387d9781c68b1c9c43be5eade1b8d72e",
+    "extraction/avx-horner/kernel/Arithmetic/Types.lean": "9eed91c2cd665f33c198ae5aaee275052307a0f271867751d7ff7a0c7c0fc5b9",
+    "extraction/avx-horner/kernel/Arithmetic/TypesExternal_Template.lean": "53a1f77ea401e3bd79bd5c8aa608572ffcbaef870fef5e989bb21a59cc8ed985",
+    "extraction/avx-horner/kernel/aeneas.log": "cea70fbd37a02bc9763baf729666e96f7cefbc4131930d5c20a8bbcacf8137d6",
+    "extraction/avx-horner/kernel/arithmetic.llbc": "f1bf69d2b5c5088ed5a58c9508962897fb1b9ee5120d7fd418aa86c968c99126",
+    "extraction/avx-horner/kernel/charon.log": "d81d29ca1d433098b5f92c63686255685ba9b08673aacaf7137960d565cb3d9e",
+    "extraction/avx-horner/kernel/replay.log": "bc2c815fa63b31712c53ad6ec6aec49949d7cc1e8510772d7243c496728406a4",
+    "extraction/avx-horner/rust-std.sha256": "fb75778de1f660c3bd9e7c45c4b4953f806cd0d84de0f0a81048400d69d992ec",
+    "extraction/avx-horner/stock-kernel-rejection.log": "ea13efaf2cb9e6aac2d85c84c6f1f28f412b34b6cf3d9ddeb640253c7dd428fc",
+    "extraction/avx-horner/trait-scoped/Arithmetic/Funs.lean": "ec2c09736a5b0526200dbb6458df966104d40622156acd7ee65bee0b5227208c",
+    "extraction/avx-horner/trait-scoped/Arithmetic/FunsExternal_Template.lean": "44924ee5cde7e18377c25bec8a51b5859426d9e88c6fd6ac1e521de29daaf2ce",
+    "extraction/avx-horner/trait-scoped/Arithmetic/Types.lean": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef",
+    "extraction/avx-horner/trait-scoped/aeneas.log": "531c80f8e66f285ce88aa8e92c6dc77c327447455dcbb7008d4190e257d34815",
+    "extraction/avx-horner/trait-scoped/arithmetic.llbc": "13cc6b7dc88cbd4521fe05d9ab7480be0e7a7c2612d2d3307a9b091c7558fb4b",
+    "extraction/avx-horner/trait-scoped/charon.log": "94a9fed93bf6f09ca16ae3d276b7593b4f3a90e045362eb36dae79bd38f3b9fb",
+    "extraction/avx-horner/trait-scoped/replay.log": "297c1de0d80471d12bcf339ea73b5794fef799e7088a44f79906bcee51a3e89b",
+    "extraction/avx-horner/unchecked-kernel-rejection.log": "b4b6c115f903c4ec9e0ae31cf2e257f0251214724ea77c6cff9082191df34bbf"
+  }
+}

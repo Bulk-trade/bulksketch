@@ -105,3 +105,6 @@ import BulksketchBridge.AffineSplitterEvaluation
 import BulksketchBridge.AffineEnumerationHorner
 import BulksketchBridge.AffineSelector
 import BulksketchBridge.AvxMultiplyLinearHeap
+import BulksketchBridge.AffineEnumerationCompleteness
+import BulksketchBridge.AffineSolveMapSoundness
+import BulksketchBridge.AvxHornerAllocatedKernel

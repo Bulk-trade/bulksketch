@@ -2223,7 +2223,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxHorner.trait_refines",
+        "scope": "Original length guard and exact GF64 route through the stock wrapper and proved kernel. Separate field and allocated heap endpoints.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:190:function:bulksketch::backend::x86_vpclmul512::mask",
@@ -2629,7 +2636,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxHorner.free_refines",
+        "scope": "Stock original free selector binds the proved scoped checked AVX kernel and exact output words under admitted matching widths.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:376:function:bulksketch::backend::x86_vpclmul512::horner_kernel",
@@ -2647,7 +2661,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxHorner.kernel_refines",
+        "scope": "Exact original inner and outer loops for both reduction modes, empty-coefficient zero fill and short tail under matching slice widths and masked memory contracts.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:395:function:bulksketch::backend::x86_vpclmul512::insert",
@@ -3192,7 +3213,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AffineSolveMap.solve_map_gf64_refines",
+        "scope": "Original GF64 table and coefficient fold, image and preimage pivots, kernel frame and final reduction for affine lengths 1\u201365 under exact backend ScaleXor. Success soundness checked separately.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/affine.rs:234:function:bulksketch::decode::affine::linear_eval",
@@ -3387,7 +3415,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AffineSolveMap.frobenius_columns_refines",
+        "scope": "Exact original constructor and three nested iteration paths for all 64 powers and 64 basis columns.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/affine.rs:372:function:bulksketch::decode::affine::square_column",
@@ -3407,7 +3442,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AffineSolveMap.square_column_refines",
+        "scope": "Exact original 64-bit bit spreading and polynomial reduction implementing GF64 column square.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/affine.rs:52:constant:bulksketch::decode::affine::PREFERRED_MASK",
@@ -4557,7 +4599,7 @@
       "trusted_assumptions": [],
       "generated_body_refinement_evidence": {
         "theorem": "BulksketchBridge.RootAffinePreparation.prepare_affine_refines",
-        "scope": "Exact checked price, charge, rank guards and stage frames. Original subspace table and selector are bound, with affine multiple and solve-map slots.",
+        "scope": "Exact checked price, charge, rank guards and stage frames. Original solve map, subspace table and selector are bound, with an explicit affine multiple slot.",
         "source_linkage": "bridge/source-linkage.json",
         "registry": "bridge/obligations.json",
         "verification": "bridge/audit/results/verification.json"
@@ -11971,8 +12013,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. Original affine enumeration, its selector, and AVX-512 linear update check under explicit contracts. Enumeration uses original Portable and PCLMUL Horner slot proofs. AVX linear update has a checked allocated byte-frame composition. Affine multiple, solve-map composition, AVX-512 Horner, depth-first traversal and decoder completeness, Rust provenance and compiler/ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 131,
+    "note": "All 344 native executable obligations retained. Original GF64 solve-map execution and soundness, affine enumeration completeness under split-coset admission, and AVX-512 Horner kernel, wrappers, field evaluation and allocated byte-frame check. Affine multiple, kernel spanning and caller-wide admission, general traversal and decoder completeness, Rust provenance and compiler/ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 137,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12072,7 +12114,10 @@
         "BulksketchBridge.AffineSplitter.native_splitter_children",
         "BulksketchBridge.AffineEnumerate.native_enumerate_refines",
         "BulksketchBridge.RootEnumerate.original_candidate_law",
-        "BulksketchBridge.AffineSelector.enumerate_preferred_refines"
+        "BulksketchBridge.AffineSelector.enumerate_preferred_refines",
+        "BulksketchBridge.AffineEnumerate.native_enumeration_complete",
+        "BulksketchBridge.AffineSolveMap.solve_map_gf64_refines",
+        "BulksketchBridge.AffineSolveMap.native_solve_map_sound"
       ]
     },
     "masked_memory_evidence": {
@@ -12101,7 +12146,8 @@
       "BulksketchBridge.X86MaskedMemory.Allocation.allocated_difference_refines",
       "BulksketchBridge.AvxSquare.allocated_block_scan",
       "BulksketchBridge.AvxSquare.allocated_square_refines",
-      "BulksketchBridge.AvxMultiplyLinear.allocated_multiply_linear_refines"
+      "BulksketchBridge.AvxMultiplyLinear.allocated_multiply_linear_refines",
+      "BulksketchBridge.AvxHorner.allocated_kernel_refines"
     ]
   }
 }

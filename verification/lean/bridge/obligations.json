@@ -1098,10 +1098,6 @@
       "theorem": "BulksketchBridge.RootRun.run_refines"
     },
     {
-      "challenge": "BulksketchBridge.RootAffinePreparation.ActualAffinePreparation",
-      "theorem": "BulksketchBridge.RootAffinePreparation.prepare_affine_refines"
-    },
-    {
       "challenge": "BulksketchBridge.AffineEnumerate.ActualNativeEnumerate",
       "theorem": "BulksketchBridge.AffineEnumerate.native_enumerate_refines"
     },
@@ -1124,6 +1120,46 @@
     {
       "challenge": "BulksketchBridge.AvxMultiplyLinear.ActualAllocatedMultiplyLinear",
       "theorem": "BulksketchBridge.AvxMultiplyLinear.allocated_multiply_linear_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootAffinePreparation.ActualAffinePreparation",
+      "theorem": "BulksketchBridge.RootAffinePreparation.prepare_affine_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineSolveMap.ActualSolveMapGf64",
+      "theorem": "BulksketchBridge.AffineSolveMap.solve_map_gf64_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineSolveMap.ActualFrobeniusColumns",
+      "theorem": "BulksketchBridge.AffineSolveMap.frobenius_columns_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineSolveMap.ActualSquareColumn",
+      "theorem": "BulksketchBridge.AffineSolveMap.square_column_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxHorner.ActualAvxHornerKernel",
+      "theorem": "BulksketchBridge.AvxHorner.kernel_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxHorner.ActualAvxHornerFree",
+      "theorem": "BulksketchBridge.AvxHorner.free_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxHorner.ActualAvxHorner",
+      "theorem": "BulksketchBridge.AvxHorner.trait_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxHorner.ActualAvxHornerEvaluatesPolynomial",
+      "theorem": "BulksketchBridge.AvxHorner.trait_polynomial_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxHorner.ActualAllocatedAvxHornerKernel",
+      "theorem": "BulksketchBridge.AvxHorner.allocated_kernel_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineEnumerate.ActualNativeEnumerationComplete",
+      "theorem": "BulksketchBridge.AffineEnumerate.native_enumeration_complete"
     }
   ],
   "refinements": [
@@ -3153,20 +3189,6 @@
       "scope": "Exact original stage dispatcher, charges, transitions and workspace frames, with the original inner enumerator and both affine wrappers bound."
     },
     {
-      "label": "Roots::prepare_affine [original source]",
-      "native_item_id": "src/decode/roots.rs:274:method:bulksketch::decode::roots::Roots::prepare_affine",
-      "source_line_span_sha256": "4fcc6452d5c60cdc86eb22d6d758f566a02d8c75febec11ef41b26252e8d004d",
-      "theorem": "BulksketchBridge.RootAffinePreparation.prepare_affine_refines",
-      "challenge": "BulksketchBridge.RootAffinePreparation.ActualAffinePreparation",
-      "generated_declaration": "bulksketch.decode.roots.Roots.prepare_affine",
-      "generated_file": "bridge/Arithmetic/RootAffinePreparationGenerated.lean",
-      "generated_files": [
-        "bridge/Arithmetic/RootAffinePreparationGenerated.lean"
-      ],
-      "source_linkage": "bridge/source-linkage.json",
-      "scope": "Exact checked price, charge, rank guards and stage frames. Original subspace table and selector are bound, with affine multiple and solve-map slots."
-    },
-    {
       "label": "affine::enumerate [original source]",
       "native_item_id": "src/decode/affine.rs:299:function:bulksketch::decode::affine::enumerate",
       "source_line_span_sha256": "22bf3e245f2b3498af80f9e550202e09311392590099cf69ba2df579282036d8",
@@ -3222,6 +3244,107 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Original descending AVX linear update produces the exact GF64 coefficient recurrence under the checked masked load and store laws. Separate allocated heap theorem covers all writes and frame."
+    },
+    {
+      "label": "Roots::prepare_affine [original source]",
+      "native_item_id": "src/decode/roots.rs:274:method:bulksketch::decode::roots::Roots::prepare_affine",
+      "source_line_span_sha256": "4fcc6452d5c60cdc86eb22d6d758f566a02d8c75febec11ef41b26252e8d004d",
+      "theorem": "BulksketchBridge.RootAffinePreparation.prepare_affine_refines",
+      "challenge": "BulksketchBridge.RootAffinePreparation.ActualAffinePreparation",
+      "generated_declaration": "bulksketch.decode.roots.Roots.prepare_affine",
+      "generated_file": "bridge/Arithmetic/RootAffinePreparationGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RootAffinePreparationGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact checked price, charge, rank guards and stage frames. Original solve map, subspace table and selector are bound, with an explicit affine multiple slot."
+    },
+    {
+      "label": "affine::solve_map [original GF64 source]",
+      "native_item_id": "src/decode/affine.rs:172:function:bulksketch::decode::affine::solve_map",
+      "source_line_span_sha256": "1bd2f9227eaf89fe83fad7149a9da8c061f690a85da40f4f53a0f0900d70e07a",
+      "theorem": "BulksketchBridge.AffineSolveMap.solve_map_gf64_refines",
+      "challenge": "BulksketchBridge.AffineSolveMap.ActualSolveMapGf64",
+      "generated_declaration": "bulksketch.decode.affine.solve_map",
+      "generated_file": "bridge/Arithmetic/AffineSolveMapGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AffineSolveMapGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original GF64 table and coefficient fold, image and preimage pivots, kernel frame and final reduction for affine lengths 1\u201365 under exact backend ScaleXor. Success soundness checked separately."
+    },
+    {
+      "label": "affine::frobenius_columns [original source]",
+      "native_item_id": "src/decode/affine.rs:353:function:bulksketch::decode::affine::frobenius_columns",
+      "source_line_span_sha256": "f2686de31d17d81cfc75872ac39ba0096908fc9489b4555000a7446bceb68791",
+      "theorem": "BulksketchBridge.AffineSolveMap.frobenius_columns_refines",
+      "challenge": "BulksketchBridge.AffineSolveMap.ActualFrobeniusColumns",
+      "generated_declaration": "bulksketch.decode.affine.frobenius_columns",
+      "generated_file": "bridge/Arithmetic/AffineSolveMapGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AffineSolveMapGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original constructor and three nested iteration paths for all 64 powers and 64 basis columns."
+    },
+    {
+      "label": "affine::square_column [original source]",
+      "native_item_id": "src/decode/affine.rs:372:function:bulksketch::decode::affine::square_column",
+      "source_line_span_sha256": "88795057f6d405c40459cbb14809dfb26b25ade3a1fe85a860f7a67b25d1dd7a",
+      "theorem": "BulksketchBridge.AffineSolveMap.square_column_refines",
+      "challenge": "BulksketchBridge.AffineSolveMap.ActualSquareColumn",
+      "generated_declaration": "bulksketch.decode.affine.square_column",
+      "generated_file": "bridge/Arithmetic/AffineSolveMapGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AffineSolveMapGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original 64-bit bit spreading and polynomial reduction implementing GF64 column square."
+    },
+    {
+      "label": "AVX horner_kernel [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:376:function:bulksketch::backend::x86_vpclmul512::horner_kernel",
+      "source_line_span_sha256": "ece82726d27fb1870fd5e8079a15e82ef86a255091975d42083f3cac54e45cd1",
+      "theorem": "BulksketchBridge.AvxHorner.kernel_refines",
+      "challenge": "BulksketchBridge.AvxHorner.ActualAvxHornerKernel",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.horner_kernel",
+      "generated_file": "bridge/Arithmetic/AvxHornerGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxHornerGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original inner and outer loops for both reduction modes, empty-coefficient zero fill and short tail under matching slice widths and masked memory contracts.",
+      "translator_variant": "checked-ended-shared-scalar-v1"
+    },
+    {
+      "label": "AVX horner_many free [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:371:function:bulksketch::backend::x86_vpclmul512::horner_many",
+      "source_line_span_sha256": "b15a5481a214c1d1fbdf8fa5310b2ddb783979068b1cefcdc0add824c6054f83",
+      "theorem": "BulksketchBridge.AvxHorner.free_refines",
+      "challenge": "BulksketchBridge.AvxHorner.ActualAvxHornerFree",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.horner_many",
+      "generated_file": "bridge/Arithmetic/AvxHornerGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxHornerGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Stock original free selector binds the proved scoped checked AVX kernel and exact output words under admitted matching widths.",
+      "translator_variant": "checked-ended-shared-scalar-v1"
+    },
+    {
+      "label": "AVX horner_many trait [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:180:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::horner_many",
+      "source_line_span_sha256": "df13d42992c6d4b93667cade9cd2b01215f9d34428f54b6f65e47846ebb0ff3d",
+      "theorem": "BulksketchBridge.AvxHorner.trait_refines",
+      "challenge": "BulksketchBridge.AvxHorner.ActualAvxHorner",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.horner_many",
+      "generated_file": "bridge/Arithmetic/AvxHornerGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxHornerGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original length guard and exact GF64 route through the stock wrapper and proved kernel. Separate field and allocated heap endpoints.",
+      "translator_variant": "checked-ended-shared-scalar-v1"
     }
   ],
   "stateful_llbc_refinements": [

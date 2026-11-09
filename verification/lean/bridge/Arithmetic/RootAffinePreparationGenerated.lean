@@ -2,6 +2,7 @@
 import Arithmetic.ClosedLeafGenerated
 import Arithmetic.AffineSubspacesGenerated
 import Arithmetic.AffineSelectorGenerated
+import Arithmetic.AffineSolveMapGenerated
 import Arithmetic.WorkScheduleRuntime
 import Arithmetic.RebuiltLfsrRuntime
 
@@ -15,8 +16,6 @@ structure Callees where
   multiple : ∀ {F K : Type}, field.BinaryField F → backend.contract.BulkKernels K F →
     Slice U64 → Slice U64 → Slice U64 → Slice U64 → Slice U64 → Slice types.RawProduct →
     Result (Usize × Slice U64 × Slice U64 × Slice U64 × Slice types.RawProduct)
-  solveMap : ∀ {F K : Type}, field.BinaryField F → backend.contract.BulkKernels K F →
-    Slice U64 → Array U64 64#usize → Result (Option (U64 × Usize) × Array U64 64#usize)
 
 /-- Option insertion for the Copy array of GF64 direction words. -/
 def insertBasis (_old : Option (Array U64 64#usize)) (value : Array U64 64#usize) :
@@ -33,7 +32,6 @@ set_option linter.unusedVariables false
 
 local notation "core.option.Option.insert" => RootAffinePreparationRuntime.insertBasis
 local notation "decode.affine.multiple" => calls.multiple
-local notation "decode.affine.solve_map" => calls.solveMap
 local notation "core.ops.range.RangeToInclusiveUsize.Insts.CoreSliceIndexSliceIndexSliceSlice" =>
   RebuiltLfsrRuntime.inclusive
 
