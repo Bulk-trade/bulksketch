@@ -1564,6 +1564,22 @@
     {
       "challenge": "BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrAvx",
       "theorem": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_avx"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxTileNative.ActualNativeTile",
+      "theorem": "BulksketchBridge.AvxTileNative.native_tile_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxRecurrence.ActualNativeAvxRecurrenceEntry",
+      "theorem": "BulksketchBridge.AvxRecurrence.native_avx_recurrence_entry"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxRecurrence.ActualNativeAvxRecurrenceEntryGf64",
+      "theorem": "BulksketchBridge.AvxRecurrence.native_avx_recurrence_entry_gf64"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxInsertDispatch.ActualNativeAvxDegree18Seed",
+      "theorem": "BulksketchBridge.AvxInsertDispatch.native_avx_degree18_seed"
     }
   ],
   "refinements": [
@@ -4110,6 +4126,37 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Original accelerated recurrence for every nonempty locator under the bounded masked-load contract, exact lag sums, early mismatch, and all short and full blocks."
+    },
+    {
+      "label": "AVX insert_tile [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:437:function:bulksketch::backend::x86_vpclmul512::insert_tile",
+      "source_line_span_sha256": "15b2a9d65d8601bcdf921d38cd2a02d4b84f284182a1710280bb2c056f7cfafc",
+      "theorem": "BulksketchBridge.AvxTileNative.native_tile_refines",
+      "challenge": "BulksketchBridge.AvxTileNative.ActualNativeTile",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert_tile",
+      "generated_file": "bridge/Arithmetic/AvxTileGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxTileGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original tile for all captured widths, reduction modes, and slice sizes. Exact two-array initialization, copied horizontal fold, descending borrow continuations, row XOR writebacks and empty output failure. Bounded masked-load law remains explicit.",
+      "translator_variant": "checked-avx-tile-history-v1"
+    },
+    {
+      "label": "AVX odd recurrence trait entry [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:124:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::odd_recurrence_matches",
+      "source_line_span_sha256": "5013c377a632260a832a0a3a9a80e8dc46a87fe15511c16bbf0929176ec55b4b",
+      "theorem": "BulksketchBridge.AvxRecurrence.native_avx_recurrence_entry",
+      "challenge": "BulksketchBridge.AvxRecurrence.ActualNativeAvxRecurrenceEntry",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.odd_recurrence_matches",
+      "generated_file": "bridge/Arithmetic/AvxRecurrenceEntryGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxRecurrenceEntryGenerated.lean",
+        "bridge/Arithmetic/AvxRecurrenceGenerated.lean",
+        "bridge/Arithmetic/OddRecurrenceGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original width-64 dispatch to the proved AVX recurrence. Other widths delegate to the original scalar default under the supplied Portable dictionary."
     }
   ],
   "stateful_llbc_refinements": [

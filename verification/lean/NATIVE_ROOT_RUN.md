@@ -247,7 +247,9 @@ and eight-word blocks, masks inactive lanes, and stops at the first
 mismatch. Each lag and current comparison window has an exact
 finite-heap read contract. The AVX locator-update and continuation
 proofs compose with the rebuilt verifier under its seed and square
-contracts. The tile output proof and remaining backend bindings are open.
+contracts. The original tile now refines the executable initialization and row
+folds, including both mutable iterator writebacks. The composition from
+those folds to the odd-power sum and remaining backend bindings is open.
 
 Run the complete gate from `verification/lean`.
 

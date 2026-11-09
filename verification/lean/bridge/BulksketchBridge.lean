@@ -168,3 +168,5 @@ import BulksketchBridge.RootChargeExit
 import BulksketchBridge.RootEmissionPopMetadata
 import BulksketchBridge.AvxRecurrenceHeap
 import BulksketchBridge.RebuiltLfsrAvx
+import BulksketchBridge.AvxTileNative
+import BulksketchBridge.AvxDegree18Seed

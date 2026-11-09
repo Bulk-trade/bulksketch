@@ -487,6 +487,41 @@ PROJECTIONS = [
      "extraction/avx-single-bases/Arithmetic/Funs.lean", "bridge/Arithmetic/AvxSingleBasesGenerated.lean",
      "id >>> 6#i32", "id >>> 7#i32", "compiled AVX single-bases projection differs", None, None,
      ["extraction/avx-square/receipt.json"]),
+    ("avx-tile", "extraction/avx-tile/project.py", "extraction/avx-tile/receipt.json",
+     "extraction/avx-tile/Arithmetic/Funs.lean", "bridge/Arithmetic/AvxTileGenerated.lean",
+     "let i2 ← Slice.index_usize odd 0#usize", "let i2 ← Slice.index_usize odd 1#usize",
+     "AVX tile active projection differs", None, None,
+     ['bridge/Arithmetic/AvxTileRuntime.lean',
+      'bridge/BulksketchBridge/AvxTileDoubleZip.lean',
+      'bridge/Arithmetic/AvxHorizontalXorGenerated.lean',
+      'bridge/Arithmetic/AvxHornerChunkRuntime.lean',
+      'bridge/Arithmetic/MutableZipRuntime.lean',
+      'bridge/Arithmetic/AvxSquareRuntime.lean',
+      'extraction/avx-insert/horizontal/arithmetic.llbc',
+      'extraction/avx-insert/horizontal/Arithmetic/Funs.lean',
+      'extraction/avx-insert/horizontal/Arithmetic/FunsExternal_Template.lean',
+      'extraction/avx-insert/horizontal/Arithmetic/Types.lean',
+      'extraction/avx-insert/horizontal/Arithmetic/TypesExternal_Template.lean',
+      'extraction/avx-insert/free-dispatch/arithmetic.llbc',
+      'extraction/avx-insert/free-dispatch/Arithmetic/Funs.lean',
+      'extraction/avx-insert/free-dispatch/Arithmetic/FunsExternal_Template.lean',
+      'extraction/avx-insert/free-dispatch/Arithmetic/Types.lean',
+      'extraction/avx-insert/free-dispatch/Arithmetic/TypesExternal_Template.lean',
+      'extraction/avx-insert/trait-dispatch/arithmetic.llbc',
+      'extraction/avx-insert/trait-dispatch/Arithmetic/Funs.lean',
+      'extraction/avx-insert/trait-dispatch/Arithmetic/FunsExternal_Template.lean',
+      'extraction/avx-insert/trait-dispatch/Arithmetic/Types.lean',
+      'extraction/avx-insert/insert18/arithmetic.llbc',
+      'extraction/avx-insert/insert18/Arithmetic/Funs.lean',
+      'extraction/avx-insert/insert18/Arithmetic/FunsExternal_Template.lean',
+      'extraction/avx-insert/insert18/Arithmetic/Types.lean',
+      'extraction/avx-insert/insert18/Arithmetic/TypesExternal_Template.lean']),
+    ("avx-recurrence-entry", "extraction/avx-recurrence-entry/project.py",
+     "extraction/avx-recurrence-entry/receipt.json", "extraction/avx-recurrence-entry/Arithmetic/Funs.lean",
+     "bridge/Arithmetic/AvxRecurrenceEntryGenerated.lean",
+     "if i != 64#u32", "if i != 63#u32", "compiled AVX recurrence entry projection differs", None, None,
+     ["extraction/avx-linear-entry/receipt.json", "bridge/Arithmetic/AvxLinearEntryGenerated.lean",
+      "bridge/Arithmetic/OddRecurrenceGenerated.lean", "bridge/Arithmetic/SliceKernelTypes.lean"]),
     ("avx-recurrence", "extraction/avx-recurrence/project.py",
      "extraction/avx-recurrence/receipt.json", "extraction/avx-recurrence/Arithmetic/Funs.lean",
      "bridge/Arithmetic/AvxRecurrenceGenerated.lean",
@@ -763,6 +798,12 @@ def main():
         if label == "avx-single-bases":
             cases.append(("wrong-target", receipt_path, '"x86_64-apple-darwin"', '"aarch64-apple-darwin"',
                           "invalid AVX single-bases receipt"))
+        if label == "avx-tile":
+            cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false',
+                          '"native_llbc_edited": true', "invalid checked AVX tile translator receipt"))
+        if label == "avx-recurrence-entry":
+            cases.append(("missing-checks", receipt_path, '"-checks"', '"-no-checks"',
+                          "AVX recurrence entry checked replay differs"))
         if label == "avx-recurrence":
             cases.append(("missing-checks", receipt_path, '"-checks"', '"-no-checks"',
                           "AVX recurrence checked replay differs"))
@@ -789,7 +830,7 @@ def main():
                              "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry", "root-divide", "root-run", "affine-splitter",
                              "affine-subspaces", "root-prepare-affine", "root-enumerate-affine", "dense-div-rem",
                              "affine-enumerate", "affine-selector", "avx-multiply-linear", "affine-solve-map",
-                             "avx-horner", "affine-multiple", "avx-recurrence", "avx-linear-entry", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
+                             "avx-horner", "affine-multiple", "avx-tile", "avx-recurrence", "avx-recurrence-entry", "avx-linear-entry", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
                              "avx-insert-insert18", "avx-insert-horizontal", "avx-insert-dispatch", "native-driver", "candidate-row", "completed-result",
                              "native-finish", "canonicalize", "candidate-normalize-compact", "candidate-normalize-merge"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)

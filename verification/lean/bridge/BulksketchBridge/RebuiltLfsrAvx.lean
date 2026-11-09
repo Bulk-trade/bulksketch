@@ -1,5 +1,5 @@
 import BulksketchBridge.RebuiltLfsrAnyContinuation
-import BulksketchBridge.AvxRecurrenceComplete
+import BulksketchBridge.AvxRecurrenceEntry
 import BulksketchBridge.AvxLinearEntry
 
 namespace BulksketchBridge.RebuiltLfsr
@@ -19,7 +19,9 @@ def ActualRebuiltLfsrAvx : Prop :=
     ∀ (portable : {F : Type} → bulksketch.field.BinaryField F → BulkKernels Portable F)
       {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64),
     kernels.multiply_linear = multiply_linear load store portable avxField →
-    kernels.odd_recurrence_matches = bulksketch.backend.x86_vpclmul512.odd_recurrence_matches load →
+    kernels.odd_recurrence_matches =
+      bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.odd_recurrence_matches
+        load portable avxField →
     squaringLaw kernels →
     ∀ (roots odd coefficients expected seed : Slice U64),
       roots.val.Nodup → (0 : Field) ∉ rootSupport roots →
@@ -44,7 +46,7 @@ theorem rebuilt_lfsr_avx : ActualRebuiltLfsrAvx := by
   have recurrence : ContinuationLaw kernels := by
     intro odd locator positive
     rw [recurrenceEq]
-    exact AvxRecurrence.native_avx_recurrence load loadLaw odd locator positive
+    exact AvxRecurrence.native_avx_recurrence_entry_gf64 load loadLaw portable odd locator positive
   exact rebuilt_lfsr_any_continuation kernels linear square recurrence
 
 #print axioms rebuilt_lfsr_avx

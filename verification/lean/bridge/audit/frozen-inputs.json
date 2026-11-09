@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "7136ef0087b24aaeb960be1c31c5da2d50d3afbc631f3a45100198df69158be2",
+    "bridge/BulksketchBridge/Audit.lean": "433ab1193170d60a99ee896d7fefb197b4757d9c461de8a32ac234e52e4c5712",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,9 +13,9 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "e487ca306dc0577d3cf480fba920fe3df38af4e3b9da69870869406d90e0cecf",
-    "audit/frozen-inputs.json": "94a94e9c914e169c5854d3f25c63bafa2050f66c59658a320c7cc111d62b370a",
-    "bridge/BulksketchBridge.lean": "d48bde2afe34c26cd320fe7be70a3895d1687ada8797976c46104fd16d5d7fd7",
+    "scripts/verify_bridge.py": "8f310a4ec3b293ef1eca0db6077bfb2a5e8896a8fd59fb934bf944ffc65412c7",
+    "audit/frozen-inputs.json": "d0d4e40e8e7e3e68ea64cc69b4ae7693e487705b6f7e6e7caac3db18daa7d2ab",
+    "bridge/BulksketchBridge.lean": "961cf7a2a16507d592215458203be953e9d21b8f71417cc8a871bedef55dab8d",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "5b574cb2dbb048bedf202aebcfe06dce853b43b4a8135d88dd0fec885be6b126",
-    "bridge/obligations.json": "bed46c8e4f2941cab9f5bcd1f03966b2f75419a5183277983dd0106244fd0634",
+    "bridge/source-linkage.json": "42e1d07db52f4d77532375a83891dcad48988e5a9585415335a532cec7981d1c",
+    "bridge/obligations.json": "605956f764a7288f33bb7067aa54ca75948235e987825212c395071d5f0d47bb",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "417bee837937790b21e1b9a06dbd3d6000a0c7bb0d30fff55b63e8161e190835",
+    "scripts/check_projection_fixtures.py": "230fac9fdf68a414ace70abd040949d4bc1cd55f0f09b5afcda32056abafc7f9",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "091afc79ffd4bcc65ae5f5f0dc76a698314821b906cc74de0a85780f16826c27",
+    "README.md": "d2f10ccdddc16d6315da00dfac8538e12097214c899a33a977728132dae3e52d",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "1d255600fea9f9dd5e2df4a128c4b7689c2304a19750940ba34f81c2b8b2fda8",
+    "audit/coverage.json": "bee1ddb845583c9b985ba3ddfebe9ae7859534dc9b3d13d6aeb439eab11cf6aa",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "a989ea4821d537e3ec7272248638426a11b477eddd2d73b4b88fa0ec84703533",
-    "audit/native-root-run-checkpoint.json": "f8216b03edb485f872ff250d8320c8897f2bb71e85dd8521877657c1d9a4b7c9",
+    "NATIVE_ROOT_RUN.md": "a2b98682cf789a1cd485f73070f035ff803898cbedf86c0e41291fba3f486969",
+    "audit/native-root-run-checkpoint.json": "e0fa0553c9006c3d79ffe27b930fbce69b3bbc8d9384181f6d2830921395f6b7",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1810,7 +1810,7 @@
     "bridge/BulksketchBridge/AvxRecurrenceLoop.lean": "f8818ecb519c79f4caaec9f0af9e0a1bf94f613f56a7ea2f5bfb2099587d44e4",
     "bridge/BulksketchBridge/AvxRecurrenceOuter.lean": "97a05f81455d344a4dfea0b12dabfd1c0d8c52e034d3d00e6b06410094d2aca5",
     "bridge/BulksketchBridge/RebuiltLfsrAnyContinuation.lean": "17a89e00a95ffa044f42df32ea1a4b3089111d592562a9dd24e3c28775504233",
-    "bridge/BulksketchBridge/RebuiltLfsrAvx.lean": "5fa0d66e1dcb8bd83fadbe0500dd638c57157abdbd4f349ac75a30e200912713",
+    "bridge/BulksketchBridge/RebuiltLfsrAvx.lean": "d79d23a721726f183e9f9248fc3bdab460d13117fef3c1fcc88c8c3c3c7a52e7",
     "extraction/avx-recurrence/Arithmetic/Funs.lean": "0fccbf832785088e3b50b25fe875984104564233cb31007197738f5cd0f21bf3",
     "extraction/avx-recurrence/Arithmetic/FunsExternal_Template.lean": "8bdfb9a04a38cb28515218e9a54fc49d7d5bab78fa895acb900cbc1497e96c1d",
     "extraction/avx-recurrence/Arithmetic/Types.lean": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
@@ -1820,7 +1820,46 @@
     "extraction/avx-recurrence/charon.log": "f1098cb4c34f28ed8b0515bf29c1f8d90bd03a831c1691faa8d0eb2b933dea5a",
     "extraction/avx-recurrence/project.py": "566907a8b5770d24c12333c8e18602c9ce7b7b6fc9b4478093c75885e9f38e33",
     "extraction/avx-recurrence/receipt.json": "39bb827bdb0add00a44ee53856bd32791d7fd491823bbc6cf5903916d5eba7b7",
-    "extraction/avx-recurrence/replay.log": "698722d672dcc5e760c9ee505a9abdda220b6ad63e47ca71c3f61efec098c95c"
+    "extraction/avx-recurrence/replay.log": "698722d672dcc5e760c9ee505a9abdda220b6ad63e47ca71c3f61efec098c95c",
+    "bridge/Arithmetic/AvxRecurrenceEntryGenerated.lean": "a1499b90fe2567459ca2788b1f9dabcfb671db068a7ce325f5006370bfbad16c",
+    "bridge/Arithmetic/AvxTileGenerated.lean": "d5d9c84f8ace5e4e39791df0409b8d04227fa786822a498f42b98b8b30515fea",
+    "bridge/Arithmetic/AvxTileRuntime.lean": "cb1fc05ac6d07ed02173bb0e6abaeb8ad2cceedaf05c2cc60c6789b53eb88162",
+    "bridge/BulksketchBridge/AvxDegree18Seed.lean": "c19c3039cc5f663a56048386d797a02204fb7dfaa4cbe8462874d9aef41a4fd8",
+    "bridge/BulksketchBridge/AvxRecurrenceEntry.lean": "ab45b779b77be46537a2186201c8a289a7ecaa751092f68514b65f675c3508a8",
+    "bridge/BulksketchBridge/AvxTileDoubleZip.lean": "be1f29be4f330c52eecfc6522751ca1088cc181b22e6e87357e75941c4d781d3",
+    "bridge/BulksketchBridge/AvxTileInit.lean": "77ddb7b06ac51229a62d1c703b9c633466d7befc5279be8a9d80369cca9ad6bb",
+    "bridge/BulksketchBridge/AvxTileInitLoop.lean": "ce75e7711d92766a0ca1f72e8c1cb78a48ec37c14cd349c0af695c8500d174f2",
+    "bridge/BulksketchBridge/AvxTileNative.lean": "146a72e82e12145c78871b0834399be2c73e86539d7abe8117d34180bfbcb3af",
+    "bridge/BulksketchBridge/AvxTilePowerLoop.lean": "cebea78f7d1782c4a976bf0833fcef1c5133920ad32c238b02114dda2dec1331",
+    "bridge/BulksketchBridge/AvxTileSyndromeLoop.lean": "7cd729492ec94b8294209f8ac05f5893346fe9b9f61cbf08e66ea3ff19fed23c",
+    "extraction/avx-recurrence-entry/Arithmetic/Funs.lean": "1ffdc96045cdac0c81f05bbada02a6efee73b6881ed98f88327de5b16986b957",
+    "extraction/avx-recurrence-entry/Arithmetic/FunsExternal_Template.lean": "8361fbe787f6a466a0d588b505ae86a8cf8e28d3379afce090c0d0bb471c1d8d",
+    "extraction/avx-recurrence-entry/Arithmetic/Types.lean": "7568729debeeed94e9cdfa662cd6c1ab794b79dbc6288af7bf91893c3418096a",
+    "extraction/avx-recurrence-entry/aeneas.log": "d935191bec8330efc921ec523d879ddc68b44fc681a5b2780feb96ed3922ecf7",
+    "extraction/avx-recurrence-entry/arithmetic.llbc": "5f6928a7d58d27c0a3fc0554c1b72373e7401964ba68eb4003333a3d2544cbe9",
+    "extraction/avx-recurrence-entry/charon.log": "8419b7f0304d402a28dbadab3dd69f0e831ed1d2882a71d39955553455bd9f2f",
+    "extraction/avx-recurrence-entry/project.py": "6b703e8f8331c00e2a857fbdb545aaa7f2315c6eeeb3fb965621cd7bfa98d1b3",
+    "extraction/avx-recurrence-entry/receipt.json": "077de373dc6ef5029d766e4cdfabe5bdd12136f2be45cece34d2e75034a4f17e",
+    "extraction/avx-recurrence-entry/replay.log": "2be7d37cf939f1114da9bfab2c87bb60983a711e9fd2aef068111913c40c7e1c",
+    "extraction/avx-tile/Arithmetic/Funs.lean": "bbe8a001870d9ed30f185f4178a5e03291b9a0c24ff23c546fadff48f43fea11",
+    "extraction/avx-tile/Arithmetic/FunsExternal_Template.lean": "bd8312ec5c1883541fad78c4beda96ff8a76186a16480624b0cbc04f92714bb4",
+    "extraction/avx-tile/Arithmetic/Types.lean": "df213ef1128f0f4786c753b6266296b2c19fd53131e50196f6a5ec93c4ee15a8",
+    "extraction/avx-tile/Arithmetic/TypesExternal_Template.lean": "327c9bcfa1e90e14a4a8eac9d523fffdabf78b8bb0f16dfef73e62fe4016b144",
+    "extraction/avx-tile/README.md": "9a8759a6c967c3e2c07144a60a1affbdb9e3b1dc9583a0e9f27a4f93d0201d70",
+    "extraction/avx-tile/arithmetic.llbc": "8b85cbc28114a0e4214b93607d3c2e3045bf3dbcbf57141f36f67815887767a5",
+    "extraction/avx-tile/checked-avx-tile-history.patch": "ad584bbf586616835c3b3c4ec9039d13d55a157f97fb7e99ef31563b44dce06f",
+    "extraction/avx-tile/checked.log": "3f4ad24819c45606fb47bc218aa2ba070f3f0d5c7887ee36ba8f290461c19349",
+    "extraction/avx-tile/controls.json": "a9da8be924259a85a22cf07ee2a7e1cd8c545c2eb4fb0b69328c27ebef36bc4b",
+    "extraction/avx-tile/disabled.log": "a0712d0fd93442259941293b9cdbdaab477e9292c512ce1ebbcdac94070e7c14",
+    "extraction/avx-tile/no-checks.log": "4c7d12597b12daf79c879bbbd1e57ee57bef3bac736515566d6012ea2e904695",
+    "extraction/avx-tile/project.py": "952f1f329bb3a2265acc5ff28b675ce7a75480f2e3bfc5d552a6e2ac62176dc6",
+    "extraction/avx-tile/receipt.json": "5a87acbacb1d19bd6eb9fbbb4bf36d6fd7639ae8956b7bfe86cd06ce99733fb5",
+    "extraction/avx-tile/strict.log": "30833180dc8d32537ec87d57df55ae568e4a059f5ce149e38352f8531e53d204",
+    "extraction/avx-tile/unrelated-free-dispatch.log": "5820c1b2967af1090a585db0b3c74ba1c28cbfb79364574b45c9de3b8120ee35",
+    "extraction/avx-tile/unrelated-horizontal.log": "3b8efbdf1b9e1f84a1666eeac25b7b5658124704e87b166afd0fc24bafde4ddf",
+    "extraction/avx-tile/unrelated-insert18.log": "857047fcb4886b62b8c7bff4d53e0159b96ebe3399979b19107b385c01189003",
+    "extraction/avx-tile/unrelated-trait-dispatch.log": "d709b66509e1a59e7412430a6b0423b26dd108befd4cdf05916f87abdf0eb7ee",
+    "extraction/avx-tile/wrong-site.log": "92d4b2ba14a50ac04f5b38684060042300409c3306ea7dbe46a9f6f0be26eba6"
   },
   "reviewed_policy_revisions": [
     {
@@ -13539,7 +13578,274 @@
       "new_sha256": "417bee837937790b21e1b9a06dbd3d6000a0c7bb0d30fff55b63e8161e190835",
       "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads.",
       "old_sha256": "a471cfa6b29158fc1cb301d66d22d741afe5c6031618af9a56983359112c97fd"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "a2b98682cf789a1cd485f73070f035ff803898cbedf86c0e41291fba3f486969",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition.",
+      "old_sha256": "a989ea4821d537e3ec7272248638426a11b477eddd2d73b4b88fa0ec84703533"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "d2f10ccdddc16d6315da00dfac8538e12097214c899a33a977728132dae3e52d",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition.",
+      "old_sha256": "091afc79ffd4bcc65ae5f5f0dc76a698314821b906cc74de0a85780f16826c27"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "bee1ddb845583c9b985ba3ddfebe9ae7859534dc9b3d13d6aeb439eab11cf6aa",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition.",
+      "old_sha256": "1d255600fea9f9dd5e2df4a128c4b7689c2304a19750940ba34f81c2b8b2fda8"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "d0d4e40e8e7e3e68ea64cc69b4ae7693e487705b6f7e6e7caac3db18daa7d2ab",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition.",
+      "old_sha256": "94a94e9c914e169c5854d3f25c63bafa2050f66c59658a320c7cc111d62b370a"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "e0fa0553c9006c3d79ffe27b930fbce69b3bbc8d9384181f6d2830921395f6b7",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition.",
+      "old_sha256": "f8216b03edb485f872ff250d8320c8897f2bb71e85dd8521877657c1d9a4b7c9"
+    },
+    {
+      "path": "bridge/Arithmetic/AvxRecurrenceEntryGenerated.lean",
+      "new_sha256": "a1499b90fe2567459ca2788b1f9dabcfb671db068a7ce325f5006370bfbad16c",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "bridge/Arithmetic/AvxTileGenerated.lean",
+      "new_sha256": "d5d9c84f8ace5e4e39791df0409b8d04227fa786822a498f42b98b8b30515fea",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "bridge/Arithmetic/AvxTileRuntime.lean",
+      "new_sha256": "cb1fc05ac6d07ed02173bb0e6abaeb8ad2cceedaf05c2cc60c6789b53eb88162",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "961cf7a2a16507d592215458203be953e9d21b8f71417cc8a871bedef55dab8d",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition.",
+      "old_sha256": "d48bde2afe34c26cd320fe7be70a3895d1687ada8797976c46104fd16d5d7fd7"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "433ab1193170d60a99ee896d7fefb197b4757d9c461de8a32ac234e52e4c5712",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition.",
+      "old_sha256": "7136ef0087b24aaeb960be1c31c5da2d50d3afbc631f3a45100198df69158be2"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxDegree18Seed.lean",
+      "new_sha256": "c19c3039cc5f663a56048386d797a02204fb7dfaa4cbe8462874d9aef41a4fd8",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxRecurrenceEntry.lean",
+      "new_sha256": "ab45b779b77be46537a2186201c8a289a7ecaa751092f68514b65f675c3508a8",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxTileDoubleZip.lean",
+      "new_sha256": "be1f29be4f330c52eecfc6522751ca1088cc181b22e6e87357e75941c4d781d3",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxTileInit.lean",
+      "new_sha256": "77ddb7b06ac51229a62d1c703b9c633466d7befc5279be8a9d80369cca9ad6bb",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxTileInitLoop.lean",
+      "new_sha256": "ce75e7711d92766a0ca1f72e8c1cb78a48ec37c14cd349c0af695c8500d174f2",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxTileNative.lean",
+      "new_sha256": "146a72e82e12145c78871b0834399be2c73e86539d7abe8117d34180bfbcb3af",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxTilePowerLoop.lean",
+      "new_sha256": "cebea78f7d1782c4a976bf0833fcef1c5133920ad32c238b02114dda2dec1331",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxTileSyndromeLoop.lean",
+      "new_sha256": "7cd729492ec94b8294209f8ac05f5893346fe9b9f61cbf08e66ea3ff19fed23c",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RebuiltLfsrAvx.lean",
+      "new_sha256": "d79d23a721726f183e9f9248fc3bdab460d13117fef3c1fcc88c8c3c3c7a52e7",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition.",
+      "old_sha256": "5fa0d66e1dcb8bd83fadbe0500dd638c57157abdbd4f349ac75a30e200912713"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "605956f764a7288f33bb7067aa54ca75948235e987825212c395071d5f0d47bb",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition.",
+      "old_sha256": "bed46c8e4f2941cab9f5bcd1f03966b2f75419a5183277983dd0106244fd0634"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "42e1d07db52f4d77532375a83891dcad48988e5a9585415335a532cec7981d1c",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition.",
+      "old_sha256": "5b574cb2dbb048bedf202aebcfe06dce853b43b4a8135d88dd0fec885be6b126"
+    },
+    {
+      "path": "extraction/avx-recurrence-entry/Arithmetic/Funs.lean",
+      "new_sha256": "1ffdc96045cdac0c81f05bbada02a6efee73b6881ed98f88327de5b16986b957",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-recurrence-entry/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "8361fbe787f6a466a0d588b505ae86a8cf8e28d3379afce090c0d0bb471c1d8d",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-recurrence-entry/Arithmetic/Types.lean",
+      "new_sha256": "7568729debeeed94e9cdfa662cd6c1ab794b79dbc6288af7bf91893c3418096a",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-recurrence-entry/aeneas.log",
+      "new_sha256": "d935191bec8330efc921ec523d879ddc68b44fc681a5b2780feb96ed3922ecf7",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-recurrence-entry/arithmetic.llbc",
+      "new_sha256": "5f6928a7d58d27c0a3fc0554c1b72373e7401964ba68eb4003333a3d2544cbe9",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-recurrence-entry/charon.log",
+      "new_sha256": "8419b7f0304d402a28dbadab3dd69f0e831ed1d2882a71d39955553455bd9f2f",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-recurrence-entry/project.py",
+      "new_sha256": "6b703e8f8331c00e2a857fbdb545aaa7f2315c6eeeb3fb965621cd7bfa98d1b3",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-recurrence-entry/receipt.json",
+      "new_sha256": "077de373dc6ef5029d766e4cdfabe5bdd12136f2be45cece34d2e75034a4f17e",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-recurrence-entry/replay.log",
+      "new_sha256": "2be7d37cf939f1114da9bfab2c87bb60983a711e9fd2aef068111913c40c7e1c",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/Arithmetic/Funs.lean",
+      "new_sha256": "bbe8a001870d9ed30f185f4178a5e03291b9a0c24ff23c546fadff48f43fea11",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "bd8312ec5c1883541fad78c4beda96ff8a76186a16480624b0cbc04f92714bb4",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/Arithmetic/Types.lean",
+      "new_sha256": "df213ef1128f0f4786c753b6266296b2c19fd53131e50196f6a5ec93c4ee15a8",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "327c9bcfa1e90e14a4a8eac9d523fffdabf78b8bb0f16dfef73e62fe4016b144",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/README.md",
+      "new_sha256": "9a8759a6c967c3e2c07144a60a1affbdb9e3b1dc9583a0e9f27a4f93d0201d70",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/arithmetic.llbc",
+      "new_sha256": "8b85cbc28114a0e4214b93607d3c2e3045bf3dbcbf57141f36f67815887767a5",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/checked-avx-tile-history.patch",
+      "new_sha256": "ad584bbf586616835c3b3c4ec9039d13d55a157f97fb7e99ef31563b44dce06f",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/checked.log",
+      "new_sha256": "3f4ad24819c45606fb47bc218aa2ba070f3f0d5c7887ee36ba8f290461c19349",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/controls.json",
+      "new_sha256": "a9da8be924259a85a22cf07ee2a7e1cd8c545c2eb4fb0b69328c27ebef36bc4b",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/disabled.log",
+      "new_sha256": "a0712d0fd93442259941293b9cdbdaab477e9292c512ce1ebbcdac94070e7c14",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/no-checks.log",
+      "new_sha256": "4c7d12597b12daf79c879bbbd1e57ee57bef3bac736515566d6012ea2e904695",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/project.py",
+      "new_sha256": "952f1f329bb3a2265acc5ff28b675ce7a75480f2e3bfc5d552a6e2ac62176dc6",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/receipt.json",
+      "new_sha256": "5a87acbacb1d19bd6eb9fbbb4bf36d6fd7639ae8956b7bfe86cd06ce99733fb5",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/strict.log",
+      "new_sha256": "30833180dc8d32537ec87d57df55ae568e4a059f5ce149e38352f8531e53d204",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/unrelated-free-dispatch.log",
+      "new_sha256": "5820c1b2967af1090a585db0b3c74ba1c28cbfb79364574b45c9de3b8120ee35",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/unrelated-horizontal.log",
+      "new_sha256": "3b8efbdf1b9e1f84a1666eeac25b7b5658124704e87b166afd0fc24bafde4ddf",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/unrelated-insert18.log",
+      "new_sha256": "857047fcb4886b62b8c7bff4d53e0159b96ebe3399979b19107b385c01189003",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/unrelated-trait-dispatch.log",
+      "new_sha256": "d709b66509e1a59e7412430a6b0423b26dd108befd4cdf05916f87abdf0eb7ee",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "extraction/avx-tile/wrong-site.log",
+      "new_sha256": "92d4b2ba14a50ac04f5b38684060042300409c3306ea7dbe46a9f6f0be26eba6",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "230fac9fdf68a414ace70abd040949d4bc1cd55f0f09b5afcda32056abafc7f9",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition.",
+      "old_sha256": "417bee837937790b21e1b9a06dbd3d6000a0c7bb0d30fff55b63e8161e190835"
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "8f310a4ec3b293ef1eca0db6077bfb2a5e8896a8fd59fb934bf944ffc65412c7",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition.",
+      "old_sha256": "e487ca306dc0577d3cf480fba920fe3df38af4e3b9da69870869406d90e0cecf"
     }
   ],
-  "challenge_count": 391
+  "challenge_count": 395
 }

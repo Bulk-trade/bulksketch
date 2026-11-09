@@ -2140,7 +2140,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxRecurrence.native_avx_recurrence_entry",
+        "scope": "Exact original width-64 dispatch to the proved AVX recurrence. Other widths delegate to the original scalar default under the supplied Portable dictionary.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:133:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::insert_nonzero",
@@ -2750,7 +2757,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxTileNative.native_tile_refines",
+        "scope": "Original tile for all captured widths, reduction modes, and slice sizes. Exact two-array initialization, copied horizontal fold, descending borrow continuations, row XOR writebacks and empty output failure. Bounded masked-load law remains explicit.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:476:struct:bulksketch::backend::x86_vpclmul512::InsertionBases",
@@ -12200,8 +12214,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. Honest native BM returns the exact support locator or latches a work error. Candidate and deflation calls establish the full initial traversal invariant. Given the terminal emitted locator product and a paid canonicalization, the actual driver returns a sorted borrowed prefix with exactly those roots. Paid native Trace and GCD preserve the live traversal invariant and decrease the continuation rank. Paid affine split, affine GCD and ordinary leaf extend the invariant. A ranked driver law constructs the exact finite finish trace. Native affine emission, pending pop metadata, and initial factor-stage charge failures are checked. The original AVX locator-update entry dispatches to the verified vector update. Original AVX continuation matches the GF64 lag sum on every active lane and binds to the rebuilt verifier under the seed and square contracts. Global traversal induction, work-budget termination, row-local normalization, wire/API composition, remaining backend bodies, provenance and compiler-to-ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 162,
+    "note": "All 344 native executable obligations retained. Honest native BM returns the exact support locator or latches a work error. Candidate and deflation calls establish the full initial traversal invariant. Given the terminal emitted locator product and a paid canonicalization, the actual driver returns a sorted borrowed prefix with exactly those roots. Paid native Trace and GCD preserve the live traversal invariant and decrease the continuation rank. Paid affine split, affine GCD and ordinary leaf extend the invariant. A ranked driver law constructs the exact finite finish trace. Native affine emission, pending pop metadata, and initial factor-stage charge failures are checked. The original AVX locator-update entry dispatches to the verified vector update. Original AVX continuation matches the GF64 lag sum on every active lane and binds to the rebuilt verifier under the seed and square contracts. Original AVX tile refines the executable writeback folds under the bounded masked-load law. Global traversal induction, work-budget termination, row-local normalization, wire/API composition, remaining backend bodies, provenance and compiler-to-ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 164,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12226,7 +12240,9 @@
       "x86_feature_gate": "Original feature detection returns the exact AVX-512 and VPCLMUL predicate and checks XSAVE and OSXSAVE before the modeled XGETBV read.",
       "pclmul_slice_kernels": "Original scale-XOR, square, XOR and Horner have exact slice frames and arithmetic under recorded register value models.",
       "avx_tile_row_model": "BulksketchBridge.AvxTileChunkSum.tile_row_exact",
-      "avx_rebuilt_continuation": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_avx"
+      "avx_rebuilt_continuation": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_avx",
+      "avx_tile_executable_model": "BulksketchBridge.AvxTileNative.native_tile_refines",
+      "avx_degree18_seed_under_tile_word_law": "BulksketchBridge.AvxInsertDispatch.native_avx_degree18_seed"
     },
     "reconciliation_algebra_evidence": {
       "sparse_support_uniqueness": "BulksketchBridge.Reconciliation.gf64_sparse_support_unique",

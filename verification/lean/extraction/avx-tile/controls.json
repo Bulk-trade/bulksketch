@@ -1,0 +1,249 @@
+{
+  "status": "passed",
+  "checked_binary_sha256": "05045fe36357a6c2cb877887896da194365a838dd4ba411aeb06fac9f0727d50",
+  "runs": {
+    "strict": {
+      "command": [
+        "env",
+        "BULKSKETCH_TILE_HISTORY=1",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/compiler/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-strict-joins",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/capture/control-runs/strict",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-insert18/tile/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "8b85cbc28114a0e4214b93607d3c2e3045bf3dbcbf57141f36f67815887767a5",
+      "log_sha256": "30833180dc8d32537ec87d57df55ae568e4a059f5ce149e38352f8531e53d204",
+      "output_sha256": {
+        "Funs.lean": "bbe8a001870d9ed30f185f4178a5e03291b9a0c24ff23c546fadff48f43fea11",
+        "FunsExternal_Template.lean": "bd8312ec5c1883541fad78c4beda96ff8a76186a16480624b0cbc04f92714bb4",
+        "Types.lean": "df213ef1128f0f4786c753b6266296b2c19fd53131e50196f6a5ec93c4ee15a8",
+        "TypesExternal_Template.lean": "327c9bcfa1e90e14a4a8eac9d523fffdabf78b8bb0f16dfef73e62fe4016b144"
+      },
+      "diagnostic": null
+    },
+    "checked": {
+      "command": [
+        "env",
+        "BULKSKETCH_TILE_HISTORY=1",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/compiler/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/capture/control-runs/checked",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-insert18/tile/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "8b85cbc28114a0e4214b93607d3c2e3045bf3dbcbf57141f36f67815887767a5",
+      "log_sha256": "3f4ad24819c45606fb47bc218aa2ba070f3f0d5c7887ee36ba8f290461c19349",
+      "output_sha256": {
+        "Funs.lean": "bbe8a001870d9ed30f185f4178a5e03291b9a0c24ff23c546fadff48f43fea11",
+        "FunsExternal_Template.lean": "bd8312ec5c1883541fad78c4beda96ff8a76186a16480624b0cbc04f92714bb4",
+        "Types.lean": "df213ef1128f0f4786c753b6266296b2c19fd53131e50196f6a5ec93c4ee15a8",
+        "TypesExternal_Template.lean": "327c9bcfa1e90e14a4a8eac9d523fffdabf78b8bb0f16dfef73e62fe4016b144"
+      },
+      "diagnostic": null
+    },
+    "no-checks": {
+      "command": [
+        "env",
+        "BULKSKETCH_TILE_HISTORY=1",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/compiler/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/capture/control-runs/no-checks",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-insert18/tile/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "8b85cbc28114a0e4214b93607d3c2e3045bf3dbcbf57141f36f67815887767a5",
+      "log_sha256": "4c7d12597b12daf79c879bbbd1e57ee57bef3bac736515566d6012ea2e904695",
+      "output_sha256": {
+        "Funs.lean": "5aa022e83792e1573e9def879e88a02352601f08fbfce7df6df6ae5ad8ff83a0",
+        "FunsExternal_Template.lean": "bd8312ec5c1883541fad78c4beda96ff8a76186a16480624b0cbc04f92714bb4",
+        "Types.lean": "df213ef1128f0f4786c753b6266296b2c19fd53131e50196f6a5ec93c4ee15a8",
+        "TypesExternal_Template.lean": "327c9bcfa1e90e14a4a8eac9d523fffdabf78b8bb0f16dfef73e62fe4016b144"
+      },
+      "diagnostic": "tile loop entry requires checked symbolic execution"
+    },
+    "disabled": {
+      "command": [
+        "env",
+        "BULKSKETCH_TILE_HISTORY=0",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/compiler/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/capture/control-runs/disabled",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-insert18/tile/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "8b85cbc28114a0e4214b93607d3c2e3045bf3dbcbf57141f36f67815887767a5",
+      "log_sha256": "a0712d0fd93442259941293b9cdbdaab477e9292c512ce1ebbcdac94070e7c14",
+      "output_sha256": {
+        "Funs.lean": "5aa022e83792e1573e9def879e88a02352601f08fbfce7df6df6ae5ad8ff83a0",
+        "FunsExternal_Template.lean": "bd8312ec5c1883541fad78c4beda96ff8a76186a16480624b0cbc04f92714bb4",
+        "Types.lean": "df213ef1128f0f4786c753b6266296b2c19fd53131e50196f6a5ec93c4ee15a8",
+        "TypesExternal_Template.lean": "327c9bcfa1e90e14a4a8eac9d523fffdabf78b8bb0f16dfef73e62fe4016b144"
+      },
+      "diagnostic": "Compiler source: interp/InterpMatchCtxs.ml"
+    },
+    "wrong-site": {
+      "command": [
+        "env",
+        "BULKSKETCH_TILE_HISTORY=1",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/compiler/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-strict-joins",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/capture/control-runs/wrong-site",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/capture/control-runs/wrong-steps.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "2a2cf200fe0738c6cfda5dcf1744522c83924809fab2a4f9c46a450ef579b6d9",
+      "log_sha256": "92d4b2ba14a50ac04f5b38684060042300409c3306ea7dbe46a9f6f0be26eba6",
+      "output_sha256": {
+        "Funs.lean": "9b61fe9592ccb9ccf256916e2c96e69720d66ab5e219c60206e72e5f47ec8351",
+        "FunsExternal_Template.lean": "c9f81a4d3b47fa8e6fbf1ee853afc7db44f7bb245f3bf8f855bb00085d42fbbd",
+        "Types.lean": "d443d63a8497ba0680ea6f78df6e72cc769b007fa0897f12d658def45303b5c4",
+        "TypesExternal_Template.lean": "327c9bcfa1e90e14a4a8eac9d523fffdabf78b8bb0f16dfef73e62fe4016b144"
+      },
+      "diagnostic": "tile loop entry missing steps"
+    },
+    "unrelated-horizontal": {
+      "command": [
+        "env",
+        "BULKSKETCH_TILE_HISTORY=1",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/compiler/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/capture/control-runs/unrelated-horizontal",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/avx-insert/horizontal/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "c88e1b3c662ffaa9ada126b793098e2689c4e6fba6038c37e5ac108ef048bd9a",
+      "log_sha256": "3b8efbdf1b9e1f84a1666eeac25b7b5658124704e87b166afd0fc24bafde4ddf",
+      "output_sha256": {
+        "Funs.lean": "5d644bb10295a54e4f40a184805b4a579f6c10e8c0e8043921ca7b938644275a",
+        "FunsExternal_Template.lean": "7542934cb77a1763da034140e9e6ddc58b1d5abea2977b7cb2498b04c9b6e433",
+        "Types.lean": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+        "TypesExternal_Template.lean": "bc4d496196b2ec6aabc718d1d482d70aaac93aa2446ea030a5a361f2380d1938"
+      },
+      "diagnostic": null
+    },
+    "unrelated-free-dispatch": {
+      "command": [
+        "env",
+        "BULKSKETCH_TILE_HISTORY=1",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/compiler/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/capture/control-runs/unrelated-free-dispatch",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/avx-insert/free-dispatch/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "283d3fc9983da2d79c2b1bd776aea71eea54ed90f12fc0f9572e9e79b57eaa7b",
+      "log_sha256": "5820c1b2967af1090a585db0b3c74ba1c28cbfb79364574b45c9de3b8120ee35",
+      "output_sha256": {
+        "Funs.lean": "cf8ac6e1e39e358276a6584b4a15a3967b4492817f3edefc171d1a99cf9eda3f",
+        "FunsExternal_Template.lean": "27757d70087e0744c4a75b560f2bd5ed43827f3242db2a110c6e04abf425209d",
+        "Types.lean": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+        "TypesExternal_Template.lean": "efabfaae7f8001e29d6864f7630a9e41a6fc56c8fa5e3dbcacb07faab31156e2"
+      },
+      "diagnostic": null
+    },
+    "unrelated-trait-dispatch": {
+      "command": [
+        "env",
+        "BULKSKETCH_TILE_HISTORY=1",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/compiler/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/capture/control-runs/unrelated-trait-dispatch",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/avx-insert/trait-dispatch/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "6b8ddd9a2bf43a14a92a12bb9b77b91eb33e38d4a88f0dc6980bc6aabd962e71",
+      "log_sha256": "d709b66509e1a59e7412430a6b0423b26dd108befd4cdf05916f87abdf0eb7ee",
+      "output_sha256": {
+        "Funs.lean": "523f80e3bf8e5d13eedb8eca8208ed2e47ab918c65517f33c8a456c85d33151d",
+        "FunsExternal_Template.lean": "962aec8f3945fb5e623992d133bdbeec27ef3d386dbb014bc14f05fb6c83826c",
+        "Types.lean": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef"
+      },
+      "diagnostic": null
+    },
+    "unrelated-insert18": {
+      "command": [
+        "env",
+        "BULKSKETCH_TILE_HISTORY=1",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/compiler/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-avx-tile-next/capture/control-runs/unrelated-insert18",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/avx-insert/insert18/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "9314310f8541176e45001c5cea75db3ce45ce381e12cd38caf545f982fbdec60",
+      "log_sha256": "857047fcb4886b62b8c7bff4d53e0159b96ebe3399979b19107b385c01189003",
+      "output_sha256": {
+        "Funs.lean": "64d7512b1c789552557d98725ce30bb2dc886884f86dea82cea1fa868f6f1f7a",
+        "FunsExternal_Template.lean": "9bf248798727fab255d05c44658f62b23d10f5e0a56291d334c3dad5eea77f3c",
+        "Types.lean": "9eed91c2cd665f33c198ae5aaee275052307a0f271867751d7ff7a0c7c0fc5b9",
+        "TypesExternal_Template.lean": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e"
+      },
+      "diagnostic": null
+    }
+  }
+}
