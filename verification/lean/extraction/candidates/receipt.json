@@ -1,0 +1,142 @@
+{
+  "variant_id": "checked-candidates-nested-return-v1",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "native_source_edited": false,
+  "native_llbc_edited": false,
+  "variant_patch": "extraction/candidates/checked-candidates-nested-return.patch",
+  "variant_patch_sha256": "cd1cdc2ca14ef3657fb566dab0f6cf338de15bccd1c7ef81faf421a9cbaf34a5",
+  "patched_binary_sha256": "c1a66692bb841c3e5ec682bfba916c24c19767d536a63d240a9ba05444071fcc",
+  "base_sources": {
+    "src/PrePasses.ml": "ae752eeef3227b7566611fa7d3ace71fd64fbf24c088bc7ce16699a243772165"
+  },
+  "modified_sources": {
+    "src/PrePasses.ml": "b25357e021147de2a0fbc0271a61b5b2aa504fb0c28a60d81c118504f44ab995"
+  },
+  "candidate_sources": {
+    "src/decode/stages.rs": "93825fcb5054e98e9af060a81da72d4770c29354d79822ccfc949cc55f6e9b23",
+    "src/decode/scratch.rs": "97016cadabf021829b567ff1472a9f11136f54059d78e457d58896cc318e50f6",
+    "src/decode/row.rs": "bf5ae89114d3bab811f1e0ca3b370cd916803bddd178471b3167e81b432df7bc",
+    "src/poly/dense.rs": "13b360fba6387dda36a9655f3f67d01be6752e4ca6b7f8e1824e7333bf3da644",
+    "src/backend/contract.rs": "4d05ce564edc408ba04f5a907b159ad91018ba8cfd93126e17913ed49f7e3d59",
+    "src/types.rs": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
+  },
+  "dense_sources": {
+    "src/poly/dense.rs": "13b360fba6387dda36a9655f3f67d01be6752e4ca6b7f8e1824e7333bf3da644",
+    "src/poly/mod.rs": "93fcb671a61dce34848723a52bc0f49e2f8c440f918d748f4101956dbb11ac2e",
+    "src/backend/contract.rs": "4d05ce564edc408ba04f5a907b159ad91018ba8cfd93126e17913ed49f7e3d59",
+    "src/types.rs": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
+  },
+  "candidate_capture": {
+    "sha256": "5027b8a1881e2188cc4b47896b021dec28cf92c50ac6f8b3ab2ca614512d8193",
+    "charon_exit": 0,
+    "charon_command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates/arithmetic.llbc",
+      "--start-from=bulksketch::decode::stages",
+      "--opaque=bulksketch::decode::stages::_::_",
+      "--include=bulksketch::decode::stages::_::candidates",
+      "--opaque=bulksketch::decode::stages::check_workspace",
+      "--opaque=bulksketch::poly::dense::_::eval_many_into",
+      "--",
+      "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked",
+      "--target",
+      "x86_64-apple-darwin"
+    ],
+    "charon_sha256": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "opaque_application_callees": [
+      "Execution::charge",
+      "Dense::eval_many_into"
+    ]
+  },
+  "dense_capture": {
+    "sha256": "5e43fd8478eff83f9ac6fe48766ec409e840905535cbbbce2440caef00e5ecb7",
+    "exit_code": 0,
+    "aeneas_sha256": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "charon_command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/dense-eval/arithmetic.llbc",
+      "--start-from={impl bulksketch::poly::Polynomial for bulksketch::poly::Dense}::eval_many_into",
+      "--",
+      "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked",
+      "--target",
+      "x86_64-apple-darwin"
+    ],
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/dense-eval/Arithmetic",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/dense-eval/arithmetic.llbc"
+    ]
+  },
+  "fresh_build": {
+    "exit_code": 0,
+    "command": [
+      "opam",
+      "exec",
+      "--root=/Users/junbug/bulk/bulksketch-proofs/tooling/opam-root",
+      "--switch=aeneas-5.3.0",
+      "--",
+      "dune",
+      "build",
+      "--root",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/variant/src",
+      "-j",
+      "2"
+    ]
+  },
+  "files_sha256": {
+    "extraction/candidates/Arithmetic/Funs.lean": "de5ed3d1c89bf45d995de0824ab40f7206792bd7297dd870c2629cc82cb7e461",
+    "extraction/candidates/Arithmetic/FunsExternal_Template.lean": "9a95bd69b056ffb0eece1648b4690fa8c0b999d66d4b25814bde04f0681ce181",
+    "extraction/candidates/Arithmetic/Types.lean": "72b3450060687efa894156872f87e11566faf5e8b4070611690f7a26984e21d2",
+    "extraction/candidates/Arithmetic/TypesExternal_Template.lean": "efabfaae7f8001e29d6864f7630a9e41a6fc56c8fa5e3dbcacb07faab31156e2",
+    "extraction/candidates/arithmetic.llbc": "5027b8a1881e2188cc4b47896b021dec28cf92c50ac6f8b3ab2ca614512d8193",
+    "extraction/candidates/charon.log": "7256dcf6d617da57f318d682f3ac3d47c6141ee8e41e7c9301f9a393bde6b923",
+    "extraction/candidates/checked-candidates-nested-return.patch": "cd1cdc2ca14ef3657fb566dab0f6cf338de15bccd1c7ef81faf421a9cbaf34a5",
+    "extraction/candidates/checked.log": "e2fa8e9054fd2cc2f7f74835b781cc255c6a9992844a98dc837e0186160d5af6",
+    "extraction/candidates/controls.json": "c589e3c8596c70cb66688be8b1788198c3dae94080e881a1ab5c865e66feef43",
+    "extraction/candidates/dense-eval/Arithmetic/Funs.lean": "0e069920da3d4289674076d8af74f6464569705847f1d46c5b79a4346b6eebf0",
+    "extraction/candidates/dense-eval/Arithmetic/FunsExternal_Template.lean": "fb6d11211c161b659a4172f7b5aad6fc08b201d20a7fddf33b1e28a3e969b395",
+    "extraction/candidates/dense-eval/Arithmetic/Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+    "extraction/candidates/dense-eval/aeneas.log": "efadc80dd4713419639015bb384c3b2f40f954a05f0385d58e57da3017ff8b15",
+    "extraction/candidates/dense-eval/arithmetic.llbc": "5e43fd8478eff83f9ac6fe48766ec409e840905535cbbbce2440caef00e5ecb7",
+    "extraction/candidates/dense-eval/charon.log": "917fee7cbec081d9e8ca61bd7e32dc003f6173a4e4d959152453663b1d5f4aa2",
+    "extraction/candidates/fresh-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "extraction/candidates/replay.log": "2913fae1e8315c2bca8b3dd8520f46f5af332917ace32bb301d91f5fd65284ec",
+    "extraction/candidates/splitter-stock.log": "b7debe89923bfeff4370e064f6a6011e47107e3fd12b2af2a6198d1bdd07bf4d",
+    "extraction/candidates/splitter-variant.log": "fb47fe74f62d3b98ae52648bef1a4b63cf72b4b2e415401a9d605bf2dfed0f21",
+    "extraction/candidates/stock.log": "e1fbf4057c8d3c129a827f3cffb8672588a342e563dfbfb14b1a7d9155f622d4",
+    "extraction/candidates/unchecked.log": "470f044050f45bf8e8b9420e7a761257679b40e2e2f0f8f55baaa51b93892dd3",
+    "extraction/candidates/wrong-chunks-cleanup.log": "f12278a5c60f7ca6ea95dd23db778203eb575a4915a8744bec377a754df9032b",
+    "extraction/candidates/wrong-constructor.log": "c873b8d3d32c54b191e5dd2d27fc0e156443bdf9df0e1a8cc410a11bed9a959f",
+    "extraction/candidates/wrong-name.log": "9ca0f9e0bfffc8e3a6c7cbdad49bbba38ae5b2f33eeb3d310bb6d3d10cf9193f",
+    "extraction/candidates/wrong-normal-break.log": "327d26b829ce4a27d0ba1f6ca7e89d3da289456e471d86f3f2a835d2d16d06e1",
+    "extraction/candidates/wrong-return-id.log": "cbb9d27f96bb52da019515becd530f72ea8867a3d50fe0c18e4c693404a904bf",
+    "extraction/candidates/wrong-span.log": "e953c14a15aaa623cf349503c4a9cd13c4ea9db29f12bb763ca3f1a640ab4cf7",
+    "extraction/candidates/wrong-zip-cleanup.log": "82a6fe707a79bb8514a495aaf0ab813ecb3c70c1b926883276191fce8b48c9b9"
+  }
+}

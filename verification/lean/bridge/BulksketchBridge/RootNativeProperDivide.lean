@@ -1,6 +1,7 @@
 import BulksketchBridge.RootDivideArena
 import BulksketchBridge.RootDivideCommitDegree
 import BulksketchBridge.NativeRootRun
+import BulksketchBridge.RootPendingProduct
 
 namespace BulksketchBridge.RootDivide
 
@@ -70,6 +71,7 @@ def ActualNativeProperDivide : Prop :=
       PendingLayout after written.stack written.factors.length written.polynomials.length ∧
       factorDegreeMass after written.stack = factorDegreeMass roots workspace.stack ∧
       traversalPotential after written.stack < traversalPotential roots workspace.stack ∧
+      liveProduct after written = liveProduct roots workspace ∧
       ∀ index < start.val, written.factors[index]! = workspace.factors[index]!
 
 theorem native_proper_divide : ActualNativeProperDivide := by
@@ -129,8 +131,16 @@ theorem native_proper_divide : ActualNativeProperDivide := by
     slotEnd startVal (by omega) lengthRoom.le (fun _ => lengthRoom)
   have decreases := committed_potential_decreases roots buffers workspace.factors workspace.stack finalMeter
     length start call.2.1 call.2.2.1 call.2.2.2 commit.slotRoom degrees shape.gcdPositive positive
+  have pending := committed_pending_product roots workspace buffers finalMeter length start call.2.1
+    call.2.2.1 call.2.2.2 layout stackRoom slotEnd startVal (by omega) lengthRoom quotientFits ready.gcdRoom commit.modulusRoom
+  change pendingProduct written output.2.1.pending.val =
+    pendingProduct workspace roots.pending.val * slicePolynomial (prefixSlice call.2.1 length.val) at pending
+  have sameProduct : liveProduct output.2.1 written = liveProduct roots workspace := by
+    unfold liveProduct
+    rw [active, pending, parent, product]
+    ring
   refine ⟨length, start, output.1, output.2.1, written, exactStage, rfl, startVal, positive, afterDegree,
-    ?_, ?_, ?_, massEq, decreases, preserved⟩
+    ?_, ?_, ?_, massEq, decreases, sameProduct, preserved⟩
   · rw [active, parent]
     exact prior.gcdExact
   · rw [parent, active, right]

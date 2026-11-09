@@ -1,0 +1,208 @@
+{
+  "original_sha256": "5027b8a1881e2188cc4b47896b021dec28cf92c50ac6f8b3ab2ca614512d8193",
+  "variant_sha256": "c1a66692bb841c3e5ec682bfba916c24c19767d536a63d240a9ba05444071fcc",
+  "controls": {
+    "stock": {
+      "status": 1,
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/stock/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates/arithmetic.llbc"
+      ],
+      "log_sha256": "e1fbf4057c8d3c129a827f3cffb8672588a342e563dfbfb14b1a7d9155f622d4"
+    },
+    "unchecked": {
+      "status": 1,
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/variant/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/unchecked/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates/arithmetic.llbc"
+      ],
+      "log_sha256": "470f044050f45bf8e8b9420e7a761257679b40e2e2f0f8f55baaa51b93892dd3"
+    },
+    "checked": {
+      "status": 0,
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/variant/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/checked/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates/arithmetic.llbc"
+      ],
+      "log_sha256": "e2fa8e9054fd2cc2f7f74835b781cc255c6a9992844a98dc837e0186160d5af6"
+    },
+    "wrong-name": {
+      "status": 1,
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/variant/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/wrong-name/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/wrong-name/arithmetic.llbc"
+      ],
+      "log_sha256": "9ca0f9e0bfffc8e3a6c7cbdad49bbba38ae5b2f33eeb3d310bb6d3d10cf9193f"
+    },
+    "wrong-span": {
+      "status": 1,
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/variant/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/wrong-span/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/wrong-span/arithmetic.llbc"
+      ],
+      "log_sha256": "e953c14a15aaa623cf349503c4a9cd13c4ea9db29f12bb763ca3f1a640ab4cf7"
+    },
+    "wrong-zip-cleanup": {
+      "status": 1,
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/variant/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/wrong-zip-cleanup/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/wrong-zip-cleanup/arithmetic.llbc"
+      ],
+      "log_sha256": "82a6fe707a79bb8514a495aaf0ab813ecb3c70c1b926883276191fce8b48c9b9"
+    },
+    "wrong-chunks-cleanup": {
+      "status": 1,
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/variant/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/wrong-chunks-cleanup/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/wrong-chunks-cleanup/arithmetic.llbc"
+      ],
+      "log_sha256": "f12278a5c60f7ca6ea95dd23db778203eb575a4915a8744bec377a754df9032b"
+    },
+    "wrong-constructor": {
+      "status": 1,
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/variant/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/wrong-constructor/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/wrong-constructor/arithmetic.llbc"
+      ],
+      "log_sha256": "c873b8d3d32c54b191e5dd2d27fc0e156443bdf9df0e1a8cc410a11bed9a959f"
+    },
+    "wrong-return-id": {
+      "status": 1,
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/variant/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/wrong-return-id/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/wrong-return-id/arithmetic.llbc"
+      ],
+      "log_sha256": "cbb9d27f96bb52da019515becd530f72ea8867a3d50fe0c18e4c693404a904bf"
+    },
+    "wrong-normal-break": {
+      "status": 1,
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/variant/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/wrong-normal-break/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/wrong-normal-break/arithmetic.llbc"
+      ],
+      "log_sha256": "327d26b829ce4a27d0ba1f6ca7e89d3da289456e471d86f3f2a835d2d16d06e1"
+    }
+  },
+  "unchanged_splitter": {
+    "stock": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/splitter-stock/Arithmetic",
+      "/Users/junbug/bulk/bulksketch/verification/lean/extraction/affine-splitter/arithmetic.llbc"
+    ],
+    "variant": [
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/variant/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-bm-outer/candidates-lowering/guard-controls/splitter-variant/Arithmetic",
+      "/Users/junbug/bulk/bulksketch/verification/lean/extraction/affine-splitter/arithmetic.llbc"
+    ],
+    "files": {
+      "Funs.lean": "4a1e1a13827ea38655bd055b65e579e17052f91a8e92ea82a72bbddb6c6f876a",
+      "FunsExternal_Template.lean": "4c59046b038ddb5906a108fac743d2bfdafa10499b04405679623a05e331ef6d",
+      "Types.lean": "c1c3706fc639ac3c460be5b0043a2b49afa6b36f37172c27e5aca26f08c59abb"
+    }
+  }
+}

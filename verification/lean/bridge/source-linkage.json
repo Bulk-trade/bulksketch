@@ -616,6 +616,16 @@
       "path": "extraction/avx-insert/trait-dispatch/arithmetic.llbc",
       "sha256": "6b8ddd9a2bf43a14a92a12bb9b77b91eb33e38d4a88f0dc6980bc6aabd962e71",
       "has_errors": false
+    },
+    {
+      "path": "extraction/candidates/arithmetic.llbc",
+      "sha256": "5027b8a1881e2188cc4b47896b021dec28cf92c50ac6f8b3ab2ca614512d8193",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/candidates/dense-eval/arithmetic.llbc",
+      "sha256": "5e43fd8478eff83f9ac6fe48766ec409e840905535cbbbce2440caef00e5ecb7",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1438,6 +1448,21 @@
       "native_item_id": "src/backend/x86_vpclmul512.rs:133:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::insert_nonzero",
       "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.insert_nonzero",
       "generated_file": "bridge/Arithmetic/AvxInsertDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:395:function:bulksketch::backend::x86_vpclmul512::insert",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert",
+      "generated_file": "bridge/Arithmetic/AvxInsertDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:266:method:bulksketch::decode::stages::Execution < F , K >::candidates",
+      "generated_declaration": "bulksketch.decode.stages.Execution.candidates",
+      "generated_file": "bridge/Arithmetic/CandidateOuterGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:155:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::eval_many_into",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.eval_many_into",
+      "generated_file": "bridge/Arithmetic/CandidateDenseEvalGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2207,6 +2232,47 @@
       ],
       "declaration_count": 10,
       "scope": "Exact original GF64 public wrapper on both empty inputs and original free dispatch on nonempty inputs, with explicit leaf slots."
+    },
+    {
+      "generated": "extraction/candidates/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CandidateInnerGenerated.lean",
+      "sha256": "20fb4272ee444b12b9f87aab1db017b7dc5a61c02fc3077370ea4cde415ff1b6",
+      "raw_sha256": "de5ed3d1c89bf45d995de0824ab40f7206792bd7297dd870c2629cc82cb7e461",
+      "checker": "extraction/candidates/project.py",
+      "checker_args": [
+        "--kind",
+        "inner"
+      ],
+      "declaration_count": 2,
+      "scope": "Original candidate Zip scan, including exact zero count, admitted root writes and early rejection.",
+      "translator_variant": "checked-candidates-nested-return-v1"
+    },
+    {
+      "generated": "extraction/candidates/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CandidateOuterGenerated.lean",
+      "sha256": "50dcf4c98b6940501e6e40b8828bd8e48c4d9434a3999ef3380ca032dcad2745",
+      "raw_sha256": "de5ed3d1c89bf45d995de0824ab40f7206792bd7297dd870c2629cc82cb7e461",
+      "checker": "extraction/candidates/project.py",
+      "checker_args": [
+        "--kind",
+        "outer"
+      ],
+      "declaration_count": 3,
+      "scope": "Original candidate chunk loop and entry through exact Dense evaluation and original charge.",
+      "translator_variant": "checked-candidates-nested-return-v1"
+    },
+    {
+      "generated": "extraction/candidates/dense-eval/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CandidateDenseEvalGenerated.lean",
+      "sha256": "b65efa68a92703c47589ff50f0e9531959d2036654d76de77dc05dc949e5bd34",
+      "raw_sha256": "0e069920da3d4289674076d8af74f6464569705847f1d46c5b79a4346b6eebf0",
+      "checker": "extraction/candidates/project.py",
+      "checker_args": [
+        "--kind",
+        "dense"
+      ],
+      "declaration_count": 1,
+      "scope": "Original stock Dense evaluation delegates exactly to the supplied Horner slot."
     }
   ],
   "reviewed_translator_variants": [
@@ -2335,6 +2401,15 @@
       "receipt": "extraction/native-deflate/receipt.json",
       "mandatory_checks": true,
       "scope": "Exact original deflate return join. End the sole roots iterator shared loan using the existing checked match retry."
+    },
+    {
+      "id": "checked-candidates-nested-return-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/candidates/checked-candidates-nested-return.patch",
+      "patch_sha256": "cd1cdc2ca14ef3657fb566dab0f6cf338de15bccd1c7ef81faf421a9cbaf34a5",
+      "receipt": "extraction/candidates/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact original candidate nested return. Keep early error and mutable writeback, and end the original Zip and Chunks iterators before their corresponding joins."
     }
   ],
   "diagnostic_generated_projections": [

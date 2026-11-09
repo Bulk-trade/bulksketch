@@ -2,6 +2,7 @@ import BulksketchBridge.AffineEnumerationCoset
 import BulksketchBridge.RootAffineChildren
 import BulksketchBridge.RootAffineTableWindow
 import BulksketchBridge.NativeRootRun
+import BulksketchBridge.RootReborrow
 
 namespace BulksketchBridge.RootRun
 
@@ -40,6 +41,9 @@ def ActualNativeAffineSplit : Prop :=
     ∃ (size : Usize) (trace work : Slice U64) (raw : Slice RawProduct),
       Roots.run nativeCalls nativeDivRem dictionary kernels roots .AffineSplit workspace meter =
         .ok (frame (.Ok (.Ok .Gcd)) roots { roots with trace_len := size } workspace { buffers with trace, work, raw } paid) ∧
+      size.val ≤ roots.degree.val ∧ DenseGcd.Normal (prefixSlice trace size.val) ∧
+      buffersFor { roots with trace_len := size }
+        (rebuild workspace roots { buffers with trace, work, raw }) = { buffers with trace, work, raw } ∧
       RootDivide.AffineSplitClassifier factor (slicePolynomial (prefixSlice trace size.val))
         roots.affine_base basis[rank]! basis rank
 
@@ -48,7 +52,7 @@ theorem native_affine_split : ActualNativeAffineSplit := by
     rankPositive rankBudget rankMax basisBound independent tableExact charged rawLaw squareLaw reduceLaw
     arithmetic scale buffers rank factor monic correct backend contains
   let table := BmEntry.tail workspace.factors (roots.stride.val * roots.stride.val)
-  obtain ⟨factorReady, modulusWidth, traceWidth, _, workRoom, rawRoom⟩ :=
+  obtain ⟨factorReady, modulusWidth, traceWidth, gcdWidth, workRoom, rawRoom⟩ :=
     gcd_buffers_of_budget roots workspace capacity budget sized (by omega) degreeBound
   change buffers.modulus.length = roots.degree.val + 1 at modulusWidth
   change buffers.trace.length = roots.degree.val at traceWidth
@@ -60,7 +64,7 @@ theorem native_affine_split : ActualNativeAffineSplit := by
   have paidReady := affine_window_of_budget roots workspace capacity budget sized stride rankBudget rankMax
   have ready : Ready nativeDivRem kernels roots .AffineSplit workspace meter :=
     ⟨factorReady, fun _ _ => paidReady⟩
-  obtain ⟨size, trace, work, raw, splitter, eval⟩ :=
+  obtain ⟨size, trace, work, raw, splitter, sizeBound, normal, outputWidth, workWidth, _, eval⟩ :=
     AffineSplitter.native_splitter_at_roots kernels rawLaw squareLaw reduceLaw arithmetic scale buffers.modulus
       buffers.table (row table rank) roots.affine_base buffers.trace buffers.work buffers.raw roots.degree.val
       modulusWidth (by omega) (by omega) (by omega) (by omega) monic tableWidth correct backend
@@ -68,7 +72,7 @@ theorem native_affine_split : ActualNativeAffineSplit := by
     intro zero
     rw [zero] at rankPositive
     exact Nat.not_lt_zero 0 rankPositive
-  refine ⟨size, trace, work, raw, ?_, ?_⟩
+  refine ⟨size, trace, work, raw, ?_, sizeBound, normal, ?_, ?_⟩
   · rw [original_root_run_refines kernels roots .AffineSplit workspace meter ready]
     simp only [expected, affineSplit, charged, bind_ok]
     dsimp! only
@@ -76,6 +80,17 @@ theorem native_affine_split : ActualNativeAffineSplit := by
     rw [splitter]
     simp only [bind_ok]
     rfl
+  · change buffersFor roots (rebuild workspace roots { buffers with trace, work, raw }) = _
+    apply reborrow_factor_work roots workspace _ factorReady
+    · exact modulusWidth
+    · exact outputWidth.trans traceWidth
+    · exact gcdWidth
+    · change work.length = _
+      rw [workWidth]
+      change (BmEntry.tail (BmEntry.tail (BmEntry.tail workspace.polynomials (roots.degree.val + 1))
+        roots.degree.val) (roots.degree.val + 1)).length = _
+      simp only [BmEntry.tail_length]
+    · exact tableWidth
   · intro point root
     have rankSucc : roots.affine_rank.val = rank + 1 := by omega
     have evaluated := eval point root

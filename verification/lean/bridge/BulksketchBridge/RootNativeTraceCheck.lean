@@ -28,6 +28,7 @@ def ActualNativeTraceCheckAccept : Prop :=
     BackendSquareLaw kernels buffers.modulus buffers.table buffers.trace.length →
     (slicePolynomial buffers.modulus).Splits → (slicePolynomial buffers.modulus).roots.Nodup →
     ∃ writes : TraceWrites, writes.correct roots buffers ∧
+      DenseGcd.Normal (prefixSlice writes.trace writes.activeLength.val) ∧
       Roots.trace nativeSquare gf64 kernels roots buffers meter =
         .ok (writes.frame roots buffers true (.Ok (.Ok .Gcd)) finalMeter)
 
@@ -40,7 +41,7 @@ theorem native_trace_check_accepts : ActualNativeTraceCheckAccept := by
   have fullSquare := AffineSplitter.native_full_square kernels rawLaw squareLaw reduceLaw buffers.modulus
     buffers.table degree minimum shape monic tableLen tableCorrect backend
   obtain ⟨attempts, basisLen, basis, size, trace, gcd, raw, ran, attempt, live, cacheLen, cacheBound, cached,
-    sizeRoom, traceLen, gcdLen, rawLen, invariant, before, checkDst, checkRaw, checkedSize, beforeWidth,
+    sizeRoom, traceLen, gcdLen, rawLen, invariant, normalPrefix, before, checkDst, checkRaw, checkedSize, beforeWidth,
     dstWidth, checkRawWidth, padded, checkRan⟩ :=
     trace_split_checked_evidence nativeSquare kernels roots buffers meter paid finalMeter charged splitCharged
       ready.compare checked ready.counter ready.direction ready.cache ready.trace ready.gcd ready.raw square
@@ -87,7 +88,7 @@ theorem native_trace_check_accepts : ActualNativeTraceCheckAccept := by
     rw [prefix_length, gcdLen, Nat.min_eq_left ready.compare, traceLen, traceWidth]
   have accepted := words_eq_of_poly _ _ checkWidth checkPoly
   refine ⟨⟨attempts, basisLen, basis, size, trace, gcd, raw⟩,
-    ⟨attempt, live, cacheLen, cacheBound, cached, sizeRoom, traceLen, gcdLen, rawLen, invariant⟩, ?_⟩
+    ⟨attempt, live, cacheLen, cacheBound, cached, sizeRoom, traceLen, gcdLen, rawLen, invariant⟩, normalPrefix, ?_⟩
   simpa only [accepted, decide_true, ite_true, TraceWrites.frame] using ran
 
 #print axioms native_trace_check_accepts

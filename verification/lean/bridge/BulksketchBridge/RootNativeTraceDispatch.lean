@@ -1,6 +1,7 @@
 import BulksketchBridge.RootNativeTraceCheck
 import BulksketchBridge.RootWorkspaceBudget
 import BulksketchBridge.NativeRootRun
+import BulksketchBridge.RootReborrow
 
 namespace BulksketchBridge.RootRun
 
@@ -36,6 +37,8 @@ def ActualNativeTraceDispatch : Prop :=
       Roots.run nativeCalls nativeDivRem dictionary kernels roots .Trace workspace meter =
         .ok (frame.1, frame.2.1, rebuild workspace roots frame.2.2.1, id, finalMeter) ∧
       writes.correct roots buffers ∧
+      DenseGcd.Normal (prefixSlice writes.trace writes.activeLength.val) ∧
+      buffersFor frame.2.1 (rebuild workspace roots frame.2.2.1) = frame.2.2.1 ∧
       ∀ point, factor.IsRoot point →
         ((slicePolynomial (prefixSlice writes.trace writes.activeLength.val)).IsRoot point ↔
           traceBit roots.splitter_seed roots.direction.val point = 0)
@@ -61,8 +64,9 @@ theorem native_trace_dispatch : ActualNativeTraceDispatch := by
   have traceReady : TraceReady roots buffers :=
     ⟨counter, direction, cache, by omega, by omega, by omega, by omega⟩
   have minimum : 4 ≤ buffers.modulus.length := by omega
-  obtain ⟨writes, sound, ran⟩ :
+  obtain ⟨writes, sound, normalPrefix, ran⟩ :
       ∃ writes : TraceWrites, writes.correct roots buffers ∧
+        DenseGcd.Normal (prefixSlice writes.trace writes.activeLength.val) ∧
         Roots.trace nativeSquare gf64 kernels roots buffers meter =
           .ok (writes.frame roots buffers true (.Ok (.Ok .Gcd)) finalMeter) := by
     cases checked : roots.checked with
@@ -71,23 +75,42 @@ theorem native_trace_dispatch : ActualNativeTraceDispatch := by
       rw [exactMeter]
       have square := native_modular_square kernels rawLaw squareLaw reduceLaw buffers.modulus buffers.table
         roots.degree.val minimum modulusWidth monic tableWidth tableCorrect backend
-      obtain ⟨attempts, basisLen, basis, size, trace, gcd, raw, native, data⟩ :=
+      obtain ⟨attempts, basisLen, basis, size, trace, gcd, raw, native, attempt, live, cacheLen, cacheBound,
+        cacheData, sizeRoom, traceLen, gcdLen, rawLen, invariant, norm⟩ :=
         trace_checked_refines nativeSquare kernels roots buffers meter paid charged checked counter direction cache
           traceReady.trace traceReady.gcd traceReady.raw (by rwa [traceWidth])
-      exact ⟨⟨attempts, basisLen, basis, size, trace, gcd, raw⟩, data, by simpa only [TraceWrites.frame, checked] using native⟩
+      exact ⟨⟨attempts, basisLen, basis, size, trace, gcd, raw⟩,
+        ⟨attempt, live, cacheLen, cacheBound, cacheData, sizeRoom, traceLen, gcdLen, rawLen, invariant⟩, norm,
+        by simpa only [TraceWrites.frame, checked] using native⟩
     | false =>
       have second : bulksketch.decode.roots.charge paid (.SplitCheck roots.degree) = .ok (.Ok (), finalMeter) := by
         simpa only [checked, Bool.false_eq_true, ite_false] using splitCharge
       exact native_trace_check_accepts kernels roots buffers meter paid finalMeter checked traceReady charged second
         rawLaw squareLaw reduceLaw traceWidth minimum (by rwa [traceWidth]) (by rwa [traceWidth])
         (by rwa [traceWidth]) (by rwa [traceWidth]) (by rwa [traceWidth]) split simple
-  refine ⟨writes, ?_, sound, trace_invariant_classifies buffers.modulus writes.trace writes.activeLength
+  refine ⟨writes, ?_, sound, normalPrefix, ?_, trace_invariant_classifies buffers.modulus writes.trace writes.activeLength
     roots.splitter_seed roots.direction.val sound.2.2.2.2.2.2.2.2.2⟩
-  rw [original_root_run_refines kernels roots .Trace workspace meter ready]
-  unfold expected
-  rw [ran]
-  simp only [bind_ok]
-  rfl
+  · rw [original_root_run_refines kernels roots .Trace workspace meter ready]
+    unfold expected
+    rw [ran]
+    simp only [bind_ok]
+    rfl
+  · let updated : FactorWork := {
+      buffers with
+      trace := writes.trace
+      gcd := writes.gcd
+      raw := writes.raw
+      basis := ⟨some writes.basis, writes.basisLength⟩
+    }
+    change buffersFor roots (rebuild workspace roots updated) = updated
+    apply reborrow_factor_work roots workspace updated ready
+    · exact modulusWidth
+    · exact sound.2.2.2.2.2.2.1.trans traceWidth
+    · exact sound.2.2.2.2.2.2.2.1.trans gcdWidth
+    · change (BmEntry.tail (BmEntry.tail (BmEntry.tail workspace.polynomials (roots.degree.val + 1))
+        roots.degree.val) (roots.degree.val + 1)).length = _
+      simp only [BmEntry.tail_length]
+    · exact tableWidth
 
 #print axioms native_trace_dispatch
 

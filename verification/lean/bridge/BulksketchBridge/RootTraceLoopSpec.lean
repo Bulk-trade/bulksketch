@@ -1,5 +1,6 @@
 import BulksketchBridge.RootTraceSpec
 import BulksketchBridge.DenseCoefficientPolynomial
+import BulksketchBridge.DenseGcdSpec
 import Mathlib.Algebra.Polynomial.Div
 
 namespace BulksketchBridge.RootTrace
@@ -50,5 +51,24 @@ def ActualTraceLoop : Prop :=
       output.val ≤ updated.length ∧ updated.length = trace.length ∧
       gcdOut.length = gcd.length ∧ rawOut.length = raw.length ∧
       traceInvariant modulus splitter 64 output updated
+
+/-- The exact update also certifies the normalized prefix passed to GCD. -/
+def ActualTraceLoopWithNormal : Prop :=
+  ∀ (square : RootTraceRuntime.ModularSquare) {K : Type}
+    (backend : BulkKernels K bulksketch.field.Gf64) (range : core.ops.range.Range U32)
+    (len : Usize) (modulus trace gcd table : Slice U64) (raw : Slice RawProduct) (splitter : U64),
+    1 ≤ range.start.val → range.start.val ≤ 64 → range.«end».val = 64 →
+    2 ≤ trace.length → len.val ≤ trace.length → trace.length ≤ gcd.length →
+    2 * trace.length < raw.length →
+    ModularSquareLaw square backend modulus table trace.length →
+    traceInvariant modulus splitter range.start.val len trace →
+    ∃ output updated gcdOut rawOut,
+      Roots.trace_loop1 square gf64 backend range len modulus trace gcd table raw splitter =
+        .ok (output, updated, gcdOut, rawOut) ∧
+      output.val ≤ updated.length ∧ updated.length = trace.length ∧
+      gcdOut.length = gcd.length ∧ rawOut.length = raw.length ∧
+      traceInvariant modulus splitter 64 output updated ∧
+      (range.start.val < 64 ∨ DenseGcd.Normal (prefixSlice trace len.val) →
+        DenseGcd.Normal (prefixSlice updated output.val))
 
 end BulksketchBridge.RootTrace

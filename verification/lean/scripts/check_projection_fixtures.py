@@ -403,6 +403,20 @@ PROJECTIONS = [
           ("dispatch", "free-dispatch", "AvxInsertDispatchGenerated",
            "insert_tile 4#usize false odd ids", "insert_tile 4#usize true odd ids"),
       )),
+    *((f"candidates-{kind}", "extraction/candidates/project.py", "extraction/candidates/receipt.json",
+       raw, f"bridge/Arithmetic/{active}.lean", before, after, "compiled candidate projection differs",
+       None, None, [f"bridge/Arithmetic/{name}.lean"
+                   for name in ("ReconstructionTypes", "SliceKernelTypes", "WorkScheduleGenerated",
+                                "AvxHornerChunkRuntime", "MutableZipRuntime", "RebuiltLfsrRuntime")])
+      for kind, raw, active, before, after in (
+          ("inner", "extraction/candidates/Arithmetic/Funs.lean", "CandidateInnerGenerated",
+           "let s1 ← Slice.update s i1 point", "let s1 ← Slice.update s i1 value"),
+          ("outer", "extraction/candidates/Arithmetic/Funs.lean", "CandidateOuterGenerated",
+           "let i2 := Slice.len points", "let i2 := Slice.len locator"),
+          ("dense", "extraction/candidates/dense-eval/Arithmetic/Funs.lean", "CandidateDenseEvalGenerated",
+           "backendcontractBulkKernelsInst.horner_many coefficients points out",
+           "backendcontractBulkKernelsInst.horner_many points coefficients out"),
+      )),
     ("native-deflate", "extraction/native-deflate/project.py", "extraction/native-deflate/receipt.json",
      "extraction/native-deflate/Arithmetic/Funs.lean", "bridge/Arithmetic/NativeDeflateGenerated.lean",
      "let i4 ← i - 1#usize", "let i4 ← i + 1#usize", "compiled deflate projection differs",
@@ -454,6 +468,8 @@ def main():
         kwargs = {"kind": "encode"} if label == "portable-encode" else {}
         if label.startswith("avx-insert-"):
             kwargs = {"entry": label.removeprefix("avx-insert-")}
+        if label.startswith("candidates-"):
+            kwargs = {"kind": label.removeprefix("candidates-")}
         originals[label] = projector.check(**kwargs)["source_declarations_retained_verbatim"]
         receipt = json.loads((ROOT / receipt_path).read_text())
         files = [receipt_path, active_path, "bridge/Arithmetic/Types.lean", "bridge/Arithmetic/Funs.lean"]
@@ -666,6 +682,9 @@ def main():
         if label == "avx-horner":
             cases.append(("wrong-kernel-binary", receipt_path, receipt["variant_binary_sha256"], "0" * 64,
                           "invalid AVX Horner receipt"))
+        if label == "candidates-outer":
+            cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false',
+                          '"native_llbc_edited": true', "candidate variant receipt differs"))
         if label == "native-deflate":
             cases.append(("wrong-variant", receipt_path, '"checked-native-deflate-loan-retry-v1"',
                           '"unreviewed-deflate-variant"', "invalid deflate translator receipt"))

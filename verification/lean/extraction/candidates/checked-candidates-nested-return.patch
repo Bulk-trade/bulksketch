@@ -1,0 +1,217 @@
+--- a/src/PrePasses.ml
++++ b/src/PrePasses.ml
+@@ -2361,6 +2361,206 @@
+     }
+   else f
+ 
++(** The candidate scan has a function return inside the inner Zip.
++    Keep one exit flag and dispatch the original result after both loops.
++    Move each exit's ordered StorageDead epilogue before the corresponding
++    loop join, where the borrowed iterator is already semantically dead. *)
++let lower_candidates_nested_return (crate : crate) (f : fun_decl) : fun_decl =
++  let span = f.item_meta.span in
++  let site = span.data in
++  let target =
++    NameMatcher.parse_pattern
++      "bulksketch::decode::stages::{bulksketch::decode::stages::Execution<@F, @K>}::candidates"
++  in
++  let scoped =
++    !Config.sanity_checks && span.generated_from_span = None
++    && (match site.file.name with Local "src/decode/stages.rs" -> true | _ -> false)
++    && (site.beg_loc.line, site.beg_loc.col, site.end_loc.line, site.end_loc.col)
++         = (266, 4, 303, 5)
++    && ExtractName.match_name crate target f.item_meta.name
++  in
++  let id (st : statement) = StatementId.to_int st.statement_id in
++  let ids = List.map id in
++  let rec split n = function
++    | [] -> None
++    | st :: rest when id st = n -> Some ([], st, rest)
++    | st :: rest ->
++        Option.map (fun (before, found, after) -> (st :: before, found, after))
++          (split n rest)
++  in
++  let storage_dead expected statements =
++    List.map
++      (fun st ->
++        match st.kind with StorageDead i -> LocalId.to_int i | _ -> -1)
++      statements = expected
++  in
++  let ctor type_id variant destination source (st : statement) =
++    let operands_match = function
++      | [] -> source = None
++      | [Move place] ->
++          Option.fold ~none:false
++            ~some:(fun i -> place.kind = PlaceLocal (LocalId.of_int i)) source
++      | _ -> false
++    in
++    match st.kind with
++    | Assign
++        (place, Aggregate (AggregatedAdt (decl, Some tag, None), operands)) ->
++        place.kind = PlaceLocal (LocalId.of_int destination)
++        && decl.id = TypeDeclId.of_int type_id
++        && tag = VariantId.of_int variant && operands_match operands
++    | _ -> false
++  in
++  let take n xs = List.filteri (fun i _ -> i < n) xs in
++  let drop n xs = List.filteri (fun i _ -> i >= n) xs in
++  let replace_branch old_ids replace (b : block) =
++    let matches = ref 0 in
++    let visitor =
++      object
++        inherit [_] map_statement as super
++        method! visit_block () b =
++          if ids b.statements = old_ids then
++            match replace b.statements with
++            | None -> b
++            | Some statements ->
++                incr matches;
++                { b with statements }
++          else super#visit_block () b
++      end
++    in
++    let output = visitor#visit_block () b in
++    if !matches = 1 then Some output else None
++  in
++  match f.body with
++  | StructuredBody body when scoped && List.length body.locals.locals = 82 ->
++      let flag = LocalId.of_int 82 in
++      let ty = TScalar TBool in
++      let place = { kind = PlaceLocal flag; ty } in
++      let literal value : constant_expr = { kind = CBool value; ty } in
++      let transform (outer_st : statement) (after : statement list) =
++        let span = outer_st.span in
++        let statement kind =
++          { span; statement_id = StatementId.zero; kind; comments_before = [] }
++        in
++        let block statements = { span; block_id = BlockId.zero; statements } in
++        let assign value =
++          statement (Assign (place, Use (Constant (literal value), YesRetag)))
++        in
++        let if_flag yes no =
++          let dispatch = {
++            scrutinee = SwitchValue (Copy place);
++            branches = [(literal false, BranchId.of_int 1)];
++            fallback = Some BranchId.zero;
++          } in
++          statement (Switch (dispatch, [block yes; block no]))
++        in
++        let end_flag = statement (StorageDead flag) in
++        match outer_st.kind, after with
++        | Loop outer, a :: b :: c :: d :: success
++          when ids [a; b; c; d] = [556; 557; 559; 560]
++            && storage_dead [37; 35; 34; 30] [a; b; c; d]
++            && (match success with
++                | live :: read :: write :: _ ->
++                    ids [live; read; write] = [562; 563; 564]
++                | _ -> false) ->
++            (match split 541 outer.statements with
++            | Some (prefix, inner_st, inner_tail) ->
++                (match inner_st.kind, List.rev inner_tail with
++                | Loop inner, ({ kind = Continue 0; _ } as next) :: cleanup_rev ->
++                    let cleanup = List.rev cleanup_rev in
++                    if id next <> 553
++                       || ids cleanup <> [543; 544; 546; 547; 548; 549; 550]
++                       || not (storage_dead [63; 61; 60; 54; 38; 37; 35] cleanup)
++                    then None
++                    else
++                      let ordinary_exit = function
++                        | [{ kind = Break 0; _ } as leave] -> Some (cleanup @ [leave])
++                        | _ -> None
++                      in
++                      let failure_tail = ref None in
++                      let failure_exit statements =
++                        let constructors = take 7 (drop 2 statements) in
++                        let current = take 4 (drop 9 statements) in
++                        let inner_deaths = take 7 (drop 13 statements) in
++                        let outer_deaths = take 2 (drop 20 statements) in
++                        match constructors, List.rev statements with
++                        | [ { kind = StorageLive temp1; _ }; { kind = StorageLive temp2; _ };
++                            error; err; { kind = StorageDead dead2; _ }; result;
++                            { kind = StorageDead dead1; _ } ],
++                          ({ kind = Return; _ } as leave) :: _
++                          when LocalId.to_int temp1 = 71 && LocalId.to_int temp2 = 72
++                            && temp1 = dead1 && temp2 = dead2
++                            && ctor 11 1 72 None error && ctor 19 1 71 (Some 72) err
++                            && ctor 19 0 0 (Some 71) result
++                            && storage_dead [70; 69] (take 2 statements)
++                            && storage_dead [68; 66; 65; 64] current
++                            && storage_dead [63; 61; 60; 54; 38; 37; 35] inner_deaths
++                            && storage_dead [34; 30] outer_deaths
++                            && storage_dead
++                                 [26; 25; 21; 20; 17; 5; 75; 19; 4; 3; 2; 1; 81; 80]
++                                 (take 14 (drop 22 statements)) ->
++                            failure_tail := Some (outer_deaths, constructors @ drop 22 statements);
++                            Some (take 2 statements @ current @ inner_deaths @
++                                  [assign true; { leave with kind = Break 0 }])
++                        | _ -> None
++                      in
++                      let expected_failure =
++                        [455; 456; 457; 458; 459; 460; 461; 462; 463; 464; 466; 467;
++                         468; 469; 470; 472; 473; 474; 475; 476; 478; 479; 481; 482;
++                         483; 484; 485; 486; 487; 494; 496; 497; 498; 499; 9281; 9282; 500]
++                      in
++                      (match replace_branch [434] ordinary_exit inner with
++                      | None -> None
++                      | Some inner ->
++                          let changed_inner = replace_branch expected_failure failure_exit inner in
++                          (match changed_inner, !failure_tail with
++                          | Some inner, Some (outer_deaths, error_tail) ->
++                              let outer = { outer with statements =
++                                prefix @ [{ inner_st with kind = Loop inner };
++                                  if_flag (outer_deaths @ [statement (Break 0)]) [next]] } in
++                              let ordinary_outer = function
++                                | [{ kind = Break 0; _ } as leave] ->
++                                    Some [a; b; c; d; leave]
++                                | _ -> None
++                              in
++                              Option.map
++                                (fun outer ->
++                                  [statement (StorageLive flag); assign false;
++                                   { outer_st with kind = Loop outer };
++                                   if_flag (end_flag :: error_tail) [end_flag]] @ success)
++                                (replace_branch [228] ordinary_outer outer)
++                          | _ -> None))
++                | _ -> None)
++            | _ -> None)
++        | _ -> None
++      in
++      let count = ref 0 in
++      let visitor =
++        object
++          inherit [_] map_statement as super
++          method! visit_block () b =
++            match split 554 b.statements with
++            | Some (prefix, outer, after) ->
++                (match transform outer after with
++                | None -> b
++                | Some statements ->
++                    incr count;
++                    { b with statements = prefix @ statements })
++            | None -> super#visit_block () b
++        end
++      in
++      let new_body = visitor#visit_block () body.body in
++      if !count <> 1 then f
++      else
++        let local =
++          { index = flag; local_ty = ty; name = Some "return_from_inner";
++            span; drop_flag_for = None }
++        in
++        { f with body = StructuredBody {
++          body with body = new_body;
++          locals = { body.locals with locals = body.locals.locals @ [local] };
++        } }
++  | _ -> f
++
+ let apply_passes (crate : crate) : crate =
+   (* Passes that apply to the whole crate *)
+   let crate = update_array_default crate in
+@@ -2373,6 +2573,7 @@
+       ("fix_anon_const_initializers", fix_anon_const_initializers);
+       ("erase_body_regions", erase_body_regions);
+       ("remove_unreachable", remove_unreachable);
++      ("lower_candidates_nested_return", lower_candidates_nested_return);
+       ("update_loop", update_loops);
+       ("remove_useless_joins", remove_useless_joins);
+       ( "remove_shallow_borrows_storage_live_dead",

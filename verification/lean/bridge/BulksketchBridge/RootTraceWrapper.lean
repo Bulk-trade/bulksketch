@@ -103,7 +103,8 @@ theorem trace_checked_refines (square : RootTraceRuntime.ModularSquare) {K : Typ
       length.val ≤ 64 ∧ cachePrefix self.splitter_seed basis length.val ∧
       lengthOut.val ≤ traceOut.length ∧ traceOut.length = buffers.trace.length ∧
       gcdOut.length = buffers.gcd.length ∧ rawOut.length = buffers.raw.length ∧
-      traceInvariant buffers.modulus (basisWord self.splitter_seed self.direction.val) 64 lengthOut traceOut := by
+      traceInvariant buffers.modulus (basisWord self.splitter_seed self.direction.val) 64 lengthOut traceOut ∧
+      DenseGcd.Normal (prefixSlice traceOut lengthOut.val) := by
   obtain ⟨attempts, attemptNormal, attemptVal⟩ := RawMulTable.normal_of_spec _ _
     (Usize.add_spec (x := self.attempts) (y := 1#usize) (by exact counterFits))
   obtain ⟨oldLength, oldBasis, getNormal, positive, width, cacheCorrect, oldExact⟩ :=
@@ -127,13 +128,13 @@ theorem trace_checked_refines (square : RootTraceRuntime.ModularSquare) {K : Typ
     (by change (1#usize).val < (zeroWords buffers.trace).length; rw [zeroLen]
         exact Nat.lt_of_succ_le traceFits)
   let range : core.ops.range.Range U32 := ⟨1#u32, 64#u32⟩
-  obtain ⟨out, traceOut, gcdOut, rawOut, loopNormal, outFits, traceLen, gcdLen, rawLen, correct⟩ :=
-    trace_loop_refines square backend range 2#usize buffers.modulus (traceStart buffers.trace splitter)
+  obtain ⟨out, traceOut, gcdOut, rawOut, loopNormal, outFits, traceLen, gcdLen, rawLen, correct, normalPrefix⟩ :=
+    trace_loop_with_normal square backend range 2#usize buffers.modulus (traceStart buffers.trace splitter)
       buffers.gcd buffers.table buffers.raw splitter (by decide) (by decide) (by decide)
       (by rwa [startLen]) (by change 2 ≤ _; rwa [startLen]) (by rwa [startLen]) (by rwa [startLen])
       (by rwa [startLen]) (trace_start_invariant _ _ _ traceFits)
   refine ⟨attempts, length, basis, out, traceOut, gcdOut, rawOut, ?_, ?_, directionLive, exactBasisLength, finalWidth, finalCorrect,
-    outFits, traceLen.trans startLen, gcdLen, rawLen, correct⟩
+    outFits, traceLen.trans startLen, gcdLen, rawLen, correct, normalPrefix (Or.inl (by decide))⟩
   · simp only [Roots.trace, charged, bind_ok, core.result.Result.Insts.CoreOpsTry.branch]
     dsimp! only
     simp only [attemptNormal, getNormal, bind_ok]
@@ -269,6 +270,7 @@ theorem trace_split_checked_evidence (square : RootTraceRuntime.ModularSquare) {
       lengthOut.val ≤ traceOut.length ∧ traceOut.length = buffers.trace.length ∧
       gcdOut.length = buffers.gcd.length ∧ rawOut.length = buffers.raw.length ∧
       traceInvariant buffers.modulus (basisWord self.splitter_seed self.direction.val) 64 lengthOut traceOut ∧
+      DenseGcd.Normal (prefixSlice traceOut lengthOut.val) ∧
       ∃ (before splitDst : Slice U64) (splitInputRaw : Slice RawProduct) (splitLen : Usize),
         before.length = buffers.trace.length ∧ splitDst.length = buffers.gcd.length ∧
         splitInputRaw.length = buffers.raw.length ∧
@@ -298,8 +300,8 @@ theorem trace_split_checked_evidence (square : RootTraceRuntime.ModularSquare) {
     (by change (1#usize).val < (zeroWords buffers.trace).length; rw [zeroLen]
         exact Nat.lt_of_succ_le traceFits)
   let range : core.ops.range.Range U32 := ⟨1#u32, 64#u32⟩
-  obtain ⟨out, traceOut, gcdOut, rawOut, loopNormal, outFits, traceLen, gcdLen, rawLen, correct⟩ :=
-    trace_loop_refines square backend range 2#usize buffers.modulus (traceStart buffers.trace splitter)
+  obtain ⟨out, traceOut, gcdOut, rawOut, loopNormal, outFits, traceLen, gcdLen, rawLen, correct, normalPrefix⟩ :=
+    trace_loop_with_normal square backend range 2#usize buffers.modulus (traceStart buffers.trace splitter)
       buffers.gcd buffers.table buffers.raw splitter (by decide) (by decide) (by decide)
       (by rwa [startLen]) (by change 2 ≤ _; rwa [startLen]) (by rwa [startLen]) (by rwa [startLen])
       (by rwa [startLen]) (trace_start_invariant _ _ _ traceFits)
@@ -345,6 +347,7 @@ theorem trace_split_checked_evidence (square : RootTraceRuntime.ModularSquare) {
   have compare := slice_ne (prefixSlice splitGcd self.degree.val) padded
   refine ⟨attempts, length, basis, out, padded, splitGcd, splitRaw, ?_, ?_, directionLive, exactBasisLength, finalWidth, finalCorrect,
     by omega, paddedLen.trans traceWidth, splitGcdLen.trans gcdLen, splitRawLen.trans rawLen, padCorrect,
+    by rw [samePrefix]; exact normalPrefix (Or.inl (by decide)),
     traceOut, gcdOut, rawOut, splitLen, traceWidth, gcdLen, rawLen, padValue, splitNormal⟩
   · simp only [Roots.trace, charged, bind_ok, core.result.Result.Insts.CoreOpsTry.branch]
     dsimp! only
@@ -404,7 +407,7 @@ theorem trace_split_checked_refines (square : RootTraceRuntime.ModularSquare) {K
       gcdOut.length = buffers.gcd.length ∧ rawOut.length = buffers.raw.length ∧
       traceInvariant buffers.modulus (basisWord self.splitter_seed self.direction.val) 64 lengthOut traceOut := by
   obtain ⟨attempts, length, basis, size, trace, gcd, raw, ran, attempt, live, cacheLen, cacheBound, cached,
-    sizeBound, traceLen, gcdLen, rawLen, invariant, _⟩ :=
+    sizeBound, traceLen, gcdLen, rawLen, invariant, _, _⟩ :=
     trace_split_checked_evidence square backend self buffers meter paidMeter splitMeter charged splitPaid
       degreeFits checked counterFits directionFits cached traceFits gcdFits rawFits squareLaw
   exact ⟨attempts, length, basis, size, trace, gcd, raw, ran, attempt, live, cacheLen, cacheBound, cached,
@@ -514,10 +517,13 @@ theorem trace_wrapper_refines : ActualTraceWrapper := by
     intro ready squareLaw
     cases checked : roots.checked with
     | true =>
-      obtain ⟨attempts, length, basis, len, trace, gcd, raw, result, correct⟩ :=
+      obtain ⟨attempts, length, basis, len, trace, gcd, raw, result, attempt, live, cacheLen, cacheBound,
+        cache, sizeRoom, traceLen, gcdLen, rawLen, invariant, _⟩ :=
         trace_checked_refines square backend roots buffers meter paidMeter charged checked
           ready.counter ready.direction ready.cache ready.trace ready.gcd ready.raw squareLaw
-      exact ⟨⟨attempts, length, basis, len, trace, gcd, raw⟩, correct, by simpa only [TraceWrites.frame, checked] using result⟩
+      exact ⟨⟨attempts, length, basis, len, trace, gcd, raw⟩,
+        ⟨attempt, live, cacheLen, cacheBound, cache, sizeRoom, traceLen, gcdLen, rawLen, invariant⟩,
+        by simpa only [TraceWrites.frame, checked] using result⟩
     | false =>
       obtain ⟨secondCost, secondPrice⟩ := split_cost_returns roots.degree
       obtain ⟨second, splitMeter, secondEq⟩ : ∃ second splitMeter,

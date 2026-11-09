@@ -122,6 +122,12 @@ For a split simple factor, the trace polynomial is idempotent modulo
 the factor. The original paid split check compares two exact padded
 slices representing that same polynomial. Both the already-checked
 and first-check paths enter the native GCD stage with its classifier.
+Both trace and affine split return a normalized prefix. The next GCD
+reborrows the exact source-written slices. Its proper branch supplies
+the normalized factor frame for divide, which preserves the product
+of the active and pending factors. The degree-zero, -one and -two
+leaf and the accepted small-degree certificate append exactly their
+roots, then finish or restore the exact pending factor.
 
 The original deflation stage performs the leading-coefficient seed,
 reverse synthetic division, and exact remainder test for each candidate.
@@ -131,7 +137,15 @@ rejection. Success uses the original traversal start and affine choice. Distinct
 valid candidate roots exclude rejection and give an exact factorization
 of the original locator into the removed linear factors and residual.
 The checked translator variant ends the one shared roots iterator loan
-at the exact source return join.
+at the exact source return join. Exact traversal entry derives the
+admitted residual frame and degree budget, including the separate
+zero-budget path with empty coefficient scratch.
+
+The original candidate stage checks the native charge, bounded chunks,
+the Dense delegate and zero-evaluation Zip scan. An excess hit returns
+the original error with prior writes intact. A scoped checked translator
+pass moves each iterator's exact cleanup before its join and carries the
+early return through the two loops.
 
 The AVX square finite-heap theorem composes the zero fill, scalar
 coefficient seeds, and the original masked LLBC load/store block
@@ -171,7 +185,8 @@ The allocated encoder proof composes the admitted table and output views,
 keeps the table bytes unchanged and frames bytes outside the output prefix.
 The original single-ID capacity-18 insertion and horizontal XOR now
 have exact proofs. The public GF64 selector is checked through its
-original free dispatcher, with other leaf kernels explicit.
+original free dispatcher. All empty, single-ID, sparse, and arbitrary
+32-ID chunk branches are checked under explicit leaf contracts.
 The degree-18 rebuilt verifier's multi-ID seed selects the tile path.
 
 Run the complete gate from `verification/lean`.

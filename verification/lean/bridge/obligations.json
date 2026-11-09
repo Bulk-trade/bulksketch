@@ -1340,6 +1340,54 @@
     {
       "challenge": "BulksketchBridge.Deflation.ActualNativeDeflateDistinct",
       "theorem": "BulksketchBridge.Deflation.native_deflate_distinct"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxInsertGeneral.ActualFreeInsert",
+      "theorem": "BulksketchBridge.AvxInsertGeneral.free_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Deflation.ActualNativeDeflateTraversalEntry",
+      "theorem": "BulksketchBridge.Deflation.native_deflate_traversal_entry"
+    },
+    {
+      "challenge": "BulksketchBridge.Deflation.ActualNativeDeflateZeroBudget",
+      "theorem": "BulksketchBridge.Deflation.native_deflate_zero_budget"
+    },
+    {
+      "challenge": "BulksketchBridge.RootTrace.ActualTraceLoopWithNormal",
+      "theorem": "BulksketchBridge.RootTrace.trace_loop_with_normal"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeGcdReborrow",
+      "theorem": "BulksketchBridge.RootRun.native_gcd_reborrow"
+    },
+    {
+      "challenge": "BulksketchBridge.RootLeaf.ActualNativeLeafComplete",
+      "theorem": "BulksketchBridge.RootLeaf.native_leaf_complete"
+    },
+    {
+      "challenge": "BulksketchBridge.RootLeaf.ActualNativeZeroLeaf",
+      "theorem": "BulksketchBridge.RootLeaf.native_zero_leaf"
+    },
+    {
+      "challenge": "BulksketchBridge.ClosedLeaf.ActualNativeClosedLeafVerify",
+      "theorem": "BulksketchBridge.ClosedLeaf.native_closed_leaf_verify"
+    },
+    {
+      "challenge": "BulksketchBridge.CandidateOuter.ActualNativeCandidateEntry",
+      "theorem": "BulksketchBridge.CandidateOuter.native_candidate_entry"
+    },
+    {
+      "challenge": "BulksketchBridge.CandidateOuter.ActualNativeDenseEvalMany",
+      "theorem": "BulksketchBridge.CandidateOuter.native_dense_eval_many"
+    },
+    {
+      "challenge": "BulksketchBridge.CandidateInner.ActualNativeCandidateInnerFrame",
+      "theorem": "BulksketchBridge.CandidateInner.native_candidate_inner_frame"
+    },
+    {
+      "challenge": "BulksketchBridge.CandidateOuter.ActualNativeCandidateOuter",
+      "theorem": "BulksketchBridge.CandidateOuter.native_candidate_outer"
     }
   ],
   "refinements": [
@@ -3681,6 +3729,51 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original GF64 public wrapper on both empty inputs and original free dispatch on nonempty inputs, with explicit leaf slots."
+    },
+    {
+      "label": "AVX-512 free insertion dispatcher [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:395:function:bulksketch::backend::x86_vpclmul512::insert",
+      "source_line_span_sha256": "c4130dcb38675b12e93f23105203ff136e888c10d5daa34fe7aa7a802794512f",
+      "theorem": "BulksketchBridge.AvxInsertGeneral.free_refines",
+      "challenge": "BulksketchBridge.AvxInsertGeneral.ActualFreeInsert",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert",
+      "generated_file": "bridge/Arithmetic/AvxInsertDispatchGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxInsertDispatchGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original empty, single-ID, sparse and arbitrary 32-word chunk dispatch, including all four generated loop copies, under exact explicit leaf slots."
+    },
+    {
+      "label": "Execution::candidates [original source]",
+      "native_item_id": "src/decode/stages.rs:266:method:bulksketch::decode::stages::Execution < F , K >::candidates",
+      "source_line_span_sha256": "11307d34b94a0c7d1cb652fb4e12532bc9bfc79a1505163c2b2246fad6b147fd",
+      "theorem": "BulksketchBridge.CandidateOuter.native_candidate_entry",
+      "challenge": "BulksketchBridge.CandidateOuter.ActualNativeCandidateEntry",
+      "generated_declaration": "bulksketch.decode.stages.Execution.candidates",
+      "generated_file": "bridge/Arithmetic/CandidateOuterGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/CandidateOuterGenerated.lean",
+        "bridge/Arithmetic/CandidateInnerGenerated.lean",
+        "bridge/Arithmetic/CandidateDenseEvalGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original checked pricing and charge, locator and values windows, all original chunks, zero-evaluation scan and prior writes, over-hit rejection, and hit count transfer on success. Explicit GF64 Horner law.",
+      "translator_variant": "checked-candidates-nested-return-v1"
+    },
+    {
+      "label": "Dense::eval_many_into [original source]",
+      "native_item_id": "src/poly/dense.rs:155:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::eval_many_into",
+      "source_line_span_sha256": "76801944a0cb4a72684ce9d3b5ae6b51f9615a5d18168d584064fcdee270f7d6",
+      "theorem": "BulksketchBridge.CandidateOuter.native_dense_eval_many",
+      "challenge": "BulksketchBridge.CandidateOuter.ActualNativeDenseEvalMany",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.eval_many_into",
+      "generated_file": "bridge/Arithmetic/CandidateDenseEvalGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/CandidateDenseEvalGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original stock call delegates to the kernel Horner method on every input."
     }
   ],
   "stateful_llbc_refinements": [

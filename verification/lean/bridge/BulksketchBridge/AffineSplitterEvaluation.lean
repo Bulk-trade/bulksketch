@@ -113,13 +113,13 @@ theorem fold_evaluates {K : Type} (square : Square) (kernels : BulkKernels K bul
     (scale : TimesXMod.ExactScaleXor kernels) (squareLaw : FullSquareLaw square kernels modulus table degree)
     (coefficients : List U64) (initial : State) (admitted : Admitted degree rawLength initial) :
     ∃ final, fold square fieldDictionary kernels modulus table degree coefficients initial = .ok final ∧
-      Admitted degree rawLength final ∧
+      Admitted degree rawLength final ∧ final.1.length = initial.1.length ∧
       ∀ point : Field, (slicePolynomial modulus).IsRoot point →
         (slicePolynomial (prefixSlice final.1 degree)).eval point =
           (slicePolynomial (prefixSlice initial.1 degree)).eval point +
             linearTerms coefficients ((slicePolynomial initial.2.2.1).eval point) := by
   induction coefficients generalizing initial with
-  | nil => exact ⟨initial, rfl, admitted, fun _ _ => (add_zero _).symm⟩
+  | nil => exact ⟨initial, rfl, admitted, rfl, fun _ _ => (add_zero _).symm⟩
   | cons coefficient rest ih =>
     obtain ⟨output, raw, residue, squared⟩ := initial
     obtain ⟨outputRoom, rawSize, residueSize, squaredSize⟩ := admitted
@@ -149,7 +149,7 @@ theorem fold_evaluates {K : Type} (square : Square) (kernels : BulkKernels K bul
         have scaleEq : kernels.ArithmeticInst.scale_xor (prefixSlice output degree) residue coefficient =
             .ok scaled := scaleNormal
         simp only [scaleEq, bind_ok, Bool.false_eq_true, ite_false, nextOutput]
-      refine ⟨(nextOutput, raw, residue, squared), ?_, ⟨nextOutputRoom, rawSize, residueSize, squaredSize⟩, ?_⟩
+      refine ⟨(nextOutput, raw, residue, squared), ?_, ⟨nextOutputRoom, rawSize, residueSize, squaredSize⟩, nextOutputSize, ?_⟩
       · simp only [fold, List.isEmpty_nil, Bool.not_true, stepped, bind_ok]
       · intro point _
         rw [outputRep, eval_add, eval_mul, eval_C]
@@ -160,9 +160,9 @@ theorem fold_evaluates {K : Type} (square : Square) (kernels : BulkKernels K bul
       have nextSquareWidth := nextSquareLen.trans squaredSize
       have copy := ClosedLeaf.copy_normal residue nextSquare (residueSize.trans nextSquareWidth.symm)
       let next : State := (nextOutput, nextRaw, nextSquare, nextSquare)
-      obtain ⟨final, normal, fitted, evaluation⟩ := ih next
+      obtain ⟨final, normal, fitted, finalWidth, evaluation⟩ := ih next
         ⟨nextOutputRoom, nextRawLen.trans rawSize, nextSquareWidth, nextSquareWidth⟩
-      refine ⟨final, ?_, fitted, ?_⟩
+      refine ⟨final, ?_, fitted, finalWidth.trans nextOutputSize, ?_⟩
       · have stepped : step square fieldDictionary kernels modulus table degree coefficient true
             (output, raw, residue, squared) = .ok next := by
           unfold step
@@ -246,6 +246,8 @@ theorem native_splitter_at_roots {K : Type} (kernels : BulkKernels K bulksketch.
     ∃ normalized trace newWork newRaw,
       bulksketch.decode.affine.splitter RootTrace.nativeSquare fieldDictionary kernels modulus table linear base
         output work raw = .ok (normalized, trace, newWork, newRaw) ∧
+      normalized.val ≤ degree ∧ DenseGcd.Normal (prefixSlice trace normalized.val) ∧
+      trace.length = output.length ∧ newWork.length = work.length ∧ newRaw.length = raw.length ∧
       ∀ point : Field, (slicePolynomial modulus).IsRoot point →
         (slicePolynomial (prefixSlice trace normalized.val)).eval point =
           (AffineSubspaces.rowPolynomial linear).eval point +
@@ -255,20 +257,32 @@ theorem native_splitter_at_roots {K : Type} (kernels : BulkKernels K bulksketch.
       outputRoom workRoom rawRoom monic tableLen tableCorrect backend arithmetic scale rawLaw squareLaw reduceLaw
   obtain ⟨initialFit, outputRep, residueRep⟩ :=
     initial_polynomials degree evaluated output work raw (by omega) outputRoom workRoom
-  obtain ⟨final', modeled, _, atRoots⟩ := fold_evaluates RootTrace.nativeSquare kernels modulus table degree
+  obtain ⟨final', modeled, _, finalWidth, atRoots⟩ := fold_evaluates RootTrace.nativeSquare kernels modulus table degree
     raw.length rawRoom scale
     (native_full_square kernels rawLaw squareLaw reduceLaw modulus table degree minimum shape monic tableLen tableCorrect backend)
     linear.val (initialState degree evaluated output work raw) initialFit
   have finalEq := Result.ok_injective (modeled.symm.trans folded)
   subst final'
-  refine ⟨normalized, final.1, _, _, ran, ?_⟩
+  have normLen' : normalized.val = DenseNormalization.normalizedLength (final.1.val.take degree) := by
+    simpa only [prefixSlice, Slice.from_val] using normLen
+  have outputLen := DenseDivision.output_length_normal final.1 degree fitted.1
+  dsimp only at outputLen
+  rw [DenseDivision.normalized_value _ _ fitted.1, ← normLen'] at outputLen
+  have normalizedPrefix : DenseGcd.Normal (prefixSlice final.1 normalized.val) := by
+    have count : (prefixSlice final.1 normalized.val).length = normalized.val := by
+      rw [prefix_length, Nat.min_eq_left (outputLen.1.trans fitted.1)]
+    intro nonempty
+    rw [count] at nonempty ⊢
+    exact outputLen.2 nonempty
+  have width : final.1.length = output.length := by
+    rw [finalWidth]
+    simp only [initialState, Slice.setAtNat_length, restore_length]
+  refine ⟨normalized, final.1, _, _, ran, outputLen.1, normalizedPrefix, width, splitBack_length .., fitted.2.1, ?_⟩
   intro point root
   have linearAt : linearTerms linear.val point = (AffineSubspaces.rowPolynomial linear).eval point := by
     rw [linearTerms_sum]
     simp only [AffineSubspaces.rowPolynomial, eval_finsetSum, eval_mul, eval_C, eval_pow, eval_X,
       Slice.getElem!_Nat_eq, Slice.length]
-  have normLen' : normalized.val = DenseNormalization.normalizedLength (final.1.val.take degree) := by
-    simpa only [prefixSlice, Slice.from_val] using normLen
   rw [normLen', normalized_prefix_polynomial final.1 degree fitted.1,
     atRoots point root, outputRep, residueRep, eval_C, eval_X, linearAt, evaluation,
     AffineSubspaces.rowPolynomial_eval, add_comm]
@@ -308,7 +322,7 @@ theorem native_splitter_children : ActualNativeSplitterChildren := by
   let _ : CharP Field 2 := charP_of_injective_ringHom (algebraMap (ZMod 2) Field).injective 2
   obtain ⟨filled, tableNormal, _, exactRows⟩ :=
     subspaces_annihilators kernels arithmetic basis subspaceTable rankBound subspaceRoom
-  obtain ⟨normalized, trace, newWork, newRaw, splitNormal, evaluated⟩ :=
+  obtain ⟨normalized, trace, newWork, newRaw, splitNormal, _, _, _, _, _, evaluated⟩ :=
     native_splitter_at_roots kernels rawLaw squareLaw reduceLaw arithmetic scale modulus table (row filled rank)
       base output work raw degree shape minimum outputRoom workRoom rawRoom monic tableLen tableCorrect backend
   refine ⟨filled, normalized, trace, newWork, newRaw, tableNormal, splitNormal, ?_⟩

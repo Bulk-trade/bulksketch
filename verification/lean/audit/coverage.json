@@ -2700,7 +2700,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxInsertGeneral.free_refines",
+        "scope": "Original empty, single-ID, sparse and arbitrary 32-word chunk dispatch, including all four generated loop copies, under exact explicit leaf slots.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:429:function:bulksketch::backend::x86_vpclmul512::insert_sparse",
@@ -5496,7 +5503,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.CandidateOuter.native_candidate_entry",
+        "scope": "Exact original checked pricing and charge, locator and values windows, all original chunks, zero-evaluation scan and prior writes, over-hit rejection, and hit count transfer on success. Explicit GF64 Horner law.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:27:enum:bulksketch::decode::stages::State",
@@ -7301,7 +7315,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.CandidateOuter.native_dense_eval_many",
+        "scope": "Exact original stock call delegates to the kernel Horner method on every input.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/poly/dense.rs:159:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::xor_coefficient",
@@ -12102,8 +12123,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. The original deflation body is checked through both final branches. Native trace acceptance follows from polynomial idempotence on a split simple factor. Complete candidate, root traversal and decoder composition, remaining backend bodies, Rust provenance, and compiler-to-ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 148,
+    "note": "All 344 native executable obligations retained. Original candidate, evaluation, and free AVX insertion dispatch bodies are checked under explicit kernel contracts. Native deflation supplies traversal admission for distinct valid hints. Trace, affine split and GCD reborrow exact returned slices, and native leaf paths append the exact root words. Full traversal and decoder composition, remaining backend bodies, Rust provenance and compiler-to-ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 151,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12235,7 +12256,18 @@
         "BulksketchBridge.RootDivide.native_proper_divide",
         "BulksketchBridge.RootRun.trace_gcd_retry",
         "BulksketchBridge.RootTrace.native_trace_check_accepts",
-        "BulksketchBridge.RootRun.native_trace_dispatch"
+        "BulksketchBridge.RootRun.native_trace_dispatch",
+        "BulksketchBridge.Deflation.native_deflate_traversal_entry",
+        "BulksketchBridge.Deflation.native_deflate_zero_budget",
+        "BulksketchBridge.RootTrace.trace_loop_with_normal",
+        "BulksketchBridge.RootRun.native_gcd_reborrow",
+        "BulksketchBridge.RootLeaf.native_leaf_complete",
+        "BulksketchBridge.RootLeaf.native_zero_leaf",
+        "BulksketchBridge.ClosedLeaf.native_closed_leaf_verify",
+        "BulksketchBridge.CandidateOuter.native_candidate_entry",
+        "BulksketchBridge.CandidateOuter.native_dense_eval_many",
+        "BulksketchBridge.CandidateInner.native_candidate_inner_frame",
+        "BulksketchBridge.CandidateOuter.native_candidate_outer"
       ]
     },
     "masked_memory_evidence": {

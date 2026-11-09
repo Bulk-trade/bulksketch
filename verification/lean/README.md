@@ -27,7 +27,7 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The bridge now has 148 original Aeneas generated-body refinements under
+The bridge now has 151 original Aeneas generated-body refinements under
 their recorded contracts. Five source-linked LLBC execution contracts are
 checked separately. The latest checkpoint covers the original root stage
 dispatcher, Dense div/rem, factor division, affine enumeration
@@ -42,8 +42,11 @@ the captured masked reads and writes. The original GF64 affine predictor
 and preference are checked through the traversal entry. The original
 deflation stage checks both return paths through traversal start, and
 the paid trace split test accepts every admitted split simple factor.
-The AVX capacity-18 insertion, horizontal XOR, and public GF64 insertion
-selector have original-body refinements.
+The candidate entry and Dense evaluation delegate have checked original
+bodies. The native trace, affine splitter and GCD stages preserve the
+returned coefficient and scratch frames between stages. The AVX
+capacity-18 insertion, horizontal XOR, public GF64 insertion selector,
+and complete free dispatcher have original-body refinements.
 Full native implementation contracts remain open.
 
 The [core proofs](BulksketchProofs.lean) and [generated-body bridge](bridge/README.md)

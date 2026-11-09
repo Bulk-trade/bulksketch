@@ -134,3 +134,9 @@ import BulksketchBridge.AvxInsert18
 import BulksketchBridge.AvxHorizontalXor
 import BulksketchBridge.AvxInsertDispatch
 import BulksketchBridge.NativeDeflateResidual
+import BulksketchBridge.AvxInsertGeneral
+import BulksketchBridge.NativeDeflateTraversalEntry
+import BulksketchBridge.RootNativeGcdReborrow
+import BulksketchBridge.RootNativeLeafComplete
+import BulksketchBridge.RootNativeClosedLeafVerify
+import BulksketchBridge.CandidateEntry

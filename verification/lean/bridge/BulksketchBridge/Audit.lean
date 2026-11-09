@@ -706,7 +706,31 @@ run_cmd do
     (``BulksketchBridge.AvxInsertDispatch.ActualPublicSingle18,
       ``BulksketchBridge.AvxInsertDispatch.public_single18_refines),
     (``BulksketchBridge.Deflation.ActualNativeDeflateDistinct,
-      ``BulksketchBridge.Deflation.native_deflate_distinct)
+      ``BulksketchBridge.Deflation.native_deflate_distinct),
+    (``BulksketchBridge.AvxInsertGeneral.ActualFreeInsert,
+      ``BulksketchBridge.AvxInsertGeneral.free_refines),
+    (``BulksketchBridge.Deflation.ActualNativeDeflateTraversalEntry,
+      ``BulksketchBridge.Deflation.native_deflate_traversal_entry),
+    (``BulksketchBridge.Deflation.ActualNativeDeflateZeroBudget,
+      ``BulksketchBridge.Deflation.native_deflate_zero_budget),
+    (``BulksketchBridge.RootTrace.ActualTraceLoopWithNormal,
+      ``BulksketchBridge.RootTrace.trace_loop_with_normal),
+    (``BulksketchBridge.RootRun.ActualNativeGcdReborrow,
+      ``BulksketchBridge.RootRun.native_gcd_reborrow),
+    (``BulksketchBridge.RootLeaf.ActualNativeLeafComplete,
+      ``BulksketchBridge.RootLeaf.native_leaf_complete),
+    (``BulksketchBridge.RootLeaf.ActualNativeZeroLeaf,
+      ``BulksketchBridge.RootLeaf.native_zero_leaf),
+    (``BulksketchBridge.ClosedLeaf.ActualNativeClosedLeafVerify,
+      ``BulksketchBridge.ClosedLeaf.native_closed_leaf_verify),
+    (``BulksketchBridge.CandidateOuter.ActualNativeCandidateEntry,
+      ``BulksketchBridge.CandidateOuter.native_candidate_entry),
+    (``BulksketchBridge.CandidateOuter.ActualNativeDenseEvalMany,
+      ``BulksketchBridge.CandidateOuter.native_dense_eval_many),
+    (``BulksketchBridge.CandidateInner.ActualNativeCandidateInnerFrame,
+      ``BulksketchBridge.CandidateInner.native_candidate_inner_frame),
+    (``BulksketchBridge.CandidateOuter.ActualNativeCandidateOuter,
+      ``BulksketchBridge.CandidateOuter.native_candidate_outer)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge
