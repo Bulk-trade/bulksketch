@@ -55,7 +55,7 @@
     "audit/native-stateful-checkpoint.json": "2c41ee402642341add52703d90795de97eff7b0656c4a4db9cd3e675332f0210",
     "NATIVE_CALLER_CHAINS.md": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
     "audit/native-caller-checkpoint.json": "837788fd6bb6f20d3c18e69b74e0610177fc4b9aec084f1ec313c271f4771cf2",
-    "README.md": "db8028e6851fa026906c58b19cb2f1517b8456b84f6612254783cb3d9baa7777",
+    "README.md": "aa765527fb7794b0a61957454e2af900413c3f1fd80db5a38ce2188e28dd89bf",
     "NATIVE_RECONSTRUCTION.md": "3a1955592353708b30df40c5fb5443a743451002275c4da8164c37a3344746b2",
     "audit/native-reconstruction-checkpoint.json": "13745cfcf6c9161fb460c8165365bb767a672f474cd14d06edecf6b5fb428562",
     "NATIVE_QUARTIC.md": "0f7a4311accbf944b75a6792955da66ae548891ce2dc1a7e53a167aed892a381",
@@ -72,8 +72,8 @@
     "audit/native-dense-reducer-checkpoint.json": "41da787e360070eaa0ee57a31380362d9a3a4642c085a1334ba9293acb37fceb",
     "NATIVE_DENSE_DIVISION.md": "7bc66fd0e205e372f4492b801782b7af8a5cf59bd300896e4b7633612da6b9bc",
     "audit/native-dense-division-checkpoint.json": "d7fb2cc4e1014accb335dc7532561026c4c6906194c6cffec11ecead264c01cc",
-    "NATIVE_ROOT_RUN.md": "ff6e790c5678e649cff916753c01b17bf705518fb9ec95d336315ebbf9fa73cd",
-    "audit/native-root-run-checkpoint.json": "3bc7a075d56a641943cad770e1d7b3d5b8b521fd15f4ebcdd7e3d87ca4220dd1"
+    "NATIVE_ROOT_RUN.md": "9076648e4a8c45ba7cb36848abc3d8a0b412aa47903d4a1885b33a8abb8f947a",
+    "audit/native-root-run-checkpoint.json": "d06d6c502a55e21f615b8478331ac5009b3c100eb49e832125412e5a76738549"
   },
   "reviewed_policy_revisions": [
     {
@@ -1455,6 +1455,24 @@
       "new_sha256": "3bc7a075d56a641943cad770e1d7b3d5b8b521fd15f4ebcdd7e3d87ca4220dd1",
       "reason": "Freeze exact non-affine reducer readiness and paid node starting at reducer preparation.",
       "old_sha256": "e8ca97d8df19582708bd622f584ec593a7f16270b7338469f9fd3c32aa1f4e78"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "9076648e4a8c45ba7cb36848abc3d8a0b412aa47903d4a1885b33a8abb8f947a",
+      "reason": "Freeze the full paid plain non-affine traversal and exact recovered native support.",
+      "old_sha256": "ff6e790c5678e649cff916753c01b17bf705518fb9ec95d336315ebbf9fa73cd"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "d06d6c502a55e21f615b8478331ac5009b3c100eb49e832125412e5a76738549",
+      "reason": "Freeze the full paid plain non-affine traversal and exact recovered native support.",
+      "old_sha256": "3bc7a075d56a641943cad770e1d7b3d5b8b521fd15f4ebcdd7e3d87ca4220dd1"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "aa765527fb7794b0a61957454e2af900413c3f1fd80db5a38ce2188e28dd89bf",
+      "reason": "Freeze the original Portable decoder from valid in-memory frozen sketches to exact symmetric difference.",
+      "old_sha256": "db8028e6851fa026906c58b19cb2f1517b8456b84f6612254783cb3d9baa7777"
     }
   ]
 }

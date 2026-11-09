@@ -12730,7 +12730,25 @@
         "BulksketchBridge.AvxEncodeEntry.concrete_native_avx_encoding",
         "BulksketchBridge.ExecutionDriver.native_avx_paid_verification_concrete_encoder"
       ],
-      "max_preferred_degree_initializer": "BulksketchBridge.RootWorkBudget.native_max_preferred_degree"
+      "max_preferred_degree_initializer": "BulksketchBridge.RootWorkBudget.native_max_preferred_degree",
+      "native_trace_frontier_recovery": [
+        "BulksketchBridge.RootRun.native_trace_invariant_widths",
+        "BulksketchBridge.RootRun.native_trace_gcd_fixed_frame",
+        "BulksketchBridge.RootRun.native_trace_search_frame",
+        "BulksketchBridge.RootDivide.native_trace_split_frame",
+        "BulksketchBridge.RootRun.native_trace_node_frame",
+        "BulksketchBridge.RootRun.native_nonaffine_reducer_fixed",
+        "BulksketchBridge.RootRun.native_trace_frontier_leaf",
+        "BulksketchBridge.RootRun.native_trace_frontier_split",
+        "BulksketchBridge.RootRun.native_trace_drain",
+        "BulksketchBridge.ExecutionDriver.native_paid_verification_after_chunk",
+        "BulksketchBridge.ExecutionDriver.native_recovered_support_after_chunk",
+        "BulksketchBridge.RootRun.native_trace_recovered_finish"
+      ],
+      "portable_in_memory_end_to_end": [
+        "BulksketchBridge.PortableDecoder.portable_row_end_to_end",
+        "BulksketchBridge.PortableDecoder.portable_frozen_sketch_end_to_end"
+      ]
     },
     "reconciliation_algebra_evidence": {
       "sparse_support_uniqueness": "BulksketchBridge.Reconciliation.gf64_sparse_support_unique",

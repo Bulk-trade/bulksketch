@@ -2080,6 +2080,62 @@
     {
       "challenge": "BulksketchBridge.RootRun.ActualNativeNonaffineReducerNode",
       "theorem": "BulksketchBridge.RootRun.native_nonaffine_reducer_node"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceInvariantWidths",
+      "theorem": "BulksketchBridge.RootRun.native_trace_invariant_widths"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceGcdFixedFrame",
+      "theorem": "BulksketchBridge.RootRun.native_trace_gcd_fixed_frame"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceSearchFrame",
+      "theorem": "BulksketchBridge.RootRun.native_trace_search_frame"
+    },
+    {
+      "challenge": "BulksketchBridge.RootDivide.ActualNativeTraceSplitFrame",
+      "theorem": "BulksketchBridge.RootDivide.native_trace_split_frame"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceNodeFrame",
+      "theorem": "BulksketchBridge.RootRun.native_trace_node_frame"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeNonaffineReducerFixed",
+      "theorem": "BulksketchBridge.RootRun.native_nonaffine_reducer_fixed"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceFrontierLeaf",
+      "theorem": "BulksketchBridge.RootRun.native_trace_frontier_leaf"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceFrontierSplit",
+      "theorem": "BulksketchBridge.RootRun.native_trace_frontier_split"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceDrain",
+      "theorem": "BulksketchBridge.RootRun.native_trace_drain"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativePaidVerificationAfterChunk",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_paid_verification_after_chunk"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeRecoveredSupportAfterChunk",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_recovered_support_after_chunk"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceRecoveredFinish",
+      "theorem": "BulksketchBridge.RootRun.native_trace_recovered_finish"
+    },
+    {
+      "challenge": "BulksketchBridge.PortableDecoder.ActualPortableRowEndToEnd",
+      "theorem": "BulksketchBridge.PortableDecoder.portable_row_end_to_end"
+    },
+    {
+      "challenge": "BulksketchBridge.PortableDecoder.ActualPortableFrozenSketchEndToEnd",
+      "theorem": "BulksketchBridge.PortableDecoder.portable_frozen_sketch_end_to_end"
     }
   ],
   "refinements": [

@@ -3,7 +3,7 @@ import BulksketchBridge.RootInvariantReborrow
 namespace BulksketchBridge.RootRun
 
 open Aeneas.Std Algebra.Gf64 Polynomial SliceKernels DenseCoefficient RootTrace
-open DenseReducerAlgebra DenseReducerSquare DenseMulConvolutionSpec
+open DenseReducerAlgebra DenseReducerSquare DenseMulConvolutionSpec RebuiltLfsr BmEntry
 open bulksketch.backend.contract bulksketch.decode.roots bulksketch.decode.scratch bulksketch.types
 
 set_option maxRecDepth 4096
@@ -45,7 +45,44 @@ def ActualNativeTraceInvariant : Prop :=
       ∀ point, (activeFactor after written).IsRoot point →
         ((slicePolynomial trace).IsRoot point ↔ traceBit roots.splitter_seed roots.direction.val point = 0)
 
-theorem native_trace_invariant : ActualNativeTraceInvariant := by
+/-- A paid original Trace advances to GCD with the same live factor and
+pending product. It also establishes the exact reborrow and GCD trace
+polynomial, normalized trace window and strictly decreasing phase rank. -/
+def ActualNativeTraceInvariantWidths : Prop :=
+  ∀ {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64)
+    (locator : Polynomial Field) (roots : Roots) (workspace : RowWorkspace)
+    (meter paid finalMeter : WorkMeter) (capacity budget : Nat),
+    RootTraversalInvariant locator roots workspace capacity budget → 3 ≤ roots.degree.val →
+    roots.attempts.val + 1 ≤ Usize.max →
+    bulksketch.decode.roots.charge meter (.Trace roots.degree) = .ok (.Ok (), paid) →
+    (if roots.checked then finalMeter = paid
+      else bulksketch.decode.roots.charge paid (.SplitCheck roots.degree) = .ok (.Ok (), finalMeter)) →
+    RawMulAgrees kernels → SquareAgrees kernels → DenseMul.reduceAgrees kernels →
+    let before := buffersFor roots workspace
+    cacheWellFormed roots before →
+    CorrectTable before.modulus before.table roots.degree.val →
+    BackendSquareLaw kernels before.modulus before.table roots.degree.val →
+    TraceAgreement (activeFactor roots workspace) roots.splitter_seed roots.direction.val →
+    ∃ writes : TraceWrites,
+      let frame := writes.frame roots before true (.Ok (.Ok .Gcd)) finalMeter
+      let after := frame.2.1
+      let written := rebuild workspace roots frame.2.2.1
+      let next := buffersFor after written
+      let trace := prefixSlice next.trace after.trace_len.val
+      Roots.run nativeCalls nativeDivRem dictionary kernels roots .Trace workspace meter =
+        .ok (.Ok (.Ok .Gcd), after, written, id, finalMeter) ∧
+      RootTraversalInvariant locator after written capacity budget ∧
+      activeFactor after written = activeFactor roots workspace ∧
+      buffersFor after written = frame.2.2.1 ∧
+      CorrectTable next.modulus next.table after.degree.val ∧
+      cacheWellFormed after next ∧ after.attempts.val = roots.attempts.val + 1 ∧
+      after.trace_len.val ≤ after.degree.val ∧ DenseGcd.Normal trace ∧
+      traversalRank .Gcd after written < traversalRank .Trace roots workspace ∧
+      workspaceLengths written = workspaceLengths workspace ∧
+      ∀ point, (activeFactor after written).IsRoot point →
+        ((slicePolynomial trace).IsRoot point ↔ traceBit roots.splitter_seed roots.direction.val point = 0)
+
+theorem native_trace_invariant_widths : ActualNativeTraceInvariantWidths := by
   intro K kernels locator roots workspace meter paid finalMeter capacity budget invariant
     minimum counter charged splitCharge rawLaw squareLaw reduceLaw before cache table backend agreement
   have sized := invariant.buffers
@@ -78,7 +115,7 @@ theorem native_trace_invariant : ActualNativeTraceInvariant := by
   have preserved : RootTraversalInvariant locator after written capacity budget :=
     rebuild_preserves_traversal locator roots after workspace frame.2.2.1 capacity budget invariant
       rfl rfl rfl rfl rfl restored rfl rawWidth
-  refine ⟨writes, ran, preserved, ?_, restored, ?_, ?_, correct.1, ?_, ?_, ?_, ?_⟩
+  refine ⟨writes, ran, preserved, ?_, restored, ?_, ?_, correct.1, ?_, ?_, ?_, ?_, ?_⟩
   · change slicePolynomial (buffersFor after written).modulus = slicePolynomial before.modulus
     rw [restored]
     rfl
@@ -97,11 +134,22 @@ theorem native_trace_invariant : ActualNativeTraceInvariant := by
     exact normalized
   · apply traversal_rank_decreases
     exact Or.inr ⟨rfl, .trace _⟩
+  · simp only [written, workspaceLengths, rebuild, RootSetup.restoreWork, splitBack_length, restore_length]
+    rw [rawWidth]
   · intro point present
     change (slicePolynomial (buffersFor after written).modulus).IsRoot point at present
     rw [restored] at present ⊢
     exact meaning point present
 
+theorem native_trace_invariant : ActualNativeTraceInvariant := by
+  intro K kernels locator roots workspace meter paid finalMeter capacity budget invariant minimum counter
+    charged splitCharge raw square reduce before cache table backend agreement
+  obtain ⟨writes, ran, retained, factor, reborrow, correct, cached, attempts, room, normal, rank, _, classified⟩ :=
+    native_trace_invariant_widths kernels locator roots workspace meter paid finalMeter capacity budget
+      invariant minimum counter charged splitCharge raw square reduce cache table backend agreement
+  exact ⟨writes, ran, retained, factor, reborrow, correct, cached, attempts, room, normal, rank, classified⟩
+
+#print axioms native_trace_invariant_widths
 #print axioms native_trace_invariant
 
 end BulksketchBridge.RootRun

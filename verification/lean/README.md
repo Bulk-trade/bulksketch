@@ -11,6 +11,17 @@ excluded. The initial inventory retains 344 executable source declarations and
 532 declarations in total. Compiler-expanded bodies and complete per-item
 contracts remain open, so no implementation-coverage percentage is claimed.
 
+## End-to-end Portable decoder
+
+[The whole-sketch theorem](bridge/BulksketchBridge/PortableSketchEndToEnd.lean)
+starts with two valid equal-shape in-memory frozen sketches. It binds the
+original Portable XOR, binary row constructor, and row finish for every
+admitted bucket. The output list has no duplicates and represents exactly
+the symmetric difference, including zero. The theorem states the capacity,
+output, per-row scratch, and work reserve premises. It uses the ordinary
+decoder route with empty candidate hints. Bucket views and concatenation
+are proof-side adapters.
+
 ## Checked milestone
 
 | Area | Result | Source relationship |

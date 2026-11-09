@@ -1,3 +1,4 @@
+import BulksketchBridge.RootFrontierBudget
 import BulksketchBridge.RootDivideInvariant
 import BulksketchBridge.RootTraceProgress
 import BulksketchBridge.RootTraversalRanking
@@ -44,7 +45,57 @@ def ActualNativeTraceDivideHandoff : Prop :=
       TraceAgreement (activeFactor after written) after.splitter_seed after.direction.val ∧
       TraceAgreement (pendingFactor written frame) after.splitter_seed frame.next_direction.val
 
-theorem native_trace_divide_handoff : ActualNativeTraceDivideHandoff := by
+/-- Additional exact fields used to transfer the parent frontier to
+its children while preserving row-level search and workspace bounds. -/
+structure NativeTraceSplitFrame (roots after : Roots) (workspace written : RowWorkspace)
+    (frame : FactorFrame) : Prop where
+  pending : after.pending.val = roots.pending.val + 1
+  count : after.count = roots.count
+  stride : after.stride = roots.stride
+  attempts : after.attempts = roots.attempts
+  closedForm : after.closed_form = roots.closed_form
+  widths : workspaceLengths written = workspaceLengths workspace
+  leftPositive : 0 < after.degree.val
+  rightPositive : 0 < frame.coefficient_len.val - 1
+  degreeSum : after.degree.val + (frame.coefficient_len.val - 1) = roots.degree.val
+  start : frame.coefficient_start.val = roots.pending.val * roots.stride.val
+  potential : traversalPotential after written.stack < traversalPotential roots workspace.stack
+
+/-- The original proper divide transfers trace agreement to both live
+    children at the exact incremented direction, including the saved
+    resume direction and checked bit of the pending frame. -/
+def ActualNativeTraceSplitFrame : Prop :=
+  ∀ {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64)
+    (locator : Polynomial Field) (roots : Roots) (workspace : RowWorkspace)
+    (meter paid finalMeter : WorkMeter) (capacity budget : Nat),
+    RootTraversalInvariant locator roots workspace capacity budget → roots.affine = false →
+    DenseDivRem.MulWordLaw kernels → DenseMulConvolutionSpec.RawMulAgrees kernels →
+    DenseMul.reduceAgrees kernels → BmTerminal.NativeInverse kernels →
+    StageCharge.chargeResult meter (divideCost roots.degree) = (.Ok (), paid) →
+    StageCharge.chargeResult paid (assemblyCost roots.degree) = (.Ok (), finalMeter) →
+    let buffers := buffersFor roots workspace
+    let trace := slicePolynomial (prefixSlice buffers.trace roots.trace_len.val)
+    ProperGcdFrame roots buffers trace →
+    TraceAgreement (activeFactor roots workspace) roots.splitter_seed roots.direction.val →
+    (∀ point, (activeFactor roots workspace).IsRoot point →
+      (trace.IsRoot point ↔ traceBit roots.splitter_seed roots.direction.val point = 0)) →
+    ∃ (after : Roots) (written : RowWorkspace) (frame : FactorFrame),
+      Roots.run nativeCalls nativeDivRem RootRun.dictionary kernels roots .FactorDivision workspace meter =
+        .ok (.Ok (.Ok (ClosedLeafAdvance.stageFor after)), after, written, id, finalMeter) ∧
+      RootTraversalInvariant locator after written capacity budget ∧
+      traversalRank (ClosedLeafAdvance.stageFor after) after written < traversalRank .FactorDivision roots workspace ∧
+      after.affine = false ∧ after.checked = true ∧ after.splitter_seed = roots.splitter_seed ∧
+      after.direction.val = roots.direction.val + 1 ∧
+      written.basis = workspace.basis ∧
+      written.stack.val[roots.pending.val]? = some frame ∧
+      frame.next_direction = after.direction ∧ frame.split_checked = 1#u32 ∧
+      (∀ i < frame.coefficient_start.val, written.factors[i]! = workspace.factors[i]!) ∧
+      (∀ slot < roots.pending.val, written.stack.val[slot]? = workspace.stack.val[slot]?) ∧
+      TraceAgreement (activeFactor after written) after.splitter_seed after.direction.val ∧
+      TraceAgreement (pendingFactor written frame) after.splitter_seed frame.next_direction.val ∧
+      NativeTraceSplitFrame roots after workspace written frame
+
+theorem native_trace_split_frame : ActualNativeTraceSplitFrame := by
   intro K kernels locator roots workspace meter paid finalMeter capacity budget invariant affine
     mul raw reduce inverse charged assembly buffers trace prior agrees classifies
   have degreeBound := traversal_degree_budget locator roots workspace capacity budget invariant
@@ -59,8 +110,8 @@ theorem native_trace_divide_handoff : ActualNativeTraceDivideHandoff := by
   have positiveSlots := pending_degrees_positive locator roots workspace capacity budget invariant
   have rankRoom : roots.affine = true → 0 < roots.affine_rank.val ∧ roots.affine_rank.val ≤ 64 := by simp [affine]
   have basisRoom : roots.affine = true → ∃ directions, buffers.basis.directions = some directions := by simp [affine]
-  obtain ⟨length, start, reply, after, written, ran, replyEq, _, _, _, activeGcd,
-    product, _, _, _, _, _, _, basisFrame, _, _, _, _, earlierWords, earlierStack, frame,
+  obtain ⟨length, start, reply, after, written, ran, replyEq, startVal, rightPositive, afterDegree, activeGcd,
+    product, _, massEq, potential, _, widths, _, basisFrame, _, sameCount, sameStride, pendingCount, earlierWords, earlierStack, frame,
     frameRead, frameStart, frameLength, _⟩ :=
     native_proper_divide kernels roots workspace meter paid finalMeter capacity budget mul raw reduce inverse
       invariant.buffers invariant.stride degreeRoom invariant.layout positiveSlots mass direction rankRoom
@@ -129,14 +180,46 @@ theorem native_trace_divide_handoff : ActualNativeTraceDivideHandoff := by
   obtain ⟨leftAgreement, rightAgreement⟩ :=
     trace_agreement_after_division (activeFactor roots workspace) trace (activeFactor after written)
       (pendingFactor written frame) roots.splitter_seed roots.direction.val squarefree activeGcd rightProduct agrees classifies
+  have sameAttempts : after.attempts = roots.attempts := by
+    rw [← actualRoots]
+    simp only [output, committed, affine, Bool.false_eq_true, ite_false]
+  have sameClosedForm : after.closed_form = roots.closed_form := by
+    rw [← actualRoots]
+    simp only [output, committed, affine, Bool.false_eq_true, ite_false]
+  have sumDegrees : after.degree.val + (frame.coefficient_len.val - 1) = roots.degree.val := by
+    have push := frontier_credits_push id roots after workspace.stack written.stack frame
+      pendingCount earlierStack frameRead
+    change after.degree.val + pendingDegree written.stack after.pending.val =
+      after.degree.val + (frame.coefficient_len.val - 1) + pendingDegree workspace.stack roots.pending.val at push
+    unfold factorDegreeMass at massEq
+    rw [sameCount] at massEq
+    omega
+  have leftPositive : 0 < after.degree.val := by
+    rw [afterDegree]
+    exact prior.proper.1
+  have framePositive : 0 < frame.coefficient_len.val - 1 := by rwa [frameLength]
+  have fixed : NativeTraceSplitFrame roots after workspace written frame :=
+    ⟨pendingCount, sameCount, sameStride, sameAttempts, sameClosedForm, widths, leftPositive, framePositive,
+      sumDegrees, frameStart.trans startVal, potential⟩
   refine ⟨after, written, frame, ran, preserved, traversal_rank_decreases _ _ _ _ _ _ (Or.inl smaller),
     sameAffine, sameChecked, sameSeed, nextVal, basisFrame, frameRead, savedDirection, savedChecked,
-    ?_, earlierStack, ?_, ?_⟩
+    ?_, earlierStack, ?_, ?_, fixed⟩
   · rw [frameStart]
     exact earlierWords
   · simpa only [sameSeed, nextVal] using leftAgreement
   · simpa only [sameSeed, savedDirection, nextVal] using rightAgreement
 
+theorem native_trace_divide_handoff : ActualNativeTraceDivideHandoff := by
+  intro K kernels locator roots workspace meter paid finalMeter capacity budget invariant affine
+    mul raw reduce inverse charged assembly buffers trace prior agrees classifies
+  obtain ⟨after, written, frame, ran, retained, rank, nonAffine, checked, seed, direction, basis, read,
+    savedDirection, savedChecked, words, stack, left, right, _⟩ :=
+    native_trace_split_frame kernels locator roots workspace meter paid finalMeter capacity budget invariant affine
+      mul raw reduce inverse charged assembly prior agrees classifies
+  exact ⟨after, written, frame, ran, retained, rank, nonAffine, checked, seed, direction, basis, read,
+    savedDirection, savedChecked, words, stack, left, right⟩
+
+#print axioms native_trace_split_frame
 #print axioms native_trace_divide_handoff
 
 end BulksketchBridge.RootDivide

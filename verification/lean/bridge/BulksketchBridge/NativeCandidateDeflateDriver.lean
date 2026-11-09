@@ -99,7 +99,52 @@ def ActualNativeCandidateDeflateDriver : Prop :=
       (∀ point, residual.IsRoot point → point ≠ 0) ∧
       (∀ j, j < count.val → ¬ residual.IsRoot (toField (deflateHits next scanned)[j]!.bv))
 
-theorem native_candidate_deflate_driver : ActualNativeCandidateDeflateDriver := by
+/-- Two consecutive original run_next calls enter traversal with the exact
+    admitted residual factor and previously emitted roots. The source
+    execution state is latched at each returned stage. -/
+def ActualNativeCandidateDeflateDriverAdmitted : Prop :=
+  ∀ (canonicalize : Canonicalize) {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64),
+    AffineEnumerate.HornerLaw kernels → (∀ a b, kernels.ArithmeticInst.mul a b = .ok (mulWord a b)) →
+    ∀ (self : Execution bulksketch.field.Gf64 K) (input : RowInput) (workspace : RowWorkspace)
+      (meter finalMeter : WorkMeter),
+    self.state = .Running .CandidateEvaluation → self.degree_probe = none →
+    WorkspaceAdmission.Admitted (RootRun.workspaceLengths workspace) input.difference.length self.budget.nonzero.val →
+    0 < self.budget.nonzero.val → self.budget.nonzero.val ≤ input.difference.length →
+    self.degree.val ≤ self.budget.nonzero.val →
+    self.roots.pending = 0#usize → self.hits.val = 0 → input.candidates.val.Nodup →
+    let original := slicePolynomial (prefixSlice workspace.bm (self.degree.val + 1))
+    original.Monic → original.natDegree = self.degree.val → original.Splits → original.roots.Nodup →
+    (∀ point, original.IsRoot point → point ≠ 0) →
+    let charge := StageCharge.chargeResult meter (candidateCost self.degree input.candidates.len)
+    charge.1 = .Ok () →
+    StageCharge.chargeResult charge.2 (deflateCost self.degree) = (.Ok (), finalMeter) →
+    ∃ (count : Usize) (roots values : Slice U64) (final : FinalState),
+      let candidate := completedExecution self count false
+      let next := { candidate with state := .Running .Deflation }
+      let scanned := candidateWorkspace input workspace roots values
+      let updated := finishedRoots next.roots final.degree
+      let stage := ClosedLeafAdvance.stageFor updated
+      let residual := activeLocator final.locator final.degree
+      let joined := joinedWorkspace (deflateFrame next scanned (input.difference.length + 1)) final.locator final.quotient
+      let written := RootSetup.startedWorkspace final.degree joined
+      let beforeState := { next with roots := updated }
+      nativeCandidateDriver canonicalize kernels self input workspace meter =
+        .ok (.Ok (progress .CandidateEvaluation candidate), next, scanned, id, charge.2) ∧
+      nativeCandidateDriver canonicalize kernels next input scanned charge.2 =
+        .ok (.Ok (progress .Deflation beforeState), { beforeState with state := .Running stage }, written, id, finalMeter) ∧
+      original = RootRun.emittedProduct updated written * residual ∧
+      RootRun.activeTraversalProduct updated written = original ∧
+      final.degree.val + count.val = self.degree.val ∧ updated.count = count ∧ updated.pending = 0#usize ∧
+      RootRun.BudgetBuffers written input.difference.length self.budget.nonzero.val ∧
+      RootRun.PendingLayout updated written.stack written.factors.length written.polynomials.length ∧
+      RootRun.factorDegreeMass updated written.stack = self.degree.val ∧
+      (final.degree ≠ 0#usize → RootRun.activeFactor updated written = residual) ∧
+      residual.Monic ∧ residual.natDegree = final.degree.val ∧ residual.Splits ∧ residual.roots.Nodup ∧
+      (∀ point, residual.IsRoot point → point ≠ 0) ∧
+      (∀ j, j < count.val → ¬ residual.IsRoot (toField (deflateHits next scanned)[j]!.bv)) ∧
+      WorkspaceAdmission.Admitted (RootRun.workspaceLengths written) input.difference.length self.budget.nonzero.val
+
+theorem native_candidate_deflate_driver_admitted : ActualNativeCandidateDeflateDriverAdmitted := by
   intro canonicalize K kernels horner mul self input workspace meter finalMeter state probe admitted
     positive cap degreeBudget pending fresh unique original monic degree split simple nonzero charge paid deflatePaid
   obtain ⟨count, roots, values, candidateRan, handoff, meaning⟩ :=
@@ -116,7 +161,7 @@ theorem native_candidate_deflate_driver : ActualNativeCandidateDeflateDriver := 
   have nextMeaning : DeflateCandidateMeaning next input scanned :=
     ⟨locatorMonic, locatorDegree, locatorSplit, locatorSimple, locatorNonzero, supplied, distinct⟩
   have nextProbe : next.degree_probe = none := probe
-  obtain ⟨final, _, balance, product, deflated, _, emptied, counted, _, _, _, rootFrame, _, _, _, mass, _,
+  obtain ⟨final, _, balance, product, deflated, _, emptied, counted, _, _, _, rootFrame, _, _, finalAdmitted, mass, _,
     sized, layout, _, active, residualMonic, residualDegree, residualSplit, residualSimple, residualNonzero, disjoint⟩ :=
     native_deflate_traversal_entry RootSetup.gf64Dictionary kernels mul next input scanned charge.2 finalMeter
       nextHandoff nextMeaning positive deflatePaid
@@ -153,9 +198,21 @@ theorem native_candidate_deflate_driver : ActualNativeCandidateDeflateDriver := 
   have represented := RootRun.initial_traversal_product original residual updated written emptied
     exactProduct residualMonic residualDegree active
   refine ⟨count, roots, values, final, ?_, ?_, exactProduct, represented, balance, counted, emptied,
-    sized, layout, mass, active, residualMonic, residualDegree, residualSplit, residualSimple, residualNonzero, disjoint⟩
+    sized, layout, mass, active, residualMonic, residualDegree, residualSplit, residualSimple, residualNonzero, disjoint, finalAdmitted⟩
   · exact candidates_driver canonicalize kernels self input workspace meter _ state probe candidateRan
   · exact deflate_driver canonicalize kernels next input scanned charge.2 _ rfl nextProbe deflated
+
+#print axioms native_candidate_deflate_driver_admitted
+
+theorem native_candidate_deflate_driver : ActualNativeCandidateDeflateDriver := by
+  intro canonicalize K kernels horner mul self input workspace meter finalMeter state probe admitted
+    positive cap degreeBudget pending fresh unique original monic degree split simple nonzero charge paid deflatePaid
+  obtain ⟨count, roots, values, final, candidate, deflate, product, represented, balance, counted, empty,
+    sized, layout, mass, active, residualMonic, residualDegree, residualSplit, residualSimple, residualNonzero, disjoint, _⟩ :=
+      native_candidate_deflate_driver_admitted canonicalize kernels horner mul self input workspace meter finalMeter
+        state probe admitted positive cap degreeBudget pending fresh unique monic degree split simple nonzero paid deflatePaid
+  exact ⟨count, roots, values, final, candidate, deflate, product, represented, balance, counted, empty,
+    sized, layout, mass, active, residualMonic, residualDegree, residualSplit, residualSimple, residualNonzero, disjoint⟩
 
 #print axioms native_candidate_deflate_driver
 

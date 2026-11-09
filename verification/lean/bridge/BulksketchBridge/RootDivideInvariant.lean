@@ -9,7 +9,7 @@ open bulksketch.backend.contract bulksketch.decode.roots bulksketch.decode.scrat
 set_option maxRecDepth 4096
 set_option maxHeartbeats 2500000
 
-private theorem older_pending_factor (roots : Roots) (workspace written : RowWorkspace)
+theorem older_pending_factor (roots : Roots) (workspace written : RowWorkspace)
     (frame : FactorFrame) (slot : Nat) (live : slot < roots.pending.val)
     (shape : SlotLayout roots slot frame)
     (factorRoom : roots.pending.val * roots.stride.val ≤ workspace.factors.length)

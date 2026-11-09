@@ -91,7 +91,37 @@ def ActualNativeTraceSearch : Prop :=
           tries * (traceUnits before.execution.roots.degree.val + gcdUnits before.execution.roots.degree.val) +
           (if before.execution.roots.checked then 0 else splitCheckUnits before.execution.roots.degree.val)
 
-theorem native_trace_search : ActualNativeTraceSearch := by
+/-- Source-state fields that remain fixed over all successful trace
+attempts of the same active factor. -/
+structure NativeTraceSearchFrame {K : Type} (before after : RootDrainState K) : Prop where
+  fixed : NativeTraceFixedFrame before.execution.roots after.execution.roots before.workspace after.workspace
+  stack : after.workspace.stack = before.workspace.stack
+  factors : after.workspace.factors = before.workspace.factors
+  seed : after.execution.roots.splitter_seed = before.execution.roots.splitter_seed
+  cache : cacheWellFormed after.execution.roots (buffersFor after.execution.roots after.workspace)
+  budget : after.execution.budget = before.execution.budget
+
+def ActualNativeTraceSearchFrame : Prop :=
+  ∀ (canonicalize : Canonicalize) {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64),
+    RawMulAgrees kernels → SquareAgrees kernels → DenseMul.reduceAgrees kernels →
+    DenseDivRem.MulWordLaw kernels → BmTerminal.NativeInverse kernels → TimesXMod.ExactScaleXor kernels →
+    ∀ (locator : Polynomial Field) (input : RowInput) (capacity budget : Nat) (before : RootDrainState K),
+      budget ≤ 65535 → TraceSearchReady kernels locator before capacity budget →
+      ∃ tries after,
+        0 < tries ∧ tries ≤ 64 - before.execution.roots.direction.val ∧
+        SuccessfulChunk (nativeDrainRuntime canonicalize) RootSetup.gf64Dictionary kernels input
+          (2 * tries) before after id ∧
+        TraceDivisionReady locator after capacity budget ∧
+        after.execution.roots.degree = before.execution.roots.degree ∧
+        after.execution.roots.direction.val + 1 = before.execution.roots.direction.val + tries ∧
+        after.execution.roots.attempts.val = before.execution.roots.attempts.val + tries ∧
+        after.meter.exhausted = false ∧ after.meter.limit = before.meter.limit ∧
+        after.meter.used.val = before.meter.used.val +
+          tries * (traceUnits before.execution.roots.degree.val + gcdUnits before.execution.roots.degree.val) +
+          (if before.execution.roots.checked then 0 else splitCheckUnits before.execution.roots.degree.val) ∧
+        NativeTraceSearchFrame before after
+
+theorem native_trace_search_frame : ActualNativeTraceSearchFrame := by
   intro canonicalize K kernels raw square reduce mul inverse scale locator input capacity budget initial
     budgetBound initialReady
   suffices ∀ fuel (before : RootDrainState K), fuel = 64 - before.execution.roots.direction.val →
@@ -106,7 +136,8 @@ theorem native_trace_search : ActualNativeTraceSearch := by
         after.meter.exhausted = false ∧ after.meter.limit = before.meter.limit ∧
         after.meter.used.val = before.meter.used.val +
           tries * (traceUnits before.execution.roots.degree.val + gcdUnits before.execution.roots.degree.val) +
-          (if before.execution.roots.checked then 0 else splitCheckUnits before.execution.roots.degree.val)
+          (if before.execution.roots.checked then 0 else splitCheckUnits before.execution.roots.degree.val) ∧
+        NativeTraceSearchFrame before after
     from this _ initial rfl initialReady
   intro fuel
   induction fuel using Nat.strong_induction_on with
@@ -132,8 +163,8 @@ theorem native_trace_search : ActualNativeTraceSearch := by
     obtain ⟨paid, traced, final, paidTrace, paidCheck, paidGcd, _, _, used, _, _, limit, _, _, live⟩ :=
       native_trace_attempt_charges roots before.meter degreeBound ready.live (by omega)
     obtain ⟨tracedRoots, afterRoots, tracedWorkspace, written, next, ranTrace, ranGcd, invariant,
-      _, _, nonAffine, _, sameDegree, attempts, checked, _, _, table, cache, squareLaw, outcome⟩ :=
-      native_trace_gcd_division_ready kernels locator roots before.workspace before.meter paid traced final
+      _, seed, nonAffine, _, sameDegree, attempts, checked, stack, factors, fixed, table, cache, squareLaw, outcome⟩ :=
+      native_trace_gcd_fixed_frame kernels locator roots before.workspace before.meter paid traced final
         capacity budget ready.invariant minimum ready.nonAffine attempt paidTrace paidCheck paidGcd
         raw square reduce mul inverse scale ready.cache ready.table ready.square ready.history
     let middle := advanceRootState before .Gcd tracedRoots tracedWorkspace traced
@@ -144,7 +175,7 @@ theorem native_trace_search : ActualNativeTraceSearch := by
     rcases outcome with ⟨proper, sameDirection, frame, history, classified⟩ | ⟨retry, stepDirection, history⟩
     · refine ⟨1, after, by decide, by omega, pair,
         ⟨by change State.Running next = _; rw [proper], ready.noProbe, invariant,
-          nonAffine, frame, history, classified⟩, sameDegree, ?_, attempts, live, limit, ?_⟩
+          nonAffine, frame, history, classified⟩, sameDegree, ?_, attempts, live, limit, ?_, ⟨fixed, stack, factors, seed, cache, rfl⟩⟩
       · change afterRoots.direction.val + 1 = roots.direction.val + 1
         rw [sameDirection]
       · change final.used.val = before.meter.used.val + 1 * (traceUnits roots.degree.val + gcdUnits roots.degree.val) +
@@ -163,9 +194,9 @@ theorem native_trace_search : ActualNativeTraceSearch := by
           rw [used, limit, sameDegree, stepDirection, checked]
           omega
       obtain ⟨more, done, positiveMore, bounded, segment, readyDone, exactDegree, exactDirection,
-        exactAttempts, doneLive, doneLimit, doneUsed⟩ := ih (64 - afterRoots.direction.val) smaller after rfl nextReady
+        exactAttempts, doneLive, doneLimit, doneUsed, doneFrame⟩ := ih (64 - afterRoots.direction.val) smaller after rfl nextReady
       refine ⟨more + 1, done, by omega, by omega, ?_, readyDone, exactDegree.trans sameDegree, ?_, ?_,
-        doneLive, doneLimit.trans limit, ?_⟩
+        doneLive, doneLimit.trans limit, ?_, ?_⟩
       · have joined := append_successful_chunks pair segment
         simpa only [Function.id_comp, Nat.mul_add, Nat.mul_one, Nat.add_comm] using joined
       · change done.execution.roots.direction.val + 1 = roots.direction.val + (more + 1)
@@ -183,7 +214,19 @@ theorem native_trace_search : ActualNativeTraceSearch := by
         rw [doneUsed, used, sameDegree, checked, Nat.add_mul, Nat.one_mul]
         simp only [ite_true, Nat.add_zero]
         omega
+      · refine ⟨⟨doneFrame.fixed.pending.trans fixed.pending, doneFrame.fixed.count.trans fixed.count,
+          doneFrame.fixed.stride.trans fixed.stride, doneFrame.fixed.closedForm.trans fixed.closedForm,
+          doneFrame.fixed.widths.trans fixed.widths⟩,
+          doneFrame.stack.trans stack, doneFrame.factors.trans factors, doneFrame.seed.trans seed, doneFrame.cache, doneFrame.budget⟩
 
+theorem native_trace_search : ActualNativeTraceSearch := by
+  intro canonicalize K kernels raw square reduce mul inverse scale locator input capacity budget before budgetFit ready
+  obtain ⟨tries, after, positive, bounded, chunk, readyDivide, degree, direction, attempts, live, limit, debit, _⟩ :=
+    native_trace_search_frame canonicalize kernels raw square reduce mul inverse scale locator input capacity budget
+      before budgetFit ready
+  exact ⟨tries, after, positive, bounded, chunk, readyDivide, degree, direction, attempts, live, limit, debit⟩
+
+#print axioms native_trace_search_frame
 #print axioms native_trace_search
 
 end BulksketchBridge.RootRun

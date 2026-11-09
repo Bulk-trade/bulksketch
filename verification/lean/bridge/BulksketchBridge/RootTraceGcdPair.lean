@@ -5,7 +5,7 @@ import BulksketchBridge.RootTraversalFactor
 namespace BulksketchBridge.RootRun
 
 open Aeneas.Std Algebra.Gf64 Polynomial SliceKernels DenseCoefficient RootTrace
-open DenseReducerAlgebra DenseReducerSquare DenseMulConvolutionSpec
+open DenseReducerAlgebra DenseReducerSquare DenseMulConvolutionSpec RebuiltLfsr BmEntry
 open bulksketch.backend.contract bulksketch.decode.roots bulksketch.decode.scratch bulksketch.types
 
 set_option maxRecDepth 4096
@@ -96,13 +96,64 @@ def ActualNativeTraceGcdDivisionReady : Prop :=
        next = .Trace ∧ after.direction.val = roots.direction.val + 1 ∧
         TraceAgreement (activeFactor after written) after.splitter_seed after.direction.val)
 
-theorem native_trace_gcd_division_ready : ActualNativeTraceGcdDivisionReady := by
+/-- Fields the original Trace/GCD pair leaves unchanged while it
+searches for a proper divisor. -/
+structure NativeTraceFixedFrame (roots after : Roots) (workspace written : RowWorkspace) : Prop where
+  pending : after.pending = roots.pending
+  count : after.count = roots.count
+  stride : after.stride = roots.stride
+  closedForm : after.closed_form = roots.closed_form
+  widths : workspaceLengths written = workspaceLengths workspace
+
+/-- The exact Trace/GCD pair preserves both the original retry charge
+schedule and the trace classification needed by proper division. -/
+def ActualNativeTraceGcdFixedFrame : Prop :=
+  ∀ {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64)
+    (locator : Polynomial Field) (roots : Roots) (workspace : RowWorkspace)
+    (meter paid traced finalMeter : WorkMeter) (capacity budget : Nat),
+    RootTraversalInvariant locator roots workspace capacity budget → 3 ≤ roots.degree.val →
+    roots.affine = false → roots.attempts.val + 1 ≤ Usize.max →
+    charge meter (.Trace roots.degree) = .ok (.Ok (), paid) →
+    (if roots.checked then traced = paid
+      else charge paid (.SplitCheck roots.degree) = .ok (.Ok (), traced)) →
+    charge traced (.Gcd roots.degree) = .ok (.Ok (), finalMeter) →
+    RawMulAgrees kernels → SquareAgrees kernels → DenseMul.reduceAgrees kernels →
+    DenseDivRem.MulWordLaw kernels → BmTerminal.NativeInverse kernels → TimesXMod.ExactScaleXor kernels →
+    let before := buffersFor roots workspace
+    cacheWellFormed roots before → CorrectTable before.modulus before.table roots.degree.val →
+    BackendSquareLaw kernels before.modulus before.table roots.degree.val →
+    TraceAgreement (activeFactor roots workspace) roots.splitter_seed roots.direction.val →
+    ∃ (tracedRoots after : Roots) (tracedWorkspace written : RowWorkspace) (next : Stage),
+      Roots.run nativeCalls nativeDivRem dictionary kernels roots .Trace workspace meter =
+        .ok (.Ok (.Ok .Gcd), tracedRoots, tracedWorkspace, id, traced) ∧
+      Roots.run nativeCalls nativeDivRem dictionary kernels tracedRoots .Gcd tracedWorkspace traced =
+        .ok (.Ok (.Ok next), after, written, id, finalMeter) ∧
+      RootTraversalInvariant locator after written capacity budget ∧
+      activeFactor after written = activeFactor roots workspace ∧
+      after.splitter_seed = roots.splitter_seed ∧ after.affine = false ∧
+      traversalRank next after written < traversalRank .Trace roots workspace ∧
+      after.degree = roots.degree ∧ after.attempts.val = roots.attempts.val + 1 ∧ after.checked = true ∧
+      written.stack = workspace.stack ∧ written.factors = workspace.factors ∧
+      NativeTraceFixedFrame roots after workspace written ∧
+      let buffers := buffersFor after written
+      let trace := slicePolynomial (prefixSlice buffers.trace after.trace_len.val)
+      CorrectTable buffers.modulus buffers.table after.degree.val ∧ cacheWellFormed after buffers ∧
+      BackendSquareLaw kernels buffers.modulus buffers.table after.degree.val ∧
+      (next = .FactorDivision ∧ after.direction = roots.direction ∧
+        RootDivide.ProperGcdFrame after buffers trace ∧
+        TraceAgreement (activeFactor after written) after.splitter_seed after.direction.val ∧
+        (∀ point, (activeFactor after written).IsRoot point →
+          (trace.IsRoot point ↔ traceBit after.splitter_seed after.direction.val point = 0)) ∨
+       next = .Trace ∧ after.direction.val = roots.direction.val + 1 ∧
+        TraceAgreement (activeFactor after written) after.splitter_seed after.direction.val)
+
+theorem native_trace_gcd_fixed_frame : ActualNativeTraceGcdFixedFrame := by
   intro K kernels locator roots workspace meter paid traced finalMeter capacity budget invariant minimum
     nonAffine counter chargeTrace splitCharge chargeGcd rawLaw squareLaw reduceLaw mul inverse scale
     before cache table backend agreement
   obtain ⟨writes, traceRan, traceInvariant, traceFactor, traceReborrow, traceTable, traceCache, traceAttempts, traceRoom, normal,
-    traceRank, classifies⟩ :=
-    native_trace_invariant kernels locator roots workspace meter paid traced capacity budget invariant
+    traceRank, traceWidths, classifies⟩ :=
+    native_trace_invariant_widths kernels locator roots workspace meter paid traced capacity budget invariant
       minimum counter chargeTrace splitCharge rawLaw squareLaw reduceLaw cache table backend agreement
   let tracedFrame := writes.frame roots before true (.Ok (.Ok .Gcd)) traced
   let tracedRoots := tracedFrame.2.1
@@ -123,7 +174,7 @@ theorem native_trace_gcd_division_ready : ActualNativeTraceGcdDivisionReady := b
     omega
   have direction := trace_agreement_before_end (activeFactor tracedRoots tracedWorkspace)
     tracedRoots.splitter_seed tracedRoots.direction.val monic.ne_zero split simple enough traceAgreement
-  obtain ⟨size, result, work, raw, gcdRan, gcdInvariant, gcdReborrow, _, gcdRank, _, _, proper, retry⟩ :=
+  obtain ⟨size, result, work, raw, gcdRan, gcdInvariant, gcdReborrow, gcdRawWidth, gcdRank, _, _, proper, retry⟩ :=
     native_gcd_invariant kernels tracedRoots tracedWorkspace traced finalMeter locator capacity budget traceInvariant
       (by omega) traceRoom chargeGcd mul rawLaw reduceLaw inverse scale
       (traversal_modulus_normal locator tracedRoots tracedWorkspace capacity budget traceInvariant (by omega))
@@ -164,6 +215,28 @@ theorem native_trace_gcd_division_ready : ActualNativeTraceGcdDivisionReady := b
     have modulusFrame : tracedBuffers.modulus = before.modulus := by rw [traceReborrow]; rfl
     rw [tableFrame, modulusFrame]
     exact backend
+  have sameShape : after.pending = roots.pending ∧ after.count = roots.count ∧
+      after.stride = roots.stride ∧ after.closed_form = roots.closed_form := by
+    change (outcome tracedRoots tracedBuffers size).2.pending = roots.pending ∧
+      (outcome tracedRoots tracedBuffers size).2.count = roots.count ∧
+      (outcome tracedRoots tracedBuffers size).2.stride = roots.stride ∧
+      (outcome tracedRoots tracedBuffers size).2.closed_form = roots.closed_form
+    by_cases condition : 0 < size.val - 1 ∧ size.val - 1 < tracedRoots.degree.val
+    · rw [outcome, ite_eq_left condition]
+      exact ⟨rfl, rfl, rfl, rfl⟩
+    · rw [outcome, ite_eq_right condition, ite_eq_right noAffine]
+      exact ⟨rfl, rfl, rfl, rfl⟩
+  have sameWidths : workspaceLengths written = workspaceLengths workspace := by
+    calc
+      _ = workspaceLengths tracedWorkspace := by
+        simp only [written, workspaceLengths, rebuild, RootSetup.restoreWork, splitBack_length, restore_length]
+        exact congrArg (fun n => (⟨tracedWorkspace.syndromes.length, tracedWorkspace.bm.length,
+          tracedWorkspace.polynomials.length, tracedWorkspace.factors.length, tracedWorkspace.square_table.length,
+          tracedWorkspace.verification.length, tracedWorkspace.roots.length, n, tracedWorkspace.stack.length⟩ :
+          WorkspaceAdmission.Lengths)) gcdRawWidth
+      _ = _ := traceWidths
+  have fixed : NativeTraceFixedFrame roots after workspace written :=
+    ⟨sameShape.1, sameShape.2.1, sameShape.2.2.1, sameShape.2.2.2, sameWidths⟩
   have tracedDirection : tracedRoots.direction = roots.direction := rfl
   have sameTrace : slicePolynomial (prefixSlice (buffersFor after written).trace after.trace_len.val) = trace := by
     rw [gcdReborrow, traceLen]
@@ -176,7 +249,7 @@ theorem native_trace_gcd_division_ready : ActualNativeTraceGcdDivisionReady := b
       exact tracedDirection
     refine ⟨tracedRoots, after, tracedWorkspace, written, .FactorDivision, traceRan, ?_, gcdInvariant,
       sameFactor.trans traceFactor, seed, affine, (gcdRank _ chosen).trans traceRank,
-      degree, (congrArg UScalar.val keep.1).trans traceAttempts, checked, rfl, rfl,
+      degree, (congrArg UScalar.val keep.1).trans traceAttempts, checked, rfl, rfl, fixed,
       correct, cached, backendAfter, Or.inl ⟨rfl, sameDirection, ?_, ?_, ?_⟩⟩
     · rw [← chosen]
       exact gcdRan
@@ -199,12 +272,26 @@ theorem native_trace_gcd_division_ready : ActualNativeTraceGcdDivisionReady := b
       omega
     refine ⟨tracedRoots, after, tracedWorkspace, written, .Trace, traceRan, ?_, gcdInvariant,
       sameFactor.trans traceFactor, seed, affine, (gcdRank _ chosen).trans traceRank,
-      degree, (congrArg UScalar.val keep.1).trans traceAttempts, checked, rfl, rfl,
+      degree, (congrArg UScalar.val keep.1).trans traceAttempts, checked, rfl, rfl, fixed,
       correct, cached, backendAfter, Or.inr ⟨rfl, nextVal, ?_⟩⟩
     · rw [← chosen]
       exact gcdRan
     · rw [sameFactor, seed]
       exact valid
+
+theorem native_trace_gcd_division_ready : ActualNativeTraceGcdDivisionReady := by
+  intro K kernels locator roots workspace meter paid traced finalMeter capacity budget invariant minimum
+    nonAffine counter chargeTrace splitCharge chargeGcd raw square reduce mul inverse scale
+    before cache table backend agreement
+  obtain ⟨tracedRoots, after, tracedWorkspace, written, next, traceRan, gcdRan, retained,
+    factor, seed, affine, rank, degree, attempts, checked, stack, factors, _, correct, cached, squareLaw, outcome⟩ :=
+    native_trace_gcd_fixed_frame kernels locator roots workspace meter paid traced finalMeter capacity budget
+      invariant minimum nonAffine counter chargeTrace splitCharge chargeGcd raw square reduce
+      mul inverse scale cache table backend agreement
+  exact ⟨tracedRoots, after, tracedWorkspace, written, next, traceRan, gcdRan, retained,
+    factor, seed, affine, rank, degree, attempts, checked, stack, factors, correct, cached, squareLaw, outcome⟩
+
+#print axioms native_trace_gcd_fixed_frame
 
 theorem native_trace_gcd_pair : ActualNativeTraceGcdPair := by
   intro K kernels locator roots workspace meter paid traced finalMeter capacity budget invariant minimum

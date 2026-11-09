@@ -37,7 +37,35 @@ def ActualNativeNonaffineReducerReady : Prop :=
         after.meter.used.val = before.meter.used.val + tableUnits roots.degree.val ∧
         after.meter.limit = before.meter.limit
 
-theorem native_nonaffine_reducer_ready : ActualNativeNonaffineReducerReady := by
+/-- The original non-affine reducer entry pays its exact table charge
+and restores Trace readiness for the initial factor or a saved child. -/
+def ActualNativeNonaffineReducerFixed : Prop :=
+  ∀ (canonicalize : Canonicalize) {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64),
+    TimesXMod.ExactScaleXor kernels →
+    (∀ (modulus table : Slice U64) (degree : Nat),
+      CorrectTable modulus table degree → BackendSquareLaw kernels modulus table degree) →
+    ∀ (locator : Polynomial Field) (input : RowInput) (before : RootDrainState K) (capacity budget : Nat),
+      let roots := before.execution.roots
+      before.execution.state = .Running .ReducerPreparation → before.execution.degree_probe = none →
+      RootTraversalInvariant locator roots before.workspace capacity budget → budget ≤ 65535 →
+      3 ≤ roots.degree.val → roots.affine = false →
+      roots.attempts.val + (64 - roots.direction.val) ≤ Usize.max →
+      cacheWellFormed roots (buffersFor roots before.workspace) →
+      TraceAgreement (activeFactor roots before.workspace) roots.splitter_seed roots.direction.val →
+      before.meter.exhausted = false →
+      before.meter.used.val + tableUnits roots.degree.val +
+        traceSearchUnits roots.degree.val roots.direction.val roots.checked ≤ before.meter.limit.val →
+      ∃ after : RootDrainState K,
+        SuccessfulChunk (nativeDrainRuntime canonicalize) RootSetup.gf64Dictionary kernels input 1 before after id ∧
+        TraceSearchReady kernels locator after capacity budget ∧ after.execution.roots = roots ∧
+        workspaceLengths after.workspace = workspaceLengths before.workspace ∧
+        after.workspace.basis = before.workspace.basis ∧
+        after.meter.used.val = before.meter.used.val + tableUnits roots.degree.val ∧
+        after.meter.limit = before.meter.limit ∧
+        after.workspace.stack = before.workspace.stack ∧ after.workspace.factors = before.workspace.factors ∧
+        after.execution.budget = before.execution.budget
+
+theorem native_nonaffine_reducer_fixed : ActualNativeNonaffineReducerFixed := by
   intro canonicalize K kernels scale square locator input before capacity budget roots state noProbe
     invariant budgetFit degreeMin affine attempt cache agreement live reserve
   have bound := traversal_degree_budget locator roots before.workspace capacity budget invariant
@@ -71,12 +99,24 @@ theorem native_nonaffine_reducer_ready : ActualNativeNonaffineReducerReady := by
       (progress .ReducerPreparation { before.execution with roots }) id id 0 state step (.empty after)
   refine ⟨after, segment,
     ⟨rfl, noProbe, retained, degreeMin, affine, attempt, cached, correct, square _ _ _ correct, history, paidLive, ?_⟩,
-    rfl, ?_, sameBasis, used, limit⟩
+    rfl, ?_, sameBasis, used, limit, ?_, ?_, rfl⟩
   · change paid.used.val + traceSearchUnits roots.degree.val roots.direction.val roots.checked ≤ paid.limit.val
     rwa [used, limit]
   · change workspaceLengths written = _
     rw [writtenEq]
     exact widths
+  · change written.stack = _; rw [writtenEq]; rfl
+  · change written.factors = _; rw [writtenEq]; rfl
+
+theorem native_nonaffine_reducer_ready : ActualNativeNonaffineReducerReady := by
+  intro canonicalize K kernels scale square locator input before capacity budget roots state noProbe
+    invariant budgetFit degreeMin affine attempt cache agreement live reserve
+  obtain ⟨after, chunk, ready, same, widths, basis, used, limit, _, _, _⟩ :=
+    native_nonaffine_reducer_fixed canonicalize kernels scale square locator input before capacity budget
+      state noProbe invariant budgetFit degreeMin affine attempt cache agreement live reserve
+  exact ⟨after, chunk, ready, same, widths, basis, used, limit⟩
+
+#print axioms native_nonaffine_reducer_fixed
 
 /-- One complete native non-affine node fits the original envelope
 from its first reducer call through both paid division charges. -/

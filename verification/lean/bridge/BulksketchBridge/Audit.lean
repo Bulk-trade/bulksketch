@@ -1,3 +1,6 @@
+import BulksketchBridge.PortableSketchEndToEnd
+import BulksketchBridge.NativeTraceRecoveredFinish
+import BulksketchBridge.NativeTraceDrain
 import BulksketchBridge.NativeNonaffineReducerReady
 import BulksketchBridge.RowWorkBudgetV3Complete
 import BulksketchBridge.NativeTraceNode
@@ -965,6 +968,34 @@ run_cmd do
       ``BulksketchBridge.RootRun.native_nonaffine_reducer_ready),
     (``BulksketchBridge.RootRun.ActualNativeNonaffineReducerNode,
       ``BulksketchBridge.RootRun.native_nonaffine_reducer_node),
+    (``BulksketchBridge.RootRun.ActualNativeTraceInvariantWidths,
+      ``BulksketchBridge.RootRun.native_trace_invariant_widths),
+    (``BulksketchBridge.RootRun.ActualNativeTraceGcdFixedFrame,
+      ``BulksketchBridge.RootRun.native_trace_gcd_fixed_frame),
+    (``BulksketchBridge.RootRun.ActualNativeTraceSearchFrame,
+      ``BulksketchBridge.RootRun.native_trace_search_frame),
+    (``BulksketchBridge.RootDivide.ActualNativeTraceSplitFrame,
+      ``BulksketchBridge.RootDivide.native_trace_split_frame),
+    (``BulksketchBridge.RootRun.ActualNativeTraceNodeFrame,
+      ``BulksketchBridge.RootRun.native_trace_node_frame),
+    (``BulksketchBridge.RootRun.ActualNativeNonaffineReducerFixed,
+      ``BulksketchBridge.RootRun.native_nonaffine_reducer_fixed),
+    (``BulksketchBridge.RootRun.ActualNativeTraceFrontierLeaf,
+      ``BulksketchBridge.RootRun.native_trace_frontier_leaf),
+    (``BulksketchBridge.RootRun.ActualNativeTraceFrontierSplit,
+      ``BulksketchBridge.RootRun.native_trace_frontier_split),
+    (``BulksketchBridge.RootRun.ActualNativeTraceDrain,
+      ``BulksketchBridge.RootRun.native_trace_drain),
+    (``BulksketchBridge.ExecutionDriver.ActualNativePaidVerificationAfterChunk,
+      ``BulksketchBridge.ExecutionDriver.native_paid_verification_after_chunk),
+    (``BulksketchBridge.ExecutionDriver.ActualNativeRecoveredSupportAfterChunk,
+      ``BulksketchBridge.ExecutionDriver.native_recovered_support_after_chunk),
+    (``BulksketchBridge.RootRun.ActualNativeTraceRecoveredFinish,
+      ``BulksketchBridge.RootRun.native_trace_recovered_finish),
+    (``BulksketchBridge.PortableDecoder.ActualPortableRowEndToEnd,
+      ``BulksketchBridge.PortableDecoder.portable_row_end_to_end),
+    (``BulksketchBridge.PortableDecoder.ActualPortableFrozenSketchEndToEnd,
+      ``BulksketchBridge.PortableDecoder.portable_frozen_sketch_end_to_end),
     (``BulksketchBridge.ExecutionDriver.ActualNativeVerificationStartFinish,
       ``BulksketchBridge.ExecutionDriver.native_verification_start_finish),
     (``BulksketchBridge.RowConfiguration.ActualRowBegin,

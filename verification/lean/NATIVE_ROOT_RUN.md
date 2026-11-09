@@ -338,6 +338,18 @@ Reducer preparation preserves the exact direction cache and factor,
 then the paid Trace/GCD search and division commit both child histories.
 The complete source chunk fits the original node envelope.
 
+The plain non-affine traversal now drains the exact original stage
+calls from an admitted active and saved frontier to Verification.
+Its reserve is the sum of the original subtree allowances. Proper
+splits conserve degree, preserve older siblings, and consume one split
+credit. Emissions debit the original leaf charge and restore the
+saved trace direction. The trace attempt bound and all workspace
+widths survive each iteration. The paid verification and canonicalizer
+also accept a preceding exact driver chunk.
+With sufficient tail reserve, the original finish accepts the
+emitted honest locator and returns the sorted, exact support. The
+source result and complete meter debit are tied to the same run.
+
 Run the complete gate from `verification/lean`.
 
 ```sh
