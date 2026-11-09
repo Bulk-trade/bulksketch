@@ -810,7 +810,15 @@ run_cmd do
     (``BulksketchBridge.RootRun.ActualNativeLeafPopMetadata,
       ``BulksketchBridge.RootRun.native_leaf_pop_metadata),
     (``BulksketchBridge.RootRun.ActualNativeAffinePopMetadata,
-      ``BulksketchBridge.RootRun.native_affine_pop_metadata)
+      ``BulksketchBridge.RootRun.native_affine_pop_metadata),
+    (``BulksketchBridge.AvxRecurrence.ActualNativeAvxRecurrence,
+      ``BulksketchBridge.AvxRecurrence.native_avx_recurrence),
+    (``BulksketchBridge.AvxRecurrence.ActualAllocatedRecurrenceReads,
+      ``BulksketchBridge.AvxRecurrence.allocated_recurrence_reads),
+    (``BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrAnyContinuation,
+      ``BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_any_continuation),
+    (``BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrAvx,
+      ``BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_avx)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

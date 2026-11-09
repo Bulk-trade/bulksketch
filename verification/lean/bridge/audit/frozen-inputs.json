@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "3c9801a8607e09f429b9b5522595b58a1d7e820c1998abc4c0592f47c43f95a9",
+    "bridge/BulksketchBridge/Audit.lean": "7136ef0087b24aaeb960be1c31c5da2d50d3afbc631f3a45100198df69158be2",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "e487ca306dc0577d3cf480fba920fe3df38af4e3b9da69870869406d90e0cecf",
-    "audit/frozen-inputs.json": "a9bc349a928546716f37760590cb65b71f8b0bf94bef3b124c513c7a6acc9887",
-    "bridge/BulksketchBridge.lean": "7d5f234aa1490349ee66cc0c5b7466cfe79225f94fa88017c7bccbbb4c1fb79f",
+    "audit/frozen-inputs.json": "94a94e9c914e169c5854d3f25c63bafa2050f66c59658a320c7cc111d62b370a",
+    "bridge/BulksketchBridge.lean": "d48bde2afe34c26cd320fe7be70a3895d1687ada8797976c46104fd16d5d7fd7",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "9cb5854d51210544a43fdc28ac134d64df8fe8ab88cd69b6205ea68a2cced5bf",
-    "bridge/obligations.json": "b9246c22139edb9834b0210dd4433c2c2739b3f07d96db279d4fe3e6838653a1",
+    "bridge/source-linkage.json": "5b574cb2dbb048bedf202aebcfe06dce853b43b4a8135d88dd0fec885be6b126",
+    "bridge/obligations.json": "bed46c8e4f2941cab9f5bcd1f03966b2f75419a5183277983dd0106244fd0634",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "a471cfa6b29158fc1cb301d66d22d741afe5c6031618af9a56983359112c97fd",
+    "scripts/check_projection_fixtures.py": "417bee837937790b21e1b9a06dbd3d6000a0c7bb0d30fff55b63e8161e190835",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "7e20989e08a7a7f9df2e6302996231b9223f1b3af6e809da638f23a7ad727cc0",
+    "README.md": "091afc79ffd4bcc65ae5f5f0dc76a698314821b906cc74de0a85780f16826c27",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "d0601abbc06def39dea4166ad5f2a1f7ed3d72886c6f93373f983e37fe5a0381",
+    "audit/coverage.json": "1d255600fea9f9dd5e2df4a128c4b7689c2304a19750940ba34f81c2b8b2fda8",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -385,7 +385,7 @@
     "bridge/BulksketchBridge/PortableInsertionLoop.lean": "16eccbd341f24f233fef71aca3e3b57ca6626d5082d53b2a0a15e04c1404eb4c",
     "bridge/BulksketchBridge/PortableRebuiltSeed.lean": "17fc0ccc7cf8c9027550485d5be74fdccd66d048cd252cf0ab7a2552bfd7c58d",
     "bridge/BulksketchBridge/RebuiltLfsr.lean": "4f07f8cbbeeda4455d96a0fed5fde6a1a872bed2ab19c60ef4b6899368732587",
-    "bridge/BulksketchBridge/RebuiltLfsrAcceptance.lean": "998a5a157002a96fd7bba64061dcd7103b783d4a126bd547bb12ace24c5bd718",
+    "bridge/BulksketchBridge/RebuiltLfsrAcceptance.lean": "2051ad157eccee6ba31289de6db3102acc992abaac7f1058d5fca4a0eed9f21c",
     "bridge/BulksketchBridge/RebuiltLfsrPortable.lean": "11c76fe35d129cbc2fca90258cb1763952db040c1db0fb2cc005cb0d7f62da4c",
     "bridge/BulksketchBridge/RebuiltLfsrSpec.lean": "39961ba7915de048358fe75a41999da98a70d5abe05037cc6fcc8c2baef1af19",
     "bridge/BulksketchBridge/RebuiltLocatorLoop.lean": "782098491cdb2c60da9aaa18ce2c9dc3e9519d8baf66b7a87d672cd5c7fafdcd",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "d58e5c62c0ae6b2f626cf4ceed96fa2f16b56558da0d606f977bb1f4cccd2b2d",
-    "audit/native-root-run-checkpoint.json": "a8f7528fb6c5326ace8113ab997e19a79ef745788bf19050fdf486c697cb2c2e",
+    "NATIVE_ROOT_RUN.md": "a989ea4821d537e3ec7272248638426a11b477eddd2d73b4b88fa0ec84703533",
+    "audit/native-root-run-checkpoint.json": "f8216b03edb485f872ff250d8320c8897f2bb71e85dd8521877657c1d9a4b7c9",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1801,7 +1801,26 @@
     "extraction/avx-linear-entry/charon.log": "27e785bf1b5913734ba318d60164b6d9316a8e99f8894874bc51de57d965d485",
     "extraction/avx-linear-entry/project.py": "012acd91ad6e92dbcfdd94f230fb095e714bf989c57dbd1a918eb8670214c4ef",
     "extraction/avx-linear-entry/receipt.json": "009e32ee228f2fb5c5cd4904d5c7812e655e7dc04391cf4b6f147b0458e2da23",
-    "extraction/avx-linear-entry/replay.log": "62179a498a7f3b543cebe3d8678a79d9fe9cce73573620768c8d497b0d765ed0"
+    "extraction/avx-linear-entry/replay.log": "62179a498a7f3b543cebe3d8678a79d9fe9cce73573620768c8d497b0d765ed0",
+    "bridge/Arithmetic/AvxRecurrenceGenerated.lean": "9f3dd711ec53495ae359d88de2929d25f02de9d6be81a375952504c3bdbfd001",
+    "bridge/BulksketchBridge/AvxRecurrenceBlockMask.lean": "2983ef4378d7e0463f7bcb6c5b7a73ad8a039e560763cb968681a74bd4116b47",
+    "bridge/BulksketchBridge/AvxRecurrenceComplete.lean": "b6c2b941448b9ef9fc7b548581d90ff4c1eed4e1f8779ca18e377148b3f91ced",
+    "bridge/BulksketchBridge/AvxRecurrenceHeap.lean": "6e9e76ad5bb5bb04f93e8801cee2ee7594d88a469fd42d57e8787db6393e4f33",
+    "bridge/BulksketchBridge/AvxRecurrenceLag.lean": "395aad3490e7c27e145a28cfb3e7add4356675591a1020226b2b27a0c47d139d",
+    "bridge/BulksketchBridge/AvxRecurrenceLoop.lean": "f8818ecb519c79f4caaec9f0af9e0a1bf94f613f56a7ea2f5bfb2099587d44e4",
+    "bridge/BulksketchBridge/AvxRecurrenceOuter.lean": "97a05f81455d344a4dfea0b12dabfd1c0d8c52e034d3d00e6b06410094d2aca5",
+    "bridge/BulksketchBridge/RebuiltLfsrAnyContinuation.lean": "17a89e00a95ffa044f42df32ea1a4b3089111d592562a9dd24e3c28775504233",
+    "bridge/BulksketchBridge/RebuiltLfsrAvx.lean": "5fa0d66e1dcb8bd83fadbe0500dd638c57157abdbd4f349ac75a30e200912713",
+    "extraction/avx-recurrence/Arithmetic/Funs.lean": "0fccbf832785088e3b50b25fe875984104564233cb31007197738f5cd0f21bf3",
+    "extraction/avx-recurrence/Arithmetic/FunsExternal_Template.lean": "8bdfb9a04a38cb28515218e9a54fc49d7d5bab78fa895acb900cbc1497e96c1d",
+    "extraction/avx-recurrence/Arithmetic/Types.lean": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+    "extraction/avx-recurrence/Arithmetic/TypesExternal_Template.lean": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e",
+    "extraction/avx-recurrence/aeneas.log": "051da82a954e83850a38bfc2235388a173ddbd067a505775380e8d645f308950",
+    "extraction/avx-recurrence/arithmetic.llbc": "d6a84dfa6096dba4e6670df5edf8698e8cb70156d3827a71d99e212457b721b2",
+    "extraction/avx-recurrence/charon.log": "f1098cb4c34f28ed8b0515bf29c1f8d90bd03a831c1691faa8d0eb2b933dea5a",
+    "extraction/avx-recurrence/project.py": "566907a8b5770d24c12333c8e18602c9ce7b7b6fc9b4478093c75885e9f38e33",
+    "extraction/avx-recurrence/receipt.json": "39bb827bdb0add00a44ee53856bd32791d7fd491823bbc6cf5903916d5eba7b7",
+    "extraction/avx-recurrence/replay.log": "698722d672dcc5e760c9ee505a9abdda220b6ad63e47ca71c3f61efec098c95c"
   },
   "reviewed_policy_revisions": [
     {
@@ -13359,7 +13378,168 @@
       "new_sha256": "a471cfa6b29158fc1cb301d66d22d741afe5c6031618af9a56983359112c97fd",
       "reason": "Freeze native AVX locator entry, affine emission, pop metadata and factor-stage charge exits.",
       "old_sha256": "beed7da2f0964168a161dac591c4d41bbb003f2c21ca876baf716439a5e995a6"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "a989ea4821d537e3ec7272248638426a11b477eddd2d73b4b88fa0ec84703533",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads.",
+      "old_sha256": "d58e5c62c0ae6b2f626cf4ceed96fa2f16b56558da0d606f977bb1f4cccd2b2d"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "091afc79ffd4bcc65ae5f5f0dc76a698314821b906cc74de0a85780f16826c27",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads.",
+      "old_sha256": "7e20989e08a7a7f9df2e6302996231b9223f1b3af6e809da638f23a7ad727cc0"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "1d255600fea9f9dd5e2df4a128c4b7689c2304a19750940ba34f81c2b8b2fda8",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads.",
+      "old_sha256": "d0601abbc06def39dea4166ad5f2a1f7ed3d72886c6f93373f983e37fe5a0381"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "94a94e9c914e169c5854d3f25c63bafa2050f66c59658a320c7cc111d62b370a",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads.",
+      "old_sha256": "a9bc349a928546716f37760590cb65b71f8b0bf94bef3b124c513c7a6acc9887"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "f8216b03edb485f872ff250d8320c8897f2bb71e85dd8521877657c1d9a4b7c9",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads.",
+      "old_sha256": "a8f7528fb6c5326ace8113ab997e19a79ef745788bf19050fdf486c697cb2c2e"
+    },
+    {
+      "path": "bridge/Arithmetic/AvxRecurrenceGenerated.lean",
+      "new_sha256": "9f3dd711ec53495ae359d88de2929d25f02de9d6be81a375952504c3bdbfd001",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "d48bde2afe34c26cd320fe7be70a3895d1687ada8797976c46104fd16d5d7fd7",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads.",
+      "old_sha256": "7d5f234aa1490349ee66cc0c5b7466cfe79225f94fa88017c7bccbbb4c1fb79f"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "7136ef0087b24aaeb960be1c31c5da2d50d3afbc631f3a45100198df69158be2",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads.",
+      "old_sha256": "3c9801a8607e09f429b9b5522595b58a1d7e820c1998abc4c0592f47c43f95a9"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxRecurrenceBlockMask.lean",
+      "new_sha256": "2983ef4378d7e0463f7bcb6c5b7a73ad8a039e560763cb968681a74bd4116b47",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxRecurrenceComplete.lean",
+      "new_sha256": "b6c2b941448b9ef9fc7b548581d90ff4c1eed4e1f8779ca18e377148b3f91ced",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxRecurrenceHeap.lean",
+      "new_sha256": "6e9e76ad5bb5bb04f93e8801cee2ee7594d88a469fd42d57e8787db6393e4f33",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxRecurrenceLag.lean",
+      "new_sha256": "395aad3490e7c27e145a28cfb3e7add4356675591a1020226b2b27a0c47d139d",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxRecurrenceLoop.lean",
+      "new_sha256": "f8818ecb519c79f4caaec9f0af9e0a1bf94f613f56a7ea2f5bfb2099587d44e4",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxRecurrenceOuter.lean",
+      "new_sha256": "97a05f81455d344a4dfea0b12dabfd1c0d8c52e034d3d00e6b06410094d2aca5",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RebuiltLfsrAcceptance.lean",
+      "new_sha256": "2051ad157eccee6ba31289de6db3102acc992abaac7f1058d5fca4a0eed9f21c",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads.",
+      "old_sha256": "998a5a157002a96fd7bba64061dcd7103b783d4a126bd547bb12ace24c5bd718"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RebuiltLfsrAnyContinuation.lean",
+      "new_sha256": "17a89e00a95ffa044f42df32ea1a4b3089111d592562a9dd24e3c28775504233",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RebuiltLfsrAvx.lean",
+      "new_sha256": "5fa0d66e1dcb8bd83fadbe0500dd638c57157abdbd4f349ac75a30e200912713",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "bed46c8e4f2941cab9f5bcd1f03966b2f75419a5183277983dd0106244fd0634",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads.",
+      "old_sha256": "b9246c22139edb9834b0210dd4433c2c2739b3f07d96db279d4fe3e6838653a1"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "5b574cb2dbb048bedf202aebcfe06dce853b43b4a8135d88dd0fec885be6b126",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads.",
+      "old_sha256": "9cb5854d51210544a43fdc28ac134d64df8fe8ab88cd69b6205ea68a2cced5bf"
+    },
+    {
+      "path": "extraction/avx-recurrence/Arithmetic/Funs.lean",
+      "new_sha256": "0fccbf832785088e3b50b25fe875984104564233cb31007197738f5cd0f21bf3",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "extraction/avx-recurrence/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "8bdfb9a04a38cb28515218e9a54fc49d7d5bab78fa895acb900cbc1497e96c1d",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "extraction/avx-recurrence/Arithmetic/Types.lean",
+      "new_sha256": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "extraction/avx-recurrence/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "extraction/avx-recurrence/aeneas.log",
+      "new_sha256": "051da82a954e83850a38bfc2235388a173ddbd067a505775380e8d645f308950",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "extraction/avx-recurrence/arithmetic.llbc",
+      "new_sha256": "d6a84dfa6096dba4e6670df5edf8698e8cb70156d3827a71d99e212457b721b2",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "extraction/avx-recurrence/charon.log",
+      "new_sha256": "f1098cb4c34f28ed8b0515bf29c1f8d90bd03a831c1691faa8d0eb2b933dea5a",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "extraction/avx-recurrence/project.py",
+      "new_sha256": "566907a8b5770d24c12333c8e18602c9ce7b7b6fc9b4478093c75885e9f38e33",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "extraction/avx-recurrence/receipt.json",
+      "new_sha256": "39bb827bdb0add00a44ee53856bd32791d7fd491823bbc6cf5903916d5eba7b7",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "extraction/avx-recurrence/replay.log",
+      "new_sha256": "698722d672dcc5e760c9ee505a9abdda220b6ad63e47ca71c3f61efec098c95c",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "417bee837937790b21e1b9a06dbd3d6000a0c7bb0d30fff55b63e8161e190835",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads.",
+      "old_sha256": "a471cfa6b29158fc1cb301d66d22d741afe5c6031618af9a56983359112c97fd"
     }
   ],
-  "challenge_count": 387
+  "challenge_count": 391
 }

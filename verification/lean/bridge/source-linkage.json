@@ -671,6 +671,11 @@
       "path": "extraction/avx-linear-entry/arithmetic.llbc",
       "sha256": "712216a6e2dfeb50bf6b090fe350d039c0be3c7a8c60635ecb31d290a525109a",
       "has_errors": false
+    },
+    {
+      "path": "extraction/avx-recurrence/arithmetic.llbc",
+      "sha256": "d6a84dfa6096dba4e6670df5edf8698e8cb70156d3827a71d99e212457b721b2",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1558,6 +1563,11 @@
       "native_item_id": "src/backend/x86_vpclmul512.rs:116:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::multiply_linear",
       "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.multiply_linear",
       "generated_file": "bridge/Arithmetic/AvxLinearEntryGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:835:function:bulksketch::backend::x86_vpclmul512::odd_recurrence_matches",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.odd_recurrence_matches",
+      "generated_file": "bridge/Arithmetic/AvxRecurrenceGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2451,6 +2461,15 @@
       "checker": "extraction/avx-linear-entry/project.py",
       "declaration_count": 2,
       "scope": "Original checked AVX locator coefficient update dispatch, with exact default and vector callees."
+    },
+    {
+      "generated": "extraction/avx-recurrence/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxRecurrenceGenerated.lean",
+      "sha256": "9f3dd711ec53495ae359d88de2929d25f02de9d6be81a375952504c3bdbfd001",
+      "raw_sha256": "0fccbf832785088e3b50b25fe875984104564233cb31007197738f5cd0f21bf3",
+      "checker": "extraction/avx-recurrence/project.py",
+      "declaration_count": 5,
+      "scope": "Original AVX packed lag loop, outer blocks, masked comparison and exact early rejection."
     }
   ],
   "reviewed_translator_variants": [

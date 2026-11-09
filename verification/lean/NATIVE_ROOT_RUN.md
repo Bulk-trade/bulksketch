@@ -242,7 +242,12 @@ The modeled masked-load and register recurrence has an exact odd-power
 sum over all tile IDs and zero padding lanes. The original AVX locator-update entry dispatches to the proved
 vector update at the 64-bit field width. Other widths delegate to the
 original scalar default under the supplied Portable dictionary.
-The original tile loop refinement remains open.
+The original AVX continuation consumes the exact inclusive lag loop
+and eight-word blocks, masks inactive lanes, and stops at the first
+mismatch. Each lag and current comparison window has an exact
+finite-heap read contract. The AVX locator-update and continuation
+proofs compose with the rebuilt verifier under its seed and square
+contracts. The tile output proof and remaining backend bindings are open.
 
 Run the complete gate from `verification/lean`.
 

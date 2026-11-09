@@ -1548,6 +1548,22 @@
     {
       "challenge": "BulksketchBridge.RootRun.ActualNativeAffinePopMetadata",
       "theorem": "BulksketchBridge.RootRun.native_affine_pop_metadata"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxRecurrence.ActualNativeAvxRecurrence",
+      "theorem": "BulksketchBridge.AvxRecurrence.native_avx_recurrence"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxRecurrence.ActualAllocatedRecurrenceReads",
+      "theorem": "BulksketchBridge.AvxRecurrence.allocated_recurrence_reads"
+    },
+    {
+      "challenge": "BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrAnyContinuation",
+      "theorem": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_any_continuation"
+    },
+    {
+      "challenge": "BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrAvx",
+      "theorem": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_avx"
     }
   ],
   "refinements": [
@@ -4080,6 +4096,20 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Original dispatch at every field width. The 64-bit arm implements the exact fixed-width locator product update under bounded masked-memory laws. Other widths delegate to the original default using the admitted Portable dictionary."
+    },
+    {
+      "label": "AVX odd recurrence [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:835:function:bulksketch::backend::x86_vpclmul512::odd_recurrence_matches",
+      "source_line_span_sha256": "f57e560a0bbc1c73b879b4fd05b30577d40cda1ca2e0654cfd6970fffa90b0d5",
+      "theorem": "BulksketchBridge.AvxRecurrence.native_avx_recurrence",
+      "challenge": "BulksketchBridge.AvxRecurrence.ActualNativeAvxRecurrence",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.odd_recurrence_matches",
+      "generated_file": "bridge/Arithmetic/AvxRecurrenceGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxRecurrenceGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original accelerated recurrence for every nonempty locator under the bounded masked-load contract, exact lag sums, early mismatch, and all short and full blocks."
     }
   ],
   "stateful_llbc_refinements": [
