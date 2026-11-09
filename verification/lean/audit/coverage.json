@@ -2115,7 +2115,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxMultiplyLinear.native_avx_linear_entry",
+        "scope": "Original dispatch at every field width. The 64-bit arm implements the exact fixed-width locator product update under bounded masked-memory laws. Other widths delegate to the original default using the admitted Portable dictionary.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:124:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::odd_recurrence_matches",
@@ -12186,8 +12193,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. Honest native BM returns the exact support locator or latches a work error. Candidate and deflation calls establish the full initial traversal invariant. Given the terminal emitted locator product and a paid canonicalization, the actual driver returns a sorted borrowed prefix with exactly those roots. Paid native Trace and GCD preserve the live traversal invariant and decrease the continuation rank. Paid affine split, affine GCD and ordinary leaf extend the invariant. A ranked driver law constructs the exact finite finish trace. Global traversal induction, work-budget termination, row-local normalization, wire/API composition, remaining backend bodies, provenance and compiler-to-ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 160,
+    "note": "All 344 native executable obligations retained. Honest native BM returns the exact support locator or latches a work error. Candidate and deflation calls establish the full initial traversal invariant. Given the terminal emitted locator product and a paid canonicalization, the actual driver returns a sorted borrowed prefix with exactly those roots. Paid native Trace and GCD preserve the live traversal invariant and decrease the continuation rank. Paid affine split, affine GCD and ordinary leaf extend the invariant. A ranked driver law constructs the exact finite finish trace. Native affine emission, pending pop metadata, and initial factor-stage charge failures are checked. The original AVX locator-update entry dispatches to the verified vector update. Global traversal induction, work-budget termination, row-local normalization, wire/API composition, remaining backend bodies, provenance and compiler-to-ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 161,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12364,7 +12371,12 @@
         "BulksketchBridge.ExecutionFinish.ranked_native_finish",
         "BulksketchBridge.RootLeaf.native_empty_leaf",
         "BulksketchBridge.RootLeaf.native_leaf_traversal_step",
-        "BulksketchBridge.RootLeaf.native_leaf_ranked_step"
+        "BulksketchBridge.RootLeaf.native_leaf_ranked_step",
+        "BulksketchBridge.RootRun.native_factor_charge_exit",
+        "BulksketchBridge.RootEnumerate.native_affine_emission_invariant",
+        "BulksketchBridge.RootEnumerate.native_affine_emission_ranked_step",
+        "BulksketchBridge.RootRun.native_leaf_pop_metadata",
+        "BulksketchBridge.RootRun.native_affine_pop_metadata"
       ]
     },
     "masked_memory_evidence": {

@@ -191,7 +191,11 @@ to verification or restoring the exact pending factor at lower potential.
 A ranked interface constructs the original finite drain trace, including
 its error latch and ordered workspace callbacks. It bounds the root tail
 by 208 times the square of the admitted degree budget plus 211 calls.
-Complete per-stage readiness and charge induction remain open.
+Paid affine enumeration has the same exact pop and terminal verification
+outcomes. The original leaf and affine pops restore the saved direction,
+affine base and rank, and keep the shared basis. The first charge of any
+FactorWork stage exits with the original workspace and exact failed-charge
+meter. Complete per-stage readiness and charge induction remain open.
 
 The AVX square finite-heap theorem composes the zero fill, scalar
 coefficient seeds, and the original masked LLBC load/store block
@@ -235,8 +239,10 @@ original free dispatcher. All empty, single-ID, sparse, and arbitrary
 32-ID chunk branches are checked under explicit leaf contracts.
 The degree-18 rebuilt verifier's multi-ID seed selects the tile path.
 The modeled masked-load and register recurrence has an exact odd-power
-sum over all tile IDs and zero padding lanes. The original checked tile
-loop translation remains open.
+sum over all tile IDs and zero padding lanes. The original AVX locator-update entry dispatches to the proved
+vector update at the 64-bit field width. Other widths delegate to the
+original scalar default under the supplied Portable dictionary.
+The original tile loop refinement remains open.
 
 Run the complete gate from `verification/lean`.
 

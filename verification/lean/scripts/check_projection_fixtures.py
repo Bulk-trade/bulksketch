@@ -487,6 +487,12 @@ PROJECTIONS = [
      "extraction/avx-single-bases/Arithmetic/Funs.lean", "bridge/Arithmetic/AvxSingleBasesGenerated.lean",
      "id >>> 6#i32", "id >>> 7#i32", "compiled AVX single-bases projection differs", None, None,
      ["extraction/avx-square/receipt.json"]),
+    ("avx-linear-entry", "extraction/avx-linear-entry/project.py",
+     "extraction/avx-linear-entry/receipt.json", "extraction/avx-linear-entry/Arithmetic/Funs.lean",
+     "bridge/Arithmetic/AvxLinearEntryGenerated.lean",
+     "if i != 64#u32", "if i != 63#u32", "compiled AVX linear entry projection differs", None, None,
+     ["extraction/avx-insert/receipt.json", "bridge/Arithmetic/SliceKernelGenerated.lean",
+      "bridge/Arithmetic/SliceKernelTypes.lean"]),
     ("avx-encode-18", "extraction/avx-encode-18/project.py", "extraction/avx-encode-18/receipt.json",
      "extraction/avx-encode-18/Arithmetic/Funs.lean", "bridge/Arithmetic/AvxEncode18Generated.lean",
      "0#i64 10#i64 9#i64 2#i64 8#i64", "1#i64 10#i64 9#i64 2#i64 8#i64",
@@ -750,6 +756,9 @@ def main():
         if label == "avx-single-bases":
             cases.append(("wrong-target", receipt_path, '"x86_64-apple-darwin"', '"aarch64-apple-darwin"',
                           "invalid AVX single-bases receipt"))
+        if label == "avx-linear-entry":
+            cases.append(("missing-checks", receipt_path, '"-checks"', '"-no-checks"',
+                          "AVX linear entry checked replay differs"))
         if label == "avx-encode-18":
             cases.append(("wrong-target", receipt_path, '"x86_64-apple-darwin"', '"aarch64-apple-darwin"',
                           "invalid AVX capacity-18 encoder receipt"))
@@ -770,7 +779,7 @@ def main():
                              "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry", "root-divide", "root-run", "affine-splitter",
                              "affine-subspaces", "root-prepare-affine", "root-enumerate-affine", "dense-div-rem",
                              "affine-enumerate", "affine-selector", "avx-multiply-linear", "affine-solve-map",
-                             "avx-horner", "affine-multiple", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
+                             "avx-horner", "affine-multiple", "avx-linear-entry", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
                              "avx-insert-insert18", "avx-insert-horizontal", "avx-insert-dispatch", "native-driver", "candidate-row", "completed-result",
                              "native-finish", "canonicalize", "candidate-normalize-compact", "candidate-normalize-merge"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)

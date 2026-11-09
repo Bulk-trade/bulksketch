@@ -162,3 +162,7 @@ import BulksketchBridge.RootGcdInvariant
 import BulksketchBridge.RootAffineSplitInvariant
 import BulksketchBridge.RootAffineGcdInvariant
 import BulksketchBridge.RootNativeLeafInvariant
+import BulksketchBridge.AvxLinearEntry
+import BulksketchBridge.RootNativeAffineEmissionInvariant
+import BulksketchBridge.RootChargeExit
+import BulksketchBridge.RootEmissionPopMetadata

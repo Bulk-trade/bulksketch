@@ -798,7 +798,19 @@ run_cmd do
     (``BulksketchBridge.RootLeaf.ActualNativeLeafTraversalStep,
       ``BulksketchBridge.RootLeaf.native_leaf_traversal_step),
     (``BulksketchBridge.RootLeaf.ActualNativeLeafRankedStep,
-      ``BulksketchBridge.RootLeaf.native_leaf_ranked_step)
+      ``BulksketchBridge.RootLeaf.native_leaf_ranked_step),
+    (``BulksketchBridge.AvxMultiplyLinear.ActualNativeAvxLinearEntry,
+      ``BulksketchBridge.AvxMultiplyLinear.native_avx_linear_entry),
+    (``BulksketchBridge.RootRun.ActualNativeFactorChargeExit,
+      ``BulksketchBridge.RootRun.native_factor_charge_exit),
+    (``BulksketchBridge.RootEnumerate.ActualNativeAffineEmissionInvariant,
+      ``BulksketchBridge.RootEnumerate.native_affine_emission_invariant),
+    (``BulksketchBridge.RootEnumerate.ActualNativeAffineEmissionRankedStep,
+      ``BulksketchBridge.RootEnumerate.native_affine_emission_ranked_step),
+    (``BulksketchBridge.RootRun.ActualNativeLeafPopMetadata,
+      ``BulksketchBridge.RootRun.native_leaf_pop_metadata),
+    (``BulksketchBridge.RootRun.ActualNativeAffinePopMetadata,
+      ``BulksketchBridge.RootRun.native_affine_pop_metadata)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

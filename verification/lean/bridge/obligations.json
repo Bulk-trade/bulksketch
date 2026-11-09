@@ -1524,6 +1524,30 @@
     {
       "challenge": "BulksketchBridge.RootLeaf.ActualNativeLeafRankedStep",
       "theorem": "BulksketchBridge.RootLeaf.native_leaf_ranked_step"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxMultiplyLinear.ActualNativeAvxLinearEntry",
+      "theorem": "BulksketchBridge.AvxMultiplyLinear.native_avx_linear_entry"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeFactorChargeExit",
+      "theorem": "BulksketchBridge.RootRun.native_factor_charge_exit"
+    },
+    {
+      "challenge": "BulksketchBridge.RootEnumerate.ActualNativeAffineEmissionInvariant",
+      "theorem": "BulksketchBridge.RootEnumerate.native_affine_emission_invariant"
+    },
+    {
+      "challenge": "BulksketchBridge.RootEnumerate.ActualNativeAffineEmissionRankedStep",
+      "theorem": "BulksketchBridge.RootEnumerate.native_affine_emission_ranked_step"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeLeafPopMetadata",
+      "theorem": "BulksketchBridge.RootRun.native_leaf_pop_metadata"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeAffinePopMetadata",
+      "theorem": "BulksketchBridge.RootRun.native_affine_pop_metadata"
     }
   ],
   "refinements": [
@@ -4040,6 +4064,22 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact checked modulo routing and usize/u64 conversions for every word and positive bucket count."
+    },
+    {
+      "label": "AVX multiply_linear trait entry [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:116:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::multiply_linear",
+      "source_line_span_sha256": "4d165998a95337849fa9a350a97ed889c07ba0dabae6be0d637f50f0f591e328",
+      "theorem": "BulksketchBridge.AvxMultiplyLinear.native_avx_linear_entry",
+      "challenge": "BulksketchBridge.AvxMultiplyLinear.ActualNativeAvxLinearEntry",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.multiply_linear",
+      "generated_file": "bridge/Arithmetic/AvxLinearEntryGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxLinearEntryGenerated.lean",
+        "bridge/Arithmetic/AvxMultiplyLinearGenerated.lean",
+        "bridge/Arithmetic/SliceKernelGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original dispatch at every field width. The 64-bit arm implements the exact fixed-width locator product update under bounded masked-memory laws. Other widths delegate to the original default using the admitted Portable dictionary."
     }
   ],
   "stateful_llbc_refinements": [
