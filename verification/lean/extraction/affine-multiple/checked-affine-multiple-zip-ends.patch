@@ -1,0 +1,208 @@
+--- a/src/interp/InterpStatements.ml
++++ b/src/interp/InterpStatements.ml
+@@ -17,6 +17,52 @@
+ 
+ (** The local logger *)
+ let log = L.statements_log
++
++let affine_multiple_zip_storage_death (span : Meta.span) local =
++  let site = span.data in
++  !Config.sanity_checks
++  && Sys.getenv_opt "BULKSKETCH_AFFINE_MULTIPLE" = Some "1"
++  && span.generated_from_span = None
++  && (match site.file.name with Local "src/decode/affine.rs" -> true | _ -> false)
++  && site.beg_loc.line = site.end_loc.line && site.beg_loc.col = 8 && site.end_loc.col = 9
++  && ((site.beg_loc.line = 154 && local = LocalId.of_int 191)
++      || (site.beg_loc.line = 160 && local = LocalId.of_int 225))
++
++let affine_multiple_zip_exit (span : Meta.span) local ctx =
++  let state = ctx_lookup_var_value span ctx local in
++  let terminal =
++    match state.value with
++    | VSymbolic terminal -> Some terminal
++    | VLoan (VMutLoan loan) -> (
++        match InterpBorrowsCore.lookup_borrow_opt span InterpBorrowsCore.ek_all (UMut loan) ctx with
++        | Some (Concrete (VMutBorrow (bid, { value = VSymbolic terminal; _ }))) when bid = loan ->
++            Some terminal
++        | _ -> None)
++    | _ -> None
++  in
++  match terminal with
++  | Some terminal -> (
++      match InterpBorrows.affine_multiple_zip_regions span ctx terminal.sv_ty with
++      | Some (left, right) ->
++          let is_sibling region (abs : abs) =
++            match abs.kind, abs.avalues with
++            | Loop loop,
++              [{ value = ASymbolic (PNone, AProjBorrows { proj = origin; loans = [] }); _ };
++               { value = ASymbolic (PNone, AProjLoans { proj; consumed = []; borrows = [] }); _ }]
++              when abs.can_end && AbsId.Set.is_empty abs.parents
++                && RegionSet.equal abs.regions.owned (RegionSet.singleton region)
++                && proj.sv_id = terminal.sv_id && proj.proj_ty = terminal.sv_ty
++                && origin.proj_ty = proj.proj_ty && origin.sv_id <> proj.sv_id ->
++                  Some (abs.abs_id, loop, origin.sv_id)
++            | _ -> None
++          in
++          (match env_filter_map_abs (is_sibling left) ctx.env,
++                 env_filter_map_abs (is_sibling right) ctx.env with
++           | [(mutable_id, ml, mo)], [(shared_id, sl, so)] when ml = sl && mo = so ->
++               Some (shared_id, mutable_id)
++           | _ -> None)
++      | _ -> None)
++  | _ -> None
+ 
+ (** Drop a value at a given place - TODO: factorize this with [assign_to_place]
+ *)
+@@ -778,7 +824,21 @@
+         ([ (ctx, Unit) ], cc_singleton __FILE__ __LINE__ st.span cc)
+   | StorageDead local ->
+       let p = mk_place_from_var_id ctx st.span local in
++      let exit =
++        if affine_multiple_zip_storage_death st.span local then
++          match affine_multiple_zip_exit st.span local ctx with
++          | Some pair -> Some pair
++          | None -> [%craise] st.span "Unexpected affine multiple terminal Zip ownership"
++        else None
++      in
+       let ctx, cc = drop_value config st.span p ctx in
++      let ctx, cc =
++        match exit with
++        | Some (shared_id, mutable_id) ->
++            let ctx, cc = comp cc (InterpBorrows.end_abs config st.span shared_id 0 ctx) in
++            comp cc (InterpBorrows.end_abs config st.span mutable_id 0 ctx)
++        | None -> ctx, cc
++      in
+       ([ (ctx, Unit) ], cc_singleton __FILE__ __LINE__ st.span cc)
+   | Assert (assertion, _on_failure, _) ->
+       let (ctx, res), cc = eval_assertion config st.span assertion ctx in
+--- a/src/interp/InterpBorrows.ml
++++ b/src/interp/InterpBorrows.ml
+@@ -662,6 +662,40 @@
+   [%cassert] span !replaced "No loan updated";
+   (* *)
+   ctx
++
++let affine_multiple_zip_regions (span : Meta.span) ctx ty =
++  let named id name =
++    let decl = ctx_lookup_type_decl span ctx id in
++    Print.EvalCtx.name_to_string ctx decl.item_meta.name = name
++  in
++    let operand name = function
++      | TAdt { id; generics = { regions = [(RVar (Free _) as region)];
++          types = [TScalar (TInteger (Unsigned U64))];
++          const_generics = []; trait_refs = [] }; _ } when named id name -> Some region
++      | _ -> None
++    in
++    match ty with
++    | TAdt { id; generics = { regions = []; types = [left; right];
++        const_generics = []; trait_refs = [] }; _ }
++      when named id "core::iter::adapters::zip::Zip" -> (
++        match operand "core::slice::iter::IterMut" left, operand "core::slice::iter::Iter" right with
++        | Some left, Some right when left <> right -> Some (left, right)
++        | _ -> None)
++    | _ -> None
++
++let disjoint_affine_multiple_zip_siblings (span : Meta.span) ctx (proj : symbolic_proj) regions =
++  let site = span.data in
++  !Config.sanity_checks
++  && Sys.getenv_opt "BULKSKETCH_AFFINE_MULTIPLE" = Some "1"
++  && span.generated_from_span = None
++  && (match site.file.name with Local "src/decode/affine.rs" -> true | _ -> false)
++  && List.mem site.beg_loc.line [154; 160] && site.end_loc.line = site.beg_loc.line
++  && site.beg_loc.col = 8 && site.end_loc.col = 9
++  && (match affine_multiple_zip_regions span ctx proj.proj_ty with
++      | Some (left, right) ->
++          RegionSet.equal regions (RegionSet.singleton left)
++          || RegionSet.equal regions (RegionSet.singleton right)
++      | _ -> false)
+ 
+ (** Update the borrow projectors upon ending some regions in a symbolic value.
+ 
+@@ -740,8 +774,9 @@
+         { proj = { sv_id; proj_ty }; loans = (consumed, loan) :: aproj.loans }
+   in
+   update_intersecting_aproj_borrows span ~fail_if_unchanged:true
+-    ~include_owned:true ~include_outlive:true ~update_shared:None ~update_mut
+-    ~update_emut ended_regions proj ctx
++    ~include_owned:true
++    ~include_outlive:(not (disjoint_affine_multiple_zip_siblings span ctx proj ended_regions))
++    ~update_shared:None ~update_mut ~update_emut ended_regions proj ctx
+ 
+ (** Give back a *modified* symbolic value. *)
+ let give_back_symbolic_value (_config : config) (span : Meta.span)
+@@ -821,8 +856,9 @@
+       EProjLoans { aproj with borrows = (consumed, borrow) :: aproj.borrows }
+   in
+   update_intersecting_aproj_loans span ~fail_if_unchanged:true
+-    ~include_owned:true ~include_outlive:true ended_regions proj subst esubst
+-    ctx
++    ~include_owned:true
++    ~include_outlive:(not (disjoint_affine_multiple_zip_siblings span ctx proj ended_regions))
++    ended_regions proj subst esubst ctx
+ 
+ (** Convert an {!type:avalue} to a {!type:value}.
+ 
+--- a/src/interp/InterpBorrows.mli
++++ b/src/interp/InterpBorrows.mli
+@@ -180,3 +180,6 @@
+       end them, nor their loans). *)
+ val simplify_dummy_values_useless_abs :
+   config -> ?snapshots:bool -> ?filter_avalues:bool -> Meta.span -> cm_fun
++
++(** The two distinct free regions of a word slice mutable/shared Zip. *)
++val affine_multiple_zip_regions : Meta.span -> Contexts.eval_ctx -> Types.ty -> (Types.region * Types.region) option
+--- a/src/interp/InterpBorrowsCore.ml
++++ b/src/interp/InterpBorrowsCore.ml
+@@ -1465,7 +1465,8 @@
+ 
+               let outlive = include_outlive && not owned in
+               let owned = include_owned && owned in
+-              update ~owned ~outlive abs aproj_loans
++              if owned || outlive then update ~owned ~outlive abs aproj_loans
++              else super#visit_aproj (Some abs) sproj
+             else super#visit_aproj (Some abs) sproj
+ 
+       method! visit_eproj abs sproj =
+@@ -1482,7 +1483,8 @@
+ 
+               let outlive = include_outlive && not owned in
+               let owned = include_owned && owned in
+-              update_evalue ~owned ~outlive abs aproj_loans
++              if owned || outlive then update_evalue ~owned ~outlive abs aproj_loans
++              else super#visit_eproj (Some abs) sproj
+             else super#visit_eproj (Some abs) sproj
+     end
+   in
+--- a/src/interp/InterpAbs.ml
++++ b/src/interp/InterpAbs.ml
+@@ -1414,7 +1414,29 @@
+             bound := bound';
+             e
+         | EEndedProjLoans { proj = _; consumed; borrows } ->
+-            [%cassert] span (consumed = []) "Unimplemented";
++            let ended_affine_zip_shell =
++              let site = span.data in
++              !Config.sanity_checks
++              && Sys.getenv_opt "BULKSKETCH_AFFINE_MULTIPLE" = Some "1"
++              && span.generated_from_span = None
++              && (match site.file.name with Local "src/decode/affine.rs" -> true | _ -> false)
++              && (site.beg_loc.line, site.beg_loc.col, site.end_loc.line, site.end_loc.col)
++                   = (119, 4, 170, 1)
++              && (match consumed, affine_multiple_zip_regions span ctx input.ty with
++                  | [((meta : mconsumed_symb), EEmpty)], Some (left, right) ->
++                      (pm = PNone && meta.proj_ty = input.ty
++                       && (RegionSet.equal regions (RegionSet.singleton left)
++                           || RegionSet.equal regions (RegionSet.singleton right)))
++                      || ((pm = PNone || pm = PRight) && RegionSet.equal regions (RegionSet.singleton left)
++                          && (match affine_multiple_zip_regions span ctx meta.proj_ty with
++                              | Some (old_left, old_right) -> old_left <> left && old_right = right
++                              | _ -> false))
++                  | _ -> false)
++            in
++            (* The right join arm may rename the mutable region in the ended
++               shell while preserving the shared sibling. The empty child
++               contributes no new input binding. Keep its history and marker. *)
++            [%cassert] span (consumed = [] || ended_affine_zip_shell) "Unimplemented";
+             [%cassert] span (borrows = []) "Unimplemented";
+             input
+         | EProjBorrows _ | EEndedProjBorrows _ ->

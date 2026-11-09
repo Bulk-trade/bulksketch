@@ -1,0 +1,275 @@
+{
+  "variant_id": "checked-affine-multiple-zip-ends-v1",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "native_source_edited": false,
+  "native_llbc_edited": false,
+  "source_sha256": {
+    "src/decode/affine.rs": "a7c45498717202aec291b4c4acdd6f819edf16bcdf478500a8c74a3492c4e11d",
+    "src/poly/dense.rs": "13b360fba6387dda36a9655f3f67d01be6752e4ca6b7f8e1824e7333bf3da644",
+    "src/backend/contract.rs": "4d05ce564edc408ba04f5a907b159ad91018ba8cfd93126e17913ed49f7e3d59",
+    "src/types.rs": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
+  },
+  "capture_sha256": "5c052e41228ab5a9a3bfe259389d2e1d5333bf09a063608bde61b66a105145d6",
+  "variant_patch": "extraction/affine-multiple/checked-affine-multiple-zip-ends.patch",
+  "variant_patch_sha256": "ee10ff36dfc11a6fe78b6789b775e4afbb4b2a3171458d37a599a9eae111e9c9",
+  "patched_binary_sha256": "53fd011bcc11b7107f4783b8cf1e98ce9ff8080b2b13efa68319abb321bc723b",
+  "base_sources": {
+    "src/interp/InterpStatements.ml": "52ff1eb23a3b02b969fbbd38849f58e27d8652253a3c7bf996e7a19e747f32a0",
+    "src/interp/InterpBorrows.ml": "41fe2d959370354e5187007eb358088883a196ebc44f6635511f215dba332a7a",
+    "src/interp/InterpBorrows.mli": "bec35be5ccd34bc596d23deaa4f1f4b93358759a385e9f55bef794c26d8ebcba",
+    "src/interp/InterpBorrowsCore.ml": "0294abaaf5a305ef73f19c807626e37e55023f52c9fb0e7abda86bfdcbf1db89",
+    "src/interp/InterpAbs.ml": "713c57546138df421b391293a76e175391f2ecbcf4b3d97db7e9e6c93c89de0b"
+  },
+  "modified_sources": {
+    "src/interp/InterpStatements.ml": "d8501e596eb0f22e3fbe2738f5f8a450b88824467371a96297de1fdc3ac7089b",
+    "src/interp/InterpBorrows.ml": "15e67c132d27eae2d463ad84cd870c2714e77f231958a887d35696bb47cb5cb2",
+    "src/interp/InterpBorrows.mli": "e796730bdedccb563e4271be55b341b8e2118dd5ecc5a60f7406a0460d4a6a9b",
+    "src/interp/InterpBorrowsCore.ml": "002da3564d478de1af820e6b86a139e5c8fbe94ff2b2f982ffd142025b78ebf2",
+    "src/interp/InterpAbs.ml": "e848a941e6bbff0c33cf2d84da9688e3dd3c91690b9f6deb4b5ca8eee07583d7"
+  },
+  "charon_recapture": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/recaptured.llbc",
+      "--start-from=bulksketch::decode::affine::multiple",
+      "--opaque=bulksketch::poly::dense::_::square_mod_into",
+      "--",
+      "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked",
+      "--target",
+      "x86_64-apple-darwin"
+    ],
+    "exit_code": 0,
+    "original_sha256": "5c052e41228ab5a9a3bfe259389d2e1d5333bf09a063608bde61b66a105145d6",
+    "recapture_sha256": "9af3e25b21e661b84dc20830ddbbca28e8df51c0dbd3d9ce0b4762e731a61330",
+    "normalized_fields": [
+      "translated.options.dest_file"
+    ],
+    "log_sha256": "c7d662906e4eb7ceacdea8eeb5d9e7c81b6455d3ed4589eebdb252b74befd738",
+    "binary_sha256": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe"
+  },
+  "fresh_build": {
+    "exit_code": 0,
+    "source_files_byte_identical": 104,
+    "modified_source_sha256": {
+      "src/interp/InterpStatements.ml": "d8501e596eb0f22e3fbe2738f5f8a450b88824467371a96297de1fdc3ac7089b",
+      "src/interp/InterpBorrows.ml": "15e67c132d27eae2d463ad84cd870c2714e77f231958a887d35696bb47cb5cb2",
+      "src/interp/InterpBorrows.mli": "e796730bdedccb563e4271be55b341b8e2118dd5ecc5a60f7406a0460d4a6a9b",
+      "src/interp/InterpBorrowsCore.ml": "002da3564d478de1af820e6b86a139e5c8fbe94ff2b2f982ffd142025b78ebf2",
+      "src/interp/InterpAbs.ml": "e848a941e6bbff0c33cf2d84da9688e3dd3c91690b9f6deb4b5ca8eee07583d7"
+    },
+    "command": [
+      "opam",
+      "exec",
+      "--root=/Users/junbug/bulk/bulksketch-proofs/tooling/opam-root",
+      "--switch=aeneas-5.3.0",
+      "--",
+      "dune",
+      "build",
+      "--root",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-tool/src",
+      "-j",
+      "2"
+    ],
+    "log_sha256": "f49157a385d047f23e5b981fa61e26f7704aae8a14db3b525b1401116f623133"
+  },
+  "replay": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-tool/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-replay",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "binary_sha256": "53fd011bcc11b7107f4783b8cf1e98ce9ff8080b2b13efa68319abb321bc723b",
+    "input_sha256": "5c052e41228ab5a9a3bfe259389d2e1d5333bf09a063608bde61b66a105145d6",
+    "environment": {
+      "BULKSKETCH_AFFINE_MULTIPLE": "1"
+    },
+    "outputs": {
+      "Funs.lean": "c016c3f963dbe2708027b8e039a0c7590191864a6bcd17468e89e76fca38b7cc",
+      "FunsExternal_Template.lean": "6b79b38a224de70ad04c51859800b4fc780fbe31c9da077306463d61ffdbefa3",
+      "Types.lean": "8a93715ef2336aafd7a6e2441962da32c9298cbfcc57058f0cbea7e3d1718471"
+    },
+    "log_sha256": "5f0450d82a8c06a4ce6fec9b4de18a33da5bcc14380f4dda5f0086bc637e685f"
+  },
+  "controls": {
+    "stock": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-guard-controls/stock/generated",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/affine-multiple/arithmetic.llbc"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "input_sha256": "5c052e41228ab5a9a3bfe259389d2e1d5333bf09a063608bde61b66a105145d6",
+      "binary_sha256": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+      "log_sha256": "19a16d4d49f509db8ea6684d3321ac5bbfa42c152d1f8f7915863f9ef0fa2f3b",
+      "outputs": {}
+    },
+    "flag-off": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-guard-controls/flag-off/generated",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/affine-multiple/arithmetic.llbc"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "input_sha256": "5c052e41228ab5a9a3bfe259389d2e1d5333bf09a063608bde61b66a105145d6",
+      "binary_sha256": "53fd011bcc11b7107f4783b8cf1e98ce9ff8080b2b13efa68319abb321bc723b",
+      "log_sha256": "62ef50c90b36a562b0b230afefb3f5f92b3e36d17c1ef592587ed3280aa582ab",
+      "outputs": {}
+    },
+    "unchecked": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-guard-controls/unchecked/generated",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/affine-multiple/arithmetic.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_AFFINE_MULTIPLE": "1"
+      },
+      "exit_code": 1,
+      "input_sha256": "5c052e41228ab5a9a3bfe259389d2e1d5333bf09a063608bde61b66a105145d6",
+      "binary_sha256": "53fd011bcc11b7107f4783b8cf1e98ce9ff8080b2b13efa68319abb321bc723b",
+      "log_sha256": "df21670f82b4bf1fe5857006a97d1906d4d2b6f513115577f7122ae8434ee479",
+      "outputs": {}
+    },
+    "checked": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-guard-controls/checked/generated",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/affine-multiple/arithmetic.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_AFFINE_MULTIPLE": "1"
+      },
+      "exit_code": 0,
+      "input_sha256": "5c052e41228ab5a9a3bfe259389d2e1d5333bf09a063608bde61b66a105145d6",
+      "binary_sha256": "53fd011bcc11b7107f4783b8cf1e98ce9ff8080b2b13efa68319abb321bc723b",
+      "log_sha256": "975c32707f1f0c2eb1bd3e057d0293c5d391c4605014150c73ccc7cfe647c3ac",
+      "outputs": {
+        "Funs.lean": "c016c3f963dbe2708027b8e039a0c7590191864a6bcd17468e89e76fca38b7cc",
+        "FunsExternal_Template.lean": "6b79b38a224de70ad04c51859800b4fc780fbe31c9da077306463d61ffdbefa3",
+        "Types.lean": "8a93715ef2336aafd7a6e2441962da32c9298cbfcc57058f0cbea7e3d1718471"
+      }
+    },
+    "wrong-lifetime": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-guard-controls/wrong-lifetime/generated",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-guard-controls/wrong-lifetime/arithmetic.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_AFFINE_MULTIPLE": "1"
+      },
+      "exit_code": 1,
+      "input_sha256": "6392e33cdbbb80d5432790b86f4ad5edc0d9db450c9f1ed4dfe375a7c1a453f8",
+      "binary_sha256": "53fd011bcc11b7107f4783b8cf1e98ce9ff8080b2b13efa68319abb321bc723b",
+      "log_sha256": "0f5083e5213c348e054b51dcf3b33fe4b41ea6430beca641a56335da25c07b41",
+      "outputs": {}
+    },
+    "affine-splitter": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-guard-controls/affine-splitter/generated",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/affine-splitter/arithmetic.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_AFFINE_MULTIPLE": "1"
+      },
+      "exit_code": 0,
+      "input_sha256": "3c0ffb403ac22a397fc026c36fc59dca6c2252ccebf98e09494a7452a56f09f3",
+      "binary_sha256": "53fd011bcc11b7107f4783b8cf1e98ce9ff8080b2b13efa68319abb321bc723b",
+      "log_sha256": "a9e98a680b9e5af05271197972ccc337beff588a1cf29ea6c8a7d1197cc7c965",
+      "outputs": {
+        "Funs.lean": "4a1e1a13827ea38655bd055b65e579e17052f91a8e92ea82a72bbddb6c6f876a",
+        "FunsExternal_Template.lean": "4c59046b038ddb5906a108fac743d2bfdafa10499b04405679623a05e331ef6d",
+        "Types.lean": "c1c3706fc639ac3c460be5b0043a2b49afa6b36f37172c27e5aca26f08c59abb"
+      }
+    }
+  },
+  "files_sha256": {
+    "extraction/affine-multiple/Arithmetic/Funs.lean": "c016c3f963dbe2708027b8e039a0c7590191864a6bcd17468e89e76fca38b7cc",
+    "extraction/affine-multiple/Arithmetic/FunsExternal_Template.lean": "6b79b38a224de70ad04c51859800b4fc780fbe31c9da077306463d61ffdbefa3",
+    "extraction/affine-multiple/Arithmetic/Types.lean": "8a93715ef2336aafd7a6e2441962da32c9298cbfcc57058f0cbea7e3d1718471",
+    "extraction/affine-multiple/affine-splitter.log": "a9e98a680b9e5af05271197972ccc337beff588a1cf29ea6c8a7d1197cc7c965",
+    "extraction/affine-multiple/arithmetic.llbc": "5c052e41228ab5a9a3bfe259389d2e1d5333bf09a063608bde61b66a105145d6",
+    "extraction/affine-multiple/charon.log": "c7d662906e4eb7ceacdea8eeb5d9e7c81b6455d3ed4589eebdb252b74befd738",
+    "extraction/affine-multiple/checked-affine-multiple-zip-ends.patch": "ee10ff36dfc11a6fe78b6789b775e4afbb4b2a3171458d37a599a9eae111e9c9",
+    "extraction/affine-multiple/checked.log": "975c32707f1f0c2eb1bd3e057d0293c5d391c4605014150c73ccc7cfe647c3ac",
+    "extraction/affine-multiple/flag-off.log": "62ef50c90b36a562b0b230afefb3f5f92b3e36d17c1ef592587ed3280aa582ab",
+    "extraction/affine-multiple/fresh-build.log": "f49157a385d047f23e5b981fa61e26f7704aae8a14db3b525b1401116f623133",
+    "extraction/affine-multiple/guard-controls.py": "f6e593b71ebc3aa0a6c23c4c1e004deeefab937fd8f5e6b25d53b5b0d93b5871",
+    "extraction/affine-multiple/replay.log": "5f0450d82a8c06a4ce6fec9b4de18a33da5bcc14380f4dda5f0086bc637e685f",
+    "extraction/affine-multiple/stock.log": "19a16d4d49f509db8ea6684d3321ac5bbfa42c152d1f8f7915863f9ef0fa2f3b",
+    "extraction/affine-multiple/unchecked.log": "df21670f82b4bf1fe5857006a97d1906d4d2b6f513115577f7122ae8434ee479",
+    "extraction/affine-multiple/wrong-lifetime.log": "0f5083e5213c348e054b51dcf3b33fe4b41ea6430beca641a56335da25c07b41",
+    "extraction/affine-multiple/zip-lifetimes.log": "4ff0dab374e81a8a2b4370c8b11566fdf32aa93dba885a8ee1532d4108c08be4",
+    "extraction/affine-multiple/zip_lifetimes.py": "7a9e7967c71afb92290ada02a61947b6d828e1f13120e6090c41069e413e02de"
+  }
+}

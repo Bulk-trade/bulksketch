@@ -566,6 +566,11 @@
       "path": "extraction/avx-horner/trait-scoped/arithmetic.llbc",
       "sha256": "13cc6b7dc88cbd4521fe05d9ab7480be0e7a7c2612d2d3307a9b091c7558fb4b",
       "has_errors": false
+    },
+    {
+      "path": "extraction/affine-multiple/arithmetic.llbc",
+      "sha256": "5c052e41228ab5a9a3bfe259389d2e1d5333bf09a063608bde61b66a105145d6",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1333,6 +1338,11 @@
       "native_item_id": "src/backend/x86_vpclmul512.rs:180:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::horner_many",
       "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.horner_many",
       "generated_file": "bridge/Arithmetic/AvxHornerGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:97:function:bulksketch::decode::affine::multiple",
+      "generated_declaration": "bulksketch.decode.affine.multiple",
+      "generated_file": "bridge/Arithmetic/AffineMultipleGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2007,6 +2017,16 @@
       "declaration_count": 7,
       "scope": "Exact original AVX Horner kernel and both wrappers. The inner kernel uses the reviewed checked ended-shared variant. Both wrappers were extracted by stock Aeneas.",
       "translator_variant": "checked-ended-shared-scalar-v1"
+    },
+    {
+      "generated": "extraction/affine-multiple/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AffineMultipleGenerated.lean",
+      "sha256": "5584b6df5b9a3a135b9ad79b33bb27f68647e95ad32123f866a83b5110ba868d",
+      "raw_sha256": "c016c3f963dbe2708027b8e039a0c7590191864a6bcd17468e89e76fca38b7cc",
+      "checker": "extraction/affine-multiple/project.py",
+      "declaration_count": 9,
+      "scope": "Exact original affine multiple wrapper and all four source loops under the scoped checked row and witness Zip cleanup.",
+      "translator_variant": "checked-affine-multiple-zip-ends-v1"
     }
   ],
   "reviewed_translator_variants": [
@@ -2117,6 +2137,15 @@
       "receipt": "extraction/affine-enumerate/receipt.json",
       "mandatory_checks": true,
       "scope": "Exact checked affine enumerator span and loop shape. Nonlocal continuation, error cleanup, and unobservable result initialization are scoped to the original capture."
+    },
+    {
+      "id": "checked-affine-multiple-zip-ends-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/affine-multiple/checked-affine-multiple-zip-ends.patch",
+      "patch_sha256": "ee10ff36dfc11a6fe78b6789b775e4afbb4b2a3171458d37a599a9eae111e9c9",
+      "receipt": "extraction/affine-multiple/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact checked affine multiple capture. At the original iterator storage deaths, trace matching terminal borrowers and both Zip loan owners. Preserve ended projection history and stock borrow checks."
     }
   ],
   "diagnostic_generated_projections": [

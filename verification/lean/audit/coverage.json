@@ -3556,7 +3556,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AffineMultiple.native_multiple_refines",
+        "scope": "Exact original arena setup, pivot search, normalization, bounded column trace and scratch result under admitted GF64 backend and table laws. Includes original exhaustion panic. Minimum and algebraic unreachability are separate.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/bm.rs:13:function:bulksketch::decode::bm::locator",
@@ -12013,8 +12020,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. Original GF64 solve-map execution and soundness, affine enumeration completeness under split-coset admission, and AVX-512 Horner kernel, wrappers, field evaluation and allocated byte-frame check. Affine multiple, kernel spanning and caller-wide admission, general traversal and decoder completeness, Rust provenance and compiler/ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 137,
+    "note": "All 344 native executable obligations retained. Original affine multiple operational trace, native dispatcher specialization, and solve-map kernel independence check. Affine multiple minimum and exhaustion exclusion, kernel spanning, caller-wide admission, general traversal and decoder completeness, remaining Rust provenance and compiler/ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 138,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12117,7 +12124,10 @@
         "BulksketchBridge.AffineSelector.enumerate_preferred_refines",
         "BulksketchBridge.AffineEnumerate.native_enumeration_complete",
         "BulksketchBridge.AffineSolveMap.solve_map_gf64_refines",
-        "BulksketchBridge.AffineSolveMap.native_solve_map_sound"
+        "BulksketchBridge.AffineSolveMap.native_solve_map_sound",
+        "BulksketchBridge.RootRun.original_root_run_refines",
+        "BulksketchBridge.AffineMultiple.native_multiple_refines",
+        "BulksketchBridge.AffineSolveMap.native_kernel_independent"
       ]
     },
     "masked_memory_evidence": {

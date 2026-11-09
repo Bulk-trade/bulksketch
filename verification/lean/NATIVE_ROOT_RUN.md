@@ -4,7 +4,7 @@ All 344 native executable obligations remain in scope. This checkpoint
 adds exact original Aeneas body refinements for `Roots::run`,
 `Roots::divide`, the affine subspace offset, `affine::splitter`,
 `affine::subspaces`, the preparation and enumeration wrappers, the
-inner enumerator and selector, the GF64 solve map and its table
+inner enumerator and selector, the affine multiple, the GF64 solve map and its table
 construction, and the original AVX linear update and Horner paths.
 Production Rust and Cargo inputs are unchanged.
 
@@ -14,8 +14,9 @@ workspace frames, and all admitted branches. The original leaf,
 closed-leaf, trace, reducer table, GCD, factor division, splitter,
 affine preparation and affine enumeration wrappers are bound in the
 projection. The original selector, binary solve map, and candidate
-enumerator are bound directly. The affine multiple still has a typed
-slot. The GCD stage uses the
+enumerator are bound directly. The native dispatcher specialization
+also instantiates the affine multiple and Dense div/rem with their
+original bodies. The GCD stage uses the
 admitted div/rem law and normalized remainder and retry conditions.
 Table, GCD and affine split prices follow the original order of
 checked operations, including intermediate overflow.
@@ -53,8 +54,20 @@ The original GF64 solve-map proof checks native table construction,
 the coefficient fold, pivot insertion and reduction, and exact kernel,
 image and preimage writes. Its field interpretation proves the
 returned base maps to the constant term and each written kernel
-direction maps to zero. Showing that those directions span the entire
-kernel is still a separate obligation.
+direction maps to zero. The original sweep gives the returned kernel
+directions distinct increasing leading bits, which proves their
+independence. Showing that they span the entire kernel remains open.
+
+The original affine-multiple proof checks its buffer setup, pivot
+search, both normalization loops, modular square, and returned
+coefficient and scratch frames against a finite column trace. The
+scoped checked translation closes only the matching row and witness
+Zip lifetimes in the frozen capture. The operational result includes
+the original exhaustion panic. Separate algebra proves divisibility
+from a zero-residue witness, and proves the zero linear coefficient
+criterion for a least affine multiple of a squarefree input.
+The loop invariant that establishes leastness and rules out exhaustion
+still needs a proof.
 
 The enumeration selector and its square-products helper check all
 scalar inputs. Their proofs preserve the checked operation order,

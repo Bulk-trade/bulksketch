@@ -499,6 +499,10 @@ def check_dense_reducer_variant(variant, receipt, runtime, runtime_head, linkage
              "src/symbolic/SymbolicToPureCore.ml", "src/symbolic/SymbolicToPureExpressions.ml"}),
         "checked-affine-outer-continue-v1": (
             "extraction/affine-enumerate/", "checked-affine-outer-continue.patch", {"src/PrePasses.ml"}),
+        "checked-affine-multiple-zip-ends-v1": (
+            "extraction/affine-multiple/", "checked-affine-multiple-zip-ends.patch",
+            {"src/interp/InterpStatements.ml", "src/interp/InterpBorrows.ml",
+             "src/interp/InterpBorrows.mli", "src/interp/InterpBorrowsCore.ml", "src/interp/InterpAbs.ml"}),
     }
     directory, name, sources = files[variant["id"]]
     patch = directory + name
@@ -693,7 +697,8 @@ def main():
             records.append(result)
             continue
         if variant["id"] in {"checked-dense-reducer-option-v1", "checked-dense-reducer-square-v1",
-                            "checked-dense-div-rem-v1", "checked-affine-outer-continue-v1"}:
+                            "checked-dense-div-rem-v1", "checked-affine-outer-continue-v1",
+                            "checked-affine-multiple-zip-ends-v1"}:
             check_dense_reducer_variant(variant, receipt, runtime, runtime_head, linkage)
             result, _ = run(variant["id"] + "-patch-applies", ["git", "apply", "--check",
                             str(ROOT / variant["patch"])], timeout=30, cwd=runtime)

@@ -1160,6 +1160,18 @@
     {
       "challenge": "BulksketchBridge.AffineEnumerate.ActualNativeEnumerationComplete",
       "theorem": "BulksketchBridge.AffineEnumerate.native_enumeration_complete"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineMultiple.ActualNativeMultiple",
+      "theorem": "BulksketchBridge.AffineMultiple.native_multiple_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeRootRun",
+      "theorem": "BulksketchBridge.RootRun.original_root_run_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineSolveMap.ActualNativeKernelIndependent",
+      "theorem": "BulksketchBridge.AffineSolveMap.native_kernel_independent"
     }
   ],
   "refinements": [
@@ -3345,6 +3357,21 @@
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Original length guard and exact GF64 route through the stock wrapper and proved kernel. Separate field and allocated heap endpoints.",
       "translator_variant": "checked-ended-shared-scalar-v1"
+    },
+    {
+      "label": "affine::multiple [original GF64 source]",
+      "native_item_id": "src/decode/affine.rs:97:function:bulksketch::decode::affine::multiple",
+      "source_line_span_sha256": "ddc332a3ff70e00aaa2eb34dfcd5ef8a5d7a67cf320974792b12a7e01a41111b",
+      "theorem": "BulksketchBridge.AffineMultiple.native_multiple_refines",
+      "challenge": "BulksketchBridge.AffineMultiple.ActualNativeMultiple",
+      "generated_declaration": "bulksketch.decode.affine.multiple",
+      "generated_file": "bridge/Arithmetic/AffineMultipleGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AffineMultipleGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original arena setup, pivot search, normalization, bounded column trace and scratch result under admitted GF64 backend and table laws. Includes original exhaustion panic. Minimum and algebraic unreachability are separate.",
+      "translator_variant": "checked-affine-multiple-zip-ends-v1"
     }
   ],
   "stateful_llbc_refinements": [

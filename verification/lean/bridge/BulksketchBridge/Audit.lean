@@ -616,7 +616,13 @@ run_cmd do
     (``BulksketchBridge.AvxHorner.ActualAllocatedAvxHornerKernel,
       ``BulksketchBridge.AvxHorner.allocated_kernel_refines),
     (``BulksketchBridge.AffineEnumerate.ActualNativeEnumerationComplete,
-      ``BulksketchBridge.AffineEnumerate.native_enumeration_complete)
+      ``BulksketchBridge.AffineEnumerate.native_enumeration_complete),
+    (``BulksketchBridge.AffineMultiple.ActualNativeMultiple,
+      ``BulksketchBridge.AffineMultiple.native_multiple_refines),
+    (``BulksketchBridge.RootRun.ActualNativeRootRun,
+      ``BulksketchBridge.RootRun.original_root_run_refines),
+    (``BulksketchBridge.AffineSolveMap.ActualNativeKernelIndependent,
+      ``BulksketchBridge.AffineSolveMap.native_kernel_independent)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

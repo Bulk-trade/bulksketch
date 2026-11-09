@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "8cd828c85dd1e37a5c73cad4968fbcf68abefc695385d5a8054d2c3b8201779b",
+    "bridge/BulksketchBridge/Audit.lean": "1b4ba1566b1fa6408d94a97fed112614c599fc454d71b14398fa6d5bb8786641",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,9 +13,9 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "50de9c90cb9d4e0a75e44761ac4c611086b1831c229c6a2bd2a556303535c8a3",
-    "audit/frozen-inputs.json": "74f5870219053245f5cb054010d5737480f3f15821b7d44514268c15f6d78249",
-    "bridge/BulksketchBridge.lean": "0c92b00c10d3217fe5fd02f8183208f556c56abf6635d82d9a7e30f69f1c5e9a",
+    "scripts/verify_bridge.py": "6091117abdc8a309b8ed788546806ad708619ea361599dd5435bab45d92c7cba",
+    "audit/frozen-inputs.json": "7907b01687ae4c32654f723e980320d2e0efc9541ecb9789ea5b67c5ed560def",
+    "bridge/BulksketchBridge.lean": "07046859d15347d5a9b9282bf2d07e2f5af62b073df1cf0453ea4f691489b364",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "f4f3c6c7bc32727961ddc21aef63d0de5ace93cc9327b04eeeffbd3a2eec35bc",
-    "bridge/obligations.json": "c6b0afdfd576c2e740b2343b42f08d707c3d1d317b89d99468ed813f6c59b023",
+    "bridge/source-linkage.json": "f65d70ef5dc2347dc2c13690492f572cc4e9471950d2351fc9fabd68a8c9e88d",
+    "bridge/obligations.json": "063290adc8c23f1cb31c62ef8d4954d43670809a06397b3e78451d637ce467e4",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "637b9d692082a29848c8cfbc47b70e14a8abe2770e4fb94282efa9604f1ff329",
+    "scripts/check_projection_fixtures.py": "8bcb657f97144ca651a5a45b5d1d74c4c88375009990669f025541c6bc86043f",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "5bc188ff6be8eae0d0507dc816bb1eb5a2a1e1a3e2ec21319d233d9942c03c07",
+    "README.md": "7480a55379bb1d620bfd34adef127a8040aebddbec1ae4cd5ba4ceeb64d40e05",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "4e0145a3b3b989f7f949e0134e916c700a0957cb5979ac94560280699be91c64",
+    "audit/coverage.json": "33d0c85b86fac1bc8b20af805cbf93c94b061da42512841a8ba8c72d52653025",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "b9c22e9d7ec9b5de35d4ce6972c6e6ed6fce88700efc87401e8b194fb262e8c7",
-    "audit/native-root-run-checkpoint.json": "151e33c60b933fc13c1a2f63f8081b7d3eaf2450ff054081f7574c1b9b1818a5",
+    "NATIVE_ROOT_RUN.md": "b6902c65e948eac74ecf32bb8aa4921eaea1b145bea19629cfa75b89bb5b7b22",
+    "audit/native-root-run-checkpoint.json": "a5cc7a1d63f7ddcc25300a878449de91e6be6c850a7922ce939645240208ddaf",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1385,7 +1385,37 @@
     "extraction/avx-horner/trait-scoped/arithmetic.llbc": "13cc6b7dc88cbd4521fe05d9ab7480be0e7a7c2612d2d3307a9b091c7558fb4b",
     "extraction/avx-horner/trait-scoped/charon.log": "94a9fed93bf6f09ca16ae3d276b7593b4f3a90e045362eb36dae79bd38f3b9fb",
     "extraction/avx-horner/trait-scoped/replay.log": "297c1de0d80471d12bcf339ea73b5794fef799e7088a44f79906bcee51a3e89b",
-    "extraction/avx-horner/unchecked-kernel-rejection.log": "b4b6c115f903c4ec9e0ae31cf2e257f0251214724ea77c6cff9082191df34bbf"
+    "extraction/avx-horner/unchecked-kernel-rejection.log": "b4b6c115f903c4ec9e0ae31cf2e257f0251214724ea77c6cff9082191df34bbf",
+    "bridge/Arithmetic/AffineMultipleGenerated.lean": "5584b6df5b9a3a135b9ad79b33bb27f68647e95ad32123f866a83b5110ba868d",
+    "bridge/BulksketchBridge/AffineMultipleAlgebra.lean": "fdf47a56388ce714a33b12abe7212aba51e8253c6a8ce21630fd86838c649c3b",
+    "bridge/BulksketchBridge/AffineMultipleBounds.lean": "90870ae0c18a6a577e0de4c689e42d33c0cdfb98b63bc1bea624de8f166c6dba",
+    "bridge/BulksketchBridge/AffineMultipleColumn.lean": "4a85c914a07ad1b7ceaf4f34dfb417f129c65a82ba9c5ec012052800f4de8d42",
+    "bridge/BulksketchBridge/AffineMultipleLoop.lean": "80983ea20c02007197c3288b72dbe7b3fecb93469bdffee6ea541e1f619b642f",
+    "bridge/BulksketchBridge/AffineMultipleNormalization.lean": "b922ec4f804bd0f5dafb1053d2f345f39e8566e2edef50aad8137099b0fcf371",
+    "bridge/BulksketchBridge/AffineMultiplePivot.lean": "297ff70350f396004274d39322fd917b8b79e906130ed77f8682d9ef0d977c5d",
+    "bridge/BulksketchBridge/AffineMultipleWrapper.lean": "ac298948a841d42ef479b3ad4dc009d29b6763008d4aa7149c332953c8c2050f",
+    "bridge/BulksketchBridge/AffineSolveMapTriangular.lean": "9e553a794dec2c567033ec3ab266036ea6ccf67da6afc849f022805150efd283",
+    "bridge/BulksketchBridge/NativeRootRun.lean": "24c7986f3402f0c825b18579754237da76a99aafb59f680e88e3ad356cdb92b0",
+    "extraction/affine-multiple/Arithmetic/Funs.lean": "c016c3f963dbe2708027b8e039a0c7590191864a6bcd17468e89e76fca38b7cc",
+    "extraction/affine-multiple/Arithmetic/FunsExternal_Template.lean": "6b79b38a224de70ad04c51859800b4fc780fbe31c9da077306463d61ffdbefa3",
+    "extraction/affine-multiple/Arithmetic/Types.lean": "8a93715ef2336aafd7a6e2441962da32c9298cbfcc57058f0cbea7e3d1718471",
+    "extraction/affine-multiple/README.md": "b4d7bb19394d40521a7328f754a07aaa5f08ee665132471636ec994fec60b825",
+    "extraction/affine-multiple/affine-splitter.log": "a9e98a680b9e5af05271197972ccc337beff588a1cf29ea6c8a7d1197cc7c965",
+    "extraction/affine-multiple/arithmetic.llbc": "5c052e41228ab5a9a3bfe259389d2e1d5333bf09a063608bde61b66a105145d6",
+    "extraction/affine-multiple/charon.log": "c7d662906e4eb7ceacdea8eeb5d9e7c81b6455d3ed4589eebdb252b74befd738",
+    "extraction/affine-multiple/checked-affine-multiple-zip-ends.patch": "ee10ff36dfc11a6fe78b6789b775e4afbb4b2a3171458d37a599a9eae111e9c9",
+    "extraction/affine-multiple/checked.log": "975c32707f1f0c2eb1bd3e057d0293c5d391c4605014150c73ccc7cfe647c3ac",
+    "extraction/affine-multiple/flag-off.log": "62ef50c90b36a562b0b230afefb3f5f92b3e36d17c1ef592587ed3280aa582ab",
+    "extraction/affine-multiple/fresh-build.log": "f49157a385d047f23e5b981fa61e26f7704aae8a14db3b525b1401116f623133",
+    "extraction/affine-multiple/guard-controls.py": "f6e593b71ebc3aa0a6c23c4c1e004deeefab937fd8f5e6b25d53b5b0d93b5871",
+    "extraction/affine-multiple/project.py": "efc620d6f5d1670ce98ad575ab9d3abfa4dd0ca7874a583ebadeb0dedf99f30c",
+    "extraction/affine-multiple/receipt.json": "afcfa1ff3587e3216732520bc24244f8807080812f77486b38db2cacc50b828d",
+    "extraction/affine-multiple/replay.log": "5f0450d82a8c06a4ce6fec9b4de18a33da5bcc14380f4dda5f0086bc637e685f",
+    "extraction/affine-multiple/stock.log": "19a16d4d49f509db8ea6684d3321ac5bbfa42c152d1f8f7915863f9ef0fa2f3b",
+    "extraction/affine-multiple/unchecked.log": "df21670f82b4bf1fe5857006a97d1906d4d2b6f513115577f7122ae8434ee479",
+    "extraction/affine-multiple/wrong-lifetime.log": "0f5083e5213c348e054b51dcf3b33fe4b41ea6430beca641a56335da25c07b41",
+    "extraction/affine-multiple/zip-lifetimes.log": "4ff0dab374e81a8a2b4370c8b11566fdf32aa93dba885a8ee1532d4108c08be4",
+    "extraction/affine-multiple/zip_lifetimes.py": "7a9e7967c71afb92290ada02a61947b6d828e1f13120e6090c41069e413e02de"
   },
   "reviewed_policy_revisions": [
     {
@@ -9831,7 +9861,223 @@
       "new_sha256": "637b9d692082a29848c8cfbc47b70e14a8abe2770e4fb94282efa9604f1ff329",
       "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
       "old_sha256": "aa27c30b9f8d5835f9750f085758afa38b11c7b76919bbd67354c48aff007109"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "b6902c65e948eac74ecf32bb8aa4921eaea1b145bea19629cfa75b89bb5b7b22",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence.",
+      "old_sha256": "b9c22e9d7ec9b5de35d4ce6972c6e6ed6fce88700efc87401e8b194fb262e8c7"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "7480a55379bb1d620bfd34adef127a8040aebddbec1ae4cd5ba4ceeb64d40e05",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence.",
+      "old_sha256": "5bc188ff6be8eae0d0507dc816bb1eb5a2a1e1a3e2ec21319d233d9942c03c07"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "33d0c85b86fac1bc8b20af805cbf93c94b061da42512841a8ba8c72d52653025",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence.",
+      "old_sha256": "4e0145a3b3b989f7f949e0134e916c700a0957cb5979ac94560280699be91c64"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "7907b01687ae4c32654f723e980320d2e0efc9541ecb9789ea5b67c5ed560def",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence.",
+      "old_sha256": "74f5870219053245f5cb054010d5737480f3f15821b7d44514268c15f6d78249"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "a5cc7a1d63f7ddcc25300a878449de91e6be6c850a7922ce939645240208ddaf",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence.",
+      "old_sha256": "151e33c60b933fc13c1a2f63f8081b7d3eaf2450ff054081f7574c1b9b1818a5"
+    },
+    {
+      "path": "bridge/Arithmetic/AffineMultipleGenerated.lean",
+      "new_sha256": "5584b6df5b9a3a135b9ad79b33bb27f68647e95ad32123f866a83b5110ba868d",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "07046859d15347d5a9b9282bf2d07e2f5af62b073df1cf0453ea4f691489b364",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence.",
+      "old_sha256": "0c92b00c10d3217fe5fd02f8183208f556c56abf6635d82d9a7e30f69f1c5e9a"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleAlgebra.lean",
+      "new_sha256": "fdf47a56388ce714a33b12abe7212aba51e8253c6a8ce21630fd86838c649c3b",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleBounds.lean",
+      "new_sha256": "90870ae0c18a6a577e0de4c689e42d33c0cdfb98b63bc1bea624de8f166c6dba",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleColumn.lean",
+      "new_sha256": "4a85c914a07ad1b7ceaf4f34dfb417f129c65a82ba9c5ec012052800f4de8d42",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleLoop.lean",
+      "new_sha256": "80983ea20c02007197c3288b72dbe7b3fecb93469bdffee6ea541e1f619b642f",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleNormalization.lean",
+      "new_sha256": "b922ec4f804bd0f5dafb1053d2f345f39e8566e2edef50aad8137099b0fcf371",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultiplePivot.lean",
+      "new_sha256": "297ff70350f396004274d39322fd917b8b79e906130ed77f8682d9ef0d977c5d",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineMultipleWrapper.lean",
+      "new_sha256": "ac298948a841d42ef479b3ad4dc009d29b6763008d4aa7149c332953c8c2050f",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSolveMapTriangular.lean",
+      "new_sha256": "9e553a794dec2c567033ec3ab266036ea6ccf67da6afc849f022805150efd283",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "1b4ba1566b1fa6408d94a97fed112614c599fc454d71b14398fa6d5bb8786641",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence.",
+      "old_sha256": "8cd828c85dd1e37a5c73cad4968fbcf68abefc695385d5a8054d2c3b8201779b"
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeRootRun.lean",
+      "new_sha256": "24c7986f3402f0c825b18579754237da76a99aafb59f680e88e3ad356cdb92b0",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "063290adc8c23f1cb31c62ef8d4954d43670809a06397b3e78451d637ce467e4",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence.",
+      "old_sha256": "c6b0afdfd576c2e740b2343b42f08d707c3d1d317b89d99468ed813f6c59b023"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "f65d70ef5dc2347dc2c13690492f572cc4e9471950d2351fc9fabd68a8c9e88d",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence.",
+      "old_sha256": "f4f3c6c7bc32727961ddc21aef63d0de5ace93cc9327b04eeeffbd3a2eec35bc"
+    },
+    {
+      "path": "extraction/affine-multiple/Arithmetic/Funs.lean",
+      "new_sha256": "c016c3f963dbe2708027b8e039a0c7590191864a6bcd17468e89e76fca38b7cc",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "6b79b38a224de70ad04c51859800b4fc780fbe31c9da077306463d61ffdbefa3",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/Arithmetic/Types.lean",
+      "new_sha256": "8a93715ef2336aafd7a6e2441962da32c9298cbfcc57058f0cbea7e3d1718471",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/README.md",
+      "new_sha256": "b4d7bb19394d40521a7328f754a07aaa5f08ee665132471636ec994fec60b825",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/affine-splitter.log",
+      "new_sha256": "a9e98a680b9e5af05271197972ccc337beff588a1cf29ea6c8a7d1197cc7c965",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/arithmetic.llbc",
+      "new_sha256": "5c052e41228ab5a9a3bfe259389d2e1d5333bf09a063608bde61b66a105145d6",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/charon.log",
+      "new_sha256": "c7d662906e4eb7ceacdea8eeb5d9e7c81b6455d3ed4589eebdb252b74befd738",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/checked-affine-multiple-zip-ends.patch",
+      "new_sha256": "ee10ff36dfc11a6fe78b6789b775e4afbb4b2a3171458d37a599a9eae111e9c9",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/checked.log",
+      "new_sha256": "975c32707f1f0c2eb1bd3e057d0293c5d391c4605014150c73ccc7cfe647c3ac",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/flag-off.log",
+      "new_sha256": "62ef50c90b36a562b0b230afefb3f5f92b3e36d17c1ef592587ed3280aa582ab",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/fresh-build.log",
+      "new_sha256": "f49157a385d047f23e5b981fa61e26f7704aae8a14db3b525b1401116f623133",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/guard-controls.py",
+      "new_sha256": "f6e593b71ebc3aa0a6c23c4c1e004deeefab937fd8f5e6b25d53b5b0d93b5871",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/project.py",
+      "new_sha256": "efc620d6f5d1670ce98ad575ab9d3abfa4dd0ca7874a583ebadeb0dedf99f30c",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/receipt.json",
+      "new_sha256": "afcfa1ff3587e3216732520bc24244f8807080812f77486b38db2cacc50b828d",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/replay.log",
+      "new_sha256": "5f0450d82a8c06a4ce6fec9b4de18a33da5bcc14380f4dda5f0086bc637e685f",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/stock.log",
+      "new_sha256": "19a16d4d49f509db8ea6684d3321ac5bbfa42c152d1f8f7915863f9ef0fa2f3b",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/unchecked.log",
+      "new_sha256": "df21670f82b4bf1fe5857006a97d1906d4d2b6f513115577f7122ae8434ee479",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/wrong-lifetime.log",
+      "new_sha256": "0f5083e5213c348e054b51dcf3b33fe4b41ea6430beca641a56335da25c07b41",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/zip-lifetimes.log",
+      "new_sha256": "4ff0dab374e81a8a2b4370c8b11566fdf32aa93dba885a8ee1532d4108c08be4",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "extraction/affine-multiple/zip_lifetimes.py",
+      "new_sha256": "7a9e7967c71afb92290ada02a61947b6d828e1f13120e6090c41069e413e02de",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "8bcb657f97144ca651a5a45b5d1d74c4c88375009990669f025541c6bc86043f",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence.",
+      "old_sha256": "637b9d692082a29848c8cfbc47b70e14a8abe2770e4fb94282efa9604f1ff329"
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "6091117abdc8a309b8ed788546806ad708619ea361599dd5435bab45d92c7cba",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence.",
+      "old_sha256": "50de9c90cb9d4e0a75e44761ac4c611086b1831c229c6a2bd2a556303535c8a3"
     }
   ],
-  "challenge_count": 290
+  "challenge_count": 293
 }

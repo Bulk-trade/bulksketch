@@ -108,3 +108,6 @@ import BulksketchBridge.AvxMultiplyLinearHeap
 import BulksketchBridge.AffineEnumerationCompleteness
 import BulksketchBridge.AffineSolveMapSoundness
 import BulksketchBridge.AvxHornerAllocatedKernel
+import BulksketchBridge.NativeRootRun
+import BulksketchBridge.AffineMultipleAlgebra
+import BulksketchBridge.AffineSolveMapTriangular
