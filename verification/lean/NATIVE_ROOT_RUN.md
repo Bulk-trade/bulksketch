@@ -333,6 +333,11 @@ search and both paid division charges form one exact node trace,
 preserve both child trace histories and fit the original node envelope
 with the table allowance.
 
+An admitted non-affine node now starts before the original table charge.
+Reducer preparation preserves the exact direction cache and factor,
+then the paid Trace/GCD search and division commit both child histories.
+The complete source chunk fits the original node envelope.
+
 Run the complete gate from `verification/lean`.
 
 ```sh

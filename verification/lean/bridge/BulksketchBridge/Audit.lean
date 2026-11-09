@@ -1,3 +1,4 @@
+import BulksketchBridge.NativeNonaffineReducerReady
 import BulksketchBridge.RowWorkBudgetV3Complete
 import BulksketchBridge.NativeTraceNode
 import BulksketchBridge.AvxEncodeConcrete
@@ -960,6 +961,10 @@ run_cmd do
       ``BulksketchBridge.RootWorkBudget.native_complete_v3_row_bound),
     (``BulksketchBridge.RootRun.ActualNativeTraceNode,
       ``BulksketchBridge.RootRun.native_trace_node),
+    (``BulksketchBridge.RootRun.ActualNativeNonaffineReducerReady,
+      ``BulksketchBridge.RootRun.native_nonaffine_reducer_ready),
+    (``BulksketchBridge.RootRun.ActualNativeNonaffineReducerNode,
+      ``BulksketchBridge.RootRun.native_nonaffine_reducer_node),
     (``BulksketchBridge.ExecutionDriver.ActualNativeVerificationStartFinish,
       ``BulksketchBridge.ExecutionDriver.native_verification_start_finish),
     (``BulksketchBridge.RowConfiguration.ActualRowBegin,

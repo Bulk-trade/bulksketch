@@ -12722,7 +12722,9 @@
         "BulksketchBridge.RootRun.native_trace_attempt_charges",
         "BulksketchBridge.RootRun.native_trace_gcd_division_ready",
         "BulksketchBridge.RootRun.native_trace_search",
-        "BulksketchBridge.RootRun.native_trace_node"
+        "BulksketchBridge.RootRun.native_trace_node",
+        "BulksketchBridge.RootRun.native_nonaffine_reducer_ready",
+        "BulksketchBridge.RootRun.native_nonaffine_reducer_node"
       ],
       "native_avx_full_encoder": [
         "BulksketchBridge.AvxEncodeEntry.concrete_native_avx_encoding",

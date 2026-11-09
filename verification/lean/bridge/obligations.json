@@ -2072,6 +2072,14 @@
     {
       "challenge": "BulksketchBridge.RootRun.ActualNativeTraceNode",
       "theorem": "BulksketchBridge.RootRun.native_trace_node"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeNonaffineReducerReady",
+      "theorem": "BulksketchBridge.RootRun.native_nonaffine_reducer_ready"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeNonaffineReducerNode",
+      "theorem": "BulksketchBridge.RootRun.native_nonaffine_reducer_node"
     }
   ],
   "refinements": [

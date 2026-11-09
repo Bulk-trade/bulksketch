@@ -72,8 +72,8 @@
     "audit/native-dense-reducer-checkpoint.json": "41da787e360070eaa0ee57a31380362d9a3a4642c085a1334ba9293acb37fceb",
     "NATIVE_DENSE_DIVISION.md": "7bc66fd0e205e372f4492b801782b7af8a5cf59bd300896e4b7633612da6b9bc",
     "audit/native-dense-division-checkpoint.json": "d7fb2cc4e1014accb335dc7532561026c4c6906194c6cffec11ecead264c01cc",
-    "NATIVE_ROOT_RUN.md": "663f8a823bc490c93b9d4fb0434353b1c56bf98ea5eaf86c14a227b3eb3a2e97",
-    "audit/native-root-run-checkpoint.json": "e8ca97d8df19582708bd622f584ec593a7f16270b7338469f9fd3c32aa1f4e78"
+    "NATIVE_ROOT_RUN.md": "ff6e790c5678e649cff916753c01b17bf705518fb9ec95d336315ebbf9fa73cd",
+    "audit/native-root-run-checkpoint.json": "3bc7a075d56a641943cad770e1d7b3d5b8b521fd15f4ebcdd7e3d87ca4220dd1"
   },
   "reviewed_policy_revisions": [
     {
@@ -1443,6 +1443,18 @@
       "new_sha256": "771c6a0cf84230b2d59e42cbda72ded564d920366be8350a796dbd63d5d84555",
       "reason": "Freeze the admitted native V3 work chain and complete paid non-affine split node.",
       "old_sha256": "ac4f90450d7ace64611c95c73a213900c3d705f7877bc2424910a6a1a8eff45c"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "ff6e790c5678e649cff916753c01b17bf705518fb9ec95d336315ebbf9fa73cd",
+      "reason": "Freeze exact non-affine reducer readiness and paid node starting at reducer preparation.",
+      "old_sha256": "663f8a823bc490c93b9d4fb0434353b1c56bf98ea5eaf86c14a227b3eb3a2e97"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "3bc7a075d56a641943cad770e1d7b3d5b8b521fd15f4ebcdd7e3d87ca4220dd1",
+      "reason": "Freeze exact non-affine reducer readiness and paid node starting at reducer preparation.",
+      "old_sha256": "e8ca97d8df19582708bd622f584ec593a7f16270b7338469f9fd3c32aa1f4e78"
     }
   ]
 }

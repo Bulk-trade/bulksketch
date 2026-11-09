@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "8482754e63cf3b23a1fb1c98997b1e3537d773f21a76122cd05b0da30a9d2ce4",
+    "bridge/BulksketchBridge/Audit.lean": "1531ee10050acc7232bc6950893b65d0c35bd708d2433a744f8bfc5aa1c58bbe",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,7 +14,7 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "2b4c43715bb677d439fc8eb99564e093d041bea1fdb8ec5567ba470275ec8485",
-    "audit/frozen-inputs.json": "4615520f0aececcf793ac744698a162a40e73f678040370126390dbc69109706",
+    "audit/frozen-inputs.json": "5ca3895c6fba043a982773fdec7ea07ba15ac88a3ff8f81418bffdb1ebcbce03",
     "bridge/BulksketchBridge.lean": "5dbd9b1fd933cd65fc227225c70ec885fecc1b5eaa061ec44ae76ecd4d5eb840",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
@@ -31,7 +31,7 @@
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
     "bridge/source-linkage.json": "9fbb6a3d63b634158d8e1e19a4706438a46a115617e6af40bb74ea0fcf9d2883",
-    "bridge/obligations.json": "7289cc7bda6aa507d9713d697a03c59ae6f815e42dfc259e4c8e7e72f226188f",
+    "bridge/obligations.json": "77e4e5e6555ce60c6ada59e8bc2121f9d99ae0f460829f5dbffb2220f894cf89",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -290,7 +290,7 @@
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
     "README.md": "db8028e6851fa026906c58b19cb2f1517b8456b84f6612254783cb3d9baa7777",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "0091b13cf216a534dff715471187a9b3444ee2627ef5a0990dbcb55b3c977256",
+    "audit/coverage.json": "525bff1ce4c4a8ec471f577c84c61e26640b09d14f319b70ad0784f5037ee3a5",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "663f8a823bc490c93b9d4fb0434353b1c56bf98ea5eaf86c14a227b3eb3a2e97",
-    "audit/native-root-run-checkpoint.json": "e8ca97d8df19582708bd622f584ec593a7f16270b7338469f9fd3c32aa1f4e78",
+    "NATIVE_ROOT_RUN.md": "ff6e790c5678e649cff916753c01b17bf705518fb9ec95d336315ebbf9fa73cd",
+    "audit/native-root-run-checkpoint.json": "3bc7a075d56a641943cad770e1d7b3d5b8b521fd15f4ebcdd7e3d87ca4220dd1",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -2265,7 +2265,8 @@
     "bridge/BulksketchBridge/RowWorkBudgetV3VerifierQuotes.lean": "c41aa6ad1a92966a05f2339b4093637cee71e4476e9e406c117abdfb12a01f4d",
     "extraction/max-affine-degree/project.py": "323089b7d4006ea69b60bcfdb8d975b54f575830a5ab27238fc3a266217827a1",
     "extraction/row-work-budget-v3/README.md": "ea312a4872a3cd5cc2116f0ec29e9e2f7ec32924ce765caef8ab8a4640b27c86",
-    "extraction/row-work-budget-v3/project.py": "2e91374898e343b4d35032fdc0807e14e8152851b91ad80f846d924701c0738f"
+    "extraction/row-work-budget-v3/project.py": "2e91374898e343b4d35032fdc0807e14e8152851b91ad80f846d924701c0738f",
+    "bridge/BulksketchBridge/NativeNonaffineReducerReady.lean": "2a1985fe4780953d87f747f1fe7a82b675c4e8879674e6f9eed369c80704c785"
   },
   "reviewed_policy_revisions": [
     {
@@ -16947,7 +16948,48 @@
       "new_sha256": "771c6a0cf84230b2d59e42cbda72ded564d920366be8350a796dbd63d5d84555",
       "reason": "Freeze the admitted native V3 work chain and complete paid non-affine split node.",
       "old_sha256": "ac4f90450d7ace64611c95c73a213900c3d705f7877bc2424910a6a1a8eff45c"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "ff6e790c5678e649cff916753c01b17bf705518fb9ec95d336315ebbf9fa73cd",
+      "reason": "Freeze exact non-affine reducer readiness and paid node starting at reducer preparation.",
+      "old_sha256": "663f8a823bc490c93b9d4fb0434353b1c56bf98ea5eaf86c14a227b3eb3a2e97"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "525bff1ce4c4a8ec471f577c84c61e26640b09d14f319b70ad0784f5037ee3a5",
+      "reason": "Freeze exact non-affine reducer readiness and paid node starting at reducer preparation.",
+      "old_sha256": "0091b13cf216a534dff715471187a9b3444ee2627ef5a0990dbcb55b3c977256"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "5ca3895c6fba043a982773fdec7ea07ba15ac88a3ff8f81418bffdb1ebcbce03",
+      "reason": "Freeze exact non-affine reducer readiness and paid node starting at reducer preparation.",
+      "old_sha256": "4615520f0aececcf793ac744698a162a40e73f678040370126390dbc69109706"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "3bc7a075d56a641943cad770e1d7b3d5b8b521fd15f4ebcdd7e3d87ca4220dd1",
+      "reason": "Freeze exact non-affine reducer readiness and paid node starting at reducer preparation.",
+      "old_sha256": "e8ca97d8df19582708bd622f584ec593a7f16270b7338469f9fd3c32aa1f4e78"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "1531ee10050acc7232bc6950893b65d0c35bd708d2433a744f8bfc5aa1c58bbe",
+      "reason": "Freeze exact non-affine reducer readiness and paid node starting at reducer preparation.",
+      "old_sha256": "8482754e63cf3b23a1fb1c98997b1e3537d773f21a76122cd05b0da30a9d2ce4"
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeNonaffineReducerReady.lean",
+      "new_sha256": "2a1985fe4780953d87f747f1fe7a82b675c4e8879674e6f9eed369c80704c785",
+      "reason": "Freeze exact non-affine reducer readiness and paid node starting at reducer preparation."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "77e4e5e6555ce60c6ada59e8bc2121f9d99ae0f460829f5dbffb2220f894cf89",
+      "reason": "Freeze exact non-affine reducer readiness and paid node starting at reducer preparation.",
+      "old_sha256": "7289cc7bda6aa507d9713d697a03c59ae6f815e42dfc259e4c8e7e72f226188f"
     }
   ],
-  "challenge_count": 518
+  "challenge_count": 520
 }
