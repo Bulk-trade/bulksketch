@@ -1626,6 +1626,30 @@
       "theorem": "BulksketchBridge.ExecutionDriver.native_verification_tail_finish"
     },
     {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeFirstTraceEntry",
+      "theorem": "BulksketchBridge.RootRun.native_first_trace_entry"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeRebuiltVerificationAccepts",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_rebuilt_verification_accepts"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeFullVerificationAccepts",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_full_verification_accepts"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativePortablePaidVerification",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_portable_paid_verification"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativePclmulPaidVerification",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_pclmul_paid_verification"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeAvxPaidVerification",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_avx_paid_verification"
+    },
+    {
       "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeVerificationStartFinish",
       "theorem": "BulksketchBridge.ExecutionDriver.native_verification_start_finish"
     },

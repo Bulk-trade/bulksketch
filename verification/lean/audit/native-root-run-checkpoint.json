@@ -1,6 +1,6 @@
 {
   "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
-  "previous_proof_commit": "45f5aaa67eb8c66be6b7446f3b08a19c77402097",
+  "previous_proof_commit": "d87e108c7e18e4cd277c71012ca13f2bcb3e3066",
   "retained_native_executable_obligations": 344,
   "generated_body_refinements_under_recorded_TCB": 208,
   "checked_stateful_llbc_refinements": 5,

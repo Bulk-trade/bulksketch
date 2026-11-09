@@ -1,3 +1,5 @@
+import BulksketchBridge.NativeFirstTraceEntry
+import BulksketchBridge.NativeVerificationBackendAcceptance
 import BulksketchBridge
 import BulksketchBridge.Challenges
 import BulksketchBridge.WorkMeterUsedChallenges
@@ -849,6 +851,18 @@ run_cmd do
       ``BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_avx18_all_callbacks),
     (``BulksketchBridge.ExecutionDriver.ActualNativeVerificationTailFinish,
       ``BulksketchBridge.ExecutionDriver.native_verification_tail_finish),
+    (``BulksketchBridge.RootRun.ActualNativeFirstTraceEntry,
+      ``BulksketchBridge.RootRun.native_first_trace_entry),
+    (``BulksketchBridge.ExecutionDriver.ActualNativeRebuiltVerificationAccepts,
+      ``BulksketchBridge.ExecutionDriver.native_rebuilt_verification_accepts),
+    (``BulksketchBridge.ExecutionDriver.ActualNativeFullVerificationAccepts,
+      ``BulksketchBridge.ExecutionDriver.native_full_verification_accepts),
+    (``BulksketchBridge.ExecutionDriver.ActualNativePortablePaidVerification,
+      ``BulksketchBridge.ExecutionDriver.native_portable_paid_verification),
+    (``BulksketchBridge.ExecutionDriver.ActualNativePclmulPaidVerification,
+      ``BulksketchBridge.ExecutionDriver.native_pclmul_paid_verification),
+    (``BulksketchBridge.ExecutionDriver.ActualNativeAvxPaidVerification,
+      ``BulksketchBridge.ExecutionDriver.native_avx_paid_verification),
     (``BulksketchBridge.ExecutionDriver.ActualNativeVerificationStartFinish,
       ``BulksketchBridge.ExecutionDriver.native_verification_start_finish),
     (``BulksketchBridge.RowConfiguration.ActualRowBegin,

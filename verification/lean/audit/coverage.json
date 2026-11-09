@@ -12558,7 +12558,15 @@
       "native_portable_rebuilt_all_degrees": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_portable_all_degrees",
       "native_pclmul_rebuilt_all_degrees": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_pclmul_all_degrees",
       "concrete_portable_rebuilt_all_degrees": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_concrete_portable_all_degrees",
-      "concrete_pclmul_rebuilt_all_degrees": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_concrete_pclmul_all_degrees"
+      "concrete_pclmul_rebuilt_all_degrees": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_concrete_pclmul_all_degrees",
+      "native_paid_verification_acceptance": {
+        "full": "BulksketchBridge.ExecutionDriver.native_full_verification_accepts",
+        "rebuilt": "BulksketchBridge.ExecutionDriver.native_rebuilt_verification_accepts",
+        "portable": "BulksketchBridge.ExecutionDriver.native_portable_paid_verification",
+        "pclmul": "BulksketchBridge.ExecutionDriver.native_pclmul_paid_verification",
+        "avx": "BulksketchBridge.ExecutionDriver.native_avx_paid_verification"
+      },
+      "native_first_trace_entry": "BulksketchBridge.RootRun.native_first_trace_entry"
     },
     "reconciliation_algebra_evidence": {
       "sparse_support_uniqueness": "BulksketchBridge.Reconciliation.gf64_sparse_support_unique",

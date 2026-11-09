@@ -277,6 +277,15 @@ preserves their exact returned state, meter and callback composition.
 The checked original root budget bounds every proper split tree under
 the admitted u16 budget, using the six exact node prices.
 
+The first non-affine reducer transition preserves the original empty
+direction cache, prepares the exact table and establishes Trace agreement
+at direction zero. Both original paid Verification branches transition
+to Canonicalization exactly when every input odd word agrees with the
+selected root support. The full encoder also checks the original
+short-root guards before touching its scratch. The original Portable and
+PCLMUL dictionaries supply the complete verification laws. The AVX
+version retains masked load and store premises and the full encoder law.
+
 Run the complete gate from `verification/lean`.
 
 ```sh

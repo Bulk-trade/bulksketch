@@ -72,8 +72,8 @@
     "audit/native-dense-reducer-checkpoint.json": "41da787e360070eaa0ee57a31380362d9a3a4642c085a1334ba9293acb37fceb",
     "NATIVE_DENSE_DIVISION.md": "7bc66fd0e205e372f4492b801782b7af8a5cf59bd300896e4b7633612da6b9bc",
     "audit/native-dense-division-checkpoint.json": "d7fb2cc4e1014accb335dc7532561026c4c6906194c6cffec11ecead264c01cc",
-    "NATIVE_ROOT_RUN.md": "b535491215e6200e4b3244424e5f64c06052059d37e8ce78abbba189144201ae",
-    "audit/native-root-run-checkpoint.json": "f5d59fb1b2cfb3743152fe056db338acbd1fe7b61f2cf74a73dcaf4b14529aa6"
+    "NATIVE_ROOT_RUN.md": "c2f255055eb009be3209514bbc95e3a479c5d338e05a24bfcae71db8010e9f2e",
+    "audit/native-root-run-checkpoint.json": "7a0878a183f86f100fe638484a5f228dccfd6fa876d77533bfa9f2c774a8b0c3"
   },
   "reviewed_policy_revisions": [
     {
@@ -1335,6 +1335,18 @@
       "new_sha256": "2317cf3bb8719e7b9dcdac3dfe6a40ded4b5c6f6a583d683a435b4347933f9e7",
       "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
       "old_sha256": "b153c6fd45bd0bac8772bf51e115003a38f1979f4eb698fdcffd3cdf2e6a8aaa"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "c2f255055eb009be3209514bbc95e3a479c5d338e05a24bfcae71db8010e9f2e",
+      "reason": "Freeze exact paid verification acceptance on native backends and first non-affine Trace entry.",
+      "old_sha256": "b535491215e6200e4b3244424e5f64c06052059d37e8ce78abbba189144201ae"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "7a0878a183f86f100fe638484a5f228dccfd6fa876d77533bfa9f2c774a8b0c3",
+      "reason": "Freeze exact paid verification acceptance on native backends and first non-affine Trace entry.",
+      "old_sha256": "f5d59fb1b2cfb3743152fe056db338acbd1fe7b61f2cf74a73dcaf4b14529aa6"
     }
   ]
 }

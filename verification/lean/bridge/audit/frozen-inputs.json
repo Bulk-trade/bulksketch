@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "3d938099c6d3d5ad7978f14498b660f519e23cbe63cbbe4cbe1a07303927f955",
+    "bridge/BulksketchBridge/Audit.lean": "90abf4698adcca3c29dd48f6b8aff093b705b5bf50fd1364d89f6aca27ed8259",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,7 +14,7 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "15acf4643715fc065fe5cf459fe27844a1ab21bd323e7a14486c91947fb6a989",
-    "audit/frozen-inputs.json": "8b31294cd93e63f4fedb1f7f544548f00d8dce61d803898f50fb10a5b135293d",
+    "audit/frozen-inputs.json": "b80d23bf14b1018cde6c7551ba016999c688a27a3b84d2d303aa7222e4d5fc1a",
     "bridge/BulksketchBridge.lean": "5dbd9b1fd933cd65fc227225c70ec885fecc1b5eaa061ec44ae76ecd4d5eb840",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
@@ -31,7 +31,7 @@
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
     "bridge/source-linkage.json": "c0cf140225a0e76a97df5047f3101be19365974fe590f727dd9123f33527a517",
-    "bridge/obligations.json": "9b6a9ba7d49aab7e622fee2d4680343a1fe0a3c0d5e746f9a6504db611b9f0a0",
+    "bridge/obligations.json": "d6c2ab3ca7729d5f517d05a3194f28919d1e15a2eab0f3c50dabf86b615fcd75",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -290,7 +290,7 @@
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
     "README.md": "2ba70c946295aa5328d8640f26e66044a7d4ec75ffc2f1352998a87262fdd931",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "f5d207f7f40324ca2884e2b490d6129f1c64050d704ecc3824a16dff2b061fbf",
+    "audit/coverage.json": "e0162371e26bd3aaf1cb8a565e7c367c8b71e685211ee4dc6818547d1a476542",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "b535491215e6200e4b3244424e5f64c06052059d37e8ce78abbba189144201ae",
-    "audit/native-root-run-checkpoint.json": "f5d59fb1b2cfb3743152fe056db338acbd1fe7b61f2cf74a73dcaf4b14529aa6",
+    "NATIVE_ROOT_RUN.md": "c2f255055eb009be3209514bbc95e3a479c5d338e05a24bfcae71db8010e9f2e",
+    "audit/native-root-run-checkpoint.json": "7a0878a183f86f100fe638484a5f228dccfd6fa876d77533bfa9f2c774a8b0c3",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -2085,7 +2085,11 @@
     "extraction/row-work-budget-v1/arithmetic.llbc": "b10f2f54d4a554f5eef15f2dbc67a862873f2bde5dbc2039be172afcc6a5fb47",
     "extraction/row-work-budget-v1/charon.log": "c2ec0d1a4f72f257467779dfb6b6000d187d0d27db5e90c15afdbfc5b7b2793a",
     "extraction/row-work-budget-v1/project.py": "494c0e184adfaeaceb23e2b2d5cc34446a4a59f527a7a724f441ecd74283e3ce",
-    "extraction/row-work-budget-v1/receipt.json": "512075c890c807e163873c2569b1bd302a209e92e350e513c154483e7ca67bb5"
+    "extraction/row-work-budget-v1/receipt.json": "512075c890c807e163873c2569b1bd302a209e92e350e513c154483e7ca67bb5",
+    "bridge/BulksketchBridge/NativeFirstTraceEntry.lean": "6068e9ec814ca85eb1087e99f8256b22861fd5a634aeac101948dec79406816f",
+    "bridge/BulksketchBridge/NativeFullVerificationAcceptance.lean": "b701919bee9b6228a8f0b491db92bf3f44ff46d738c7fb2d790d3081dafcbd56",
+    "bridge/BulksketchBridge/NativeRebuiltVerificationAcceptance.lean": "09a7ef8b7a66259ed397f47ea37f8c059ced60fba3b638b089a37763eab360ba",
+    "bridge/BulksketchBridge/NativeVerificationBackendAcceptance.lean": "081e7f72c5c1d049c15c2c8b68f8a68aff9763b50549443481605669a44bc127"
   },
   "reviewed_policy_revisions": [
     {
@@ -15585,7 +15589,63 @@
       "new_sha256": "15acf4643715fc065fe5cf459fe27844a1ab21bd323e7a14486c91947fb6a989",
       "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
       "old_sha256": "2554c0454a37a6324bd410719f4a82a3f95c9ff315836964f4628ae5a5616a90"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "c2f255055eb009be3209514bbc95e3a479c5d338e05a24bfcae71db8010e9f2e",
+      "reason": "Freeze exact paid verification acceptance on native backends and first non-affine Trace entry.",
+      "old_sha256": "b535491215e6200e4b3244424e5f64c06052059d37e8ce78abbba189144201ae"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "e0162371e26bd3aaf1cb8a565e7c367c8b71e685211ee4dc6818547d1a476542",
+      "reason": "Freeze exact paid verification acceptance on native backends and first non-affine Trace entry.",
+      "old_sha256": "f5d207f7f40324ca2884e2b490d6129f1c64050d704ecc3824a16dff2b061fbf"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "b80d23bf14b1018cde6c7551ba016999c688a27a3b84d2d303aa7222e4d5fc1a",
+      "reason": "Freeze exact paid verification acceptance on native backends and first non-affine Trace entry.",
+      "old_sha256": "8b31294cd93e63f4fedb1f7f544548f00d8dce61d803898f50fb10a5b135293d"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "7a0878a183f86f100fe638484a5f228dccfd6fa876d77533bfa9f2c774a8b0c3",
+      "reason": "Freeze exact paid verification acceptance on native backends and first non-affine Trace entry.",
+      "old_sha256": "f5d59fb1b2cfb3743152fe056db338acbd1fe7b61f2cf74a73dcaf4b14529aa6"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "90abf4698adcca3c29dd48f6b8aff093b705b5bf50fd1364d89f6aca27ed8259",
+      "reason": "Freeze exact paid verification acceptance on native backends and first non-affine Trace entry.",
+      "old_sha256": "3d938099c6d3d5ad7978f14498b660f519e23cbe63cbbe4cbe1a07303927f955"
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeFirstTraceEntry.lean",
+      "new_sha256": "6068e9ec814ca85eb1087e99f8256b22861fd5a634aeac101948dec79406816f",
+      "reason": "Freeze exact paid verification acceptance on native backends and first non-affine Trace entry."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeFullVerificationAcceptance.lean",
+      "new_sha256": "b701919bee9b6228a8f0b491db92bf3f44ff46d738c7fb2d790d3081dafcbd56",
+      "reason": "Freeze exact paid verification acceptance on native backends and first non-affine Trace entry."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeRebuiltVerificationAcceptance.lean",
+      "new_sha256": "09a7ef8b7a66259ed397f47ea37f8c059ced60fba3b638b089a37763eab360ba",
+      "reason": "Freeze exact paid verification acceptance on native backends and first non-affine Trace entry."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeVerificationBackendAcceptance.lean",
+      "new_sha256": "081e7f72c5c1d049c15c2c8b68f8a68aff9763b50549443481605669a44bc127",
+      "reason": "Freeze exact paid verification acceptance on native backends and first non-affine Trace entry."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "d6c2ab3ca7729d5f517d05a3194f28919d1e15a2eab0f3c50dabf86b615fcd75",
+      "reason": "Freeze exact paid verification acceptance on native backends and first non-affine Trace entry.",
+      "old_sha256": "9b6a9ba7d49aab7e622fee2d4680343a1fe0a3c0d5e746f9a6504db611b9f0a0"
     }
   ],
-  "challenge_count": 472
+  "challenge_count": 478
 }
