@@ -257,7 +257,12 @@ scalar AVX and PCLMUL delegate bodies now bind the scalar square
 to that composition. An admitted original Verification entry
 constructs the finite verification and canonicalization finish trace
 using the exact native returned state, root slice and meter.
-Other backend bindings remain open.
+The same original tile dispatch covers every admitted rebuilt seed.
+The seed width is at most the root count, so the original singleton and
+sparse special cases are unreachable during rebuilding. Every admitted
+GF64 degree has exact AVX and Portable rebuilt-verifier acceptance under
+the recorded backend and memory contracts. Original row configuration
+and first affine preparation supply exact driver and traversal entry.
 
 Run the complete gate from `verification/lean`.
 

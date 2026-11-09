@@ -440,6 +440,13 @@ PROJECTIONS = [
      ["extraction/avx-square/receipt.json", "extraction/avx-insert/horizontal/arithmetic.llbc"] +
      [f"extraction/avx-insert/horizontal/Arithmetic/{name}"
       for name in ("Funs.lean", "FunsExternal_Template.lean", "Types.lean", "TypesExternal_Template.lean")]),
+    ("row-configuration", "extraction/row-configuration/project.py",
+     "extraction/row-configuration/receipt.json", "extraction/row-configuration/Arithmetic/Funs.lean",
+     "bridge/Arithmetic/RowConfigurationGenerated.lean",
+     "hits := 0#usize", "hits := 1#usize", "compiled row configuration projection differs", None, None,
+     ["extraction/avx-insert/receipt.json", "bridge/Arithmetic/ExecutionDriverGenerated.lean",
+      "bridge/Arithmetic/ReconstructionTypes.lean", "bridge/Arithmetic/RootSetupGenerated.lean",
+      "bridge/Arithmetic/DegreeProbeGenerated.lean"]),
     ("candidate-normalize-rows", "extraction/candidate-normalize-rows/project.py",
      "extraction/candidate-normalize-rows/receipt.json", "extraction/candidate-normalize-rows/Arithmetic/Funs.lean",
      "bridge/Arithmetic/RowLocalGenerated.lean",
@@ -805,6 +812,9 @@ def main():
         if label == "completed-result":
             cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false',
                           '"native_llbc_edited": true', "invalid completed_result translator receipt"))
+        if label == "row-configuration":
+            cases.append(("missing-checks", receipt_path, '"-checks"', '"-no-checks"',
+                          "row configuration checked replay differs"))
         if label == "candidate-normalize-rows":
             cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false',
                           '"native_llbc_edited": true', "candidate row-local receipt differs"))
@@ -860,7 +870,7 @@ def main():
                              "affine-enumerate", "affine-selector", "avx-multiply-linear", "affine-solve-map",
                              "avx-horner", "affine-multiple", "avx-tile", "avx-recurrence", "avx-scalar-delegates", "avx-recurrence-entry", "avx-linear-entry", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
                              "avx-insert-insert18", "avx-insert-horizontal", "avx-insert-dispatch", "native-driver", "candidate-row", "completed-result",
-                             "native-finish", "canonicalize", "candidate-normalize-rows", "candidate-normalize-compact", "candidate-normalize-merge"}:
+                             "native-finish", "canonicalize", "row-configuration", "candidate-normalize-rows", "candidate-normalize-compact", "candidate-normalize-merge"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

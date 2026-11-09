@@ -5407,7 +5407,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RowConfiguration.start_degrees_refines",
+        "scope": "Exact original degree-three start, no-probe and disabled paths under the native bound checks.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:115:method:bulksketch::decode::stages::Execution < F , K >::verification_count",
@@ -5427,7 +5434,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RowConfiguration.verification_count_refines",
+        "scope": "Reads the exact verified root count field.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:119:method:bulksketch::decode::stages::Execution < F , K >::reject_upper",
@@ -5447,7 +5461,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RowConfiguration.reject_upper_refines",
+        "scope": "Exact GuardFour fallback, Reconstruction restart with probe cleared, or InvalidLocator latch, with root count reset on probe rejection.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:141:method:bulksketch::decode::stages::Execution < F , K >::completed_result",
@@ -5494,7 +5515,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RowConfiguration.set_seed_refines",
+        "scope": "Writes only the exact splitter seed field.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:163:method:bulksketch::decode::stages::Execution < F , K >::charge",
@@ -5889,7 +5917,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RowConfiguration.begin_refines",
+        "scope": "Exact Reconstruction state with zero counters, no probe and the original default roots state.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:90:method:bulksketch::decode::stages::Execution < F , K >::restart",
@@ -5909,7 +5944,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RowConfiguration.restart_refines",
+        "scope": "Exact fresh row state with the requested budget and seed, independent of the prior execution.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:97:method:bulksketch::decode::stages::Execution < F , K >::enable_v3",
@@ -5929,7 +5971,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RowConfiguration.enable_v3_refines",
+        "scope": "Exact v3 and GF64 closed-form flags with original field-width result.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/verify.rs:14:function:bulksketch::decode::verify::product_counts",
@@ -12291,8 +12340,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. Shared and row-local candidate normalization, the admitted ranked root steps and native drain, and exact original AVX tile, locator update and recurrence are checked. The degree-18 native AVX seed, update and continuation compose in the original rebuilt verifier through its exact scalar delegates, with explicit backend dictionary and masked-memory contracts. The admitted Verification entry constructs the exact native tail finish trace. Complete traversal induction, work-budget termination, other verifier degrees and backends, public API and wire composition, Rust provenance and compiler-to-ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 175,
+    "note": "All 344 native executable obligations retained. Exact original row initialization, reset and degree-probe configuration are source linked. The admitted affine preparation stage preserves the original locator invariant, layouts, buffers and strict rank, with exact first entry and charge exit. AVX and Portable rebuilt verifiers compose their original seed and arithmetic callbacks for all admitted GF64 degrees. Global traversal induction, other backend and wire/API bindings, Rust provenance and compiler-to-ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 182,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12322,7 +12371,9 @@
       "avx_degree18_seed_under_tile_word_law": "BulksketchBridge.AvxInsertDispatch.native_avx_degree18_seed",
       "native_avx_tile_rows": "BulksketchBridge.AvxTileOddSum.native_tile_odd_sums",
       "native_avx_rebuilt_degree18": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_avx18",
-      "native_avx_rebuilt_degree18_all_callbacks": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_avx18_all_callbacks"
+      "native_avx_rebuilt_degree18_all_callbacks": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_avx18_all_callbacks",
+      "native_avx_rebuilt_all_degrees": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_avx_all_degrees",
+      "native_portable_rebuilt_all_degrees": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_portable_all_degrees"
     },
     "reconciliation_algebra_evidence": {
       "sparse_support_uniqueness": "BulksketchBridge.Reconciliation.gf64_sparse_support_unique",
@@ -12482,7 +12533,10 @@
         "BulksketchBridge.RootRun.native_leaf_pop_metadata",
         "BulksketchBridge.RootRun.native_affine_pop_metadata",
         "BulksketchBridge.ExecutionDriver.native_verification_driver",
-        "BulksketchBridge.ExecutionDriver.native_verification_start_finish"
+        "BulksketchBridge.ExecutionDriver.native_verification_start_finish",
+        "BulksketchBridge.RootRun.native_first_affine_preparation_entry",
+        "BulksketchBridge.RootRun.native_affine_preparation_invariant",
+        "BulksketchBridge.RootRun.native_affine_preparation_charge_exit"
       ]
     },
     "masked_memory_evidence": {

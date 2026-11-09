@@ -696,6 +696,11 @@
       "path": "extraction/avx-scalar-delegates/arithmetic.llbc",
       "sha256": "7954ea34e8bd6566d09bf21f1d4330ebdeea04bba42e4b2dbc1b014932753761",
       "has_errors": false
+    },
+    {
+      "path": "extraction/row-configuration/arithmetic.llbc",
+      "sha256": "429fd59afae4855373469ff5456c82d4cd8edc1778855d08d9521bf482ef26b1",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1653,6 +1658,41 @@
       "native_item_id": "src/backend/x86_pclmul.rs:73:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::reduce",
       "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.reduce",
       "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:56:method:bulksketch::decode::stages::<BinaryDecoder as RowDecoder < F , K >>::begin",
+      "generated_declaration": "bulksketch.decode.stages.BinaryDecoder.Insts.BulksketchDecodeRowRowDecoderFKExecution.begin",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:90:method:bulksketch::decode::stages::Execution < F , K >::restart",
+      "generated_declaration": "bulksketch.decode.stages.Execution.restart",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:97:method:bulksketch::decode::stages::Execution < F , K >::enable_v3",
+      "generated_declaration": "bulksketch.decode.stages.Execution.enable_v3",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:105:method:bulksketch::decode::stages::Execution < F , K >::start_degrees",
+      "generated_declaration": "bulksketch.decode.stages.Execution.start_degrees",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:115:method:bulksketch::decode::stages::Execution < F , K >::verification_count",
+      "generated_declaration": "bulksketch.decode.stages.Execution.verification_count",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:119:method:bulksketch::decode::stages::Execution < F , K >::reject_upper",
+      "generated_declaration": "bulksketch.decode.stages.Execution.reject_upper",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:159:method:bulksketch::decode::stages::Execution < F , K >::set_splitter_seed",
+      "generated_declaration": "bulksketch.decode.stages.Execution.set_splitter_seed",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2593,6 +2633,15 @@
       "checker": "extraction/avx-scalar-delegates/project.py",
       "declaration_count": 10,
       "scope": "Ten original stock checked AVX and PCLMUL scalar delegate bodies."
+    },
+    {
+      "generated": "extraction/row-configuration/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RowConfigurationGenerated.lean",
+      "sha256": "f485da026f5b19a4473a6f5015eaeb8dfeed4ddd9aea3a5230a2233e24d5c4fa",
+      "raw_sha256": "803890b2f7a3b6c87bdd64e75ddf18d340c926bdee9f43760bc850e3896aafd9",
+      "checker": "extraction/row-configuration/project.py",
+      "declaration_count": 8,
+      "scope": "Original row begin, reset, configuration and exact degree-probe fallback."
     }
   ],
   "reviewed_translator_variants": [

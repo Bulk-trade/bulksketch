@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "897f9d384762990ee8210e1c1a31c165ed2d5f7bb642cea027fda804dd10536e",
+    "bridge/BulksketchBridge/Audit.lean": "dfff4929fc4ffa78fdc570f5d53aeecdfda43f4d06543d7efa5b962190c6aea9",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "2554c0454a37a6324bd410719f4a82a3f95c9ff315836964f4628ae5a5616a90",
-    "audit/frozen-inputs.json": "2e8401c03e9b02077606c2e8f10eebcdfdb38d89d644438f1ea46d032adb57ec",
-    "bridge/BulksketchBridge.lean": "ef40a955daf0af706a64ca5a77c55ded74de5929b3f759cb2819ed2921e0a760",
+    "audit/frozen-inputs.json": "ed463b10f57eb8316c2d322a3efd6df966e11be7f38b12181d5ad2f57a5fa28c",
+    "bridge/BulksketchBridge.lean": "5ebf30b825574ed4fe169cbc68927128f09aa8f30b3c1a19aed033b03c22794f",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "a37d72a07591c9ef59512f251369c7f815989b1e5c143d3d116e8d4fb19f72d5",
-    "bridge/obligations.json": "e7b632fbfa384a7d9557d407868bd344299110a15e841f85340a26cb913a519c",
+    "bridge/source-linkage.json": "4452e09247a14714d824911f0c2bd0a706b6321cd38a75d21bffd5769ceba62e",
+    "bridge/obligations.json": "41edb70d8dbf4e3299a5092a62092df631b7df8cc28ed66c7258eb8c2ccdfca2",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "c4bf95707feeebc5956f32f84c243f5d7d48e5a409785b73130782a091383f19",
+    "scripts/check_projection_fixtures.py": "8277bced24240ddbad21c78c593cb61ce946a39d2b07c61bc669f7b24ed36cea",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "a52262eb208ba1e80bc6d9dd54ed658d354331fa2268180db5edc83f3dfb7cbe",
+    "README.md": "dd817b118e0db9bde7e378cd3d48666c5492ec4db16c37862ad04b6680c907b4",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "8a6ed4db7b782f1c0dff1c1885d79cdef7989b2797654eebc5042743f97b6e08",
+    "audit/coverage.json": "d783a4891c71e6700525f02eb659c4447b5129d418ea2b2750e7c9568e30deef",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "0bb5c83d62c5cffcdd7a88b60c0486373a471ad1e1367001de25b1089822f3d8",
-    "audit/native-root-run-checkpoint.json": "03de75dc525495c4223be11c007d9870436f9ff283b9ee456ad7708d97c15a04",
+    "NATIVE_ROOT_RUN.md": "bbf1a6708e070274ace46ba9e8d31807ea516eee5d7fb7c4ced0ca89781feb2f",
+    "audit/native-root-run-checkpoint.json": "acad5e144dfd7276cabe8ca4b7e92af38e6158465c9b7aa476d9e2b778eba3b7",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1916,7 +1916,23 @@
     "extraction/avx-scalar-delegates/charon.log": "f024464fd2a1c89e142a778b7ea382db112758ec7e77a97bee34746c127d09a9",
     "extraction/avx-scalar-delegates/project.py": "0014e2bf7612cf686fab0a73d1c1d3717b3925732e6ef8710605801f877b7b3a",
     "extraction/avx-scalar-delegates/receipt.json": "ec722c6240bc0e7a2806cb657571b52a7a5a59420af1cd04de503bc67a55d35c",
-    "extraction/avx-scalar-delegates/replay.log": "fa4b2db1c1591803ec7b7c2fad79daef5c53769f2a1ca1d48480f2aba297d771"
+    "extraction/avx-scalar-delegates/replay.log": "fa4b2db1c1591803ec7b7c2fad79daef5c53769f2a1ca1d48480f2aba297d771",
+    "bridge/Arithmetic/RowConfigurationGenerated.lean": "f485da026f5b19a4473a6f5015eaeb8dfeed4ddd9aea3a5230a2233e24d5c4fa",
+    "bridge/BulksketchBridge/AvxRebuiltSeed.lean": "21acd9e63538a8a12f9ca67871ee0e0b108de2f9c305cf4f08a43f38b8c22589",
+    "bridge/BulksketchBridge/RebuiltLfsrNativeAvxAllDegrees.lean": "92045d3f91772d4001f478a1feabc275b05cf061d9b0285f7ad131d22e5a38cc",
+    "bridge/BulksketchBridge/RebuiltLfsrNativePortableAllDegrees.lean": "3dd2ecf347c433b869ec153ca4cdf607c788d7b4d37ef2160de7ba5d89c28f86",
+    "bridge/BulksketchBridge/RootAffinePreparationFrame.lean": "f836250a9a5d8818449587cc18d5b4f2c52c165dd0627592d5949b01494bbae5",
+    "bridge/BulksketchBridge/RootAffinePreparationInvariant.lean": "895e0909f6f3b6b3288b3ae3e14dc902e01cd114f6bb2242058fe1349334d3d3",
+    "bridge/BulksketchBridge/RowConfiguration.lean": "97e1a5193742f63655dc43d865b9728af3d51af299bd1af1bfc9475f5f73a03e",
+    "extraction/row-configuration/Arithmetic/Funs.lean": "803890b2f7a3b6c87bdd64e75ddf18d340c926bdee9f43760bc850e3896aafd9",
+    "extraction/row-configuration/Arithmetic/FunsExternal_Template.lean": "2d6ac3d6a013da3a19a2cdebe5e2ef2d446f88c6b45add7839fed61e43124e01",
+    "extraction/row-configuration/Arithmetic/Types.lean": "a8a423f65007965442ee398eb0fb598f6e534bb5ddd2044fd4c52aae222bfdba",
+    "extraction/row-configuration/arithmetic.llbc": "429fd59afae4855373469ff5456c82d4cd8edc1778855d08d9521bf482ef26b1",
+    "extraction/row-configuration/charon.log": "c428d4c9c4e5e8a3865e50bc294ec99164d21f9aea5121c2a20915c7afbbde7c",
+    "extraction/row-configuration/project.py": "8842656c2d7b9c2aa8aa4d4c9bbdab35799f47cb1d6d38174ce9a81b160d2144",
+    "extraction/row-configuration/receipt.json": "afb3d6a1158b44221f181ef004b9dd66c1dd40f32936793d0f8d699aeb07eeba",
+    "extraction/row-configuration/replay.log": "4633a5db8f35cfa8b798116a1da2e20e149e762fbcabdf266d4965b2a2c01747",
+    "extraction/row-configuration/stock.log": "5132aee131d0c5b9be9a6c997fd7a42e3bf3cd7f33d01b3f06f05c7aa0816235"
   },
   "reviewed_policy_revisions": [
     {
@@ -14319,7 +14335,147 @@
       "new_sha256": "c4bf95707feeebc5956f32f84c243f5d7d48e5a409785b73130782a091383f19",
       "reason": "Freeze original AVX scalar delegates and the native verification-to-finish trace.",
       "old_sha256": "e9dc1c9f9465b9c0e58cdf47bc5d7a60fa6c2a0a2523506cb6d708fb43128828"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "bbf1a6708e070274ace46ba9e8d31807ea516eee5d7fb7c4ced0ca89781feb2f",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification.",
+      "old_sha256": "0bb5c83d62c5cffcdd7a88b60c0486373a471ad1e1367001de25b1089822f3d8"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "dd817b118e0db9bde7e378cd3d48666c5492ec4db16c37862ad04b6680c907b4",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification.",
+      "old_sha256": "a52262eb208ba1e80bc6d9dd54ed658d354331fa2268180db5edc83f3dfb7cbe"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "d783a4891c71e6700525f02eb659c4447b5129d418ea2b2750e7c9568e30deef",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification.",
+      "old_sha256": "8a6ed4db7b782f1c0dff1c1885d79cdef7989b2797654eebc5042743f97b6e08"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "ed463b10f57eb8316c2d322a3efd6df966e11be7f38b12181d5ad2f57a5fa28c",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification.",
+      "old_sha256": "2e8401c03e9b02077606c2e8f10eebcdfdb38d89d644438f1ea46d032adb57ec"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "acad5e144dfd7276cabe8ca4b7e92af38e6158465c9b7aa476d9e2b778eba3b7",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification.",
+      "old_sha256": "03de75dc525495c4223be11c007d9870436f9ff283b9ee456ad7708d97c15a04"
+    },
+    {
+      "path": "bridge/Arithmetic/RowConfigurationGenerated.lean",
+      "new_sha256": "f485da026f5b19a4473a6f5015eaeb8dfeed4ddd9aea3a5230a2233e24d5c4fa",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "5ebf30b825574ed4fe169cbc68927128f09aa8f30b3c1a19aed033b03c22794f",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification.",
+      "old_sha256": "ef40a955daf0af706a64ca5a77c55ded74de5929b3f759cb2819ed2921e0a760"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "dfff4929fc4ffa78fdc570f5d53aeecdfda43f4d06543d7efa5b962190c6aea9",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification.",
+      "old_sha256": "897f9d384762990ee8210e1c1a31c165ed2d5f7bb642cea027fda804dd10536e"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxRebuiltSeed.lean",
+      "new_sha256": "21acd9e63538a8a12f9ca67871ee0e0b108de2f9c305cf4f08a43f38b8c22589",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RebuiltLfsrNativeAvxAllDegrees.lean",
+      "new_sha256": "92045d3f91772d4001f478a1feabc275b05cf061d9b0285f7ad131d22e5a38cc",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RebuiltLfsrNativePortableAllDegrees.lean",
+      "new_sha256": "3dd2ecf347c433b869ec153ca4cdf607c788d7b4d37ef2160de7ba5d89c28f86",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootAffinePreparationFrame.lean",
+      "new_sha256": "f836250a9a5d8818449587cc18d5b4f2c52c165dd0627592d5949b01494bbae5",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootAffinePreparationInvariant.lean",
+      "new_sha256": "895e0909f6f3b6b3288b3ae3e14dc902e01cd114f6bb2242058fe1349334d3d3",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RowConfiguration.lean",
+      "new_sha256": "97e1a5193742f63655dc43d865b9728af3d51af299bd1af1bfc9475f5f73a03e",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "41edb70d8dbf4e3299a5092a62092df631b7df8cc28ed66c7258eb8c2ccdfca2",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification.",
+      "old_sha256": "e7b632fbfa384a7d9557d407868bd344299110a15e841f85340a26cb913a519c"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "4452e09247a14714d824911f0c2bd0a706b6321cd38a75d21bffd5769ceba62e",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification.",
+      "old_sha256": "a37d72a07591c9ef59512f251369c7f815989b1e5c143d3d116e8d4fb19f72d5"
+    },
+    {
+      "path": "extraction/row-configuration/Arithmetic/Funs.lean",
+      "new_sha256": "803890b2f7a3b6c87bdd64e75ddf18d340c926bdee9f43760bc850e3896aafd9",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification."
+    },
+    {
+      "path": "extraction/row-configuration/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "2d6ac3d6a013da3a19a2cdebe5e2ef2d446f88c6b45add7839fed61e43124e01",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification."
+    },
+    {
+      "path": "extraction/row-configuration/Arithmetic/Types.lean",
+      "new_sha256": "a8a423f65007965442ee398eb0fb598f6e534bb5ddd2044fd4c52aae222bfdba",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification."
+    },
+    {
+      "path": "extraction/row-configuration/arithmetic.llbc",
+      "new_sha256": "429fd59afae4855373469ff5456c82d4cd8edc1778855d08d9521bf482ef26b1",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification."
+    },
+    {
+      "path": "extraction/row-configuration/charon.log",
+      "new_sha256": "c428d4c9c4e5e8a3865e50bc294ec99164d21f9aea5121c2a20915c7afbbde7c",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification."
+    },
+    {
+      "path": "extraction/row-configuration/project.py",
+      "new_sha256": "8842656c2d7b9c2aa8aa4d4c9bbdab35799f47cb1d6d38174ce9a81b160d2144",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification."
+    },
+    {
+      "path": "extraction/row-configuration/receipt.json",
+      "new_sha256": "afb3d6a1158b44221f181ef004b9dd66c1dd40f32936793d0f8d699aeb07eeba",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification."
+    },
+    {
+      "path": "extraction/row-configuration/replay.log",
+      "new_sha256": "4633a5db8f35cfa8b798116a1da2e20e149e762fbcabdf266d4965b2a2c01747",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification."
+    },
+    {
+      "path": "extraction/row-configuration/stock.log",
+      "new_sha256": "5132aee131d0c5b9be9a6c997fd7a42e3bf3cd7f33d01b3f06f05c7aa0816235",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "8277bced24240ddbad21c78c593cb61ce946a39d2b07c61bc669f7b24ed36cea",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification.",
+      "old_sha256": "c4bf95707feeebc5956f32f84c243f5d7d48e5a409785b73130782a091383f19"
     }
   ],
-  "challenge_count": 407
+  "challenge_count": 420
 }

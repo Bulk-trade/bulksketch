@@ -1,13 +1,13 @@
 {
   "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
-  "previous_proof_commit": "4eed694f806f1d7a2f8be0a47c5d6636ecfa9d57",
+  "previous_proof_commit": "375d81ddcb92e458c1fe8b736db9f8b28f0e34e0",
   "retained_native_executable_obligations": 344,
-  "generated_body_refinements_under_recorded_TCB": 175,
+  "generated_body_refinements_under_recorded_TCB": 182,
   "checked_stateful_llbc_refinements": 5,
   "whole_native_coverage_achieved": false,
   "open": [
     "Global stage-indexed traversal induction and complete source work-budget termination",
-    "Other verifier degrees and backends, row admission, wire and public API composition",
+    "Remaining verifier backend bindings, request admission, wire and public API composition",
     "Remaining native backend bodies, Rust pointer provenance, and compiler-to-ISA correspondence"
   ]
 }

@@ -1628,6 +1628,58 @@
     {
       "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeVerificationStartFinish",
       "theorem": "BulksketchBridge.ExecutionDriver.native_verification_start_finish"
+    },
+    {
+      "challenge": "BulksketchBridge.RowConfiguration.ActualRowBegin",
+      "theorem": "BulksketchBridge.RowConfiguration.begin_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RowConfiguration.ActualRowRestart",
+      "theorem": "BulksketchBridge.RowConfiguration.restart_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RowConfiguration.ActualRowEnableV3",
+      "theorem": "BulksketchBridge.RowConfiguration.enable_v3_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RowConfiguration.ActualStartDegrees",
+      "theorem": "BulksketchBridge.RowConfiguration.start_degrees_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RowConfiguration.ActualVerificationCount",
+      "theorem": "BulksketchBridge.RowConfiguration.verification_count_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RowConfiguration.ActualRejectUpper",
+      "theorem": "BulksketchBridge.RowConfiguration.reject_upper_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RowConfiguration.ActualRowSetSeed",
+      "theorem": "BulksketchBridge.RowConfiguration.set_seed_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxRebuiltSeed.ActualNativeAvxRebuiltSeed",
+      "theorem": "BulksketchBridge.AvxRebuiltSeed.native_avx_rebuilt_seed"
+    },
+    {
+      "challenge": "BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrNativeAvxAllDegrees",
+      "theorem": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_avx_all_degrees"
+    },
+    {
+      "challenge": "BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrNativePortableAllDegrees",
+      "theorem": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_portable_all_degrees"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeFirstAffinePreparationEntry",
+      "theorem": "BulksketchBridge.RootRun.native_first_affine_preparation_entry"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeAffinePreparationInvariant",
+      "theorem": "BulksketchBridge.RootRun.native_affine_preparation_invariant"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeAffinePreparationChargeExit",
+      "theorem": "BulksketchBridge.RootRun.native_affine_preparation_charge_exit"
     }
   ],
   "refinements": [
@@ -4360,6 +4412,104 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original PCLMUL reduce forwards to the pinned field gf64::reduce for every dictionary."
+    },
+    {
+      "label": "BinaryDecoder::begin [original source]",
+      "native_item_id": "src/decode/stages.rs:56:method:bulksketch::decode::stages::<BinaryDecoder as RowDecoder < F , K >>::begin",
+      "source_line_span_sha256": "69de510cdbd3f29fe86990a8d1d8dfb02f6e693c326aa851b9307c8c0bbd2fc1",
+      "theorem": "BulksketchBridge.RowConfiguration.begin_refines",
+      "challenge": "BulksketchBridge.RowConfiguration.ActualRowBegin",
+      "generated_declaration": "bulksketch.decode.stages.BinaryDecoder.Insts.BulksketchDecodeRowRowDecoderFKExecution.begin",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowConfigurationGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact Reconstruction state with zero counters, no probe and the original default roots state."
+    },
+    {
+      "label": "Execution::restart [original source]",
+      "native_item_id": "src/decode/stages.rs:90:method:bulksketch::decode::stages::Execution < F , K >::restart",
+      "source_line_span_sha256": "4d260c07b96dbc4f6c81b03a1b40be4740f84170e5dab353f35b7542e8084bbb",
+      "theorem": "BulksketchBridge.RowConfiguration.restart_refines",
+      "challenge": "BulksketchBridge.RowConfiguration.ActualRowRestart",
+      "generated_declaration": "bulksketch.decode.stages.Execution.restart",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowConfigurationGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact fresh row state with the requested budget and seed, independent of the prior execution."
+    },
+    {
+      "label": "Execution::enable_v3 [original source]",
+      "native_item_id": "src/decode/stages.rs:97:method:bulksketch::decode::stages::Execution < F , K >::enable_v3",
+      "source_line_span_sha256": "14cefdb1aa0b72abde815618cf5f53f3d1b46ff66f6e48e5f9deccd403891201",
+      "theorem": "BulksketchBridge.RowConfiguration.enable_v3_refines",
+      "challenge": "BulksketchBridge.RowConfiguration.ActualRowEnableV3",
+      "generated_declaration": "bulksketch.decode.stages.Execution.enable_v3",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowConfigurationGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact v3 and GF64 closed-form flags with original field-width result."
+    },
+    {
+      "label": "Execution::start_degrees [original source]",
+      "native_item_id": "src/decode/stages.rs:105:method:bulksketch::decode::stages::Execution < F , K >::start_degrees",
+      "source_line_span_sha256": "1bd810ada20fe6d7462c6da6700594c31ddf60346adac36e74d84e2022f31b43",
+      "theorem": "BulksketchBridge.RowConfiguration.start_degrees_refines",
+      "challenge": "BulksketchBridge.RowConfiguration.ActualStartDegrees",
+      "generated_declaration": "bulksketch.decode.stages.Execution.start_degrees",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowConfigurationGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original degree-three start, no-probe and disabled paths under the native bound checks."
+    },
+    {
+      "label": "Execution::verification_count [original source]",
+      "native_item_id": "src/decode/stages.rs:115:method:bulksketch::decode::stages::Execution < F , K >::verification_count",
+      "source_line_span_sha256": "234f59d9ec4474a2e59e2d0bb3e9a0b3f5938fd10c60598b94f7ea1a68bdee5b",
+      "theorem": "BulksketchBridge.RowConfiguration.verification_count_refines",
+      "challenge": "BulksketchBridge.RowConfiguration.ActualVerificationCount",
+      "generated_declaration": "bulksketch.decode.stages.Execution.verification_count",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowConfigurationGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Reads the exact verified root count field."
+    },
+    {
+      "label": "Execution::reject_upper [original source]",
+      "native_item_id": "src/decode/stages.rs:119:method:bulksketch::decode::stages::Execution < F , K >::reject_upper",
+      "source_line_span_sha256": "20f9712a68f2e6c12b4a8769ec7a77922336d0ecd38285732ee3e71eddf9db8f",
+      "theorem": "BulksketchBridge.RowConfiguration.reject_upper_refines",
+      "challenge": "BulksketchBridge.RowConfiguration.ActualRejectUpper",
+      "generated_declaration": "bulksketch.decode.stages.Execution.reject_upper",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowConfigurationGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact GuardFour fallback, Reconstruction restart with probe cleared, or InvalidLocator latch, with root count reset on probe rejection."
+    },
+    {
+      "label": "Execution::set_splitter_seed [original source]",
+      "native_item_id": "src/decode/stages.rs:159:method:bulksketch::decode::stages::Execution < F , K >::set_splitter_seed",
+      "source_line_span_sha256": "03873e1088c86d77737abb98bbb2328cc9ceef1c4d43a9e27ddc93c50e043cc1",
+      "theorem": "BulksketchBridge.RowConfiguration.set_seed_refines",
+      "challenge": "BulksketchBridge.RowConfiguration.ActualRowSetSeed",
+      "generated_declaration": "bulksketch.decode.stages.Execution.set_splitter_seed",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowConfigurationGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Writes only the exact splitter seed field."
     }
   ],
   "stateful_llbc_refinements": [
