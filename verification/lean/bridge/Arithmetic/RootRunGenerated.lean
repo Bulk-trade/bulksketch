@@ -9,14 +9,14 @@ import Arithmetic.RootDivideGenerated
 import Arithmetic.AffineSplitterGenerated
 import Arithmetic.RootAffinePreparationGenerated
 import Arithmetic.RootEnumerateGenerated
+import Arithmetic.AffineEnumerateGenerated
 
 open Aeneas Aeneas.Std Result Error
 
 namespace Aeneas.Std.RootRunRuntime
 
-/-- Explicit lower-level calls in the two original affine wrappers. -/
+/-- Explicit lower-level calls in the original affine preparation wrapper. -/
 structure OtherCallees where
-  enumerate : RootEnumerateRuntime.Enumerate
   preparation : RootAffinePreparationRuntime.Callees
 
 /-- Shared Option view does not change either branch or payload. -/
@@ -35,7 +35,7 @@ local notation "decode.roots.Roots.divide" =>
   (decode.roots.Roots.divide (poly.Dense.Insts.BulksketchPolyPolynomial.exact_divide_into division))
 local notation "decode.roots.Roots.trace" =>
   (decode.roots.Roots.trace poly.Dense.Insts.BulksketchPolyPolynomial.square_mod_into)
-local notation "decode.roots.Roots.enumerate_affine" => (decode.roots.Roots.enumerate_affine calls.enumerate)
+local notation "decode.roots.Roots.enumerate_affine" => (decode.roots.Roots.enumerate_affine decode.affine.enumerate)
 local notation "decode.roots.Roots.prepare_affine" => (decode.roots.Roots.prepare_affine calls.preparation)
 local notation "poly.Dense.Insts.BulksketchPolyPolynomial.monic_gcd_into" =>
   (poly.Dense.Insts.BulksketchPolyPolynomial.monic_gcd_into division)

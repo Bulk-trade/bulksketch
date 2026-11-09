@@ -360,6 +360,23 @@ PROJECTIONS = [
      "let (q2, raw2) ←", "let (raw2, q2) ←", "compiled direct Dense division projection differs",
      None, None, ["extraction/dense-div-rem/checked-dense-div-rem.patch", "extraction/portable-xor/arithmetic.llbc",
                   "bridge/Arithmetic/SliceKernelTypes.lean"]),
+    ("affine-enumerate", "extraction/affine-enumerate/project.py", "extraction/affine-enumerate/receipt.json",
+     "extraction/affine-enumerate/Arithmetic/Funs.lean", "bridge/Arithmetic/AffineEnumerateGenerated.lean",
+     "let i ← count - start", "let i ← count + start", "compiled affine enumerator projection differs",
+     None, None, ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean",
+                  "bridge/Arithmetic/ReconstructionTypes.lean"] +
+     [f"extraction/{capture}/{file}" for capture in ("root-enumerate-affine", "affine-splitter")
+      for file in ("arithmetic.llbc", "Arithmetic/Types.lean", "Arithmetic/Funs.lean",
+                   "Arithmetic/FunsExternal_Template.lean")]),
+    ("affine-selector", "extraction/affine-selector/project.py", "extraction/affine-selector/receipt.json",
+     "extraction/affine-selector/Arithmetic/Funs.lean", "bridge/Arithmetic/AffineSelectorGenerated.lean",
+     "let i2 ← 6#u64 * d", "let i2 ← 7#u64 * d", "compiled affine selector projection differs",
+     None, None, ["extraction/root-setup/receipt.json", "bridge/Arithmetic/RootSetupGenerated.lean"]),
+    ("avx-multiply-linear", "extraction/avx-multiply-linear/project.py", "extraction/avx-multiply-linear/receipt.json",
+     "extraction/avx-multiply-linear/Arithmetic/Funs.lean", "bridge/Arithmetic/AvxMultiplyLinearGenerated.lean",
+     "multiply true mi1 root", "multiply false mi1 root", "compiled AVX linear-product projection differs",
+     None, None, ["extraction/avx-square/receipt.json", "bridge/Arithmetic/AvxSquareRuntime.lean",
+                  "bridge/Arithmetic/Avx512RegisterGenerated.lean"]),
 ]
 
 
@@ -549,8 +566,8 @@ def main():
         if label == "root-run":
             cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
                           "root run checked capture command differs"))
-            cases.append(("wrong-affine-callee", active_path, "Roots.prepare_affine calls.preparation",
-                          "Roots.prepare_affine calls.enumerate",
+            cases.append(("wrong-affine-callee", active_path, "Roots.enumerate_affine decode.affine.enumerate",
+                          "Roots.enumerate_affine calls.enumerate",
                           "compiled root run projection differs"))
         if label == "affine-subspaces":
             cases.append(("shared-offset-edit", active_path, "i1 / 2#usize", "i1 / 3#usize",
@@ -570,6 +587,13 @@ def main():
                 ("missing-checks", receipt_path, '"-checks"', '"-no-checks"',
                  "direct Dense division control differs: stock"),
             ])
+        if label == "affine-enumerate":
+            cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false', '"native_llbc_edited": true',
+                          "invalid affine enumerator receipt"))
+        if label == "affine-selector":
+            cases.append(("wrong-shared-square-products", "bridge/Arithmetic/RootSetupGenerated.lean",
+                          "let i ← 3#u64 * degree", "let i ← 4#u64 * degree",
+                          "shared square_products differs"))
         if label == "affine-splitter":
             cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
                           "affine splitter checked replay differs"))
@@ -582,7 +606,8 @@ def main():
                 shadow = Path(directory)
                 if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic", "closed-leaf", "deg34-normalize", "deg34-guard",
                              "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry", "root-divide", "root-run", "affine-splitter",
-                             "affine-subspaces", "root-prepare-affine", "root-enumerate-affine", "dense-div-rem"}:
+                             "affine-subspaces", "root-prepare-affine", "root-enumerate-affine", "dense-div-rem",
+                             "affine-enumerate", "affine-selector", "avx-multiply-linear"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

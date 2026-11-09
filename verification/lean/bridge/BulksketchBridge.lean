@@ -102,3 +102,6 @@ import BulksketchBridge.RootEnumerate
 import BulksketchBridge.DenseDivRemComposition
 import BulksketchBridge.DenseDivRemFailures
 import BulksketchBridge.AffineSplitterEvaluation
+import BulksketchBridge.AffineEnumerationHorner
+import BulksketchBridge.AffineSelector
+import BulksketchBridge.AvxMultiplyLinearHeap

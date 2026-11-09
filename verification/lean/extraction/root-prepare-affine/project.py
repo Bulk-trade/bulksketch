@@ -36,7 +36,7 @@ CLOSURE = NAME + ".closure"
 CALLBACK = CLOSURE + ".Insts.CoreOpsFunctionFnOnceTupleU64Bool"
 FUNS = (CALLBACK + ".call_once", CALLBACK, NAME)
 MARKER = '/-- [bulksketch::decode::roots::{bulksketch::decode::roots::Roots}::prepare_affine::{closure}]'
-HEADER_SHA256 = '89f3ccd0ee568e20f9fbe852cf2caacce20a8a4ae6d65e469d4cc58227fce721'
+HEADER_SHA256 = '714c8c06b666184a452507a83818dac2bdac520637ba34043ae3612c948904f2'
 
 
 def check(root=ROOT):

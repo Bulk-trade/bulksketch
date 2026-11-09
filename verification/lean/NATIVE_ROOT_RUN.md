@@ -3,7 +3,8 @@
 All 344 native executable obligations remain in scope. This checkpoint
 adds exact original Aeneas body refinements for `Roots::run`,
 `Roots::divide`, the affine subspace offset, `affine::splitter`,
-`affine::subspaces`, and the preparation and enumeration wrappers.
+`affine::subspaces`, the preparation and enumeration wrappers, the
+inner enumerator and selector, and the original AVX linear update.
 Production Rust and Cargo inputs are unchanged.
 
 The stock root-run projection retains the original dispatcher and
@@ -11,8 +12,9 @@ subspace offset helper. Its theorem checks the stage decisions, exact
 workspace frames, and all admitted branches. The original leaf,
 closed-leaf, trace, reducer table, GCD, factor division, splitter,
 affine preparation and affine enumeration wrappers are bound in the
-projection. The affine multiple, binary solve map, enumeration selector
-and candidate enumeration still have typed slots. The GCD stage uses the
+projection. The original selector and candidate enumerator are bound
+directly. The affine multiple and binary solve map still have typed
+slots. The GCD stage uses the
 admitted div/rem law and normalized remainder and retry conditions.
 Table, GCD and affine split prices follow the original order of
 checked operations, including intermediate overflow.
@@ -35,7 +37,17 @@ the solve-map rejection, both rank guards, and both successful stages.
 The split path invokes the original subspace table implementation. Affine
 enumeration checks the exact price, both candidate-result frames, the
 bounded count increment and the original advance after success. The
-inner enumeration algorithm and Gaussian elimination remain open.
+inner enumerator proof checks the rank shift, scratch split, batch
+boundaries, Gray points, Horner calls, exact candidate writes and final
+count. The proved frame supplies the wrapper's candidate law under
+admitted scratch and rank bounds. The original Portable and PCLMUL
+Horner methods provide the field-evaluation law when installed in the
+backend slot. Gaussian elimination and AVX-512 Horner remain open.
+
+The enumeration selector and its square-products helper check all
+scalar inputs. Their proofs preserve the checked operation order,
+including the rank cast, optional shift and multiplication, and
+checked arithmetic overflow.
 
 The original divide theorem checks both charge results, a nonexact
 division, both checked offset overflows, and the affine and non-affine
@@ -54,6 +66,12 @@ slices. The captured x86 RawProduct layout uses stride 16, alignment
 and rejects target and overlap mutations. The layout premise is
 capture-specific. Actual Rust pointer provenance, compiled scalar
 stores and full compiler-to-ISA correspondence remain open.
+
+The original AVX linear update uses two overlapping masked loads before
+each descending write. Its slice theorem gives the exact GF64 linear
+coefficient update. The finite-heap theorem composes the checked
+load and store contracts for every block, including the short block,
+and preserves every byte outside the admitted slice.
 
 Run the complete gate from `verification/lean`.
 

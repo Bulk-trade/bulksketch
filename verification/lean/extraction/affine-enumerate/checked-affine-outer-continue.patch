@@ -1,0 +1,170 @@
+--- a/src/PrePasses.ml
++++ b/src/PrePasses.ml
+@@ -2360,7 +2360,159 @@
+       generics = { f.generics with regions };
+     }
+   else f
++
++(** Preserve the two exits of the original affine enumerator's Zip loop.
++    The normal exhaustion edge continues the outer loop. Both other exits
++    run the iterator-storage epilogue and leave the outer loop with a
++    previously assigned error. Retain the outer cursor cleanup after the
++    dispatch. These checks restrict this pass to the inspected LLBC shape. *)
++let lower_affine_enumeration_continue (crate : crate) (f : fun_decl) : fun_decl =
++  let target = NameMatcher.parse_pattern "bulksketch::decode::affine::enumerate" in
++  let span = f.item_meta.span in
++  let site = span.data in
++  let scoped =
++    !Config.sanity_checks && span.generated_from_span = None
++    && (match site.file.name with Local "src/decode/affine.rs" -> true | _ -> false)
++    && (site.beg_loc.line, site.beg_loc.col, site.end_loc.line, site.end_loc.col)
++         = (302, 0, 347, 1)
++    && ExtractName.match_name crate target f.item_meta.name
++  in
++  if not scoped then f
++  else
++    match f.body with
++    | StructuredBody body ->
++        let _, fresh_local =
++          LocalId.mk_stateful_generator_starting_at_id
++            (LocalId.of_int (List.length body.locals.locals))
++        in
++        let added_locals = ref [] in
++        let matches_id n (st : statement) = st.statement_id = StatementId.of_int n in
++        let find_shape (b : block) =
++          let continues = ref [] in
++          let breaks = ref [] in
++          let assigns = ref [] in
++          let scan =
++            object
++              inherit [_] iter_statement as super
++              method! visit_Loop _ _ = ()
++              method! visit_statement () st =
++                (match st.kind with
++                | Continue 1 -> continues := st :: !continues
++                | Break 0 -> breaks := st :: !breaks
++                | Assign _ when matches_id 1097 st || matches_id 1098 st ->
++                    assigns := st :: !assigns
++                | _ -> ());
++                super#visit_statement () st
++            end
++          in
++          scan#visit_block () b;
++          match (!continues, !breaks, List.rev !assigns) with
++          | [next], [break_b; break_a],
++            [({ kind = Assign (temp, Aggregate (_, [])); _ } as set_error);
++             ({ kind = Assign (result, Aggregate (_, [Move from_temp])); _ } as set_result)]
++              when matches_id 1054 next && matches_id 1080 break_a
++                && matches_id 1102 break_b
++                && temp.kind = PlaceLocal (LocalId.of_int 119)
++                && from_temp.kind = temp.kind
++                && result.kind = PlaceLocal LocalId.zero ->
++              Some (set_error, set_result, LocalId.of_int 119)
++          | _ -> None
++        in
++        let cleanup_locals = [111; 110; 109; 108; 106; 105; 101; 96; 92; 47; 46; 45; 43] in
++        let cleanup_shape statements =
++          let all_ids = List.filter_map
++            (fun (st : statement) -> match st.kind with StorageDead i -> Some i | _ -> None)
++            statements
++          in
++          List.length all_ids = List.length statements
++          && all_ids = List.map LocalId.of_int cleanup_locals
++        in
++        let visitor =
++          object (self)
++            inherit [_] map_statement as super
+ 
++            method! visit_Loop depth loop =
++              super#visit_Loop (depth + 1) loop
++
++            method! visit_block depth b =
++              if depth <> 1 then super#visit_block depth b
++              else
++                let rec lower = function
++                  | [] -> []
++                  | (st : statement) :: rest ->
++                    (match st.kind, List.rev rest with
++                    | Loop loop,
++                      ({ kind = Break 0; _ } as leave) ::
++                      ({ kind = StorageDead cursor; _ } as drop_cursor) ::
++                      ({ kind = StorageDead offset; _ } as drop_offset) :: reverse_cleanup
++                        when cursor = LocalId.of_int 37 && offset = LocalId.of_int 42
++                          && cleanup_shape (List.rev reverse_cleanup) ->
++                      (match find_shape loop with
++                      | None -> self#visit_statement depth st :: lower rest
++                      | Some (set_error, set_result, temp) ->
++                        let span = st.span in
++                        let ty = TScalar TBool in
++                        let index = fresh_local () in
++                        added_locals :=
++                          { index; local_ty = ty; name = None; span; drop_flag_for = None }
++                          :: !added_locals;
++                        let place = { kind = PlaceLocal index; ty } in
++                        let boolean value : constant_expr = { kind = CBool value; ty } in
++                        let statement kind =
++                          { span; statement_id = StatementId.zero; kind; comments_before = [] }
++                        in
++                        let assign value =
++                          statement (Assign (place, Use (Constant (boolean value), YesRetag)))
++                        in
++                        let end_flag = statement (StorageDead index) in
++                        let cleanup = List.rev reverse_cleanup in
++                        let rewrite =
++                          object
++                            inherit [_] map_statement as super
++                            method! visit_Loop _ loop = Loop loop
++                            method! visit_block () b =
++                              let rewrite (st : statement) =
++                                match st.kind with
++                                | Continue 1 ->
++                                    (* Supply the join with an initialized result.
++                                       The true branch immediately continues, so
++                                       the unused return place is overwritten by
++                                       the original next result before any return. *)
++                                    [ statement (StorageLive temp); set_error; set_result;
++                                      statement (StorageDead temp); assign true;
++                                      { st with kind = Break 0 } ]
++                                | Break 0 -> cleanup @ [st]
++                                | _ -> [super#visit_statement () st]
++                              in
++                              { b with statements = List.concat_map rewrite b.statements }
++                          end
++                        in
++                        let dispatch = {
++                          scrutinee = SwitchValue (Copy place);
++                          branches = [(boolean false, BranchId.of_int 1)];
++                          fallback = Some BranchId.zero;
++                        } in
++                        let branch statements = { span; block_id = BlockId.zero; statements } in
++                        [ statement (StorageLive index);
++                          assign false;
++                          { st with kind = Loop (rewrite#visit_block () loop) };
++                          statement
++                            (Switch (dispatch,
++                               [branch [end_flag; statement (Continue 0)]; branch [end_flag]]));
++                          drop_offset; drop_cursor; leave ])
++                    | _ -> self#visit_statement depth st :: lower rest)
++                in
++                { b with statements = lower b.statements }
++          end
++        in
++        let block = visitor#visit_block 0 body.body in
++        { f with body = StructuredBody {
++            body with
++            locals = { body.locals with locals = body.locals.locals @ List.rev !added_locals };
++            body = block;
++          } }
++    | _ -> f
++
+ let apply_passes (crate : crate) : crate =
+   (* Passes that apply to the whole crate *)
+   let crate = update_array_default crate in
+@@ -2373,6 +2525,7 @@
+       ("fix_anon_const_initializers", fix_anon_const_initializers);
+       ("erase_body_regions", erase_body_regions);
+       ("remove_unreachable", remove_unreachable);
++      ("lower_affine_enumeration_continue", lower_affine_enumeration_continue);
+       ("update_loop", update_loops);
+       ("remove_useless_joins", remove_useless_joins);
+       ( "remove_shallow_borrows_storage_live_dead",

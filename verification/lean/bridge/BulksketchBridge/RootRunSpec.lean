@@ -108,7 +108,7 @@ def expected (calls : Calls) (division : DivRem) {K : Type}
   | .LeafThree | .LeafFour | .FactorVerification => Roots.closed_leaf dictionary kernels roots stage workspace meter
   | .Leaf => Roots.leaf dictionary kernels roots workspace meter
   | .AffinePreparation => Roots.prepare_affine calls.preparation dictionary kernels roots workspace meter
-  | .AffineEnumeration => Roots.enumerate_affine calls.enumerate dictionary kernels roots workspace meter
+  | .AffineEnumeration => Roots.enumerate_affine bulksketch.decode.affine.enumerate dictionary kernels roots workspace meter
   | .ReducerPreparation => reducer kernels roots workspace meter
   | .AffineSplit => affineSplit kernels roots workspace meter
   | .Gcd => gcdStage division kernels roots workspace meter

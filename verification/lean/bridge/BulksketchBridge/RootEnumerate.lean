@@ -3,6 +3,7 @@ import BulksketchBridge.RootEnumeratePrice
 import BulksketchBridge.ClosedLeafAdvance
 import BulksketchBridge.ClosedLeafWindows
 import BulksketchBridge.BmEntry
+import BulksketchBridge.AffineEnumerationFrame
 
 namespace BulksketchBridge.RootEnumerate
 
@@ -39,6 +40,36 @@ def Ready {F K : Type} (enumerate : Enumerate) (field : bulksketch.field.BinaryF
   (roots.pending ≠ 0#usize → ∃ frame, PopBounds roots workspace frame) ∧
   ∃ directions, workspace.basis.directions = some directions ∧
     CandidateLaw enumerate field kernels roots workspace directions
+
+/-- Supply the wrapper's candidate contract from the original inner body.
+    Only the caller's admitted row lengths and backend evaluation law remain. -/
+theorem original_candidate_law {K : Type} (kernels : BulkKernels K bulksketch.field.Gf64)
+    (horner : AffineEnumerate.HornerLaw kernels) (roots : Roots) (workspace : RowWorkspace)
+    (directions : Array U64 64#usize)
+    (polynomialRoom : roots.degree.val < workspace.polynomials.length)
+    (rootRoom : roots.count.val + roots.degree.val ≤ workspace.roots.length)
+    (rankRoom : roots.affine_rank.val < System.Platform.numBits)
+    (workRoom : 2 ≤ workspace.bm.length) :
+    CandidateLaw bulksketch.decode.affine.enumerate fieldDictionary kernels roots workspace directions := by
+  let polynomial := prefixSlice workspace.polynomials (roots.degree.val + 1)
+  let basis := prefixSlice directions.to_slice roots.affine_rank.val
+  let candidates := tail workspace.roots roots.count.val
+  have degreeSize : polynomial.length = roots.degree.val + 1 := by
+    rw [show polynomial = prefixSlice workspace.polynomials (roots.degree.val + 1) from rfl,
+      prefix_length, Nat.min_eq_left (by omega)]
+  have rankSize : basis.length = roots.affine_rank.val := by
+    have width := System.Platform.numBits_le
+    have directionLength : directions.to_slice.length = 64 := Array.length_to_slice directions
+    rw [show basis = prefixSlice directions.to_slice roots.affine_rank.val from rfl,
+      prefix_length, directionLength, Nat.min_eq_left (by omega)]
+  have candidateSize : candidates.length = workspace.roots.length - roots.count.val := tail_length ..
+  obtain ⟨reply, written, scratch, normal, writtenLen, scratchLen, exactCount⟩ :=
+    AffineEnumerate.native_enumeration_frame kernels horner polynomial roots.affine_base basis candidates workspace.bm
+      (by omega) (by omega) workRoom (by rwa [rankSize])
+  refine ⟨reply, written, scratch, normal, writtenLen.trans candidateSize, scratchLen, ?_⟩
+  intro count success
+  have exactSize := exactCount count success
+  omega
 
 /-- Exact original wrapper frame, including charge rejection, propagation of
 the callee's error and writes, and the original empty or popping advance. -/

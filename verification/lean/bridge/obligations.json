@@ -1066,20 +1066,12 @@
       "theorem": "BulksketchBridge.AffineSplitter.splitter_refines"
     },
     {
-      "challenge": "BulksketchBridge.RootRun.ActualRootRun",
-      "theorem": "BulksketchBridge.RootRun.run_refines"
-    },
-    {
       "challenge": "BulksketchBridge.RootRun.ActualSubspaceStart",
       "theorem": "BulksketchBridge.RootRun.subspace_start_refines"
     },
     {
       "challenge": "BulksketchBridge.AffineSubspaces.ActualSubspaces",
       "theorem": "BulksketchBridge.AffineSubspaces.subspaces_refines"
-    },
-    {
-      "challenge": "BulksketchBridge.RootAffinePreparation.ActualAffinePreparation",
-      "theorem": "BulksketchBridge.RootAffinePreparation.prepare_affine_refines"
     },
     {
       "challenge": "BulksketchBridge.RootEnumerate.ActualEnumerateAffine",
@@ -1100,6 +1092,38 @@
     {
       "challenge": "BulksketchBridge.AffineSplitter.ActualNativeSplitterChildren",
       "theorem": "BulksketchBridge.AffineSplitter.native_splitter_children"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualRootRun",
+      "theorem": "BulksketchBridge.RootRun.run_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootAffinePreparation.ActualAffinePreparation",
+      "theorem": "BulksketchBridge.RootAffinePreparation.prepare_affine_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineEnumerate.ActualNativeEnumerate",
+      "theorem": "BulksketchBridge.AffineEnumerate.native_enumerate_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineSelector.ActualEnumeratePreferred",
+      "theorem": "BulksketchBridge.AffineSelector.enumerate_preferred_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineSelector.ActualSquareProducts",
+      "theorem": "BulksketchBridge.AffineSelector.square_products_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxMultiplyLinear.ActualMultiplyLinear",
+      "theorem": "BulksketchBridge.AvxMultiplyLinear.multiply_linear_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineEnumerate.ActualCandidateScan",
+      "theorem": "BulksketchBridge.AffineEnumerate.candidate_scan_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxMultiplyLinear.ActualAllocatedMultiplyLinear",
+      "theorem": "BulksketchBridge.AvxMultiplyLinear.allocated_multiply_linear_refines"
     }
   ],
   "refinements": [
@@ -3058,20 +3082,6 @@
       "scope": "Exact original setup, coefficient loop, prefix normalization and output, work and raw slice frames. Original linear evaluation and Dense square compose under admitted input, table and backend laws."
     },
     {
-      "label": "Roots::run [original source]",
-      "native_item_id": "src/decode/roots.rs:128:method:bulksketch::decode::roots::Roots::run",
-      "source_line_span_sha256": "730b199d24702f4f56a9b3dd2a62182834bf636f88ccf581e6c4c0b845813282",
-      "theorem": "BulksketchBridge.RootRun.run_refines",
-      "challenge": "BulksketchBridge.RootRun.ActualRootRun",
-      "generated_declaration": "bulksketch.decode.roots.Roots.run",
-      "generated_file": "bridge/Arithmetic/RootRunGenerated.lean",
-      "generated_files": [
-        "bridge/Arithmetic/RootRunGenerated.lean"
-      ],
-      "source_linkage": "bridge/source-linkage.json",
-      "scope": "Exact original stage dispatcher, charges, transitions and workspace frames. Both original affine wrappers are bound, with explicit lower-level affine calls."
-    },
-    {
       "label": "affine::subspace_start [original source]",
       "native_item_id": "src/decode/affine.rs:245:function:bulksketch::decode::affine::subspace_start",
       "source_line_span_sha256": "ea726253e39bca2c174f7a596d6b55e5e3bc31845d07a1a1af1865f6b920c8d1",
@@ -3098,20 +3108,6 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original seed, nested loops and row writeback under triangular scratch, rank and arithmetic laws. Separate checked zero-set theorem gives every GF64 prefix span."
-    },
-    {
-      "label": "Roots::prepare_affine [original source]",
-      "native_item_id": "src/decode/roots.rs:274:method:bulksketch::decode::roots::Roots::prepare_affine",
-      "source_line_span_sha256": "4fcc6452d5c60cdc86eb22d6d758f566a02d8c75febec11ef41b26252e8d004d",
-      "theorem": "BulksketchBridge.RootAffinePreparation.prepare_affine_refines",
-      "challenge": "BulksketchBridge.RootAffinePreparation.ActualAffinePreparation",
-      "generated_declaration": "bulksketch.decode.roots.Roots.prepare_affine",
-      "generated_file": "bridge/Arithmetic/RootAffinePreparationGenerated.lean",
-      "generated_files": [
-        "bridge/Arithmetic/RootAffinePreparationGenerated.lean"
-      ],
-      "source_linkage": "bridge/source-linkage.json",
-      "scope": "Exact checked price, charge, both rank guards, all admitted result frames and both successful dispatches. Binds original subspace table with explicit affine multiple, map and selector slots."
     },
     {
       "label": "Roots::enumerate_affine [original source]",
@@ -3141,6 +3137,91 @@
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original raw initialization, descending factors and quotient, final reduction, normalized lengths and scratch under admitted bounds and backend laws. Separate checked model failure paths and original factor division composition.",
       "translator_variant": "checked-dense-div-rem-v1"
+    },
+    {
+      "label": "Roots::run [original source]",
+      "native_item_id": "src/decode/roots.rs:128:method:bulksketch::decode::roots::Roots::run",
+      "source_line_span_sha256": "730b199d24702f4f56a9b3dd2a62182834bf636f88ccf581e6c4c0b845813282",
+      "theorem": "BulksketchBridge.RootRun.run_refines",
+      "challenge": "BulksketchBridge.RootRun.ActualRootRun",
+      "generated_declaration": "bulksketch.decode.roots.Roots.run",
+      "generated_file": "bridge/Arithmetic/RootRunGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RootRunGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original stage dispatcher, charges, transitions and workspace frames, with the original inner enumerator and both affine wrappers bound."
+    },
+    {
+      "label": "Roots::prepare_affine [original source]",
+      "native_item_id": "src/decode/roots.rs:274:method:bulksketch::decode::roots::Roots::prepare_affine",
+      "source_line_span_sha256": "4fcc6452d5c60cdc86eb22d6d758f566a02d8c75febec11ef41b26252e8d004d",
+      "theorem": "BulksketchBridge.RootAffinePreparation.prepare_affine_refines",
+      "challenge": "BulksketchBridge.RootAffinePreparation.ActualAffinePreparation",
+      "generated_declaration": "bulksketch.decode.roots.Roots.prepare_affine",
+      "generated_file": "bridge/Arithmetic/RootAffinePreparationGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RootAffinePreparationGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact checked price, charge, rank guards and stage frames. Original subspace table and selector are bound, with affine multiple and solve-map slots."
+    },
+    {
+      "label": "affine::enumerate [original source]",
+      "native_item_id": "src/decode/affine.rs:299:function:bulksketch::decode::affine::enumerate",
+      "source_line_span_sha256": "22bf3e245f2b3498af80f9e550202e09311392590099cf69ba2df579282036d8",
+      "theorem": "BulksketchBridge.AffineEnumerate.native_enumerate_refines",
+      "challenge": "BulksketchBridge.AffineEnumerate.ActualNativeEnumerate",
+      "generated_declaration": "bulksketch.decode.affine.enumerate",
+      "generated_file": "bridge/Arithmetic/AffineEnumerateGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AffineEnumerateGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact checked rank shift, scratch split, aligned and short batches, Gray points, Horner calls, candidate writes, failure exits and final count under admitted buffer and Horner laws.",
+      "translator_variant": "checked-affine-outer-continue-v1"
+    },
+    {
+      "label": "affine::enumerate_preferred [original source]",
+      "native_item_id": "src/decode/affine.rs:82:function:bulksketch::decode::affine::enumerate_preferred",
+      "source_line_span_sha256": "c6c2a705f050f317593944a5dc87cc738d4c19303db65d72673690cfd08792b3",
+      "theorem": "BulksketchBridge.AffineSelector.enumerate_preferred_refines",
+      "challenge": "BulksketchBridge.AffineSelector.ActualEnumeratePreferred",
+      "generated_declaration": "bulksketch.decode.affine.enumerate_preferred",
+      "generated_file": "bridge/Arithmetic/AffineSelectorGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AffineSelectorGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original shift, cast, checked optional multiplication and ordered predictor arithmetic for all usize inputs."
+    },
+    {
+      "label": "affine::square_products [original source]",
+      "native_item_id": "src/decode/affine.rs:15:function:bulksketch::decode::affine::square_products",
+      "source_line_span_sha256": "5a4fdabc6c876c57c13f810e960d031df761dac25753d81c1d484ab3eae61b0c",
+      "theorem": "BulksketchBridge.AffineSelector.square_products_refines",
+      "challenge": "BulksketchBridge.AffineSelector.ActualSquareProducts",
+      "generated_declaration": "bulksketch.decode.affine.square_products",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RootSetupGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original scalar square-products predictor and ordered checked arithmetic for every U64 degree, byte-identical in both checked captures."
+    },
+    {
+      "label": "AVX multiply_linear [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:819:function:bulksketch::backend::x86_vpclmul512::multiply_linear",
+      "source_line_span_sha256": "27ae1dddcef0a84716ce14e06d682ac012b3d2f40ebed46f7483e7b9399d0b4e",
+      "theorem": "BulksketchBridge.AvxMultiplyLinear.multiply_linear_refines",
+      "challenge": "BulksketchBridge.AvxMultiplyLinear.ActualMultiplyLinear",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.multiply_linear",
+      "generated_file": "bridge/Arithmetic/AvxMultiplyLinearGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxMultiplyLinearGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Original descending AVX linear update produces the exact GF64 coefficient recurrence under the checked masked load and store laws. Separate allocated heap theorem covers all writes and frame."
     }
   ],
   "stateful_llbc_refinements": [

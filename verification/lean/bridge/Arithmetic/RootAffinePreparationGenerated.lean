@@ -1,6 +1,7 @@
 -- Exact stock original Roots::prepare_affine with typed algorithm slots.
 import Arithmetic.ClosedLeafGenerated
 import Arithmetic.AffineSubspacesGenerated
+import Arithmetic.AffineSelectorGenerated
 import Arithmetic.WorkScheduleRuntime
 import Arithmetic.RebuiltLfsrRuntime
 
@@ -16,7 +17,6 @@ structure Callees where
     Result (Usize × Slice U64 × Slice U64 × Slice U64 × Slice types.RawProduct)
   solveMap : ∀ {F K : Type}, field.BinaryField F → backend.contract.BulkKernels K F →
     Slice U64 → Array U64 64#usize → Result (Option (U64 × Usize) × Array U64 64#usize)
-  enumeratePreferred : Usize → Usize → Result Bool
 
 /-- Option insertion for the Copy array of GF64 direction words. -/
 def insertBasis (_old : Option (Array U64 64#usize)) (value : Array U64 64#usize) :
@@ -34,7 +34,6 @@ set_option linter.unusedVariables false
 local notation "core.option.Option.insert" => RootAffinePreparationRuntime.insertBasis
 local notation "decode.affine.multiple" => calls.multiple
 local notation "decode.affine.solve_map" => calls.solveMap
-local notation "decode.affine.enumerate_preferred" => calls.enumeratePreferred
 local notation "core.ops.range.RangeToInclusiveUsize.Insts.CoreSliceIndexSliceIndexSliceSlice" =>
   RebuiltLfsrRuntime.inclusive
 

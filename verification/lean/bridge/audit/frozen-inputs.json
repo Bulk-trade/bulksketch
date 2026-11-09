@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "346ba75b014c6f77ee5869465e9bcd97500e096239df6c98909713b2670a6db1",
+    "bridge/BulksketchBridge/Audit.lean": "bae9644bfc86abf9b10177eb624ea0888cd78b26929a9b6da757b1145fe46e23",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,9 +13,9 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "cf02fd164dba9f559dbcf040a0ce8215d5d32d88698e01214640daccb0755c75",
-    "audit/frozen-inputs.json": "1a81030b63bcbaf894f1ed98362378fa1c635cf45a947f48596cc222b4e83074",
-    "bridge/BulksketchBridge.lean": "007acc2bfdbfa880bbeeb4641df583010114cb4a9ada5461e7c6a03cdbfc50b2",
+    "scripts/verify_bridge.py": "50de9c90cb9d4e0a75e44761ac4c611086b1831c229c6a2bd2a556303535c8a3",
+    "audit/frozen-inputs.json": "59f44ce4894d9e15eee382646fdd8d0e91a5e24f5c8f26c0be1f6c9e309498ba",
+    "bridge/BulksketchBridge.lean": "79c084c9f2e031b0fd17abf648f3d4d5511dc31f6ae94d6d62cf36fed22b6ccc",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "76e8753d4ab0d968d2e212ab29f9ac0277e12982ef80ead3aa2689f29d0ace09",
-    "bridge/obligations.json": "95f7302743d5f28c668cf60caf39cb234867dcf91d7cedd44d6926bc2454a3e0",
+    "bridge/source-linkage.json": "ad73e61b2f5c00aedf9e6046655b5759df6826ec58b6f59f264d9e61a7c133b6",
+    "bridge/obligations.json": "5bdff58ceaf815ac74323381e804fa49ea233675b99d80f885512f317d7e3493",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "167ea92d3d4049bb4cb0df61b7ffc9da0ed42bb05a3527f7d8d2f2c9f2d88552",
+    "scripts/check_projection_fixtures.py": "aa27c30b9f8d5835f9750f085758afa38b11c7b76919bbd67354c48aff007109",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "926579e1ddabc1d1a8bc0087a2bb4ce06bf74330d60777ad9fa5292ab47fbf03",
+    "README.md": "b5134eeed7300ce35559a4f61b667ebf772a5c2d6f24a3149f524bd7986a9216",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "8bd03c9fea66cffc7f18f6df629af413a2fd6dac4a3166d8bfa3e91bef5b40e1",
+    "audit/coverage.json": "2fae6c8eaa7caf71dba9576529581861f6e2324cdead47de7576d67c9d62a8d3",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,10 +1154,10 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "f67532fc38aea5f67abdb32b7bb41b3ca43f3354f1c7f4e38ba1220bf4d61e56",
-    "audit/native-root-run-checkpoint.json": "bbef1f95463308a366748efcb858ed3015b2c6c70525ebdf77c2bffe25aad241",
+    "NATIVE_ROOT_RUN.md": "cafea1149952f64224096c3f1a1efd4dd38be4cb6b1ce71b2b7c42932e2d6f88",
+    "audit/native-root-run-checkpoint.json": "23acddffb13f48970f825cc3bf3109d4913fe394335e22d002ae5c36a0af7f83",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
-    "bridge/Arithmetic/RootRunGenerated.lean": "3b262df943a7c1f5cf90c597146f022e485431e8f9cbc9c7105e18035a61aa0e",
+    "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
     "bridge/BulksketchBridge/AvxSquareScalarMemory.lean": "fb7140785bd4cfda9017e8c06799c724823e87cfe87f6b8f51a03be4483fe194",
     "bridge/BulksketchBridge/AvxSquareWindows.lean": "b77a569f6cf0f01ed3eaf0a1727381dbfeb6fb7a8d842a3ef793a72dff010ca4",
@@ -1170,7 +1170,7 @@
     "bridge/BulksketchBridge/RootRun.lean": "1ed0e3d1efbb40bae0b628bd9dc08c740fb2783eb50e2a6735a6786703c6f3dd",
     "bridge/BulksketchBridge/RootRunGcd.lean": "d63ae5062a68caeb50d8a09486f22946ce35cbe7604709e02f39f6adb44f37f8",
     "bridge/BulksketchBridge/RootRunPrice.lean": "edff2bc28045bfa18adbed0912843b0a028c850ddf67ac27feacdac298cb2776",
-    "bridge/BulksketchBridge/RootRunSpec.lean": "f4f3b1651c8b996bda5235625b7651d4d84739d3424c40ce875828ecd645468b",
+    "bridge/BulksketchBridge/RootRunSpec.lean": "7c8ccc56cf025978296e8d9572d77c07ee9e585c2eeaa42f0c4bb26892766cce",
     "extraction/avx-square/HEAP.md": "79a3b8fabda602fe11a434ab6d97bf76608b1d11dbee69a4c63b5de19f8f0735",
     "extraction/avx-square/check_seed_layout.py": "4e1fa8dc6f9398b035d6fcaef4394c57f5961a91d0dc49c449cbbf06443a60b7",
     "extraction/root-divide/Arithmetic/Funs.lean": "d0356c2374cf3c0c873eeb45f47b9381a1410f80d277de32467b9ae0fbfd64a1",
@@ -1190,7 +1190,7 @@
     "extraction/root-run/aeneas.log": "32cc0721231a0273e2fa60fcf729082942d2a5d3dc1a20c3e4280d142cce1db5",
     "extraction/root-run/arithmetic.llbc": "6a925fe406ccd8bbf20bad9d6e28b5e8b427941c25637a4a6ad6f179528355b2",
     "extraction/root-run/charon.log": "54f8b010ce595513bf4e1d04ce848c3f0dd18ec4af4aa9707c6afd9e9b16b2dd",
-    "extraction/root-run/project.py": "ad62ca2c66947fdc306e59ca50f31cc5eba143c517a6bc6193537ad921587930",
+    "extraction/root-run/project.py": "b8e5f450caf024b86c5ee30e6aaac646785f7ec914ba91a2eb54a3efe9a611a8",
     "extraction/root-run/receipt.json": "7c74338364987ee1f5ccff91cdf699a51d765c44b7e7d3e3e0de4ebbb7176e6a",
     "extraction/root-run/replay.log": "2a98b03981ff61e31b8f8a1515f4535c65397c68d9007ee7bfdf94e9307351f0",
     "bridge/Arithmetic/AffineSplitterGenerated.lean": "044b1c2fbb15ea34ae4779c68c24305d2ef407f0854fc1293d5a04a27848450b",
@@ -1205,7 +1205,7 @@
     "extraction/affine-splitter/receipt.json": "f8fb4ffbe20751f5c9e7eee455de400448021eac6592893447f35c9a43ea085a",
     "extraction/affine-splitter/replay.log": "507ae028fb85e1e3d3dd9b8916c63c88bf0cf593257a82731f1f661da1f4e917",
     "bridge/Arithmetic/AffineSubspacesGenerated.lean": "7424c450af083f0817c133118340bac5f88feaf05dd275f56776c9824af8a17b",
-    "bridge/Arithmetic/RootAffinePreparationGenerated.lean": "c9845023c7f3148484ae0e76f47973552f0b97616a9ef84c177c6f2ea609e2ab",
+    "bridge/Arithmetic/RootAffinePreparationGenerated.lean": "8d5945fd918805636fa53506e21388cfa084e9c321fdcc335e71730ab0bf2de7",
     "bridge/Arithmetic/RootEnumerateGenerated.lean": "e7a0fca7b1b158e00b47b7b836849451c93aee794d112486e43bf4c1654e3662",
     "bridge/BulksketchBridge/AffineSubspaceAlgebra.lean": "42602e2969268f149f95b3f2db0cd2c0783a3d98130e7125ae7b54090ab35bae",
     "bridge/BulksketchBridge/AffineSubspaceStart.lean": "f45098e9fea4afb56f85f52a6e3250ddab11628977c0a71e7116d4c7ae602eaf",
@@ -1213,9 +1213,9 @@
     "bridge/BulksketchBridge/AffineSubspacesAnnihilators.lean": "78cb533ccd3401cf81be22a944956b5ffd9d3427b3ddc59fe3a158ef2c52df23",
     "bridge/BulksketchBridge/AffineSubspacesCoefficients.lean": "ab43d36f77a7ff7e3fe2a84f73f4127c6a5ce5acba4ac16aa03029be6459e445",
     "bridge/BulksketchBridge/AffineSubspacesPolynomial.lean": "de9982ba773682db34f518198e9baa170684f487180e887135bf207c1805d2b2",
-    "bridge/BulksketchBridge/RootAffinePreparation.lean": "f98c642f74d6e87a19e0b216ffa0da320304410077bf8afee16bd31b4510a3ad",
+    "bridge/BulksketchBridge/RootAffinePreparation.lean": "ef5c0cbb8d8e698af6be0eb7d0d34b118cddde09fdd816f74dc15251b571524c",
     "bridge/BulksketchBridge/RootAffinePreparationPrice.lean": "a049bc3d867a5e6041ffc3eb14e13f22059bf69d63f9390fbae1fe71d1a0aa1a",
-    "bridge/BulksketchBridge/RootEnumerate.lean": "4221ccd20e5bd8622ae54c8a41d83817a8fb95d1f990b93d537da8baa77ccf86",
+    "bridge/BulksketchBridge/RootEnumerate.lean": "e51bc71eeb0689e7f22066e2e0573b3d516c05cd95fc3a884258cc4496e349d6",
     "bridge/BulksketchBridge/RootEnumeratePrice.lean": "b9fe0f1ec25b18a4f2ae18c245b808f54065950eadafa70e7f397d23263ca59b",
     "extraction/affine-subspaces/Arithmetic/Funs.lean": "86ef12291f5e17311e2305f43c21371f3ac57f6246686f16404fe0214d33efb0",
     "extraction/affine-subspaces/Arithmetic/FunsExternal_Template.lean": "6550635aa8b29a86ac612545889ceea8ac578635dddb91593cc4aa38a3b6c709",
@@ -1241,7 +1241,7 @@
     "extraction/root-prepare-affine/aeneas.log": "975a1fdb8b9d69fcd5959e7f6879089d9d3de6f0af0c5cc68d849cf930b06779",
     "extraction/root-prepare-affine/arithmetic.llbc": "dd81094edf438584a1c870dbcab26f8dec8d59df8d577ccb10783fe4be360c43",
     "extraction/root-prepare-affine/charon.log": "e87c8d79d5167da26d7dc3545ee29a9ff8f9fb251ae16638fd01c01219a9adeb",
-    "extraction/root-prepare-affine/project.py": "7688cb5ffd69a3a5e2ad6bc25e3bfb004e3fb5d032aaff234199a52779c0274d",
+    "extraction/root-prepare-affine/project.py": "12680b2906e599517aab52e770c27f8afbb34df07ffa7ac0304f178206b56f7d",
     "extraction/root-prepare-affine/receipt.json": "949bd677e89c49cb1a60773c69b79ebfa7b42982f9b1663145d619e9bc3ab509",
     "extraction/root-prepare-affine/replay.log": "fb5ceb1fb69d97937dc0f763bcdab57e081f3ca96a35f7da10343c2d8af4a63a",
     "bridge/Arithmetic/DenseDivRemGenerated.lean": "8b8a2f298e58c3946adda864dff96ec9a461fdc555078a39e5d38d3e0121ba44",
@@ -1275,7 +1275,62 @@
     "extraction/dense-div-rem/wrong_owner.log": "b59e76562b95872fde672888f78ad818d25b4b02e456d06de442cf9cdd6f243f",
     "extraction/dense-div-rem/wrong_terminal.log": "02a10e0ce3de521dba0b70694fa9dfe57806aaac4ff52a084085592133298458",
     "extraction/dense-div-rem/xor-patched.log": "cc2aafec7f68278f50224167479108eaddba6cfa5522ab31b1a5fba7dad43ee1",
-    "extraction/dense-div-rem/xor-stock.log": "158aa9ed3a43d86b4b5b052c6704b5a6ebe4e328d5e5834cd8f876712c7714ca"
+    "extraction/dense-div-rem/xor-stock.log": "158aa9ed3a43d86b4b5b052c6704b5a6ebe4e328d5e5834cd8f876712c7714ca",
+    "bridge/Arithmetic/AffineEnumerateGenerated.lean": "7984d3dff96ebf8f3a005a84a0030f0c50ecbe98dea7cad4110ee74914d521b5",
+    "bridge/Arithmetic/AffineSelectorGenerated.lean": "d1e9ca9246b61856b27d55cafff6d492861029e65fce6633502aa5a494db03f3",
+    "bridge/Arithmetic/AvxMultiplyLinearGenerated.lean": "8f8180be98885dc58012cc6ac8634e901b4032c2f775538ba3ba3fb326a0820d",
+    "bridge/BulksketchBridge/AffineCandidateScan.lean": "165286589ccb51754b73336ba67725d9a00da7461ee80bbc689c0ebad2fc982a",
+    "bridge/BulksketchBridge/AffineEnumerationBatch.lean": "3c4ae325eed4894f4d19eea943defc3a11c4266508b52a7d556fbdbb6c2cfa18",
+    "bridge/BulksketchBridge/AffineEnumerationFrame.lean": "88dd05180ac5875cb6e988ddd7478cd3930dadd11159fb9f984fa1942acd01b8",
+    "bridge/BulksketchBridge/AffineEnumerationHorner.lean": "5bb21cf5b0725b1b83966a01c64b525db0cded3e0fa1588f4d8569b68623d9b9",
+    "bridge/BulksketchBridge/AffineGrayFill.lean": "714d7939b3ba16f47c98424fecfd4f705e75c0bb64070cc806b925e75a9e26a0",
+    "bridge/BulksketchBridge/AffineSelector.lean": "f5700d86ba22c39b15a6a8b4c7c4045d6ce29e0a860725a488eeee32e5e98316",
+    "bridge/BulksketchBridge/AvxMultiplyLinear.lean": "a4ab70f3b92edbe064b21d8a5a7dd7c7870a3ba18be7d4f91bf4f5015cf4aa3c",
+    "bridge/BulksketchBridge/AvxMultiplyLinearHeap.lean": "db435bd58c2d735d5a147a0cabbb9ada71aa788b72a66c70574f9fcaec4291d2",
+    "extraction/affine-enumerate/Arithmetic/Funs.lean": "7d2317640c55722bd5472bbaad51f84a0af5449faaa9f2508af83ce6c42dc481",
+    "extraction/affine-enumerate/Arithmetic/FunsExternal_Template.lean": "9c0b9bc7263142cde8a1ff14d9377ddc2ba386acbaf4158a46d429fd062eb803",
+    "extraction/affine-enumerate/Arithmetic/Types.lean": "ec25fe10cf04ff6687064fa9b18f8a40bc1ac761f2f643b99db946ccb38b62ac",
+    "extraction/affine-enumerate/README.md": "635ddaef8cb31bbbb466d4a61c1300a6f2dad3589c09a77f775fa35df35e80fa",
+    "extraction/affine-enumerate/affine-splitter.log": "a9fe3f8e84b3e13f0a202869b14013547036afd804305f0fbb5d85cf90e1c699",
+    "extraction/affine-enumerate/arithmetic.llbc": "a507a5d00a56b0ae642627cd588722e8cec9095cc2f25690977534e361cea579",
+    "extraction/affine-enumerate/charon.log": "933c00a1846356b41210dc4fc18b3520461006af5f6762d8be9984bed0b96885",
+    "extraction/affine-enumerate/checked-affine-outer-continue.patch": "6481beb982e57655e7ee2c888daf823c9b5286f66af85f9ec56dac90e545aa4f",
+    "extraction/affine-enumerate/checked.log": "b64887694a772d15791478ea2ee7fdf9233277935353d28c25f1f3ae2305490a",
+    "extraction/affine-enumerate/control_flow.py": "6222fb77b2094c783e5adb9fc9d09c0db4f3b1faf290e8042199c487a0ec4b20",
+    "extraction/affine-enumerate/fresh-build.log": "9a5da287c1e6a1b8175286fe6dbe97d9918eef484e8d73277b7f883ab8b3ce6b",
+    "extraction/affine-enumerate/guard-controls.py": "df151044522202c81a73dd823533c4ebf4bb28d67cec678d45fab80a553ed87a",
+    "extraction/affine-enumerate/missing-return-assignment.log": "2c48f70db76812659a09033452f3d4d596d72cbe45d1bbfa29ff017045f2d356",
+    "extraction/affine-enumerate/project.py": "74a311d77062882bbb348a15f78b38df5f17d0397a10e14467ea293cc0448203",
+    "extraction/affine-enumerate/receipt.json": "d8be31907d69ad61c835f572c78ca6a1df4c0488f01145cf5250be6642373d6c",
+    "extraction/affine-enumerate/replay.log": "41957b48cd0b82e6e543eed882cbc7e65b3487f824a427622976ed8f0adf3d12",
+    "extraction/affine-enumerate/return-place.log": "ce677e1937de3337622b39025440625e23dffb0d29833a8386c1873689f79382",
+    "extraction/affine-enumerate/root-enumerate-affine.log": "e6aeb2a5de0a37bfa070525c034efbf2cfc124fd84c8b473be386244b546c6d7",
+    "extraction/affine-enumerate/stock.log": "c03fbe09c8d570bf3c4adb1272ef2b51f2afa0b87445a9560ccd2a6d66696f24",
+    "extraction/affine-enumerate/unchecked.log": "b4184820dc3a82aeb12de95b8e2eba88921a92b78ca375195ccd7c78dfcec5f8",
+    "extraction/affine-enumerate/wrong-break.log": "020cc1f3a685ef4def57b8429d6013e825a6c450fac04f3bee6e24c55af328d5",
+    "extraction/affine-enumerate/wrong-cleanup.log": "23214634eab2d24b7fd258fa90dd72f1355e2426e81e75c31e5bdd5004f72314",
+    "extraction/affine-enumerate/wrong-constructor.log": "6efa3c9e4dad2118fb96c6338a738a7c9f43690dc4a3a73e2ec24ca179f8cbbb",
+    "extraction/affine-enumerate/wrong-name.log": "4b85a46e4e4a0d4c770e4a22d4f13b3baa1b5b4afbb378992365b89dabcaf5f6",
+    "extraction/affine-enumerate/wrong-span.log": "ab9df4106ce95895bbe7d4e620689f938d42936abd87f8df291cfb63910e653d",
+    "extraction/affine-selector/Arithmetic/Funs.lean": "2cb5c3b780f0ad89bd6797f507b7adfdb903ea0efb8a66ee3ac52f65a960e256",
+    "extraction/affine-selector/Arithmetic/FunsExternal_Template.lean": "92035b28f002c76166c04112a5f25e8259ccddc96cbb8750236a847d7915c0c4",
+    "extraction/affine-selector/Arithmetic/Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+    "extraction/affine-selector/aeneas.log": "82cd4816d295ed67b95492c53272a4aacc0e7678b5357aad546c763b054f42f7",
+    "extraction/affine-selector/arithmetic.llbc": "da8717291b8ca86da1ed1cafb7cec5da437ac88733d8b839b6fbac6197831ce8",
+    "extraction/affine-selector/charon.log": "a963df76826198ba2c474cbdfa4c5992bb5cb167de99ecd441b0fe146f4691bc",
+    "extraction/affine-selector/project.py": "06106382dcb8ba8ae8b513a36009a84a38c4f855a822204cd114593cbe9341b3",
+    "extraction/affine-selector/receipt.json": "9334013003c3bcfa7f2ab889d3835a391ab1eefe435a928216a82bb4e24a1fb3",
+    "extraction/affine-selector/replay.log": "b6fa7bb24f2406d0db619afc834c34d9bf6ec07e06dc037b42087a61bc5a0890",
+    "extraction/avx-multiply-linear/Arithmetic/Funs.lean": "a986c38e63f0ba6186f0fc3e5ac9db188516b8e6bcf1decfc4cad2a13800f915",
+    "extraction/avx-multiply-linear/Arithmetic/FunsExternal_Template.lean": "113a02d181689c2b6f3127724c3856f3877da1fb0a959978503455630d9a2657",
+    "extraction/avx-multiply-linear/Arithmetic/Types.lean": "9eed91c2cd665f33c198ae5aaee275052307a0f271867751d7ff7a0c7c0fc5b9",
+    "extraction/avx-multiply-linear/Arithmetic/TypesExternal_Template.lean": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e",
+    "extraction/avx-multiply-linear/aeneas.log": "406fc5ab82335f086d8e9cc37cb57db0671f72f599317993f213953561c7eb2d",
+    "extraction/avx-multiply-linear/arithmetic.llbc": "21246f91e18d7997f114453f4f80c08cf8a94baa5e57166cf6a9767aff13c7e0",
+    "extraction/avx-multiply-linear/charon.log": "b95b81839f1ecc726c58456d7cd37261ff880655eb75afd5a0a2e5888b424c66",
+    "extraction/avx-multiply-linear/project.py": "2db541b084c3380d18d3113350ab5ccfe67a5c954fc24d4e97b8955bba0f26a3",
+    "extraction/avx-multiply-linear/receipt.json": "fd066ff0a6d4b8f2990c98ed865f3415553dd1fd3baeac2df943629731272108",
+    "extraction/avx-multiply-linear/replay.log": "4ffa7b999eb8b65d14e4241391d1d0d89e779e80be0c615b98745cfdf2a21b7b"
   },
   "reviewed_policy_revisions": [
     {
@@ -8979,7 +9034,390 @@
       "new_sha256": "cf02fd164dba9f559dbcf040a0ce8215d5d32d88698e01214640daccb0755c75",
       "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
       "old_sha256": "a91cf58c91dd2c10f0c613e9426d276b91442906d045dca49c667f2bdf31561e"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "cafea1149952f64224096c3f1a1efd4dd38be4cb6b1ce71b2b7c42932e2d6f88",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "f67532fc38aea5f67abdb32b7bb41b3ca43f3354f1c7f4e38ba1220bf4d61e56"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "b5134eeed7300ce35559a4f61b667ebf772a5c2d6f24a3149f524bd7986a9216",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "926579e1ddabc1d1a8bc0087a2bb4ce06bf74330d60777ad9fa5292ab47fbf03"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "2fae6c8eaa7caf71dba9576529581861f6e2324cdead47de7576d67c9d62a8d3",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "8bd03c9fea66cffc7f18f6df629af413a2fd6dac4a3166d8bfa3e91bef5b40e1"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "59f44ce4894d9e15eee382646fdd8d0e91a5e24f5c8f26c0be1f6c9e309498ba",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "1a81030b63bcbaf894f1ed98362378fa1c635cf45a947f48596cc222b4e83074"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "23acddffb13f48970f825cc3bf3109d4913fe394335e22d002ae5c36a0af7f83",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "bbef1f95463308a366748efcb858ed3015b2c6c70525ebdf77c2bffe25aad241"
+    },
+    {
+      "path": "bridge/Arithmetic/AffineEnumerateGenerated.lean",
+      "new_sha256": "7984d3dff96ebf8f3a005a84a0030f0c50ecbe98dea7cad4110ee74914d521b5",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "bridge/Arithmetic/AffineSelectorGenerated.lean",
+      "new_sha256": "d1e9ca9246b61856b27d55cafff6d492861029e65fce6633502aa5a494db03f3",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "bridge/Arithmetic/AvxMultiplyLinearGenerated.lean",
+      "new_sha256": "8f8180be98885dc58012cc6ac8634e901b4032c2f775538ba3ba3fb326a0820d",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "bridge/Arithmetic/RootAffinePreparationGenerated.lean",
+      "new_sha256": "8d5945fd918805636fa53506e21388cfa084e9c321fdcc335e71730ab0bf2de7",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "c9845023c7f3148484ae0e76f47973552f0b97616a9ef84c177c6f2ea609e2ab"
+    },
+    {
+      "path": "bridge/Arithmetic/RootRunGenerated.lean",
+      "new_sha256": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "3b262df943a7c1f5cf90c597146f022e485431e8f9cbc9c7105e18035a61aa0e"
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "79c084c9f2e031b0fd17abf648f3d4d5511dc31f6ae94d6d62cf36fed22b6ccc",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "007acc2bfdbfa880bbeeb4641df583010114cb4a9ada5461e7c6a03cdbfc50b2"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineCandidateScan.lean",
+      "new_sha256": "165286589ccb51754b73336ba67725d9a00da7461ee80bbc689c0ebad2fc982a",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineEnumerationBatch.lean",
+      "new_sha256": "3c4ae325eed4894f4d19eea943defc3a11c4266508b52a7d556fbdbb6c2cfa18",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineEnumerationFrame.lean",
+      "new_sha256": "88dd05180ac5875cb6e988ddd7478cd3930dadd11159fb9f984fa1942acd01b8",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineEnumerationHorner.lean",
+      "new_sha256": "5bb21cf5b0725b1b83966a01c64b525db0cded3e0fa1588f4d8569b68623d9b9",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineGrayFill.lean",
+      "new_sha256": "714d7939b3ba16f47c98424fecfd4f705e75c0bb64070cc806b925e75a9e26a0",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineSelector.lean",
+      "new_sha256": "f5700d86ba22c39b15a6a8b4c7c4045d6ce29e0a860725a488eeee32e5e98316",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "bae9644bfc86abf9b10177eb624ea0888cd78b26929a9b6da757b1145fe46e23",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "346ba75b014c6f77ee5869465e9bcd97500e096239df6c98909713b2670a6db1"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxMultiplyLinear.lean",
+      "new_sha256": "a4ab70f3b92edbe064b21d8a5a7dd7c7870a3ba18be7d4f91bf4f5015cf4aa3c",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxMultiplyLinearHeap.lean",
+      "new_sha256": "db435bd58c2d735d5a147a0cabbb9ada71aa788b72a66c70574f9fcaec4291d2",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootAffinePreparation.lean",
+      "new_sha256": "ef5c0cbb8d8e698af6be0eb7d0d34b118cddde09fdd816f74dc15251b571524c",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "f98c642f74d6e87a19e0b216ffa0da320304410077bf8afee16bd31b4510a3ad"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootEnumerate.lean",
+      "new_sha256": "e51bc71eeb0689e7f22066e2e0573b3d516c05cd95fc3a884258cc4496e349d6",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "4221ccd20e5bd8622ae54c8a41d83817a8fb95d1f990b93d537da8baa77ccf86"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootRunSpec.lean",
+      "new_sha256": "7c8ccc56cf025978296e8d9572d77c07ee9e585c2eeaa42f0c4bb26892766cce",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "f4f3b1651c8b996bda5235625b7651d4d84739d3424c40ce875828ecd645468b"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "5bdff58ceaf815ac74323381e804fa49ea233675b99d80f885512f317d7e3493",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "95f7302743d5f28c668cf60caf39cb234867dcf91d7cedd44d6926bc2454a3e0"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "ad73e61b2f5c00aedf9e6046655b5759df6826ec58b6f59f264d9e61a7c133b6",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "76e8753d4ab0d968d2e212ab29f9ac0277e12982ef80ead3aa2689f29d0ace09"
+    },
+    {
+      "path": "extraction/affine-enumerate/Arithmetic/Funs.lean",
+      "new_sha256": "7d2317640c55722bd5472bbaad51f84a0af5449faaa9f2508af83ce6c42dc481",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "9c0b9bc7263142cde8a1ff14d9377ddc2ba386acbaf4158a46d429fd062eb803",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/Arithmetic/Types.lean",
+      "new_sha256": "ec25fe10cf04ff6687064fa9b18f8a40bc1ac761f2f643b99db946ccb38b62ac",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/README.md",
+      "new_sha256": "635ddaef8cb31bbbb466d4a61c1300a6f2dad3589c09a77f775fa35df35e80fa",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/affine-splitter.log",
+      "new_sha256": "a9fe3f8e84b3e13f0a202869b14013547036afd804305f0fbb5d85cf90e1c699",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/arithmetic.llbc",
+      "new_sha256": "a507a5d00a56b0ae642627cd588722e8cec9095cc2f25690977534e361cea579",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/charon.log",
+      "new_sha256": "933c00a1846356b41210dc4fc18b3520461006af5f6762d8be9984bed0b96885",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/checked-affine-outer-continue.patch",
+      "new_sha256": "6481beb982e57655e7ee2c888daf823c9b5286f66af85f9ec56dac90e545aa4f",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/checked.log",
+      "new_sha256": "b64887694a772d15791478ea2ee7fdf9233277935353d28c25f1f3ae2305490a",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/control_flow.py",
+      "new_sha256": "6222fb77b2094c783e5adb9fc9d09c0db4f3b1faf290e8042199c487a0ec4b20",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/fresh-build.log",
+      "new_sha256": "9a5da287c1e6a1b8175286fe6dbe97d9918eef484e8d73277b7f883ab8b3ce6b",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/guard-controls.py",
+      "new_sha256": "df151044522202c81a73dd823533c4ebf4bb28d67cec678d45fab80a553ed87a",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/missing-return-assignment.log",
+      "new_sha256": "2c48f70db76812659a09033452f3d4d596d72cbe45d1bbfa29ff017045f2d356",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/project.py",
+      "new_sha256": "74a311d77062882bbb348a15f78b38df5f17d0397a10e14467ea293cc0448203",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/receipt.json",
+      "new_sha256": "d8be31907d69ad61c835f572c78ca6a1df4c0488f01145cf5250be6642373d6c",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/replay.log",
+      "new_sha256": "41957b48cd0b82e6e543eed882cbc7e65b3487f824a427622976ed8f0adf3d12",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/return-place.log",
+      "new_sha256": "ce677e1937de3337622b39025440625e23dffb0d29833a8386c1873689f79382",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/root-enumerate-affine.log",
+      "new_sha256": "e6aeb2a5de0a37bfa070525c034efbf2cfc124fd84c8b473be386244b546c6d7",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/stock.log",
+      "new_sha256": "c03fbe09c8d570bf3c4adb1272ef2b51f2afa0b87445a9560ccd2a6d66696f24",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/unchecked.log",
+      "new_sha256": "b4184820dc3a82aeb12de95b8e2eba88921a92b78ca375195ccd7c78dfcec5f8",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/wrong-break.log",
+      "new_sha256": "020cc1f3a685ef4def57b8429d6013e825a6c450fac04f3bee6e24c55af328d5",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/wrong-cleanup.log",
+      "new_sha256": "23214634eab2d24b7fd258fa90dd72f1355e2426e81e75c31e5bdd5004f72314",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/wrong-constructor.log",
+      "new_sha256": "6efa3c9e4dad2118fb96c6338a738a7c9f43690dc4a3a73e2ec24ca179f8cbbb",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/wrong-name.log",
+      "new_sha256": "4b85a46e4e4a0d4c770e4a22d4f13b3baa1b5b4afbb378992365b89dabcaf5f6",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-enumerate/wrong-span.log",
+      "new_sha256": "ab9df4106ce95895bbe7d4e620689f938d42936abd87f8df291cfb63910e653d",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-selector/Arithmetic/Funs.lean",
+      "new_sha256": "2cb5c3b780f0ad89bd6797f507b7adfdb903ea0efb8a66ee3ac52f65a960e256",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-selector/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "92035b28f002c76166c04112a5f25e8259ccddc96cbb8750236a847d7915c0c4",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-selector/Arithmetic/Types.lean",
+      "new_sha256": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-selector/aeneas.log",
+      "new_sha256": "82cd4816d295ed67b95492c53272a4aacc0e7678b5357aad546c763b054f42f7",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-selector/arithmetic.llbc",
+      "new_sha256": "da8717291b8ca86da1ed1cafb7cec5da437ac88733d8b839b6fbac6197831ce8",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-selector/charon.log",
+      "new_sha256": "a963df76826198ba2c474cbdfa4c5992bb5cb167de99ecd441b0fe146f4691bc",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-selector/project.py",
+      "new_sha256": "06106382dcb8ba8ae8b513a36009a84a38c4f855a822204cd114593cbe9341b3",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-selector/receipt.json",
+      "new_sha256": "9334013003c3bcfa7f2ab889d3835a391ab1eefe435a928216a82bb4e24a1fb3",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/affine-selector/replay.log",
+      "new_sha256": "b6fa7bb24f2406d0db619afc834c34d9bf6ec07e06dc037b42087a61bc5a0890",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/avx-multiply-linear/Arithmetic/Funs.lean",
+      "new_sha256": "a986c38e63f0ba6186f0fc3e5ac9db188516b8e6bcf1decfc4cad2a13800f915",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/avx-multiply-linear/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "113a02d181689c2b6f3127724c3856f3877da1fb0a959978503455630d9a2657",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/avx-multiply-linear/Arithmetic/Types.lean",
+      "new_sha256": "9eed91c2cd665f33c198ae5aaee275052307a0f271867751d7ff7a0c7c0fc5b9",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/avx-multiply-linear/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/avx-multiply-linear/aeneas.log",
+      "new_sha256": "406fc5ab82335f086d8e9cc37cb57db0671f72f599317993f213953561c7eb2d",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/avx-multiply-linear/arithmetic.llbc",
+      "new_sha256": "21246f91e18d7997f114453f4f80c08cf8a94baa5e57166cf6a9767aff13c7e0",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/avx-multiply-linear/charon.log",
+      "new_sha256": "b95b81839f1ecc726c58456d7cd37261ff880655eb75afd5a0a2e5888b424c66",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/avx-multiply-linear/project.py",
+      "new_sha256": "2db541b084c3380d18d3113350ab5ccfe67a5c954fc24d4e97b8955bba0f26a3",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/avx-multiply-linear/receipt.json",
+      "new_sha256": "fd066ff0a6d4b8f2990c98ed865f3415553dd1fd3baeac2df943629731272108",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/avx-multiply-linear/replay.log",
+      "new_sha256": "4ffa7b999eb8b65d14e4241391d1d0d89e779e80be0c615b98745cfdf2a21b7b",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update."
+    },
+    {
+      "path": "extraction/root-prepare-affine/project.py",
+      "new_sha256": "12680b2906e599517aab52e770c27f8afbb34df07ffa7ac0304f178206b56f7d",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "7688cb5ffd69a3a5e2ad6bc25e3bfb004e3fb5d032aaff234199a52779c0274d"
+    },
+    {
+      "path": "extraction/root-run/project.py",
+      "new_sha256": "b8e5f450caf024b86c5ee30e6aaac646785f7ec914ba91a2eb54a3efe9a611a8",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "ad62ca2c66947fdc306e59ca50f31cc5eba143c517a6bc6193537ad921587930"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "aa27c30b9f8d5835f9750f085758afa38b11c7b76919bbd67354c48aff007109",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "167ea92d3d4049bb4cb0df61b7ffc9da0ed42bb05a3527f7d8d2f2c9f2d88552"
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "50de9c90cb9d4e0a75e44761ac4c611086b1831c229c6a2bd2a556303535c8a3",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "cf02fd164dba9f559dbcf040a0ce8215d5d32d88698e01214640daccb0755c75"
     }
   ],
-  "challenge_count": 275
+  "challenge_count": 281
 }

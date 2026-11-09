@@ -71,7 +71,7 @@ def expected (calls : Calls) {K : Type} (kernels : BulkKernels K bulksketch.fiel
         else if insufficientPoints roots.degree rank then
           .ok (.Ok (.Err .NotSplit), roots, based, id, paid)
         else do
-          let enumerate ← calls.enumeratePreferred roots.degree rank
+          let enumerate ← bulksketch.decode.affine.enumerate_preferred roots.degree rank
           let readyRoots := { roots with affine_ready := true, affine_base := base, affine_rank := rank }
           let readyWork := { based with basis := { based.basis with len := UScalar.cast .U32 rank } }
           if enumerate then

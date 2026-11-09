@@ -586,7 +586,19 @@ run_cmd do
     (``BulksketchBridge.DenseDivRem.ActualRootDivideWithDivRem,
       ``BulksketchBridge.DenseDivRem.original_root_divide_refines),
     (``BulksketchBridge.AffineSplitter.ActualNativeSplitterChildren,
-      ``BulksketchBridge.AffineSplitter.native_splitter_children)
+      ``BulksketchBridge.AffineSplitter.native_splitter_children),
+    (``BulksketchBridge.AffineEnumerate.ActualNativeEnumerate,
+      ``BulksketchBridge.AffineEnumerate.native_enumerate_refines),
+    (``BulksketchBridge.AffineSelector.ActualEnumeratePreferred,
+      ``BulksketchBridge.AffineSelector.enumerate_preferred_refines),
+    (``BulksketchBridge.AffineSelector.ActualSquareProducts,
+      ``BulksketchBridge.AffineSelector.square_products_refines),
+    (``BulksketchBridge.AvxMultiplyLinear.ActualMultiplyLinear,
+      ``BulksketchBridge.AvxMultiplyLinear.multiply_linear_refines),
+    (``BulksketchBridge.AffineEnumerate.ActualCandidateScan,
+      ``BulksketchBridge.AffineEnumerate.candidate_scan_refines),
+    (``BulksketchBridge.AvxMultiplyLinear.ActualAllocatedMultiplyLinear,
+      ``BulksketchBridge.AvxMultiplyLinear.allocated_multiply_linear_refines)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

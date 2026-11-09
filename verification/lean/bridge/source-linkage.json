@@ -508,18 +508,8 @@
       "has_errors": false
     },
     {
-      "path": "extraction/root-run/arithmetic.llbc",
-      "sha256": "6a925fe406ccd8bbf20bad9d6e28b5e8b427941c25637a4a6ad6f179528355b2",
-      "has_errors": false
-    },
-    {
       "path": "extraction/affine-subspaces/arithmetic.llbc",
       "sha256": "072a2394e9ac06be6597ce5a11ff254f710b3b22bb10ec0c8679ce3f701f67c9",
-      "has_errors": false
-    },
-    {
-      "path": "extraction/root-prepare-affine/arithmetic.llbc",
-      "sha256": "dd81094edf438584a1c870dbcab26f8dec8d59df8d577ccb10783fe4be360c43",
       "has_errors": false
     },
     {
@@ -530,6 +520,31 @@
     {
       "path": "extraction/dense-div-rem/arithmetic.llbc",
       "sha256": "1e565faa140b2f226dc3652de37ee8dcc0bfd5de2894b692e05a207d4c1d8b0c",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/root-run/arithmetic.llbc",
+      "sha256": "6a925fe406ccd8bbf20bad9d6e28b5e8b427941c25637a4a6ad6f179528355b2",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/root-prepare-affine/arithmetic.llbc",
+      "sha256": "dd81094edf438584a1c870dbcab26f8dec8d59df8d577ccb10783fe4be360c43",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/affine-enumerate/arithmetic.llbc",
+      "sha256": "a507a5d00a56b0ae642627cd588722e8cec9095cc2f25690977534e361cea579",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/affine-selector/arithmetic.llbc",
+      "sha256": "da8717291b8ca86da1ed1cafb7cec5da437ac88733d8b839b6fbac6197831ce8",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-multiply-linear/arithmetic.llbc",
+      "sha256": "21246f91e18d7997f114453f4f80c08cf8a94baa5e57166cf6a9767aff13c7e0",
       "has_errors": false
     }
   ],
@@ -1220,11 +1235,6 @@
       "generated_file": "bridge/Arithmetic/AffineSplitterGenerated.lean"
     },
     {
-      "native_item_id": "src/decode/roots.rs:128:method:bulksketch::decode::roots::Roots::run",
-      "generated_declaration": "bulksketch.decode.roots.Roots.run",
-      "generated_file": "bridge/Arithmetic/RootRunGenerated.lean"
-    },
-    {
       "native_item_id": "src/decode/affine.rs:245:function:bulksketch::decode::affine::subspace_start",
       "generated_declaration": "bulksketch.decode.affine.subspace_start",
       "generated_file": "bridge/Arithmetic/AffineSubspacesGenerated.lean"
@@ -1235,11 +1245,6 @@
       "generated_file": "bridge/Arithmetic/AffineSubspacesGenerated.lean"
     },
     {
-      "native_item_id": "src/decode/roots.rs:274:method:bulksketch::decode::roots::Roots::prepare_affine",
-      "generated_declaration": "bulksketch.decode.roots.Roots.prepare_affine",
-      "generated_file": "bridge/Arithmetic/RootAffinePreparationGenerated.lean"
-    },
-    {
       "native_item_id": "src/decode/roots.rs:321:method:bulksketch::decode::roots::Roots::enumerate_affine",
       "generated_declaration": "bulksketch.decode.roots.Roots.enumerate_affine",
       "generated_file": "bridge/Arithmetic/RootEnumerateGenerated.lean"
@@ -1248,6 +1253,36 @@
       "native_item_id": "src/poly/dense.rs:40:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::div_rem_into",
       "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.div_rem_into",
       "generated_file": "bridge/Arithmetic/DenseDivRemGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:128:method:bulksketch::decode::roots::Roots::run",
+      "generated_declaration": "bulksketch.decode.roots.Roots.run",
+      "generated_file": "bridge/Arithmetic/RootRunGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:274:method:bulksketch::decode::roots::Roots::prepare_affine",
+      "generated_declaration": "bulksketch.decode.roots.Roots.prepare_affine",
+      "generated_file": "bridge/Arithmetic/RootAffinePreparationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:299:function:bulksketch::decode::affine::enumerate",
+      "generated_declaration": "bulksketch.decode.affine.enumerate",
+      "generated_file": "bridge/Arithmetic/AffineEnumerateGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:82:function:bulksketch::decode::affine::enumerate_preferred",
+      "generated_declaration": "bulksketch.decode.affine.enumerate_preferred",
+      "generated_file": "bridge/Arithmetic/AffineSelectorGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:15:function:bulksketch::decode::affine::square_products",
+      "generated_declaration": "bulksketch.decode.affine.square_products",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:819:function:bulksketch::backend::x86_vpclmul512::multiply_linear",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.multiply_linear",
+      "generated_file": "bridge/Arithmetic/AvxMultiplyLinearGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1831,15 +1866,6 @@
       "scope": "Original stock affine splitter, its coefficient loop and normalization callbacks. Original linear evaluation and Dense modular square are bound at the native endpoint."
     },
     {
-      "generated": "extraction/root-run/Arithmetic/Funs.lean",
-      "bridge_copy": "bridge/Arithmetic/RootRunGenerated.lean",
-      "sha256": "3b262df943a7c1f5cf90c597146f022e485431e8f9cbc9c7105e18035a61aa0e",
-      "raw_sha256": "8eb87055b6f02b4317a73a4143bd6f31eac1fd147b762658d0211872dc39f584",
-      "checker": "extraction/root-run/project.py",
-      "declaration_count": 1,
-      "scope": "Original stage dispatcher with original leaf, trace, table, divide, GCD, affine splitter, preparation and enumeration wrappers bound. Lower-level affine algorithm slots remain explicit."
-    },
-    {
       "generated": "extraction/affine-subspaces/Arithmetic/Funs.lean",
       "bridge_copy": "bridge/Arithmetic/AffineSubspacesGenerated.lean",
       "sha256": "7424c450af083f0817c133118340bac5f88feaf05dd275f56776c9824af8a17b",
@@ -1847,15 +1873,6 @@
       "checker": "extraction/affine-subspaces/project.py",
       "declaration_count": 6,
       "scope": "Original triangular offset and affine subspace table, including both nested loops and the original linear evaluation binding."
-    },
-    {
-      "generated": "extraction/root-prepare-affine/Arithmetic/Funs.lean",
-      "bridge_copy": "bridge/Arithmetic/RootAffinePreparationGenerated.lean",
-      "sha256": "c9845023c7f3148484ae0e76f47973552f0b97616a9ef84c177c6f2ea609e2ab",
-      "raw_sha256": "04ecd15e87bfd5393b3e22f7fe6854cdafd79171db15e70c211738ee2a394566",
-      "checker": "extraction/root-prepare-affine/project.py",
-      "declaration_count": 4,
-      "scope": "Original affine preparation and checked count callback, with the original subspace table bound."
     },
     {
       "generated": "extraction/root-enumerate-affine/Arithmetic/Funs.lean",
@@ -1875,6 +1892,52 @@
       "declaration_count": 15,
       "scope": "Original unoutlined Dense div/rem entry and all six source loops, checked scoped translator, and existing arithmetic and mutable Zip bindings.",
       "translator_variant": "checked-dense-div-rem-v1"
+    },
+    {
+      "generated": "extraction/root-run/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootRunGenerated.lean",
+      "sha256": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
+      "raw_sha256": "8eb87055b6f02b4317a73a4143bd6f31eac1fd147b762658d0211872dc39f584",
+      "checker": "extraction/root-run/project.py",
+      "declaration_count": 1,
+      "scope": "Original root stage dispatcher with the original enumeration wrapper and inner enumerator linked. Only affine multiple and solve map are lower-level affine slots."
+    },
+    {
+      "generated": "extraction/root-prepare-affine/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootAffinePreparationGenerated.lean",
+      "sha256": "8d5945fd918805636fa53506e21388cfa084e9c321fdcc335e71730ab0bf2de7",
+      "raw_sha256": "04ecd15e87bfd5393b3e22f7fe6854cdafd79171db15e70c211738ee2a394566",
+      "checker": "extraction/root-prepare-affine/project.py",
+      "declaration_count": 4,
+      "scope": "Original affine preparation, count callback, subspace table, and original selector binding."
+    },
+    {
+      "generated": "extraction/affine-enumerate/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AffineEnumerateGenerated.lean",
+      "sha256": "7984d3dff96ebf8f3a005a84a0030f0c50ecbe98dea7cad4110ee74914d521b5",
+      "raw_sha256": "7d2317640c55722bd5472bbaad51f84a0af5449faaa9f2508af83ce6c42dc481",
+      "checker": "extraction/affine-enumerate/project.py",
+      "declaration_count": 7,
+      "scope": "Original affine enumeration entry and all three loops under the scoped checked Continue normalization.",
+      "translator_variant": "checked-affine-outer-continue-v1"
+    },
+    {
+      "generated": "extraction/affine-selector/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AffineSelectorGenerated.lean",
+      "sha256": "d1e9ca9246b61856b27d55cafff6d492861029e65fce6633502aa5a494db03f3",
+      "raw_sha256": "2cb5c3b780f0ad89bd6797f507b7adfdb903ea0efb8a66ee3ac52f65a960e256",
+      "checker": "extraction/affine-selector/project.py",
+      "declaration_count": 1,
+      "scope": "Original enumeration selector with the byte-identical square-products helper in the stock root setup projection."
+    },
+    {
+      "generated": "extraction/avx-multiply-linear/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxMultiplyLinearGenerated.lean",
+      "sha256": "8f8180be98885dc58012cc6ac8634e901b4032c2f775538ba3ba3fb326a0820d",
+      "raw_sha256": "a986c38e63f0ba6186f0fc3e5ac9db188516b8e6bcf1decfc4cad2a13800f915",
+      "checker": "extraction/avx-multiply-linear/project.py",
+      "declaration_count": 3,
+      "scope": "Original AVX-512 linear update and descending loop with exact masked load, store and multiply bindings."
     }
   ],
   "reviewed_translator_variants": [
@@ -1976,6 +2039,15 @@
       "receipt": "extraction/dense-div-rem/receipt.json",
       "mandatory_checks": true,
       "scope": "Exact original Dense division LLBC. Checked Zip region and raw iterator ownership preflight, stock cleanup, and terminal seed by matching symbolic loan identity."
+    },
+    {
+      "id": "checked-affine-outer-continue-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/affine-enumerate/checked-affine-outer-continue.patch",
+      "patch_sha256": "6481beb982e57655e7ee2c888daf823c9b5286f66af85f9ec56dac90e545aa4f",
+      "receipt": "extraction/affine-enumerate/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact checked affine enumerator span and loop shape. Nonlocal continuation, error cleanup, and unobservable result initialization are scoped to the original capture."
     }
   ],
   "diagnostic_generated_projections": [

@@ -1,0 +1,331 @@
+{
+  "variant_id": "checked-affine-outer-continue-v1",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "native_source_edited": false,
+  "native_llbc_edited": false,
+  "source_sha256": {
+    "src/decode/affine.rs": "a7c45498717202aec291b4c4acdd6f819edf16bcdf478500a8c74a3492c4e11d",
+    "src/backend/contract.rs": "4d05ce564edc408ba04f5a907b159ad91018ba8cfd93126e17913ed49f7e3d59",
+    "src/types.rs": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
+  },
+  "capture_sha256": "a507a5d00a56b0ae642627cd588722e8cec9095cc2f25690977534e361cea579",
+  "variant_patch": "extraction/affine-enumerate/checked-affine-outer-continue.patch",
+  "variant_patch_sha256": "6481beb982e57655e7ee2c888daf823c9b5286f66af85f9ec56dac90e545aa4f",
+  "patched_binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+  "base_sources": {
+    "src/PrePasses.ml": "ae752eeef3227b7566611fa7d3ace71fd64fbf24c088bc7ce16699a243772165"
+  },
+  "modified_sources": {
+    "src/PrePasses.ml": "d0d2a6a122bc0446a493b4d70ff2ca19fc53122c4ab6ee0e3192343d082fb8eb"
+  },
+  "charon_command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/arithmetic.llbc",
+    "--start-from=bulksketch::decode::affine::enumerate",
+    "--",
+    "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "charon_exit": 0,
+  "charon_binary_sha256": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+  "fresh_build": {
+    "exit_code": 0,
+    "source_sha256": "d0d2a6a122bc0446a493b4d70ff2ca19fc53122c4ab6ee0e3192343d082fb8eb",
+    "source_files_byte_identical": 108,
+    "command": [
+      "opam",
+      "exec",
+      "--root=/Users/junbug/bulk/bulksketch-proofs/tooling/opam-root",
+      "--switch=aeneas-5.3.0",
+      "--",
+      "dune",
+      "build",
+      "--root",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src",
+      "-j",
+      "2"
+    ],
+    "log_sha256": "9a5da287c1e6a1b8175286fe6dbe97d9918eef484e8d73277b7f883ab8b3ce6b"
+  },
+  "replay": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/fresh-scoped-replay",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+    "input_sha256": "a507a5d00a56b0ae642627cd588722e8cec9095cc2f25690977534e361cea579",
+    "outputs": {
+      "Funs.lean": "7d2317640c55722bd5472bbaad51f84a0af5449faaa9f2508af83ce6c42dc481",
+      "FunsExternal_Template.lean": "9c0b9bc7263142cde8a1ff14d9377ddc2ba386acbaf4158a46d429fd062eb803",
+      "Types.lean": "ec25fe10cf04ff6687064fa9b18f8a40bc1ac761f2f643b99db946ccb38b62ac"
+    },
+    "log_sha256": "41957b48cd0b82e6e543eed882cbc7e65b3487f824a427622976ed8f0adf3d12"
+  },
+  "controls": {
+    "stock": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/stock/generated",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/affine-enumerate/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "binary_sha256": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+      "input_sha256": "a507a5d00a56b0ae642627cd588722e8cec9095cc2f25690977534e361cea579",
+      "log_sha256": "c03fbe09c8d570bf3c4adb1272ef2b51f2afa0b87445a9560ccd2a6d66696f24",
+      "outputs": {}
+    },
+    "checked": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/checked/generated",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/affine-enumerate/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "a507a5d00a56b0ae642627cd588722e8cec9095cc2f25690977534e361cea579",
+      "log_sha256": "b64887694a772d15791478ea2ee7fdf9233277935353d28c25f1f3ae2305490a",
+      "outputs": {
+        "Funs.lean": "7d2317640c55722bd5472bbaad51f84a0af5449faaa9f2508af83ce6c42dc481",
+        "FunsExternal_Template.lean": "9c0b9bc7263142cde8a1ff14d9377ddc2ba386acbaf4158a46d429fd062eb803",
+        "Types.lean": "ec25fe10cf04ff6687064fa9b18f8a40bc1ac761f2f643b99db946ccb38b62ac"
+      }
+    },
+    "unchecked": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/unchecked/generated",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/affine-enumerate/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "a507a5d00a56b0ae642627cd588722e8cec9095cc2f25690977534e361cea579",
+      "log_sha256": "b4184820dc3a82aeb12de95b8e2eba88921a92b78ca375195ccd7c78dfcec5f8",
+      "outputs": {}
+    },
+    "wrong-name": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-name/generated",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-name/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "cb63f1ace1975f91546be0d8888c34c0127e7e1c3b118df394a67ac3cd4ce76c",
+      "log_sha256": "4b85a46e4e4a0d4c770e4a22d4f13b3baa1b5b4afbb378992365b89dabcaf5f6",
+      "outputs": {}
+    },
+    "wrong-span": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-span/generated",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-span/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "25d2255cdb2d0c735b6ddfbe1f93f4ca7f3a2f1398a4574e78f8c37b0625102e",
+      "log_sha256": "ab9df4106ce95895bbe7d4e620689f938d42936abd87f8df291cfb63910e653d",
+      "outputs": {}
+    },
+    "wrong-cleanup": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-cleanup/generated",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-cleanup/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "edb2e40e5fc354bda659123e106ac8ae2e5c7d2b331d74e6d6f831635883a31a",
+      "log_sha256": "23214634eab2d24b7fd258fa90dd72f1355e2426e81e75c31e5bdd5004f72314",
+      "outputs": {}
+    },
+    "wrong-break": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-break/generated",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-break/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "7e9a1291d6b83307cb24a8fec20ef4d81463842b33e04f637f7e11d3995ae7fc",
+      "log_sha256": "020cc1f3a685ef4def57b8429d6013e825a6c450fac04f3bee6e24c55af328d5",
+      "outputs": {}
+    },
+    "wrong-constructor": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-constructor/generated",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-constructor/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "6e4e10458975829e9a499214fc72d8203262eb10e03711d6ba06bb5c646b2cc1",
+      "log_sha256": "6efa3c9e4dad2118fb96c6338a738a7c9f43690dc4a3a73e2ec24ca179f8cbbb",
+      "outputs": {}
+    },
+    "root-enumerate-affine": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/root-enumerate-affine/generated",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/root-enumerate-affine/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "9e48e70b0d65df92e03b81b5bb47d14ba0ef976ca7a869c26bdb5a0ed60ccc07",
+      "log_sha256": "e6aeb2a5de0a37bfa070525c034efbf2cfc124fd84c8b473be386244b546c6d7",
+      "outputs": {
+        "Funs.lean": "32928bea334705d734b741e78d3d99f6a571c5770a4ba84b603a4809b9e0bbe3",
+        "FunsExternal_Template.lean": "9cfe9c90ec5d61b508979f90f008de7e1adafc53b878ec77d70fb86213f61cf9",
+        "Types.lean": "7e3dd3679bf1a13d81680c2cdd32c5a2b23aeb61e1a084fb36f8c4bcb1b4c69b"
+      }
+    },
+    "affine-splitter": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/affine-splitter/generated",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/affine-splitter/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "3c0ffb403ac22a397fc026c36fc59dca6c2252ccebf98e09494a7452a56f09f3",
+      "log_sha256": "a9fe3f8e84b3e13f0a202869b14013547036afd804305f0fbb5d85cf90e1c699",
+      "outputs": {
+        "Funs.lean": "4a1e1a13827ea38655bd055b65e579e17052f91a8e92ea82a72bbddb6c6f876a",
+        "FunsExternal_Template.lean": "4c59046b038ddb5906a108fac743d2bfdafa10499b04405679623a05e331ef6d",
+        "Types.lean": "c1c3706fc639ac3c460be5b0043a2b49afa6b36f37172c27e5aca26f08c59abb"
+      }
+    },
+    "return-place": {
+      "input_sha256": "a507a5d00a56b0ae642627cd588722e8cec9095cc2f25690977534e361cea579",
+      "log_sha256": "ce677e1937de3337622b39025440625e23dffb0d29833a8386c1873689f79382"
+    },
+    "missing-return-assignment": {
+      "input_sha256": "66452417665e74ceed6c315b1379d912c111ac9dc0d0dd6d737f70a8b115fd15",
+      "log_sha256": "2c48f70db76812659a09033452f3d4d596d72cbe45d1bbfa29ff017045f2d356"
+    }
+  },
+  "files_sha256": {
+    "extraction/affine-enumerate/Arithmetic/Funs.lean": "7d2317640c55722bd5472bbaad51f84a0af5449faaa9f2508af83ce6c42dc481",
+    "extraction/affine-enumerate/Arithmetic/FunsExternal_Template.lean": "9c0b9bc7263142cde8a1ff14d9377ddc2ba386acbaf4158a46d429fd062eb803",
+    "extraction/affine-enumerate/Arithmetic/Types.lean": "ec25fe10cf04ff6687064fa9b18f8a40bc1ac761f2f643b99db946ccb38b62ac",
+    "extraction/affine-enumerate/affine-splitter.log": "a9fe3f8e84b3e13f0a202869b14013547036afd804305f0fbb5d85cf90e1c699",
+    "extraction/affine-enumerate/arithmetic.llbc": "a507a5d00a56b0ae642627cd588722e8cec9095cc2f25690977534e361cea579",
+    "extraction/affine-enumerate/charon.log": "933c00a1846356b41210dc4fc18b3520461006af5f6762d8be9984bed0b96885",
+    "extraction/affine-enumerate/checked-affine-outer-continue.patch": "6481beb982e57655e7ee2c888daf823c9b5286f66af85f9ec56dac90e545aa4f",
+    "extraction/affine-enumerate/checked.log": "b64887694a772d15791478ea2ee7fdf9233277935353d28c25f1f3ae2305490a",
+    "extraction/affine-enumerate/control_flow.py": "6222fb77b2094c783e5adb9fc9d09c0db4f3b1faf290e8042199c487a0ec4b20",
+    "extraction/affine-enumerate/fresh-build.log": "9a5da287c1e6a1b8175286fe6dbe97d9918eef484e8d73277b7f883ab8b3ce6b",
+    "extraction/affine-enumerate/guard-controls.py": "df151044522202c81a73dd823533c4ebf4bb28d67cec678d45fab80a553ed87a",
+    "extraction/affine-enumerate/missing-return-assignment.log": "2c48f70db76812659a09033452f3d4d596d72cbe45d1bbfa29ff017045f2d356",
+    "extraction/affine-enumerate/replay.log": "41957b48cd0b82e6e543eed882cbc7e65b3487f824a427622976ed8f0adf3d12",
+    "extraction/affine-enumerate/return-place.log": "ce677e1937de3337622b39025440625e23dffb0d29833a8386c1873689f79382",
+    "extraction/affine-enumerate/root-enumerate-affine.log": "e6aeb2a5de0a37bfa070525c034efbf2cfc124fd84c8b473be386244b546c6d7",
+    "extraction/affine-enumerate/stock.log": "c03fbe09c8d570bf3c4adb1272ef2b51f2afa0b87445a9560ccd2a6d66696f24",
+    "extraction/affine-enumerate/unchecked.log": "b4184820dc3a82aeb12de95b8e2eba88921a92b78ca375195ccd7c78dfcec5f8",
+    "extraction/affine-enumerate/wrong-break.log": "020cc1f3a685ef4def57b8429d6013e825a6c450fac04f3bee6e24c55af328d5",
+    "extraction/affine-enumerate/wrong-cleanup.log": "23214634eab2d24b7fd258fa90dd72f1355e2426e81e75c31e5bdd5004f72314",
+    "extraction/affine-enumerate/wrong-constructor.log": "6efa3c9e4dad2118fb96c6338a738a7c9f43690dc4a3a73e2ec24ca179f8cbbb",
+    "extraction/affine-enumerate/wrong-name.log": "4b85a46e4e4a0d4c770e4a22d4f13b3baa1b5b4afbb378992365b89dabcaf5f6",
+    "extraction/affine-enumerate/wrong-span.log": "ab9df4106ce95895bbe7d4e620689f938d42936abd87f8df291cfb63910e653d"
+  }
+}
