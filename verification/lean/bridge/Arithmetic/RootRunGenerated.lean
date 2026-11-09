@@ -1,4 +1,4 @@
--- Original checked Roots::run and its affine subspace offset helper.
+-- Original checked Roots::run with the source-backed affine wrappers.
 import Arithmetic.DenseGcdGenerated
 import Arithmetic.DenseReducerTableGenerated
 import Arithmetic.DenseReducerSquareGenerated
@@ -7,27 +7,17 @@ import Arithmetic.RootTraceGenerated
 import Arithmetic.RootSetupGenerated
 import Arithmetic.RootDivideGenerated
 import Arithmetic.AffineSplitterGenerated
+import Arithmetic.RootAffinePreparationGenerated
+import Arithmetic.RootEnumerateGenerated
 
 open Aeneas Aeneas.Std Result Error
 
 namespace Aeneas.Std.RootRunRuntime
 
-open bulksketch
-
-/-- Affine preparation and enumeration still need source linkage. -/
+/-- Explicit lower-level calls in the two original affine wrappers. -/
 structure OtherCallees where
-  enumerateAffine : ∀ {F K : Type}, field.BinaryField F → backend.contract.BulkKernels K F →
-  decode.roots.Roots → decode.scratch.RowWorkspace → types.WorkMeter →
-    Result ((core.result.Result (core.result.Result types.Stage
-    types.DecodeFailure) types.DecodeError) × decode.roots.Roots ×
-    decode.scratch.RowWorkspace × (decode.scratch.RowWorkspace →
-    decode.scratch.RowWorkspace) × types.WorkMeter)
-  prepareAffine : ∀ {F K : Type}, field.BinaryField F → backend.contract.BulkKernels K F →
-  decode.roots.Roots → decode.scratch.RowWorkspace → types.WorkMeter →
-    Result ((core.result.Result (core.result.Result types.Stage
-    types.DecodeFailure) types.DecodeError) × decode.roots.Roots ×
-    decode.scratch.RowWorkspace × (decode.scratch.RowWorkspace →
-    decode.scratch.RowWorkspace) × types.WorkMeter)
+  enumerate : RootEnumerateRuntime.Enumerate
+  preparation : RootAffinePreparationRuntime.Callees
 
 /-- Shared Option view does not change either branch or payload. -/
 def optionAsRef {T : Type} (value : Option T) : Result (Option T) := .ok value
@@ -45,17 +35,10 @@ local notation "decode.roots.Roots.divide" =>
   (decode.roots.Roots.divide (poly.Dense.Insts.BulksketchPolyPolynomial.exact_divide_into division))
 local notation "decode.roots.Roots.trace" =>
   (decode.roots.Roots.trace poly.Dense.Insts.BulksketchPolyPolynomial.square_mod_into)
-local notation "decode.roots.Roots.enumerate_affine" => calls.enumerateAffine
-local notation "decode.roots.Roots.prepare_affine" => calls.prepareAffine
+local notation "decode.roots.Roots.enumerate_affine" => (decode.roots.Roots.enumerate_affine calls.enumerate)
+local notation "decode.roots.Roots.prepare_affine" => (decode.roots.Roots.prepare_affine calls.preparation)
 local notation "poly.Dense.Insts.BulksketchPolyPolynomial.monic_gcd_into" =>
   (poly.Dense.Insts.BulksketchPolyPolynomial.monic_gcd_into division)
-
-/-- [bulksketch::decode::affine::subspace_start]:
-    Source: 'src/decode/affine.rs', lines 245:0-247:1 -/
-def decode.affine.subspace_start (rank : Std.Usize) : Result Std.Usize := do
-  let i ← rank + 1#usize
-  let i1 ← rank * i
-  i1 / 2#usize
 
 /-- [bulksketch::decode::roots::{bulksketch::decode::roots::Roots}::run]:
     Source: 'src/decode/roots.rs', lines 128:4-236:5 -/

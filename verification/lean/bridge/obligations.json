@@ -1038,14 +1038,6 @@
       "theorem": "BulksketchBridge.DenseGcd.native_gcd_size"
     },
     {
-      "challenge": "BulksketchBridge.RootRun.ActualRootRun",
-      "theorem": "BulksketchBridge.RootRun.run_refines"
-    },
-    {
-      "challenge": "BulksketchBridge.RootRun.ActualSubspaceStart",
-      "theorem": "BulksketchBridge.RootRun.subspace_start_refines"
-    },
-    {
       "challenge": "BulksketchBridge.RootDivide.ActualNativeRootDivide",
       "theorem": "BulksketchBridge.RootDivide.native_divide_refines"
     },
@@ -1072,6 +1064,30 @@
     {
       "challenge": "BulksketchBridge.AffineSplitter.ActualSplitter",
       "theorem": "BulksketchBridge.AffineSplitter.splitter_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualRootRun",
+      "theorem": "BulksketchBridge.RootRun.run_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualSubspaceStart",
+      "theorem": "BulksketchBridge.RootRun.subspace_start_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineSubspaces.ActualSubspaces",
+      "theorem": "BulksketchBridge.AffineSubspaces.subspaces_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootAffinePreparation.ActualAffinePreparation",
+      "theorem": "BulksketchBridge.RootAffinePreparation.prepare_affine_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootEnumerate.ActualEnumerateAffine",
+      "theorem": "BulksketchBridge.RootEnumerate.enumerate_affine_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AffineSubspaces.ActualSubspacesZeroSet",
+      "theorem": "BulksketchBridge.AffineSubspaces.subspaces_zero_set"
     }
   ],
   "refinements": [
@@ -3002,34 +3018,6 @@
       "scope": "Exact original field bit test and false frame, or original accelerated free kernel result on the GF64 path."
     },
     {
-      "label": "Roots::run [original source]",
-      "native_item_id": "src/decode/roots.rs:128:method:bulksketch::decode::roots::Roots::run",
-      "source_line_span_sha256": "730b199d24702f4f56a9b3dd2a62182834bf636f88ccf581e6c4c0b845813282",
-      "theorem": "BulksketchBridge.RootRun.run_refines",
-      "challenge": "BulksketchBridge.RootRun.ActualRootRun",
-      "generated_declaration": "bulksketch.decode.roots.Roots.run",
-      "generated_file": "bridge/Arithmetic/RootRunGenerated.lean",
-      "generated_files": [
-        "bridge/Arithmetic/RootRunGenerated.lean"
-      ],
-      "source_linkage": "bridge/source-linkage.json",
-      "scope": "Exact original stage dispatcher, charge and transition outcomes, workspace frames and all admitted branch behaviors. Explicit remaining affine slots."
-    },
-    {
-      "label": "affine::subspace_start [original source]",
-      "native_item_id": "src/decode/affine.rs:245:function:bulksketch::decode::affine::subspace_start",
-      "source_line_span_sha256": "ea726253e39bca2c174f7a596d6b55e5e3bc31845d07a1a1af1865f6b920c8d1",
-      "theorem": "BulksketchBridge.RootRun.subspace_start_refines",
-      "challenge": "BulksketchBridge.RootRun.ActualSubspaceStart",
-      "generated_declaration": "bulksketch.decode.affine.subspace_start",
-      "generated_file": "bridge/Arithmetic/RootRunGenerated.lean",
-      "generated_files": [
-        "bridge/Arithmetic/RootRunGenerated.lean"
-      ],
-      "source_linkage": "bridge/source-linkage.json",
-      "scope": "Exact original checked triangular offset over the admitted GF64 rank range."
-    },
-    {
       "label": "Roots::divide [original source]",
       "native_item_id": "src/decode/roots.rs:444:method:bulksketch::decode::roots::Roots::divide",
       "source_line_span_sha256": "1ef6b421351879b0e883791fb5cb1641b4d0fff44ff6c0dd459852dd5b15a660",
@@ -3056,6 +3044,76 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original setup, coefficient loop, prefix normalization and output, work and raw slice frames. Original linear evaluation and Dense square compose under admitted input, table and backend laws."
+    },
+    {
+      "label": "Roots::run [original source]",
+      "native_item_id": "src/decode/roots.rs:128:method:bulksketch::decode::roots::Roots::run",
+      "source_line_span_sha256": "730b199d24702f4f56a9b3dd2a62182834bf636f88ccf581e6c4c0b845813282",
+      "theorem": "BulksketchBridge.RootRun.run_refines",
+      "challenge": "BulksketchBridge.RootRun.ActualRootRun",
+      "generated_declaration": "bulksketch.decode.roots.Roots.run",
+      "generated_file": "bridge/Arithmetic/RootRunGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RootRunGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original stage dispatcher, charges, transitions and workspace frames. Both original affine wrappers are bound, with explicit lower-level affine calls."
+    },
+    {
+      "label": "affine::subspace_start [original source]",
+      "native_item_id": "src/decode/affine.rs:245:function:bulksketch::decode::affine::subspace_start",
+      "source_line_span_sha256": "ea726253e39bca2c174f7a596d6b55e5e3bc31845d07a1a1af1865f6b920c8d1",
+      "theorem": "BulksketchBridge.RootRun.subspace_start_refines",
+      "challenge": "BulksketchBridge.RootRun.ActualSubspaceStart",
+      "generated_declaration": "bulksketch.decode.affine.subspace_start",
+      "generated_file": "bridge/Arithmetic/AffineSubspacesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AffineSubspacesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original checked triangular offset over the admitted GF64 rank range."
+    },
+    {
+      "label": "affine::subspaces [original source]",
+      "native_item_id": "src/decode/affine.rs:249:function:bulksketch::decode::affine::subspaces",
+      "source_line_span_sha256": "3df2f7a383b6247a29e5e6a469393e096ae40f1cb82d950946ee1d36ab191d5f",
+      "theorem": "BulksketchBridge.AffineSubspaces.subspaces_refines",
+      "challenge": "BulksketchBridge.AffineSubspaces.ActualSubspaces",
+      "generated_declaration": "bulksketch.decode.affine.subspaces",
+      "generated_file": "bridge/Arithmetic/AffineSubspacesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AffineSubspacesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original seed, nested loops and row writeback under triangular scratch, rank and arithmetic laws. Separate checked zero-set theorem gives every GF64 prefix span."
+    },
+    {
+      "label": "Roots::prepare_affine [original source]",
+      "native_item_id": "src/decode/roots.rs:274:method:bulksketch::decode::roots::Roots::prepare_affine",
+      "source_line_span_sha256": "4fcc6452d5c60cdc86eb22d6d758f566a02d8c75febec11ef41b26252e8d004d",
+      "theorem": "BulksketchBridge.RootAffinePreparation.prepare_affine_refines",
+      "challenge": "BulksketchBridge.RootAffinePreparation.ActualAffinePreparation",
+      "generated_declaration": "bulksketch.decode.roots.Roots.prepare_affine",
+      "generated_file": "bridge/Arithmetic/RootAffinePreparationGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RootAffinePreparationGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact checked price, charge, both rank guards, all admitted result frames and both successful dispatches. Binds original subspace table with explicit affine multiple, map and selector slots."
+    },
+    {
+      "label": "Roots::enumerate_affine [original source]",
+      "native_item_id": "src/decode/roots.rs:321:method:bulksketch::decode::roots::Roots::enumerate_affine",
+      "source_line_span_sha256": "4dc0339a4a11ae624d2e62426a14ddbd93b6a1122a143a9b10d5f69204a1ac1c",
+      "theorem": "BulksketchBridge.RootEnumerate.enumerate_affine_refines",
+      "challenge": "BulksketchBridge.RootEnumerate.ActualEnumerateAffine",
+      "generated_declaration": "bulksketch.decode.roots.Roots.enumerate_affine",
+      "generated_file": "bridge/Arithmetic/RootEnumerateGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RootEnumerateGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact checked price, charge, candidate writes on both outcomes, bounded count update and original empty or popping advance. Explicit admitted inner candidate enumeration law."
     }
   ],
   "stateful_llbc_refinements": [

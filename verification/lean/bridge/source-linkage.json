@@ -503,13 +503,28 @@
       "has_errors": false
     },
     {
+      "path": "extraction/affine-splitter/arithmetic.llbc",
+      "sha256": "3c0ffb403ac22a397fc026c36fc59dca6c2252ccebf98e09494a7452a56f09f3",
+      "has_errors": false
+    },
+    {
       "path": "extraction/root-run/arithmetic.llbc",
       "sha256": "6a925fe406ccd8bbf20bad9d6e28b5e8b427941c25637a4a6ad6f179528355b2",
       "has_errors": false
     },
     {
-      "path": "extraction/affine-splitter/arithmetic.llbc",
-      "sha256": "3c0ffb403ac22a397fc026c36fc59dca6c2252ccebf98e09494a7452a56f09f3",
+      "path": "extraction/affine-subspaces/arithmetic.llbc",
+      "sha256": "072a2394e9ac06be6597ce5a11ff254f710b3b22bb10ec0c8679ce3f701f67c9",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/root-prepare-affine/arithmetic.llbc",
+      "sha256": "dd81094edf438584a1c870dbcab26f8dec8d59df8d577ccb10783fe4be360c43",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/root-enumerate-affine/arithmetic.llbc",
+      "sha256": "9e48e70b0d65df92e03b81b5bb47d14ba0ef976ca7a869c26bdb5a0ed60ccc07",
       "has_errors": false
     }
   ],
@@ -1190,16 +1205,6 @@
       "generated_file": "bridge/Arithmetic/AvxSquareEntryGenerated.lean"
     },
     {
-      "native_item_id": "src/decode/roots.rs:128:method:bulksketch::decode::roots::Roots::run",
-      "generated_declaration": "bulksketch.decode.roots.Roots.run",
-      "generated_file": "bridge/Arithmetic/RootRunGenerated.lean"
-    },
-    {
-      "native_item_id": "src/decode/affine.rs:245:function:bulksketch::decode::affine::subspace_start",
-      "generated_declaration": "bulksketch.decode.affine.subspace_start",
-      "generated_file": "bridge/Arithmetic/RootRunGenerated.lean"
-    },
-    {
       "native_item_id": "src/decode/roots.rs:444:method:bulksketch::decode::roots::Roots::divide",
       "generated_declaration": "bulksketch.decode.roots.Roots.divide",
       "generated_file": "bridge/Arithmetic/RootDivideGenerated.lean"
@@ -1208,6 +1213,31 @@
       "native_item_id": "src/decode/affine.rs:268:function:bulksketch::decode::affine::splitter",
       "generated_declaration": "bulksketch.decode.affine.splitter",
       "generated_file": "bridge/Arithmetic/AffineSplitterGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:128:method:bulksketch::decode::roots::Roots::run",
+      "generated_declaration": "bulksketch.decode.roots.Roots.run",
+      "generated_file": "bridge/Arithmetic/RootRunGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:245:function:bulksketch::decode::affine::subspace_start",
+      "generated_declaration": "bulksketch.decode.affine.subspace_start",
+      "generated_file": "bridge/Arithmetic/AffineSubspacesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:249:function:bulksketch::decode::affine::subspaces",
+      "generated_declaration": "bulksketch.decode.affine.subspaces",
+      "generated_file": "bridge/Arithmetic/AffineSubspacesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:274:method:bulksketch::decode::roots::Roots::prepare_affine",
+      "generated_declaration": "bulksketch.decode.roots.Roots.prepare_affine",
+      "generated_file": "bridge/Arithmetic/RootAffinePreparationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:321:method:bulksketch::decode::roots::Roots::enumerate_affine",
+      "generated_declaration": "bulksketch.decode.roots.Roots.enumerate_affine",
+      "generated_file": "bridge/Arithmetic/RootEnumerateGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -1782,15 +1812,6 @@
       "scope": "Original factor division with checked charge, quotient/remainder scratch, and pending-frame assembly."
     },
     {
-      "generated": "extraction/root-run/Arithmetic/Funs.lean",
-      "bridge_copy": "bridge/Arithmetic/RootRunGenerated.lean",
-      "sha256": "4da97692f95e7d81153aa3c65ca29ef612d61430473503169329af024d8bd152",
-      "raw_sha256": "8eb87055b6f02b4317a73a4143bd6f31eac1fd147b762658d0211872dc39f584",
-      "checker": "extraction/root-run/project.py",
-      "declaration_count": 2,
-      "scope": "Original stage dispatcher and affine subspace offset; original leaf, trace, table, divide, GCD and affine splitter bodies are bound. Affine preparation and enumeration retain typed contracts."
-    },
-    {
       "generated": "extraction/affine-splitter/Arithmetic/Funs.lean",
       "bridge_copy": "bridge/Arithmetic/AffineSplitterGenerated.lean",
       "sha256": "044b1c2fbb15ea34ae4779c68c24305d2ef407f0854fc1293d5a04a27848450b",
@@ -1798,6 +1819,42 @@
       "checker": "extraction/affine-splitter/project.py",
       "declaration_count": 11,
       "scope": "Original stock affine splitter, its coefficient loop and normalization callbacks. Original linear evaluation and Dense modular square are bound at the native endpoint."
+    },
+    {
+      "generated": "extraction/root-run/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootRunGenerated.lean",
+      "sha256": "3b262df943a7c1f5cf90c597146f022e485431e8f9cbc9c7105e18035a61aa0e",
+      "raw_sha256": "8eb87055b6f02b4317a73a4143bd6f31eac1fd147b762658d0211872dc39f584",
+      "checker": "extraction/root-run/project.py",
+      "declaration_count": 1,
+      "scope": "Original stage dispatcher with original leaf, trace, table, divide, GCD, affine splitter, preparation and enumeration wrappers bound. Lower-level affine algorithm slots remain explicit."
+    },
+    {
+      "generated": "extraction/affine-subspaces/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AffineSubspacesGenerated.lean",
+      "sha256": "7424c450af083f0817c133118340bac5f88feaf05dd275f56776c9824af8a17b",
+      "raw_sha256": "86ef12291f5e17311e2305f43c21371f3ac57f6246686f16404fe0214d33efb0",
+      "checker": "extraction/affine-subspaces/project.py",
+      "declaration_count": 6,
+      "scope": "Original triangular offset and affine subspace table, including both nested loops and the original linear evaluation binding."
+    },
+    {
+      "generated": "extraction/root-prepare-affine/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootAffinePreparationGenerated.lean",
+      "sha256": "c9845023c7f3148484ae0e76f47973552f0b97616a9ef84c177c6f2ea609e2ab",
+      "raw_sha256": "04ecd15e87bfd5393b3e22f7fe6854cdafd79171db15e70c211738ee2a394566",
+      "checker": "extraction/root-prepare-affine/project.py",
+      "declaration_count": 4,
+      "scope": "Original affine preparation and checked count callback, with the original subspace table bound."
+    },
+    {
+      "generated": "extraction/root-enumerate-affine/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootEnumerateGenerated.lean",
+      "sha256": "e7a0fca7b1b158e00b47b7b836849451c93aee794d112486e43bf4c1654e3662",
+      "raw_sha256": "32928bea334705d734b741e78d3d99f6a571c5770a4ba84b603a4809b9e0bbe3",
+      "checker": "extraction/root-enumerate-affine/project.py",
+      "declaration_count": 1,
+      "scope": "Original affine enumeration wrapper, with original charge and advance and an explicit candidate enumeration slot."
     }
   ],
   "reviewed_translator_variants": [

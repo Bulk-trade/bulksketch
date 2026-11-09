@@ -3252,7 +3252,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AffineSubspaces.subspaces_refines",
+        "scope": "Exact original seed, nested loops and row writeback under triangular scratch, rank and arithmetic laws. Separate checked zero-set theorem gives every GF64 prefix span.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/affine.rs:268:function:bulksketch::decode::affine::splitter",
@@ -4448,7 +4455,7 @@
       "trusted_assumptions": [],
       "generated_body_refinement_evidence": {
         "theorem": "BulksketchBridge.RootRun.run_refines",
-        "scope": "Exact original stage dispatcher, charge and transition outcomes, workspace frames and all admitted branch behaviors. Explicit remaining affine slots.",
+        "scope": "Exact original stage dispatcher, charges, transitions and workspace frames. Both original affine wrappers are bound, with explicit lower-level affine calls.",
         "source_linkage": "bridge/source-linkage.json",
         "registry": "bridge/obligations.json",
         "verification": "bridge/audit/results/verification.json"
@@ -4519,7 +4526,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RootAffinePreparation.prepare_affine_refines",
+        "scope": "Exact checked price, charge, both rank guards, all admitted result frames and both successful dispatches. Binds original subspace table with explicit affine multiple, map and selector slots.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/roots.rs:321:method:bulksketch::decode::roots::Roots::enumerate_affine",
@@ -4539,7 +4553,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.RootEnumerate.enumerate_affine_refines",
+        "scope": "Exact checked price, charge, candidate writes on both outcomes, bounded count update and original empty or popping advance. Explicit admitted inner candidate enumeration law.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/roots.rs:347:method:bulksketch::decode::roots::Roots::leaf",
@@ -11915,8 +11936,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. Original root dispatcher, factor division, affine triangular offsets and affine splitter checked under explicit contracts. The full original AVX square finite-heap effects are checked under exact capture layout and allocation premises. Original div/rem linkage, affine preparation and enumeration, depth-first traversal and decoder completeness, Rust provenance and compiler/ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 123,
+    "note": "All 344 native executable obligations retained. Original root dispatch, factor division, affine splitter, subspace table and preparation and enumeration wrappers checked under explicit contracts. Original div/rem proof linkage, lower-level affine kernels, depth-first traversal and decoder completeness, Rust pointer provenance and compiler/ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 126,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12007,7 +12028,10 @@
       "native_root_traversal": [
         "BulksketchBridge.RootRun.run_refines",
         "BulksketchBridge.RootDivide.native_divide_refines",
-        "BulksketchBridge.AffineSplitter.native_splitter_refines"
+        "BulksketchBridge.AffineSplitter.native_splitter_refines",
+        "BulksketchBridge.AffineSubspaces.subspaces_zero_set",
+        "BulksketchBridge.RootAffinePreparation.prepare_affine_refines",
+        "BulksketchBridge.RootEnumerate.enumerate_affine_refines"
       ]
     },
     "masked_memory_evidence": {

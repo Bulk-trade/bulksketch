@@ -2,15 +2,17 @@
 
 All 344 native executable obligations remain in scope. This checkpoint
 adds exact original Aeneas body refinements for `Roots::run`,
-`Roots::divide`, the affine subspace offset, and `affine::splitter`.
+`Roots::divide`, the affine subspace offset, `affine::splitter`,
+`affine::subspaces`, and the preparation and enumeration wrappers.
 Production Rust and Cargo inputs are unchanged.
 
 The stock root-run projection retains the original dispatcher and
 subspace offset helper. Its theorem checks the stage decisions, exact
 workspace frames, and all admitted branches. The original leaf,
-closed-leaf, trace, reducer table, GCD, factor division and splitter
-bodies are bound in the projection. Affine preparation and enumeration
-retain explicit typed slots. The GCD stage uses the
+closed-leaf, trace, reducer table, GCD, factor division, splitter,
+affine preparation and affine enumeration wrappers are bound in the
+projection. The affine multiple, binary solve map, enumeration selector
+and candidate enumeration still have typed slots. The GCD stage uses the
 admitted div/rem law and normalized remainder and retry conditions.
 Table, GCD and affine split prices follow the original order of
 checked operations, including intermediate overflow.
@@ -20,6 +22,18 @@ loop, prefix normalization and all slice writebacks. It binds the
 original linear evaluation and Dense modular square bodies under the
 field, reducer table and backend contracts. Relating the splitter result
 to the affine coset maintained by the complete traversal remains open.
+
+The affine subspace table proof checks the seed, both loops and exact
+row writes. Over Mathlib's GF(2⁶⁴), each prefix row represents the
+polynomial whose zero set is the binary span of those directions. The
+proof starts with (A_0=X) and establishes (A_{r+1}=A_r^2+A_r(b_r)A_r).
+
+Affine preparation checks the exact charge, the zero linear coefficient,
+the solve-map rejection, both rank guards, and both successful stages.
+The split path invokes the original subspace table implementation. Affine
+enumeration checks the exact price, both candidate-result frames, the
+bounded count increment and the original advance after success. The
+inner enumeration algorithm and Gaussian elimination remain open.
 
 The original divide theorem checks both charge results, a nonexact
 division, both checked offset overflows, and the affine and non-affine

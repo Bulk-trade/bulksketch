@@ -96,3 +96,6 @@ import BulksketchBridge.RootRun
 import BulksketchBridge.RootDivideNative
 import BulksketchBridge.AvxSquareHeap
 import BulksketchBridge.AffineSplitter
+import BulksketchBridge.AffineSubspacesAnnihilators
+import BulksketchBridge.RootAffinePreparation
+import BulksketchBridge.RootEnumerate

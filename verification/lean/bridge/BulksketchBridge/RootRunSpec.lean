@@ -1,4 +1,5 @@
 import BulksketchBridge.RootRunGcd
+import BulksketchBridge.AffineSubspaceStart
 
 namespace BulksketchBridge.RootRun
 
@@ -21,8 +22,6 @@ def tableStage (roots : Roots) : Stage :=
   if roots.affine then
     if roots.affine_ready then .AffineSplit else .AffinePreparation
   else .Trace
-
-def subspaceStart (rank : Nat) : Nat := rank * (rank + 1) / 2
 
 def affineStart (roots : Roots) : Nat :=
   roots.stride.val * roots.stride.val + subspaceStart (roots.affine_rank.val - 1)
@@ -108,8 +107,8 @@ def expected (calls : Calls) (division : DivRem) {K : Type}
   match stage with
   | .LeafThree | .LeafFour | .FactorVerification => Roots.closed_leaf dictionary kernels roots stage workspace meter
   | .Leaf => Roots.leaf dictionary kernels roots workspace meter
-  | .AffinePreparation => calls.prepareAffine dictionary kernels roots workspace meter
-  | .AffineEnumeration => calls.enumerateAffine dictionary kernels roots workspace meter
+  | .AffinePreparation => Roots.prepare_affine calls.preparation dictionary kernels roots workspace meter
+  | .AffineEnumeration => Roots.enumerate_affine calls.enumerate dictionary kernels roots workspace meter
   | .ReducerPreparation => reducer kernels roots workspace meter
   | .AffineSplit => affineSplit kernels roots workspace meter
   | .Gcd => gcdStage division kernels roots workspace meter
@@ -132,10 +131,5 @@ def ActualRootRun : Prop :=
     Ready division kernels roots stage workspace meter →
     Roots.run calls division dictionary kernels roots stage workspace meter =
       expected calls division kernels roots stage workspace meter
-
-def ActualSubspaceStart : Prop :=
-  ∀ rank : Usize, rank.val ≤ 64 →
-    ∃ offset : Usize, bulksketch.decode.affine.subspace_start rank = .ok offset ∧
-      offset.val = subspaceStart rank.val
 
 end BulksketchBridge.RootRun

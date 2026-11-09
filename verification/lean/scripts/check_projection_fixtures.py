@@ -328,13 +328,33 @@ PROJECTIONS = [
      "let i ← self.stride * self.stride", "let i ← self.stride + self.stride", "compiled root run projection differs",
      None, None, ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean",
                   "bridge/Arithmetic/ReconstructionTypes.lean", "bridge/Arithmetic/RootSetupGenerated.lean",
-                  "bridge/Arithmetic/WorkScheduleGenerated.lean", "bridge/Arithmetic/ClosedLeafGenerated.lean"]),
+                  "bridge/Arithmetic/WorkScheduleGenerated.lean", "bridge/Arithmetic/ClosedLeafGenerated.lean",
+                  "bridge/Arithmetic/AffineSubspacesGenerated.lean"]),
     ("affine-splitter", "extraction/affine-splitter/project.py", "extraction/affine-splitter/receipt.json",
      "extraction/affine-splitter/Arithmetic/Funs.lean", "bridge/Arithmetic/AffineSplitterGenerated.lean",
      "let s3 ← Slice.update residue1 1#usize 1#u64", "let s3 ← Slice.update residue1 0#usize 1#u64",
      "compiled affine splitter projection differs", None, None,
      ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean",
       "bridge/Arithmetic/DenseNormalizationGenerated.lean"]),
+    ("affine-subspaces", "extraction/affine-subspaces/project.py", "extraction/affine-subspaces/receipt.json",
+     "extraction/affine-subspaces/Arithmetic/Funs.lean", "bridge/Arithmetic/AffineSubspacesGenerated.lean",
+     "Slice.update table 0#usize 1#u64", "Slice.update table 0#usize 0#u64",
+     "compiled affine subspaces projection differs", None, None,
+     ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean",
+      "bridge/Arithmetic/AffineLinearEvalGenerated.lean", "extraction/affine-linear-eval/Arithmetic/Funs.lean"]),
+    ("root-prepare-affine", "extraction/root-prepare-affine/project.py", "extraction/root-prepare-affine/receipt.json",
+     "extraction/root-prepare-affine/Arithmetic/Funs.lean", "bridge/Arithmetic/RootAffinePreparationGenerated.lean",
+     "let offset ← self.stride * self.stride", "let offset ← self.stride + self.stride",
+     "compiled root preparation projection differs", None, None,
+     ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean",
+      "bridge/Arithmetic/RebuiltLfsrTypes.lean", "bridge/Arithmetic/ReconstructionTypes.lean",
+      "bridge/Arithmetic/WorkScheduleGenerated.lean", "bridge/Arithmetic/ClosedLeafGenerated.lean", "bridge/Workmeter/Types.lean"]),
+    ("root-enumerate-affine", "extraction/root-enumerate-affine/project.py", "extraction/root-enumerate-affine/receipt.json",
+     "extraction/root-enumerate-affine/Arithmetic/Funs.lean", "bridge/Arithmetic/RootEnumerateGenerated.lean",
+     "self.count + count", "self.count - count", "active projection differs", None, None,
+     ["extraction/root-setup/receipt.json", "bridge/Arithmetic/SliceKernelTypes.lean",
+      "bridge/Arithmetic/RebuiltLfsrTypes.lean", "bridge/Arithmetic/ReconstructionTypes.lean",
+      "bridge/Arithmetic/WorkScheduleGenerated.lean", "bridge/Arithmetic/ClosedLeafGenerated.lean", "bridge/Workmeter/Types.lean"]),
 ]
 
 
@@ -524,8 +544,18 @@ def main():
         if label == "root-run":
             cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
                           "root run checked capture command differs"))
-            cases.append(("wrong-affine-callee", active_path, "=> calls.prepareAffine", "=> calls.enumerateAffine",
+            cases.append(("wrong-affine-callee", active_path, "Roots.prepare_affine calls.preparation",
+                          "Roots.prepare_affine calls.enumerate",
                           "compiled root run projection differs"))
+        if label == "affine-subspaces":
+            cases.append(("shared-offset-edit", active_path, "i1 / 2#usize", "i1 / 3#usize",
+                          "compiled affine subspaces projection differs"))
+        if label == "root-prepare-affine":
+            cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
+                          "checked capture or replay commands differ"))
+        if label == "root-enumerate-affine":
+            cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
+                          "checked capture or replay commands differ"))
         if label == "affine-splitter":
             cases.append(("wrong-backend", receipt_path, '"lean"', '"fstar"',
                           "affine splitter checked replay differs"))
@@ -537,7 +567,8 @@ def main():
             with tempfile.TemporaryDirectory(prefix="bulksketch-provenance-") as directory:
                 shadow = Path(directory)
                 if label in {"degree-certificate", "reconstruction", "affine-quartic", "quartic", "closed-leaf", "deg34-normalize", "deg34-guard",
-                             "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry", "root-divide", "root-run", "affine-splitter"}:
+                             "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry", "root-divide", "root-run", "affine-splitter",
+                             "affine-subspaces", "root-prepare-affine", "root-enumerate-affine"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

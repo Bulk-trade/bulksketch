@@ -572,7 +572,15 @@ run_cmd do
     (``BulksketchBridge.AffineSplitter.ActualSplitterLoop,
       ``BulksketchBridge.AffineSplitter.loop_refines),
     (``BulksketchBridge.AffineSplitter.ActualSplitter,
-      ``BulksketchBridge.AffineSplitter.splitter_refines)
+      ``BulksketchBridge.AffineSplitter.splitter_refines),
+    (``BulksketchBridge.AffineSubspaces.ActualSubspaces,
+      ``BulksketchBridge.AffineSubspaces.subspaces_refines),
+    (``BulksketchBridge.RootAffinePreparation.ActualAffinePreparation,
+      ``BulksketchBridge.RootAffinePreparation.prepare_affine_refines),
+    (``BulksketchBridge.RootEnumerate.ActualEnumerateAffine,
+      ``BulksketchBridge.RootEnumerate.enumerate_affine_refines),
+    (``BulksketchBridge.AffineSubspaces.ActualSubspacesZeroSet,
+      ``BulksketchBridge.AffineSubspaces.subspaces_zero_set)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

@@ -1,0 +1,82 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "binary_sha256": {
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe"
+  },
+  "selector": "bulksketch::decode::affine::subspaces",
+  "native_source_edited": false,
+  "opaque_application_bodies": [
+    "bulksketch::decode::affine::linear_eval"
+  ],
+  "checked_exit": 0,
+  "source_sha256": {
+    "src/decode/affine.rs": "a7c45498717202aec291b4c4acdd6f819edf16bcdf478500a8c74a3492c4e11d"
+  },
+  "files_sha256": {
+    "extraction/affine-subspaces/arithmetic.llbc": "072a2394e9ac06be6597ce5a11ff254f710b3b22bb10ec0c8679ce3f701f67c9",
+    "extraction/affine-subspaces/charon.log": "e9aea8b1be302b7b51b2ebd482d329584b66a69641224b23949e777002e84118",
+    "extraction/affine-subspaces/aeneas.log": "91c9829faddd030a1a9274771b7d80321e48a0484ac5cc1f0724f4ff1c22d7af",
+    "extraction/affine-subspaces/replay.log": "49c168a10da28295d3e285818e3a8bfd023800f1f1eef9b4bab74b2e18f69db2",
+    "extraction/affine-subspaces/Arithmetic/Funs.lean": "86ef12291f5e17311e2305f43c21371f3ac57f6246686f16404fe0214d33efb0",
+    "extraction/affine-subspaces/Arithmetic/FunsExternal_Template.lean": "6550635aa8b29a86ac612545889ceea8ac578635dddb91593cc4aa38a3b6c709",
+    "extraction/affine-subspaces/Arithmetic/Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1"
+  },
+  "charon_command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/affine-subspaces/arithmetic.llbc",
+    "--start-from=bulksketch::decode::affine::subspaces",
+    "--opaque=bulksketch::decode::affine::linear_eval",
+    "--",
+    "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "aeneas_command": [
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-checks",
+    "-sequential",
+    "-no-progress-bar",
+    "-print-error-emitters",
+    "-split-files",
+    "-dest",
+    "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/affine-subspaces/stock",
+    "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/affine-subspaces/arithmetic.llbc"
+  ],
+  "replay": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/affine-subspaces/stock-replay",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-root-run/affine-subspaces/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "input_sha256": "072a2394e9ac06be6597ce5a11ff254f710b3b22bb10ec0c8679ce3f701f67c9",
+    "log_sha256": "49c168a10da28295d3e285818e3a8bfd023800f1f1eef9b4bab74b2e18f69db2",
+    "outputs": {
+      "Funs.lean": "86ef12291f5e17311e2305f43c21371f3ac57f6246686f16404fe0214d33efb0",
+      "FunsExternal_Template.lean": "6550635aa8b29a86ac612545889ceea8ac578635dddb91593cc4aa38a3b6c709",
+      "Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1"
+    }
+  }
+}

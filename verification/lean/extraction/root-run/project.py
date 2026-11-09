@@ -14,7 +14,7 @@ require, sha, declarations = shared.require, shared.sha, shared.declarations
 DIRECTORY = Path("extraction/root-run")
 RAW = DIRECTORY / "Arithmetic"
 ACTIVE = Path("bridge/Arithmetic/RootRunGenerated.lean")
-HEADER_SHA256 = "90e400bb2da5ac4e829e0f9c505a2903285aaa750368d0823b20862e6e636fc7"
+HEADER_SHA256 = "0622ec10e02e25f0ae498644dc75a36f4ff814eeeb171a87eb3011aece8f106f"
 SELECTOR = "bulksketch::decode::roots::_::run"
 ROOTS = "src/decode/roots.rs"
 AFFINE = "src/decode/affine.rs"
@@ -37,7 +37,8 @@ SPANS = {
     "prepare_square_table": (DENSE, 167, 4, 186, 5, "Opaque"),
     "monic_gcd_into": (DENSE, 113, 4, 153, 5, "Opaque"),
 }
-NAMES = ("decode.affine.subspace_start", "decode.roots.Roots.run")
+NAMES = ("decode.roots.Roots.run",)
+START = "decode.affine.subspace_start"
 ARTIFACTS = {str(DIRECTORY / name) for name in (
     "arithmetic.llbc", "charon.log", "aeneas.log", "replay.log",
     "Arithmetic/Funs.lean", "Arithmetic/FunsExternal_Template.lean", "Arithmetic/Types.lean",
@@ -112,20 +113,22 @@ def check(root=ROOT):
     require(found == SPANS, "root run original body or callee slot differs")
     types = declarations(root / RAW / "Types.lean")
     funcs = declarations(root / RAW / "Funs.lean")
+    shared_offsets = declarations(root / "bridge/Arithmetic/AffineSubspacesGenerated.lean")
+    require(funcs[START] == shared_offsets.get(START), "root run original offset declaration differs")
     for groups, original in ((SHARED_TYPES, types), (REUSED, funcs)):
         for path, names in groups.items():
             current = declarations(root / "bridge/Arithmetic" / (path + ".lean"))
             require(all(original[name] == current.get(name) for name in names),
                     "root run shared source declaration differs: " + path)
     active = (root / ACTIVE).read_text()
-    header, marker, body = active.partition("/-- [bulksketch::decode::affine::subspace_start]:")
+    header, marker, body = active.partition("/-- [bulksketch::decode::roots::{bulksketch::decode::roots::Roots}::run]:")
     require(hashlib.sha256(header.encode()).hexdigest() == HEADER_SHA256
             and marker + body == "\n\n".join(funcs[name] for name in NAMES) + "\n\nend bulksketch\n",
             "compiled root run projection differs")
     return {
         "raw_generated_file": str(RAW / "Funs.lean"), "raw_file_sha256": sha(root / RAW / "Funs.lean"),
         "compiled_projection": str(ACTIVE), "projection_file_sha256": sha(root / ACTIVE),
-        "source_declarations_retained_verbatim": 2,
+        "source_declarations_retained_verbatim": len(NAMES),
         "shared_types_and_function_dictionary_declarations_checked": True,
         "generated_declarations": ["bulksketch." + name for name in NAMES],
         "native_source_edited": False,
