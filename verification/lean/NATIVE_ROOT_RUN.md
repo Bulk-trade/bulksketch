@@ -95,7 +95,11 @@ factor and preserves the remaining frames. The workspace budget
 supplies the GCD scratch, affine matrices, and subspace table.
 For a proper GCD, exact division returns a normalized positive-degree
 quotient. The factor degrees sum to the parent degree and the live
-degree budget bounds the next pending slot. The complete
+degree budget bounds the next pending slot. At an admitted affine GCD
+stage, the exact native coefficient count selects either proper
+division or a retry in a smaller positive-rank coset. The successful
+divide commit partitions the parent's root set by the split classifier
+and preserves the recorded child bases and rank. The complete
 depth-first traversal still needs to compose these steps.
 
 The AVX square finite-heap theorem composes the zero fill, scalar
@@ -125,9 +129,12 @@ The original AVX-512 capacity-18 encoder packs the 18 odd powers in
 three registers and applies either one input or the XOR sum of two
 inputs. Its proof checks all lane selectors, the 8/8/2 masked stores,
 and preservation of every byte outside the written prefix. The
-original single-base table is bound by an explicit value contract.
-The checked finite-heap store model is specific to the captured x86
-target and admitted allocation view.
+original single-base lookup reads eleven exact six- or five-bit
+windows of the input word and XORs their rows. Its finite-heap proof
+checks the captured contiguous insertion-table layout and every
+masked read. A table-value contract supplies the field lane values
+until the static table generator is proved. The heap contracts use
+the captured x86 layout and admitted live allocation views.
 
 Run the complete gate from `verification/lean`.
 

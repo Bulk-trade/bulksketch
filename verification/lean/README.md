@@ -27,15 +27,16 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The bridge now has 140 original Aeneas generated-body refinements under
+The bridge now has 141 original Aeneas generated-body refinements under
 their recorded contracts. Five source-linked LLBC execution contracts are
 checked separately. The latest checkpoint covers the original root stage
 dispatcher, Dense div/rem, factor division, affine enumeration
 completeness, native affine-multiple termination and minimality, the full GF64
 solve-map fibers and paid affine preparation, and fixed-stride pending
-factor frames with degree conservation. It also
-checks the original capacity-18 AVX odd-power packer and encoder, with
-finite-heap effects for the three masked writes.
+factor frames with degree conservation. The paid affine GCD step either
+selects a proper division or retains every factor root in a smaller coset.
+The original capacity-18 AVX packer, encoder, and insertion-base lookup
+have exact masked read and write contracts.
 Full native implementation contracts remain open.
 
 The [core proofs](BulksketchProofs.lean) and [generated-body bridge](bridge/README.md)

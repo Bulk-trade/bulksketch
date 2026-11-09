@@ -654,7 +654,15 @@ run_cmd do
     (``BulksketchBridge.AffineMultiple.ActualNativeSquarefreeNonzeroX,
       ``BulksketchBridge.AffineMultiple.native_multiple_squarefree_nonzero_X),
     (``BulksketchBridge.RootDivide.ActualNativeCommittedDegreeMass,
-      ``BulksketchBridge.RootDivide.native_committed_degree_mass)
+      ``BulksketchBridge.RootDivide.native_committed_degree_mass),
+    (``BulksketchBridge.AvxSingleBases.ActualSingleBases,
+      ``BulksketchBridge.AvxSingleBases.single_bases_refines),
+    (``BulksketchBridge.AvxSingleBases.ActualAllocatedSingleBases,
+      ``BulksketchBridge.AvxSingleBases.allocated_single_bases_refines),
+    (``BulksketchBridge.RootRun.ActualNativeAffineGcd,
+      ``BulksketchBridge.RootRun.native_affine_gcd),
+    (``BulksketchBridge.RootDivide.ActualNativeCommittedAffineChildren,
+      ``BulksketchBridge.RootDivide.native_committed_affine_children)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

@@ -1236,6 +1236,22 @@
     {
       "challenge": "BulksketchBridge.RootDivide.ActualNativeCommittedDegreeMass",
       "theorem": "BulksketchBridge.RootDivide.native_committed_degree_mass"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSingleBases.ActualSingleBases",
+      "theorem": "BulksketchBridge.AvxSingleBases.single_bases_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSingleBases.ActualAllocatedSingleBases",
+      "theorem": "BulksketchBridge.AvxSingleBases.allocated_single_bases_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeAffineGcd",
+      "theorem": "BulksketchBridge.RootRun.native_affine_gcd"
+    },
+    {
+      "challenge": "BulksketchBridge.RootDivide.ActualNativeCommittedAffineChildren",
+      "theorem": "BulksketchBridge.RootDivide.native_committed_affine_children"
     }
   ],
   "refinements": [
@@ -3464,6 +3480,20 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact lane ordering and 18 GF64 odd powers under the admitted single-base table law."
+    },
+    {
+      "label": "AVX-512 single_bases [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:521:function:bulksketch::backend::x86_vpclmul512::single_bases",
+      "source_line_span_sha256": "15a355672823b3b7e165951be2765f0dfd95a8a31e0271801bd5acff8ad31f01",
+      "theorem": "BulksketchBridge.AvxSingleBases.single_bases_refines",
+      "challenge": "BulksketchBridge.AvxSingleBases.ActualSingleBases",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.single_bases",
+      "generated_file": "bridge/Arithmetic/AvxSingleBasesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxSingleBasesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original eleven table loads, six-bit index windows, and three returned XOR groups under typed load semantics and the explicit static-table value contract."
     }
   ],
   "stateful_llbc_refinements": [

@@ -118,3 +118,6 @@ import BulksketchBridge.AvxEncode18Heap
 import BulksketchBridge.RootAffineCoset
 import BulksketchBridge.RootDivideDegree
 import BulksketchBridge.RootDivideCommitDegree
+import BulksketchBridge.AvxSingleBasesHeap
+import BulksketchBridge.RootNativeAffineGcd
+import BulksketchBridge.RootAffineChildren
