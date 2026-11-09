@@ -532,6 +532,12 @@ PROJECTIONS = [
       'extraction/avx-insert/insert18/Arithmetic/FunsExternal_Template.lean',
       'extraction/avx-insert/insert18/Arithmetic/Types.lean',
       'extraction/avx-insert/insert18/Arithmetic/TypesExternal_Template.lean']),
+    ("avx-scalar-delegates", "extraction/avx-scalar-delegates/project.py",
+     "extraction/avx-scalar-delegates/receipt.json", "extraction/avx-scalar-delegates/Arithmetic/Funs.lean",
+     "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean",
+     "fieldBinaryFieldInst a b", "fieldBinaryFieldInst b a", "compiled AVX scalar delegate projection differs",
+     None, None, ["extraction/avx-insert/receipt.json", "bridge/Arithmetic/X86PclmulGenerated.lean",
+                  "bridge/Arithmetic/X86PclmulNextGenerated.lean"]),
     ("avx-recurrence-entry", "extraction/avx-recurrence-entry/project.py",
      "extraction/avx-recurrence-entry/receipt.json", "extraction/avx-recurrence-entry/Arithmetic/Funs.lean",
      "bridge/Arithmetic/AvxRecurrenceEntryGenerated.lean",
@@ -820,6 +826,9 @@ def main():
         if label == "avx-tile":
             cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false',
                           '"native_llbc_edited": true', "invalid checked AVX tile translator receipt"))
+        if label == "avx-scalar-delegates":
+            cases.append(("missing-checks", receipt_path, '"-checks"', '"-no-checks"',
+                          "AVX scalar delegate checked replay differs"))
         if label == "avx-recurrence-entry":
             cases.append(("missing-checks", receipt_path, '"-checks"', '"-no-checks"',
                           "AVX recurrence entry checked replay differs"))
@@ -849,7 +858,7 @@ def main():
                              "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry", "root-divide", "root-run", "affine-splitter",
                              "affine-subspaces", "root-prepare-affine", "root-enumerate-affine", "dense-div-rem",
                              "affine-enumerate", "affine-selector", "avx-multiply-linear", "affine-solve-map",
-                             "avx-horner", "affine-multiple", "avx-tile", "avx-recurrence", "avx-recurrence-entry", "avx-linear-entry", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
+                             "avx-horner", "affine-multiple", "avx-tile", "avx-recurrence", "avx-scalar-delegates", "avx-recurrence-entry", "avx-linear-entry", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
                              "avx-insert-insert18", "avx-insert-horizontal", "avx-insert-dispatch", "native-driver", "candidate-row", "completed-result",
                              "native-finish", "canonicalize", "candidate-normalize-rows", "candidate-normalize-compact", "candidate-normalize-merge"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)

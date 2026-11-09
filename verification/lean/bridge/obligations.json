@@ -1600,6 +1600,34 @@
     {
       "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeVerificationDriver",
       "theorem": "BulksketchBridge.ExecutionDriver.native_verification_driver"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxScalarDelegates.ActualNativeAvxScalarDelegates",
+      "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxScalarDelegates.ActualPclmulTraceDelegate",
+      "theorem": "BulksketchBridge.AvxScalarDelegates.pclmul_trace_delegate"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxScalarDelegates.ActualPclmulReduceDelegate",
+      "theorem": "BulksketchBridge.AvxScalarDelegates.pclmul_reduce_delegate"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxScalarDelegates.ActualNativeAvxScalarSquare",
+      "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_square"
+    },
+    {
+      "challenge": "BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrNativeAvx18AllCallbacks",
+      "theorem": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_avx18_all_callbacks"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeVerificationTailFinish",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_verification_tail_finish"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeVerificationStartFinish",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_verification_start_finish"
     }
   ],
   "refinements": [
@@ -4192,6 +4220,146 @@
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original row-local normalization under scratch size bounds. Each source row accessor returns exactly its own sorted distinct nonzero hints under the standard unsigned sort model.",
       "translator_variant": "checked-candidate-normalize-rows-v1"
+    },
+    {
+      "label": "AVX mul scalar delegate [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:50:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::mul",
+      "source_line_span_sha256": "9bc85019508c1e03f6770fa60ce1113411f2271849c0b502c2453daca0a82366",
+      "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates",
+      "challenge": "BulksketchBridge.AvxScalarDelegates.ActualNativeAvxScalarDelegates",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.mul",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original mul delegation to the pinned PCLMUL method for every field dictionary."
+    },
+    {
+      "label": "AVX square scalar delegate [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:53:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::square",
+      "source_line_span_sha256": "290a5c85099e0dbebe5a76a072de630ddc175ba9f148c792476ba5e8f450820e",
+      "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates",
+      "challenge": "BulksketchBridge.AvxScalarDelegates.ActualNativeAvxScalarDelegates",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.square",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original square delegation to the pinned PCLMUL method for every field dictionary."
+    },
+    {
+      "label": "AVX frobenius scalar delegate [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:56:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::frobenius",
+      "source_line_span_sha256": "f96b82507aa1550d8fe7b4e09dbeda0c93b7c8596ee083a07a3110710f3f7362",
+      "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates",
+      "challenge": "BulksketchBridge.AvxScalarDelegates.ActualNativeAvxScalarDelegates",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.frobenius",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original frobenius delegation to the pinned PCLMUL method for every field dictionary."
+    },
+    {
+      "label": "AVX inverse scalar delegate [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:59:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::inverse",
+      "source_line_span_sha256": "90134ba11a30fe02dacd863d03d282a6a736390cd48f19b89bf9e53788a9977a",
+      "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates",
+      "challenge": "BulksketchBridge.AvxScalarDelegates.ActualNativeAvxScalarDelegates",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.inverse",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original inverse delegation to the pinned PCLMUL method for every field dictionary."
+    },
+    {
+      "label": "AVX trace scalar delegate [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:62:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::trace",
+      "source_line_span_sha256": "1fcdd09090c0871cb453108b76fe9169bc400b3b9ec1eadf79838a142c8bfb65",
+      "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates",
+      "challenge": "BulksketchBridge.AvxScalarDelegates.ActualNativeAvxScalarDelegates",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.trace",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original trace delegation to the pinned PCLMUL method for every field dictionary."
+    },
+    {
+      "label": "AVX solve_quadratic scalar delegate [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:65:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::solve_quadratic",
+      "source_line_span_sha256": "cd9f0c7a96f95fd414f4867f6121f869f7b394f2c411a423c291df45b9cfca55",
+      "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates",
+      "challenge": "BulksketchBridge.AvxScalarDelegates.ActualNativeAvxScalarDelegates",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original solve_quadratic delegation to the pinned PCLMUL method for every field dictionary."
+    },
+    {
+      "label": "AVX raw_mul scalar delegate [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:68:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::raw_mul",
+      "source_line_span_sha256": "66db15ef132e0e43a818bc5c5ddbfdf92672b29edad143731f7b6a639b974606",
+      "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates",
+      "challenge": "BulksketchBridge.AvxScalarDelegates.ActualNativeAvxScalarDelegates",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.raw_mul",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original raw_mul delegation to the pinned PCLMUL method for every field dictionary."
+    },
+    {
+      "label": "AVX reduce scalar delegate [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:71:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::reduce",
+      "source_line_span_sha256": "acde66bd7f21208cd19e828b1645efbbb86c92f24511504f55f0d893a8ef417e",
+      "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates",
+      "challenge": "BulksketchBridge.AvxScalarDelegates.ActualNativeAvxScalarDelegates",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.reduce",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original reduce delegation to the pinned PCLMUL method for every field dictionary."
+    },
+    {
+      "label": "PCLMUL trace scalar delegate [original source]",
+      "native_item_id": "src/backend/x86_pclmul.rs:59:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::trace",
+      "source_line_span_sha256": "1ec7113e49a764171ab3b96e2758f8834cf0adaa91364a71fcc5cadca5075741",
+      "theorem": "BulksketchBridge.AvxScalarDelegates.pclmul_trace_delegate",
+      "challenge": "BulksketchBridge.AvxScalarDelegates.ActualPclmulTraceDelegate",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.trace",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original PCLMUL trace forwards to the pinned field maps::trace for every dictionary."
+    },
+    {
+      "label": "PCLMUL reduce scalar delegate [original source]",
+      "native_item_id": "src/backend/x86_pclmul.rs:73:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::reduce",
+      "source_line_span_sha256": "592c0d5d12dd32c8af11c3be21ddc9796be7b77dea26da4364ead673b6e87f78",
+      "theorem": "BulksketchBridge.AvxScalarDelegates.pclmul_reduce_delegate",
+      "challenge": "BulksketchBridge.AvxScalarDelegates.ActualPclmulReduceDelegate",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.reduce",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original PCLMUL reduce forwards to the pinned field gf64::reduce for every dictionary."
     }
   ],
   "stateful_llbc_refinements": [

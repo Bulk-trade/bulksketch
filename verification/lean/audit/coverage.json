@@ -1936,7 +1936,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxScalarDelegates.pclmul_trace_delegate",
+        "scope": "Exact original PCLMUL trace forwards to the pinned field maps::trace for every dictionary.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:63:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::solve_quadratic",
@@ -2004,7 +2011,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxScalarDelegates.pclmul_reduce_delegate",
+        "scope": "Exact original PCLMUL reduce forwards to the pinned field gf64::reduce for every dictionary.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_pclmul.rs:84:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::scale_xor",
@@ -2825,7 +2839,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates",
+        "scope": "Exact original mul delegation to the pinned PCLMUL method for every field dictionary.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:519:static:bulksketch::backend::x86_vpclmul512::INSERT_BASES",
@@ -2892,7 +2913,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates",
+        "scope": "Exact original square delegation to the pinned PCLMUL method for every field dictionary.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:541:function:bulksketch::backend::x86_vpclmul512::insert_18",
@@ -2985,7 +3013,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates",
+        "scope": "Exact original frobenius delegation to the pinned PCLMUL method for every field dictionary.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:59:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::inverse",
@@ -3003,7 +3038,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates",
+        "scope": "Exact original inverse delegation to the pinned PCLMUL method for every field dictionary.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:615:function:bulksketch::backend::x86_vpclmul512::insert_32",
@@ -3039,7 +3081,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates",
+        "scope": "Exact original trace delegation to the pinned PCLMUL method for every field dictionary.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:65:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::solve_quadratic",
@@ -3057,7 +3106,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates",
+        "scope": "Exact original solve_quadratic delegation to the pinned PCLMUL method for every field dictionary.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:68:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::raw_mul",
@@ -3075,7 +3131,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates",
+        "scope": "Exact original raw_mul delegation to the pinned PCLMUL method for every field dictionary.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:711:function:bulksketch::backend::x86_vpclmul512::insert_single",
@@ -3111,7 +3174,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates",
+        "scope": "Exact original reduce delegation to the pinned PCLMUL method for every field dictionary.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:749:function:bulksketch::backend::x86_vpclmul512::broadcast",
@@ -12221,8 +12291,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. Shared and row-local candidate normalization, the admitted ranked root steps and native drain, and exact original AVX tile, locator update and recurrence are checked. The degree-18 native AVX seed, update and continuation compose in the original rebuilt verifier with its explicit squaring, backend dictionary and masked-memory contracts. Complete traversal induction, work-budget termination, other verifier degrees and backends, public API and wire composition, Rust provenance and compiler-to-ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 165,
+    "note": "All 344 native executable obligations retained. Shared and row-local candidate normalization, the admitted ranked root steps and native drain, and exact original AVX tile, locator update and recurrence are checked. The degree-18 native AVX seed, update and continuation compose in the original rebuilt verifier through its exact scalar delegates, with explicit backend dictionary and masked-memory contracts. The admitted Verification entry constructs the exact native tail finish trace. Complete traversal induction, work-budget termination, other verifier degrees and backends, public API and wire composition, Rust provenance and compiler-to-ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 175,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12251,7 +12321,8 @@
       "avx_tile_executable_model": "BulksketchBridge.AvxTileNative.native_tile_refines",
       "avx_degree18_seed_under_tile_word_law": "BulksketchBridge.AvxInsertDispatch.native_avx_degree18_seed",
       "native_avx_tile_rows": "BulksketchBridge.AvxTileOddSum.native_tile_odd_sums",
-      "native_avx_rebuilt_degree18": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_avx18"
+      "native_avx_rebuilt_degree18": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_avx18",
+      "native_avx_rebuilt_degree18_all_callbacks": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_avx18_all_callbacks"
     },
     "reconciliation_algebra_evidence": {
       "sparse_support_uniqueness": "BulksketchBridge.Reconciliation.gf64_sparse_support_unique",
@@ -12410,7 +12481,8 @@
         "BulksketchBridge.RootEnumerate.native_affine_emission_ranked_step",
         "BulksketchBridge.RootRun.native_leaf_pop_metadata",
         "BulksketchBridge.RootRun.native_affine_pop_metadata",
-        "BulksketchBridge.ExecutionDriver.native_verification_driver"
+        "BulksketchBridge.ExecutionDriver.native_verification_driver",
+        "BulksketchBridge.ExecutionDriver.native_verification_start_finish"
       ]
     },
     "masked_memory_evidence": {

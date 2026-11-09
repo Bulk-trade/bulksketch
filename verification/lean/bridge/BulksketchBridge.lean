@@ -174,3 +174,5 @@ import BulksketchBridge.RowLocalNormalize
 import BulksketchBridge.RebuiltLfsrNativeAvx18
 import BulksketchBridge.AvxDegree18Dispatch
 import BulksketchBridge.NativeVerificationDriver
+import BulksketchBridge.RebuiltLfsrNativeAvx18AllCallbacks
+import BulksketchBridge.NativeVerificationReady

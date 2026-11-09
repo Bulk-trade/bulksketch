@@ -691,6 +691,11 @@
       "path": "extraction/candidate-normalize-rows/arithmetic.llbc",
       "sha256": "18f2316981699128ed715212a783610b02d2a0c7e821f111e63a94df105216fb",
       "has_errors": false
+    },
+    {
+      "path": "extraction/avx-scalar-delegates/arithmetic.llbc",
+      "sha256": "7954ea34e8bd6566d09bf21f1d4330ebdeea04bba42e4b2dbc1b014932753761",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1598,6 +1603,56 @@
       "native_item_id": "src/sketch/candidates.rs:75:function:bulksketch::sketch::candidates::normalize_rows",
       "generated_declaration": "bulksketch.sketch.candidates.normalize_rows",
       "generated_file": "bridge/Arithmetic/RowLocalGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:50:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::mul",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.mul",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:53:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::square",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.square",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:56:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::frobenius",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.frobenius",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:59:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::inverse",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.inverse",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:62:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::trace",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.trace",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:65:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::solve_quadratic",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:68:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::raw_mul",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.raw_mul",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:71:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::reduce",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.reduce",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:59:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::trace",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.trace",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:73:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::reduce",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.reduce",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2529,6 +2584,15 @@
       "declaration_count": 13,
       "scope": "Original row-local count, copy, sort, compaction, cumulative offsets and exact packed row views.",
       "translator_variant": "checked-candidate-normalize-rows-v1"
+    },
+    {
+      "generated": "extraction/avx-scalar-delegates/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean",
+      "sha256": "e5a38ea5df289c3e3fb68d49879e80356bf9097f369e0a4fc25e87da704c4008",
+      "raw_sha256": "0bc7a98d673d5abaeab54eccc1148e4b56c74a55e5d3fd7bc476f1caae954552",
+      "checker": "extraction/avx-scalar-delegates/project.py",
+      "declaration_count": 10,
+      "scope": "Ten original stock checked AVX and PCLMUL scalar delegate bodies."
     }
   ],
   "reviewed_translator_variants": [

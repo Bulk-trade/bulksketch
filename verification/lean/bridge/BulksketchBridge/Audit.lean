@@ -836,7 +836,21 @@ run_cmd do
     (``BulksketchBridge.VerifyDispatch.ActualNativeDegree18Dispatch,
       ``BulksketchBridge.VerifyDispatch.native_degree18_selects),
     (``BulksketchBridge.ExecutionDriver.ActualNativeVerificationDriver,
-      ``BulksketchBridge.ExecutionDriver.native_verification_driver)
+      ``BulksketchBridge.ExecutionDriver.native_verification_driver),
+    (``BulksketchBridge.AvxScalarDelegates.ActualNativeAvxScalarDelegates,
+      ``BulksketchBridge.AvxScalarDelegates.native_avx_scalar_delegates),
+    (``BulksketchBridge.AvxScalarDelegates.ActualPclmulTraceDelegate,
+      ``BulksketchBridge.AvxScalarDelegates.pclmul_trace_delegate),
+    (``BulksketchBridge.AvxScalarDelegates.ActualPclmulReduceDelegate,
+      ``BulksketchBridge.AvxScalarDelegates.pclmul_reduce_delegate),
+    (``BulksketchBridge.AvxScalarDelegates.ActualNativeAvxScalarSquare,
+      ``BulksketchBridge.AvxScalarDelegates.native_avx_scalar_square),
+    (``BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrNativeAvx18AllCallbacks,
+      ``BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_avx18_all_callbacks),
+    (``BulksketchBridge.ExecutionDriver.ActualNativeVerificationTailFinish,
+      ``BulksketchBridge.ExecutionDriver.native_verification_tail_finish),
+    (``BulksketchBridge.ExecutionDriver.ActualNativeVerificationStartFinish,
+      ``BulksketchBridge.ExecutionDriver.native_verification_start_finish)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

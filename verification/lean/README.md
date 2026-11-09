@@ -27,7 +27,7 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 | Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The bridge now has 165 original Aeneas generated-body refinements under
+The bridge now has 175 original Aeneas generated-body refinements under
 their recorded contracts. Five source-linked LLBC execution contracts are
 checked separately. The latest checkpoint covers the original root stage
 dispatcher, Dense div/rem, factor division, affine enumeration
@@ -64,7 +64,7 @@ The accelerated AVX recurrence checks every active lane and rejects
 the first mismatched block. Its exact update and continuation bind to
 the rebuilt verifier. At degree 18, the exact original tile seed,
 locator update and recurrence prove acceptance against all odd
-syndrome words, with explicit squaring and masked-memory contracts.
+syndrome words, through the exact original scalar squaring delegate, with explicit backend and masked-memory contracts.
 Canonicalization returns the exact sorted roots under the terminal
 locator-product and charge premises. Global traversal
 induction and remaining native implementation contracts are open.

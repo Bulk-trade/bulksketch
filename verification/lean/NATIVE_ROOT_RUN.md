@@ -252,7 +252,11 @@ folds, including both mutable iterator writebacks. The composition from
 those folds to the odd-power sum now checks for every admitted tile.
 For degree 18 the original dispatch selects the exact four-register
 tile. Its seed, original locator update and original continuation
-compose into the rebuilt verifier's acceptance theorem.
+compose into the rebuilt verifier's acceptance theorem. The original
+scalar AVX and PCLMUL delegate bodies now bind the scalar square
+to that composition. An admitted original Verification entry
+constructs the finite verification and canonicalization finish trace
+using the exact native returned state, root slice and meter.
 Other backend bindings remain open.
 
 Run the complete gate from `verification/lean`.
