@@ -135,6 +135,20 @@ theorem original_native_proper_gcd_not_none (division : DenseDivisionRuntime.Div
     congrArg Prod.fst (Result.ok_injective (accepted.symm.trans rejected))
   cases impossible
 
+theorem native_call_raw_width (roots : Roots) (buffers : FactorWork) :
+    (nativeCall roots buffers).2.2.2.length = buffers.raw.length := by
+  let divisor := prefixSlice buffers.gcd roots.gcd_len.val
+  let quotient := prefixSlice buffers.work (roots.degree.val + 2)
+  let remainder := tail buffers.work (roots.degree.val + 2)
+  let inverse := DenseDivision.divisorInverse divisor[divisor.length - 1]!
+  let out := DenseDivision.expectedDivRem buffers.modulus divisor quotient remainder buffers.raw inverse
+  have width : out.2.2.2.length = buffers.raw.length :=
+    (DenseDivision.expected_widths buffers.modulus divisor quotient remainder buffers.raw inverse).2.2
+  change (if out.1.2 = 0#usize then
+    (some out.1.1, out.2.1, out.2.2.1, out.2.2.2)
+    else (none, DenseDivision.cleared out.2.1 (buffers.modulus.length + 1), out.2.2.1, out.2.2.2)).2.2.2.length = _
+  split <;> exact width
+
 #print axioms native_call_some_of_factor
 #print axioms native_proper_gcd_has_quotient
 #print axioms original_native_proper_gcd_call

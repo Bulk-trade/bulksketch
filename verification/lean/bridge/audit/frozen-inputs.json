@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "622b879214a3b7f889c914b89c5973a2693a066917b2a760ce170706c1918eaa",
+    "bridge/BulksketchBridge/Audit.lean": "d8ceab0ed0b02ce7d80836b29ae55f830b7b622f00120945708c18fb0fef572a",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,9 +13,9 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "c0a927632220229b8075287a7dff99714ca2c5a628427dc8956ac0adfd4dee9a",
-    "audit/frozen-inputs.json": "ed370d4d369e87ddfadd344798900c304d4c744468f6656522880af97819ef7f",
-    "bridge/BulksketchBridge.lean": "3cf01c038afa3ffa229bcbed022f65fe6d36b73a8ca04999f7193e8c574f951c",
+    "scripts/verify_bridge.py": "5a8f7a04c1097677d33acea82b88336e1d50e9e7882fe3a9eeae35353c07c3c2",
+    "audit/frozen-inputs.json": "32631528291229298bf7ad61c9d4c2e9f9ee4e466c17d3aae4f625013c4b28d2",
+    "bridge/BulksketchBridge.lean": "b696b514880bc6323e0dccba6db065c1ab3e6a03a8ac493651ae3b63f5268395",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "9a7f74ef7f181a45345e6c5974fb154e12625db371f448708c01f8b7a9e07460",
-    "bridge/obligations.json": "7a8417d7dea83fd3a63e0d298fbf80a6d240364c90b32325436d35f530847944",
+    "bridge/source-linkage.json": "d18e2e8d9a55e26abfeae446abc5697f60b94dc862a7f1bb099e9be77f6e0203",
+    "bridge/obligations.json": "1f091ebcd94d809958a5aa18cbbafee73890b13ab21f414ab1dfdb08ee8471f3",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "87a716ce57f7ed03dea2dcea0bbc31db94133400d188fe60333aef7dd9199be1",
+    "scripts/check_projection_fixtures.py": "b549eaee8117e367e7a1e221af0d16fe7c4cddeac2633aa32b470ad35c0b54bd",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "396a92bb8018aff881b5e1f86aabc05f45594e2d3b88989a56182750e01a5c27",
+    "README.md": "0be2963a92222a6c845b579c4238a3733627735210659feaa7cc07059e7c263f",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "75c71fda2c29df04d5e9a5bff166e4807ccadeea29c3cb8b2689dfa92e367b7b",
+    "audit/coverage.json": "b37741d4a984d823d71697560d000081cc60ff8c45af4490bea057643546b87b",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "3f6bfde5a9d977901aabbff7ec7f8bdf21e0f92507056b10b3ac35167dd2e41c",
-    "audit/native-root-run-checkpoint.json": "45603ed34cfc877f4b60522476b4eb2e5ccc1a74e71a62a4041abdf1d4a3a468",
+    "NATIVE_ROOT_RUN.md": "48faece86d6444b119311f0d2df1f12d5e06223936b67549a6304f387523bd99",
+    "audit/native-root-run-checkpoint.json": "124990d614e42856604ac9294355f847f2e3afff92ed23e7a418eb089ce9d80a",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1500,8 +1500,8 @@
     "bridge/BulksketchBridge/AvxInsertionBasesStatic.lean": "1fc2e3fc23726ead9ea77ca36cb7b6ac4717e037ff10b1b00f49fdbef52fffaf",
     "bridge/BulksketchBridge/AvxInsertionBasesTableLaw.lean": "26f8328f375ed54763c21bdee86975259ceab876febf09023ca027671f014e60",
     "bridge/BulksketchBridge/RootDivideArena.lean": "d8c342b2a6d0ea787afe2c746524119e9d8410ef4eea47698abdb3c3fd68be20",
-    "bridge/BulksketchBridge/RootDivideGcdExact.lean": "15d18fb028ff2154df2270bf3dd7c18cb19dc77711c1bfaeb91da03fa5156889",
-    "bridge/BulksketchBridge/RootNativeProperDivide.lean": "17843d21d18fd7adda896b163caa227fe954620996f0b3f6569ed5fa151b58b8",
+    "bridge/BulksketchBridge/RootDivideGcdExact.lean": "127554dc671f20e9bec6969a582f473326a1cd82d8a13ea14568edff1e0ff9cd",
+    "bridge/BulksketchBridge/RootNativeProperDivide.lean": "6b2490e3f76e7858488f18634e0020b801fc31e4583ecfd41b1a61fdb2f5eb42",
     "bridge/BulksketchBridge/RootTraceProgress.lean": "78ac4692236f9c055a757bf7dc518801d0bafa2e4ffe53c9966ba1227bb7d9c3",
     "bridge/BulksketchBridge/RootTraversalPotential.lean": "749a1c5d868f65aa025db9b9176a3e996bc36b0a2ffb829608ded0a9050b558a",
     "extraction/avx-insertion-bases-static/Arithmetic/Funs.lean": "e803915a0b577be92377c0c58f5eb438a1cb298c53631f592a31b2ee338f0ce3",
@@ -1595,10 +1595,10 @@
     "bridge/BulksketchBridge/RootGcdFrame.lean": "e80ce92b172bfa993d01ce60a5b83f81254fb71c4f44bf651dd7794b36657364",
     "bridge/BulksketchBridge/RootLeafQuadratic.lean": "6ba33136d2b10a9614474029596f7e4766436b8956d05819fe107bd329e4407b",
     "bridge/BulksketchBridge/RootLeafWords.lean": "36ada4c25ac72225bb0ef1787955e75ec922fc0ad6fdc88c72a51d170b2c3dd2",
-    "bridge/BulksketchBridge/RootNativeClosedLeafVerify.lean": "55e8bd40bb6214b821a2c048404619c912131bd4c96f9a90aa4919d6698ba37b",
+    "bridge/BulksketchBridge/RootNativeClosedLeafVerify.lean": "30a8f573e4312be026d4e67683be9fc54675f65999003305b0d9e86567d93826",
     "bridge/BulksketchBridge/RootNativeGcdReborrow.lean": "69ad7278eebfcde360f653883f521f165e837d34b5c5d9056d380bd6f61d388c",
-    "bridge/BulksketchBridge/RootNativeLeafComplete.lean": "6e722477d170b4d687678066ba481fa1499d75351ac1241674f2c81bb21a66a3",
-    "bridge/BulksketchBridge/RootPendingProduct.lean": "7074e3e9e5939ec920a42c7ace3d95264b679450584d5572d6ba2fcece09e988",
+    "bridge/BulksketchBridge/RootNativeLeafComplete.lean": "46c3d87349b437921185b1011383f66344840b554441aa2a4619837742e122bc",
+    "bridge/BulksketchBridge/RootPendingProduct.lean": "8973d4089ac7e9210e7f67fa5ff3a0173f9a47b0179ba6a5fa57c2a0a7bc19fe",
     "bridge/BulksketchBridge/RootReborrow.lean": "d2d9d42d1b5a57d6ebc707e4475c124e5bab2bee284b04d8de9b3b95cc4c2134",
     "extraction/candidates/Arithmetic/Funs.lean": "de5ed3d1c89bf45d995de0824ab40f7206792bd7297dd870c2629cc82cb7e461",
     "extraction/candidates/Arithmetic/FunsExternal_Template.lean": "9a95bd69b056ffb0eece1648b4690fa8c0b999d66d4b25814bde04f0681ce181",
@@ -1642,9 +1642,9 @@
     "bridge/BulksketchBridge/CandidateSupport.lean": "39d2241f005ff0692ad8657b80a6dc15ce6ecb10d318a99a44321788685a8598",
     "bridge/BulksketchBridge/ExecutionDispatch.lean": "9188d91547e1bfb21f459ba8465ee6d148cf31e949364e26746d0a3012d4b737",
     "bridge/BulksketchBridge/ExecutionDriver.lean": "6f88b77798da2877f21970952730a78b36b700d28eb273cc5b797e470fdf1cd3",
-    "bridge/BulksketchBridge/NativeCandidateDeflateDriver.lean": "a98863376e7e1f107711cced43ecabf6582dd9208142fb0153f0f7247d0462a8",
-    "bridge/BulksketchBridge/RootEmissionProduct.lean": "750b3ee5ef8a87bcbdc2cec7fc8fe553083a388170964fa6ab7fb9a10d5c99a6",
-    "bridge/BulksketchBridge/RootNativeAffineEnumerationComplete.lean": "808e1335c31d67d830b87fa0e6ffce7e6961fb17876bb5828597cb6f4fc40181",
+    "bridge/BulksketchBridge/NativeCandidateDeflateDriver.lean": "d5844ba92ab34edc1081c142faee3ada76b60fd14b065b60e7f3afc92483fc67",
+    "bridge/BulksketchBridge/RootEmissionProduct.lean": "d7f5450f3faa9260b2ae070bebea4fd24874d26e4b6f33f9e9401a0284d6512c",
+    "bridge/BulksketchBridge/RootNativeAffineEnumerationComplete.lean": "52d92b909f2da0eba7c058db4a3b00902a044029590643fc2b4a48be47e1c8f7",
     "extraction/candidate-row/Arithmetic/Funs.lean": "b88864bf41e03e1bfc9f673d845653f05181b88adbf1508a461439821c0533d2",
     "extraction/candidate-row/Arithmetic/FunsExternal_Template.lean": "9d9b413ee8b6ba7aab15c36c02800a6861e76dae4bd721045a2df7166ec9ab40",
     "extraction/candidate-row/Arithmetic/Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
@@ -1675,7 +1675,35 @@
     "extraction/native-driver/run-next/arithmetic.llbc": "bb7bf11a972a5f2b923e2ef4b0e735af9e13ad1d063ac2c92840f7441e00819c",
     "extraction/native-driver/run-next/charon.log": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828",
     "extraction/native-driver/run-next/replay.log": "e40e6b22e0d6ffcaa37b3eadf28265e9b6344798ccc79ea0d875ae484052481a",
-    "extraction/native-driver/run-next/stock.log": "42ca15a5388e18944181d54f0ad5f01d202e222ecda8802a358f11ed89597d1a"
+    "extraction/native-driver/run-next/stock.log": "42ca15a5388e18944181d54f0ad5f01d202e222ecda8802a358f11ed89597d1a",
+    "bridge/Arithmetic/CompletedResultGenerated.lean": "7c6ec0a2c56a0ff88eae2d51d5e6d1560b4e99ec7f5af8969b5c5492895b16aa",
+    "bridge/BulksketchBridge/AvxTileChunkSum.lean": "1e0bc596230bdccca1a3fe31fac60764eec03a12d02b16cec0dd4f76e908a091",
+    "bridge/BulksketchBridge/AvxTileSyndrome.lean": "40336f3bc365dee62d0230f95a76fa912af3eb6c15c96a9f86286d0d349fd3aa",
+    "bridge/BulksketchBridge/NativeCompletedResult.lean": "94f2ee1b5c7b5c67e17ebddbd51cb5d53a04a7e376276c4857e268bde67ada79",
+    "bridge/BulksketchBridge/NativeTraversalDriver.lean": "63dac76dba8763169d3f50ec85fd75d2afed54200626c5fbea8b0772c09f82c5",
+    "bridge/BulksketchBridge/RootFactorValidity.lean": "a80479e5884fcada615ad478d5520f3eff22e799121499a050c4356875f8d880",
+    "bridge/BulksketchBridge/RootNativeReducerPreparation.lean": "24032f213b4e5da7f1188c204447249e6a58a94685b09dc5977e5bc8b7e60e08",
+    "bridge/BulksketchBridge/RootTraversalRankLinks.lean": "208f809cc54e7f82abdbad9fc3cb8f121050d719f3d3b20d3366ef877fdfeb41",
+    "bridge/BulksketchBridge/RootTraversalRanking.lean": "b16f798300ee03f35d85bf3f336f8b02f1c5d465f5117e9846f492023ea831d1",
+    "extraction/completed-result/Arithmetic/Funs.lean": "ed2942f11ed9521dcb98a3252b66bff8863de6a60d94bd9648a65462da502469",
+    "extraction/completed-result/Arithmetic/FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+    "extraction/completed-result/Arithmetic/Types.lean": "2d71cb04b7390ef2f3b869192ac4d6ac8a0717d11efd87ad81155052fa07020e",
+    "extraction/completed-result/README.md": "720059074807b103db8dca90c05359ad2c2b3719d68f586283eec8499501e1d0",
+    "extraction/completed-result/arithmetic.llbc": "130d24ce1409e5b672d4769dae554c84dfba2f846e5ec9bef0a719fd917909c0",
+    "extraction/completed-result/charon.log": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828",
+    "extraction/completed-result/checked-completed-result-frozen-shared.patch": "072f57a70e79f9fa4ec42feabeb5cbfdae3c757b0af09ade5a4079a642fb6b60",
+    "extraction/completed-result/checked.log": "82f904f940dc562ab2bef96b8f9cc6c93b2dc70424a76ccd9d83b9041f6ed65d",
+    "extraction/completed-result/execution-verify.log": "93ca660c8ddc8861d5b4613ecf940d00bf2a1c9bb9d5c6cc7c5ea19a70874893",
+    "extraction/completed-result/flag-off.log": "477863982fe2caace4d7ba0787aea6a99af07aef72da815a9f51a0f509278887",
+    "extraction/completed-result/fresh-build.log": "03e34dc773f1533322b79753298af165c7b0eb6d04812dd7ffa2945e865f7032",
+    "extraction/completed-result/project.py": "7439701a0f93e9c9072b72a76b5dcd574f6b1a4079c1d55ac4ccff3ec64cf554",
+    "extraction/completed-result/receipt.json": "fc7386bad6a602ebe66cced4bfd4b322943d5e20cee9c09647b7affd49bbb145",
+    "extraction/completed-result/scope_controls.py": "88b7cf13f5b5cc65c18f7f3dfd2a8fcd24f0c798e60f6ba5a3eb5d4af26aa14b",
+    "extraction/completed-result/stock.log": "cd9d0d1ba3765d416292be7ddb51a2b12e12cec7527f531f41f1341d5946d5ce",
+    "extraction/completed-result/strict-joins.log": "a4045356b4e0382c2fb1e9a73e754347d19a1ff6f00b6e457ed1677486d37e4f",
+    "extraction/completed-result/unchecked.log": "56bdc8788881a32d67ef0d69f716bdf5a4098e2663030042877cd7eef4066dda",
+    "extraction/completed-result/wrong-site.log": "135db7b526a53529043960c11b8ccb82962e2dda7ade27d07c4f2bde3f22abcd",
+    "extraction/completed-result/wrong-workspace.log": "03983c49a1a69be85fb2156ac022cb56f0e54dda757fb45e34af58512411445b"
   },
   "reviewed_policy_revisions": [
     {
@@ -12201,7 +12229,267 @@
       "new_sha256": "87a716ce57f7ed03dea2dcea0bbc31db94133400d188fe60333aef7dd9199be1",
       "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs.",
       "old_sha256": "8b3552e3786cfeab37d4fe35ae08683357664b1b9a63465cf15a54c00eb79f8c"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "48faece86d6444b119311f0d2df1f12d5e06223936b67549a6304f387523bd99",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "3f6bfde5a9d977901aabbff7ec7f8bdf21e0f92507056b10b3ac35167dd2e41c"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "0be2963a92222a6c845b579c4238a3733627735210659feaa7cc07059e7c263f",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "396a92bb8018aff881b5e1f86aabc05f45594e2d3b88989a56182750e01a5c27"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "b37741d4a984d823d71697560d000081cc60ff8c45af4490bea057643546b87b",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "75c71fda2c29df04d5e9a5bff166e4807ccadeea29c3cb8b2689dfa92e367b7b"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "32631528291229298bf7ad61c9d4c2e9f9ee4e466c17d3aae4f625013c4b28d2",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "ed370d4d369e87ddfadd344798900c304d4c744468f6656522880af97819ef7f"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "124990d614e42856604ac9294355f847f2e3afff92ed23e7a418eb089ce9d80a",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "45603ed34cfc877f4b60522476b4eb2e5ccc1a74e71a62a4041abdf1d4a3a468"
+    },
+    {
+      "path": "bridge/Arithmetic/CompletedResultGenerated.lean",
+      "new_sha256": "7c6ec0a2c56a0ff88eae2d51d5e6d1560b4e99ec7f5af8969b5c5492895b16aa",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "b696b514880bc6323e0dccba6db065c1ab3e6a03a8ac493651ae3b63f5268395",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "3cf01c038afa3ffa229bcbed022f65fe6d36b73a8ca04999f7193e8c574f951c"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "d8ceab0ed0b02ce7d80836b29ae55f830b7b622f00120945708c18fb0fef572a",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "622b879214a3b7f889c914b89c5973a2693a066917b2a760ce170706c1918eaa"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxTileChunkSum.lean",
+      "new_sha256": "1e0bc596230bdccca1a3fe31fac60764eec03a12d02b16cec0dd4f76e908a091",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxTileSyndrome.lean",
+      "new_sha256": "40336f3bc365dee62d0230f95a76fa912af3eb6c15c96a9f86286d0d349fd3aa",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeCandidateDeflateDriver.lean",
+      "new_sha256": "d5844ba92ab34edc1081c142faee3ada76b60fd14b065b60e7f3afc92483fc67",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "a98863376e7e1f107711cced43ecabf6582dd9208142fb0153f0f7247d0462a8"
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeCompletedResult.lean",
+      "new_sha256": "94f2ee1b5c7b5c67e17ebddbd51cb5d53a04a7e376276c4857e268bde67ada79",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeTraversalDriver.lean",
+      "new_sha256": "63dac76dba8763169d3f50ec85fd75d2afed54200626c5fbea8b0772c09f82c5",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootDivideGcdExact.lean",
+      "new_sha256": "127554dc671f20e9bec6969a582f473326a1cd82d8a13ea14568edff1e0ff9cd",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "15d18fb028ff2154df2270bf3dd7c18cb19dc77711c1bfaeb91da03fa5156889"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootEmissionProduct.lean",
+      "new_sha256": "d7f5450f3faa9260b2ae070bebea4fd24874d26e4b6f33f9e9401a0284d6512c",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "750b3ee5ef8a87bcbdc2cec7fc8fe553083a388170964fa6ab7fb9a10d5c99a6"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootFactorValidity.lean",
+      "new_sha256": "a80479e5884fcada615ad478d5520f3eff22e799121499a050c4356875f8d880",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootNativeAffineEnumerationComplete.lean",
+      "new_sha256": "52d92b909f2da0eba7c058db4a3b00902a044029590643fc2b4a48be47e1c8f7",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "808e1335c31d67d830b87fa0e6ffce7e6961fb17876bb5828597cb6f4fc40181"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootNativeClosedLeafVerify.lean",
+      "new_sha256": "30a8f573e4312be026d4e67683be9fc54675f65999003305b0d9e86567d93826",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "55e8bd40bb6214b821a2c048404619c912131bd4c96f9a90aa4919d6698ba37b"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootNativeLeafComplete.lean",
+      "new_sha256": "46c3d87349b437921185b1011383f66344840b554441aa2a4619837742e122bc",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "6e722477d170b4d687678066ba481fa1499d75351ac1241674f2c81bb21a66a3"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootNativeProperDivide.lean",
+      "new_sha256": "f3459da3caafb21a4aa0b669bb8bf7925286bea5242276afffc4830745cc9987",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "17843d21d18fd7adda896b163caa227fe954620996f0b3f6569ed5fa151b58b8"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootNativeReducerPreparation.lean",
+      "new_sha256": "24032f213b4e5da7f1188c204447249e6a58a94685b09dc5977e5bc8b7e60e08",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootPendingProduct.lean",
+      "new_sha256": "8973d4089ac7e9210e7f67fa5ff3a0173f9a47b0179ba6a5fa57c2a0a7bc19fe",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "7074e3e9e5939ec920a42c7ace3d95264b679450584d5572d6ba2fcece09e988"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraversalRankLinks.lean",
+      "new_sha256": "208f809cc54e7f82abdbad9fc3cb8f121050d719f3d3b20d3366ef877fdfeb41",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraversalRanking.lean",
+      "new_sha256": "b16f798300ee03f35d85bf3f336f8b02f1c5d465f5117e9846f492023ea831d1",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "1f091ebcd94d809958a5aa18cbbafee73890b13ab21f414ab1dfdb08ee8471f3",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "7a8417d7dea83fd3a63e0d298fbf80a6d240364c90b32325436d35f530847944"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "d18e2e8d9a55e26abfeae446abc5697f60b94dc862a7f1bb099e9be77f6e0203",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "9a7f74ef7f181a45345e6c5974fb154e12625db371f448708c01f8b7a9e07460"
+    },
+    {
+      "path": "extraction/completed-result/Arithmetic/Funs.lean",
+      "new_sha256": "ed2942f11ed9521dcb98a3252b66bff8863de6a60d94bd9648a65462da502469",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/Arithmetic/Types.lean",
+      "new_sha256": "2d71cb04b7390ef2f3b869192ac4d6ac8a0717d11efd87ad81155052fa07020e",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/README.md",
+      "new_sha256": "720059074807b103db8dca90c05359ad2c2b3719d68f586283eec8499501e1d0",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/arithmetic.llbc",
+      "new_sha256": "130d24ce1409e5b672d4769dae554c84dfba2f846e5ec9bef0a719fd917909c0",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/charon.log",
+      "new_sha256": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/checked-completed-result-frozen-shared.patch",
+      "new_sha256": "072f57a70e79f9fa4ec42feabeb5cbfdae3c757b0af09ade5a4079a642fb6b60",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/checked.log",
+      "new_sha256": "82f904f940dc562ab2bef96b8f9cc6c93b2dc70424a76ccd9d83b9041f6ed65d",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/execution-verify.log",
+      "new_sha256": "93ca660c8ddc8861d5b4613ecf940d00bf2a1c9bb9d5c6cc7c5ea19a70874893",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/flag-off.log",
+      "new_sha256": "477863982fe2caace4d7ba0787aea6a99af07aef72da815a9f51a0f509278887",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/fresh-build.log",
+      "new_sha256": "03e34dc773f1533322b79753298af165c7b0eb6d04812dd7ffa2945e865f7032",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/project.py",
+      "new_sha256": "7439701a0f93e9c9072b72a76b5dcd574f6b1a4079c1d55ac4ccff3ec64cf554",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/receipt.json",
+      "new_sha256": "fc7386bad6a602ebe66cced4bfd4b322943d5e20cee9c09647b7affd49bbb145",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/scope_controls.py",
+      "new_sha256": "88b7cf13f5b5cc65c18f7f3dfd2a8fcd24f0c798e60f6ba5a3eb5d4af26aa14b",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/stock.log",
+      "new_sha256": "cd9d0d1ba3765d416292be7ddb51a2b12e12cec7527f531f41f1341d5946d5ce",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/strict-joins.log",
+      "new_sha256": "a4045356b4e0382c2fb1e9a73e754347d19a1ff6f00b6e457ed1677486d37e4f",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/unchecked.log",
+      "new_sha256": "56bdc8788881a32d67ef0d69f716bdf5a4098e2663030042877cd7eef4066dda",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/wrong-site.log",
+      "new_sha256": "135db7b526a53529043960c11b8ccb82962e2dda7ade27d07c4f2bde3f22abcd",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "extraction/completed-result/wrong-workspace.log",
+      "new_sha256": "03983c49a1a69be85fb2156ac022cb56f0e54dda757fb45e34af58512411445b",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "b549eaee8117e367e7a1e221af0d16fe7c4cddeac2633aa32b470ad35c0b54bd",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "87a716ce57f7ed03dea2dcea0bbc31db94133400d188fe60333aef7dd9199be1"
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "5a8f7a04c1097677d33acea82b88336e1d50e9e7882fe3a9eeae35353c07c3c2",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "c0a927632220229b8075287a7dff99714ca2c5a628427dc8956ac0adfd4dee9a"
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootNativeProperDivide.lean",
+      "new_sha256": "6b2490e3f76e7858488f18634e0020b801fc31e4583ecfd41b1a61fdb2f5eb42",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "f3459da3caafb21a4aa0b669bb8bf7925286bea5242276afffc4830745cc9987"
     }
   ],
-  "challenge_count": 356
+  "challenge_count": 362
 }

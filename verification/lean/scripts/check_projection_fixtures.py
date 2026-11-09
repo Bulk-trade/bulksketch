@@ -417,6 +417,14 @@ PROJECTIONS = [
            "backendcontractBulkKernelsInst.horner_many coefficients points out",
            "backendcontractBulkKernelsInst.horner_many points coefficients out"),
       )),
+    ("completed-result", "extraction/completed-result/project.py", "extraction/completed-result/receipt.json",
+     "extraction/completed-result/Arithmetic/Funs.lean", "bridge/Arithmetic/CompletedResultGenerated.lean",
+     "if self.roots.count = 0#usize", "if self.roots.count != 0#usize", "compiled completed_result projection differs",
+     None, None, ["extraction/root-setup/receipt.json", "extraction/execution-verify/arithmetic.llbc",
+                  "bridge/Workmeter/Types.lean", "bridge/Arithmetic/SliceKernelTypes.lean",
+                  "bridge/Arithmetic/ReconstructionTypes.lean"] +
+     [f"extraction/execution-verify/Arithmetic/{name}"
+      for name in ("Funs.lean", "FunsExternal_Template.lean", "Types.lean")]),
     ("native-driver", "extraction/native-driver/project.py", "extraction/native-driver/receipt.json",
      "extraction/native-driver/execute/Arithmetic/Funs.lean", "bridge/Arithmetic/ExecutionDriverGenerated.lean",
      "if i = 0#u64", "if i != 0#u64", "compiled decoder driver projection differs", None, None,
@@ -693,6 +701,9 @@ def main():
         if label == "candidates-outer":
             cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false',
                           '"native_llbc_edited": true', "candidate variant receipt differs"))
+        if label == "completed-result":
+            cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false',
+                          '"native_llbc_edited": true', "invalid completed_result translator receipt"))
         if label == "native-driver":
             cases.append(("unchecked-replay", receipt_path, '"-checks"', '"-no-checks"',
                           "decoder driver checked Aeneas command differs"))
@@ -723,7 +734,7 @@ def main():
                              "affine-subspaces", "root-prepare-affine", "root-enumerate-affine", "dense-div-rem",
                              "affine-enumerate", "affine-selector", "avx-multiply-linear", "affine-solve-map",
                              "avx-horner", "affine-multiple", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
-                             "avx-insert-insert18", "avx-insert-horizontal", "avx-insert-dispatch", "native-driver", "candidate-row"}:
+                             "avx-insert-insert18", "avx-insert-horizontal", "avx-insert-dispatch", "native-driver", "candidate-row", "completed-result"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

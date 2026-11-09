@@ -5369,7 +5369,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.CompletedResult.native_completed_result",
+        "scope": "Every original result state, including Equal, Decoded of the exact roots prefix, Failed, Error and invalid count or state panic.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:159:method:bulksketch::decode::stages::Execution < F , K >::set_splitter_seed",
@@ -12151,8 +12158,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. The original decoder driver and packed candidate row accessor have checked body refinements. The original candidate and deflation driver steps supply the exact admitted residual product and traversal frame, and paid affine enumeration emits every factor root. Complete traversal and decoder composition, publication, backend bodies, Rust provenance, and compiler-to-ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 155,
+    "note": "All 344 native executable obligations retained. The original completed-result wrapper returns the exact shared root slice. Native root transitions preserve the active and emitted factor product at entry, divide and emission under their local assumptions, and the same-degree control ranking is checked. Complete traversal invariant induction, caller normalization, canonicalization, remaining backend bodies, Rust provenance and compiler-to-ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 156,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12175,7 +12182,8 @@
       "x86_register_kernels": "Original PCLMUL raw multiplication and reduced scalar entry methods, plus the original AVX-512 raw, two reduction and multiply bodies. Exact register values under scoped instruction and byte models.",
       "pclmul_field_maps": "Original PCLMUL Frobenius, quadratic solve and inverse and their Arithmetic entry methods return their exact GF64 results.",
       "x86_feature_gate": "Original feature detection returns the exact AVX-512 and VPCLMUL predicate and checks XSAVE and OSXSAVE before the modeled XGETBV read.",
-      "pclmul_slice_kernels": "Original scale-XOR, square, XOR and Horner have exact slice frames and arithmetic under recorded register value models."
+      "pclmul_slice_kernels": "Original scale-XOR, square, XOR and Horner have exact slice frames and arithmetic under recorded register value models.",
+      "avx_tile_row_model": "BulksketchBridge.AvxTileChunkSum.tile_row_exact"
     },
     "reconciliation_algebra_evidence": {
       "sparse_support_uniqueness": "BulksketchBridge.Reconciliation.gf64_sparse_support_unique",
@@ -12304,7 +12312,12 @@
         "BulksketchBridge.CandidateOuter.native_candidate_no_overhit",
         "BulksketchBridge.CandidateOuter.native_candidate_success_handoff",
         "BulksketchBridge.ExecutionDriver.native_candidate_deflate_driver",
-        "BulksketchBridge.RootEnumerate.native_affine_enumeration_complete"
+        "BulksketchBridge.RootEnumerate.native_affine_enumeration_complete",
+        "BulksketchBridge.CompletedResult.native_completed_result",
+        "BulksketchBridge.RootRun.native_reducer_preparation",
+        "BulksketchBridge.ExecutionDriver.native_root_driver_return",
+        "BulksketchBridge.RootRun.traversal_rank_decreases",
+        "BulksketchBridge.RootRun.gcd_outcome_phase_step"
       ]
     },
     "masked_memory_evidence": {

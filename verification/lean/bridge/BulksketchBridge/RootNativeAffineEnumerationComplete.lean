@@ -3,6 +3,8 @@ import BulksketchBridge.AffineEnumerationCompleteness
 import BulksketchBridge.NativeRootRun
 import BulksketchBridge.RootEnumerate
 import BulksketchBridge.RootTraversalPotential
+import BulksketchBridge.RootEmissionProduct
+import BulksketchBridge.DenseReducerAlgebra
 
 namespace BulksketchBridge.RootEnumerate
 
@@ -80,6 +82,7 @@ def ActualNativeAffineEnumerationComplete : Prop :=
       written.roots.val.take after.count.val = workspace.roots.val.take roots.count.val ++ words ∧
       workspaceLengths written = workspaceLengths workspace ∧
       PendingLayout after written.stack written.factors.length written.polynomials.length ∧
+      traversalProduct (decide (roots.pending = 0#usize)) after written = traversalProduct false roots workspace ∧
       (roots.pending = 0#usize → stage = .Verification ∧ after.count.val = factorDegreeMass roots workspace.stack) ∧
       (roots.pending ≠ 0#usize → ∃ frame, workspace.stack.val[roots.pending.val - 1]? = some frame ∧
         stage = stageFor after ∧
@@ -193,16 +196,29 @@ theorem native_affine_enumeration_complete : ActualNativeAffineEnumerationComple
     refine ⟨layout.stackRoom, layout.factorRoom, layout.polynomialRoom, ?_⟩
     intro slot live
     exact layout.slots slot live
+  have leading : polynomial[roots.degree.val]! = 1#u64 := by
+    rw [show roots.degree.val = polynomial.length - 1 by omega]
+    exact highest
+  have monic := (DenseReducerAlgebra.modulus_monic polynomial roots.degree.val polyLen leading).1
+  have factorProduct := factor_from_emitted_roots (activeFactor roots workspace) words monic split simple distinct allRoots
+  have roomWords : roots.count.val + words.length ≤ workspace.roots.length := by rwa [outLen]
+  have countedWords : counted.count.val = roots.count.val + words.length := by rw [outLen]; exact countValue
   rw [original_root_run_refines kernels roots .AffineEnumeration workspace meter trivial]
   simp only [RootRun.expected]
   by_cases empty : roots.pending = 0#usize
   · rw [ite_eq_left empty] at resumed
+    have pending : pendingProduct workspace roots.pending.val = (1 : Polynomial Field) := by
+      simp only [pendingProduct, empty, show (0#usize).val = 0 from rfl, Finset.range_zero, Finset.prod_empty]
+    have product := emission_preserves_traversal_product roots counted workspace emitted words true
+      roomWords countedWords exactWrite factorProduct (by exact pending)
     refine ⟨words, .Verification, counted, emitted, resumed, paidModel, outLen, distinct, zeroFree,
-      allRoots, countValue, exactWrite, prefixWritten, emittedLengths, countedLayout, ?_, fun impossible => (impossible empty).elim⟩
-    intro _
-    simp only [factorDegreeMass, pendingDegree, empty, show (0#usize).val = 0 from rfl,
-      Finset.range_zero, Finset.sum_empty, Nat.add_zero]
-    exact ⟨trivial, countValue⟩
+      allRoots, countValue, exactWrite, prefixWritten, emittedLengths, countedLayout, ?_, ?_,
+      fun impossible => (impossible empty).elim⟩
+    · simpa only [empty, decide_true] using product
+    · intro _
+      simp only [factorDegreeMass, pendingDegree, empty, show (0#usize).val = 0 from rfl,
+        Finset.range_zero, Finset.sum_empty, Nat.add_zero]
+      exact ⟨trivial, countValue⟩
   · rw [ite_eq_right empty] at resumed
     obtain ⟨frame, popBounds, ran⟩ := resumed
     let after := poppedRoots counted emitted frame
@@ -214,20 +230,25 @@ theorem native_affine_enumeration_complete : ActualNativeAffineEnumerationComple
       change workspaceLengths (poppedWorkspace emitted frame) = _
       simp only [workspaceLengths, poppedWorkspace, restore_length] at emittedLengths ⊢
       exact emittedLengths
+    have pending : pendingProduct workspace roots.pending.val = liveProduct after written :=
+      popped_pending_product counted emitted frame popBounds
+    have product := emission_preserves_traversal_product roots after workspace written words false
+      roomWords countedWords exactWrite factorProduct (by exact pending)
     refine ⟨words, stageFor after, after, written, ran, paidModel, outLen, distinct, zeroFree,
       allRoots, countValue, exactWrite, prefixWritten, restoredLengths, popped_pending_layout counted emitted frame countedLayout,
-      fun impossible => (empty impossible).elim, ?_⟩
-    intro _
-    refine ⟨frame, popBounds.2.1, rfl, ?_, popped_factor counted emitted frame popBounds, ?_, ?_⟩
-    · unfold after counted
-      rw [countExact]
-      rfl
-    · change factorDegreeMass (poppedRoots counted emitted frame) (poppedWorkspace emitted frame).stack = _
-      unfold counted
-      rw [countExact]
-      exact oldMass
-    · intro positive
-      exact oldPotential positive
+      ?_, fun impossible => (empty impossible).elim, ?_⟩
+    · simpa only [empty, decide_false] using product
+    · intro _
+      refine ⟨frame, popBounds.2.1, rfl, ?_, popped_factor counted emitted frame popBounds, ?_, ?_⟩
+      · unfold after counted
+        rw [countExact]
+        rfl
+      · change factorDegreeMass (poppedRoots counted emitted frame) (poppedWorkspace emitted frame).stack = _
+        unfold counted
+        rw [countExact]
+        exact oldMass
+      · intro positive
+        exact oldPotential positive
 
 #print axioms native_affine_enumeration_complete
 

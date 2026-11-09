@@ -14,6 +14,17 @@ set_option maxRecDepth 4096
 noncomputable def rootsProduct (words : List U64) : Polynomial Field :=
   (words.map fun word => X + C (toField word.bv)).prod
 
+theorem rootsProduct_eq_indices (words : List U64) :
+    rootsProduct words = ∏ i ∈ Finset.range words.length, (X + C (toField words[i]!.bv)) := by
+  induction words with
+  | nil => simp [rootsProduct]
+  | cons first rest ih =>
+    rw [List.length_cons, Finset.prod_range_succ']
+    simp only [List.getElem!_cons_zero, List.getElem!_cons_succ]
+    change (X + C (toField first.bv)) * rootsProduct rest = _
+    rw [ih]
+    exact mul_comm ..
+
 noncomputable def emittedProduct (roots : Roots) (workspace : RowWorkspace) : Polynomial Field :=
   rootsProduct (workspace.roots.val.take roots.count.val)
 
@@ -108,6 +119,27 @@ theorem emission_preserves_traversal_product (roots after : Roots) (old written 
     exact mul_assoc ..
   · simp only [traversalProduct, Bool.false_eq_true, ite_false, ite_true, appended, liveProduct, factor] at *
     rw [rest, mul_one]
+
+/-- Before verification, a zero-degree active factor is the unit. Rust
+does not copy a coefficient into the polynomial buffer on that path. -/
+noncomputable def activeTraversalProduct (roots : Roots) (workspace : RowWorkspace) : Polynomial Field :=
+  if roots.degree.val = 0 then emittedProduct roots workspace * pendingProduct workspace roots.pending.val
+  else traversalProduct false roots workspace
+
+theorem initial_traversal_product (locator residual : Polynomial Field) (roots : Roots) (workspace : RowWorkspace)
+    (empty : roots.pending = 0#usize)
+    (product : locator = emittedProduct roots workspace * residual)
+    (monic : residual.Monic) (degree : residual.natDegree = roots.degree.val)
+    (active : roots.degree ≠ 0#usize → activeFactor roots workspace = residual) :
+    activeTraversalProduct roots workspace = locator := by
+  have pending : pendingProduct workspace roots.pending.val = (1 : Polynomial Field) := by
+    simp only [pendingProduct, empty, show (0#usize).val = 0 from rfl, Finset.range_zero, Finset.prod_empty]
+  by_cases zero : roots.degree.val = 0
+  · have one := eq_one_of_monic_natDegree_zero monic (degree.trans zero)
+    rw [activeTraversalProduct, ite_eq_left zero, pending, product, one]
+  · have nonzero : roots.degree ≠ 0#usize := fun h => zero (congrArg UScalar.val h)
+    rw [activeTraversalProduct, ite_eq_right zero, product]
+    simp only [traversalProduct, Bool.false_eq_true, ite_false, liveProduct, pending, mul_one, active nonzero]
 
 #print axioms factor_from_emitted_roots
 #print axioms emitted_product_append

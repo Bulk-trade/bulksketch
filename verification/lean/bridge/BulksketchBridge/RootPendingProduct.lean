@@ -105,7 +105,12 @@ theorem committed_pending_product (roots : Roots) (workspace : RowWorkspace) (bu
     let output := committed roots buffers workspace.factors workspace.stack meter length start quotient remainder raw
     let written := { workspace with factors := output.2.2.2.2.1, stack := output.2.2.2.2.2.1 }
     pendingProduct written output.2.1.pending.val =
-      pendingProduct workspace roots.pending.val * slicePolynomial (prefixSlice quotient length.val) := by
+      pendingProduct workspace roots.pending.val * slicePolynomial (prefixSlice quotient length.val) ∧
+    output.2.1.pending.val = roots.pending.val + 1 ∧
+    written.factors.length = workspace.factors.length ∧ written.stack.length = workspace.stack.length ∧
+    (∀ slot < roots.pending.val, written.stack.val[slot]? = workspace.stack.val[slot]?) ∧
+    ∃ frame, written.stack.val[roots.pending.val]? = some frame ∧
+      frame.coefficient_start.val = start.val ∧ frame.coefficient_len.val = length.val := by
   let output := committed roots buffers workspace.factors workspace.stack meter length start quotient remainder raw
   let written := { workspace with factors := output.2.2.2.2.1, stack := output.2.2.2.2.2.1 }
   have pending : output.2.1.pending.val = roots.pending.val + 1 :=
@@ -145,6 +150,8 @@ theorem committed_pending_product (roots : Roots) (workspace : RowWorkspace) (bu
       (fun slot old => earlierWords slot (startVal ▸ old))
   obtain ⟨_, quotientWords⟩ := committed_coefficients roots buffers workspace.factors workspace.stack meter
     length start quotient remainder raw positive quotientRoom lengthRoom.le slotEnd (fun _ => lengthRoom) gcdRoom modulusRoom
+  have stackWidth : written.stack.length = workspace.stack.length := by rw [stack, Slice.set_length]
+  refine ⟨?_, pending, factors, stackWidth, earlierStack, saved, current, savedStart, savedLength⟩
   change pendingProduct written output.2.1.pending.val = _
   rw [pending]
   unfold pendingProduct at preserved ⊢

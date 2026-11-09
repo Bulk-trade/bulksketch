@@ -1,0 +1,317 @@
+{
+  "variant_id": "checked-completed-result-frozen-shared-v1",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "native_source_edited": false,
+  "native_llbc_edited": false,
+  "source_sha256": {
+    "src/lib.rs": "5174f3741a1c1b0bbdfddfac894adb8d96de06896dce8960bad76fe2056fe124",
+    "src/decode/stages.rs": "93825fcb5054e98e9af060a81da72d4770c29354d79822ccfc949cc55f6e9b23",
+    "src/decode/mod.rs": "4d1f559feaa82a6f89e4ddd533fb7fa526d5637386364385020888c25e6026b4",
+    "src/field/mod.rs": "035dc6193ebb50b324527525c0ee47cbe06ca325db16aa5f8ee55b0e79baa723",
+    "src/backend/mod.rs": "b4883e5070592cd5db4c9450fbc14e7dc9c07ec457029a54917295a24a94fb72",
+    "src/backend/contract.rs": "4d05ce564edc408ba04f5a907b159ad91018ba8cfd93126e17913ed49f7e3d59",
+    "src/types.rs": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d",
+    "src/decode/row.rs": "bf5ae89114d3bab811f1e0ca3b370cd916803bddd178471b3167e81b432df7bc",
+    "src/decode/roots.rs": "4697d5874fd1eb03c0210371fdac83a8dc7171de2724da046613f59c879f4fb6",
+    "src/decode/degree_probe.rs": "60d72b0aa11f311c4359bfe94f0d6fede00723602b3251492cbdb10ee51752ed",
+    "src/decode/scratch.rs": "97016cadabf021829b567ff1472a9f11136f54059d78e457d58896cc318e50f6"
+  },
+  "capture_sha256": "130d24ce1409e5b672d4769dae554c84dfba2f846e5ec9bef0a719fd917909c0",
+  "variant_patch": "extraction/completed-result/checked-completed-result-frozen-shared.patch",
+  "variant_patch_sha256": "072f57a70e79f9fa4ec42feabeb5cbfdae3c757b0af09ade5a4079a642fb6b60",
+  "patched_binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+  "base_sources": {
+    "src/interp/InterpJoin.ml": "57c5478aae42f8a354755424b67f67f37dc8bd233d653c97de0dcbbea5dd6229"
+  },
+  "modified_sources": {
+    "src/interp/InterpJoin.ml": "7b7b982db6c128a0950c969218813bf10b86a405d6c92530814d5dfdcb3e34b4"
+  },
+  "charon_recapture": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/recaptured.llbc",
+      "--start-from=bulksketch::decode::stages::_::completed_result",
+      "--include=bulksketch::decode::stages::_::completed_result",
+      "--",
+      "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked",
+      "--offline",
+      "--target",
+      "x86_64-apple-darwin"
+    ],
+    "exit_code": 0,
+    "binary_sha256": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "original_sha256": "130d24ce1409e5b672d4769dae554c84dfba2f846e5ec9bef0a719fd917909c0",
+    "recapture_sha256": "972c0e6f94aee4a446d514be08b196305fd6bda24cbd37d35e386a76c5ca53a1",
+    "normalized_fields": [
+      "translated.options.dest_file"
+    ],
+    "log_sha256": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828"
+  },
+  "fresh_build": {
+    "command": [
+      "dune",
+      "build",
+      "--root",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src",
+      "-j",
+      "2",
+      "./main.exe"
+    ],
+    "exit_code": 0,
+    "source_files_byte_identical": 108,
+    "modified_source_sha256": {
+      "src/interp/InterpJoin.ml": "7b7b982db6c128a0950c969218813bf10b86a405d6c92530814d5dfdcb3e34b4"
+    },
+    "log_sha256": "03e34dc773f1533322b79753298af165c7b0eb6d04812dd7ffa2945e865f7032"
+  },
+  "strict_join_replay": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-strict-joins",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/strict-joins",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/arithmetic.llbc"
+    ],
+    "environment": {
+      "BULKSKETCH_COMPLETED_RESULT": "1"
+    },
+    "exit_code": 0,
+    "binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+    "input_sha256": "130d24ce1409e5b672d4769dae554c84dfba2f846e5ec9bef0a719fd917909c0",
+    "log_sha256": "a4045356b4e0382c2fb1e9a73e754347d19a1ff6f00b6e457ed1677486d37e4f",
+    "outputs": {
+      "Funs.lean": "ed2942f11ed9521dcb98a3252b66bff8863de6a60d94bd9648a65462da502469",
+      "Types.lean": "2d71cb04b7390ef2f3b869192ac4d6ac8a0717d11efd87ad81155052fa07020e",
+      "FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829"
+    }
+  },
+  "replay": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-checks",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/checked",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/arithmetic.llbc"
+    ],
+    "environment": {
+      "BULKSKETCH_COMPLETED_RESULT": "1"
+    },
+    "exit_code": 0,
+    "binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+    "input_sha256": "130d24ce1409e5b672d4769dae554c84dfba2f846e5ec9bef0a719fd917909c0",
+    "log_sha256": "82f904f940dc562ab2bef96b8f9cc6c93b2dc70424a76ccd9d83b9041f6ed65d",
+    "outputs": {
+      "Funs.lean": "ed2942f11ed9521dcb98a3252b66bff8863de6a60d94bd9648a65462da502469",
+      "Types.lean": "2d71cb04b7390ef2f3b869192ac4d6ac8a0717d11efd87ad81155052fa07020e",
+      "FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829"
+    }
+  },
+  "controls": {
+    "stock": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/stock",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/arithmetic.llbc"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "binary_sha256": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+      "input_sha256": "130d24ce1409e5b672d4769dae554c84dfba2f846e5ec9bef0a719fd917909c0",
+      "log_sha256": "cd9d0d1ba3765d416292be7ddb51a2b12e12cec7527f531f41f1341d5946d5ce",
+      "outputs": {}
+    },
+    "flag-off": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/flag-off",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/arithmetic.llbc"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+      "input_sha256": "130d24ce1409e5b672d4769dae554c84dfba2f846e5ec9bef0a719fd917909c0",
+      "log_sha256": "477863982fe2caace4d7ba0787aea6a99af07aef72da815a9f51a0f509278887",
+      "outputs": {}
+    },
+    "unchecked": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/unchecked",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/arithmetic.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_COMPLETED_RESULT": "1"
+      },
+      "exit_code": 1,
+      "binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+      "input_sha256": "130d24ce1409e5b672d4769dae554c84dfba2f846e5ec9bef0a719fd917909c0",
+      "log_sha256": "56bdc8788881a32d67ef0d69f716bdf5a4098e2663030042877cd7eef4066dda",
+      "outputs": {}
+    },
+    "checked": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/checked",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/arithmetic.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_COMPLETED_RESULT": "1"
+      },
+      "exit_code": 0,
+      "binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+      "input_sha256": "130d24ce1409e5b672d4769dae554c84dfba2f846e5ec9bef0a719fd917909c0",
+      "log_sha256": "82f904f940dc562ab2bef96b8f9cc6c93b2dc70424a76ccd9d83b9041f6ed65d",
+      "outputs": {
+        "Funs.lean": "ed2942f11ed9521dcb98a3252b66bff8863de6a60d94bd9648a65462da502469",
+        "Types.lean": "2d71cb04b7390ef2f3b869192ac4d6ac8a0717d11efd87ad81155052fa07020e",
+        "FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829"
+      }
+    },
+    "wrong-site": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/wrong-site",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/wrong-site.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_COMPLETED_RESULT": "1"
+      },
+      "exit_code": 1,
+      "binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+      "input_sha256": "ebcdb4f24200acbe0bd7dc55fa2b66e15b839345402a90b8cfcdcd3d16b9a45c",
+      "log_sha256": "135db7b526a53529043960c11b8ccb82962e2dda7ade27d07c4f2bde3f22abcd",
+      "outputs": {}
+    },
+    "wrong-workspace": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/wrong-workspace",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/wrong-workspace.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_COMPLETED_RESULT": "1"
+      },
+      "exit_code": 1,
+      "binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+      "input_sha256": "6f25ddc5fe5d43b89d09effa2d5382713494059189fb22e477578797b5ef5c1f",
+      "log_sha256": "03983c49a1a69be85fb2156ac022cb56f0e54dda757fb45e34af58512411445b",
+      "outputs": {}
+    },
+    "execution-verify": {
+      "command": [
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/execution-verify",
+        "/Users/junbug/bulk/bulksketch/verification/lean/extraction/execution-verify/arithmetic.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_COMPLETED_RESULT": "1"
+      },
+      "exit_code": 0,
+      "binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+      "input_sha256": "d09e25d9769d8b533c1870bcf4ad2c99eb7b37571fdc11049749e2dfcb248e24",
+      "log_sha256": "93ca660c8ddc8861d5b4613ecf940d00bf2a1c9bb9d5c6cc7c5ea19a70874893",
+      "outputs": {
+        "Funs.lean": "81ead7bd1b18fc51774accc6bcdffaeaaf9a2170b8939f36e2fe662e669883e2",
+        "Types.lean": "8254935be313eb1dc586f4589a4a8571f35a39b0ce9f331b3733787793a743d7",
+        "FunsExternal_Template.lean": "954d34c787c30e628ca159c164e3577d62a4352e5ac34393add7edac98e5916b"
+      }
+    }
+  },
+  "files_sha256": {
+    "extraction/completed-result/Arithmetic/Funs.lean": "ed2942f11ed9521dcb98a3252b66bff8863de6a60d94bd9648a65462da502469",
+    "extraction/completed-result/Arithmetic/FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+    "extraction/completed-result/Arithmetic/Types.lean": "2d71cb04b7390ef2f3b869192ac4d6ac8a0717d11efd87ad81155052fa07020e",
+    "extraction/completed-result/arithmetic.llbc": "130d24ce1409e5b672d4769dae554c84dfba2f846e5ec9bef0a719fd917909c0",
+    "extraction/completed-result/charon.log": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828",
+    "extraction/completed-result/checked-completed-result-frozen-shared.patch": "072f57a70e79f9fa4ec42feabeb5cbfdae3c757b0af09ade5a4079a642fb6b60",
+    "extraction/completed-result/checked.log": "82f904f940dc562ab2bef96b8f9cc6c93b2dc70424a76ccd9d83b9041f6ed65d",
+    "extraction/completed-result/execution-verify.log": "93ca660c8ddc8861d5b4613ecf940d00bf2a1c9bb9d5c6cc7c5ea19a70874893",
+    "extraction/completed-result/flag-off.log": "477863982fe2caace4d7ba0787aea6a99af07aef72da815a9f51a0f509278887",
+    "extraction/completed-result/fresh-build.log": "03e34dc773f1533322b79753298af165c7b0eb6d04812dd7ffa2945e865f7032",
+    "extraction/completed-result/scope_controls.py": "88b7cf13f5b5cc65c18f7f3dfd2a8fcd24f0c798e60f6ba5a3eb5d4af26aa14b",
+    "extraction/completed-result/stock.log": "cd9d0d1ba3765d416292be7ddb51a2b12e12cec7527f531f41f1341d5946d5ce",
+    "extraction/completed-result/strict-joins.log": "a4045356b4e0382c2fb1e9a73e754347d19a1ff6f00b6e457ed1677486d37e4f",
+    "extraction/completed-result/unchecked.log": "56bdc8788881a32d67ef0d69f716bdf5a4098e2663030042877cd7eef4066dda",
+    "extraction/completed-result/wrong-site.log": "135db7b526a53529043960c11b8ccb82962e2dda7ade27d07c4f2bde3f22abcd",
+    "extraction/completed-result/wrong-workspace.log": "03983c49a1a69be85fb2156ac022cb56f0e54dda757fb45e34af58512411445b"
+  }
+}

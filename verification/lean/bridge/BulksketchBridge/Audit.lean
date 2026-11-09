@@ -748,7 +748,19 @@ run_cmd do
     (``BulksketchBridge.ExecutionDriver.ActualNativeCandidateDeflateDriver,
       ``BulksketchBridge.ExecutionDriver.native_candidate_deflate_driver),
     (``BulksketchBridge.RootEnumerate.ActualNativeAffineEnumerationComplete,
-      ``BulksketchBridge.RootEnumerate.native_affine_enumeration_complete)
+      ``BulksketchBridge.RootEnumerate.native_affine_enumeration_complete),
+    (``BulksketchBridge.CompletedResult.ActualNativeCompletedResult,
+      ``BulksketchBridge.CompletedResult.native_completed_result),
+    (``BulksketchBridge.RootRun.ActualNativeReducerPreparation,
+      ``BulksketchBridge.RootRun.native_reducer_preparation),
+    (``BulksketchBridge.ExecutionDriver.ActualNativeRootDriverReturn,
+      ``BulksketchBridge.ExecutionDriver.native_root_driver_return),
+    (``BulksketchBridge.RootRun.ActualTraversalRankDecreases,
+      ``BulksketchBridge.RootRun.traversal_rank_decreases),
+    (``BulksketchBridge.RootRun.ActualGcdOutcomePhaseStep,
+      ``BulksketchBridge.RootRun.gcd_outcome_phase_step),
+    (``BulksketchBridge.AvxTileChunkSum.ActualTileRowMath,
+      ``BulksketchBridge.AvxTileChunkSum.tile_row_exact)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

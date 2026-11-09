@@ -108,7 +108,9 @@ admitted incoming count, degree and pending state, the original
 Roots::start establishes the empty pending layout, root budget, basis
 reset and exact locator copy. The native predictor proves both checked
 Gaussian cost loops and computes the preferred degree mask as 0x7fff8.
-Traversal start uses the original V3 preference for degrees 3 through 18.
+Traversal start uses the original V3 preference for degrees 3 through 18. The native
+reducer preparation returns the correct square table and reborrows
+its exact source-written windows at the next stage.
 
 The native paid proper-division dispatcher derives the exact quotient
 from GCD divisibility. The live degree budget supplies both checked offsets,
@@ -127,7 +129,10 @@ reborrows the exact source-written slices. Its proper branch supplies
 the normalized factor frame for divide, which preserves the product
 of the active and pending factors. The degree-zero, -one and -two
 leaf and the accepted small-degree certificate append exactly their
-roots, then finish or restore the exact pending factor.
+roots, then finish or restore the exact pending factor. These emissions
+preserve the represented locator product, including affine enumeration.
+The rank proof combines the live-degree potential with a bounded local
+phase rank. Exact GCD retry consumes one affine or trace direction.
 
 The original deflation stage performs the leading-coefficient seed,
 reverse synthetic division, and exact remainder test for each candidate.
@@ -150,7 +155,9 @@ fresh scan cannot overflow the locator degree. The exact candidate
 and deflation calls use the original driver transitions and return the
 admitted residual product. The checked stock driver also covers the
 degree probe, original BM guard, state commit, progress and latched
-error; the canonicalization call remains explicit.
+error; the canonicalization call remains explicit. The completed-result
+wrapper preserves the unique frozen shared workspace loan through the
+exact source switches and exposes only the admitted completed root prefix.
 
 The AVX square finite-heap theorem composes the zero fill, scalar
 coefficient seeds, and the original masked LLBC load/store block
@@ -193,6 +200,9 @@ have exact proofs. The public GF64 selector is checked through its
 original free dispatcher. All empty, single-ID, sparse, and arbitrary
 32-ID chunk branches are checked under explicit leaf contracts.
 The degree-18 rebuilt verifier's multi-ID seed selects the tile path.
+The modeled masked-load and register recurrence has an exact odd-power
+sum over all tile IDs and zero padding lanes. The original checked tile
+loop translation remains open.
 
 Run the complete gate from `verification/lean`.
 

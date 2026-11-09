@@ -1424,6 +1424,30 @@
     {
       "challenge": "BulksketchBridge.RootEnumerate.ActualNativeAffineEnumerationComplete",
       "theorem": "BulksketchBridge.RootEnumerate.native_affine_enumeration_complete"
+    },
+    {
+      "challenge": "BulksketchBridge.CompletedResult.ActualNativeCompletedResult",
+      "theorem": "BulksketchBridge.CompletedResult.native_completed_result"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeReducerPreparation",
+      "theorem": "BulksketchBridge.RootRun.native_reducer_preparation"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeRootDriverReturn",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_root_driver_return"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualTraversalRankDecreases",
+      "theorem": "BulksketchBridge.RootRun.traversal_rank_decreases"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualGcdOutcomePhaseStep",
+      "theorem": "BulksketchBridge.RootRun.gcd_outcome_phase_step"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxTileChunkSum.ActualTileRowMath",
+      "theorem": "BulksketchBridge.AvxTileChunkSum.tile_row_exact"
     }
   ],
   "refinements": [
@@ -3866,6 +3890,21 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original packed row slice for admitted row index and offsets, including checked offset arithmetic."
+    },
+    {
+      "label": "Execution::completed_result [original source]",
+      "native_item_id": "src/decode/stages.rs:141:method:bulksketch::decode::stages::Execution < F , K >::completed_result",
+      "source_line_span_sha256": "3016aa4873b4b4d3b50be9b329c1d2119a3600c0100fa4cda7345dbe72447d79",
+      "theorem": "BulksketchBridge.CompletedResult.native_completed_result",
+      "challenge": "BulksketchBridge.CompletedResult.ActualNativeCompletedResult",
+      "generated_declaration": "bulksketch.decode.stages.Execution.completed_result",
+      "generated_file": "bridge/Arithmetic/CompletedResultGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/CompletedResultGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Every original result state, including Equal, Decoded of the exact roots prefix, Failed, Error and invalid count or state panic.",
+      "translator_variant": "checked-completed-result-frozen-shared-v1"
     }
   ],
   "stateful_llbc_refinements": [

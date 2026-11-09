@@ -1,5 +1,7 @@
 import BulksketchBridge.RootLeafWords
 import BulksketchBridge.RootTraversalPotential
+import BulksketchBridge.RootEmissionProduct
+import BulksketchBridge.DenseReducerAlgebra
 import BulksketchBridge.NativeRootRun
 import BulksketchBridge.RootPendingBudget
 import BulksketchBridge.ClosedLeafAdvance
@@ -61,6 +63,8 @@ def ActualNativeLeafComplete : Prop :=
       PendingLayout after written.stack written.factors.length written.polynomials.length ∧
       (0 < roots.degree.val → ∀ point, (activeFactor roots workspace).IsRoot point ↔
         ∃ word ∈ words.val, point = toField word.bv) ∧
+      (0 < roots.degree.val → traversalProduct (decide (roots.pending = 0#usize)) after written =
+        traversalProduct false roots workspace) ∧
       (roots.pending = 0#usize → stage = .Verification) ∧
       (roots.pending ≠ 0#usize → ∃ frame, workspace.stack.val[roots.pending.val - 1]? = some frame ∧
         activeFactor after written = pendingFactor workspace frame ∧
@@ -90,6 +94,24 @@ theorem native_leaf_complete : ActualNativeLeafComplete := by
     change Roots.leaf DirectTwo.fieldDictionary kernels roots workspace meter = _
     rw [root_leaf_refines kernels roots workspace meter arithmetic bounds,
       leaf_paid_model roots workspace meter paid words charged selected nonzero]
+  have factorProduct (positive : 0 < roots.degree.val) :
+      activeFactor roots workspace = rootsProduct words.val := by
+    obtain ⟨lead, split, simple, _⟩ := admitted positive
+    let coefficients := prefixSlice workspace.polynomials (roots.degree.val + 1)
+    have coeffWidth : coefficients.length = roots.degree.val + 1 := by
+      rw [RebuiltLfsr.prefix_length, Nat.min_eq_left (by omega)]
+    have coeffLead : coefficients[roots.degree.val]! = 1#u64 := by
+      simp only [coefficients, prefixSlice, Slice.getElem!_Nat_eq, Slice.from_val,
+        List.getElem!_eq_getElem?_getD, List.getElem?_take_of_lt (Nat.lt_succ_self roots.degree.val)]
+      simpa only [Slice.getElem!_Nat_eq, List.getElem!_eq_getElem?_getD] using lead
+    have monic := (DenseReducerAlgebra.modulus_monic coefficients roots.degree.val coeffWidth coeffLead).1
+    exact factor_from_emitted_roots (activeFactor roots workspace) words.val monic split simple unique (complete positive)
+  have emittedRoom : roots.count.val + words.val.length ≤ workspace.roots.length := by
+    change roots.count.val + words.length ≤ workspace.roots.length
+    rwa [wordLen]
+  have countWords : counted.count.val = roots.count.val + words.val.length := by
+    change counted.count.val = roots.count.val + words.length
+    rw [countValue, wordLen]
   by_cases empty : roots.pending = 0#usize
   · have advanced := advance_empty_refines counted emitted empty
     have executed : Roots.run nativeCalls nativeDivRem dictionary kernels roots .Leaf workspace meter =
@@ -100,8 +122,16 @@ theorem native_leaf_complete : ActualNativeLeafComplete := by
       rw [advanced]
       simp only [bind_ok]
       rfl
+    have emptyProduct : pendingProduct workspace roots.pending.val = (1 : Polynomial Field) := by
+      simp only [pendingProduct, empty, show (0#usize).val = 0 from rfl,
+        Finset.range_zero, Finset.prod_empty]
+    have product (positive : 0 < roots.degree.val) :
+        traversalProduct true counted emitted = traversalProduct false roots workspace :=
+      emission_preserves_traversal_product roots counted workspace emitted words.val true emittedRoom
+        countWords rfl (factorProduct positive) (by exact emptyProduct)
     exact ⟨words, .Verification, counted, emitted, executed, wordLen, unique, nonzero, countValue, rfl,
-      countedLayout, complete, fun _ => rfl, fun impossible => (impossible empty).elim⟩
+      countedLayout, complete, fun positive => by simpa only [empty, decide_true] using product positive,
+      fun _ => rfl, fun impossible => (impossible empty).elim⟩
   · obtain ⟨frame, active, _⟩ := pop_bounds_of_pending_layout counted emitted countedLayout empty
     let after := poppedRoots counted emitted frame
     let written := poppedWorkspace emitted frame
@@ -114,8 +144,16 @@ theorem native_leaf_complete : ActualNativeLeafComplete := by
       rw [advanced]
       simp only [bind_ok]
       rfl
+    have pendingFactorization : pendingProduct workspace roots.pending.val = liveProduct after written :=
+      popped_pending_product counted emitted frame active
+    have afterCount : after.count.val = roots.count.val + words.val.length := countWords
+    have product (positive : 0 < roots.degree.val) :
+        traversalProduct false after written = traversalProduct false roots workspace :=
+      emission_preserves_traversal_product roots after workspace written words.val false emittedRoom
+        afterCount rfl (factorProduct positive) (by exact pendingFactorization)
     refine ⟨words, stageFor after, after, written, executed, wordLen, unique, nonzero,
       countValue, rfl, popped_pending_layout counted emitted frame countedLayout, complete,
+      fun positive => by simpa only [empty, decide_false] using product positive,
       fun impossible => (empty impossible).elim, ?_⟩
     intro _
     have oldPop : PopBounds roots workspace frame := active

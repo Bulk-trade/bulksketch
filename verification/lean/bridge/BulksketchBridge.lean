@@ -143,3 +143,8 @@ import BulksketchBridge.CandidateEntry
 import BulksketchBridge.NativeCandidateDeflateDriver
 import BulksketchBridge.CandidateRow
 import BulksketchBridge.RootNativeAffineEnumerationComplete
+import BulksketchBridge.NativeCompletedResult
+import BulksketchBridge.RootNativeReducerPreparation
+import BulksketchBridge.NativeTraversalDriver
+import BulksketchBridge.RootTraversalRankLinks
+import BulksketchBridge.AvxTileChunkSum

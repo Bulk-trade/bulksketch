@@ -2,6 +2,7 @@ import BulksketchBridge.RootDivideArena
 import BulksketchBridge.RootDivideCommitDegree
 import BulksketchBridge.NativeRootRun
 import BulksketchBridge.RootPendingProduct
+import BulksketchBridge.RootFactorValidity
 
 namespace BulksketchBridge.RootDivide
 
@@ -72,8 +73,17 @@ def ActualNativeProperDivide : Prop :=
       factorDegreeMass after written.stack = factorDegreeMass roots workspace.stack ∧
       traversalPotential after written.stack < traversalPotential roots workspace.stack ∧
       liveProduct after written = liveProduct roots workspace ∧
-      ∀ index < start.val, written.factors[index]! = workspace.factors[index]!
+      workspaceLengths written = workspaceLengths workspace ∧
+      after.count = roots.count ∧ after.stride = roots.stride ∧ after.pending.val = roots.pending.val + 1 ∧
+      (∀ index < start.val, written.factors[index]! = workspace.factors[index]!) ∧
+      (∀ slot < roots.pending.val, written.stack.val[slot]? = workspace.stack.val[slot]?) ∧
+      ∃ frame, written.stack.val[roots.pending.val]? = some frame ∧
+        frame.coefficient_start.val = start.val ∧ frame.coefficient_len.val = length.val ∧
+        (ValidFactor (activeFactor roots workspace) roots.degree.val →
+          ValidFactor (activeFactor after written) after.degree.val ∧
+          ValidFactor (pendingFactor written frame) (length.val - 1))
 
+set_option maxHeartbeats 4400000 in
 theorem native_proper_divide : ActualNativeProperDivide := by
   intro K kernels roots workspace meter paid finalMeter capacity budget mul rawLaw reduce inverse
     sized strideBound activeWidth layout positiveSlots mass direction rank basis charged assembly buffers trace prior
@@ -131,16 +141,51 @@ theorem native_proper_divide : ActualNativeProperDivide := by
     slotEnd startVal (by omega) lengthRoom.le (fun _ => lengthRoom)
   have decreases := committed_potential_decreases roots buffers workspace.factors workspace.stack finalMeter
     length start call.2.1 call.2.2.1 call.2.2.2 commit.slotRoom degrees shape.gcdPositive positive
-  have pending := committed_pending_product roots workspace buffers finalMeter length start call.2.1
-    call.2.2.1 call.2.2.2 layout stackRoom slotEnd startVal (by omega) lengthRoom quotientFits ready.gcdRoom commit.modulusRoom
+  obtain ⟨pending, pendingCount, factorWidth, stackWidth, earlierStack, frame, frameRead, frameStart, frameLength⟩ :=
+    committed_pending_product roots workspace buffers finalMeter length start call.2.1 call.2.2.1 call.2.2.2
+      layout stackRoom slotEnd startVal (by omega) lengthRoom quotientFits ready.gcdRoom commit.modulusRoom
   change pendingProduct written output.2.1.pending.val =
     pendingProduct workspace roots.pending.val * slicePolynomial (prefixSlice call.2.1 length.val) at pending
   have sameProduct : liveProduct output.2.1 written = liveProduct roots workspace := by
     unfold liveProduct
     rw [active, pending, parent, product]
     ring
+  have rawWidth : output.2.2.1.raw.length = workspace.raw.length :=
+    native_call_raw_width roots buffers
+  have lengths : workspaceLengths written = workspaceLengths workspace := by
+    change workspaceLengths
+      { rebuild workspace roots output.2.2.1 with factors := output.2.2.2.2.1, stack := output.2.2.2.2.2.1 } = _
+    change output.2.2.2.2.1.length = workspace.factors.length at factorWidth
+    change output.2.2.2.2.2.1.length = workspace.stack.length at stackWidth
+    simp only [workspaceLengths, rebuild, RootSetup.restoreWork, splitBack_length, restore_length,
+      factorWidth, stackWidth, rawWidth]
+  have current : written.stack.val[roots.pending.val]? = some frame := frameRead
+  have pendingFactorEq : pendingFactor written frame = slicePolynomial (prefixSlice call.2.1 length.val) := by
+    unfold pendingFactor pendingCoefficients
+    rw [frameStart, frameLength, right]
+  have children (valid : ValidFactor (activeFactor roots workspace) roots.degree.val) :
+      ValidFactor (activeFactor output.2.1 written) output.2.1.degree.val ∧
+      ValidFactor (pendingFactor written frame) (length.val - 1) := by
+    have nozero : gcd (slicePolynomial buffers.modulus) trace ≠ 0 :=
+      fun zero => prior.monic.ne_zero ((gcd_eq_zero_iff _ _).mp zero).1
+    have gcdMonic := (normalize_eq_self_iff_monic nozero).mp (normalize_gcd (slicePolynomial buffers.modulus) trace)
+    have activeGcd : activeFactor output.2.1 written = gcd (slicePolynomial buffers.modulus) trace :=
+      active.trans prior.gcdExact
+    have activeMonic : (activeFactor output.2.1 written).Monic := activeGcd.symm ▸ gcdMonic
+    have exactDegree : (activeFactor output.2.1 written).natDegree = output.2.1.degree.val :=
+      (congrArg Polynomial.natDegree activeGcd).trans
+        (prior.gcdDegree.symm.trans (congrArg UScalar.val afterDegree.symm))
+    have childProduct : activeFactor roots workspace =
+        pendingFactor written frame * activeFactor output.2.1 written :=
+      parent.trans (product.trans (congrArg₂ (· * ·) pendingFactorEq.symm active.symm))
+    have childSum : output.2.1.degree.val + (length.val - 1) = roots.degree.val :=
+      (congrArg (fun d : Usize => d.val + (length.val - 1)) afterDegree).trans degrees
+    exact valid_children (activeFactor roots workspace) (activeFactor output.2.1 written)
+      (pendingFactor written frame) roots.degree.val output.2.1.degree.val (length.val - 1)
+      valid childProduct activeMonic exactDegree childSum
   refine ⟨length, start, output.1, output.2.1, written, exactStage, rfl, startVal, positive, afterDegree,
-    ?_, ?_, ?_, massEq, decreases, sameProduct, preserved⟩
+    ?_, ?_, ?_, massEq, decreases, sameProduct, lengths, rfl, rfl, pendingCount, preserved, earlierStack,
+    frame, current, frameStart, frameLength, children⟩
   · rw [active, parent]
     exact prior.gcdExact
   · rw [parent, active, right]

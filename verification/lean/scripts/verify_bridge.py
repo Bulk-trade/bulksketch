@@ -499,6 +499,8 @@ def check_dense_reducer_variant(variant, receipt, runtime, runtime_head, linkage
              "src/symbolic/SymbolicToPureCore.ml", "src/symbolic/SymbolicToPureExpressions.ml"}),
         "checked-candidates-nested-return-v1": (
             "extraction/candidates/", "checked-candidates-nested-return.patch", {"src/PrePasses.ml"}),
+        "checked-completed-result-frozen-shared-v1": (
+            "extraction/completed-result/", "checked-completed-result-frozen-shared.patch", {"src/interp/InterpJoin.ml"}),
         "checked-native-deflate-loan-retry-v1": (
             "extraction/native-deflate/", "checked-native-deflate-loan-retry.patch",
             {"src/interp/InterpMatchCtxs.ml"}),
@@ -704,7 +706,7 @@ def main():
         if variant["id"] in {"checked-dense-reducer-option-v1", "checked-dense-reducer-square-v1",
                             "checked-dense-div-rem-v1", "checked-affine-outer-continue-v1",
                             "checked-affine-multiple-zip-ends-v1", "checked-native-deflate-loan-retry-v1",
-                            "checked-candidates-nested-return-v1"}:
+                            "checked-candidates-nested-return-v1", "checked-completed-result-frozen-shared-v1"}:
             check_dense_reducer_variant(variant, receipt, runtime, runtime_head, linkage)
             result, _ = run(variant["id"] + "-patch-applies", ["git", "apply", "--check",
                             str(ROOT / variant["patch"])], timeout=30, cwd=runtime)

@@ -646,6 +646,11 @@
       "path": "extraction/candidate-row/arithmetic.llbc",
       "sha256": "28bf61542fd44ae85e000b7651dd08f0df3fde65a53c0c5bfdf14644fce99c14",
       "has_errors": false
+    },
+    {
+      "path": "extraction/completed-result/arithmetic.llbc",
+      "sha256": "130d24ce1409e5b672d4769dae554c84dfba2f846e5ec9bef0a719fd917909c0",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1503,6 +1508,11 @@
       "native_item_id": "src/sketch/candidates.rs:65:function:bulksketch::sketch::candidates::row",
       "generated_declaration": "bulksketch.sketch.candidates.row",
       "generated_file": "bridge/Arithmetic/CandidateRowGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:141:method:bulksketch::decode::stages::Execution < F , K >::completed_result",
+      "generated_declaration": "bulksketch.decode.stages.Execution.completed_result",
+      "generated_file": "bridge/Arithmetic/CompletedResultGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2331,6 +2341,16 @@
       "checker": "extraction/candidate-row/project.py",
       "declaration_count": 1,
       "scope": "Original stock candidate row offset pair and bounded packed slice."
+    },
+    {
+      "generated": "extraction/completed-result/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CompletedResultGenerated.lean",
+      "sha256": "7c6ec0a2c56a0ff88eae2d51d5e6d1560b4e99ec7f5af8969b5c5492895b16aa",
+      "raw_sha256": "ed2942f11ed9521dcb98a3252b66bff8863de6a60d94bd9648a65462da502469",
+      "checker": "extraction/completed-result/project.py",
+      "declaration_count": 2,
+      "scope": "Original checked completed_result and RowResult type, with exact returned shared roots slice.",
+      "translator_variant": "checked-completed-result-frozen-shared-v1"
     }
   ],
   "reviewed_translator_variants": [
@@ -2468,6 +2488,15 @@
       "receipt": "extraction/candidates/receipt.json",
       "mandatory_checks": true,
       "scope": "Exact original candidate nested return. Keep early error and mutable writeback, and end the original Zip and Chunks iterators before their corresponding joins."
+    },
+    {
+      "id": "checked-completed-result-frozen-shared-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/completed-result/checked-completed-result-frozen-shared.patch",
+      "patch_sha256": "072f57a70e79f9fa4ec42feabeb5cbfdae3c757b0af09ade5a4079a642fb6b60",
+      "receipt": "extraction/completed-result/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact original return-only completed_result switches. Keep the unique frozen shared RowWorkspace input and ordinary self reborrows."
     }
   ],
   "diagnostic_generated_projections": [

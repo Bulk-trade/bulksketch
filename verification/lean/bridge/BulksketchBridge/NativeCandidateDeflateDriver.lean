@@ -89,6 +89,7 @@ def ActualNativeCandidateDeflateDriver : Prop :=
       nativeCandidateDriver canonicalize kernels next input scanned charge.2 =
         .ok (.Ok (progress .Deflation beforeState), { beforeState with state := .Running stage }, written, id, finalMeter) ∧
       original = RootRun.emittedProduct updated written * residual ∧
+      RootRun.activeTraversalProduct updated written = original ∧
       final.degree.val + count.val = self.degree.val ∧ updated.count = count ∧ updated.pending = 0#usize ∧
       RootRun.BudgetBuffers written input.difference.length self.budget.nonzero.val ∧
       RootRun.PendingLayout updated written.stack written.factors.length written.polynomials.length ∧
@@ -149,7 +150,9 @@ theorem native_candidate_deflate_driver : ActualNativeCandidateDeflateDriver := 
     change initialDeflateLocator next input scanned = rootProduct (deflateHits next scanned) 0 count.val * residual at product
     rw [sameLocator, emitted] at product
     exact product
-  refine ⟨count, roots, values, final, ?_, ?_, exactProduct, balance, counted, emptied,
+  have represented := RootRun.initial_traversal_product original residual updated written emptied
+    exactProduct residualMonic residualDegree active
+  refine ⟨count, roots, values, final, ?_, ?_, exactProduct, represented, balance, counted, emptied,
     sized, layout, mass, active, residualMonic, residualDegree, residualSplit, residualSimple, residualNonzero, disjoint⟩
   · exact candidates_driver canonicalize kernels self input workspace meter _ state probe candidateRan
   · exact deflate_driver canonicalize kernels next input scanned charge.2 _ rfl nextProbe deflated
