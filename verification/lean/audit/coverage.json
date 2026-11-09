@@ -2558,7 +2558,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxSliceEntry.scale_xor_refines",
+        "scope": "Exact original free scale wrapper calls the original scale kernel.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:320:function:bulksketch::backend::x86_vpclmul512::scale_kernel",
@@ -2576,7 +2583,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxSliceKernel.scale_kernel_refines",
+        "scope": "Exact original zero, one and nontrivial scale modes, short tail bounds and writeback under the bounded load/store laws.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:337:function:bulksketch::backend::x86_vpclmul512::square_slice",
@@ -2594,7 +2608,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxSliceEntry.square_slice_refines",
+        "scope": "Exact original free square wrapper calls the original square kernel.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:349:function:bulksketch::backend::x86_vpclmul512::square_kernel",
@@ -2612,7 +2633,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxSliceKernel.square_kernel_refines",
+        "scope": "Exact original AVX square loop and short final masked window under the bounded load/store laws.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:364:function:bulksketch::backend::x86_vpclmul512::xor_assign",
@@ -2753,7 +2781,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxSparseInsert.native_sparse_insert",
+        "scope": "Exact original sparse loop invokes the native insert callback once per singleton in original order.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:437:function:bulksketch::backend::x86_vpclmul512::insert_tile",
@@ -3217,7 +3252,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxUpdateSingleBlock.update_single_block_refines",
+        "scope": "Exact original power lookup, masked read and XOR write under the bounded load, store and basis value laws.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:800:function:bulksketch::backend::x86_vpclmul512::difference",
@@ -3308,7 +3350,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxSliceEntry.scale_xor_entry_refines",
+        "scope": "Exact original field-width dispatch, length assertion and vector or PCLMUL fallback call.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:95:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::square_slice",
@@ -3326,7 +3375,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxSliceEntry.square_slice_entry_refines",
+        "scope": "Exact original field-width dispatch, length assertion and vector or PCLMUL fallback call.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/affine.rs:15:function:bulksketch::decode::affine::square_products",
@@ -8135,7 +8191,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.PublicationFrame.new_refines",
+        "scope": "Exact prefix clearing, metadata initialization, and original result storage continuation under admitted sizes.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/api.rs:259:method:bulksketch::sketch::api::Publication < 's >::write",
@@ -8175,7 +8238,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.PublicationFrame.fail_refines",
+        "scope": "The first failure is retained, with the exact original result storage backward projection.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/api.rs:320:method:bulksketch::sketch::api::Publication < 's >::finish",
@@ -8195,7 +8265,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.PublicationFrame.finish_refines",
+        "scope": "Exact original failure, incomplete-state panic or completed report prefixes for all publication states.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/api.rs:32:struct:bulksketch::sketch::api::DecodeRequest",
@@ -12340,8 +12417,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. Exact original row initialization, reset and degree-probe configuration are source linked. The admitted affine preparation stage preserves the original locator invariant, layouts, buffers and strict rank, with exact first entry and charge exit. AVX and Portable rebuilt verifiers compose their original seed and arithmetic callbacks for all admitted GF64 degrees. Global traversal induction, other backend and wire/API bindings, Rust provenance and compiler-to-ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 182,
+    "note": "All 344 native executable obligations retained. Exact original row initialization, reset and degree-probe configuration are source linked. The admitted affine preparation stage preserves the original locator invariant, layouts, buffers and strict rank, with exact first entry and charge exit. AVX and Portable rebuilt verifiers compose their original seed and arithmetic callbacks for all admitted GF64 degrees. Exact report initialization, failure and finish, sparse AVX insertion, and allocated AVX block/slice effects are checked. Original affine divide carries exact child cosets and both second-charge exits preserve the admitted invariant. Global traversal induction, other backend and wire/API bindings, Rust provenance and compiler-to-ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 193,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12536,7 +12613,10 @@
         "BulksketchBridge.ExecutionDriver.native_verification_start_finish",
         "BulksketchBridge.RootRun.native_first_affine_preparation_entry",
         "BulksketchBridge.RootRun.native_affine_preparation_invariant",
-        "BulksketchBridge.RootRun.native_affine_preparation_charge_exit"
+        "BulksketchBridge.RootRun.native_affine_preparation_charge_exit",
+        "BulksketchBridge.RootDivide.native_affine_divide_handoff",
+        "BulksketchBridge.RootRun.native_divide_assembly_charge_exit",
+        "BulksketchBridge.RootRun.native_trace_split_charge_exit"
       ]
     },
     "masked_memory_evidence": {
@@ -12570,7 +12650,10 @@
       "BulksketchBridge.AvxEncode18.allocated_encode_refines",
       "BulksketchBridge.AvxSingleBases.allocated_single_bases_refines",
       "BulksketchBridge.AvxInsertionBases.allocated_static_encode_refines",
-      "BulksketchBridge.AvxRecurrence.allocated_recurrence_reads"
+      "BulksketchBridge.AvxRecurrence.allocated_recurrence_reads",
+      "BulksketchBridge.AvxUpdateSingleBlock.allocated_update_single_block",
+      "BulksketchBridge.AvxSliceKernel.allocated_square_kernel",
+      "BulksketchBridge.AvxSliceKernel.allocated_scale_kernel"
     ]
   }
 }

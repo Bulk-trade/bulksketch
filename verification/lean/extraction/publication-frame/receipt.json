@@ -1,0 +1,100 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "native_source_edited": false,
+  "commands": [
+    {
+      "step": "charon",
+      "argv": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-closure/publication/frame/arithmetic.llbc",
+        "--start-from=bulksketch::sketch::api::_::new",
+        "--start-from=bulksketch::sketch::api::_::fail",
+        "--start-from=bulksketch::sketch::api::_::finish",
+        "--include=bulksketch::sketch::api::_::new",
+        "--include=bulksketch::sketch::api::_::fail",
+        "--include=bulksketch::sketch::api::_::finish",
+        "--opaque=bulksketch::sketch::api::_::write",
+        "--",
+        "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "environment": {
+        "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+        "CARGO_BUILD_JOBS": "1",
+        "CARGO_TARGET_DIR": "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-decoder-deflation/target"
+      },
+      "exit_code": 0
+    },
+    {
+      "step": "stock",
+      "argv": [
+        "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-closure/publication/frame/Arithmetic",
+        "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-closure/publication/frame/arithmetic.llbc"
+      ],
+      "environment": {},
+      "exit_code": 0
+    }
+  ],
+  "replay": {
+    "command": [
+      "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-closure/publication/frame/replay",
+      "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-closure/publication/frame/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "outputs_sha256": {
+      "Funs.lean": "3fdb9756cc2ccebc58bc5536d29e46921bb4fe9646575c9d9b96fe026d2217df",
+      "Types.lean": "08bce9f7a297b6d6b6f22643809e431a493d13d60e22120f18bcac1f2c54da67"
+    }
+  },
+  "source_sha256": {
+    "src/sketch/api.rs": "45333a4d9966d07bd36c6382f84ae03b156fd00aea4af5e87218f33919fb8700",
+    "src/sketch/scratch.rs": "f72a3fb7165817d7e2f504d2025fbcba98c38a31685fb0f57bffb63ca502384c",
+    "src/types.rs": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
+  },
+  "shared_sha256": {
+    "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1"
+  },
+  "artifacts": {
+    "extraction/publication-frame/arithmetic.llbc": "4cbc93f3062404e91b4be1c91420a31d814beb1992aa6d5bb8eeb2c9f77d94e8",
+    "extraction/publication-frame/charon.log": "c9e61bcbb57ae6d2618a81dade1f442ecbf11b138c1febf1888a6a0555fe5416",
+    "extraction/publication-frame/stock.log": "d9a13f4c0d091963e41144fbd9cbcd32dd0d427494ed8d79714a66ecde7489be",
+    "extraction/publication-frame/replay.log": "18b712427fd08d5663029295a46864269f9f15331e557191f0311d562329914d",
+    "extraction/publication-frame/Arithmetic/Funs.lean": "3fdb9756cc2ccebc58bc5536d29e46921bb4fe9646575c9d9b96fe026d2217df",
+    "extraction/publication-frame/Arithmetic/Types.lean": "08bce9f7a297b6d6b6f22643809e431a493d13d60e22120f18bcac1f2c54da67"
+  }
+}

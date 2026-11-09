@@ -701,6 +701,26 @@
       "path": "extraction/row-configuration/arithmetic.llbc",
       "sha256": "429fd59afae4855373469ff5456c82d4cd8edc1778855d08d9521bf482ef26b1",
       "has_errors": false
+    },
+    {
+      "path": "extraction/publication-frame/arithmetic.llbc",
+      "sha256": "4cbc93f3062404e91b4be1c91420a31d814beb1992aa6d5bb8eeb2c9f77d94e8",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-slice-kernel/arithmetic.llbc",
+      "sha256": "94dcaa61e64e7aa161122ce192d54963cddca35a51ef19b87f51a453977792da",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-slice-entry/arithmetic.llbc",
+      "sha256": "1830b2fc69b8750b5d11feafb4e087c5966123e8b32bae02fc59ebc69881b964",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-sparse-insert/arithmetic.llbc",
+      "sha256": "b613319d953cde06deaa4d13056aad3f06b8dcd241c09a61bd9c21a9d2cdd913",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1693,6 +1713,61 @@
       "native_item_id": "src/decode/stages.rs:159:method:bulksketch::decode::stages::Execution < F , K >::set_splitter_seed",
       "generated_declaration": "bulksketch.decode.stages.Execution.set_splitter_seed",
       "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/api.rs:242:method:bulksketch::sketch::api::Publication < 's >::new",
+      "generated_declaration": "bulksketch.sketch.api.Publication.new",
+      "generated_file": "bridge/Arithmetic/PublicationFrameGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/api.rs:314:method:bulksketch::sketch::api::Publication < 's >::fail",
+      "generated_declaration": "bulksketch.sketch.api.Publication.fail",
+      "generated_file": "bridge/Arithmetic/PublicationFrameGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/api.rs:320:method:bulksketch::sketch::api::Publication < 's >::finish",
+      "generated_declaration": "bulksketch.sketch.api.Publication.finish",
+      "generated_file": "bridge/Arithmetic/PublicationFrameGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:754:function:bulksketch::backend::x86_vpclmul512::update_single_block",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.update_single_block",
+      "generated_file": "bridge/Arithmetic/AvxSliceKernelGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:320:function:bulksketch::backend::x86_vpclmul512::scale_kernel",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.scale_kernel",
+      "generated_file": "bridge/Arithmetic/AvxSliceKernelGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:349:function:bulksketch::backend::x86_vpclmul512::square_kernel",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.square_kernel",
+      "generated_file": "bridge/Arithmetic/AvxSliceKernelGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:315:function:bulksketch::backend::x86_vpclmul512::scale_xor",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.scale_xor",
+      "generated_file": "bridge/Arithmetic/AvxSliceEntryGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:337:function:bulksketch::backend::x86_vpclmul512::square_slice",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.square_slice",
+      "generated_file": "bridge/Arithmetic/AvxSliceEntryGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:86:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::scale_xor",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.scale_xor",
+      "generated_file": "bridge/Arithmetic/AvxSliceEntryGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:95:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::square_slice",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.square_slice",
+      "generated_file": "bridge/Arithmetic/AvxSliceEntryGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:429:function:bulksketch::backend::x86_vpclmul512::insert_sparse",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert_sparse",
+      "generated_file": "bridge/Arithmetic/AvxSparseInsertGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2642,6 +2717,42 @@
       "checker": "extraction/row-configuration/project.py",
       "declaration_count": 8,
       "scope": "Original row begin, reset, configuration and exact degree-probe fallback."
+    },
+    {
+      "generated": "extraction/publication-frame/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PublicationFrameGenerated.lean",
+      "sha256": "42a201cbb364ee69bcb84824c897123e4b97ce26a6705d1f5634359d212b807d",
+      "raw_sha256": "3fdb9756cc2ccebc58bc5536d29e46921bb4fe9646575c9d9b96fe026d2217df",
+      "checker": "extraction/publication-frame/project.py",
+      "declaration_count": 13,
+      "scope": "Original result arena initialization, sticky error and bounded report lending."
+    },
+    {
+      "generated": "extraction/avx-slice-kernel/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxSliceKernelGenerated.lean",
+      "sha256": "f15095f5796769df16f5bbc26128e77f67dc4f1948b3aa921e1982ca57f6e041",
+      "raw_sha256": "de438394f3ff4818036b6dc2c927e648983db5902826269e8aedd873f60a87db",
+      "checker": "extraction/avx-slice-kernel/project.py",
+      "declaration_count": 7,
+      "scope": "Original single-block updates and AVX scale/square slice loops with explicit bounded load/store laws."
+    },
+    {
+      "generated": "extraction/avx-slice-entry/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxSliceEntryGenerated.lean",
+      "sha256": "2c6373504f784b705af5adf8c6abc723746a0e210b7e70e0720b19cda476aa1e",
+      "raw_sha256": "06b082ea80a145fe0022986622949c112ff17e6b1efe377e94a5213f9c1fa290",
+      "checker": "extraction/avx-slice-entry/project.py",
+      "declaration_count": 4,
+      "scope": "Original free and trait scale-xor and square-slice entry bodies."
+    },
+    {
+      "generated": "extraction/avx-sparse-insert/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxSparseInsertGenerated.lean",
+      "sha256": "f13e37dfd91e4bccb928eef04a612fcf7866b1f72d9fb272b5d9bb5c884d458d",
+      "raw_sha256": "dc5c9abef7442af1a823cb26a404b6a83402350ec86a97c02a83fd4a024cacba",
+      "checker": "extraction/avx-sparse-insert/project.py",
+      "declaration_count": 3,
+      "scope": "Original sparse repeat insertion in exact input order."
     }
   ],
   "reviewed_translator_variants": [

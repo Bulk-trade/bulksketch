@@ -263,6 +263,12 @@ sparse special cases are unreachable during rebuilding. Every admitted
 GF64 degree has exact AVX and Portable rebuilt-verifier acceptance under
 the recorded backend and memory contracts. Original row configuration
 and first affine preparation supply exact driver and traversal entry.
+Proper affine division preserves both child cosets, saved metadata
+and the earlier pending stack. The post-Dense assembly rejection and
+post-trace split-check rejection preserve their exact original scratch
+and failed-charge meter. The AVX update, square and scale proofs compose
+the actual masked memory calls and frame bytes outside each admitted
+destination window.
 
 Run the complete gate from `verification/lean`.
 

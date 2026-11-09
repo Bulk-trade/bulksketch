@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "dfff4929fc4ffa78fdc570f5d53aeecdfda43f4d06543d7efa5b962190c6aea9",
+    "bridge/BulksketchBridge/Audit.lean": "a7d03d55c8fd78940f9074828b80adfb6ab64832044a89afcba30aaa254f8859",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "2554c0454a37a6324bd410719f4a82a3f95c9ff315836964f4628ae5a5616a90",
-    "audit/frozen-inputs.json": "ed463b10f57eb8316c2d322a3efd6df966e11be7f38b12181d5ad2f57a5fa28c",
-    "bridge/BulksketchBridge.lean": "5ebf30b825574ed4fe169cbc68927128f09aa8f30b3c1a19aed033b03c22794f",
+    "audit/frozen-inputs.json": "00c413efbb7409d703f29bcb844ea2c4e0430e233d4883feef72bd8eec8739c4",
+    "bridge/BulksketchBridge.lean": "b9aabc44b2275251e1ef2de373eb74f26243c884acdb27bbfbe2709c53a63d14",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "4452e09247a14714d824911f0c2bd0a706b6321cd38a75d21bffd5769ceba62e",
-    "bridge/obligations.json": "41edb70d8dbf4e3299a5092a62092df631b7df8cc28ed66c7258eb8c2ccdfca2",
+    "bridge/source-linkage.json": "3b6c34c5496249b8bf4a6871b03d78f15b22ca14a899f6a6810e00f5acb0ed4e",
+    "bridge/obligations.json": "939a0f9cb41477b8dba15c2a4089c716874ba8d1369e7c82d17ee8285c51f187",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "8277bced24240ddbad21c78c593cb61ce946a39d2b07c61bc669f7b24ed36cea",
+    "scripts/check_projection_fixtures.py": "44a7f864a8fcb1c495afbded3d4c6d0fefe1676d967f521cf4dee236341f5b59",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "dd817b118e0db9bde7e378cd3d48666c5492ec4db16c37862ad04b6680c907b4",
+    "README.md": "d150b36d0fb016d20206376d8a21be97ad5139c996fe7af12aa1246e07b477f2",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "d783a4891c71e6700525f02eb659c4447b5129d418ea2b2750e7c9568e30deef",
+    "audit/coverage.json": "800c29e0074341eb9a895ee00d73f75eabde4d0ba504fc02c5d8b5758b94ba59",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "bbf1a6708e070274ace46ba9e8d31807ea516eee5d7fb7c4ced0ca89781feb2f",
-    "audit/native-root-run-checkpoint.json": "acad5e144dfd7276cabe8ca4b7e92af38e6158465c9b7aa476d9e2b778eba3b7",
+    "NATIVE_ROOT_RUN.md": "54caeb676fd8fb7b9556b82a955b441a8f7aee589ce15428219465c038589104",
+    "audit/native-root-run-checkpoint.json": "514760e0e0ec814e629d6e320532234932d1babe46e9d965569c0737e3ea76ac",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1932,7 +1932,61 @@
     "extraction/row-configuration/project.py": "8842656c2d7b9c2aa8aa4d4c9bbdab35799f47cb1d6d38174ce9a81b160d2144",
     "extraction/row-configuration/receipt.json": "afb3d6a1158b44221f181ef004b9dd66c1dd40f32936793d0f8d699aeb07eeba",
     "extraction/row-configuration/replay.log": "4633a5db8f35cfa8b798116a1da2e20e149e762fbcabdf266d4965b2a2c01747",
-    "extraction/row-configuration/stock.log": "5132aee131d0c5b9be9a6c997fd7a42e3bf3cd7f33d01b3f06f05c7aa0816235"
+    "extraction/row-configuration/stock.log": "5132aee131d0c5b9be9a6c997fd7a42e3bf3cd7f33d01b3f06f05c7aa0816235",
+    "bridge/Arithmetic/AvxSliceEntryGenerated.lean": "2c6373504f784b705af5adf8c6abc723746a0e210b7e70e0720b19cda476aa1e",
+    "bridge/Arithmetic/AvxSliceKernelGenerated.lean": "f15095f5796769df16f5bbc26128e77f67dc4f1948b3aa921e1982ca57f6e041",
+    "bridge/Arithmetic/AvxSliceKernelRuntime.lean": "dd728e9d41e16693ef495d484478c8bb922e03a8f232078f7e062974169ae002",
+    "bridge/Arithmetic/AvxSparseInsertGenerated.lean": "f13e37dfd91e4bccb928eef04a612fcf7866b1f72d9fb272b5d9bb5c884d458d",
+    "bridge/Arithmetic/PublicationFrameGenerated.lean": "42a201cbb364ee69bcb84824c897123e4b97ce26a6705d1f5634359d212b807d",
+    "bridge/BulksketchBridge/AvxSliceEntry.lean": "a0ebb6c18e1933b9551fd178933910275e780dc13a51ca858d4986d4b6d80751",
+    "bridge/BulksketchBridge/AvxSliceKernel.lean": "72ad10c66137c30de9f84bd9683ede3a9e65f394b681efe620aaf18d297fa690",
+    "bridge/BulksketchBridge/AvxSliceKernelAllocated.lean": "9f0ba374a7be79297071f2ded2728f88f458ff1d47c54dd4813423c55ee9b7f0",
+    "bridge/BulksketchBridge/AvxSliceKernelHeap.lean": "9ff9d601e6669d58732f4bbb6f30a77d94e869b7f3f5b1bfdb1f7df279bea5bf",
+    "bridge/BulksketchBridge/AvxSliceKernelWords.lean": "4d2bb385f6b4ebc37f42a295067190dcc7a81c0e61db8f6fb514c71bea156809",
+    "bridge/BulksketchBridge/AvxSparseInsert.lean": "cf64c8d20b192a14f71946ba29a52fa4e4a2d314448efa9b9da67d8885c2f956",
+    "bridge/BulksketchBridge/AvxSparseInsert18.lean": "43e1818b7e62b762feec574be78495d1d56c226d40f378e96b7af3b5990b4b3b",
+    "bridge/BulksketchBridge/AvxUpdateSingleBlock.lean": "12294703ae4f69cbf15a775f4b21dfaa9f0a6fc88e4302aa79ad5182f29d1e4b",
+    "bridge/BulksketchBridge/PublicationFrame.lean": "af2dd3d3653d52f740b2ef8dcbc1849d9f11070a3fc6b036fed757cd6a342140",
+    "bridge/BulksketchBridge/RootAffineDivideHandoff.lean": "c842059d0f743464b155a68687a605c328c783b873171b04c5bfc1afe8172a40",
+    "bridge/BulksketchBridge/RootSecondChargeExit.lean": "8521c9d859f09b98e0f4a5c67aef237331a8a314b73771d02b03d11b134271d7",
+    "extraction/avx-slice-entry/Arithmetic/Funs.lean": "06b082ea80a145fe0022986622949c112ff17e6b1efe377e94a5213f9c1fa290",
+    "extraction/avx-slice-entry/Arithmetic/FunsExternal_Template.lean": "820002fc5740dd8f680f25749a9638bff8bd6d25fa7c9d01ba1756d76fae0b09",
+    "extraction/avx-slice-entry/Arithmetic/Types.lean": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef",
+    "extraction/avx-slice-entry/README.md": "78983438e051e562065fa51378d0a136ed58c2f4a02d05a2533a34b170d70587",
+    "extraction/avx-slice-entry/aeneas.log": "4b7ae4a293e4614306b0f101631791c7d167d4b28c38b67fcbe619d697c76c06",
+    "extraction/avx-slice-entry/arithmetic.llbc": "1830b2fc69b8750b5d11feafb4e087c5966123e8b32bae02fc59ebc69881b964",
+    "extraction/avx-slice-entry/charon.log": "dfc610c5f697e76e6ce339b5f556b160ff6f4a72a73a556cfffd4d214ea00a0c",
+    "extraction/avx-slice-entry/project.py": "8d00008263f6af23d0222dcdfc3aad0a8f13db28b023a0f8b0db1f2e027ef65d",
+    "extraction/avx-slice-entry/receipt.json": "e02e0d1dcef010bcb0d933ae4acf2aa0c4f92ccd1ddf5ab46d36bcf8e01c5e36",
+    "extraction/avx-slice-entry/replay.log": "9fc6d6046cbc11b13b911e58e3f4e89dd473412fa1ca74a981d19ad70f97ae95",
+    "extraction/avx-slice-kernel/Arithmetic/Funs.lean": "de438394f3ff4818036b6dc2c927e648983db5902826269e8aedd873f60a87db",
+    "extraction/avx-slice-kernel/Arithmetic/FunsExternal_Template.lean": "fa9a0f667ff623a689e3c966502ec43ffa51f02d95a825eda24f4e261a3f7c7d",
+    "extraction/avx-slice-kernel/Arithmetic/Types.lean": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+    "extraction/avx-slice-kernel/Arithmetic/TypesExternal_Template.lean": "53a1f77ea401e3bd79bd5c8aa608572ffcbaef870fef5e989bb21a59cc8ed985",
+    "extraction/avx-slice-kernel/README.md": "78983438e051e562065fa51378d0a136ed58c2f4a02d05a2533a34b170d70587",
+    "extraction/avx-slice-kernel/aeneas.log": "ed37f2395c17236ffec382bb146dd6e445f42454c14457c7e4d431b5f9fcc513",
+    "extraction/avx-slice-kernel/arithmetic.llbc": "94dcaa61e64e7aa161122ce192d54963cddca35a51ef19b87f51a453977792da",
+    "extraction/avx-slice-kernel/charon.log": "7f60c90442ce118ae909d9e57261f840867791a0a82f2078ba61602db868fc2d",
+    "extraction/avx-slice-kernel/project.py": "74c1f4a39e4b9da8d699740ef4df527b3158139328dc06eb34f7a5afb2a0887c",
+    "extraction/avx-slice-kernel/receipt.json": "3a8d75991f5411afc359ee1057ee1cacb90071f4c846d761064f97ef4faf1a90",
+    "extraction/avx-slice-kernel/replay.log": "9d91626dc30f43ad9c6c7b9d74379664e3bcd7f5c6cf924b028ac936d0b0e27a",
+    "extraction/avx-sparse-insert/Arithmetic/Funs.lean": "dc5c9abef7442af1a823cb26a404b6a83402350ec86a97c02a83fd4a024cacba",
+    "extraction/avx-sparse-insert/Arithmetic/FunsExternal_Template.lean": "e369850c4a1a373e240d14cab568913939abfee8912b29bca69e3a764a52479b",
+    "extraction/avx-sparse-insert/Arithmetic/Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+    "extraction/avx-sparse-insert/aeneas.log": "460d6e3e4660890cb24005bab8661e26079718bcacb7db18f6d9f83ff52f2856",
+    "extraction/avx-sparse-insert/arithmetic.llbc": "b613319d953cde06deaa4d13056aad3f06b8dcd241c09a61bd9c21a9d2cdd913",
+    "extraction/avx-sparse-insert/charon.log": "c9e61bcbb57ae6d2618a81dade1f442ecbf11b138c1febf1888a6a0555fe5416",
+    "extraction/avx-sparse-insert/project.py": "80c5ba510e2d7fa038fa274eb36b0df2666993579d755d54cfa2dd9e4ebf0bc0",
+    "extraction/avx-sparse-insert/receipt.json": "3b5934a7f8c05ba4bd2e7c5ee070757f6c5dc9a3d0845b227035f9699c9198ea",
+    "extraction/avx-sparse-insert/replay.log": "802e9932692680142f08002ab10bb333169818887c6539c39e6a0cf2298df74a",
+    "extraction/publication-frame/Arithmetic/Funs.lean": "3fdb9756cc2ccebc58bc5536d29e46921bb4fe9646575c9d9b96fe026d2217df",
+    "extraction/publication-frame/Arithmetic/Types.lean": "08bce9f7a297b6d6b6f22643809e431a493d13d60e22120f18bcac1f2c54da67",
+    "extraction/publication-frame/arithmetic.llbc": "4cbc93f3062404e91b4be1c91420a31d814beb1992aa6d5bb8eeb2c9f77d94e8",
+    "extraction/publication-frame/charon.log": "c9e61bcbb57ae6d2618a81dade1f442ecbf11b138c1febf1888a6a0555fe5416",
+    "extraction/publication-frame/project.py": "4a2626f1632dd9890264aa8cd6878c4b501c12b1bb850ba2f9110cbbe15dce3f",
+    "extraction/publication-frame/receipt.json": "72ba252b733f5b51b3dae16ce16fce5fb4ea0ee820e71a97ffb31ef63034feae",
+    "extraction/publication-frame/replay.log": "18b712427fd08d5663029295a46864269f9f15331e557191f0311d562329914d",
+    "extraction/publication-frame/stock.log": "d9a13f4c0d091963e41144fbd9cbcd32dd0d427494ed8d79714a66ecde7489be"
   },
   "reviewed_policy_revisions": [
     {
@@ -14475,7 +14529,337 @@
       "new_sha256": "8277bced24240ddbad21c78c593cb61ce946a39d2b07c61bc669f7b24ed36cea",
       "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification.",
       "old_sha256": "c4bf95707feeebc5956f32f84c243f5d7d48e5a409785b73130782a091383f19"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "54caeb676fd8fb7b9556b82a955b441a8f7aee589ce15428219465c038589104",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits.",
+      "old_sha256": "bbf1a6708e070274ace46ba9e8d31807ea516eee5d7fb7c4ced0ca89781feb2f"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "d150b36d0fb016d20206376d8a21be97ad5139c996fe7af12aa1246e07b477f2",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits.",
+      "old_sha256": "dd817b118e0db9bde7e378cd3d48666c5492ec4db16c37862ad04b6680c907b4"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "800c29e0074341eb9a895ee00d73f75eabde4d0ba504fc02c5d8b5758b94ba59",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits.",
+      "old_sha256": "d783a4891c71e6700525f02eb659c4447b5129d418ea2b2750e7c9568e30deef"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "00c413efbb7409d703f29bcb844ea2c4e0430e233d4883feef72bd8eec8739c4",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits.",
+      "old_sha256": "ed463b10f57eb8316c2d322a3efd6df966e11be7f38b12181d5ad2f57a5fa28c"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "514760e0e0ec814e629d6e320532234932d1babe46e9d965569c0737e3ea76ac",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits.",
+      "old_sha256": "acad5e144dfd7276cabe8ca4b7e92af38e6158465c9b7aa476d9e2b778eba3b7"
+    },
+    {
+      "path": "bridge/Arithmetic/AvxSliceEntryGenerated.lean",
+      "new_sha256": "2c6373504f784b705af5adf8c6abc723746a0e210b7e70e0720b19cda476aa1e",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "bridge/Arithmetic/AvxSliceKernelGenerated.lean",
+      "new_sha256": "f15095f5796769df16f5bbc26128e77f67dc4f1948b3aa921e1982ca57f6e041",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "bridge/Arithmetic/AvxSliceKernelRuntime.lean",
+      "new_sha256": "dd728e9d41e16693ef495d484478c8bb922e03a8f232078f7e062974169ae002",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "bridge/Arithmetic/AvxSparseInsertGenerated.lean",
+      "new_sha256": "f13e37dfd91e4bccb928eef04a612fcf7866b1f72d9fb272b5d9bb5c884d458d",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "bridge/Arithmetic/PublicationFrameGenerated.lean",
+      "new_sha256": "42a201cbb364ee69bcb84824c897123e4b97ce26a6705d1f5634359d212b807d",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "b9aabc44b2275251e1ef2de373eb74f26243c884acdb27bbfbe2709c53a63d14",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits.",
+      "old_sha256": "5ebf30b825574ed4fe169cbc68927128f09aa8f30b3c1a19aed033b03c22794f"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "a7d03d55c8fd78940f9074828b80adfb6ab64832044a89afcba30aaa254f8859",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits.",
+      "old_sha256": "dfff4929fc4ffa78fdc570f5d53aeecdfda43f4d06543d7efa5b962190c6aea9"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSliceEntry.lean",
+      "new_sha256": "a0ebb6c18e1933b9551fd178933910275e780dc13a51ca858d4986d4b6d80751",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSliceKernel.lean",
+      "new_sha256": "72ad10c66137c30de9f84bd9683ede3a9e65f394b681efe620aaf18d297fa690",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSliceKernelAllocated.lean",
+      "new_sha256": "9f0ba374a7be79297071f2ded2728f88f458ff1d47c54dd4813423c55ee9b7f0",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSliceKernelHeap.lean",
+      "new_sha256": "9ff9d601e6669d58732f4bbb6f30a77d94e869b7f3f5b1bfdb1f7df279bea5bf",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSliceKernelWords.lean",
+      "new_sha256": "4d2bb385f6b4ebc37f42a295067190dcc7a81c0e61db8f6fb514c71bea156809",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSparseInsert.lean",
+      "new_sha256": "cf64c8d20b192a14f71946ba29a52fa4e4a2d314448efa9b9da67d8885c2f956",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxSparseInsert18.lean",
+      "new_sha256": "43e1818b7e62b762feec574be78495d1d56c226d40f378e96b7af3b5990b4b3b",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxUpdateSingleBlock.lean",
+      "new_sha256": "12294703ae4f69cbf15a775f4b21dfaa9f0a6fc88e4302aa79ad5182f29d1e4b",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "bridge/BulksketchBridge/PublicationFrame.lean",
+      "new_sha256": "af2dd3d3653d52f740b2ef8dcbc1849d9f11070a3fc6b036fed757cd6a342140",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootAffineDivideHandoff.lean",
+      "new_sha256": "c842059d0f743464b155a68687a605c328c783b873171b04c5bfc1afe8172a40",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootSecondChargeExit.lean",
+      "new_sha256": "8521c9d859f09b98e0f4a5c67aef237331a8a314b73771d02b03d11b134271d7",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "939a0f9cb41477b8dba15c2a4089c716874ba8d1369e7c82d17ee8285c51f187",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits.",
+      "old_sha256": "41edb70d8dbf4e3299a5092a62092df631b7df8cc28ed66c7258eb8c2ccdfca2"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "3b6c34c5496249b8bf4a6871b03d78f15b22ca14a899f6a6810e00f5acb0ed4e",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits.",
+      "old_sha256": "4452e09247a14714d824911f0c2bd0a706b6321cd38a75d21bffd5769ceba62e"
+    },
+    {
+      "path": "extraction/avx-slice-entry/Arithmetic/Funs.lean",
+      "new_sha256": "06b082ea80a145fe0022986622949c112ff17e6b1efe377e94a5213f9c1fa290",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-entry/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "820002fc5740dd8f680f25749a9638bff8bd6d25fa7c9d01ba1756d76fae0b09",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-entry/Arithmetic/Types.lean",
+      "new_sha256": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-entry/README.md",
+      "new_sha256": "78983438e051e562065fa51378d0a136ed58c2f4a02d05a2533a34b170d70587",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-entry/aeneas.log",
+      "new_sha256": "4b7ae4a293e4614306b0f101631791c7d167d4b28c38b67fcbe619d697c76c06",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-entry/arithmetic.llbc",
+      "new_sha256": "1830b2fc69b8750b5d11feafb4e087c5966123e8b32bae02fc59ebc69881b964",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-entry/charon.log",
+      "new_sha256": "dfc610c5f697e76e6ce339b5f556b160ff6f4a72a73a556cfffd4d214ea00a0c",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-entry/project.py",
+      "new_sha256": "8d00008263f6af23d0222dcdfc3aad0a8f13db28b023a0f8b0db1f2e027ef65d",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-entry/receipt.json",
+      "new_sha256": "e02e0d1dcef010bcb0d933ae4acf2aa0c4f92ccd1ddf5ab46d36bcf8e01c5e36",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-entry/replay.log",
+      "new_sha256": "9fc6d6046cbc11b13b911e58e3f4e89dd473412fa1ca74a981d19ad70f97ae95",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-kernel/Arithmetic/Funs.lean",
+      "new_sha256": "de438394f3ff4818036b6dc2c927e648983db5902826269e8aedd873f60a87db",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-kernel/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "fa9a0f667ff623a689e3c966502ec43ffa51f02d95a825eda24f4e261a3f7c7d",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-kernel/Arithmetic/Types.lean",
+      "new_sha256": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-kernel/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "53a1f77ea401e3bd79bd5c8aa608572ffcbaef870fef5e989bb21a59cc8ed985",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-kernel/README.md",
+      "new_sha256": "78983438e051e562065fa51378d0a136ed58c2f4a02d05a2533a34b170d70587",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-kernel/aeneas.log",
+      "new_sha256": "ed37f2395c17236ffec382bb146dd6e445f42454c14457c7e4d431b5f9fcc513",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-kernel/arithmetic.llbc",
+      "new_sha256": "94dcaa61e64e7aa161122ce192d54963cddca35a51ef19b87f51a453977792da",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-kernel/charon.log",
+      "new_sha256": "7f60c90442ce118ae909d9e57261f840867791a0a82f2078ba61602db868fc2d",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-kernel/project.py",
+      "new_sha256": "74c1f4a39e4b9da8d699740ef4df527b3158139328dc06eb34f7a5afb2a0887c",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-kernel/receipt.json",
+      "new_sha256": "3a8d75991f5411afc359ee1057ee1cacb90071f4c846d761064f97ef4faf1a90",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-slice-kernel/replay.log",
+      "new_sha256": "9d91626dc30f43ad9c6c7b9d74379664e3bcd7f5c6cf924b028ac936d0b0e27a",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-sparse-insert/Arithmetic/Funs.lean",
+      "new_sha256": "dc5c9abef7442af1a823cb26a404b6a83402350ec86a97c02a83fd4a024cacba",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-sparse-insert/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "e369850c4a1a373e240d14cab568913939abfee8912b29bca69e3a764a52479b",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-sparse-insert/Arithmetic/Types.lean",
+      "new_sha256": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-sparse-insert/aeneas.log",
+      "new_sha256": "460d6e3e4660890cb24005bab8661e26079718bcacb7db18f6d9f83ff52f2856",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-sparse-insert/arithmetic.llbc",
+      "new_sha256": "b613319d953cde06deaa4d13056aad3f06b8dcd241c09a61bd9c21a9d2cdd913",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-sparse-insert/charon.log",
+      "new_sha256": "c9e61bcbb57ae6d2618a81dade1f442ecbf11b138c1febf1888a6a0555fe5416",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-sparse-insert/project.py",
+      "new_sha256": "80c5ba510e2d7fa038fa274eb36b0df2666993579d755d54cfa2dd9e4ebf0bc0",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-sparse-insert/receipt.json",
+      "new_sha256": "3b5934a7f8c05ba4bd2e7c5ee070757f6c5dc9a3d0845b227035f9699c9198ea",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/avx-sparse-insert/replay.log",
+      "new_sha256": "802e9932692680142f08002ab10bb333169818887c6539c39e6a0cf2298df74a",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/publication-frame/Arithmetic/Funs.lean",
+      "new_sha256": "3fdb9756cc2ccebc58bc5536d29e46921bb4fe9646575c9d9b96fe026d2217df",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/publication-frame/Arithmetic/Types.lean",
+      "new_sha256": "08bce9f7a297b6d6b6f22643809e431a493d13d60e22120f18bcac1f2c54da67",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/publication-frame/arithmetic.llbc",
+      "new_sha256": "4cbc93f3062404e91b4be1c91420a31d814beb1992aa6d5bb8eeb2c9f77d94e8",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/publication-frame/charon.log",
+      "new_sha256": "c9e61bcbb57ae6d2618a81dade1f442ecbf11b138c1febf1888a6a0555fe5416",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/publication-frame/project.py",
+      "new_sha256": "4a2626f1632dd9890264aa8cd6878c4b501c12b1bb850ba2f9110cbbe15dce3f",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/publication-frame/receipt.json",
+      "new_sha256": "72ba252b733f5b51b3dae16ce16fce5fb4ea0ee820e71a97ffb31ef63034feae",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/publication-frame/replay.log",
+      "new_sha256": "18b712427fd08d5663029295a46864269f9f15331e557191f0311d562329914d",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "extraction/publication-frame/stock.log",
+      "new_sha256": "d9a13f4c0d091963e41144fbd9cbcd32dd0d427494ed8d79714a66ecde7489be",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "44a7f864a8fcb1c495afbded3d4c6d0fefe1676d967f521cf4dee236341f5b59",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits.",
+      "old_sha256": "8277bced24240ddbad21c78c593cb61ce946a39d2b07c61bc669f7b24ed36cea"
     }
   ],
-  "challenge_count": 420
+  "challenge_count": 440
 }

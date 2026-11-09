@@ -440,6 +440,58 @@ PROJECTIONS = [
      ["extraction/avx-square/receipt.json", "extraction/avx-insert/horizontal/arithmetic.llbc"] +
      [f"extraction/avx-insert/horizontal/Arithmetic/{name}"
       for name in ("Funs.lean", "FunsExternal_Template.lean", "Types.lean", "TypesExternal_Template.lean")]),
+    ('publication-frame',
+     'extraction/publication-frame/project.py',
+     'extraction/publication-frame/receipt.json',
+     'extraction/publication-frame/Arithmetic/Funs.lean',
+     'bridge/Arithmetic/PublicationFrameGenerated.lean',
+     'written := 0#usize',
+     'written := 1#usize',
+     'compiled publication frame projection differs',
+     None,
+     None,
+     ['extraction/avx-insert/receipt.json', 'bridge/Workmeter/Types.lean']),
+    ('avx-sparse-insert',
+     'extraction/avx-sparse-insert/project.py',
+     'extraction/avx-sparse-insert/receipt.json',
+     'extraction/avx-sparse-insert/Arithmetic/Funs.lean',
+     'bridge/Arithmetic/AvxSparseInsertGenerated.lean',
+     'Array.make 1#usize [ id ]',
+     'Array.make 1#usize [ 0#u64 ]',
+     'compiled AVX sparse insert projection differs',
+     None,
+     None,
+     ['extraction/avx-recurrence/receipt.json',
+      'bridge/Arithmetic/AvxInsertDispatchGenerated.lean']),
+    ('avx-slice-kernel',
+     'extraction/avx-slice-kernel/project.py',
+     'extraction/avx-slice-kernel/receipt.json',
+     'extraction/avx-slice-kernel/Arithmetic/Funs.lean',
+     'bridge/Arithmetic/AvxSliceKernelGenerated.lean',
+     'let i ← offset + 8#usize',
+     'let i ← offset + 7#usize',
+     'AVX slice compiled projection differs',
+     None,
+     None,
+     ['bridge/Arithmetic/AvxHornerChunkRuntime.lean',
+      'bridge/Arithmetic/AvxSliceKernelRuntime.lean',
+      'bridge/Arithmetic/AvxSquareRuntime.lean']),
+    ('avx-slice-entry',
+     'extraction/avx-slice-entry/project.py',
+     'extraction/avx-slice-entry/receipt.json',
+     'extraction/avx-slice-entry/Arithmetic/Funs.lean',
+     'bridge/Arithmetic/AvxSliceEntryGenerated.lean',
+     'scale_kernel false dst src scale',
+     'scale_kernel true dst src scale',
+     'AVX slice compiled projection differs',
+     None,
+     None,
+     ['bridge/Arithmetic/AvxHornerChunkRuntime.lean',
+      'bridge/Arithmetic/AvxSliceKernelGenerated.lean',
+      'bridge/Arithmetic/AvxSliceKernelRuntime.lean',
+      'bridge/Arithmetic/AvxSquareRuntime.lean',
+      'bridge/Arithmetic/PortableSliceGenerated.lean',
+      'bridge/Arithmetic/Types.lean']),
     ("row-configuration", "extraction/row-configuration/project.py",
      "extraction/row-configuration/receipt.json", "extraction/row-configuration/Arithmetic/Funs.lean",
      "bridge/Arithmetic/RowConfigurationGenerated.lean",
@@ -812,6 +864,12 @@ def main():
         if label == "completed-result":
             cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false',
                           '"native_llbc_edited": true', "invalid completed_result translator receipt"))
+        if label == "publication-frame":
+            cases.append(("missing-checks", receipt_path, '"-checks"', '"-no-checks"',
+                          "publication frame checked replay differs"))
+        if label == "avx-sparse-insert":
+            cases.append(("missing-checks", receipt_path, '"-checks"', '"-no-checks"',
+                          "AVX sparse insert checked replay differs"))
         if label == "row-configuration":
             cases.append(("missing-checks", receipt_path, '"-checks"', '"-no-checks"',
                           "row configuration checked replay differs"))
@@ -868,9 +926,9 @@ def main():
                              "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry", "root-divide", "root-run", "affine-splitter",
                              "affine-subspaces", "root-prepare-affine", "root-enumerate-affine", "dense-div-rem",
                              "affine-enumerate", "affine-selector", "avx-multiply-linear", "affine-solve-map",
-                             "avx-horner", "affine-multiple", "avx-tile", "avx-recurrence", "avx-scalar-delegates", "avx-recurrence-entry", "avx-linear-entry", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
+                             "avx-horner", "affine-multiple", "avx-tile", "avx-recurrence", "avx-sparse-insert", "avx-slice-kernel", "avx-slice-entry", "avx-scalar-delegates", "avx-recurrence-entry", "avx-linear-entry", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
                              "avx-insert-insert18", "avx-insert-horizontal", "avx-insert-dispatch", "native-driver", "candidate-row", "completed-result",
-                             "native-finish", "canonicalize", "row-configuration", "candidate-normalize-rows", "candidate-normalize-compact", "candidate-normalize-merge"}:
+                             "native-finish", "canonicalize", "publication-frame", "row-configuration", "candidate-normalize-rows", "candidate-normalize-compact", "candidate-normalize-merge"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

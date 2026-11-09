@@ -1680,6 +1680,86 @@
     {
       "challenge": "BulksketchBridge.RootRun.ActualNativeAffinePreparationChargeExit",
       "theorem": "BulksketchBridge.RootRun.native_affine_preparation_charge_exit"
+    },
+    {
+      "challenge": "BulksketchBridge.PublicationFrame.ActualPublicationNew",
+      "theorem": "BulksketchBridge.PublicationFrame.new_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.PublicationFrame.ActualPublicationFail",
+      "theorem": "BulksketchBridge.PublicationFrame.fail_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.PublicationFrame.ActualPublicationFinish",
+      "theorem": "BulksketchBridge.PublicationFrame.finish_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxUpdateSingleBlock.ActualUpdateSingleBlock",
+      "theorem": "BulksketchBridge.AvxUpdateSingleBlock.update_single_block_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSliceKernel.ActualAvxScaleKernel",
+      "theorem": "BulksketchBridge.AvxSliceKernel.scale_kernel_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSliceKernel.ActualAvxSquareKernel",
+      "theorem": "BulksketchBridge.AvxSliceKernel.square_kernel_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSliceEntry.ActualAvxScaleXor",
+      "theorem": "BulksketchBridge.AvxSliceEntry.scale_xor_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSliceEntry.ActualAvxSquareSlice",
+      "theorem": "BulksketchBridge.AvxSliceEntry.square_slice_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSliceEntry.ActualAvxScaleXorEntry",
+      "theorem": "BulksketchBridge.AvxSliceEntry.scale_xor_entry_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSliceEntry.ActualAvxSquareSliceEntry",
+      "theorem": "BulksketchBridge.AvxSliceEntry.square_slice_entry_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSparseInsert.ActualNativeSparseInsert",
+      "theorem": "BulksketchBridge.AvxSparseInsert.native_sparse_insert"
+    },
+    {
+      "challenge": "BulksketchBridge.PublicationFrame.ActualPublicationNewRejects",
+      "theorem": "BulksketchBridge.PublicationFrame.new_rejects"
+    },
+    {
+      "challenge": "BulksketchBridge.PublicationFrame.ActualPublicationFailedFinish",
+      "theorem": "BulksketchBridge.PublicationFrame.failed_finish_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxUpdateSingleBlock.ActualAllocatedUpdateSingleBlock",
+      "theorem": "BulksketchBridge.AvxUpdateSingleBlock.allocated_update_single_block"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSliceKernel.ActualAllocatedSquareKernel",
+      "theorem": "BulksketchBridge.AvxSliceKernel.allocated_square_kernel"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSliceKernel.ActualAllocatedScaleKernel",
+      "theorem": "BulksketchBridge.AvxSliceKernel.allocated_scale_kernel"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxSparseInsert.ActualNativeSparseInsert18",
+      "theorem": "BulksketchBridge.AvxSparseInsert.native_sparse_insert18"
+    },
+    {
+      "challenge": "BulksketchBridge.RootDivide.ActualNativeAffineDivideHandoff",
+      "theorem": "BulksketchBridge.RootDivide.native_affine_divide_handoff"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeDivideAssemblyChargeExit",
+      "theorem": "BulksketchBridge.RootRun.native_divide_assembly_charge_exit"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceSplitChargeExit",
+      "theorem": "BulksketchBridge.RootRun.native_trace_split_charge_exit"
     }
   ],
   "refinements": [
@@ -4510,6 +4590,164 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Writes only the exact splitter seed field."
+    },
+    {
+      "label": "Publication::new [original source]",
+      "native_item_id": "src/sketch/api.rs:242:method:bulksketch::sketch::api::Publication < 's >::new",
+      "source_line_span_sha256": "9ec88f91071abf87b134bba1ffb9dbc0dafb48046e143e1f40c671e53c5d085b",
+      "theorem": "BulksketchBridge.PublicationFrame.new_refines",
+      "challenge": "BulksketchBridge.PublicationFrame.ActualPublicationNew",
+      "generated_declaration": "bulksketch.sketch.api.Publication.new",
+      "generated_file": "bridge/Arithmetic/PublicationFrameGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/PublicationFrameGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact prefix clearing, metadata initialization, and original result storage continuation under admitted sizes."
+    },
+    {
+      "label": "Publication::fail [original source]",
+      "native_item_id": "src/sketch/api.rs:314:method:bulksketch::sketch::api::Publication < 's >::fail",
+      "source_line_span_sha256": "6dd09768c582e3b3d22eab6b6335ec5972f795f6f47ab1c4cee2d95ba2b3da1d",
+      "theorem": "BulksketchBridge.PublicationFrame.fail_refines",
+      "challenge": "BulksketchBridge.PublicationFrame.ActualPublicationFail",
+      "generated_declaration": "bulksketch.sketch.api.Publication.fail",
+      "generated_file": "bridge/Arithmetic/PublicationFrameGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/PublicationFrameGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "The first failure is retained, with the exact original result storage backward projection."
+    },
+    {
+      "label": "Publication::finish [original source]",
+      "native_item_id": "src/sketch/api.rs:320:method:bulksketch::sketch::api::Publication < 's >::finish",
+      "source_line_span_sha256": "a0cccfe81e21a8d82a6da283219e7b64dbf52c149a11c802d3fbcc40c516d342",
+      "theorem": "BulksketchBridge.PublicationFrame.finish_refines",
+      "challenge": "BulksketchBridge.PublicationFrame.ActualPublicationFinish",
+      "generated_declaration": "bulksketch.sketch.api.Publication.finish",
+      "generated_file": "bridge/Arithmetic/PublicationFrameGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/PublicationFrameGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original failure, incomplete-state panic or completed report prefixes for all publication states."
+    },
+    {
+      "label": "AVX update_single_block [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:754:function:bulksketch::backend::x86_vpclmul512::update_single_block",
+      "source_line_span_sha256": "3377220567dc4d4f50d69fc76a21844855085fc7f728c5fbe6114924e98d3a5a",
+      "theorem": "BulksketchBridge.AvxUpdateSingleBlock.update_single_block_refines",
+      "challenge": "BulksketchBridge.AvxUpdateSingleBlock.ActualUpdateSingleBlock",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.update_single_block",
+      "generated_file": "bridge/Arithmetic/AvxSliceKernelGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxSliceKernelGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original power lookup, masked read and XOR write under the bounded load, store and basis value laws."
+    },
+    {
+      "label": "AVX scale_kernel [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:320:function:bulksketch::backend::x86_vpclmul512::scale_kernel",
+      "source_line_span_sha256": "d0f407d901824b5206dc58c5b9dd9e74fc4f7c617aed020ca0ccae0fcf117d72",
+      "theorem": "BulksketchBridge.AvxSliceKernel.scale_kernel_refines",
+      "challenge": "BulksketchBridge.AvxSliceKernel.ActualAvxScaleKernel",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.scale_kernel",
+      "generated_file": "bridge/Arithmetic/AvxSliceKernelGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxSliceKernelGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original zero, one and nontrivial scale modes, short tail bounds and writeback under the bounded load/store laws."
+    },
+    {
+      "label": "AVX square_kernel [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:349:function:bulksketch::backend::x86_vpclmul512::square_kernel",
+      "source_line_span_sha256": "e9a463c4962954a0de50e797996aee69b3579e8dd248867b579451ea629b34b7",
+      "theorem": "BulksketchBridge.AvxSliceKernel.square_kernel_refines",
+      "challenge": "BulksketchBridge.AvxSliceKernel.ActualAvxSquareKernel",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.square_kernel",
+      "generated_file": "bridge/Arithmetic/AvxSliceKernelGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxSliceKernelGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original AVX square loop and short final masked window under the bounded load/store laws."
+    },
+    {
+      "label": "AVX scale_xor [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:315:function:bulksketch::backend::x86_vpclmul512::scale_xor",
+      "source_line_span_sha256": "1f3ee63917e71c2abc941d670b032f95e97b43cecfeb579e2a315511815fdc96",
+      "theorem": "BulksketchBridge.AvxSliceEntry.scale_xor_refines",
+      "challenge": "BulksketchBridge.AvxSliceEntry.ActualAvxScaleXor",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.scale_xor",
+      "generated_file": "bridge/Arithmetic/AvxSliceEntryGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxSliceEntryGenerated.lean",
+        "bridge/Arithmetic/AvxSliceKernelGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original free scale wrapper calls the original scale kernel."
+    },
+    {
+      "label": "AVX square_slice [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:337:function:bulksketch::backend::x86_vpclmul512::square_slice",
+      "source_line_span_sha256": "2e3b5f5096009e3548f4502cd3edbfaeafa376bf5aab0d3120544d28d88f69a4",
+      "theorem": "BulksketchBridge.AvxSliceEntry.square_slice_refines",
+      "challenge": "BulksketchBridge.AvxSliceEntry.ActualAvxSquareSlice",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.square_slice",
+      "generated_file": "bridge/Arithmetic/AvxSliceEntryGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxSliceEntryGenerated.lean",
+        "bridge/Arithmetic/AvxSliceKernelGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original free square wrapper calls the original square kernel."
+    },
+    {
+      "label": "AVX scale_xor trait entry [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:86:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::scale_xor",
+      "source_line_span_sha256": "db0ee421284d03898f24662a0f933d0a2f82e0fee207106323fbbc95109166fd",
+      "theorem": "BulksketchBridge.AvxSliceEntry.scale_xor_entry_refines",
+      "challenge": "BulksketchBridge.AvxSliceEntry.ActualAvxScaleXorEntry",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.scale_xor",
+      "generated_file": "bridge/Arithmetic/AvxSliceEntryGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxSliceEntryGenerated.lean",
+        "bridge/Arithmetic/AvxSliceKernelGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original field-width dispatch, length assertion and vector or PCLMUL fallback call."
+    },
+    {
+      "label": "AVX square_slice trait entry [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:95:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::square_slice",
+      "source_line_span_sha256": "3aa431806d8588b6adc075a7d6684227fe05b60a8f904becf37eb1eb73b4fe79",
+      "theorem": "BulksketchBridge.AvxSliceEntry.square_slice_entry_refines",
+      "challenge": "BulksketchBridge.AvxSliceEntry.ActualAvxSquareSliceEntry",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.square_slice",
+      "generated_file": "bridge/Arithmetic/AvxSliceEntryGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxSliceEntryGenerated.lean",
+        "bridge/Arithmetic/AvxSliceKernelGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original field-width dispatch, length assertion and vector or PCLMUL fallback call."
+    },
+    {
+      "label": "AVX insert_sparse [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:429:function:bulksketch::backend::x86_vpclmul512::insert_sparse",
+      "source_line_span_sha256": "4052c997b2912aca9209668e349508a357b17e7a2dab26b49e9d0dea531f2e60",
+      "theorem": "BulksketchBridge.AvxSparseInsert.native_sparse_insert",
+      "challenge": "BulksketchBridge.AvxSparseInsert.ActualNativeSparseInsert",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert_sparse",
+      "generated_file": "bridge/Arithmetic/AvxSparseInsertGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxSparseInsertGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original sparse loop invokes the native insert callback once per singleton in original order."
     }
   ],
   "stateful_llbc_refinements": [
