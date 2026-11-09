@@ -440,6 +440,22 @@ PROJECTIONS = [
      ["extraction/avx-square/receipt.json", "extraction/avx-insert/horizontal/arithmetic.llbc"] +
      [f"extraction/avx-insert/horizontal/Arithmetic/{name}"
       for name in ("Funs.lean", "FunsExternal_Template.lean", "Types.lean", "TypesExternal_Template.lean")]),
+    ("candidate-normalize-rows", "extraction/candidate-normalize-rows/project.py",
+     "extraction/candidate-normalize-rows/receipt.json", "extraction/candidate-normalize-rows/Arithmetic/Funs.lean",
+     "bridge/Arithmetic/RowLocalGenerated.lean",
+     "let i6 ← bucket + 1#usize", "let i6 ← bucket + 2#usize",
+     "compiled row-local candidate projection differs", None, None,
+     ['bridge/Arithmetic/CandidateCompactGenerated.lean',
+      'bridge/Arithmetic/ReconstructionTypes.lean',
+      'bridge/Arithmetic/DegreeProbeRuntime.lean',
+      'extraction/candidate-normalize/arithmetic.llbc',
+      'extraction/candidate-normalize/Arithmetic/Funs.lean',
+      'extraction/candidate-normalize/Arithmetic/FunsExternal_Template.lean',
+      'extraction/candidate-normalize/Arithmetic/Types.lean',
+      'extraction/candidate-row/arithmetic.llbc',
+      'extraction/candidate-row/Arithmetic/Funs.lean',
+      'extraction/candidate-row/Arithmetic/FunsExternal_Template.lean',
+      'extraction/candidate-row/Arithmetic/Types.lean']),
     ("candidate-normalize-compact", "extraction/candidate-normalize/project.py",
      "extraction/candidate-normalize/receipt.json", "extraction/candidate-normalize/Arithmetic/Funs.lean",
      "bridge/Arithmetic/CandidateCompactGenerated.lean",
@@ -561,7 +577,7 @@ def main():
         kwargs = {"kind": "encode"} if label == "portable-encode" else {}
         if label.startswith("avx-insert-"):
             kwargs = {"entry": label.removeprefix("avx-insert-")}
-        if label.startswith("candidate-normalize-"):
+        if label in {"candidate-normalize-compact", "candidate-normalize-merge"}:
             kwargs = {"kind": label.removeprefix("candidate-normalize-")}
         if label.startswith("candidates-"):
             kwargs = {"kind": label.removeprefix("candidates-")}
@@ -783,6 +799,9 @@ def main():
         if label == "completed-result":
             cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false',
                           '"native_llbc_edited": true', "invalid completed_result translator receipt"))
+        if label == "candidate-normalize-rows":
+            cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false',
+                          '"native_llbc_edited": true', "candidate row-local receipt differs"))
         if label == "native-finish":
             cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false',
                           '"native_llbc_edited": true', "invalid finish checked translator receipt"))
@@ -832,7 +851,7 @@ def main():
                              "affine-enumerate", "affine-selector", "avx-multiply-linear", "affine-solve-map",
                              "avx-horner", "affine-multiple", "avx-tile", "avx-recurrence", "avx-recurrence-entry", "avx-linear-entry", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
                              "avx-insert-insert18", "avx-insert-horizontal", "avx-insert-dispatch", "native-driver", "candidate-row", "completed-result",
-                             "native-finish", "canonicalize", "candidate-normalize-compact", "candidate-normalize-merge"}:
+                             "native-finish", "canonicalize", "candidate-normalize-rows", "candidate-normalize-compact", "candidate-normalize-merge"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

@@ -1580,6 +1580,26 @@
     {
       "challenge": "BulksketchBridge.AvxInsertDispatch.ActualNativeAvxDegree18Seed",
       "theorem": "BulksketchBridge.AvxInsertDispatch.native_avx_degree18_seed"
+    },
+    {
+      "challenge": "BulksketchBridge.CandidateNormalization.ActualNativeRowLocalNormalize",
+      "theorem": "BulksketchBridge.CandidateNormalization.native_row_local_normalize"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxTileOddSum.ActualNativeTileOddSums",
+      "theorem": "BulksketchBridge.AvxTileOddSum.native_tile_odd_sums"
+    },
+    {
+      "challenge": "BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrNativeAvx18",
+      "theorem": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_avx18"
+    },
+    {
+      "challenge": "BulksketchBridge.VerifyDispatch.ActualNativeDegree18Dispatch",
+      "theorem": "BulksketchBridge.VerifyDispatch.native_degree18_selects"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeVerificationDriver",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_verification_driver"
     }
   ],
   "refinements": [
@@ -4157,6 +4177,21 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original width-64 dispatch to the proved AVX recurrence. Other widths delegate to the original scalar default under the supplied Portable dictionary."
+    },
+    {
+      "label": "sketch::candidates::normalize_rows [original source]",
+      "native_item_id": "src/sketch/candidates.rs:75:function:bulksketch::sketch::candidates::normalize_rows",
+      "source_line_span_sha256": "0c32b83b8227bcb3543e86598357f8410613aad8820ea8a53c3b2cce1cc16f57",
+      "theorem": "BulksketchBridge.CandidateNormalization.native_row_local_normalize",
+      "challenge": "BulksketchBridge.CandidateNormalization.ActualNativeRowLocalNormalize",
+      "generated_declaration": "bulksketch.sketch.candidates.normalize_rows",
+      "generated_file": "bridge/Arithmetic/RowLocalGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/RowLocalGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original row-local normalization under scratch size bounds. Each source row accessor returns exactly its own sorted distinct nonzero hints under the standard unsigned sort model.",
+      "translator_variant": "checked-candidate-normalize-rows-v1"
     }
   ],
   "stateful_llbc_refinements": [

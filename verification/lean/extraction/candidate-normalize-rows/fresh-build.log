@@ -1,0 +1,4 @@
+Entering directory '/Users/junbug/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/fresh-tool/src'
+2026-11-09 13:29:49.545 xcodebuild[27088:6750769]  DVTFilePathFSEvents: Failed to start fs event stream.
+2026-11-09 13:29:49.714 xcodebuild[27088:6750753] [MT] DVTDeveloperPaths: Failed to get length of DARWIN_USER_CACHE_DIR from confstr(3), error = Error Domain=NSPOSIXErrorDomain Code=5 "Input/output error". Using NSCachesDirectory instead.
+Leaving directory '/Users/junbug/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/fresh-tool/src'

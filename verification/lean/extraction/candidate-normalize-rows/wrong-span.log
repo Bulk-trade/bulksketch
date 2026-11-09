@@ -1,0 +1,32 @@
+[[92mInfo[39m ] Imported: /Users/junbug/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/wrong-span/arithmetic.llbc
+[[91mError[39m] Internal error, please file an issue
+Source: 'src/sketch/candidates.rs', lines 89:35-89:36
+Compiler source: interp/Invariants.ml, line 914
+[[93mWarn[39m ] Could not translate the body of function 'bulksketch::sketch::candidates::normalize_rows because of previous error
+Name pattern: 'bulksketch::sketch::candidates::normalize_rows'
+Definition span: 'src/sketch/candidates.rs', lines 76:1-102:1
+Source: 'src/sketch/candidates.rs', lines 89:35-89:36
+Compiler source: interp/Interp.ml, line 685
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::traits::iterator::Iterator', could not find the information for item 'map'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/traits/iterator.rs', lines 42:0-42:24
+Compiler source: extract/Extract.ml, line 2866
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::traits::iterator::Iterator', could not find the information for item 'sum'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/traits/iterator.rs', lines 42:0-42:24
+Compiler source: extract/Extract.ml, line 2866
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::range::Step', could not find the information for item 'forward_overflowing'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/range.rs', lines 35:0-35:64
+Compiler source: extract/Extract.ml, line 2866
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::range::Step', could not find the information for item 'backward_overflowing'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/range.rs', lines 35:0-35:64
+Compiler source: extract/Extract.ml, line 2866
+
+[[92mInfo[39m ] Creating missing directory: /Users/junbug/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/wrong-span/Arithmetic
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /Users/junbug/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/wrong-span/Arithmetic/TypesExternal_Template.lean
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /Users/junbug/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/wrong-span/Arithmetic/Types.lean
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /Users/junbug/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/wrong-span/Arithmetic/FunsExternal_Template.lean
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /Users/junbug/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/wrong-span/Arithmetic/Funs.lean
+[[92mInfo[39m ] Total execution time: 0.358949 seconds

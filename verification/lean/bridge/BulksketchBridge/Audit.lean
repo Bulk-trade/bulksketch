@@ -826,7 +826,17 @@ run_cmd do
     (``BulksketchBridge.AvxRecurrence.ActualNativeAvxRecurrenceEntryGf64,
       ``BulksketchBridge.AvxRecurrence.native_avx_recurrence_entry_gf64),
     (``BulksketchBridge.AvxInsertDispatch.ActualNativeAvxDegree18Seed,
-      ``BulksketchBridge.AvxInsertDispatch.native_avx_degree18_seed)
+      ``BulksketchBridge.AvxInsertDispatch.native_avx_degree18_seed),
+    (``BulksketchBridge.CandidateNormalization.ActualNativeRowLocalNormalize,
+      ``BulksketchBridge.CandidateNormalization.native_row_local_normalize),
+    (``BulksketchBridge.AvxTileOddSum.ActualNativeTileOddSums,
+      ``BulksketchBridge.AvxTileOddSum.native_tile_odd_sums),
+    (``BulksketchBridge.RebuiltLfsr.ActualRebuiltLfsrNativeAvx18,
+      ``BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_avx18),
+    (``BulksketchBridge.VerifyDispatch.ActualNativeDegree18Dispatch,
+      ``BulksketchBridge.VerifyDispatch.native_degree18_selects),
+    (``BulksketchBridge.ExecutionDriver.ActualNativeVerificationDriver,
+      ``BulksketchBridge.ExecutionDriver.native_verification_driver)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

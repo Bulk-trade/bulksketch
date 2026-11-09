@@ -249,7 +249,11 @@ finite-heap read contract. The AVX locator-update and continuation
 proofs compose with the rebuilt verifier under its seed and square
 contracts. The original tile now refines the executable initialization and row
 folds, including both mutable iterator writebacks. The composition from
-those folds to the odd-power sum and remaining backend bindings is open.
+those folds to the odd-power sum now checks for every admitted tile.
+For degree 18 the original dispatch selects the exact four-register
+tile. Its seed, original locator update and original continuation
+compose into the rebuilt verifier's acceptance theorem.
+Other backend bindings remain open.
 
 Run the complete gate from `verification/lean`.
 

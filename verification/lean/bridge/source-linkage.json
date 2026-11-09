@@ -686,6 +686,11 @@
       "path": "extraction/avx-recurrence-entry/arithmetic.llbc",
       "sha256": "5f6928a7d58d27c0a3fc0554c1b72373e7401964ba68eb4003333a3d2544cbe9",
       "has_errors": false
+    },
+    {
+      "path": "extraction/candidate-normalize-rows/arithmetic.llbc",
+      "sha256": "18f2316981699128ed715212a783610b02d2a0c7e821f111e63a94df105216fb",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1588,6 +1593,11 @@
       "native_item_id": "src/backend/x86_vpclmul512.rs:124:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::odd_recurrence_matches",
       "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.odd_recurrence_matches",
       "generated_file": "bridge/Arithmetic/AvxRecurrenceEntryGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/candidates.rs:75:function:bulksketch::sketch::candidates::normalize_rows",
+      "generated_declaration": "bulksketch.sketch.candidates.normalize_rows",
+      "generated_file": "bridge/Arithmetic/RowLocalGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2509,6 +2519,16 @@
       "checker": "extraction/avx-recurrence-entry/project.py",
       "declaration_count": 1,
       "scope": "Original AVX continuation trait dispatch and exact Portable default fallback."
+    },
+    {
+      "generated": "extraction/candidate-normalize-rows/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RowLocalGenerated.lean",
+      "sha256": "20468236c7990ff5a78c5afd139c3e85a77fb2fdd8a1d6b2e9b6869c456a74a6",
+      "raw_sha256": "32cfbe7fad891270458cd519695697472c4f6038ce8d20fbcdbc806938c8a3cf",
+      "checker": "extraction/candidate-normalize-rows/project.py",
+      "declaration_count": 13,
+      "scope": "Original row-local count, copy, sort, compaction, cumulative offsets and exact packed row views.",
+      "translator_variant": "checked-candidate-normalize-rows-v1"
     }
   ],
   "reviewed_translator_variants": [
@@ -2682,6 +2702,15 @@
       "receipt": "extraction/avx-tile/receipt.json",
       "mandatory_checks": true,
       "scope": "Exact original AVX tile, paired mutable initialization and row-loop history with checked distinct callbacks and pinned source guards."
+    },
+    {
+      "id": "checked-candidate-normalize-rows-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/candidate-normalize-rows/checked-candidate-normalize-rows.patch",
+      "patch_sha256": "8b4a40d54ccb6b5ce23ab5fa8863d669a9e22a12043f9c4585f03f062c6518c4",
+      "receipt": "extraction/candidate-normalize-rows/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact original row-local normalize. Preserve frozen shared row owner and isolate the checked unused read-only iterator around scalar compaction."
     }
   ],
   "diagnostic_generated_projections": [

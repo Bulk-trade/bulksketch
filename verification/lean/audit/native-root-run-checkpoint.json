@@ -1,13 +1,13 @@
 {
   "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
-  "previous_proof_commit": "386f6a06a3e904918b4e16eef6ffcefb5057cbab",
+  "previous_proof_commit": "c3c3fa966185f3ea4564ebbba99ea55e28d1edb9",
   "retained_native_executable_obligations": 344,
-  "generated_body_refinements_under_recorded_TCB": 164,
+  "generated_body_refinements_under_recorded_TCB": 165,
   "checked_stateful_llbc_refinements": 5,
   "whole_native_coverage_achieved": false,
   "open": [
-    "Row-local hint normalization, global traversal induction and source work-budget termination",
-    "Native decoder completeness through a constructed finite finish trace and complete wire/API composition",
-    "Remaining AVX tile syndrome composition and backend bodies, Rust pointer provenance, and compiler-to-ISA correspondence"
+    "Global stage-indexed traversal induction and complete source work-budget termination",
+    "Other verifier degrees and backends, row admission, wire and public API composition",
+    "Remaining native backend bodies, Rust pointer provenance, and compiler-to-ISA correspondence"
   ]
 }

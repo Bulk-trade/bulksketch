@@ -8250,7 +8250,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.CandidateNormalization.native_row_local_normalize",
+        "scope": "Exact original row-local normalization under scratch size bounds. Each source row accessor returns exactly its own sorted distinct nonzero hints under the standard unsigned sort model.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/contract.rs:16:trait:bulksketch::sketch::contract::RequestExecution",
@@ -12214,8 +12221,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. Honest native BM returns the exact support locator or latches a work error. Candidate and deflation calls establish the full initial traversal invariant. Given the terminal emitted locator product and a paid canonicalization, the actual driver returns a sorted borrowed prefix with exactly those roots. Paid native Trace and GCD preserve the live traversal invariant and decrease the continuation rank. Paid affine split, affine GCD and ordinary leaf extend the invariant. A ranked driver law constructs the exact finite finish trace. Native affine emission, pending pop metadata, and initial factor-stage charge failures are checked. The original AVX locator-update entry dispatches to the verified vector update. Original AVX continuation matches the GF64 lag sum on every active lane and binds to the rebuilt verifier under the seed and square contracts. Original AVX tile refines the executable writeback folds under the bounded masked-load law. Global traversal induction, work-budget termination, row-local normalization, wire/API composition, remaining backend bodies, provenance and compiler-to-ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 164,
+    "note": "All 344 native executable obligations retained. Shared and row-local candidate normalization, the admitted ranked root steps and native drain, and exact original AVX tile, locator update and recurrence are checked. The degree-18 native AVX seed, update and continuation compose in the original rebuilt verifier with its explicit squaring, backend dictionary and masked-memory contracts. Complete traversal induction, work-budget termination, other verifier degrees and backends, public API and wire composition, Rust provenance and compiler-to-ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 165,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12242,7 +12249,9 @@
       "avx_tile_row_model": "BulksketchBridge.AvxTileChunkSum.tile_row_exact",
       "avx_rebuilt_continuation": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_avx",
       "avx_tile_executable_model": "BulksketchBridge.AvxTileNative.native_tile_refines",
-      "avx_degree18_seed_under_tile_word_law": "BulksketchBridge.AvxInsertDispatch.native_avx_degree18_seed"
+      "avx_degree18_seed_under_tile_word_law": "BulksketchBridge.AvxInsertDispatch.native_avx_degree18_seed",
+      "native_avx_tile_rows": "BulksketchBridge.AvxTileOddSum.native_tile_odd_sums",
+      "native_avx_rebuilt_degree18": "BulksketchBridge.RebuiltLfsr.rebuilt_lfsr_native_avx18"
     },
     "reconciliation_algebra_evidence": {
       "sparse_support_uniqueness": "BulksketchBridge.Reconciliation.gf64_sparse_support_unique",
@@ -12400,7 +12409,8 @@
         "BulksketchBridge.RootEnumerate.native_affine_emission_invariant",
         "BulksketchBridge.RootEnumerate.native_affine_emission_ranked_step",
         "BulksketchBridge.RootRun.native_leaf_pop_metadata",
-        "BulksketchBridge.RootRun.native_affine_pop_metadata"
+        "BulksketchBridge.RootRun.native_affine_pop_metadata",
+        "BulksketchBridge.ExecutionDriver.native_verification_driver"
       ]
     },
     "masked_memory_evidence": {

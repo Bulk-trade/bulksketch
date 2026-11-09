@@ -170,3 +170,7 @@ import BulksketchBridge.AvxRecurrenceHeap
 import BulksketchBridge.RebuiltLfsrAvx
 import BulksketchBridge.AvxTileNative
 import BulksketchBridge.AvxDegree18Seed
+import BulksketchBridge.RowLocalNormalize
+import BulksketchBridge.RebuiltLfsrNativeAvx18
+import BulksketchBridge.AvxDegree18Dispatch
+import BulksketchBridge.NativeVerificationDriver
