@@ -730,7 +730,25 @@ run_cmd do
     (``BulksketchBridge.CandidateInner.ActualNativeCandidateInnerFrame,
       ``BulksketchBridge.CandidateInner.native_candidate_inner_frame),
     (``BulksketchBridge.CandidateOuter.ActualNativeCandidateOuter,
-      ``BulksketchBridge.CandidateOuter.native_candidate_outer)
+      ``BulksketchBridge.CandidateOuter.native_candidate_outer),
+    (``BulksketchBridge.ExecutionDriver.ActualExecute,
+      ``BulksketchBridge.ExecutionDriver.execute_refines),
+    (``BulksketchBridge.ExecutionDriver.ActualRunNext,
+      ``BulksketchBridge.ExecutionDriver.run_next_refines),
+    (``BulksketchBridge.ExecutionDriver.ActualNextStage,
+      ``BulksketchBridge.ExecutionDriver.next_stage_refines),
+    (``BulksketchBridge.CandidateNormalization.ActualNativeCandidateRow,
+      ``BulksketchBridge.CandidateNormalization.native_candidate_row),
+    (``BulksketchBridge.CandidateOuter.ActualNativeCandidateDistinct,
+      ``BulksketchBridge.CandidateOuter.native_candidate_distinct),
+    (``BulksketchBridge.CandidateOuter.ActualNativeCandidateNoOverhit,
+      ``BulksketchBridge.CandidateOuter.native_candidate_no_overhit),
+    (``BulksketchBridge.CandidateOuter.ActualNativeCandidateSuccessHandoff,
+      ``BulksketchBridge.CandidateOuter.native_candidate_success_handoff),
+    (``BulksketchBridge.ExecutionDriver.ActualNativeCandidateDeflateDriver,
+      ``BulksketchBridge.ExecutionDriver.native_candidate_deflate_driver),
+    (``BulksketchBridge.RootEnumerate.ActualNativeAffineEnumerationComplete,
+      ``BulksketchBridge.RootEnumerate.native_affine_enumeration_complete)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

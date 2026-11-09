@@ -5436,7 +5436,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.ExecutionDriver.execute_refines",
+        "scope": "Exact original stage dispatch, degree probe, BM locator leading guard and returned workspace, state and work frame. Explicit canonicalization callback and checked Rust core adapters.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:241:method:bulksketch::decode::stages::Execution < F , K >::reconstruct",
@@ -5644,7 +5651,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.ExecutionDriver.next_stage_refines",
+        "scope": "Exact native next stage for every execution state, including all terminal branches.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:414:method:bulksketch::decode::stages::<Execution < F , K > as RowExecution>::run_next",
@@ -5664,7 +5678,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.ExecutionDriver.run_next_refines",
+        "scope": "Exact native state commit, progress counters, latched error and invalid terminal call. Original execute is bound.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:442:method:bulksketch::decode::stages::<Execution < F , K > as RowExecution>::finish",
@@ -8126,7 +8147,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.CandidateNormalization.native_candidate_row",
+        "scope": "Exact original packed row slice for admitted row index and offsets, including checked offset arithmetic.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/sketch/candidates.rs:6:function:bulksketch::sketch::candidates::normalize",
@@ -12123,8 +12151,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. Original candidate, evaluation, and free AVX insertion dispatch bodies are checked under explicit kernel contracts. Native deflation supplies traversal admission for distinct valid hints. Trace, affine split and GCD reborrow exact returned slices, and native leaf paths append the exact root words. Full traversal and decoder composition, remaining backend bodies, Rust provenance and compiler-to-ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 151,
+    "note": "All 344 native executable obligations retained. The original decoder driver and packed candidate row accessor have checked body refinements. The original candidate and deflation driver steps supply the exact admitted residual product and traversal frame, and paid affine enumeration emits every factor root. Complete traversal and decoder composition, publication, backend bodies, Rust provenance, and compiler-to-ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 155,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12267,7 +12295,16 @@
         "BulksketchBridge.CandidateOuter.native_candidate_entry",
         "BulksketchBridge.CandidateOuter.native_dense_eval_many",
         "BulksketchBridge.CandidateInner.native_candidate_inner_frame",
-        "BulksketchBridge.CandidateOuter.native_candidate_outer"
+        "BulksketchBridge.CandidateOuter.native_candidate_outer",
+        "BulksketchBridge.ExecutionDriver.execute_refines",
+        "BulksketchBridge.ExecutionDriver.run_next_refines",
+        "BulksketchBridge.ExecutionDriver.next_stage_refines",
+        "BulksketchBridge.CandidateNormalization.native_candidate_row",
+        "BulksketchBridge.CandidateOuter.native_candidate_distinct",
+        "BulksketchBridge.CandidateOuter.native_candidate_no_overhit",
+        "BulksketchBridge.CandidateOuter.native_candidate_success_handoff",
+        "BulksketchBridge.ExecutionDriver.native_candidate_deflate_driver",
+        "BulksketchBridge.RootEnumerate.native_affine_enumeration_complete"
       ]
     },
     "masked_memory_evidence": {

@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "c1323413b47d68e84dd4b7fe7606f2b020492788c66ca22167c2addf3f9b8fe7",
+    "bridge/BulksketchBridge/Audit.lean": "622b879214a3b7f889c914b89c5973a2693a066917b2a760ce170706c1918eaa",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -14,8 +14,8 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "c0a927632220229b8075287a7dff99714ca2c5a628427dc8956ac0adfd4dee9a",
-    "audit/frozen-inputs.json": "c1056054eca32308b3b2e132aa5ce46c0cda8247aa917aae83b7816892c79525",
-    "bridge/BulksketchBridge.lean": "053be2e84e833971d7273daf71d3956f8befe3eef641b426f631ce3fefa1b750",
+    "audit/frozen-inputs.json": "ed370d4d369e87ddfadd344798900c304d4c744468f6656522880af97819ef7f",
+    "bridge/BulksketchBridge.lean": "3cf01c038afa3ffa229bcbed022f65fe6d36b73a8ca04999f7193e8c574f951c",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "83fb3fa4841dc5cc8719056754194f79f2dca5abde1f2a68433a125f82a2d5e0",
-    "bridge/obligations.json": "e623c2bc0c1d7cc9497b2ee7176d881a6116a80ba12bb142362645e6c2bb0b64",
+    "bridge/source-linkage.json": "9a7f74ef7f181a45345e6c5974fb154e12625db371f448708c01f8b7a9e07460",
+    "bridge/obligations.json": "7a8417d7dea83fd3a63e0d298fbf80a6d240364c90b32325436d35f530847944",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "8b3552e3786cfeab37d4fe35ae08683357664b1b9a63465cf15a54c00eb79f8c",
+    "scripts/check_projection_fixtures.py": "87a716ce57f7ed03dea2dcea0bbc31db94133400d188fe60333aef7dd9199be1",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "24e18d78db41de193be3d85a81216e1a57db593afaafafa597846a9eaa6610fe",
+    "README.md": "396a92bb8018aff881b5e1f86aabc05f45594e2d3b88989a56182750e01a5c27",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "3b3868580c7201f650e1012fdc3ab92ce94c5db824fb2490de25dd5158e3efad",
+    "audit/coverage.json": "75c71fda2c29df04d5e9a5bff166e4807ccadeea29c3cb8b2689dfa92e367b7b",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "ce48c6da46d411735b009f5c362bc38880c85749953286c4cac7829e88973180",
-    "audit/native-root-run-checkpoint.json": "b80eea1f9321506dff3fced74651c38c1e01bfdc8ad9c252cd486d708a78a37e",
+    "NATIVE_ROOT_RUN.md": "3f6bfde5a9d977901aabbff7ec7f8bdf21e0f92507056b10b3ac35167dd2e41c",
+    "audit/native-root-run-checkpoint.json": "45603ed34cfc877f4b60522476b4eb2e5ccc1a74e71a62a4041abdf1d4a3a468",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1630,7 +1630,52 @@
     "extraction/candidates/wrong-normal-break.log": "327d26b829ce4a27d0ba1f6ca7e89d3da289456e471d86f3f2a835d2d16d06e1",
     "extraction/candidates/wrong-return-id.log": "cbb9d27f96bb52da019515becd530f72ea8867a3d50fe0c18e4c693404a904bf",
     "extraction/candidates/wrong-span.log": "e953c14a15aaa623cf349503c4a9cd13c4ea9db29f12bb763ca3f1a640ab4cf7",
-    "extraction/candidates/wrong-zip-cleanup.log": "82a6fe707a79bb8514a495aaf0ab813ecb3c70c1b926883276191fce8b48c9b9"
+    "extraction/candidates/wrong-zip-cleanup.log": "82a6fe707a79bb8514a495aaf0ab813ecb3c70c1b926883276191fce8b48c9b9",
+    "bridge/Arithmetic/CandidateRowGenerated.lean": "00f5e5c750b7095d87033eb1811e80492b97a6b326b68b48fc081fc3440a154e",
+    "bridge/Arithmetic/ExecutionDriverGenerated.lean": "055859eb1ffaefb6a5519ac02f84a4e5ee06060bf9d2e0e4447139834b24025c",
+    "bridge/BulksketchBridge/AffineEnumerationSuffix.lean": "847800bf2fb7f5d56e01f1390aa78f219518df58ffaad8a5ec17475b40f78276",
+    "bridge/BulksketchBridge/CandidateDeflateHandoff.lean": "f6d6a7f24648b1e4c510d168c41a6964fa55aa8ae7672753ac4c977173ad15a1",
+    "bridge/BulksketchBridge/CandidateHornerBridge.lean": "2fdae144013098d01798c32306de06e617a72716b90c9346bd16a2d3b32ed1a8",
+    "bridge/BulksketchBridge/CandidateNoOverhit.lean": "44c561e38de8334f5c02ee406e347b8deacd7df0d3259b71596150804766488e",
+    "bridge/BulksketchBridge/CandidateRow.lean": "039527baea7332e011fb1ef384a4bec451f58c075f845220dce2f353e864c1c8",
+    "bridge/BulksketchBridge/CandidateSuccessHandoff.lean": "795d0fdfea7120299078169128bdd78953565c81007e879d67be44465d2892de",
+    "bridge/BulksketchBridge/CandidateSupport.lean": "39d2241f005ff0692ad8657b80a6dc15ce6ecb10d318a99a44321788685a8598",
+    "bridge/BulksketchBridge/ExecutionDispatch.lean": "9188d91547e1bfb21f459ba8465ee6d148cf31e949364e26746d0a3012d4b737",
+    "bridge/BulksketchBridge/ExecutionDriver.lean": "6f88b77798da2877f21970952730a78b36b700d28eb273cc5b797e470fdf1cd3",
+    "bridge/BulksketchBridge/NativeCandidateDeflateDriver.lean": "a98863376e7e1f107711cced43ecabf6582dd9208142fb0153f0f7247d0462a8",
+    "bridge/BulksketchBridge/RootEmissionProduct.lean": "750b3ee5ef8a87bcbdc2cec7fc8fe553083a388170964fa6ab7fb9a10d5c99a6",
+    "bridge/BulksketchBridge/RootNativeAffineEnumerationComplete.lean": "808e1335c31d67d830b87fa0e6ffce7e6961fb17876bb5828597cb6f4fc40181",
+    "extraction/candidate-row/Arithmetic/Funs.lean": "b88864bf41e03e1bfc9f673d845653f05181b88adbf1508a461439821c0533d2",
+    "extraction/candidate-row/Arithmetic/FunsExternal_Template.lean": "9d9b413ee8b6ba7aab15c36c02800a6861e76dae4bd721045a2df7166ec9ab40",
+    "extraction/candidate-row/Arithmetic/Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+    "extraction/candidate-row/aeneas.log": "7c85a29ed95e7b892670346d52bbcf45c335fb415ad1da4a5498ee697d90e883",
+    "extraction/candidate-row/arithmetic.llbc": "28bf61542fd44ae85e000b7651dd08f0df3fde65a53c0c5bfdf14644fce99c14",
+    "extraction/candidate-row/charon.log": "4842b4a32465bd204784362d0833292fefd6192592b6dded8318863ca2841131",
+    "extraction/candidate-row/project.py": "faaa166a4b489d0ff9cb8f8aa96e0d69916a62a0564c54b973e5fdbd56bd8121",
+    "extraction/candidate-row/receipt.json": "f85b216347ee2febd75c6e83ce6926554f00588dbc9e45a08a2845f1d40325a6",
+    "extraction/native-driver/execute/Arithmetic/Funs.lean": "49158a6b74d70209284d490d9a0ced4ff52f98cb5dd77dbc384806f1b63eeb8e",
+    "extraction/native-driver/execute/Arithmetic/FunsExternal_Template.lean": "88678f056d6a4cf0420350148bc99dd97a87173a2781057dc74b5857f1dd3cfd",
+    "extraction/native-driver/execute/Arithmetic/Types.lean": "f4e5afa4022e3ae7234267491de216bb8245dedb612d1b61cded7f727d57bdba",
+    "extraction/native-driver/execute/arithmetic.llbc": "e210756e8febb92d39ae2e28f3c26a326051c1baf8146e6fb4be337518599ddd",
+    "extraction/native-driver/execute/charon.log": "f024464fd2a1c89e142a778b7ea382db112758ec7e77a97bee34746c127d09a9",
+    "extraction/native-driver/execute/replay.log": "8c7051e330b9f8db3524459380c13ac3c04205c7ed458bdbdd63290263c77f15",
+    "extraction/native-driver/execute/stock.log": "32b411ee7b4ccb20f46c991372bb9fa36baa6612e6fa39079d5749225b4173b8",
+    "extraction/native-driver/next-stage/Arithmetic/Funs.lean": "ada9596cd2a9228d0e70c24ad4de2c4f0d2fee0ff555fcc5e1ab4f8a28447d6b",
+    "extraction/native-driver/next-stage/Arithmetic/FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+    "extraction/native-driver/next-stage/Arithmetic/Types.lean": "dbff35d723b9fcb9f7e9e81cc6b6f8b91accae76f0f20769c272ea09324b74da",
+    "extraction/native-driver/next-stage/arithmetic.llbc": "d55f21aa4d182ce7d2b432f94e9fed0f3cbbe376c48c7c63c8b0f3dd9bd6081d",
+    "extraction/native-driver/next-stage/charon.log": "1cb01f89c9f311451eedae9abf9ca0bc605dd175b2402b94370a3de5e4198f93",
+    "extraction/native-driver/next-stage/replay.log": "00bcbd68416dddf98005f1e8287d5ee2fa16da9a00aee8e7ec359dec870efe67",
+    "extraction/native-driver/next-stage/stock.log": "e7e6a23dec03bd2d93f3acb2ee045da7424106fb9d9f84c35b8b6c01161ece83",
+    "extraction/native-driver/project.py": "38f9fad6b2c9527a63ad8db726caad38d49fa105728e40f7897b0a32d173ff6c",
+    "extraction/native-driver/receipt.json": "e13989a9394a1ef8a1197c7270ca26d9f012ff14f26f7efaec8b0434a9d73bc4",
+    "extraction/native-driver/run-next/Arithmetic/Funs.lean": "0036fece76bf09c304d9b9dd0baa784d7e35ee62d73f68993b22b89722e661b2",
+    "extraction/native-driver/run-next/Arithmetic/FunsExternal_Template.lean": "fab8fc3e686c4887e4b2ec1e88f288b7f490234b640ea4f83bc91568397544bb",
+    "extraction/native-driver/run-next/Arithmetic/Types.lean": "a03c6d3fc1ad961535346461974ab0a01a17107296e710e931b6c946871bd2fa",
+    "extraction/native-driver/run-next/arithmetic.llbc": "bb7bf11a972a5f2b923e2ef4b0e735af9e13ad1d063ac2c92840f7441e00819c",
+    "extraction/native-driver/run-next/charon.log": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828",
+    "extraction/native-driver/run-next/replay.log": "e40e6b22e0d6ffcaa37b3eadf28265e9b6344798ccc79ea0d875ae484052481a",
+    "extraction/native-driver/run-next/stock.log": "42ca15a5388e18944181d54f0ad5f01d202e222ecda8802a358f11ed89597d1a"
   },
   "reviewed_policy_revisions": [
     {
@@ -11871,7 +11916,292 @@
       "new_sha256": "c0a927632220229b8075287a7dff99714ca2c5a628427dc8956ac0adfd4dee9a",
       "reason": "Freeze original candidate and AVX free dispatch, normalized reborrowed trace and GCD frames, and traversal entry and leaf emission.",
       "old_sha256": "6f8c5a4d656c1c895639713b80e8f408403bbdfc6db63a56b543dc203b132f63"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "3f6bfde5a9d977901aabbff7ec7f8bdf21e0f92507056b10b3ac35167dd2e41c",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs.",
+      "old_sha256": "ce48c6da46d411735b009f5c362bc38880c85749953286c4cac7829e88973180"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "396a92bb8018aff881b5e1f86aabc05f45594e2d3b88989a56182750e01a5c27",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs.",
+      "old_sha256": "24e18d78db41de193be3d85a81216e1a57db593afaafafa597846a9eaa6610fe"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "75c71fda2c29df04d5e9a5bff166e4807ccadeea29c3cb8b2689dfa92e367b7b",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs.",
+      "old_sha256": "3b3868580c7201f650e1012fdc3ab92ce94c5db824fb2490de25dd5158e3efad"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "ed370d4d369e87ddfadd344798900c304d4c744468f6656522880af97819ef7f",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs.",
+      "old_sha256": "c1056054eca32308b3b2e132aa5ce46c0cda8247aa917aae83b7816892c79525"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "45603ed34cfc877f4b60522476b4eb2e5ccc1a74e71a62a4041abdf1d4a3a468",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs.",
+      "old_sha256": "b80eea1f9321506dff3fced74651c38c1e01bfdc8ad9c252cd486d708a78a37e"
+    },
+    {
+      "path": "bridge/Arithmetic/CandidateRowGenerated.lean",
+      "new_sha256": "00f5e5c750b7095d87033eb1811e80492b97a6b326b68b48fc081fc3440a154e",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "bridge/Arithmetic/ExecutionDriverGenerated.lean",
+      "new_sha256": "055859eb1ffaefb6a5519ac02f84a4e5ee06060bf9d2e0e4447139834b24025c",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "3cf01c038afa3ffa229bcbed022f65fe6d36b73a8ca04999f7193e8c574f951c",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs.",
+      "old_sha256": "053be2e84e833971d7273daf71d3956f8befe3eef641b426f631ce3fefa1b750"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AffineEnumerationSuffix.lean",
+      "new_sha256": "847800bf2fb7f5d56e01f1390aa78f219518df58ffaad8a5ec17475b40f78276",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "622b879214a3b7f889c914b89c5973a2693a066917b2a760ce170706c1918eaa",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs.",
+      "old_sha256": "c1323413b47d68e84dd4b7fe7606f2b020492788c66ca22167c2addf3f9b8fe7"
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateDeflateHandoff.lean",
+      "new_sha256": "f6d6a7f24648b1e4c510d168c41a6964fa55aa8ae7672753ac4c977173ad15a1",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateHornerBridge.lean",
+      "new_sha256": "2fdae144013098d01798c32306de06e617a72716b90c9346bd16a2d3b32ed1a8",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateNoOverhit.lean",
+      "new_sha256": "44c561e38de8334f5c02ee406e347b8deacd7df0d3259b71596150804766488e",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateRow.lean",
+      "new_sha256": "039527baea7332e011fb1ef384a4bec451f58c075f845220dce2f353e864c1c8",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateSuccessHandoff.lean",
+      "new_sha256": "795d0fdfea7120299078169128bdd78953565c81007e879d67be44465d2892de",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "bridge/BulksketchBridge/CandidateSupport.lean",
+      "new_sha256": "39d2241f005ff0692ad8657b80a6dc15ce6ecb10d318a99a44321788685a8598",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ExecutionDispatch.lean",
+      "new_sha256": "9188d91547e1bfb21f459ba8465ee6d148cf31e949364e26746d0a3012d4b737",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "bridge/BulksketchBridge/ExecutionDriver.lean",
+      "new_sha256": "6f88b77798da2877f21970952730a78b36b700d28eb273cc5b797e470fdf1cd3",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeCandidateDeflateDriver.lean",
+      "new_sha256": "a98863376e7e1f107711cced43ecabf6582dd9208142fb0153f0f7247d0462a8",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootEmissionProduct.lean",
+      "new_sha256": "750b3ee5ef8a87bcbdc2cec7fc8fe553083a388170964fa6ab7fb9a10d5c99a6",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootNativeAffineEnumerationComplete.lean",
+      "new_sha256": "808e1335c31d67d830b87fa0e6ffce7e6961fb17876bb5828597cb6f4fc40181",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "7a8417d7dea83fd3a63e0d298fbf80a6d240364c90b32325436d35f530847944",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs.",
+      "old_sha256": "e623c2bc0c1d7cc9497b2ee7176d881a6116a80ba12bb142362645e6c2bb0b64"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "9a7f74ef7f181a45345e6c5974fb154e12625db371f448708c01f8b7a9e07460",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs.",
+      "old_sha256": "83fb3fa4841dc5cc8719056754194f79f2dca5abde1f2a68433a125f82a2d5e0"
+    },
+    {
+      "path": "extraction/candidate-row/Arithmetic/Funs.lean",
+      "new_sha256": "b88864bf41e03e1bfc9f673d845653f05181b88adbf1508a461439821c0533d2",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/candidate-row/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "9d9b413ee8b6ba7aab15c36c02800a6861e76dae4bd721045a2df7166ec9ab40",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/candidate-row/Arithmetic/Types.lean",
+      "new_sha256": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/candidate-row/aeneas.log",
+      "new_sha256": "7c85a29ed95e7b892670346d52bbcf45c335fb415ad1da4a5498ee697d90e883",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/candidate-row/arithmetic.llbc",
+      "new_sha256": "28bf61542fd44ae85e000b7651dd08f0df3fde65a53c0c5bfdf14644fce99c14",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/candidate-row/charon.log",
+      "new_sha256": "4842b4a32465bd204784362d0833292fefd6192592b6dded8318863ca2841131",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/candidate-row/project.py",
+      "new_sha256": "faaa166a4b489d0ff9cb8f8aa96e0d69916a62a0564c54b973e5fdbd56bd8121",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/candidate-row/receipt.json",
+      "new_sha256": "f85b216347ee2febd75c6e83ce6926554f00588dbc9e45a08a2845f1d40325a6",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/execute/Arithmetic/Funs.lean",
+      "new_sha256": "49158a6b74d70209284d490d9a0ced4ff52f98cb5dd77dbc384806f1b63eeb8e",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/execute/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "88678f056d6a4cf0420350148bc99dd97a87173a2781057dc74b5857f1dd3cfd",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/execute/Arithmetic/Types.lean",
+      "new_sha256": "f4e5afa4022e3ae7234267491de216bb8245dedb612d1b61cded7f727d57bdba",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/execute/arithmetic.llbc",
+      "new_sha256": "e210756e8febb92d39ae2e28f3c26a326051c1baf8146e6fb4be337518599ddd",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/execute/charon.log",
+      "new_sha256": "f024464fd2a1c89e142a778b7ea382db112758ec7e77a97bee34746c127d09a9",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/execute/replay.log",
+      "new_sha256": "8c7051e330b9f8db3524459380c13ac3c04205c7ed458bdbdd63290263c77f15",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/execute/stock.log",
+      "new_sha256": "32b411ee7b4ccb20f46c991372bb9fa36baa6612e6fa39079d5749225b4173b8",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/next-stage/Arithmetic/Funs.lean",
+      "new_sha256": "ada9596cd2a9228d0e70c24ad4de2c4f0d2fee0ff555fcc5e1ab4f8a28447d6b",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/next-stage/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/next-stage/Arithmetic/Types.lean",
+      "new_sha256": "dbff35d723b9fcb9f7e9e81cc6b6f8b91accae76f0f20769c272ea09324b74da",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/next-stage/arithmetic.llbc",
+      "new_sha256": "d55f21aa4d182ce7d2b432f94e9fed0f3cbbe376c48c7c63c8b0f3dd9bd6081d",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/next-stage/charon.log",
+      "new_sha256": "1cb01f89c9f311451eedae9abf9ca0bc605dd175b2402b94370a3de5e4198f93",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/next-stage/replay.log",
+      "new_sha256": "00bcbd68416dddf98005f1e8287d5ee2fa16da9a00aee8e7ec359dec870efe67",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/next-stage/stock.log",
+      "new_sha256": "e7e6a23dec03bd2d93f3acb2ee045da7424106fb9d9f84c35b8b6c01161ece83",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/project.py",
+      "new_sha256": "38f9fad6b2c9527a63ad8db726caad38d49fa105728e40f7897b0a32d173ff6c",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/receipt.json",
+      "new_sha256": "e13989a9394a1ef8a1197c7270ca26d9f012ff14f26f7efaec8b0434a9d73bc4",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/run-next/Arithmetic/Funs.lean",
+      "new_sha256": "0036fece76bf09c304d9b9dd0baa784d7e35ee62d73f68993b22b89722e661b2",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/run-next/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "fab8fc3e686c4887e4b2ec1e88f288b7f490234b640ea4f83bc91568397544bb",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/run-next/Arithmetic/Types.lean",
+      "new_sha256": "a03c6d3fc1ad961535346461974ab0a01a17107296e710e931b6c946871bd2fa",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/run-next/arithmetic.llbc",
+      "new_sha256": "bb7bf11a972a5f2b923e2ef4b0e735af9e13ad1d063ac2c92840f7441e00819c",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/run-next/charon.log",
+      "new_sha256": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/run-next/replay.log",
+      "new_sha256": "e40e6b22e0d6ffcaa37b3eadf28265e9b6344798ccc79ea0d875ae484052481a",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "extraction/native-driver/run-next/stock.log",
+      "new_sha256": "42ca15a5388e18944181d54f0ad5f01d202e222ecda8802a358f11ed89597d1a",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "87a716ce57f7ed03dea2dcea0bbc31db94133400d188fe60333aef7dd9199be1",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs.",
+      "old_sha256": "8b3552e3786cfeab37d4fe35ae08683357664b1b9a63465cf15a54c00eb79f8c"
     }
   ],
-  "challenge_count": 347
+  "challenge_count": 356
 }

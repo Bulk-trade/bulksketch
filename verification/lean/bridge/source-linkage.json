@@ -626,6 +626,26 @@
       "path": "extraction/candidates/dense-eval/arithmetic.llbc",
       "sha256": "5e43fd8478eff83f9ac6fe48766ec409e840905535cbbbce2440caef00e5ecb7",
       "has_errors": false
+    },
+    {
+      "path": "extraction/native-driver/run-next/arithmetic.llbc",
+      "sha256": "bb7bf11a972a5f2b923e2ef4b0e735af9e13ad1d063ac2c92840f7441e00819c",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/native-driver/next-stage/arithmetic.llbc",
+      "sha256": "d55f21aa4d182ce7d2b432f94e9fed0f3cbbe376c48c7c63c8b0f3dd9bd6081d",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/native-driver/execute/arithmetic.llbc",
+      "sha256": "e210756e8febb92d39ae2e28f3c26a326051c1baf8146e6fb4be337518599ddd",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/candidate-row/arithmetic.llbc",
+      "sha256": "28bf61542fd44ae85e000b7651dd08f0df3fde65a53c0c5bfdf14644fce99c14",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1463,6 +1483,26 @@
       "native_item_id": "src/poly/dense.rs:155:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::eval_many_into",
       "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.eval_many_into",
       "generated_file": "bridge/Arithmetic/CandidateDenseEvalGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:166:method:bulksketch::decode::stages::Execution < F , K >::execute",
+      "generated_declaration": "bulksketch.decode.stages.Execution.execute",
+      "generated_file": "bridge/Arithmetic/ExecutionDriverGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:414:method:bulksketch::decode::stages::<Execution < F , K > as RowExecution>::run_next",
+      "generated_declaration": "bulksketch.decode.stages.Execution.Insts.BulksketchDecodeRowRowExecution.run_next",
+      "generated_file": "bridge/Arithmetic/ExecutionDriverGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:408:method:bulksketch::decode::stages::<Execution < F , K > as RowExecution>::next_stage",
+      "generated_declaration": "bulksketch.decode.stages.Execution.Insts.BulksketchDecodeRowRowExecution.next_stage",
+      "generated_file": "bridge/Arithmetic/ExecutionDriverGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/candidates.rs:65:function:bulksketch::sketch::candidates::row",
+      "generated_declaration": "bulksketch.sketch.candidates.row",
+      "generated_file": "bridge/Arithmetic/CandidateRowGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2273,6 +2313,24 @@
       ],
       "declaration_count": 1,
       "scope": "Original stock Dense evaluation delegates exactly to the supplied Horner slot."
+    },
+    {
+      "generated": "extraction/native-driver/execute/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/ExecutionDriverGenerated.lean",
+      "sha256": "055859eb1ffaefb6a5519ac02f84a4e5ee06060bf9d2e0e4447139834b24025c",
+      "raw_sha256": "49158a6b74d70209284d490d9a0ced4ff52f98cb5dd77dbc384806f1b63eeb8e",
+      "checker": "extraction/native-driver/project.py",
+      "declaration_count": 5,
+      "scope": "Three checked stock original driver bodies with original stage callees bound and explicit canonicalization slot."
+    },
+    {
+      "generated": "extraction/candidate-row/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CandidateRowGenerated.lean",
+      "sha256": "00f5e5c750b7095d87033eb1811e80492b97a6b326b68b48fc081fc3440a154e",
+      "raw_sha256": "b88864bf41e03e1bfc9f673d845653f05181b88adbf1508a461439821c0533d2",
+      "checker": "extraction/candidate-row/project.py",
+      "declaration_count": 1,
+      "scope": "Original stock candidate row offset pair and bounded packed slice."
     }
   ],
   "reviewed_translator_variants": [

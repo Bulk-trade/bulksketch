@@ -1,13 +1,13 @@
 {
   "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
-  "previous_proof_commit": "80836cd40df2469238922fbd4ed83e46a32a59fe",
+  "previous_proof_commit": "96ea5d63c4f1e3fbc4cc34f28e3fab2bb11850e0",
   "retained_native_executable_obligations": 344,
-  "generated_body_refinements_under_recorded_TCB": 151,
+  "generated_body_refinements_under_recorded_TCB": 155,
   "checked_stateful_llbc_refinements": 5,
   "whole_native_coverage_achieved": false,
   "open": [
-    "Candidate membership and caller-wide end-to-end traversal with source work budget",
-    "Complete native decoder correctness, verification and wire/API composition",
+    "Candidate normalization, actual driver traversal induction and source work-budget termination",
+    "Native decoder correctness, completed result and wire/API composition",
     "Remaining AVX tile and NEON bodies, Rust pointer provenance, and compiler-to-ISA correspondence"
   ]
 }

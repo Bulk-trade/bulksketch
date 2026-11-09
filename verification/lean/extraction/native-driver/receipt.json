@@ -1,0 +1,274 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "native_source_edited": false,
+  "native_llbc_edited": false,
+  "tools": {
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "source": {
+    "src/decode/stages.rs": "93825fcb5054e98e9af060a81da72d4770c29354d79822ccfc949cc55f6e9b23",
+    "src/decode/row.rs": "bf5ae89114d3bab811f1e0ca3b370cd916803bddd178471b3167e81b432df7bc",
+    "src/types.rs": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
+  },
+  "captures": {
+    "run-next": {
+      "commands": [
+        {
+          "step": "charon",
+          "argv": [
+            "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+            "cargo",
+            "--preset=aeneas",
+            "--sysroot=default",
+            "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/run-next/arithmetic.llbc",
+            "--start-from={impl bulksketch::decode::row::RowExecution for bulksketch::decode::stages::Execution}::run_next",
+            "--opaque=bulksketch::decode::stages::_::execute",
+            "--opaque={impl bulksketch::decode::row::RowExecution for bulksketch::decode::stages::Execution}::finish",
+            "--opaque={impl bulksketch::decode::row::RowExecution for bulksketch::decode::stages::Execution}::next_stage",
+            "--include={impl bulksketch::decode::row::RowExecution for bulksketch::decode::stages::Execution}::run_next",
+            "--",
+            "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+            "-p",
+            "bulksketch",
+            "--lib",
+            "--locked",
+            "--offline",
+            "--target",
+            "x86_64-apple-darwin"
+          ],
+          "environment": {
+            "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+            "CARGO_BUILD_JOBS": "1",
+            "CARGO_TARGET_DIR": "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-decoder-deflation/target"
+          },
+          "exit_code": 0
+        },
+        {
+          "step": "stock",
+          "argv": [
+            "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+            "-backend",
+            "lean",
+            "-checks",
+            "-sequential",
+            "-no-progress-bar",
+            "-print-error-emitters",
+            "-split-files",
+            "-dest",
+            "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/run-next/stock",
+            "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/run-next/arithmetic.llbc"
+          ],
+          "environment": {},
+          "exit_code": 0
+        },
+        {
+          "step": "replay",
+          "argv": [
+            "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+            "-backend",
+            "lean",
+            "-checks",
+            "-sequential",
+            "-no-progress-bar",
+            "-print-error-emitters",
+            "-split-files",
+            "-dest",
+            "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/run-next/replay",
+            "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/run-next/arithmetic.llbc"
+          ],
+          "environment": {},
+          "exit_code": 0
+        }
+      ],
+      "stock_replay_sha256": {
+        "Funs.lean": "0036fece76bf09c304d9b9dd0baa784d7e35ee62d73f68993b22b89722e661b2",
+        "FunsExternal_Template.lean": "fab8fc3e686c4887e4b2ec1e88f288b7f490234b640ea4f83bc91568397544bb",
+        "Types.lean": "a03c6d3fc1ad961535346461974ab0a01a17107296e710e931b6c946871bd2fa"
+      }
+    },
+    "next-stage": {
+      "commands": [
+        {
+          "step": "charon",
+          "argv": [
+            "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+            "cargo",
+            "--preset=aeneas",
+            "--sysroot=default",
+            "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/next-stage/arithmetic.llbc",
+            "--start-from={impl bulksketch::decode::row::RowExecution for bulksketch::decode::stages::Execution}::next_stage",
+            "--opaque=bulksketch::decode::stages::_::execute",
+            "--opaque={impl bulksketch::decode::row::RowExecution for bulksketch::decode::stages::Execution}::finish",
+            "--opaque={impl bulksketch::decode::row::RowExecution for bulksketch::decode::stages::Execution}::run_next",
+            "--include={impl bulksketch::decode::row::RowExecution for bulksketch::decode::stages::Execution}::next_stage",
+            "--",
+            "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+            "-p",
+            "bulksketch",
+            "--lib",
+            "--locked",
+            "--offline",
+            "--target",
+            "x86_64-apple-darwin"
+          ],
+          "environment": {
+            "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+            "CARGO_BUILD_JOBS": "1",
+            "CARGO_TARGET_DIR": "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-decoder-deflation/target"
+          },
+          "exit_code": 0
+        },
+        {
+          "step": "stock",
+          "argv": [
+            "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+            "-backend",
+            "lean",
+            "-checks",
+            "-sequential",
+            "-no-progress-bar",
+            "-print-error-emitters",
+            "-split-files",
+            "-dest",
+            "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/next-stage/stock",
+            "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/next-stage/arithmetic.llbc"
+          ],
+          "environment": {},
+          "exit_code": 0
+        },
+        {
+          "step": "replay",
+          "argv": [
+            "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+            "-backend",
+            "lean",
+            "-checks",
+            "-sequential",
+            "-no-progress-bar",
+            "-print-error-emitters",
+            "-split-files",
+            "-dest",
+            "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/next-stage/replay",
+            "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/next-stage/arithmetic.llbc"
+          ],
+          "environment": {},
+          "exit_code": 0
+        }
+      ],
+      "stock_replay_sha256": {
+        "Funs.lean": "ada9596cd2a9228d0e70c24ad4de2c4f0d2fee0ff555fcc5e1ab4f8a28447d6b",
+        "FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+        "Types.lean": "dbff35d723b9fcb9f7e9e81cc6b6f8b91accae76f0f20769c272ea09324b74da"
+      }
+    },
+    "execute": {
+      "commands": [
+        {
+          "step": "charon",
+          "argv": [
+            "/Users/junbug/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+            "cargo",
+            "--preset=aeneas",
+            "--sysroot=default",
+            "--dest-file=/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/execute/arithmetic.llbc",
+            "--start-from=bulksketch::decode::stages::_::execute",
+            "--opaque=bulksketch::decode::stages::_::reconstruct",
+            "--opaque=bulksketch::decode::stages::_::candidates",
+            "--opaque=bulksketch::decode::stages::_::deflate",
+            "--opaque=bulksketch::decode::stages::_::verify",
+            "--opaque=bulksketch::decode::stages::_::canonicalize",
+            "--opaque=bulksketch::decode::bm::locator",
+            "--opaque=bulksketch::decode::degree_probe::_::run",
+            "--opaque=bulksketch::decode::degree_probe::_::count",
+            "--opaque=bulksketch::decode::roots::_::run",
+            "--include=bulksketch::decode::stages::_::execute",
+            "--",
+            "--manifest-path=/Users/junbug/bulk/bulksketch/Cargo.toml",
+            "-p",
+            "bulksketch",
+            "--lib",
+            "--locked",
+            "--offline",
+            "--target",
+            "x86_64-apple-darwin"
+          ],
+          "environment": {
+            "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+            "CARGO_BUILD_JOBS": "1",
+            "CARGO_TARGET_DIR": "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-decoder-deflation/target"
+          },
+          "exit_code": 0
+        },
+        {
+          "step": "stock",
+          "argv": [
+            "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+            "-backend",
+            "lean",
+            "-checks",
+            "-sequential",
+            "-no-progress-bar",
+            "-print-error-emitters",
+            "-split-files",
+            "-dest",
+            "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/execute/stock",
+            "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/execute/arithmetic.llbc"
+          ],
+          "environment": {},
+          "exit_code": 0
+        },
+        {
+          "step": "replay",
+          "argv": [
+            "/Users/junbug/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+            "-backend",
+            "lean",
+            "-checks",
+            "-sequential",
+            "-no-progress-bar",
+            "-print-error-emitters",
+            "-split-files",
+            "-dest",
+            "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/execute/replay",
+            "/Users/junbug/bulk/bulksketch-proof-evidence-20261109-native-driver/execute/arithmetic.llbc"
+          ],
+          "environment": {},
+          "exit_code": 0
+        }
+      ],
+      "stock_replay_sha256": {
+        "Funs.lean": "49158a6b74d70209284d490d9a0ced4ff52f98cb5dd77dbc384806f1b63eeb8e",
+        "FunsExternal_Template.lean": "88678f056d6a4cf0420350148bc99dd97a87173a2781057dc74b5857f1dd3cfd",
+        "Types.lean": "f4e5afa4022e3ae7234267491de216bb8245dedb612d1b61cded7f727d57bdba"
+      }
+    }
+  },
+  "artifacts": {
+    "extraction/native-driver/run-next/stock.log": "42ca15a5388e18944181d54f0ad5f01d202e222ecda8802a358f11ed89597d1a",
+    "extraction/native-driver/run-next/charon.log": "9b7966c8e23b84e524a182c5e70fe72c8f6156d0b51240fce3ea519e59e7c828",
+    "extraction/native-driver/run-next/arithmetic.llbc": "bb7bf11a972a5f2b923e2ef4b0e735af9e13ad1d063ac2c92840f7441e00819c",
+    "extraction/native-driver/run-next/replay.log": "e40e6b22e0d6ffcaa37b3eadf28265e9b6344798ccc79ea0d875ae484052481a",
+    "extraction/native-driver/run-next/Arithmetic/Funs.lean": "0036fece76bf09c304d9b9dd0baa784d7e35ee62d73f68993b22b89722e661b2",
+    "extraction/native-driver/run-next/Arithmetic/FunsExternal_Template.lean": "fab8fc3e686c4887e4b2ec1e88f288b7f490234b640ea4f83bc91568397544bb",
+    "extraction/native-driver/run-next/Arithmetic/Types.lean": "a03c6d3fc1ad961535346461974ab0a01a17107296e710e931b6c946871bd2fa",
+    "extraction/native-driver/next-stage/stock.log": "e7e6a23dec03bd2d93f3acb2ee045da7424106fb9d9f84c35b8b6c01161ece83",
+    "extraction/native-driver/next-stage/charon.log": "1cb01f89c9f311451eedae9abf9ca0bc605dd175b2402b94370a3de5e4198f93",
+    "extraction/native-driver/next-stage/arithmetic.llbc": "d55f21aa4d182ce7d2b432f94e9fed0f3cbbe376c48c7c63c8b0f3dd9bd6081d",
+    "extraction/native-driver/next-stage/replay.log": "00bcbd68416dddf98005f1e8287d5ee2fa16da9a00aee8e7ec359dec870efe67",
+    "extraction/native-driver/next-stage/Arithmetic/Funs.lean": "ada9596cd2a9228d0e70c24ad4de2c4f0d2fee0ff555fcc5e1ab4f8a28447d6b",
+    "extraction/native-driver/next-stage/Arithmetic/FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+    "extraction/native-driver/next-stage/Arithmetic/Types.lean": "dbff35d723b9fcb9f7e9e81cc6b6f8b91accae76f0f20769c272ea09324b74da",
+    "extraction/native-driver/execute/stock.log": "32b411ee7b4ccb20f46c991372bb9fa36baa6612e6fa39079d5749225b4173b8",
+    "extraction/native-driver/execute/charon.log": "f024464fd2a1c89e142a778b7ea382db112758ec7e77a97bee34746c127d09a9",
+    "extraction/native-driver/execute/arithmetic.llbc": "e210756e8febb92d39ae2e28f3c26a326051c1baf8146e6fb4be337518599ddd",
+    "extraction/native-driver/execute/replay.log": "8c7051e330b9f8db3524459380c13ac3c04205c7ed458bdbdd63290263c77f15",
+    "extraction/native-driver/execute/Arithmetic/Funs.lean": "49158a6b74d70209284d490d9a0ced4ff52f98cb5dd77dbc384806f1b63eeb8e",
+    "extraction/native-driver/execute/Arithmetic/FunsExternal_Template.lean": "88678f056d6a4cf0420350148bc99dd97a87173a2781057dc74b5857f1dd3cfd",
+    "extraction/native-driver/execute/Arithmetic/Types.lean": "f4e5afa4022e3ae7234267491de216bb8245dedb612d1b61cded7f727d57bdba"
+  }
+}

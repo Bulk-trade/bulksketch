@@ -1388,6 +1388,42 @@
     {
       "challenge": "BulksketchBridge.CandidateOuter.ActualNativeCandidateOuter",
       "theorem": "BulksketchBridge.CandidateOuter.native_candidate_outer"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualExecute",
+      "theorem": "BulksketchBridge.ExecutionDriver.execute_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualRunNext",
+      "theorem": "BulksketchBridge.ExecutionDriver.run_next_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNextStage",
+      "theorem": "BulksketchBridge.ExecutionDriver.next_stage_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.CandidateNormalization.ActualNativeCandidateRow",
+      "theorem": "BulksketchBridge.CandidateNormalization.native_candidate_row"
+    },
+    {
+      "challenge": "BulksketchBridge.CandidateOuter.ActualNativeCandidateDistinct",
+      "theorem": "BulksketchBridge.CandidateOuter.native_candidate_distinct"
+    },
+    {
+      "challenge": "BulksketchBridge.CandidateOuter.ActualNativeCandidateNoOverhit",
+      "theorem": "BulksketchBridge.CandidateOuter.native_candidate_no_overhit"
+    },
+    {
+      "challenge": "BulksketchBridge.CandidateOuter.ActualNativeCandidateSuccessHandoff",
+      "theorem": "BulksketchBridge.CandidateOuter.native_candidate_success_handoff"
+    },
+    {
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNativeCandidateDeflateDriver",
+      "theorem": "BulksketchBridge.ExecutionDriver.native_candidate_deflate_driver"
+    },
+    {
+      "challenge": "BulksketchBridge.RootEnumerate.ActualNativeAffineEnumerationComplete",
+      "theorem": "BulksketchBridge.RootEnumerate.native_affine_enumeration_complete"
     }
   ],
   "refinements": [
@@ -3774,6 +3810,62 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Exact original stock call delegates to the kernel Horner method on every input."
+    },
+    {
+      "label": "Execution::execute [original source]",
+      "native_item_id": "src/decode/stages.rs:166:method:bulksketch::decode::stages::Execution < F , K >::execute",
+      "source_line_span_sha256": "e5ebf1c991caec59aaa9d68d1880d5f1adfc5ccc635275ba4e6c58ad03307ecf",
+      "theorem": "BulksketchBridge.ExecutionDriver.execute_refines",
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualExecute",
+      "generated_declaration": "bulksketch.decode.stages.Execution.execute",
+      "generated_file": "bridge/Arithmetic/ExecutionDriverGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/ExecutionDriverGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original stage dispatch, degree probe, BM locator leading guard and returned workspace, state and work frame. Explicit canonicalization callback and checked Rust core adapters."
+    },
+    {
+      "label": "Execution::run_next [original source]",
+      "native_item_id": "src/decode/stages.rs:414:method:bulksketch::decode::stages::<Execution < F , K > as RowExecution>::run_next",
+      "source_line_span_sha256": "d8f121d52791dec8de65126e44315ade8d3dc602a219b7a4cf329e9d344c35fb",
+      "theorem": "BulksketchBridge.ExecutionDriver.run_next_refines",
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualRunNext",
+      "generated_declaration": "bulksketch.decode.stages.Execution.Insts.BulksketchDecodeRowRowExecution.run_next",
+      "generated_file": "bridge/Arithmetic/ExecutionDriverGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/ExecutionDriverGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact native state commit, progress counters, latched error and invalid terminal call. Original execute is bound."
+    },
+    {
+      "label": "Execution::next_stage [original source]",
+      "native_item_id": "src/decode/stages.rs:408:method:bulksketch::decode::stages::<Execution < F , K > as RowExecution>::next_stage",
+      "source_line_span_sha256": "a2603bc4bf828719dd3f5c84e38e8b043856798fd76817dd0389eab09c4f9b00",
+      "theorem": "BulksketchBridge.ExecutionDriver.next_stage_refines",
+      "challenge": "BulksketchBridge.ExecutionDriver.ActualNextStage",
+      "generated_declaration": "bulksketch.decode.stages.Execution.Insts.BulksketchDecodeRowRowExecution.next_stage",
+      "generated_file": "bridge/Arithmetic/ExecutionDriverGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/ExecutionDriverGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact native next stage for every execution state, including all terminal branches."
+    },
+    {
+      "label": "candidates::row [original source]",
+      "native_item_id": "src/sketch/candidates.rs:65:function:bulksketch::sketch::candidates::row",
+      "source_line_span_sha256": "bfa53693f8603218a4a8dfff7500d96c26fe093da0d9eed74cef2d2dd1971076",
+      "theorem": "BulksketchBridge.CandidateNormalization.native_candidate_row",
+      "challenge": "BulksketchBridge.CandidateNormalization.ActualNativeCandidateRow",
+      "generated_declaration": "bulksketch.sketch.candidates.row",
+      "generated_file": "bridge/Arithmetic/CandidateRowGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/CandidateRowGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original packed row slice for admitted row index and offsets, including checked offset arithmetic."
     }
   ],
   "stateful_llbc_refinements": [

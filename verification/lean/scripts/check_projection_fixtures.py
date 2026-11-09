@@ -417,6 +417,14 @@ PROJECTIONS = [
            "backendcontractBulkKernelsInst.horner_many coefficients points out",
            "backendcontractBulkKernelsInst.horner_many points coefficients out"),
       )),
+    ("native-driver", "extraction/native-driver/project.py", "extraction/native-driver/receipt.json",
+     "extraction/native-driver/execute/Arithmetic/Funs.lean", "bridge/Arithmetic/ExecutionDriverGenerated.lean",
+     "if i = 0#u64", "if i != 0#u64", "compiled decoder driver projection differs", None, None,
+     ["extraction/root-setup/receipt.json", "bridge/Arithmetic/ReconstructionTypes.lean"]),
+    ("candidate-row", "extraction/candidate-row/project.py", "extraction/candidate-row/receipt.json",
+     "extraction/candidate-row/Arithmetic/Funs.lean", "bridge/Arithmetic/CandidateRowGenerated.lean",
+     "let i ← 2#usize * raw_count", "let i ← 3#usize * raw_count", "compiled candidate row projection differs",
+     None, None, ["bridge/Arithmetic/Funs.lean", "bridge/Arithmetic/MapsRuntime.lean"]),
     ("native-deflate", "extraction/native-deflate/project.py", "extraction/native-deflate/receipt.json",
      "extraction/native-deflate/Arithmetic/Funs.lean", "bridge/Arithmetic/NativeDeflateGenerated.lean",
      "let i4 ← i - 1#usize", "let i4 ← i + 1#usize", "compiled deflate projection differs",
@@ -685,6 +693,9 @@ def main():
         if label == "candidates-outer":
             cases.append(("wrong-capture-mode", receipt_path, '"native_llbc_edited": false',
                           '"native_llbc_edited": true', "candidate variant receipt differs"))
+        if label == "native-driver":
+            cases.append(("unchecked-replay", receipt_path, '"-checks"', '"-no-checks"',
+                          "decoder driver checked Aeneas command differs"))
         if label == "native-deflate":
             cases.append(("wrong-variant", receipt_path, '"checked-native-deflate-loan-retry-v1"',
                           '"unreviewed-deflate-variant"', "invalid deflate translator receipt"))
@@ -712,7 +723,7 @@ def main():
                              "affine-subspaces", "root-prepare-affine", "root-enumerate-affine", "dense-div-rem",
                              "affine-enumerate", "affine-selector", "avx-multiply-linear", "affine-solve-map",
                              "avx-horner", "affine-multiple", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
-                             "avx-insert-insert18", "avx-insert-horizontal", "avx-insert-dispatch"}:
+                             "avx-insert-insert18", "avx-insert-horizontal", "avx-insert-dispatch", "native-driver", "candidate-row"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

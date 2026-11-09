@@ -140,3 +140,6 @@ import BulksketchBridge.RootNativeGcdReborrow
 import BulksketchBridge.RootNativeLeafComplete
 import BulksketchBridge.RootNativeClosedLeafVerify
 import BulksketchBridge.CandidateEntry
+import BulksketchBridge.NativeCandidateDeflateDriver
+import BulksketchBridge.CandidateRow
+import BulksketchBridge.RootNativeAffineEnumerationComplete

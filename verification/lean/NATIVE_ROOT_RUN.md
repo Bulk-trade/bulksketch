@@ -145,7 +145,12 @@ The original candidate stage checks the native charge, bounded chunks,
 the Dense delegate and zero-evaluation Zip scan. An excess hit returns
 the original error with prior writes intact. A scoped checked translator
 pass moves each iterator's exact cleanup before its join and carries the
-early return through the two loops.
+early return through the two loops. Distinct supplied hints on a
+fresh scan cannot overflow the locator degree. The exact candidate
+and deflation calls use the original driver transitions and return the
+admitted residual product. The checked stock driver also covers the
+degree probe, original BM guard, state commit, progress and latched
+error; the canonicalization call remains explicit.
 
 The AVX square finite-heap theorem composes the zero fill, scalar
 coefficient seeds, and the original masked LLBC load/store block
