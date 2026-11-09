@@ -1304,6 +1304,42 @@
     {
       "challenge": "BulksketchBridge.AvxInsertionBases.ActualAllocatedStaticEncode18",
       "theorem": "BulksketchBridge.AvxInsertionBases.allocated_static_encode_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Deflation.ActualNativeDeflateFinish",
+      "theorem": "BulksketchBridge.Deflation.native_deflate_finish"
+    },
+    {
+      "challenge": "BulksketchBridge.Deflation.ActualNativeDeflateOuter",
+      "theorem": "BulksketchBridge.Deflation.native_deflate_outer"
+    },
+    {
+      "challenge": "BulksketchBridge.RootTrace.ActualNativeTraceCheckAccept",
+      "theorem": "BulksketchBridge.RootTrace.native_trace_check_accepts"
+    },
+    {
+      "challenge": "BulksketchBridge.RootRun.ActualNativeTraceDispatch",
+      "theorem": "BulksketchBridge.RootRun.native_trace_dispatch"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxInsert18.ActualInsert18",
+      "theorem": "BulksketchBridge.AvxInsert18.insert_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxHorizontalXor.ActualHorizontalXor",
+      "theorem": "BulksketchBridge.AvxHorizontalXor.horizontal_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxInsertDispatch.ActualInsertDispatch",
+      "theorem": "BulksketchBridge.AvxInsertDispatch.public_dispatch_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.AvxInsertDispatch.ActualPublicSingle18",
+      "theorem": "BulksketchBridge.AvxInsertDispatch.public_single18_refines"
+    },
+    {
+      "challenge": "BulksketchBridge.Deflation.ActualNativeDeflateDistinct",
+      "theorem": "BulksketchBridge.Deflation.native_deflate_distinct"
     }
   ],
   "refinements": [
@@ -3588,6 +3624,63 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "scope": "Original GF64 selection on every usize degree, including exact mask 0x7fff8 and the degree interval 3 through 18."
+    },
+    {
+      "label": "Execution::deflate [original source]",
+      "native_item_id": "src/decode/stages.rs:304:method:bulksketch::decode::stages::Execution < F , K >::deflate",
+      "source_line_span_sha256": "022c5660bd9210710732e01d45634c04737879b381b626e304a8dee7826bee66",
+      "theorem": "BulksketchBridge.Deflation.native_deflate_finish",
+      "challenge": "BulksketchBridge.Deflation.ActualNativeDeflateFinish",
+      "generated_declaration": "bulksketch.decode.stages.Execution.deflate",
+      "generated_file": "bridge/Arithmetic/NativeDeflateGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/NativeDeflateGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact checked charge and all original seed, reverse loop, rejection and success frames. Successful deflation enters original Roots.start using native affine preference. On rejection the first failed candidate is not a root of the active locator.",
+      "translator_variant": "checked-native-deflate-loan-retry-v1"
+    },
+    {
+      "label": "AVX-512 insert_18 [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:541:function:bulksketch::backend::x86_vpclmul512::insert_18",
+      "source_line_span_sha256": "e75dcf8c82b77058674c33aa6d6592bfcfa93afb05fc9cf9b069c99b0d304f3f",
+      "theorem": "BulksketchBridge.AvxInsert18.insert_refines",
+      "challenge": "BulksketchBridge.AvxInsert18.ActualInsert18",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert_18",
+      "generated_file": "bridge/Arithmetic/AvxInsert18Generated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxInsert18Generated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact native capacity-18 single-ID XOR insertion, word and suffix preservation, under admitted masked loads and stores."
+    },
+    {
+      "label": "AVX-512 horizontal_xor [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:252:function:bulksketch::backend::x86_vpclmul512::horizontal_xor",
+      "source_line_span_sha256": "0a805466f2a0a41d4f80f00e2e8551990c9fd716d231ca482ee00843b1f3d7f3",
+      "theorem": "BulksketchBridge.AvxHorizontalXor.horizontal_refines",
+      "challenge": "BulksketchBridge.AvxHorizontalXor.ActualHorizontalXor",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.horizontal_xor",
+      "generated_file": "bridge/Arithmetic/AvxHorizontalXorGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxHorizontalXorGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original shuffle and extraction path gives the XOR of all eight register lanes."
+    },
+    {
+      "label": "AVX-512 public insert_nonzero [original source]",
+      "native_item_id": "src/backend/x86_vpclmul512.rs:133:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::insert_nonzero",
+      "source_line_span_sha256": "f77ba2c3014935616a9721aa7a4cc3c5f0ec88438dd9e7ced116b3002762a38f",
+      "theorem": "BulksketchBridge.AvxInsertDispatch.public_dispatch_refines",
+      "challenge": "BulksketchBridge.AvxInsertDispatch.ActualInsertDispatch",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.insert_nonzero",
+      "generated_file": "bridge/Arithmetic/AvxInsertDispatchGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/AvxInsertDispatchGenerated.lean"
+      ],
+      "source_linkage": "bridge/source-linkage.json",
+      "scope": "Exact original GF64 public wrapper on both empty inputs and original free dispatch on nonempty inputs, with explicit leaf slots."
     }
   ],
   "stateful_llbc_refinements": [

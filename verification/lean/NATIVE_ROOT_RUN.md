@@ -118,6 +118,20 @@ For the non-affine trace branch, two distinct roots have different binary
 trace bits in at least one of the 64 cached directions. On a nonproper GCD
 the current trace bit agrees across the entire factor, extending the
 earlier-direction invariant and excluding the terminal retry rejection.
+For a split simple factor, the trace polynomial is idempotent modulo
+the factor. The original paid split check compares two exact padded
+slices representing that same polynomial. Both the already-checked
+and first-check paths enter the native GCD stage with its classifier.
+
+The original deflation stage performs the leading-coefficient seed,
+reverse synthetic division, and exact remainder test for each candidate.
+The charged entry checks the admitted scratch and restores both windows.
+A failed root leaves its current locator in place and returns the source
+rejection. Success uses the original traversal start and affine choice. Distinct
+valid candidate roots exclude rejection and give an exact factorization
+of the original locator into the removed linear factors and residual.
+The checked translator variant ends the one shared roots iterator loan
+at the exact source return join.
 
 The AVX square finite-heap theorem composes the zero fill, scalar
 coefficient seeds, and the original masked LLBC load/store block
@@ -155,6 +169,10 @@ original Frobenius square. The per-cell field proof and exact immutable
 INSERT_BASES initializer supply the lookup and encoder's field values.
 The allocated encoder proof composes the admitted table and output views,
 keeps the table bytes unchanged and frames bytes outside the output prefix.
+The original single-ID capacity-18 insertion and horizontal XOR now
+have exact proofs. The public GF64 selector is checked through its
+original free dispatcher, with other leaf kernels explicit.
+The degree-18 rebuilt verifier's multi-ID seed selects the tile path.
 
 Run the complete gate from `verification/lean`.
 

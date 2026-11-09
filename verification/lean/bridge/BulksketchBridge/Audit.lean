@@ -688,7 +688,25 @@ run_cmd do
     (``BulksketchBridge.AvxInsertionBases.ActualStaticEncode18,
       ``BulksketchBridge.AvxInsertionBases.static_encode_refines),
     (``BulksketchBridge.AvxInsertionBases.ActualAllocatedStaticEncode18,
-      ``BulksketchBridge.AvxInsertionBases.allocated_static_encode_refines)
+      ``BulksketchBridge.AvxInsertionBases.allocated_static_encode_refines),
+    (``BulksketchBridge.Deflation.ActualNativeDeflateFinish,
+      ``BulksketchBridge.Deflation.native_deflate_finish),
+    (``BulksketchBridge.Deflation.ActualNativeDeflateOuter,
+      ``BulksketchBridge.Deflation.native_deflate_outer),
+    (``BulksketchBridge.RootTrace.ActualNativeTraceCheckAccept,
+      ``BulksketchBridge.RootTrace.native_trace_check_accepts),
+    (``BulksketchBridge.RootRun.ActualNativeTraceDispatch,
+      ``BulksketchBridge.RootRun.native_trace_dispatch),
+    (``BulksketchBridge.AvxInsert18.ActualInsert18,
+      ``BulksketchBridge.AvxInsert18.insert_refines),
+    (``BulksketchBridge.AvxHorizontalXor.ActualHorizontalXor,
+      ``BulksketchBridge.AvxHorizontalXor.horizontal_refines),
+    (``BulksketchBridge.AvxInsertDispatch.ActualInsertDispatch,
+      ``BulksketchBridge.AvxInsertDispatch.public_dispatch_refines),
+    (``BulksketchBridge.AvxInsertDispatch.ActualPublicSingle18,
+      ``BulksketchBridge.AvxInsertDispatch.public_single18_refines),
+    (``BulksketchBridge.Deflation.ActualNativeDeflateDistinct,
+      ``BulksketchBridge.Deflation.native_deflate_distinct)
   ]
   for (challenge, solution) in pairs do
     let expected ← getConstInfo challenge

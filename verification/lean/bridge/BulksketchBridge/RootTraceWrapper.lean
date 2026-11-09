@@ -243,7 +243,7 @@ private theorem slice_ne (left right : Slice U64) :
     simpa using meaning
   exact normal.trans (congrArg Result.ok exactResult)
 
-theorem trace_split_checked_refines (square : RootTraceRuntime.ModularSquare) {K : Type}
+theorem trace_split_checked_evidence (square : RootTraceRuntime.ModularSquare) {K : Type}
     (backend : BulkKernels K bulksketch.field.Gf64) (self : Roots) (buffers : FactorWork)
     (meter paidMeter splitMeter : WorkMeter)
     (charged : bulksketch.decode.roots.charge meter (.Trace self.degree) = .ok (.Ok (), paidMeter))
@@ -268,7 +268,13 @@ theorem trace_split_checked_refines (square : RootTraceRuntime.ModularSquare) {K
       length.val ≤ 64 ∧ cachePrefix self.splitter_seed basis length.val ∧
       lengthOut.val ≤ traceOut.length ∧ traceOut.length = buffers.trace.length ∧
       gcdOut.length = buffers.gcd.length ∧ rawOut.length = buffers.raw.length ∧
-      traceInvariant buffers.modulus (basisWord self.splitter_seed self.direction.val) 64 lengthOut traceOut := by
+      traceInvariant buffers.modulus (basisWord self.splitter_seed self.direction.val) 64 lengthOut traceOut ∧
+      ∃ (before splitDst : Slice U64) (splitInputRaw : Slice RawProduct) (splitLen : Usize),
+        before.length = buffers.trace.length ∧ splitDst.length = buffers.gcd.length ∧
+        splitInputRaw.length = buffers.raw.length ∧
+        traceOut.val = before.val.take lengthOut.val ++ List.replicate (before.length - lengthOut.val) 0#u64 ∧
+        square gf64 backend (prefixSlice before lengthOut.val) buffers.modulus buffers.table splitDst splitInputRaw =
+          .ok (splitLen, gcdOut, rawOut) := by
   obtain ⟨attempts, attemptNormal, attemptVal⟩ := RawMulTable.normal_of_spec _ _
     (Usize.add_spec (x := self.attempts) (y := 1#usize) (by exact counterFits))
   obtain ⟨oldLength, oldBasis, getNormal, positive, width, cacheCorrect, oldExact⟩ :=
@@ -326,10 +332,20 @@ theorem trace_split_checked_refines (square : RootTraceRuntime.ModularSquare) {K
     intro x root
     rw [samePrefix]
     exact correct x root
+  have padValue : padded.val =
+      traceOut.val.take out.val ++ List.replicate (traceOut.length - out.val) 0#u64 := by
+    change (back (zeroWords tail)).val = _
+    rw [restore]
+    have endDrop : List.drop (out.val + (traceOut.val.length - out.val)) traceOut.val = [] :=
+      List.drop_eq_nil_iff.mpr (by have bound : out.val ≤ traceOut.val.length := outFits; omega)
+    have width : traceOut.length = traceOut.val.length := rfl
+    simp only [List.setSlice!, zeroWords, Slice.from_val, tailLength, width, List.length_replicate,
+      Nat.min_self, List.take_replicate, Nat.min_self, endDrop, List.append_nil]
   have fillTail := fill_zero tail
   have compare := slice_ne (prefixSlice splitGcd self.degree.val) padded
   refine ⟨attempts, length, basis, out, padded, splitGcd, splitRaw, ?_, ?_, directionLive, exactBasisLength, finalWidth, finalCorrect,
-    by omega, paddedLen.trans traceWidth, splitGcdLen.trans gcdLen, splitRawLen.trans rawLen, padCorrect⟩
+    by omega, paddedLen.trans traceWidth, splitGcdLen.trans gcdLen, splitRawLen.trans rawLen, padCorrect,
+    traceOut, gcdOut, rawOut, splitLen, traceWidth, gcdLen, rawLen, padValue, splitNormal⟩
   · simp only [Roots.trace, charged, bind_ok, core.result.Result.Insts.CoreOpsTry.branch]
     dsimp! only
     simp only [attemptNormal, getNormal, bind_ok]
@@ -359,6 +375,40 @@ theorem trace_split_checked_refines (square : RootTraceRuntime.ModularSquare) {K
     · simp [equal]
       rfl
   · exact attemptVal
+
+
+theorem trace_split_checked_refines (square : RootTraceRuntime.ModularSquare) {K : Type}
+    (backend : BulkKernels K bulksketch.field.Gf64) (self : Roots) (buffers : FactorWork)
+    (meter paidMeter splitMeter : WorkMeter)
+    (charged : bulksketch.decode.roots.charge meter (.Trace self.degree) = .ok (.Ok (), paidMeter))
+    (splitPaid : bulksketch.decode.roots.charge paidMeter (.SplitCheck self.degree) =
+      .ok (.Ok (), splitMeter))
+    (degreeFits : self.degree.val ≤ buffers.gcd.length)
+    (checked : self.checked = false) (counterFits : self.attempts.val + 1 ≤ Usize.max)
+    (directionFits : self.direction.val < 64) (cached : cacheWellFormed self buffers)
+    (traceFits : 2 ≤ buffers.trace.length) (gcdFits : buffers.trace.length ≤ buffers.gcd.length)
+    (rawFits : 2 * buffers.trace.length < buffers.raw.length)
+    (squareLaw : ModularSquareLaw square backend buffers.modulus buffers.table buffers.trace.length) :
+    ∃ attempts length basis lengthOut traceOut gcdOut rawOut,
+      let accepted := decide (prefixSlice gcdOut self.degree.val = traceOut)
+      let reply := if accepted then .Ok .Gcd else .Err .NotSplit
+      Roots.trace square gf64 backend self buffers meter =
+        .ok (.Ok reply, { self with attempts, trace_len := lengthOut, checked := accepted },
+          { buffers with trace := traceOut, gcd := gcdOut, raw := rawOut, basis := ⟨some basis, length⟩ },
+          id, splitMeter) ∧
+      attempts.val = self.attempts.val + 1 ∧
+      self.direction.val < length.val ∧
+      length.val = max (cacheInitialLength buffers) (self.direction.val + 1) ∧
+      length.val ≤ 64 ∧ cachePrefix self.splitter_seed basis length.val ∧
+      lengthOut.val ≤ traceOut.length ∧ traceOut.length = buffers.trace.length ∧
+      gcdOut.length = buffers.gcd.length ∧ rawOut.length = buffers.raw.length ∧
+      traceInvariant buffers.modulus (basisWord self.splitter_seed self.direction.val) 64 lengthOut traceOut := by
+  obtain ⟨attempts, length, basis, size, trace, gcd, raw, ran, attempt, live, cacheLen, cacheBound, cached,
+    sizeBound, traceLen, gcdLen, rawLen, invariant, _⟩ :=
+    trace_split_checked_evidence square backend self buffers meter paidMeter splitMeter charged splitPaid
+      degreeFits checked counterFits directionFits cached traceFits gcdFits rawFits squareLaw
+  exact ⟨attempts, length, basis, size, trace, gcd, raw, ran, attempt, live, cacheLen, cacheBound, cached,
+    sizeBound, traceLen, gcdLen, rawLen, invariant⟩
 
 private theorem multiply_price (left right : U64) :
     bulksketch.decode.work.mul left right = .ok (WorkSchedule.checkedCost (left.val * right.val)) :=

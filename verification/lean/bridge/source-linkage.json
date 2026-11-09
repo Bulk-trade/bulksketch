@@ -591,6 +591,31 @@
       "path": "extraction/avx-insertion-bases-static/arithmetic.llbc",
       "sha256": "a2b5079a66fd837ec5d6a7e25792028a9d007007a8810c6762943dc076cfca8f",
       "has_errors": false
+    },
+    {
+      "path": "extraction/native-deflate/arithmetic.llbc",
+      "sha256": "4f9ff487b79d357e2caea38fe46f8677d017e067fe37a917e53aa19740aedbc2",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-insert/insert18/arithmetic.llbc",
+      "sha256": "9314310f8541176e45001c5cea75db3ce45ce381e12cd38caf545f982fbdec60",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-insert/horizontal/arithmetic.llbc",
+      "sha256": "c88e1b3c662ffaa9ada126b793098e2689c4e6fba6038c37e5ac108ef048bd9a",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-insert/free-dispatch/arithmetic.llbc",
+      "sha256": "283d3fc9983da2d79c2b1bd776aea71eea54ed90f12fc0f9572e9e79b57eaa7b",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-insert/trait-dispatch/arithmetic.llbc",
+      "sha256": "6b8ddd9a2bf43a14a92a12bb9b77b91eb33e38d4a88f0dc6980bc6aabd962e71",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -1393,6 +1418,26 @@
       "native_item_id": "src/decode/affine.rs:64:function:bulksketch::decode::affine::preferred",
       "generated_declaration": "bulksketch.decode.affine.preferred",
       "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:304:method:bulksketch::decode::stages::Execution < F , K >::deflate",
+      "generated_declaration": "bulksketch.decode.stages.Execution.deflate",
+      "generated_file": "bridge/Arithmetic/NativeDeflateGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:541:function:bulksketch::backend::x86_vpclmul512::insert_18",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert_18",
+      "generated_file": "bridge/Arithmetic/AvxInsert18Generated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:252:function:bulksketch::backend::x86_vpclmul512::horizontal_xor",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.horizontal_xor",
+      "generated_file": "bridge/Arithmetic/AvxHorizontalXorGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:133:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::insert_nonzero",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.insert_nonzero",
+      "generated_file": "bridge/Arithmetic/AvxInsertDispatchGenerated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
@@ -2113,6 +2158,55 @@
       "checker": "extraction/avx-insertion-bases-static/project.py",
       "declaration_count": 1,
       "scope": "Original immutable INSERT_BASES initializer, retaining the exact original call to the stock table generator."
+    },
+    {
+      "generated": "extraction/native-deflate/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/NativeDeflateGenerated.lean",
+      "sha256": "babaf01984c12d73517a5c76f1618fd532c311b4c9c34ce9818a84d25652ee5b",
+      "raw_sha256": "e41d85f34becf7435c75136c0bf6b4eff9a8b1f14c806ef34cfea6a2e00dd1b9",
+      "checker": "extraction/native-deflate/project.py",
+      "declaration_count": 5,
+      "scope": "Original reverse synthetic-division loop, outer candidate loop, and deflation entry with exact loan-ending retry.",
+      "translator_variant": "checked-native-deflate-loan-retry-v1"
+    },
+    {
+      "generated": "extraction/avx-insert/insert18/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxInsert18Generated.lean",
+      "sha256": "a153bbd8366845259535a8ebb82fc23cec00659a09727021beb8d38492308e0f",
+      "raw_sha256": "64d7512b1c789552557d98725ce30bb2dc886884f86dea82cea1fa868f6f1f7a",
+      "checker": "extraction/avx-insert/project.py",
+      "checker_args": [
+        "--entry",
+        "insert18"
+      ],
+      "declaration_count": 1,
+      "scope": "Exact native capacity-18 single-ID XOR insertion, word and suffix preservation, under admitted masked loads and stores."
+    },
+    {
+      "generated": "extraction/avx-insert/horizontal/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxHorizontalXorGenerated.lean",
+      "sha256": "0578f61b1ccb42ef63ad5cc48cf634808dddc8731fac3d02bde921221bcd7bc9",
+      "raw_sha256": "5d644bb10295a54e4f40a184805b4a579f6c10e8c0e8043921ca7b938644275a",
+      "checker": "extraction/avx-insert/project.py",
+      "checker_args": [
+        "--entry",
+        "horizontal"
+      ],
+      "declaration_count": 1,
+      "scope": "Exact original shuffle and extraction path gives the XOR of all eight register lanes."
+    },
+    {
+      "generated": "extraction/avx-insert/free-dispatch/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxInsertDispatchGenerated.lean",
+      "sha256": "66704356b73df6580c69d7220489e68704598b82fcc3af98ccbd0a89cb16e1d7",
+      "raw_sha256": "cf8ac6e1e39e358276a6584b4a15a3967b4492817f3edefc171d1a99cf9eda3f",
+      "checker": "extraction/avx-insert/project.py",
+      "checker_args": [
+        "--entry",
+        "dispatch"
+      ],
+      "declaration_count": 10,
+      "scope": "Exact original GF64 public wrapper on both empty inputs and original free dispatch on nonempty inputs, with explicit leaf slots."
     }
   ],
   "reviewed_translator_variants": [
@@ -2232,6 +2326,15 @@
       "receipt": "extraction/affine-multiple/receipt.json",
       "mandatory_checks": true,
       "scope": "Exact checked affine multiple capture. At the original iterator storage deaths, trace matching terminal borrowers and both Zip loan owners. Preserve ended projection history and stock borrow checks."
+    },
+    {
+      "id": "checked-native-deflate-loan-retry-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/native-deflate/checked-native-deflate-loan-retry.patch",
+      "patch_sha256": "0e6309acb7a82f7012d4bec0fe5c5c5a7ed58f9d177077f0927eaef5e3ce37b3",
+      "receipt": "extraction/native-deflate/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact original deflate return join. End the sole roots iterator shared loan using the existing checked match retry."
     }
   ],
   "diagnostic_generated_projections": [

@@ -128,3 +128,9 @@ import BulksketchBridge.AffinePredictor
 import BulksketchBridge.RootNativeProperDivide
 import BulksketchBridge.RootTraceProgress
 import BulksketchBridge.AvxInsertionBasesStatic
+import BulksketchBridge.NativeDeflateFinish
+import BulksketchBridge.RootNativeTraceDispatch
+import BulksketchBridge.AvxInsert18
+import BulksketchBridge.AvxHorizontalXor
+import BulksketchBridge.AvxInsertDispatch
+import BulksketchBridge.NativeDeflateResidual

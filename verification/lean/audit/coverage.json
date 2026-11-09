@@ -2151,7 +2151,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxInsertDispatch.public_dispatch_refines",
+        "scope": "Exact original GF64 public wrapper on both empty inputs and original free dispatch on nonempty inputs, with explicit leaf slots.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:144:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::encode_nonzero",
@@ -2369,7 +2376,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxHorizontalXor.horizontal_refines",
+        "scope": "Exact original shuffle and extraction path gives the XOR of all eight register lanes.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:25:type_alias:bulksketch::backend::x86_vpclmul512::ScalarArithmetic",
@@ -2868,7 +2882,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.AvxInsert18.insert_refines",
+        "scope": "Exact native capacity-18 single-ID XOR insertion, word and suffix preservation, under admitted masked loads and stores.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/backend/x86_vpclmul512.rs:551:function:bulksketch::backend::x86_vpclmul512::encode_18",
@@ -5515,7 +5536,14 @@
       "implementation_correspondence_status": "not_proved",
       "proof_status": "unproved",
       "lean_declarations": [],
-      "trusted_assumptions": []
+      "trusted_assumptions": [],
+      "generated_body_refinement_evidence": {
+        "theorem": "BulksketchBridge.Deflation.native_deflate_finish",
+        "scope": "Exact checked charge and all original seed, reverse loop, rejection and success frames. Successful deflation enters original Roots.start using native affine preference. On rejection the first failed candidate is not a root of the active locator.",
+        "source_linkage": "bridge/source-linkage.json",
+        "registry": "bridge/obligations.json",
+        "verification": "bridge/audit/results/verification.json"
+      }
     },
     {
       "id": "src/decode/stages.rs:334:method:bulksketch::decode::stages::Execution < F , K >::verify",
@@ -12074,8 +12102,8 @@
     "completed_rust_refinements": 0,
     "native_scope_dropped_items": 0,
     "full_implementation_coverage_achieved": false,
-    "note": "All 344 native executable obligations retained. This checkpoint adds the original affine predictor and preference bodies, and strengthens the native start, proper division, trace retry, and AVX static table composition. Complete depth-first traversal, decoder completeness, remaining backend bodies, Rust provenance, and compiler-to-ISA correspondence remain open.",
-    "checked_generated_body_refinements_under_recorded_TCB": 144,
+    "note": "All 344 native executable obligations retained. The original deflation body is checked through both final branches. Native trace acceptance follows from polynomial idempotence on a split simple factor. Complete candidate, root traversal and decoder composition, remaining backend bodies, Rust provenance, and compiler-to-ISA correspondence remain open.",
+    "checked_generated_body_refinements_under_recorded_TCB": 148,
     "field_algebra_evidence": {
       "modulus_irreducible": "BulksketchBridge.Algebra.Gf64.exactPolynomialIrreducible",
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
@@ -12205,7 +12233,9 @@
         "BulksketchBridge.AffinePreferred.native_preferred_mask",
         "BulksketchBridge.RootDivide.native_proper_gcd_has_quotient",
         "BulksketchBridge.RootDivide.native_proper_divide",
-        "BulksketchBridge.RootRun.trace_gcd_retry"
+        "BulksketchBridge.RootRun.trace_gcd_retry",
+        "BulksketchBridge.RootTrace.native_trace_check_accepts",
+        "BulksketchBridge.RootRun.native_trace_dispatch"
       ]
     },
     "masked_memory_evidence": {

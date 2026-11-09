@@ -389,6 +389,29 @@ PROJECTIONS = [
                   "tooling/aeneas-horner-match/receipt.json", "tooling/aeneas-horner-match/ended-shared-scalar.patch",
                   "bridge/Arithmetic/AvxHornerChunkRuntime.lean", "bridge/Arithmetic/Avx512RegisterGenerated.lean",
                   "bridge/Arithmetic/DenseNormalizationGenerated.lean"]),
+    *((f"avx-insert-{mode}", "extraction/avx-insert/project.py", "extraction/avx-insert/receipt.json",
+       f"extraction/avx-insert/{capture}/Arithmetic/Funs.lean", f"bridge/Arithmetic/{active}.lean",
+       before, after, f"compiled AVX insert projection differs: {mode}", None, None,
+       ["extraction/avx-square/receipt.json", "extraction/avx-horner/receipt.json",
+        "extraction/avx-encode-18/Arithmetic/Funs.lean"] +
+       [f"bridge/Arithmetic/{module}.lean"
+        for module in ("AvxInsert18Generated", "AvxHorizontalXorGenerated", "AvxInsertDispatchGenerated")])
+      for mode, capture, active, before, after in (
+          ("insert18", "insert18", "AvxInsert18Generated", "mi low", "mi high"),
+          ("horizontal", "horizontal", "AvxHorizontalXorGenerated",
+           "shuffle_i64x2 78#i32", "shuffle_i64x2 79#i32"),
+          ("dispatch", "free-dispatch", "AvxInsertDispatchGenerated",
+           "insert_tile 4#usize false odd ids", "insert_tile 4#usize true odd ids"),
+      )),
+    ("native-deflate", "extraction/native-deflate/project.py", "extraction/native-deflate/receipt.json",
+     "extraction/native-deflate/Arithmetic/Funs.lean", "bridge/Arithmetic/NativeDeflateGenerated.lean",
+     "let i4 ← i - 1#usize", "let i4 ← i + 1#usize", "compiled deflate projection differs",
+     None, None, ["extraction/root-setup/receipt.json", "bridge/Arithmetic/RootSetupGenerated.lean",
+                  "bridge/Arithmetic/SliceKernelTypes.lean", "bridge/Workmeter/Types.lean",
+                  "bridge/Arithmetic/WorkScheduleGenerated.lean", "bridge/Arithmetic/ReconstructionTypes.lean",
+                  "extraction/execution-verify/arithmetic.llbc"] +
+     [f"extraction/execution-verify/Arithmetic/{name}"
+      for name in ("Funs.lean", "FunsExternal_Template.lean", "Types.lean")]),
     ("avx-insertion-bases-static", "extraction/avx-insertion-bases-static/project.py",
      "extraction/avx-insertion-bases-static/receipt.json",
      "extraction/avx-insertion-bases-static/Arithmetic/Funs.lean", "bridge/Arithmetic/AvxInsertionBasesStaticGenerated.lean",
@@ -429,6 +452,8 @@ def main():
         projector = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(projector)
         kwargs = {"kind": "encode"} if label == "portable-encode" else {}
+        if label.startswith("avx-insert-"):
+            kwargs = {"entry": label.removeprefix("avx-insert-")}
         originals[label] = projector.check(**kwargs)["source_declarations_retained_verbatim"]
         receipt = json.loads((ROOT / receipt_path).read_text())
         files = [receipt_path, active_path, "bridge/Arithmetic/Types.lean", "bridge/Arithmetic/Funs.lean"]
@@ -641,6 +666,9 @@ def main():
         if label == "avx-horner":
             cases.append(("wrong-kernel-binary", receipt_path, receipt["variant_binary_sha256"], "0" * 64,
                           "invalid AVX Horner receipt"))
+        if label == "native-deflate":
+            cases.append(("wrong-variant", receipt_path, '"checked-native-deflate-loan-retry-v1"',
+                          '"unreviewed-deflate-variant"', "invalid deflate translator receipt"))
         if label == "avx-single-bases":
             cases.append(("wrong-target", receipt_path, '"x86_64-apple-darwin"', '"aarch64-apple-darwin"',
                           "invalid AVX single-bases receipt"))
@@ -664,7 +692,8 @@ def main():
                              "bm-locator", "degree-probe", "root-setup", "execution-verify", "root-leaf", "times-x-mod", "dense-reducer-table", "root-trace", "dense-reducer-square", "dense-exact-division", "dense-monic-gcd", "avx-square", "avx-square-entry", "root-divide", "root-run", "affine-splitter",
                              "affine-subspaces", "root-prepare-affine", "root-enumerate-affine", "dense-div-rem",
                              "affine-enumerate", "affine-selector", "avx-multiply-linear", "affine-solve-map",
-                             "avx-horner", "affine-multiple", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static"}:
+                             "avx-horner", "affine-multiple", "avx-encode-18", "avx-single-bases", "avx-insertion-bases", "avx-insertion-bases-static", "native-deflate",
+                             "avx-insert-insert18", "avx-insert-horizontal", "avx-insert-dispatch"}:
                     (shadow / "src").symlink_to(ROOT.parents[1] / "src", target_is_directory=True)
                     shadow = shadow / "verification" / "lean"
                 for file in files:

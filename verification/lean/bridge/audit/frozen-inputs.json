@@ -3,7 +3,7 @@
   "files": {
     "bridge/BulksketchBridge/WorkMeterSpec.lean": "175f7fb37b293372f002076a5009aa74649f1e4a118b30384d0e57fa85ef961e",
     "bridge/BulksketchBridge/Challenges.lean": "4448f869920b1dda3e95c64decaa10bbbf1357f3c1abb102ece6a0fa94db8150",
-    "bridge/BulksketchBridge/Audit.lean": "fd0b05cae64997b16f430729e6c400b8c3776755d84e1d2382c55984e3d1ffd9",
+    "bridge/BulksketchBridge/Audit.lean": "e4db9d9419f9de3a78ba7e72a8ad5fe2ed52b6f5ca969dac736c1e1fb62e4e85",
     "bridge/Workmeter/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "bridge/Workmeter/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "bridge/Workmeter/FunsExternal.lean": "c158bf5bdae7b4b65609844505bdcc01784d0fa7ad64fe0cefee57584b5b07d3",
@@ -13,9 +13,9 @@
     "extraction/aeneas-pilot/workmeter.llbc": "35cd645c2ebc802508eafe6a5884e2fdc095184543333d453e344483452f27d4",
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
-    "scripts/verify_bridge.py": "6091117abdc8a309b8ed788546806ad708619ea361599dd5435bab45d92c7cba",
-    "audit/frozen-inputs.json": "a0265e318aa6405d991ae69441db3d2232022a27564ee89cbd3840ea7f673719",
-    "bridge/BulksketchBridge.lean": "4e1b5d77ede94739d48ca699d49c4acb556ab410c6ac99cbdc46a22acffa64d5",
+    "scripts/verify_bridge.py": "6f8c5a4d656c1c895639713b80e8f408403bbdfc6db63a56b543dc203b132f63",
+    "audit/frozen-inputs.json": "e0cf013b6aa7f51001b124f1c5ec0ae591b0f98ff53a4e5d3dc3ddb001ed873c",
+    "bridge/BulksketchBridge.lean": "f84cdd1a4936b21f89cd1557cfc654a8d0374b39c38494e281b244d5334a7b62",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "05772b30ee2619b777ce531caa871303bf81bc09ac19c692b936eeca9b5862f9",
@@ -30,8 +30,8 @@
     "bridge/Arithmetic/TypesExternal.lean": "f356dabcfd0ae39a3257260e6c665ed652c4c8909ae00ebd921b542e8beec825",
     "bridge/Arithmetic/FunsExternal.lean": "0bef0ab18e5572ea3d65885a9d79c67487a4630e185be22aae661519125de282",
     "bridge/runtime-models/array-iterator.rs": "b907f8ebb68216d613c8b9ba7702f2b82795586228520dfed200dbad672d5f63",
-    "bridge/source-linkage.json": "9aef72380e2fab35a1f89ed54972cecc88e6e4c10b7e0742f6e85b940b03e1b0",
-    "bridge/obligations.json": "e0b4e49a071cad138a4a26476b4b5081e1a4c895a65bd4aceccab7867093937a",
+    "bridge/source-linkage.json": "db6f65cdf826641f12d313aeccc7ac8733ec6f48188a83aeec54b3132638274f",
+    "bridge/obligations.json": "6f63b841ea03774265a7f34170540c70799eed54580e833e23b6fe773380c76a",
     "extraction/canonical-arithmetic/impl-root/arithmetic.llbc": "18f2b08d9f3b7da49a2163f69b3614c4224e62761e8e8dc3fa45ad99358c1122",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
     "extraction/canonical-arithmetic/impl-root/Arithmetic/Funs.lean": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614",
@@ -116,7 +116,7 @@
     "bridge/BulksketchBridge/InverseFieldSpec.lean": "dfaea9d3eda270ca1281f825a82226cca7f6c4782862e9ecefa9bd58bf13df59",
     "bridge/BulksketchBridge/InverseChallenges.lean": "2bbe81b72b41ae1bf26591f4edb9f1d7e32906debe1e8ea1f8ff5118893dedb4",
     "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "scripts/check_projection_fixtures.py": "e0e1b213d83bc0e0f19217cd25f19e2577e8417ea3e608816ade929aa8e92044",
+    "scripts/check_projection_fixtures.py": "ef676e9f988eea04b7a8d4d4e74ee141a7727243bd63b7769a6d2c8c4332aaf9",
     "extraction/inverse-chain/project.py": "c0bf776649e2d079695135292d7afb57f851856e922d8365fcf99650d595c697",
     "bridge/Arithmetic/InverseGenerated.lean": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
     "extraction/inverse-chain/Inverse/Types.lean": "862681f8765d0f9d7eef3f451a1c6f08543b4adae25c949579c50a613f62d8b8",
@@ -288,9 +288,9 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "816c565b00f3a02a19e081cebe863a6f4e4fb28b90de0885c3f22f646127af82",
+    "README.md": "cfcb14a62f4ea9653d4dac5aaecdf94b984ccf47b5c747b14500df016b5c3bb2",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
-    "audit/coverage.json": "fa1959412982beba217413a0ef5b7f4724ed12aada96bcb3b2445998e331a510",
+    "audit/coverage.json": "a67001fa17667e65665fa43575c04130ccfe2cbad92402b24f73ca25765f8f29",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
     "bridge/Arithmetic/DenseSquareGenerated.lean": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
     "bridge/Arithmetic/DenseSquareRuntime.lean": "17407e27c7b60e2108f214def610774258ddaa3055d3e3be4aeb33f2a89a202c",
@@ -1064,7 +1064,7 @@
     "bridge/BulksketchBridge/DenseReducerSquareSpec.lean": "6a9f225a3f09bb0fd21660062405692de7b63af77c7996c4e61f79dd493b9d07",
     "bridge/BulksketchBridge/NativeRootTrace.lean": "8ea77cde69890a542dc90631ccbe76747b146ce6c7fb00fa98c72d35faa3cbc5",
     "bridge/BulksketchBridge/RootTraceGenerator.lean": "6aec0a3ba4a885a4810a047876bb501660b1891c192e03d120fc5ed9edaf03a5",
-    "bridge/BulksketchBridge/RootTraceWrapper.lean": "544d9eddee2a984b2e8c069069ef83bccee5dd2e9ae2c0a13d1e758b5ddb6901",
+    "bridge/BulksketchBridge/RootTraceWrapper.lean": "138fd42a1269fa18f83dde49b40ec793630718dad68e9affcf35c6071e79070d",
     "bridge/BulksketchBridge/RootTraceWrapperSpec.lean": "91dbda331d95e41dc7392d493141b5b7fb5c8f63ab4de5593fd8c4a8131e8e25",
     "extraction/dense-reducer-square/Arithmetic/Funs.lean": "bfb8c077f8c7172988d6b6d11183929211a2eed0bc804e4fe2af586aa4d8075e",
     "extraction/dense-reducer-square/Arithmetic/FunsExternal_Template.lean": "e70580d958e57d0416a230a8c2d299d1c5906d2c64a1804f1f3bfeb0922b3b71",
@@ -1154,8 +1154,8 @@
     "extraction/avx-square-entry/project.py": "1aaffbf1193844d28ebce3894f8b770467456f26fc11dc8d31bc800991984462",
     "extraction/avx-square-entry/receipt.json": "0c1dfec778a7c61fc996a23e56cb9fd7440a986514a655e48f61b447397cedeb",
     "extraction/avx-square-entry/replay.log": "2a6fbcdd3af5d93f18c692775d65663b770dec82f7830e03178aaa5bc0162f5c",
-    "NATIVE_ROOT_RUN.md": "9274a01f64c222dfaae7e3f833ca917ef515ecb86fbd4ac3225c820debf5dff8",
-    "audit/native-root-run-checkpoint.json": "9419224aa1f262e8c7f8953daef04fd2626a0e7bf1da8fd68ca11fd631acb969",
+    "NATIVE_ROOT_RUN.md": "13cfc7d502886e6b916fb710a62e2f4f974bb044e3441f837dbdc4f7b0859eec",
+    "audit/native-root-run-checkpoint.json": "a08aa6ef36487e6712d76c01a11756001faf851bf6353abff06d77913246bc78",
     "bridge/Arithmetic/RootDivideGenerated.lean": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
     "bridge/Arithmetic/RootRunGenerated.lean": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
     "bridge/BulksketchBridge/AvxSquareHeap.lean": "77c21a26e7d80a1fe80fffd91c1c902b1cb4857c79e840333cc5dc198c8f7bf7",
@@ -1512,7 +1512,77 @@
     "extraction/avx-insertion-bases-static/charon.log": "952963e47852f5d157a28f4602ed15fc4b41f9f3019db30a0870aab192cffa9b",
     "extraction/avx-insertion-bases-static/project.py": "71f5872b209201a18e07a1e18942dcaad587505d960477b34098fc8e94e06f3b",
     "extraction/avx-insertion-bases-static/receipt.json": "33bdec05e8bc749eecbb5500d009b3418b3c1beecb5988a03f230d2280963e07",
-    "extraction/avx-insertion-bases-static/replay.log": "8c3668e8dd7a232f1dd9cf8aa556c08c6708f51c1ef976521e4ba0f24ad67ddc"
+    "extraction/avx-insertion-bases-static/replay.log": "8c3668e8dd7a232f1dd9cf8aa556c08c6708f51c1ef976521e4ba0f24ad67ddc",
+    "bridge/Arithmetic/AvxHorizontalXorGenerated.lean": "0578f61b1ccb42ef63ad5cc48cf634808dddc8731fac3d02bde921221bcd7bc9",
+    "bridge/Arithmetic/AvxInsert18Generated.lean": "a153bbd8366845259535a8ebb82fc23cec00659a09727021beb8d38492308e0f",
+    "bridge/Arithmetic/AvxInsertDispatchGenerated.lean": "66704356b73df6580c69d7220489e68704598b82fcc3af98ccbd0a89cb16e1d7",
+    "bridge/Arithmetic/NativeDeflateGenerated.lean": "babaf01984c12d73517a5c76f1618fd532c311b4c9c34ce9818a84d25652ee5b",
+    "bridge/BulksketchBridge/AvxHorizontalXor.lean": "57fb7b9ba09a8ea0ec3bd684c89d7b60d3f898208cca9d504f078611ca038416",
+    "bridge/BulksketchBridge/AvxInsert18.lean": "ba8445e07fea8d511b0c41a9c1251c0263274c71c03b31bffe3554a4c371a980",
+    "bridge/BulksketchBridge/AvxInsertDispatch.lean": "3aa9e08796e03e9492f68bd855196e700a4f568f0bf1c5dcaa124f55755a8e7d",
+    "bridge/BulksketchBridge/DeflatePrice.lean": "449513fa0fa83ed4e2d2dec437faa3a19cfacae2c8159d68ab39d1fa990e59fd",
+    "bridge/BulksketchBridge/DeflateSyntheticAlgebra.lean": "a3c40dcacfc739512fe528fd66a0d61d1a8903b2d5511510d0e24fbe9635cad2",
+    "bridge/BulksketchBridge/NativeDeflate.lean": "2e7214ebedf73ebdbdfe17bd9a689590a92acd79f85c2a86f6dd7abfdad3d2ea",
+    "bridge/BulksketchBridge/NativeDeflateFinish.lean": "d5a71d904aca1c68cbdb3ef6ad447d1970eee9bed12358c7ade187aacb95d249",
+    "bridge/BulksketchBridge/NativeDeflateOuterLoop.lean": "5df01543933bf79a609107cb51b2aabff6493ebe1a1e46862a43e651e03c596e",
+    "bridge/BulksketchBridge/NativeDeflateOuterStep.lean": "ed33063ce2c26ace86dbfaa8c9b94205c4e15c5a16d0523d2c983e0083af8ead",
+    "bridge/BulksketchBridge/NativeDeflateSyntheticLoop.lean": "490851f0aa27cd192812e5c37b500799fed5e995a316d61e0babf209470256c3",
+    "bridge/BulksketchBridge/NativeDeflateSyntheticStep.lean": "90c69e69c456f7fb0a7d01a507ab14593c6b2c67884fbbdd20299fa098816915",
+    "bridge/BulksketchBridge/RootNativeTraceCheck.lean": "c2a6387be989fb66ea675fda6a775dfe54b548b12553069d4bca5390587f8707",
+    "bridge/BulksketchBridge/RootNativeTraceDispatch.lean": "106e3ed80f990d7f8e98bf7d5dcaf085c2522426ccca1cc17a1a593d7411aa0e",
+    "bridge/BulksketchBridge/RootTraceSplitAlgebra.lean": "b9d2072160358c48f9b49b2015d40a318e3005709374aa05fecdd53a9b8b28e1",
+    "extraction/avx-insert/free-dispatch/Arithmetic/Funs.lean": "cf8ac6e1e39e358276a6584b4a15a3967b4492817f3edefc171d1a99cf9eda3f",
+    "extraction/avx-insert/free-dispatch/Arithmetic/FunsExternal_Template.lean": "27757d70087e0744c4a75b560f2bd5ed43827f3242db2a110c6e04abf425209d",
+    "extraction/avx-insert/free-dispatch/Arithmetic/Types.lean": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+    "extraction/avx-insert/free-dispatch/Arithmetic/TypesExternal_Template.lean": "efabfaae7f8001e29d6864f7630a9e41a6fc56c8fa5e3dbcacb07faab31156e2",
+    "extraction/avx-insert/free-dispatch/aeneas.log": "c832088c79d1a62a7ea68bbc6b1e061137c375832a3d361d4589cf2cccbe4dc8",
+    "extraction/avx-insert/free-dispatch/arithmetic.llbc": "283d3fc9983da2d79c2b1bd776aea71eea54ed90f12fc0f9572e9e79b57eaa7b",
+    "extraction/avx-insert/free-dispatch/charon.log": "b008cfe65680176a76b9b9df86153f6de18a544c953523b98b49ddb4710d3e27",
+    "extraction/avx-insert/free-dispatch/replay.log": "534fecdf1e8d164d25644fc7a31885c7e82eec8e38143b0447e36c2b8f18aad6",
+    "extraction/avx-insert/horizontal/Arithmetic/Funs.lean": "5d644bb10295a54e4f40a184805b4a579f6c10e8c0e8043921ca7b938644275a",
+    "extraction/avx-insert/horizontal/Arithmetic/FunsExternal_Template.lean": "7542934cb77a1763da034140e9e6ddc58b1d5abea2977b7cb2498b04c9b6e433",
+    "extraction/avx-insert/horizontal/Arithmetic/Types.lean": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+    "extraction/avx-insert/horizontal/Arithmetic/TypesExternal_Template.lean": "bc4d496196b2ec6aabc718d1d482d70aaac93aa2446ea030a5a361f2380d1938",
+    "extraction/avx-insert/horizontal/aeneas.log": "adfe33ee426e9e1f26452cf7a98a19c4710e7c00e249b593d70e9a6d904e1b1d",
+    "extraction/avx-insert/horizontal/arithmetic.llbc": "c88e1b3c662ffaa9ada126b793098e2689c4e6fba6038c37e5ac108ef048bd9a",
+    "extraction/avx-insert/horizontal/charon.log": "952963e47852f5d157a28f4602ed15fc4b41f9f3019db30a0870aab192cffa9b",
+    "extraction/avx-insert/horizontal/replay.log": "eea5fe602e5284d1295c3068280cb1f8e3b759ef6380cf261837f699f1c78273",
+    "extraction/avx-insert/insert18/Arithmetic/Funs.lean": "64d7512b1c789552557d98725ce30bb2dc886884f86dea82cea1fa868f6f1f7a",
+    "extraction/avx-insert/insert18/Arithmetic/FunsExternal_Template.lean": "9bf248798727fab255d05c44658f62b23d10f5e0a56291d334c3dad5eea77f3c",
+    "extraction/avx-insert/insert18/Arithmetic/Types.lean": "9eed91c2cd665f33c198ae5aaee275052307a0f271867751d7ff7a0c7c0fc5b9",
+    "extraction/avx-insert/insert18/Arithmetic/TypesExternal_Template.lean": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e",
+    "extraction/avx-insert/insert18/aeneas.log": "b781d54aadbe2a6b3fdb09f03d5fbde414bbc165ddcad657fb30dbfff3ba5d49",
+    "extraction/avx-insert/insert18/arithmetic.llbc": "9314310f8541176e45001c5cea75db3ce45ce381e12cd38caf545f982fbdec60",
+    "extraction/avx-insert/insert18/charon.log": "896118e2c6fb8fda055020096ddc53773e1b69eb9719a086c89a54d49d8bdc17",
+    "extraction/avx-insert/insert18/replay.log": "b6d659d89538512d6c52fbc4538478be9c27e341c26c5cebabade62b952c3fed",
+    "extraction/avx-insert/project.py": "708adb5d06761c3a61a1c8f9237952f0b62ce3a7d9594e312ec9c13b46b6cc06",
+    "extraction/avx-insert/receipt.json": "60685c677fb31ac13bf00fe95b949b083a09dc56c3cd62e9c436d34121e00639",
+    "extraction/avx-insert/trait-dispatch/Arithmetic/Funs.lean": "523f80e3bf8e5d13eedb8eca8208ed2e47ab918c65517f33c8a456c85d33151d",
+    "extraction/avx-insert/trait-dispatch/Arithmetic/FunsExternal_Template.lean": "962aec8f3945fb5e623992d133bdbeec27ef3d386dbb014bc14f05fb6c83826c",
+    "extraction/avx-insert/trait-dispatch/Arithmetic/Types.lean": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef",
+    "extraction/avx-insert/trait-dispatch/aeneas.log": "e8ce36d620f747d447fb70a0721e5cd8c391eb48dd44c95b82606fb03b0ea0c1",
+    "extraction/avx-insert/trait-dispatch/arithmetic.llbc": "6b8ddd9a2bf43a14a92a12bb9b77b91eb33e38d4a88f0dc6980bc6aabd962e71",
+    "extraction/avx-insert/trait-dispatch/charon.log": "b008cfe65680176a76b9b9df86153f6de18a544c953523b98b49ddb4710d3e27",
+    "extraction/avx-insert/trait-dispatch/replay.log": "984a67a2a6b0c785deaefd2c1a0124fab3b9f8ed6940bbf9c130415d4784db53",
+    "extraction/native-deflate/Arithmetic/Funs.lean": "e41d85f34becf7435c75136c0bf6b4eff9a8b1f14c806ef34cfea6a2e00dd1b9",
+    "extraction/native-deflate/Arithmetic/FunsExternal_Template.lean": "19dcf55935884b26471e1a3ea81af2b219d11cd4326a08dab75e542432159333",
+    "extraction/native-deflate/Arithmetic/Types.lean": "5b2de071521a639ce8e4cc56a69c8f01f0116b8a37d4bc1036f660a0daed52b8",
+    "extraction/native-deflate/README.md": "60a26af023e6356300e1a9075663f62fbc4f7cd51f007db8a67124891368e15d",
+    "extraction/native-deflate/arithmetic.llbc": "4f9ff487b79d357e2caea38fe46f8677d017e067fe37a917e53aa19740aedbc2",
+    "extraction/native-deflate/charon.log": "f1098cb4c34f28ed8b0515bf29c1f8d90bd03a831c1691faa8d0eb2b933dea5a",
+    "extraction/native-deflate/checked-native-deflate-loan-retry.patch": "0e6309acb7a82f7012d4bec0fe5c5c5a7ed58f9d177077f0927eaef5e3ce37b3",
+    "extraction/native-deflate/checked.log": "295f7ba0c2975bdf3b9f21d177f38a277666595c1316ec36dfd7a21394e65c18",
+    "extraction/native-deflate/execution-verify.log": "a80e6dd86250771061d5967ad4c203e884e478c867fc38b73fc5259b536b1c75",
+    "extraction/native-deflate/flag-off.log": "998a811e1b4b7bb734cac4fa9038f47bda0b60547fa6a024b7aaaaaa46f1a05f",
+    "extraction/native-deflate/fresh-build.log": "bdc53a26c7bcf9c9009aa25f7d78e4fb31615445805845205acd3aa1d508f632",
+    "extraction/native-deflate/guard-controls.py": "a80f1b8b361722d527ef445c8c0db0dd77981a4ec9c30700de064f99f6e67fdb",
+    "extraction/native-deflate/project.py": "0f56040fecba47b6a39c5c37bb25c2192eaa92d4cd01a88cd9a24addeed8bb0d",
+    "extraction/native-deflate/receipt.json": "2919df2e4c82bab18c923a86dfc8b08ce56cbe8819422984e2a4ab9f7b103c69",
+    "extraction/native-deflate/stock.log": "5af6ec66c0d4f1a0262148e157ba1527f831d484c3d87eae499aae1b11483653",
+    "extraction/native-deflate/unchecked.log": "49f4e3b4636c3eece8f26ae233342598165ec6ddf06f0c9feed8c370d664db59",
+    "extraction/native-deflate/wrong-roots-loan.log": "b798975c639be24a1966a3c27c842c43f3ab9959fd43df8dc2bc0b8232394c22",
+    "extraction/native-deflate/wrong_roots_loan.py": "d7982cad79f8b0fd7f6f9b7080bc642649c92c1374522371e6ced811cca3327a",
+    "bridge/BulksketchBridge/NativeDeflateResidual.lean": "be6c3f994720766917beb396b97b1b7fc89ce444bc628b3406106fcdf9866e99"
   },
   "reviewed_policy_revisions": [
     {
@@ -10941,7 +11011,465 @@
       "new_sha256": "e0e1b213d83bc0e0f19217cd25f19e2577e8417ea3e608816ade929aa8e92044",
       "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
       "old_sha256": "04bb63f1dbcea0d2e66ab6d8de1c4b2e897a43e79d2cbd928d1207984df3a2d7"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "3d0ffc0666d416f11bfe4f766d1fc79a5168547c8161eb226139a95f11154a70",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "9274a01f64c222dfaae7e3f833ca917ef515ecb86fbd4ac3225c820debf5dff8"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "cfcb14a62f4ea9653d4dac5aaecdf94b984ccf47b5c747b14500df016b5c3bb2",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "816c565b00f3a02a19e081cebe863a6f4e4fb28b90de0885c3f22f646127af82"
+    },
+    {
+      "path": "audit/coverage.json",
+      "new_sha256": "a67001fa17667e65665fa43575c04130ccfe2cbad92402b24f73ca25765f8f29",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "fa1959412982beba217413a0ef5b7f4724ed12aada96bcb3b2445998e331a510"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "19ed65381b27f2bfd7e8a89bc8b1ccc6b0fd35bbef288eb797fef0a65c40e755",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "a0265e318aa6405d991ae69441db3d2232022a27564ee89cbd3840ea7f673719"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "a08aa6ef36487e6712d76c01a11756001faf851bf6353abff06d77913246bc78",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "9419224aa1f262e8c7f8953daef04fd2626a0e7bf1da8fd68ca11fd631acb969"
+    },
+    {
+      "path": "bridge/Arithmetic/AvxHorizontalXorGenerated.lean",
+      "new_sha256": "0578f61b1ccb42ef63ad5cc48cf634808dddc8731fac3d02bde921221bcd7bc9",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/Arithmetic/AvxInsert18Generated.lean",
+      "new_sha256": "a153bbd8366845259535a8ebb82fc23cec00659a09727021beb8d38492308e0f",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/Arithmetic/AvxInsertDispatchGenerated.lean",
+      "new_sha256": "66704356b73df6580c69d7220489e68704598b82fcc3af98ccbd0a89cb16e1d7",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/Arithmetic/NativeDeflateGenerated.lean",
+      "new_sha256": "babaf01984c12d73517a5c76f1618fd532c311b4c9c34ce9818a84d25652ee5b",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "8ebde50116f88b78ffbd84cf4064aea3ffd45b235f20e7abafb3d51a6fae08f5",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "4e1b5d77ede94739d48ca699d49c4acb556ab410c6ac99cbdc46a22acffa64d5"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "f6b00bfb35dbea6ab9d0503e07d80d4d8c658567e27f2049413b694afb74f813",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "fd0b05cae64997b16f430729e6c400b8c3776755d84e1d2382c55984e3d1ffd9"
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxHorizontalXor.lean",
+      "new_sha256": "57fb7b9ba09a8ea0ec3bd684c89d7b60d3f898208cca9d504f078611ca038416",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxInsert18.lean",
+      "new_sha256": "ba8445e07fea8d511b0c41a9c1251c0263274c71c03b31bffe3554a4c371a980",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/BulksketchBridge/AvxInsertDispatch.lean",
+      "new_sha256": "3aa9e08796e03e9492f68bd855196e700a4f568f0bf1c5dcaa124f55755a8e7d",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DeflatePrice.lean",
+      "new_sha256": "449513fa0fa83ed4e2d2dec437faa3a19cfacae2c8159d68ab39d1fa990e59fd",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/BulksketchBridge/DeflateSyntheticAlgebra.lean",
+      "new_sha256": "a3c40dcacfc739512fe528fd66a0d61d1a8903b2d5511510d0e24fbe9635cad2",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeDeflate.lean",
+      "new_sha256": "2e7214ebedf73ebdbdfe17bd9a689590a92acd79f85c2a86f6dd7abfdad3d2ea",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeDeflateFinish.lean",
+      "new_sha256": "d5a71d904aca1c68cbdb3ef6ad447d1970eee9bed12358c7ade187aacb95d249",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeDeflateOuterLoop.lean",
+      "new_sha256": "5df01543933bf79a609107cb51b2aabff6493ebe1a1e46862a43e651e03c596e",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeDeflateOuterStep.lean",
+      "new_sha256": "ed33063ce2c26ace86dbfaa8c9b94205c4e15c5a16d0523d2c983e0083af8ead",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeDeflateSyntheticLoop.lean",
+      "new_sha256": "74e26439550496ac234a1496e4b74acdf9884562e9c325b66b9d5af122c9f171",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeDeflateSyntheticStep.lean",
+      "new_sha256": "90c69e69c456f7fb0a7d01a507ab14593c6b2c67884fbbdd20299fa098816915",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootNativeTraceCheck.lean",
+      "new_sha256": "c2a6387be989fb66ea675fda6a775dfe54b548b12553069d4bca5390587f8707",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootNativeTraceDispatch.lean",
+      "new_sha256": "106e3ed80f990d7f8e98bf7d5dcaf085c2522426ccca1cc17a1a593d7411aa0e",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraceSplitAlgebra.lean",
+      "new_sha256": "b9d2072160358c48f9b49b2015d40a318e3005709374aa05fecdd53a9b8b28e1",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/BulksketchBridge/RootTraceWrapper.lean",
+      "new_sha256": "138fd42a1269fa18f83dde49b40ec793630718dad68e9affcf35c6071e79070d",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "544d9eddee2a984b2e8c069069ef83bccee5dd2e9ae2c0a13d1e758b5ddb6901"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "a86124892234e336ed751bb71ec444c9c2bb82390a0ffa3acd571a16601e37b2",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "e0b4e49a071cad138a4a26476b4b5081e1a4c895a65bd4aceccab7867093937a"
+    },
+    {
+      "path": "bridge/source-linkage.json",
+      "new_sha256": "db6f65cdf826641f12d313aeccc7ac8733ec6f48188a83aeec54b3132638274f",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "9aef72380e2fab35a1f89ed54972cecc88e6e4c10b7e0742f6e85b940b03e1b0"
+    },
+    {
+      "path": "extraction/avx-insert/free-dispatch/Arithmetic/Funs.lean",
+      "new_sha256": "cf8ac6e1e39e358276a6584b4a15a3967b4492817f3edefc171d1a99cf9eda3f",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/free-dispatch/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "27757d70087e0744c4a75b560f2bd5ed43827f3242db2a110c6e04abf425209d",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/free-dispatch/Arithmetic/Types.lean",
+      "new_sha256": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/free-dispatch/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "efabfaae7f8001e29d6864f7630a9e41a6fc56c8fa5e3dbcacb07faab31156e2",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/free-dispatch/aeneas.log",
+      "new_sha256": "c832088c79d1a62a7ea68bbc6b1e061137c375832a3d361d4589cf2cccbe4dc8",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/free-dispatch/arithmetic.llbc",
+      "new_sha256": "283d3fc9983da2d79c2b1bd776aea71eea54ed90f12fc0f9572e9e79b57eaa7b",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/free-dispatch/charon.log",
+      "new_sha256": "b008cfe65680176a76b9b9df86153f6de18a544c953523b98b49ddb4710d3e27",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/free-dispatch/replay.log",
+      "new_sha256": "534fecdf1e8d164d25644fc7a31885c7e82eec8e38143b0447e36c2b8f18aad6",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/horizontal/Arithmetic/Funs.lean",
+      "new_sha256": "5d644bb10295a54e4f40a184805b4a579f6c10e8c0e8043921ca7b938644275a",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/horizontal/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "7542934cb77a1763da034140e9e6ddc58b1d5abea2977b7cb2498b04c9b6e433",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/horizontal/Arithmetic/Types.lean",
+      "new_sha256": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/horizontal/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "bc4d496196b2ec6aabc718d1d482d70aaac93aa2446ea030a5a361f2380d1938",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/horizontal/aeneas.log",
+      "new_sha256": "adfe33ee426e9e1f26452cf7a98a19c4710e7c00e249b593d70e9a6d904e1b1d",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/horizontal/arithmetic.llbc",
+      "new_sha256": "c88e1b3c662ffaa9ada126b793098e2689c4e6fba6038c37e5ac108ef048bd9a",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/horizontal/charon.log",
+      "new_sha256": "952963e47852f5d157a28f4602ed15fc4b41f9f3019db30a0870aab192cffa9b",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/horizontal/replay.log",
+      "new_sha256": "eea5fe602e5284d1295c3068280cb1f8e3b759ef6380cf261837f699f1c78273",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/insert18/Arithmetic/Funs.lean",
+      "new_sha256": "64d7512b1c789552557d98725ce30bb2dc886884f86dea82cea1fa868f6f1f7a",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/insert18/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "9bf248798727fab255d05c44658f62b23d10f5e0a56291d334c3dad5eea77f3c",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/insert18/Arithmetic/Types.lean",
+      "new_sha256": "9eed91c2cd665f33c198ae5aaee275052307a0f271867751d7ff7a0c7c0fc5b9",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/insert18/Arithmetic/TypesExternal_Template.lean",
+      "new_sha256": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/insert18/aeneas.log",
+      "new_sha256": "b781d54aadbe2a6b3fdb09f03d5fbde414bbc165ddcad657fb30dbfff3ba5d49",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/insert18/arithmetic.llbc",
+      "new_sha256": "9314310f8541176e45001c5cea75db3ce45ce381e12cd38caf545f982fbdec60",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/insert18/charon.log",
+      "new_sha256": "896118e2c6fb8fda055020096ddc53773e1b69eb9719a086c89a54d49d8bdc17",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/insert18/replay.log",
+      "new_sha256": "b6d659d89538512d6c52fbc4538478be9c27e341c26c5cebabade62b952c3fed",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/project.py",
+      "new_sha256": "708adb5d06761c3a61a1c8f9237952f0b62ce3a7d9594e312ec9c13b46b6cc06",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/receipt.json",
+      "new_sha256": "60685c677fb31ac13bf00fe95b949b083a09dc56c3cd62e9c436d34121e00639",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/trait-dispatch/Arithmetic/Funs.lean",
+      "new_sha256": "523f80e3bf8e5d13eedb8eca8208ed2e47ab918c65517f33c8a456c85d33151d",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/trait-dispatch/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "962aec8f3945fb5e623992d133bdbeec27ef3d386dbb014bc14f05fb6c83826c",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/trait-dispatch/Arithmetic/Types.lean",
+      "new_sha256": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/trait-dispatch/aeneas.log",
+      "new_sha256": "e8ce36d620f747d447fb70a0721e5cd8c391eb48dd44c95b82606fb03b0ea0c1",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/trait-dispatch/arithmetic.llbc",
+      "new_sha256": "6b8ddd9a2bf43a14a92a12bb9b77b91eb33e38d4a88f0dc6980bc6aabd962e71",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/trait-dispatch/charon.log",
+      "new_sha256": "b008cfe65680176a76b9b9df86153f6de18a544c953523b98b49ddb4710d3e27",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/avx-insert/trait-dispatch/replay.log",
+      "new_sha256": "984a67a2a6b0c785deaefd2c1a0124fab3b9f8ed6940bbf9c130415d4784db53",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/Arithmetic/Funs.lean",
+      "new_sha256": "e41d85f34becf7435c75136c0bf6b4eff9a8b1f14c806ef34cfea6a2e00dd1b9",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/Arithmetic/FunsExternal_Template.lean",
+      "new_sha256": "19dcf55935884b26471e1a3ea81af2b219d11cd4326a08dab75e542432159333",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/Arithmetic/Types.lean",
+      "new_sha256": "5b2de071521a639ce8e4cc56a69c8f01f0116b8a37d4bc1036f660a0daed52b8",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/README.md",
+      "new_sha256": "60a26af023e6356300e1a9075663f62fbc4f7cd51f007db8a67124891368e15d",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/arithmetic.llbc",
+      "new_sha256": "4f9ff487b79d357e2caea38fe46f8677d017e067fe37a917e53aa19740aedbc2",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/charon.log",
+      "new_sha256": "f1098cb4c34f28ed8b0515bf29c1f8d90bd03a831c1691faa8d0eb2b933dea5a",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/checked-native-deflate-loan-retry.patch",
+      "new_sha256": "0e6309acb7a82f7012d4bec0fe5c5c5a7ed58f9d177077f0927eaef5e3ce37b3",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/checked.log",
+      "new_sha256": "295f7ba0c2975bdf3b9f21d177f38a277666595c1316ec36dfd7a21394e65c18",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/execution-verify.log",
+      "new_sha256": "a80e6dd86250771061d5967ad4c203e884e478c867fc38b73fc5259b536b1c75",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/flag-off.log",
+      "new_sha256": "998a811e1b4b7bb734cac4fa9038f47bda0b60547fa6a024b7aaaaaa46f1a05f",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/fresh-build.log",
+      "new_sha256": "bdc53a26c7bcf9c9009aa25f7d78e4fb31615445805845205acd3aa1d508f632",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/guard-controls.py",
+      "new_sha256": "a80f1b8b361722d527ef445c8c0db0dd77981a4ec9c30700de064f99f6e67fdb",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/project.py",
+      "new_sha256": "0f56040fecba47b6a39c5c37bb25c2192eaa92d4cd01a88cd9a24addeed8bb0d",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/receipt.json",
+      "new_sha256": "2919df2e4c82bab18c923a86dfc8b08ce56cbe8819422984e2a4ab9f7b103c69",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/stock.log",
+      "new_sha256": "5af6ec66c0d4f1a0262148e157ba1527f831d484c3d87eae499aae1b11483653",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/unchecked.log",
+      "new_sha256": "49f4e3b4636c3eece8f26ae233342598165ec6ddf06f0c9feed8c370d664db59",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/wrong-roots-loan.log",
+      "new_sha256": "b798975c639be24a1966a3c27c842c43f3ab9959fd43df8dc2bc0b8232394c22",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "extraction/native-deflate/wrong_roots_loan.py",
+      "new_sha256": "d7982cad79f8b0fd7f6f9b7080bc642649c92c1374522371e6ced811cca3327a",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "ef676e9f988eea04b7a8d4d4e74ee141a7727243bd63b7769a6d2c8c4332aaf9",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "e0e1b213d83bc0e0f19217cd25f19e2577e8417ea3e608816ade929aa8e92044"
+    },
+    {
+      "path": "scripts/verify_bridge.py",
+      "new_sha256": "6f8c5a4d656c1c895639713b80e8f408403bbdfc6db63a56b543dc203b132f63",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "6091117abdc8a309b8ed788546806ad708619ea361599dd5435bab45d92c7cba"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "13cfc7d502886e6b916fb710a62e2f4f974bb044e3441f837dbdc4f7b0859eec",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "3d0ffc0666d416f11bfe4f766d1fc79a5168547c8161eb226139a95f11154a70"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "e0cf013b6aa7f51001b124f1c5ec0ae591b0f98ff53a4e5d3dc3ddb001ed873c",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "19ed65381b27f2bfd7e8a89bc8b1ccc6b0fd35bbef288eb797fef0a65c40e755"
+    },
+    {
+      "path": "bridge/BulksketchBridge.lean",
+      "new_sha256": "f84cdd1a4936b21f89cd1557cfc654a8d0374b39c38494e281b244d5334a7b62",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "8ebde50116f88b78ffbd84cf4064aea3ffd45b235f20e7abafb3d51a6fae08f5"
+    },
+    {
+      "path": "bridge/BulksketchBridge/Audit.lean",
+      "new_sha256": "e4db9d9419f9de3a78ba7e72a8ad5fe2ed52b6f5ca969dac736c1e1fb62e4e85",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "f6b00bfb35dbea6ab9d0503e07d80d4d8c658567e27f2049413b694afb74f813"
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeDeflateResidual.lean",
+      "new_sha256": "be6c3f994720766917beb396b97b1b7fc89ce444bc628b3406106fcdf9866e99",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies."
+    },
+    {
+      "path": "bridge/BulksketchBridge/NativeDeflateSyntheticLoop.lean",
+      "new_sha256": "490851f0aa27cd192812e5c37b500799fed5e995a316d61e0babf209470256c3",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "74e26439550496ac234a1496e4b74acdf9884562e9c325b66b9d5af122c9f171"
+    },
+    {
+      "path": "bridge/obligations.json",
+      "new_sha256": "6f63b841ea03774265a7f34170540c70799eed54580e833e23b6fe773380c76a",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "a86124892234e336ed751bb71ec444c9c2bb82390a0ffa3acd571a16601e37b2"
     }
   ],
-  "challenge_count": 326
+  "challenge_count": 335
 }

@@ -1,0 +1,35 @@
+--- a/src/interp/InterpMatchCtxs.ml
++++ b/src/interp/InterpMatchCtxs.ml
+@@ -1469,6 +1469,32 @@
+   let match_symbolic_with_other (_ : tvalue_matcher) (ctx0 : eval_ctx)
+       (ctx1 : eval_ctx) ~(symbolic_is_left : bool) (sv : symbolic_value)
+       (v : tvalue) : tvalue =
++    let site = span.data in
++    let deflate_scope =
++      !Config.sanity_checks && Sys.getenv_opt "BULKSKETCH_DEFLATE" = Some "1"
++      && span.generated_from_span = None
++      && (match site.file.name with Local "src/decode/stages.rs" -> true | _ -> false)
++      && (site.beg_loc.line, site.beg_loc.col, site.end_loc.line, site.end_loc.col)
++         = (321, 8, 333, 5)
++    in
++    (* The source rejects after the last quotient read on this path.
++       End the one roots iterator loan by the normal checked retry. *)
++    (if deflate_scope then
++       let ctx = if symbolic_is_left then ctx1 else ctx0 in
++       match v.value, v.ty with
++       | VAdt {variant_id = None; fields}, TAdt {id; _}
++         when Print.EvalCtx.name_to_string ctx (ctx_lookup_type_decl span ctx id).item_meta.name =
++           "bulksketch::decode::scratch::RowWorkspace" ->
++           (match fields with
++            | [a; b; c; d; e; f;
++               {value = VBorrow (VMutBorrow (_, {value = VLoan (VSharedLoan (loan,
++                 {value = VSymbolic _; ty = TSlice (TScalar (TInteger (Unsigned U64)), None)})); _})); _};
++               g; h; i]
++              when List.for_all (fun field -> not (tvalue_has_loans field)) [a;b;c;d;e;f;g;h;i] ->
++                let side = if symbolic_is_left then LoanInRight loan else LoanInLeft loan in
++                raise (ValueMatchFailure side)
++            | _ -> ())
++       | _ -> ());
+     let sv = mk_tvalue_from_symbolic_value sv in
+     let v0, v1 = if symbolic_is_left then (sv, v) else (v, sv) in
+     to_symbolic_value_with_borrows ctx0 ctx1 v0 v1
