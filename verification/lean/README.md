@@ -13,14 +13,68 @@ contracts remain open, so no implementation-coverage percentage is claimed.
 
 ## End-to-end Portable decoder
 
-[The whole-sketch theorem](bridge/BulksketchBridge/PortableSketchEndToEnd.lean)
-starts with two valid equal-shape in-memory frozen sketches. It binds the
-original Portable XOR, binary row constructor, and row finish for every
-admitted bucket. The output list has no duplicates and represents exactly
-the symmetric difference, including zero. The theorem states the capacity,
-output, per-row scratch, and work reserve premises. It uses the ordinary
-decoder route with empty candidate hints. Bucket views and concatenation
-are proof-side adapters.
+We prove that two valid equal-shape in-memory `FrozenSketch` values representing
+finite sets `A` and `B` reconcile to exactly `A △ B`. The returned IDs have no
+duplicates. The result covers empty differences and changed membership of ID
+zero.
+
+The principal statement is
+[`ActualPortableFrozenSketchEndToEnd`](bridge/BulksketchBridge/PortableSketchEndToEnd.lean),
+proved by `portable_frozen_sketch_end_to_end`. Its row-level statement is
+[`ActualPortableRowEndToEnd`](bridge/BulksketchBridge/PortableRowEndToEnd.lean),
+proved by `portable_row_end_to_end`.
+
+### Assumptions
+
+- **Valid input representation.**
+  [`ValidFrozenSketch`](bridge/BulksketchBridge/PortableFrozenSketchBoundary.lean)
+  states that the original flattened syndrome storage has the shape's required
+  length, the bucket count and every capacity are positive, and the stored odd
+  syndromes correctly encode its modulo-routed ID set. Zero-word storage is
+  nonempty, and the low bit of its first word records membership of ID zero.
+  Both inputs have the same shape.
+- **Capacity and output bounds.** Each bucket has capacity `c` in `1..65535`.
+  Its true symmetric difference has at most `β` IDs and `β ≤ c`. If the zero
+  membership bit differs, the row budget reserves one of those output slots
+  for zero. The remaining budget bounds the nonzero support.
+- **Admitted scratch.** Each row workspace satisfies
+  [`WorkspaceAdmission.Admitted`](bridge/BulksketchBridge/WorkspaceAdmissionSpec.lean),
+  including all required slice lengths and checked arithmetic bounds.
+- **Sufficient work.** Each row starts with an unexhausted meter whose remaining
+  allowance is at least
+  [`rowWork`](bridge/BulksketchBridge/PortableRowEndToEnd.lean). The proof derives
+  successful payment of reconstruction, BM, candidate evaluation, deflation,
+  root traversal, verification, and canonicalization from this reserve.
+
+### Checked scope
+
+The row proof binds calls to the original Portable XOR, `BinaryDecoder::begin`,
+and `Execution::finish` in the translated Rust implementation. It uses the
+ordinary Portable GF64 route with empty candidate hints and derives the honest
+locator and traversal conditions internally. The whole-sketch theorem applies
+that result to the original frozen payload's bucket views and assembles the
+returned IDs in bucket order. It also proves that the original `bucket_for`
+routes each recovered ID to its output bucket.
+
+Bucket views, the interpretation of the separate zero bit, and concatenation
+are Lean adapters. Workspaces and meters are supplied per row. The connection
+to Rust uses the pinned Charon/Aeneas translations and recorded standard-library
+models described below.
+
+### Verification record
+
+Proof checkpoint `19e6250e35763c15ac2c7558dc362bb14c792bea` passed all six gates
+of `scripts/verify_all.py`. The check matched 563 frozen statements, audited
+their transitive axioms, and replayed the exported terms through Lean's kernel
+and independent Nanoda. The only permitted axioms are `propext`,
+`Classical.choice`, and `Quot.sound`. The native release suite passed 139 tests
+against the source pin recorded above.
+
+From this directory, reproduce the checks with
+
+```sh
+CI=1 MATHLIB_NO_CACHE_ON_UPDATE=1 LEAN_NUM_THREADS=2 python3 scripts/verify_all.py
+```
 
 ## Checked milestone
 
@@ -80,8 +134,9 @@ The original row initializer and restart preserve the exact counter,
 probe and stage setup. The affine preparation stage establishes the
 first splitter or enumeration invariant under its admitted workspace.
 Canonicalization returns the exact sorted roots under the terminal
-locator-product and charge premises. Global traversal
-induction and remaining native implementation contracts are open.
+locator-product and charge premises. The end-to-end Portable theorem above
+closes the plain non-affine traversal and its work bound. Other decoder routes
+and the remaining native implementation contracts have further obligations.
 The checked row-local normalizer returns each row's exact sorted,
 distinct, nonzero candidate slice under the admitted scratch bounds.
 The original row dispatch preserves its backend tag and exact result
@@ -251,7 +306,10 @@ around associated iterator types, and full Aeneas translation encounters
 associated-type, function-pointer, lifetime and loop limitations. They are proof
 tooling gaps, not completed obligations or demonstrated library defects.
 
-Next milestones are the remaining slice and polynomial kernels, the capacity-18
-public slice, general decoder completeness, public state/resource/ownership
-behavior, and both accelerated x86 backends. Target execution and memory safety
-remain separate proof obligations.
+The core sketch mathematics and the ordinary no-hint Portable route have the
+end-to-end result stated above. Broader verification work includes the public
+constructors and updates that establish input validity, parsing and request
+admission, the shared job loop and aggregate request work, candidate hints and
+probe paths, V3 affine and closed-form composition, and accelerated backend
+execution. Physical memory provenance and compiler-to-ISA correspondence remain
+part of that broader scope.

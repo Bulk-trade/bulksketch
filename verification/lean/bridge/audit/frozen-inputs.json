@@ -14,7 +14,7 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "2b4c43715bb677d439fc8eb99564e093d041bea1fdb8ec5567ba470275ec8485",
-    "audit/frozen-inputs.json": "a8fbb5b085ea8c919affb4be514d3b231c20f1e2556cc7f3b66a7f3845e493db",
+    "audit/frozen-inputs.json": "ea5bda92f5ee182774702d274ec05383461ec296df7971ebb0209840b702a646",
     "bridge/BulksketchBridge.lean": "5dbd9b1fd933cd65fc227225c70ec885fecc1b5eaa061ec44ae76ecd4d5eb840",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
@@ -288,7 +288,7 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "160152bc44968676b1f9a04acf87abbcb26b2ed7d76bb167d35f049a41cc4940",
     "extraction/portable-xor/refinement-receipt.json": "3ff95bd9882582d238752a85be02fb4999e7a939ecfaa61fa94103537e4261aa",
-    "README.md": "aa765527fb7794b0a61957454e2af900413c3f1fd80db5a38ce2188e28dd89bf",
+    "README.md": "f65bd86e4bf476b59c541550dbe9333def50eeb5b06430d5bc65118884f6f746",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
     "audit/coverage.json": "17ddaa8f412c83b6c4c58d6629a0ddb3a93c53ae1474da229e0203763cb630d8",
     "audit/reconciliation-checkpoint.json": "2fe04207fd421c42b32b491ed4f144aacc3d69abfe707e37cb32aa4f3d32da66",
@@ -17211,6 +17211,18 @@
       "new_sha256": "e27859c8bfbff87efdef3419ee54410e5121028834ddf110ee63b45cf35708a0",
       "reason": "Freeze the original Portable decoder from valid in-memory frozen sketches to exact symmetric difference.",
       "old_sha256": "940642cd691036acff68302f5d866c5e4b42c05f9132c96b588500c1569b2a27"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "f65bd86e4bf476b59c541550dbe9333def50eeb5b06430d5bc65118884f6f746",
+      "reason": "Clarify the proved Portable end-to-end result, explicit input and resource assumptions, checked scope, and replay evidence; no theorem or native-source change.",
+      "old_sha256": "aa765527fb7794b0a61957454e2af900413c3f1fd80db5a38ce2188e28dd89bf"
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "new_sha256": "ea5bda92f5ee182774702d274ec05383461ec296df7971ebb0209840b702a646",
+      "reason": "Clarify the proved Portable end-to-end result, explicit input and resource assumptions, checked scope, and replay evidence; no theorem or native-source change.",
+      "old_sha256": "a8fbb5b085ea8c919affb4be514d3b231c20f1e2556cc7f3b66a7f3845e493db"
     }
   ],
   "challenge_count": 534

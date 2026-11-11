@@ -187,19 +187,59 @@ and libclang (for `bindgen`). The library itself needs neither.
 
 ## Proofs
 
-[`verification/lean`](verification/lean/README.md) holds Lean 4 proofs about the
-native Rust code, checked against Lean translations of 37 source bodies. The
-proofs cover GF64 arithmetic, trace, quadratic solving, inversion, the Portable
-arithmetic methods, fixed Frobenius tables and lookups, selected slice kernels,
-dense coefficient updates, and the work meter. They also prove that the modulus `X^64 + X^4 + X^3 + X + 1` is irreducible and connect native
-words to Mathlib's quotient-field arithmetic and `Algebra.trace`.
+This repository contains Lean 4 proofs of the sketch mathematics and an
+end-to-end correctness theorem for the original Portable GF64 decoder.
+For two valid in-memory sketches representing finite ID sets `A` and `B`,
+the theorem proves that the decoded IDs are distinct and form exactly
+the symmetric difference `A △ B`, including ID zero.
 
-Three enclosing inverse bodies use a separately reviewed Aeneas frontend patch
-with invariant checks required; the original pinned Lean runtime is unchanged.
-The remaining work includes other slice and polynomial kernels, decoder and
-sketch API contracts, and the PCLMUL/VPCLMUL backends. All 344 native executable
-obligations remain in scope. The checker enforces the pinned source revision and
-the documented translator, runtime and compiler trust boundary.
+### Theorem and assumptions
+
+The [whole-sketch theorem](verification/lean/bridge/BulksketchBridge/PortableSketchEndToEnd.lean)
+uses the original `FrozenSketch` payloads and assumes the following.
+
+- Both sketches have the same shape with a positive bucket count, the required
+  flattened storage length, and nonempty zero-word storage. Their odd syndromes
+  and zero membership bits correctly represent their routed ID sets.
+- Each bucket has positive capacity `c` within the format's 16-bit bound.
+  Its difference contains at most `β` IDs, where `β ≤ c`. ID zero consumes
+  an output slot when its membership differs.
+- Each row has scratch storage satisfying the native workspace admission
+  conditions and a live work meter with the explicit `rowWork` reserve.
+
+The proof follows the original Portable XOR, `BinaryDecoder::begin`, and
+`Execution::finish` calls on the ordinary decoder route with empty candidate
+hints. It derives reconstruction, the Berlekamp–Massey locator, root recovery,
+verification, and canonicalization from those premises. Bucket views, zero-ID
+interpretation, and bucket-order assembly are defined in Lean. Scratch and
+work assumptions are per row.
+
+The supporting mathematics proves that capacity-bounded nonzero supports are
+uniquely determined by their odd syndromes, and connects native GF64 arithmetic
+to Mathlib's field representation. The
+[row theorem](verification/lean/bridge/BulksketchBridge/PortableRowEndToEnd.lean)
+and [verification guide](verification/lean/README.md) give the exact statements
+and their scope.
+
+### Verification
+
+The proof checkpoint `19e6250` passed all six audit gates, including frozen
+statement and source checks, a transitive axiom audit, Lean kernel replay,
+and independent Nanoda replay. Only `propext`, `Classical.choice`, and
+`Quot.sound` are permitted. The native release suite passed 139 tests.
+The Rust source is pinned to `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`.
+
+```sh
+cd verification/lean
+CI=1 MATHLIB_NO_CACHE_ON_UPDATE=1 LEAN_NUM_THREADS=2 python3 scripts/verify_all.py
+```
+
+The connection to Rust uses pinned Charon/Aeneas translations and the recorded
+standard-library models. The translation, models, and correspondence with the
+production compiler and runtime are trusted. Broader verification work includes
+establishing input validity through the public constructors and updates, wire
+parsing, the shared request job and its aggregate work allowance, candidate-hint
+and V3 routes, and accelerated backend execution and memory contracts.
 
 ## Benchmark
 

@@ -55,7 +55,7 @@
     "audit/native-stateful-checkpoint.json": "2c41ee402642341add52703d90795de97eff7b0656c4a4db9cd3e675332f0210",
     "NATIVE_CALLER_CHAINS.md": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
     "audit/native-caller-checkpoint.json": "837788fd6bb6f20d3c18e69b74e0610177fc4b9aec084f1ec313c271f4771cf2",
-    "README.md": "aa765527fb7794b0a61957454e2af900413c3f1fd80db5a38ce2188e28dd89bf",
+    "README.md": "f65bd86e4bf476b59c541550dbe9333def50eeb5b06430d5bc65118884f6f746",
     "NATIVE_RECONSTRUCTION.md": "3a1955592353708b30df40c5fb5443a743451002275c4da8164c37a3344746b2",
     "audit/native-reconstruction-checkpoint.json": "13745cfcf6c9161fb460c8165365bb767a672f474cd14d06edecf6b5fb428562",
     "NATIVE_QUARTIC.md": "0f7a4311accbf944b75a6792955da66ae548891ce2dc1a7e53a167aed892a381",
@@ -1473,6 +1473,12 @@
       "new_sha256": "aa765527fb7794b0a61957454e2af900413c3f1fd80db5a38ce2188e28dd89bf",
       "reason": "Freeze the original Portable decoder from valid in-memory frozen sketches to exact symmetric difference.",
       "old_sha256": "db8028e6851fa026906c58b19cb2f1517b8456b84f6612254783cb3d9baa7777"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "f65bd86e4bf476b59c541550dbe9333def50eeb5b06430d5bc65118884f6f746",
+      "reason": "Clarify the proved Portable end-to-end result, explicit input and resource assumptions, checked scope, and replay evidence; no theorem or native-source change.",
+      "old_sha256": "aa765527fb7794b0a61957454e2af900413c3f1fd80db5a38ce2188e28dd89bf"
     }
   ]
 }
