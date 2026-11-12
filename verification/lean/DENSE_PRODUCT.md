@@ -1,6 +1,7 @@
-# Dense product and native decoder checkpoint
+# Dense product and native decoder proofs
 
-The audit checks 50 generated-body refinements. The source ledger retains
+The associated verification record contains 50 generated-body refinements.
+The source ledger retains
 all 344 executable native obligations from
 `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`.
 
@@ -54,7 +55,7 @@ or `None` for nonzero `S1` with the stated GF64 callbacks. Every returned
 pair has distinct nonzero roots and reproduces the given `S1` and `S3`.
 The row verifier remains responsible for the other odd syndromes. The direct
 body extracts with the pinned tools and its proof uses the previously
-reviewed inverse wrapper.
+pinned inverse wrapper.
 
 ## x86 masked-lane selection
 
@@ -62,16 +63,23 @@ The original `x86_vpclmul512::mask` helper was extracted for the x86 target.
 For each admitted length from zero through eight, it returns exactly
 `2^len - 1`. Each of its eight bits is set exactly when the lane index is
 below the slice length. The proof covers the zero branch and bounds the
-nonzero branch shift. The masked load and store still require address,
-pointer, and instruction contracts.
+nonzero branch shift. The [stateful LLBC contracts](NATIVE_STATEFUL.md) establish the masked load
+and store effects under admitted memory views. Physical pointer provenance and
+compiler-to-instruction correspondence remain outside these kernel proofs.
 
-## Open decoder and machine obligations
+## Recorded extraction limits and broader scope
 
-The isolated checked Berlekamp–Massey experiment propagates the common return
-into the tail switch arms and clears the original early-return lowering
-failure. The same original input then reaches a mandatory mutable context
-match in the final coefficient-normalization loop. This experiment remains
-outside the verified extraction pipeline. Reconstruction still fails at the
-loop back edge. General locator fitting, root recovery, work budgets,
-accelerated verification and compiler-expanded memory and ISA contracts
-remain open.
+The recorded isolated Berlekamp–Massey extraction propagated the common return
+into the tail switch arms and cleared the early-return lowering failure, then
+reached a mandatory mutable-context match in coefficient normalization. The
+reconstruction record also contains a loop-backedge failure. These diagnostic
+outputs are not counted as source refinements. The
+[BM locator](NATIVE_BM_LOCATOR.md), [reconstruction](NATIVE_RECONSTRUCTION.md) and
+[root traversal](NATIVE_ROOT_RUN.md) documentation describe the completed source
+contracts. The [Portable theorem](README.md) composes the ordinary no-hint route
+with explicit capacity, workspace and work assumptions.
+
+Public sketch construction and updates, wire/request admission, the shared job
+and its aggregate budget, hint and V3 routes, accelerated end-to-end execution,
+physical memory and compiler-to-ISA correspondence are broader verification
+obligations.

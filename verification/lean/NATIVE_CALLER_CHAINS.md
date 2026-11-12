@@ -1,7 +1,7 @@
 # Native x86 callers and the degree-3/4 certificate
 
-The frozen scope retains 344 executable native declarations. This checkpoint
-records 82 original Aeneas generated-body refinements and four separate
+The frozen scope retains 344 executable native declarations. The associated
+verification record contains 82 original Aeneas generated-body refinements and four separate
 source-linked stateful LLBC contracts. Production Rust is unchanged.
 
 ## Scalar PCLMUL
@@ -55,19 +55,22 @@ nonzero and pairwise distinct, and the ascending factor polynomial equals
 their monic product in the quotient field. The polynomial characterization
 uses the same original certificate body.
 
-## Reproduction and remaining coverage
+## Reproduction and related proofs
 
 Run `python3 scripts/verify_all.py` from this directory after setting up the
 pinned toolchain. The aggregate gate checks frozen exact-type challenges,
 transitive axiom dependencies, both proof replays and negative controls.
 Projector receipts preserve the original extraction commands and hashes.
 
-Prior checkpoints cover Dense multiplication, Portable Horner, the native
+The related proofs cover Dense multiplication, Portable Horner, the native
 rebuilt verifier, its Portable seed composition and its locator construction.
-The original reconstruction control still reaches a context join on pinned
-Aeneas. The checked ended-projector variant now extracts the original wrapper
-and both loop definitions in isolation with workspace admission modeled as an
-external call. The reconstruction loops, wrapper and admission link still
-need proofs. Native Berlekamp–Massey, general root recovery, the remaining
-accelerated slice and Horner bodies, memory and ISA correspondence, and
-end-to-end decoder completeness remain open.
+The original reconstruction control recorded a context-join failure on pinned
+Aeneas. The checked ended-projector variant extracted the original wrapper and
+both loops with workspace admission modeled as an external call. The
+[reconstruction proofs](NATIVE_RECONSTRUCTION.md) document the loop, wrapper and
+admission contracts; [locator](NATIVE_BM_LOCATOR.md) and
+[root traversal](NATIVE_ROOT_RUN.md) proofs cover the associated decoder stages.
+The [Portable theorem](README.md) composes ordinary no-hint decoding under
+explicit input and resource assumptions. Public admission, shared-job accounting,
+hint/V3 routes, accelerated end-to-end execution, physical memory and
+compiler-to-ISA correspondence remain broader obligations.

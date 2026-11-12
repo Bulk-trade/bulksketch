@@ -325,7 +325,7 @@ def check_newton_slice_retry_variant(variant, receipt, runtime, runtime_head, li
     directory = "extraction/deg34-guard/"
     patch = directory + "translator/checked-nested-slice-loan-retry.patch"
     delta = directory + "translator/nested-slice-loan-retry-delta.patch"
-    base = next((entry for entry in linkage["reviewed_translator_variants"]
+    base = next((entry for entry in linkage["translator_variants"]
                  if entry["id"] == "checked-fixedpoint-scalar-array-loan-retry-v1"), None)
     if (base is None or variant["receipt"] != directory + "receipt.json" or variant["patch"] != patch or
             variant["base_commit"] != runtime_head or variant["mandatory_checks"] is not True or
@@ -561,7 +561,7 @@ def check_degree_probe_extension(extension, receipt, variants, runtime_head, lin
             receipt["charon_commit"] != linkage["charon_commit"] or receipt["source_commit"] != linkage["source_commit"] or
             receipt["native_body_proof_credit"] != 0 or receipt["native_source_edited"] is not False or
             receipt["transparent_application_bodies"] is not True or receipt["guard_declarations_byte_identical"] != 13):
-        raise RuntimeError("DegreeProbe lost the reviewed nested-slice extension")
+        raise RuntimeError("DegreeProbe lost the pinned nested-slice extension")
     guard = json.loads((ROOT / variant["receipt"]).read_text())
     parent_checks = {item["name"]: item for item in guard["checks"]}
     commands = {row["name"]: row for row in receipt["checks"]}
@@ -599,7 +599,7 @@ def check_degree_probe_extension(extension, receipt, variants, runtime_head, lin
 
 
 def check_pclmul_horner_extension(extension, receipt, variants, runtime_head, linkage):
-    """Bind the second original Horner extraction to the reviewed matcher."""
+    """Bind the second original Horner extraction to the pinned matcher."""
     variant = next((entry for entry in variants if entry["id"] == "checked-ended-shared-scalar-v1"), None)
     directory = "extraction/pclmul-horner/"
     extraction = receipt["checked_extraction"]
@@ -660,7 +660,7 @@ def main():
     runtime_head = subprocess.check_output(["git", "-C", str(runtime), "rev-parse", "HEAD"], text=True).strip()
     if runtime_head != linkage["aeneas_commit"] or subprocess.check_output(
             ["git", "-C", str(runtime), "status", "--porcelain", "--untracked-files=no"], text=True).strip():
-        raise RuntimeError("Aeneas runtime differs from its clean reviewed source pin")
+        raise RuntimeError("Aeneas runtime differs from its clean pinned source pin")
     for item in linkage["extractions"]:
         if sha(ROOT / item["path"]) != item["sha256"] or \
                 json.loads((ROOT / item["path"]).read_text())["has_errors"] is not False:
@@ -675,7 +675,7 @@ def main():
     if {item["id"] for item in coverage["items"]} != {item["id"] for item in inventory["items"]}:
         raise RuntimeError("native obligation disappeared from coverage denominator")
     records = []
-    variants = linkage.get("reviewed_translator_variants", [])
+    variants = linkage.get("translator_variants", [])
     for variant in variants:
         receipt = json.loads((ROOT / variant["receipt"]).read_text())
         if variant["id"] == "checked-shared-expansion-owner-v1":
@@ -775,7 +775,7 @@ def main():
                 raise RuntimeError("checked sum_costs LLBC specialization lost exact scope")
             continue
         if variant["id"] != "checked-frozen-capture-v1":
-            raise RuntimeError("unknown reviewed translator variant")
+            raise RuntimeError("unknown translator variant")
         extraction = receipt["extraction"]
         expected_sources = {"src/interp/InterpJoin.ml", "src/pure/PureUtils.ml",
                             "src/pure/PureMicroPassesLoops.ml"}
@@ -796,12 +796,12 @@ def main():
                 extraction["exit_code"] != 0 or "-checks" not in extraction["required_flags"] or \
                 not set(extraction["required_flags"]) <= set(extraction["command"]) or \
                 sha(ROOT / extraction["input"]) != extraction["input_sha256"]:
-            raise RuntimeError("reviewed translator variant lost pinned provenance/checks")
+            raise RuntimeError("translator variant lost pinned provenance/checks")
         changed = re.findall(r"(?m)^diff --git a/(\S+) b/(\S+)$",
                              (ROOT / variant["patch"]).read_text())
         if {before for before, after in changed if before == after} != expected_sources or \
                 len(changed) != len(expected_sources):
-            raise RuntimeError("reviewed translator patch modifies unexpected files")
+            raise RuntimeError("pinned translator patch modifies unexpected files")
         if sha(runtime / "src/interp/InterpReduceCollapse.ml") != \
                 receipt["unchanged_collapse_guard_source_sha256"]:
             raise RuntimeError("original nested-loan guard changed")
@@ -810,7 +810,7 @@ def main():
                 raise RuntimeError("translator variant base source drift")
         for item in extraction["generated"]:
             if sha(ROOT / item["path"]) != item["sha256"]:
-                raise RuntimeError("reviewed variant generated artifact drift")
+                raise RuntimeError("pinned variant generated artifact drift")
         if not receipt["regressions"] or any(item["status"] not in {
                 "passed", "expected_rejection_confirmed", "expected_rust_borrow_rejection_confirmed"}
                 for item in receipt["regressions"]):
@@ -833,10 +833,10 @@ def main():
                 not any(item["name"] == "rust-value-regressions" and item["exit_code"] == 0
                         for item in receipt["commands"]):
             raise RuntimeError("translator checks/alias/value controls are incomplete")
-        result, _ = run("reviewed-translator-patch-applies", ["git", "apply", "--check",
+        result, _ = run("translator-patch-applies", ["git", "apply", "--check",
                          str(ROOT / variant["patch"])], timeout=30, cwd=runtime)
         records.append(result)
-    extensions = linkage.get("reviewed_pclmul_horner_extensions", [])
+    extensions = linkage.get("pclmul_horner_extensions", [])
     projections = linkage.get("native_generated_projections", [])
     horner_projections = [item for item in projections
                           if item["bridge_copy"] == "bridge/Arithmetic/X86PclmulHornerGenerated.lean"]
@@ -847,7 +847,7 @@ def main():
         check_pclmul_horner_extension(extension, receipt, variants, runtime_head, linkage)
         if horner_projections[0].get("translator_variant") != extension["variant"]:
             raise RuntimeError("PCLMUL Horner projection hides its translator variant")
-    probe_extensions = linkage.get("reviewed_degree_probe_extensions", [])
+    probe_extensions = linkage.get("degree_probe_extensions", [])
     probe_projections = [item for item in projections
                          if item["bridge_copy"] == "bridge/Arithmetic/DegreeProbeGenerated.lean"]
     if len(probe_extensions) != len(probe_projections) or len(probe_extensions) > 1:
@@ -962,7 +962,7 @@ def main():
     copies.update(item["bridge_copy"] for item in projections)
     variant_ids = {item["id"] for item in variants}
     if len(variant_ids) != len(variants):
-        raise RuntimeError("duplicate reviewed translator variant")
+        raise RuntimeError("duplicate pinned translator variant")
     for native_id, entry in refined.items():
         item = items[native_id]
         recorded = item["generated_body_refinement_evidence"]
@@ -1067,7 +1067,7 @@ def main():
     records.append(result)
     summary = {"status": "passed", "source_commit": scope["source_commit"], "checkout_commit": head,
                "runtime_commit": runtime_head,
-               "reviewed_translator_variants": [item["id"] for item in variants],
+               "translator_variants": [item["id"] for item in variants],
                "checked_generated_body_refinements": [entry["label"] for entry in registry["refinements"]],
                "checked_stateful_llbc_refinements": [entry["native_item_id"] for entry in stateful_entries],
                "frozen_challenges_matched": len(challenges),

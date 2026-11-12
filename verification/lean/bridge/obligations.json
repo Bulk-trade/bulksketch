@@ -2502,7 +2502,7 @@
       "scope": "Original Portable forwarding body returns normally on every native-width input with the exact full-word/raw-product result and genuine Mathlib field/trace/normalized quadratic semantics stated by its frozen challenge. No callback-success or caller-success premise; original source and shared dependencies retained verbatim."
     },
     {
-      "label": "maps::inverse_using [actual Gf64, reviewed checked frontend]",
+      "label": "maps::inverse_using [actual Gf64, pinned checked frontend]",
       "native_item_id": "src/field/maps.rs:36:function:bulksketch::field::maps::inverse_using",
       "source_line_span_sha256": "78130318ea4a965e73deada41bb0e25fcd1e7198331b448d1c628ad8b1f8deb4",
       "theorem": "BulksketchBridge.InverseUsing.inverse_using_refines",
@@ -2518,10 +2518,10 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "translator_variant": "checked-frozen-capture-v1",
-      "scope": "Every U64 input returns normally as None exactly for zero and otherwise the unique represented Mathlib field inverse. Original captured-square loop and all U32 counts/bounds are proved; inverse_using has explicit native callback equalities, while inverse supplies actual generated function-pointer dictionaries with no callback premise. Requires recorded checks-enabled reviewed frontend variant; no replacement closure model or application axiom."
+      "scope": "Every U64 input returns normally as None exactly for zero and otherwise the unique represented Mathlib field inverse. Original captured-square loop and all U32 counts/bounds are proved; inverse_using has explicit native callback equalities, while inverse supplies actual generated function-pointer dictionaries with no callback premise. Requires recorded checks-enabled pinned frontend variant; no replacement closure model or application axiom."
     },
     {
-      "label": "maps::inverse [actual Gf64, reviewed checked frontend]",
+      "label": "maps::inverse [actual Gf64, pinned checked frontend]",
       "native_item_id": "src/field/maps.rs:27:function:bulksketch::field::maps::inverse",
       "source_line_span_sha256": "c0a3efabe176c4f91856b88c21483b9cf89fe24c64c3e734748ca9ff12de25fa",
       "theorem": "BulksketchBridge.InverseUsing.inverse_refines",
@@ -2537,7 +2537,7 @@
       ],
       "source_linkage": "bridge/source-linkage.json",
       "translator_variant": "checked-frozen-capture-v1",
-      "scope": "Every U64 input returns normally as None exactly for zero and otherwise the unique represented Mathlib field inverse. Original captured-square loop and all U32 counts/bounds are proved; inverse_using has explicit native callback equalities, while inverse supplies actual generated function-pointer dictionaries with no callback premise. Requires recorded checks-enabled reviewed frontend variant; no replacement closure model or application axiom."
+      "scope": "Every U64 input returns normally as None exactly for zero and otherwise the unique represented Mathlib field inverse. Original captured-square loop and all U32 counts/bounds are proved; inverse_using has explicit native callback equalities, while inverse supplies actual generated function-pointer dictionaries with no callback premise. Requires recorded checks-enabled pinned frontend variant; no replacement closure model or application axiom."
     },
     {
       "source_line_span_sha256": "0498af637fdca28129420645db2ed29b28516ae9f946c014b7d9592d70438fe8",
@@ -2546,7 +2546,7 @@
       "challenge": "BulksketchBridge.PortableInverseChallenges.actualInverseReturnsFieldInverse",
       "theorem": "BulksketchBridge.PortableInverse.inverse_refines",
       "native_item_id": "src/backend/portable.rs:26:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::inverse",
-      "label": "Portable::inverse [actual Gf64, reviewed checked frontend]",
+      "label": "Portable::inverse [actual Gf64, pinned checked frontend]",
       "source_linkage": "bridge/source-linkage.json",
       "translator_variant": "checked-frozen-capture-v1",
       "generated_files": [
@@ -2557,7 +2557,7 @@
         "bridge/Arithmetic/InverseUsingGenerated.lean",
         "bridge/Arithmetic/PortableInverseGenerated.lean"
       ],
-      "scope": "Every original Portable inverse returns normally: None exactly for zero, otherwise the unique represented Mathlib field inverse. No callback premise; original forwarding body and dependencies retained verbatim under the mandatory-checks reviewed frontend variant."
+      "scope": "Every original Portable inverse returns normally: None exactly for zero, otherwise the unique represented Mathlib field inverse. No callback premise; original forwarding body and dependencies retained verbatim under the mandatory-checks pinned frontend variant."
     },
     {
       "label": "frobenius::square [original x86-visible const fn]",
@@ -2821,7 +2821,7 @@
       "scope": "For a nonempty ascending squared locator and explicit exact raw multiplication and reduction callback contracts, the original default returns normally and accepts exactly when every odd continuation equation holds. Both loops, index bounds, reduction and short-circuit mismatch are covered."
     },
     {
-      "label": "Dense::square_into [original source, reviewed checked frontend]",
+      "label": "Dense::square_into [original source, pinned checked frontend]",
       "native_item_id": "src/poly/dense.rs:30:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::square_into",
       "source_line_span_sha256": "3e965ba40793cc7723a14f56d7440c754b27d221b29aef2c060d18e2096c451f",
       "theorem": "BulksketchBridge.DenseSquare.square_into_refines",
@@ -2912,7 +2912,7 @@
       "scope": "For adequate buffers and explicit callback equations, both original loops and both comparison branches return normally with exact scratch frames. A seed mismatch returns false before squaring or recurrence. A matching seed squares the locator tail and returns the exact continuation result."
     },
     {
-      "label": "Dense::mul_into [original source, reviewed checked frontend]",
+      "label": "Dense::mul_into [original source, pinned checked frontend]",
       "native_item_id": "src/poly/dense.rs:7:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::mul_into",
       "source_line_span_sha256": "5e2aedce1b0696ae7b4285b879c95e9eddf370591fb7695eb0cd4e8fe6e19d20",
       "theorem": "BulksketchBridge.DenseMul.mul_into_refines",
@@ -2955,7 +2955,7 @@
       "translator_variant": "checked-frozen-capture-v1"
     },
     {
-      "label": "Portable::horner_many [original source, reviewed checked frontend]",
+      "label": "Portable::horner_many [original source, pinned checked frontend]",
       "native_item_id": "src/backend/portable.rs:109:method:bulksketch::backend::portable::<Portable as BulkKernels < F >>::horner_many",
       "source_line_span_sha256": "07f2978c6272a4217ebf8086f717d7edb327260d48d5aed5406586d668682414",
       "theorem": "BulksketchBridge.PortableHorner.horner_many_refines",
@@ -2972,7 +2972,7 @@
         "bridge/Arithmetic/PortableHornerGenerated.lean"
       ],
       "source_linkage": "bridge/source-linkage.json",
-      "scope": "The original empty coefficient and full reverse fold paths give the exact output frame on equal lengths. Unequal lengths follow the original panic path. Actual Portable GF64 multiplication and original closure are proved, under the reviewed checked context matcher and scoped iterator model.",
+      "scope": "The original empty coefficient and full reverse fold paths give the exact output frame on equal lengths. Unequal lengths follow the original panic path. Actual Portable GF64 multiplication and original closure are proved, under the pinned checked context matcher and scoped iterator model.",
       "translator_variant": "checked-ended-shared-scalar-v1"
     },
     {

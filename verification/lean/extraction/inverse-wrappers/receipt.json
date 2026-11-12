@@ -1,9 +1,9 @@
 {
-  "status": "complete original-source extraction; final translator test/review receipt integrated separately",
+  "status": "complete original-source extraction; final translator test/analysis receipt integrated separately",
   "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
   "original_llbc": "extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc",
   "original_llbc_sha256": "cd5efbbf9c68a8283359a2d48ffded1d60560df82374e131201a248106ebac7e",
-  "reviewed_translator_variant": "tooling/aeneas-loop-capture",
+  "translator_variant": "tooling/aeneas-loop-capture",
   "sanity_checks_required": true,
   "generated": [
     {

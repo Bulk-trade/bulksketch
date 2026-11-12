@@ -1118,7 +1118,7 @@
       "trusted_assumptions": [],
       "generated_body_refinement_evidence": {
         "theorem": "BulksketchBridge.PortableHorner.horner_many_refines",
-        "scope": "The original empty coefficient and full reverse fold paths give the exact output frame on equal lengths. Unequal lengths follow the original panic path. Actual Portable GF64 multiplication and original closure are proved, under the reviewed checked context matcher and scoped iterator model.",
+        "scope": "The original empty coefficient and full reverse fold paths give the exact output frame on equal lengths. Unequal lengths follow the original panic path. Actual Portable GF64 multiplication and original closure are proved, under the pinned checked context matcher and scoped iterator model.",
         "source_linkage": "bridge/source-linkage.json",
         "registry": "bridge/obligations.json",
         "verification": "bridge/audit/results/verification.json"
@@ -1246,7 +1246,7 @@
       "trusted_assumptions": [],
       "generated_body_refinement_evidence": {
         "theorem": "BulksketchBridge.PortableInverse.inverse_refines",
-        "scope": "Every original Portable inverse returns normally: None exactly for zero, otherwise the unique represented Mathlib field inverse. No callback premise; original forwarding body and dependencies retained verbatim under the mandatory-checks reviewed frontend variant.",
+        "scope": "Every original Portable inverse returns normally: None exactly for zero, otherwise the unique represented Mathlib field inverse. No callback premise; original forwarding body and dependencies retained verbatim under the mandatory-checks pinned frontend variant.",
         "source_linkage": "bridge/source-linkage.json",
         "registry": "bridge/obligations.json",
         "verification": "bridge/audit/results/verification.json"
@@ -7092,7 +7092,7 @@
       "trusted_assumptions": [],
       "generated_body_refinement_evidence": {
         "theorem": "BulksketchBridge.InverseUsing.inverse_refines",
-        "scope": "Every U64 input returns normally as None exactly for zero and otherwise the unique represented Mathlib field inverse. Original captured-square loop and all U32 counts/bounds are proved; inverse_using has explicit native callback equalities, while inverse supplies actual generated function-pointer dictionaries with no callback premise. Requires recorded checks-enabled reviewed frontend variant; no replacement closure model or application axiom.",
+        "scope": "Every U64 input returns normally as None exactly for zero and otherwise the unique represented Mathlib field inverse. Original captured-square loop and all U32 counts/bounds are proved; inverse_using has explicit native callback equalities, while inverse supplies actual generated function-pointer dictionaries with no callback premise. Requires recorded checks-enabled pinned frontend variant; no replacement closure model or application axiom.",
         "source_linkage": "bridge/source-linkage.json",
         "registry": "bridge/obligations.json",
         "verification": "bridge/audit/results/verification.json"
@@ -7119,7 +7119,7 @@
       "trusted_assumptions": [],
       "generated_body_refinement_evidence": {
         "theorem": "BulksketchBridge.InverseUsing.inverse_using_refines",
-        "scope": "Every U64 input returns normally as None exactly for zero and otherwise the unique represented Mathlib field inverse. Original captured-square loop and all U32 counts/bounds are proved; inverse_using has explicit native callback equalities, while inverse supplies actual generated function-pointer dictionaries with no callback premise. Requires recorded checks-enabled reviewed frontend variant; no replacement closure model or application axiom.",
+        "scope": "Every U64 input returns normally as None exactly for zero and otherwise the unique represented Mathlib field inverse. Original captured-square loop and all U32 counts/bounds are proved; inverse_using has explicit native callback equalities, while inverse supplies actual generated function-pointer dictionaries with no callback premise. Requires recorded checks-enabled pinned frontend variant; no replacement closure model or application axiom.",
         "source_linkage": "bridge/source-linkage.json",
         "registry": "bridge/obligations.json",
         "verification": "bridge/audit/results/verification.json"
@@ -12662,7 +12662,7 @@
       "period64": "BulksketchProofs.Field.Period.sixty_four_squares_identity",
       "source_tables": "BulksketchBridge.MapsTables.rows_match_source/chunks_match_source",
       "native_word_quotient_field_bridge": "BulksketchBridge.Algebra.Gf64.bijective_representation",
-      "inverse_wrappers": "All three scalar maps inversion functions have source-body field-inverse refinements; inverse_using/inverse use the checks-enabled reviewed translator variant checked-frozen-capture-v1, not the failing unpatched frontend.",
+      "inverse_wrappers": "All three scalar maps inversion functions have source-body field-inverse refinements; inverse_using/inverse use the checks-enabled pinned translator variant checked-frozen-capture-v1, not the failing unpatched frontend.",
       "multiplication_transport": "BulksketchBridge.Algebra.Gf64.native_mul_is_field",
       "square_transport": "BulksketchBridge.Algebra.Gf64.native_square_is_field",
       "algebra_trace_transport": "BulksketchBridge.Algebra.Gf64.native_trace_is_algebra_trace",

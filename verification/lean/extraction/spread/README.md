@@ -13,9 +13,9 @@ python3 extraction/spread/run.py \
   --aeneas tooling/aeneas/src/_build/default/main.exe
 ```
 
-`run.py` verifies every reviewed native source hash and the Cargo/toolchain
+`run.py` verifies every pinned native source hash and the Cargo/toolchain
 input hashes before running Charon. It permits proof-only descendant commits:
-Git HEAD is recorded, while the actual Rust content must equal the reviewed
+Git HEAD is recorded, while the actual Rust content must equal the pinned
 native revision. The source branch is not edited or narrowed by hand.
 
 The 2026-11-04 attempt completed with process exit 0 and explicit LLBC

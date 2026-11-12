@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate actual WorkMeter methods from reviewed native source content."""
+"""Regenerate actual WorkMeter methods from pinned native source content."""
 import argparse
 import hashlib
 import json
@@ -34,7 +34,7 @@ def logged(name,command,env):
 
 inventory=json.loads((PROOF/'audit/source-inventory.json').read_text())
 if inventory['source_commit']!=SCOPE['source_commit']:
-    raise SystemExit('reviewed native source pins disagree')
+    raise SystemExit('pinned native source pins disagree')
 for record in inventory['files']:
     if sha(SOURCE/record['path'])!=record['sha256']:
         raise SystemExit('native source drift: '+record['path'])

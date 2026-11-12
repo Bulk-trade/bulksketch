@@ -1,6 +1,6 @@
-# Independent exact modulus irreducibility proof review
+# Exact modulus irreducibility analysis
 
-Approved2026-11-04 by wrapper_performance; no blockers in the stable reviewed snapshot. Exact file hashes are in modulus-proof-independent-review.json. This is a read-only source/argument review. The reviewer also read modulus-build.log confirming successful2095job targeted elaboration and modulus-axioms.log confirming standard-three closure for the exact literal root and supporting modulus/Frobenius/Bézout/final square-certificate roots; parent retains responsibility for aggregate exported replay. No reviewer builds or source changes were performed.
+Analysis date: 2026-11-04. Current file fingerprints are recorded in `audit/frozen-inputs.json`. The recorded targeted build completed 2,095 jobs. The axiom log contains only `propext`, `Classical.choice` and `Quot.sound` for the exact literal root and supporting modulus, Frobenius, Bézout and final square-certificate roots. Aggregate exported-term replay is separate from this source argument.
 
 ## Goal and assumptions
 
@@ -8,7 +8,7 @@ The final exactPolynomialIrreducible root has the independently frozen literal p
 
 ## All certificate data are checked
 
-ModulusCertificates.lean contains65explicit candidate remainder polynomials and64unconditional adjacent identities R_i^2+modulus*q_i+R_(i+1)=0. The review checked that all64theorem headers use exactly the adjacent indices0..63 and have no parameters, that each proof unfolds the required polynomials/modulus and uses ordinary ring_nf/characteristic-two proofs, and that no admission, custom axiom or native-decision token occurs. The direct final Bezout theorem explicitly proves u*modulus+v*(R32+X)=1. These data are witnesses whose identities must be checked, not externally trusted computed results.
+ModulusCertificates.lean contains65explicit candidate remainder polynomials and64unconditional adjacent identities R_i^2+modulus*q_i+R_(i+1)=0. All 64 theorem headers use exactly the adjacent indices 0..63 and have no parameters. Each proof unfolds the required polynomials and modulus and uses ordinary `ring_nf` and characteristic-two reasoning. No admission, custom axiom or native-decision token occurs. The direct final Bezout theorem explicitly proves u*modulus+v*(R32+X)=1. These data are witnesses whose identities must be checked, not externally trusted computed results.
 
 Canonical remainder degree bounds are not needed for the divisibility argument: arbitrary R_i satisfying the proved congruences are sufficient, with R0=X and R64=X. Degree64 of the modulus and positive/small factor degrees are separately proved where needed.
 
@@ -24,12 +24,12 @@ The proof separately establishes monicity and natDegree64. Any hypothetical moni
 
 Subtracting the two32-power congruences gives divisibility of R32+X in characteristic2. The proved Bezout identity then forces the factor to be a unit, contradicting its irreducibility. This excludes every proper small monic divisor and proves the final irreducibility statement. The Mathlib finite-field lemma internally constructs a quotient field only for the already-proved irreducible FACTOR; it does not assume irreducibility of the target modulus, so the argument is not circular.
 
-The native BitVec-to-Polynomial/quotient representation bridge is explicitly separate in the frozen spec and remains a material scope limit. This exact polynomial theorem does not, by itself, prove all native field operations satisfy the field laws or establish whole-library source coverage.
+The native BitVec-to-polynomial quotient representation has a separate specification. This exact polynomial theorem does not, by itself, prove all native field operations satisfy the field laws or establish whole-library source coverage.
 
-## Independent isolated export/replay completed
+## Recorded isolated export and replay
 
-At root request, this reviewer exported only Gf64.exactPolynomialIrreducible and Gf64.modulus_irreducible from the stable module, without rebuilding or editing it. The untouched export has156,850,168bytes and SHA256 fd80ffa72f70d262f12ac6289180d352c2f84301f11b7ac51d606af6c95d89cc.
+The scoped export contains only `Gf64.exactPolynomialIrreducible` and `Gf64.modulus_irreducible` as selected roots from the fixed module, without a source edit or rebuild. The untouched export has156,850,168bytes and SHA256 fd80ffa72f70d262f12ac6289180d352c2f84301f11b7ac51d606af6c95d89cc.
 
 Export completed in6.842seconds. The original stock Leanchecker accepted it in13.606seconds; ordinary independent Nanoda accepted the exact same file in4.459seconds. Every process returned0 within unchanged120second limits. Nanoda used2threads, only propext/Quot.sound/Classical.choice permitted, forbidden-axiom hard errors, and the existing nat/string extension configuration. No scheduling fallback or transformed proof export was needed.
 
-An independent NDJSON structure pass confirmed that the only axiom declaration names are those three and that the private frobeniusPackage appears as an opaque declaration WITH an exported value and type. Thus the abstraction was not silently replaced by an axiom or omitted body during replay. Separate ignored logs, configuration, commands and hashes are in bridge/audit/results/modulus-review. Parent whole-project integration remains a distinct check.
+An independent NDJSON structure pass confirmed that the only axiom declaration names are those three and that the private frobeniusPackage appears as an opaque declaration WITH an exported value and type. Thus the abstraction was not silently replaced by an axiom or omitted body during replay. The recorded export fingerprint identifies the input to both replay checks. Whole-project integration remains a distinct check.

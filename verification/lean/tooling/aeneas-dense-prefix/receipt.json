@@ -46,7 +46,7 @@
     "exit_code": 0
   },
   "regression_sources": {
-    "tooling/aeneas-dense-prefix/run.py": "f0c6822035a19f7e9098f03db0b759d40fc8013a071ba6dffe6022c489a0bd41",
+    "tooling/aeneas-dense-prefix/run.py": "627a70c8b188d7347224228a87773d6fb2d03902870629d6489ff331db4d2181",
     "tooling/aeneas-dense-prefix/tests/Cargo.toml": "c4786210846407c975ca8745c71f96212c8b36f0f9e048fdf1f2b954e9c64af2",
     "tooling/aeneas-dense-prefix/tests/Cargo.lock": "da99c8ef1525545496cbc525c6444088338ceb98ee74900bf8df75c4a066b5b8",
     "tooling/aeneas-dense-prefix/tests/src/lib.rs": "843a9ae6635be7dde241a8ebc75e7585983c0ed3825e9e400facf5e76ea30b77",

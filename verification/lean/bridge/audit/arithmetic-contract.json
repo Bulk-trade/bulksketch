@@ -1,7 +1,6 @@
 {
-  "policy": "Independent frozen contracts were reviewed before proof search. Canonical migration changes import paths only and retains exact original generated function/type text; no proposition was weakened.",
-  "reviewer": "wrapper_performance",
-  "canonical_definition_review": "extraction/canonical-arithmetic/migration-receipt.json",
+  "policy": "Independent frozen contracts were pinned before proof construction. Canonical migration changes import paths only and retains exact original generated function/type text; no proposition was weakened.",
+  "canonical_definition_record": "extraction/canonical-arithmetic/migration-receipt.json",
   "pre_search_files": {
     "bridge/BulksketchBridge/ReduceSpec.lean": "f544901960402b251b832412991ad43dd3395820fec7cbe533688d5298256a42",
     "bridge/BulksketchBridge/ReduceChallenges.lean": "190ed042531fa8a748a83991f3af8f28cf9f08b4fa35c8c90de3e8b7772e27a6",

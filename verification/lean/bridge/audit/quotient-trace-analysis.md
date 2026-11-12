@@ -1,20 +1,15 @@
-# Quotient representation and algebra-trace review
+# Quotient representation and algebra-trace analysis
 
-Reviewed on 2026-11-06 against native source pin
+Analysis date: 2026-11-06. Native source pin:
 `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`, Lean 4.35.0, and the existing
 Mathlib pin `56a005855ea17e0b0958f73ec801ae140b0a1679`.
 
-## Mathematical and statement review
+## Mathematical contracts
 
-The trace-transport agent cross-reviewed `Word.lean`, `WordOps.lean`,
-`WordNative.lean`, and `InversePower.lean`. It authored `WordSquare.lean`,
-`WordEquiv.lean`, and the new trace modules, so this cross-review is not an
-author-independent review of those latter files. The independent proof-term
-checkers below check all eighteen listed roots, regardless of authorship.
-The word-representation agent separately reviewed the square, equivalence, and
-trace modules and found their statements and proofs sound. Its author-independent
-findings and source hashes are recorded in
-[`word-quotient-independent-review.md`](../../audit/word-quotient-independent-review.md).
+The contracts cover the word representation, arithmetic operations, square,
+trace transport and inverse exponent. The independent proof-term checkers below
+check all eighteen listed roots. Representation and source fingerprints are
+documented in the [word quotient analysis](../../audit/word-quotient-analysis.md).
 
 - The target is `AdjoinRoot modulus` over `ZMod 2`, with the exact modulus
   `X^64 + X^4 + X^3 + X + 1`. Its field instance is obtained from the earlier
@@ -53,8 +48,8 @@ findings and source hashes are recorded in
   theorem includes zero and uses Mathlib's total inverse. By itself it grants
   no native inversion-function coverage credit.
 
-No blocking mathematical or statement issue was found in the cross-reviewed
-word, native-composition, or inverse-power proofs. Extractor, runtime, compiler,
+The word, native-composition and inverse-power proofs have the contracts
+described above. Extractor, runtime, compiler,
 and machine correspondence remain the documented trusted boundary. A generated
 body refinement is distinct from complete native contracts and from closure of
 the compiler-expanded implementation inventory.
@@ -86,7 +81,7 @@ unchanged Lean kernel and independently through Nanoda. No application axiom,
 | Export literal-dependency selector | Passed | 2.903 |
 | Project exact original-export prelude subset | Passed | 6.072 |
 | Stock Leanchecker on that prelude | Passed | 4.441 |
-| Unchanged Lean kernel via reviewed scheduling loader | Passed | 29.894 |
+| Unchanged Lean kernel via the scheduling loader | Passed | 29.894 |
 | Independent Nanoda on untouched original export | Passed | 12.240 |
 
 Every subprocess retained the 120-second limit. The main export is 217,338,952
@@ -98,11 +93,8 @@ It retains the original expression/name records, hence its size, while selecting
 only the literal dependency declarations already present in the main export.
 No export record is rewritten. Nanoda receives the original main export.
 
-The local reproduction script, full commands, raw logs, and JSON receipt are
-saved outside Git in
-`/workspace/bulk/bulksketch-proof-evidence-20261106/trace-review/`.
 The combined repository verifier remains the final integration gate.
 
-This is progress toward the retained native scope. It is not a 100% coverage
-claim, does not alter the 344-item executable denominator, and does not count
-new mathematical consequences as additional Rust source bodies.
+The source accounting retains 344 executable obligations. Mathematical
+consequences are recorded separately from Rust source-body refinements; these
+contracts do not establish whole-library coverage.

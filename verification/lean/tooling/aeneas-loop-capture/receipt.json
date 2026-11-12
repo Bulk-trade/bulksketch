@@ -655,7 +655,7 @@
   ],
   "native_source_changed": false,
   "regression_sources": {
-    "tooling/aeneas-loop-capture/run.py": "d7c058d5c76b5b58309b3c249cd93bdd524ace5503b155bf4d34992cabea1747",
+    "tooling/aeneas-loop-capture/run.py": "0f73323214328cc355750bf6980d21593f3a3faa651dc10fa36556d4b14248f4",
     "tooling/aeneas-loop-capture/tests/Cargo.toml": "ae431364b119e3dcc981627892e0dd70d5192da8e87d939fc5c839ff66661765",
     "tooling/aeneas-loop-capture/tests/Cargo.lock": "ac2c6bd2c17d40954934091aab68d7838a20451f960ba44a3c536a6a3a3f86d5",
     "tooling/aeneas-loop-capture/tests/negative/nested_shared_then_mutable.rs": "42f7b8fd74abac3cc3198f83cf0bc68179f2f4d8aeef2e554f8d859d694cc86a",
@@ -663,5 +663,5 @@
     "tooling/aeneas-loop-capture/tests/src/lib.rs": "a29be3658d98bc00a89ed8dc7fc4e87a161be41c955bb59b0371a53f52038196"
   },
   "new_native_coverage_credit_from_tests": 0,
-  "trust_boundary": "Reviewed Aeneas frontend patch under mandatory enabled sanity/frozen-context checks; not a kernel theorem of compiler correctness."
+  "trust_boundary": "Pinned Aeneas frontend patch under mandatory enabled sanity/frozen-context checks; not a kernel theorem of compiler correctness."
 }

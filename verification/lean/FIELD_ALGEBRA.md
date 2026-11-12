@@ -1,11 +1,12 @@
-# Field algebra and native maps checkpoint
+# Field algebra and native maps
 
-This records the earlier field-algebra checkpoint. The subsequent
-[quotient-field checkpoint](QUOTIENT_FIELD.md) closes the word representation
-and algebra-trace transport listed as remaining below, and verifies the original
-`inverse_with_frobenius` body. The enclosing inversion wrappers remain open.
+The field-algebra proofs establish modulus irreducibility, Frobenius period,
+and the native map properties described below. The
+[quotient-field proofs](QUOTIENT_FIELD.md) establish word representation,
+algebra-trace transport, and the original `inverse_with_frobenius` body.
+[Enclosing-inversion proofs](NATIVE_COVERAGE.md) cover the wrapper functions.
 
-This checkpoint preserves native revision
+These proofs use native revision
 `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`. Rust implementation and build inputs
 are unchanged. All earlier frozen statements and generated function definitions
 remain present.
@@ -112,20 +113,26 @@ diagnostic behavior is not claimed as Rust formatting correctness. Independence
 from every Debug dictionary is proved, and all endpoint conversions establish
 inner `Ok` before `expect`.
 
-## Remaining scope
+## Scope of the recorded component results
+
+These limits describe the component record below. The
+[verification overview](README.md) states the combined Portable result and
+links the other source refinements.
 
 This establishes the literal Mathlib polynomial theorem and the specified word
 and native-source refinements. The formal native-word-to-polynomial quotient
 field representation, field-law transport and identification with Mathlib's
 `Algebra.trace` remain separate obligations.
 
-Inverse functions remain unproved. The original enclosing inverse extraction
-fails on the captured borrowed-square closure; its failure is preserved. A
-standalone original `inverse_with_frobenius` extraction succeeded, but neither
-extraction nor an unintegrated projection is credited as an inverse proof.
+This component record contains no inverse-function proof. The original enclosing
+inverse extraction failed on the captured borrowed-square closure; the failed
+extraction is preserved. A standalone original `inverse_with_frobenius` extraction
+succeeded, and extraction alone is not counted as an inverse proof. The
+[quotient-field](QUOTIENT_FIELD.md) and [enclosing-inversion](NATIVE_COVERAGE.md)
+proofs document the functional contracts.
 
 The x86-only Frobenius lookup/table-generation paths, inversion, the decoder,
 public state/resource/ownership behavior and compiler-expanded closure remain
-in scope. All 344 native executable obligations are retained. The checkpoint's
+in scope. All 344 native executable obligations are retained. The recorded
 14 source-body refinements and 65 frozen endpoints are distinct evidence counts,
 with no full-native coverage percentage claimed.

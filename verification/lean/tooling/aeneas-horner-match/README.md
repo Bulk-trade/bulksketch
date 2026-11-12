@@ -1,7 +1,7 @@
 # Checked matching of ended scalar loans
 
 The `checked-ended-shared-scalar-v1` extractor is Aeneas
-`ab34bd28458a08c150b7cbf1873e59af74588138` with one reviewed patch to
+`ab34bd28458a08c150b7cbf1873e59af74588138` with one pinned patch to
 `src/interp/InterpMatchCtxs.ml`. The original Portable Horner body is the
 only native extraction associated with this variant. The Lean runtime
 comes from the clean pinned Aeneas checkout.

@@ -1,5 +1,5 @@
 {
-  "status": "parent-independently-approved-before-proof-search",
+  "status": "contract fixed before proof construction",
   "files": [
     {
       "path": "bridge/BulksketchBridge/MapsTraceSpec.lean",
@@ -15,11 +15,9 @@
     "mathematical absolute trace correctness until separate semantic proof",
     "Rust std/compiler/ISA correctness"
   ],
-  "proof_search_started": false,
+  "proof_construction_started": false,
   "active_arithmetic_copies_changed": false,
-  "independent_review": {
-    "reviewer": "root",
-    "approved": true,
+  "contract_analysis": {
     "note": "All-U64 normal U8 word, every outputbit; separate mathematical trace certificate to follow."
   }
 }

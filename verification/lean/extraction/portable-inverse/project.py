@@ -14,7 +14,7 @@ import re
 ROOT = Path(__file__).resolve().parents[2]
 PREFIX = "backend.portable.Portable.Insts.BulksketchBackendContractArithmetic."
 METHODS = ["inverse"]
-HEADER = """-- Exact declaration projection from reviewed checks-enabled original-source Aeneas output.
+HEADER = """-- Exact declaration projection from pinned checks-enabled original-source Aeneas output.
 -- The original Portable inverse declaration below is retained verbatim.
 -- Shared extracted types and function bodies are checked against Arithmetic.Funs.
 module

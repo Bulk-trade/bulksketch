@@ -1,4 +1,4 @@
--- Exact declaration projection from reviewed checks-enabled original-source Aeneas output.
+-- Exact declaration projection from pinned checks-enabled original-source Aeneas output.
 -- The original Portable inverse declaration below is retained verbatim.
 -- Shared extracted types and function bodies are checked against Arithmetic.Funs.
 module

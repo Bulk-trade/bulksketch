@@ -1,5 +1,5 @@
 {
-  "status": "parent-approved-exact-generated-canonical-migration",
+  "status": "exact-generated-canonical-migration",
   "previous_artifact": "extraction/canonical-arithmetic/frobenius/Arithmetic",
   "new_artifact": "extraction/canonical-arithmetic/maps/Arithmetic",
   "previous_function_declarations_checked_by_fullname": 29,

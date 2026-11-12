@@ -42,7 +42,7 @@ def main():
     head = subprocess.check_output(["git", "-C", str(source), "rev-parse", "HEAD"], text=True).strip()
     inventory = json.loads((AUDIT / "source-inventory.json").read_text())
     if inventory["source_commit"] != scope["source_commit"]:
-        raise RuntimeError("source inventory and reviewed source pin disagree")
+        raise RuntimeError("source inventory and pinned source pin disagree")
     for record in inventory["files"]:
         if digest(source / record["path"]) != record["sha256"]:
             raise RuntimeError("native source changed: " + record["path"])

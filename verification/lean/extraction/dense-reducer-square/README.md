@@ -6,7 +6,7 @@ pinned Charon LLBC and a composition of three previously checked
 Aeneas changes. The included patch contains the exact reducer
 Option matcher, the shared-expansion owner check and the Dense
 shared-only level-one erasure guard. The projector compares each
-patch section byte for byte with those reviewed parts. Mutable
+patch section byte for byte with those pinned parts. Mutable
 row and final-reduction writeback callbacks survive the lowering.
 
 The checked original high-table row Zip and final reduction Zip are

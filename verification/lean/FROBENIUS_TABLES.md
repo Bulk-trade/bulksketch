@@ -1,7 +1,7 @@
 # Frobenius tables and slice kernels
 
-The later [slice and normalization checkpoint](SLICE_NORMALIZATION.md) resolves
-the mutable Zip and Dense iterator dependencies listed below.
+The [slice and normalization proofs](SLICE_NORMALIZATION.md) cover the mutable
+Zip and Dense iterator dependencies used by the slice kernels.
 
 The two original Frobenius generators complete normally and produce all 2,560
 cells. Each cell is the scheduled power of the square map applied to a nibble
@@ -23,7 +23,7 @@ were extracted for `x86_64-apple-darwin` with the pinned tools. The proof consum
 the generated initializer bodies. Correspondence to Rust's constant evaluation
 and target execution stays within the documented extraction trust boundary.
 
-The slice checkpoint proves the original `BulkKernels::multiply_linear` default
+The slice proofs establish the original `BulkKernels::multiply_linear` default
 for every slice length. The descending update reads the original preceding
 coefficient and preserves the full fixed-length destination frame. Its contract
 requires the supplied multiplication to agree with the native GF64 body.
@@ -31,11 +31,13 @@ With a zero final spare slot, the resulting Mathlib polynomial is the full
 product with `1 + root * X`. The default `square_mod` fallback returns false and
 preserves both mutable buffers in the slice value model.
 
-The six new source bodies bring the ledger to 32 refinements across 344 retained
-native obligations. The static statements and polynomial transport add no
-extra source-body count. The slice frame proofs use the pinned Aeneas value
-model. Decoder completeness, machine memory and aliasing, and the accelerated
-ISA contracts remain open.
+The associated record contains 32 refinements across 344 retained native
+obligations, including the six source bodies described here. Static statements
+and polynomial transport add no source-body count. The slice frame proofs use
+the pinned Aeneas value model. The [Portable theorem](README.md) establishes
+ordinary no-hint decoder completeness under explicit admission and resource
+assumptions. Physical memory, aliasing and accelerated ISA correspondence
+remain outside these table and slice proofs.
 
 The existing x86_64 Frobenius regeneration regression passed under Rosetta
 with the pinned nightly toolchain. The arm64 release suite passed all 139 tests

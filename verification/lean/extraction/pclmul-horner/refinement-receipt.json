@@ -46,7 +46,7 @@
   "native_body_refinements_added": 2,
   "verbatim_functions": 6,
   "shared_declarations_checked": 16,
-  "runtime_trust_boundary": "Same reviewed checked-ended-shared-scalar-v1 translator as Portable Horner. Existing x86 PCLMUL XMM register, shared slice split_last, reverse iteration and mutable Zip value models. Native pointers, feature dispatch, LLVM code generation and hardware execution are separate.",
+  "runtime_trust_boundary": "Same pinned checked-ended-shared-scalar-v1 translator as Portable Horner. Existing x86 PCLMUL XMM register, shared slice split_last, reverse iteration and mutable Zip value models. Native pointers, feature dispatch, LLVM code generation and hardware execution are separate.",
   "native_source_edited": false,
   "full_native_coverage_achieved": false,
   "files_sha256": {

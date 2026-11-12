@@ -1,10 +1,6 @@
 {
-  "review_date": "2026-11-04",
-  "reviewers": [
-    "/root",
-    "/root/wrapper_performance"
-  ],
-  "policy": "Full128-bit nibble table, original loop normal return, no assumes-success or application axiom; frozen before proof search.",
+  "recorded_date": "2026-11-04",
+  "policy": "Full128-bit nibble table, original loop normal return, no assumes-success or application axiom; frozen before proof construction.",
   "files": {
     "bridge/BulksketchBridge/RawMulTableSpec.lean": "8d733a61c0cafb7314940346e9f52c59995a94c3aad23206763f3fb04aefb34d",
     "bridge/BulksketchBridge/RawMulTableChallenges.lean": "4130cbeed74994d1afbc225e58a03da233b1130c8074468d71898f3d55615e36",

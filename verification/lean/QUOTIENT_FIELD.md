@@ -1,13 +1,13 @@
 # Word representation, algebra trace and source inversion
 
-This records the earlier quotient-field checkpoint. The subsequent
-[native coverage checkpoint](NATIVE_COVERAGE.md) closes the enclosing inversion
-wrappers listed as open below using an explicitly reviewed, checks-enabled
-frontend variant. The original failing extractor evidence remains preserved.
+The quotient-field proofs cover the representation, trace and source inversion
+chain described below. [Enclosing-inversion proofs](NATIVE_COVERAGE.md) cover
+the wrapper functions through a pinned, checks-enabled frontend variant. The
+original failed-extraction evidence remains preserved.
 
 The native source remains revision
-`0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`. This checkpoint adds proof and checking
-artifacts; it changes no native Rust, build input or runtime operation.
+`0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`. The proof and checking
+artifacts change no native Rust, build input or runtime operation.
 
 ## The exact field and its word representation
 
@@ -89,35 +89,39 @@ type and Gf64 dictionary against the existing arithmetic extraction. Eight
 mutation fixtures test rejection in ordinary and optimized Python. The original
 generated files remain untouched. No new runtime model is introduced.
 
-## Remaining inversion wrappers and full native scope
+## Enclosing-inversion extraction boundary
 
 The enclosing `inverse_using` captures a shared borrow of its square callback.
 Pinned Aeneas cannot join the resulting nested shared loans across that loop.
 Both loop extraction modes and isolated optimized-MIR attempts were investigated
 without changing native code; none yielded a usable enclosing-wrapper proof.
 [The investigation](audit/inverse-enclosing-translator-investigation.md) records
-the exact guard, evidence and requirements for a separately reviewed frontend
-fix. `inverse_using` and its `inverse` caller receive no new proof credit.
+the exact guard, evidence and requirements for a separately pinned frontend
+fix. This component record counts no wrapper refinement. The
+[enclosing-inversion proofs](NATIVE_COVERAGE.md) cover `inverse_using` and
+`inverse` through the pinned frontend variant.
 
-This checkpoint strengthens six earlier native endpoints in place and adds one
+The proofs strengthen six native endpoints in place and include one
 source-body refinement for `inverse_with_frobenius`: fifteen distinct bodies
 under the stated translation/runtime/compiler/machine trust boundary. Loop
 helpers, field lemmas, equivalences and extraction artifacts add no Rust-body
-credit. All 344 native executable obligations remain in scope. X86 lookup and
-table generation, accelerated arithmetic, general decoder completeness, public
-state/resource/ownership behavior and compiler-expanded closure remain open.
+credit. All 344 native executable obligations remain in scope. This component
+record does not cover x86 lookup and table generation, accelerated arithmetic,
+decoder composition, public state/resource/ownership behavior or
+compiler-expanded closure. The [overview](README.md) describes the combined
+Portable theorem and other source refinements.
 Full native coverage is false and no percentage is claimed.
 
 ## Independent checking and native behavior
 
-Every earlier frozen proposition is retained. New fixed propositions are
-cross-reviewed, pinned and compared to theorem types before export. All project
+Every frozen proposition is retained and compared to its theorem type before
+export. All project
 theorem axiom closures are checked, and the original exported terms are replayed
 through Lean and independent Nanoda. Only `propext`, `Quot.sound` and
 `Classical.choice` are permitted. Existing replay time limits remain unchanged.
 
 The native implementation and build inputs are byte-identical to the baseline,
-so this is a proof milestone with no native performance change. The local native
+so these proofs introduce no native performance change. The local native
 release regression suite passed all 139 tests. Runtime benchmarking lives in
 the excluded oracle crate and is not used as evidence of a performance gain.
 Proof-checking timings are recorded separately from runtime behavior.

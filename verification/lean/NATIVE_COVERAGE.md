@@ -1,11 +1,11 @@
-# Enclosing inversion, Portable arithmetic and const-square checkpoint
+# Enclosing inversion, Portable arithmetic and const-square proofs
 
-The [Frobenius and slice checkpoint](FROBENIUS_TABLES.md) extends the 26-body
-checkpoint below to 32 source-body refinements.
+The associated verification record contains 26 source-body refinements. The
+[Frobenius and slice proofs](FROBENIUS_TABLES.md) have a recorded total of 32.
 
-This continues the quotient-field checkpoint without changing native source
-revision `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6` or its build inputs. The ledger
-now records 26 distinct generated-body functional refinements under the stated
+These proofs use native source revision
+`0a5bda53f6b07fcae8acd870e2d0c4a246d207e6` and its unchanged build inputs.
+The component record contains 26 distinct generated-body functional refinements under the stated
 translation/runtime/compiler/machine boundary. All 344 native executable
 obligations and the preliminary 532-declaration inventory remain in scope.
 Complete native coverage remains false; no percentage is claimed.
@@ -26,7 +26,7 @@ The outer `inverse` uses the actual generated native function-item dictionaries
 and has no callback premise. Every U64 input returns normally: `None` exactly
 for zero, otherwise the unique word representing Mathlib's field inverse.
 
-These bodies use a named, reviewed frontend variant. They do not use a new
+These bodies use a named, pinned frontend variant. They do not use a new
 application closure model, a successful-source-call premise, or an inverse axiom.
 The [strict projection](extraction/inverse-wrappers/project.py) retains 22
 original generated functions/helpers/dictionaries and one closure type alias
@@ -55,9 +55,9 @@ annotations or invent a missing substitution.
 The committed [receipt](tooling/aeneas-loop-capture/receipt.json) records baseline
 and patched outcomes, alias/indirect-graph controls, an unchecked rejection, Rust
 borrow-checker rejections, value tests and exact original inverse regeneration.
-The independent [review](audit/aeneas-capture-independent-review.md) discusses the
+The [analysis](audit/aeneas-capture-analysis.md) discusses the
 eligibility and matcher invariants, the generic-parameter fix and its limits.
-This is an explicitly reviewed frontend trust boundary, not a Lean theorem of
+This frontend remains an explicit trust boundary, not a Lean theorem of
 translator or compiler soundness.
 
 Ordinary proof verification requires the pinned base, exact patch, mandatory
@@ -105,10 +105,10 @@ does not grant table-initializer, lookup, accelerated-backend or ISA execution
 coverage. Cross-target proof extraction is distinct from executing x86 code on
 the Mac.
 
-## Checking and remaining work
+## Recorded verification results
 
-The combined entry point remains `python3 scripts/verify_all.py`. It checks all
-98 exact frozen propositions, transitive axiom closures, exact source/projection
+The associated verification record reports `python3 scripts/verify_all.py`
+checking 98 exact frozen propositions, transitive axiom closures, exact source/projection
 linkage, Lean kernel replay and independent Nanoda on the original export. Only
 `propext`, `Quot.sound` and `Classical.choice` are allowed. Replay caps are
 unchanged. Source-projection mutations are tested in ordinary and optimized
@@ -121,8 +121,9 @@ All 139 native release regression tests passed on the unchanged Rust source.
 There is no native runtime change or claimed speedup. Native benchmarking lives
 in the excluded oracle crate and is not used to claim a performance change.
 
-The next source obligations include Frobenius table generation/lookup, slice
-kernels, polynomial/decoder completeness, public state/resource/ownership
-contracts, accelerated backends and compiler-expanded closure. The original
-source denominator is retained throughout. No replacement Lean decoder,
-Minisketch, bindings, oracle or Bulk consensus work is included.
+The [Frobenius-table](FROBENIUS_TABLES.md), [slice](SLICE_NORMALIZATION.md) and
+[decoder](README.md) documentation describe the related proofs. Public
+state/resource/ownership contracts, accelerated end-to-end execution and
+compiler-expanded closure are outside this component record. The original
+source inventory is retained throughout. Replacement Lean decoders, Minisketch,
+bindings, the oracle and Bulk consensus are excluded.

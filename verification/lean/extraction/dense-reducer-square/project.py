@@ -80,7 +80,7 @@ def check(root=ROOT):
     exact_patches = sections(root / DENSE_MUL_PATCH) | sections(root / table.PATCH)
     require(receipt["variant_patch"] == str(PATCH) and receipt["variant_patch_sha256"] == sha(root / PATCH)
             and sections(root / PATCH) == exact_patches,
-            "Dense modular square patch differs from its three reviewed parts")
+            "Dense modular square patch differs from its three pinned parts")
 
     capture = receipt["charon_command"]
     parent = json.loads((root / "extraction/root-setup/receipt.json").read_text())

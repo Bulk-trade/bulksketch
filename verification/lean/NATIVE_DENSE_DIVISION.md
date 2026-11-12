@@ -1,11 +1,10 @@
 # Original Dense division and accelerated square
 
-The ledger retains all 344 native executable obligations. This checkpoint
-checks the original Dense div/rem, exact-division and monic-GCD bodies and the
+The ledger retains all 344 native executable obligations. The proofs check the original Dense div/rem, exact-division and monic-GCD bodies and the
 original AVX-512 free square kernel and trait selector under their recorded contracts.
 Production Rust is unchanged.
 
-The original, unoutlined `Dense::div_rem_into` now checks against the
+The original, unoutlined `Dense::div_rem_into` is checked against the
 word model. The proof covers initialization, every descending quotient
 offset, zero, unit and general factors in both inverse branches, final
 prefix reduction, normalized lengths and the full scratch frame. The

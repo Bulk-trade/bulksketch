@@ -1,6 +1,7 @@
 # Decoder dispatch and reconciliation
 
-This checkpoint precedes the [native verifier and Dense multiplication work](NATIVE_VERIFIER.md).
+The [native verifier and Dense multiplication proofs](NATIVE_VERIFIER.md)
+cover the related source kernels.
 
 The checked source baseline remains `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`.
 The coverage ledger retains all 344 executable native declarations. Each
@@ -32,7 +33,8 @@ raw multiplication and reduction equations for the selected callback
 dictionary. A separate composition theorem proves that this native
 continuation accepts exactly when the whole odd row matches directly, given
 the correct seed comparison and squared locator. The VPCLMUL512 override
-and the native seed and coefficient construction remain open.
+and native seed/coefficient construction are outside this component record;
+the [native verifier proofs](NATIVE_VERIFIER.md) describe their source contracts.
 
 The original `record_bytes` returns the complete wire length
 `24 + 2*buckets + 8*words + ceil(buckets/8)` exactly when the descriptor
@@ -59,12 +61,18 @@ allocation and parser admission are separate obligations.
   A nonzero fit has degree at least `d`, and a monic fit of degree at most
   `d` equals the support polynomial.
 
-The decoder still needs native links for reconstruction, Berlekamp–Massey
-discrepancies and fit, root recovery and work limits, verifier composition,
-and the zero channel. The pinned extractor emits the original rebuilt
-verifier. It fails to join the reconstruction loop contexts at the in-place
-syndrome update. The mathematical uniqueness and recurrence proofs give
-the exact hypotheses those native links must establish.
+These uniqueness and recurrence theorems supply the algebraic premises for
+the native decoder. The [reconstruction](NATIVE_RECONSTRUCTION.md),
+[Berlekamp–Massey locator](NATIVE_BM_LOCATOR.md), [root traversal](NATIVE_ROOT_RUN.md)
+and [verification](NATIVE_VERIFIER.md) proofs establish the corresponding source
+contracts. The [Portable theorem](README.md) composes the ordinary no-hint route,
+including work bounds and zero-ID handling, under its stated input, capacity,
+workspace and work-meter assumptions.
+
+The original extraction record includes a failed reconstruction context join
+at the in-place syndrome update. That diagnostic describes the specified
+translator configuration; it does not describe the completed reconstruction
+proofs linked above.
 
 ## Dense polynomial square
 
@@ -79,13 +87,14 @@ also covers both buffer assertions and checked scalar overflow in the
 generated model. Physical slice representability stays within the memory
 boundary.
 
-`Dense::mul_into` then
-reaches a level-1 abstraction-lowering guard when it ends a nested shared
-loan from the final reduction Zip. Its shared iterator has no emitted
-continuation, while the mutable destination has one. A future lowering rule
-needs to establish that the affected nested projectors are entirely shared
-and that the ending is erased. Portable Horner still hits a context join
-failure in its zipped outer loop.
+The recorded `Dense::mul_into` extraction reached a level-1 abstraction-lowering
+guard when ending a nested shared loan from the final reduction Zip. Its shared
+iterator had no emitted continuation, while the mutable destination had one.
+The required lowering invariant is that the affected nested projectors are
+entirely shared and their ending is erased. The same record includes a Portable
+Horner context-join failure in the zipped outer loop. The
+[Dense product and Horner proofs](DENSE_PRODUCT.md) document the pinned frontend
+variants and complete function-body contracts.
 
 The runtime bindings model standard-library value behavior. Source and
 translator correspondence, memory and alias semantics, and machine ISA

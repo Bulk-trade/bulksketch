@@ -1,8 +1,8 @@
 # Original Berlekamp–Massey locator and recovery stages
 
-The ledger retains 344 native executable obligations. This checkpoint adds
-nine original Aeneas body refinements for a total of 111 under the recorded
-source, translator, runtime and kernel contracts. The five scoped LLBC
+The ledger retains 344 native executable obligations. The associated record
+contains 111 original Aeneas body refinements, including the nine refinements
+described here, under the stated source, translator, runtime and kernel contracts. The five scoped LLBC
 contracts remain separate. Production Rust is unchanged.
 
 ## Berlekamp–Massey
@@ -46,10 +46,12 @@ admitted verifier branches, independent checked prices in source
 operation order, early errors, exact meter and scratch frames, and
 canonicalization-stage return.
 
-The complete factor traversal, affine preference arithmetic,
-candidate evaluation and deflation stages, caller-wide admission,
-end-to-end decoder completeness, and remaining physical memory,
-ISA and compiler-expanded correspondence still require proof.
+The [root traversal](NATIVE_ROOT_RUN.md) documentation describes the conditional
+factor, candidate and deflation contracts. The [Portable theorem](README.md)
+composes the ordinary no-hint decoder route, including its admitted work bound.
+Public caller admission, shared-job accounting, hint and V3 composition,
+accelerated end-to-end execution, physical memory and compiler-expanded ISA
+correspondence remain outside these component proofs.
 
 Run the aggregate from `verification/lean`.
 

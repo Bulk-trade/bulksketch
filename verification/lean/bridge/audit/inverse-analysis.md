@@ -1,7 +1,6 @@
-# Independent inverse-source and projection review
+# Inverse-source and projection analysis
 
-Reviewed on 2026-11-06 by the trace-transport agent, which did not author the
-inverse proofs or projection validator. The source pin remains
+Analysis date: 2026-11-06. The source pin is
 `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`. No native Rust or native build input
 diff exists against that pin.
 
@@ -32,14 +31,14 @@ declarations, and successful shared-declaration checking. The inverse LLBC also
 passes the usual source-linkage hash and `has_errors = false` gate. The projection
 does not introduce an axiom for any copied application body.
 
-The review identified one validator hardening issue: Python `assert` checks can
-be disabled by optimization. The optimized-Python negative fixture reproduced
+The original validator relied on Python `assert` checks, which can be disabled
+by optimization. The optimized-Python negative fixture reproduced
 acceptance of an edited compiled body before the fix. All projection checks now
 raise explicit `ValueError` exceptions. Independently rerunning the four mutations
 in ordinary and optimized Python confirmed all eight expected rejections. A
 valid positive projection also passed under `python3 -O`.
 
-## Operational and mathematical review
+## Operational and mathematical contracts
 
 - The proof covers every complete U64 input with the actual Gf64 dictionary.
   Its all-ones canonical mask makes the assertion normal without an input
@@ -75,13 +74,12 @@ valid positive projection also passed under `python3 -O`.
   committed `native_callback_instance` endpoint now states this closed instance
   without callback assumptions. No new runtime model is needed.
 
-No blocking mathematical, statement, or generated-body provenance issue remains
-in the reviewed checkpoint. This is a functional refinement of one original
+These contracts establish a functional refinement of one original
 native function body under the documented extractor/runtime/compiler/machine
 boundary. The two loop helpers and additional theorem endpoints do not earn
 extra native-function credit.
 
-`inverse_using` and `inverse` remain unproved. The preserved retry evidence
+At this analysis revision, `inverse_using` and `inverse` are unproved. The preserved retry evidence
 records the pinned extractor's captured borrowed-square closure failure in both
 loop modes. The closed `BuiltinFn` instance is not evidence that either of those
 other Rust wrapper bodies has been translated or verified.
@@ -109,19 +107,18 @@ or native-evaluation axiom was used.
 | Export literal-dependency selector | Passed | 3.129 |
 | Project exact main-export prelude subset | Passed | 5.337 |
 | Stock Leanchecker on literal prelude | Passed | 3.883 |
-| Unchanged Lean kernel via reviewed scheduling loader | Passed | 23.785 |
+| Unchanged Lean kernel via the scheduling loader | Passed | 23.785 |
 | Independent Nanoda on untouched original main export | Passed | 11.144 |
 
 The original export is 188,858,594 bytes with SHA-256
 `5ff08c3ea4582adde4c3920a1893113113cc70892ac833b364a86a4b72047710`.
 The exact-subset literal prelude has SHA-256
 `ab2e99a8097037649c229f172711c730ccd84d887a5d6bb4ead50fbba887f5d0`.
-Every subprocess retained the 120-second cap. The checked source hashes, complete
-commands, nonvacuity example, raw exports, and logs are saved outside Git under
-`/workspace/bulk/bulksketch-proof-evidence-20261106/inverse-review/`.
+Every subprocess retained the 120-second cap. The source fingerprint table and
+recorded export hashes identify the checked inputs.
 The combined verifier remains the final integration gate.
 
-## Reviewed source hashes
+## Source fingerprints
 
 Paths below are relative to `verification/lean`.
 
@@ -138,5 +135,5 @@ Paths below are relative to `verification/lean`.
 | `scripts/verify_bridge.py` | `d5fe005154c6c783861cb81b651321fae9b524de23049d54d8b7ce20b6620024` |
 | `scripts/verify_all.py` | `c57cfb04460626b291d42cf8a13a1c6759582e3f2dadc4765ad7fbd2a41541c5` |
 
-All 344 executable native obligations remain in scope. Neither this review nor
-the successful scoped replay establishes full native coverage.
+All 344 executable native obligations remain in scope. This source analysis and
+the successful scoped replay do not establish full native coverage.

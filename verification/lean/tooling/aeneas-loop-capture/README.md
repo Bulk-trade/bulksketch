@@ -26,7 +26,7 @@ This optimization is enabled **only with `-checks`**. Existing join and
 fixed-point matching then require equality of frozen abstractions and their
 fixed identifiers. Thus preservation cannot silently accept a changed frozen
 input context. In unchecked mode, the old reborrow path and its rejection remain.
-This is a reviewed translator change under the explicit extraction trust
+This is a pinned translator change under the explicit extraction trust
 boundary, not a kernel proof of frontend soundness.
 
 Passing the former borrow failure exposes a separate loop-helper type defect:

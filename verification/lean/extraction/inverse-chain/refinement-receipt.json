@@ -1,5 +1,5 @@
 {
-  "status": "all-owned-source-and-field-inverse-endpoints-built; exact-challenge-assignments-and-standard-only-axioms-checked; independent-review-and-global-replay-separate",
+  "status": "all-owned-source-and-field-inverse-endpoints-built; exact-challenge-assignments-and-standard-only-axioms-checked; independent-analysis-and-global-replay-separate",
   "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
   "native_source_edited": false,
   "source_item_id": "src/field/maps.rs:50:function:bulksketch::field::maps::inverse_with_frobenius",
@@ -81,7 +81,7 @@
     "Classical.choice"
   ],
   "new_runtime_models": [],
-  "remaining_enclosing_wrapper_blocker": {
+  "enclosing_wrapper_limitation": {
     "functions": [
       "inverse_using",
       "inverse"

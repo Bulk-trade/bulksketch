@@ -6,7 +6,7 @@
     "{impl bulksketch::field::BinaryField for bulksketch::field::Gf64}"
   ],
   "native_source_edited": false,
-  "reviewed_translator_variant": "tooling/aeneas-loop-capture",
+  "translator_variant": "tooling/aeneas-loop-capture",
   "sanity_checks_required": true,
   "commands": [
     {

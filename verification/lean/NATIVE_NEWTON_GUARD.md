@@ -1,7 +1,7 @@
 # Native Newton guard and residual recurrence
 
-The ledger retains 344 native executable obligations. This checkpoint records
-96 original Aeneas body refinements under their stated contracts and five
+The ledger retains 344 native executable obligations. The associated record
+contains 96 original Aeneas body refinements under their stated contracts and five
 separate source-linked LLBC contracts. Production Rust is unchanged.
 
 ## Exact native result and scratch
@@ -44,7 +44,7 @@ checked endpoints.
 
 The original guard, all six loop wrappers and all six loop bodies are
 retained verbatim. The isolated checked nested-slice retry extends the
-reviewed scalar-array fixed-point matcher. It runs only in the
+pinned scalar-array fixed-point matcher. It runs only in the
 continuation-free fixed-point list join under the same immediate outer
 mutable borrow ID. It requires a U64 slice and an equally typed symbolic
 shared payload. The stock retry ends the shared side and preserves the
@@ -61,13 +61,16 @@ Run `python3 scripts/verify_all.py` from `verification/lean` under the pinned
 toolchain for the frozen statements, transitive axiom audit, kernel and
 Nanoda replays, and rejection controls.
 
-## Remaining coverage
+## Scope of the recorded component results
 
-The original degree probe now extracts and elaborates in an external
-probe with scoped standard-library bindings. Its stage proofs and the
-full decoder acceptance and fallback theorem remain open. The original
-Berlekamp–Massey locator also extracts and elaborates in isolation with
-both typed mutable continuations preserved. Its functional proof and
-variant review remain open. The remaining general root recovery,
-accelerated kernels, physical memory, ISA and compiler-expanded
-correspondence still require proofs.
+These limits describe the component record below. The
+[verification overview](README.md) states the combined Portable result and
+links the other source refinements.
+
+The extraction records include the original degree probe with scoped
+standard-library bindings and the original Berlekamp–Massey locator with both
+typed mutable continuations preserved. Their functional contracts are described
+in the [degree-probe/BM loop proofs](NATIVE_BM_DEGREE_PROBE.md) and
+[locator proofs](NATIVE_BM_LOCATOR.md). The [overview](README.md) states the
+combined Portable result. Accelerated execution, physical memory provenance,
+ISA and compiler-expanded correspondence are outside these component proofs.

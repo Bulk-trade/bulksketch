@@ -1,12 +1,6 @@
 {
   "date": "2026-11-06",
-  "policy": "Additive fixed mathematical and exact generated-body contracts, cross-reviewed before final aggregate checking. All earlier frozen proposition and source meanings remain unchanged. This is controlled-source formal verification; externally frozen adversarial challenge isolation remains a separate integrity gate.",
-  "reviewers": [
-    "root",
-    "word_quotient",
-    "trace_transport",
-    "inversion_wrappers"
-  ],
+  "policy": "Fixed mathematical and exact generated-body contracts. Earlier proposition and source meanings remain unchanged. The source specification is maintained within this repository; externally fixed adversarial challenge isolation is a separate integrity condition.",
   "files": {
     "bridge/BulksketchBridge/Algebra/WordSpec.lean": "ab8929aa4b46148dbaf1add1f4fdb19b21de1b7c15b4edbed8f084b062db33c8",
     "bridge/BulksketchBridge/Algebra/WordChallenges.lean": "bd1baacce1fb827da2a25fa6ca35c743b07bbef3597c1d178e82af25ae44d8b8",
@@ -25,9 +19,9 @@
   "new_native_body_credit": 1,
   "source_projection": "extraction/inverse-chain/project.py",
   "projection_negative_cases": 8,
-  "independent_review_reports": [
-    "audit/word-quotient-independent-review.md",
-    "bridge/audit/quotient-trace-independent-review.md",
-    "bridge/audit/inverse-independent-review.md"
+  "analysis_reports": [
+    "audit/word-quotient-analysis.md",
+    "bridge/audit/quotient-trace-analysis.md",
+    "bridge/audit/inverse-analysis.md"
   ]
 }

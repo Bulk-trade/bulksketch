@@ -94,7 +94,7 @@ its receipt and logs in the output directory.
 
 ## Functional proof boundary
 
-The [current checkpoint](../../NATIVE_BM_DEGREE_PROBE.md) checks the original
+The [degree-probe and BM proofs](../../NATIVE_BM_DEGREE_PROBE.md) checks the original
 discrepancy, scaling, shifted XOR, normalization and reversal, and exact
 entry and named active branch semantics. The full successful update and
 outer connection/previous-row recurrence still need proof. This

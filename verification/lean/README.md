@@ -1,6 +1,6 @@
 # Native Bulksketch Lean 4 proofs
 
-This directory verifies native Bulksketch at reviewed source revision
+This directory verifies native Bulksketch at pinned source revision
 `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`. Proof-only commits may change Git HEAD;
 verification checks the exact native source and build-input fingerprints against
 the frozen inventory. Native Rust remains the implementation.
@@ -71,7 +71,7 @@ per-user temporary paths with a repository-relative diagnostic.
 
 ### Verification record
 
-Sanitized publication checkpoint `666085680fb54d9d503b9ddabacea20240ca8ec7` passed all six gates
+Sanitized publication revision `666085680fb54d9d503b9ddabacea20240ca8ec7` passed all six gates
 of `scripts/verify_all.py`. The check matched 563 frozen statements, audited
 their transitive axioms, and replayed the exported terms through Lean's kernel
 and independent Nanoda. The only permitted axioms are `propext`,
@@ -84,7 +84,7 @@ From this directory, reproduce the checks with
 CI=1 MATHLIB_NO_CACHE_ON_UPDATE=1 LEAN_NUM_THREADS=2 python3 scripts/verify_all.py
 ```
 
-## Checked milestone
+## Verified components
 
 | Area | Result | Source relationship |
 | --- | --- | --- |
@@ -95,19 +95,24 @@ CI=1 MATHLIB_NO_CACHE_ON_UPDATE=1 LEAN_NUM_THREADS=2 python3 scripts/verify_all.
 | Period and modulus | Every word returns after 64 squarings; all natural iteration counts reduce modulo 64; exact `Polynomial (ZMod 2)` modulus is irreducible | Checked basis/linearity proof and polynomial square/Bézout/factor-degree certificates; quotient representation is proved separately below |
 | Trace and quadratic maps | Complete 64-conjugate trace, all row/chunk identities, trace-zero solvability and normalized uniqueness | Actual source trace/canonical trace, row selector, 16-chunk value loop and solver refine the universal word models |
 | Quotient field and algebra trace | Bijective polynomial-basis interpretation in Mathlib's exact irreducible quotient; multiplication, square, field laws and `Algebra.trace` transport | Existing native reduction/multiplication/square/Frobenius/trace endpoints strengthened in place; entire trace byte bounded by one |
-| Inversion | Original chain, captured-square loop and all bounds; exact represented field inverse for nonzero input and `None` for zero | Actual three scalar inversion functions and Portable inverse; enclosing wrappers use the named checks-enabled reviewed frontend variant |
+| Inversion | Original chain, captured-square loop and all bounds; exact represented field inverse for nonzero input and `None` for zero | Actual three scalar inversion functions and Portable inverse; enclosing wrappers use the named checks-enabled pinned frontend variant |
 | Portable and const-square source | All eight Portable arithmetic methods; original x86-visible const-square with two 64-step loops and full byte output | Exact generated bodies and shared dependencies retained; no table/lookup or ISA execution credit |
-| Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with actual-generated-body refinements below |
+| Work accounting | Exact finite-word overflow, boundary, failure and sequence accounting | UInt64 specification with generated function body refinements below |
 | `WorkMeter::new`, `charge` and `used` | Exact normal return, Rust result, final state and observed value for every generated state/amount | Unedited pinned Charon/Aeneas output, under the recorded runtime/compiler trust boundary |
 
-The bridge now has 227 original Aeneas generated-body refinements under
+The bridge contains 227 original Aeneas generated-body refinements under
 their recorded contracts. Five source-linked LLBC execution contracts are
-checked separately. The latest checkpoint covers the original root stage
+checked separately.
+
+### Decoder and polynomial source refinements
+
+The source refinements cover the original root stage
 dispatcher, Dense div/rem, factor division, affine enumeration
 completeness, native affine-multiple termination and minimality, the full GF64
 solve-map fibers and paid affine preparation, and fixed-stride pending
 factor frames with degree conservation. The paid affine GCD step either
 selects a proper division or retains every factor root in a smaller coset.
+
 The original capacity-18 AVX packer and encoder and the insertion-base
 lookup and generator have checked body refinements. The exact static
 initializer supplies the lookup's field values. The AVX heap proofs cover
@@ -119,13 +124,14 @@ The candidate entry and Dense evaluation delegate have checked original
 bodies. The native trace, affine splitter and GCD stages preserve the
 returned coefficient and scratch frames between stages. The AVX
 capacity-18 insertion, horizontal XOR, public GF64 insertion selector,
-and complete free dispatcher have original-body refinements. The stock
+and complete free-function dispatcher have original-body refinements. The stock
 decoder driver commits exact source state, progress, work and error
 frames. The native candidate and deflation driver calls establish the
 initial residual traversal product, and paid affine enumeration emits
 the complete active factor. The original completed-result wrapper
 returns the exact verified root slice. The local traversal proofs
 preserve the represented locator product at division and emission.
+
 The original shared candidate normalizer and modulo bucket selector
 establish distinct nonzero candidate slices. The original canonicalizer
 checks the sort boundary, work charge and root validation. The original
@@ -133,6 +139,7 @@ finish loop consumes a finite native driver trace, composes workspace
 writebacks, and returns the exact terminal result. The honest BM guard
 accepts the exact support locator, and the native candidate and
 deflation calls establish the full initial traversal invariant.
+
 The accelerated AVX recurrence checks every active lane and rejects
 the first mismatched block. Its exact update and continuation bind to
 the rebuilt verifier. Every admitted GF64 degree uses the original
@@ -145,6 +152,7 @@ Canonicalization returns the exact sorted roots under the terminal
 locator-product and charge premises. The end-to-end Portable theorem above
 closes the plain non-affine traversal and its work bound. Other decoder routes
 and the remaining native implementation contracts have further obligations.
+
 The checked row-local normalizer returns each row's exact sorted,
 distinct, nonzero candidate slice under the admitted scratch bounds.
 The original row dispatch preserves its backend tag and exact result
@@ -168,17 +176,18 @@ both source-loop invariants, every bound and the final composition in detail.
 [FIELD_ALGEBRA.md](FIELD_ALGEBRA.md) explains the exact modulus theorem, universal
 period, table certificates and normalized quadratic solver semantics.
 [QUOTIENT_FIELD.md](QUOTIENT_FIELD.md) explains the polynomial representation,
-actual algebra trace, source inversion chain and remaining enclosing-wrapper gap.
-[NATIVE_COVERAGE.md](NATIVE_COVERAGE.md) closes that wrapper gap under a named
-reviewed frontend variant and explains the Portable and const-square proofs.
-[FROBENIUS_TABLES.md](FROBENIUS_TABLES.md) records the table, lookup and slice checkpoint.
+actual algebra trace and source inversion chain.
+[NATIVE_COVERAGE.md](NATIVE_COVERAGE.md) explains the enclosing inversion
+contracts under a pinned frontend variant, plus the Portable and const-square
+proofs.
+[FROBENIUS_TABLES.md](FROBENIUS_TABLES.md) records the table, lookup and slice proofs.
 [SLICE_NORMALIZATION.md](SLICE_NORMALIZATION.md) records the mutable Zip and Dense proofs.
 [RECONCILIATION.md](RECONCILIATION.md) records decoder dispatch, wire sizing and reconciliation.
 [NATIVE_VERIFIER.md](NATIVE_VERIFIER.md) records the rebuilt verifier and Dense multiplication extraction.
-[DENSE_PRODUCT.md](DENSE_PRODUCT.md) records the full Dense product, Portable Horner and direct two-root checkpoint.
+[DENSE_PRODUCT.md](DENSE_PRODUCT.md) records the full Dense product, Portable Horner and direct two-root proofs.
 [X86_REGISTER_MEMORY.md](X86_REGISTER_MEMORY.md) records the native x86 register kernels and pure masked-memory boundary.
 [NATIVE_STATEFUL.md](NATIVE_STATEFUL.md) records the stateful LLBC contracts, accelerated field maps and cubic helper.
-[NATIVE_CALLER_CHAINS.md](NATIVE_CALLER_CHAINS.md) records the x86 caller and native certificate checkpoint.
+[NATIVE_CALLER_CHAINS.md](NATIVE_CALLER_CHAINS.md) records the x86 caller and native certificate proofs.
 [NATIVE_RECONSTRUCTION.md](NATIVE_RECONSTRUCTION.md) records the original reconstruction stage, pricing and workspace admission.
 [NATIVE_QUARTIC.md](NATIVE_QUARTIC.md) records the original affine and general quartic and candidate solve frames.
 [NATIVE_CLOSED_LEAF.md](NATIVE_CLOSED_LEAF.md) records closed-leaf certification, accepted advance, and Newton normalization.
@@ -195,7 +204,7 @@ reviewed frontend variant and explains the Portable and const-square proofs.
 
 The [coverage ledger](audit/coverage.json) keeps every native item in scope,
 including unsupported and unproved items. Related mathematical model evidence
-and actual-generated-body refinement evidence have separate fields. Conservative
+and generated function body refinement evidence have separate fields. Conservative
 full native-contract statuses remain unproved until their remaining links close.
 
 ## Check the proofs
@@ -212,7 +221,7 @@ python3 scripts/verify.py
 python3 scripts/check_negative_fixtures.py
 ```
 
-To include the actual-generated-body bridge, fetch its exact Lean runtime and
+To include the generated function body bridge, fetch its exact Lean runtime and
 Mathlib dependencies, then run the combined check:
 
 ```sh
@@ -247,13 +256,13 @@ shared types and dictionaries against the larger arithmetic extraction. Seventy-
 mutation checks exercise source and runtime provenance in ordinary and optimized
 Python. The runtime inventory records scoped value models for mutable slice Zip,
 shared-slice reverse position and Option map-or. The three enclosing inverse
-bodies require the named reviewed frontend variant with invariant checks.
+bodies require the named pinned frontend variant with invariant checks.
 
 These are controlled-source exact-type checks and independent proof-term replay.
 Sandboxed Linux Comparator validation is a separate, remaining integrity gate.
 Run native regression tests from the repository root with
-`cargo +1.96.1 test --release --locked -p bulksketch`. This milestone includes the
-verification commands; an automated CI workflow is not part of this change.
+`cargo +1.96.1 test --release --locked -p bulksketch`. The verification commands are provided here; automated CI is outside this
+verification setup.
 
 ## Specification and source integrity
 
@@ -263,10 +272,10 @@ verification commands; an automated CI workflow is not part of this change.
   propositions without proof holes.
 - [frozen-inputs.json](audit/frozen-inputs.json) and its bridge counterpart pin
   those meanings, source descriptors and validator code. Intentional changes
-  require an explicit review record; proof search must not silently weaken them.
-- [scope.json](scope.json) records the reviewed native content, exclusions and
+  require an explicit input-revision record; proof search must not silently weaken them.
+- [scope.json](scope.json) records the pinned native content, exclusions and
   axiom policy. A proof-only commit is allowed; a changed native body or build
-  input is rejected until its source contract is reviewed.
+  input is rejected until its source contract and fingerprints are updated.
 - [source-linkage.json](bridge/source-linkage.json) ties the generated bridge to
   source spans, IR/body hashes and byte-identical generated application files.
 - [obligations.json](bridge/obligations.json) maps source items and generated files
@@ -296,7 +305,7 @@ is outside these claims.
 ## Regenerate source-derived artifacts
 
 `python3 extraction/regenerate.py` reruns the small locked Rust/Syn AST utility
-against the reviewed source fingerprints. It rejects unsupported syntax and
+against the pinned source fingerprints. It rejects unsupported syntax and
 preserves the parsed XOR/shift expression. The generated expression is a model
 artifact; its mathematical proof is not a theorem proving the translator correct.
 
@@ -307,7 +316,7 @@ these actual Rust-to-LLBC-to-Lean artifacts requires the exact
 [tool pins and recipe](extraction/README.md), separately from checking the
 committed proofs. Generated application bodies must not be hand-edited.
 
-## Remaining work toward full native coverage
+## Remaining verification scope
 
 The full-crate attempt remains incomplete: the Charon artifact reports errors
 around associated iterator types, and full Aeneas translation encounters

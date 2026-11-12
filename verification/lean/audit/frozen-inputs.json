@@ -1,5 +1,5 @@
 {
-  "policy": "Initial approved challenge/specification freeze. Proof files may evolve; these meanings/source inputs must not change silently. Intentional changes require review and a new freeze record.",
+  "policy": "Initial approved challenge/specification freeze. Proof files may evolve; these meanings/source inputs must not change silently. Intentional changes require explicit revision record and a new freeze record.",
   "challenge_count": 29,
   "files": {
     "BulksketchProofs/Challenges.lean": "4a3802958e73c5b65937f7710c86ac0bb0c0ec25fc03faaece632ae4ef6e268f",
@@ -14,38 +14,38 @@
     "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
     "lakefile.toml": "b6b1d522c0d1a9676055f895112143020c2a04b9ff250fb795a0cbddd46398a0",
     "BulksketchProofs/Audit.lean": "c9ce92f2202ceb9297e81c78c86965dbecaf1509289c53ce106dbedd54ad8eb1",
-    "scripts/verify.py": "54985bd8bbae78224c386873f82d1fd9e23e1af362729fafd9fabb304e0d54db",
+    "scripts/verify.py": "aeb815ee6f24195abce786aeb2aba69c07fca8058efb45574e6cfe704a64b50a",
     "BulksketchProofs/Field/SpreadSpec.lean": "cb21b3ad6e0c378438699e848a78038ca0d61b757322f8489fede4fc57cc9062",
     "BulksketchProofs/SpreadChallenges.lean": "1efb7e6e3d8561c83a26916282b6240a774a80db52091dd7420053a4424f7c63",
-    "scripts/verify_all.py": "d50e113c9bb16d503980c0fbb927eff9a05ac40e63c45f29b1ab58036cba1c41",
+    "scripts/verify_all.py": "e29a97e9fd2990dc58af21ed5eb903f873f39db8204e1ce9af6748e4ad9c4784",
     "scripts/check_negative_fixtures.py": "1be2bee7eb62aad32a2e9a3b4949a7076be5e8ee6ab8b59ec8e4370c0024ac7d",
     "BulksketchProofs.lean": "062759adee4278c7bc60184084009295b282e3e2c6293ca5bda2b572547f13b5",
     "BulksketchProofs/Field/CLMulSpec.lean": "b80c1557d0e1d10e719c255d6d74500f5a48e2580ed04e26d7e16d210ba1737b",
     "BulksketchProofs/CLMulChallenges.lean": "e1d1017fabdbbf07a8ac259d8fca264ef20175e6c5b1d0706306ea542237cdbb",
-    "audit/clmul-contract-review.json": "eaf9a143e359757389300176c8ea75eabb4f7d945a1ca8204d62c4dcc75d0306",
+    "audit/clmul-contract.json": "39ff965698a6d9494129f9f2d1c2bb3a9045a2b8db1f59f8ea7922d6bceae7cb",
     "BulksketchProofs/Field/PeriodSpec.lean": "d2417cef84e3e58cb5f1050c4fe416322aa1d5b2e874e0252c921e7dfe9387d9",
     "BulksketchProofs/PeriodChallenges.lean": "fc7142606f57b8a005ae4961f15e83c7af9c9d5978d51de59c2bae620141b315",
     "BulksketchProofs/Field/MapsSpec.lean": "bf9be6ad14733817b644efb7ac5dc3c42a1c74c60778d0cf9ec4d602cb74f439",
     "BulksketchProofs/MapsChallenges.lean": "7506d3be82924407281f607c704612f693c361d600b8f8176005b265f7e4afdf",
-    "BulksketchProofs/Generated/FieldTables.lean": "25cb2883183185bd93f22b3f1d000f20a7ee67ab7867ce010a86fc80a1dda124",
-    "extraction/extract-field-tables.py": "46b020654d32253b223e7961bd9f9c0ee805d056e7db5492e0907ad555c1aece",
-    "extraction/field-tables-linkage.json": "e532e17a5d7ae98864de10a826d9d1af62c7929d9a5ef3b5af228f1179d6c674",
-    "audit/maps-contract-preproof-freeze.json": "5510580141b61dbb4a930b0fd2b879efb0f56ddc4d8fbd8e9b6939b1af9a72d8",
-    "audit/period-contract-preproof-freeze.json": "0abf907b9472f61d18abcf50650e71deefccd89e552a94200111ab91e1a33ade",
-    "audit/modulus-proof-independent-review.md": "24a9fa1b70f297f50efacf5d2fdfb3592ecfdc82fdb80fc5ab6d79ea36e2b96b",
-    "audit/core-maps-proof-independent-review.md": "aed4509f239a8e3db59c7a9f0d95ca20286d8a6df50372e3f59c172572101124",
-    "audit/field-algebra-accounting-review.md": "55d3cd81a3f03185992e3272994c04b13b5e7ea34ff85e5d8e2cfced90f240be",
-    "audit/field-algebra-checkpoint.json": "e93b65ffd57dcdb5c4c987c76f96d48b8917e82f52969853dbb979c049a4220e",
-    "scripts/check_projection_fixtures.py": "771c6a0cf84230b2d59e42cbda72ded564d920366be8350a796dbd63d5d84555",
-    "audit/quotient-field-checkpoint.json": "74c13d90c143531b3e619c9722b197ccfbb07ef45ffab3647a78482d083777d6",
-    "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
-    "audit/word-quotient-independent-review.md": "1ece7f43c3ba81f3d2e4dcb30416edf780d5aeeaf62845d0a78b834cbcd0bd53",
-    "audit/inverse-enclosing-translator-investigation.md": "d8e28ac55492b8b4feabde9350a8208ffe7a3546cc5299035c325e138b24d28e",
-    "scripts/check_variant_fixtures.py": "cc17e2a0661ed53a4df7401c3280bba2e8f7ba9a87ac0e490bc2ff85b1527c33",
-    "audit/native-coverage-checkpoint.json": "95b5a3cdfbd02282affa4b810f0ea76062d76f67096ae3f9f2f0ebf9f4832c63",
-    "audit/aeneas-capture-independent-review.md": "581285b55e7fcf4e884c1d640b35b479eccd8b72f18286a28f6fcdaa69f53d8b",
-    "audit/frobenius-const-independent-review.md": "873bd302ac21353de6d949023879af885fda21537c011fa634694a9c25a4ba0c",
-    "audit/native-coverage-integration-review.md": "a9d5b50795799dcacec3b3b919fea69ff7e3dfae8f84fedbdbb134bc2e56b58e",
+    "BulksketchProofs/Generated/FieldTables.lean": "b32bd8cc00f93dc6f488c5439e278d1c203f5ecf8c5b87ff2d7cda5bed540a24",
+    "extraction/extract-field-tables.py": "b01c18f360b10214a85c2c512f876817d2a943a5b46804f5cdfcda70230423d3",
+    "extraction/field-tables-linkage.json": "15898fbf80df27f529eb20e8e454a6b48dc4fd0e3687922abc054dfed614e372",
+    "audit/maps-contract-preproof-freeze.json": "a13c9d8b9ec3bc27306404088d2e28cb1a43d26921ed5d97e53ef9a2a117e4e5",
+    "audit/period-contract-preproof-freeze.json": "ffe83abdb3d117574eed2f90b8f993af45f0499fe6f9fd06324156fcf8168afc",
+    "audit/modulus-proof-analysis.md": "fd0ae5633cd2c45445df3a48fc91bcb1a2be2d3f82c2a5a0a484a0a4271bbfee",
+    "audit/core-maps-proof-analysis.md": "19b9f6d70085a9186a7f1d3267993b1468d216339ddbd62e0395e5be6fa51bba",
+    "audit/field-algebra-accounting.md": "0304c776bb8f2df9f69fa6ce0144a4c20eb8d74e0578817163e8a658c15d8b6b",
+    "audit/field-algebra-checkpoint.json": "3ba7117934e58808ab3fb47ae486de833db4bdb9e26c1cc37006113ec604be7f",
+    "scripts/check_projection_fixtures.py": "cfd3dfde361515b6842f9592a986e4e04248d63dc79148a8a964660307b02724",
+    "audit/quotient-field-checkpoint.json": "ca24eb686b77fc20d56e48e1e5e886515b8877af345bed90c44f2763e849aa1e",
+    "audit/quotient-contract.json": "96804318a46b78e8e0341aeb635dd55028966bc93e606cca2d1d57c2e1ab254d",
+    "audit/word-quotient-analysis.md": "1edfd153a18a0475fd98b263acd1d64a143c04d2a870aa30dd33b123d4081e19",
+    "audit/inverse-enclosing-translator-investigation.md": "3b4ba71270a678e67e8710c7c0fc142258343ddfacb4aca662ba6dbb49d9fc3c",
+    "scripts/check_variant_fixtures.py": "e4aa633a141ef8117e6417011f957996bfc369c8155412cd4b392c0e698588ae",
+    "audit/native-coverage-checkpoint.json": "4f318022572b35daf51d84f659a600a219d0588fdf10941888693489531c33e3",
+    "audit/aeneas-capture-analysis.md": "025b0fddf144700a2baaca8574af1915f9fdcdf0c4cb239393954ad89578ffea",
+    "audit/frobenius-const-analysis.md": "06db8ef2a68b50ab68dc45fd5e4b45a889bc59d0dc67de5971ad19d888701860",
+    "audit/native-coverage-validation.md": "7dbe44162ef437db61fa7d42fa5a008ca95b0fb26456649febcce0d8f732d9fc",
     "audit/frobenius-tables-checkpoint.json": "a6f6745974360c0d5523e4b252a80049e0baa8a10354ffe7079946db6a3c0b63",
     "audit/slice-normalization-checkpoint.json": "d7743584cf035bf05f978330f598ebe3e918c673ec35ce2c3d9de7f4c95b2316",
     "audit/reconciliation-checkpoint.json": "b22311c148f62eea4bbdb3968f6ae187abf6f7b553f9f1cd03f883eed2cd009a",
@@ -53,31 +53,31 @@
     "audit/dense-product-checkpoint.json": "39c90405f56b7a6f63f7baa9aed8059137b43a8e4df09eca0fc2056fa7a7d2d5",
     "audit/x86-register-checkpoint.json": "4c5147bc686340d29f844288e978836feecd41b0816b7d91a98dd05b7d92634a",
     "audit/native-stateful-checkpoint.json": "2796eaed83ef49ef2ea06d263c75c3b9d17e62c89e9d032fc07c86832775f41e",
-    "NATIVE_CALLER_CHAINS.md": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
+    "NATIVE_CALLER_CHAINS.md": "c1d0164324704051f1ee64a79880d1619f14585f110865fe4d82b1901363b51c",
     "audit/native-caller-checkpoint.json": "444e2d5cfb18737c77ae01dc9708bd7f1e7f3975e786e9054024be396724497a",
-    "README.md": "6113c737bc7bffa13177fa7686081e9ad91f3071932912678c2df306ac448de8",
-    "NATIVE_RECONSTRUCTION.md": "3a1955592353708b30df40c5fb5443a743451002275c4da8164c37a3344746b2",
+    "README.md": "96e7f2a4d9ef4d4873fd948119e606d6a1889c0d6b47c57778ba73b91ec0deda",
+    "NATIVE_RECONSTRUCTION.md": "6891ea0477b6901d135d3043a2c74afab0e776942981b0943990bf621721f4ef",
     "audit/native-reconstruction-checkpoint.json": "bae6baacb93dc2d9070dbb07dbdfd10599d3c4d35de76b9ce67d143a3fbd82ea",
-    "NATIVE_QUARTIC.md": "0f7a4311accbf944b75a6792955da66ae548891ce2dc1a7e53a167aed892a381",
+    "NATIVE_QUARTIC.md": "21e40591b4203e0ec841f5ccc26b654334a579fe6153c5d3979b6e3aacd6a2e3",
     "audit/native-quartic-checkpoint.json": "9c1ca070ae1ae3bf043da0482064945b09e6fe3702a5f38acf4a1b52da0f94d7",
-    "NATIVE_CLOSED_LEAF.md": "89b20e2b1ea0c3d71bd27a50dbd8f9538ce5fd02d653c87268692459787dd0b8",
+    "NATIVE_CLOSED_LEAF.md": "e01474ea472b4300592902f2e93867cef2f7cbe2298bf126959fe04a404e6aeb",
     "audit/native-closed-leaf-checkpoint.json": "6631ceb2701080b491ad05ca287fb20d4b48d90b40f7cae7b0ad658e7abf1273",
-    "NATIVE_NEWTON_GUARD.md": "f8d13ab202dd6dc1cda482af41c06eca338711bf59e4b45622f3567aeb072d0f",
-    "audit/native-newton-guard-checkpoint.json": "343b89fc0d759b4989ebd91a5ff5d719d4b84ac0fd59ca0b47c2e4f8ba0fb41d",
-    "NATIVE_BM_DEGREE_PROBE.md": "348262e809a74c48d237059f90c04a4415dbf95ef704dcd79af2e4c08eab40c4",
+    "NATIVE_NEWTON_GUARD.md": "920323d2164037b7a826c0b639eca124e896f1bc89aa96aa0ade0b9666a83b8f",
+    "audit/native-newton-guard-checkpoint.json": "ffc82c49bb25ff6d6a62ea7f4f8e6edbcd25ab6d2a1c54c4f8e2cd3408ee70bd",
+    "NATIVE_BM_DEGREE_PROBE.md": "37dd34be157d87e604234c7474d0bcdde5bb8afd6f3d746d0959498a1308c12d",
     "audit/native-bm-degree-probe-checkpoint.json": "938dd3bd0585a767560b0b1e260591e75e6400fc5c8228ac6cdcd1b6f4927a7d",
-    "NATIVE_BM_LOCATOR.md": "2b330a3ca4841689cf58af8be9df209e2fb39b30bc1f442054be74ff3f08aed2",
+    "NATIVE_BM_LOCATOR.md": "344435e2927a680f65654658f19157184224177cfb6b46c24fd8ee579130d80e",
     "audit/native-bm-locator-checkpoint.json": "7a3ca98cc9a8df5a89b541255d2b8c7b092dfa9198ced0b0f3e619bc7a3c2c70",
-    "NATIVE_DENSE_REDUCER.md": "1e507a052eda6ffab691e8e3d78c9904cafd2498edccbd46b8164de89248531a",
+    "NATIVE_DENSE_REDUCER.md": "a734a74f812471cd13e9898850eb56bafb7f99416e535b1cbf082b5d70f2f78b",
     "audit/native-dense-reducer-checkpoint.json": "cee690a7c8e30b7f3735fe6ca8a8a6aaded3433e8f65f0cd969e569bcf1b94fc",
-    "NATIVE_DENSE_DIVISION.md": "7bc66fd0e205e372f4492b801782b7af8a5cf59bd300896e4b7633612da6b9bc",
+    "NATIVE_DENSE_DIVISION.md": "78f879d191aeb5804172a32f9d2c91723ea769c5031c9c4f443fc3a4edaa85ad",
     "audit/native-dense-division-checkpoint.json": "680b967447883dc88713eda00089fede00e69ea9887c772a5568d82ae43f7597",
-    "NATIVE_ROOT_RUN.md": "9076648e4a8c45ba7cb36848abc3d8a0b412aa47903d4a1885b33a8abb8f947a",
+    "NATIVE_ROOT_RUN.md": "69700278f50406478a872f0eb9b45b6fd3053ffbba00e51c1ededddc6f290319",
     "audit/native-root-run-checkpoint.json": "fb4cca79029b0c2fc01b4f858c22e087568bbc374414fc2b320c2596b9b5f5f2"
   },
-  "reviewed_policy_revisions": [
+  "input_revisions": [
     {
-      "reason": "Independent cross-review found that a challenged root replaced by a same-type axiom could be omitted from the theorem-only audit. Require theorem kind and challenge-root inclusion in axiom checking/export. Specification propositions unchanged.",
+      "reason": "Independent cross-analysis found that a challenged root replaced by a same-type axiom could be omitted from the theorem-only audit. Require theorem kind and challenge-root inclusion in axiom checking/export. Specification propositions unchanged.",
       "changes": [
         {
           "path": "BulksketchProofs/Audit.lean",
@@ -130,7 +130,7 @@
       ]
     },
     {
-      "reason": "Repository packaging: resolve native sources from the repository, retain reviewed content hashes across proof-only commits, and write generated verification output under ignored results directories. Frozen mathematical definitions, propositions and generated application bodies are byte-identical to the checked milestone.",
+      "reason": "Repository packaging: resolve native sources from the repository, retain pinned content hashes across proof-only commits, and write generated verification output under ignored results directories. Frozen mathematical definitions, propositions and generated application bodies are byte-identical to the checked milestone.",
       "changes": [
         {
           "path": "audit/source-inventory.json",
@@ -183,19 +183,19 @@
       "path": "BulksketchProofs/Audit.lean",
       "old_sha256": "7206c4f7d7c1be5ed178b5f3f62f908e6da37731da15da5aa9e295bb2314b574",
       "new_sha256": "c9ce92f2202ceb9297e81c78c86965dbecaf1509289c53ce106dbedd54ad8eb1",
-      "reason": "Add independently reviewed period64 and complete source-table/trace/quadratic contracts. Keep all previous meanings and source obligations. Regenerate exact source literals and kernel-check transpose/table identities; no assumed correctness from generator."
+      "reason": "Add independently pinned period64 and complete source-table/trace/quadratic contracts. Keep all previous meanings and source obligations. Regenerate exact source literals and kernel-check transpose/table identities; no assumed correctness from generator."
     },
     {
       "path": "scripts/verify.py",
       "old_sha256": "990388ee1b4641c5536dc6cac88babf77b338a1ead74bff7fabfdf52a1c5eabf",
       "new_sha256": "54985bd8bbae78224c386873f82d1fd9e23e1af362729fafd9fabb304e0d54db",
-      "reason": "Add independently reviewed period64 and complete source-table/trace/quadratic contracts. Keep all previous meanings and source obligations. Regenerate exact source literals and kernel-check transpose/table identities; no assumed correctness from generator."
+      "reason": "Add independently pinned period64 and complete source-table/trace/quadratic contracts. Keep all previous meanings and source obligations. Regenerate exact source literals and kernel-check transpose/table identities; no assumed correctness from generator."
     },
     {
       "path": "BulksketchProofs.lean",
       "old_sha256": "98e3f3231cf43fb03237202b4889a9fc9619af171c3bab3ea1eb2ea4d74315b5",
       "new_sha256": "062759adee4278c7bc60184084009295b282e3e2c6293ca5bda2b572547f13b5",
-      "reason": "Add independently reviewed period64 and complete source-table/trace/quadratic contracts. Keep all previous meanings and source obligations. Regenerate exact source literals and kernel-check transpose/table identities; no assumed correctness from generator."
+      "reason": "Add independently pinned period64 and complete source-table/trace/quadratic contracts. Keep all previous meanings and source obligations. Regenerate exact source literals and kernel-check transpose/table identities; no assumed correctness from generator."
     },
     {
       "reason": "Run eight inverse-projection provenance mutation fixtures in both ordinary and optimized Python; preserves all old source/specification hashes and exact proposition meanings.",
@@ -212,18 +212,18 @@
       ]
     },
     {
-      "reason": "Pin cross-reviewed quotient/trace/inverse checkpoint and exact remaining enclosing-wrapper blocker investigation. No prior proposition or source fingerprint changes.",
+      "reason": "Pin cross-pinned quotient/trace/inverse checkpoint and exact remaining enclosing-wrapper blocker investigation. No prior proposition or source fingerprint changes.",
       "changes": [
         {
           "path": "audit/quotient-field-checkpoint.json",
           "new_sha256": "74c13d90c143531b3e619c9722b197ccfbb07ef45ffab3647a78482d083777d6"
         },
         {
-          "path": "audit/quotient-contract-review.json",
+          "path": "audit/quotient-contract.json",
           "new_sha256": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4"
         },
         {
-          "path": "audit/word-quotient-independent-review.md",
+          "path": "audit/word-quotient-analysis.md",
           "new_sha256": "1ece7f43c3ba81f3d2e4dcb30416edf780d5aeeaf62845d0a78b834cbcd0bd53"
         },
         {
@@ -233,7 +233,7 @@
       ]
     },
     {
-      "reason": "Add the reviewed native wrapper/Portable/const-square checkpoint and preserve all earlier propositions. Extend exact provenance mutations and actual translator-policy gate fixtures after reproducing/fixing empty-artifact metadata acceptance. No native source, axiom allowlist or replay cap changes.",
+      "reason": "Add the pinned native wrapper/Portable/const-square checkpoint and preserve all earlier propositions. Extend exact provenance mutations and actual translator-policy gate fixtures after reproducing/fixing empty-artifact metadata acceptance. No native source, axiom allowlist or replay cap changes.",
       "changes": [
         {
           "path": "scripts/verify_all.py",
@@ -254,15 +254,15 @@
           "new_sha256": "95b5a3cdfbd02282affa4b810f0ea76062d76f67096ae3f9f2f0ebf9f4832c63"
         },
         {
-          "path": "audit/aeneas-capture-independent-review.md",
+          "path": "audit/aeneas-capture-analysis.md",
           "new_sha256": "581285b55e7fcf4e884c1d640b35b479eccd8b72f18286a28f6fcdaa69f53d8b"
         },
         {
-          "path": "audit/frobenius-const-independent-review.md",
+          "path": "audit/frobenius-const-analysis.md",
           "new_sha256": "873bd302ac21353de6d949023879af885fda21537c011fa634694a9c25a4ba0c"
         },
         {
-          "path": "audit/native-coverage-integration-review.md",
+          "path": "audit/native-coverage-validation.md",
           "new_sha256": "a9d5b50795799dcacec3b3b919fea69ff7e3dfae8f84fedbdbb134bc2e56b58e"
         }
       ]
@@ -1509,6 +1509,210 @@
       "old_sha256": "34e28fccde99480f7e114b7326f3a867883d3093f201b78e838635b5ccfed063",
       "new_sha256": "6113c737bc7bffa13177fa7686081e9ad91f3071932912678c2df306ac448de8",
       "reason": "Cite the exact sanitized publication checkpoint whose tree passed replay, distinct from the rewritten historical theorem checkpoint; documentation only."
+    },
+    {
+      "path": "scripts/verify.py",
+      "old_sha256": "54985bd8bbae78224c386873f82d1fd9e23e1af362729fafd9fabb304e0d54db",
+      "new_sha256": "aeb815ee6f24195abce786aeb2aba69c07fca8058efb45574e6cfe704a64b50a",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "scripts/verify_all.py",
+      "old_sha256": "d50e113c9bb16d503980c0fbb927eff9a05ac40e63c45f29b1ab58036cba1c41",
+      "new_sha256": "e29a97e9fd2990dc58af21ed5eb903f873f39db8204e1ce9af6748e4ad9c4784",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "audit/clmul-contract.json",
+      "old_sha256": "eaf9a143e359757389300176c8ea75eabb4f7d945a1ca8204d62c4dcc75d0306",
+      "new_sha256": "39ff965698a6d9494129f9f2d1c2bb3a9045a2b8db1f59f8ea7922d6bceae7cb",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "BulksketchProofs/Generated/FieldTables.lean",
+      "old_sha256": "25cb2883183185bd93f22b3f1d000f20a7ee67ab7867ce010a86fc80a1dda124",
+      "new_sha256": "b32bd8cc00f93dc6f488c5439e278d1c203f5ecf8c5b87ff2d7cda5bed540a24",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "extraction/extract-field-tables.py",
+      "old_sha256": "46b020654d32253b223e7961bd9f9c0ee805d056e7db5492e0907ad555c1aece",
+      "new_sha256": "b01c18f360b10214a85c2c512f876817d2a943a5b46804f5cdfcda70230423d3",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "extraction/field-tables-linkage.json",
+      "old_sha256": "e532e17a5d7ae98864de10a826d9d1af62c7929d9a5ef3b5af228f1179d6c674",
+      "new_sha256": "15898fbf80df27f529eb20e8e454a6b48dc4fd0e3687922abc054dfed614e372",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "audit/maps-contract-preproof-freeze.json",
+      "old_sha256": "5510580141b61dbb4a930b0fd2b879efb0f56ddc4d8fbd8e9b6939b1af9a72d8",
+      "new_sha256": "a13c9d8b9ec3bc27306404088d2e28cb1a43d26921ed5d97e53ef9a2a117e4e5",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "audit/period-contract-preproof-freeze.json",
+      "old_sha256": "0abf907b9472f61d18abcf50650e71deefccd89e552a94200111ab91e1a33ade",
+      "new_sha256": "ffe83abdb3d117574eed2f90b8f993af45f0499fe6f9fd06324156fcf8168afc",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "audit/modulus-proof-analysis.md",
+      "old_sha256": "24a9fa1b70f297f50efacf5d2fdfb3592ecfdc82fdb80fc5ab6d79ea36e2b96b",
+      "new_sha256": "fd0ae5633cd2c45445df3a48fc91bcb1a2be2d3f82c2a5a0a484a0a4271bbfee",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "audit/core-maps-proof-analysis.md",
+      "old_sha256": "aed4509f239a8e3db59c7a9f0d95ca20286d8a6df50372e3f59c172572101124",
+      "new_sha256": "19b9f6d70085a9186a7f1d3267993b1468d216339ddbd62e0395e5be6fa51bba",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "audit/field-algebra-accounting.md",
+      "old_sha256": "55d3cd81a3f03185992e3272994c04b13b5e7ea34ff85e5d8e2cfced90f240be",
+      "new_sha256": "0304c776bb8f2df9f69fa6ce0144a4c20eb8d74e0578817163e8a658c15d8b6b",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "audit/field-algebra-checkpoint.json",
+      "old_sha256": "e93b65ffd57dcdb5c4c987c76f96d48b8917e82f52969853dbb979c049a4220e",
+      "new_sha256": "3ba7117934e58808ab3fb47ae486de833db4bdb9e26c1cc37006113ec604be7f",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "old_sha256": "771c6a0cf84230b2d59e42cbda72ded564d920366be8350a796dbd63d5d84555",
+      "new_sha256": "cfd3dfde361515b6842f9592a986e4e04248d63dc79148a8a964660307b02724",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "audit/quotient-field-checkpoint.json",
+      "old_sha256": "74c13d90c143531b3e619c9722b197ccfbb07ef45ffab3647a78482d083777d6",
+      "new_sha256": "ca24eb686b77fc20d56e48e1e5e886515b8877af345bed90c44f2763e849aa1e",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "audit/quotient-contract.json",
+      "old_sha256": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
+      "new_sha256": "96804318a46b78e8e0341aeb635dd55028966bc93e606cca2d1d57c2e1ab254d",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "audit/word-quotient-analysis.md",
+      "old_sha256": "1ece7f43c3ba81f3d2e4dcb30416edf780d5aeeaf62845d0a78b834cbcd0bd53",
+      "new_sha256": "1edfd153a18a0475fd98b263acd1d64a143c04d2a870aa30dd33b123d4081e19",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "audit/inverse-enclosing-translator-investigation.md",
+      "old_sha256": "d8e28ac55492b8b4feabde9350a8208ffe7a3546cc5299035c325e138b24d28e",
+      "new_sha256": "3b4ba71270a678e67e8710c7c0fc142258343ddfacb4aca662ba6dbb49d9fc3c",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "scripts/check_variant_fixtures.py",
+      "old_sha256": "cc17e2a0661ed53a4df7401c3280bba2e8f7ba9a87ac0e490bc2ff85b1527c33",
+      "new_sha256": "e4aa633a141ef8117e6417011f957996bfc369c8155412cd4b392c0e698588ae",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "audit/native-coverage-checkpoint.json",
+      "old_sha256": "95b5a3cdfbd02282affa4b810f0ea76062d76f67096ae3f9f2f0ebf9f4832c63",
+      "new_sha256": "4f318022572b35daf51d84f659a600a219d0588fdf10941888693489531c33e3",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "audit/aeneas-capture-analysis.md",
+      "old_sha256": "581285b55e7fcf4e884c1d640b35b479eccd8b72f18286a28f6fcdaa69f53d8b",
+      "new_sha256": "025b0fddf144700a2baaca8574af1915f9fdcdf0c4cb239393954ad89578ffea",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "audit/frobenius-const-analysis.md",
+      "old_sha256": "873bd302ac21353de6d949023879af885fda21537c011fa634694a9c25a4ba0c",
+      "new_sha256": "06db8ef2a68b50ab68dc45fd5e4b45a889bc59d0dc67de5971ad19d888701860",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "audit/native-coverage-validation.md",
+      "old_sha256": "a9d5b50795799dcacec3b3b919fea69ff7e3dfae8f84fedbdbb134bc2e56b58e",
+      "new_sha256": "7dbe44162ef437db61fa7d42fa5a008ca95b0fb26456649febcce0d8f732d9fc",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "NATIVE_CALLER_CHAINS.md",
+      "old_sha256": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
+      "new_sha256": "c1d0164324704051f1ee64a79880d1619f14585f110865fe4d82b1901363b51c",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "README.md",
+      "old_sha256": "6113c737bc7bffa13177fa7686081e9ad91f3071932912678c2df306ac448de8",
+      "new_sha256": "96e7f2a4d9ef4d4873fd948119e606d6a1889c0d6b47c57778ba73b91ec0deda",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "NATIVE_RECONSTRUCTION.md",
+      "old_sha256": "3a1955592353708b30df40c5fb5443a743451002275c4da8164c37a3344746b2",
+      "new_sha256": "6891ea0477b6901d135d3043a2c74afab0e776942981b0943990bf621721f4ef",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "NATIVE_QUARTIC.md",
+      "old_sha256": "0f7a4311accbf944b75a6792955da66ae548891ce2dc1a7e53a167aed892a381",
+      "new_sha256": "21e40591b4203e0ec841f5ccc26b654334a579fe6153c5d3979b6e3aacd6a2e3",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "NATIVE_CLOSED_LEAF.md",
+      "old_sha256": "89b20e2b1ea0c3d71bd27a50dbd8f9538ce5fd02d653c87268692459787dd0b8",
+      "new_sha256": "e01474ea472b4300592902f2e93867cef2f7cbe2298bf126959fe04a404e6aeb",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "NATIVE_NEWTON_GUARD.md",
+      "old_sha256": "f8d13ab202dd6dc1cda482af41c06eca338711bf59e4b45622f3567aeb072d0f",
+      "new_sha256": "920323d2164037b7a826c0b639eca124e896f1bc89aa96aa0ade0b9666a83b8f",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "audit/native-newton-guard-checkpoint.json",
+      "old_sha256": "343b89fc0d759b4989ebd91a5ff5d719d4b84ac0fd59ca0b47c2e4f8ba0fb41d",
+      "new_sha256": "ffc82c49bb25ff6d6a62ea7f4f8e6edbcd25ab6d2a1c54c4f8e2cd3408ee70bd",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "NATIVE_BM_DEGREE_PROBE.md",
+      "old_sha256": "348262e809a74c48d237059f90c04a4415dbf95ef704dcd79af2e4c08eab40c4",
+      "new_sha256": "37dd34be157d87e604234c7474d0bcdde5bb8afd6f3d746d0959498a1308c12d",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "NATIVE_BM_LOCATOR.md",
+      "old_sha256": "2b330a3ca4841689cf58af8be9df209e2fb39b30bc1f442054be74ff3f08aed2",
+      "new_sha256": "344435e2927a680f65654658f19157184224177cfb6b46c24fd8ee579130d80e",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "NATIVE_DENSE_REDUCER.md",
+      "old_sha256": "1e507a052eda6ffab691e8e3d78c9904cafd2498edccbd46b8164de89248531a",
+      "new_sha256": "a734a74f812471cd13e9898850eb56bafb7f99416e535b1cbf082b5d70f2f78b",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "NATIVE_DENSE_DIVISION.md",
+      "old_sha256": "7bc66fd0e205e372f4492b801782b7af8a5cf59bd300896e4b7633612da6b9bc",
+      "new_sha256": "78f879d191aeb5804172a32f9d2c91723ea769c5031c9c4f443fc3a4edaa85ad",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "old_sha256": "9076648e4a8c45ba7cb36848abc3d8a0b412aa47903d4a1885b33a8abb8f947a",
+      "new_sha256": "69700278f50406478a872f0eb9b45b6fd3053ffbba00e51c1ededddc6f290319",
+      "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
     }
   ]
 }

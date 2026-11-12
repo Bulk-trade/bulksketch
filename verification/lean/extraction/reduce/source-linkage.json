@@ -29,8 +29,7 @@
     "source_snapshot": "bridge/runtime-models/array-iterator.rs",
     "correspondence": "explicit trusted owned remaining-sequence value model, not a proof of Rust std ownership/drop/representation"
   },
-  "contract_review": {
-    "reviewer": "wrapper_performance",
+  "contract_record": {
     "before_proof_search": true,
     "spec_sha256": "f544901960402b251b832412991ad43dd3395820fec7cbe533688d5298256a42",
     "challenge_sha256": "190ed042531fa8a748a83991f3af8f28cf9f08b4fa35c8c90de3e8b7772e27a6"

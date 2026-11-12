@@ -1,4 +1,4 @@
--- Exact declaration projection from the reviewed original-source extraction.
+-- Exact declaration projection from the pinned original-source extraction.
 -- Only imports/type sharing are adapted; declarations below remain verbatim.
 module
 public import Arithmetic.InverseUsingTypes

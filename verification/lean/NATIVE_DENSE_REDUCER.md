@@ -1,7 +1,7 @@
 # Original Dense reducer, trace stage and finite memory
 
-All 344 native executable obligations remain in scope. The ledger records
-115 original Aeneas body refinements under the recorded contracts, and
+All 344 native executable obligations remain in scope. The associated record
+contains 115 original Aeneas body refinements under the recorded contracts, and
 five separate stateful LLBC contracts. Production Rust is unchanged.
 
 ## Dense modular square table
@@ -30,7 +30,7 @@ stock symbol, region, loan and mutable writeback mapping is retained.
 Checked replay reproduces all three artifacts. Stock, disabled and
 unchecked controls fail at the original join. Unrelated Portable XOR
 artifacts match the stock translator. The square uses the identical
-matcher together with the reviewed shared expansion owner guard and
+matcher together with the pinned shared expansion owner guard and
 shared-only level-1 erasure. Both typed mutable Zip continuations are
 retained.
 
@@ -44,7 +44,9 @@ contract. The 64-step pointwise result is Mathlib `Algebra.trace` in
 the exact GF64 quotient. The original Dense square discharges the
 trace wrapper's modular-square premise. The wrapper checks both
 charges, exact failures, scratch updates, exact cache length bounded by
-64, and the GCD or NotSplit return. General factor traversal remains open.
+64, and the GCD or NotSplit return. The [root traversal proofs](NATIVE_ROOT_RUN.md)
+describe the conditional factor-stage contracts, and the
+[Portable theorem](README.md) composes the ordinary no-hint route.
 
 ## Finite address and allocation contracts
 

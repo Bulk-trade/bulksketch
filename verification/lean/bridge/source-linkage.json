@@ -202,7 +202,7 @@
       "status": "exact frozen source contract plus current aggregate replay gate under recorded TCB"
     }
   ],
-  "implementation_coverage_credit": "root ledger owns final classification; no whole-native verification claimed",
+  "implementation_coverage_credit": "Coverage uses distinct native source items; whole-native verification is not claimed.",
   "independent_generated_model_refinement_axiom_audit": "passed: propext/Classical.choice/Quot.sound only",
   "independent_refinement_axiom_log": "bridge/audit/results/axioms.json",
   "generated_model_refinement_source_sha256": "5f96237fa121091b828431e86408cafaf5556a0f586b7d4b2bd7edb48bfb34fd",
@@ -2032,7 +2032,7 @@
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
   "frobenius_source_linkage": "extraction/canonical-arithmetic/frobenius/source-linkage.json",
-  "kernel_replay_loader": "audit/replay-loader-review.json",
+  "kernel_replay_loader": "audit/replay-loader-validation.json",
   "native_generated_projections": [
     {
       "generated": "extraction/inverse-chain/Inverse/Funs.lean",
@@ -2055,18 +2055,18 @@
     {
       "generated": "extraction/inverse-wrappers/Arithmetic/Funs.lean",
       "bridge_copy": "bridge/Arithmetic/InverseUsingGenerated.lean",
-      "sha256": "7c6ad32c606fe4779dc950fc6bc77b2631a36033eba170301eb0a5e12a0dfb46",
+      "sha256": "4d1713a69de679a29a7db114c7b9bb964516fd09eb109a3c752ee73fe82ced6c",
       "raw_sha256": "4a8009854592056eecc02291a4fe1a3d8a71c20ab5920784eff1aa6aaeccbc8b",
       "checker": "extraction/inverse-wrappers/project.py",
       "checker_args": [],
       "declaration_count": 22,
       "translator_variant": "checked-frozen-capture-v1",
-      "scope": "Exact original closure and wrapper declarations under reviewed checks-enabled frontend; all shared declarations byte-identical to prior packages."
+      "scope": "Exact original closure and wrapper declarations under pinned checks-enabled frontend; all shared declarations byte-identical to prior packages."
     },
     {
       "generated": "extraction/inverse-wrappers/Arithmetic/Types.lean",
       "bridge_copy": "bridge/Arithmetic/InverseUsingTypes.lean",
-      "sha256": "619fb7c67f9aa399df652f490893644a1cbcdce23748b885f5a93a38acad7235",
+      "sha256": "e3c3c3df6abe162253fdc6695c99dbdcca8417a4b4eb883715cd3e43fc25f51d",
       "raw_sha256": "ef16309c06e9b68d0cd9d207f76f10734347b52d239ce3925bad1c6c645a760a",
       "checker": "extraction/inverse-wrappers/project.py",
       "checker_args": [
@@ -2074,12 +2074,12 @@
       ],
       "declaration_count": 1,
       "translator_variant": "checked-frozen-capture-v1",
-      "scope": "Exact original closure and wrapper declarations under reviewed checks-enabled frontend; all shared declarations byte-identical to prior packages."
+      "scope": "Exact original closure and wrapper declarations under pinned checks-enabled frontend; all shared declarations byte-identical to prior packages."
     },
     {
       "generated": "extraction/portable-inverse/PortableInverse/Funs.lean",
       "bridge_copy": "bridge/Arithmetic/PortableInverseGenerated.lean",
-      "sha256": "c9f4b8b77ecc93ecf64e944309ceafd5ae52169fc13c2d00412b84ca93f74a94",
+      "sha256": "a620ace60666f6ef1a9e7f5a0f7db3db0f598ff06dde23a055a0014aa2b09fbd",
       "raw_sha256": "a9ef06a1539d0b7278024945bf738a8794a4dadf07447027049d6ac8921db337",
       "checker": "extraction/portable-inverse/project.py",
       "declaration_count": 1,
@@ -2696,11 +2696,11 @@
     {
       "generated": "extraction/avx-horner/kernel/Arithmetic/Funs.lean",
       "bridge_copy": "bridge/Arithmetic/AvxHornerGenerated.lean",
-      "sha256": "726aab57b5ec5c8d30df6de975b039d970fd9d90cdf9f8b88d9919a011570b53",
+      "sha256": "6e666789373788bfb585d924701436d177c671e733e4ed1b0915648c7eb7fcb4",
       "raw_sha256": "3ebe6cb2593e6c292c58dc047ca24719f0dec2520c40d6e046b934e4bdfc4c83",
       "checker": "extraction/avx-horner/project.py",
       "declaration_count": 7,
-      "scope": "Exact original AVX Horner kernel and both wrappers. The inner kernel uses the reviewed checked ended-shared variant. Both wrappers were extracted by stock Aeneas.",
+      "scope": "Exact original AVX Horner kernel and both wrappers. The inner kernel uses the pinned checked ended-shared variant. Both wrappers were extracted by stock Aeneas.",
       "translator_variant": "checked-ended-shared-scalar-v1"
     },
     {
@@ -3195,7 +3195,7 @@
       "scope": "Exact original MAX_PREFERRED_DEGREE initializer and both emitted loop declarations."
     }
   ],
-  "reviewed_translator_variants": [
+  "translator_variants": [
     {
       "id": "checked-frozen-capture-v1",
       "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
@@ -3440,7 +3440,7 @@
     },
     "scope": "Source-bound typed interpretation of the exact original masked-memory LLBC normal paths. No Aeneas generated-body credit or physical pointer provenance claim."
   },
-  "reviewed_pclmul_horner_extensions": [
+  "pclmul_horner_extensions": [
     {
       "variant": "checked-ended-shared-scalar-v1",
       "receipt": "extraction/pclmul-horner/receipt.json"
@@ -3487,7 +3487,7 @@
       "scope": "Exact checked original read-only LLBC workspace admission, including all nine length reads, arithmetic overflow, short circuit rejection, and preservation of the complete workspace."
     }
   ],
-  "reviewed_degree_probe_extensions": [
+  "degree_probe_extensions": [
     {
       "variant": "checked-fixedpoint-nested-scalar-slice-retry-v1",
       "receipt": "extraction/degree-probe/receipt.json"

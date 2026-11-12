@@ -1,7 +1,7 @@
 # Original root traversal stages and AVX square heap effects
 
-All 344 native executable obligations remain in scope. This checkpoint
-adds exact original Aeneas body refinements for `Roots::run`,
+All 344 native executable obligations remain in scope. The source refinements
+described here cover `Roots::run`,
 `Roots::divide`, the affine subspace offset, `affine::splitter`,
 `affine::subspaces`, the preparation and enumeration wrappers, the
 inner enumerator and selector, the affine multiple, the GF64 solve map and its table
@@ -27,7 +27,9 @@ original linear evaluation and Dense modular square bodies under the
 field, reducer table and backend contracts. The field proof relates the
 normalized output to both child cosets at every root of the factor in
 the parent coset. It requires independence of the new basis direction.
-The complete traversal still needs to establish and preserve those premises.
+These are conditional affine-stage contracts. Composition of the V3 affine
+route must establish and preserve these premises; the ordinary no-hint Portable
+result is stated separately in the [verification overview](README.md).
 
 The affine subspace table proof checks the seed, both loops and exact
 row writes. Over Mathlib's GF(2⁶⁴), each prefix row represents the
@@ -102,8 +104,10 @@ degree budget bounds the next pending slot. At an admitted affine GCD
 stage, the exact native coefficient count selects either proper
 division or a retry in a smaller positive-rank coset. The successful
 divide commit partitions the parent's root set by the split classifier
-and preserves the recorded child bases and rank. The complete
-depth-first traversal still needs to compose these steps. From the
+and preserves the recorded child bases and rank. These local affine
+transition contracts do not by themselves establish an end-to-end V3 route.
+The ordinary Portable traversal is composed in the [end-to-end theorem](README.md).
+From the
 admitted incoming count, degree and pending state, the original
 Roots::start establishes the empty pending layout, root budget, basis
 reset and exact locator copy. The native predictor proves both checked
@@ -195,7 +199,9 @@ Paid affine enumeration has the same exact pop and terminal verification
 outcomes. The original leaf and affine pops restore the saved direction,
 affine base and rank, and keep the shared basis. The first charge of any
 FactorWork stage exits with the original workspace and exact failed-charge
-meter. Complete per-stage readiness and charge induction remain open.
+meter. The [Portable theorem](README.md) derives per-stage readiness and work
+payment for the ordinary no-hint route. Other decoder variants retain their
+separate admission, readiness and aggregate-accounting obligations.
 
 The AVX square finite-heap theorem composes the zero fill, scalar
 coefficient seeds, and the original masked LLBC load/store block

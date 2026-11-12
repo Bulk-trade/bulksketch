@@ -33,6 +33,7 @@ reused dependencies are checked by the four new extraction projectors.
 The runtime bindings describe the supported Rust standard-library value
 operations. Standard-library and extractor correspondence, physical aliasing,
 pointer provenance, drop behavior and ISA semantics retain their recorded
-trust assumptions. Remaining targets include the Dense square and multiplication
-kernels, Horner evaluation, decoder completeness, and machine memory and ISA
-contracts.
+trust assumptions. The [Dense square](RECONCILIATION.md),
+[multiplication and Horner](DENSE_PRODUCT.md), and [Portable decoder](README.md)
+documentation describe the related proofs. Physical memory provenance and
+compiler-to-ISA correspondence remain outside these slice-value models.
