@@ -223,7 +223,7 @@ and their scope.
 
 ### Verification
 
-The proof checkpoint `d0155ee` passed all six audit gates, including frozen
+The sanitized publication checkpoint `6660856` passed all six audit gates, including frozen
 statement and source checks, a transitive axiom audit, Lean kernel replay,
 and independent Nanoda replay. Only `propext`, `Classical.choice`, and
 `Quot.sound` are permitted. The native release suite passed 139 tests.

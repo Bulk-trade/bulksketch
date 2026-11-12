@@ -55,7 +55,7 @@
     "audit/native-stateful-checkpoint.json": "2796eaed83ef49ef2ea06d263c75c3b9d17e62c89e9d032fc07c86832775f41e",
     "NATIVE_CALLER_CHAINS.md": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
     "audit/native-caller-checkpoint.json": "444e2d5cfb18737c77ae01dc9708bd7f1e7f3975e786e9054024be396724497a",
-    "README.md": "34e28fccde99480f7e114b7326f3a867883d3093f201b78e838635b5ccfed063",
+    "README.md": "6113c737bc7bffa13177fa7686081e9ad91f3071932912678c2df306ac448de8",
     "NATIVE_RECONSTRUCTION.md": "3a1955592353708b30df40c5fb5443a743451002275c4da8164c37a3344746b2",
     "audit/native-reconstruction-checkpoint.json": "bae6baacb93dc2d9070dbb07dbdfd10599d3c4d35de76b9ce67d143a3fbd82ea",
     "NATIVE_QUARTIC.md": "0f7a4311accbf944b75a6792955da66ae548891ce2dc1a7e53a167aed892a381",
@@ -1503,6 +1503,12 @@
       "old_sha256": "b4b13cd3ad3de52d936d80d353e3feea78c47be7b8fdf6a48b18359ccb0f6ecd",
       "new_sha256": "34e28fccde99480f7e114b7326f3a867883d3093f201b78e838635b5ccfed063",
       "reason": "Scan exact staged blob contents, including symlink targets, and reject local paths without revealing the filesystem location in diagnostics; no native or Lean proof change."
+    },
+    {
+      "path": "README.md",
+      "old_sha256": "34e28fccde99480f7e114b7326f3a867883d3093f201b78e838635b5ccfed063",
+      "new_sha256": "6113c737bc7bffa13177fa7686081e9ad91f3071932912678c2df306ac448de8",
+      "reason": "Cite the exact sanitized publication checkpoint whose tree passed replay, distinct from the rewritten historical theorem checkpoint; documentation only."
     }
   ]
 }

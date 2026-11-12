@@ -14,7 +14,7 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "2b4c43715bb677d439fc8eb99564e093d041bea1fdb8ec5567ba470275ec8485",
-    "audit/frozen-inputs.json": "09ce1b41795ccc6749edf81108998c9924d0dfdc7329c9550a5a7090ec269203",
+    "audit/frozen-inputs.json": "eed1006960f309b3cb8aea30b485bc9b7dd746dc9dc191270ac554b9bf2a4d32",
     "bridge/BulksketchBridge.lean": "5dbd9b1fd933cd65fc227225c70ec885fecc1b5eaa061ec44ae76ecd4d5eb840",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
@@ -288,7 +288,7 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "66a4cd4838efc1a0f5c312d3d21bb4afa7c2801fee342d0ed63e7d4327d946a0",
     "extraction/portable-xor/refinement-receipt.json": "064222f445b771c56f238fd2c73cf29bc14210ee4c5d9b874337ca03b71a632e",
-    "README.md": "34e28fccde99480f7e114b7326f3a867883d3093f201b78e838635b5ccfed063",
+    "README.md": "6113c737bc7bffa13177fa7686081e9ad91f3071932912678c2df306ac448de8",
     "RECONCILIATION.md": "9e89b2caf38c1dc035a6245493f5d921496f9bd95a266afd951a48f9ef756928",
     "audit/coverage.json": "17ddaa8f412c83b6c4c58d6629a0ddb3a93c53ae1474da229e0203763cb630d8",
     "audit/reconciliation-checkpoint.json": "b22311c148f62eea4bbdb3968f6ae187abf6f7b553f9f1cd03f883eed2cd009a",
@@ -17259,6 +17259,18 @@
       "old_sha256": "e3e3d344bb193ae0661a38c7a2fac8fa9c312da28ac50e1dfded9ef2aceff61b",
       "new_sha256": "d50e113c9bb16d503980c0fbb927eff9a05ac40e63c45f29b1ab58036cba1c41",
       "reason": "Scan exact staged blob contents, including symlink targets, and reject local paths without revealing the filesystem location in diagnostics; no native or Lean proof change."
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "old_sha256": "09ce1b41795ccc6749edf81108998c9924d0dfdc7329c9550a5a7090ec269203",
+      "new_sha256": "eed1006960f309b3cb8aea30b485bc9b7dd746dc9dc191270ac554b9bf2a4d32",
+      "reason": "Cite the exact sanitized publication checkpoint whose tree passed replay, distinct from the rewritten historical theorem checkpoint; documentation only."
+    },
+    {
+      "path": "README.md",
+      "old_sha256": "34e28fccde99480f7e114b7326f3a867883d3093f201b78e838635b5ccfed063",
+      "new_sha256": "6113c737bc7bffa13177fa7686081e9ad91f3071932912678c2df306ac448de8",
+      "reason": "Cite the exact sanitized publication checkpoint whose tree passed replay, distinct from the rewritten historical theorem checkpoint; documentation only."
     }
   ],
   "challenge_count": 534

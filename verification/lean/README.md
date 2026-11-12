@@ -71,7 +71,7 @@ per-user temporary paths with a repository-relative diagnostic.
 
 ### Verification record
 
-Proof checkpoint `d0155ee4948ca170729e9c635c3c9bd702ebde2b` passed all six gates
+Sanitized publication checkpoint `666085680fb54d9d503b9ddabacea20240ca8ec7` passed all six gates
 of `scripts/verify_all.py`. The check matched 563 frozen statements, audited
 their transitive axioms, and replayed the exported terms through Lean's kernel
 and independent Nanoda. The only permitted axioms are `propext`,
