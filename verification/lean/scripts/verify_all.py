@@ -2,6 +2,7 @@
 """Single fail-closed entry point for current native-only proof milestones."""
 from pathlib import Path
 import json
+import re
 import subprocess
 import time
 
@@ -12,6 +13,28 @@ OUTPUT = ROOT / "audit/results/overall-verification.json"
 def main():
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps({"status": "running"}) + "\n")
+    with subprocess.Popen(["git", "cat-file", "--batch"], cwd=ROOT.parents[1],
+                          stdin=subprocess.PIPE, stdout=subprocess.PIPE) as blobs:
+        for entry in subprocess.check_output(["git", "ls-files", "--stage", "-z"], cwd=ROOT.parents[1]).split(b"\0"):
+            if not entry:
+                continue
+            metadata, path = entry.split(b"\t", 1)
+            mode, oid, stage = metadata.split()
+            if mode == b"160000":
+                continue
+            blobs.stdin.write(oid + b"\n")
+            blobs.stdin.flush()
+            header = blobs.stdout.readline().split()
+            if len(header) != 3 or header[:2] != [oid, b"blob"]:
+                raise RuntimeError("invalid staged publication blob")
+            contents = blobs.stdout.read(int(header[2]))
+            if blobs.stdout.read(1) != b"\n":
+                raise RuntimeError("invalid staged publication framing")
+            if stage != b"0" or re.search(
+                    rb"/(?:Users|home)/[^/\s\"<>]+|/(?:private/)?var/folders/[^/\s\"<>]+", contents):
+                message = "unsafe staged publication file: " + path.decode(errors="replace")
+                OUTPUT.write_text(json.dumps({"status": "failed", "error": message}) + "\n")
+                raise SystemExit(message)
     stages = []
     for script in ["verify.py", "verify_bridge.py", "check_negative_fixtures.py",
                    "check_replay_fixtures.py", "check_projection_fixtures.py",

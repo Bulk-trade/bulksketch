@@ -61,6 +61,14 @@ are Lean adapters. Workspaces and meters are supplied per row. The connection
 to Rust uses the pinned Charon/Aeneas translations and recorded standard-library
 models described below.
 
+Checked-in extraction metadata uses neutral workspace paths. Its byte-level
+hashes cover that normalized evidence; the native Rust, generated Lean, and
+proof statements are unchanged by path normalization. Fresh extraction runs
+must normalize local paths and regenerate the dependent receipts before
+publication. Before building proofs, the aggregate verifier scans staged Git
+blobs, including symlink targets, and rejects personal home-directory and
+per-user temporary paths with a repository-relative diagnostic.
+
 ### Verification record
 
 Proof checkpoint `d0155ee4948ca170729e9c635c3c9bd702ebde2b` passed all six gates

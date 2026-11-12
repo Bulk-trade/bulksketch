@@ -17,7 +17,7 @@
     "scripts/verify.py": "54985bd8bbae78224c386873f82d1fd9e23e1af362729fafd9fabb304e0d54db",
     "BulksketchProofs/Field/SpreadSpec.lean": "cb21b3ad6e0c378438699e848a78038ca0d61b757322f8489fede4fc57cc9062",
     "BulksketchProofs/SpreadChallenges.lean": "1efb7e6e3d8561c83a26916282b6240a774a80db52091dd7420053a4424f7c63",
-    "scripts/verify_all.py": "c1a90ea1aeda9ca314899ff89f7df17ddfb9ea636e917be439e7639f54c19323",
+    "scripts/verify_all.py": "d50e113c9bb16d503980c0fbb927eff9a05ac40e63c45f29b1ab58036cba1c41",
     "scripts/check_negative_fixtures.py": "1be2bee7eb62aad32a2e9a3b4949a7076be5e8ee6ab8b59ec8e4370c0024ac7d",
     "BulksketchProofs.lean": "062759adee4278c7bc60184084009295b282e3e2c6293ca5bda2b572547f13b5",
     "BulksketchProofs/Field/CLMulSpec.lean": "b80c1557d0e1d10e719c255d6d74500f5a48e2580ed04e26d7e16d210ba1737b",
@@ -55,7 +55,7 @@
     "audit/native-stateful-checkpoint.json": "2796eaed83ef49ef2ea06d263c75c3b9d17e62c89e9d032fc07c86832775f41e",
     "NATIVE_CALLER_CHAINS.md": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
     "audit/native-caller-checkpoint.json": "444e2d5cfb18737c77ae01dc9708bd7f1e7f3975e786e9054024be396724497a",
-    "README.md": "179dc9f8c586b7286b841fad233b4c6c7cf439b6180778f85cb5039b22acc987",
+    "README.md": "34e28fccde99480f7e114b7326f3a867883d3093f201b78e838635b5ccfed063",
     "NATIVE_RECONSTRUCTION.md": "3a1955592353708b30df40c5fb5443a743451002275c4da8164c37a3344746b2",
     "audit/native-reconstruction-checkpoint.json": "bae6baacb93dc2d9070dbb07dbdfd10599d3c4d35de76b9ce67d143a3fbd82ea",
     "NATIVE_QUARTIC.md": "0f7a4311accbf944b75a6792955da66ae548891ce2dc1a7e53a167aed892a381",
@@ -1479,6 +1479,30 @@
       "new_sha256": "179dc9f8c586b7286b841fad233b4c6c7cf439b6180778f85cb5039b22acc987",
       "reason": "Clarify the proved Portable end-to-end result, explicit input and resource assumptions, checked scope, and replay evidence; no theorem or native-source change.",
       "old_sha256": "aa765527fb7794b0a61957454e2af900413c3f1fd80db5a38ce2188e28dd89bf"
+    },
+    {
+      "path": "scripts/verify_all.py",
+      "old_sha256": "c1a90ea1aeda9ca314899ff89f7df17ddfb9ea636e917be439e7639f54c19323",
+      "new_sha256": "e3e3d344bb193ae0661a38c7a2fac8fa9c312da28ac50e1dfded9ef2aceff61b",
+      "reason": "Document normalized publication metadata and reject local user or temporary paths before proof execution; native and Lean proof statements unchanged."
+    },
+    {
+      "path": "README.md",
+      "old_sha256": "179dc9f8c586b7286b841fad233b4c6c7cf439b6180778f85cb5039b22acc987",
+      "new_sha256": "b4b13cd3ad3de52d936d80d353e3feea78c47be7b8fdf6a48b18359ccb0f6ecd",
+      "reason": "Document normalized publication metadata and reject local user or temporary paths before proof execution; native and Lean proof statements unchanged."
+    },
+    {
+      "path": "scripts/verify_all.py",
+      "old_sha256": "e3e3d344bb193ae0661a38c7a2fac8fa9c312da28ac50e1dfded9ef2aceff61b",
+      "new_sha256": "d50e113c9bb16d503980c0fbb927eff9a05ac40e63c45f29b1ab58036cba1c41",
+      "reason": "Scan exact staged blob contents, including symlink targets, and reject local paths without revealing the filesystem location in diagnostics; no native or Lean proof change."
+    },
+    {
+      "path": "README.md",
+      "old_sha256": "b4b13cd3ad3de52d936d80d353e3feea78c47be7b8fdf6a48b18359ccb0f6ecd",
+      "new_sha256": "34e28fccde99480f7e114b7326f3a867883d3093f201b78e838635b5ccfed063",
+      "reason": "Scan exact staged blob contents, including symlink targets, and reject local paths without revealing the filesystem location in diagnostics; no native or Lean proof change."
     }
   ]
 }
