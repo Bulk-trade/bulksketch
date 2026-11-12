@@ -46,7 +46,7 @@ def main():
         raise RuntimeError("baseline Aeneas source differs from its pin")
     patch = HERE / "owner-guard.patch"
     if git(args.patched_source, "diff", "--binary") != patch.read_bytes():
-        raise RuntimeError("patched source differs from reviewed diff")
+        raise RuntimeError("patched source differs from pinned diff")
     env = dict(os.environ, RUSTUP_TOOLCHAIN="nightly-2026-09-17", CARGO_BUILD_JOBS="1",
                CARGO_TARGET_DIR=str(args.output / "charon-target"))
     commands = []

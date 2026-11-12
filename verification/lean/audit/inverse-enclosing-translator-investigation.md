@@ -1,6 +1,6 @@
 # Enclosing inverse translation investigation
 
-Date: 2026-11-06. Outcome: the existing pinned extractor still cannot translate the enclosing borrowed-square closure. No application source, generated application body or pinned translator source was edited. Every experiment here earns zero source-function proof credit.
+Analysis date: 2026-11-06. The pinned extractor cannot translate the enclosing borrowed-square closure described here. No application source, generated application body or pinned translator source was edited. These extraction experiments establish no source-function refinement.
 
 ## Reproduction and exact cause
 
@@ -36,13 +36,13 @@ Official upstream commit [fc321a2 / PR1457](https://github.com/AeneasVerif/aenea
 
 Pinned primary sources: [InterpReduceCollapse](https://github.com/AeneasVerif/aeneas/blob/ab34bd28458a08c150b7cbf1873e59af74588138/src/interp/InterpReduceCollapse.ml#L1326), [InterpMatchCtxs](https://github.com/AeneasVerif/aeneas/blob/ab34bd28458a08c150b7cbf1873e59af74588138/src/interp/InterpMatchCtxs.ml#L22), [loop-entry preparation](https://github.com/AeneasVerif/aeneas/blob/ab34bd28458a08c150b7cbf1873e59af74588138/src/interp/InterpLoopsFixedPoint.ml#L43), and [shared-loan reborrowing](https://github.com/AeneasVerif/aeneas/blob/ab34bd28458a08c150b7cbf1873e59af74588138/src/interp/InterpJoin.ml#L18).
 
-## Bounded candidate work, requiring separate soundness review
+## Conditions for translator changes
 
-1. Build a minimal translator regression containing a borrowed callback captured by a shared closure and invoked inside a counted loop, together with aliasing/nested-reference negative cases. Keep it outside native BulkSketch source.
-2. Prefer a narrowly justified change to loop-entry reborrowing for immutable shared-only capture graphs, or implement correct nested shared-borrow registration in abstraction matching. Such a change must preserve the identity of the underlying loan, assign fresh shared-instance IDs on copies, maintain parent-region relationships and respect ended-loan conditions. It must not simply freeze arbitrary abstractions or erase borrow structure.
-3. Re-run Aeneas invariant checks, positive/negative translator fixtures, original enclosing wrapper extraction, deterministic declaration/body linkage and both proof checkers. A versioned translator change would expand the reviewed extraction TCB and must be recorded explicitly before any new native proof credit.
+1. A translator change needs a regression containing a borrowed callback captured by a shared closure and invoked inside a counted loop, together with aliasing and nested-reference negative cases. These fixtures belong outside native BulkSketch source.
+2. A change to loop-entry reborrowing for immutable shared-only capture graphs, or to nested shared-borrow registration in abstraction matching, needs an explicit soundness argument. Such a change must preserve the identity of the underlying loan, assign fresh shared-instance IDs on copies, maintain parent-region relationships and respect ended-loan conditions. It must not simply freeze arbitrary abstractions or erase borrow structure.
+3. Aeneas invariant checks, positive and negative translator fixtures, original enclosing wrapper extraction, deterministic declaration/body linkage and both proof checkers must pass. A versioned translator change expands the extraction trust boundary and must be recorded explicitly before establishing another native-body refinement.
 
-No frontend patch was attempted in this checkpoint. The failed enclosing source obligations remain in the full native denominator. An opaque replacement closure or a manually asserted callback-normality fact would conceal the gap and is not an acceptable substitute.
+These experiments do not include a frontend patch. The failed enclosing source obligations are retained in the native-source inventory. An opaque replacement closure or a manually asserted callback-normality fact would conceal the gap and is not an acceptable substitute.
 
 ## Original-source monomorphization pilot
 
@@ -60,9 +60,9 @@ instantiation could provide a concrete callgraph, but the representation
 lowering still needs a supported route. The nine exact commands, statuses and
 artifact fingerprints are preserved in
 [monomorphization-pilot-receipt.json](../extraction/inverse-chain/monomorphization-pilot-receipt.json).
-This pilot changes no source, stable proof or pinned tool and earns zero credit.
+This pilot changes no source, fixed proposition or pinned tool and establishes no native-body refinement.
 
-## Durable local experiment evidence
+## Recorded experiment evidence
 
 Full command receipts and diagnostics are saved at `/workspace/bulk/bulksketch-pr-20261104/word-quotient-research/`. This directory is research evidence, not an active proof input.
 

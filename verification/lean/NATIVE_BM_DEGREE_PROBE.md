@@ -1,7 +1,7 @@
 # Native degree probe and Berlekamp–Massey loop proofs
 
-This checkpoint retains all 344 native executable obligations. The ledger
-records 102 original Aeneas body refinements under their stated contracts
+The source inventory retains all 344 native executable obligations. The
+associated verification record contains 102 original Aeneas body refinements under their stated contracts
 and five separate source-linked LLBC contracts. Production Rust is unchanged.
 
 ## Original degree probe
@@ -25,15 +25,15 @@ the encoder contract for the default encoder with Portable insertion.
 
 The checked original module projection retains 14 source declarations and
 two closure types verbatim, with checked shared declarations. It uses
-the reviewed nested-slice retry from the Newton guard and three scoped
+the pinned nested-slice retry from the Newton guard and three scoped
 standard-library bindings for fold, checked conversion and sorting.
 The extension gate ties the replay to the exact original LLBC and the
-reviewed guard translator.
+pinned guard translator.
 
 ## Original Berlekamp–Massey locator
 
 The full original locator extracts and elaborates, with all 25 generated
-declarations retained verbatim. The reviewed source-scoped translator
+declarations retained verbatim. The pinned source-scoped translator
 requires checks and the explicit BM flag. The paired lowering retains the
 loop's typed mutable writeback and the mirror that restores its iterator.
 The stock join and expansion modules remain unchanged. The checked
@@ -62,24 +62,27 @@ The checked source endpoints cover:
   odd-index skipping, even zero discrepancy and degree-budget rejection.
 - The scalar shift window invariant in the arithmetic state model.
   It derives the shifted interval and machine bounds from the step and
-  growth relations. Linking that invariant to the entire native outer
-  loop remains open.
+  growth relations. The [locator proofs](NATIVE_BM_LOCATOR.md) link this
+  invariant to the admitted native outer loop.
 
 The parity proof shows that the true skipped discrepancy vanishes for
 any reconstructed GF64 row satisfying the square relation, given a vanishing
 residual at all earlier powers. The polynomial update preserves that
 residual condition under the anchor equations, including the bootstrap
-case. These equations still need to be linked to every native loop state.
-The locator has zero full-body coverage credit. The verified subloops
-and branch theorems are recorded separately.
+case. The [locator proofs](NATIVE_BM_LOCATOR.md) establish the connection to
+the admitted native loop states. This component record assigns zero full-body
+locator count to the subloop and branch theorems; the full locator refinement
+is recorded separately.
 
-## Verification and remaining coverage
+## Verification and related proofs
 
 Run `python3 scripts/verify_all.py` from `verification/lean` with the pinned
 toolchain. The aggregate checks original source projections, exact frozen
 types, permitted axioms, independent proof replay and provenance controls.
 
-The degree-probe theorem gives exact admitted stage transitions. Full
-decoder acceptance, fallback and caller admission, the complete BM
-recurrence, general root recovery, remaining accelerated kernels and
-physical memory, ISA and compiler-expanded correspondence remain open.
+The degree-probe theorem gives exact admitted stage transitions. The
+[locator proofs](NATIVE_BM_LOCATOR.md) cover the complete native BM recurrence,
+and the [Portable theorem](README.md) composes ordinary no-hint decoding with
+its stated input and resource assumptions. Public caller admission, shared-job
+accounting, hint/V3 composition, accelerated end-to-end execution, physical
+memory and compiler-to-ISA correspondence are broader verification obligations.

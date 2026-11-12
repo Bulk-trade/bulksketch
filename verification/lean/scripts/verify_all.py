@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Single fail-closed entry point for current native-only proof milestones."""
+"""Run the native proof and source-consistency checks."""
 from pathlib import Path
 import json
 import re
@@ -57,7 +57,7 @@ def main():
                "checked_stateful_llbc_refinements": bridge["checked_stateful_llbc_refinements"],
                "matched_frozen_challenges": core["frozen_challenges_matched"] + bridge["frozen_challenges_matched"],
                "whole_native_coverage_achieved": False,
-               "note": "Verified current proof milestones under recorded source/translator/runtime assumptions. Full native contracts/expanded-body closure remain open; no coverage percentage claimed."}
+               "note": "Verified native proof contracts under recorded source/translator/runtime assumptions. Full native contracts/expanded-body closure remain open; no coverage percentage claimed."}
     OUTPUT.write_text(json.dumps(summary, indent=2) + "\n")
     print(json.dumps(summary, indent=2))
 

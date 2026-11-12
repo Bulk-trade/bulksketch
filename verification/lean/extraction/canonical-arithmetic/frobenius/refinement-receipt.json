@@ -1,5 +1,5 @@
 {
-  "status": "targeted-kernel-check-axiom-audit-and-independent-proof-review-passed",
+  "status": "targeted-kernel-check-and-axiom-audit-passed",
   "frozen_contracts_unchanged": true,
   "files": [
     {
@@ -17,7 +17,7 @@
   ],
   "source_linkage": "extraction/canonical-arithmetic/frobenius/source-linkage.json",
   "migration": "extraction/canonical-arithmetic/frobenius/migration-receipt.json",
-  "independent_preproof_contract_review": "extraction/canonical-arithmetic/frobenius/contract-preproof-freeze.json",
+  "preproof_contract_record": "extraction/canonical-arithmetic/frobenius/contract-preproof-freeze.json",
   "challenge": "BulksketchBridge.FrobeniusChallenges.normalResultMatchesIteratedSquare",
   "endpoint": "BulksketchBridge.Frobenius.frobenius_refines",
   "auxiliary_source_loop_endpoint": "BulksketchBridge.Frobenius.loop_refines",
@@ -50,14 +50,11 @@
   "no_native_source_changes": true,
   "no_generated_application_hand_edits": true,
   "no_additional_runtime_models": true,
-  "shared_frozen_audit_registry_not_edited_by_this_agent": true,
-  "implementation_coverage_credit": "Root ledger classifies one original native function; generated loop helpers do not add denominator items.",
-  "independent_proof_review": {
-    "reviewer": "wrapper_performance",
-    "approved": true,
-    "path": "extraction/canonical-arithmetic/frobenius/independent-proof-review.md",
-    "sha256": "516e5044fc2ee1c8d846e3f66015254bffa799dde28155984f0e7585452f091e",
-    "no_blocking_findings": true,
-    "fresh_build_by_reviewer": false
+  "shared_frozen_audit_registry_unchanged": true,
+  "implementation_coverage_credit": "Coverage counts one original native function; generated loop helpers do not add separate source items.",
+  "proof_analysis": {
+    "path": "extraction/canonical-arithmetic/frobenius/proof-analysis.md",
+    "sha256": "d835d13d29af97998609f7db22c7be75fcd42d90ab93e0ea7ce44ab04084cee7",
+    "additional_build_executed": false
   }
 }

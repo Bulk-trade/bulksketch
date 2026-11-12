@@ -1,7 +1,8 @@
 # Native closed-leaf recovery and Newton normalization
 
-The ledger retains 344 native executable obligations and records 95 original
-Aeneas body refinements under their stated contracts. Five source-linked LLBC
+The ledger retains 344 native executable obligations. The associated
+verification record contains 95 original Aeneas body refinements under their
+stated contracts. Five source-linked LLBC
 contracts remain separately checked. Production Rust is unchanged.
 
 ## Closed-leaf phases
@@ -44,7 +45,7 @@ and one into the monic leading coefficient, preserving the exact scratch
 suffix. The field theorem transports each result to GF64 under the
 verified multiplication and inverse callbacks.
 
-## Checked extraction and remaining coverage
+## Checked extraction and related proofs
 
 Pinned Aeneas with checks emits both projections. The closed-leaf
 projection uses the previously checked original solve and certificate
@@ -56,10 +57,15 @@ Run `python3 scripts/verify_all.py` from `verification/lean` under the pinned
 toolchain. The aggregate checks the frozen statements, transitive axioms,
 both proof replays and the provenance rejection controls.
 
-A separate checked extraction experiment emits the original Newton guard
-and complete degree probe with transparent application bodies. Their
-body proofs remain open. The isolated Berlekamp–Massey extraction still
-requires a typed lowering for a mutable loop continuation and its paired
-mirror writeback. General root recovery, other stage callers and accelerated
-kernels, physical memory and ISA correspondence, and end-to-end decoder
-completeness remain open.
+The extraction record includes the original Newton guard and degree probe
+with transparent application bodies, plus a Berlekamp–Massey diagnostic at a
+mutable loop continuation and its paired mirror writeback. The
+[Newton guard](NATIVE_NEWTON_GUARD.md), [degree-probe/BM loop](NATIVE_BM_DEGREE_PROBE.md)
+and [BM locator](NATIVE_BM_LOCATOR.md) documentation describe their function-body
+proofs. The [root traversal](NATIVE_ROOT_RUN.md) contracts and
+[Portable theorem](README.md) establish ordinary no-hint decoder composition
+under the stated input and resource assumptions.
+
+Public input construction and request admission, shared-job accounting,
+hint/V3 composition, accelerated end-to-end execution, physical memory and
+ISA correspondence remain broader verification obligations.

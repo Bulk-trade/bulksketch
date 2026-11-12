@@ -1,6 +1,5 @@
 {
-  "reviewer": "wrapper_performance",
-  "status": "APPROVED before proof search; no blockers",
+  "status": "contract fixed before proof construction",
   "files": {
     "bridge/BulksketchBridge/MapsQuadraticSpec.lean": "67d92a8392bed12e9b0477ed87be28b3d99f88d1b5794675a4ad22c75a58dc07",
     "bridge/BulksketchBridge/MapsQuadraticChallenges.lean": "cd797900ed4228284c5acf3914bd65e3d4643bc1543947963b5cbc04c3e8a319",

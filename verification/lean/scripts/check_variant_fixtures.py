@@ -18,7 +18,7 @@ source=(ROOT/'scripts/verify_bridge.py').read_text();tree=ast.parse(source)
 main=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='main')
 loop=next(n for n in main.body if isinstance(n,ast.For) and isinstance(n.target,ast.Name) and n.target.id=='variant')
 code=compile(ast.fix_missing_locations(ast.Module(body=[loop],type_ignores=[])),'actual-verify-bridge-variant-gates','exec')
-link=json.loads((ROOT/'bridge/source-linkage.json').read_text());variant=link['reviewed_translator_variants'][0];original=json.loads((ROOT/variant['receipt']).read_text());runtime=ROOT/'tooling/aeneas'
+link=json.loads((ROOT/'bridge/source-linkage.json').read_text());variant=link['translator_variants'][0];original=json.loads((ROOT/variant['receipt']).read_text());runtime=ROOT/'tooling/aeneas'
 runtime_head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=runtime,text=True).strip()
 def run(name,args,timeout,cwd):
  r=subprocess.run(args,cwd=cwd,capture_output=True,text=True,timeout=timeout)
@@ -52,7 +52,7 @@ for name,mutate in cases:
   except (RuntimeError,KeyError,ValueError) as e:status='rejected';reason=str(e)
   results.append({'case':name,'status':status});print(name,status)
 
-dense = next(item for item in link["reviewed_translator_variants"]
+dense = next(item for item in link["translator_variants"]
              if item["id"] == "checked-shared-expansion-owner-v1")
 dense_original = json.loads((ROOT / dense["receipt"]).read_text())
 dense_check = next(node for node in tree.body if isinstance(node, ast.FunctionDef)
@@ -98,7 +98,7 @@ for name, mutate in dense_cases:
     results.append({"case": name, "status": status})
     print(name, status)
 
-dense_mul = next(item for item in link["reviewed_translator_variants"]
+dense_mul = next(item for item in link["translator_variants"]
                  if item["id"] == "checked-shared-loop-erasure-v1")
 mul_original = json.loads((ROOT / dense_mul["receipt"]).read_text())
 mul_check = next(node for node in tree.body if isinstance(node, ast.FunctionDef)
@@ -143,7 +143,7 @@ for name, mutate in mul_cases:
     results.append({"case": name, "status": status})
     print(name, status)
 
-horner = next(item for item in link["reviewed_translator_variants"]
+horner = next(item for item in link["translator_variants"]
               if item["id"] == "checked-ended-shared-scalar-v1")
 horner_original = json.loads((ROOT / horner["receipt"]).read_text())
 horner_check = next(node for node in tree.body if isinstance(node, ast.FunctionDef)
@@ -182,21 +182,21 @@ for name, mutate in horner_cases:
     results.append({"case": name, "status": status})
     print(name, status)
 
-pclmul = link["reviewed_pclmul_horner_extensions"][0]
+pclmul = link["pclmul_horner_extensions"][0]
 pclmul_original = json.loads((ROOT / pclmul["receipt"]).read_text())
 pclmul_check = runpy.run_path(str(ROOT / "scripts/verify_bridge.py"))["check_pclmul_horner_extension"]
 pclmul_cases = [
     ("pclmul-horner-positive", lambda receipt, variants: None),
     ("pclmul-horner-omits-checks", lambda receipt, variants: receipt["checked_extraction"]["command"].remove("-checks")),
     ("pclmul-horner-wrong-patch", lambda receipt, variants: receipt.update(variant_patch_sha256="wrong")),
-    ("pclmul-horner-unreviewed", lambda receipt, variants: variants.clear()),
+    ("pclmul-horner-missing-extension", lambda receipt, variants: variants.clear()),
     ("pclmul-horner-unchecked-accepted", lambda receipt, variants: receipt["rejections"]["unchecked"].update(exit_code=0)),
     ("pclmul-horner-missing-type-artifact", lambda receipt, variants: receipt["checked_extraction"]["generated"].pop()),
     ("pclmul-horner-short-replay", lambda receipt, variants: receipt["replay"].update(exact_generated_artifacts=3)),
 ]
 for name, mutate in pclmul_cases:
     receipt = copy.deepcopy(pclmul_original)
-    variants = copy.deepcopy(link["reviewed_translator_variants"])
+    variants = copy.deepcopy(link["translator_variants"])
     mutate(receipt, variants)
     try:
         pclmul_check(pclmul, receipt, variants, runtime_head, link)
@@ -206,7 +206,7 @@ for name, mutate in pclmul_cases:
     results.append({"case": name, "status": status})
     print(name, status)
 
-certificate = next(entry for entry in link["reviewed_translator_variants"]
+certificate = next(entry for entry in link["translator_variants"]
                    if entry["id"] == "checked-ended-projector-leaf-v1")
 certificate_original = json.loads((ROOT / certificate["receipt"]).read_text())
 certificate_check = runpy.run_path(str(ROOT / "scripts/verify_bridge.py"))["check_certificate_match_variant"]
@@ -229,7 +229,7 @@ for name, mutate in certificate_cases:
     results.append({"case": name, "status": status})
     print(name, status)
 
-quartic = next(entry for entry in link["reviewed_translator_variants"]
+quartic = next(entry for entry in link["translator_variants"]
                if entry["id"] == "checked-fixedpoint-scalar-array-loan-retry-v1")
 quartic_original = json.loads((ROOT / quartic["receipt"]).read_text())
 quartic_check = runpy.run_path(str(ROOT / "scripts/verify_bridge.py"))["check_quartic_array_retry_variant"]
@@ -266,7 +266,7 @@ for name, mutate in quartic_cases:
     results.append({"case": name, "status": status})
     print(name, status)
 
-newton = next(entry for entry in link["reviewed_translator_variants"]
+newton = next(entry for entry in link["translator_variants"]
               if entry["id"] == "checked-fixedpoint-nested-scalar-slice-retry-v1")
 newton_original = json.loads((ROOT / newton["receipt"]).read_text())
 newton_check = runpy.run_path(str(ROOT / "scripts/verify_bridge.py"))["check_newton_slice_retry_variant"]
@@ -299,7 +299,7 @@ for name, mutate in newton_cases:
     results.append({"case": name, "status": status})
     print(name, status)
 
-bm = next(entry for entry in link["reviewed_translator_variants"] if entry["id"] == "checked-bm-locator-v1")
+bm = next(entry for entry in link["translator_variants"] if entry["id"] == "checked-bm-locator-v1")
 bm_original = json.loads((ROOT / bm["receipt"]).read_text())
 bm_check = runpy.run_path(str(ROOT / "scripts/verify_bridge.py"))["check_bm_locator_variant"]
 bm_cases = [
@@ -322,7 +322,7 @@ for name, mutate in bm_cases:
     results.append({"case": name, "status": status})
     print(name, status)
 
-probe = link["reviewed_degree_probe_extensions"][0]
+probe = link["degree_probe_extensions"][0]
 probe_original = json.loads((ROOT / probe["receipt"]).read_text())
 probe_check = runpy.run_path(str(ROOT / "scripts/verify_bridge.py"))["check_degree_probe_extension"]
 def redirect_probe_capture(receipt):
@@ -354,7 +354,7 @@ for name, mutate in probe_cases:
     receipt = copy.deepcopy(probe_original)
     mutate(receipt)
     try:
-        probe_check(probe, receipt, link["reviewed_translator_variants"], runtime_head, link)
+        probe_check(probe, receipt, link["translator_variants"], runtime_head, link)
         status = "accepted"
     except (RuntimeError, KeyError, ValueError):
         status = "rejected"
@@ -380,7 +380,7 @@ attribution_cases.extend([
 ])
 for name,entry,mutate in attribution_cases:
  e=copy.deepcopy(entry);p=copy.deepcopy(link['native_generated_projections']);mutate(e,p)
- try:exec(attribution_code,dict(entry=e,projections=p,variant_ids={x['id'] for x in link['reviewed_translator_variants']}));status='accepted'
+ try:exec(attribution_code,dict(entry=e,projections=p,variant_ids={x['id'] for x in link['translator_variants']}));status='accepted'
  except RuntimeError:status='rejected'
  results.append({'case':name,'status':status});print(name,status)
 

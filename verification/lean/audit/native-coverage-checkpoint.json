@@ -1,6 +1,6 @@
 {
   "date": "2026-11-06",
-  "reviewed_native_source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
   "previous_checkpoint_commit": "d374b6f5a8d792557e51e7febd3b29ada9056252",
   "native_source_or_build_inputs_changed": false,
   "native_source_body_refinements_before": 15,
@@ -16,7 +16,7 @@
     "Classical.choice"
   ],
   "new_runtime_models": 0,
-  "reviewed_translator_variant": "checked-frozen-capture-v1",
+  "translator_variant": "checked-frozen-capture-v1",
   "translator_patch": "tooling/aeneas-loop-capture/loop-capture.patch",
   "translator_patch_sha256": "15ecb6d84c03d7ad68a384f10b153a1538474d813bacaeb27d4e79156cfbf111",
   "mandatory_frontend_checks": true,
@@ -36,12 +36,12 @@
     "bridge/BulksketchBridge/FrobeniusConstSpec.lean": "68ae588ef8c0c8808c3feaa95550254fb4a511c434d8d0300e18d074000a6df4",
     "bridge/BulksketchBridge/FrobeniusConstChallenges.lean": "3b6d008cc28b54591230316749b45b42380d735bd3abad9d03c350eff12ddd4d"
   },
-  "review_reports": [
-    "audit/aeneas-capture-independent-review.md",
-    "audit/frobenius-const-independent-review.md",
-    "audit/native-coverage-integration-review.md"
+  "analysis_reports": [
+    "audit/aeneas-capture-analysis.md",
+    "audit/frobenius-const-analysis.md",
+    "audit/native-coverage-validation.md"
   ],
-  "scope": "Eight original Portable methods, original enclosing maps inverse_using/inverse, and the original x86-visible const square add eleven bodies. Generated helpers, type aliases, frontend tests and mathematical lemmas add zero source-body credit. All old endpoints retained. The new frontend is an explicitly reviewed trust assumption, not a compiler soundness proof.",
+  "scope": "Eight original Portable methods, original enclosing maps inverse_using/inverse, and the original x86-visible const square add eleven bodies. Generated helpers, type aliases, frontend tests and mathematical lemmas add zero source-body credit. All old endpoints retained. The new frontend is an explicitly pinned trust assumption, not a compiler soundness proof.",
   "remaining": [
     "Frobenius lookup/table-generation and inverse21",
     "Slice and polynomial kernels; decoder completeness",

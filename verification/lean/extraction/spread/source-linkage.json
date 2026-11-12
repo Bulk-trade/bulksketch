@@ -1,6 +1,6 @@
 {
   "schema": "bulksketch-spread-actual-extraction-v1",
-  "reviewed_native_revision": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_source_revision": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
   "checkout_head": "086fef0248953f7c7d5ab3c396c011f7d3c2c43d",
   "selected_native_item": "bulksketch::field::gf64::spread",
   "source_files_sha256": {
@@ -137,7 +137,7 @@
       "sha256": "b0032b86bd496f8f420e8ca910f39c9ea26d26a1d5b52323a7876e9a0758f614"
     }
   ],
-  "earlier_spread_only_copies": "generated_copies records initial Spread-only copies before the reviewed canonical Arithmetic import migration; extraction originals remain in extraction/spread/generated",
+  "earlier_spread_only_copies": "generated_copies records initial Spread-only copies before the pinned canonical Arithmetic import migration; extraction originals remain in extraction/spread/generated",
   "trust_boundary": [
     "pinned Charon/Aeneas translation correctness",
     "Aeneas standard scalar and Result model correspondence",

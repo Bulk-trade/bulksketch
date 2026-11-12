@@ -1,5 +1,5 @@
 {
-  "policy": "Independently reviewed new exact algebraic and source-normality contracts before proof search; all old frozen meanings retained. Literal table links, period and irreducibility are distinct obligations, not extra Rust functions.",
+  "policy": "specified new exact algebraic and source-normality contracts before proof construction; all old frozen meanings retained. Literal table links, period and irreducibility are distinct obligations, not extra Rust functions.",
   "files": {
     "bridge/BulksketchBridge/Algebra/ModulusSpec.lean": "a4537b0df5908321068dfe54d2470aa76fe7ca715899c99faee0aaf3f6b5048e",
     "bridge/BulksketchBridge/Algebra/ModulusChallenges.lean": "a6431a9a520f86e55a0dae48bf413a107fc54d27d703b23e07c10aa5417943ac",
@@ -13,11 +13,5 @@
     "bridge/BulksketchBridge/MapsCanonicalTraceSpec.lean": "88308b651b7673fb95b59575b6ceeba036b30cbc49d9a46536ac238d5d635431",
     "bridge/BulksketchBridge/MapsCanonicalTraceChallenges.lean": "62a07e36b164687d27f8997dfe7f985d49406ea1d3e137cb02383459e0d438d7"
   },
-  "reviewers": [
-    "root",
-    "upstream_core",
-    "wrapper_performance",
-    "bulk_integration"
-  ],
   "scope": "Exact polynomial irreducibility and universal word-model period/trace/quadratic laws; actual source functions under explicit frontend/runtime/compiler/ISA TCB. Native word-to-Polynomial quotient and Algebra.trace representation remain open; inverse extraction-only artifacts receive no proof credit."
 }

@@ -112,6 +112,6 @@
     "all_within_allowlist": true
   },
   "build_log": "extraction/canonical-arithmetic/rawmul/trailing-zeros-build.log",
-  "proof_credit": "Root ledger decides source-level evidence; runtime model is not a new native item; no whole-native verification claim.",
+  "proof_credit": "The runtime model is not a new native source item. Whole-native verification is not claimed.",
   "application_generated_files_hand_edited": false
 }

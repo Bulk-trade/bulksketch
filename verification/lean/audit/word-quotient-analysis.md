@@ -1,10 +1,10 @@
-# Word quotient and trace semantic review
+# Word quotient and trace semantics
 
-Date: 2026-11-06. Reviewed native source revision: `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`.
+Analysis date: 2026-11-06. Native source revision: `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`.
 
-## Independence and scope
+## Scope
 
-The reviewing agent authored WordSpec, Word, WordOps, WordChallenges, WordLaws and WordEndpoints. Its analysis of these files is a self-review; the separate trace agent cross-reviewed the representation and operation proofs. This review is independent of the authors of WordSquare, WordEquiv, TraceSpec, Trace, TraceNative, WordNative and InversePower. It reviews propositions, their mathematical meaning and source composition, rather than assigning complete native-contract coverage.
+This analysis covers the word representation, arithmetic operations, trace transport and inverse exponent, together with their source composition. These results do not establish complete native-contract coverage. The exported-term checks below provide machine-checked validation of the listed roots.
 
 ## Findings
 
@@ -19,13 +19,13 @@ The reviewing agent authored WordSpec, Word, WordOps, WordChallenges, WordLaws a
 - InversePower proves the total field inverse exponent, including zero. For nonzero values its two cancellations reduce the exponent equation to the independently proved power period. It neither assumes callback correctness nor converts extraction alone into an inverse wrapper proof.
 - InverseSpec exposes normal-return contracts for every invocation of each supplied callback. Its expectedResult is an operational addition-chain model. This file alone is not inversion correctness and does not discharge any enclosing closure or field-arithmetic callback obligation. The final source wrapper theorem must separately supply these facts.
 
-No semantic defect was found in the reviewed stable mathematical and source-transport propositions. Complete native contracts, ownership/compiler correspondence and all other source items remain open; this checkpoint does not establish 100% native coverage.
+The listed mathematical and source-transport propositions retain their explicit assumptions. Complete native contracts, ownership and compiler correspondence, and other source items are outside this analysis; it does not establish full native coverage.
 
 ## Trusted boundary
 
-The mathematical proofs use only the permitted logical foundations propext, Quot.sound and Classical.choice. Charon/Aeneas translation correctness, Rust standard-library model correspondence, compiler and machine correspondence remain the previously stated trusted boundary. No native source or pinned translator source was changed for these proofs. New generated inverse declarations and any new runtime adapters require their own exact source-linkage/model review; this report does not waive that requirement.
+The mathematical proofs use only the permitted logical foundations propext, Quot.sound and Classical.choice. Charon/Aeneas translation correctness, Rust standard-library model correspondence, compiler and machine correspondence remain the previously stated trusted boundary. No native source or pinned translator source was changed for these proofs. Generated inverse declarations and runtime adapters require exact source linkage and explicit model correspondence.
 
-## Scoped independent checking
+## Recorded scoped exported-term checks
 
 Eight fixed word endpoints were exported from BulksketchBridge.Algebra.WordEndpoints, then the same untouched original export was accepted by stock Leanchecker and independent Nanoda. No scheduling loader or modified export was needed for this mathematical subset.
 
@@ -52,21 +52,11 @@ Eight fixed word endpoints were exported from BulksketchBridge.Algebra.WordEndpo
     },
     {
       "name": "stock-leanchecker",
-      "command": [
-        "/workspace/.elan/toolchains/leanprover--lean4---v4.35.0/bin/leanchecker",
-        "--silent",
-        "--from-export",
-        "/workspace/bulk/bulksketch/verification/lean/bridge/audit/results/word-quotient-review/words.export.ndjson"
-      ],
       "exit_code": 0,
       "elapsed_seconds": 15.21886175032705
     },
     {
       "name": "independent-nanoda",
-      "command": [
-        "/workspace/.elan/toolchains/leanprover--lean4---v4.35.0/bin/nanoda_bin",
-        "/workspace/bulk/bulksketch/verification/lean/bridge/audit/results/word-quotient-review/nanoda.json"
-      ],
       "exit_code": 0,
       "elapsed_seconds": 5.338089167140424
     }
@@ -74,7 +64,7 @@ Eight fixed word endpoints were exported from BulksketchBridge.Algebra.WordEndpo
 }
 ```
 
-## Reviewed file fingerprints
+## File fingerprints
 
 | File relative to bridge/BulksketchBridge | SHA-256 |
 | --- | --- |
@@ -96,11 +86,11 @@ Eight fixed word endpoints were exported from BulksketchBridge.Algebra.WordEndpo
 | `Algebra/InversePower.lean` | `d043761d20fd30a38826ce0aba1916c0b421b3270a11e2e4ff8aba7c6473401c` |
 | `InverseSpec.lean` | `cfab6bdd1c375b36576d4a35935137ac7883de01ea5e5c34650aa90ddc504f2c` |
 
-## Final original inverse body review
+## Original inverse-body contracts
 
-The final `actualSourceReturnsExactChain`, `actualSourceReturnsFieldInverse` and
-`nativeCallbackInstanceReturnsFieldInverse` propositions were reviewed after the
-inversion agent completed them. The conditional API has explicit universal
+The `actualSourceReturnsExactChain`, `actualSourceReturnsFieldInverse` and
+`nativeCallbackInstanceReturnsFieldInverse` propositions describe the original
+inverse body. The conditional API has explicit universal
 callback equations to the actual native multiplication and Frobenius bodies.
 The closed BuiltinFn instantiation discharges both equations by definitional
 equality; it is not an assumed application-correctness axiom or an unsupported
@@ -120,7 +110,7 @@ inverse declaration texts remain byte-identical to the original successful
 source-generated output. Shared types and dictionary/function declarations
 are compared verbatim with the active Arithmetic package. The import boundary
 is adapted to reuse those exact existing declarations; no generated function
-body is edited. The reviewed projection SHA is
+body is edited. The recorded projection SHA is
 `b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359`.
 
 This establishes the original `inverse_with_frobenius` body with stated callback

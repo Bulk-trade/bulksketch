@@ -1,5 +1,5 @@
 {
-  "status": "all seven source endpoints built; exact challenge assignments and standard-only axiom audit passed; independent review and aggregate replay separate",
+  "status": "all seven source endpoints built; exact challenge assignments and standard-only axiom audit passed; independent analysis and aggregate replay separate",
   "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
   "native_source_edited": false,
   "native_source_body_refinements_added": 7,

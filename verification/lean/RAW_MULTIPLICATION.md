@@ -1,6 +1,6 @@
 # Exact 128-bit native multiplication
 
-The source remains `src/field/gf64.rs` at the reviewed native revision. The
+The source remains `src/field/gf64.rs` at the pinned native revision. The
 original two loops, assertion and output casts are present in the unedited
 generated `bridge/Arithmetic/Funs.lean`. No replacement multiplication routine
 is used to discharge the generated-body contract.
@@ -90,7 +90,7 @@ A period-64 identity and an unmodded exponent interpretation are not assumed.
 ## Evidence and limits
 
 Frozen statements, transitive axiom audits and Lean/Nanoda replay apply to the
-whole checkpoint, including both original loop proofs and all new primitive
+complete proof set, including both original loop proofs and all new primitive
 property lemmas. The [replay loader notes](bridge/README.md) describe the
 scheduling-only repair for the pinned Lean string-literal replay bug and its
 negative regression cases. No mathematical goal or original export is weakened.

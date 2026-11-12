@@ -1,5 +1,5 @@
 {
-  "status": "all-owned-source-and-semantic-proofs-compiled-exact-challenges-and-standard-only-axioms; independent-review-approved",
+  "status": "source-and-semantic-proofs-compiled-exact-challenges-and-standard-only-axioms",
   "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
   "files": [
     {
@@ -162,36 +162,26 @@
       "exit_code": 0
     }
   ],
-  "independent_reviews": [
+  "analysis_reports": [
     {
-      "reviewer": "wrapper_performance",
-      "approved": true,
-      "path": "extraction/canonical-arithmetic/maps/native-trace-proof-review.md",
-      "sha256": "d9b448bd43d919557b9591cb697a058e6eb58a37e230e4d272f3b4c3a34cb14e"
+      "path": "extraction/canonical-arithmetic/maps/native-trace-proof-analysis.md",
+      "sha256": "d9b704a22a0f4fd5523df6f41d66e8529b1b50f44aed5c21a944e5bc8acbe9fd"
     },
     {
-      "reviewer": "wrapper_performance",
-      "approved": true,
-      "path": "extraction/canonical-arithmetic/maps/native-quadratic-value-proof-review.md",
-      "sha256": "8c74ccc913635845bfc974087c91b0c0030fa721872d923e8ed24131719f70cb"
+      "path": "extraction/canonical-arithmetic/maps/native-quadratic-value-proof-analysis.md",
+      "sha256": "b6a4c4f5ed5a8c596016feb2d93714f6b6906fd9d90d703113a6c93050069234"
     },
     {
-      "reviewer": "wrapper_performance",
-      "approved": true,
-      "path": "extraction/canonical-arithmetic/maps/native-maps-final-semantic-review.md",
-      "sha256": "80e5e03027149e7ab4d8984cb863d9faabd66ff9b6e29ab95d973cc598d38959"
+      "path": "extraction/canonical-arithmetic/maps/native-maps-final-semantics.md",
+      "sha256": "35a9fe31ac5c35b4747290b8601789def7f03fd551957aedd25441c723f79f03"
     },
     {
-      "reviewer": "wrapper_performance",
-      "approved": true,
-      "path": "extraction/canonical-arithmetic/maps/native-maps-contract-review.json",
-      "sha256": "170f3293e3efb712ee274a9fedadc23173b6b8b73c02632f407deff2fb1c03ba"
+      "path": "extraction/canonical-arithmetic/maps/native-maps-contract.json",
+      "sha256": "001f54c2828be030c3cb5d2ed9adc999d281a345f35deef14a58e2b98566604d"
     }
   ],
-  "independent_semantic_review_message_approved": true,
   "native_source_edited": false,
   "application_generated_files_hand_edited": false,
-  "shared_audit_frozen_registry_not_edited_by_this_agent": true,
-  "coverage_accounting": "Root ledger owns final sourceitem classification; multiple semantic endpoints and generated helpers do not double-count the4 original native functions.",
-  "files_stable_for_parent_freeze": true
+  "shared_audit_frozen_registry_unchanged": true,
+  "coverage_accounting": "Coverage counts distinct native source items; multiple endpoints and generated helpers do not double-count the four original native functions."
 }

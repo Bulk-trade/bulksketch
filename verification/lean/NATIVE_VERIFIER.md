@@ -1,10 +1,11 @@
-# Native rebuilt verifier and Dense multiplication checkpoint
+# Native rebuilt verifier and Dense multiplication
 
-This checkpoint precedes the [complete Dense multiplication and Portable Horner proofs](DENSE_PRODUCT.md).
+The [Dense product proofs](DENSE_PRODUCT.md) cover complete multiplication
+and Portable Horner behavior.
 
 The audit retains all 344 executable obligations from the frozen native
-source revision. It now checks 46 original generated-body refinements.
-This checkpoint adds the original rebuilt verifier, Portable insertion,
+source revision. Its associated record contains 46 original generated-body refinements.
+The component proofs cover the original rebuilt verifier, Portable insertion,
 default encoder and affine linear evaluator. The Dense final reduction loop
 and the composition theorems are recorded separately with zero additional
 source-body credit.
@@ -55,10 +56,16 @@ The final reduction loop proof covers equal-length destination and raw
 prefixes, with a callback agreeing with native GF64 reduction. Applying
 its returned continuation writes every remaining reduced coefficient to the
 destination, preserves earlier destination words and retains the shared
-raw slice before the incoming continuation. The two raw convolution loops,
-outer scratch management and normalization still need proofs.
+raw slice before the incoming continuation. This component record covers the
+final reduction loop; the [complete Dense product proof](DENSE_PRODUCT.md)
+includes both raw convolution loops, outer scratch management and normalization.
 
-## Remaining extraction and proof gaps
+## Recorded extraction limitations
+
+The extraction diagnostics in this component record predate the
+[complete Dense product and Horner proofs](DENSE_PRODUCT.md) and
+[native BM locator proofs](NATIVE_BM_LOCATOR.md). They preserve the following
+failures from the specified translator configurations.
 
 Portable Horner's context matcher reaches two identical ended shared loans
 from `split_last` and rejects the ended-loan pair in `InterpMatchCtxs.ml`.

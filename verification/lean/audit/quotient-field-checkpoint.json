@@ -1,6 +1,6 @@
 {
   "date": "2026-11-06",
-  "reviewed_native_source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
   "branch_base": "d962931dfe0e62589c1bd43e43f167c2ac4ba52d",
   "branch": "jun/proofs",
   "native_rust_or_build_input_changed": false,
@@ -31,10 +31,10 @@
   "native_test_toolchain": "1.96.1",
   "proof_toolchain": "leanprover/lean4:v4.35.0",
   "replay_time_limits_changed": false,
-  "independent_reviews": [
-    "audit/word-quotient-independent-review.md",
-    "bridge/audit/quotient-trace-independent-review.md",
-    "bridge/audit/inverse-independent-review.md"
+  "analysis_reports": [
+    "audit/word-quotient-analysis.md",
+    "bridge/audit/quotient-trace-analysis.md",
+    "bridge/audit/inverse-analysis.md"
   ],
   "remaining_gaps": [
     "inverse_using captured borrowed-square closure and inverse caller: original pinned extractor fails; optimized MIR and monomorphization pilots provide no usable body",

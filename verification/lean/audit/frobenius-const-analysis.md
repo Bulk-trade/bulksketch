@@ -1,12 +1,11 @@
-# Independent review of the original const Frobenius square
+# Original const Frobenius square analysis
 
-Reviewed 2026-11-06 by the Aeneas-capture agent, which authored none of these
-proof, specification, extraction or source-projection files. Native source pin:
+Analysis date: 2026-11-06. Native source pin:
 `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`.
 
-## Outcome and precise scope
+## Contract and scope
 
-No blocking semantic issue was found. The exact challenge quantifies every U64
+The exact challenge quantifies every U64
 input and concludes a normal return of the complete canonical word. It names the
 actual source-generated `bulksketch.field.frobenius.square`; it does not assume
 source success, a degree bound on the operand, field irreducibility, or the
@@ -16,10 +15,10 @@ The full `BulksketchBridge.FrobeniusConst` target was independently rebuilt
 successfully. A separate Lean file assigns `square_refines` to the exact fixed
 challenge and checks the transitive axioms of that endpoint, byte conversion,
 both loop completions and final division meaning. Only the permitted standard
-foundations occur. Root's aggregate checker supplies the independent exported-term
-replay gate; this report does not substitute its local build for that gate.
+foundations occur. Aggregate exported-term replay remains a separate
+verification step; the local build does not replace it.
 
-## Mathematical and source review
+## Mathematical argument and source correspondence
 
 - `spreadPrefix_bits` covers every processed count through 64 and every 128-bit
   coefficient. The source reads input bit 0 through 63 and writes even positions 0
@@ -67,10 +66,10 @@ helpers are part of that body's proof, not separate Rust-function coverage.
 `tables`, `inverse21_table`, the lookup functions, accelerated backends and
 compiler/runtime/machine correspondence remain distinct obligations. The proof
 uses existing Aeneas scalar/array/byte semantics under the documented TCB; this
-review does not formally verify Rust's standard library or the translator.
+analysis does not formally verify Rust's standard library or the translator.
 All 344 native executable obligations remain in scope.
 
-## Independent local checks
+## Recorded local checks
 
 - `lake build BulksketchBridge.FrobeniusConst`: exit 0.
 - Exact challenge assignment and transitive-axiom checks for
@@ -78,10 +77,7 @@ All 344 native executable obligations remain in scope.
   `divisionPrefix_complete`: exit 0.
 - `python3 extraction/frobenius-const/project.py`: exit 0;5 verbatim declarations.
 
-Build and axiom logs are external evidence under
-`/workspace/bulk/bulksketch-proof-tools/frobenius-const-review-{build,axioms}.log`.
-
-## Reviewed hashes
+## File fingerprints
 
 | Path relative to verification/lean | SHA-256 |
 | --- | --- |

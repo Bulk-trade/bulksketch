@@ -1,6 +1,6 @@
 # Source-derived proof artifacts
 
-The reviewed native source is `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`.
+The pinned native source is `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`.
 Source validation uses exact production-file/build-input hashes so proof-only
 commits do not invalidate it.
 
@@ -90,7 +90,7 @@ semantics explicitly trusted. Generic BITS=64 refinement and the unconditional
 actual-Gf64 refinement refer to the same source body. The canonical extraction
 avoids duplicate generated declaration names across separate spread/reduce
 packages; [migration-receipt.json](canonical-arithmetic/migration-receipt.json)
-records exact-name body comparisons and the reviewed import-only migration.
+records exact-name body comparisons and the pinned import-only migration.
 
 The initial full-native extraction remains incomplete and is not a successful
 certificate. The earlier monomorphization experiment encountered incompatible

@@ -1,5 +1,5 @@
 {
-  "status": "independently-approved-before-proof-search",
+  "status": "contract fixed before proof construction",
   "files": [
     {
       "path": "bridge/BulksketchBridge/MapsQuadraticSpec.lean",
@@ -14,13 +14,11 @@
       "sha256": "adab521e51208cc53e6aa50b6b63a207e479c3fc97605fd701a9bbddde13458f"
     }
   ],
-  "proof_search_started": false,
+  "proof_construction_started": false,
   "scope": "Actual generated Gf64 rows/chunk/table-value/solver endpoints and fullbyte absolute-trace meaning; no source-success premises, no generated-body substitutions.",
   "core_spec": "BulksketchProofs/Field/MapsSpec.lean",
-  "independent_review": {
-    "reviewer": "wrapper_performance",
-    "approved": true,
-    "report": "/workspace/bulk/bulksketch-pr-20261104/field-algebra/native-maps-contract-review.json",
+  "contract_analysis": {
+    "report": "/workspace/bulk/bulksketch-pr-20261104/field-algebra/native-maps-contract.json",
     "scope": "All nativeU64normal, realdictionary, completeconstants, normalizedOption/semanticmeaning andfullbyteabsoluteTrace; no circularsuccesspremise."
   }
 }

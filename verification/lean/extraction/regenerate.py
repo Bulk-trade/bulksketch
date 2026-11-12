@@ -21,7 +21,7 @@ def run(args, **kwargs):
 head = run(['git', '-C', str(SOURCE), 'rev-parse', 'HEAD'], capture_output=True).stdout.strip()
 inventory = json.loads((PROOF / 'audit/source-inventory.json').read_text())
 if inventory['source_commit'] != PIN:
-    raise SystemExit('source inventory does not match the reviewed commit')
+    raise SystemExit('source inventory does not match the pinned commit')
 expected_hashes = {item['path']: item['sha256'] for item in inventory['files']}
 source_records = []
 for path in PATHS:

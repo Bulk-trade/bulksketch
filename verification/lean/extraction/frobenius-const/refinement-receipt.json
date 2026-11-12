@@ -1,5 +1,5 @@
 {
-  "status": "targeted Lean exact-source endpoint and standard-only axiom closures passed; independent review and global replay are separate gates",
+  "status": "targeted Lean exact-source endpoint and standard-only axiom closures passed; independent analysis and global replay are separate gates",
   "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
   "source_item_id": "src/field/frobenius.rs:55:function:bulksketch::field::frobenius::square",
   "source_line_span_sha256": "327fbb9dc34a842ed4b8521785748310e6bc14e6ab38466f771afbdb157b5d84",

@@ -1,6 +1,6 @@
 {
-  "status": "independently-reviewed-before-proof-search",
-  "proof_search_started": false,
+  "status": "fixed-before-proof-construction",
+  "proof_construction_started": false,
   "files": {
     "BulksketchProofs/Field/PeriodSpec.lean": "d2417cef84e3e58cb5f1050c4fe416322aa1d5b2e874e0252c921e7dfe9387d9",
     "BulksketchProofs/PeriodChallenges.lean": "fc7142606f57b8a005ae4961f15e83c7af9c9d5978d51de59c2bae620141b315",
@@ -8,9 +8,7 @@
     "bridge/BulksketchBridge/FrobeniusPeriodChallenges.lean": "38af93ede9761a5a5f47706fd2c8eae4e3c714bc5df553c8066e514e46f1838c"
   },
   "scope": "universal complete BitVec64 period64, all-natural modulo iteration, exact correspondence to old frozen model, actual native allword/allU32 unmodded iteration; no irreducibility premise",
-  "independent_review": {
-    "reviewer": "bulk_integration",
-    "approved": true,
+  "contract_analysis": {
     "note": "allword/allNat exact period contracts, allbasis certificate and native allU64/allU32 unmodded endpoint; no irreducibility or success hypotheses"
   },
   "spec_and_challenge_elaboration": "core and bridge targeted builds exit0"

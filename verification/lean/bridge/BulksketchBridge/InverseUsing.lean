@@ -2,7 +2,7 @@ import BulksketchBridge.InverseUsingChallenges
 import BulksketchBridge.InverseNative
 
 /-! The original captured callback is now represented by its generated body,
-including its range iterator. The explicitly recorded reviewed frontend variant
+including its range iterator. The explicitly recorded pinned frontend variant
 is a translation trust boundary; no closure correctness model is substituted. -/
 namespace BulksketchBridge.InverseUsing
 

@@ -1,7 +1,6 @@
 {
-  "policy": "Spread generated source and independent universal contracts frozen before proof search; no statement change permitted without independent review.",
-  "review_date": "2026-11-04",
-  "independent_reviewer": "/root/wrapper_performance",
+  "policy": "Source-generated spread and universal contracts fixed before proof construction. Statement changes require a recorded specification revision.",
+  "recorded_date": "2026-11-04",
   "files": {
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
     "bridge/BulksketchBridge/SpreadChallenges.lean": "134f3649317623d7f9b8e0f8ad6be8724ba0e956940092e381c2a01fb9f906ae",
@@ -12,5 +11,5 @@
     "BulksketchBridge.SpreadChallenges.normalResultMatchesModel",
     "BulksketchBridge.SpreadChallenges.allCoefficientsMatch"
   ],
-  "proof_search_started_after_this_freeze": true
+  "contract_fixed_before_proof": true
 }

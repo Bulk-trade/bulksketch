@@ -4,7 +4,7 @@ The pinned Charon extraction selects `bulksketch::decode::stages::check_workspac
 on x86-64 Darwin. Its structured LLBC contains the complete native body and
 both checked-arithmetic closures. The original Aeneas extraction stops at the
 nested mutable-borrow uniqueness guard when symbolically reborrowing the
-shared `RowWorkspace`. This checkpoint uses a scoped LLBC projection.
+shared `RowWorkspace`. The proof uses a scoped LLBC projection.
 
 The projector follows the original assignments, locals, calls, enum and
 Boolean branches, and terminal outcomes. It interprets the original
@@ -29,7 +29,7 @@ trust boundaries. The model assumes an existing valid shared workspace
 and valid slice metadata. It covers the native normal return paths,
 including arithmetic overflow reported through `ScratchTooSmall`.
 
-The aggregate verifier records this checkpoint as an LLBC projection.
+The aggregate verifier records this result as an LLBC projection.
 The projector reports the generated-program digest and zero Aeneas body
 credit. The control runner emits one `rejected` record per mutation and
 retains the corresponding diagnostic.

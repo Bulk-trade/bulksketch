@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read only the reviewed fixed GF64 integer tables; emit literal proof data.
+"""Read only the pinned fixed GF64 integer tables; emit literal proof data.
 
 The transpose is untrusted generated certificate data and is separately checked
 in Lean. This utility translates no application function or control flow.
@@ -43,7 +43,7 @@ if any(type(word) is not int or not 0 <= word < 2**64 for word in rows + sum(chu
     raise ValueError("non-u64 table entry")
 columns = [sum(((row >> index) & 1) << output for output, row in enumerate(rows))
            for index in range(64)]
-lines = ["import Std", "", "-- GENERATED literal data from the reviewed native tables.",
+lines = ["import Std", "", "-- GENERATED literal data from the pinned native tables.",
          "-- Column transposition and all map identities are separately proved in Lean.",
          "namespace BulksketchProofs.Generated.FieldTables", "",
          "def quadraticRows : List (BitVec 64) := ["]

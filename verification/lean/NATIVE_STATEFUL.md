@@ -1,7 +1,7 @@
 # Native field maps, root recovery and masked-memory execution
 
 The ledger retains all 344 executable native obligations from the frozen
-source revision. This checkpoint checks 74 original Aeneas generated-body
+source revision. The associated record contains 74 original Aeneas generated-body
 refinements and separately records two checked source-linked LLBC execution
 contracts.
 
@@ -26,10 +26,12 @@ view gives the exact low register payload, with every address outside the
 slice preserved.
 
 These are the two separately audited LLBC contracts. They compose the prior
-source mask proof and byte-memory instruction models. Physical address and
-pointer provenance, real intrinsic correspondence, and composition through
-the remaining vector callers still require proofs. The previous pure Aeneas
-obstruction remains valid for its original external signatures.
+source mask proof and byte-memory instruction models. The
+[native caller proofs](NATIVE_CALLER_CHAINS.md) document the associated vector
+callers under their memory contracts. Physical address and pointer provenance,
+real intrinsic correspondence and accelerated end-to-end execution remain
+broader obligations. The recorded pure Aeneas obstruction still applies to its
+original external signatures.
 
 ## Accelerated scalar field maps
 
@@ -60,12 +62,17 @@ The original degree-three/four quadratic helper returns the exact normalized
 quadratic option under the stated GF64 callback equations. The original
 cubic helper terminates normally under its callback contracts, and every
 word in a returned array is a root of the input monic cubic. A returned
-array still needs the caller's acceptance checks, and the theorem allows a
-None result. The full cubic and quartic recovery and decoder contracts
-remain open.
+array requires the caller's acceptance checks, and the theorem permits a
+`None` result. The [quartic](NATIVE_QUARTIC.md) and
+[closed-leaf](NATIVE_CLOSED_LEAF.md) proofs cover the associated recovery and
+certification contracts. The helper theorem alone is not a decoder-completeness
+result; the [Portable theorem](README.md) states that result with its admission
+and resource assumptions.
 
-The isolated BM experiment accepted a checked mutable expansion with an
-unrelated owner and exact leaf children. The same original prefix-scaling
-loop next reached an enum case containing a fresh mutable word borrow.
-Reconstruction still stops at its mandatory loop-backedge match. These
-diagnostic translator changes remain outside the admitted proof pipeline.
+The recorded isolated BM extraction accepted a checked mutable expansion with
+an unrelated owner and exact leaf children, then reached an enum case containing
+a fresh mutable word borrow in the original prefix-scaling loop. The
+reconstruction record contains a loop-backedge mismatch. These diagnostic
+translator configurations are outside the admitted proof pipeline; the
+[BM locator](NATIVE_BM_LOCATOR.md) and [reconstruction](NATIVE_RECONSTRUCTION.md)
+documentation describe the function-body proofs.

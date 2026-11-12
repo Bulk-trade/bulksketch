@@ -7,7 +7,7 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[2]
-HEADER = """-- Exact declaration projection from the reviewed original-source extraction.
+HEADER = """-- Exact declaration projection from the pinned original-source extraction.
 -- Only imports/type sharing are adapted; declarations below remain verbatim.
 module
 public import Arithmetic.Types

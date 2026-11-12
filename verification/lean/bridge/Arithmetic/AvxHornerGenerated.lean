@@ -1,4 +1,4 @@
--- Exact declarations from the reviewed checked kernel and stock selector captures.
+-- Exact declarations from the pinned checked kernel and stock selector captures.
 import Arithmetic.AvxHornerChunkRuntime
 import Arithmetic.PortableHornerGenerated
 

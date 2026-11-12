@@ -23,7 +23,7 @@
   "generated_native_function_count": 4,
   "generated_types_unchanged_from_milestone": true,
   "existing_new_charge_closure_text_unchanged": true,
-  "frozen_contract_review": "bridge/audit/workmeter-used-review.json",
+  "frozen_contract_record": "bridge/audit/workmeter-used-analysis.json",
   "theorem": "BulksketchBridge.WorkMeter.used_refines",
   "challenge": "BulksketchBridge.Challenges.generatedUsedMatchesExactValue",
   "isolated_build": "passed",

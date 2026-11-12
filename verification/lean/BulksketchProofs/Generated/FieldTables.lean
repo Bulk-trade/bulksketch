@@ -1,6 +1,6 @@
 import Std
 
--- GENERATED literal data from the reviewed native tables.
+-- GENERATED literal data from the pinned native tables.
 -- Column transposition and all map identities are separately proved in Lean.
 namespace BulksketchProofs.Generated.FieldTables
 

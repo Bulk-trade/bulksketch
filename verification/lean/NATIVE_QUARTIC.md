@@ -1,7 +1,7 @@
 # Native affine quartic, reciprocal quartic and solve frames
 
-The ledger retains 344 native executable obligations. This checkpoint records
-90 original Aeneas body refinements under their stated contracts and five
+The ledger retains 344 native executable obligations. The associated record
+contains 90 original Aeneas body refinements under their stated contracts and five
 separate source-linked LLBC contracts. The production Rust is unchanged.
 
 ## Affine quartic
@@ -62,17 +62,22 @@ joins retain their original modes. Pinned and unchecked controls reject
 the original quartic join. The checked replay and the separate cubic and
 certificate controls reproduce their three output artifacts byte for byte.
 
-## Verification and remaining coverage
+## Verification and related proofs
 
 Run `python3 scripts/verify_all.py` from `verification/lean` with the pinned
 toolchain. The aggregate checks the exact body projections, frozen types,
 transitive axioms, Lean and independent Nanoda replay, and rejection
 controls.
 
-The isolated native Berlekamp–Massey experiment now passes full symbolic
-evaluation with stock loan endings and writeback. Pure lowering still
-rejects a nonzero abstraction level at `SymbolicToPureExpressions.ml:1288`.
-That experiment has no coverage credit. Native Berlekamp–Massey, recovery
-above the specialized quartic path, the remaining accelerated kernels and
-physical memory and ISA correspondence still require proofs. End-to-end
-decoder completeness remains open.
+The recorded isolated Berlekamp–Massey extraction passed symbolic evaluation
+with stock loan endings and writeback, then failed pure lowering at a nonzero
+abstraction level in `SymbolicToPureExpressions.ml:1288`. That diagnostic is not
+counted as a source refinement. The [BM locator](NATIVE_BM_LOCATOR.md) and
+[root traversal](NATIVE_ROOT_RUN.md) documentation describe the completed
+function-body contracts beyond the specialized quartic path. The
+[Portable theorem](README.md) establishes the ordinary no-hint end-to-end result
+under its explicit input, capacity, scratch and work assumptions.
+
+Public construction/update validity, request parsing and admission, shared-job
+accounting, hint/V3 composition, accelerated end-to-end execution, physical
+memory and compiler-to-ISA correspondence are broader verification obligations.

@@ -1,6 +1,6 @@
 {
-  "review_date": "2026-11-04",
-  "status": "root_independent_contract_approval_and_spec_elaboration_passed_before_proof_search",
+  "recorded_date": "2026-11-04",
+  "status": "specification_elaboration_passed_before_proof_construction",
   "files": {
     "bridge/BulksketchBridge/RawMulAccumSpec.lean": "6cd4233f8d036f3d07caa8b1b968cd28783a40b9ae82033b41443079f9d477c0",
     "bridge/BulksketchBridge/RawMulAccumChallenges.lean": "3ab73677a4a78e54eea3f549141f4d5981c4e8bfbe2d364b8f54904bc9a8913a",
@@ -15,16 +15,11 @@
     "terminal body has no unnecessary table-correctness premise",
     "all masked indices below16 and cast preserves nibble bits; shifts below64/128"
   ],
-  "reviews": {
-    "root": "approved before proof search: no success premise or output truncation loophole",
-    "table_owner": "shared TableCorrect reviewed by wrapper_performance; compatible full128bit total getter predicate",
-    "upstream_core": "independently approved before proof search: exact normal 128-bit result, sufficient bounds, no unnecessary terminal table premise; no change requested"
-  },
   "syntax_note": "An explicit BitVec64 annotation was added to the literal15 before spec elaboration; the intended mask and proposition meaning are unchanged.",
   "elaboration_command": "CI=1 MATHLIB_NO_CACHE_ON_UPDATE=1 LEAN_NUM_THREADS=2 lake +leanprover/lean4:v4.35.0 build BulksketchBridge.RawMulAccumSpec BulksketchBridge.RawMulAccumChallenges",
   "elaboration_exit_code": 0,
   "runtime_boundary": "Aeneas StepBy advances its model range before return; Rust std layout/ownership correspondence remains TCB",
-  "proof_status": "all_four_frozen_contracts_lean_checked; independent_export_replay_pending_parent_aggregate_audit",
+  "proof_status": "all_four_frozen_contracts_lean_checked",
   "proof": {
     "file": "bridge/BulksketchBridge/RawMulAccum.lean",
     "sha256": "6d6a2ee5de9b3c0096eca4bb8a7e3a43143a5a79615257252785f0ade6d13581",
@@ -44,5 +39,11 @@
     ],
     "algorithm": "exact body and total iterator equations; strong induction on remaining count 16-count, no source-body unrolling",
     "native_item_accounting": "loop helpers belong to original raw_mul and do not add separate native coverage items"
-  }
+  },
+  "contract_properties": [
+    "No success premise or output truncation.",
+    "TableCorrect is a total full-128-bit getter predicate.",
+    "Exact normal 128-bit result with sufficient bounds and no unnecessary terminal table premise."
+  ],
+  "export_replay_recorded_here": false
 }

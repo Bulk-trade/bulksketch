@@ -7,7 +7,7 @@
   "whole_native_coverage_achieved": false,
   "open": [
     "Compose the original degree probe phases and prove caller-wide recovery and fallback",
-    "Prove the exact original Berlekamp–Massey locator and review its isolated typed lowering",
+    "Prove the exact original Berlekamp\u2013Massey locator and analysis its isolated typed lowering",
     "Remaining general root recovery and accelerated kernels",
     "Physical memory, ISA and compiler-expanded correspondence"
   ]

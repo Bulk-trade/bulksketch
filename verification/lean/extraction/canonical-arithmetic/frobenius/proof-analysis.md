@@ -1,6 +1,6 @@
-# Independent read-only Frobenius proof review
+# Native Frobenius proof analysis
 
-Reviewed2026-11-04 by wrapper_performance. No builds or source edits performed. Result: APPROVED; no blocking finding in the reviewed snapshot.
+Analysis date: 2026-11-04. This note describes the source argument and recorded fingerprints; it does not include a build or replay run.
 
 `bridge/BulksketchBridge/Frobenius.lean` SHA256 `b2d847306dd9e92facba0e383682abd0c0c95ebe7e19e0414cfb2e048997f324`.
 
@@ -22,6 +22,6 @@ In the exhausted branch(lines84–99), actual range-next returns None and unchan
 
 ## Scope and evidence limits
 
-This proves source behavior after power modulo64 squarings. It does not prove64 squarings equal identity, irreducibility of the modulus, or exponent-reduction algebra for an unmodded requested power. The proof imports only the already-checked square refinement plus the frozen word model; no such period theorem is used implicitly.
+The contract analyzed here proves source behavior after power modulo 64 squarings. It does not prove64 squarings equal identity, irreducibility of the modulus, or exponent-reduction algebra for an unmodded requested power. The proof imports only the already-checked square refinement plus the frozen word model; no such period theorem is used implicitly.
 
-The extraction/runtime-standard-library/compiler/ownership/ISA trust boundary is unchanged. This review is source reasoning, separate from the owner-reported targeted build and axiom audit. Parent retains responsibility for frozen exact-type audit, independent kernel/Nanoda replay, source-item accounting and final PR integration. The generated loop helpers remain part of one native frobenius source item.
+The extraction/runtime-standard-library/compiler/ownership/ISA trust boundary is unchanged. The source argument is separate from targeted elaboration, exact-statement and transitive-axiom audits, exported-term replay through the Lean kernel and Nanoda, and native-source accounting. The generated loop helpers remain part of one native frobenius source item.

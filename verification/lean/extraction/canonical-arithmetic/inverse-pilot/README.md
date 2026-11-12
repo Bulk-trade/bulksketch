@@ -10,6 +10,7 @@ square closure's repeated-square loop inside inverse_using.
 All original tool outputs and templates are preserved unchanged. Partial Lean
 files are not imported into the proof library, and this attempt earns no native
 inverse proof coverage. No native Rust body, LLBC branch or application body was
-edited to bypass the error. A separate standalone inverse_with_frobenius route
-may be studied by another agent; it does not by itself close this original
-captured-closure call-chain obligation.
+edited to bypass the error. A standalone `inverse_with_frobenius` extraction does not establish this
+captured-closure call-chain contract. The
+[enclosing-inversion proofs](../../../NATIVE_COVERAGE.md) document the pinned
+frontend variant used for the wrapper proofs.

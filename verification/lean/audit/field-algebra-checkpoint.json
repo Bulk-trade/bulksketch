@@ -10,11 +10,11 @@
   "native_word_polynomial_quotient_bridge": "open",
   "mathlib_Algebra_trace_identification": "open",
   "inverse_proof_credit": 0,
-  "reviews": [
-    "audit/modulus-proof-independent-review.md",
-    "audit/core-maps-proof-independent-review.md",
-    "bridge/audit/native-maps-final-semantic-review.md",
-    "audit/field-algebra-accounting-review.md"
+  "analysis_reports": [
+    "audit/modulus-proof-analysis.md",
+    "audit/core-maps-proof-analysis.md",
+    "bridge/audit/native-maps-final-semantics.md",
+    "audit/field-algebra-accounting.md"
   ],
   "note": "Final aggregate gate owns pass status. Mathematical certificates are not extra native bodies; no scope item removed. Stale multiplication-scope irreducibility wording was corrected in matching registry and ledger."
 }

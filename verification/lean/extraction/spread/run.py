@@ -44,16 +44,16 @@ def main():
     scope = json.loads((ROOT / 'scope.json').read_text())
     inventory = json.loads((ROOT / 'audit/source-inventory.json').read_text())
     if inventory['source_commit'] != scope['source_commit']:
-        raise RuntimeError('source inventory and reviewed source revision disagree')
+        raise RuntimeError('source inventory and pinned source revision disagree')
     source_hashes = {}
     for item in inventory['files']:
         path = SOURCE / item['path']
         if digest(path) != item['sha256']:
-            raise RuntimeError('reviewed native source changed: ' + item['path'])
+            raise RuntimeError('pinned native source changed: ' + item['path'])
         source_hashes[item['path']] = item['sha256']
     for name, expected in scope['source_build_inputs_sha256'].items():
         if digest(SOURCE / name) != expected:
-            raise RuntimeError('reviewed native build input changed: ' + name)
+            raise RuntimeError('pinned native build input changed: ' + name)
     environment = dict(os.environ, RUSTUP_TOOLCHAIN='nightly-2026-09-17',
                        CARGO_TARGET_DIR=str(ROOT / 'tooling/spread-charon-target'),
                        CARGO_BUILD_JOBS='1')
@@ -86,7 +86,7 @@ def main():
     templates = [{'path': str(p.relative_to(ROOT)), 'sha256': digest(p)}
                  for p in sorted(destination.glob('*External*'))]
     record = {'schema': 'bulksketch-spread-actual-extraction-v1',
-              'reviewed_native_revision': scope['source_commit'],
+              'native_source_revision': scope['source_commit'],
               'checkout_head': subprocess.check_output(
                   ['git', '-C', str(SOURCE), 'rev-parse', 'HEAD'], text=True).strip(),
               'selected_native_item': 'bulksketch::field::gf64::spread',

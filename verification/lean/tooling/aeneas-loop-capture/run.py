@@ -43,7 +43,7 @@ def main():
         raise RuntimeError("unexpected translator source modifications")
     patch = subprocess.check_output(["git", "diff", "--binary"], cwd=source)
     if patch != (HERE / "loop-capture.patch").read_bytes():
-        raise RuntimeError("translator diff differs from reviewed patch")
+        raise RuntimeError("translator diff differs from pinned patch")
     if subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=args.charon.parent, text=True).strip() != CHARON:
         raise RuntimeError("wrong Charon source pin")
     env = dict(os.environ, RUSTUP_TOOLCHAIN="nightly-2026-09-17", CARGO_BUILD_JOBS="1",
@@ -145,7 +145,7 @@ def main():
             [HERE / "run.py", HERE / "tests/Cargo.toml", HERE / "tests/Cargo.lock",
              *sorted((HERE / "tests").rglob("*.rs"))]},
         "new_native_coverage_credit_from_tests": 0,
-        "trust_boundary": "Reviewed Aeneas frontend patch under mandatory enabled sanity/frozen-context checks; not a kernel theorem of compiler correctness."}
+        "trust_boundary": "Pinned Aeneas frontend patch under mandatory enabled sanity/frozen-context checks; not a kernel theorem of compiler correctness."}
     (HERE / "receipt.json").write_text(json.dumps(receipt, indent=2) + "\n")
     print(json.dumps({"status": "passed", "patch_sha256": receipt["patch_sha256"],
                       "regressions": outcomes, "receipt": str(HERE / "receipt.json")}, indent=2))

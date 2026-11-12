@@ -47,7 +47,7 @@ CHUNKS = {
     "core.slice.iter.Chunks.Insts.CoreIterTraitsIteratorIteratorSharedASlice",
     "core.slice.iter.ChunksMut.Insts.CoreIterTraitsIteratorIteratorMutASlice",
 }
-HEADER = """-- Exact declarations from the reviewed checked kernel and stock selector captures.
+HEADER = """-- Exact declarations from the pinned checked kernel and stock selector captures.
 import Arithmetic.AvxHornerChunkRuntime
 import Arithmetic.PortableHornerGenerated
 

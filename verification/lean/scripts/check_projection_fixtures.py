@@ -1047,7 +1047,7 @@ def main():
                           "decoder driver checked Aeneas command differs"))
         if label == "native-deflate":
             cases.append(("wrong-variant", receipt_path, '"checked-native-deflate-loan-retry-v1"',
-                          '"unreviewed-deflate-variant"', "invalid deflate translator receipt"))
+                          '"unknown-deflate-variant"', "invalid deflate translator receipt"))
         if label == "avx-single-bases":
             cases.append(("wrong-target", receipt_path, '"x86_64-apple-darwin"', '"aarch64-apple-darwin"',
                           "invalid AVX single-bases receipt"))

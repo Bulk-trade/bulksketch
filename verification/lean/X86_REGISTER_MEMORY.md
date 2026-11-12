@@ -1,8 +1,9 @@
 # Native x86 register kernels and masked-memory boundary
 
-This checkpoint precedes the [checked stateful LLBC interpretation](NATIVE_STATEFUL.md).
+The [stateful LLBC proofs](NATIVE_STATEFUL.md) cover the associated masked-memory
+execution contracts.
 
-This checkpoint checks 64 original generated-body refinements under the
+The associated record contains 64 original generated-body refinements under the
 recorded extraction and runtime boundary. All 344 executable obligations
 from the frozen native source revision remain in the ledger.
 
@@ -64,18 +65,20 @@ theorems to the actual masked source methods requires a heap effect or
 verified writeback lowering, then machine address, pointer provenance and
 intrinsic correspondence.
 
-## Decoder progress
+## Decoder and memory scope
 
 The original cube-root helper checks all ten iterations and returns a
 nonzero cube root exactly when one exists, under the explicit GF64
 multiply, square and Frobenius callback equations. The proof gives the
 exact chain exponent (2^64 + 2) / 9.
 
-The checked Berlekamp–Massey experiment reached a mutable reference
+The recorded Berlekamp–Massey extraction reached a mutable reference
 expansion in the prefix scaling loop after clearing the normalization
 match. The obstructing projector belongs to an unrelated symbolic owner,
 but the expansion is mutable, so the existing checked shared-owner rule
-leaves its guard in place. The experiment remains outside the admitted
-proof pipeline. Reconstruction still reaches its mandatory loop-backedge
-match. General locator fitting, root recovery and decoder composition,
-accelerated memory paths, and compiler-expanded closure remain open.
+leaves its guard in place. That extraction is outside the admitted proof pipeline. The recorded
+reconstruction extraction reaches its mandatory loop-backedge match.
+[Reconstruction](NATIVE_RECONSTRUCTION.md), [locator](NATIVE_BM_LOCATOR.md) and
+[Portable decoder](README.md) proofs document the corresponding source
+contracts. Accelerated end-to-end memory paths and compiler-expanded closure
+are outside these register proofs.

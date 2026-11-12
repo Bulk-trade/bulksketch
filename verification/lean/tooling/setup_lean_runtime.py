@@ -36,9 +36,9 @@ def main():
         subprocess.run(["git", "-C", str(DESTINATION), "checkout", "--detach", COMMIT], check=True)
     actual = subprocess.check_output(["git", "-C", str(DESTINATION), "rev-parse", "HEAD"], text=True).strip()
     if actual != COMMIT:
-        raise SystemExit("runtime checkout differs from the reviewed pin")
+        raise SystemExit("runtime checkout differs from the pinned pin")
     if subprocess.check_output(["git", "-C", str(DESTINATION), "status", "--porcelain"], text=True).strip():
-        raise SystemExit("runtime checkout has unreviewed tracked or untracked changes")
+        raise SystemExit("runtime checkout has uncommitted tracked or untracked changes")
     subprocess.run(["python3", str(ROOT / "tooling/bootstrap-lean-runtime.py")], env=ENV, check=True)
     if not arguments.skip_cache:
         subprocess.run(["python3", str(ROOT / "tooling/fetch-lean-runtime-cache.py")], env=ENV, check=True)
