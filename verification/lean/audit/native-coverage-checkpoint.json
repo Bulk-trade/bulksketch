@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-06",
+  "reviewed_native_source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "previous_checkpoint_commit": "d374b6f5a8d792557e51e7febd3b29ada9056252",
+  "native_source_or_build_inputs_changed": false,
+  "native_source_body_refinements_before": 15,
+  "native_source_body_refinements_after": 26,
+  "native_executable_obligations_retained": 344,
+  "source_AST_declarations_retained": 532,
+  "full_native_coverage_achieved": false,
+  "core_frozen_endpoints": 29,
+  "bridge_frozen_endpoints": 69,
+  "permitted_logical_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "new_runtime_models": 0,
+  "reviewed_translator_variant": "checked-frozen-capture-v1",
+  "translator_patch": "tooling/aeneas-loop-capture/loop-capture.patch",
+  "translator_patch_sha256": "15ecb6d84c03d7ad68a384f10b153a1538474d813bacaeb27d4e79156cfbf111",
+  "mandatory_frontend_checks": true,
+  "original_runtime_clean_and_unchanged": true,
+  "previous_frozen_meanings_retained": true,
+  "replay_time_limits_unchanged": true,
+  "projection_negative_cases": 40,
+  "existing_policy_negative_cases": 2,
+  "existing_replay_loader_negative_cases": 7,
+  "translator_regression_cases": 11,
+  "native_release_tests_passed": 139,
+  "native_release_toolchain": "1.96.1",
+  "statement_files_sha256": {
+    "bridge/BulksketchBridge/PortableChallenges.lean": "235976ed618ad5c1b66ffd922623b4a58241f8e36b384466e308c9f47cb649f9",
+    "bridge/BulksketchBridge/PortableInverseChallenges.lean": "f03e0f23dd87626c7b6f8ae10ef8adfa6e0dd8d38ef0a079b860570bc1494a79",
+    "bridge/BulksketchBridge/InverseUsingChallenges.lean": "e5a7a24c61ae853775ee7c0266f49abecf120f1a0f5aa61e924d49c3f7827141",
+    "bridge/BulksketchBridge/FrobeniusConstSpec.lean": "68ae588ef8c0c8808c3feaa95550254fb4a511c434d8d0300e18d074000a6df4",
+    "bridge/BulksketchBridge/FrobeniusConstChallenges.lean": "3b6d008cc28b54591230316749b45b42380d735bd3abad9d03c350eff12ddd4d"
+  },
+  "review_reports": [
+    "audit/aeneas-capture-independent-review.md",
+    "audit/frobenius-const-independent-review.md",
+    "audit/native-coverage-integration-review.md"
+  ],
+  "scope": "Eight original Portable methods, original enclosing maps inverse_using/inverse, and the original x86-visible const square add eleven bodies. Generated helpers, type aliases, frontend tests and mathematical lemmas add zero source-body credit. All old endpoints retained. The new frontend is an explicitly reviewed trust assumption, not a compiler soundness proof.",
+  "remaining": [
+    "Frobenius lookup/table-generation and inverse21",
+    "Slice and polynomial kernels; decoder completeness",
+    "Public state/resource/ownership contracts",
+    "Accelerated ISA backends and compiler-expanded closure",
+    "Compiler/runtime/machine correspondence and sandboxed comparator integrity"
+  ],
+  "validation": "Targeted module builds and independent wrapper dual replay passed; final combined results and exact committed tree recorded separately.",
+  "variant_policy_valid_cases": 3,
+  "variant_policy_negative_cases": 16,
+  "total_proof_policy_negative_cases": 65
+}

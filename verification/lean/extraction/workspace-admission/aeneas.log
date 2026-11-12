@@ -1,0 +1,14 @@
+[[92mInfo[39m ] Imported: /workspace/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/check-workspace/arithmetic.llbc
+[[91mError[39m] Internal error, please file an issue
+Source: 'src/decode/stages.rs', lines 461:8-487:1
+Compiler source: interp/Invariants.ml, line 212
+[[93mWarn[39m ] Could not translate the body of function 'bulksketch::decode::stages::check_workspace because of previous error
+Name pattern: 'bulksketch::decode::stages::check_workspace'
+Definition span: 'src/decode/stages.rs', lines 454:0-487:1
+Source: 'src/decode/stages.rs', lines 461:8-487:1
+Compiler source: interp/Interp.ml, line 685
+
+[[92mInfo[39m ] Creating missing directory: /workspace/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/check-workspace/Arithmetic
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /workspace/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/check-workspace/Arithmetic/Types.lean
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /workspace/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/check-workspace/Arithmetic/Funs.lean
+[[92mInfo[39m ] Total execution time: 0.325390 seconds

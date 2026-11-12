@@ -1,0 +1,16 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "previous_proof_commit": "16531408497f221e1da25c6ebf5e551ce7160258",
+  "retained_native_executable_obligations": 344,
+  "generated_body_refinements_under_recorded_TCB": 42,
+  "math_endpoints_added": 6,
+  "composition_endpoints_added": 2,
+  "whole_native_coverage_achieved": false,
+  "dense_translator_variant": "checked-shared-expansion-owner-v1",
+  "open": [
+    "Dense::mul_into level-1 abstraction lowering",
+    "Portable Horner loop context join",
+    "Native reconstruction context join, BM fit, root recovery and decoder completeness",
+    "Compiler-expanded coverage and remaining runtime, memory and ISA contracts"
+  ]
+}

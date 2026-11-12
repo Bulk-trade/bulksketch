@@ -1,0 +1,15 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "previous_checkpoint": "3f4dc9a0f004f309e8e5ef8d2b2700f62b873270",
+  "source_body_refinements_before": 26,
+  "source_body_refinements_after": 32,
+  "native_executable_obligations_retained": 344,
+  "frozen_endpoints": 107,
+  "new_frobenius_cells": 2560,
+  "new_source_bodies": 6,
+  "native_source_edited": false,
+  "full_native_coverage_achieved": false,
+  "scope": "Two Frobenius generators, two lookup paths, original multiply_linear default and original square_mod fallback. Static and polynomial transport statements add no source-body credit.",
+  "remaining": "Mutable Zip backward updates, Dense rposition/map_or dependencies, other slice and polynomial kernels, decoder completeness and memory/ISA contracts.",
+  "verification": "python3 scripts/verify_all.py"
+}

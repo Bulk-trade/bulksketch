@@ -1,0 +1,317 @@
+{
+  "variant_id": "checked-completed-result-frozen-shared-v1",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "native_source_edited": false,
+  "native_llbc_edited": false,
+  "source_sha256": {
+    "src/lib.rs": "5174f3741a1c1b0bbdfddfac894adb8d96de06896dce8960bad76fe2056fe124",
+    "src/decode/stages.rs": "93825fcb5054e98e9af060a81da72d4770c29354d79822ccfc949cc55f6e9b23",
+    "src/decode/mod.rs": "4d1f559feaa82a6f89e4ddd533fb7fa526d5637386364385020888c25e6026b4",
+    "src/field/mod.rs": "035dc6193ebb50b324527525c0ee47cbe06ca325db16aa5f8ee55b0e79baa723",
+    "src/backend/mod.rs": "b4883e5070592cd5db4c9450fbc14e7dc9c07ec457029a54917295a24a94fb72",
+    "src/backend/contract.rs": "4d05ce564edc408ba04f5a907b159ad91018ba8cfd93126e17913ed49f7e3d59",
+    "src/types.rs": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d",
+    "src/decode/row.rs": "bf5ae89114d3bab811f1e0ca3b370cd916803bddd178471b3167e81b432df7bc",
+    "src/decode/roots.rs": "4697d5874fd1eb03c0210371fdac83a8dc7171de2724da046613f59c879f4fb6",
+    "src/decode/degree_probe.rs": "60d72b0aa11f311c4359bfe94f0d6fede00723602b3251492cbdb10ee51752ed",
+    "src/decode/scratch.rs": "97016cadabf021829b567ff1472a9f11136f54059d78e457d58896cc318e50f6"
+  },
+  "capture_sha256": "bfc4339f46f175a4e89f2afc38d88a90ed9506c306f71423293ef4a3f20f1673",
+  "variant_patch": "extraction/completed-result/checked-completed-result-frozen-shared.patch",
+  "variant_patch_sha256": "072f57a70e79f9fa4ec42feabeb5cbfdae3c757b0af09ade5a4079a642fb6b60",
+  "patched_binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+  "base_sources": {
+    "src/interp/InterpJoin.ml": "57c5478aae42f8a354755424b67f67f37dc8bd233d653c97de0dcbbea5dd6229"
+  },
+  "modified_sources": {
+    "src/interp/InterpJoin.ml": "7b7b982db6c128a0950c969218813bf10b86a405d6c92530814d5dfdcb3e34b4"
+  },
+  "charon_recapture": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/recaptured.llbc",
+      "--start-from=bulksketch::decode::stages::_::completed_result",
+      "--include=bulksketch::decode::stages::_::completed_result",
+      "--",
+      "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked",
+      "--offline",
+      "--target",
+      "x86_64-apple-darwin"
+    ],
+    "exit_code": 0,
+    "binary_sha256": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "original_sha256": "bfc4339f46f175a4e89f2afc38d88a90ed9506c306f71423293ef4a3f20f1673",
+    "recapture_sha256": "10cb3d04e8ed82c6bc056f230ef98755d2fac607b83269713b7c8c5bf0f483ee",
+    "normalized_fields": [
+      "translated.options.dest_file"
+    ],
+    "log_sha256": "4e787e26b02bff13d349c543dcbeada5cda87bcf6f4f18ea05a981e61e6aad3a"
+  },
+  "fresh_build": {
+    "command": [
+      "dune",
+      "build",
+      "--root",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src",
+      "-j",
+      "2",
+      "./main.exe"
+    ],
+    "exit_code": 0,
+    "source_files_byte_identical": 108,
+    "modified_source_sha256": {
+      "src/interp/InterpJoin.ml": "7b7b982db6c128a0950c969218813bf10b86a405d6c92530814d5dfdcb3e34b4"
+    },
+    "log_sha256": "1a059267a2ab9f9267ec4045a5edcc72a41ccb6ce62d2cb993d619e716826908"
+  },
+  "strict_join_replay": {
+    "command": [
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-strict-joins",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/strict-joins",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/arithmetic.llbc"
+    ],
+    "environment": {
+      "BULKSKETCH_COMPLETED_RESULT": "1"
+    },
+    "exit_code": 0,
+    "binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+    "input_sha256": "bfc4339f46f175a4e89f2afc38d88a90ed9506c306f71423293ef4a3f20f1673",
+    "log_sha256": "18865191622949a37432abffc866b60e051f551cbec12a8f5c50c59196b4fd15",
+    "outputs": {
+      "Funs.lean": "ed2942f11ed9521dcb98a3252b66bff8863de6a60d94bd9648a65462da502469",
+      "Types.lean": "2d71cb04b7390ef2f3b869192ac4d6ac8a0717d11efd87ad81155052fa07020e",
+      "FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829"
+    }
+  },
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-checks",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/checked",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/arithmetic.llbc"
+    ],
+    "environment": {
+      "BULKSKETCH_COMPLETED_RESULT": "1"
+    },
+    "exit_code": 0,
+    "binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+    "input_sha256": "bfc4339f46f175a4e89f2afc38d88a90ed9506c306f71423293ef4a3f20f1673",
+    "log_sha256": "5bf6c5196cd2c2889d1c96ffbf358db3e18026b7494faf47385d1989c77108d4",
+    "outputs": {
+      "Funs.lean": "ed2942f11ed9521dcb98a3252b66bff8863de6a60d94bd9648a65462da502469",
+      "Types.lean": "2d71cb04b7390ef2f3b869192ac4d6ac8a0717d11efd87ad81155052fa07020e",
+      "FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829"
+    }
+  },
+  "controls": {
+    "stock": {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/stock",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/arithmetic.llbc"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "binary_sha256": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+      "input_sha256": "bfc4339f46f175a4e89f2afc38d88a90ed9506c306f71423293ef4a3f20f1673",
+      "log_sha256": "48584942094d7b98ce98a5bcfb0cfdca4256e6508987db28e24c5eb7eb38c9a5",
+      "outputs": {}
+    },
+    "flag-off": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/flag-off",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/arithmetic.llbc"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+      "input_sha256": "bfc4339f46f175a4e89f2afc38d88a90ed9506c306f71423293ef4a3f20f1673",
+      "log_sha256": "1c36d87ff184db86c4701367030ac24b6dbbcfac3736fc5a79f81389bd2a1942",
+      "outputs": {}
+    },
+    "unchecked": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/unchecked",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/arithmetic.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_COMPLETED_RESULT": "1"
+      },
+      "exit_code": 1,
+      "binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+      "input_sha256": "bfc4339f46f175a4e89f2afc38d88a90ed9506c306f71423293ef4a3f20f1673",
+      "log_sha256": "022bd7d88a83102c3dd79e25bf510cdfc44f7e4acc47ea10bd2e86357e457240",
+      "outputs": {}
+    },
+    "checked": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/checked",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/arithmetic.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_COMPLETED_RESULT": "1"
+      },
+      "exit_code": 0,
+      "binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+      "input_sha256": "bfc4339f46f175a4e89f2afc38d88a90ed9506c306f71423293ef4a3f20f1673",
+      "log_sha256": "5bf6c5196cd2c2889d1c96ffbf358db3e18026b7494faf47385d1989c77108d4",
+      "outputs": {
+        "Funs.lean": "ed2942f11ed9521dcb98a3252b66bff8863de6a60d94bd9648a65462da502469",
+        "Types.lean": "2d71cb04b7390ef2f3b869192ac4d6ac8a0717d11efd87ad81155052fa07020e",
+        "FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829"
+      }
+    },
+    "wrong-site": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/wrong-site",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/wrong-site.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_COMPLETED_RESULT": "1"
+      },
+      "exit_code": 1,
+      "binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+      "input_sha256": "4af1d4132e6b37adfc7a2056737db152b185d1d95f9ad821ea698bfa337b1af1",
+      "log_sha256": "e36ee9271e67439fc13a94d3ceafa285ae9414faf57edf7f2af6ce673107516a",
+      "outputs": {}
+    },
+    "wrong-workspace": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/wrong-workspace",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/wrong-workspace.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_COMPLETED_RESULT": "1"
+      },
+      "exit_code": 1,
+      "binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+      "input_sha256": "15f7a20b53ff69e497f5ecad53ff4ad1ad724b6babe3c1b538e21128517e44ff",
+      "log_sha256": "4945425cb6d0293355087aaea64ccd30f85974730179122845b42cdda146ed66",
+      "outputs": {}
+    },
+    "execution-verify": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-driver/completed-result/fresh-controls/execution-verify",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/execution-verify/arithmetic.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_COMPLETED_RESULT": "1"
+      },
+      "exit_code": 0,
+      "binary_sha256": "49ca05c2307e682cdb112c6b9a8fccd3784c774b621fe44355fd22755547a3f6",
+      "input_sha256": "bd05d88ce7edc864d28c5229b5c2ccbe823973092202ba019c04b1f4b2ab6442",
+      "log_sha256": "23c19a20b7492222b0035ce245e0b0745ff2def0da1efcddc3e14422efaaf116",
+      "outputs": {
+        "Funs.lean": "81ead7bd1b18fc51774accc6bcdffaeaaf9a2170b8939f36e2fe662e669883e2",
+        "Types.lean": "8254935be313eb1dc586f4589a4a8571f35a39b0ce9f331b3733787793a743d7",
+        "FunsExternal_Template.lean": "954d34c787c30e628ca159c164e3577d62a4352e5ac34393add7edac98e5916b"
+      }
+    }
+  },
+  "files_sha256": {
+    "extraction/completed-result/Arithmetic/Funs.lean": "ed2942f11ed9521dcb98a3252b66bff8863de6a60d94bd9648a65462da502469",
+    "extraction/completed-result/Arithmetic/FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+    "extraction/completed-result/Arithmetic/Types.lean": "2d71cb04b7390ef2f3b869192ac4d6ac8a0717d11efd87ad81155052fa07020e",
+    "extraction/completed-result/arithmetic.llbc": "bfc4339f46f175a4e89f2afc38d88a90ed9506c306f71423293ef4a3f20f1673",
+    "extraction/completed-result/charon.log": "4e787e26b02bff13d349c543dcbeada5cda87bcf6f4f18ea05a981e61e6aad3a",
+    "extraction/completed-result/checked-completed-result-frozen-shared.patch": "072f57a70e79f9fa4ec42feabeb5cbfdae3c757b0af09ade5a4079a642fb6b60",
+    "extraction/completed-result/checked.log": "5bf6c5196cd2c2889d1c96ffbf358db3e18026b7494faf47385d1989c77108d4",
+    "extraction/completed-result/execution-verify.log": "23c19a20b7492222b0035ce245e0b0745ff2def0da1efcddc3e14422efaaf116",
+    "extraction/completed-result/flag-off.log": "1c36d87ff184db86c4701367030ac24b6dbbcfac3736fc5a79f81389bd2a1942",
+    "extraction/completed-result/fresh-build.log": "1a059267a2ab9f9267ec4045a5edcc72a41ccb6ce62d2cb993d619e716826908",
+    "extraction/completed-result/scope_controls.py": "c56382cb1e4b8b5b352188561eed0b3814905261ab9e1a6f0bd35d4aefae66f4",
+    "extraction/completed-result/stock.log": "48584942094d7b98ce98a5bcfb0cfdca4256e6508987db28e24c5eb7eb38c9a5",
+    "extraction/completed-result/strict-joins.log": "18865191622949a37432abffc866b60e051f551cbec12a8f5c50c59196b4fd15",
+    "extraction/completed-result/unchecked.log": "022bd7d88a83102c3dd79e25bf510cdfc44f7e4acc47ea10bd2e86357e457240",
+    "extraction/completed-result/wrong-site.log": "e36ee9271e67439fc13a94d3ceafa285ae9414faf57edf7f2af6ce673107516a",
+    "extraction/completed-result/wrong-workspace.log": "4945425cb6d0293355087aaea64ccd30f85974730179122845b42cdda146ed66"
+  }
+}

@@ -1,0 +1,9 @@
+'BulksketchBridge.X86MaskedMemory.PureExtraction.pure_store_cannot_writeback' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BulksketchBridge.X86MaskedMemory.PureExtraction.pure_load_cannot_read_two_words' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BulksketchBridge.X86MaskedMemory.store_register_payload' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.X86MaskedMemory.source_mask_load_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.X86MaskedMemory.source_mask_store_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]

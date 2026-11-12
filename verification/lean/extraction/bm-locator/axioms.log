@@ -1,0 +1,3 @@
+'bulksketch.decode.bm.locator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Aeneas.Std.BmLocatorRuntime.inclusiveRange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Aeneas.Std.BmLocatorRuntime.reverseIterator' depends on axioms: [propext, Classical.choice, Quot.sound]

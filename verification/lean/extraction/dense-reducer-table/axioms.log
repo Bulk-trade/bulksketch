@@ -1,0 +1,5 @@
+'BulksketchBridge.DenseReducerTable.stepWords_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.DenseReducerTable.loop_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.DenseReducerTable.prepare_square_table_refines' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

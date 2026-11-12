@@ -1,0 +1,35 @@
+{
+  "status": "exact challenge, axioms, Lean kernel and Nanoda all passed",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_item_id": "src/sketch/shape.rs:120:function:bulksketch::sketch::shape::record_bytes",
+  "source_line_span_sha256": "ddf48321f3f4ac2859630467516d4493bde8e0bd33112acb8d5b4e2b25da2bf0",
+  "generated_declaration": "bulksketch.sketch.shape.record_bytes",
+  "generated_file": "bridge/Arithmetic/ShapeWireGenerated.lean",
+  "generated_files": [
+    "bridge/Arithmetic/ShapeWireGenerated.lean"
+  ],
+  "challenge": "BulksketchBridge.ShapeWireChallenges.actualRecordBytesMatchesWireBounds",
+  "theorem": "BulksketchBridge.ShapeWire.record_bytes_refines",
+  "scope": "For every usize pair the actual helper returns normally. Some carries exact size 24 + 2*buckets + 8*words + ceil(buckets/8) iff descriptor and payload fit u32 and complete record fits usize. None is exact rejection. Both supported machine widths are included; intermediate checked additions, multiplications, division, and conversions are reconciled with these final bounds. This is the wire-size admission helper. Shape constructor allocation and descriptor admission remain separate obligations.",
+  "native_body_refinements_added": 1,
+  "scoped_runtime_module": "bridge/Arithmetic/ShapeWireRuntime.lean",
+  "runtime_trust_boundary": "General Option Try branch/None residual and value-level Result.ok conversions, with pinned checked arithmetic and unsigned conversion models. Runtime/source correspondence remains trusted.",
+  "native_source_edited": false,
+  "full_native_coverage_achieved": false,
+  "proof_replay": {
+    "export_sha256": "6250f242f3ec3dfdb3c83c4a9668a27b31ec8c5dd0cb9ee0286523f3a7ec199b",
+    "export_bytes": 19555011,
+    "replayers": {
+      "leanchecker": 0,
+      "nanoda": 0
+    },
+    "evidence": "/workspace/bulk/bulksketch-proof-tools/shape-admission/wire-size/checks/receipt.json"
+  },
+  "files_sha256": {
+    "bridge/Arithmetic/ShapeWireRuntime.lean": "c58c15a917cc7d925f90ba7dfc4e9615bdf79e921f98f96bbc87a925c5d1ed6a",
+    "bridge/Arithmetic/ShapeWireGenerated.lean": "be38b0252b70adba3a22ed197bad57944cd64b3a6f52cf5d4d3b8a867dc7f31b",
+    "bridge/BulksketchBridge/ShapeWireChallenges.lean": "c7d44799062095a7fa4492ec942da28fa8ded2ec44c978bdbe45a52a3fb28875",
+    "bridge/BulksketchBridge/ShapeWire.lean": "6f1c4da6b4bd77ed8a7d4ac747b6305ed1993f636e3924e054b7cc51855e925b",
+    "extraction/shape-admission/wire-size/project.py": "7b6b806becd8b90b52b173cb3df1eb4a4a8e45aaaf662fbfad98c058c0338e44"
+  }
+}

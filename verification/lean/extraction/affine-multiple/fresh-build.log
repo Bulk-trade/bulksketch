@@ -1,0 +1,4 @@
+Entering directory '/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-tool/src'
+2026-11-09 09:38:20.866 xcodebuild[94280:5534789]  DVTFilePathFSEvents: Failed to start fs event stream.
+2026-11-09 09:38:21.008 xcodebuild[94280:5534693] [MT] DVTDeveloperPaths: Failed to get length of DARWIN_USER_CACHE_DIR from confstr(3), error = Error Domain=NSPOSIXErrorDomain Code=5 "Input/output error". Using NSCachesDirectory instead.
+Leaving directory '/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-tool/src'

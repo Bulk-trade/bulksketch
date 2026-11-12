@@ -1,0 +1,77 @@
+--- a/src/interp/InterpMatchCtxs.ml
++++ b/src/interp/InterpMatchCtxs.ml
+@@ -353,6 +353,7 @@
+     (Mode : sig
+       val match_ended_projector_leaves : bool
+       val retry_mixed_array_loan : bool
++      val retry_mixed_nested_slice_loan : bool
+     end) : Matcher = struct
+   let span = M.span
+ 
+@@ -362,7 +363,14 @@
+     && shared.ty = ty
+     && not (ValuesUtils.value_has_loans_or_borrows (Some span) ctx.type_ctx.type_infos shared.value)
+ 
+-  let rec match_tvalues (ctx0 : eval_ctx) (ctx1 : eval_ctx) (v0 : tvalue)
++  let can_retry_nested_slice_loan same_mutable_parent ty (shared : tvalue) =
++    Mode.retry_mixed_nested_slice_loan && !Config.sanity_checks && same_mutable_parent
++    && (match ty with TSlice (TScalar (TInteger (Unsigned U64)), _) -> true | _ -> false)
++    && shared.ty = ty
++    && (match shared.value with VSymbolic sv -> sv.sv_ty = ty | _ -> false)
++
++  let rec match_tvalues_under_mutable (same_mutable_parent : bool)
++      (ctx0 : eval_ctx) (ctx1 : eval_ctx) (v0 : tvalue)
+       (v1 : tvalue) : tvalue =
+     [%ldebug
+       "- v0: " ^ tvalue_to_string ctx0 v0 ^ "\n- v1: "
+@@ -398,7 +406,7 @@
+               in
+               VSharedBorrow (bid, sid)
+           | VMutBorrow (bid0, bv0), VMutBorrow (bid1, bv1) ->
+-              let bv = match_rec bv0 bv1 in
++              let bv = match_tvalues_under_mutable (bid0 = bid1) ctx0 ctx1 bv0 bv1 in
+               let bid, bv =
+                 M.match_mut_borrows match_rec ctx0 ctx1 ty bid0 bv0 bid1 bv1 bv
+               in
+@@ -432,6 +440,14 @@
+         | VMutLoan _, VSharedLoan (shared, value) when can_retry_array_loan ctx1 ty value ->
+             [%ltrace "Retry mixed scalar array by ending right shared loan " ^ BorrowId.to_string shared];
+             raise (ValueMatchFailure (LoanInRight shared))
++        | VSharedLoan (shared, value), VMutLoan _
++          when can_retry_nested_slice_loan same_mutable_parent ty value ->
++            [%ltrace "Retry nested u64 slice by ending left shared loan " ^ BorrowId.to_string shared];
++            raise (ValueMatchFailure (LoanInLeft shared))
++        | VMutLoan _, VSharedLoan (shared, value)
++          when can_retry_nested_slice_loan same_mutable_parent ty value ->
++            [%ltrace "Retry nested u64 slice by ending right shared loan " ^ BorrowId.to_string shared];
++            raise (ValueMatchFailure (LoanInRight shared))
+         | VSharedLoan _, VMutLoan _ | VMutLoan _, VSharedLoan _ ->
+             (* TODO: *)
+             [%craise_recover] M.recover M.span "Unimplemented"
+@@ -477,6 +493,9 @@
+           ^ "\n- value1: "
+           ^ tvalue_to_string ~span:(Some M.span) ctx1 v1];
+         [%craise_recover] M.recover M.span "Unexpected"
++
++  and match_tvalues ctx0 ctx1 v0 v1 =
++    match_tvalues_under_mutable false ctx0 ctx1 v0 v1
+ 
+   and match_tavalues (ctx0 : eval_ctx) (ctx1 : eval_ctx) (v0 : tavalue)
+       (v1 : tavalue) : tavalue =
+@@ -611,13 +630,13 @@
+ end
+ 
+ module MakeMatcher (M : PrimMatcher) =
+-  MakeMatcherWithMode (M) (struct let match_ended_projector_leaves = false let retry_mixed_array_loan = false end)
++  MakeMatcherWithMode (M) (struct let match_ended_projector_leaves = false let retry_mixed_array_loan = false let retry_mixed_nested_slice_loan = false end)
+ 
+ module MakeContextMatcher (M : PrimMatcher) =
+-  MakeMatcherWithMode (M) (struct let match_ended_projector_leaves = true let retry_mixed_array_loan = false end)
++  MakeMatcherWithMode (M) (struct let match_ended_projector_leaves = true let retry_mixed_array_loan = false let retry_mixed_nested_slice_loan = false end)
+ 
+ module MakeArrayLoanRetryMatcher (M : PrimMatcher) =
+-  MakeMatcherWithMode (M) (struct let match_ended_projector_leaves = false let retry_mixed_array_loan = true end)
++  MakeMatcherWithMode (M) (struct let match_ended_projector_leaves = false let retry_mixed_array_loan = true let retry_mixed_nested_slice_loan = true end)
+ 
+ module MakeJoinMatcher (S : MatchJoinState) : PrimMatcher = struct
+   (** Small utility *)

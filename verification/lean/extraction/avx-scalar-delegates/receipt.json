@@ -1,0 +1,130 @@
+{
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "rust_toolchain": "nightly-2026-09-17",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "target": "x86_64-apple-darwin",
+  "native_source_edited": false,
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "commands": {
+    "charon": {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/avx-scalar-delegates/linked/arithmetic.llbc",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::mul",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::square",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::frobenius",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::inverse",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::trace",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::solve_quadratic",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::raw_mul",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::reduce",
+        "--include={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::mul",
+        "--include={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::square",
+        "--include={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::frobenius",
+        "--include={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::inverse",
+        "--include={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::trace",
+        "--include={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::solve_quadratic",
+        "--include={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::raw_mul",
+        "--include={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::reduce",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::scale_xor",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::square_slice",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::square_mod",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::multiply_linear",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::odd_recurrence_matches",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::insert_nonzero",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::encode_nonzero",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::xor_assign",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::difference",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::horner_many",
+        "--opaque=bulksketch::backend::x86_pclmul::_::mul",
+        "--opaque=bulksketch::backend::x86_pclmul::_::square",
+        "--opaque=bulksketch::backend::x86_pclmul::_::frobenius",
+        "--opaque=bulksketch::backend::x86_pclmul::_::inverse",
+        "--opaque=bulksketch::backend::x86_pclmul::_::solve_quadratic",
+        "--opaque=bulksketch::backend::x86_pclmul::_::raw_mul",
+        "--opaque=bulksketch::backend::x86_pclmul::_::scale_xor",
+        "--opaque=bulksketch::backend::x86_pclmul::_::square_slice",
+        "--opaque=bulksketch::backend::x86_pclmul::_::square_mod",
+        "--opaque=bulksketch::backend::x86_pclmul::_::multiply_linear",
+        "--opaque=bulksketch::backend::x86_pclmul::_::odd_recurrence_matches",
+        "--opaque=bulksketch::backend::x86_pclmul::_::insert_nonzero",
+        "--opaque=bulksketch::backend::x86_pclmul::_::encode_nonzero",
+        "--opaque=bulksketch::backend::x86_pclmul::_::xor_assign",
+        "--opaque=bulksketch::backend::x86_pclmul::_::difference",
+        "--opaque=bulksketch::backend::x86_pclmul::_::horner_many",
+        "--opaque=bulksketch::backend::portable::_::_",
+        "--opaque=bulksketch::field::maps::trace",
+        "--opaque=bulksketch::field::gf64::reduce",
+        "--",
+        "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    "aeneas": {
+      "command": [
+        "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/avx-scalar-delegates/linked/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/avx-scalar-delegates/linked/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  },
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/avx-scalar-delegates/linked/replay",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/avx-scalar-delegates/linked/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "identical_outputs": true
+  },
+  "source_sha256": {
+    "src/backend/x86_vpclmul512.rs": "7a9c29dff254508671aa4122b20644b21a9cfb40f86ba5eaadce02bf680475d4",
+    "src/backend/x86_pclmul.rs": "8cf4abd4ed47aa63b2d050928c37a5cdc93f49e8cd07b2f7c8ffddb56b7b4fff"
+  },
+  "shared_sha256": {
+    "bridge/Arithmetic/Funs.lean": "4d688e3ce715126a0bf92d0c43cac8361de11c6f5215c01fdbf7caf8d3584ef9",
+    "bridge/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0",
+    "bridge/Arithmetic/X86PclmulGenerated.lean": "dc418d8fb3549ba684ddfe5cc26712890d43c6f9c801975048826fedd1e55963",
+    "bridge/Arithmetic/X86PclmulNextGenerated.lean": "4298251c5d548d45ecfa729a12b41f0a38088dec1fb9fbf4a63c8441e33bfb25"
+  },
+  "artifacts": {
+    "extraction/avx-scalar-delegates/arithmetic.llbc": "bb438dd3923cadfbe41191dfc02a9c36c777cc79a07a97d702fb555094d0bb02",
+    "extraction/avx-scalar-delegates/charon.log": "0fd56cafcfdc3c31050efd87fea1bd9c23faaf9e12481a30d7d4abdde7d072f9",
+    "extraction/avx-scalar-delegates/aeneas.log": "20f9e6f2c2dde198830a4b9bc68c99d130911a39e01faf856b8b5e18d8e14b9b",
+    "extraction/avx-scalar-delegates/replay.log": "674f243e65dd21e695178fd5ea7f25e068b653250b02aedecedf5fb0357924ca",
+    "extraction/avx-scalar-delegates/Arithmetic/Funs.lean": "0bc7a98d673d5abaeab54eccc1148e4b56c74a55e5d3fd7bc476f1caae954552",
+    "extraction/avx-scalar-delegates/Arithmetic/Types.lean": "cfa13f1742e997d6f7880640950dfe6eeb9626c751c41760043ceeb53f28d2b6",
+    "extraction/avx-scalar-delegates/Arithmetic/FunsExternal_Template.lean": "42e077e0c866401dae62bdf7a4253c418e3fbd52d7b3795d799be1eb9d3c698b"
+  }
+}

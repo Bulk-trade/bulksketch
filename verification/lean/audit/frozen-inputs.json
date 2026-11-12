@@ -17,7 +17,7 @@
     "scripts/verify.py": "54985bd8bbae78224c386873f82d1fd9e23e1af362729fafd9fabb304e0d54db",
     "BulksketchProofs/Field/SpreadSpec.lean": "cb21b3ad6e0c378438699e848a78038ca0d61b757322f8489fede4fc57cc9062",
     "BulksketchProofs/SpreadChallenges.lean": "1efb7e6e3d8561c83a26916282b6240a774a80db52091dd7420053a4424f7c63",
-    "scripts/verify_all.py": "9c0f63cbea92b253f314ff3651ca9b843a4e481deebef6e38afdae05f44c55bd",
+    "scripts/verify_all.py": "c1a90ea1aeda9ca314899ff89f7df17ddfb9ea636e917be439e7639f54c19323",
     "scripts/check_negative_fixtures.py": "1be2bee7eb62aad32a2e9a3b4949a7076be5e8ee6ab8b59ec8e4370c0024ac7d",
     "BulksketchProofs.lean": "062759adee4278c7bc60184084009295b282e3e2c6293ca5bda2b572547f13b5",
     "BulksketchProofs/Field/CLMulSpec.lean": "b80c1557d0e1d10e719c255d6d74500f5a48e2580ed04e26d7e16d210ba1737b",
@@ -35,7 +35,45 @@
     "audit/modulus-proof-independent-review.md": "24a9fa1b70f297f50efacf5d2fdfb3592ecfdc82fdb80fc5ab6d79ea36e2b96b",
     "audit/core-maps-proof-independent-review.md": "aed4509f239a8e3db59c7a9f0d95ca20286d8a6df50372e3f59c172572101124",
     "audit/field-algebra-accounting-review.md": "55d3cd81a3f03185992e3272994c04b13b5e7ea34ff85e5d8e2cfced90f240be",
-    "audit/field-algebra-checkpoint.json": "e93b65ffd57dcdb5c4c987c76f96d48b8917e82f52969853dbb979c049a4220e"
+    "audit/field-algebra-checkpoint.json": "e93b65ffd57dcdb5c4c987c76f96d48b8917e82f52969853dbb979c049a4220e",
+    "scripts/check_projection_fixtures.py": "771c6a0cf84230b2d59e42cbda72ded564d920366be8350a796dbd63d5d84555",
+    "audit/quotient-field-checkpoint.json": "74c13d90c143531b3e619c9722b197ccfbb07ef45ffab3647a78482d083777d6",
+    "audit/quotient-contract-review.json": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4",
+    "audit/word-quotient-independent-review.md": "1ece7f43c3ba81f3d2e4dcb30416edf780d5aeeaf62845d0a78b834cbcd0bd53",
+    "audit/inverse-enclosing-translator-investigation.md": "d8e28ac55492b8b4feabde9350a8208ffe7a3546cc5299035c325e138b24d28e",
+    "scripts/check_variant_fixtures.py": "cc17e2a0661ed53a4df7401c3280bba2e8f7ba9a87ac0e490bc2ff85b1527c33",
+    "audit/native-coverage-checkpoint.json": "95b5a3cdfbd02282affa4b810f0ea76062d76f67096ae3f9f2f0ebf9f4832c63",
+    "audit/aeneas-capture-independent-review.md": "581285b55e7fcf4e884c1d640b35b479eccd8b72f18286a28f6fcdaa69f53d8b",
+    "audit/frobenius-const-independent-review.md": "873bd302ac21353de6d949023879af885fda21537c011fa634694a9c25a4ba0c",
+    "audit/native-coverage-integration-review.md": "a9d5b50795799dcacec3b3b919fea69ff7e3dfae8f84fedbdbb134bc2e56b58e",
+    "audit/frobenius-tables-checkpoint.json": "a6f6745974360c0d5523e4b252a80049e0baa8a10354ffe7079946db6a3c0b63",
+    "audit/slice-normalization-checkpoint.json": "d7743584cf035bf05f978330f598ebe3e918c673ec35ce2c3d9de7f4c95b2316",
+    "audit/reconciliation-checkpoint.json": "b22311c148f62eea4bbdb3968f6ae187abf6f7b553f9f1cd03f883eed2cd009a",
+    "audit/native-verifier-checkpoint.json": "ef766acbe6b4c942bc1adf7914ed59589c2a86d93de4842cd8d00d516aa4d6bb",
+    "audit/dense-product-checkpoint.json": "39c90405f56b7a6f63f7baa9aed8059137b43a8e4df09eca0fc2056fa7a7d2d5",
+    "audit/x86-register-checkpoint.json": "4c5147bc686340d29f844288e978836feecd41b0816b7d91a98dd05b7d92634a",
+    "audit/native-stateful-checkpoint.json": "2796eaed83ef49ef2ea06d263c75c3b9d17e62c89e9d032fc07c86832775f41e",
+    "NATIVE_CALLER_CHAINS.md": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
+    "audit/native-caller-checkpoint.json": "444e2d5cfb18737c77ae01dc9708bd7f1e7f3975e786e9054024be396724497a",
+    "README.md": "179dc9f8c586b7286b841fad233b4c6c7cf439b6180778f85cb5039b22acc987",
+    "NATIVE_RECONSTRUCTION.md": "3a1955592353708b30df40c5fb5443a743451002275c4da8164c37a3344746b2",
+    "audit/native-reconstruction-checkpoint.json": "bae6baacb93dc2d9070dbb07dbdfd10599d3c4d35de76b9ce67d143a3fbd82ea",
+    "NATIVE_QUARTIC.md": "0f7a4311accbf944b75a6792955da66ae548891ce2dc1a7e53a167aed892a381",
+    "audit/native-quartic-checkpoint.json": "9c1ca070ae1ae3bf043da0482064945b09e6fe3702a5f38acf4a1b52da0f94d7",
+    "NATIVE_CLOSED_LEAF.md": "89b20e2b1ea0c3d71bd27a50dbd8f9538ce5fd02d653c87268692459787dd0b8",
+    "audit/native-closed-leaf-checkpoint.json": "6631ceb2701080b491ad05ca287fb20d4b48d90b40f7cae7b0ad658e7abf1273",
+    "NATIVE_NEWTON_GUARD.md": "f8d13ab202dd6dc1cda482af41c06eca338711bf59e4b45622f3567aeb072d0f",
+    "audit/native-newton-guard-checkpoint.json": "343b89fc0d759b4989ebd91a5ff5d719d4b84ac0fd59ca0b47c2e4f8ba0fb41d",
+    "NATIVE_BM_DEGREE_PROBE.md": "348262e809a74c48d237059f90c04a4415dbf95ef704dcd79af2e4c08eab40c4",
+    "audit/native-bm-degree-probe-checkpoint.json": "938dd3bd0585a767560b0b1e260591e75e6400fc5c8228ac6cdcd1b6f4927a7d",
+    "NATIVE_BM_LOCATOR.md": "2b330a3ca4841689cf58af8be9df209e2fb39b30bc1f442054be74ff3f08aed2",
+    "audit/native-bm-locator-checkpoint.json": "7a3ca98cc9a8df5a89b541255d2b8c7b092dfa9198ced0b0f3e619bc7a3c2c70",
+    "NATIVE_DENSE_REDUCER.md": "1e507a052eda6ffab691e8e3d78c9904cafd2498edccbd46b8164de89248531a",
+    "audit/native-dense-reducer-checkpoint.json": "cee690a7c8e30b7f3735fe6ca8a8a6aaded3433e8f65f0cd969e569bcf1b94fc",
+    "NATIVE_DENSE_DIVISION.md": "7bc66fd0e205e372f4492b801782b7af8a5cf59bd300896e4b7633612da6b9bc",
+    "audit/native-dense-division-checkpoint.json": "680b967447883dc88713eda00089fede00e69ea9887c772a5568d82ae43f7597",
+    "NATIVE_ROOT_RUN.md": "9076648e4a8c45ba7cb36848abc3d8a0b412aa47903d4a1885b33a8abb8f947a",
+    "audit/native-root-run-checkpoint.json": "fb4cca79029b0c2fc01b4f858c22e087568bbc374414fc2b320c2596b9b5f5f2"
   },
   "reviewed_policy_revisions": [
     {
@@ -158,6 +196,1289 @@
       "old_sha256": "98e3f3231cf43fb03237202b4889a9fc9619af171c3bab3ea1eb2ea4d74315b5",
       "new_sha256": "062759adee4278c7bc60184084009295b282e3e2c6293ca5bda2b572547f13b5",
       "reason": "Add independently reviewed period64 and complete source-table/trace/quadratic contracts. Keep all previous meanings and source obligations. Regenerate exact source literals and kernel-check transpose/table identities; no assumed correctness from generator."
+    },
+    {
+      "reason": "Run eight inverse-projection provenance mutation fixtures in both ordinary and optimized Python; preserves all old source/specification hashes and exact proposition meanings.",
+      "changes": [
+        {
+          "path": "scripts/verify_all.py",
+          "new_sha256": "c57cfb04460626b291d42cf8a13a1c6759582e3f2dadc4765ad7fbd2a41541c5",
+          "old_sha256": "9c0f63cbea92b253f314ff3651ca9b843a4e481deebef6e38afdae05f44c55bd"
+        },
+        {
+          "path": "scripts/check_projection_fixtures.py",
+          "new_sha256": "0dc011a7b556e5ae676623de89697ff63fde06fbb77df9f2f5334272b11f232f"
+        }
+      ]
+    },
+    {
+      "reason": "Pin cross-reviewed quotient/trace/inverse checkpoint and exact remaining enclosing-wrapper blocker investigation. No prior proposition or source fingerprint changes.",
+      "changes": [
+        {
+          "path": "audit/quotient-field-checkpoint.json",
+          "new_sha256": "74c13d90c143531b3e619c9722b197ccfbb07ef45ffab3647a78482d083777d6"
+        },
+        {
+          "path": "audit/quotient-contract-review.json",
+          "new_sha256": "06d26606df128b6465298eccbecd9ff469cb6fe83b0afd37b4f06d492b8a00a4"
+        },
+        {
+          "path": "audit/word-quotient-independent-review.md",
+          "new_sha256": "1ece7f43c3ba81f3d2e4dcb30416edf780d5aeeaf62845d0a78b834cbcd0bd53"
+        },
+        {
+          "path": "audit/inverse-enclosing-translator-investigation.md",
+          "new_sha256": "d8e28ac55492b8b4feabde9350a8208ffe7a3546cc5299035c325e138b24d28e"
+        }
+      ]
+    },
+    {
+      "reason": "Add the reviewed native wrapper/Portable/const-square checkpoint and preserve all earlier propositions. Extend exact provenance mutations and actual translator-policy gate fixtures after reproducing/fixing empty-artifact metadata acceptance. No native source, axiom allowlist or replay cap changes.",
+      "changes": [
+        {
+          "path": "scripts/verify_all.py",
+          "new_sha256": "0b325db81eaff28df6b6c71c3ece2e4fc2420a38f67fa7af7a92ae72234a8c53",
+          "old_sha256": "c57cfb04460626b291d42cf8a13a1c6759582e3f2dadc4765ad7fbd2a41541c5"
+        },
+        {
+          "path": "scripts/check_projection_fixtures.py",
+          "new_sha256": "a3b6e70b3b74705644e70783c4c1d86c8a13b7146a8754259c44f3a527c6d18c",
+          "old_sha256": "0dc011a7b556e5ae676623de89697ff63fde06fbb77df9f2f5334272b11f232f"
+        },
+        {
+          "path": "scripts/check_variant_fixtures.py",
+          "new_sha256": "d789b1ea872aec1de1be9471e04782c28bf0919258149b049a620c9657597490"
+        },
+        {
+          "path": "audit/native-coverage-checkpoint.json",
+          "new_sha256": "95b5a3cdfbd02282affa4b810f0ea76062d76f67096ae3f9f2f0ebf9f4832c63"
+        },
+        {
+          "path": "audit/aeneas-capture-independent-review.md",
+          "new_sha256": "581285b55e7fcf4e884c1d640b35b479eccd8b72f18286a28f6fcdaa69f53d8b"
+        },
+        {
+          "path": "audit/frobenius-const-independent-review.md",
+          "new_sha256": "873bd302ac21353de6d949023879af885fda21537c011fa634694a9c25a4ba0c"
+        },
+        {
+          "path": "audit/native-coverage-integration-review.md",
+          "new_sha256": "a9d5b50795799dcacec3b3b919fea69ff7e3dfae8f84fedbdbb134bc2e56b58e"
+        }
+      ]
+    },
+    {
+      "reason": "Add provenance mutation controls for the two new generated boundaries and record the Frobenius/slice checkpoint. Prior propositions and source pins retained.",
+      "changes": [
+        {
+          "path": "scripts/check_projection_fixtures.py",
+          "new_sha256": "161a5eda3850e0052bb1e98641d24fe7e2fdf84b9bba033869d0553705514c1c",
+          "old_sha256": "a3b6e70b3b74705644e70783c4c1d86c8a13b7146a8754259c44f3a527c6d18c"
+        },
+        {
+          "path": "audit/frobenius-tables-checkpoint.json",
+          "new_sha256": "a6f6745974360c0d5523e4b252a80049e0baa8a10354ffe7079946db6a3c0b63"
+        }
+      ]
+    },
+    {
+      "reason": "Add provenance checks for the original slice and Dense projections and scoped runtime binding. Retain all previous claims and source pins.",
+      "changes": [
+        {
+          "path": "scripts/check_projection_fixtures.py",
+          "new_sha256": "da5ca1f1d466a0635297b722052ebc224295980e9cc81401f1e873faca669cb9",
+          "old_sha256": "161a5eda3850e0052bb1e98641d24fe7e2fdf84b9bba033869d0553705514c1c"
+        },
+        {
+          "path": "audit/slice-normalization-checkpoint.json",
+          "new_sha256": "d7743584cf035bf05f978330f598ebe3e918c673ec35ce2c3d9de7f4c95b2316"
+        }
+      ]
+    },
+    {
+      "reason": "Freeze original Dense square, decoder dispatch and scalar recurrence, wire sizing and reconciliation contracts. Check the independent Dense-prefix translator receipt and preserve the previous translator gate and source denominator.",
+      "changes": [
+        {
+          "path": "audit/reconciliation-checkpoint.json",
+          "new_sha256": "b22311c148f62eea4bbdb3968f6ae187abf6f7b553f9f1cd03f883eed2cd009a"
+        },
+        {
+          "path": "scripts/check_projection_fixtures.py",
+          "new_sha256": "5299558730273df4bc1e44794746e29d31e2abae933d927c36750ae26b2680c8",
+          "old_sha256": "da5ca1f1d466a0635297b722052ebc224295980e9cc81401f1e873faca669cb9"
+        },
+        {
+          "path": "scripts/check_variant_fixtures.py",
+          "new_sha256": "115f159400d4d6dbebc01f220e74acfadf21ab942bcba2b6060547718a223260",
+          "old_sha256": "d789b1ea872aec1de1be9471e04782c28bf0919258149b049a620c9657597490"
+        }
+      ]
+    },
+    {
+      "reason": "Freeze the original rebuilt verifier, Portable insertion and default encoding, affine evaluation, and the checked Dense multiplication final loop. Preserve prior source pins and verification boundaries.",
+      "changes": [
+        {
+          "path": "audit/native-verifier-checkpoint.json",
+          "new_sha256": "ef766acbe6b4c942bc1adf7914ed59589c2a86d93de4842cd8d00d516aa4d6bb"
+        },
+        {
+          "path": "scripts/check_projection_fixtures.py",
+          "new_sha256": "a992d8203bbf35538b4d30b8fce41126efd5a1f551e13f3cf5140d93743ab3da",
+          "old_sha256": "5299558730273df4bc1e44794746e29d31e2abae933d927c36750ae26b2680c8"
+        },
+        {
+          "path": "scripts/check_variant_fixtures.py",
+          "new_sha256": "5cd4df885362acef3ac067f0268bbf35a4ea1f0a674703cd291c106309bf3b75",
+          "old_sha256": "115f159400d4d6dbebc01f220e74acfadf21ab942bcba2b6060547718a223260"
+        }
+      ]
+    },
+    {
+      "reason": "Freeze original Dense multiplication, Portable Horner direct two-root and x86 lane-mask proofs, with exact extraction projections and checked translator controls. Retain all previous source pins and coverage obligations.",
+      "changes": [
+        {
+          "path": "audit/dense-product-checkpoint.json",
+          "new_sha256": "39c90405f56b7a6f63f7baa9aed8059137b43a8e4df09eca0fc2056fa7a7d2d5"
+        },
+        {
+          "path": "scripts/check_projection_fixtures.py",
+          "new_sha256": "1e2ebb7ee1b29ad23e159523323a00c7b7188423ad946cffb19bb78d01890e22",
+          "old_sha256": "a992d8203bbf35538b4d30b8fce41126efd5a1f551e13f3cf5140d93743ab3da"
+        },
+        {
+          "path": "scripts/check_variant_fixtures.py",
+          "new_sha256": "8dca0f8f385a1898538da709228a3dbdd23f1d6c6b9027204f7d0d8be5045197",
+          "old_sha256": "5cd4df885362acef3ac067f0268bbf35a4ea1f0a674703cd291c106309bf3b75"
+        }
+      ]
+    },
+    {
+      "reason": "Freeze the original scalar PCLMUL and AVX-512 register kernels, native cube-root proof, and masked-memory diagnostic and stateful contract. Keep diagnostics outside native body credit and preserve all previous source pins.",
+      "changes": [
+        {
+          "path": "audit/x86-register-checkpoint.json",
+          "new_sha256": "4c5147bc686340d29f844288e978836feecd41b0816b7d91a98dd05b7d92634a"
+        },
+        {
+          "path": "scripts/check_projection_fixtures.py",
+          "new_sha256": "e896833f87f6054e5c7618352ef02c836cecd3952afeb725baf927b8c753f906",
+          "old_sha256": "1e2ebb7ee1b29ad23e159523323a00c7b7188423ad946cffb19bb78d01890e22"
+        }
+      ]
+    },
+    {
+      "reason": "Freeze original accelerated field maps, feature detector and root helper proofs. Check the original stateful LLBC contracts and semantic mutations separately from generated-body credit. Retain prior pins and all native obligations.",
+      "changes": [
+        {
+          "path": "audit/native-stateful-checkpoint.json",
+          "new_sha256": "2796eaed83ef49ef2ea06d263c75c3b9d17e62c89e9d032fc07c86832775f41e"
+        },
+        {
+          "path": "scripts/check_projection_fixtures.py",
+          "new_sha256": "f913b4c0fb7ed2ba26cbd5c61d305fd64f3a9164cbc6ef9380a9574aeac3aa46",
+          "old_sha256": "e896833f87f6054e5c7618352ef02c836cecd3952afeb725baf927b8c753f906"
+        },
+        {
+          "path": "scripts/verify_all.py",
+          "new_sha256": "c1a90ea1aeda9ca314899ff89f7df17ddfb9ea636e917be439e7639f54c19323",
+          "old_sha256": "0b325db81eaff28df6b6c71c3ece2e4fc2420a38f67fa7af7a92ae72234a8c53"
+        }
+      ]
+    },
+    {
+      "path": "NATIVE_CALLER_CHAINS.md",
+      "new_sha256": "9fd1dde2703c297253afee07c5533b2eac61233e90434824536e0cce113b7722",
+      "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements."
+    },
+    {
+      "path": "audit/native-caller-checkpoint.json",
+      "new_sha256": "6ec09ba0b80b0d79189f00fa405a1e9857f7192de2d116dd6a2269d68684915f",
+      "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "bbd0db19b779ee0cded10eb18188914619976447eb87425ee37a35749a68594a",
+      "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements.",
+      "old_sha256": "f913b4c0fb7ed2ba26cbd5c61d305fd64f3a9164cbc6ef9380a9574aeac3aa46"
+    },
+    {
+      "path": "scripts/check_variant_fixtures.py",
+      "new_sha256": "03f66e170551b2abb439bbba18999b6508b6a0ec56c1e6bd603e1105e1500365",
+      "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements.",
+      "old_sha256": "8dca0f8f385a1898538da709228a3dbdd23f1d6c6b9027204f7d0d8be5045197"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "bde01fde764fc747ffe1e21bb78ef84071284812020f577e0fa94cafbc649b38",
+      "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements."
+    },
+    {
+      "path": "NATIVE_CALLER_CHAINS.md",
+      "new_sha256": "1b2ff1126fbb8b27f8f04f71793c57304b2805ae7e82bcc3a8be37be7f5f6c5f",
+      "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements.",
+      "old_sha256": "9fd1dde2703c297253afee07c5533b2eac61233e90434824536e0cce113b7722"
+    },
+    {
+      "path": "audit/native-caller-checkpoint.json",
+      "new_sha256": "444e2d5cfb18737c77ae01dc9708bd7f1e7f3975e786e9054024be396724497a",
+      "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements.",
+      "old_sha256": "6ec09ba0b80b0d79189f00fa405a1e9857f7192de2d116dd6a2269d68684915f"
+    },
+    {
+      "path": "NATIVE_CALLER_CHAINS.md",
+      "new_sha256": "6b96d77bd5ad84ca3a5595257523faf5775c93423d6baa2eded05e95d1a6109f",
+      "reason": "Freeze the checked original PCLMUL slice and Horner paths, scoped stateful AVX callers, and degree certificate extraction and refinements.",
+      "old_sha256": "1b2ff1126fbb8b27f8f04f71793c57304b2805ae7e82bcc3a8be37be7f5f6c5f"
+    },
+    {
+      "path": "NATIVE_RECONSTRUCTION.md",
+      "new_sha256": "3a1955592353708b30df40c5fb5443a743451002275c4da8164c37a3344746b2",
+      "reason": "Freeze original reconstruction, work schedule and charge refinements, and exact read-only workspace LLBC admission."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "f61a0838b77dad79e9b204d2ce04c620924bb185badcd818d02f0b2adb7c97a4",
+      "reason": "Freeze original reconstruction, work schedule and charge refinements, and exact read-only workspace LLBC admission.",
+      "old_sha256": "bde01fde764fc747ffe1e21bb78ef84071284812020f577e0fa94cafbc649b38"
+    },
+    {
+      "path": "audit/native-reconstruction-checkpoint.json",
+      "new_sha256": "bae6baacb93dc2d9070dbb07dbdfd10599d3c4d35de76b9ce67d143a3fbd82ea",
+      "reason": "Freeze original reconstruction, work schedule and charge refinements, and exact read-only workspace LLBC admission."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "45c5a1e8cec4ab58ca9e4e326d7449128fa4718badc02c7dd85ac765e785b4d3",
+      "reason": "Freeze original reconstruction, work schedule and charge refinements, and exact read-only workspace LLBC admission.",
+      "old_sha256": "bbd0db19b779ee0cded10eb18188914619976447eb87425ee37a35749a68594a"
+    },
+    {
+      "path": "NATIVE_QUARTIC.md",
+      "new_sha256": "0f7a4311accbf944b75a6792955da66ae548891ce2dc1a7e53a167aed892a381",
+      "reason": "Freeze the original affine and general quartic, both batch inversion loops, and the exact degree-three and degree-four solve frames."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "ff981a4e1aab3edb5e340910538245bbc31efc29bb8817a21697ee0c72ce9422",
+      "reason": "Freeze the original affine and general quartic, both batch inversion loops, and the exact degree-three and degree-four solve frames.",
+      "old_sha256": "f61a0838b77dad79e9b204d2ce04c620924bb185badcd818d02f0b2adb7c97a4"
+    },
+    {
+      "path": "audit/native-quartic-checkpoint.json",
+      "new_sha256": "9c1ca070ae1ae3bf043da0482064945b09e6fe3702a5f38acf4a1b52da0f94d7",
+      "reason": "Freeze the original affine and general quartic, both batch inversion loops, and the exact degree-three and degree-four solve frames."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "35a400b026d1c441da5ab5261899dc1a90d2b6b932268117d9c157e2e3fb18c8",
+      "reason": "Freeze the original affine and general quartic, both batch inversion loops, and the exact degree-three and degree-four solve frames.",
+      "old_sha256": "45c5a1e8cec4ab58ca9e4e326d7449128fa4718badc02c7dd85ac765e785b4d3"
+    },
+    {
+      "path": "scripts/check_variant_fixtures.py",
+      "new_sha256": "fc0933dcfee5448943a3a32c5755ffa50780c9812f4daa2e86f5736aedf16555",
+      "reason": "Freeze the original affine and general quartic, both batch inversion loops, and the exact degree-three and degree-four solve frames.",
+      "old_sha256": "03f66e170551b2abb439bbba18999b6508b6a0ec56c1e6bd603e1105e1500365"
+    },
+    {
+      "path": "NATIVE_CLOSED_LEAF.md",
+      "new_sha256": "89b20e2b1ea0c3d71bd27a50dbd8f9538ce5fd02d653c87268692459787dd0b8",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "0ad9be2b237e1dfdf7f378ecba8952b7a9ece4dfa124cf11f03f450610c0bc80",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization.",
+      "old_sha256": "ff981a4e1aab3edb5e340910538245bbc31efc29bb8817a21697ee0c72ce9422"
+    },
+    {
+      "path": "audit/native-closed-leaf-checkpoint.json",
+      "new_sha256": "6631ceb2701080b491ad05ca287fb20d4b48d90b40f7cae7b0ad658e7abf1273",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "10ea349d01a6672a94c6b0b1f5e03a990ce98522801580a230193de64521edc2",
+      "reason": "Freeze the original closed-leaf phases, checked stack advance, and degree-three/four Newton normalization.",
+      "old_sha256": "35a400b026d1c441da5ab5261899dc1a90d2b6b932268117d9c157e2e3fb18c8"
+    },
+    {
+      "path": "NATIVE_NEWTON_GUARD.md",
+      "new_sha256": "f8d13ab202dd6dc1cda482af41c06eca338711bf59e4b45622f3567aeb072d0f",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "5a9017cbcd8057faf46bb595b36373805f56c823ef00b47555a12c7b885c45af",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics.",
+      "old_sha256": "0ad9be2b237e1dfdf7f378ecba8952b7a9ece4dfa124cf11f03f450610c0bc80"
+    },
+    {
+      "path": "audit/native-newton-guard-checkpoint.json",
+      "new_sha256": "343b89fc0d759b4989ebd91a5ff5d719d4b84ac0fd59ca0b47c2e4f8ba0fb41d",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "8e091c58f4151646623a21056bafbfb002ac41fb224114110fd4434d424c74c1",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics.",
+      "old_sha256": "10ea349d01a6672a94c6b0b1f5e03a990ce98522801580a230193de64521edc2"
+    },
+    {
+      "path": "scripts/check_variant_fixtures.py",
+      "new_sha256": "0c6cf2dc380fa26a969ffe7bc6ce039e31aeaecf36cf111927115b03db148bcb",
+      "reason": "Freeze the original Newton guard, residual loop refinements, and field recurrence semantics.",
+      "old_sha256": "fc0933dcfee5448943a3a32c5755ffa50780c9812f4daa2e86f5736aedf16555"
+    },
+    {
+      "path": "NATIVE_BM_DEGREE_PROBE.md",
+      "new_sha256": "88aba3a7969ce04b91c26dd25c95421ee98d97e57782354312f86007d560c5a6",
+      "reason": "Freeze original DegreeProbe stages, BM entry and scoped loop and branch proofs, and the checked locator variant."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "c1897670fe1a181b109289462ebb9dd93011d3e29e8d7bf78dc9110c59538abb",
+      "reason": "Freeze original DegreeProbe stages, BM entry and scoped loop and branch proofs, and the checked locator variant.",
+      "old_sha256": "5a9017cbcd8057faf46bb595b36373805f56c823ef00b47555a12c7b885c45af"
+    },
+    {
+      "path": "audit/native-bm-degree-probe-checkpoint.json",
+      "new_sha256": "cc8d71808b23ead44e5ada6a4b8863cd87a618df9b86c46c3e61b45d52fa1f66",
+      "reason": "Freeze original DegreeProbe stages, BM entry and scoped loop and branch proofs, and the checked locator variant."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "2c67002992e449733e009027f7ef1adc2fc9c58d6cb4b653dfc6f66d384804fb",
+      "reason": "Freeze original DegreeProbe stages, BM entry and scoped loop and branch proofs, and the checked locator variant.",
+      "old_sha256": "8e091c58f4151646623a21056bafbfb002ac41fb224114110fd4434d424c74c1"
+    },
+    {
+      "path": "scripts/check_variant_fixtures.py",
+      "new_sha256": "cc17e2a0661ed53a4df7401c3280bba2e8f7ba9a87ac0e490bc2ff85b1527c33",
+      "reason": "Freeze original DegreeProbe stages, BM entry and scoped loop and branch proofs, and the checked locator variant.",
+      "old_sha256": "0c6cf2dc380fa26a969ffe7bc6ce039e31aeaecf36cf111927115b03db148bcb"
+    },
+    {
+      "path": "NATIVE_BM_DEGREE_PROBE.md",
+      "new_sha256": "348262e809a74c48d237059f90c04a4415dbf95ef704dcd79af2e4c08eab40c4",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof.",
+      "old_sha256": "88aba3a7969ce04b91c26dd25c95421ee98d97e57782354312f86007d560c5a6"
+    },
+    {
+      "path": "audit/native-bm-degree-probe-checkpoint.json",
+      "new_sha256": "938dd3bd0585a767560b0b1e260591e75e6400fc5c8228ac6cdcd1b6f4927a7d",
+      "reason": "Freeze the accepted original BM branches and characteristic-two parity proof.",
+      "old_sha256": "cc8d71808b23ead44e5ada6a4b8863cd87a618df9b86c46c3e61b45d52fa1f66"
+    },
+    {
+      "path": "NATIVE_BM_LOCATOR.md",
+      "new_sha256": "2b330a3ca4841689cf58af8be9df209e2fb39b30bc1f442054be74ff3f08aed2",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "f4b081cfafb5000db4c0d119a6d9c6fdce7235cea15b52656441b93edef0e82d",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing.",
+      "old_sha256": "c1897670fe1a181b109289462ebb9dd93011d3e29e8d7bf78dc9110c59538abb"
+    },
+    {
+      "path": "audit/native-bm-locator-checkpoint.json",
+      "new_sha256": "7a3ca98cc9a8df5a89b541255d2b8c7b092dfa9198ced0b0f3e619bc7a3c2c70",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "089b4dec48ea733e0248560ba2af2633c895ae266955bb8191096e8af6e23748",
+      "reason": "Freeze exact original BM recurrence and support locator, original root setup and leaf, and verification dispatch and pricing.",
+      "old_sha256": "2c67002992e449733e009027f7ef1adc2fc9c58d6cb4b653dfc6f66d384804fb"
+    },
+    {
+      "path": "NATIVE_DENSE_REDUCER.md",
+      "new_sha256": "f0640a2ca3e32980df3bc36b3b4948bd9bf67d54d093a501460cb432cefc823c",
+      "reason": "Freeze exact original Dense modular shift and table, trace seed and loops, and finite-address and allocation contracts."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "1e687602357de561be7b79a28ae19eda6d2ba6f35beda8eb955017392f5663e6",
+      "reason": "Freeze exact original Dense modular shift and table, trace seed and loops, and finite-address and allocation contracts.",
+      "old_sha256": "f4b081cfafb5000db4c0d119a6d9c6fdce7235cea15b52656441b93edef0e82d"
+    },
+    {
+      "path": "audit/native-dense-reducer-checkpoint.json",
+      "new_sha256": "fe187e8101f85ea869d3f2befce4885a159c3a049f90ce542ed6ec94c39113c3",
+      "reason": "Freeze exact original Dense modular shift and table, trace seed and loops, and finite-address and allocation contracts."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "2e2c0b5448bde5502b02ec44ed20851ed4b1be3db54db97dfa8a4783b6ac9924",
+      "reason": "Freeze exact original Dense modular shift and table, trace seed and loops, and finite-address and allocation contracts.",
+      "old_sha256": "089b4dec48ea733e0248560ba2af2633c895ae266955bb8191096e8af6e23748"
+    },
+    {
+      "path": "NATIVE_DENSE_REDUCER.md",
+      "new_sha256": "1e507a052eda6ffab691e8e3d78c9904cafd2498edccbd46b8164de89248531a",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
+      "old_sha256": "f0640a2ca3e32980df3bc36b3b4948bd9bf67d54d093a501460cb432cefc823c"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "c89a9e135dd5d6f3f45ba22d8df885ade252812d452f5dea5bb5ace576ab22dd",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
+      "old_sha256": "1e687602357de561be7b79a28ae19eda6d2ba6f35beda8eb955017392f5663e6"
+    },
+    {
+      "path": "audit/native-dense-reducer-checkpoint.json",
+      "new_sha256": "cee690a7c8e30b7f3735fe6ca8a8a6aaded3433e8f65f0cd969e569bcf1b94fc",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
+      "old_sha256": "fe187e8101f85ea869d3f2befce4885a159c3a049f90ce542ed6ec94c39113c3"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "87b79b142eefcaca6c5611169021294d50e0ff28abc91eb198ecfbe332e36edf",
+      "reason": "Freeze exact original Dense modular square and the composed original trace stage.",
+      "old_sha256": "2e2c0b5448bde5502b02ec44ed20851ed4b1be3db54db97dfa8a4783b6ac9924"
+    },
+    {
+      "path": "NATIVE_DENSE_DIVISION.md",
+      "new_sha256": "a43dfefa75558fed3d418c0aaee254c7b47c7b97e839a1fe387d8ebe2f9b5b21",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "dd0b5f4577171b3cb976a1ed4358b56f702fb83d8fd23fdde5894d39b1d0f2bf",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics.",
+      "old_sha256": "c89a9e135dd5d6f3f45ba22d8df885ade252812d452f5dea5bb5ace576ab22dd"
+    },
+    {
+      "path": "audit/native-dense-division-checkpoint.json",
+      "new_sha256": "07871ba4a17b5dc67cc46162c5b7eeb285094964277f61cbd7fab13f7e098adb",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "f3a094e9b504cde2d0b731a7b597b2c7a70d42d7226ea3b30ec8c90af7f53bb0",
+      "reason": "Freeze original exact division, monic GCD and accelerated square, and the descending division semantics.",
+      "old_sha256": "87b79b142eefcaca6c5611169021294d50e0ff28abc91eb198ecfbe332e36edf"
+    },
+    {
+      "path": "NATIVE_DENSE_DIVISION.md",
+      "new_sha256": "6658b5cabf54ba63984229fb05b0fd5ba95ca75915f8ae3ad85c6454b04f6f5f",
+      "reason": "Freeze the original AVX modular-square selector and its Dense remainder law, and the native GCD size theorem.",
+      "old_sha256": "a43dfefa75558fed3d418c0aaee254c7b47c7b97e839a1fe387d8ebe2f9b5b21"
+    },
+    {
+      "path": "audit/native-dense-division-checkpoint.json",
+      "new_sha256": "680b967447883dc88713eda00089fede00e69ea9887c772a5568d82ae43f7597",
+      "reason": "Freeze the original AVX modular-square selector and its Dense remainder law, and the native GCD size theorem.",
+      "old_sha256": "07871ba4a17b5dc67cc46162c5b7eeb285094964277f61cbd7fab13f7e098adb"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "655b42d153d5d1d7daff7e59493f71964d07986aabbd2e2404163534e6da6832",
+      "reason": "Freeze the original AVX modular-square selector and its Dense remainder law, and the native GCD size theorem.",
+      "old_sha256": "f3a094e9b504cde2d0b731a7b597b2c7a70d42d7226ea3b30ec8c90af7f53bb0"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "8b85b4bd9e5435022c72159b8c746957c70646e1637d4a2537ca394fdc5b0256",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "0b18a44e0016a00b50d24a4b4952ea8b15f218e8806f99b24b8623d9a255b2e4",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects.",
+      "old_sha256": "dd0b5f4577171b3cb976a1ed4358b56f702fb83d8fd23fdde5894d39b1d0f2bf"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "615763bc1c773956e7aac5ed7cabef4d5dd21af35f8257efed91f6f0c38c6603",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects."
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "857a68a1f0dc57f8f8d127b20780ff909b3b6eb17e2ffcc8a5eb385cc71f8a72",
+      "reason": "Freeze original root dispatch and factor division, and captured AVX square heap effects.",
+      "old_sha256": "655b42d153d5d1d7daff7e59493f71964d07986aabbd2e2404163534e6da6832"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "45af1fd6ffa546257c4554e8f25bcfbdad25679e89d8c24706d7722ab50adec8",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "8b85b4bd9e5435022c72159b8c746957c70646e1637d4a2537ca394fdc5b0256"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "cc5c7df06e53bcd8f15fe1c8d2119f6f66864493e7b9a909e8ec80560b0df282",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "0b18a44e0016a00b50d24a4b4952ea8b15f218e8806f99b24b8623d9a255b2e4"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "6da94b38b43a799382627add0cb73d07ae3ddf4f80a98fef1f57adcd8b1b624d",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "615763bc1c773956e7aac5ed7cabef4d5dd21af35f8257efed91f6f0c38c6603"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "624891b7fb03c54afb925bdf1522722fe6a7f7af1a0a7be7d64db7d656c8aba2",
+      "reason": "Freeze original affine splitter body and bind it to root dispatch.",
+      "old_sha256": "857a68a1f0dc57f8f8d127b20780ff909b3b6eb17e2ffcc8a5eb385cc71f8a72"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "694e4031beeffcd5509db0794b2a8336f330b716d1bc036255a9d1decc95bcee",
+      "reason": "Freeze original affine subspace table and both affine root stage wrappers.",
+      "old_sha256": "45af1fd6ffa546257c4554e8f25bcfbdad25679e89d8c24706d7722ab50adec8"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "229838c7730866a1ca214b5f90423cfcbdc28b80b8f486bbe370c7d976420d6b",
+      "reason": "Freeze original affine subspace table and both affine root stage wrappers.",
+      "old_sha256": "cc5c7df06e53bcd8f15fe1c8d2119f6f66864493e7b9a909e8ec80560b0df282"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "2cdc8f5a7160c0a63d35929d5b91523f51605bd7904977898f03ef73eefc0055",
+      "reason": "Freeze original affine subspace table and both affine root stage wrappers.",
+      "old_sha256": "6da94b38b43a799382627add0cb73d07ae3ddf4f80a98fef1f57adcd8b1b624d"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "44913881c4e19916460e6bcda7c43dea53a41ce3438d91881c4cd9b80445a989",
+      "reason": "Freeze original affine subspace table and both affine root stage wrappers.",
+      "old_sha256": "624891b7fb03c54afb925bdf1522722fe6a7f7af1a0a7be7d64db7d656c8aba2"
+    },
+    {
+      "path": "NATIVE_DENSE_DIVISION.md",
+      "new_sha256": "7bc66fd0e205e372f4492b801782b7af8a5cf59bd300896e4b7633612da6b9bc",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "6658b5cabf54ba63984229fb05b0fd5ba95ca75915f8ae3ad85c6454b04f6f5f"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "f67532fc38aea5f67abdb32b7bb41b3ca43f3354f1c7f4e38ba1220bf4d61e56",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "694e4031beeffcd5509db0794b2a8336f330b716d1bc036255a9d1decc95bcee"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "926579e1ddabc1d1a8bc0087a2bb4ce06bf74330d60777ad9fa5292ab47fbf03",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "229838c7730866a1ca214b5f90423cfcbdc28b80b8f486bbe370c7d976420d6b"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "cc6ea897fda29d1539bd4a16b493b740c9d20e7d3963b6e31603787a41662d6f",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "2cdc8f5a7160c0a63d35929d5b91523f51605bd7904977898f03ef73eefc0055"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "167ea92d3d4049bb4cb0df61b7ffc9da0ed42bb05a3527f7d8d2f2c9f2d88552",
+      "reason": "Freeze direct original Dense division, factor composition, and affine child coset proof.",
+      "old_sha256": "44913881c4e19916460e6bcda7c43dea53a41ce3438d91881c4cd9b80445a989"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "cafea1149952f64224096c3f1a1efd4dd38be4cb6b1ce71b2b7c42932e2d6f88",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "f67532fc38aea5f67abdb32b7bb41b3ca43f3354f1c7f4e38ba1220bf4d61e56"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "b5134eeed7300ce35559a4f61b667ebf772a5c2d6f24a3149f524bd7986a9216",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "926579e1ddabc1d1a8bc0087a2bb4ce06bf74330d60777ad9fa5292ab47fbf03"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "c1683d698a963b2c301c81042e1894b89116352e423e4940956d28560cacd060",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "cc6ea897fda29d1539bd4a16b493b740c9d20e7d3963b6e31603787a41662d6f"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "aa27c30b9f8d5835f9750f085758afa38b11c7b76919bbd67354c48aff007109",
+      "reason": "Freeze original affine enumeration and selector and allocated AVX linear update.",
+      "old_sha256": "167ea92d3d4049bb4cb0df61b7ffc9da0ed42bb05a3527f7d8d2f2c9f2d88552"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "b9c22e9d7ec9b5de35d4ce6972c6e6ed6fce88700efc87401e8b194fb262e8c7",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "cafea1149952f64224096c3f1a1efd4dd38be4cb6b1ce71b2b7c42932e2d6f88"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "5bc188ff6be8eae0d0507dc816bb1eb5a2a1e1a3e2ec21319d233d9942c03c07",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "b5134eeed7300ce35559a4f61b667ebf772a5c2d6f24a3149f524bd7986a9216"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "cd8a54115990ad44c0c6a7e1a62b171580d4be89edfb99aec445a7cd23956fa3",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "c1683d698a963b2c301c81042e1894b89116352e423e4940956d28560cacd060"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "637b9d692082a29848c8cfbc47b70e14a8abe2770e4fb94282efa9604f1ff329",
+      "reason": "Freeze native solve map, enumeration completeness, and AVX Horner kernel and heap effects.",
+      "old_sha256": "aa27c30b9f8d5835f9750f085758afa38b11c7b76919bbd67354c48aff007109"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "b6902c65e948eac74ecf32bb8aa4921eaea1b145bea19629cfa75b89bb5b7b22",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence.",
+      "old_sha256": "b9c22e9d7ec9b5de35d4ce6972c6e6ed6fce88700efc87401e8b194fb262e8c7"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "7480a55379bb1d620bfd34adef127a8040aebddbec1ae4cd5ba4ceeb64d40e05",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence.",
+      "old_sha256": "5bc188ff6be8eae0d0507dc816bb1eb5a2a1e1a3e2ec21319d233d9942c03c07"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "c440b6c8ab9d8a174d0de1dc2d0fc35d789f00c9a837634f66ce2c4268f575bc",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence.",
+      "old_sha256": "cd8a54115990ad44c0c6a7e1a62b171580d4be89edfb99aec445a7cd23956fa3"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "8bcb657f97144ca651a5a45b5d1d74c4c88375009990669f025541c6bc86043f",
+      "reason": "Freeze original affine multiple, native root dispatcher specialization and kernel independence.",
+      "old_sha256": "637b9d692082a29848c8cfbc47b70e14a8abe2770e4fb94282efa9604f1ff329"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "2f95a49a790bd440cd20d2f1186af47dd68a6eb0512aa77660235e56440a418c",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "b6902c65e948eac74ecf32bb8aa4921eaea1b145bea19629cfa75b89bb5b7b22"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "b6a287462ad3be03a09782e66b1d021c6d5dd7eb7297ec90a39b91c6c7f7cbc6",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "7480a55379bb1d620bfd34adef127a8040aebddbec1ae4cd5ba4ceeb64d40e05"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "a67d93c921c9dcd6473d5b1ca43c683e3bc9abba20b3edd0172e761924407f8c",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "c440b6c8ab9d8a174d0de1dc2d0fc35d789f00c9a837634f66ce2c4268f575bc"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "296a252460631b2cb8be26a783ed95ba4c114bc01c74daea13d525b215ebcbf3",
+      "reason": "Freeze native affine minimum, solve-map fibers, factor traversal invariants, and exact AVX capacity-18 encoding.",
+      "old_sha256": "8bcb657f97144ca651a5a45b5d1d74c4c88375009990669f025541c6bc86043f"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "f5bf8a82356a49857346ebb438f261e706c11348328e6c20553474e8ab53265e",
+      "reason": "Freeze the original AVX insertion-base lookup and affine GCD retry and child partitions.",
+      "old_sha256": "2f95a49a790bd440cd20d2f1186af47dd68a6eb0512aa77660235e56440a418c"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "f6443e1ee68da25b1d095eac87b2a246097b04b9ed94f2cd03ebc95c3861e9b5",
+      "reason": "Freeze the original AVX insertion-base lookup and affine GCD retry and child partitions.",
+      "old_sha256": "b6a287462ad3be03a09782e66b1d021c6d5dd7eb7297ec90a39b91c6c7f7cbc6"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "ef774880b4fa8e1aa37635efc1946f7c2b880ebe881a35851be4354f6e4ba430",
+      "reason": "Freeze the original AVX insertion-base lookup and affine GCD retry and child partitions.",
+      "old_sha256": "a67d93c921c9dcd6473d5b1ca43c683e3bc9abba20b3edd0172e761924407f8c"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "88c4ea95e73ef0ecd6bc5693ff313b8bc191a44d0f537cb22a869aed2a86139d",
+      "reason": "Freeze the original AVX insertion-base lookup and affine GCD retry and child partitions.",
+      "old_sha256": "296a252460631b2cb8be26a783ed95ba4c114bc01c74daea13d525b215ebcbf3"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "6b8c7f89d42be0064df5c02b971115c7ae025c8dcf005493276e2d5731f7dfb5",
+      "reason": "Freeze native traversal admission, exact affine table writeback and split rows, and original AVX insertion table generation.",
+      "old_sha256": "f5bf8a82356a49857346ebb438f261e706c11348328e6c20553474e8ab53265e"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "57c55da3aa5cdeff1c350b50cb0ac3787a1254eb78d12dd1fb1ec4a24127dc07",
+      "reason": "Freeze native traversal admission, exact affine table writeback and split rows, and original AVX insertion table generation.",
+      "old_sha256": "f6443e1ee68da25b1d095eac87b2a246097b04b9ed94f2cd03ebc95c3861e9b5"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "358baa508d818cce8bd2b6591637ce1e0556b38db405eba9de7ead63a1b7ef46",
+      "reason": "Freeze native traversal admission, exact affine table writeback and split rows, and original AVX insertion table generation.",
+      "old_sha256": "ef774880b4fa8e1aa37635efc1946f7c2b880ebe881a35851be4354f6e4ba430"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "04bb63f1dbcea0d2e66ab6d8de1c4b2e897a43e79d2cbd928d1207984df3a2d7",
+      "reason": "Freeze native traversal admission, exact affine table writeback and split rows, and original AVX insertion table generation.",
+      "old_sha256": "88c4ea95e73ef0ecd6bc5693ff313b8bc191a44d0f537cb22a869aed2a86139d"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "9274a01f64c222dfaae7e3f833ca917ef515ecb86fbd4ac3225c820debf5dff8",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "6b8c7f89d42be0064df5c02b971115c7ae025c8dcf005493276e2d5731f7dfb5"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "816c565b00f3a02a19e081cebe863a6f4e4fb28b90de0885c3f22f646127af82",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "57c55da3aa5cdeff1c350b50cb0ac3787a1254eb78d12dd1fb1ec4a24127dc07"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "ce3c974c58b2a4f44381a28f9cfaff0ab9c5f69e0e493434bc88d142a7b640b1",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "358baa508d818cce8bd2b6591637ce1e0556b38db405eba9de7ead63a1b7ef46"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "e0e1b213d83bc0e0f19217cd25f19e2577e8417ea3e608816ade929aa8e92044",
+      "reason": "Freeze original GF64 affine selection, admitted proper division, trace retry and the original AVX static initializer.",
+      "old_sha256": "04bb63f1dbcea0d2e66ab6d8de1c4b2e897a43e79d2cbd928d1207984df3a2d7"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "3d0ffc0666d416f11bfe4f766d1fc79a5168547c8161eb226139a95f11154a70",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "9274a01f64c222dfaae7e3f833ca917ef515ecb86fbd4ac3225c820debf5dff8"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "cfcb14a62f4ea9653d4dac5aaecdf94b984ccf47b5c747b14500df016b5c3bb2",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "816c565b00f3a02a19e081cebe863a6f4e4fb28b90de0885c3f22f646127af82"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "97e224faca9cb84af4e4cc362c0ed58a73033598457e143186c3a4e68c01dab7",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "ce3c974c58b2a4f44381a28f9cfaff0ab9c5f69e0e493434bc88d142a7b640b1"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "ef676e9f988eea04b7a8d4d4e74ee141a7727243bd63b7769a6d2c8c4332aaf9",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "e0e1b213d83bc0e0f19217cd25f19e2577e8417ea3e608816ade929aa8e92044"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "13cfc7d502886e6b916fb710a62e2f4f974bb044e3441f837dbdc4f7b0859eec",
+      "reason": "Freeze original native deflation, exact trace acceptance and AVX insertion bodies.",
+      "old_sha256": "3d0ffc0666d416f11bfe4f766d1fc79a5168547c8161eb226139a95f11154a70"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "ce48c6da46d411735b009f5c362bc38880c85749953286c4cac7829e88973180",
+      "reason": "Freeze original candidate and AVX free dispatch, normalized reborrowed trace and GCD frames, and traversal entry and leaf emission.",
+      "old_sha256": "13cfc7d502886e6b916fb710a62e2f4f974bb044e3441f837dbdc4f7b0859eec"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "24e18d78db41de193be3d85a81216e1a57db593afaafafa597846a9eaa6610fe",
+      "reason": "Freeze original candidate and AVX free dispatch, normalized reborrowed trace and GCD frames, and traversal entry and leaf emission.",
+      "old_sha256": "cfcb14a62f4ea9653d4dac5aaecdf94b984ccf47b5c747b14500df016b5c3bb2"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "a2ca7e0cccb8d9de3ea1ae127ac3b69535af3191815e5167d7b3d80875524799",
+      "reason": "Freeze original candidate and AVX free dispatch, normalized reborrowed trace and GCD frames, and traversal entry and leaf emission.",
+      "old_sha256": "97e224faca9cb84af4e4cc362c0ed58a73033598457e143186c3a4e68c01dab7"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "8b3552e3786cfeab37d4fe35ae08683357664b1b9a63465cf15a54c00eb79f8c",
+      "reason": "Freeze original candidate and AVX free dispatch, normalized reborrowed trace and GCD frames, and traversal entry and leaf emission.",
+      "old_sha256": "ef676e9f988eea04b7a8d4d4e74ee141a7727243bd63b7769a6d2c8c4332aaf9"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "3f6bfde5a9d977901aabbff7ec7f8bdf21e0f92507056b10b3ac35167dd2e41c",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs.",
+      "old_sha256": "ce48c6da46d411735b009f5c362bc38880c85749953286c4cac7829e88973180"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "396a92bb8018aff881b5e1f86aabc05f45594e2d3b88989a56182750e01a5c27",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs.",
+      "old_sha256": "24e18d78db41de193be3d85a81216e1a57db593afaafafa597846a9eaa6610fe"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "2d5815e968ddf90f423602aacdedd23ad5eabca37ab168fa95250f2c25802b9d",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs.",
+      "old_sha256": "a2ca7e0cccb8d9de3ea1ae127ac3b69535af3191815e5167d7b3d80875524799"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "87a716ce57f7ed03dea2dcea0bbc31db94133400d188fe60333aef7dd9199be1",
+      "reason": "Freeze stock native decoder driver, candidate row, and exact candidate-to-traversal and affine-emission proofs.",
+      "old_sha256": "8b3552e3786cfeab37d4fe35ae08683357664b1b9a63465cf15a54c00eb79f8c"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "48faece86d6444b119311f0d2df1f12d5e06223936b67549a6304f387523bd99",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "3f6bfde5a9d977901aabbff7ec7f8bdf21e0f92507056b10b3ac35167dd2e41c"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "0be2963a92222a6c845b579c4238a3733627735210659feaa7cc07059e7c263f",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "396a92bb8018aff881b5e1f86aabc05f45594e2d3b88989a56182750e01a5c27"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "918e9724bace97d5674ac331f332c294fb4b07788de18cf54a64eb2a1085107d",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "2d5815e968ddf90f423602aacdedd23ad5eabca37ab168fa95250f2c25802b9d"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "b549eaee8117e367e7a1e221af0d16fe7c4cddeac2633aa32b470ad35c0b54bd",
+      "reason": "Freeze original completed-result borrow, native traversal locator product, local ranking and modeled AVX tile arithmetic.",
+      "old_sha256": "87a716ce57f7ed03dea2dcea0bbc31db94133400d188fe60333aef7dd9199be1"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "e83e391ea7d2c9c371870173f2407dcdb72164988711b48effe1e85e37d810f5",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "48faece86d6444b119311f0d2df1f12d5e06223936b67549a6304f387523bd99"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "19c71e53a19ae17ecd8b1fcc47edade44207cbbbdbf7a3bb5d54675c771dfb2b",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "0be2963a92222a6c845b579c4238a3733627735210659feaa7cc07059e7c263f"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "e9094b793e3eb7df45b79e59588bc7f62a0f823c450d51e7167f39f4c15ac6f7",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "918e9724bace97d5674ac331f332c294fb4b07788de18cf54a64eb2a1085107d"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "c41f0fb7cd70a17aac817afe92d1edc1fa24cd8565c00bcb9446bcb8925fa9dc",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "b549eaee8117e367e7a1e221af0d16fe7c4cddeac2633aa32b470ad35c0b54bd"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "beed7da2f0964168a161dac591c4d41bbb003f2c21ca876baf716439a5e995a6",
+      "reason": "Freeze original finish, canonicalization, shared normalization and bucket routing with strengthened traversal invariant.",
+      "old_sha256": "c41f0fb7cd70a17aac817afe92d1edc1fa24cd8565c00bcb9446bcb8925fa9dc"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "751e98e01ed1aa111b395fe1dc1e9f6d388a3b3119fce96030a22645161610df",
+      "reason": "Freeze exact native BM, traversal admission and completed canonical locator composition.",
+      "old_sha256": "e83e391ea7d2c9c371870173f2407dcdb72164988711b48effe1e85e37d810f5"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "f6785f28dfe4d50b2b4d0dbf02488c959d9bccf1e1da76194b18b7b85bbda95b",
+      "reason": "Freeze exact native BM, traversal admission and completed canonical locator composition.",
+      "old_sha256": "19c71e53a19ae17ecd8b1fcc47edade44207cbbbdbf7a3bb5d54675c771dfb2b"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "7d2baed4cef054ba20af3b8ab07df9dfc0ea7fa612f482ddbb45480939bdfd4b",
+      "reason": "Freeze exact native BM, traversal admission and completed canonical locator composition.",
+      "old_sha256": "e9094b793e3eb7df45b79e59588bc7f62a0f823c450d51e7167f39f4c15ac6f7"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "dfa3ddd4cb28988b39ae4747d8c647556f2d3dac6a75e268221f8a12173d7bb7",
+      "reason": "Freeze the exact paid native Trace and GCD traversal invariant and rank.",
+      "old_sha256": "751e98e01ed1aa111b395fe1dc1e9f6d388a3b3119fce96030a22645161610df"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "d9a9ee1e53fad0cc7d572f92cc180a1e9fe80dda5403a20704e39869dc9c0851",
+      "reason": "Freeze the exact paid native Trace and GCD traversal invariant and rank.",
+      "old_sha256": "7d2baed4cef054ba20af3b8ab07df9dfc0ea7fa612f482ddbb45480939bdfd4b"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "619cd4da26f7101d86e72461e0e01e5c1397cf547e0ceed3082c8aec7deadfe7",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition.",
+      "old_sha256": "dfa3ddd4cb28988b39ae4747d8c647556f2d3dac6a75e268221f8a12173d7bb7"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "9346627e85db0e7dba1ba9e31e531ba47ee52982454467423bf604e05eda5821",
+      "reason": "Freeze paid native affine split, GCD, ordinary leaf and ranked finish composition.",
+      "old_sha256": "d9a9ee1e53fad0cc7d572f92cc180a1e9fe80dda5403a20704e39869dc9c0851"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "d58e5c62c0ae6b2f626cf4ceed96fa2f16b56558da0d606f977bb1f4cccd2b2d",
+      "reason": "Freeze native AVX locator entry, affine emission, pop metadata and factor-stage charge exits.",
+      "old_sha256": "619cd4da26f7101d86e72461e0e01e5c1397cf547e0ceed3082c8aec7deadfe7"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "7e20989e08a7a7f9df2e6302996231b9223f1b3af6e809da638f23a7ad727cc0",
+      "reason": "Freeze native AVX locator entry, affine emission, pop metadata and factor-stage charge exits.",
+      "old_sha256": "f6785f28dfe4d50b2b4d0dbf02488c959d9bccf1e1da76194b18b7b85bbda95b"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "58a0dddd046ae330c8e7d1dfa6392ff08dff0c0bb90db6c002e4abed7a34cb5e",
+      "reason": "Freeze native AVX locator entry, affine emission, pop metadata and factor-stage charge exits.",
+      "old_sha256": "9346627e85db0e7dba1ba9e31e531ba47ee52982454467423bf604e05eda5821"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "a471cfa6b29158fc1cb301d66d22d741afe5c6031618af9a56983359112c97fd",
+      "reason": "Freeze native AVX locator entry, affine emission, pop metadata and factor-stage charge exits.",
+      "old_sha256": "beed7da2f0964168a161dac591c4d41bbb003f2c21ca876baf716439a5e995a6"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "a989ea4821d537e3ec7272248638426a11b477eddd2d73b4b88fa0ec84703533",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads.",
+      "old_sha256": "d58e5c62c0ae6b2f626cf4ceed96fa2f16b56558da0d606f977bb1f4cccd2b2d"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "091afc79ffd4bcc65ae5f5f0dc76a698314821b906cc74de0a85780f16826c27",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads.",
+      "old_sha256": "7e20989e08a7a7f9df2e6302996231b9223f1b3af6e809da638f23a7ad727cc0"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "b4f7724b8e8f7403581798555a69861f466b5175fdc6b3e70569194f6d0c6bf5",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads.",
+      "old_sha256": "58a0dddd046ae330c8e7d1dfa6392ff08dff0c0bb90db6c002e4abed7a34cb5e"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "417bee837937790b21e1b9a06dbd3d6000a0c7bb0d30fff55b63e8161e190835",
+      "reason": "Freeze original AVX recurrence and rebuilt verifier composition with exact masked reads.",
+      "old_sha256": "a471cfa6b29158fc1cb301d66d22d741afe5c6031618af9a56983359112c97fd"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "a2b98682cf789a1cd485f73070f035ff803898cbedf86c0e41291fba3f486969",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition.",
+      "old_sha256": "a989ea4821d537e3ec7272248638426a11b477eddd2d73b4b88fa0ec84703533"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "d2f10ccdddc16d6315da00dfac8538e12097214c899a33a977728132dae3e52d",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition.",
+      "old_sha256": "091afc79ffd4bcc65ae5f5f0dc76a698314821b906cc74de0a85780f16826c27"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "b7c0dc0860722ee04fb39a58717319ba99cec877274b86a5907757e96a6e2b26",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition.",
+      "old_sha256": "b4f7724b8e8f7403581798555a69861f466b5175fdc6b3e70569194f6d0c6bf5"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "230fac9fdf68a414ace70abd040949d4bc1cd55f0f09b5afcda32056abafc7f9",
+      "reason": "Freeze exact AVX tile translation, recurrence trait entry and degree-18 public seed composition.",
+      "old_sha256": "417bee837937790b21e1b9a06dbd3d6000a0c7bb0d30fff55b63e8161e190835"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "f49ceca004a0751952b7d22c69f4a221a89180c40b3f1b8923ad298b453ca3ef",
+      "reason": "Freeze original row-local candidate normalization and complete native AVX degree-18 rebuilt verification.",
+      "old_sha256": "a2b98682cf789a1cd485f73070f035ff803898cbedf86c0e41291fba3f486969"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "84108789e3350d4b9b81b5010e545cd782e3a71f15e6e434f03bc1ca9b9263d5",
+      "reason": "Freeze original row-local candidate normalization and complete native AVX degree-18 rebuilt verification.",
+      "old_sha256": "d2f10ccdddc16d6315da00dfac8538e12097214c899a33a977728132dae3e52d"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "7ac11f03cc5a1243691c262c17d8f3b28d3e02d4b3ebde643cf6a1311feb831f",
+      "reason": "Freeze original row-local candidate normalization and complete native AVX degree-18 rebuilt verification.",
+      "old_sha256": "b7c0dc0860722ee04fb39a58717319ba99cec877274b86a5907757e96a6e2b26"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "e9dc1c9f9465b9c0e58cdf47bc5d7a60fa6c2a0a2523506cb6d708fb43128828",
+      "reason": "Freeze original row-local candidate normalization and complete native AVX degree-18 rebuilt verification.",
+      "old_sha256": "230fac9fdf68a414ace70abd040949d4bc1cd55f0f09b5afcda32056abafc7f9"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "0bb5c83d62c5cffcdd7a88b60c0486373a471ad1e1367001de25b1089822f3d8",
+      "reason": "Freeze original AVX scalar delegates and the native verification-to-finish trace.",
+      "old_sha256": "f49ceca004a0751952b7d22c69f4a221a89180c40b3f1b8923ad298b453ca3ef"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "a52262eb208ba1e80bc6d9dd54ed658d354331fa2268180db5edc83f3dfb7cbe",
+      "reason": "Freeze original AVX scalar delegates and the native verification-to-finish trace.",
+      "old_sha256": "84108789e3350d4b9b81b5010e545cd782e3a71f15e6e434f03bc1ca9b9263d5"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "9b113346b2da8356195b80d30adce22d9f82df3844ca9ba80098d96170bbfde1",
+      "reason": "Freeze original AVX scalar delegates and the native verification-to-finish trace.",
+      "old_sha256": "7ac11f03cc5a1243691c262c17d8f3b28d3e02d4b3ebde643cf6a1311feb831f"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "c4bf95707feeebc5956f32f84c243f5d7d48e5a409785b73130782a091383f19",
+      "reason": "Freeze original AVX scalar delegates and the native verification-to-finish trace.",
+      "old_sha256": "e9dc1c9f9465b9c0e58cdf47bc5d7a60fa6c2a0a2523506cb6d708fb43128828"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "bbf1a6708e070274ace46ba9e8d31807ea516eee5d7fb7c4ced0ca89781feb2f",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification.",
+      "old_sha256": "0bb5c83d62c5cffcdd7a88b60c0486373a471ad1e1367001de25b1089822f3d8"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "dd817b118e0db9bde7e378cd3d48666c5492ec4db16c37862ad04b6680c907b4",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification.",
+      "old_sha256": "a52262eb208ba1e80bc6d9dd54ed658d354331fa2268180db5edc83f3dfb7cbe"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "f59e9bf3c14598be95d124d517edba58a7b34c997ad9d00e771fddf2285bbb94",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification.",
+      "old_sha256": "9b113346b2da8356195b80d30adce22d9f82df3844ca9ba80098d96170bbfde1"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "8277bced24240ddbad21c78c593cb61ce946a39d2b07c61bc669f7b24ed36cea",
+      "reason": "Freeze exact row configuration, native affine preparation and all-degree rebuilt verification.",
+      "old_sha256": "c4bf95707feeebc5956f32f84c243f5d7d48e5a409785b73130782a091383f19"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "54caeb676fd8fb7b9556b82a955b441a8f7aee589ce15428219465c038589104",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits.",
+      "old_sha256": "bbf1a6708e070274ace46ba9e8d31807ea516eee5d7fb7c4ced0ca89781feb2f"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "d150b36d0fb016d20206376d8a21be97ad5139c996fe7af12aa1246e07b477f2",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits.",
+      "old_sha256": "dd817b118e0db9bde7e378cd3d48666c5492ec4db16c37862ad04b6680c907b4"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "72219144de1df3cb4b5987f0ef093bcbb04b4e8b0fc7fb00a48de4966a180160",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits.",
+      "old_sha256": "f59e9bf3c14598be95d124d517edba58a7b34c997ad9d00e771fddf2285bbb94"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "44a7f864a8fcb1c495afbded3d4c6d0fefe1676d967f521cf4dee236341f5b59",
+      "reason": "Freeze original publication frames, allocated AVX slice effects, sparse insertion and root charge exits.",
+      "old_sha256": "8277bced24240ddbad21c78c593cb61ce946a39d2b07c61bc669f7b24ed36cea"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "b40fc22859385dda15123e0aeb142ef786b03aeef7fdd3d5231a23e5f1529a20",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
+      "old_sha256": "54caeb676fd8fb7b9556b82a955b441a8f7aee589ce15428219465c038589104"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "2d41b8da0bd4383b52315061eafb30dc37dd57d0db5af2ea9d45209462441797",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
+      "old_sha256": "d150b36d0fb016d20206376d8a21be97ad5139c996fe7af12aa1246e07b477f2"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "c9344c4b0ecad26d10c1ff4cf6eb01c9c9eec37c24698d4d2087958e2a1c7115",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
+      "old_sha256": "72219144de1df3cb4b5987f0ef093bcbb04b4e8b0fc7fb00a48de4966a180160"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "b153c6fd45bd0bac8772bf51e115003a38f1979f4eb698fdcffd3cdf2e6a8aaa",
+      "reason": "Freeze native PCLMUL rebuilt verification and exact consecutive root-stage handoffs.",
+      "old_sha256": "44a7f864a8fcb1c495afbded3d4c6d0fefe1676d967f521cf4dee236341f5b59"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "b535491215e6200e4b3244424e5f64c06052059d37e8ce78abbba189144201ae",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "b40fc22859385dda15123e0aeb142ef786b03aeef7fdd3d5231a23e5f1529a20"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "2ba70c946295aa5328d8640f26e66044a7d4ec75ffc2f1352998a87262fdd931",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "2d41b8da0bd4383b52315061eafb30dc37dd57d0db5af2ea9d45209462441797"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "2b308364e2b7982bfb76428b9ee7f81db35cf29f0860cd9768e272b563886968",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "c9344c4b0ecad26d10c1ff4cf6eb01c9c9eec37c24698d4d2087958e2a1c7115"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "2317cf3bb8719e7b9dcdac3dfe6a40ded4b5c6f6a583d683a435b4347933f9e7",
+      "reason": "Freeze exact row dispatch, wire difference, work envelope and ordered publication write.",
+      "old_sha256": "b153c6fd45bd0bac8772bf51e115003a38f1979f4eb698fdcffd3cdf2e6a8aaa"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "c2f255055eb009be3209514bbc95e3a479c5d338e05a24bfcae71db8010e9f2e",
+      "reason": "Freeze exact paid verification acceptance on native backends and first non-affine Trace entry.",
+      "old_sha256": "b535491215e6200e4b3244424e5f64c06052059d37e8ce78abbba189144201ae"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "1769765d80c66ef4f6f6372d9149c1626ed1a7ffda8cc10d6a6294572a3f42b8",
+      "reason": "Freeze exact paid verification acceptance on native backends and first non-affine Trace entry.",
+      "old_sha256": "2b308364e2b7982bfb76428b9ee7f81db35cf29f0860cd9768e272b563886968"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "0e223d4258e3287e170a25cedead6d7e9adbfeb5c278b90d6005bbca1df1ddae",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "c2f255055eb009be3209514bbc95e3a479c5d338e05a24bfcae71db8010e9f2e"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "710c4df0b4d07673036fc28e4ae2024d28d0330aa4e03a3d2ce2ced739af81e0",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "2ba70c946295aa5328d8640f26e66044a7d4ec75ffc2f1352998a87262fdd931"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "7770d8dc055320497cac8dcadfd472c0f0a4814978287d3fbe7f07b675b6972f",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "1769765d80c66ef4f6f6372d9149c1626ed1a7ffda8cc10d6a6294572a3f42b8"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "b7f9feacfaa87eeb5ab3e5d618771ba8da9b531a24679e0273cce9312cf712ff",
+      "reason": "Freeze exact native verification finish, small-factor continuations and public report readback.",
+      "old_sha256": "2317cf3bb8719e7b9dcdac3dfe6a40ded4b5c6f6a583d683a435b4347933f9e7"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "5289a6000ab503954e4bb7a011940fc1383b37bbdefd64c2210f4c27761b5743",
+      "reason": "Freeze original probe, completion, shape and ordered budget bodies and recovered support finish.",
+      "old_sha256": "0e223d4258e3287e170a25cedead6d7e9adbfeb5c278b90d6005bbca1df1ddae"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "c909486ca2ceaa01f6f1ddde775f65ff06fe36ec3176460fae61c62bd52c6c36",
+      "reason": "Freeze original probe, completion, shape and ordered budget bodies and recovered support finish.",
+      "old_sha256": "710c4df0b4d07673036fc28e4ae2024d28d0330aa4e03a3d2ce2ced739af81e0"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "93c111ef4fff85eecda7a4b8e5f0e18118e50f8591ea57549dc405f9bee033ad",
+      "reason": "Freeze original probe, completion, shape and ordered budget bodies and recovered support finish.",
+      "old_sha256": "7770d8dc055320497cac8dcadfd472c0f0a4814978287d3fbe7f07b675b6972f"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "ef8b1378437c79ebc3b15fbde495e2774efb6057cfec1b8f461db3501606814a",
+      "reason": "Freeze original probe, completion, shape and ordered budget bodies and recovered support finish.",
+      "old_sha256": "b7f9feacfaa87eeb5ab3e5d618771ba8da9b531a24679e0273cce9312cf712ff"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "bcd75379e569e1a1873270ee74f0d3bd979c9a2b9e7721bb4d0069a74e6e8539",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search.",
+      "old_sha256": "5289a6000ab503954e4bb7a011940fc1383b37bbdefd64c2210f4c27761b5743"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "62d745a05d5b1e1a6b36a9537814b7848a1a85d76f8c24e8b3acea908512a7b1",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search.",
+      "old_sha256": "c909486ca2ceaa01f6f1ddde775f65ff06fe36ec3176460fae61c62bd52c6c36"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "71444668f6e1493ac5562d6e0ab79def8e1306159f04960a7d37fcc57e3139a5",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search.",
+      "old_sha256": "93c111ef4fff85eecda7a4b8e5f0e18118e50f8591ea57549dc405f9bee033ad"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "ac4f90450d7ace64611c95c73a213900c3d705f7877bc2424910a6a1a8eff45c",
+      "reason": "Freeze all native AVX encoder routes, native request permissions and exact paid Trace search.",
+      "old_sha256": "ef8b1378437c79ebc3b15fbde495e2774efb6057cfec1b8f461db3501606814a"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "663f8a823bc490c93b9d4fb0434353b1c56bf98ea5eaf86c14a227b3eb3a2e97",
+      "reason": "Freeze the admitted native V3 work chain and complete paid non-affine split node.",
+      "old_sha256": "bcd75379e569e1a1873270ee74f0d3bd979c9a2b9e7721bb4d0069a74e6e8539"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "db8028e6851fa026906c58b19cb2f1517b8456b84f6612254783cb3d9baa7777",
+      "reason": "Freeze the admitted native V3 work chain and complete paid non-affine split node.",
+      "old_sha256": "62d745a05d5b1e1a6b36a9537814b7848a1a85d76f8c24e8b3acea908512a7b1"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "2374de58613843bf9f68ed68bc8dc67346a3182a395a3488ed606960ffabb451",
+      "reason": "Freeze the admitted native V3 work chain and complete paid non-affine split node.",
+      "old_sha256": "71444668f6e1493ac5562d6e0ab79def8e1306159f04960a7d37fcc57e3139a5"
+    },
+    {
+      "path": "scripts/check_projection_fixtures.py",
+      "new_sha256": "771c6a0cf84230b2d59e42cbda72ded564d920366be8350a796dbd63d5d84555",
+      "reason": "Freeze the admitted native V3 work chain and complete paid non-affine split node.",
+      "old_sha256": "ac4f90450d7ace64611c95c73a213900c3d705f7877bc2424910a6a1a8eff45c"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "ff6e790c5678e649cff916753c01b17bf705518fb9ec95d336315ebbf9fa73cd",
+      "reason": "Freeze exact non-affine reducer readiness and paid node starting at reducer preparation.",
+      "old_sha256": "663f8a823bc490c93b9d4fb0434353b1c56bf98ea5eaf86c14a227b3eb3a2e97"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "9aea3dce72db12fbcdd19646c041b107284ca369b8d6d4462435db853c53776a",
+      "reason": "Freeze exact non-affine reducer readiness and paid node starting at reducer preparation.",
+      "old_sha256": "2374de58613843bf9f68ed68bc8dc67346a3182a395a3488ed606960ffabb451"
+    },
+    {
+      "path": "NATIVE_ROOT_RUN.md",
+      "new_sha256": "9076648e4a8c45ba7cb36848abc3d8a0b412aa47903d4a1885b33a8abb8f947a",
+      "reason": "Freeze the full paid plain non-affine traversal and exact recovered native support.",
+      "old_sha256": "ff6e790c5678e649cff916753c01b17bf705518fb9ec95d336315ebbf9fa73cd"
+    },
+    {
+      "path": "audit/native-root-run-checkpoint.json",
+      "new_sha256": "fb4cca79029b0c2fc01b4f858c22e087568bbc374414fc2b320c2596b9b5f5f2",
+      "reason": "Freeze the full paid plain non-affine traversal and exact recovered native support.",
+      "old_sha256": "9aea3dce72db12fbcdd19646c041b107284ca369b8d6d4462435db853c53776a"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "aa765527fb7794b0a61957454e2af900413c3f1fd80db5a38ce2188e28dd89bf",
+      "reason": "Freeze the original Portable decoder from valid in-memory frozen sketches to exact symmetric difference.",
+      "old_sha256": "db8028e6851fa026906c58b19cb2f1517b8456b84f6612254783cb3d9baa7777"
+    },
+    {
+      "path": "README.md",
+      "new_sha256": "179dc9f8c586b7286b841fad233b4c6c7cf439b6180778f85cb5039b22acc987",
+      "reason": "Clarify the proved Portable end-to-end result, explicit input and resource assumptions, checked scope, and replay evidence; no theorem or native-source change.",
+      "old_sha256": "aa765527fb7794b0a61957454e2af900413c3f1fd80db5a38ce2188e28dd89bf"
     }
   ]
 }

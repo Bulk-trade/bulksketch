@@ -1,0 +1,88 @@
+{
+  "status": "targeted build and exact source challenge audit passed",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_item_ids": [
+    "src/backend/x86_pclmul.rs:247:function:bulksketch::backend::x86_pclmul::frobenius",
+    "src/backend/x86_pclmul.rs:45:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::frobenius",
+    "src/backend/x86_pclmul.rs:297:function:bulksketch::backend::x86_pclmul::solve_quadratic",
+    "src/backend/x86_pclmul.rs:63:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::solve_quadratic"
+  ],
+  "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean",
+  "generated_files": [
+    "bridge/Arithmetic/X86PclmulNextGenerated.lean",
+    "bridge/Arithmetic/Types.lean",
+    "bridge/Arithmetic/Funs.lean",
+    "bridge/Arithmetic/X86PclmulGenerated.lean",
+    "bridge/Arithmetic/FrobeniusTablesGenerated.lean",
+    "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+    "bridge/Arithmetic/InverseGenerated.lean"
+  ],
+  "refinements": [
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:247:function:bulksketch::backend::x86_pclmul::frobenius",
+      "source_line_span_sha256": "b99e8ca0e594bc28c7071203a0a56c7ddd3818b1b2618f37bc753571172cafc5",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.frobenius",
+      "challenge": "BulksketchBridge.X86PclmulMapsChallenges.FrobeniusRefines",
+      "theorem": "BulksketchBridge.X86PclmulMaps.frobenius_refines",
+      "scope": "All GF64 words and every U32 power. The exact table hit and fallback iteration yield the full unmodded Frobenius iterate by the independent period theorem. Both generated loop copies are related to the checked portable loop on their bounded suffixes.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:45:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::frobenius",
+      "source_line_span_sha256": "2c3b20f674c2acb249247088a9aa1bcde6de34d2a7d7b1011bcad0193207bb8c",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.frobenius",
+      "challenge": "BulksketchBridge.X86PclmulMapsChallenges.FrobeniusEntryRefines",
+      "theorem": "BulksketchBridge.X86PclmulMaps.frobenius_entry_refines",
+      "scope": "Original trait entry forwards every GF64 word and U32 exponent to the proved native helper.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:297:function:bulksketch::backend::x86_pclmul::solve_quadratic",
+      "source_line_span_sha256": "7aa7c00035e08f87dd1e16da8a776caac04ab8f925790464341cb12795e95d4a",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.solve_quadratic",
+      "challenge": "BulksketchBridge.X86PclmulMapsChallenges.SolveQuadraticRefines",
+      "theorem": "BulksketchBridge.X86PclmulMaps.solve_quadratic_refines",
+      "scope": "All GF64 words. Trace one returns None; trace zero executes the original hardware square and checked assertion and returns the exact normalized matrix solution.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:63:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::solve_quadratic",
+      "source_line_span_sha256": "8c5afdd0a7ef84619224e7e1bda0c9f1cca91387749e1d583d9e4b405edfbf94",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.solve_quadratic",
+      "challenge": "BulksketchBridge.X86PclmulMapsChallenges.SolveQuadraticEntryRefines",
+      "theorem": "BulksketchBridge.X86PclmulMaps.solve_quadratic_entry_refines",
+      "scope": "Original trait entry forwards every GF64 word to the proved native helper.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "native_body_refinements_added": 4,
+  "verbatim_functions_in_shared_projection": 23,
+  "verbatim_types_in_shared_projection": 3,
+  "shared_declarations_checked": 74,
+  "runtime_trust_boundary": "The original x86 PCLMUL multiplication uses the previously checked register and Rust stdarch value model. The proof names the source-generated concrete Gf64 dictionary. Native feature dispatch, LLVM code generation, and physical x86 execution remain outside these Lean value refinements.",
+  "native_source_edited": false,
+  "full_native_coverage_achieved": false,
+  "files_sha256": {
+    "bridge/Arithmetic/X86PclmulNextGenerated.lean": "4298251c5d548d45ecfa729a12b41f0a38088dec1fb9fbf4a63c8441e33bfb25",
+    "bridge/BulksketchBridge/X86PclmulMaps.lean": "5e9c70f75eaa56d55da215dde2cebdcd2b80d7d0d7b00f7cc242137e785dcf27",
+    "bridge/BulksketchBridge/X86PclmulMapsChallenges.lean": "1677a194f4ef525cf41fde44fd4604a38c84535a5ffcedf8a67fab43d7782413",
+    "extraction/pclmul-next/project.py": "d9171cdd4c01507fbdafba24db8006f0454db3439f8d9fe15d0e48a8568a5914",
+    "extraction/pclmul-next/receipt.json": "c7a49b85e5820f41a8c0c22e85a7393299a2f59a20a1defc575e3bd9ec345754"
+  }
+}

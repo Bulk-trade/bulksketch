@@ -1,0 +1,5 @@
+import BulksketchBridge.DenseReducerTable
+
+#print axioms BulksketchBridge.DenseReducerTable.stepWords_refines
+#print axioms BulksketchBridge.DenseReducerTable.loop_refines
+#print axioms BulksketchBridge.DenseReducerTable.prepare_square_table_refines

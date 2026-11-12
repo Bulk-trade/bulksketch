@@ -1,0 +1,7 @@
+import BulksketchBridge.FrobeniusConst
+#check (BulksketchBridge.FrobeniusConst.square_refines : BulksketchBridge.FrobeniusConstChallenges.actualConstSquareMatchesWord)
+#print axioms BulksketchBridge.FrobeniusConst.square_refines
+#print axioms BulksketchBridge.FrobeniusConst.low_bytes_refines
+#print axioms BulksketchBridge.FrobeniusConst.spread_loop
+#print axioms BulksketchBridge.FrobeniusConst.division_loop
+#print axioms BulksketchBridge.FrobeniusConst.divisionPrefix_complete

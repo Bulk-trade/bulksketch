@@ -1,0 +1,30 @@
+[[92mInfo[39m ] Imported: /workspace/bulk/bulksketch-proof-evidence-20261109-dense-div-rem-lifetime/original-plain.llbc
+[[91mError[39m] Could not match the contexts
+Source: 'src/poly/dense.rs', lines 48:22-52:9
+Compiler source: interp/InterpJoin.ml, line 1571
+[[93mWarn[39m ] Could not translate the body of function 'bulksketch::poly::dense::{impl bulksketch::poly::Polynomial<F, K> for bulksketch::poly::Dense}::div_rem_into because of previous error
+Name pattern: 'bulksketch::poly::dense::{bulksketch::poly::Polynomial<bulksketch::poly::Dense, @F, @K>}::div_rem_into'
+Definition span: 'src/poly/dense.rs', lines 40:4-96:5
+Source: 'src/poly/dense.rs', lines 48:22-52:9
+Compiler source: interp/Interp.ml, line 685
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::traits::iterator::Iterator', could not find the information for item 'zip'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/traits/iterator.rs', lines 42:0-42:24
+Compiler source: extract/Extract.ml, line 2866
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::traits::iterator::Iterator', could not find the information for item 'rev'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/traits/iterator.rs', lines 42:0-42:24
+Compiler source: extract/Extract.ml, line 2866
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::range::Step', could not find the information for item 'forward_overflowing'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/range.rs', lines 35:0-35:64
+Compiler source: extract/Extract.ml, line 2866
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::range::Step', could not find the information for item 'backward_overflowing'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/range.rs', lines 35:0-35:64
+Compiler source: extract/Extract.ml, line 2866
+
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /workspace/bulk/bulksketch-proof-evidence-20261109-dense-div-rem-linkage/diagnostic-controls/unchecked/Types.lean
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /workspace/bulk/bulksketch-proof-evidence-20261109-dense-div-rem-linkage/diagnostic-controls/unchecked/FunsExternal_Template.lean
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /workspace/bulk/bulksketch-proof-evidence-20261109-dense-div-rem-linkage/diagnostic-controls/unchecked/Funs.lean
+[[92mInfo[39m ] Total execution time: 1.004154 seconds

@@ -1,0 +1,25 @@
+{
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "source_checkout": "b39e690586582acfdcb51b286d6adbb90141d976",
+  "frozen_source": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "checks": [
+    "-checks",
+    "-sequential"
+  ],
+  "native_body_proof_credit": 0,
+  "root": "bulksketch::backend::x86_vpclmul512::xor_assign",
+  "charon_exit": 0,
+  "aeneas_exit": 0,
+  "artifacts": {
+    "extraction/avx-xor-assign/arithmetic.llbc": "94f9ce1a5b51d189ffbe1682bbd0043907a90b1ff1624b07f99f46eb36e6ebec",
+    "extraction/avx-xor-assign/charon.log": "5a37d5ca34748cb85e899b0fb59795f256fc135b0d9c6bd180d1ffb2bdbbbc48",
+    "extraction/avx-xor-assign/aeneas.log": "5e3ed6f3d94395cc43bb3d4c118ba762b06f1dffb58c6ab517fd1bd6d356e04d",
+    "extraction/avx-xor-assign/Arithmetic/Funs.lean": "e56b1c7edec9d08362ca7f3ae18e67f5d8a1528a539ac4319ecf77b632e6b183",
+    "extraction/avx-xor-assign/Arithmetic/FunsExternal_Template.lean": "acf3884f655d8c21371d70b09b8ae6c47ece46abf929927818a65fba1f42b20f",
+    "extraction/avx-xor-assign/Arithmetic/Types.lean": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+    "extraction/avx-xor-assign/Arithmetic/TypesExternal_Template.lean": "53a1f77ea401e3bd79bd5c8aa608572ffcbaef870fef5e989bb21a59cc8ed985"
+  }
+}

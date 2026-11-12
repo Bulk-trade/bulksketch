@@ -1,0 +1,339 @@
+{
+  "original_sha256": "3ab1a8b5cac0a3efae2fb68467c3485e0cf084a6950cb2cbeacbe2aa416d29b9",
+  "variant_sha256": "70d4ed8dedfef2b517d65621728b89075d81d43a505a8383147cac34277ade34",
+  "checks": {
+    "stock": {
+      "status": 1,
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/stock/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/arithmetic.llbc"
+      ],
+      "enabled": false,
+      "checked": true,
+      "input_sha256": "3ab1a8b5cac0a3efae2fb68467c3485e0cf084a6950cb2cbeacbe2aa416d29b9",
+      "log_sha256": "3e50448d2092d02d393aa8a252a1ec08b7ba8d178e127295c0019fdc93030fc0",
+      "outputs": {
+        "Funs.lean": "02945d7456dfba65740784b33c86c1f3ed7296d940ad819fb91ed951d9feb0ad",
+        "FunsExternal_Template.lean": "7d2c6d8941122d93d1fc5b0ba830b152eac2c748329b685a7850712cad6964d7",
+        "Types.lean": "a989f40b55b898721ba05aebee5c08bf88a0a898e41d5c2fc29ab6c0eac168e3",
+        "TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea"
+      }
+    },
+    "off": {
+      "status": 1,
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/off/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/arithmetic.llbc"
+      ],
+      "enabled": false,
+      "checked": true,
+      "input_sha256": "3ab1a8b5cac0a3efae2fb68467c3485e0cf084a6950cb2cbeacbe2aa416d29b9",
+      "log_sha256": "c9ccefb58dfc1a9ed99c463d5fd49457818a87489dce48d97e22f1a89d5fd2f6",
+      "outputs": {
+        "Funs.lean": "02945d7456dfba65740784b33c86c1f3ed7296d940ad819fb91ed951d9feb0ad",
+        "FunsExternal_Template.lean": "7d2c6d8941122d93d1fc5b0ba830b152eac2c748329b685a7850712cad6964d7",
+        "Types.lean": "a989f40b55b898721ba05aebee5c08bf88a0a898e41d5c2fc29ab6c0eac168e3",
+        "TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea"
+      }
+    },
+    "unchecked": {
+      "status": 1,
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/unchecked/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/arithmetic.llbc"
+      ],
+      "enabled": true,
+      "checked": false,
+      "input_sha256": "3ab1a8b5cac0a3efae2fb68467c3485e0cf084a6950cb2cbeacbe2aa416d29b9",
+      "log_sha256": "350fbd26ac5f2fda26eaa978ca50f114966c838350552c3e4f97f1100c4b70ee",
+      "outputs": {
+        "Funs.lean": "02945d7456dfba65740784b33c86c1f3ed7296d940ad819fb91ed951d9feb0ad",
+        "FunsExternal_Template.lean": "7d2c6d8941122d93d1fc5b0ba830b152eac2c748329b685a7850712cad6964d7",
+        "Types.lean": "a989f40b55b898721ba05aebee5c08bf88a0a898e41d5c2fc29ab6c0eac168e3",
+        "TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea"
+      }
+    },
+    "checked": {
+      "status": 0,
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/checked/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/arithmetic.llbc"
+      ],
+      "enabled": true,
+      "checked": true,
+      "input_sha256": "3ab1a8b5cac0a3efae2fb68467c3485e0cf084a6950cb2cbeacbe2aa416d29b9",
+      "log_sha256": "e5cb1bb7b12e49c9f92d73d525586bbe57c75557fc160b7145a8712c8b0eb7f9",
+      "outputs": {
+        "Funs.lean": "32cfbe7fad891270458cd519695697472c4f6038ce8d20fbcdbc806938c8a3cf",
+        "FunsExternal_Template.lean": "7d2c6d8941122d93d1fc5b0ba830b152eac2c748329b685a7850712cad6964d7",
+        "Types.lean": "a989f40b55b898721ba05aebee5c08bf88a0a898e41d5c2fc29ab6c0eac168e3",
+        "TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea"
+      }
+    },
+    "wrong-name": {
+      "status": 1,
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/wrong-name/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/wrong-name/arithmetic.llbc"
+      ],
+      "enabled": true,
+      "checked": true,
+      "input_sha256": "d98bf32744e02bc32a1ab0e4bec380571231e3b17a29912dcc262d17951a6966",
+      "log_sha256": "7b5f17571814703f830b564679b6eccc72940233e3bcf84df8b828b21e83b227",
+      "outputs": {
+        "Funs.lean": "646fc54508fb43aaa5b006521fcd2381a3c345d986701eaee4a4da69c8ea649f",
+        "FunsExternal_Template.lean": "7d2c6d8941122d93d1fc5b0ba830b152eac2c748329b685a7850712cad6964d7",
+        "Types.lean": "a989f40b55b898721ba05aebee5c08bf88a0a898e41d5c2fc29ab6c0eac168e3",
+        "TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea"
+      }
+    },
+    "wrong-span": {
+      "status": 1,
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/wrong-span/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/wrong-span/arithmetic.llbc"
+      ],
+      "enabled": true,
+      "checked": true,
+      "input_sha256": "2d8e34aa7e09eaaa16183daa5ac7d175e14063a650bafb8a993b898799a882f0",
+      "log_sha256": "af1a4167fd0a7cbf11cccab6b610247a60623177ed6e2af13496b7b6c6985f8e",
+      "outputs": {
+        "Funs.lean": "12b20e5be7bc85596daf7570262abdd3444e12ddc880a025463a55e6d2aa6078",
+        "FunsExternal_Template.lean": "7d2c6d8941122d93d1fc5b0ba830b152eac2c748329b685a7850712cad6964d7",
+        "Types.lean": "a989f40b55b898721ba05aebee5c08bf88a0a898e41d5c2fc29ab6c0eac168e3",
+        "TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea"
+      }
+    },
+    "wrong-row-type": {
+      "status": 1,
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/wrong-row-type/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/wrong-row-type/arithmetic.llbc"
+      ],
+      "enabled": true,
+      "checked": true,
+      "input_sha256": "c6a102b5869ba62e7cf1d20ffd2a0916edd28f415df015e2f5ca49f87d68690c",
+      "log_sha256": "5c751ac11343776d4d9e0bc5830fde9e912201abde5a01e8522997bd4f2edc02",
+      "outputs": {
+        "Funs.lean": "84ed5c204929e319527c2e13686ad99342114f91fce69136596d06b3c041a12c",
+        "FunsExternal_Template.lean": "7d2c6d8941122d93d1fc5b0ba830b152eac2c748329b685a7850712cad6964d7",
+        "Types.lean": "277ed9ef844b240ace298e481f3eb33dfdffabbdcb73307a2ca7f24b97aab931",
+        "TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea"
+      }
+    },
+    "wrong-cleanup": {
+      "status": 1,
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/wrong-cleanup/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/wrong-cleanup/arithmetic.llbc"
+      ],
+      "enabled": true,
+      "checked": true,
+      "input_sha256": "011dffcdd8396493b4316f3135ab1a8ba9ad282fcef725e9ea6def53eb526cca",
+      "log_sha256": "a8d28a2fe944043e20f0a947345bac49c5f79f5bd67307b3bd04238eaf833cb3",
+      "outputs": {
+        "Funs.lean": "02945d7456dfba65740784b33c86c1f3ed7296d940ad819fb91ed951d9feb0ad",
+        "FunsExternal_Template.lean": "7d2c6d8941122d93d1fc5b0ba830b152eac2c748329b685a7850712cad6964d7",
+        "Types.lean": "a989f40b55b898721ba05aebee5c08bf88a0a898e41d5c2fc29ab6c0eac168e3",
+        "TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea"
+      }
+    },
+    "idle-iterator-use": {
+      "status": 1,
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/idle-iterator-use/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/idle-iterator-use/arithmetic.llbc"
+      ],
+      "enabled": true,
+      "checked": true,
+      "input_sha256": "f636d4e017e1d99ba5b5326a7023ec2fff6fbf2935164a2aa3c9ae9566ebdf7c",
+      "log_sha256": "f97e17d6c3b8a9fcf2f8eafc654edac59f9153e88ea0673b00e8565a79593c07",
+      "outputs": {
+        "Funs.lean": "02945d7456dfba65740784b33c86c1f3ed7296d940ad819fb91ed951d9feb0ad",
+        "FunsExternal_Template.lean": "7d2c6d8941122d93d1fc5b0ba830b152eac2c748329b685a7850712cad6964d7",
+        "Types.lean": "a989f40b55b898721ba05aebee5c08bf88a0a898e41d5c2fc29ab6c0eac168e3",
+        "TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea"
+      }
+    },
+    "shared-stock": {
+      "status": 0,
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/shared-stock/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize/arithmetic.llbc"
+      ],
+      "enabled": false,
+      "checked": true,
+      "input_sha256": "b4a673290d546933b1d520e4f8eecc1398ff7678ff04d74e8c76fe9c3e6aa274",
+      "log_sha256": "2e3cc5265b060d3a0bc2ee54ac68ff21ecd1393feeab2e468b6db81899363f21",
+      "outputs": {
+        "Funs.lean": "4a61e533b878876bf78057c02ddbd540e2f8d9b2ce356edc3a450fc4fb3c7011",
+        "FunsExternal_Template.lean": "7c771e1d10f5df8ca4541ca1255bd7ab521c91b84a159d3b11a6e7c228e8b4f7",
+        "Types.lean": "2518484fd1c94d8442e510b34c506e05f7164c1b6cae11be4bbf1c8f621e9f30"
+      }
+    },
+    "shared-variant": {
+      "status": 0,
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/shared-variant/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize/arithmetic.llbc"
+      ],
+      "enabled": true,
+      "checked": true,
+      "input_sha256": "b4a673290d546933b1d520e4f8eecc1398ff7678ff04d74e8c76fe9c3e6aa274",
+      "log_sha256": "9b9b2cbc72f8dfb03a146d5be033bcb16c745b6c233c57197d2aa8bc113e5cf2",
+      "outputs": {
+        "Funs.lean": "4a61e533b878876bf78057c02ddbd540e2f8d9b2ce356edc3a450fc4fb3c7011",
+        "FunsExternal_Template.lean": "7c771e1d10f5df8ca4541ca1255bd7ab521c91b84a159d3b11a6e7c228e8b4f7",
+        "Types.lean": "2518484fd1c94d8442e510b34c506e05f7164c1b6cae11be4bbf1c8f621e9f30"
+      }
+    },
+    "row-stock": {
+      "status": 0,
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/row-stock/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/row/arithmetic.llbc"
+      ],
+      "enabled": false,
+      "checked": true,
+      "input_sha256": "8d5139d6c7d1ae2b39c5c6a2fada7a1fa4e2b809d9f7702303989162380c0c53",
+      "log_sha256": "271696f4cc64e964f86908e778ab2015f187893fbc1a6becffd232e4cb812c25",
+      "outputs": {
+        "Funs.lean": "b88864bf41e03e1bfc9f673d845653f05181b88adbf1508a461439821c0533d2",
+        "FunsExternal_Template.lean": "9d9b413ee8b6ba7aab15c36c02800a6861e76dae4bd721045a2df7166ec9ab40",
+        "Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea"
+      }
+    },
+    "row-variant": {
+      "status": 0,
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/controls/row-variant/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/row/arithmetic.llbc"
+      ],
+      "enabled": true,
+      "checked": true,
+      "input_sha256": "8d5139d6c7d1ae2b39c5c6a2fada7a1fa4e2b809d9f7702303989162380c0c53",
+      "log_sha256": "eea96f01f47714dcc4a4d855be96068399abf407b3a1ec58c940d5bcf3e19267",
+      "outputs": {
+        "Funs.lean": "b88864bf41e03e1bfc9f673d845653f05181b88adbf1508a461439821c0533d2",
+        "FunsExternal_Template.lean": "9d9b413ee8b6ba7aab15c36c02800a6861e76dae4bd721045a2df7166ec9ab40",
+        "Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea"
+      }
+    }
+  }
+}

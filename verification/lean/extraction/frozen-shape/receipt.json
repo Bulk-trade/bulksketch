@@ -1,0 +1,85 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "native_source_edited": false,
+  "native_llbc_edited": false,
+  "commands": {
+    "charon": {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/frozen-shape/arithmetic.llbc",
+        "--start-from=bulksketch::sketch::state::_::shape",
+        "--include=bulksketch::sketch::state::_::shape",
+        "--",
+        "--manifest-path",
+        "/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    "aeneas": {
+      "command": [
+        "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/frozen-shape/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/frozen-shape/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  },
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/frozen-shape/replay/Arithmetic",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/frozen-shape/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "output_sha256": {
+      "Funs.lean": "a2b25d502437c3f9f6f8136dff3acce5c46b0b5ca1a42d8c10765e07a4d0e1d3",
+      "FunsExternal_Template.lean": "10c0b33cad38bb4504cb3e25325bf2505bae6fb38297ff7afaa4c45cb9038188",
+      "Types.lean": "46322a1b76a60c5df4fa252f8f88905d85105bd5c3dd9ccac22770caf52a2b5d",
+      "TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea"
+    }
+  },
+  "source_sha256": {
+    "src/sketch/state.rs": "516876d63076bf34f5b37bcf47a8ca557cc22b1b1615124522b6853f9b8b3b45"
+  },
+  "artifacts": {
+    "extraction/frozen-shape/Arithmetic/Funs.lean": "a2b25d502437c3f9f6f8136dff3acce5c46b0b5ca1a42d8c10765e07a4d0e1d3",
+    "extraction/frozen-shape/Arithmetic/FunsExternal_Template.lean": "10c0b33cad38bb4504cb3e25325bf2505bae6fb38297ff7afaa4c45cb9038188",
+    "extraction/frozen-shape/Arithmetic/Types.lean": "46322a1b76a60c5df4fa252f8f88905d85105bd5c3dd9ccac22770caf52a2b5d",
+    "extraction/frozen-shape/Arithmetic/TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea",
+    "extraction/frozen-shape/aeneas.log": "814888197aa7a9c157915063e21df6b23c3426fe1edf38324e4b735ad46400b7",
+    "extraction/frozen-shape/arithmetic.llbc": "17048cb79c9e30800b8bd6fecb637eb2bda3b2ca1d73fc4dba789e624eb7523f",
+    "extraction/frozen-shape/charon.log": "66c83dd4b89af9485ac2c9c0148cd3a19e7954d733bcebc57813ca0e639497db",
+    "extraction/frozen-shape/replay.log": "c7463257627f4c93e942a932a5af445efb7a0419cf18e9b72b509446f905fa62",
+    "extraction/frozen-shape/project.py": "ced5f5e6d5759f55e3eec83cdf998bd7e67ecb6de3b12ebcdb7925d229ef8c46"
+  }
+}

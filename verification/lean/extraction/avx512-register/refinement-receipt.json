@@ -1,0 +1,89 @@
+{
+  "status": "targeted build and exact source challenge audit passed",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_item_ids": [
+    "src/backend/x86_vpclmul512.rs:208:function:bulksketch::backend::x86_vpclmul512::raw",
+    "src/backend/x86_vpclmul512.rs:260:function:bulksketch::backend::x86_vpclmul512::reduce_shift",
+    "src/backend/x86_vpclmul512.rs:278:function:bulksketch::backend::x86_vpclmul512::reduce_cl",
+    "src/backend/x86_vpclmul512.rs:286:function:bulksketch::backend::x86_vpclmul512::multiply"
+  ],
+  "generated_file": "bridge/Arithmetic/Avx512RegisterGenerated.lean",
+  "generated_files": [
+    "bridge/Arithmetic/Avx512RegisterGenerated.lean"
+  ],
+  "refinements": [
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:208:function:bulksketch::backend::x86_vpclmul512::raw",
+      "source_line_span_sha256": "9d6501eaf99f8473420bcfc6e3c78cff53170c8cab90487bde823618536d3bc2",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.raw",
+      "challenge": "BulksketchBridge.Avx512RegisterChallenges.rawRefines",
+      "theorem": "BulksketchBridge.Avx512Register.raw_refines",
+      "scope": "All eight independent 64-by-64 products, with complete 128-bit output. Even and odd input lanes appear in separate 512-bit registers.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:260:function:bulksketch::backend::x86_vpclmul512::reduce_shift",
+      "source_line_span_sha256": "47a2965d12a38ede03ed4baeeee8433e8414e580712f412a5d5f5cfd32714a4d",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.reduce_shift",
+      "challenge": "BulksketchBridge.Avx512RegisterChallenges.reduceShiftRefines",
+      "theorem": "BulksketchBridge.Avx512Register.reduce_shift_refines",
+      "scope": "Every low/high word pair for all eight lanes reduces to its canonical GF64 remainder.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:278:function:bulksketch::backend::x86_vpclmul512::reduce_cl",
+      "source_line_span_sha256": "a217aea92d2c89da76392d155928810c791c94d805b12644d5faf47589385e82",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.reduce_cl",
+      "challenge": "BulksketchBridge.Avx512RegisterChallenges.reduceClRefines",
+      "theorem": "BulksketchBridge.Avx512Register.reduce_cl_refines",
+      "scope": "All four 128-bit lanes return both exact words. The low word is the canonical remainder and the high word is the polynomial division quotient.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:286:function:bulksketch::backend::x86_vpclmul512::multiply",
+      "source_line_span_sha256": "f04d2f535a9fd4b93963506f84001aeaaee7dd259ad52fdc4b1399aee2a8d5b8",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.multiply",
+      "challenge": "BulksketchBridge.Avx512RegisterChallenges.multiplyRefines",
+      "theorem": "BulksketchBridge.Avx512Register.multiply_refines",
+      "scope": "Both original const-generic branches, all eight independent field products, all input register words.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "native_body_refinements_added": 4,
+  "verbatim_functions": 5,
+  "verbatim_types": 1,
+  "scoped_runtime_module": "bridge/Arithmetic/Avx512RegisterRuntime.lean",
+  "runtime_trust_boundary": "Register-only value correspondence for the pinned Rust stdarch AVX-512 operations and the Intel register ISA. Covers the exact legal immediates and all register values at the original calls. LLVM code generation, target-feature availability, CPU execution, masked memory and dispatch are separate.",
+  "native_source_edited": false,
+  "full_native_coverage_achieved": false,
+  "files_sha256": {
+    "bridge/Arithmetic/Avx512RegisterRuntime.lean": "3615bb72464790c8193f7b88e054fff142377dcc86b7fa3ad49f359173d8f99f",
+    "bridge/Arithmetic/Avx512RegisterGenerated.lean": "671fe8eb15890499b45174fa832221a7e32b1c1db19eef8112bc5e476ad2c14f",
+    "bridge/BulksketchBridge/Avx512RegisterChallenges.lean": "a7c37f3aa90a68a4b65a94c684144fe38f806d32655b63e3590ddfeb2a8bb1fd",
+    "bridge/BulksketchBridge/Avx512Register.lean": "9480405acabc6140a25f9993950a6d2a466541cb5c23553e0b913b2ad26f2643",
+    "bridge/BulksketchBridge/ClmulModulus.lean": "f60e12c47172f05bfc2d7e97ddd647f40a49b4356baba74e17f458b075192ecb",
+    "extraction/avx512-register/project.py": "f8745e719177b27cdf08e888e693d2b3fdece664e6993ff6ae9dc5da014a2ec7",
+    "extraction/avx512-register/receipt.json": "16cb6ac2c0f9a8f83514751a940a176c7f5d34ba7ee5f523f8167e2ef9789335"
+  },
+  "primary_sources": {
+    "intel_sdm": "https://cdrdv2-public.intel.com/874240/325462-090-sdm-vol-1-2abcd-3abcd-4.pdf",
+    "stdarch_avx512f_rs_sha256": "a8bcad3f534650249a37813bfc1634a4bab30591d00349b6ac123e4cf9e0cbf1",
+    "stdarch_vpclmulqdq_rs_sha256": "25f1dd73c7930147005851654262f7a2d96109957922bcca32525e3a55809a32"
+  }
+}

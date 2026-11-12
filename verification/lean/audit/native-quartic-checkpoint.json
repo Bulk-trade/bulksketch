@@ -1,0 +1,14 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "previous_proof_commit": "5bc123ea6ab0ce851079e0270425de8f1ee4240e",
+  "retained_native_executable_obligations": 344,
+  "generated_body_refinements_under_recorded_TCB": 90,
+  "checked_stateful_llbc_refinements": 5,
+  "whole_native_coverage_achieved": false,
+  "open": [
+    "Native Berlekamp–Massey pure lowering at a nonzero abstraction level and full locator semantics",
+    "General root recovery and end-to-end decoder completeness",
+    "Remaining work schedule tags, stage callers and accelerated kernels",
+    "Physical memory, ISA and compiler-expanded correspondence"
+  ]
+}

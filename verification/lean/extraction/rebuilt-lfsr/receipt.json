@@ -1,0 +1,59 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "extraction_checkout": "16531408497f221e1da25c6ebf5e551ce7160258",
+  "rust_toolchain": "nightly-2026-09-17",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_selector": "--start-from=bulksketch::decode::verify::rebuilt_lfsr",
+  "aeneas_flags": [
+    "-backend",
+    "lean",
+    "-checks",
+    "-sequential",
+    "-print-error-emitters",
+    "-split-files"
+  ],
+  "llbc_has_errors": false,
+  "artifacts": [
+    {
+      "path": "extraction/rebuilt-lfsr/arithmetic.llbc",
+      "sha256": "d4f865561eb7d0b05faa0210bd34ca94c063917621e47c30d4fd6ca747fe0784"
+    },
+    {
+      "path": "extraction/rebuilt-lfsr/charon.log",
+      "sha256": "741f5ed2ac47e617c88fd88c5a720656649af5d0280c701be5fd415a7b6fae33"
+    },
+    {
+      "path": "extraction/rebuilt-lfsr/aeneas.log",
+      "sha256": "8ee2ecbefffe8b4a259afc8c23e4e1f9633feeb8318bb775e0476b9d2a9c95a3"
+    },
+    {
+      "path": "extraction/rebuilt-lfsr/Arithmetic/Funs.lean",
+      "sha256": "0980f9fccb4786d69397028c460618b6895b39c82b76d4d6b3bd6ba9d82e5595"
+    },
+    {
+      "path": "extraction/rebuilt-lfsr/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "8ab9bd644e3572ce7ac5062eea1e31b99e38dca06b528e93e93de53db6f2f088"
+    },
+    {
+      "path": "extraction/rebuilt-lfsr/Arithmetic/Types.lean",
+      "sha256": "8a93715ef2336aafd7a6e2441962da32c9298cbfcc57058f0cbea7e3d1718471"
+    }
+  ],
+  "runtime_sha256": "6fdef76755089ae0966294b4ba4ea7138b86780136ecd5083920ba49a022f2a2",
+  "rust_std_source_references": [
+    {
+      "path": "core/src/cmp.rs",
+      "sha256": "aa1d810f0c36798492e3b17b10a85ac91c047c0020b9be5db86f1111b34e94be"
+    },
+    {
+      "path": "core/src/slice/index.rs",
+      "sha256": "080ad30d5226cc0089ba585248b88118921d19440f9c57c48371bca0d67e219d"
+    },
+    {
+      "path": "core/src/slice/iter.rs",
+      "sha256": "6cb6156e617daf67ec15c5510ac58ee85b12cd0edbe4bceb9a4ad9d10f1e4021"
+    }
+  ]
+}

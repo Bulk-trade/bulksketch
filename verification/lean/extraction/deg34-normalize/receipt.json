@@ -1,0 +1,144 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "3612535e21fa539bd35703287f79254fa547fbe7",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "selected_roots": [
+    "bulksketch::decode::deg34::normalize"
+  ],
+  "llbc_has_errors": false,
+  "native_source_edited": false,
+  "source_directory": "/workspace/bulk/bulksketch",
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+    "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/deg34-normalize/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true"
+  },
+  "commands": [
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/deg34-normalize/arithmetic.llbc",
+        "--start-from=bulksketch::decode::deg34::normalize",
+        "--",
+        "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/deg34-normalize/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/deg34-normalize/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "artifacts": [
+    {
+      "path": "extraction/deg34-normalize/arithmetic.llbc",
+      "sha256": "b17cd5b3058f52243c75011004dc4b68c050fda5326a2b8c6cbbd988e549fbf0"
+    },
+    {
+      "path": "extraction/deg34-normalize/charon.log",
+      "sha256": "a3b5a64f69a725a4bc11cbff8467903923098893c7ea9bae4e4afefcb7c468f3"
+    },
+    {
+      "path": "extraction/deg34-normalize/aeneas.log",
+      "sha256": "ec69bef35b4fabf8137636a4ded99d3d1c6fab46a0f3817437abf005d0d135e6"
+    },
+    {
+      "path": "extraction/deg34-normalize/Arithmetic/Funs.lean",
+      "sha256": "2070052f9f725db6dc4a7a9ba97212f40028c6a6c57877d0f7598967dfd3193e"
+    },
+    {
+      "path": "extraction/deg34-normalize/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829"
+    },
+    {
+      "path": "extraction/deg34-normalize/Arithmetic/Types.lean",
+      "sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1"
+    },
+    {
+      "path": "extraction/deg34-normalize/replay.log",
+      "sha256": "639f0e85730d2d9a37e0953f1906f44473ce55d910b585346f9c05e9dfdecf9d"
+    }
+  ],
+  "native_files_checked": 41,
+  "native_build_inputs_checked": 3,
+  "pinned_checked_replay": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/deg34-normalize/replay",
+      "/workspace/bulk/bulksketch/verification/lean/extraction/deg34-normalize/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "byte_identical_generated_files": 3,
+    "log_sha256": "639f0e85730d2d9a37e0953f1906f44473ce55d910b585346f9c05e9dfdecf9d",
+    "outputs": {
+      "Funs.lean": "2070052f9f725db6dc4a7a9ba97212f40028c6a6c57877d0f7598967dfd3193e",
+      "Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+      "FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829"
+    },
+    "input_sha256": "b17cd5b3058f52243c75011004dc4b68c050fda5326a2b8c6cbbd988e549fbf0"
+  },
+  "controls": {
+    "file": "extraction/deg34-normalize/check_controls.py",
+    "sha256": "8736c844193a7b375e0e4356a81731460b3535b861bfc546da137541f8d7ea39",
+    "modes": [
+      "standard",
+      "optimized"
+    ],
+    "rejections": [
+      "missing raw artifacts",
+      "wrong final coefficient slot",
+      "wrong denominator slot",
+      "changed Rust input"
+    ]
+  },
+  "native_test": {
+    "command": [
+      "cargo",
+      "test",
+      "--release",
+      "--locked",
+      "--lib",
+      "independent_algebra_and_solver_controls"
+    ],
+    "exit_code": 0,
+    "log_sha256": "745199e584d1d72bb78b16c76f677a5268c1db9cbcca5e3b9dd717eee209c56f"
+  }
+}

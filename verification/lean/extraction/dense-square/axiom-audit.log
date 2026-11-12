@@ -1,0 +1,2 @@
+'BulksketchBridge.DenseSquare.square_into_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.DenseSquare.square_loop_refines' depends on axioms: [propext, Classical.choice, Quot.sound]

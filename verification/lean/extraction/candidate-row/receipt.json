@@ -1,0 +1,54 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "selector": "bulksketch::sketch::candidates::row",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "native_source_edited": false,
+  "checked_exit": 0,
+  "binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "source_sha256": {
+    "src/sketch/candidates.rs": "5071c62cae68c4cc27c3d5db00697ed4412fde698f6868a6da6e266f2e1fada5"
+  },
+  "charon_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/row/arithmetic.llbc",
+    "--start-from=bulksketch::sketch::candidates::row",
+    "--",
+    "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "aeneas_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-checks",
+    "-sequential",
+    "-no-progress-bar",
+    "-print-error-emitters",
+    "-split-files",
+    "-dest",
+    "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/row/Arithmetic",
+    "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/row/arithmetic.llbc"
+  ],
+  "files_sha256": {
+    "extraction/candidate-row/Arithmetic/Funs.lean": "b88864bf41e03e1bfc9f673d845653f05181b88adbf1508a461439821c0533d2",
+    "extraction/candidate-row/Arithmetic/FunsExternal_Template.lean": "9d9b413ee8b6ba7aab15c36c02800a6861e76dae4bd721045a2df7166ec9ab40",
+    "extraction/candidate-row/Arithmetic/Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+    "extraction/candidate-row/aeneas.log": "b0a0b4d5636348a2f43d7d20734abe3aa564402c391d47f3d8ee56c8488a6ac6",
+    "extraction/candidate-row/arithmetic.llbc": "8d5139d6c7d1ae2b39c5c6a2fada7a1fa4e2b809d9f7702303989162380c0c53",
+    "extraction/candidate-row/charon.log": "f13ee8b344ab05a1bc4eff9ea6d415b1303c9abd2ef0c05308580def79aa0101"
+  }
+}

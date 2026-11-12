@@ -1,0 +1,229 @@
+--- a/src/PrePasses.ml
++++ b/src/PrePasses.ml
+@@ -388,6 +388,218 @@
+     in
+     visitor#visit_crate None crate
+ 
++(* Keep the original shared-result call outside the finish loop. The stock
++   early-return normalization moves that call into the normal break, which
++   puts the returned shared borrow into the loop's output abstraction. *)
++let separate_finish_return (crate : crate) (f : fun_decl) : fun_decl =
++  let span = f.item_meta.span in
++  let site = span.data in
++  let scoped =
++    !Config.sanity_checks
++    && Sys.getenv_opt "BULKSKETCH_FINISH_BOUNDARY" = Some "1"
++    && (match f.body with StructuredBody _ -> true | _ -> false)
++    && span.generated_from_span = None
++    && (match site.file.name with Local "src/decode/stages.rs" -> true | _ -> false)
++    && (site.beg_loc.line, site.beg_loc.col, site.end_loc.line, site.end_loc.col)
++       = (442, 4, 452, 5)
++  in
++  if not scoped then f
++  else
++  let render = Print.name_to_string (Print.crate_to_fmt_env crate) in
++  let name expected actual = render actual = expected in
++  let impl_of expected id =
++    match TraitImplId.Map.find_opt id crate.trait_impls with
++    | Some impl ->
++        (match TraitDeclId.Map.find_opt impl.impl_trait.id crate.trait_decls with
++         | Some decl -> name expected decl.item_meta.name
++         | None -> false)
++    | None -> false
++  in
++  let row_method expected = function
++    | [PeIdent ("bulksketch", _); PeIdent ("decode", _); PeIdent ("stages", _);
++       PeImpl (ImplElemTrait impl); PeIdent (method_name, _)] ->
++        method_name = expected && impl_of "bulksketch::decode::row::RowExecution" impl
++    | _ -> false
++  in
++  if not (row_method "finish" f.item_meta.name) then f
++  else
++    let bad () = [%craise] span "Unexpected original RowExecution::finish return boundary" in
++    let body = match f.body with StructuredBody body -> body | _ -> bad () in
++    let ids stl = List.map (fun (st : statement) -> StatementId.to_int st.statement_id) stl in
++    let named_call (call : call) predicate =
++      match call.func with
++      | FnOpRegular { kind = Fun fid; _ } ->
++          (match FunDeclId.Map.find_opt fid crate.fun_decls with
++           | Some decl -> predicate decl.item_meta.name
++           | None -> false)
++      | _ -> false
++    in
++    let local_is id (p : place) = p.kind = PlaceLocal (LocalId.of_int id) in
++    let return_prefix, loop_statement, after_loop =
++      match body.body.statements with
++      | { kind = StorageLive zero; _ } as first ::
++        ({ kind = Loop _; _ } as loop_statement) :: after
++        when LocalId.to_int zero = 0 && StatementId.to_int loop_statement.statement_id = 103
++             && ids after = [104;105;109;111;112;113;114;122;123;124;127;128;129;130;131] ->
++          (first, loop_statement, after)
++      | _ -> bad ()
++    in
++    (match List.nth after_loop 7 with
++     | { kind = Call (call, dest, _); _ }
++       when named_call call (function
++         | [PeIdent ("bulksketch", _); PeIdent ("decode", _); PeIdent ("stages", _);
++            PeImpl (ImplElemTy _); PeIdent ("completed_result", _)] -> true
++         | _ -> false)
++            && local_is 0 dest
++            && (match call.args with [Move a; Move b] -> local_is 19 a && local_is 20 b | _ -> false) -> ()
++     | _ -> bad ());
++    let loop = match loop_statement.kind with Loop loop -> loop | _ -> bad () in
++    if ids loop.statements <>
++         [4;5;6;7;8;16;17;18;26;29;30;31;32;33;34;35;36;37;38;39;40;41;42;
++          50;51;52;53;54;62;63;93;94;95;96;97;98;99;101;102]
++       || (List.hd (List.rev after_loop)).kind <> Return then bad ();
++    let find id = match List.find_opt (fun (st : statement) -> StatementId.to_int st.statement_id = id)
++      loop.statements with Some st -> st | None -> bad () in
++    (match (find 16).kind, (find 50).kind with
++     | Call (next, next_dest, _), Call (step, step_dest, _)
++       when named_call next (row_method "next_stage") && local_is 7 next_dest
++            && named_call step (row_method "run_next") && local_is 11 step_dest
++            && (match next.args, step.args with
++                | [Move s], [Move a; Move b; Move c; Move d] ->
++                    local_is 8 s && local_is 12 a && local_is 13 b && local_is 14 c && local_is 15 d
++                | _ -> false) -> ()
++     | _ -> bad ());
++    let next_test = find 29 in
++    let step_test = find 93 in
++    let next_data, next_ok, next_done, normal_break =
++      match next_test.kind with
++      | Switch (data, [({ statements = []; _ } as keep);
++                       ({ statements = [{kind = Break 0; _} as brk]; _ } as done_)])
++        when ids done_.statements = [28]
++             && (match data.scrutinee, data.branches, data.fallback with
++                 | SwitchValue (Move p), [({ kind = CBool false; _ }, index)], Some fallback ->
++                     local_is 5 p && BranchId.to_int index = 1 && BranchId.to_int fallback = 0
++                 | _ -> false) ->
++          (data, keep, done_, brk)
++      | _ -> bad ()
++    in
++    let step_data, step_ok, step_error, error_head, residual_call, error_tail =
++      match step_test.kind with
++      | Switch (data, [({ statements = []; _ } as keep); error])
++        when (match data.scrutinee, data.branches, data.fallback with
++              | SwitchDiscriminant p,
++                [({ kind = CDiscriminant (a, v0); _ }, i0); ({ kind = CDiscriminant (b, v1); _ }, i1)], None ->
++                  local_is 10 p && a = b && VariantId.to_int v0 = 0 && VariantId.to_int v1 = 1
++                  && BranchId.to_int i0 = 0 && BranchId.to_int i1 = 1
++              | _ -> false) ->
++          (match error.statements with
++           | a :: b :: c :: d :: ({ kind = Call (call, dest, _); _ } as conversion) :: tail
++             when ids [a;b;c;d;conversion] = [66;67;68;69;77]
++                  && ids tail = [78;79;80;81;82;86;87;88;89;90]
++                  && (List.hd (List.rev tail)).kind = Return
++                  && (match a.kind, b.kind, c.kind, d.kind with
++                      | StorageLive l16, Assign (dst16, Use (Copy source, YesRetag)),
++                        StorageLive l17, Assign (dst17, Use (Copy src16, YesRetag)) ->
++                          LocalId.to_int l16 = 16 && LocalId.to_int l17 = 17
++                          && local_is 16 dst16 && local_is 17 dst17 && local_is 16 src16
++                          && (match source.kind with
++                              | PlaceProjection (base, Field (Some v, field)) ->
++                                  local_is 10 base && VariantId.to_int v = 1 && FieldId.to_int field = 0
++                              | _ -> false)
++                      | _ -> false)
++                  && named_call call (function
++                    | [PeIdent ("core", _); PeIdent ("result", _); PeImpl (ImplElemTrait impl);
++                       PeIdent ("from_residual", _)] ->
++                        impl_of "core::ops::try_trait::FromResidual" impl
++                    | _ -> false)
++                  && local_is 0 dest ->
++               (data, keep, error, [a;b;c;d], conversion, tail)
++           | _ -> bad ())
++      | _ -> bad ()
++    in
++    let call, return_place, unwind, previous_residual =
++      match residual_call.kind with
++      | Call (({ args = [Move residual]; _ } as call), dst, unwind) when local_is 17 residual ->
++          (call, dst, unwind, residual)
++      | _ -> bad ()
++    in
++    let residual_ref, error_ref, error_ty =
++      match previous_residual.ty with
++      | TAdt ({ generics = { types = [TNever; (TAdt error_ref as error_ty)]; _ }; _ } as residual_ref) ->
++          (residual_ref, error_ref, error_ty)
++      | _ -> bad ()
++    in
++    let enum_variant (adt : type_decl_ref) expected index variant =
++      match TypeDeclId.Map.find_opt adt.id crate.type_decls with
++      | Some decl when name expected decl.item_meta.name ->
++          (match decl.kind with
++           | Enum variants ->
++               (match List.nth_opt variants index with
++                | Some item -> item.variant_name = variant && (variant <> "WorkLimitExceeded" || item.fields = [])
++                | None -> false)
++           | _ -> false)
++      | _ -> false
++    in
++    if not (enum_variant residual_ref "core::result::Result" 1 "Err"
++            && enum_variant error_ref "bulksketch::types::DecodeError" 3 "WorkLimitExceeded"
++            && body.locals.arg_count = 4 && List.length body.locals.locals = 21) then bad ();
++    let bool_ty = TScalar TBool in
++    let local n name local_ty =
++      { index = LocalId.of_int n; name; local_ty; span; drop_flag_for = None }
++    in
++    let normal = local 21 (Some "finish_normal") bool_ty in
++    let residual = local 22 (Some "finish_residual") previous_residual.ty in
++    let dummy = local 23 None error_ty in
++    let place (v : local) : place = { kind = PlaceLocal v.index; ty = v.local_ty } in
++    let statement kind = { span; statement_id = StatementId.zero; kind; comments_before = [] } in
++    let bool b : constant_expr = { kind = CBool b; ty = bool_ty } in
++    let assign dst rhs = statement (Assign (place dst, rhs)) in
++    let set_normal b = assign normal (Use (Constant (bool b), YesRetag)) in
++    let variant adt index args =
++      Aggregate (AggregatedAdt (adt, Some (VariantId.of_int index), None), args)
++    in
++    (* The placeholder residual belongs only to the normal exit. Its
++       payload is never read on that path. The original error residual is
++       forwarded untouched to the original conversion on the other path. *)
++    let next_done = { next_done with statements = [
++      set_normal true;
++      statement (StorageLive dummy.index);
++      assign dummy (variant error_ref 3 []);
++      assign residual (variant residual_ref 1 [Move (place dummy)]);
++      statement (StorageDead dummy.index);
++      normal_break;
++    ] } in
++    let step_error = { step_error with statements = error_head @ [
++      assign residual (Use (Move previous_residual, YesRetag));
++      set_normal false;
++      statement (Break 0);
++    ] } in
++    let rewrite (st : statement) =
++      match StatementId.to_int st.statement_id with
++      | 29 -> { st with kind = Switch (next_data, [next_ok; next_done]) }
++      | 93 -> { st with kind = Switch (step_data, [step_ok; step_error]) }
++      | _ -> st
++    in
++    let loop_statement = { loop_statement with kind = Loop { loop with statements = List.map rewrite loop.statements } } in
++    let residual_call = { residual_call with kind =
++      Call ({ call with args = [Move (place residual)] }, return_place, unwind) } in
++    let branch statements = { span; block_id = BlockId.zero; statements } in
++    let finish_result =
++      statement (Switch ({
++        scrutinee = SwitchValue (Move (place normal));
++        branches = [ (bool false, BranchId.of_int 1) ];
++        fallback = Some BranchId.zero;
++      }, [branch after_loop; branch (residual_call :: error_tail)]))
++    in
++    let body = { body with
++      locals = { body.locals with locals = body.locals.locals @ [normal; residual; dummy] };
++      body = { body.body with statements = [
++        return_prefix; statement (StorageLive normal.index); statement (StorageLive residual.index);
++        loop_statement; finish_result;
++      ] };
++    } in
++    { f with body = StructuredBody body }
++
+ exception FoundStatement of statement
+ 
+ (** Check that loops:
+@@ -489,6 +701,7 @@
+     ]} *)
+ let update_loops (crate : crate) (f : fun_decl) : fun_decl =
+   let f0 = f in
++  let f = separate_finish_return crate f in
+   let span = f.item_meta.span in
+ 
+   let visitor =

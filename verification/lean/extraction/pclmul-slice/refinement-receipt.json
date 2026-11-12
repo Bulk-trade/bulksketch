@@ -1,0 +1,101 @@
+{
+  "status": "targeted build and exact source challenge audit passed",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_item_ids": [
+    "src/backend/x86_pclmul.rs:177:function:bulksketch::backend::x86_pclmul::scale_xor",
+    "src/backend/x86_pclmul.rs:196:function:bulksketch::backend::x86_pclmul::square_slice",
+    "src/backend/x86_pclmul.rs:84:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::scale_xor",
+    "src/backend/x86_pclmul.rs:90:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::square_slice",
+    "src/backend/x86_pclmul.rs:103:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::xor_assign"
+  ],
+  "generated_file": "bridge/Arithmetic/X86PclmulSliceGenerated.lean",
+  "generated_files": [
+    "bridge/Arithmetic/X86PclmulSliceGenerated.lean",
+    "bridge/Arithmetic/Types.lean",
+    "bridge/Arithmetic/Funs.lean",
+    "bridge/Arithmetic/X86PclmulGenerated.lean"
+  ],
+  "refinements": [
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:177:function:bulksketch::backend::x86_pclmul::scale_xor",
+      "source_line_span_sha256": "fa6b682ad447d81c93da99ec83d19d2e1b9423fefa6085ba93bd0c8d646f38f5",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.scale_xor",
+      "challenge": "BulksketchBridge.X86PclmulSliceChallenges.ScaleRefines",
+      "theorem": "BulksketchBridge.X86PclmulSlice.scale_xor_refines",
+      "scope": "All GF64 input words, both reduction selectors and every slice length. Zero scale preserves every slot, one scale uses the source XOR loop, and other scalars multiply and XOR each common-prefix word. The unmatched destination tail is unchanged.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:196:function:bulksketch::backend::x86_pclmul::square_slice",
+      "source_line_span_sha256": "3df6c7708f3982c884c0a4794368fb0cbb3952e5a5412077cd5e22bcc8b89dc6",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.square_slice",
+      "challenge": "BulksketchBridge.X86PclmulSliceChallenges.SquareRefines",
+      "theorem": "BulksketchBridge.X86PclmulSlice.square_slice_refines",
+      "scope": "Both reduction selectors and all slice lengths. Each common-prefix destination word is replaced by the exact square of its paired input, with the unmatched tail preserved.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:84:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::scale_xor",
+      "source_line_span_sha256": "5203c1d1b03c017f6dc3af286e8bf68653f7cba3336a27be2c0c3e368cc1873a",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.scale_xor",
+      "challenge": "BulksketchBridge.X86PclmulSliceChallenges.ScaleEntryRefines",
+      "theorem": "BulksketchBridge.X86PclmulSlice.scale_xor_entry_refines",
+      "scope": "Equal slice lengths run the original accelerated helper with the carry-less selector. Unequal lengths panic before any write.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:90:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::square_slice",
+      "source_line_span_sha256": "99f02c0a75c2efe36c7a1129a056b55a1aa7d5af8110d286efdf45b53776baea",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.square_slice",
+      "challenge": "BulksketchBridge.X86PclmulSliceChallenges.SquareEntryRefines",
+      "theorem": "BulksketchBridge.X86PclmulSlice.square_slice_entry_refines",
+      "scope": "Equal slice lengths run the original accelerated helper with the carry-less selector. Unequal lengths panic before any write.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:103:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::xor_assign",
+      "source_line_span_sha256": "f4516c457f493b6551d14ac81ccdfcc80e0df36987771339cd4accb91c81e3b1",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractBulkKernels.xor_assign",
+      "challenge": "BulksketchBridge.X86PclmulSliceChallenges.XorEntryRefines",
+      "theorem": "BulksketchBridge.X86PclmulSlice.xor_assign_refines",
+      "scope": "Equal lengths return the exact pairwise XOR of all destination words. Unequal lengths panic before any write.",
+      "transitive_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "native_body_refinements_added": 5,
+  "verbatim_functions": 13,
+  "shared_declarations_checked": 15,
+  "runtime_trust_boundary": "Existing x86 PCLMUL XMM register and slice-specialized MutableZip value models. The checked common-prefix induction composes exact backward writes and models unequal slice lengths in the private helpers. Native pointer, feature dispatch, LLVM and CPU execution are separate.",
+  "native_source_edited": false,
+  "full_native_coverage_achieved": false,
+  "files_sha256": {
+    "bridge/Arithmetic/X86PclmulSliceGenerated.lean": "0ea46ba5d29c2afa8beea386592abb689cca853c12c8463108d5fc8d0b314827",
+    "bridge/BulksketchBridge/X86PclmulSlice.lean": "556fa23a7a15d955ca47b264eefc8ec0aa622485a922e0ce3c8f83fda1fdcb77",
+    "bridge/BulksketchBridge/X86PclmulSliceChallenges.lean": "14e786a2c67fe8ddaccaa0ce530d2a8ed0b98557b12343717e04b0ba46d47e82",
+    "bridge/BulksketchBridge/MutableZipPrefix.lean": "79f797894bd766d9b2453bcfb0081710556230a8fa00f73918a9d7a320e867bd",
+    "extraction/pclmul-slice/project.py": "6554893664222a9601698cef83bef8b10b081ff2eea7276c88456757e78ef49f",
+    "extraction/pclmul-slice/receipt.json": "773652d4b65213635e14dc9e429ce967ed5b5df1c839fc0cb37ad2c20e33741c",
+    "bridge/Arithmetic/X86PclmulRuntime.lean": "527522b826c35bd0bc841d4106bed3aed1e32cba17f48f08b75145c09713d808",
+    "bridge/Arithmetic/MutableZipRuntime.lean": "683a48af92e8c4f992d4f0893ed18679122344714cdda9a2293c07029b85776d"
+  }
+}

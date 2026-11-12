@@ -1,0 +1,98 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "d374b6f5a8d792557e51e7febd3b29ada9056252",
+  "native_files_checked": 41,
+  "build_inputs_checked": 3,
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  },
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "selected_roots": [
+    "{impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::mul",
+    "{impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::square",
+    "{impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::frobenius",
+    "{impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::trace",
+    "{impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::solve_quadratic",
+    "{impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::raw_mul",
+    "{impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::reduce",
+    "{impl bulksketch::field::BinaryField for bulksketch::field::Gf64}"
+  ],
+  "charon": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/workspace/bulk/bulksketch/verification/lean/extraction/portable-forwarding/portable.llbc",
+      "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::mul",
+      "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::square",
+      "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::frobenius",
+      "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::trace",
+      "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::solve_quadratic",
+      "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::raw_mul",
+      "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::reduce",
+      "--start-from={impl bulksketch::field::BinaryField for bulksketch::field::Gf64}",
+      "--",
+      "--manifest-path",
+      "/workspace/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6267007919998377,
+    "log": "extraction/portable-forwarding/charon.log",
+    "log_sha256": "d382aa19ff718c8afc51e415c225efeb5667a4e5d25e7f3388b896967889a28e"
+  },
+  "application_source_edited": false,
+  "bridge_files_edited": false,
+  "implementation_proof_credit": 0,
+  "llbc_has_errors": false,
+  "llbc_sha256": "fbac32b6557427fc7d3f5bff41735e408bd7079b0bd7428c1997938289dc9a5b",
+  "declaration_counts": {
+    "fun_decls": 394,
+    "type_decls": 68,
+    "global_decls": 81,
+    "trait_impls": 79
+  },
+  "aeneas": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch/verification/lean/extraction/portable-forwarding/Portable",
+      "/workspace/bulk/bulksketch/verification/lean/extraction/portable-forwarding/portable.llbc"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.2971443330000056,
+    "log": "extraction/portable-forwarding/aeneas.log",
+    "log_sha256": "8be83ac6915faf8367f082b5500779f8bcc95246f1c616ee800d8ea02db64cfc"
+  },
+  "status": "generated",
+  "generated": [
+    {
+      "path": "extraction/portable-forwarding/Portable/Funs.lean",
+      "sha256": "11ee26b358174af8fcf51b0f1cdd47f7bfbd57646faf8a1f9fd11360a933dd08"
+    },
+    {
+      "path": "extraction/portable-forwarding/Portable/FunsExternal_Template.lean",
+      "sha256": "4b078d613901aa8fc418f5e0a2bf8fda4945f2f0f88e2b3056fc7f05c2a41c62"
+    },
+    {
+      "path": "extraction/portable-forwarding/Portable/Types.lean",
+      "sha256": "f46e2c77542b7b4e96e746bb5461a9483fae18bf7c716c9da4ad38aeee8424fe"
+    },
+    {
+      "path": "extraction/portable-forwarding/Portable/TypesExternal_Template.lean",
+      "sha256": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582"
+    }
+  ]
+}

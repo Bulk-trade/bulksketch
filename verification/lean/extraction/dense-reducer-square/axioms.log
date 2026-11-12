@@ -1,0 +1,8 @@
+'BulksketchBridge.DenseReducerSquare.high_zip_is_convolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.DenseReducerSquare.reduction_zip_is_convolution' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BulksketchBridge.DenseReducerSquare.coefficient_loop_refines' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BulksketchBridge.DenseReducerSquare.square_mod_into_refines' depends on axioms: [propext, Classical.choice, Quot.sound]

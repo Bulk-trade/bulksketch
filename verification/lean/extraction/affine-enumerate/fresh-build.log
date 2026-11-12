@@ -1,0 +1,4 @@
+Entering directory '/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src'
+2026-11-09 08:56:20.295 xcodebuild[9335:5296956]  DVTFilePathFSEvents: Failed to start fs event stream.
+2026-11-09 08:56:20.448 xcodebuild[9335:5296936] [MT] DVTDeveloperPaths: Failed to get length of DARWIN_USER_CACHE_DIR from confstr(3), error = Error Domain=NSPOSIXErrorDomain Code=5 "Input/output error". Using NSCachesDirectory instead.
+Leaving directory '/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src'

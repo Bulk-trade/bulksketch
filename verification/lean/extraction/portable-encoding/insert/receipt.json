@@ -1,0 +1,57 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "3145562",
+  "selected_roots": [
+    "{impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::portable::Portable}::insert_nonzero"
+  ],
+  "native_files_checked": 41,
+  "build_inputs_checked": 3,
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  },
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "llbc_has_errors": false,
+  "llbc_sha256": "5ea61080613eaea61f794edf11dfbd995bc1fe7dded986283d659cf83a6ddcc4",
+  "recorded_output_directory": "/workspace/bulk/bulksketch-proof-evidence-20261108/portable-next/insert",
+  "artifacts": [
+    {
+      "path": "extraction/portable-encoding/insert/arithmetic.llbc",
+      "sha256": "5ea61080613eaea61f794edf11dfbd995bc1fe7dded986283d659cf83a6ddcc4"
+    },
+    {
+      "path": "extraction/portable-encoding/insert/charon.log",
+      "sha256": "b5e646f92ae22ab133ffb4156975ab7cd5a7fd621662fa187a47365d057f822a"
+    },
+    {
+      "path": "extraction/portable-encoding/insert/aeneas.log",
+      "sha256": "49f367728a25d0f5c413e659afbeeda97cd0357078a6d18a4367e2a78cb23149"
+    },
+    {
+      "path": "extraction/portable-encoding/insert/Arithmetic/Funs.lean",
+      "sha256": "30a69a641cebc1e5dad7fc99fa8edd051970cd36f5d9d8ca010db1afe0ceb6b1"
+    },
+    {
+      "path": "extraction/portable-encoding/insert/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "8ca8c96487a6ba9518d4f38ced0d28bb8f104c202265afcb63f84f0f8f23030d"
+    },
+    {
+      "path": "extraction/portable-encoding/insert/Arithmetic/Types.lean",
+      "sha256": "d85fc6fef598ee48e95ca16c4955e9352bf9a9ce33b572b78f91d46f5b8db9f5"
+    },
+    {
+      "path": "extraction/portable-encoding/insert/Arithmetic/TypesExternal_Template.lean",
+      "sha256": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582"
+    }
+  ],
+  "native_source_edited": false,
+  "command_recipe": [
+    "charon cargo --preset=aeneas --sysroot=default --dest-file=<output>/arithmetic.llbc --start-from=<selected_root> -- --manifest-path=<repo>/Cargo.toml -p bulksketch --lib --locked",
+    "aeneas -backend lean -checks -sequential -print-error-emitters -split-files -dest <output>/Pinned <output>/arithmetic.llbc"
+  ]
+}

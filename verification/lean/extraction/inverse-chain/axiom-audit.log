@@ -1,0 +1,8 @@
+'BulksketchBridge.Inverse.exact_chain_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.Inverse.field_inverse_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.Inverse.native_callback_instance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.Inverse.source_scalar_bounds' depends on axioms: [propext]
+'BulksketchBridge.Inverse.zero_returns_without_callbacks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.Inverse.one_returns_without_callbacks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.Inverse.chain_meaning' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.Inverse.completed_chain_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]

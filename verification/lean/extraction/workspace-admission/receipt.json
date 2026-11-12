@@ -1,0 +1,132 @@
+{
+  "status": "passed",
+  "mode": "scoped_llbc_read_only_projection",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_source_edited": false,
+  "checkout_commit": "112ef27b894fde1ce65912430047527b70d65df3",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "usize_bits": 64,
+  "selected_roots": [
+    "bulksketch::decode::stages::check_workspace"
+  ],
+  "llbc_has_errors": false,
+  "source_directory": "/workspace/bulk/bulksketch",
+  "source_path": "src/decode/stages.rs",
+  "source_sha256": "93825fcb5054e98e9af060a81da72d4770c29354d79822ccfc949cc55f6e9b23",
+  "source_span": "454:0-487:1",
+  "registry_sha256": "efb1bf5f921bcf4e5be563d09fb72fb28ed66430a77957703e8ef64e6f3282be",
+  "tool_binary_sha256": {
+    "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "/workspace/bulk/bulksketch-proof-tools/certificate-ended-projector/src/_build/default/main.exe": "7482e094f6a3afbd01403fb072a284e9656ef3732e2fbeed5d030deccf323e19"
+  },
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+    "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/check-workspace/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true"
+  },
+  "commands": [
+    {
+      "name": "charon",
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/check-workspace/arithmetic.llbc",
+        "--start-from=bulksketch::decode::stages::check_workspace",
+        "--",
+        "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "aeneas-rejection",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/certificate-ended-projector/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/check-workspace/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/check-workspace/arithmetic.llbc"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "projector-controls",
+      "command": [
+        "python3",
+        "-O",
+        "verification/lean/extraction/workspace-admission/check_controls.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "extraction_files_sha256": {
+    "extraction/workspace-admission/arithmetic.llbc": "ccbfd979ca9624af231b6ebfd31e4b05db2fecc5ac632cd3b9e1d556c33572d6",
+    "extraction/workspace-admission/charon.log": "499f0f38ecdaafb3015ef9514a535ee82caad6671b91b65ce4bf9d9ba16c7881",
+    "extraction/workspace-admission/aeneas.log": "e25180f30a163d99c0a29f1f3d6a49ad0f9a18bac991b2a18ac8444a3c04fe0a",
+    "extraction/workspace-admission/controls.log": "7da58f64bc886f3300776e7e62e74536b3806f2e8c04c46d4d8971e9857a2179",
+    "extraction/workspace-admission/project.py": "e300f7f4982cdca86f7bb1ecc0baf2abd8308afc392888baf1588d13885f1d64",
+    "extraction/workspace-admission/check_controls.py": "834362ee046da5796a0af5547821b9cb94d272f33106c832cb860ded882bb558"
+  },
+  "projection": {
+    "normal_success_paths": 2,
+    "normal_error_paths": 34,
+    "read_only_fields": [
+      "syndromes",
+      "bm",
+      "polynomials",
+      "factors",
+      "squareTable",
+      "verification",
+      "roots",
+      "raw",
+      "stack"
+    ],
+    "original_call_ids": {
+      "24": 6,
+      "28": 6,
+      "29": 16,
+      "20": 16,
+      "22": 18,
+      "25": 10,
+      "32": 10,
+      "21": 16
+    },
+    "programs": {
+      "src/decode/stages.rs:454:function:bulksketch::decode::stages::check_workspace": "BulksketchBridge.WorkspaceAdmission.runOriginal"
+    },
+    "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+    "source_sha256": "93825fcb5054e98e9af060a81da72d4770c29354d79822ccfc949cc55f6e9b23",
+    "llbc_sha256": "ccbfd979ca9624af231b6ebfd31e4b05db2fecc5ac632cd3b9e1d556c33572d6",
+    "llbc": "extraction/workspace-admission/arithmetic.llbc",
+    "compiled_projection": "bridge/BulksketchBridge/WorkspaceAdmissionGenerated.lean",
+    "projection_file_sha256": "49754b7b722a6661a787af75a04504ed7b593335d283ef1c489dff70d894c099",
+    "projection_sha256": "49754b7b722a6661a787af75a04504ed7b593335d283ef1c489dff70d894c099",
+    "native_body_proof_credit": 0,
+    "native_source_edited": false
+  },
+  "challenges": {
+    "src/decode/stages.rs:454:function:bulksketch::decode::stages::check_workspace": {
+      "program": "BulksketchBridge.WorkspaceAdmission.runOriginal",
+      "challenge": "BulksketchBridge.WorkspaceAdmission.ActualWorkspaceAdmissionReturnsExactFrame",
+      "theorem": "BulksketchBridge.WorkspaceAdmission.check_workspace_refines",
+      "scope": "All valid shared workspace descriptors, all u64-sized usize inputs on x86_64 Darwin, exact checked-arithmetic rejection, short-circuit length tests and read-only frame."
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "native_source_edited": false,
+  "selector": "bulksketch::poly::dense::times_x_mod",
+  "charon_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/times-x-mod/arithmetic.llbc",
+    "--start-from=bulksketch::poly::dense::times_x_mod",
+    "--",
+    "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "aeneas_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-checks",
+    "-sequential",
+    "-no-progress-bar",
+    "-print-error-emitters",
+    "-split-files",
+    "-dest",
+    "/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/times-x-mod/stock",
+    "/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/times-x-mod/arithmetic.llbc"
+  ],
+  "checked_exit": 0,
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-dense-reducer/times-x-replay",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/times-x-mod/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "outputs": {
+      "Funs.lean": "7a75d5bcbc3f7cf27a5105e150e92beef6a869a940dadb5c35fe5ea8c2831219",
+      "FunsExternal_Template.lean": "b821fda73a162db9387db67f0ffdc390bf54b869f400eff903eee8f803173394",
+      "Types.lean": "60b67a1a6b409429060cc341dec947da79aff03f7397fb963acb9d7a3ce270a6"
+    }
+  },
+  "files_sha256": {
+    "extraction/times-x-mod/aeneas.log": "665ab21095e94aa496db0911c750a4a84ce3a95a14a91249d325cef484774ca6",
+    "extraction/times-x-mod/charon.log": "912766eb4410d6dec76a13040dde2f269e8ed29311662a6f8b12b7f90310ea71",
+    "extraction/times-x-mod/arithmetic.llbc": "06951cddca5be8f6f1f99052a9a262a6527e878e04c9db846506c0aa7c1baf51",
+    "extraction/times-x-mod/replay.log": "27b3b37406e5b76990c50c4a25c5aa4d4c60eb5ca814f9bb7e50ef5568b6c139",
+    "extraction/times-x-mod/Arithmetic/Funs.lean": "7a75d5bcbc3f7cf27a5105e150e92beef6a869a940dadb5c35fe5ea8c2831219",
+    "extraction/times-x-mod/Arithmetic/FunsExternal_Template.lean": "b821fda73a162db9387db67f0ffdc390bf54b869f400eff903eee8f803173394",
+    "extraction/times-x-mod/Arithmetic/Types.lean": "60b67a1a6b409429060cc341dec947da79aff03f7397fb963acb9d7a3ce270a6"
+  }
+}

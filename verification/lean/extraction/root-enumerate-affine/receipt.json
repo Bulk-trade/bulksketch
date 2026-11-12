@@ -1,0 +1,85 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "selector": "bulksketch::decode::roots::_::enumerate_affine",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "binary_sha256": {
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe"
+  },
+  "native_source_edited": false,
+  "opaque_application_bodies": [
+    "bulksketch::decode::affine::enumerate",
+    "bulksketch::decode::roots::_::advance"
+  ],
+  "checked_exit": 0,
+  "files_sha256": {
+    "extraction/root-enumerate-affine/Arithmetic/Funs.lean": "32928bea334705d734b741e78d3d99f6a571c5770a4ba84b603a4809b9e0bbe3",
+    "extraction/root-enumerate-affine/Arithmetic/FunsExternal_Template.lean": "9cfe9c90ec5d61b508979f90f008de7e1adafc53b878ec77d70fb86213f61cf9",
+    "extraction/root-enumerate-affine/Arithmetic/Types.lean": "7e3dd3679bf1a13d81680c2cdd32c5a2b23aeb61e1a084fb36f8c4bcb1b4c69b",
+    "extraction/root-enumerate-affine/aeneas.log": "a8977ca60fa81f1f502e716775e23276468a90b9b7e55ffe54d0800beda3257b",
+    "extraction/root-enumerate-affine/arithmetic.llbc": "c89b551c5e6f3ad080cb1cedce4bd46b0125d40ba6c2f691e34502509f18ed62",
+    "extraction/root-enumerate-affine/charon.log": "38cc7f1bd1b0b52c6628c3278e2b852f66871504cfb3679c7768d004cb7471d4",
+    "extraction/root-enumerate-affine/replay.log": "a20a390e6560efb334acce9c460938766553b842e0b577f6a507e61e6182be27"
+  },
+  "charon_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/arithmetic.llbc",
+    "--start-from=bulksketch::decode::roots::_::enumerate_affine",
+    "--opaque=bulksketch::decode::affine::enumerate",
+    "--opaque=bulksketch::decode::roots::_::advance",
+    "--",
+    "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "aeneas_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-checks",
+    "-sequential",
+    "-no-progress-bar",
+    "-print-error-emitters",
+    "-split-files",
+    "-dest",
+    "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/stock",
+    "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/arithmetic.llbc"
+  ],
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/replay",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "input_sha256": "c89b551c5e6f3ad080cb1cedce4bd46b0125d40ba6c2f691e34502509f18ed62",
+    "log_sha256": "a20a390e6560efb334acce9c460938766553b842e0b577f6a507e61e6182be27",
+    "outputs": {
+      "Funs.lean": "32928bea334705d734b741e78d3d99f6a571c5770a4ba84b603a4809b9e0bbe3",
+      "FunsExternal_Template.lean": "9cfe9c90ec5d61b508979f90f008de7e1adafc53b878ec77d70fb86213f61cf9",
+      "Types.lean": "7e3dd3679bf1a13d81680c2cdd32c5a2b23aeb61e1a084fb36f8c4bcb1b4c69b"
+    }
+  },
+  "source_sha256": {
+    "src/decode/roots.rs": "4697d5874fd1eb03c0210371fdac83a8dc7171de2724da046613f59c879f4fb6",
+    "src/decode/affine.rs": "a7c45498717202aec291b4c4acdd6f819edf16bcdf478500a8c74a3492c4e11d"
+  }
+}

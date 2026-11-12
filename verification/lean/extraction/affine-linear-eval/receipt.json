@@ -1,0 +1,85 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "3145562867e2441eee51aca290591007b23e0ae4",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "selected_roots": [
+    "bulksketch::decode::affine::linear_eval"
+  ],
+  "llbc_has_errors": false,
+  "native_source_edited": false,
+  "source_directory": "/workspace/bulk/bulksketch",
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+    "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-evidence-20261108/reconstruct-retry/linear-eval/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true"
+  },
+  "commands": [
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261108/reconstruct-retry/linear-eval/arithmetic.llbc",
+        "--start-from=bulksketch::decode::affine::linear_eval",
+        "--",
+        "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261108/reconstruct-retry/linear-eval/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261108/reconstruct-retry/linear-eval/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "artifacts": [
+    {
+      "path": "extraction/affine-linear-eval/arithmetic.llbc",
+      "sha256": "748ac70f584fed00ec5be4f7bb0813deabda01f508896bea556dd6f7a1e58ad7"
+    },
+    {
+      "path": "extraction/affine-linear-eval/charon.log",
+      "sha256": "5484214e08f1a05d1064cd4537edc61d8137ddb79916e3128f98320614b3763a"
+    },
+    {
+      "path": "extraction/affine-linear-eval/aeneas.log",
+      "sha256": "ccb9dddf5fe830a815d747e38be8961694ffc644eaff3fc00dc774d23d6a163c"
+    },
+    {
+      "path": "extraction/affine-linear-eval/Arithmetic/Types.lean",
+      "sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1"
+    },
+    {
+      "path": "extraction/affine-linear-eval/Arithmetic/Funs.lean",
+      "sha256": "1ad1dbb2088a62e4cc6a3d7167314b676da60198b46453cf42bf6f836e0e3c12"
+    },
+    {
+      "path": "extraction/affine-linear-eval/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829"
+    }
+  ]
+}

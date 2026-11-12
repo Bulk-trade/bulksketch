@@ -1,0 +1,42 @@
+{
+  "status": "helper-refinements-checked",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_body_proof_credit": 0,
+  "original_method": "bulksketch::poly::dense::<Dense as Polynomial < F , K >>::mul_into",
+  "translator_variant": "checked-shared-loop-erasure-v1",
+  "proofs": [
+    {
+      "challenge": "BulksketchBridge.DenseMulConvolutionSpec.innerLoopFrame",
+      "theorem": "BulksketchBridge.DenseMulConvolution.inner_loop_refines",
+      "source_span": "src/poly/dense.rs:18-22",
+      "scope": "Original inner row loop returns exact exhausted cursors and a backward callback whose application XORs the complete raw product into both halves of each remaining slot."
+    },
+    {
+      "challenge": "BulksketchBridge.DenseMulConvolutionSpec.outerLoopFrame",
+      "theorem": "BulksketchBridge.DenseMulConvolution.outer_loop_refines",
+      "source_span": "src/poly/dense.rs:17-23",
+      "scope": "Original outer enumerate loop checks indices and window bounds and applies every remaining shifted row to the original scratch slice. Word, length and out-of-window frame theorems describe all scratch slots."
+    }
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "checks": [
+    "Targeted Lean build",
+    "Exact challenge assignments",
+    "Transitive axiom checks",
+    "Verbatim loop, wrapper and RawProduct clone projection with shared default and normalization bindings",
+    "Modified XOR and shared default rejected under normal and optimized Python"
+  ],
+  "files_sha256": {
+    "bridge/Arithmetic/DenseMulConvolutionGenerated.lean": "833933b1c40e180072b889c7db4528983194014e5a3ad914b5b15975c237e104",
+    "bridge/BulksketchBridge/DenseMulConvolutionSpec.lean": "9580798d9dca26f3727ac8d297df6d588a20679bc2b69f096d64b5e2baaf193d",
+    "bridge/BulksketchBridge/DenseMulConvolution.lean": "2598a21f3e4825eda83d07496432a23b9afbcb5ea0bfbff4b2a8d0ba3a8701bd",
+    "extraction/dense-mul/project-convolution.py": "02fd73c517e335becbcd1c9d99c25b8c7a5ba26174cd5d380b1434388029c0f4",
+    "extraction/dense-mul/convolution-axiom-audit.log": "131db0a73be9d48bdeef5b24de1ea55f30a3a425fc8227e68bbc6d78bef14c55",
+    "extraction/dense-mul/receipt.json": "6b8976439f19e57cf5cd6c5de68573645853f5b47f094f18a6458dd462671932",
+    "tooling/aeneas-dense-mul/receipt.json": "f58334207b2eccb868566cf79daf46b9a660a938166453f9a62d0cbc1de2f0db"
+  }
+}

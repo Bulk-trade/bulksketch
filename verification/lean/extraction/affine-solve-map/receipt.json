@@ -1,0 +1,119 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "94b9d7166f06efeba16135f1e82f2de9a7b2ccc4",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "selected_roots": [
+    "bulksketch::decode::affine::solve_map"
+  ],
+  "llbc_has_errors": false,
+  "native_source_edited": false,
+  "source_sha256": {
+    "src/decode/affine.rs": "a7c45498717202aec291b4c4acdd6f819edf16bcdf478500a8c74a3492c4e11d",
+    "src/field/mod.rs": "035dc6193ebb50b324527525c0ee47cbe06ca325db16aa5f8ee55b0e79baa723",
+    "src/backend/contract.rs": "4d05ce564edc408ba04f5a907b159ad91018ba8cfd93126e17913ed49f7e3d59"
+  },
+  "source_directory": "/workspace/bulk/bulksketch",
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+    "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-selector-map/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true"
+  },
+  "commands": [
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-affine-selector-map/solve-map-table/arithmetic.llbc",
+        "--start-from=bulksketch::decode::affine::solve_map",
+        "--",
+        "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-selector-map/solve-map-table/checked",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-selector-map/solve-map-table/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-selector-map/solve-map-table/replay",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-selector-map/solve-map-table/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "tool_binary_sha256": {
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe"
+  },
+  "artifacts": [
+    {
+      "path": "extraction/affine-solve-map/arithmetic.llbc",
+      "sha256": "5f5fcda061b47e1871aa8a3d6f0d04732ebd5bde6bd09b95b9980bfc918c81eb"
+    },
+    {
+      "path": "extraction/affine-solve-map/charon.log",
+      "sha256": "413f9c24b36d25e7ca7cbfb28d5e334de1eb0223260f19d4f79e8d09d63bbbce"
+    },
+    {
+      "path": "extraction/affine-solve-map/aeneas.log",
+      "sha256": "8819bb9fae643d8ca2000030fdd6fe6898e4e90d5b8882813e2f3104106d23a5"
+    },
+    {
+      "path": "extraction/affine-solve-map/replay.log",
+      "sha256": "d39a6e8561321d83ed02b3ef30343e8390cea6738e91b65eafd1d5cd3737f8d0"
+    },
+    {
+      "path": "extraction/affine-solve-map/Arithmetic/Types.lean",
+      "sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1"
+    },
+    {
+      "path": "extraction/affine-solve-map/Arithmetic/Funs.lean",
+      "sha256": "6a9eb3243563ce128ae56d23bfb11a39f74cf6f4acda41817f59e673cb7a0d53"
+    },
+    {
+      "path": "extraction/affine-solve-map/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "5ad04a275111888fca6d8242fa5f3753688eb0a3dac5fd0737c67894e682bf2b"
+    }
+  ],
+  "checked_replay_byte_identical": true,
+  "replay_generated_sha256": {
+    "Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+    "Funs.lean": "6a9eb3243563ce128ae56d23bfb11a39f74cf6f4acda41817f59e673cb7a0d53",
+    "FunsExternal_Template.lean": "5ad04a275111888fca6d8242fa5f3753688eb0a3dac5fd0737c67894e682bf2b"
+  }
+}

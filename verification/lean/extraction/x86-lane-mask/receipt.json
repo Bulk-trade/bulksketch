@@ -1,0 +1,91 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "07927c25ecb8fe22c925692edbd2c0780baec8bd",
+  "native_files_checked": 41,
+  "native_build_inputs_checked": 3,
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  },
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "selected_roots": [
+    "bulksketch::backend::x86_vpclmul512::mask"
+  ],
+  "target": "x86_64-apple-darwin",
+  "llbc_has_errors": false,
+  "native_source_edited": false,
+  "source_directory": "/workspace/bulk/bulksketch",
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+    "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-evidence-20261109/x86-lane-mask/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true"
+  },
+  "commands": [
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch/verification/lean/extraction/x86-lane-mask/arithmetic.llbc",
+        "--start-from=bulksketch::backend::x86_vpclmul512::mask",
+        "--",
+        "--manifest-path",
+        "/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.008928916999139
+    },
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/x86-lane-mask/Arithmetic",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/x86-lane-mask/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.38298920799570624
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "extraction/x86-lane-mask/arithmetic.llbc",
+      "sha256": "06e044cf0737ebeab6915f4f685dd31febf76ecd215e9f5faafcd2a3b8c3226f"
+    },
+    {
+      "path": "extraction/x86-lane-mask/charon.log",
+      "sha256": "3d43d9cac5c0f6b3ee77356aacf608a3650d33d27596d35ffb801c9177bd452b"
+    },
+    {
+      "path": "extraction/x86-lane-mask/aeneas.log",
+      "sha256": "1cc72896f2f2b80ade259e1f5c9d0dcff46f36ecec20f39b7cf2cb1dbee5e204"
+    },
+    {
+      "path": "extraction/x86-lane-mask/Arithmetic/Funs.lean",
+      "sha256": "1734d7fd2265fd71eb2682d6069c2aceff3272ce0ef8fde76a8925a675c1c10f"
+    },
+    {
+      "path": "extraction/x86-lane-mask/Arithmetic/Types.lean",
+      "sha256": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea"
+    }
+  ]
+}

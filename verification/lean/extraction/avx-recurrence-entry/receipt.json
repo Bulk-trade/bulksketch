@@ -1,0 +1,109 @@
+{
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "rust_toolchain": "nightly-2026-09-17",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "target": "x86_64-apple-darwin",
+  "native_source_edited": false,
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "commands": {
+    "charon": {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/avx-recurrence-entry/arithmetic.llbc",
+        "--start-from={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::x86_vpclmul512::Vpclmul512}::odd_recurrence_matches",
+        "--opaque=bulksketch::backend::x86_vpclmul512::odd_recurrence_matches",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::mul",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::square",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::frobenius",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::inverse",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::trace",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::solve_quadratic",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::raw_mul",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::reduce",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::scale_xor",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::square_slice",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::multiply_linear",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::encode_nonzero",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::xor_assign",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::difference",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::square_mod",
+        "--opaque=bulksketch::backend::x86_vpclmul512::horner_many",
+        "--opaque=bulksketch::backend::x86_vpclmul512::square_mod",
+        "--opaque=bulksketch::backend::portable::_::_",
+        "--opaque=bulksketch::backend::x86_pclmul::_::_",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::horner_many",
+        "--opaque=bulksketch::backend::x86_vpclmul512::insert",
+        "--include={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::x86_vpclmul512::Vpclmul512}::odd_recurrence_matches",
+        "--",
+        "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    "aeneas": {
+      "command": [
+        "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/avx-recurrence-entry/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/avx-recurrence-entry/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  },
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/avx-recurrence-entry/replay",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/avx-recurrence-entry/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "identical_outputs": true,
+    "outputs_sha256": {
+      "Funs.lean": "1ffdc96045cdac0c81f05bbada02a6efee73b6881ed98f88327de5b16986b957",
+      "Types.lean": "7568729debeeed94e9cdfa662cd6c1ab794b79dbc6288af7bf91893c3418096a",
+      "FunsExternal_Template.lean": "8361fbe787f6a466a0d588b505ae86a8cf8e28d3379afce090c0d0bb471c1d8d"
+    }
+  },
+  "source_sha256": {
+    "src/backend/x86_vpclmul512.rs": "7a9c29dff254508671aa4122b20644b21a9cfb40f86ba5eaadce02bf680475d4",
+    "src/backend/portable.rs": "2c3543dc3c5a67d5343e292a1c7b4f0554ba15f68f45b9533d269e3f4ba9b8da",
+    "src/backend/contract.rs": "4d05ce564edc408ba04f5a907b159ad91018ba8cfd93126e17913ed49f7e3d59"
+  },
+  "artifacts": {
+    "extraction/avx-recurrence-entry/arithmetic.llbc": "21ecc24ca45024c5f0ceb261626b04c2f302518d1f5ba169b483d7988e2d3dd4",
+    "extraction/avx-recurrence-entry/charon.log": "0e20c3b14d7e2130906ca70b87b8a692de473f3a620cbc9e65c606506320b79b",
+    "extraction/avx-recurrence-entry/aeneas.log": "d4981b5c3e4c380e65be93401e48c121cecb9e6849f9f135e62ad73a2e4466f2",
+    "extraction/avx-recurrence-entry/replay.log": "666381c06563ac4d3c68fd8e0bff8134fa131f2788aac7c2143b7aae9122637d",
+    "extraction/avx-recurrence-entry/Arithmetic/Funs.lean": "1ffdc96045cdac0c81f05bbada02a6efee73b6881ed98f88327de5b16986b957",
+    "extraction/avx-recurrence-entry/Arithmetic/Types.lean": "7568729debeeed94e9cdfa662cd6c1ab794b79dbc6288af7bf91893c3418096a",
+    "extraction/avx-recurrence-entry/Arithmetic/FunsExternal_Template.lean": "8361fbe787f6a466a0d588b505ae86a8cf8e28d3379afce090c0d0bb471c1d8d"
+  }
+}

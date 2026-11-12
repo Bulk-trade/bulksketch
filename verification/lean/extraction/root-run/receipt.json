@@ -1,0 +1,81 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "native_source_edited": false,
+  "binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "charon_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/run/arithmetic.llbc",
+    "--start-from=bulksketch::decode::roots::_::run",
+    "--opaque=bulksketch::decode::roots::_::closed_leaf",
+    "--opaque=bulksketch::decode::roots::_::leaf",
+    "--opaque=bulksketch::decode::roots::_::prepare_affine",
+    "--opaque=bulksketch::decode::roots::_::enumerate_affine",
+    "--opaque=bulksketch::decode::roots::_::trace",
+    "--opaque=bulksketch::decode::roots::_::divide",
+    "--opaque=bulksketch::decode::affine::splitter",
+    "--opaque=bulksketch::poly::dense::_::prepare_square_table",
+    "--opaque=bulksketch::poly::dense::_::monic_gcd_into",
+    "--",
+    "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "aeneas_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-checks",
+    "-sequential",
+    "-no-progress-bar",
+    "-print-error-emitters",
+    "-split-files",
+    "-dest",
+    "/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/run/stock",
+    "/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/run/arithmetic.llbc"
+  ],
+  "checked_exit": 0,
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/replay",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/run/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "outputs": {
+      "Funs.lean": "8eb87055b6f02b4317a73a4143bd6f31eac1fd147b762658d0211872dc39f584",
+      "FunsExternal_Template.lean": "d88b12ca83f1f47162def256050e04ea360ea4a6d3ffce5d2da3e2694eca203c",
+      "Types.lean": "8e60f427b52e8189626149f13baa92802e3a84388b111eb3dfce62e9c6a88e94"
+    }
+  },
+  "files_sha256": {
+    "extraction/root-run/aeneas.log": "5f939b86075dec142f63114813a6962880dc2462578ff5909301ff9bd31bb86c",
+    "extraction/root-run/charon.log": "5c28a2aa14146a1d220dc3e6d00e58957ce8aa4fd74150dbb0be8f4554e8745e",
+    "extraction/root-run/arithmetic.llbc": "81f04e48c376f9df6c870ef1f6db72c8d49fe3f648ab961c3adcbae0521aefdd",
+    "extraction/root-run/replay.log": "c16d54d78945815a117f6c3f1b0826fd9e43ee326560fc305b5d3ef9fd254969",
+    "extraction/root-run/Arithmetic/Funs.lean": "8eb87055b6f02b4317a73a4143bd6f31eac1fd147b762658d0211872dc39f584",
+    "extraction/root-run/Arithmetic/FunsExternal_Template.lean": "d88b12ca83f1f47162def256050e04ea360ea4a6d3ffce5d2da3e2694eca203c",
+    "extraction/root-run/Arithmetic/Types.lean": "8e60f427b52e8189626149f13baa92802e3a84388b111eb3dfce62e9c6a88e94"
+  }
+}

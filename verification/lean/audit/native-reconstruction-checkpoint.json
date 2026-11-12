@@ -1,0 +1,14 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "previous_proof_commit": "b42346ac39c9f658311ee2f025ac56af67919d14",
+  "retained_native_executable_obligations": 344,
+  "generated_body_refinements_under_recorded_TCB": 87,
+  "checked_stateful_llbc_refinements": 5,
+  "whole_native_coverage_achieved": false,
+  "open": [
+    "Native Berlekamp–Massey shared Zip projection lifecycle and full locator semantics",
+    "General and specialized root recovery and full decoder completeness",
+    "Remaining work schedule pricing tags and stage callers",
+    "Remaining accelerated kernels, physical memory and ISA correspondence, compiler-expanded closure"
+  ]
+}

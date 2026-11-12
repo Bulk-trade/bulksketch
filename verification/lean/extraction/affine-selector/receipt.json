@@ -1,0 +1,119 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "7ca23544b647e830420c34fdc59f5ba09470d15c",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "selected_roots": [
+    "bulksketch::decode::affine::enumerate_preferred",
+    "bulksketch::decode::affine::square_products"
+  ],
+  "llbc_has_errors": false,
+  "native_source_edited": false,
+  "source_sha256": {
+    "src/decode/affine.rs": "a7c45498717202aec291b4c4acdd6f819edf16bcdf478500a8c74a3492c4e11d"
+  },
+  "source_directory": "/workspace/bulk/bulksketch",
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+    "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-selector-map/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true"
+  },
+  "commands": [
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-affine-selector-map/selector/arithmetic.llbc",
+        "--start-from=bulksketch::decode::affine::enumerate_preferred",
+        "--start-from=bulksketch::decode::affine::square_products",
+        "--",
+        "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-selector-map/selector/checked",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-selector-map/selector/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-selector-map/selector/replay",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-selector-map/selector/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "tool_binary_sha256": {
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe"
+  },
+  "artifacts": [
+    {
+      "path": "extraction/affine-selector/arithmetic.llbc",
+      "sha256": "499dc34be5db7c61bc0cecd35872095042d8c5f64f38ca050089c8d793a20779"
+    },
+    {
+      "path": "extraction/affine-selector/charon.log",
+      "sha256": "154a04fe6ecc576a6c374cc5a50f3ac8e420b417a8ac48916177e63994d67790"
+    },
+    {
+      "path": "extraction/affine-selector/aeneas.log",
+      "sha256": "b598f978f94620c72a52e3b8a9b74b52fc3294a2c41644628f60a6235fa84a59"
+    },
+    {
+      "path": "extraction/affine-selector/replay.log",
+      "sha256": "55f2d043c573930063a6db7e1e22beb8611d4e8d61494075050b925bc473b60d"
+    },
+    {
+      "path": "extraction/affine-selector/Arithmetic/Types.lean",
+      "sha256": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea"
+    },
+    {
+      "path": "extraction/affine-selector/Arithmetic/Funs.lean",
+      "sha256": "2cb5c3b780f0ad89bd6797f507b7adfdb903ea0efb8a66ee3ac52f65a960e256"
+    },
+    {
+      "path": "extraction/affine-selector/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "92035b28f002c76166c04112a5f25e8259ccddc96cbb8750236a847d7915c0c4"
+    }
+  ],
+  "checked_replay_byte_identical": true,
+  "replay_generated_sha256": {
+    "Types.lean": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea",
+    "Funs.lean": "2cb5c3b780f0ad89bd6797f507b7adfdb903ea0efb8a66ee3ac52f65a960e256",
+    "FunsExternal_Template.lean": "92035b28f002c76166c04112a5f25e8259ccddc96cbb8750236a847d7915c0c4"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "status": "checked_original_body_extracted",
+  "native_source_edited": false,
+  "native_body_proof_credit": 0,
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "112ef27b894fde1ce65912430047527b70d65df3",
+  "source_directory": "/workspace/bulk/bulksketch",
+  "source_path": "src/decode/stages.rs",
+  "source_sha256": "93825fcb5054e98e9af060a81da72d4770c29354d79822ccfc949cc55f6e9b23",
+  "source_span": "241:4-265:5",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "translator_variant": "checked-ended-projector-leaf-v1",
+  "patch_sha256": "087d4f3aec35bdeeb3d3d6ddef5a685d60c7765b11ffd05382eacaeefed0d90e",
+  "tool_binary_sha256": {
+    "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "/workspace/bulk/bulksketch-proof-tools/certificate-ended-projector/src/_build/default/main.exe": "7482e094f6a3afbd01403fb072a284e9656ef3732e2fbeed5d030deccf323e19",
+    "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+    "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/reconstruct-filtered/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true"
+  },
+  "commands": [
+    {
+      "name": "charon",
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/reconstruct-filtered/arithmetic.llbc",
+        "--start-from=bulksketch::decode::stages",
+        "--opaque=bulksketch::decode::stages::_::_",
+        "--include=bulksketch::decode::stages::_::reconstruct",
+        "--include=bulksketch::decode::stages::_::charge",
+        "--opaque=bulksketch::decode::stages::check_workspace",
+        "--",
+        "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "Arithmetic",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/certificate-ended-projector/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/reconstruct-filtered/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/reconstruct-filtered/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "pinned",
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/reconstruct-filtered/pinned",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/reconstruct-filtered/arithmetic.llbc"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "unchecked",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/certificate-ended-projector/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/reconstruct-filtered/unchecked",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-next/certificate-lane/reconstruct-filtered/arithmetic.llbc"
+      ],
+      "exit_code": 1
+    }
+  ],
+  "llbc_has_errors": false,
+  "reconstruct_declarations_sha256": {
+    "decode.stages.Execution.reconstruct.closure.Insts.CoreOpsFunctionFnMutTupleShared0U64Bool.call_mut": "94b06f8aae6081cde356a076c6b1e45e1b6f691ef1adf1400c859736ebeb81bf",
+    "decode.stages.Execution.reconstruct.closure.Insts.CoreOpsFunctionFnOnceTupleShared0U64Bool.call_once": "18ce1da5cca2315ffe42cc15aef93326113766bd744f2114edc080ee0fb802f4",
+    "decode.stages.Execution.reconstruct.closure.Insts.CoreOpsFunctionFnOnceTupleShared0U64Bool": "12ff681b0b5ec1c2658b42b9dae6f487fa2fcf294ac275581202eebf35ce4fba",
+    "decode.stages.Execution.reconstruct.closure.Insts.CoreOpsFunctionFnMutTupleShared0U64Bool": "b4e7a869e494eb5bc69b944b475a3cb4227319d80ec97dd33a184848b667e925",
+    "decode.stages.Execution.reconstruct_loop0.body": "47247a6695fbcef7dfa20b75345d7e730d5c6cc53389c2abc37871e2b3fc06ce",
+    "decode.stages.Execution.reconstruct_loop0": "8f1faf89ed7af23d09abc78ea2b9044a59132e1cad6b40760c9984fdbc3c4c95",
+    "decode.stages.Execution.reconstruct_loop1.body": "df9d0adca02002d43a357e98ba80227b2eb50089232300d30a13f57ea22cbcec",
+    "decode.stages.Execution.reconstruct_loop1": "09277b10d7c032d7c904732851188e06cf0c684d91a9d970ca9599791223c425",
+    "decode.stages.Execution.reconstruct": "82d24d6d0fa39c7c771e5fccf293c52d3645444fa2facf822a9020a47ace529b"
+  },
+  "same_reconstruct_declarations_as_unfiltered_checked_attempt": true,
+  "external_dependency_boundary": "The workspace checker is explicitly opaque. Sibling stage methods are opaque. Both original reconstruct loops, closure, wrapper and original charge body are transparent.",
+  "checker_gap": "The workspace checker and scoped Iterator::all binding need correspondence before full reconstruction source credit.",
+  "artifacts": {
+    "arithmetic.llbc": "21807c0e28ca0d89d050c5ec80f18f379f72b761bf8dbb67affcb59a8c9f7f0d",
+    "charon.log": "a3b5a64f69a725a4bc11cbff8467903923098893c7ea9bae4e4afefcb7c468f3",
+    "aeneas.log": "313e5e288e5ad162f0b2c18c11ec301c6a0ebf1c6b94d792ee0f56288858c00e",
+    "pinned.log": "b7f7a89b468f731970c7d134387139d506cce1042c58f29bd2433ac948e50294",
+    "unchecked.log": "51af8b1460af2a16dd627816dcff861ed3149067581d691d94749447e1b99566",
+    "Arithmetic/Funs.lean": "f6155441a842fa7faf893966ee353d535a570712fb20b05c151e96910c321894",
+    "Arithmetic/Types.lean": "744c9ad2bf87c425744c19e6ba0137afafdd196687029dcd8b2c44db5c34acb3",
+    "Arithmetic/FunsExternal_Template.lean": "08183927186b1e15b828fa301780d4287c522edd8ae9c6b98de7f1f8a1cef79b"
+  }
+}

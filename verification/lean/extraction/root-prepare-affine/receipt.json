@@ -1,0 +1,89 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "selector": "bulksketch::decode::roots::_::prepare_affine",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "binary_sha256": {
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe"
+  },
+  "native_source_edited": false,
+  "opaque_application_bodies": [
+    "bulksketch::decode::affine::multiple",
+    "bulksketch::decode::affine::solve_map",
+    "bulksketch::decode::affine::enumerate_preferred",
+    "bulksketch::decode::affine::subspaces"
+  ],
+  "checked_exit": 0,
+  "files_sha256": {
+    "extraction/root-prepare-affine/Arithmetic/Funs.lean": "04ecd15e87bfd5393b3e22f7fe6854cdafd79171db15e70c211738ee2a394566",
+    "extraction/root-prepare-affine/Arithmetic/FunsExternal_Template.lean": "d222672c3cc56b32bd10121c2de1e1f8a15e3b6c0ebf5a015d90a24c4596c87e",
+    "extraction/root-prepare-affine/Arithmetic/Types.lean": "e4e325bcae89ae46192310d3391f32f3ee765f63442eb8533dd24079af1773d7",
+    "extraction/root-prepare-affine/aeneas.log": "dbaaad5f87d7b1f57aa2b97916d45c43d30ccae6a2e71ea62477c8980ce91e96",
+    "extraction/root-prepare-affine/arithmetic.llbc": "fc2ff59fc790f9336dd4af0b1ebaa2e52339f55119aff583e87e1797e2431799",
+    "extraction/root-prepare-affine/charon.log": "7a2ed9d06d72dd33fad108ee7cff2350f0985a52b8b70ba2dc70cda8dd627462",
+    "extraction/root-prepare-affine/replay.log": "c6cb81d7fabdf24a165f9914484dace5ea119ef68b22c95ce7011e0a5c6467f3"
+  },
+  "charon_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-prepare-affine/arithmetic.llbc",
+    "--start-from=bulksketch::decode::roots::_::prepare_affine",
+    "--opaque=bulksketch::decode::affine::multiple",
+    "--opaque=bulksketch::decode::affine::solve_map",
+    "--opaque=bulksketch::decode::affine::enumerate_preferred",
+    "--opaque=bulksketch::decode::affine::subspaces",
+    "--",
+    "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "aeneas_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-checks",
+    "-sequential",
+    "-no-progress-bar",
+    "-print-error-emitters",
+    "-split-files",
+    "-dest",
+    "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-prepare-affine/stock",
+    "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-prepare-affine/arithmetic.llbc"
+  ],
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-prepare-affine/replay",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-prepare-affine/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "input_sha256": "fc2ff59fc790f9336dd4af0b1ebaa2e52339f55119aff583e87e1797e2431799",
+    "log_sha256": "c6cb81d7fabdf24a165f9914484dace5ea119ef68b22c95ce7011e0a5c6467f3",
+    "outputs": {
+      "Funs.lean": "04ecd15e87bfd5393b3e22f7fe6854cdafd79171db15e70c211738ee2a394566",
+      "FunsExternal_Template.lean": "d222672c3cc56b32bd10121c2de1e1f8a15e3b6c0ebf5a015d90a24c4596c87e",
+      "Types.lean": "e4e325bcae89ae46192310d3391f32f3ee765f63442eb8533dd24079af1773d7"
+    }
+  },
+  "source_sha256": {
+    "src/decode/roots.rs": "4697d5874fd1eb03c0210371fdac83a8dc7171de2724da046613f59c879f4fb6",
+    "src/decode/affine.rs": "a7c45498717202aec291b4c4acdd6f819edf16bcdf478500a8c74a3492c4e11d"
+  }
+}

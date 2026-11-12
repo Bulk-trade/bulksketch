@@ -1,0 +1,28 @@
+[[92mInfo[39m ] Imported: /workspace/bulk/bulksketch/verification/lean/extraction/affine-enumerate/arithmetic.llbc
+[[91mError[39m] Continue to outer loops are not supported yet
+Source: 'src/decode/affine.rs', lines 302:0-347:1
+Compiler source: PrePasses.ml, line 641
+[[91mError[39m] Ignoring the body of 'bulksketch::decode::affine::enumerate' because of previous error
+Source: 'src/decode/affine.rs', lines 302:0-347:1
+Compiler source: PrePasses.ml, line 2401
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::traits::iterator::Iterator', could not find the information for item 'zip'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/traits/iterator.rs', lines 42:0-42:24
+Compiler source: extract/Extract.ml, line 2866
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::traits::iterator::Iterator', could not find the information for item 'rev'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/traits/iterator.rs', lines 42:0-42:24
+Compiler source: extract/Extract.ml, line 2866
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::range::Step', could not find the information for item 'forward_overflowing'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/range.rs', lines 35:0-35:64
+Compiler source: extract/Extract.ml, line 2866
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::range::Step', could not find the information for item 'backward_overflowing'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/range.rs', lines 35:0-35:64
+Compiler source: extract/Extract.ml, line 2866
+
+[[92mInfo[39m ] Creating missing directory: /workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/stock/generated
+[[92mInfo[39m ] Generated the partial file (because of 2 errors, including 2 unique errors): /workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/stock/generated/Types.lean
+[[92mInfo[39m ] Generated the partial file (because of 2 errors, including 2 unique errors): /workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/stock/generated/FunsExternal_Template.lean
+[[92mInfo[39m ] Generated the partial file (because of 2 errors, including 2 unique errors): /workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/stock/generated/Funs.lean
+[[92mInfo[39m ] Total execution time: 1.618101 seconds

@@ -1,0 +1,8 @@
+PASS identical-mapping
+PASS identical-equivalence
+PASS different-ended-id
+PASS different-type
+PASS identical-consumed-child
+PASS identical-borrow-child
+PASS identical-marked-projector
+PASS unchecked-identical

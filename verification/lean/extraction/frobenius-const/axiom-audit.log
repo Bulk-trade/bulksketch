@@ -1,0 +1,6 @@
+BulksketchBridge.FrobeniusConst.square_refines : BulksketchBridge.FrobeniusConstChallenges.actualConstSquareMatchesWord
+'BulksketchBridge.FrobeniusConst.square_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.FrobeniusConst.low_bytes_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.FrobeniusConst.spread_loop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.FrobeniusConst.division_loop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.FrobeniusConst.divisionPrefix_complete' depends on axioms: [propext, Classical.choice, Quot.sound]

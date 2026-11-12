@@ -1,0 +1,388 @@
+{
+  "status": "checked_original_closure_extracted",
+  "native_source_edited": false,
+  "native_body_proof_credit": 0,
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "3612535e21fa539bd35703287f79254fa547fbe7",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "transparent_application_bodies": true,
+  "native_files_checked": 41,
+  "native_build_inputs_checked": 3,
+  "llbc_has_errors": false,
+  "candidate_variant": "checked-fixedpoint-nested-scalar-slice-retry-v1",
+  "full_patch_sha256": "7c8426703fb5220a89039735f8f92677e14b7b93efa344851deaa5232bbf6fae",
+  "tool_binary_sha256": {
+    "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "/workspace/bulk/bulksketch-proof-tools/deg34-slice-loan-retry/src/_build/default/main.exe": "656ad7c927561d91b8d1e752c829abd557ed32808dec1a776b3796fed525f90b",
+    "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "/workspace/bulk/bulksketch-proof-tools/quartic-array-loan-retry/src/_build/default/main.exe": "99c2c9f4db95a14cc0178b7373c247419e6ac6a424d8f7e5eda3e063ddcaf3d0"
+  },
+  "selected_root": "bulksketch::decode::deg34::guard",
+  "source_path": "src/decode/deg34.rs",
+  "source_span": "10:0-63:1",
+  "source_sha256": "50e92cc158d33b58361cf95719d4f13e01295802a15e1dab7622fab5ce050015",
+  "extension_of": "checked-fixedpoint-scalar-array-loan-retry-v1",
+  "delta_modified_source": "src/interp/InterpMatchCtxs.ml",
+  "delta_base_sha256": "ed1538b2430704d0bbf522b4b30a17df5cff1dbb82da51a3b56780c3d90e0a60",
+  "delta_modified_sha256": "e4a4ae6820a8c44fa9e3c563971675a18d402452c8f9fa727fbe67db6fe249bc",
+  "delta_patch_sha256": "b5af23f0e681407135f8b289fc861a8e494cd8d5a110495434d0e3d2e5e3fc0e",
+  "scope": "The existing checked continuation-free loop fixedpoint list matcher may retry a mixed concrete loan only for an immediate child of the same mutable borrow ID, exact U64 slice type and same typed symbolic shared payload. It requests ending the shared loan through stock machinery. Other modes retain the original behavior.",
+  "observed_contexts": {
+    "matched_outer_mutable_borrow": "MB@1",
+    "left_active_mutable_loan": "ML@12, MB@13, abstraction 22 from out[5]",
+    "right_active_shared_loan": "SL@28, symbolic U64 slice s@140, abstraction 21 from out[degree-lag]",
+    "retry_traces": [
+      "Retry nested u64 slice by ending right shared loan 28",
+      "Retry nested u64 slice by ending right shared loan 286"
+    ]
+  },
+  "checks": [
+    {
+      "name": "charon",
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/arithmetic.llbc",
+        "--start-from=bulksketch::decode::deg34::guard",
+        "--",
+        "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "environment": {
+        "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+        "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/target",
+        "CARGO_BUILD_JOBS": "1",
+        "CARGO_NET_OFFLINE": "true"
+      },
+      "cwd": "/workspace/bulk/bulksketch",
+      "exit_code": 0
+    },
+    {
+      "name": "build",
+      "command": [
+        "opam",
+        "exec",
+        "--root=/workspace/bulk/bulksketch-proofs/tooling/opam-root",
+        "--switch=aeneas-5.3.0",
+        "--",
+        "dune",
+        "build",
+        "-j",
+        "2",
+        "main.exe"
+      ],
+      "cwd": "/workspace/bulk/bulksketch-proof-tools/deg34-slice-loan-retry/src",
+      "environment": {
+        "DEVELOPER_DIR": "/Library/Developer/CommandLineTools",
+        "SDKROOT": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
+      },
+      "exit_code": 0
+    },
+    {
+      "name": "Arithmetic",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/quartic-array-loan-retry/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-log",
+        "InterpJoin,InterpMatchCtxs",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "20c117405f561f211ec39c7ee31ab4e2b3ae7df93e0bfb22982e367214d338eb",
+      "log_sha256": "af4cebbbafab3b9e450f56940b47f4ccc76544333fad928a4d59ea626d4b1e6f"
+    },
+    {
+      "name": "slice-retry",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/deg34-slice-loan-retry/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-log",
+        "InterpJoin,InterpMatchCtxs",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/slice-retry",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "20c117405f561f211ec39c7ee31ab4e2b3ae7df93e0bfb22982e367214d338eb",
+      "log_sha256": "35510f4453e8e731b874195cac691c121e19a011de5bbf4f2846de0ae51372b5"
+    },
+    {
+      "name": "replay",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/deg34-slice-loan-retry/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/replay",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "20c117405f561f211ec39c7ee31ab4e2b3ae7df93e0bfb22982e367214d338eb",
+      "log_sha256": "0d26f67e3172ba87e3a4102cc0acf215b103ec17f9c977d25f376f91e45bbf63"
+    },
+    {
+      "name": "pinned",
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/pinned",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "20c117405f561f211ec39c7ee31ab4e2b3ae7df93e0bfb22982e367214d338eb",
+      "log_sha256": "6266f06effd8012b75f5d5696fb8985d236fafe2e9455ae4b47e7d748d080acc"
+    },
+    {
+      "name": "unchecked",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/deg34-slice-loan-retry/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/unchecked",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "20c117405f561f211ec39c7ee31ab4e2b3ae7df93e0bfb22982e367214d338eb",
+      "log_sha256": "d22ad617e271a652b5bd928e71bccc360257abe2b5472b1ed996f5cf683c6b5b"
+    },
+    {
+      "name": "quartic-control",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/deg34-slice-loan-retry/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/quartic-control",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/quartic/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "bae801d20df524409dd3bd7710e396d8a1c2d72c37add151df93fc0fbfbf4ddd",
+      "log_sha256": "51992b55b6e439242b8ef10f18c8d9d48167cff1762e92e8c3b3a654e4f8477a"
+    },
+    {
+      "name": "normalize-control",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/deg34-slice-loan-retry/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/normalize-control",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/deg34-normalize/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "b17cd5b3058f52243c75011004dc4b68c050fda5326a2b8c6cbbd988e549fbf0",
+      "log_sha256": "dad9065b0bc6d5697a8e5685e99511dec880e80ed4a7c8414301f50190f84f18"
+    },
+    {
+      "name": "guard-controls",
+      "command": [
+        "opam",
+        "exec",
+        "--root=/workspace/bulk/bulksketch-proofs/tooling/opam-root",
+        "--switch=aeneas-5.3.0",
+        "--",
+        "dune",
+        "exec",
+        "-j",
+        "2",
+        "./nested_slice_loan_controls/nested_slice_loan_controls.exe",
+        "--",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/arithmetic.llbc"
+      ],
+      "cwd": "/workspace/bulk/bulksketch-proof-tools/deg34-slice-loan-retry/src",
+      "environment": {
+        "DEVELOPER_DIR": "/Library/Developer/CommandLineTools",
+        "SDKROOT": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
+      },
+      "exit_code": 0
+    }
+  ],
+  "guard_controls": [
+    "end-left-shared",
+    "end-right-shared",
+    "unchecked",
+    "original-mode",
+    "different-parent",
+    "no-mutable-parent",
+    "different-element-type",
+    "non-symbolic-payload",
+    "mismatched-payload-type",
+    "mismatched-symbolic-type"
+  ],
+  "replayed_files_byte_identical": 3,
+  "quartic_control_files_byte_identical": 3,
+  "normalization_control_files_byte_identical": 3,
+  "generated_guard_declarations_sha256": {
+    "decode.deg34.guard_loop0_loop0_loop0.body": "c105b1e040e3fc8e3cfe337b8da254d481cba975bba20a19374caeaa62574d75",
+    "decode.deg34.guard_loop0_loop0_loop0": "0303e305c871c8c523f64c757968cde8f7f06edfe424e2b4e8f72f74d341383c",
+    "decode.deg34.guard_loop0_loop0.body": "47d713330f30c2e9b67ef4f590b7f5b1949122f7b934507cf994e9d34a0e2365",
+    "decode.deg34.guard_loop0_loop0": "7c43b0edbe838c7ebef654c75891ccef450a9fa462d532c4c92e6b2579c1abdb",
+    "decode.deg34.guard_loop0.body": "0f4022a75cb79b4ba7125d5c827c67de89981be5d196fd06114876f105e13557",
+    "decode.deg34.guard_loop0": "3472ffe7ca68e92f1063f2574abef78f0b7c83e5ec28e5f4af67832d5504b312",
+    "decode.deg34.guard_loop1_loop0_loop0.body": "5568fbb933273b04e0459097490136835e0cbf202b93d58b5f9d8238fb622317",
+    "decode.deg34.guard_loop1_loop0_loop0": "2751e295aeb3c80695a01aad80a278a62fde1e42330ed0009876fcf09a0191e0",
+    "decode.deg34.guard_loop1_loop0.body": "0b600fe7c078e621a61ea5adac113ed600395ab6a37e40b99dccf1ff78b70673",
+    "decode.deg34.guard_loop1_loop0": "3cc7f786622c1be50fd6464a117136929826dbd42c7169e7f24a2feec36e6805",
+    "decode.deg34.guard_loop1.body": "c1d721c6a65edec4fa3b3a0139fffe473578fb51f9d31b4644c8440710677abe",
+    "decode.deg34.guard_loop1": "9b76d805b607aef27cd07600f71976b773b931ed7376c045f68edc3afef72be2",
+    "decode.deg34.guard": "289f924b006316576935ef0131856d8930c42b6268828ffc7c036dbc14bf6970"
+  },
+  "loop_pairs_equal_modulo_names": 3,
+  "artifacts": {
+    "arithmetic.llbc": "20c117405f561f211ec39c7ee31ab4e2b3ae7df93e0bfb22982e367214d338eb",
+    "charon.log": "ffd18ef6344e98e60d40a34660bd5f3abcb81dd25bb68774d50dded7879d10e9",
+    "aeneas.log": "af4cebbbafab3b9e450f56940b47f4ccc76544333fad928a4d59ea626d4b1e6f",
+    "slice-retry.log": "35510f4453e8e731b874195cac691c121e19a011de5bbf4f2846de0ae51372b5",
+    "replay.log": "0d26f67e3172ba87e3a4102cc0acf215b103ec17f9c977d25f376f91e45bbf63",
+    "pinned.log": "6266f06effd8012b75f5d5696fb8985d236fafe2e9455ae4b47e7d748d080acc",
+    "unchecked.log": "d22ad617e271a652b5bd928e71bccc360257abe2b5472b1ed996f5cf683c6b5b",
+    "quartic-control.log": "51992b55b6e439242b8ef10f18c8d9d48167cff1762e92e8c3b3a654e4f8477a",
+    "normalize-control.log": "dad9065b0bc6d5697a8e5685e99511dec880e80ed4a7c8414301f50190f84f18",
+    "controls.log": "f11c94e834c87e4ab591356844bb3b26d7f2115bd6a3956ee93f12743a372e1c",
+    "checked-nested-slice-loan-retry.patch": "7c8426703fb5220a89039735f8f92677e14b7b93efa344851deaa5232bbf6fae",
+    "nested-slice-loan-retry-delta.patch": "b5af23f0e681407135f8b289fc861a8e494cd8d5a110495434d0e3d2e5e3fc0e",
+    "nested_slice_loan_controls.ml": "a52f6e0625285231dd56be4e5fc8ebb510d158ba0d2f96fee4a41cd61feabcf1",
+    "dune": "c4a78300d6daf4bc8c2d1e2b65ebb9f465fbea15356e83451cfe7a27b9c03349",
+    "slice-retry/Funs.lean": "296dfd1887805a7a59f4774ac7bbe82a55bf118b174bddc37b866e971be1067a",
+    "slice-retry/FunsExternal_Template.lean": "e53106d47220543fc8f75aed399164f51f03c18ce88f390afece9285aa2896bf",
+    "slice-retry/Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1"
+  },
+  "files_sha256": {
+    "extraction/deg34-guard/unchecked.log": "d22ad617e271a652b5bd928e71bccc360257abe2b5472b1ed996f5cf683c6b5b",
+    "extraction/deg34-guard/aeneas.log": "0d26f67e3172ba87e3a4102cc0acf215b103ec17f9c977d25f376f91e45bbf63",
+    "extraction/deg34-guard/pinned.log": "6266f06effd8012b75f5d5696fb8985d236fafe2e9455ae4b47e7d748d080acc",
+    "extraction/deg34-guard/charon.log": "ffd18ef6344e98e60d40a34660bd5f3abcb81dd25bb68774d50dded7879d10e9",
+    "extraction/deg34-guard/arithmetic.llbc": "20c117405f561f211ec39c7ee31ab4e2b3ae7df93e0bfb22982e367214d338eb",
+    "extraction/deg34-guard/translator/controls.log": "f11c94e834c87e4ab591356844bb3b26d7f2115bd6a3956ee93f12743a372e1c",
+    "extraction/deg34-guard/translator/nested-slice-loan-retry-delta.patch": "b5af23f0e681407135f8b289fc861a8e494cd8d5a110495434d0e3d2e5e3fc0e",
+    "extraction/deg34-guard/translator/checked-nested-slice-loan-retry.patch": "7c8426703fb5220a89039735f8f92677e14b7b93efa344851deaa5232bbf6fae",
+    "extraction/deg34-guard/translator/quartic-control.log": "51992b55b6e439242b8ef10f18c8d9d48167cff1762e92e8c3b3a654e4f8477a",
+    "extraction/deg34-guard/translator/normalize-control.log": "dad9065b0bc6d5697a8e5685e99511dec880e80ed4a7c8414301f50190f84f18",
+    "extraction/deg34-guard/Arithmetic/Funs.lean": "296dfd1887805a7a59f4774ac7bbe82a55bf118b174bddc37b866e971be1067a",
+    "extraction/deg34-guard/Arithmetic/FunsExternal_Template.lean": "e53106d47220543fc8f75aed399164f51f03c18ce88f390afece9285aa2896bf",
+    "extraction/deg34-guard/Arithmetic/Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+    "extraction/deg34-guard/translator/guards/dune": "c4a78300d6daf4bc8c2d1e2b65ebb9f465fbea15356e83451cfe7a27b9c03349",
+    "extraction/deg34-guard/translator/guards/nested_slice_loan_controls.ml": "a52f6e0625285231dd56be4e5fc8ebb510d158ba0d2f96fee4a41cd61feabcf1"
+  },
+  "control_output_hashes": {
+    "quartic": {
+      "Funs.lean": "06faff2bfa131ad027aeaae819304d010a5ef034fe0303e0e52ebea79f236102",
+      "Types.lean": "c9a7b0fd09b8ece583fadda5865342ac70b4fb043eeeb4165bd89432bc685f48",
+      "FunsExternal_Template.lean": "758cfbb7e74a8dd137a056e3b68de91d2a201145958af26adc614145ecbd0009"
+    },
+    "normalize": {
+      "Funs.lean": "2070052f9f725db6dc4a7a9ba97212f40028c6a6c57877d0f7598967dfd3193e",
+      "Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+      "FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829"
+    }
+  },
+  "integration_replay": {
+    "charon": {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/integration-replay/arithmetic.llbc",
+        "--start-from=bulksketch::decode::deg34::guard",
+        "--",
+        "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0,
+      "log_sha256": "28c140c6f6e2faa3d6df6cf1497d4b843886c52201d89e1fde4d2f08b8bf2656",
+      "environment": {
+        "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+        "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/target",
+        "CARGO_BUILD_JOBS": "1",
+        "CARGO_NET_OFFLINE": "true"
+      }
+    },
+    "aeneas": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/deg34-slice-loan-retry/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/integration-replay/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-closed-leaf/deg34-guard/integration-replay/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "log_sha256": "70f4a349db0760d368f2efde2f04f216fe95accfad8208906fdf0f8f4fe6ef30"
+    },
+    "fresh_llbc_sha256": "dc776b69fc16f1448e9deb9855b944be78a93b6634d97209994e8032069d8244",
+    "llbc_only_differs_by_output_path": true,
+    "byte_identical_generated_files": 3,
+    "matcher_controls_replayed": 10
+  },
+  "projection_controls": {
+    "file": "extraction/deg34-guard/check_controls.py",
+    "sha256": "190469b21aa409cbd0362ef78a97d4b9003c291342c44024e3ea59cd563ebb3e",
+    "modes": [
+      "standard",
+      "optimized"
+    ],
+    "negative_count": 6
+  }
+}

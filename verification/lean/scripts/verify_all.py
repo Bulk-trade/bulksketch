@@ -13,7 +13,9 @@ def main():
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps({"status": "running"}) + "\n")
     stages = []
-    for script in ["verify.py", "verify_bridge.py", "check_negative_fixtures.py", "check_replay_fixtures.py"]:
+    for script in ["verify.py", "verify_bridge.py", "check_negative_fixtures.py",
+                   "check_replay_fixtures.py", "check_projection_fixtures.py",
+                   "check_variant_fixtures.py"]:
         start = time.monotonic()
         result = subprocess.run(["python3", str(ROOT / "scripts" / script)], cwd=ROOT)
         stages.append({"script": script, "exit_code": result.returncode,
@@ -29,6 +31,7 @@ def main():
                "native_executable_declarations_in_scope": core["native_executable_declarations_in_scope"],
                "core_handwritten_theorem_declarations": core["handwritten_theorem_declarations"],
                "checked_generated_body_refinements": bridge["checked_generated_body_refinements"],
+               "checked_stateful_llbc_refinements": bridge["checked_stateful_llbc_refinements"],
                "matched_frozen_challenges": core["frozen_challenges_matched"] + bridge["frozen_challenges_matched"],
                "whole_native_coverage_achieved": False,
                "note": "Verified current proof milestones under recorded source/translator/runtime assumptions. Full native contracts/expanded-body closure remain open; no coverage percentage claimed."}

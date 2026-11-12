@@ -1,0 +1,54 @@
+{
+  "status": "targeted build and exact source challenge audit passed",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_item_id": "src/backend/portable.rs:102:method:bulksketch::backend::portable::<Portable as BulkKernels < F >>::xor_assign",
+  "source_line_span_sha256": "f4516c457f493b6551d14ac81ccdfcc80e0df36987771339cd4accb91c81e3b1",
+  "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractBulkKernels.xor_assign",
+  "generated_file": "bridge/Arithmetic/PortableXorGenerated.lean",
+  "generated_files": [
+    "bridge/Arithmetic/Types.lean",
+    "bridge/Arithmetic/PortableXorGenerated.lean"
+  ],
+  "challenge": "BulksketchBridge.PortableXorChallenges.actualXorAssignReturnsFrame",
+  "theorem": "BulksketchBridge.PortableXor.xor_assign_refines",
+  "whole_slice_theorem": "BulksketchBridge.PortableXor.xor_assign_map",
+  "scope": "All carried field dictionaries and all destination/source lengths. Equal lengths terminate normally with the same destination length and exact word XOR at every position. Unequal lengths reach the original pre-traversal panic. Loop induction strictly decreases the remaining pair count and composes every original backward write.",
+  "native_body_refinements_added": 1,
+  "verbatim_functions": 3,
+  "scoped_runtime_module": "bridge/Arithmetic/MutableZipRuntime.lean",
+  "runtime_trust_boundary": "Front traversal of the pinned Rust TrustedRandomAccess Zip specialization for IterMut<T> paired with Iter<U>, with arbitrary element types and starting cursors. Absolute virtual cursors represent the native relative offset. The model stops when either slice ends and retains both cursors. The active path reuses the pinned slice next operations and installs only the yielded left slot through the later-state backward continuation. Standard-library pointer and Aeneas reference-ownership correspondence remain trusted.",
+  "checked_runtime_laws": [
+    "MutableZip.construct",
+    "MutableZip.next_some",
+    "MutableZip.next_some_at",
+    "MutableZip.next_done",
+    "MutableZip.next_done_at",
+    "MutableZip.construct_preserves_failure",
+    "MutableZip.next_preserves_left_failure",
+    "MutableZip.next_preserves_right_failure",
+    "MutableZip.replaceLeft_here",
+    "MutableZip.replaceLeft_elsewhere",
+    "MutableZip.replaceLeft_length",
+    "MutableZip.replaceLeft_left_cursor",
+    "MutableZip.replaceLeft_right",
+    "MutableZip.active_cursors_fit",
+    "MutableZip.map_loop"
+  ],
+  "native_source_edited": false,
+  "full_native_coverage_achieved": false,
+  "files_sha256": {
+    "bridge/Arithmetic/MutableZipRuntime.lean": "683a48af92e8c4f992d4f0893ed18679122344714cdda9a2293c07029b85776d",
+    "bridge/Arithmetic/PortableXorGenerated.lean": "2a1c99ee83804b84583ec0181c5de5465cc094d3d2f27a6959b1ffdeb5b41c77",
+    "bridge/BulksketchBridge/MutableZip.lean": "f43e51fcc1978f214e3b7556b7bab654424a181dbd524ea1f4fd1b6b58b43e9a",
+    "bridge/BulksketchBridge/PortableZipMap.lean": "b347c30b1a807dd998d7700bb0ddd069f1846a13813effd8c6b3a436cda6d61a",
+    "bridge/BulksketchBridge/PortableXorChallenges.lean": "774cf83c647087ccbef1c9c48bb167e700fd422bdf513ee2ae5d432483457d9c",
+    "bridge/BulksketchBridge/PortableXor.lean": "0ae910b96101b63800f3fb6781f82eb2b96609b47e24be7caf6bb9c03253b5c3",
+    "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870"
+  },
+  "projection_mutation_checks": {
+    "status": "passed",
+    "rejected_cases": 8,
+    "evidence": "/workspace/bulk/bulksketch-proof-tools/slice-kernels/portable-xor-projection-fixtures.json",
+    "summary": "Exact source body, raw extraction, shared type, and scoped runtime mutations rejected in ordinary and optimized Python."
+  }
+}

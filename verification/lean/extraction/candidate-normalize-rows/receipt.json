@@ -1,0 +1,119 @@
+{
+  "variant_id": "checked-candidate-normalize-rows-v1",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "native_source_edited": false,
+  "native_llbc_edited": false,
+  "variant_patch": "extraction/candidate-normalize-rows/checked-candidate-normalize-rows.patch",
+  "variant_patch_sha256": "8b4a40d54ccb6b5ce23ab5fa8863d669a9e22a12043f9c4585f03f062c6518c4",
+  "patched_binary_sha256": "70d4ed8dedfef2b517d65621728b89075d81d43a505a8383147cac34277ade34",
+  "base_sources": {
+    "src/PrePasses.ml": "ae752eeef3227b7566611fa7d3ace71fd64fbf24c088bc7ce16699a243772165",
+    "src/interp/InterpUtils.ml": "fc54e1d2e351ab78cf5acb231d732e407419cc6719ada4f89b1b3295c789ef3f",
+    "src/interp/InterpJoin.ml": "57c5478aae42f8a354755424b67f67f37dc8bd233d653c97de0dcbbea5dd6229",
+    "src/interp/InterpMatchCtxs.ml": "a97bd2650a71ec0795f570dac17a8a1f1f52ae2b6feb4619984e6f1d61fde264",
+    "src/interp/InterpLoops.ml": "c8cf06edfbcafbf913c2cf5bf319a6ade6e4237b944eb29a8f39c9cbe96c0dee"
+  },
+  "modified_sources": {
+    "src/PrePasses.ml": "800e6bcee2da281505aa5b7b6377deb80fc9fb4b44d87af28d5c1eea10c5630a",
+    "src/interp/InterpUtils.ml": "931a697c7f8c6ff0b3678d969421dc19332af0b5a6456e8a46e742ef1652e0b8",
+    "src/interp/InterpJoin.ml": "4ca214beffe0f512289f9201bd94d0e8120c1b6be38afee076bcf3c3113a0103",
+    "src/interp/InterpMatchCtxs.ml": "91961c050ae33a188ad5fb47154a0fc00bb256a43a3beac8f9febfbc04fb0835",
+    "src/interp/InterpLoops.ml": "428e519be902878ce2edd58d1c1ee510cd09f2d2803faeff98d8000f74b1b27a"
+  },
+  "source_sha256": {
+    "src/field/mod.rs": "035dc6193ebb50b324527525c0ee47cbe06ca325db16aa5f8ee55b0e79baa723",
+    "src/lib.rs": "5174f3741a1c1b0bbdfddfac894adb8d96de06896dce8960bad76fe2056fe124",
+    "src/sketch/candidates.rs": "5071c62cae68c4cc27c3d5db00697ed4412fde698f6868a6da6e266f2e1fada5",
+    "src/sketch/input.rs": "6c89022d5900daa757d0d5a1901c2446ec37e135610073b57cd78264c406ffaa",
+    "src/sketch/mod.rs": "1f994b7873a7d5ee9b9a656c1c824cad7cdf26ef623ceb603b1f208374842f58",
+    "src/sketch/shape.rs": "ea2286691663eda48c422ba8bab29d69c17ca30ffaec465d0e2a5a0a4fdbc17d",
+    "src/sketch/state.rs": "516876d63076bf34f5b37bcf47a8ca557cc22b1b1615124522b6853f9b8b3b45",
+    "src/types.rs": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
+  },
+  "capture_sha256": "3ab1a8b5cac0a3efae2fb68467c3485e0cf084a6950cb2cbeacbe2aa416d29b9",
+  "charon_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/arithmetic.llbc",
+    "--start-from=bulksketch::sketch::candidates::normalize_rows",
+    "--",
+    "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "fresh_build": {
+    "status": 0,
+    "command": [
+      "opam",
+      "exec",
+      "--root=/workspace/bulk/bulksketch-proofs/tooling/opam-root",
+      "--switch=aeneas-5.3.0",
+      "--",
+      "dune",
+      "build",
+      "--root",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/fresh-tool/src",
+      "-j",
+      "2"
+    ]
+  },
+  "replay": {
+    "status": 0,
+    "flag": "AENEAS_CHECKED_CANDIDATE_NORMALIZE_ROWS",
+    "command": [
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/fresh-tool/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/repair/fresh-replay/Arithmetic",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize_rows/arithmetic.llbc"
+    ],
+    "outputs": {
+      "Funs.lean": "32cfbe7fad891270458cd519695697472c4f6038ce8d20fbcdbc806938c8a3cf",
+      "FunsExternal_Template.lean": "7d2c6d8941122d93d1fc5b0ba830b152eac2c748329b685a7850712cad6964d7",
+      "Types.lean": "a989f40b55b898721ba05aebee5c08bf88a0a898e41d5c2fc29ab6c0eac168e3",
+      "TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea"
+    }
+  },
+  "files_sha256": {
+    "extraction/candidate-normalize-rows/Arithmetic/Funs.lean": "32cfbe7fad891270458cd519695697472c4f6038ce8d20fbcdbc806938c8a3cf",
+    "extraction/candidate-normalize-rows/Arithmetic/FunsExternal_Template.lean": "7d2c6d8941122d93d1fc5b0ba830b152eac2c748329b685a7850712cad6964d7",
+    "extraction/candidate-normalize-rows/Arithmetic/Types.lean": "a989f40b55b898721ba05aebee5c08bf88a0a898e41d5c2fc29ab6c0eac168e3",
+    "extraction/candidate-normalize-rows/Arithmetic/TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea",
+    "extraction/candidate-normalize-rows/arithmetic.llbc": "3ab1a8b5cac0a3efae2fb68467c3485e0cf084a6950cb2cbeacbe2aa416d29b9",
+    "extraction/candidate-normalize-rows/charon.log": "03e96e710a3b8068b635f238e924d53e2e41824c3d4853b724b529c10b113130",
+    "extraction/candidate-normalize-rows/checked-candidate-normalize-rows.patch": "8b4a40d54ccb6b5ce23ab5fa8863d669a9e22a12043f9c4585f03f062c6518c4",
+    "extraction/candidate-normalize-rows/checked.log": "e5cb1bb7b12e49c9f92d73d525586bbe57c75557fc160b7145a8712c8b0eb7f9",
+    "extraction/candidate-normalize-rows/controls.json": "1237c0f6185d922dbd22e92543fdb24b94f56069238449bf7df42df86cce6d84",
+    "extraction/candidate-normalize-rows/fresh-build.log": "e7b056aab4a62d5c0c508220c7a6c32f5c0a01c5d0dc136a188c5c9f56677ac7",
+    "extraction/candidate-normalize-rows/fresh-replay.log": "26eb269895c349663f091b23aa2fd22d460edc63ac7b3e4f08e9dac48ce8e686",
+    "extraction/candidate-normalize-rows/guard-controls.py": "5a9b6870855725077ac4d576d39d852829f8b1ce956db8e2471dc25612dcd7db",
+    "extraction/candidate-normalize-rows/idle-iterator-use.log": "f97e17d6c3b8a9fcf2f8eafc654edac59f9153e88ea0673b00e8565a79593c07",
+    "extraction/candidate-normalize-rows/off.log": "c9ccefb58dfc1a9ed99c463d5fd49457818a87489dce48d97e22f1a89d5fd2f6",
+    "extraction/candidate-normalize-rows/row-stock.log": "271696f4cc64e964f86908e778ab2015f187893fbc1a6becffd232e4cb812c25",
+    "extraction/candidate-normalize-rows/row-variant.log": "eea96f01f47714dcc4a4d855be96068399abf407b3a1ec58c940d5bcf3e19267",
+    "extraction/candidate-normalize-rows/shared-stock.log": "2e3cc5265b060d3a0bc2ee54ac68ff21ecd1393feeab2e468b6db81899363f21",
+    "extraction/candidate-normalize-rows/shared-variant.log": "9b9b2cbc72f8dfb03a146d5be033bcb16c745b6c233c57197d2aa8bc113e5cf2",
+    "extraction/candidate-normalize-rows/stock.log": "3e50448d2092d02d393aa8a252a1ec08b7ba8d178e127295c0019fdc93030fc0",
+    "extraction/candidate-normalize-rows/unchecked.log": "350fbd26ac5f2fda26eaa978ca50f114966c838350552c3e4f97f1100c4b70ee",
+    "extraction/candidate-normalize-rows/wrong-cleanup.log": "a8d28a2fe944043e20f0a947345bac49c5f79f5bd67307b3bd04238eaf833cb3",
+    "extraction/candidate-normalize-rows/wrong-name.log": "7b5f17571814703f830b564679b6eccc72940233e3bcf84df8b828b21e83b227",
+    "extraction/candidate-normalize-rows/wrong-row-type.log": "5c751ac11343776d4d9e0bc5830fde9e912201abde5a01e8522997bd4f2edc02",
+    "extraction/candidate-normalize-rows/wrong-span.log": "af1a4167fd0a7cbf11cccab6b610247a60623177ed6e2af13496b7b6c6985f8e"
+  }
+}

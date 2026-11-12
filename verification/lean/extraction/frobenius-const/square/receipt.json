@@ -1,0 +1,79 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "d374b6f5a8d792557e51e7febd3b29ada9056252",
+  "native_files_checked": 41,
+  "build_inputs_checked": 3,
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  },
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "selected_roots": [
+    "bulksketch::field::frobenius::square"
+  ],
+  "target": "x86_64-apple-darwin",
+  "charon": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/workspace/bulk/bulksketch/verification/lean/extraction/frobenius-const/square/arithmetic.llbc",
+      "--start-from=bulksketch::field::frobenius::square",
+      "--",
+      "--manifest-path",
+      "/workspace/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked",
+      "--target",
+      "x86_64-apple-darwin"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.1124804589999258,
+    "log": "extraction/frobenius-const/square/charon.log",
+    "log_sha256": "5a67e488a822bad11e6755ff41b23a931fd1734b71962a700ff44e57163ff975"
+  },
+  "application_source_edited": false,
+  "bridge_files_edited": false,
+  "implementation_proof_credit": 0,
+  "llbc_has_errors": false,
+  "llbc_sha256": "bba6ac8e01231e384d90e9c0129574e60682cfd6e8bd42c1e06b3c6b045b1a20",
+  "declaration_counts": {
+    "fun_decls": 27,
+    "type_decls": 6,
+    "global_decls": 6,
+    "trait_impls": 8
+  },
+  "aeneas": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch/verification/lean/extraction/frobenius-const/square/Arithmetic",
+      "/workspace/bulk/bulksketch/verification/lean/extraction/frobenius-const/square/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.017791207999835,
+    "log": "extraction/frobenius-const/square/aeneas.log",
+    "log_sha256": "9dca3fc83c1f75a304f5f53a8c3b2d7fa2213d109761e03cca6d2aa37fce9bb1"
+  },
+  "status": "generated",
+  "generated": [
+    {
+      "path": "extraction/frobenius-const/square/Arithmetic/Funs.lean",
+      "sha256": "840f09b2caaf3a369502fcaa724ecdd097f031c47e2abd950aba59bc25218d23"
+    },
+    {
+      "path": "extraction/frobenius-const/square/Arithmetic/Types.lean",
+      "sha256": "254742ebd444dd4761a517afe242f85f5e55a81dffdf1ab409ae429268944cea"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "07927c25ecb8fe22c925692edbd2c0780baec8bd",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "selected_roots": [
+    "bulksketch::decode::direct::two"
+  ],
+  "llbc_has_errors": false,
+  "native_source_edited": false,
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+    "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-evidence-20261109/direct-two/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true"
+  },
+  "commands": [
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109/direct-two/arithmetic.llbc",
+        "--start-from=bulksketch::decode::direct::two",
+        "--",
+        "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109/direct-two/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109/direct-two/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "extraction/direct-two/arithmetic.llbc",
+      "sha256": "e88cf6303afa11928b122f8f4d9f728eab6a44364205b390e5aede5ea542cb59"
+    },
+    {
+      "path": "extraction/direct-two/charon.log",
+      "sha256": "5fdfc4fa398cb789283f6095aef6f983cf2abf6cce092962ae0055a7411d4a93"
+    },
+    {
+      "path": "extraction/direct-two/aeneas.log",
+      "sha256": "c29bae1e99c0b2559216f131589bfab07ec49a1c5c53698e3e5fd011e3005e73"
+    },
+    {
+      "path": "extraction/direct-two/Arithmetic/Types.lean",
+      "sha256": "625d89076b6a2f7636fba06f0b5095b7ba6d23c61b09cf2756b8d511f3c527de"
+    },
+    {
+      "path": "extraction/direct-two/Arithmetic/Funs.lean",
+      "sha256": "6c8a8ae9b7930d6abfea3461618faf9d379de1fd7dfc5ae901cd2c658128c6fc"
+    },
+    {
+      "path": "extraction/direct-two/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "3448af2a38beaca4cf6c85878052ac5061aea8deb596dbdefe531809812d43fe"
+    }
+  ],
+  "runtime_sha256": "32d055f4cba42204333b6375646eb2e41be65950e1b0aff8a75ec5412b0a555c",
+  "option_runtime_sha256": "c58c15a917cc7d925f90ba7dfc4e9615bdf79e921f98f96bbc87a925c5d1ed6a",
+  "rust_std_source_reference": {
+    "path": "library/core/src/slice/iter/macros.rs",
+    "lines": "321-333",
+    "sha256": "8db181ab6087b436dcc4c350efc7283ecc4912e34ca20d8bf7460fca5084c26c",
+    "scope": "shared slice iterator any specialization, short-circuit and consumed cursor"
+  },
+  "source_directory": "/workspace/bulk/bulksketch"
+}

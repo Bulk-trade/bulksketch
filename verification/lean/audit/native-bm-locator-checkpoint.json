@@ -1,0 +1,13 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "previous_proof_commit": "ec5e06145069436b184d350dc4cfa03247ba089c",
+  "retained_native_executable_obligations": 344,
+  "generated_body_refinements_under_recorded_TCB": 111,
+  "checked_stateful_llbc_refinements": 5,
+  "whole_native_coverage_achieved": false,
+  "open": [
+    "Native general factor traversal, reducer preparation and affine preference arithmetic",
+    "Candidate evaluation, deflation, caller-wide admission and end-to-end decoder completeness",
+    "Remaining accelerated kernels and physical memory, ISA and compiler-expanded correspondence"
+  ]
+}

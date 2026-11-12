@@ -1,0 +1,38 @@
+{
+  "status": "helper-refinement-checked",
+  "native_body_proof_credit": 0,
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "original_method": "bulksketch::poly::dense::<Dense as Polynomial < F , K >>::mul_into",
+  "covered_source_lines": "src/poly/dense.rs:24-26",
+  "generated_declarations": [
+    "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.mul_into_loop1.body",
+    "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.mul_into_loop1"
+  ],
+  "challenge": "BulksketchBridge.DenseMulReductionSpec.finalReductionFrame",
+  "theorem": "BulksketchBridge.DenseMulReduction.loop_refines",
+  "translator_variant": "checked-shared-loop-erasure-v1",
+  "variant_receipt": "tooling/aeneas-dense-mul/receipt.json",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "scope": "Final reduction loop on equal length destination and raw prefixes with explicit callback agreement to native GF64 reduction. Exact exhausted state and applied backward frame for every aligned starting cursor and incoming callback. The convolution and full method remain separate proof obligations.",
+  "checks": [
+    "Targeted Lean build",
+    "Exact challenge assignment",
+    "Transitive axiom check",
+    "Verbatim loop and shared-type projection",
+    "Checked translator replay with owner-only, unchecked, square and recursive guard controls"
+  ],
+  "files_sha256": {
+    "bridge/Arithmetic/DenseMulReductionGenerated.lean": "f45c2279b424f15bd5c0cb1a35202ae5b307ae0c4d62767b7574a584658510e3",
+    "bridge/BulksketchBridge/DenseMulReductionSpec.lean": "31f92333c57d99deba60853db52a8a9d99822fd578220d1538386b805ce76fd5",
+    "bridge/BulksketchBridge/DenseMulReduction.lean": "69e82cd913c4bea50d03950bd97b83803324c6d56878a2a38d2e7f1ad63aaea5",
+    "bridge/BulksketchBridge/PortableZipMap.lean": "5985b26f6831f83088d3f13e1b37cc3daab2efb6157c172dfe77d7e3b53d623d",
+    "extraction/dense-mul/project.py": "6871850a3b1a3835afa8cc00029949db3c79e18b201074b904440c686174d03a",
+    "extraction/dense-mul/receipt.json": "6b8976439f19e57cf5cd6c5de68573645853f5b47f094f18a6458dd462671932",
+    "extraction/dense-mul/axiom-audit.log": "fb02ed3cd28a4d944fb43433194afa1078bb1ec02f55c487906a3eca002509bc",
+    "tooling/aeneas-dense-mul/receipt.json": "f58334207b2eccb868566cf79daf46b9a660a938166453f9a62d0cbc1de2f0db"
+  }
+}

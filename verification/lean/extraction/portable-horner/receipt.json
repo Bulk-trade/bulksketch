@@ -1,0 +1,56 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "07927c25ecb8fe22c925692edbd2c0780baec8bd",
+  "selected_roots": [
+    "{impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::portable::Portable}::horner_many"
+  ],
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  },
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "cb4287c07bdcac9179b6120f680dfd8ac17b875d1895ed8f6f1024e1f322de8b"
+  },
+  "aeneas_variant": "checked-ended-shared-scalar-v1",
+  "rust_toolchain": "nightly-2026-09-17",
+  "llbc_has_errors": false,
+  "llbc_sha256": "f4dd7329559230c1db64c3de4f889732f87cdf648fc4330a52f8141dc06ef46b",
+  "recorded_output_directory": "/workspace/bulk/bulksketch-proof-tools/horner-match-investigation",
+  "artifacts": [
+    {
+      "path": "extraction/portable-horner/arithmetic.llbc",
+      "sha256": "f4dd7329559230c1db64c3de4f889732f87cdf648fc4330a52f8141dc06ef46b"
+    },
+    {
+      "path": "extraction/portable-horner/charon.log",
+      "sha256": "8d2b3e93abbf859fc6edf7643466e978c1be2c15967e22590fc3da6eeb515ebb"
+    },
+    {
+      "path": "extraction/portable-horner/aeneas.log",
+      "sha256": "199712992648e8eb535619fba4ecefc4577fe08c3cb40a5d76de3a169afbd20d"
+    },
+    {
+      "path": "extraction/portable-horner/Arithmetic/Funs.lean",
+      "sha256": "c75cd779d7f3f57f806f87b791371c534a57a9a6d1f3872055e136cb0724f96e"
+    },
+    {
+      "path": "extraction/portable-horner/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "0c0189dfd533d8957de19899709849ad96d95efb8393ea331bea7c941b4cf723"
+    },
+    {
+      "path": "extraction/portable-horner/Arithmetic/Types.lean",
+      "sha256": "6c75cf2ec0d1b2219401976b4626400b5d24b18abc171f525d8e1bb099ec4a4b"
+    },
+    {
+      "path": "extraction/portable-horner/Arithmetic/TypesExternal_Template.lean",
+      "sha256": "1eefc9e15a6555636a8d9340c2ecd7eb8cb9355d525c272fb9880f38ebec4582"
+    }
+  ],
+  "native_source_edited": false,
+  "command_recipe": [
+    "charon cargo --preset=aeneas --sysroot=default --dest-file=<output>/arithmetic.llbc --start-from=<selected_root> -- --manifest-path=<repo>/Cargo.toml -p bulksketch --lib --locked --offline",
+    "aeneas -backend lean -sequential -split-files -print-error-emitters -checks -dest <output>/Arithmetic <output>/arithmetic.llbc"
+  ]
+}

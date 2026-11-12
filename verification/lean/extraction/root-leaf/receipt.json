@@ -1,0 +1,93 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "selector": "bulksketch::decode::roots::_::leaf",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "binary_sha256": {
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe"
+  },
+  "native_source_edited": false,
+  "opaque_application_bodies": [
+    "bulksketch::decode::roots::charge",
+    "bulksketch::decode::roots::_::advance"
+  ],
+  "checked_exit": 0,
+  "charon_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/root-leaf/arithmetic.llbc",
+    "--start-from=bulksketch::decode::roots::_::leaf",
+    "--opaque=bulksketch::decode::roots::charge",
+    "--opaque=bulksketch::decode::roots::_::advance",
+    "--",
+    "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "aeneas_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-checks",
+    "-sequential",
+    "-no-progress-bar",
+    "-print-error-emitters",
+    "-split-files",
+    "-dest",
+    "/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/root-leaf/stock",
+    "/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/root-leaf/arithmetic.llbc"
+  ],
+  "files_sha256": {
+    "extraction/root-leaf/Arithmetic/Funs.lean": "609ec6a09271c34305484e389a8de97a2e3aeabbb5f793e4b9a61538b10532d5",
+    "extraction/root-leaf/Arithmetic/FunsExternal_Template.lean": "1ee36f4681305f8b00d93d64a73a7afde6469be836f4dd130f232ee9c8313688",
+    "extraction/root-leaf/Arithmetic/Types.lean": "28ad9477f800c7b739aa5d7c25e79509ad1b1a6899c0fef821921efa1fdcfd7c",
+    "extraction/root-leaf/aeneas.log": "7abaa63117b8146c6d252086dd1ba1f50a3d8e717aefcfc1f0e0f533ce8e3b25",
+    "extraction/root-leaf/arithmetic.llbc": "dcdc0e3eb52c0adcf24f257b810d92b2bbdd1d11c4ea539036d356274fb70767",
+    "extraction/root-leaf/charon.log": "39385a58c9713976b5f868f5a986015d1526485ac1c45baea83d70217568470c",
+    "extraction/root-leaf/replay.log": "b78d0af7ba3c6c5c83f01fc0008c1d04351af626696724d67e8b11681a956130"
+  },
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/root-leaf/replay",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/root-leaf/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "input_sha256": "dcdc0e3eb52c0adcf24f257b810d92b2bbdd1d11c4ea539036d356274fb70767",
+    "log_sha256": "b78d0af7ba3c6c5c83f01fc0008c1d04351af626696724d67e8b11681a956130",
+    "outputs": {
+      "Funs.lean": "609ec6a09271c34305484e389a8de97a2e3aeabbb5f793e4b9a61538b10532d5",
+      "FunsExternal_Template.lean": "1ee36f4681305f8b00d93d64a73a7afde6469be836f4dd130f232ee9c8313688",
+      "Types.lean": "28ad9477f800c7b739aa5d7c25e79509ad1b1a6899c0fef821921efa1fdcfd7c"
+    }
+  },
+  "verified_call_bindings": {
+    "decode.roots.charge": {
+      "file": "bridge/Arithmetic/ClosedLeafGenerated.lean",
+      "theorem": "BulksketchBridge.ClosedLeafAdvance.charge_refines",
+      "sha256": "300e688ce1ff3b3e510b9d816e0a41b8667d08b33b2a2181b35f138689e229d1"
+    },
+    "decode.roots.Roots.advance": {
+      "file": "bridge/Arithmetic/ClosedLeafGenerated.lean",
+      "theorem": "BulksketchBridge.ClosedLeafAdvance.advance_refines",
+      "sha256": "6313cba42bfb73a08ae1afd88b6a1a499a40b48da0ac93388b8d658c8c80075f"
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "source_sha256": {
+    "src/backend/x86_vpclmul512.rs": "7a9c29dff254508671aa4122b20644b21a9cfb40f86ba5eaadce02bf680475d4"
+  },
+  "native_source_edited": false,
+  "native_llbc_edited": false,
+  "commands": {
+    "charon": {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-avx-slice-memory/arithmetic.llbc",
+        "--start-from=bulksketch::backend::x86_vpclmul512::update_single_block",
+        "--start-from=bulksketch::backend::x86_vpclmul512::scale_kernel",
+        "--start-from=bulksketch::backend::x86_vpclmul512::square_kernel",
+        "--opaque=bulksketch::backend::x86_vpclmul512::load",
+        "--opaque=bulksketch::backend::x86_vpclmul512::store",
+        "--opaque=bulksketch::backend::x86_vpclmul512::multiply",
+        "--opaque=bulksketch::backend::x86_vpclmul512::xor_assign",
+        "--",
+        "--manifest-path",
+        "/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    "aeneas": {
+      "command": [
+        "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-avx-slice-memory/capture",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-avx-slice-memory/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  },
+  "tool_binary_sha256": {
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe"
+  },
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-avx-slice-memory/replay-core",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-avx-slice-memory/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "output_sha256": {
+      "Funs.lean": "de438394f3ff4818036b6dc2c927e648983db5902826269e8aedd873f60a87db",
+      "FunsExternal_Template.lean": "fa9a0f667ff623a689e3c966502ec43ffa51f02d95a825eda24f4e261a3f7c7d",
+      "Types.lean": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+      "TypesExternal_Template.lean": "53a1f77ea401e3bd79bd5c8aa608572ffcbaef870fef5e989bb21a59cc8ed985"
+    }
+  },
+  "runtime_sha256": {
+    "bridge/Arithmetic/AvxSquareRuntime.lean": "3cba580416043b3dda5f80d810729009a493ec211e0e03813552c5b4df10bcda",
+    "bridge/Arithmetic/AvxHornerChunkRuntime.lean": "8b4b25334dd663935446930ae7de5d9f3a52252e7afe236ab431dd48608c41d2",
+    "bridge/Arithmetic/AvxSliceKernelRuntime.lean": "dd728e9d41e16693ef495d484478c8bb922e03a8f232078f7e062974169ae002"
+  },
+  "artifacts": {
+    "extraction/avx-slice-kernel/Arithmetic/Funs.lean": "de438394f3ff4818036b6dc2c927e648983db5902826269e8aedd873f60a87db",
+    "extraction/avx-slice-kernel/Arithmetic/FunsExternal_Template.lean": "fa9a0f667ff623a689e3c966502ec43ffa51f02d95a825eda24f4e261a3f7c7d",
+    "extraction/avx-slice-kernel/Arithmetic/Types.lean": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f",
+    "extraction/avx-slice-kernel/Arithmetic/TypesExternal_Template.lean": "53a1f77ea401e3bd79bd5c8aa608572ffcbaef870fef5e989bb21a59cc8ed985",
+    "extraction/avx-slice-kernel/aeneas.log": "f37778004cc89e007d1f918d9f9fcc591a1b21b99fb4d586ea34be8e6e2a8db4",
+    "extraction/avx-slice-kernel/arithmetic.llbc": "e8a0c2f73e812bcbc39755eabbe17bcea8beeefafb6d1436d4f2203b3392006c",
+    "extraction/avx-slice-kernel/charon.log": "c167b43903b8adff73d818a168cbc8638f607850e020d1c1eec99c89144d56c9",
+    "extraction/avx-slice-kernel/replay.log": "709d977da43c96593b78e6ba86a5ee3f9f1e99d0977e224c1eb49ad76331443b"
+  }
+}

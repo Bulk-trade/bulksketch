@@ -1,0 +1,68 @@
+{
+  "status": "targeted proof build and exact challenge audit passed",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "source_bodies": [
+    {
+      "native_item_id": "src/backend/contract.rs:57:trait_default:bulksketch::backend::contract::BulkKernels::multiply_linear",
+      "source_line_span_sha256": "b8bbdf235aaf8c9effd7e20d86a740cf59e415630426a4b9d725ae3ebf611509",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.multiply_linear.default",
+      "generated_file": "bridge/Arithmetic/SliceKernelGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/Funs.lean",
+        "bridge/Arithmetic/SliceKernelTypes.lean",
+        "bridge/Arithmetic/SliceKernelGenerated.lean"
+      ],
+      "challenge": "BulksketchBridge.SliceKernelChallenges.actualMultiplyLinearReturnsExactFrame",
+      "theorem": "BulksketchBridge.SliceKernels.multiply_linear_refines"
+    },
+    {
+      "native_item_id": "src/backend/contract.rs:51:trait_default:bulksketch::backend::contract::BulkKernels::square_mod",
+      "source_line_span_sha256": "b01239b8f78cfd1197f19871f6e8bfff32529bcaff26d3be5c8566bc3c420c11",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.square_mod.default",
+      "generated_file": "bridge/Arithmetic/SliceKernelGenerated.lean",
+      "generated_files": [
+        "bridge/Arithmetic/Types.lean",
+        "bridge/Arithmetic/SliceKernelTypes.lean",
+        "bridge/Arithmetic/SliceKernelGenerated.lean"
+      ],
+      "challenge": "BulksketchBridge.SliceKernelChallenges.actualSquareModFallbackPreservesBuffers",
+      "theorem": "BulksketchBridge.SliceKernels.square_mod_fallback_refines"
+    }
+  ],
+  "native_source_edited": false,
+  "new_runtime_models": 0,
+  "verbatim_functions": 4,
+  "verbatim_types": 2,
+  "files_sha256": {
+    "bridge/Arithmetic/SliceKernelTypes.lean": "2823889040f078b47aa5e5f4b30a1738815e3f1c113e1b71d4359344010c0742",
+    "bridge/Arithmetic/SliceKernelGenerated.lean": "551874d223068225ec2942b28559b8d62f8b53df04a9268a2195ac416b1683b9",
+    "bridge/BulksketchBridge/SliceKernelChallenges.lean": "e2fec1a3b7e56388da39896b8e99d6e5ee3b7d3a91035875fc849216dc997134",
+    "bridge/BulksketchBridge/SliceKernels.lean": "aa524a1df259ffcd439f29878cd89228ea3b2e0912274296e6d50df3549592d3",
+    "extraction/slice-kernels/project.py": "b611861aaef5d9faf2facc3295b93c54720b9b418e66057bc71f8f67817b149f"
+  },
+  "multiply_linear_scope": "Normal completion and exact entire fixed-length destination slice for every length, with supplied multiplication equal to actual GF64 multiplication. Reverse-range decrement, subtraction, both reads and single-index update are checked. Empty/singleton frames unchanged. This source endpoint is a trait default contract, not proof of every backend override.",
+  "square_mod_scope": "Every input returns false and preserves both caller-provided mutable slices exactly. This is the original default fallback.",
+  "source_scope_dropped": 0,
+  "full_native_coverage_achieved": false,
+  "deferred_slice_paths": [
+    {
+      "source": "Portable::xor_assign",
+      "observed": "Original Charon/Aeneas emission succeeded. The generated mutable Zip.next call requires a third backward-update continuation, while the pinned generic Zip.next runtime returns a pair. The generated mutable Iterator.zip constructor also requires a backward update.",
+      "evidence": "/workspace/bulk/bulksketch-proof-tools/slice-kernels/xor-assign/Arithmetic/Funs.lean",
+      "coverage_added": 0
+    },
+    {
+      "source": "Portable::xor_assign, monomorphize-mut pilot",
+      "observed": "Charon emitted complete LLBC. Aeneas rejected name collisions between generic and specialized Option/Zip declarations.",
+      "evidence": "/workspace/bulk/bulksketch-proof-tools/slice-kernels/xor-assign-mono-mut/aeneas.log",
+      "coverage_added": 0
+    },
+    {
+      "source": "Dense::xor_coefficient and normalized_len",
+      "observed": "Original emission succeeded. Normalized length depends on slice Iterator.rposition and Option.map_or. Both appear as unsupported external template declarations in this extraction.",
+      "evidence": "/workspace/bulk/bulksketch-proof-tools/slice-kernels/xor-coefficient/Arithmetic/FunsExternal_Template.lean",
+      "coverage_added": 0
+    }
+  ]
+}

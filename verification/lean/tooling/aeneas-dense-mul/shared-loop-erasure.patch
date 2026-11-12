@@ -1,0 +1,139 @@
+diff --git a/src/interp/InterpExpansion.ml b/src/interp/InterpExpansion.ml
+index ded98d0..73ac03c 100644
+--- a/src/interp/InterpExpansion.ml
++++ b/src/interp/InterpExpansion.ml
+@@ -21,6 +21,17 @@ let log = Logging.expansion_log
+ (** Projector kind *)
+ type proj_kind = LoanProj | BorrowProj
+ 
++(** A shared expansion may encounter an unrelated borrow projector carrying
++    loans from an ended ancestor. Preserve that owner and traverse its children
++    so the checked visitor still rejects a target hidden inside its payload.
++    Matching owners and unchecked or non-shared expansions retain the existing
++    empty-loans requirement. *)
++let check_borrow_projection_loans span ~shared_expansion target owner loans =
++  [%cassert] span
++    (loans = []
++    || (!Config.sanity_checks && shared_expansion && owner <> target))
++    "Unreachable"
++
+ (** Auxiliary function. Apply a symbolic expansion to avalues in a context,
+     targetting a specific kind of projectors.
+ 
+@@ -50,6 +61,7 @@ let apply_symbolic_expansion_to_target_aevalues (span : Meta.span)
+     (expansion : symbolic_expansion) (ctx : eval_ctx) : eval_ctx =
+   (* Symbolic values contained in the expansion might contain already ended regions *)
+   let check_symbolic_no_ended = false in
++  let shared_expansion = match expansion with SeSharedRef _ -> true | _ -> false in
+   (* Visitor to apply the expansion *)
+   let obj =
+     object (self)
+@@ -122,7 +134,8 @@ let apply_symbolic_expansion_to_target_aevalues (span : Meta.span)
+                by region abstractions, and is thus inaccessible: such a value can't
+                be expanded)
+             *)
+-            [%cassert] span (loans = []) "Unreachable";
++            check_borrow_projection_loans span ~shared_expansion
++              original_sv.sv_id proj.sv_id loans;
+             (* Check if this is the symbolic value we are looking for *)
+             if proj.sv_id = original_sv.sv_id then
+               (* Convert the symbolic expansion to a value on which we can
+@@ -184,7 +197,8 @@ let apply_symbolic_expansion_to_target_aevalues (span : Meta.span)
+                by region abstractions, and is thus inaccessible: such a value can't
+                be expanded)
+             *)
+-            [%cassert] span (loans = []) "Unreachable";
++            check_borrow_projection_loans span ~shared_expansion
++              original_sv.sv_id proj.sv_id loans;
+             (* Check if this is the symbolic value we are looking for *)
+             if proj.sv_id = original_sv.sv_id then
+               (* Convert the symbolic expansion to a value on which we can
+@@ -446,7 +460,8 @@ let expand_symbolic_value_shared_borrow (span : Meta.span)
+                by region abstractions, and is thus inaccessible: such a value can't
+                be expanded)
+             *)
+-            [%cassert] span (loans = []) "Unreachable";
++            check_borrow_projection_loans span ~shared_expansion:true
++              original_sv.sv_id proj.sv_id loans;
+             (* Check if we need to reborrow *)
+             match reborrow_ashared (Option.get proj_regions) proj with
+             | None -> super#visit_ASymbolic proj_regions pm aproj
+@@ -464,13 +479,14 @@ let expand_symbolic_value_shared_borrow (span : Meta.span)
+         | EProjLoans _ ->
+             (* Loans are handled later *)
+             ESymbolic (pm, aproj)
+-        | EProjBorrows { proj = _; loans } ->
++        | EProjBorrows { proj; loans } ->
+             (* We should never expand a symbolic value which has consumed given
+                back values (because then it means the symbolic value was consumed
+                by region abstractions, and is thus inaccessible: such a value can't
+                be expanded)
+             *)
+-            [%cassert] span (loans = []) "Unreachable";
++            check_borrow_projection_loans span ~shared_expansion:true
++              original_sv.sv_id proj.sv_id loans;
+             (* No need to check for reborrows of shared values: we don't track
+                them in abstraction expressions *)
+             super#visit_ESymbolic proj_regions pm aproj
+diff --git a/src/symbolic/SymbolicToPureExpressions.ml b/src/symbolic/SymbolicToPureExpressions.ml
+index e9c181a..0fe1a9d 100644
+--- a/src/symbolic/SymbolicToPureExpressions.ml
++++ b/src/symbolic/SymbolicToPureExpressions.ml
+@@ -9,6 +9,43 @@ open SymbolicToPureAbs
+ (** The local logger *)
+ let log = Logging.symbolic_to_pure_expressions_log
+ 
++(** Checked erasure of a level-one loop ending with no pure continuation.
++    Inspect child payload types directly because the ordinary projection-kind
++    classifier only classifies their enclosing symbolic value. *)
++let can_erase_shared_loop_end type_infos ~ignored ~has_continuation
++    (abs : V.abs) (level : V.abs_level) : bool =
++  !Config.sanity_checks && level = 1 && ignored && not has_continuation
++  && V.AbsLevelSet.mem level abs.ended_subabs
++  && (match (abs.kind, abs.cont) with
++      | ( V.Loop loop_id,
++          Some { output = Some output;
++                 input = Some { value = V.EApp (V.ELoop (aid, lid), [[]]); ty } } ) ->
++          aid = abs.abs_id && lid = loop_id && ty = TypesUtils.mk_unit_ty
++          && V.equal_tevalue output (ValuesUtils.mk_etuple ~borrow_proj:true [])
++      | _ -> false)
++  &&
++  let shared ty =
++    TypesUtils.ty_is_rty ty
++    && not (TypesUtils.ty_has_mut_borrow_for_region_in_set type_infos abs.regions.owned ty)
++  in
++  let rec projection ~top = function
++    | V.AEmpty -> true
++    | V.AProjLoans { proj; consumed; borrows } when top ->
++        shared proj.proj_ty && payloads consumed && payloads borrows
++    | V.AProjBorrows { proj; loans } when top -> shared proj.proj_ty && payloads loans
++    | V.AProjLoans _ | V.AProjBorrows _ -> false
++    | V.AEndedProjLoans { consumed; borrows; _ } -> payloads consumed && payloads borrows
++    | V.AEndedProjBorrows { mvalues; loans } ->
++        shared mvalues.given_back.sv_ty && payloads loans
++  and payloads children =
++    List.for_all (fun ((meta : V.mconsumed_symb), child) ->
++        shared meta.proj_ty && projection ~top:false child) children
++  in
++  List.for_all (fun (av : V.tavalue) ->
++      shared av.ty &&
++      match av.value with V.ASymbolic (V.PNone, proj) -> projection ~top:true proj | _ -> false)
++    abs.avalues
++
+ let translate_fn_ptr_kind (ctx : bs_ctx) (id : A.fn_ptr_kind) : fn_ptr_kind =
+   match id with
+   | T.Fun fun_id -> FunId fun_id
+@@ -1284,7 +1321,12 @@ and translate_end_abstraction_synth_ret (ectx : C.eval_ctx) (abs : V.abs)
+ 
+ and translate_end_abstraction_join_or_loop (ectx : C.eval_ctx) (abs : V.abs)
+     (abs_level : abs_level) (e : S.expr) (ctx : bs_ctx) : texpr =
+-  let span = ctx.span in
++  if can_erase_shared_loop_end ctx.type_ctx.type_infos
++       ~ignored:(V.AbsId.Set.mem abs.abs_id ctx.ignored_abs_ids)
++       ~has_continuation:(V.AbsId.Map.mem abs.abs_id ctx.abs_id_to_info)
++       abs abs_level then
++    translate_expr e ctx
++  else let span = ctx.span in
+   [%cassert] span (abs_level = 0) "Unimplemented";
+   (* Compute the input and output values *)
+   let back_inputs = abs_to_consumed ctx ectx abs abs_level in

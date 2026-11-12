@@ -1,0 +1,77 @@
+diff --git a/src/interp/InterpExpansion.ml b/src/interp/InterpExpansion.ml
+index ded98d0..73ac03c 100644
+--- a/src/interp/InterpExpansion.ml
++++ b/src/interp/InterpExpansion.ml
+@@ -21,6 +21,17 @@ let log = Logging.expansion_log
+ (** Projector kind *)
+ type proj_kind = LoanProj | BorrowProj
+ 
++(** A shared expansion may encounter an unrelated borrow projector carrying
++    loans from an ended ancestor. Preserve that owner and traverse its children
++    so the checked visitor still rejects a target hidden inside its payload.
++    Matching owners and unchecked or non-shared expansions retain the existing
++    empty-loans requirement. *)
++let check_borrow_projection_loans span ~shared_expansion target owner loans =
++  [%cassert] span
++    (loans = []
++    || (!Config.sanity_checks && shared_expansion && owner <> target))
++    "Unreachable"
++
+ (** Auxiliary function. Apply a symbolic expansion to avalues in a context,
+     targetting a specific kind of projectors.
+ 
+@@ -50,6 +61,7 @@ let apply_symbolic_expansion_to_target_aevalues (span : Meta.span)
+     (expansion : symbolic_expansion) (ctx : eval_ctx) : eval_ctx =
+   (* Symbolic values contained in the expansion might contain already ended regions *)
+   let check_symbolic_no_ended = false in
++  let shared_expansion = match expansion with SeSharedRef _ -> true | _ -> false in
+   (* Visitor to apply the expansion *)
+   let obj =
+     object (self)
+@@ -122,7 +134,8 @@ let apply_symbolic_expansion_to_target_aevalues (span : Meta.span)
+                by region abstractions, and is thus inaccessible: such a value can't
+                be expanded)
+             *)
+-            [%cassert] span (loans = []) "Unreachable";
++            check_borrow_projection_loans span ~shared_expansion
++              original_sv.sv_id proj.sv_id loans;
+             (* Check if this is the symbolic value we are looking for *)
+             if proj.sv_id = original_sv.sv_id then
+               (* Convert the symbolic expansion to a value on which we can
+@@ -184,7 +197,8 @@ let apply_symbolic_expansion_to_target_aevalues (span : Meta.span)
+                by region abstractions, and is thus inaccessible: such a value can't
+                be expanded)
+             *)
+-            [%cassert] span (loans = []) "Unreachable";
++            check_borrow_projection_loans span ~shared_expansion
++              original_sv.sv_id proj.sv_id loans;
+             (* Check if this is the symbolic value we are looking for *)
+             if proj.sv_id = original_sv.sv_id then
+               (* Convert the symbolic expansion to a value on which we can
+@@ -446,7 +460,8 @@ let expand_symbolic_value_shared_borrow (span : Meta.span)
+                by region abstractions, and is thus inaccessible: such a value can't
+                be expanded)
+             *)
+-            [%cassert] span (loans = []) "Unreachable";
++            check_borrow_projection_loans span ~shared_expansion:true
++              original_sv.sv_id proj.sv_id loans;
+             (* Check if we need to reborrow *)
+             match reborrow_ashared (Option.get proj_regions) proj with
+             | None -> super#visit_ASymbolic proj_regions pm aproj
+@@ -464,13 +479,14 @@ let expand_symbolic_value_shared_borrow (span : Meta.span)
+         | EProjLoans _ ->
+             (* Loans are handled later *)
+             ESymbolic (pm, aproj)
+-        | EProjBorrows { proj = _; loans } ->
++        | EProjBorrows { proj; loans } ->
+             (* We should never expand a symbolic value which has consumed given
+                back values (because then it means the symbolic value was consumed
+                by region abstractions, and is thus inaccessible: such a value can't
+                be expanded)
+             *)
+-            [%cassert] span (loans = []) "Unreachable";
++            check_borrow_projection_loans span ~shared_expansion:true
++              original_sv.sv_id proj.sv_id loans;
+             (* No need to check for reborrows of shared values: we don't track
+                them in abstraction expressions *)
+             super#visit_ESymbolic proj_regions pm aproj

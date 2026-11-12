@@ -1,0 +1,2 @@
+(include_subdirs no)
+(executable (name array_loan_controls) (libraries aeneas))

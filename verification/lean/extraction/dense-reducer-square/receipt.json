@@ -1,0 +1,231 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "selector": "{impl bulksketch::poly::Polynomial for bulksketch::poly::Dense}::square_mod_into",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "variant_id": "checked-dense-reducer-square-v1",
+  "native_source_edited": false,
+  "variant_patch": "extraction/dense-reducer-square/checked-dense-reducer-square.patch",
+  "variant_patch_sha256": "fa5418ecb9e225609ff7362bdc64647ffc346aab0fb142f9ae70c39b5aca7cc9",
+  "base_binary_sha256": {
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe"
+  },
+  "patched_binary_sha256": "4bf7c2b3989fae2d12239f89158ba088b732a4ff6d332d4d51b47e02ce76c365",
+  "base_sources": {
+    "src/interp/InterpExpansion.ml": "c3672499de02ee3ed411bbbe2f6a85e7a24c33df9ec12b84e409327b4c6fc6dc",
+    "src/interp/InterpMatchCtxs.ml": "a97bd2650a71ec0795f570dac17a8a1f1f52ae2b6feb4619984e6f1d61fde264",
+    "src/symbolic/SymbolicToPureExpressions.ml": "250813689915257fcab9850a12804d6a0b3a6f7ec5dd7a854dd33a849419c023"
+  },
+  "modified_sources": {
+    "src/interp/InterpExpansion.ml": "a6f3b2621f0836c20add44395fad2ccac5e350aa51bf5d670d593e22f1d35df0",
+    "src/interp/InterpMatchCtxs.ml": "b250146dc8d9a8ce2d9ea24e1e959e45a82e0138e4d92f328c87eb8468c037e1",
+    "src/symbolic/SymbolicToPureExpressions.ml": "ce26b83927530c663e28448d734dcc07a5a6f422ba67e1b4895d8c58eda7f7a4"
+  },
+  "charon_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/dense-square-mod/arithmetic.llbc",
+    "--start-from={impl bulksketch::poly::Polynomial for bulksketch::poly::Dense}::square_mod_into",
+    "--",
+    "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "runtime_sha256": "bb515d3056d7f5f197820dd859a3b0ee9d908a4a64e34c5a28cd1e73486c1585",
+  "files_sha256": {
+    "extraction/dense-reducer-square/Arithmetic/Funs.lean": "bfb8c077f8c7172988d6b6d11183929211a2eed0bc804e4fe2af586aa4d8075e",
+    "extraction/dense-reducer-square/Arithmetic/FunsExternal_Template.lean": "e70580d958e57d0416a230a8c2d299d1c5906d2c64a1804f1f3bfeb0922b3b71",
+    "extraction/dense-reducer-square/Arithmetic/Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
+    "extraction/dense-reducer-square/Axioms.lean": "2cfb277bce8338d714080d364d2a75a17aa9c63d0e4cb364be93482af3f7fae6",
+    "extraction/dense-reducer-square/arithmetic.llbc": "b0884511e045b9043f659c1aff2a2c8dbc59750e88b734f5d4505319d3a5ef49",
+    "extraction/dense-reducer-square/axioms.log": "a2eba6d35d2ee3834e78182d998078701f36e64e38b5d14cbbb37834fc12d2db",
+    "extraction/dense-reducer-square/charon.log": "9b490f77d03040f6ccc819eb82d1b939de08baf818e0b1aa5616bc0485112f0f",
+    "extraction/dense-reducer-square/checked-dense-reducer-square.patch": "fa5418ecb9e225609ff7362bdc64647ffc346aab0fb142f9ae70c39b5aca7cc9",
+    "extraction/dense-reducer-square/checked.log": "0c87b60b3c74ee45eed87b34d03a727e40548490f1b1e7b132f205f9a0e1af39",
+    "extraction/dense-reducer-square/disabled.log": "7777602a05c00b4783f8624ee0667a5320e715fec2089d00c43f663f76a5b3af",
+    "extraction/dense-reducer-square/portable-xor-stock.log": "94f27330a847a5b758c39d1b96121a302b4d4106e9074f221c9403abc3f75e15",
+    "extraction/dense-reducer-square/portable-xor.log": "08d41f77c545cfa75b6a1cd414d8c886f8bc04ff9ff52397e730e7454f103511",
+    "extraction/dense-reducer-square/replay.log": "1cd52a7293317be4cee86e555d012770d4abececb8f7a4e4a2c55cd558f16c52",
+    "extraction/dense-reducer-square/stock.log": "805d5cba3bfd90ead85f9b39d651e0c08fe992b05761e225b0154614bbfff7d7",
+    "extraction/dense-reducer-square/unchecked.log": "921cdb7041142fb16d60bbeb2fbba116296bee7990da7e29bdc1599e9712d7f6"
+  },
+  "commands": {
+    "checked": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/aeneas-dense-reducer-square/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-dense-reducer/dense-square-mod/level-one",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/dense-square-mod/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "environment": {
+        "BULKSKETCH_DENSE_REDUCER": "1"
+      },
+      "input_sha256": "b0884511e045b9043f659c1aff2a2c8dbc59750e88b734f5d4505319d3a5ef49",
+      "outputs": {
+        "Funs.lean": "bfb8c077f8c7172988d6b6d11183929211a2eed0bc804e4fe2af586aa4d8075e",
+        "FunsExternal_Template.lean": "e70580d958e57d0416a230a8c2d299d1c5906d2c64a1804f1f3bfeb0922b3b71",
+        "Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557"
+      }
+    },
+    "replay": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/aeneas-dense-reducer-square/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-dense-reducer/dense-square-mod/final-replay",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/dense-square-mod/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "b0884511e045b9043f659c1aff2a2c8dbc59750e88b734f5d4505319d3a5ef49",
+      "outputs": {
+        "Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
+        "Funs.lean": "bfb8c077f8c7172988d6b6d11183929211a2eed0bc804e4fe2af586aa4d8075e",
+        "FunsExternal_Template.lean": "e70580d958e57d0416a230a8c2d299d1c5906d2c64a1804f1f3bfeb0922b3b71"
+      },
+      "environment": {
+        "BULKSKETCH_DENSE_REDUCER": "1"
+      }
+    },
+    "stock": {
+      "command": [
+        "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-dense-reducer/dense-square-mod/final-stock",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/dense-square-mod/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "b0884511e045b9043f659c1aff2a2c8dbc59750e88b734f5d4505319d3a5ef49",
+      "outputs": {
+        "Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
+        "Funs.lean": "b5c72ca60d85850fc3ce22b7c610b979ca557f8cd4d1e6a699bba2c029b48b98",
+        "FunsExternal_Template.lean": "e70580d958e57d0416a230a8c2d299d1c5906d2c64a1804f1f3bfeb0922b3b71"
+      },
+      "environment": {}
+    },
+    "disabled": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/aeneas-dense-reducer-square/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-dense-reducer/dense-square-mod/final-disabled",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/dense-square-mod/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "b0884511e045b9043f659c1aff2a2c8dbc59750e88b734f5d4505319d3a5ef49",
+      "outputs": {
+        "Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
+        "Funs.lean": "b5c72ca60d85850fc3ce22b7c610b979ca557f8cd4d1e6a699bba2c029b48b98",
+        "FunsExternal_Template.lean": "e70580d958e57d0416a230a8c2d299d1c5906d2c64a1804f1f3bfeb0922b3b71"
+      },
+      "environment": {}
+    },
+    "unchecked": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/aeneas-dense-reducer-square/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-dense-reducer/dense-square-mod/final-unchecked",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-root-traversal/dense-square-mod/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "b0884511e045b9043f659c1aff2a2c8dbc59750e88b734f5d4505319d3a5ef49",
+      "outputs": {
+        "Types.lean": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557",
+        "Funs.lean": "b5c72ca60d85850fc3ce22b7c610b979ca557f8cd4d1e6a699bba2c029b48b98",
+        "FunsExternal_Template.lean": "e70580d958e57d0416a230a8c2d299d1c5906d2c64a1804f1f3bfeb0922b3b71"
+      },
+      "environment": {
+        "BULKSKETCH_DENSE_REDUCER": "1"
+      }
+    },
+    "portable-xor": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/aeneas-dense-reducer-square/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-dense-reducer/dense-square-mod/final-xor",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/portable-xor/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "48f0136c7ec710188892da82e32e9e1c824f13006ca53fbd3d10e8cf06d8ecdf",
+      "outputs": {
+        "Types.lean": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef",
+        "Funs.lean": "2de32175a7ff8f0bfcebfa5ad4ed9814965136fff08e0bd5b804e8d9250763f2",
+        "FunsExternal_Template.lean": "fca2fe70ab4b973fb5bbbc5f1644826e71abb99c0245cd04c3a63eff88326ed4"
+      },
+      "environment": {
+        "BULKSKETCH_DENSE_REDUCER": "1"
+      }
+    },
+    "portable-xor-stock": {
+      "command": [
+        "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-dense-reducer/dense-square-mod/final-xor-stock",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/portable-xor/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "48f0136c7ec710188892da82e32e9e1c824f13006ca53fbd3d10e8cf06d8ecdf",
+      "outputs": {
+        "Types.lean": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef",
+        "Funs.lean": "2de32175a7ff8f0bfcebfa5ad4ed9814965136fff08e0bd5b804e8d9250763f2",
+        "FunsExternal_Template.lean": "fca2fe70ab4b973fb5bbbc5f1644826e71abb99c0245cd04c3a63eff88326ed4"
+      },
+      "environment": {}
+    }
+  }
+}

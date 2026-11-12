@@ -1,0 +1,93 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "native_source_edited": false,
+  "native_llbc_edited": false,
+  "source_sha256": {
+    "src/sketch/api.rs": "45333a4d9966d07bd36c6382f84ae03b156fd00aea4af5e87218f33919fb8700"
+  },
+  "artifacts": {
+    "extraction/decode-report/Arithmetic/Funs.lean": "2da248903638770ce232e3661728b16431a0bc4741efd03c6c5ab7c63f4de656",
+    "extraction/decode-report/Arithmetic/FunsExternal_Template.lean": "870f1b70783d6d319cdf3cafddbebcec22eee1342c26f8cd58fadc577dcc537c",
+    "extraction/decode-report/Arithmetic/Types.lean": "19f7f2ca816b2a152db0daaaad69e807e63c5a8e9b56f97c92334a18508b237d",
+    "extraction/decode-report/aeneas.log": "d8274c20b53491268be42ce740d58389e1116ed9abc89dad1fd37fe21ce5ed11",
+    "extraction/decode-report/arithmetic.llbc": "050cf6b45a56cb00e4a323b93e68c656e664264be92e184c391e5f772030a0dd",
+    "extraction/decode-report/charon.log": "d382aa19ff718c8afc51e415c225efeb5667a4e5d25e7f3388b896967889a28e",
+    "extraction/decode-report/project.py": "d9d48c81005351fda6da7e94d30b0381612d107e603a01980f7dd1316aa6b444",
+    "extraction/decode-report/replay.log": "06d318e471867bf1c9c3ba49f12652930d9de2a1656d28df636f0cd7c8fe800d"
+  },
+  "runtime_sha256": {
+    "bridge/Arithmetic/MapsRuntime.lean": "ebac090bd9b4f610659f8d8a34222e1c7be297e29f05e2ee335f1257f20bf02b",
+    "bridge/Arithmetic/ShapeWireRuntime.lean": "c58c15a917cc7d925f90ba7dfc4e9615bdf79e921f98f96bbc87a925c5d1ed6a"
+  },
+  "commands": {
+    "charon": {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/report/arithmetic.llbc",
+        "--start-from=bulksketch::sketch::api::_::outcome",
+        "--start-from=bulksketch::sketch::api::_::bucket_count",
+        "--include=bulksketch::sketch::api::_::outcome",
+        "--include=bulksketch::sketch::api::_::bucket_count",
+        "--opaque=bulksketch::sketch::api::_::new",
+        "--opaque=bulksketch::sketch::api::_::write",
+        "--opaque=bulksketch::sketch::api::_::fail",
+        "--opaque=bulksketch::sketch::api::_::finish",
+        "--",
+        "--manifest-path",
+        "/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    "aeneas": {
+      "command": [
+        "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/report/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/report/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  },
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/report-replay/Arithmetic",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/report/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "output_sha256": {
+      "Funs.lean": "2da248903638770ce232e3661728b16431a0bc4741efd03c6c5ab7c63f4de656",
+      "FunsExternal_Template.lean": "870f1b70783d6d319cdf3cafddbebcec22eee1342c26f8cd58fadc577dcc537c",
+      "Types.lean": "19f7f2ca816b2a152db0daaaad69e807e63c5a8e9b56f97c92334a18508b237d"
+    }
+  }
+}

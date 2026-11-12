@@ -1,0 +1,93 @@
+{
+  "status": "all seven source endpoints built; exact challenge assignments and standard-only axiom audit passed; independent review and aggregate replay separate",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_source_edited": false,
+  "native_source_body_refinements_added": 7,
+  "complete_native_contract_status": "unproved; explicit extraction/runtime/compiler/machine boundary and general native closure remain",
+  "new_runtime_models": 0,
+  "native_inverse_body_credit": 0,
+  "entries": [
+    {
+      "native_item_id": "src/backend/portable.rs:14:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::mul",
+      "source_line_span_sha256": "2b288ccccae8fad2a3c3496e3842d7aab58adf4698d96bfcc945c5a3185fb473",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.mul",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean",
+      "challenge": "BulksketchBridge.PortableChallenges.actualMultiplicationIsFieldMultiplication",
+      "theorem": "BulksketchBridge.Portable.mul_refines"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:18:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::square",
+      "source_line_span_sha256": "47226fc382b7cd78150cb6e3b0802167449a8db7428423f78969675fecfa1a9e",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.square",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean",
+      "challenge": "BulksketchBridge.PortableChallenges.actualSquareIsFieldSquare",
+      "theorem": "BulksketchBridge.Portable.square_refines"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:22:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::frobenius",
+      "source_line_span_sha256": "888862c8d820d17f3f6636733d031668b95be8f41a0617510258e5c832f6d974",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.frobenius",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean",
+      "challenge": "BulksketchBridge.PortableChallenges.actualFrobeniusIsFullFieldPower",
+      "theorem": "BulksketchBridge.Portable.frobenius_refines"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:34:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::trace",
+      "source_line_span_sha256": "1ec7113e49a764171ab3b96e2758f8834cf0adaa91364a71fcc5cadca5075741",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.trace",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean",
+      "challenge": "BulksketchBridge.PortableChallenges.actualTraceIsAlgebraTrace",
+      "theorem": "BulksketchBridge.Portable.trace_refines"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:38:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::solve_quadratic",
+      "source_line_span_sha256": "9e526847941884bff9f59dbc6a9166c81497beb99a098be449c948963e9814b0",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean",
+      "challenge": "BulksketchBridge.PortableChallenges.actualQuadraticHasNormalizedFieldMeaning",
+      "theorem": "BulksketchBridge.Portable.solve_quadratic_refines"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:42:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::raw_mul",
+      "source_line_span_sha256": "380b2c6368ed9cbe8a6baeb054857eb37b033102dff677c2eb9ff435aef8e102",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.raw_mul",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean",
+      "challenge": "BulksketchBridge.PortableChallenges.actualRawMultiplicationReturnsFullProduct",
+      "theorem": "BulksketchBridge.Portable.raw_mul_refines"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:46:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::reduce",
+      "source_line_span_sha256": "592c0d5d12dd32c8af11c3be21ddc9796be7b77dea26da4364ead673b6e87f78",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.reduce",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean",
+      "challenge": "BulksketchBridge.PortableChallenges.actualReductionIsExactQuotientRemainder",
+      "theorem": "BulksketchBridge.Portable.reduce_refines"
+    }
+  ],
+  "projection_validator": "extraction/portable-forwarding/project.py",
+  "verbatim_source_method_declarations": 7,
+  "shared_functions_dictionaries_checked": 43,
+  "raw_output": "extraction/portable-forwarding/Portable/Funs.lean",
+  "files": {
+    "bridge/Arithmetic/PortableGenerated.lean": "a0a51923e2be29423404ac9a5523d270e502f4f151e2ae84c46b60f9de286539",
+    "bridge/BulksketchBridge/PortableChallenges.lean": "235976ed618ad5c1b66ffd922623b4a58241f8e36b384466e308c9f47cb649f9",
+    "bridge/BulksketchBridge/Portable.lean": "23edd05ef3301490a40c9e46794391a58f33051d6d54131fd92cc843e7d3cae3",
+    "extraction/portable-forwarding/project.py": "3bf5de96139cdca99c0bba565526e3784ef5c067319b041276a66286aaee7f04",
+    "extraction/portable-forwarding/run.py": "1180e53ad4b941089a272a87fac5bc9cca0f2d71dc2b7c8f0f70cb78301e8c11"
+  },
+  "axiom_audit": "extraction/portable-forwarding/axiom-audit.log",
+  "allowed_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "verification": [
+    "lake build BulksketchBridge.Portable",
+    "all seven exact challenge assignments and transitive axiom prints checked",
+    "projector positive plus eight isolated normal/-O mutation rejections passed; global fixture integration owned by root"
+  ],
+  "remaining": [
+    "Portable inverse forwarding waits for source inverse proof; no unsupported body modeled",
+    "Slice/state/resource/ownership and other source methods retained in full denominator"
+  ]
+}

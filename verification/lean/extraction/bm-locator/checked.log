@@ -1,0 +1,309 @@
+[[92mInfo[39m ] Imported: /workspace/bulk/bulksketch/verification/lean/extraction/bm-locator/arithmetic.llbc
+BM-DYNAMIC-SHARED-PRE ids=53,54,55,59,114 isolated=true
+BM-DYNAMIC-SHARED-AST abs=59 level=1
+BM-DYNAMIC-SHARED-AST abs=114 level=1
+BM-DYNAMIC-SHARED-AST abs=114 level=0
+BM-DYNAMIC-SHARED-AST abs=59 level=0
+BM-DYNAMIC-SHARED-AST abs=55 level=0
+BM-DYNAMIC-SHARED-AST abs=54 level=0
+BM-DYNAMIC-SHARED-AST abs=53 level=0
+BM-DYNAMIC-SHARED-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-PRE ids=164,165,167,202 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=167 level=1
+BM-DYNAMIC-LATER-AST abs=202 level=1
+BM-DYNAMIC-LATER-AST abs=202 level=0
+BM-DYNAMIC-LATER-AST abs=167 level=0
+BM-DYNAMIC-LATER-AST abs=165 level=0
+BM-DYNAMIC-LATER-AST abs=164 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-LATER-PRE ids=267,268,270,305 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=270 level=1
+BM-DYNAMIC-LATER-AST abs=305 level=1
+BM-DYNAMIC-LATER-AST abs=305 level=0
+BM-DYNAMIC-LATER-AST abs=270 level=0
+BM-DYNAMIC-LATER-AST abs=268 level=0
+BM-DYNAMIC-LATER-AST abs=267 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-SHARED-PRE ids=326,327,328,332,387 isolated=true
+BM-DYNAMIC-SHARED-AST abs=332 level=1
+BM-DYNAMIC-SHARED-AST abs=387 level=1
+BM-DYNAMIC-SHARED-AST abs=387 level=0
+BM-DYNAMIC-SHARED-AST abs=332 level=0
+BM-DYNAMIC-SHARED-AST abs=328 level=0
+BM-DYNAMIC-SHARED-AST abs=327 level=0
+BM-DYNAMIC-SHARED-AST abs=326 level=0
+BM-DYNAMIC-SHARED-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-PRE ids=437,438,440,475 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=440 level=1
+BM-DYNAMIC-LATER-AST abs=475 level=1
+BM-DYNAMIC-LATER-AST abs=475 level=0
+BM-DYNAMIC-LATER-AST abs=440 level=0
+BM-DYNAMIC-LATER-AST abs=438 level=0
+BM-DYNAMIC-LATER-AST abs=437 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-LATER-PRE ids=540,541,543,578 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=543 level=1
+BM-DYNAMIC-LATER-AST abs=578 level=1
+BM-DYNAMIC-LATER-AST abs=578 level=0
+BM-DYNAMIC-LATER-AST abs=543 level=0
+BM-DYNAMIC-LATER-AST abs=541 level=0
+BM-DYNAMIC-LATER-AST abs=540 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-SHARED-PRE ids=708,709,710,714,769 isolated=true
+BM-DYNAMIC-SHARED-AST abs=714 level=1
+BM-DYNAMIC-SHARED-AST abs=769 level=1
+BM-DYNAMIC-SHARED-AST abs=769 level=0
+BM-DYNAMIC-SHARED-AST abs=714 level=0
+BM-DYNAMIC-SHARED-AST abs=710 level=0
+BM-DYNAMIC-SHARED-AST abs=709 level=0
+BM-DYNAMIC-SHARED-AST abs=708 level=0
+BM-DYNAMIC-SHARED-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-PRE ids=819,820,822,857 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=822 level=1
+BM-DYNAMIC-LATER-AST abs=857 level=1
+BM-DYNAMIC-LATER-AST abs=857 level=0
+BM-DYNAMIC-LATER-AST abs=822 level=0
+BM-DYNAMIC-LATER-AST abs=820 level=0
+BM-DYNAMIC-LATER-AST abs=819 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-LATER-PRE ids=910,911,913,948 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=913 level=1
+BM-DYNAMIC-LATER-AST abs=948 level=1
+BM-DYNAMIC-LATER-AST abs=948 level=0
+BM-DYNAMIC-LATER-AST abs=913 level=0
+BM-DYNAMIC-LATER-AST abs=911 level=0
+BM-DYNAMIC-LATER-AST abs=910 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-SHARED-PRE ids=969,970,971,975,1030 isolated=true
+BM-DYNAMIC-SHARED-AST abs=975 level=1
+BM-DYNAMIC-SHARED-AST abs=1030 level=1
+BM-DYNAMIC-SHARED-AST abs=1030 level=0
+BM-DYNAMIC-SHARED-AST abs=975 level=0
+BM-DYNAMIC-SHARED-AST abs=971 level=0
+BM-DYNAMIC-SHARED-AST abs=970 level=0
+BM-DYNAMIC-SHARED-AST abs=969 level=0
+BM-DYNAMIC-SHARED-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-PRE ids=1080,1081,1083,1118 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=1083 level=1
+BM-DYNAMIC-LATER-AST abs=1118 level=1
+BM-DYNAMIC-LATER-AST abs=1118 level=0
+BM-DYNAMIC-LATER-AST abs=1083 level=0
+BM-DYNAMIC-LATER-AST abs=1081 level=0
+BM-DYNAMIC-LATER-AST abs=1080 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-LATER-PRE ids=1171,1172,1174,1209 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=1174 level=1
+BM-DYNAMIC-LATER-AST abs=1209 level=1
+BM-DYNAMIC-LATER-AST abs=1209 level=0
+BM-DYNAMIC-LATER-AST abs=1174 level=0
+BM-DYNAMIC-LATER-AST abs=1172 level=0
+BM-DYNAMIC-LATER-AST abs=1171 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-SHARED-PRE ids=1309,1310,1311,1315,1370 isolated=true
+BM-DYNAMIC-SHARED-AST abs=1315 level=1
+BM-DYNAMIC-SHARED-AST abs=1370 level=1
+BM-DYNAMIC-SHARED-AST abs=1370 level=0
+BM-DYNAMIC-SHARED-AST abs=1315 level=0
+BM-DYNAMIC-SHARED-AST abs=1311 level=0
+BM-DYNAMIC-SHARED-AST abs=1310 level=0
+BM-DYNAMIC-SHARED-AST abs=1309 level=0
+BM-DYNAMIC-SHARED-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-PRE ids=1420,1421,1423,1458 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=1423 level=1
+BM-DYNAMIC-LATER-AST abs=1458 level=1
+BM-DYNAMIC-LATER-AST abs=1458 level=0
+BM-DYNAMIC-LATER-AST abs=1423 level=0
+BM-DYNAMIC-LATER-AST abs=1421 level=0
+BM-DYNAMIC-LATER-AST abs=1420 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-LATER-PRE ids=1511,1512,1514,1549 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=1514 level=1
+BM-DYNAMIC-LATER-AST abs=1549 level=1
+BM-DYNAMIC-LATER-AST abs=1549 level=0
+BM-DYNAMIC-LATER-AST abs=1514 level=0
+BM-DYNAMIC-LATER-AST abs=1512 level=0
+BM-DYNAMIC-LATER-AST abs=1511 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-SHARED-PRE ids=1570,1571,1572,1576,1631 isolated=true
+BM-DYNAMIC-SHARED-AST abs=1576 level=1
+BM-DYNAMIC-SHARED-AST abs=1631 level=1
+BM-DYNAMIC-SHARED-AST abs=1631 level=0
+BM-DYNAMIC-SHARED-AST abs=1576 level=0
+BM-DYNAMIC-SHARED-AST abs=1572 level=0
+BM-DYNAMIC-SHARED-AST abs=1571 level=0
+BM-DYNAMIC-SHARED-AST abs=1570 level=0
+BM-DYNAMIC-SHARED-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-PRE ids=1681,1682,1684,1719 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=1684 level=1
+BM-DYNAMIC-LATER-AST abs=1719 level=1
+BM-DYNAMIC-LATER-AST abs=1719 level=0
+BM-DYNAMIC-LATER-AST abs=1684 level=0
+BM-DYNAMIC-LATER-AST abs=1682 level=0
+BM-DYNAMIC-LATER-AST abs=1681 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-LATER-PRE ids=1772,1773,1775,1810 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=1775 level=1
+BM-DYNAMIC-LATER-AST abs=1810 level=1
+BM-DYNAMIC-LATER-AST abs=1810 level=0
+BM-DYNAMIC-LATER-AST abs=1775 level=0
+BM-DYNAMIC-LATER-AST abs=1773 level=0
+BM-DYNAMIC-LATER-AST abs=1772 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-SHARED-PRE ids=1868,1869,1870,1874,1929 isolated=true
+BM-DYNAMIC-SHARED-AST abs=1874 level=1
+BM-DYNAMIC-SHARED-AST abs=1929 level=1
+BM-DYNAMIC-SHARED-AST abs=1929 level=0
+BM-DYNAMIC-SHARED-AST abs=1874 level=0
+BM-DYNAMIC-SHARED-AST abs=1870 level=0
+BM-DYNAMIC-SHARED-AST abs=1869 level=0
+BM-DYNAMIC-SHARED-AST abs=1868 level=0
+BM-DYNAMIC-SHARED-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-PRE ids=1979,1980,1982,2017 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=1982 level=1
+BM-DYNAMIC-LATER-AST abs=2017 level=1
+BM-DYNAMIC-LATER-AST abs=2017 level=0
+BM-DYNAMIC-LATER-AST abs=1982 level=0
+BM-DYNAMIC-LATER-AST abs=1980 level=0
+BM-DYNAMIC-LATER-AST abs=1979 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-LATER-PRE ids=2070,2071,2073,2108 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=2073 level=1
+BM-DYNAMIC-LATER-AST abs=2108 level=1
+BM-DYNAMIC-LATER-AST abs=2108 level=0
+BM-DYNAMIC-LATER-AST abs=2073 level=0
+BM-DYNAMIC-LATER-AST abs=2071 level=0
+BM-DYNAMIC-LATER-AST abs=2070 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-SHARED-PRE ids=2129,2130,2131,2135,2190 isolated=true
+BM-DYNAMIC-SHARED-AST abs=2135 level=1
+BM-DYNAMIC-SHARED-AST abs=2190 level=1
+BM-DYNAMIC-SHARED-AST abs=2190 level=0
+BM-DYNAMIC-SHARED-AST abs=2135 level=0
+BM-DYNAMIC-SHARED-AST abs=2131 level=0
+BM-DYNAMIC-SHARED-AST abs=2130 level=0
+BM-DYNAMIC-SHARED-AST abs=2129 level=0
+BM-DYNAMIC-SHARED-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-PRE ids=2240,2241,2243,2278 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=2243 level=1
+BM-DYNAMIC-LATER-AST abs=2278 level=1
+BM-DYNAMIC-LATER-AST abs=2278 level=0
+BM-DYNAMIC-LATER-AST abs=2243 level=0
+BM-DYNAMIC-LATER-AST abs=2241 level=0
+BM-DYNAMIC-LATER-AST abs=2240 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-LATER-PRE ids=2331,2332,2334,2369 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=2334 level=1
+BM-DYNAMIC-LATER-AST abs=2369 level=1
+BM-DYNAMIC-LATER-AST abs=2369 level=0
+BM-DYNAMIC-LATER-AST abs=2334 level=0
+BM-DYNAMIC-LATER-AST abs=2332 level=0
+BM-DYNAMIC-LATER-AST abs=2331 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-SHARED-PRE ids=2499,2500,2501,2505,2560 isolated=true
+BM-DYNAMIC-SHARED-AST abs=2505 level=1
+BM-DYNAMIC-SHARED-AST abs=2560 level=1
+BM-DYNAMIC-SHARED-AST abs=2560 level=0
+BM-DYNAMIC-SHARED-AST abs=2505 level=0
+BM-DYNAMIC-SHARED-AST abs=2501 level=0
+BM-DYNAMIC-SHARED-AST abs=2500 level=0
+BM-DYNAMIC-SHARED-AST abs=2499 level=0
+BM-DYNAMIC-SHARED-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-PRE ids=2610,2611,2613,2648 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=2613 level=1
+BM-DYNAMIC-LATER-AST abs=2648 level=1
+BM-DYNAMIC-LATER-AST abs=2648 level=0
+BM-DYNAMIC-LATER-AST abs=2613 level=0
+BM-DYNAMIC-LATER-AST abs=2611 level=0
+BM-DYNAMIC-LATER-AST abs=2610 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-LATER-PRE ids=2701,2702,2704,2739 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=2704 level=1
+BM-DYNAMIC-LATER-AST abs=2739 level=1
+BM-DYNAMIC-LATER-AST abs=2739 level=0
+BM-DYNAMIC-LATER-AST abs=2704 level=0
+BM-DYNAMIC-LATER-AST abs=2702 level=0
+BM-DYNAMIC-LATER-AST abs=2701 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-SHARED-PRE ids=2760,2761,2762,2766,2821 isolated=true
+BM-DYNAMIC-SHARED-AST abs=2766 level=1
+BM-DYNAMIC-SHARED-AST abs=2821 level=1
+BM-DYNAMIC-SHARED-AST abs=2821 level=0
+BM-DYNAMIC-SHARED-AST abs=2766 level=0
+BM-DYNAMIC-SHARED-AST abs=2762 level=0
+BM-DYNAMIC-SHARED-AST abs=2761 level=0
+BM-DYNAMIC-SHARED-AST abs=2760 level=0
+BM-DYNAMIC-SHARED-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-PRE ids=2871,2872,2874,2909 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=2874 level=1
+BM-DYNAMIC-LATER-AST abs=2909 level=1
+BM-DYNAMIC-LATER-AST abs=2909 level=0
+BM-DYNAMIC-LATER-AST abs=2874 level=0
+BM-DYNAMIC-LATER-AST abs=2872 level=0
+BM-DYNAMIC-LATER-AST abs=2871 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-DYNAMIC-LATER-PRE ids=2962,2963,2965,3000 inactive=true isolated=true
+BM-DYNAMIC-LATER-AST abs=2965 level=1
+BM-DYNAMIC-LATER-AST abs=3000 level=1
+BM-DYNAMIC-LATER-AST abs=3000 level=0
+BM-DYNAMIC-LATER-AST abs=2965 level=0
+BM-DYNAMIC-LATER-AST abs=2963 level=0
+BM-DYNAMIC-LATER-AST abs=2962 level=0
+BM-DYNAMIC-LATER-AST exact return sentinel preserved
+BM-DYNAMIC-LATER-POST restored=true all_other_bindings_preserved=true
+BM-EXACT-DENSE-ERASE id=2560 kind=(Values.Loop 46) level=1
+BM-ZIP-MIRROR-MATCH loop=2648 mirror=2613 snapshots=1
+BM-ZIP-MIRROR-USE loop=2648 mirror=2613 context_unused=true suffix_unused=true
+BM-ZIP-MIRROR-WRITEBACK id=2648 input=5132 output=5142 call=^461 ^482
+BM-ZIP-MIRROR-WRITEBACK id=2613 input=5142 output=5140 call=^456 ^539
+BM-ZIP-MIRROR-MATCH loop=2739 mirror=2704 snapshots=1
+BM-ZIP-MIRROR-USE loop=2739 mirror=2704 context_unused=true suffix_unused=true
+BM-ZIP-MIRROR-WRITEBACK id=2739 input=5332 output=5342 call=^723 ^743
+BM-ZIP-MIRROR-WRITEBACK id=2704 input=5342 output=5340 call=^718 ^798
+BM-EXACT-DENSE-ERASE id=2821 kind=(Values.Loop 51) level=1
+BM-ZIP-MIRROR-MATCH loop=2909 mirror=2874 snapshots=1
+BM-ZIP-MIRROR-USE loop=2909 mirror=2874 context_unused=true suffix_unused=true
+BM-ZIP-MIRROR-WRITEBACK id=2909 input=5653 output=5663 call=^1081 ^1102
+BM-ZIP-MIRROR-WRITEBACK id=2874 input=5663 output=5661 call=^1076 ^1159
+BM-ZIP-MIRROR-MATCH loop=3000 mirror=2965 snapshots=1
+BM-ZIP-MIRROR-USE loop=3000 mirror=2965 context_unused=true suffix_unused=true
+BM-ZIP-MIRROR-WRITEBACK id=3000 input=5844 output=5854 call=^1339 ^1359
+BM-ZIP-MIRROR-WRITEBACK id=2965 input=5854 output=5852 call=^1334 ^1414
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::traits::iterator::Iterator', could not find the information for item 'zip'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/traits/iterator.rs', lines 42:0-42:24
+Compiler source: extract/Extract.ml, line 2866
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::traits::iterator::Iterator', could not find the information for item 'rev'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/traits/iterator.rs', lines 42:0-42:24
+Compiler source: extract/Extract.ml, line 2866
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::range::Step', could not find the information for item 'forward_overflowing'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/range.rs', lines 35:0-35:64
+Compiler source: extract/Extract.ml, line 2866
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::range::Step', could not find the information for item 'backward_overflowing'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/range.rs', lines 35:0-35:64
+Compiler source: extract/Extract.ml, line 2866
+
+[[92mInfo[39m ] Generated: /workspace/bulk/bulksketch-proof-evidence-20261109/bm-locator-package/replay/checked/Types.lean
+[[92mInfo[39m ] Generated: /workspace/bulk/bulksketch-proof-evidence-20261109/bm-locator-package/replay/checked/FunsExternal_Template.lean
+[[92mInfo[39m ] Generated: /workspace/bulk/bulksketch-proof-evidence-20261109/bm-locator-package/replay/checked/Funs.lean
+[[92mInfo[39m ] Total execution time: 45.767620 seconds

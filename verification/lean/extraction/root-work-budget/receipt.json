@@ -1,0 +1,63 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "selected_roots": [
+    "bulksketch::decode::work::_::roots_bound"
+  ],
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+    "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-tools/work-schedule/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true"
+  },
+  "commands": [
+    [
+      "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-root-work-budget/roots-only/arithmetic.llbc",
+      "--start-from=bulksketch::decode::work::_::roots_bound",
+      "--",
+      "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked",
+      "--target",
+      "x86_64-apple-darwin"
+    ],
+    [
+      "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-root-work-budget/roots-only/Arithmetic",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-root-work-budget/roots-only/arithmetic.llbc"
+    ]
+  ],
+  "exit_codes": [
+    0,
+    0
+  ],
+  "artifacts": {
+    "arithmetic.llbc": "788e077587b000bb359a939aad3997c0ff2b35aac84c3c836a8ad30cc9cda869",
+    "charon.log": "154a04fe6ecc576a6c374cc5a50f3ac8e420b417a8ac48916177e63994d67790",
+    "aeneas.log": "c4f18f8ca49aa40f541001f82db355318560599504cef02abad1fc7912f0c5f4",
+    "Arithmetic/Types.lean": "b70ef8f42fe271208359552c5aaacb565969d1f22527cd7d2f9cb839e62da4e3",
+    "Arithmetic/Funs.lean": "01914c65130d040f4a1000e53020a3131d023bba9739e49440edc6316135b3a4",
+    "Arithmetic/FunsExternal_Template.lean": "d17c30d5aab6c1a7fe4203e28f267e4e1f2db032a95b3edcb759e9445e6e1e89"
+  }
+}

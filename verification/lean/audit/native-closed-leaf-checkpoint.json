@@ -1,0 +1,15 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "previous_proof_commit": "3612535e21fa539bd35703287f79254fa547fbe7",
+  "retained_native_executable_obligations": 344,
+  "generated_body_refinements_under_recorded_TCB": 95,
+  "checked_stateful_llbc_refinements": 5,
+  "whole_native_coverage_achieved": false,
+  "open": [
+    "Native Newton guard residual and whole degree-probe composition",
+    "Native Berlekamp–Massey paired mutable loop and mirror writeback lowering",
+    "General root recovery and end-to-end decoder completeness",
+    "Remaining stage callers and accelerated kernels",
+    "Physical memory, ISA and compiler-expanded correspondence"
+  ]
+}

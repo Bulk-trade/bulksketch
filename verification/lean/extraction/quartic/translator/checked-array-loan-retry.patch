@@ -1,0 +1,144 @@
+--- a/src/interp/InterpJoin.ml
++++ b/src/interp/InterpJoin.ml
+@@ -638,7 +638,7 @@
+   (ctx, !fresh_map)
+ 
+ let join_ctxs (span : Meta.span) (fresh_abs_kind : abs_kind)
+-    ~(recoverable : bool) ~(with_abs_conts : bool) (ctx0 : eval_ctx)
++    ?(retry_mixed_array_loan = false) ~(recoverable : bool) ~(with_abs_conts : bool) (ctx0 : eval_ctx)
+     (ctx1 : eval_ctx) : join_info_or_update =
+   (* Debug *)
+   [%ltrace
+@@ -715,7 +715,9 @@
+     let recover = recoverable
+   end in
+   let module JM = MakeJoinMatcher (S) in
+-  let module M = MakeMatcher (JM) in
++  let module M = (val (if retry_mixed_array_loan then
++    (module MakeArrayLoanRetryMatcher (JM) : Matcher)
++    else (module MakeMatcher (JM) : Matcher))) in
+   let pop_var = env_pop_var (fun _ -> [%internal_error] span) in
+   let pop_dummy = env_pop_dummy (fun _ -> [%internal_error] span) in
+   let pop_abs = env_pop_abs (fun _ -> [%internal_error] span) in
+@@ -953,9 +955,15 @@
+      we update the context and retry.
+   *)
+   let joined_ctx = ref ctx0 in
++  (* The fixed-point search can end the shared loan and retry without
++     synthesizing a branch continuation. Leave general branch joins alone. *)
++  let retry_mixed_array_loan =
++    match fresh_abs_kind with Loop _ -> not with_abs_conts | _ -> false
++  in
+   let rec join_one_aux (ctx : eval_ctx) : eval_ctx =
+     match
+-      join_ctxs span fresh_abs_kind ~recoverable ~with_abs_conts !joined_ctx ctx
++      join_ctxs span fresh_abs_kind ~retry_mixed_array_loan ~recoverable
++        ~with_abs_conts !joined_ctx ctx
+     with
+     | Ok { joined_ctx = nctx; _ } ->
+         joined_ctx := nctx;
+--- a/src/interp/InterpJoin.mli
++++ b/src/interp/InterpJoin.mli
+@@ -106,6 +106,7 @@
+ val join_ctxs :
+   Meta.span ->
+   abs_kind ->
++  ?retry_mixed_array_loan:bool ->
+   recoverable:bool ->
+   with_abs_conts:bool ->
+   eval_ctx ->
+--- a/src/interp/InterpMatchCtxs.ml
++++ b/src/interp/InterpMatchCtxs.ml
+@@ -348,9 +348,20 @@
+       TPtrMetadata ty
+   | _ -> match_distinct_types ty0 ty1
+ 
+-module MakeMatcher (M : PrimMatcher) : Matcher = struct
++module MakeMatcherWithMode
++    (M : PrimMatcher)
++    (Mode : sig
++      val match_ended_projector_leaves : bool
++      val retry_mixed_array_loan : bool
++    end) : Matcher = struct
+   let span = M.span
+ 
++  let can_retry_array_loan ctx ty (shared : tvalue) =
++    Mode.retry_mixed_array_loan && !Config.sanity_checks
++    && (match ty with TArray (TScalar _, _, _) -> true | _ -> false)
++    && shared.ty = ty
++    && not (ValuesUtils.value_has_loans_or_borrows (Some span) ctx.type_ctx.type_infos shared.value)
++
+   let rec match_tvalues (ctx0 : eval_ctx) (ctx1 : eval_ctx) (v0 : tvalue)
+       (v1 : tvalue) : tvalue =
+     [%ldebug
+@@ -415,6 +426,12 @@
+             M.match_shared_loans match_rec ctx0 ctx1 ty id0 id1 sv
+         | VMutLoan id0, VMutLoan id1 ->
+             M.match_mut_loans match_rec ctx0 ctx1 ty id0 id1
++        | VSharedLoan (shared, value), VMutLoan _ when can_retry_array_loan ctx0 ty value ->
++            [%ltrace "Retry mixed scalar array by ending left shared loan " ^ BorrowId.to_string shared];
++            raise (ValueMatchFailure (LoanInLeft shared))
++        | VMutLoan _, VSharedLoan (shared, value) when can_retry_array_loan ctx1 ty value ->
++            [%ltrace "Retry mixed scalar array by ending right shared loan " ^ BorrowId.to_string shared];
++            raise (ValueMatchFailure (LoanInRight shared))
+         | VSharedLoan _, VMutLoan _ | VMutLoan _, VSharedLoan _ ->
+             (* TODO: *)
+             [%craise_recover] M.recover M.span "Unimplemented"
+@@ -579,6 +596,13 @@
+             let proj_ty = M.match_rtys ctx0 ctx1 proj0.proj_ty proj1.proj_ty in
+             M.match_aproj_loans match_rec ctx0 ctx1 v0.ty pm0 ploans0 v1.ty pm1
+               ploans1 ty proj_ty
++        | ( AEndedProjLoans ({ proj = id0; consumed = []; borrows = [] } as ended),
++            AEndedProjLoans { proj = id1; consumed = []; borrows = [] } )
++          when Mode.match_ended_projector_leaves && !Config.sanity_checks
++               && pm0 = PNone && pm1 = PNone && id0 = id1 && v0.ty = v1.ty ->
++            (* The two ended projectors contain only identical synthesis metadata.
++               Retain the node. No live mapping or descendant is skipped. *)
++            { value = ASymbolic (PNone, AEndedProjLoans ended); ty }
+         | _ -> [%craise_recover] M.recover M.span "Unreachable"
+       end
+     | _ ->
+@@ -586,6 +610,15 @@
+         M.match_avalues match_rec ctx0 ctx1 v0 v1
+ end
+ 
++module MakeMatcher (M : PrimMatcher) =
++  MakeMatcherWithMode (M) (struct let match_ended_projector_leaves = false let retry_mixed_array_loan = false end)
++
++module MakeContextMatcher (M : PrimMatcher) =
++  MakeMatcherWithMode (M) (struct let match_ended_projector_leaves = true let retry_mixed_array_loan = false end)
++
++module MakeArrayLoanRetryMatcher (M : PrimMatcher) =
++  MakeMatcherWithMode (M) (struct let match_ended_projector_leaves = false let retry_mixed_array_loan = true end)
++
+ module MakeJoinMatcher (S : MatchJoinState) : PrimMatcher = struct
+   (** Small utility *)
+   let span = S.span
+@@ -2265,7 +2298,7 @@
+     let lookup_shared_value_in_ctx1 = lookup_shared_value_in_ctx1
+   end in
+   let module CEM = MakeCheckEquivMatcher (S) in
+-  let module M = MakeMatcher (CEM) in
++  let module M = MakeContextMatcher (CEM) in
+   (* When matching abstractions we allow backtracking, so we need an alternative
+      version of the matchers where [recover] is true *)
+   let module RecoverS : MatchCheckEquivState = struct
+@@ -2283,7 +2316,7 @@
+     let lookup_shared_value_in_ctx1 = lookup_shared_value_in_ctx1
+   end in
+   let module RecoverCEM = MakeCheckEquivMatcher (RecoverS) in
+-  let module RecoverM = MakeMatcher (RecoverCEM) in
++  let module RecoverM = MakeContextMatcher (RecoverCEM) in
+   (* Match the environments - we assume that they have the same structure
+      (and fail if they don't) *)
+ 
+--- a/src/interp/InterpMatchCtxs.mli
++++ b/src/interp/InterpMatchCtxs.mli
+@@ -36,6 +36,7 @@
+     the corresponding specialized function from
+     {!module-type:InterpLoopsCore.PrimMatcher}. *)
+ module MakeMatcher : functor (_ : PrimMatcher) -> Matcher
++module MakeArrayLoanRetryMatcher : functor (_ : PrimMatcher) -> Matcher
+ 
+ (** A matcher for joins (we use joins to compute loop fixed points).
+ 

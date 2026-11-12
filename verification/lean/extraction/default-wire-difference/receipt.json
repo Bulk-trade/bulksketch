@@ -1,0 +1,211 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "native_source_edited": false,
+  "source_sha256": {
+    "src/backend/contract.rs": "4d05ce564edc408ba04f5a907b159ad91018ba8cfd93126e17913ed49f7e3d59",
+    "src/backend/portable.rs": "2c3543dc3c5a67d5343e292a1c7b4f0554ba15f68f45b9533d269e3f4ba9b8da",
+    "src/backend/x86_pclmul.rs": "8cf4abd4ed47aa63b2d050928c37a5cdc93f49e8cd07b2f7c8ffddb56b7b4fff"
+  },
+  "captures": {
+    "default": {
+      "commands": {
+        "charon": {
+          "command": [
+            "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+            "cargo",
+            "--preset=aeneas",
+            "--sysroot=default",
+            "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/default-wire-difference/arithmetic.llbc",
+            "--start-from=bulksketch::backend::contract::BulkKernels::difference",
+            "--include=bulksketch::backend::contract::BulkKernels::difference",
+            "--",
+            "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+            "-p",
+            "bulksketch",
+            "--lib",
+            "--locked",
+            "--offline",
+            "--target",
+            "x86_64-apple-darwin"
+          ],
+          "exit_code": 0
+        },
+        "aeneas": {
+          "command": [
+            "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+            "-backend",
+            "lean",
+            "-checks",
+            "-sequential",
+            "-no-progress-bar",
+            "-print-error-emitters",
+            "-split-files",
+            "-dest",
+            "/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/default-wire-difference/Arithmetic",
+            "/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/default-wire-difference/arithmetic.llbc"
+          ],
+          "exit_code": 0
+        }
+      },
+      "replay": {
+        "command": [
+          "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/default-wire-difference/replay",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/default-wire-difference/arithmetic.llbc"
+        ],
+        "exit_code": 0,
+        "identical_outputs": true,
+        "outputs_sha256": {
+          "Funs.lean": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739",
+          "FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+          "Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1"
+        }
+      }
+    },
+    "dictionaries": {
+      "commands": {
+        "charon": {
+          "command": [
+            "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+            "cargo",
+            "--preset=aeneas",
+            "--sysroot=default",
+            "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/default-wire-difference/dictionaries-native-clone/arithmetic.llbc",
+            "--start-from=bulksketch::backend::contract::BulkKernels::difference",
+            "--include=bulksketch::backend::contract::BulkKernels::difference",
+            "--start-from={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::portable::Portable}",
+            "--start-from={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::x86_pclmul::Pclmul}",
+            "--start-from={impl core::clone::Clone for bulksketch::backend::portable::Portable}::clone",
+            "--start-from={impl core::clone::Clone for bulksketch::backend::x86_pclmul::Pclmul}::clone",
+            "--include={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::portable::Portable}",
+            "--include={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::x86_pclmul::Pclmul}",
+            "--include=bulksketch::backend::portable::Portable",
+            "--include=bulksketch::backend::x86_pclmul::Pclmul",
+            "--include={impl core::clone::Clone for bulksketch::backend::portable::Portable}::clone",
+            "--include={impl core::clone::Clone for bulksketch::backend::x86_pclmul::Pclmul}::clone",
+            "--opaque={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::portable::Portable}::insert_nonzero",
+            "--opaque={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::portable::Portable}::xor_assign",
+            "--opaque={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::portable::Portable}::horner_many",
+            "--opaque={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::x86_pclmul::Pclmul}::insert_nonzero",
+            "--opaque={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::x86_pclmul::Pclmul}::xor_assign",
+            "--opaque={impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::x86_pclmul::Pclmul}::horner_many",
+            "--opaque=bulksketch::backend::portable::_::mul",
+            "--opaque=bulksketch::backend::portable::_::square",
+            "--opaque=bulksketch::backend::portable::_::frobenius",
+            "--opaque=bulksketch::backend::portable::_::inverse",
+            "--opaque=bulksketch::backend::portable::_::trace",
+            "--opaque=bulksketch::backend::portable::_::solve_quadratic",
+            "--opaque=bulksketch::backend::portable::_::raw_mul",
+            "--opaque=bulksketch::backend::portable::_::reduce",
+            "--opaque=bulksketch::backend::portable::_::scale_xor",
+            "--opaque=bulksketch::backend::portable::_::square_slice",
+            "--opaque=bulksketch::backend::portable::_::insert_nonzero",
+            "--opaque=bulksketch::backend::portable::_::xor_assign",
+            "--opaque=bulksketch::backend::portable::_::horner_many",
+            "--opaque=bulksketch::backend::x86_pclmul::_::mul",
+            "--opaque=bulksketch::backend::x86_pclmul::_::square",
+            "--opaque=bulksketch::backend::x86_pclmul::_::frobenius",
+            "--opaque=bulksketch::backend::x86_pclmul::_::inverse",
+            "--opaque=bulksketch::backend::x86_pclmul::_::trace",
+            "--opaque=bulksketch::backend::x86_pclmul::_::solve_quadratic",
+            "--opaque=bulksketch::backend::x86_pclmul::_::raw_mul",
+            "--opaque=bulksketch::backend::x86_pclmul::_::reduce",
+            "--opaque=bulksketch::backend::x86_pclmul::_::scale_xor",
+            "--opaque=bulksketch::backend::x86_pclmul::_::square_slice",
+            "--opaque=bulksketch::backend::x86_pclmul::_::insert_nonzero",
+            "--opaque=bulksketch::backend::x86_pclmul::_::xor_assign",
+            "--opaque=bulksketch::backend::x86_pclmul::_::horner_many",
+            "--opaque=bulksketch::backend::x86_pclmul::horner",
+            "--",
+            "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+            "-p",
+            "bulksketch",
+            "--lib",
+            "--locked",
+            "--offline",
+            "--target",
+            "x86_64-apple-darwin"
+          ],
+          "exit_code": 0
+        },
+        "aeneas": {
+          "command": [
+            "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+            "-backend",
+            "lean",
+            "-checks",
+            "-sequential",
+            "-no-progress-bar",
+            "-print-error-emitters",
+            "-split-files",
+            "-dest",
+            "/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/default-wire-difference/dictionaries-native-clone/Arithmetic",
+            "/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/default-wire-difference/dictionaries-native-clone/arithmetic.llbc"
+          ],
+          "exit_code": 0
+        }
+      },
+      "replay": {
+        "command": [
+          "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/default-wire-difference/dictionaries-native-clone/replay",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-traversal-stages/default-wire-difference/dictionaries-native-clone/arithmetic.llbc"
+        ],
+        "exit_code": 0,
+        "identical_outputs": true,
+        "outputs_sha256": {
+          "Funs.lean": "a7bf2e963f6a2103022ff05f7a3c54368df4d3d83749eb684e61253bcc0aa0fc",
+          "FunsExternal_Template.lean": "476e52c3f2bc81ea43bbdb061b56d4dfdbae4cf61b2df3a9ab9ead110ff5fc77",
+          "Types.lean": "1ae7eb1ef058ee71c66565e90e0709754e402e003138ccbd46f10f9d011160b7",
+          "TypesExternal_Template.lean": "a1e7a1d84b947daa18ecec5a47226ab87de975dc5e2a6ca2f99059d1e76d5d82"
+        }
+      }
+    }
+  },
+  "artifacts": {
+    "extraction/default-wire-difference/default/arithmetic.llbc": "e373e0fe458117d42d261d5f273b2c69f75c4d783793bf022cf1e641b2722f24",
+    "extraction/default-wire-difference/default/charon.log": "2184a30cc6d42313b1fade13d4873ab96ea05575e69544b7411561b709c5dd66",
+    "extraction/default-wire-difference/default/aeneas.log": "f58ee3bf858b664ec62f10bd2c7483728f3ce9eee04504aea38050980d6d8340",
+    "extraction/default-wire-difference/default/replay.log": "ce57bb608b4e4d2f5eb1fe13b7aaa8e45cc28bbffad9650d6d6a509ab48397e8",
+    "extraction/default-wire-difference/default/Arithmetic/Funs.lean": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739",
+    "extraction/default-wire-difference/default/Arithmetic/FunsExternal_Template.lean": "6dda48e52e9081ad1680028efb94fbb0f0f7ca7fd85344e4d9ba34c68b90d829",
+    "extraction/default-wire-difference/default/Arithmetic/Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+    "extraction/default-wire-difference/dictionaries/arithmetic.llbc": "82f1decba6321c24739626496ca61d06a6f20f1e18e143cc7d7ec154fb07e1b6",
+    "extraction/default-wire-difference/dictionaries/charon.log": "4e787e26b02bff13d349c543dcbeada5cda87bcf6f4f18ea05a981e61e6aad3a",
+    "extraction/default-wire-difference/dictionaries/aeneas.log": "abf053ca6e6767f13943e6ce6645964921b7f225dd1a2a4f897f8b5f96210596",
+    "extraction/default-wire-difference/dictionaries/replay.log": "5ffa57ce9ea417b6a5cf7436f376b71cdaf08251be34808b0b7d42754489941c",
+    "extraction/default-wire-difference/dictionaries/Arithmetic/Funs.lean": "a7bf2e963f6a2103022ff05f7a3c54368df4d3d83749eb684e61253bcc0aa0fc",
+    "extraction/default-wire-difference/dictionaries/Arithmetic/FunsExternal_Template.lean": "476e52c3f2bc81ea43bbdb061b56d4dfdbae4cf61b2df3a9ab9ead110ff5fc77",
+    "extraction/default-wire-difference/dictionaries/Arithmetic/Types.lean": "1ae7eb1ef058ee71c66565e90e0709754e402e003138ccbd46f10f9d011160b7",
+    "extraction/default-wire-difference/dictionaries/Arithmetic/TypesExternal_Template.lean": "a1e7a1d84b947daa18ecec5a47226ab87de975dc5e2a6ca2f99059d1e76d5d82"
+  },
+  "shared_sha256": {
+    "bridge/Arithmetic/AvxLinearEntryGenerated.lean": "b46278669a8e5508e4d265faad26d7195dd9d5b9ff7e6f4ba665d218f2c70ab8",
+    "bridge/Arithmetic/MutableZipRuntime.lean": "683a48af92e8c4f992d4f0893ed18679122344714cdda9a2293c07029b85776d",
+    "bridge/Arithmetic/RowDispatchGenerated.lean": "de60227771f7750d386c272b845c5ca1e7717daa74267f313e0130141553755b"
+  }
+}

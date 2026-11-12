@@ -1,0 +1,79 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "selector": "bulksketch::sketch::candidates::normalize",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "checked_exit": 0,
+  "native_source_edited": false,
+  "binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "source_sha256": {
+    "src/sketch/candidates.rs": "5071c62cae68c4cc27c3d5db00697ed4412fde698f6868a6da6e266f2e1fada5",
+    "src/sketch/shape.rs": "ea2286691663eda48c422ba8bab29d69c17ca30ffaec465d0e2a5a0a4fdbc17d",
+    "src/field/mod.rs": "035dc6193ebb50b324527525c0ee47cbe06ca325db16aa5f8ee55b0e79baa723",
+    "src/types.rs": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
+  },
+  "charon_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize/arithmetic.llbc",
+    "--start-from=bulksketch::sketch::candidates::normalize",
+    "--",
+    "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "aeneas_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+    "-backend",
+    "lean",
+    "-checks",
+    "-sequential",
+    "-no-progress-bar",
+    "-print-error-emitters",
+    "-split-files",
+    "-dest",
+    "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize/Arithmetic",
+    "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize/arithmetic.llbc"
+  ],
+  "replay": {
+    "exit_code": 0,
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize/replay/Arithmetic",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-candidate-normalization/normalize/arithmetic.llbc"
+    ],
+    "files": {
+      "Funs.lean": "4a61e533b878876bf78057c02ddbd540e2f8d9b2ce356edc3a450fc4fb3c7011",
+      "FunsExternal_Template.lean": "7c771e1d10f5df8ca4541ca1255bd7ab521c91b84a159d3b11a6e7c228e8b4f7",
+      "Types.lean": "2518484fd1c94d8442e510b34c506e05f7164c1b6cae11be4bbf1c8f621e9f30"
+    }
+  },
+  "files_sha256": {
+    "extraction/candidate-normalize/Arithmetic/Funs.lean": "4a61e533b878876bf78057c02ddbd540e2f8d9b2ce356edc3a450fc4fb3c7011",
+    "extraction/candidate-normalize/Arithmetic/FunsExternal_Template.lean": "7c771e1d10f5df8ca4541ca1255bd7ab521c91b84a159d3b11a6e7c228e8b4f7",
+    "extraction/candidate-normalize/Arithmetic/Types.lean": "2518484fd1c94d8442e510b34c506e05f7164c1b6cae11be4bbf1c8f621e9f30",
+    "extraction/candidate-normalize/aeneas.log": "c942be7b128a5a74f9c5e227f07b3b804450644cf4d9730059ff72001ebbafe1",
+    "extraction/candidate-normalize/arithmetic.llbc": "b4a673290d546933b1d520e4f8eecc1398ff7678ff04d74e8c76fe9c3e6aa274",
+    "extraction/candidate-normalize/charon.log": "03e96e710a3b8068b635f238e924d53e2e41824c3d4853b724b529c10b113130",
+    "extraction/candidate-normalize/replay.log": "17c564cd0feab96d5c1dc680c4e64ad641bdaf366dd97580b3a713ef628c62e1"
+  }
+}

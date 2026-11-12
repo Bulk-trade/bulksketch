@@ -26,6 +26,12 @@
       "bridge_copy": "bridge/Arithmetic/Funs.lean",
       "sha256": "4d688e3ce715126a0bf92d0c43cac8361de11c6f5215c01fdbf7caf8d3584ef9",
       "byte_identical": true
+    },
+    {
+      "generated": "extraction/frobenius-const/square/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+      "sha256": "840f09b2caaf3a369502fcaa724ecdd097f031c47e2abd950aba59bc25218d23",
+      "byte_identical": true
     }
   ],
   "std_model": {
@@ -210,6 +216,601 @@
       "path": "extraction/canonical-arithmetic/maps/arithmetic.llbc",
       "sha256": "1d6bc490fcbdad972f225107409b038f1521dc059d94ecb29ca8afb6979b33a8",
       "has_errors": false
+    },
+    {
+      "path": "extraction/inverse-chain/inverse.llbc",
+      "sha256": "196793bbdd90105377a5457642680a92416bbd84012875a2816aeceea90810c5",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/portable-forwarding/portable.llbc",
+      "sha256": "fbac32b6557427fc7d3f5bff41735e408bd7079b0bd7428c1997938289dc9a5b",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc",
+      "sha256": "cd5efbbf9c68a8283359a2d48ffded1d60560df82374e131201a248106ebac7e",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/portable-inverse/portable-inverse.llbc",
+      "sha256": "feaf461d6b889fb40086fc507bc0011f65b4c0d75875b5582aeba1f6df78a7cd",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/frobenius-const/square/arithmetic.llbc",
+      "sha256": "bba6ac8e01231e384d90e9c0129574e60682cfd6e8bd42c1e06b3c6b045b1a20",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/frobenius-const/tables-lookup/arithmetic.llbc",
+      "sha256": "58f761b707e2e49b6c3e8eb486c1d02260d7a305406595b186b7d78cc8e11dd3",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/slice-kernels/multiply-linear/arithmetic.llbc",
+      "sha256": "2e55718dfaf1e6c548675eedf7a8eee9b3ba71d7f1810d03bf824dd2fb866681",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/portable-xor/arithmetic.llbc",
+      "sha256": "48f0136c7ec710188892da82e32e9e1c824f13006ca53fbd3d10e8cf06d8ecdf",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/portable-slice/arithmetic.llbc",
+      "sha256": "fc2772ae936eebe1ce9eb1eaf100188f714e3543972f2040af70b89bd9df5e30",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/dense-normalization/normalized.llbc",
+      "sha256": "43752dffbab0841cbdd28b0271457ddfe4585adb71a4c6b0e79f71e4aa6e1832",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/dense-coefficient/xor-coefficient/arithmetic.llbc",
+      "sha256": "d8a0de9469224c18e750bb9f41b255babc165e80787ce518e41cdb338cd79ae5",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/dense-square/arithmetic.llbc",
+      "sha256": "ee8d0fa36a190ea1b77c926bbeec0adea63d47ee3ce506bc97cce1ab37d5c1c3",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/verify-dispatch/arithmetic.llbc",
+      "sha256": "fc02fa409ea3874f7d176b8e096a4c3d505cee8ee89b3940aaaf2046a1a6d0ec",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/shape-admission/wire-size/arithmetic.llbc",
+      "sha256": "d8a093b1405a9a8c55538db939be083477f404abc1739b29f870b7394c012f3c",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/odd-recurrence/arithmetic.llbc",
+      "sha256": "2761546ecbc5bf8081708dbed199c2507db7e040c98248a77726fe9fb43d14e5",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/rebuilt-lfsr/arithmetic.llbc",
+      "sha256": "d4f865561eb7d0b05faa0210bd34ca94c063917621e47c30d4fd6ca747fe0784",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/affine-linear-eval/arithmetic.llbc",
+      "sha256": "748ac70f584fed00ec5be4f7bb0813deabda01f508896bea556dd6f7a1e58ad7",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/portable-encoding/insert/arithmetic.llbc",
+      "sha256": "5ea61080613eaea61f794edf11dfbd995bc1fe7dded986283d659cf83a6ddcc4",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/portable-encoding/encode/arithmetic.llbc",
+      "sha256": "a9c1110ee53e1d713a023dc7aa1304da22210bc16c13e509b866ae722a350a9b",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/dense-mul/arithmetic.llbc",
+      "sha256": "9f5dabc51970d84625839edfcfbeb0ae84c885d069f8f790c16a7338a11605f6",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/direct-two/arithmetic.llbc",
+      "sha256": "e88cf6303afa11928b122f8f4d9f728eab6a44364205b390e5aede5ea542cb59",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/portable-horner/arithmetic.llbc",
+      "sha256": "f4dd7329559230c1db64c3de4f889732f87cdf648fc4330a52f8141dc06ef46b",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/x86-lane-mask/arithmetic.llbc",
+      "sha256": "06e044cf0737ebeab6915f4f685dd31febf76ecd215e9f5faafcd2a3b8c3226f",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/pclmul-register/arithmetic.llbc",
+      "sha256": "e555b1f5085c300c0556b64f317de6474214ae1b91dddc5f5a28cea775294825",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx512-register/arithmetic.llbc",
+      "sha256": "e4e686a0874383e66b0bc815777783a1906528c5fc244969131dd3c1ad6f2fcb",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/cube-root/arithmetic.llbc",
+      "sha256": "40e446cd66296c697f93dcb848f72dc27ba8dcaafeeeb1173adaf36101b2206e",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/masked-memory/arithmetic.llbc",
+      "sha256": "75e346aaae3ad05558bb5b81ebb732598afef9d5bf1193db227fd2c8f254dfae",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/pclmul-next/arithmetic.llbc",
+      "sha256": "33028d6f7cc4da10627354db9e1400a0d46ac2dca236e844fc2cb6045478459a",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/x86-feature-detect/arithmetic.llbc",
+      "sha256": "edd1a02167ac48f20621008cdff89e4ef3cc941d08fa4f0778f764ea001e7615",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/cubic/arithmetic.llbc",
+      "sha256": "023e4de954218ef839396928a270982c28acf7e1b513aa06abdbdbc4afb5d2ac",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/pclmul-slice/arithmetic.llbc",
+      "sha256": "65acfc9b96f68a52a5a8732276fa050117be60f550fcbee4102b0fc00e877c8f",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/pclmul-horner/arithmetic.llbc",
+      "sha256": "8bf1ca75833101341b5ebf6fd4e854161065292e6e013d7f82115c9b3eb0c140",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-xor-assign/arithmetic.llbc",
+      "sha256": "94f9ce1a5b51d189ffbe1682bbd0043907a90b1ff1624b07f99f46eb36e6ebec",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-difference/arithmetic.llbc",
+      "sha256": "307abe022272d78981fd23fd766ab81dc6e18a017be8b5ef3d6c41112d30c012",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/degree-certificate/arithmetic.llbc",
+      "sha256": "25bafe45834a8e228ff8b5af07c0e23af4fbec6c764aad6a188c74b3441b631d",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/reconstruction/arithmetic.llbc",
+      "sha256": "21807c0e28ca0d89d050c5ec80f18f379f72b761bf8dbb67affcb59a8c9f7f0d",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/work-schedule/arithmetic.llbc",
+      "sha256": "37c1f9bbfbdd9d7ae6cce96321810d719c5ab4327b6768907361776c87c91c81",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/workspace-admission/arithmetic.llbc",
+      "sha256": "ccbfd979ca9624af231b6ebfd31e4b05db2fecc5ac632cd3b9e1d556c33572d6",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/affine-quartic/arithmetic.llbc",
+      "sha256": "8c22a624b9e156eec3b645a6300074f69ee98e32380a91521bdbeb3451b53b72",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/quartic/arithmetic.llbc",
+      "sha256": "bae801d20df524409dd3bd7710e396d8a1c2d72c37add151df93fc0fbfbf4ddd",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/closed-leaf/arithmetic.llbc",
+      "sha256": "5b6ad4c5a6570c42b7f0cc8e26c7cd50c079ab7bd7bebd0e78edfafa3408e59e",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/deg34-normalize/arithmetic.llbc",
+      "sha256": "b17cd5b3058f52243c75011004dc4b68c050fda5326a2b8c6cbbd988e549fbf0",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/deg34-guard/arithmetic.llbc",
+      "sha256": "20c117405f561f211ec39c7ee31ab4e2b3ae7df93e0bfb22982e367214d338eb",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/bm-locator/arithmetic.llbc",
+      "sha256": "536a79a4ec18e3c6ba0b3cedb5aa274dcefe691d64d53fe437adc0c2daa6d5ba",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/degree-probe/arithmetic.llbc",
+      "sha256": "fc4db46b222616b7f9f057d77900721b1d6783b87a2acd74f438adc39a048a6f",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/root-setup/arithmetic.llbc",
+      "sha256": "451b7949235f6c7ac7ad1c06b6fd2f3c7d4ebdf28caee2b1ec188fe8644e9b34",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/root-leaf/arithmetic.llbc",
+      "sha256": "dcdc0e3eb52c0adcf24f257b810d92b2bbdd1d11c4ea539036d356274fb70767",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/execution-verify/arithmetic.llbc",
+      "sha256": "bd05d88ce7edc864d28c5229b5c2ccbe823973092202ba019c04b1f4b2ab6442",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/times-x-mod/arithmetic.llbc",
+      "sha256": "06951cddca5be8f6f1f99052a9a262a6527e878e04c9db846506c0aa7c1baf51",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/dense-reducer-table/arithmetic.llbc",
+      "sha256": "3ac8c2f4b004211f19cc947281c9a9223837156360dfbdf14ca369e6654f1699",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/root-trace/arithmetic.llbc",
+      "sha256": "3a5723c755eca6065da5d36746fb3a34f5cd1e07365a7bbb382a5dd08354bbb9",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/dense-reducer-square/arithmetic.llbc",
+      "sha256": "b0884511e045b9043f659c1aff2a2c8dbc59750e88b734f5d4505319d3a5ef49",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/dense-exact-division/arithmetic.llbc",
+      "sha256": "5be0f58e319bf765d51734946a4e16bbe1f6f7119c543b175d1410525e25cba8",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/dense-monic-gcd/arithmetic.llbc",
+      "sha256": "1c19cca7d617f3a16852891e4aac385128b1cae4fe704e156a77c831fd21a485",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-square/arithmetic.llbc",
+      "sha256": "672c890d94119e2577025ae32c60f546818aafe20b164feb8d155ee1d09f99d3",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-square-entry/arithmetic.llbc",
+      "sha256": "80394032fe409a1eabcec4704cda698fb78950a0e1edd0d2c5660f3e06be1b35",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/root-divide/arithmetic.llbc",
+      "sha256": "609f61f6a005ec439a2ba9fa34214e3d22447828222f0a20e1e59c7256127d3d",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/affine-splitter/arithmetic.llbc",
+      "sha256": "9be44210bff18a02d66a4caaca9be7b5148aa1cd8fc73e4e5a2c8ebaac288b50",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/affine-subspaces/arithmetic.llbc",
+      "sha256": "7883c259eeb6bda808b9bc3f9762585476fff1216c85e91adb916c911432ee68",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/root-enumerate-affine/arithmetic.llbc",
+      "sha256": "c89b551c5e6f3ad080cb1cedce4bd46b0125d40ba6c2f691e34502509f18ed62",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/dense-div-rem/arithmetic.llbc",
+      "sha256": "3ed726444d0c56ab36971d160b772014b3525d8df33f1c7317b9495f7486dbd2",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/root-run/arithmetic.llbc",
+      "sha256": "81f04e48c376f9df6c870ef1f6db72c8d49fe3f648ab961c3adcbae0521aefdd",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/affine-enumerate/arithmetic.llbc",
+      "sha256": "6af0ef22080f0cd7ee6884689b8e14984b00e6afd203f5303bf255819c6e536a",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/affine-selector/arithmetic.llbc",
+      "sha256": "499dc34be5db7c61bc0cecd35872095042d8c5f64f38ca050089c8d793a20779",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-multiply-linear/arithmetic.llbc",
+      "sha256": "50dbb768041b3a6c2e8fa02ecd7dc0b2ff3db59ffa4e24cda68e6973a95cbe58",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/root-prepare-affine/arithmetic.llbc",
+      "sha256": "fc2ff59fc790f9336dd4af0b1ebaa2e52339f55119aff583e87e1797e2431799",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/affine-solve-map/arithmetic.llbc",
+      "sha256": "5f5fcda061b47e1871aa8a3d6f0d04732ebd5bde6bd09b95b9980bfc918c81eb",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-horner/kernel/arithmetic.llbc",
+      "sha256": "b13dbe4d50438bb503e37a3125998f171e72e1277274ba75ba778c213f93e80b",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-horner/free-selector/arithmetic.llbc",
+      "sha256": "3e1eaa1f24bb7c4ac812b645364fc9da7cbb9da9bfa781488bbb1c487e4d84b1",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-horner/trait-scoped/arithmetic.llbc",
+      "sha256": "58e17de80e49db084fb41abc36d6c134c27c80bdad39841feffa9ee0d2bf07d2",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/affine-multiple/arithmetic.llbc",
+      "sha256": "cd457378c74d590c8bded9bf73365787b38a21f05a35f1a6abfa6834465ad8b5",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-encode-18/arithmetic.llbc",
+      "sha256": "c0d474d7669103daf7edd44fcb53124705eaf295d33d83f1688f149a583f09b8",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-single-bases/arithmetic.llbc",
+      "sha256": "e5c065309473c2a69b128bb0f0e8f75c4771db64152dec27bb830f73e5619983",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-insertion-bases/arithmetic.llbc",
+      "sha256": "82f716304ef12a39fd38a2fa249d55ca2af00baf95de801b79ce3af942930258",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-insertion-bases-static/arithmetic.llbc",
+      "sha256": "ffa8152702827fdd27d6c1861061e00092abc2a8dddf002a475cadcfcd187342",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/native-deflate/arithmetic.llbc",
+      "sha256": "2b229999577f9864a20688af9bbaf205f039181095ac9f45a9d2b396297a723e",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-insert/insert18/arithmetic.llbc",
+      "sha256": "1fe824a154102bc5e75680026dffa642d3149ed1205b966b10a8e8baf82ba66e",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-insert/horizontal/arithmetic.llbc",
+      "sha256": "9c24a397cf00906a2c73c000a6c18ad36a2e4acb07a00cb8102bdf4905f5e714",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-insert/free-dispatch/arithmetic.llbc",
+      "sha256": "98c7231ec6dbd40c0047ab21e6c311936d67688d95de76e13389e1b20d1153fe",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-insert/trait-dispatch/arithmetic.llbc",
+      "sha256": "7449f4a3e443f40ee4a79553536d06cd27c82ee364183c9979e88e64edc4c05b",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/candidates/arithmetic.llbc",
+      "sha256": "bed7f690825a7843ec12634a23b4bcc4ed43ac7ef8fc6ac3296e4dc233273280",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/candidates/dense-eval/arithmetic.llbc",
+      "sha256": "6abc0c02483645b0ba09bba7fb3cd02d9fc732e81009dfa9c8848afcec3400cf",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/native-driver/run-next/arithmetic.llbc",
+      "sha256": "4eb699fd33e9d14d65e9040ce1f5dbbbc398ec31e9cda3233fec9020daca83ff",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/native-driver/next-stage/arithmetic.llbc",
+      "sha256": "a39132a8f5f77ff0790597b0725f4502e7bba7897eeda93e7817cbf17f226bd9",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/native-driver/execute/arithmetic.llbc",
+      "sha256": "178dab6ec3c815720756905de633f67490183fe016cfaf0e34b50341e138c004",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/candidate-row/arithmetic.llbc",
+      "sha256": "8d5139d6c7d1ae2b39c5c6a2fada7a1fa4e2b809d9f7702303989162380c0c53",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/completed-result/arithmetic.llbc",
+      "sha256": "bfc4339f46f175a4e89f2afc38d88a90ed9506c306f71423293ef4a3f20f1673",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/native-finish/arithmetic.llbc",
+      "sha256": "828fe62e379ff1dc2b86aae2869ab1afcefe5a7b1b803737cc93cc7240effeb1",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/canonicalize/arithmetic.llbc",
+      "sha256": "c898e8ea9129de55f4ffab9f045f34b50b1252f3dcae106add6769a16fbf8ff5",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/candidate-normalize/arithmetic.llbc",
+      "sha256": "b4a673290d546933b1d520e4f8eecc1398ff7678ff04d74e8c76fe9c3e6aa274",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-linear-entry/arithmetic.llbc",
+      "sha256": "264163819924e7eed633e247289931422fb27a03fd73dff109cbbf6ee6b4f55e",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-recurrence/arithmetic.llbc",
+      "sha256": "7dd57a6a1d9a3be525262a16b0c9e2a5fe98a57f496f44a9c13b7aa802d39d04",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-tile/arithmetic.llbc",
+      "sha256": "95ae6994b20a908deae62e078f580ee2578c3ebd75ad2e21a8766cbcd5d1725b",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-recurrence-entry/arithmetic.llbc",
+      "sha256": "21ecc24ca45024c5f0ceb261626b04c2f302518d1f5ba169b483d7988e2d3dd4",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/candidate-normalize-rows/arithmetic.llbc",
+      "sha256": "3ab1a8b5cac0a3efae2fb68467c3485e0cf084a6950cb2cbeacbe2aa416d29b9",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-scalar-delegates/arithmetic.llbc",
+      "sha256": "bb438dd3923cadfbe41191dfc02a9c36c777cc79a07a97d702fb555094d0bb02",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/row-configuration/arithmetic.llbc",
+      "sha256": "bbbd8031873ae98219b936a8b1bf46234d78d595090514a3fb49e923e249fd9c",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/publication-frame/arithmetic.llbc",
+      "sha256": "b2dcee69b3ec76b34b3c68f46841b5112ff1c4df1e313fe531976e7fb652f4c6",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-slice-kernel/arithmetic.llbc",
+      "sha256": "e8a0c2f73e812bcbc39755eabbe17bcea8beeefafb6d1436d4f2203b3392006c",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-slice-entry/arithmetic.llbc",
+      "sha256": "5b3637434c8135c4ac30376c26946eb26e7aeaa253a4cf583f5b7b7530eb13c7",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-sparse-insert/arithmetic.llbc",
+      "sha256": "2326c33be53d19b1b2da656ee70cbefe2550c8ecc59be3d3229c2dba6a12ecc3",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/pclmul-insert/arithmetic.llbc",
+      "sha256": "95a475fc1cc81c2e97487359db720a582f25530adcc360e59dd0dae3674021fd",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/root-work-budget/arithmetic.llbc",
+      "sha256": "788e077587b000bb359a939aad3997c0ff2b35aac84c3c836a8ad30cc9cda869",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/row-work-budget-v1/arithmetic.llbc",
+      "sha256": "0fdc989c44416ecb2e6a41ed43f3c2c37d89af4da03dda717f97601324d084b9",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/row-dispatch/arithmetic.llbc",
+      "sha256": "64f6c9091c3332293354e889b3ce4d932e82df63cc7ff79b04b26964fda174ca",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/default-wire-difference/default/arithmetic.llbc",
+      "sha256": "e373e0fe458117d42d261d5f273b2c69f75c4d783793bf022cf1e641b2722f24",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/default-wire-difference/dictionaries/arithmetic.llbc",
+      "sha256": "82f1decba6321c24739626496ca61d06a6f20f1e18e143cc7d7ec154fb07e1b6",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/publication-write/arithmetic.llbc",
+      "sha256": "f867db8bb92a6085249b9ffe8fa0a2ef5a6eb93bcda575dcae665e8765b947c0",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/decode-report/arithmetic.llbc",
+      "sha256": "050cf6b45a56cb00e4a323b93e68c656e664264be92e184c391e5f772030a0dd",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/public-lifecycle/probe/arithmetic.llbc",
+      "sha256": "4d1373c954d72d070401dc406922afb095af4947d3081dc194f0793ba2855ae6",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/public-lifecycle/wrapper/arithmetic.llbc",
+      "sha256": "65768d7b30b23e196f39fb69d113ee6035a828b120db77fdf353854c2fb1e158",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/public-lifecycle/completed/arithmetic.llbc",
+      "sha256": "967f971106c8c1e83170ff6d4179a4901986b2db72f110cd35d193dffed5edbe",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/sum-costs/arithmetic.llbc",
+      "sha256": "2be801cb47ed251d5b86d28d8c0b9a06afa6b761ae89ba4e55ee0270b6647d2b",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/shape-permission/arithmetic.llbc",
+      "sha256": "ebf443a102630a43aa0ebe34f806310edc7a64e7133a0813b47cda80462ab4dd",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-encode-entry/encode/arithmetic.llbc",
+      "sha256": "17a85687a9fbe764127f5e88686709e399daf6aa3bcf348ba6c5ead4a317bb0f",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-32/arithmetic.llbc",
+      "sha256": "6aa7fdf3e6b6c5361d744e724db73d5bf4de9d4805bfff414ca2b93e90aa5ed1",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/avx-encode-entry/insert-single-broadcast/arithmetic.llbc",
+      "sha256": "747b70a1e219625760e16ba07d64ca4202103be9f8750b2c6d2c2cfd1de45aa7",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/frozen-shape/arithmetic.llbc",
+      "sha256": "17048cb79c9e30800b8bd6fecb637eb2bda3b2ca1d73fc4dba789e624eb7523f",
+      "has_errors": false
+    },
+    {
+      "path": "extraction/request-permission/arithmetic.llbc",
+      "sha256": "1d356a7c1021698189e3a4f1eaf5f4c9b3de1888b339799730b3644dc94fc2e0",
+      "has_errors": false
     }
   ],
   "additional_runtime_models": [
@@ -227,6 +828,62 @@
     {
       "functions": "bridge/Arithmetic/MapsRuntime.lean",
       "source_scope": "General checked unsigned conversions and full U64 population count; TryFromIntError/Debug use existing diagnostics-erased Unit model and expect independence is proved for all Debug dictionaries. Formatting correctness not claimed; all native endpoint conversions establish innerOk. Std/intrinsic/compiler/ISA correspondence stays TCB."
+    },
+    {
+      "functions": "bridge/Arithmetic/FrobeniusTablesRuntime.lean",
+      "source_scope": "U32 to usize binding reuses the existing complete checked unsigned conversion model. Lookup proves inner Ok before expect. The usual Rust std/compiler correspondence assumption applies."
+    },
+    {
+      "functions": "bridge/Arithmetic/MutableZipRuntime.lean",
+      "source_scope": "Scoped value bindings for the original mutable-left/shared-right slice Zip specialization. The checked backward update preserves later writes, the source slice, cursor positions and length. Rust std pointer and ownership correspondence stays within the runtime trust boundary."
+    },
+    {
+      "functions": "bridge/Arithmetic/ReversePositionRuntime.lean",
+      "source_scope": "Shared slice Iter::rposition and Option::map_or. The reverse scan threads the original callback state and keeps the unvisited prefix. Pointer, aliasing and drop semantics stay within the runtime trust boundary."
+    },
+    {
+      "functions": "bridge/Arithmetic/VerifyDispatchRuntime.lean",
+      "source_scope": "Concrete Rust core u64 div_ceil quotient, remainder, and conditional checked increment. Runtime/source correspondence stays in the recorded boundary."
+    },
+    {
+      "functions": "bridge/Arithmetic/ShapeWireRuntime.lean",
+      "source_scope": "Option Try branch and None residual plus value-level Result.ok, with pinned Aeneas scalar arithmetic and conversions."
+    },
+    {
+      "functions": "bridge/Arithmetic/DenseSquareRuntime.lean",
+      "source_scope": "Concrete mutable slice StepBy and shared-right Zip value models. StepBy advances the cursor by the stride. The backward continuation updates the original yielded index on the later state. Pointer, alias and drop correspondence remain trusted."
+    },
+    {
+      "functions": "bridge/Arithmetic/RebuiltLfsrRuntime.lean",
+      "source_scope": "Checked inclusive prefix via exclusive indexing and pinned mutable slice iterator plus heterogeneous reference inequality forwarding. Raw pointer operations inherit the pinned undefined value model and are outside the proof."
+    },
+    {
+      "functions": "bridge/Arithmetic/PortableEncodingRuntime.lean",
+      "source_scope": "Head/tail slice views and restoration, mutable IntoIterator through the pinned slice iterator and shared singleton slice. Memory correspondence remains a trust boundary."
+    },
+    {
+      "functions": "bridge/Arithmetic/DirectTwoRuntime.lean",
+      "source_scope": "Shared-slice any consumes values in order, short circuits at the first true callback, and reuses the pinned Option Try adapter. Pointer and alias correspondence remains a trust boundary."
+    },
+    {
+      "functions": "bridge/Arithmetic/PortableHornerRuntime.lean",
+      "source_scope": "Shared split_last and reverse fold through the pinned iterator cursor and original FnMut callback, plus checked mutable Zip reuse. Physical alias correspondence remains a trust boundary."
+    },
+    {
+      "functions": "bridge/Arithmetic/X86PclmulRuntime.lean",
+      "source_scope": "X86-64 little-endian scalar byte conversions, XMM zero-extension, low lane, byte shift, XOR and CLMUL selectors in a 128-bit value model. CPU features, hardware and code generation remain separate."
+    },
+    {
+      "functions": "bridge/Arithmetic/Avx512RegisterRuntime.lean",
+      "source_scope": "Register-only value correspondence for the pinned Rust stdarch AVX-512 operations and the Intel register ISA. Covers the exact legal immediates and all register values at the original calls. LLVM code generation, target-feature availability, CPU execution, masked memory and dispatch are separate."
+    },
+    {
+      "functions": "bridge/Arithmetic/CubeRootRuntime.lean",
+      "source_scope": "Value-level eager Bool::then_some with normal Some or None; existing scalar and range models."
+    },
+    {
+      "functions": "bridge/Arithmetic/X86FeatureDetectRuntime.lean",
+      "source_scope": "Immutable modeled observations from the original two CPUID calls and XCR0. XGETBV outside the required guard fails in the model. Physical feature observations and dispatch cache are separate."
     }
   ],
   "arithmetic_source_inputs": {
@@ -306,9 +963,2534 @@
       "native_item_id": "src/field/maps.rs:77:function:bulksketch::field::maps::solve_quadratic",
       "generated_declaration": "bulksketch.field.maps.solve_quadratic",
       "generated_file": "bridge/Arithmetic/Funs.lean"
+    },
+    {
+      "native_item_id": "src/field/maps.rs:50:function:bulksketch::field::maps::inverse_with_frobenius",
+      "generated_declaration": "bulksketch.field.maps.inverse_with_frobenius",
+      "generated_file": "bridge/Arithmetic/InverseGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:14:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::mul",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.mul",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:18:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::square",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.square",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:22:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::frobenius",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.frobenius",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:34:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::trace",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.trace",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:38:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::solve_quadratic",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:42:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::raw_mul",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.raw_mul",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:46:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::reduce",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.reduce",
+      "generated_file": "bridge/Arithmetic/PortableGenerated.lean"
+    },
+    {
+      "native_item_id": "src/field/maps.rs:36:function:bulksketch::field::maps::inverse_using",
+      "generated_declaration": "bulksketch.field.maps.inverse_using",
+      "generated_file": "bridge/Arithmetic/InverseUsingGenerated.lean"
+    },
+    {
+      "native_item_id": "src/field/maps.rs:27:function:bulksketch::field::maps::inverse",
+      "generated_declaration": "bulksketch.field.maps.inverse",
+      "generated_file": "bridge/Arithmetic/InverseUsingGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:26:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::inverse",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.inverse",
+      "generated_file": "bridge/Arithmetic/PortableInverseGenerated.lean"
+    },
+    {
+      "native_item_id": "src/field/frobenius.rs:55:function:bulksketch::field::frobenius::square",
+      "generated_declaration": "bulksketch.field.frobenius.square",
+      "generated_file": "bridge/Arithmetic/FrobeniusConstGenerated.lean"
+    },
+    {
+      "native_item_id": "src/field/frobenius.rs:79:function:bulksketch::field::frobenius::tables",
+      "generated_declaration": "bulksketch.field.frobenius.tables",
+      "generated_file": "bridge/Arithmetic/FrobeniusTablesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/field/frobenius.rs:33:function:bulksketch::field::frobenius::inverse21_table",
+      "generated_declaration": "bulksketch.field.frobenius.inverse21_table",
+      "generated_file": "bridge/Arithmetic/FrobeniusTablesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/field/frobenius.rs:7:function:bulksketch::field::frobenius::lookup",
+      "generated_declaration": "bulksketch.field.frobenius.lookup",
+      "generated_file": "bridge/Arithmetic/FrobeniusTablesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/field/frobenius.rs:22:function:bulksketch::field::frobenius::inverse21",
+      "generated_declaration": "bulksketch.field.frobenius.inverse21",
+      "generated_file": "bridge/Arithmetic/FrobeniusTablesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/contract.rs:57:trait_default:bulksketch::backend::contract::BulkKernels::multiply_linear",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.multiply_linear.default",
+      "generated_file": "bridge/Arithmetic/SliceKernelGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/contract.rs:51:trait_default:bulksketch::backend::contract::BulkKernels::square_mod",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.square_mod.default",
+      "generated_file": "bridge/Arithmetic/SliceKernelGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:102:method:bulksketch::backend::portable::<Portable as BulkKernels < F >>::xor_assign",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractBulkKernels.xor_assign",
+      "generated_file": "bridge/Arithmetic/PortableXorGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:76:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::square_slice",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.square_slice",
+      "generated_file": "bridge/Arithmetic/PortableSliceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:62:method:bulksketch::backend::portable::<Portable as Arithmetic < F >>::scale_xor",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractArithmetic.scale_xor",
+      "generated_file": "bridge/Arithmetic/PortableSliceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:227:function:bulksketch::poly::dense::normalized_len",
+      "generated_declaration": "bulksketch.poly.dense.normalized_len",
+      "generated_file": "bridge/Arithmetic/DenseNormalizationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:159:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::xor_coefficient",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.xor_coefficient",
+      "generated_file": "bridge/Arithmetic/DenseCoefficientGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/verify.rs:14:function:bulksketch::decode::verify::product_counts",
+      "generated_declaration": "bulksketch.decode.verify.product_counts",
+      "generated_file": "bridge/Arithmetic/VerifyDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/verify.rs:54:function:bulksketch::decode::verify::use_rebuilt_lfsr",
+      "generated_declaration": "bulksketch.decode.verify.use_rebuilt_lfsr",
+      "generated_file": "bridge/Arithmetic/VerifyDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/shape.rs:120:function:bulksketch::sketch::shape::record_bytes",
+      "generated_declaration": "bulksketch.sketch.shape.record_bytes",
+      "generated_file": "bridge/Arithmetic/ShapeWireGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/contract.rs:65:trait_default:bulksketch::backend::contract::BulkKernels::odd_recurrence_matches",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.odd_recurrence_matches.default",
+      "generated_file": "bridge/Arithmetic/OddRecurrenceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:30:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::square_into",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.square_into",
+      "generated_file": "bridge/Arithmetic/DenseSquareGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:85:method:bulksketch::backend::portable::<Portable as BulkKernels < F >>::insert_nonzero",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractBulkKernels.insert_nonzero",
+      "generated_file": "bridge/Arithmetic/PortableInsertionGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/contract.rs:87:trait_default:bulksketch::backend::contract::BulkKernels::encode_nonzero",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.encode_nonzero.default",
+      "generated_file": "bridge/Arithmetic/PortableEncodingGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:234:function:bulksketch::decode::affine::linear_eval",
+      "generated_declaration": "bulksketch.decode.affine.linear_eval",
+      "generated_file": "bridge/Arithmetic/AffineLinearEvalGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/verify.rs:69:function:bulksketch::decode::verify::rebuilt_lfsr",
+      "generated_declaration": "bulksketch.decode.verify.rebuilt_lfsr",
+      "generated_file": "bridge/Arithmetic/RebuiltLfsrGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:7:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::mul_into",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.mul_into",
+      "generated_file": "bridge/Arithmetic/DenseMulConvolutionGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/direct.rs:22:function:bulksketch::decode::direct::two",
+      "generated_declaration": "bulksketch.decode.direct.two",
+      "generated_file": "bridge/Arithmetic/DirectTwoGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/portable.rs:109:method:bulksketch::backend::portable::<Portable as BulkKernels < F >>::horner_many",
+      "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractBulkKernels.horner_many",
+      "generated_file": "bridge/Arithmetic/PortableHornerGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:190:function:bulksketch::backend::x86_vpclmul512::mask",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.mask",
+      "generated_file": "bridge/Arithmetic/X86LaneMaskGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:117:function:bulksketch::backend::x86_pclmul::word",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.word",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:123:function:bulksketch::backend::x86_pclmul::low",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.low",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:129:function:bulksketch::backend::x86_pclmul::words",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.words",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:139:function:bulksketch::backend::x86_pclmul::raw_product",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.raw_product",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:145:function:bulksketch::backend::x86_pclmul::reduced",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.reduced",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:158:function:bulksketch::backend::x86_pclmul::multiply",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.multiply",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:35:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::mul",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.mul",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:40:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::square",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.square",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:68:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::raw_mul",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.raw_mul",
+      "generated_file": "bridge/Arithmetic/X86PclmulGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:208:function:bulksketch::backend::x86_vpclmul512::raw",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.raw",
+      "generated_file": "bridge/Arithmetic/Avx512RegisterGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:260:function:bulksketch::backend::x86_vpclmul512::reduce_shift",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.reduce_shift",
+      "generated_file": "bridge/Arithmetic/Avx512RegisterGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:278:function:bulksketch::backend::x86_vpclmul512::reduce_cl",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.reduce_cl",
+      "generated_file": "bridge/Arithmetic/Avx512RegisterGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:286:function:bulksketch::backend::x86_vpclmul512::multiply",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.multiply",
+      "generated_file": "bridge/Arithmetic/Avx512RegisterGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:84:function:bulksketch::decode::deg34::cube_root",
+      "generated_declaration": "bulksketch.decode.deg34.cube_root",
+      "generated_file": "bridge/Arithmetic/CubeRootGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:247:function:bulksketch::backend::x86_pclmul::frobenius",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.frobenius",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:45:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::frobenius",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.frobenius",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:297:function:bulksketch::backend::x86_pclmul::solve_quadratic",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:63:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::solve_quadratic",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:261:function:bulksketch::backend::x86_pclmul::inverse",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.inverse",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:50:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::inverse",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.inverse",
+      "generated_file": "bridge/Arithmetic/X86PclmulNextGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:36:function:bulksketch::backend::x86_vpclmul512::detect",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.detect",
+      "generated_file": "bridge/Arithmetic/X86FeatureDetectGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/detect.rs:98:function:bulksketch::backend::detect::vpclmul512_supported",
+      "generated_declaration": "bulksketch.backend.detect.vpclmul512_supported",
+      "generated_file": "bridge/Arithmetic/X86FeatureDetectGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:79:function:bulksketch::decode::deg34::quadratic",
+      "generated_declaration": "bulksketch.decode.deg34.quadratic",
+      "generated_file": "bridge/Arithmetic/CubicGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:95:function:bulksketch::decode::deg34::cubic",
+      "generated_declaration": "bulksketch.decode.deg34.cubic",
+      "generated_file": "bridge/Arithmetic/CubicGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:177:function:bulksketch::backend::x86_pclmul::scale_xor",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.scale_xor",
+      "generated_file": "bridge/Arithmetic/X86PclmulSliceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:196:function:bulksketch::backend::x86_pclmul::square_slice",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.square_slice",
+      "generated_file": "bridge/Arithmetic/X86PclmulSliceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:84:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::scale_xor",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.scale_xor",
+      "generated_file": "bridge/Arithmetic/X86PclmulSliceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:90:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::square_slice",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.square_slice",
+      "generated_file": "bridge/Arithmetic/X86PclmulSliceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:103:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::xor_assign",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractBulkKernels.xor_assign",
+      "generated_file": "bridge/Arithmetic/X86PclmulSliceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:225:function:bulksketch::backend::x86_pclmul::horner",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.horner",
+      "generated_file": "bridge/Arithmetic/X86PclmulHornerGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:110:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::horner_many",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractBulkKernels.horner_many",
+      "generated_file": "bridge/Arithmetic/X86PclmulHornerGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:111:function:bulksketch::decode::deg34::certificate",
+      "generated_declaration": "bulksketch.decode.deg34.certificate",
+      "generated_file": "bridge/Arithmetic/CertificateGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:241:method:bulksketch::decode::stages::Execution < F , K >::reconstruct",
+      "generated_declaration": "bulksketch.decode.stages.Execution.reconstruct",
+      "generated_file": "bridge/Arithmetic/ReconstructionGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:301:function:bulksketch::decode::work::number",
+      "generated_declaration": "bulksketch.decode.work.number",
+      "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:309:function:bulksketch::decode::work::mul",
+      "generated_declaration": "bulksketch.decode.work.mul",
+      "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:104:method:bulksketch::decode::work::WorkScheduleV1::cost",
+      "generated_declaration": "bulksketch.decode.work.WorkScheduleV1.cost",
+      "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:163:method:bulksketch::decode::stages::Execution < F , K >::charge",
+      "generated_declaration": "bulksketch.decode.stages.Execution.charge",
+      "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:138:function:bulksketch::decode::deg34::affine_quartic",
+      "generated_declaration": "bulksketch.decode.deg34.affine_quartic",
+      "generated_file": "bridge/Arithmetic/AffineQuarticGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:162:function:bulksketch::decode::deg34::quartic",
+      "generated_declaration": "bulksketch.decode.deg34.quartic",
+      "generated_file": "bridge/Arithmetic/QuarticGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:197:function:bulksketch::decode::deg34::solve",
+      "generated_declaration": "bulksketch.decode.deg34.solve",
+      "generated_file": "bridge/Arithmetic/QuarticGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:70:function:bulksketch::decode::roots::charge",
+      "generated_declaration": "bulksketch.decode.roots.charge",
+      "generated_file": "bridge/Arithmetic/ClosedLeafGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:99:method:bulksketch::decode::roots::Roots::stage",
+      "generated_declaration": "bulksketch.decode.roots.Roots.stage",
+      "generated_file": "bridge/Arithmetic/ClosedLeafGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:110:method:bulksketch::decode::roots::Roots::advance",
+      "generated_declaration": "bulksketch.decode.roots.Roots.advance",
+      "generated_file": "bridge/Arithmetic/ClosedLeafGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:237:method:bulksketch::decode::roots::Roots::closed_leaf",
+      "generated_declaration": "bulksketch.decode.roots.Roots.closed_leaf",
+      "generated_file": "bridge/Arithmetic/ClosedLeafGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:65:function:bulksketch::decode::deg34::normalize",
+      "generated_declaration": "bulksketch.decode.deg34.normalize",
+      "generated_file": "bridge/Arithmetic/NormalizeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/deg34.rs:9:function:bulksketch::decode::deg34::guard",
+      "generated_declaration": "bulksketch.decode.deg34.guard",
+      "generated_file": "bridge/Arithmetic/NewtonGuardGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/degree_probe.rs:27:method:bulksketch::decode::degree_probe::DegreeProbe::new",
+      "generated_declaration": "bulksketch.decode.degree_probe.DegreeProbe.new",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/degree_probe.rs:34:method:bulksketch::decode::degree_probe::DegreeProbe::next_stage",
+      "generated_declaration": "bulksketch.decode.degree_probe.DegreeProbe.next_stage",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/degree_probe.rs:37:method:bulksketch::decode::degree_probe::DegreeProbe::count",
+      "generated_declaration": "bulksketch.decode.degree_probe.DegreeProbe.impl.count",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/degree_probe.rs:40:method:bulksketch::decode::degree_probe::DegreeProbe::reject",
+      "generated_declaration": "bulksketch.decode.degree_probe.DegreeProbe.reject",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/degree_probe.rs:51:method:bulksketch::decode::degree_probe::DegreeProbe::run",
+      "generated_declaration": "bulksketch.decode.degree_probe.DegreeProbe.run",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:305:function:bulksketch::decode::work::add",
+      "generated_declaration": "bulksketch.decode.work.add",
+      "generated_file": "bridge/Arithmetic/WorkScheduleGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/bm.rs:13:function:bulksketch::decode::bm::locator",
+      "generated_declaration": "bulksketch.decode.bm.locator",
+      "generated_file": "bridge/Arithmetic/BmLocatorGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:49:method:bulksketch::decode::roots::FactorWork < 'a >::new",
+      "generated_declaration": "bulksketch.decode.roots.FactorWork.new",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:74:method:bulksketch::decode::roots::Roots::enable_v3",
+      "generated_declaration": "bulksketch.decode.roots.Roots.enable_v3",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:78:method:bulksketch::decode::roots::Roots::enable_closed_form",
+      "generated_declaration": "bulksketch.decode.roots.Roots.enable_closed_form",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:82:method:bulksketch::decode::roots::Roots::set_splitter_seed",
+      "generated_declaration": "bulksketch.decode.roots.Roots.set_splitter_seed",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:86:method:bulksketch::decode::roots::Roots::start",
+      "generated_declaration": "bulksketch.decode.roots.Roots.start",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/probe.rs:167:function:bulksketch::decode::probe::verified",
+      "generated_declaration": "bulksketch.decode.probe.verified",
+      "generated_file": "bridge/Arithmetic/DegreeProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:347:method:bulksketch::decode::roots::Roots::leaf",
+      "generated_declaration": "bulksketch.decode.roots.Roots.leaf",
+      "generated_file": "bridge/Arithmetic/RootLeafGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:334:method:bulksketch::decode::stages::Execution < F , K >::verify",
+      "generated_declaration": "bulksketch.decode.stages.Execution.verify",
+      "generated_file": "bridge/Arithmetic/ExecutionVerifyGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:234:function:bulksketch::poly::dense::times_x_mod",
+      "generated_declaration": "bulksketch.poly.dense.times_x_mod",
+      "generated_file": "bridge/Arithmetic/TimesXModGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:167:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::prepare_square_table",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.prepare_square_table",
+      "generated_file": "bridge/Arithmetic/DenseReducerTableGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:188:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::square_mod_into",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.square_mod_into",
+      "generated_file": "bridge/Arithmetic/DenseReducerSquareGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:384:method:bulksketch::decode::roots::Roots::trace",
+      "generated_declaration": "bulksketch.decode.roots.Roots.trace",
+      "generated_file": "bridge/Arithmetic/RootTraceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:98:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::exact_divide_into",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.exact_divide_into",
+      "generated_file": "bridge/Arithmetic/DenseExactDivideGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:113:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::monic_gcd_into",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.monic_gcd_into",
+      "generated_file": "bridge/Arithmetic/DenseGcdGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:217:function:bulksketch::backend::x86_vpclmul512::square_mod",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.square_mod",
+      "generated_file": "bridge/Arithmetic/AvxSquareGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:106:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::square_mod",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.square_mod",
+      "generated_file": "bridge/Arithmetic/AvxSquareEntryGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:444:method:bulksketch::decode::roots::Roots::divide",
+      "generated_declaration": "bulksketch.decode.roots.Roots.divide",
+      "generated_file": "bridge/Arithmetic/RootDivideGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:268:function:bulksketch::decode::affine::splitter",
+      "generated_declaration": "bulksketch.decode.affine.splitter",
+      "generated_file": "bridge/Arithmetic/AffineSplitterGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:245:function:bulksketch::decode::affine::subspace_start",
+      "generated_declaration": "bulksketch.decode.affine.subspace_start",
+      "generated_file": "bridge/Arithmetic/AffineSubspacesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:249:function:bulksketch::decode::affine::subspaces",
+      "generated_declaration": "bulksketch.decode.affine.subspaces",
+      "generated_file": "bridge/Arithmetic/AffineSubspacesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:321:method:bulksketch::decode::roots::Roots::enumerate_affine",
+      "generated_declaration": "bulksketch.decode.roots.Roots.enumerate_affine",
+      "generated_file": "bridge/Arithmetic/RootEnumerateGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:40:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::div_rem_into",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.div_rem_into",
+      "generated_file": "bridge/Arithmetic/DenseDivRemGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:128:method:bulksketch::decode::roots::Roots::run",
+      "generated_declaration": "bulksketch.decode.roots.Roots.run",
+      "generated_file": "bridge/Arithmetic/RootRunGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:299:function:bulksketch::decode::affine::enumerate",
+      "generated_declaration": "bulksketch.decode.affine.enumerate",
+      "generated_file": "bridge/Arithmetic/AffineEnumerateGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:82:function:bulksketch::decode::affine::enumerate_preferred",
+      "generated_declaration": "bulksketch.decode.affine.enumerate_preferred",
+      "generated_file": "bridge/Arithmetic/AffineSelectorGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:15:function:bulksketch::decode::affine::square_products",
+      "generated_declaration": "bulksketch.decode.affine.square_products",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:819:function:bulksketch::backend::x86_vpclmul512::multiply_linear",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.multiply_linear",
+      "generated_file": "bridge/Arithmetic/AvxMultiplyLinearGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/roots.rs:274:method:bulksketch::decode::roots::Roots::prepare_affine",
+      "generated_declaration": "bulksketch.decode.roots.Roots.prepare_affine",
+      "generated_file": "bridge/Arithmetic/RootAffinePreparationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:172:function:bulksketch::decode::affine::solve_map",
+      "generated_declaration": "bulksketch.decode.affine.solve_map",
+      "generated_file": "bridge/Arithmetic/AffineSolveMapGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:353:function:bulksketch::decode::affine::frobenius_columns",
+      "generated_declaration": "bulksketch.decode.affine.frobenius_columns",
+      "generated_file": "bridge/Arithmetic/AffineSolveMapGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:372:function:bulksketch::decode::affine::square_column",
+      "generated_declaration": "bulksketch.decode.affine.square_column",
+      "generated_file": "bridge/Arithmetic/AffineSolveMapGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:376:function:bulksketch::backend::x86_vpclmul512::horner_kernel",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.horner_kernel",
+      "generated_file": "bridge/Arithmetic/AvxHornerGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:371:function:bulksketch::backend::x86_vpclmul512::horner_many",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.horner_many",
+      "generated_file": "bridge/Arithmetic/AvxHornerGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:180:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::horner_many",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.horner_many",
+      "generated_file": "bridge/Arithmetic/AvxHornerGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:97:function:bulksketch::decode::affine::multiple",
+      "generated_declaration": "bulksketch.decode.affine.multiple",
+      "generated_file": "bridge/Arithmetic/AffineMultipleGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:551:function:bulksketch::backend::x86_vpclmul512::encode_18",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.encode_18",
+      "generated_file": "bridge/Arithmetic/AvxEncode18Generated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:567:function:bulksketch::backend::x86_vpclmul512::powers_18",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.powers_18",
+      "generated_file": "bridge/Arithmetic/AvxEncode18Generated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:521:function:bulksketch::backend::x86_vpclmul512::single_bases",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.single_bases",
+      "generated_file": "bridge/Arithmetic/AvxSingleBasesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:482:function:bulksketch::backend::x86_vpclmul512::insertion_bases",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insertion_bases",
+      "generated_file": "bridge/Arithmetic/AvxInsertionBasesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:26:function:bulksketch::decode::affine::predicted_affine",
+      "generated_declaration": "bulksketch.decode.affine.predicted_affine",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/affine.rs:64:function:bulksketch::decode::affine::preferred",
+      "generated_declaration": "bulksketch.decode.affine.preferred",
+      "generated_file": "bridge/Arithmetic/RootSetupGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:304:method:bulksketch::decode::stages::Execution < F , K >::deflate",
+      "generated_declaration": "bulksketch.decode.stages.Execution.deflate",
+      "generated_file": "bridge/Arithmetic/NativeDeflateGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:541:function:bulksketch::backend::x86_vpclmul512::insert_18",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert_18",
+      "generated_file": "bridge/Arithmetic/AvxInsert18Generated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:252:function:bulksketch::backend::x86_vpclmul512::horizontal_xor",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.horizontal_xor",
+      "generated_file": "bridge/Arithmetic/AvxHorizontalXorGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:133:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::insert_nonzero",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.insert_nonzero",
+      "generated_file": "bridge/Arithmetic/AvxInsertDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:395:function:bulksketch::backend::x86_vpclmul512::insert",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert",
+      "generated_file": "bridge/Arithmetic/AvxInsertDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:266:method:bulksketch::decode::stages::Execution < F , K >::candidates",
+      "generated_declaration": "bulksketch.decode.stages.Execution.candidates",
+      "generated_file": "bridge/Arithmetic/CandidateOuterGenerated.lean"
+    },
+    {
+      "native_item_id": "src/poly/dense.rs:155:method:bulksketch::poly::dense::<Dense as Polynomial < F , K >>::eval_many_into",
+      "generated_declaration": "bulksketch.poly.Dense.Insts.BulksketchPolyPolynomial.eval_many_into",
+      "generated_file": "bridge/Arithmetic/CandidateDenseEvalGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:166:method:bulksketch::decode::stages::Execution < F , K >::execute",
+      "generated_declaration": "bulksketch.decode.stages.Execution.execute",
+      "generated_file": "bridge/Arithmetic/ExecutionDriverGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:414:method:bulksketch::decode::stages::<Execution < F , K > as RowExecution>::run_next",
+      "generated_declaration": "bulksketch.decode.stages.Execution.Insts.BulksketchDecodeRowRowExecution.run_next",
+      "generated_file": "bridge/Arithmetic/ExecutionDriverGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:408:method:bulksketch::decode::stages::<Execution < F , K > as RowExecution>::next_stage",
+      "generated_declaration": "bulksketch.decode.stages.Execution.Insts.BulksketchDecodeRowRowExecution.next_stage",
+      "generated_file": "bridge/Arithmetic/ExecutionDriverGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/candidates.rs:65:function:bulksketch::sketch::candidates::row",
+      "generated_declaration": "bulksketch.sketch.candidates.row",
+      "generated_file": "bridge/Arithmetic/CandidateRowGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:141:method:bulksketch::decode::stages::Execution < F , K >::completed_result",
+      "generated_declaration": "bulksketch.decode.stages.Execution.completed_result",
+      "generated_file": "bridge/Arithmetic/CompletedResultGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:442:method:bulksketch::decode::stages::<Execution < F , K > as RowExecution>::finish",
+      "generated_declaration": "bulksketch.decode.stages.Execution.Insts.BulksketchDecodeRowRowExecution.finish",
+      "generated_file": "bridge/Arithmetic/FinishGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:373:method:bulksketch::decode::stages::Execution < F , K >::canonicalize",
+      "generated_declaration": "bulksketch.decode.stages.Execution.canonicalize",
+      "generated_file": "bridge/Arithmetic/CanonicalizeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/candidates.rs:6:function:bulksketch::sketch::candidates::normalize",
+      "generated_declaration": "bulksketch.sketch.candidates.normalize",
+      "generated_file": "bridge/Arithmetic/CandidateMergeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/shape.rs:104:method:bulksketch::sketch::shape::SketchShape < F >::bucket_for",
+      "generated_declaration": "bulksketch.sketch.shape.SketchShape.bucket_for",
+      "generated_file": "bridge/Arithmetic/CandidateCompactGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:116:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::multiply_linear",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.multiply_linear",
+      "generated_file": "bridge/Arithmetic/AvxLinearEntryGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:835:function:bulksketch::backend::x86_vpclmul512::odd_recurrence_matches",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.odd_recurrence_matches",
+      "generated_file": "bridge/Arithmetic/AvxRecurrenceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:437:function:bulksketch::backend::x86_vpclmul512::insert_tile",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert_tile",
+      "generated_file": "bridge/Arithmetic/AvxTileGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:124:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::odd_recurrence_matches",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.odd_recurrence_matches",
+      "generated_file": "bridge/Arithmetic/AvxRecurrenceEntryGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/candidates.rs:75:function:bulksketch::sketch::candidates::normalize_rows",
+      "generated_declaration": "bulksketch.sketch.candidates.normalize_rows",
+      "generated_file": "bridge/Arithmetic/RowLocalGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:50:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::mul",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.mul",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:53:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::square",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.square",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:56:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::frobenius",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.frobenius",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:59:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::inverse",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.inverse",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:62:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::trace",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.trace",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:65:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::solve_quadratic",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.solve_quadratic",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:68:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::raw_mul",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.raw_mul",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:71:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::reduce",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.reduce",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:59:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::trace",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.trace",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:73:method:bulksketch::backend::x86_pclmul::<Pclmul as Arithmetic < F >>::reduce",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractArithmetic.reduce",
+      "generated_file": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:56:method:bulksketch::decode::stages::<BinaryDecoder as RowDecoder < F , K >>::begin",
+      "generated_declaration": "bulksketch.decode.stages.BinaryDecoder.Insts.BulksketchDecodeRowRowDecoderFKExecution.begin",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:90:method:bulksketch::decode::stages::Execution < F , K >::restart",
+      "generated_declaration": "bulksketch.decode.stages.Execution.restart",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:97:method:bulksketch::decode::stages::Execution < F , K >::enable_v3",
+      "generated_declaration": "bulksketch.decode.stages.Execution.enable_v3",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:105:method:bulksketch::decode::stages::Execution < F , K >::start_degrees",
+      "generated_declaration": "bulksketch.decode.stages.Execution.start_degrees",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:115:method:bulksketch::decode::stages::Execution < F , K >::verification_count",
+      "generated_declaration": "bulksketch.decode.stages.Execution.verification_count",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:119:method:bulksketch::decode::stages::Execution < F , K >::reject_upper",
+      "generated_declaration": "bulksketch.decode.stages.Execution.reject_upper",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/stages.rs:159:method:bulksketch::decode::stages::Execution < F , K >::set_splitter_seed",
+      "generated_declaration": "bulksketch.decode.stages.Execution.set_splitter_seed",
+      "generated_file": "bridge/Arithmetic/RowConfigurationGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/api.rs:242:method:bulksketch::sketch::api::Publication < 's >::new",
+      "generated_declaration": "bulksketch.sketch.api.Publication.new",
+      "generated_file": "bridge/Arithmetic/PublicationFrameGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/api.rs:314:method:bulksketch::sketch::api::Publication < 's >::fail",
+      "generated_declaration": "bulksketch.sketch.api.Publication.fail",
+      "generated_file": "bridge/Arithmetic/PublicationFrameGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/api.rs:320:method:bulksketch::sketch::api::Publication < 's >::finish",
+      "generated_declaration": "bulksketch.sketch.api.Publication.finish",
+      "generated_file": "bridge/Arithmetic/PublicationFrameGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:754:function:bulksketch::backend::x86_vpclmul512::update_single_block",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.update_single_block",
+      "generated_file": "bridge/Arithmetic/AvxSliceKernelGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:320:function:bulksketch::backend::x86_vpclmul512::scale_kernel",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.scale_kernel",
+      "generated_file": "bridge/Arithmetic/AvxSliceKernelGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:349:function:bulksketch::backend::x86_vpclmul512::square_kernel",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.square_kernel",
+      "generated_file": "bridge/Arithmetic/AvxSliceKernelGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:315:function:bulksketch::backend::x86_vpclmul512::scale_xor",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.scale_xor",
+      "generated_file": "bridge/Arithmetic/AvxSliceEntryGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:337:function:bulksketch::backend::x86_vpclmul512::square_slice",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.square_slice",
+      "generated_file": "bridge/Arithmetic/AvxSliceEntryGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:86:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::scale_xor",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.scale_xor",
+      "generated_file": "bridge/Arithmetic/AvxSliceEntryGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:95:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as Arithmetic < F >>::square_slice",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractArithmetic.square_slice",
+      "generated_file": "bridge/Arithmetic/AvxSliceEntryGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:429:function:bulksketch::backend::x86_vpclmul512::insert_sparse",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert_sparse",
+      "generated_file": "bridge/Arithmetic/AvxSparseInsertGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:206:function:bulksketch::backend::x86_pclmul::insert",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.insert",
+      "generated_file": "bridge/Arithmetic/X86PclmulInsertGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_pclmul.rs:98:method:bulksketch::backend::x86_pclmul::<Pclmul as BulkKernels < F >>::insert_nonzero",
+      "generated_declaration": "bulksketch.backend.x86_pclmul.Pclmul.Insts.BulksketchBackendContractBulkKernels.insert_nonzero",
+      "generated_file": "bridge/Arithmetic/X86PclmulInsertGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:199:method:bulksketch::decode::work::WorkScheduleV1::roots_bound",
+      "generated_declaration": "bulksketch.decode.work.WorkScheduleV1.roots_bound",
+      "generated_file": "bridge/Arithmetic/RootWorkBudgetGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:229:method:bulksketch::decode::work::WorkScheduleV1::row_bound",
+      "generated_declaration": "bulksketch.decode.work.WorkScheduleV1.row_bound",
+      "generated_file": "bridge/Arithmetic/RowWorkBudgetGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/dispatch.rs:129:method:bulksketch::sketch::dispatch::DecodeExecution < F >::enable_v3",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.enable_v3",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/dispatch.rs:140:method:bulksketch::sketch::dispatch::DecodeExecution < F >::start_degrees",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.start_degrees",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/dispatch.rs:150:method:bulksketch::sketch::dispatch::DecodeExecution < F >::verification_count",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.verification_count",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/dispatch.rs:160:method:bulksketch::sketch::dispatch::DecodeExecution < F >::reject_upper",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.reject_upper",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/dispatch.rs:188:method:bulksketch::sketch::dispatch::DecodeExecution < F >::next_stage",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.next_stage",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/dispatch.rs:199:method:bulksketch::sketch::dispatch::DecodeExecution < F >::run_next",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.run_next",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/probe.rs:47:method:bulksketch::decode::probe::Probe::next_stage",
+      "generated_declaration": "bulksketch.decode.probe.Probe.next_stage",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/probe.rs:50:method:bulksketch::decode::probe::Probe::count",
+      "generated_declaration": "bulksketch.decode.probe.Probe.impl.count",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/probe.rs:58:method:bulksketch::decode::probe::Probe::reject",
+      "generated_declaration": "bulksketch.decode.probe.Probe.reject",
+      "generated_file": "bridge/Arithmetic/RowDispatchGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/contract.rs:101:trait_default:bulksketch::backend::contract::BulkKernels::difference",
+      "generated_declaration": "bulksketch.backend.contract.BulkKernels.difference.default",
+      "generated_file": "bridge/Arithmetic/DefaultWireDifferenceGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/api.rs:259:method:bulksketch::sketch::api::Publication < 's >::write",
+      "generated_declaration": "bulksketch.sketch.api.Publication.write",
+      "generated_file": "bridge/Arithmetic/PublicationWriteGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/api.rs:90:method:bulksketch::sketch::api::DecodeReport < '_ >::outcome",
+      "generated_declaration": "bulksketch.sketch.api.DecodeReport.outcome",
+      "generated_file": "bridge/Arithmetic/DecodeReportGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/api.rs:84:method:bulksketch::sketch::api::DecodeReport < '_ >::bucket_count",
+      "generated_declaration": "bulksketch.sketch.api.DecodeReport.bucket_count",
+      "generated_file": "bridge/Arithmetic/DecodeReportGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/probe.rs:82:method:bulksketch::decode::probe::Probe::charge",
+      "generated_declaration": "bulksketch.decode.probe.Probe.charge",
+      "generated_file": "bridge/Arithmetic/TinyProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/probe.rs:68:method:bulksketch::decode::probe::Probe::run_next",
+      "generated_declaration": "bulksketch.decode.probe.Probe.run_next",
+      "generated_file": "bridge/Arithmetic/TinyProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/probe.rs:105:method:bulksketch::decode::probe::Probe::run_charged",
+      "generated_declaration": "bulksketch.decode.probe.Probe.run_charged",
+      "generated_file": "bridge/Arithmetic/TinyProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/dispatch.rs:223:function:bulksketch::sketch::dispatch::run_probe",
+      "generated_declaration": "bulksketch.sketch.dispatch.run_probe",
+      "generated_file": "bridge/Arithmetic/TinyProbeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/dispatch.rs:171:method:bulksketch::sketch::dispatch::DecodeExecution < F >::completed_result",
+      "generated_declaration": "bulksketch.sketch.dispatch.DecodeExecution.completed_result",
+      "generated_file": "bridge/Arithmetic/DispatchCompletedGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:313:function:bulksketch::decode::work::sum_costs",
+      "generated_declaration": "bulksketch.decode.work.sum_costs",
+      "generated_file": "bridge/Arithmetic/SumCostsGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:264:method:bulksketch::decode::work::WorkScheduleV2::row_bound",
+      "generated_declaration": "bulksketch.decode.work.WorkScheduleV2.row_bound",
+      "generated_file": "bridge/Arithmetic/RowWorkBudgetV2Generated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/shape.rs:86:method:bulksketch::sketch::shape::SketchShape < F >::bucket_count",
+      "generated_declaration": "bulksketch.sketch.shape.SketchShape.bucket_count",
+      "generated_file": "bridge/Arithmetic/CandidateCompactGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/shape.rs:113:method:bulksketch::sketch::shape::SketchShape < F >::permits_id",
+      "generated_declaration": "bulksketch.sketch.shape.SketchShape.permits_id",
+      "generated_file": "bridge/Arithmetic/ShapePermissionGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:144:method:bulksketch::backend::x86_vpclmul512::<Vpclmul512 as BulkKernels < F >>::encode_nonzero",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.Vpclmul512.Insts.BulksketchBackendContractBulkKernels.encode_nonzero",
+      "generated_file": "bridge/Arithmetic/AvxEncodeEntryGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:615:function:bulksketch::backend::x86_vpclmul512::insert_32",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert_32",
+      "generated_file": "bridge/Arithmetic/AvxSingletonGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:711:function:bulksketch::backend::x86_vpclmul512::insert_single",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.insert_single",
+      "generated_file": "bridge/Arithmetic/AvxSingletonGenerated.lean"
+    },
+    {
+      "native_item_id": "src/backend/x86_vpclmul512.rs:749:function:bulksketch::backend::x86_vpclmul512::broadcast",
+      "generated_declaration": "bulksketch.backend.x86_vpclmul512.broadcast",
+      "generated_file": "bridge/Arithmetic/AvxSingletonGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/state.rs:231:method:bulksketch::sketch::state::FrozenSketch < F >::shape",
+      "generated_declaration": "bulksketch.sketch.state.FrozenSketch.shape",
+      "generated_file": "bridge/Arithmetic/FrozenShapeGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/input.rs:132:method:bulksketch::sketch::input::<DecodeRequest < '_ , F > as RequestInput < F >>::permits_id",
+      "generated_declaration": "bulksketch.sketch.api.DecodeRequest.Insts.BulksketchSketchInputRequestInput.permits_id",
+      "generated_file": "bridge/Arithmetic/RequestPermissionGenerated.lean"
+    },
+    {
+      "native_item_id": "src/sketch/input.rs:196:method:bulksketch::sketch::input::<DecodeRowsRequest < '_ , F > as RequestInput < F >>::permits_id",
+      "generated_declaration": "bulksketch.sketch.input.DecodeRowsRequest.Insts.BulksketchSketchInputRequestInput.permits_id",
+      "generated_file": "bridge/Arithmetic/RequestPermissionGenerated.lean"
+    },
+    {
+      "native_item_id": "src/decode/work.rs:331:method:bulksketch::decode::work::WorkScheduleV3::row_bound",
+      "generated_declaration": "bulksketch.decode.work.WorkScheduleV3.row_bound",
+      "generated_file": "bridge/Arithmetic/RowWorkBudgetV3Generated.lean"
     }
   ],
   "raw_multiplication_extraction": "extraction/canonical-arithmetic/rawmul/runtime-model-receipt.json",
   "frobenius_source_linkage": "extraction/canonical-arithmetic/frobenius/source-linkage.json",
-  "kernel_replay_loader": "audit/replay-loader-review.json"
+  "kernel_replay_loader": "audit/replay-loader-review.json",
+  "native_generated_projections": [
+    {
+      "generated": "extraction/inverse-chain/Inverse/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/InverseGenerated.lean",
+      "sha256": "b0f6af4467538ed607297dc3555fb8b416115722fcae8afba0860baa4b182359",
+      "raw_sha256": "54c868d864da1a7410177e9fc2fa7e5250a4198dfb8e297b506ad436271ab397",
+      "checker": "extraction/inverse-chain/project.py",
+      "declaration_count": 3,
+      "scope": "Exact inverse_with_frobenius body and two loop helpers copied verbatim; shared extracted types and all Gf64 function dictionaries checked byte for byte. No native source or generated declaration body edits."
+    },
+    {
+      "generated": "extraction/portable-forwarding/Portable/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PortableGenerated.lean",
+      "sha256": "a0a51923e2be29423404ac9a5523d270e502f4f151e2ae84c46b60f9de286539",
+      "raw_sha256": "11ee26b358174af8fcf51b0f1cdd47f7bfbd57646faf8a1f9fd11360a933dd08",
+      "checker": "extraction/portable-forwarding/project.py",
+      "declaration_count": 7,
+      "scope": "Seven original forwarding methods retained verbatim; all shared source types/functions/dictionaries checked exactly."
+    },
+    {
+      "generated": "extraction/inverse-wrappers/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/InverseUsingGenerated.lean",
+      "sha256": "7c6ad32c606fe4779dc950fc6bc77b2631a36033eba170301eb0a5e12a0dfb46",
+      "raw_sha256": "4a8009854592056eecc02291a4fe1a3d8a71c20ab5920784eff1aa6aaeccbc8b",
+      "checker": "extraction/inverse-wrappers/project.py",
+      "checker_args": [],
+      "declaration_count": 22,
+      "translator_variant": "checked-frozen-capture-v1",
+      "scope": "Exact original closure and wrapper declarations under reviewed checks-enabled frontend; all shared declarations byte-identical to prior packages."
+    },
+    {
+      "generated": "extraction/inverse-wrappers/Arithmetic/Types.lean",
+      "bridge_copy": "bridge/Arithmetic/InverseUsingTypes.lean",
+      "sha256": "619fb7c67f9aa399df652f490893644a1cbcdce23748b885f5a93a38acad7235",
+      "raw_sha256": "ef16309c06e9b68d0cd9d207f76f10734347b52d239ce3925bad1c6c645a760a",
+      "checker": "extraction/inverse-wrappers/project.py",
+      "checker_args": [
+        "--types"
+      ],
+      "declaration_count": 1,
+      "translator_variant": "checked-frozen-capture-v1",
+      "scope": "Exact original closure and wrapper declarations under reviewed checks-enabled frontend; all shared declarations byte-identical to prior packages."
+    },
+    {
+      "generated": "extraction/portable-inverse/PortableInverse/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PortableInverseGenerated.lean",
+      "sha256": "c9f4b8b77ecc93ecf64e944309ceafd5ae52169fc13c2d00412b84ca93f74a94",
+      "raw_sha256": "a9ef06a1539d0b7278024945bf738a8794a4dadf07447027049d6ac8921db337",
+      "checker": "extraction/portable-inverse/project.py",
+      "declaration_count": 1,
+      "translator_variant": "checked-frozen-capture-v1",
+      "scope": "One exact original inverse forwarding method; all51 shared function/dictionary declarations and all shared types checked byte for byte."
+    },
+    {
+      "generated": "extraction/frobenius-const/square/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/FrobeniusConstGenerated.lean",
+      "sha256": "840f09b2caaf3a369502fcaa724ecdd097f031c47e2abd950aba59bc25218d23",
+      "raw_sha256": "840f09b2caaf3a369502fcaa724ecdd097f031c47e2abd950aba59bc25218d23",
+      "checker": "extraction/frobenius-const/project.py",
+      "declaration_count": 5,
+      "scope": "Whole generated const-square file is byte-identical. Original generated Types has no application declarations; all primitive types/runtime unchanged."
+    },
+    {
+      "generated": "extraction/frobenius-const/tables-lookup/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/FrobeniusTablesGenerated.lean",
+      "sha256": "48fb506f80524458ed13d26bae161a086e97f87724868c18a7f7aaeedc3f13ed",
+      "raw_sha256": "d143693a61179995a0190dbc143da1b6915cdd0ae8b9acb7300cf4c823eb564d",
+      "checker": "extraction/frobenius-const/tables-lookup/project.py",
+      "declaration_count": 37,
+      "scope": "Verbatim table and lookup declarations. Five original square declarations and the existing debug dictionary are checked and reused."
+    },
+    {
+      "generated": "extraction/slice-kernels/multiply-linear/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/SliceKernelGenerated.lean",
+      "sha256": "551874d223068225ec2942b28559b8d62f8b53df04a9268a2195ac416b1683b9",
+      "raw_sha256": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739",
+      "checker": "extraction/slice-kernels/project.py",
+      "declaration_count": 4,
+      "scope": "Two original trait defaults and their generated loop helpers."
+    },
+    {
+      "generated": "extraction/slice-kernels/multiply-linear/Arithmetic/Types.lean",
+      "bridge_copy": "bridge/Arithmetic/SliceKernelTypes.lean",
+      "sha256": "2823889040f078b47aa5e5f4b30a1738815e3f1c113e1b71d4359344010c0742",
+      "raw_sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+      "checker": "extraction/slice-kernels/project.py",
+      "declaration_count": 2,
+      "scope": "Original Arithmetic and BulkKernels dictionary types with checked shared declarations.",
+      "checker_args": [
+        "--types"
+      ]
+    },
+    {
+      "generated": "extraction/portable-xor/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PortableXorGenerated.lean",
+      "sha256": "2a1c99ee83804b84583ec0181c5de5465cc094d3d2f27a6959b1ffdeb5b41c77",
+      "raw_sha256": "2de32175a7ff8f0bfcebfa5ad4ed9814965136fff08e0bd5b804e8d9250763f2",
+      "checker": "extraction/portable-xor/project.py",
+      "declaration_count": 3,
+      "scope": "Three verbatim source bodies with scoped mutable Zip bindings and pinned shared types."
+    },
+    {
+      "generated": "extraction/portable-slice/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PortableSliceGenerated.lean",
+      "sha256": "5c96da93c60d31823dfd273e669f9066a51bd8d9648a04c19e163a9814408c31",
+      "raw_sha256": "6362153a8daa0a65334a0e7273cf0e91b96cb21ced7c2181167f11caa0b247e5",
+      "checker": "extraction/portable-slice/project.py",
+      "declaration_count": 6,
+      "scope": "Six verbatim original square and scale declarations with checked arithmetic and XOR dependencies."
+    },
+    {
+      "generated": "extraction/dense-normalization/Normalized/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseNormalizationGenerated.lean",
+      "sha256": "e57328fd7a7a07e1b52bbcc8dbf34478515c64e05765870eb12fb5318873933a",
+      "raw_sha256": "cd8735662016aef12e26d3c4aba6684edccc0b3a86067fb3d17582c6ee80f817",
+      "checker": "extraction/dense-normalization/project.py",
+      "declaration_count": 9,
+      "scope": "Original normalization body, callbacks, and dictionaries with import-only adaptation."
+    },
+    {
+      "generated": "extraction/dense-normalization/Normalized/Types.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseNormalizationTypes.lean",
+      "sha256": "80c6092652ad879ea7ea8291b58021bad512da62c4089c1515bcbbd755156b94",
+      "raw_sha256": "80c6092652ad879ea7ea8291b58021bad512da62c4089c1515bcbbd755156b94",
+      "checker": "extraction/dense-normalization/project.py",
+      "declaration_count": 2,
+      "scope": "Two original closure types retained byte for byte.",
+      "checker_args": [
+        "--types"
+      ]
+    },
+    {
+      "generated": "extraction/dense-coefficient/xor-coefficient/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseCoefficientGenerated.lean",
+      "sha256": "994421cf411adab42c21c66b7cdce11926d44682d64046752eab997579550389",
+      "raw_sha256": "850b5681ff4ffbc1f256f72645f0f7681a6536cf8953b0ad706420fe0b841e63",
+      "checker": "extraction/dense-coefficient/project.py",
+      "declaration_count": 1,
+      "scope": "Verbatim Dense coefficient method with nine shared normalization declarations checked."
+    },
+    {
+      "generated": "extraction/verify-dispatch/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/VerifyDispatchGenerated.lean",
+      "sha256": "e091cf238637b0f73e586f535b767f2893a688e83914adb678e3b528c0a42837",
+      "raw_sha256": "74e0f15d8b16ce8a465b89dd7d9d8ff4bf893286546d8dd01f026ea4f36d6d68",
+      "checker": "extraction/verify-dispatch/project.py",
+      "declaration_count": 4,
+      "scope": "Original decoder count, dispatch and generated PartialEq definitions with only import adaptation."
+    },
+    {
+      "generated": "extraction/verify-dispatch/Arithmetic/Types.lean",
+      "bridge_copy": "bridge/Arithmetic/VerifyDispatchTypes.lean",
+      "sha256": "03b264c559c161d5bac5a9486d1892ac1f37d545aa9371068cb46166192d07ff",
+      "raw_sha256": "03b264c559c161d5bac5a9486d1892ac1f37d545aa9371068cb46166192d07ff",
+      "checker": "extraction/verify-dispatch/project.py",
+      "declaration_count": 1,
+      "scope": "Byte-identical derived count record.",
+      "checker_args": [
+        "--types"
+      ]
+    },
+    {
+      "generated": "extraction/shape-admission/wire-size/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/ShapeWireGenerated.lean",
+      "sha256": "be38b0252b70adba3a22ed197bad57944cd64b3a6f52cf5d4d3b8a867dc7f31b",
+      "raw_sha256": "500d295030764702667dc9b958d8c6a7f3ddfb003207d0b0e0c9e6b04fe4b691",
+      "checker": "extraction/shape-admission/wire-size/project.py",
+      "declaration_count": 1,
+      "scope": "Verbatim original record_bytes body and concrete scoped Option Try and Result.ok bindings."
+    },
+    {
+      "generated": "extraction/odd-recurrence/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/OddRecurrenceGenerated.lean",
+      "sha256": "d5d594b8be4ec2b8ad30a9b8a18347191568f8f98b5739d05f24203bbc4d198b",
+      "raw_sha256": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739",
+      "checker": "extraction/odd-recurrence/project.py",
+      "declaration_count": 6,
+      "scope": "Original scalar recurrence default, both loop bodies and wrappers, and RawProduct default with shared types checked."
+    },
+    {
+      "generated": "extraction/dense-square/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseSquareGenerated.lean",
+      "sha256": "6c24a37b83a427cc3575f165fb017b358d7629f65a21972bc9f0df5777ed3114",
+      "raw_sha256": "7ff7bf02a64fb62cb3d28154514ad7b426018c4380dc56b4d101dee3d73bd505",
+      "checker": "extraction/dense-square/project.py",
+      "declaration_count": 3,
+      "scope": "Original square body and both loop declarations, with exact shared types, normalized_len and scoped iterator bindings checked.",
+      "translator_variant": "checked-shared-expansion-owner-v1"
+    },
+    {
+      "generated": "extraction/rebuilt-lfsr/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RebuiltLfsrGenerated.lean",
+      "sha256": "592c7f8c0f35728f58e0a36a865ddab16c5bde10c89c61d0ab159f2bd9a85d97",
+      "raw_sha256": "0980f9fccb4786d69397028c460618b6895b39c82b76d4d6b3bd6ba9d82e5595",
+      "checker": "extraction/rebuilt-lfsr/project.py",
+      "declaration_count": 6,
+      "scope": "Original rebuilt verifier, both loops and slice equality dictionary with scoped inclusive prefix and mutable borrow bindings."
+    },
+    {
+      "generated": "extraction/rebuilt-lfsr/Arithmetic/Types.lean",
+      "bridge_copy": "bridge/Arithmetic/RebuiltLfsrTypes.lean",
+      "sha256": "7c68075cd73c39686e248864ef40910da1ad95d9405778ef850dc38a5809770e",
+      "raw_sha256": "8a93715ef2336aafd7a6e2441962da32c9298cbfcc57058f0cbea7e3d1718471",
+      "checker": "extraction/rebuilt-lfsr/project.py",
+      "declaration_count": 1,
+      "scope": "Verbatim RangeToInclusive type.",
+      "checker_args": [
+        "--types"
+      ]
+    },
+    {
+      "generated": "extraction/affine-linear-eval/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AffineLinearEvalGenerated.lean",
+      "sha256": "e7e8e6de1cee6fd98571f2c9fb41d0abb8b96c0e06a98a769d7c540ad89f7aa7",
+      "raw_sha256": "1ad1dbb2088a62e4cc6a3d7167314b676da60198b46453cf42bf6f836e0e3c12",
+      "checker": "extraction/affine-linear-eval/project.py",
+      "declaration_count": 3,
+      "scope": "Original affine evaluator and loop with existing shared types."
+    },
+    {
+      "generated": "extraction/portable-encoding/insert/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PortableInsertionGenerated.lean",
+      "sha256": "e8d1221520720ef83740ce0be68240f16fd7ac669493a6e9dd2742a441f9cbe4",
+      "raw_sha256": "30a69a641cebc1e5dad7fc99fa8edd051970cd36f5d9d8ca010db1afe0ceb6b1",
+      "checker": "extraction/portable-encoding/project.py",
+      "declaration_count": 5,
+      "scope": "Original Portable insertion and nested loops with verified scalar arithmetic and scoped mutable slice models."
+    },
+    {
+      "generated": "extraction/portable-encoding/encode/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PortableEncodingGenerated.lean",
+      "sha256": "91c48a3cb627826bc4cdf358b0e8cc2c82dfc197235d7692093e5f9910d0a894",
+      "raw_sha256": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739",
+      "checker": "extraction/portable-encoding/project.py",
+      "declaration_count": 3,
+      "scope": "Original default encoder and singleton loop.",
+      "checker_args": [
+        "--kind",
+        "encode"
+      ]
+    },
+    {
+      "generated": "extraction/dense-mul/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseMulReductionGenerated.lean",
+      "sha256": "f45c2279b424f15bd5c0cb1a35202ae5b307ae0c4d62767b7574a584658510e3",
+      "raw_sha256": "7b50a133f18cd4c5fea896f35f0f4093cd1af6a7e1619b51c845a67733078ad6",
+      "checker": "extraction/dense-mul/project.py",
+      "declaration_count": 2,
+      "scope": "Verbatim final reduction loop and loop body from complete original Dense multiplication extraction.",
+      "translator_variant": "checked-shared-loop-erasure-v1"
+    },
+    {
+      "generated": "extraction/dense-mul/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseMulConvolutionGenerated.lean",
+      "sha256": "833933b1c40e180072b889c7db4528983194014e5a3ad914b5b15975c237e104",
+      "raw_sha256": "7b50a133f18cd4c5fea896f35f0f4093cd1af6a7e1619b51c845a67733078ad6",
+      "checker": "extraction/dense-mul/project-convolution.py",
+      "declaration_count": 7,
+      "scope": "Verbatim main multiplication, inner and outer convolution loops, and derived clone, with original raw default, normalization and final reduction dependencies checked.",
+      "translator_variant": "checked-shared-loop-erasure-v1"
+    },
+    {
+      "generated": "extraction/direct-two/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DirectTwoGenerated.lean",
+      "sha256": "2166a8951a66bc37e91f16b34f34fec04288d5e33dba60ce78629e7af78cf1cd",
+      "raw_sha256": "6c8a8ae9b7930d6abfea3461618faf9d379de1fd7dfc5ae901cd2c658128c6fc",
+      "checker": "extraction/direct-two/project.py",
+      "declaration_count": 7,
+      "scope": "Pinned direct two-root body, closure and exact types with scoped shared-slice any and Option Try bindings."
+    },
+    {
+      "generated": "extraction/portable-horner/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PortableHornerGenerated.lean",
+      "sha256": "cf6735c9a9d3863d8523f8a9f936eb31e25d02bb788247883df79d38b6bed073",
+      "raw_sha256": "c75cd779d7f3f57f806f87b791371c534a57a9a6d1f3872055e136cb0724f96e",
+      "checker": "extraction/portable-horner/project.py",
+      "declaration_count": 7,
+      "scope": "Original Portable Horner, outer loop, captured callback, trait dictionaries and closure type with scoped split_last and reverse-fold bindings.",
+      "translator_variant": "checked-ended-shared-scalar-v1"
+    },
+    {
+      "generated": "extraction/x86-lane-mask/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/X86LaneMaskGenerated.lean",
+      "sha256": "6ae2bc88b9c91551501be0e279f57385334226a8a06caaead231e1acf9e77336",
+      "raw_sha256": "1734d7fd2265fd71eb2682d6069c2aceff3272ce0ef8fde76a8925a675c1c10f",
+      "checker": "extraction/x86-lane-mask/project.py",
+      "declaration_count": 1,
+      "scope": "Original x86 target lane mask body with checked arithmetic and no additional runtime bindings."
+    },
+    {
+      "generated": "extraction/pclmul-register/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/X86PclmulGenerated.lean",
+      "sha256": "dc418d8fb3549ba684ddfe5cc26712890d43c6f9c801975048826fedd1e55963",
+      "raw_sha256": "db091247ce267c6af34684ee20dfb05250cdde6fdf87856bd0fcfe421aeba59a",
+      "checker": "extraction/pclmul-register/project.py",
+      "declaration_count": 9,
+      "scope": "Nine verbatim original scalar x86 register operations and entry methods. Pinned little-endian bytes, SSE2 moves and PCLMUL selectors have concrete value bindings."
+    },
+    {
+      "generated": "extraction/avx512-register/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/Avx512RegisterGenerated.lean",
+      "sha256": "671fe8eb15890499b45174fa832221a7e32b1c1db19eef8112bc5e476ad2c14f",
+      "raw_sha256": "54af9cc961dad9ebcc81f3d4668563f751eaf34d0d1689f0d020b0e17f222b59",
+      "checker": "extraction/avx512-register/project.py",
+      "declaration_count": 5,
+      "scope": "Verbatim original AVX-512 register kernels and reduction closure with scoped VPCLMUL, shift, broadcast, XOR and unpack bindings."
+    },
+    {
+      "generated": "extraction/cube-root/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CubeRootGenerated.lean",
+      "sha256": "1966ff7f1b81211f9f2ab91b4520c85a1fcd6c6279db89ecb0d3d5398971563d",
+      "raw_sha256": "62b2805334b6ef3a9ade0b9ef21de36938f09f307eb82089f12f728f8b9e1c68",
+      "checker": "extraction/cube-root/project.py",
+      "declaration_count": 3,
+      "scope": "Original cube-root chain and iterator loop with scoped Bool then_some."
+    },
+    {
+      "generated": "extraction/pclmul-next/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/X86PclmulNextGenerated.lean",
+      "sha256": "4298251c5d548d45ecfa729a12b41f0a38088dec1fb9fbf4a63c8441e33bfb25",
+      "raw_sha256": "4bf4d4cc9388b30332cb9a2a426012959975a0416fd15e50a5a6950a94de81b5",
+      "checker": "extraction/pclmul-next/project.py",
+      "declaration_count": 23,
+      "scope": "Verbatim PCLMUL field helpers, entry methods, lookup and fallback loops, and closure dictionaries and types. Reuses exact arithmetic, maps, and Frobenius dependencies."
+    },
+    {
+      "generated": "extraction/x86-feature-detect/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/X86FeatureDetectGenerated.lean",
+      "sha256": "00360be3705e62516c06965a40448103f83df0116a3a4b1fd2a3059b8edf08d6",
+      "raw_sha256": "0ca59301ee47516c796ee315bcf39e85e3ef9fe9f65d7bc6a1713653bd7709df",
+      "checker": "extraction/x86-feature-detect/project.py",
+      "declaration_count": 2,
+      "scope": "Exact AVX-512 detector, Boolean support helper and CPUID result type, with scoped modeled CPUID and XCR0 observations."
+    },
+    {
+      "generated": "extraction/cubic/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CubicGenerated.lean",
+      "sha256": "66e9bdbe0fe716107a43464d44e032fde6240b36b49e13aed62f252cb6d7652b",
+      "raw_sha256": "72f828764ffee03a3827a12d3f287ae78ff3293b1cdc3735f4f8d2f012ee47c6",
+      "checker": "extraction/cubic/project.py",
+      "declaration_count": 3,
+      "scope": "Verbatim quadratic and cubic helpers and root constant, with exact cube-root reuse and existing Bool and Option adapters."
+    },
+    {
+      "generated": "extraction/pclmul-slice/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/X86PclmulSliceGenerated.lean",
+      "sha256": "0ea46ba5d29c2afa8beea386592abb689cca853c12c8463108d5fc8d0b314827",
+      "raw_sha256": "7f2a40cffd24c0507f005847aa240d9d58f396113e339d3ab3c9287534c5636c",
+      "checker": "extraction/pclmul-slice/project.py",
+      "declaration_count": 13,
+      "scope": "Exact original PCLMUL slice kernels and entries with checked shared arithmetic and Zip dependencies."
+    },
+    {
+      "generated": "extraction/pclmul-horner/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/X86PclmulHornerGenerated.lean",
+      "sha256": "bb506ce12a105908c6a08817b4e7a1f4d31db19118e9675d0cb3761f3b766828",
+      "raw_sha256": "da288314271fc67a65d8bafd604c38b757e429902adc3d61fc0ddcb71cad718e",
+      "checker": "extraction/pclmul-horner/project.py",
+      "declaration_count": 6,
+      "scope": "Exact original PCLMUL Horner loops and entry using the checked ended shared-scalar context matcher.",
+      "translator_variant": "checked-ended-shared-scalar-v1"
+    },
+    {
+      "generated": "extraction/degree-certificate/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CertificateGenerated.lean",
+      "sha256": "a448ce5c50ab97713c112da4a6824e0be583722a29e51f937276862d3f9c6180",
+      "raw_sha256": "eb400afed2af3073c9eb76370bf617c9b6adb0128988510247b64ece531e4e55",
+      "checker": "extraction/degree-certificate/project.py",
+      "declaration_count": 10,
+      "scope": "Original degree-3/4 certificate over exact GF64 multiplication with admitted usize and path-conditional scratch bounds. Checks malformed roots, the rebuilt coefficient prefix and preservation of the scratch suffix.",
+      "translator_variant": "checked-ended-projector-leaf-v1"
+    },
+    {
+      "generated": "extraction/reconstruction/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/ReconstructionGenerated.lean",
+      "sha256": "7c9bcc9f70158a2978fe460d8bbd2390f09a00e5e850707749785b1c66dc18f9",
+      "raw_sha256": "f6155441a842fa7faf893966ee353d535a570712fb20b05c151e96910c321894",
+      "checker": "extraction/reconstruction/project.py",
+      "declaration_count": 9,
+      "scope": "Original reconstruction wrapper and both inclusive-range loops. Exact zero path, pricing and meter failure, post-charge workspace rejection, syndrome recurrence, stage result and frame under the exact GF64 square callback.",
+      "translator_variant": "checked-ended-projector-leaf-v1"
+    },
+    {
+      "generated": "extraction/work-schedule/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/WorkScheduleGenerated.lean",
+      "sha256": "b2be6d0dea4f1a2b02500d28164110241d634d5c288bc5dfd56a5b770c9410e7",
+      "raw_sha256": "800e6141c605e6078bff44c4642fb8f26c74d8374c5730f98db858f629b154bd",
+      "checker": "extraction/work-schedule/project.py",
+      "declaration_count": 12,
+      "scope": "Original WorkScheduleV1 cost, checked arithmetic helpers and stage charge wrapper from pinned Aeneas. Price refinement covers the Reconstruct tag."
+    },
+    {
+      "generated": "extraction/affine-quartic/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AffineQuarticGenerated.lean",
+      "sha256": "26d7e234816500442058fd371c6a068d1cbd053f3b762d5243d6808a16332b8e",
+      "raw_sha256": "bffad41121c95c48e6f86ddfc59d393184385be85b367757da7e9f973413a75e",
+      "checker": "extraction/affine-quartic/project.py",
+      "declaration_count": 3,
+      "scope": "Original affine quartic returns normally. Under exact GF64 callbacks, success is equivalent to the native certified kernel gate and existence of an affine root, and returns four distinct roots. The exact unsigned minimum and normalized quadratic selections are retained."
+    },
+    {
+      "generated": "extraction/quartic/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/QuarticGenerated.lean",
+      "sha256": "17fef74ec3aa05286e5b5d25b01eb01104233e5a85c752de42b3a1af1f308689",
+      "raw_sha256": "06faff2bfa131ad027aeaae819304d010a5ef034fe0303e0e52ebea79f236102",
+      "checker": "extraction/quartic/project.py",
+      "declaration_count": 6,
+      "scope": "Original general quartic normal return for factor length at least four. Under exact GF64 callbacks, success is equivalent to the native recovery gate and existence of a root, with four distinct roots from the original affine or reciprocal and batch-inversion path.",
+      "translator_variant": "checked-fixedpoint-scalar-array-loan-retry-v1"
+    },
+    {
+      "generated": "extraction/closed-leaf/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/ClosedLeafGenerated.lean",
+      "sha256": "e518164928bbbb40b467f0a8631749c248be73c18fb2e55a6ba1000544257e7d",
+      "raw_sha256": "1396e42dabeeae148231918ce04f97c8c068f1f1a9cc42421347354eff2cca60",
+      "checker": "extraction/closed-leaf/project.py",
+      "declaration_count": 6,
+      "scope": "Original closed-leaf phase equation on degree three/four with admitted scratch and root output bounds. Exact price and charge, solver candidate writeback, product-certificate scratch writeback, append accepted roots and invoke the original advance. Accepted empty and admitted pending-frame returns checked separately."
+    },
+    {
+      "generated": "extraction/deg34-normalize/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/NormalizeGenerated.lean",
+      "sha256": "3d3e32a36c05ff30ad3657d224440dd0bd8dedda19f862b57937bbdeeceff15d",
+      "raw_sha256": "2070052f9f725db6dc4a7a9ba97212f40028c6a6c57877d0f7598967dfd3193e",
+      "checker": "extraction/deg34-normalize/project.py",
+      "declaration_count": 3,
+      "scope": "Exact original degree-three/four Newton normalization loop and wrapper under a nonzero denominator, admitted slices and exact GF64 callbacks. Exact full scratch words and independent field coefficients."
+    },
+    {
+      "generated": "extraction/deg34-guard/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/NewtonGuardGenerated.lean",
+      "sha256": "2f062f7c44839001c7894370ba642850434faefedadac724f0d1e9ad3964d5a1",
+      "raw_sha256": "296dfd1887805a7a59f4774ac7bbe82a55bf118b174bddc37b866e971be1067a",
+      "checker": "extraction/deg34-guard/project.py",
+      "declaration_count": 13,
+      "scope": "Original degree-three/four guard, with admitted odd words and scratch on the writing branch. Exact zero-denominator rejection, six cleared scratch words and original suffix, exact early residual boolean under verified GF64 callbacks. Residual and word meanings checked separately.",
+      "translator_variant": "checked-fixedpoint-nested-scalar-slice-retry-v1"
+    },
+    {
+      "generated": "extraction/bm-locator/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/BmLocatorGenerated.lean",
+      "sha256": "d0459135c4470df60f0b5ad313e55677c9bb031585120aa263d8a4fbba48792a",
+      "raw_sha256": "f1ab4c3aa80ecf7fb22de25a3b34a56b6adb765f1a9311739d4ad4e454e0dc1a",
+      "checker": "extraction/bm-locator/project.py",
+      "declaration_count": 25,
+      "scope": "Exact original GF64 locator body under the checked source-scoped translator and admitted scratch, syndrome and budget bounds on the paid path. The finite recurrence accounts for all branches, exact meter and workspace, and termination. Reconstructed residual and anchor invariant checked separately.",
+      "translator_variant": "checked-bm-locator-v1"
+    },
+    {
+      "generated": "extraction/degree-probe/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DegreeProbeGenerated.lean",
+      "sha256": "ad84c3b68aa3e296db6e8b318e97b576a79a432ec89b11e29de5bcc1e6968674",
+      "raw_sha256": "1dab09435d29c36fe07cf5887424d9ad2e9ac337087ab04708876131bae87528",
+      "checker": "extraction/degree-probe/project.py",
+      "declaration_count": 14,
+      "scope": "Exact original DegreeProbe run under phase-specific admitted degree, slice and count bounds, GF64 arithmetic and exact verification encoding callbacks. Original price and work errors, six stage results, rejection, scratch and state frames are exact. Portable encoding specialization checked separately.",
+      "translator_variant": "checked-fixedpoint-nested-scalar-slice-retry-v1"
+    },
+    {
+      "generated": "extraction/root-setup/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootSetupGenerated.lean",
+      "sha256": "bb7da33e4cc8120bc17c2d73b84bcc8013d2f7e9f6f90aa7c54072dc356366b6",
+      "raw_sha256": "3e235eff55e6b5f680cf5be59e7cfeeb9c2f5424b5e03fec5e02423238f85e93",
+      "checker": "extraction/root-setup/project.py",
+      "declaration_count": 16,
+      "scope": "Original FactorWork partition and root setup under pinned stock checked extraction."
+    },
+    {
+      "generated": "extraction/root-leaf/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootLeafGenerated.lean",
+      "sha256": "e25fd58ed7ff39553f9c84cc508c70cf2a4473a9476fa51c55ca199a71d7dd2c",
+      "raw_sha256": "609ec6a09271c34305484e389a8de97a2e3aeabbb5f793e4b9a61538b10532d5",
+      "checker": "extraction/root-leaf/project.py",
+      "declaration_count": 1,
+      "scope": "Original small-factor leaf with checked stock extraction and exact source charge and advance bindings."
+    },
+    {
+      "generated": "extraction/execution-verify/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/ExecutionVerifyGenerated.lean",
+      "sha256": "e28f2b7d84ce2367f71ac93c19b3dcf319406808c9beb78bcd86e7e5ae31f457",
+      "raw_sha256": "81ead7bd1b18fc51774accc6bcdffaeaaf9a2170b8939f36e2fe662e669883e2",
+      "checker": "extraction/execution-verify/project.py",
+      "declaration_count": 1,
+      "scope": "Original row verification stage, with its existing exact source-linked verification and pricing callees."
+    },
+    {
+      "generated": "extraction/times-x-mod/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/TimesXModGenerated.lean",
+      "sha256": "04673a41172b0a945fec43a01068c20281edad7287ed8cc090e54707aeb05071",
+      "raw_sha256": "7a75d5bcbc3f7cf27a5105e150e92beef6a869a940dadb5c35fe5ea8c2831219",
+      "checker": "extraction/times-x-mod/project.py",
+      "declaration_count": 4,
+      "scope": "Original native modular shift with stock exact RangeTo dictionary and scoped overlapping-copy binding."
+    },
+    {
+      "generated": "extraction/dense-reducer-table/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseReducerTableGenerated.lean",
+      "sha256": "c3d3324aec9054c53be3e3dd3e659aaf6f7c5503e8ffe887f0f317207a6a6f85",
+      "raw_sha256": "9970d0a25094d24d618bede15877037394c1dcf70630cded587111bc2887045f",
+      "checker": "extraction/dense-reducer-table/project.py",
+      "declaration_count": 3,
+      "scope": "Original Dense table entry and loop, exact table and work writebacks with the checked scoped variant.",
+      "translator_variant": "checked-dense-reducer-option-v1"
+    },
+    {
+      "generated": "extraction/root-trace/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootTraceGenerated.lean",
+      "sha256": "55674af0982c79f8f26e5759cfd69a63a7307c11d6014523460ac76d8e671ff7",
+      "raw_sha256": "3003c3b0a82b95a1ed6683855b694a32f392fb3f9217cf32c3970b70e8a3d7cb",
+      "checker": "extraction/root-trace/project.py",
+      "declaration_count": 8,
+      "scope": "Original trace entry, closure and loops. The explicit Dense square slot is instantiated by its original checked body and modular correctness theorem."
+    },
+    {
+      "generated": "extraction/dense-reducer-square/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseReducerSquareGenerated.lean",
+      "sha256": "a381cdfdb38ae9e5982020dfbbe0a6335dcc89c6a30337561a9174cad7088ec5",
+      "raw_sha256": "bfb8c077f8c7172988d6b6d11183929211a2eed0bc804e4fe2af586aa4d8075e",
+      "checker": "extraction/dense-reducer-square/project.py",
+      "declaration_count": 7,
+      "scope": "Original modular square entry and six loops with exact checked cumulative source-scoped lowering.",
+      "translator_variant": "checked-dense-reducer-square-v1"
+    },
+    {
+      "generated": "extraction/dense-exact-division/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseExactDivideGenerated.lean",
+      "sha256": "48dbea4948163f4edc35ae72cdee5bca3ebf369b2deb4cdc0e5ca3951c781cd9",
+      "raw_sha256": "237b400140c66a2cdce828255f8fa0bd78bd163652576554bb5b587ff2412254",
+      "checker": "extraction/dense-exact-division/project.py",
+      "declaration_count": 1,
+      "scope": "Original exact-division wrapper, with explicit stock div/rem slot and original quotient prefix clearing."
+    },
+    {
+      "generated": "extraction/dense-monic-gcd/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseGcdGenerated.lean",
+      "sha256": "f99c8048aa2b07e1397913b7971332e15fd1b6c516d78d0bb3a947d6f9c68600",
+      "raw_sha256": "224aba3671b52e4d558b9b6e043d74a7bed4690260ed3ae64f16478b02fdb74f",
+      "checker": "extraction/dense-monic-gcd/project.py",
+      "declaration_count": 3,
+      "scope": "Original monic GCD wrapper and both loop declarations, exact scratch rotation and explicit div/rem slot."
+    },
+    {
+      "generated": "extraction/avx-square/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxSquareGenerated.lean",
+      "sha256": "2d465d47c7ddef1a834575174050005bbd328e0a6f44fafae852bd461669e168",
+      "raw_sha256": "44ada153ec36930424a2c3161478f1ca38f849e50dc937ef3a92c087555abb8f",
+      "checker": "extraction/avx-square/project.py",
+      "declaration_count": 7,
+      "scope": "Original AVX-512 free square and six loop declarations with exact admitted slice load and store contracts."
+    },
+    {
+      "generated": "extraction/avx-square-entry/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxSquareEntryGenerated.lean",
+      "sha256": "7e8ae3de78e450c9d95ad31299bc05c6b42fe77ecefc3daaed641aef2c3288de",
+      "raw_sha256": "f713ca550d6c46f5733302c4a3c67b76e62d097020a6a3b8c648d46d48f2e7e0",
+      "checker": "extraction/avx-square-entry/project.py",
+      "declaration_count": 1,
+      "scope": "Original Vpclmul512 square selector with scoped exact original free-kernel callee."
+    },
+    {
+      "generated": "extraction/root-divide/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootDivideGenerated.lean",
+      "sha256": "6fcd247fd60e36ba5b52d87e4d3ed278384d52804209391dac0e8cf1fbc1d5b5",
+      "raw_sha256": "d0356c2374cf3c0c873eeb45f47b9381a1410f80d277de32467b9ae0fbfd64a1",
+      "checker": "extraction/root-divide/project.py",
+      "declaration_count": 1,
+      "scope": "Original factor division with checked charge, quotient/remainder scratch, and pending-frame assembly."
+    },
+    {
+      "generated": "extraction/affine-splitter/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AffineSplitterGenerated.lean",
+      "sha256": "044b1c2fbb15ea34ae4779c68c24305d2ef407f0854fc1293d5a04a27848450b",
+      "raw_sha256": "4a1e1a13827ea38655bd055b65e579e17052f91a8e92ea82a72bbddb6c6f876a",
+      "checker": "extraction/affine-splitter/project.py",
+      "declaration_count": 11,
+      "scope": "Original stock affine splitter, its coefficient loop and normalization callbacks. Original linear evaluation and Dense modular square are bound at the native endpoint."
+    },
+    {
+      "generated": "extraction/affine-subspaces/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AffineSubspacesGenerated.lean",
+      "sha256": "7424c450af083f0817c133118340bac5f88feaf05dd275f56776c9824af8a17b",
+      "raw_sha256": "86ef12291f5e17311e2305f43c21371f3ac57f6246686f16404fe0214d33efb0",
+      "checker": "extraction/affine-subspaces/project.py",
+      "declaration_count": 6,
+      "scope": "Original triangular offset and affine subspace table, including both nested loops and the original linear evaluation binding."
+    },
+    {
+      "generated": "extraction/root-enumerate-affine/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootEnumerateGenerated.lean",
+      "sha256": "e7a0fca7b1b158e00b47b7b836849451c93aee794d112486e43bf4c1654e3662",
+      "raw_sha256": "32928bea334705d734b741e78d3d99f6a571c5770a4ba84b603a4809b9e0bbe3",
+      "checker": "extraction/root-enumerate-affine/project.py",
+      "declaration_count": 1,
+      "scope": "Original affine enumeration wrapper, with original charge and advance and an explicit candidate enumeration slot."
+    },
+    {
+      "generated": "extraction/dense-div-rem/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DenseDivRemGenerated.lean",
+      "sha256": "8b8a2f298e58c3946adda864dff96ec9a461fdc555078a39e5d38d3e0121ba44",
+      "raw_sha256": "ff01ae4fd04edb6d80855af016bca20ca56777b4b7174a07386ce13ca87c737a",
+      "checker": "extraction/dense-div-rem/project.py",
+      "declaration_count": 15,
+      "scope": "Original unoutlined Dense div/rem entry and all six source loops, checked scoped translator, and existing arithmetic and mutable Zip bindings.",
+      "translator_variant": "checked-dense-div-rem-v1"
+    },
+    {
+      "generated": "extraction/root-run/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootRunGenerated.lean",
+      "sha256": "5a32d2a7ef033d5b4c23b407059952ff5d5128bdf29881bc48d768c620caacf1",
+      "raw_sha256": "8eb87055b6f02b4317a73a4143bd6f31eac1fd147b762658d0211872dc39f584",
+      "checker": "extraction/root-run/project.py",
+      "declaration_count": 1,
+      "scope": "Original root stage dispatcher with the original enumeration wrapper and inner enumerator linked. Only affine multiple and solve map are lower-level affine slots."
+    },
+    {
+      "generated": "extraction/affine-enumerate/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AffineEnumerateGenerated.lean",
+      "sha256": "7984d3dff96ebf8f3a005a84a0030f0c50ecbe98dea7cad4110ee74914d521b5",
+      "raw_sha256": "7d2317640c55722bd5472bbaad51f84a0af5449faaa9f2508af83ce6c42dc481",
+      "checker": "extraction/affine-enumerate/project.py",
+      "declaration_count": 7,
+      "scope": "Original affine enumeration entry and all three loops under the scoped checked Continue normalization.",
+      "translator_variant": "checked-affine-outer-continue-v1"
+    },
+    {
+      "generated": "extraction/affine-selector/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AffineSelectorGenerated.lean",
+      "sha256": "d1e9ca9246b61856b27d55cafff6d492861029e65fce6633502aa5a494db03f3",
+      "raw_sha256": "2cb5c3b780f0ad89bd6797f507b7adfdb903ea0efb8a66ee3ac52f65a960e256",
+      "checker": "extraction/affine-selector/project.py",
+      "declaration_count": 1,
+      "scope": "Original enumeration selector with the byte-identical square-products helper in the stock root setup projection."
+    },
+    {
+      "generated": "extraction/avx-multiply-linear/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxMultiplyLinearGenerated.lean",
+      "sha256": "8f8180be98885dc58012cc6ac8634e901b4032c2f775538ba3ba3fb326a0820d",
+      "raw_sha256": "a986c38e63f0ba6186f0fc3e5ac9db188516b8e6bcf1decfc4cad2a13800f915",
+      "checker": "extraction/avx-multiply-linear/project.py",
+      "declaration_count": 3,
+      "scope": "Original AVX-512 linear update and descending loop with exact masked load, store and multiply bindings."
+    },
+    {
+      "generated": "extraction/root-prepare-affine/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootAffinePreparationGenerated.lean",
+      "sha256": "6d12c2d57f56cbf474bdda59d13a3193b6756eeec0f9b8f5b76a88ec72548169",
+      "raw_sha256": "04ecd15e87bfd5393b3e22f7fe6854cdafd79171db15e70c211738ee2a394566",
+      "checker": "extraction/root-prepare-affine/project.py",
+      "declaration_count": 4,
+      "scope": "Original affine preparation with the original subspace table, selector and GF64 solve map bound."
+    },
+    {
+      "generated": "extraction/affine-solve-map/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AffineSolveMapGenerated.lean",
+      "sha256": "f5fadc2c9c845715cc437f81d52d2294a5a3de6cf5dd84d4cc214449f74fcf53",
+      "raw_sha256": "6a9eb3243563ce128ae56d23bfb11a39f74cf6f4acda41817f59e673cb7a0d53",
+      "checker": "extraction/affine-solve-map/project.py",
+      "declaration_count": 26,
+      "scope": "Stock checked original GF64 solve map, affine Frobenius table constructor and scalar column square."
+    },
+    {
+      "generated": "extraction/avx-horner/kernel/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxHornerGenerated.lean",
+      "sha256": "726aab57b5ec5c8d30df6de975b039d970fd9d90cdf9f8b88d9919a011570b53",
+      "raw_sha256": "3ebe6cb2593e6c292c58dc047ca24719f0dec2520c40d6e046b934e4bdfc4c83",
+      "checker": "extraction/avx-horner/project.py",
+      "declaration_count": 7,
+      "scope": "Exact original AVX Horner kernel and both wrappers. The inner kernel uses the reviewed checked ended-shared variant. Both wrappers were extracted by stock Aeneas.",
+      "translator_variant": "checked-ended-shared-scalar-v1"
+    },
+    {
+      "generated": "extraction/affine-multiple/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AffineMultipleGenerated.lean",
+      "sha256": "5584b6df5b9a3a135b9ad79b33bb27f68647e95ad32123f866a83b5110ba868d",
+      "raw_sha256": "c016c3f963dbe2708027b8e039a0c7590191864a6bcd17468e89e76fca38b7cc",
+      "checker": "extraction/affine-multiple/project.py",
+      "declaration_count": 9,
+      "scope": "Exact original affine multiple wrapper and all four source loops under the scoped checked row and witness Zip cleanup.",
+      "translator_variant": "checked-affine-multiple-zip-ends-v1"
+    },
+    {
+      "generated": "extraction/avx-encode-18/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxEncode18Generated.lean",
+      "sha256": "609aed937110c817b258cd614e9e2ce723fed265766d3155e096670f95fae800",
+      "raw_sha256": "abc37047ccc494592c4afab789b12fcf5c5301432c1dc5d03d2dc3a8fc368421",
+      "checker": "extraction/avx-encode-18/project.py",
+      "declaration_count": 2,
+      "scope": "Original stock capacity-18 encoder and odd-power register packer. Original register arithmetic bound, with explicit single-base table and masked-store models."
+    },
+    {
+      "generated": "extraction/avx-single-bases/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxSingleBasesGenerated.lean",
+      "sha256": "fb78fd90aecd8bf0ecf2d8a077412f5805e87a4e8e1e8c4105abcd36600acd21",
+      "raw_sha256": "f6e410b417e0f9c12d7fa9941545d0dff941220957279c3f591ddf1ebd407797",
+      "checker": "extraction/avx-single-bases/project.py",
+      "declaration_count": 2,
+      "scope": "Original stock insertion-table lookup, with exact target layout and explicit static-table value premise."
+    },
+    {
+      "generated": "extraction/avx-insertion-bases/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxInsertionBasesGenerated.lean",
+      "sha256": "bfdd540ab42cf77f641963aa99514324099031c4400a31491eeb583b8aff3f71",
+      "raw_sha256": "263b8f81e3e589fff3192220c03c9534aa7089f0098cba654e86992522745fb2",
+      "checker": "extraction/avx-insertion-bases/project.py",
+      "declaration_count": 7,
+      "scope": "Original stock static insertion-base generator, with all three nested loops and the original Frobenius square bound."
+    },
+    {
+      "generated": "extraction/avx-insertion-bases-static/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxInsertionBasesStaticGenerated.lean",
+      "sha256": "2e18c1cc905343dabf017540bc76c5688845e752556190723b834894bc0584fe",
+      "raw_sha256": "e803915a0b577be92377c0c58f5eb438a1cb298c53631f592a31b2ee338f0ce3",
+      "checker": "extraction/avx-insertion-bases-static/project.py",
+      "declaration_count": 1,
+      "scope": "Original immutable INSERT_BASES initializer, retaining the exact original call to the stock table generator."
+    },
+    {
+      "generated": "extraction/native-deflate/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/NativeDeflateGenerated.lean",
+      "sha256": "babaf01984c12d73517a5c76f1618fd532c311b4c9c34ce9818a84d25652ee5b",
+      "raw_sha256": "e41d85f34becf7435c75136c0bf6b4eff9a8b1f14c806ef34cfea6a2e00dd1b9",
+      "checker": "extraction/native-deflate/project.py",
+      "declaration_count": 5,
+      "scope": "Original reverse synthetic-division loop, outer candidate loop, and deflation entry with exact loan-ending retry.",
+      "translator_variant": "checked-native-deflate-loan-retry-v1"
+    },
+    {
+      "generated": "extraction/avx-insert/insert18/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxInsert18Generated.lean",
+      "sha256": "a153bbd8366845259535a8ebb82fc23cec00659a09727021beb8d38492308e0f",
+      "raw_sha256": "64d7512b1c789552557d98725ce30bb2dc886884f86dea82cea1fa868f6f1f7a",
+      "checker": "extraction/avx-insert/project.py",
+      "checker_args": [
+        "--entry",
+        "insert18"
+      ],
+      "declaration_count": 1,
+      "scope": "Exact native capacity-18 single-ID XOR insertion, word and suffix preservation, under admitted masked loads and stores."
+    },
+    {
+      "generated": "extraction/avx-insert/horizontal/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxHorizontalXorGenerated.lean",
+      "sha256": "0578f61b1ccb42ef63ad5cc48cf634808dddc8731fac3d02bde921221bcd7bc9",
+      "raw_sha256": "5d644bb10295a54e4f40a184805b4a579f6c10e8c0e8043921ca7b938644275a",
+      "checker": "extraction/avx-insert/project.py",
+      "checker_args": [
+        "--entry",
+        "horizontal"
+      ],
+      "declaration_count": 1,
+      "scope": "Exact original shuffle and extraction path gives the XOR of all eight register lanes."
+    },
+    {
+      "generated": "extraction/avx-insert/free-dispatch/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxInsertDispatchGenerated.lean",
+      "sha256": "66704356b73df6580c69d7220489e68704598b82fcc3af98ccbd0a89cb16e1d7",
+      "raw_sha256": "cf8ac6e1e39e358276a6584b4a15a3967b4492817f3edefc171d1a99cf9eda3f",
+      "checker": "extraction/avx-insert/project.py",
+      "checker_args": [
+        "--entry",
+        "dispatch"
+      ],
+      "declaration_count": 10,
+      "scope": "Exact original GF64 public wrapper on both empty inputs and original free dispatch on nonempty inputs, with explicit leaf slots."
+    },
+    {
+      "generated": "extraction/candidates/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CandidateInnerGenerated.lean",
+      "sha256": "20fb4272ee444b12b9f87aab1db017b7dc5a61c02fc3077370ea4cde415ff1b6",
+      "raw_sha256": "de5ed3d1c89bf45d995de0824ab40f7206792bd7297dd870c2629cc82cb7e461",
+      "checker": "extraction/candidates/project.py",
+      "checker_args": [
+        "--kind",
+        "inner"
+      ],
+      "declaration_count": 2,
+      "scope": "Original candidate Zip scan, including exact zero count, admitted root writes and early rejection.",
+      "translator_variant": "checked-candidates-nested-return-v1"
+    },
+    {
+      "generated": "extraction/candidates/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CandidateOuterGenerated.lean",
+      "sha256": "50dcf4c98b6940501e6e40b8828bd8e48c4d9434a3999ef3380ca032dcad2745",
+      "raw_sha256": "de5ed3d1c89bf45d995de0824ab40f7206792bd7297dd870c2629cc82cb7e461",
+      "checker": "extraction/candidates/project.py",
+      "checker_args": [
+        "--kind",
+        "outer"
+      ],
+      "declaration_count": 3,
+      "scope": "Original candidate chunk loop and entry through exact Dense evaluation and original charge.",
+      "translator_variant": "checked-candidates-nested-return-v1"
+    },
+    {
+      "generated": "extraction/candidates/dense-eval/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CandidateDenseEvalGenerated.lean",
+      "sha256": "b65efa68a92703c47589ff50f0e9531959d2036654d76de77dc05dc949e5bd34",
+      "raw_sha256": "0e069920da3d4289674076d8af74f6464569705847f1d46c5b79a4346b6eebf0",
+      "checker": "extraction/candidates/project.py",
+      "checker_args": [
+        "--kind",
+        "dense"
+      ],
+      "declaration_count": 1,
+      "scope": "Original stock Dense evaluation delegates exactly to the supplied Horner slot."
+    },
+    {
+      "generated": "extraction/native-driver/execute/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/ExecutionDriverGenerated.lean",
+      "sha256": "055859eb1ffaefb6a5519ac02f84a4e5ee06060bf9d2e0e4447139834b24025c",
+      "raw_sha256": "49158a6b74d70209284d490d9a0ced4ff52f98cb5dd77dbc384806f1b63eeb8e",
+      "checker": "extraction/native-driver/project.py",
+      "declaration_count": 5,
+      "scope": "Three checked stock original driver bodies with original stage callees bound and explicit canonicalization slot."
+    },
+    {
+      "generated": "extraction/candidate-row/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CandidateRowGenerated.lean",
+      "sha256": "00f5e5c750b7095d87033eb1811e80492b97a6b326b68b48fc081fc3440a154e",
+      "raw_sha256": "b88864bf41e03e1bfc9f673d845653f05181b88adbf1508a461439821c0533d2",
+      "checker": "extraction/candidate-row/project.py",
+      "declaration_count": 1,
+      "scope": "Original stock candidate row offset pair and bounded packed slice."
+    },
+    {
+      "generated": "extraction/completed-result/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CompletedResultGenerated.lean",
+      "sha256": "7c6ec0a2c56a0ff88eae2d51d5e6d1560b4e99ec7f5af8969b5c5492895b16aa",
+      "raw_sha256": "ed2942f11ed9521dcb98a3252b66bff8863de6a60d94bd9648a65462da502469",
+      "checker": "extraction/completed-result/project.py",
+      "declaration_count": 2,
+      "scope": "Original checked completed_result and RowResult type, with exact returned shared roots slice.",
+      "translator_variant": "checked-completed-result-frozen-shared-v1"
+    },
+    {
+      "generated": "extraction/native-finish/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/FinishGenerated.lean",
+      "sha256": "8990d00ac1a73cb613f727d7221dd6158f0ad2db49cd13b60007714c0b25971a",
+      "raw_sha256": "c64f8a5741fb3879c03eeaca9b6aa8321f529fa9796ace98edd464d1986a0e60",
+      "checker": "extraction/native-finish/project.py",
+      "declaration_count": 3,
+      "scope": "Original finish loop retains terminal residual and returns the shared result borrow with ordered workspace writebacks.",
+      "translator_variant": "checked-finish-return-boundary-v1"
+    },
+    {
+      "generated": "extraction/canonicalize/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CanonicalizeGenerated.lean",
+      "sha256": "bbd3ad2702570ec63cb096472f3926b5fc8016a9a878f0d7acb0e4ba3bb6037b",
+      "raw_sha256": "716bb06cc8681c3d43cd53d435a16f5e5e290426af638cbb32eb77365e5f9671",
+      "checker": "extraction/canonicalize/project.py",
+      "declaration_count": 11,
+      "scope": "Original canonicalization capture with checked metadata read and exact length-two slice-pattern lowering.",
+      "translator_variant": "checked-canonicalize-slice-pattern-v1"
+    },
+    {
+      "generated": "extraction/candidate-normalize/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CandidateCompactGenerated.lean",
+      "sha256": "d259a42979c247fb9f5691e7a9e9401d8cd9f2e2dfdff54742386ec557353d75",
+      "raw_sha256": "4a61e533b878876bf78057c02ddbd540e2f8d9b2ce356edc3a450fc4fb3c7011",
+      "checker": "extraction/candidate-normalize/project.py",
+      "checker_args": [
+        "--kind",
+        "compact"
+      ],
+      "declaration_count": 7,
+      "scope": "Stock original bucket routing, distinct nonzero compaction and cumulative offsets."
+    },
+    {
+      "generated": "extraction/candidate-normalize/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/CandidateMergeGenerated.lean",
+      "sha256": "12a1721defe3ba454a9ae3ee49e799492b054f8601fc881a8ebb35b21f956f3a",
+      "raw_sha256": "4a61e533b878876bf78057c02ddbd540e2f8d9b2ce356edc3a450fc4fb3c7011",
+      "checker": "extraction/candidate-normalize/project.py",
+      "checker_args": [
+        "--kind",
+        "merge"
+      ],
+      "declaration_count": 9,
+      "scope": "Stock original shared normalization entry and stable merge loop nest."
+    },
+    {
+      "generated": "extraction/avx-linear-entry/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxLinearEntryGenerated.lean",
+      "sha256": "b46278669a8e5508e4d265faad26d7195dd9d5b9ff7e6f4ba665d218f2c70ab8",
+      "raw_sha256": "30c73fef06ddd94f415779ed736d24532d82b0f32ebc3eb98d2fe503408c2487",
+      "checker": "extraction/avx-linear-entry/project.py",
+      "declaration_count": 2,
+      "scope": "Original checked AVX locator coefficient update dispatch, with exact default and vector callees."
+    },
+    {
+      "generated": "extraction/avx-recurrence/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxRecurrenceGenerated.lean",
+      "sha256": "9f3dd711ec53495ae359d88de2929d25f02de9d6be81a375952504c3bdbfd001",
+      "raw_sha256": "0fccbf832785088e3b50b25fe875984104564233cb31007197738f5cd0f21bf3",
+      "checker": "extraction/avx-recurrence/project.py",
+      "declaration_count": 5,
+      "scope": "Original AVX packed lag loop, outer blocks, masked comparison and exact early rejection."
+    },
+    {
+      "generated": "extraction/avx-tile/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxTileGenerated.lean",
+      "sha256": "d5d9c84f8ace5e4e39791df0409b8d04227fa786822a498f42b98b8b30515fea",
+      "raw_sha256": "bbe8a001870d9ed30f185f4178a5e03291b9a0c24ff23c546fadff48f43fea11",
+      "checker": "extraction/avx-tile/project.py",
+      "declaration_count": 12,
+      "scope": "Original checked AVX tile, both writeback chains, copied register fold and every row.",
+      "translator_variant": "checked-avx-tile-history-v1"
+    },
+    {
+      "generated": "extraction/avx-recurrence-entry/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxRecurrenceEntryGenerated.lean",
+      "sha256": "a1499b90fe2567459ca2788b1f9dabcfb671db068a7ce325f5006370bfbad16c",
+      "raw_sha256": "1ffdc96045cdac0c81f05bbada02a6efee73b6881ed98f88327de5b16986b957",
+      "checker": "extraction/avx-recurrence-entry/project.py",
+      "declaration_count": 1,
+      "scope": "Original AVX continuation trait dispatch and exact Portable default fallback."
+    },
+    {
+      "generated": "extraction/candidate-normalize-rows/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RowLocalGenerated.lean",
+      "sha256": "20468236c7990ff5a78c5afd139c3e85a77fb2fdd8a1d6b2e9b6869c456a74a6",
+      "raw_sha256": "32cfbe7fad891270458cd519695697472c4f6038ce8d20fbcdbc806938c8a3cf",
+      "checker": "extraction/candidate-normalize-rows/project.py",
+      "declaration_count": 13,
+      "scope": "Original row-local count, copy, sort, compaction, cumulative offsets and exact packed row views.",
+      "translator_variant": "checked-candidate-normalize-rows-v1"
+    },
+    {
+      "generated": "extraction/avx-scalar-delegates/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxScalarDelegatesGenerated.lean",
+      "sha256": "e5a38ea5df289c3e3fb68d49879e80356bf9097f369e0a4fc25e87da704c4008",
+      "raw_sha256": "0bc7a98d673d5abaeab54eccc1148e4b56c74a55e5d3fd7bc476f1caae954552",
+      "checker": "extraction/avx-scalar-delegates/project.py",
+      "declaration_count": 10,
+      "scope": "Ten original stock checked AVX and PCLMUL scalar delegate bodies."
+    },
+    {
+      "generated": "extraction/row-configuration/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RowConfigurationGenerated.lean",
+      "sha256": "f485da026f5b19a4473a6f5015eaeb8dfeed4ddd9aea3a5230a2233e24d5c4fa",
+      "raw_sha256": "803890b2f7a3b6c87bdd64e75ddf18d340c926bdee9f43760bc850e3896aafd9",
+      "checker": "extraction/row-configuration/project.py",
+      "declaration_count": 8,
+      "scope": "Original row begin, reset, configuration and exact degree-probe fallback."
+    },
+    {
+      "generated": "extraction/publication-frame/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PublicationFrameGenerated.lean",
+      "sha256": "42a201cbb364ee69bcb84824c897123e4b97ce26a6705d1f5634359d212b807d",
+      "raw_sha256": "3fdb9756cc2ccebc58bc5536d29e46921bb4fe9646575c9d9b96fe026d2217df",
+      "checker": "extraction/publication-frame/project.py",
+      "declaration_count": 13,
+      "scope": "Original result arena initialization, sticky error and bounded report lending."
+    },
+    {
+      "generated": "extraction/avx-slice-kernel/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxSliceKernelGenerated.lean",
+      "sha256": "f15095f5796769df16f5bbc26128e77f67dc4f1948b3aa921e1982ca57f6e041",
+      "raw_sha256": "de438394f3ff4818036b6dc2c927e648983db5902826269e8aedd873f60a87db",
+      "checker": "extraction/avx-slice-kernel/project.py",
+      "declaration_count": 7,
+      "scope": "Original single-block updates and AVX scale/square slice loops with explicit bounded load/store laws."
+    },
+    {
+      "generated": "extraction/avx-slice-entry/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxSliceEntryGenerated.lean",
+      "sha256": "2c6373504f784b705af5adf8c6abc723746a0e210b7e70e0720b19cda476aa1e",
+      "raw_sha256": "06b082ea80a145fe0022986622949c112ff17e6b1efe377e94a5213f9c1fa290",
+      "checker": "extraction/avx-slice-entry/project.py",
+      "declaration_count": 4,
+      "scope": "Original free and trait scale-xor and square-slice entry bodies."
+    },
+    {
+      "generated": "extraction/avx-sparse-insert/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxSparseInsertGenerated.lean",
+      "sha256": "f13e37dfd91e4bccb928eef04a612fcf7866b1f72d9fb272b5d9bb5c884d458d",
+      "raw_sha256": "dc5c9abef7442af1a823cb26a404b6a83402350ec86a97c02a83fd4a024cacba",
+      "checker": "extraction/avx-sparse-insert/project.py",
+      "declaration_count": 3,
+      "scope": "Original sparse repeat insertion in exact input order."
+    },
+    {
+      "generated": "extraction/pclmul-insert/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/X86PclmulInsertGenerated.lean",
+      "sha256": "3e154f42a6b5b90c47192c49af7b42dc589331fe88cc9c9c1bc0dbdd6d271689",
+      "raw_sha256": "58f95ae2cdbdbc511316d8244e3ad52c27a3923d8e86ae05668408e331ebe0d5",
+      "checker": "extraction/pclmul-insert/project.py",
+      "declaration_count": 6,
+      "scope": "Original PCLMUL seed inner and outer loops and exact trait entry."
+    },
+    {
+      "generated": "extraction/root-work-budget/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RootWorkBudgetGenerated.lean",
+      "sha256": "a2066ab753bb2879f0bc24cc63b2c9082ecbd0b0037a193cb1579a41e3bf2222",
+      "raw_sha256": "01914c65130d040f4a1000e53020a3131d023bba9739e49440edc6316135b3a4",
+      "checker": "extraction/root-work-budget/project.py",
+      "declaration_count": 1,
+      "scope": "Original checked root schedule and proper split tree budget."
+    },
+    {
+      "generated": "extraction/row-work-budget-v1/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RowWorkBudgetGenerated.lean",
+      "sha256": "82614189a63339bd31de0de5ba36e9849cd09cc582ec0765fc3633f56ce11178",
+      "raw_sha256": "d7c2c37fb260538b2c172e315aacd2f1ca51bc9b4321bb132451be35cc46c609",
+      "checker": "extraction/row-work-budget-v1/project.py",
+      "declaration_count": 1,
+      "scope": "Original checked V1 row envelope with the explicit typed ordered sum-cost slot."
+    },
+    {
+      "generated": "extraction/row-dispatch/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RowDispatchGenerated.lean",
+      "sha256": "de60227771f7750d386c272b845c5ca1e7717daa74267f313e0130141553755b",
+      "raw_sha256": "62dcdfc4e66f5fd620dac9514ac26b78bf7ac92e1ecbf49278c58c398f5a784f",
+      "checker": "extraction/row-dispatch/project.py",
+      "declaration_count": 14,
+      "scope": "Original backend-tagged row driver and tiny-probe control bodies."
+    },
+    {
+      "generated": "extraction/default-wire-difference/default/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DefaultWireDifferenceGenerated.lean",
+      "sha256": "b113f33f3cf0bc938c19c89bbc33f1bb7601d70615ed0ae7c96be8dc364ff133",
+      "raw_sha256": "0fbabac7637b044f6b400eb8f5a9908024d3b2f38b683118abe6ecb0c073a739",
+      "checker": "extraction/default-wire-difference/project.py",
+      "declaration_count": 13,
+      "scope": "Original default wire difference including exact bytes, bounds, guarded comparison and ordered nested iterator writes."
+    },
+    {
+      "generated": "extraction/publication-write/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/PublicationWriteGenerated.lean",
+      "sha256": "f53dd46ec6bd2f53e3429ea0dbaff7f91f06b33aa957aca075b831f4c910dab8",
+      "raw_sha256": "eaa265277ccf2d24946d463f800a38d6327b703a1ca5c3fcb72b9ebbfc141a1b",
+      "checker": "extraction/publication-write/project.py",
+      "declaration_count": 10,
+      "scope": "Original publication row write and preserved result storage callback.",
+      "translator_variant": "checked-publication-write-branches-v1"
+    },
+    {
+      "generated": "extraction/decode-report/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DecodeReportGenerated.lean",
+      "sha256": "28f4fbc2573386934dca334f948efa4cd9d2efa8865db673e0795ae9d8770218",
+      "raw_sha256": "2da248903638770ce232e3661728b16431a0bc4741efd03c6c5ab7c63f4de656",
+      "checker": "extraction/decode-report/project.py",
+      "declaration_count": 2,
+      "scope": "Original stock-checked public report count and outcome."
+    },
+    {
+      "generated": "extraction/public-lifecycle/probe/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/TinyProbeGenerated.lean",
+      "sha256": "570f90f3baa9abd6d8c0735ea25e7c6e809e49abf518ebedd4384b87e99480a5",
+      "raw_sha256": "dba7b0e8301534b34901515c5ec6f1d4c9c078debc65ee960196c81a8122417f",
+      "checker": "extraction/public-lifecycle/project.py",
+      "declaration_count": 14,
+      "scope": "Original probe work, charged branches, and checked backend wrapper."
+    },
+    {
+      "generated": "extraction/public-lifecycle/completed/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/DispatchCompletedGenerated.lean",
+      "sha256": "8f0ca7abd890eb7e75ce09f5f6c64389f5bb5f569c77d829052738eca258b76b",
+      "raw_sha256": "096778048a93fc27fb1285a6f2e52957306543548e8c9ee679d752aab6244daf",
+      "checker": "extraction/public-lifecycle/project.py",
+      "declaration_count": 1,
+      "scope": "Original checked public completed-result branch and exact probe roots borrow.",
+      "translator_variant": "checked-dispatch-completed-frozen-shared-v1",
+      "checker_args": [
+        "--entry",
+        "completed"
+      ]
+    },
+    {
+      "generated": "extraction/sum-costs/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/SumCostsGenerated.lean",
+      "sha256": "5e1cd0ef8651f5682b80ea0f12785a1cf71aff360dc4727fcef12b67a3e19111",
+      "raw_sha256": "9536a3955e53528b9c8d345f05a6b430123b95bb9d6fc14d685ef550b3d8d524",
+      "checker": "extraction/sum-costs/project.py",
+      "declaration_count": 5,
+      "scope": "Original sum caller and closure with a typed shared-slice std fold slot.",
+      "translator_variant": "checked-sum-costs-try-fold-v1"
+    },
+    {
+      "generated": "extraction/row-work-budget-v1/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RowWorkBudgetV2Generated.lean",
+      "sha256": "bce075701945ff5966f2acc7fc3ecbc18ff4eb0097aa1057a31843116171781f",
+      "raw_sha256": "d7c2c37fb260538b2c172e315aacd2f1ca51bc9b4321bb132451be35cc46c609",
+      "checker": "extraction/row-work-budget-v2/project.py",
+      "declaration_count": 1,
+      "scope": "Original V2 row wrapper with exact explicit forwarding of the V1 sum callback.",
+      "explicit_callee_parameters": [
+        "sumCosts"
+      ]
+    },
+    {
+      "generated": "extraction/shape-permission/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/ShapePermissionGenerated.lean",
+      "sha256": "b5e3195bed31973068c424bfeb580406a7504a254f52551f6b36bb4bd29bdd13",
+      "raw_sha256": "2f5dd760e5ce0e2a43dcb1529642ccce9e4f541f9741a970d672c0f9ff1854c1",
+      "checker": "extraction/shape-permission/project.py",
+      "declaration_count": 2,
+      "scope": "Original stock-checked shape permission and exact shared bucket count."
+    },
+    {
+      "generated": "extraction/avx-encode-entry/encode/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxEncodeEntryGenerated.lean",
+      "sha256": "4abd68d41739e79961acffa8cdc4118418714c03c33c51df41a0e52c4169b242",
+      "raw_sha256": "4be01e703bacd3e785f9aee162b61645bffe6d8db454aa7ee243a1e87c0f6527",
+      "checker": "extraction/avx-encode-entry/project.py",
+      "declaration_count": 7,
+      "scope": "Original AVX encoder and every original singleton fold loop."
+    },
+    {
+      "generated": "extraction/avx-encode-entry/insert-single-broadcast/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/AvxSingletonGenerated.lean",
+      "sha256": "332e8f2b136fc122fd8e90fb96a2bd416c282273774af91d345d296c3ee42bdb",
+      "raw_sha256": "e71a439c0691aacb322a7335ea2a15ece631a30586eea58a08641706e7d30611",
+      "checker": "extraction/avx-encode-entry/project.py",
+      "declaration_count": 3,
+      "scope": "Original width-32 and width-72/89 updates and native broadcast.",
+      "checker_args": [
+        "--entry",
+        "singleton"
+      ]
+    },
+    {
+      "generated": "extraction/frozen-shape/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/FrozenShapeGenerated.lean",
+      "sha256": "828ec87463c23b3906b1ec790108340933918b8fa9e1dadb880351115ad09afd",
+      "raw_sha256": "a2b25d502437c3f9f6f8136dff3acce5c46b0b5ca1a42d8c10765e07a4d0e1d3",
+      "checker": "extraction/frozen-shape/project.py",
+      "declaration_count": 1,
+      "scope": "Original FrozenSketch accessor with exact immutable shared payload."
+    },
+    {
+      "generated": "extraction/request-permission/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RequestPermissionGenerated.lean",
+      "sha256": "c7cab7b51a1e205aca3e8d7bd1975f7b5c52f9735fea4a7e6666adeef90831ac",
+      "raw_sha256": "c252587cc3f06e4a23f277f5173ed2d665c0abc99d26db77c7d9587b0aa0ced1",
+      "checker": "extraction/request-permission/project.py",
+      "declaration_count": 2,
+      "scope": "Both original request permission methods with exact shape, bucket, and slice boundaries.",
+      "translator_variant": "checked-request-selective-lift-v1"
+    },
+    {
+      "generated": "extraction/row-work-budget-v1/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/RowWorkBudgetV3Generated.lean",
+      "sha256": "ccce15fd71024dfda539c8c8cbf6c6d781781d194dbf2f5046bbd8a414d7ffde",
+      "raw_sha256": "d7c2c37fb260538b2c172e315aacd2f1ca51bc9b4321bb132451be35cc46c609",
+      "checker": "extraction/row-work-budget-v3/project.py",
+      "declaration_count": 1,
+      "explicit_callee_parameters": [
+        "sumCosts"
+      ],
+      "scope": "Exact original V3 row wrapper with explicit forwarding of the V2 sum callback."
+    },
+    {
+      "generated": "extraction/row-work-budget-v1/Arithmetic/Funs.lean",
+      "bridge_copy": "bridge/Arithmetic/MaxAffineDegreeGenerated.lean",
+      "sha256": "0b6d1e7c7baccbbd17dc051831ec530a0b04f7e3d3ff3f20be4e7783ad0ade03",
+      "raw_sha256": "d7c2c37fb260538b2c172e315aacd2f1ca51bc9b4321bb132451be35cc46c609",
+      "checker": "extraction/max-affine-degree/project.py",
+      "declaration_count": 3,
+      "scope": "Exact original MAX_PREFERRED_DEGREE initializer and both emitted loop declarations."
+    }
+  ],
+  "reviewed_translator_variants": [
+    {
+      "id": "checked-frozen-capture-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "tooling/aeneas-loop-capture/loop-capture.patch",
+      "patch_sha256": "15ecb6d84c03d7ad68a384f10b153a1538474d813bacaeb27d4e79156cfbf111",
+      "receipt": "tooling/aeneas-loop-capture/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Frozen immutable shared-only acyclic capture graphs ending in opaque type-variable leaves, with frozen-context equality checks enabled; loop signature generic retention. Original collapse guard unchanged; not a formal compiler soundness proof."
+    },
+    {
+      "id": "checked-shared-expansion-owner-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "tooling/aeneas-dense-prefix/owner-guard.patch",
+      "patch_sha256": "8d3b307160f0309621cc3971b01cf1a18b8d78b09d1631ebee6da30e9b442150",
+      "receipt": "tooling/aeneas-dense-prefix/receipt.json",
+      "mandatory_checks": true,
+      "scope": "In checked shared symbolic expansion only, skip the empty-loan requirement on unrelated owners while still traversing their children. Matching, non-shared and unchecked paths retain the original guard. No formal translation-soundness claim."
+    },
+    {
+      "id": "checked-shared-loop-erasure-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "tooling/aeneas-dense-mul/shared-loop-erasure.patch",
+      "patch_sha256": "05ea19806c2e3b3b1709661f8cd662caaf275c24dfb0460c352a7182d8fef9d3",
+      "receipt": "tooling/aeneas-dense-mul/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Cumulative shared-owner patch and checked erasure of an already-ended level-one Loop only when its abstraction ID is ignored, its continuation is absent, the continuation expression is the unit self call, and its owned-region nested projections carry no mutable state. Complete Dense multiplication extraction, with only the final loop proved."
+    },
+    {
+      "id": "checked-ended-shared-scalar-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "tooling/aeneas-horner-match/ended-shared-scalar.patch",
+      "patch_sha256": "b0d2bd6b087d0d376351469e20f97a150033a57e2a7b48aedf9e966f56f6562c",
+      "receipt": "tooling/aeneas-horner-match/receipt.json",
+      "mandatory_checks": true,
+      "scope": "In the checked context matcher only, match two already ended shared loans carrying identical typed scalar metadata and either both absent ignored children or exactly repeated scalar child payloads."
+    },
+    {
+      "id": "checked-ended-projector-leaf-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "tooling/aeneas-ended-projector/ended-projector-leaf.patch",
+      "patch_sha256": "087d4f3aec35bdeeb3d3d6ddef5a685d60c7765b11ffd05382eacaeefed0d90e",
+      "receipt": "tooling/aeneas-ended-projector/receipt.json",
+      "mandatory_checks": true,
+      "scope": "In checked context matching, preserve identical unmarked ended projector leaves with equal types, no consumed or borrowed descendants and the same symbolic ID."
+    },
+    {
+      "id": "checked-fixedpoint-scalar-array-loan-retry-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/quartic/translator/checked-array-loan-retry.patch",
+      "patch_sha256": "43068339bcc31cdafb233423f36f5cee17578b427c501d0df5786666231f16de",
+      "receipt": "extraction/quartic/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Checked continuation-free loop fixed-point list join only. Mixed concrete shared/mutable scalar arrays with matching borrow-free shared payload cause a stock retry ending the shared loan only. Context matching, collapse, and synthesis joins keep old mode. The original checked path still synthesizes and validates both sides."
+    },
+    {
+      "id": "checked-fixedpoint-nested-scalar-slice-retry-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/deg34-guard/translator/checked-nested-slice-loan-retry.patch",
+      "patch_sha256": "7c8426703fb5220a89039735f8f92677e14b7b93efa344851deaa5232bbf6fae",
+      "receipt": "extraction/deg34-guard/receipt.json",
+      "mandatory_checks": true,
+      "scope": "The existing checked continuation-free loop fixedpoint list matcher may retry a mixed concrete loan only for an immediate child of the same mutable borrow ID, exact U64 slice type and same typed symbolic shared payload. It requests ending the shared loan through stock machinery. Other modes retain the original behavior."
+    },
+    {
+      "id": "checked-bm-locator-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/bm-locator/checked-bm-locator.patch",
+      "patch_sha256": "b263b8addc49358cd0bd444828fdec8c77d70a00e6eb231b6605e4ee18d9b353",
+      "receipt": "extraction/bm-locator/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Checked explicit BM flag and exact source scope. Stock shared/mutable ending and typed loop/mirror writebacks preserved for the original locator."
+    },
+    {
+      "id": "checked-dense-reducer-option-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/dense-reducer-table/checked-dense-reducer-option.patch",
+      "patch_sha256": "81907bda4f607f3e8fb81875482012a151c9f6ec1488873f75b450e9596bfbb1",
+      "receipt": "extraction/dense-reducer-table/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact checked Dense reducer spans and identical marker-free Option<&u64> shared loan and empty ignored projector. Stock mapping and mutable writebacks retained."
+    },
+    {
+      "id": "checked-dense-reducer-square-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/dense-reducer-square/checked-dense-reducer-square.patch",
+      "patch_sha256": "fa5418ecb9e225609ff7362bdc64647ffc346aab0fb142f9ae70c39b5aca7cc9",
+      "receipt": "extraction/dense-reducer-square/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact cumulative Option join matcher, shared expansion owner guard, and shared-only level-1 erasure. Original mutable Zip writebacks retained."
+    },
+    {
+      "id": "checked-dense-div-rem-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/dense-div-rem/checked-dense-div-rem.patch",
+      "patch_sha256": "fbd95eba7f138b61635809eca867eca417b782b4f8701b39ca4c8e9038e4069c",
+      "receipt": "extraction/dense-div-rem/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact original Dense division LLBC. Checked Zip region and raw iterator ownership preflight, stock cleanup, and terminal seed by matching symbolic loan identity."
+    },
+    {
+      "id": "checked-affine-outer-continue-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/affine-enumerate/checked-affine-outer-continue.patch",
+      "patch_sha256": "6481beb982e57655e7ee2c888daf823c9b5286f66af85f9ec56dac90e545aa4f",
+      "receipt": "extraction/affine-enumerate/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact checked affine enumerator span and loop shape. Nonlocal continuation, error cleanup, and unobservable result initialization are scoped to the original capture."
+    },
+    {
+      "id": "checked-affine-multiple-zip-ends-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/affine-multiple/checked-affine-multiple-zip-ends.patch",
+      "patch_sha256": "ee10ff36dfc11a6fe78b6789b775e4afbb4b2a3171458d37a599a9eae111e9c9",
+      "receipt": "extraction/affine-multiple/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact checked affine multiple capture. At the original iterator storage deaths, trace matching terminal borrowers and both Zip loan owners. Preserve ended projection history and stock borrow checks."
+    },
+    {
+      "id": "checked-native-deflate-loan-retry-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/native-deflate/checked-native-deflate-loan-retry.patch",
+      "patch_sha256": "0e6309acb7a82f7012d4bec0fe5c5c5a7ed58f9d177077f0927eaef5e3ce37b3",
+      "receipt": "extraction/native-deflate/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact original deflate return join. End the sole roots iterator shared loan using the existing checked match retry."
+    },
+    {
+      "id": "checked-candidates-nested-return-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/candidates/checked-candidates-nested-return.patch",
+      "patch_sha256": "cd1cdc2ca14ef3657fb566dab0f6cf338de15bccd1c7ef81faf421a9cbaf34a5",
+      "receipt": "extraction/candidates/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact original candidate nested return. Keep early error and mutable writeback, and end the original Zip and Chunks iterators before their corresponding joins."
+    },
+    {
+      "id": "checked-completed-result-frozen-shared-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/completed-result/checked-completed-result-frozen-shared.patch",
+      "patch_sha256": "072f57a70e79f9fa4ec42feabeb5cbfdae3c757b0af09ade5a4079a642fb6b60",
+      "receipt": "extraction/completed-result/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact original return-only completed_result switches. Keep the unique frozen shared RowWorkspace input and ordinary self reborrows."
+    },
+    {
+      "id": "checked-finish-return-boundary-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/native-finish/checked-finish-return-boundary.patch",
+      "patch_sha256": "8dff3576cb08a725098b0605e85802752054e98aad35d30c14dd87270f3b32ae",
+      "receipt": "extraction/native-finish/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Original finish loop retains terminal residual and returns the shared result borrow with ordered workspace writebacks."
+    },
+    {
+      "id": "checked-canonicalize-slice-pattern-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/canonicalize/checked-canonicalize-slice.patch",
+      "patch_sha256": "1cb0a6cd754a7385d5e12b30854da83252c3f96b9f509fb2cde93f5bc5a00700",
+      "receipt": "extraction/canonicalize/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Original canonicalization capture with checked metadata read and exact length-two slice-pattern lowering."
+    },
+    {
+      "id": "checked-avx-tile-history-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/avx-tile/checked-avx-tile-history.patch",
+      "patch_sha256": "ad584bbf586616835c3b3c4ec9039d13d55a157f97fb7e99ef31563b44dce06f",
+      "receipt": "extraction/avx-tile/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact original AVX tile, paired mutable initialization and row-loop history with checked distinct callbacks and pinned source guards."
+    },
+    {
+      "id": "checked-candidate-normalize-rows-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/candidate-normalize-rows/checked-candidate-normalize-rows.patch",
+      "patch_sha256": "8b4a40d54ccb6b5ce23ab5fa8863d669a9e22a12043f9c4585f03f062c6518c4",
+      "receipt": "extraction/candidate-normalize-rows/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact original row-local normalize. Preserve frozen shared row owner and isolate the checked unused read-only iterator around scalar compaction."
+    },
+    {
+      "id": "checked-publication-write-branches-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/publication-write/checked-publication-write-branches.patch",
+      "patch_sha256": "d3674c545b1960ff86c0a738254e072085656f1369680eb286173105ccca979c",
+      "receipt": "extraction/publication-write/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Exact original publication write with guarded slice metadata lowering and source-scoped checked branch preservation."
+    },
+    {
+      "id": "checked-dispatch-completed-frozen-shared-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "patch": "extraction/public-lifecycle/completed/checked-dispatch-result.patch",
+      "patch_sha256": "bb8a1b98d1f263072d61379f471bd94e8a774e78d359022aa0aa3a03bf95518c",
+      "receipt": "extraction/public-lifecycle/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Guarded shared workspace join in original DecodeExecution completion, restricted to the original match and probe assertion."
+    },
+    {
+      "id": "checked-sum-costs-try-fold-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "specialization": "extraction/sum-costs/specialize.py",
+      "specialization_sha256": "1b3f7bb84e01d505257a60de60929333463a2636c47aa4cd5a158aeb3c8063e1",
+      "raw_input_sha256": "2be801cb47ed251d5b86d28d8c0b9a06afa6b761ae89ba4e55ee0270b6647d2b",
+      "specialized_input_sha256": "5c97bf7d74f619777524d05d904c12bcca819e5dc5e90f16658bce9a747e0dbf",
+      "receipt": "extraction/sum-costs/receipt.json",
+      "mandatory_checks": true,
+      "scope": "One original shared Slice<Charge> Iterator::try_fold call specialized to a typed std slot with both original borrows and exact original closure."
+    },
+    {
+      "id": "checked-request-selective-lift-v1",
+      "base_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+      "base_source_sha256": "41e7556907d3a134efc33c777035958d56bf1e30f1e988bed2a6dec8cba37def",
+      "patch": "extraction/request-permission/checked-selective-lift.patch",
+      "patch_sha256": "5efdb51e5a14db2e98c1519f9d1159e191b43df2ea1377c7e3c7528ac94f7a3e",
+      "receipt": "extraction/request-permission/receipt.json",
+      "mandatory_checks": true,
+      "scope": "Only the original two request permission methods and frozen accessor with exact selective Deref and SliceIndex lifting."
+    }
+  ],
+  "diagnostic_generated_projections": [
+    {
+      "bridge_copy": "bridge/Arithmetic/X86MaskedMemoryPureGenerated.lean",
+      "sha256": "bee4d3302449bf187171b770c7b8e4ae4da9587fe50c7fec1ae9a3a4cf07d365",
+      "checker": "extraction/masked-memory/project.py",
+      "declaration_count": 2,
+      "native_body_proof_credit": 0,
+      "scope": "Verbatim original pure masked load/store bodies, parameterized by the generated external signatures, used only for the two impossibility theorems."
+    }
+  ],
+  "stateful_llbc_projection": {
+    "checker": "extraction/masked-memory/project_stateful.py",
+    "controls": "extraction/masked-memory/check_stateful_controls.py",
+    "negative_control_count": 11,
+    "program_file": "bridge/BulksketchBridge/X86MaskedMemoryLlbcGenerated.lean",
+    "projection_sha256": "11cbdb61ae188c6f8f31612283bd4899036f6ddf7dbdcac1ec8eea20b6d43cf5",
+    "llbc_sha256": "75e346aaae3ad05558bb5b81ebb732598afef9d5bf1193db227fd2c8f254dfae",
+    "source_sha256": "7a9c29dff254508671aa4122b20644b21a9cfb40f86ba5eaadce02bf680475d4",
+    "programs": {
+      "src/backend/x86_vpclmul512.rs:195:function:bulksketch::backend::x86_vpclmul512::load": "BulksketchBridge.X86MaskedMemory.Llbc.loadProgram",
+      "src/backend/x86_vpclmul512.rs:202:function:bulksketch::backend::x86_vpclmul512::store": "BulksketchBridge.X86MaskedMemory.Llbc.storeProgram"
+    },
+    "scope": "Source-bound typed interpretation of the exact original masked-memory LLBC normal paths. No Aeneas generated-body credit or physical pointer provenance claim."
+  },
+  "reviewed_pclmul_horner_extensions": [
+    {
+      "variant": "checked-ended-shared-scalar-v1",
+      "receipt": "extraction/pclmul-horner/receipt.json"
+    }
+  ],
+  "stateful_llbc_caller_projections": [
+    {
+      "checker": "extraction/avx-xor-assign/project.py",
+      "controls": "extraction/avx-xor-assign/check_controls.py",
+      "negative_control_count": 8,
+      "program_file": "bridge/BulksketchBridge/AvxXorLlbcGenerated.lean",
+      "projection_sha256": "a67d6ce4afb96a41672ff20ec606bedf4f0fd0132368ca8fde5db8d23d38657e",
+      "llbc_sha256": "94f9ce1a5b51d189ffbe1682bbd0043907a90b1ff1624b07f99f46eb36e6ebec",
+      "source_sha256": "7a9c29dff254508671aa4122b20644b21a9cfb40f86ba5eaadce02bf680475d4",
+      "programs": {
+        "src/backend/x86_vpclmul512.rs:364:function:bulksketch::backend::x86_vpclmul512::xor_assign": "BulksketchBridge.AvxXorLlbc.program"
+      },
+      "scope": "Exact original chunked XOR caller with equal lengths, mapped words, writable destination and separated source. Checked normal paths compose original masked LLBC primitives, preserve source bytes and all addresses outside the destination, and write exact XOR including short tails."
+    },
+    {
+      "checker": "extraction/avx-difference/project.py",
+      "controls": "extraction/avx-difference/check_controls.py",
+      "negative_control_count": 9,
+      "program_file": "bridge/BulksketchBridge/X86DifferenceGenerated.lean",
+      "projection_sha256": "4a534fbcd84b08d8afb5110055d8ad2ec61b0b350b6592d185136bdc60839093",
+      "llbc_sha256": "307abe022272d78981fd23fd766ab81dc6e18a017be8b5ef3d6c41112d30c012",
+      "source_sha256": "7a9c29dff254508671aa4122b20644b21a9cfb40f86ba5eaadce02bf680475d4",
+      "programs": {
+        "src/backend/x86_vpclmul512.rs:800:function:bulksketch::backend::x86_vpclmul512::difference": "BulksketchBridge.X86MaskedMemory.Difference.differenceProgram"
+      },
+      "scope": "Exact original AVX difference caller with equal local and destination word counts, exactly eight mapped little-endian remote bytes per word, mapped local words and separated writable destination. The proof covers every full block and short tail, the exact destination XOR, the mismatch bit, and all outside bytes."
+    },
+    {
+      "checker": "extraction/workspace-admission/project.py",
+      "controls": "extraction/workspace-admission/check_controls.py",
+      "negative_control_count": 9,
+      "program_file": "bridge/BulksketchBridge/WorkspaceAdmissionGenerated.lean",
+      "projection_sha256": "49754b7b722a6661a787af75a04504ed7b593335d283ef1c489dff70d894c099",
+      "llbc_sha256": "ccbfd979ca9624af231b6ebfd31e4b05db2fecc5ac632cd3b9e1d556c33572d6",
+      "source_sha256": "93825fcb5054e98e9af060a81da72d4770c29354d79822ccfc949cc55f6e9b23",
+      "programs": {
+        "src/decode/stages.rs:454:function:bulksketch::decode::stages::check_workspace": "BulksketchBridge.WorkspaceAdmission.runOriginal"
+      },
+      "scope": "Exact checked original read-only LLBC workspace admission, including all nine length reads, arithmetic overflow, short circuit rejection, and preservation of the complete workspace."
+    }
+  ],
+  "reviewed_degree_probe_extensions": [
+    {
+      "variant": "checked-fixedpoint-nested-scalar-slice-retry-v1",
+      "receipt": "extraction/degree-probe/receipt.json"
+    }
+  ]
 }

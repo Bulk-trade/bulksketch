@@ -1,0 +1,72 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "2dfcdfcf157d75c3f36dd7fd683d82936f064205",
+  "source_root": "{impl bulksketch::poly::Polynomial for bulksketch::poly::Dense}::xor_coefficient",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "aarch64-apple-darwin",
+  "native_source_edited": false,
+  "llbc_has_errors": false,
+  "llbc_sha256": "d8a0de9469224c18e750bb9f41b255babc165e80787ce518e41cdb338cd79ae5",
+  "generated": [
+    {
+      "path": "extraction/dense-coefficient/xor-coefficient/Arithmetic/Funs.lean",
+      "sha256": "850b5681ff4ffbc1f256f72645f0f7681a6536cf8953b0ad706420fe0b841e63"
+    },
+    {
+      "path": "extraction/dense-coefficient/xor-coefficient/Arithmetic/Types.lean",
+      "sha256": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557"
+    },
+    {
+      "path": "extraction/dense-coefficient/xor-coefficient/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "9d47cb5223b7a3a784065947ca87ceea2b65fb72423eb973c18862af9f72a5c8"
+    }
+  ],
+  "command_recipe": [
+    [
+      "charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=<output>/arithmetic.llbc",
+      "--start-from={impl bulksketch::poly::Polynomial for bulksketch::poly::Dense}::xor_coefficient",
+      "--",
+      "--manifest-path=<repo>/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked",
+      "--target",
+      "aarch64-apple-darwin"
+    ],
+    [
+      "aeneas",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-split-files",
+      "-dest",
+      "<output>/Arithmetic",
+      "<output>/arithmetic.llbc"
+    ]
+  ],
+  "native_files_checked": 41,
+  "native_build_inputs_checked": 3,
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "recorded_output_directory": "/workspace/bulk/bulksketch-proof-tools/dense-coefficient-repro",
+  "recorded_environment": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+    "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-tools/dense-coefficient-repro/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true"
+  },
+  "charon_log_sha256": "663a5db9edc6ef0af8b41c4bbbf66c080ad4b91981a84560281a85f0f559f3bc",
+  "aeneas_log_sha256": "d093331a69121fbe5d65d5cfcb47e54dcfc90d9627d0dcf05fc7dea9ee265e0d",
+  "prior_generated_files_match": true
+}

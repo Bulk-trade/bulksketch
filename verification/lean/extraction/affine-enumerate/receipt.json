@@ -1,0 +1,331 @@
+{
+  "variant_id": "checked-affine-outer-continue-v1",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "native_source_edited": false,
+  "native_llbc_edited": false,
+  "source_sha256": {
+    "src/decode/affine.rs": "a7c45498717202aec291b4c4acdd6f819edf16bcdf478500a8c74a3492c4e11d",
+    "src/backend/contract.rs": "4d05ce564edc408ba04f5a907b159ad91018ba8cfd93126e17913ed49f7e3d59",
+    "src/types.rs": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
+  },
+  "capture_sha256": "6af0ef22080f0cd7ee6884689b8e14984b00e6afd203f5303bf255819c6e536a",
+  "variant_patch": "extraction/affine-enumerate/checked-affine-outer-continue.patch",
+  "variant_patch_sha256": "6481beb982e57655e7ee2c888daf823c9b5286f66af85f9ec56dac90e545aa4f",
+  "patched_binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+  "base_sources": {
+    "src/PrePasses.ml": "ae752eeef3227b7566611fa7d3ace71fd64fbf24c088bc7ce16699a243772165"
+  },
+  "modified_sources": {
+    "src/PrePasses.ml": "d0d2a6a122bc0446a493b4d70ff2ca19fc53122c4ab6ee0e3192343d082fb8eb"
+  },
+  "charon_command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/arithmetic.llbc",
+    "--start-from=bulksketch::decode::affine::enumerate",
+    "--",
+    "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked",
+    "--target",
+    "x86_64-apple-darwin"
+  ],
+  "charon_exit": 0,
+  "charon_binary_sha256": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+  "fresh_build": {
+    "exit_code": 0,
+    "source_sha256": "d0d2a6a122bc0446a493b4d70ff2ca19fc53122c4ab6ee0e3192343d082fb8eb",
+    "source_files_byte_identical": 108,
+    "command": [
+      "opam",
+      "exec",
+      "--root=/workspace/bulk/bulksketch-proofs/tooling/opam-root",
+      "--switch=aeneas-5.3.0",
+      "--",
+      "dune",
+      "build",
+      "--root",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src",
+      "-j",
+      "2"
+    ],
+    "log_sha256": "7f9cc89d08399c461e9680e05e3b28bbaef7fd1ffd2b92c96f414af5106f481d"
+  },
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/fresh-scoped-replay",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+    "input_sha256": "6af0ef22080f0cd7ee6884689b8e14984b00e6afd203f5303bf255819c6e536a",
+    "outputs": {
+      "Funs.lean": "7d2317640c55722bd5472bbaad51f84a0af5449faaa9f2508af83ce6c42dc481",
+      "FunsExternal_Template.lean": "9c0b9bc7263142cde8a1ff14d9377ddc2ba386acbaf4158a46d429fd062eb803",
+      "Types.lean": "ec25fe10cf04ff6687064fa9b18f8a40bc1ac761f2f643b99db946ccb38b62ac"
+    },
+    "log_sha256": "6fee48695ac33ac54445cbddb324dc34bc692ffef90db8f5943ef3c38bd09383"
+  },
+  "controls": {
+    "stock": {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/stock/generated",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/affine-enumerate/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "binary_sha256": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+      "input_sha256": "6af0ef22080f0cd7ee6884689b8e14984b00e6afd203f5303bf255819c6e536a",
+      "log_sha256": "09b869b804f13fe73977881cff3c81d66bc524037495a3d439e6fe8fe775ba23",
+      "outputs": {}
+    },
+    "checked": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/checked/generated",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/affine-enumerate/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "6af0ef22080f0cd7ee6884689b8e14984b00e6afd203f5303bf255819c6e536a",
+      "log_sha256": "e0b21338ab6540b41728e4aeb4d31bdbca545a488d127e121ce5e9a23d2f4284",
+      "outputs": {
+        "Funs.lean": "7d2317640c55722bd5472bbaad51f84a0af5449faaa9f2508af83ce6c42dc481",
+        "FunsExternal_Template.lean": "9c0b9bc7263142cde8a1ff14d9377ddc2ba386acbaf4158a46d429fd062eb803",
+        "Types.lean": "ec25fe10cf04ff6687064fa9b18f8a40bc1ac761f2f643b99db946ccb38b62ac"
+      }
+    },
+    "unchecked": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/unchecked/generated",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/affine-enumerate/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "6af0ef22080f0cd7ee6884689b8e14984b00e6afd203f5303bf255819c6e536a",
+      "log_sha256": "a3bc797db70a4a15257a458ea3514b04471a852386efa68985a83a8164a2dbeb",
+      "outputs": {}
+    },
+    "wrong-name": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-name/generated",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-name/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "d81f76a4e8299abf7a6ebd8e974269426a82f560404a3f436d03199d07b01c50",
+      "log_sha256": "80542618110ac0a54f318083fca6078e9d79c305b50b443c0a580c5d068e3090",
+      "outputs": {}
+    },
+    "wrong-span": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-span/generated",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-span/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "ce03f54c665ebbc9f7031ce26af9c06ec175c4007be0f6d975599a18e781291b",
+      "log_sha256": "dc9f30ed926a5746e9920d111d267fcd3949d59dc0d7ff409ed4dc4eef1d264c",
+      "outputs": {}
+    },
+    "wrong-cleanup": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-cleanup/generated",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-cleanup/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "ebe396cb58149b6bf22aea69be43633d4f9bd7c6dcf3c5885ccb70963ffd6ad3",
+      "log_sha256": "965ed28e84d33a440b06cc1b3128cb267e22139326951c3464bc66d0a359bbbb",
+      "outputs": {}
+    },
+    "wrong-break": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-break/generated",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-break/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "3727985f9555cacf892c0240f08acade1740029de10a16eac6fe946c5f095a2e",
+      "log_sha256": "27abf0e4d36b6286b98a7db3fbf242fd75b4457f022c2fecdb95258db9989f04",
+      "outputs": {}
+    },
+    "wrong-constructor": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-constructor/generated",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/wrong-constructor/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "fe0d578c9e2f3f85320070dadec2ab6a5685e74ac4ad7bec34a6bc012381b496",
+      "log_sha256": "4b47515219d3ed26997f4b7f29d38cd332a475de5202a48157a7f4b6cbb26ba1",
+      "outputs": {}
+    },
+    "root-enumerate-affine": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/root-enumerate-affine/generated",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/root-enumerate-affine/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "c89b551c5e6f3ad080cb1cedce4bd46b0125d40ba6c2f691e34502509f18ed62",
+      "log_sha256": "fe2d154b89434b5f7c5160f3ffbbb09b0a37b54b0b1c5d8b9fefb3d02661325c",
+      "outputs": {
+        "Funs.lean": "32928bea334705d734b741e78d3d99f6a571c5770a4ba84b603a4809b9e0bbe3",
+        "FunsExternal_Template.lean": "9cfe9c90ec5d61b508979f90f008de7e1adafc53b878ec77d70fb86213f61cf9",
+        "Types.lean": "7e3dd3679bf1a13d81680c2cdd32c5a2b23aeb61e1a084fb36f8c4bcb1b4c69b"
+      }
+    },
+    "affine-splitter": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/rebuilt-affine-scoped/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-root-run/roots-enumerate-affine/original-affine-enumerate/scoped-guard-controls/affine-splitter/generated",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/affine-splitter/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "binary_sha256": "9231c0ec71ada49e1cb5f6663706ff046afd8ad35bc1af42edeae11d954a8645",
+      "input_sha256": "9be44210bff18a02d66a4caaca9be7b5148aa1cd8fc73e4e5a2c8ebaac288b50",
+      "log_sha256": "7683b78971e9d6374a49a7d4ac8e52e1eea6ee9f76466d7fbd8364b541692da7",
+      "outputs": {
+        "Funs.lean": "4a1e1a13827ea38655bd055b65e579e17052f91a8e92ea82a72bbddb6c6f876a",
+        "FunsExternal_Template.lean": "4c59046b038ddb5906a108fac743d2bfdafa10499b04405679623a05e331ef6d",
+        "Types.lean": "c1c3706fc639ac3c460be5b0043a2b49afa6b36f37172c27e5aca26f08c59abb"
+      }
+    },
+    "return-place": {
+      "input_sha256": "6af0ef22080f0cd7ee6884689b8e14984b00e6afd203f5303bf255819c6e536a",
+      "log_sha256": "ce677e1937de3337622b39025440625e23dffb0d29833a8386c1873689f79382"
+    },
+    "missing-return-assignment": {
+      "input_sha256": "b54c5f25f96af8da2433e4ca9fd24ce3888407de39da311d5b34317f7cd952df",
+      "log_sha256": "2c48f70db76812659a09033452f3d4d596d72cbe45d1bbfa29ff017045f2d356"
+    }
+  },
+  "files_sha256": {
+    "extraction/affine-enumerate/Arithmetic/Funs.lean": "7d2317640c55722bd5472bbaad51f84a0af5449faaa9f2508af83ce6c42dc481",
+    "extraction/affine-enumerate/Arithmetic/FunsExternal_Template.lean": "9c0b9bc7263142cde8a1ff14d9377ddc2ba386acbaf4158a46d429fd062eb803",
+    "extraction/affine-enumerate/Arithmetic/Types.lean": "ec25fe10cf04ff6687064fa9b18f8a40bc1ac761f2f643b99db946ccb38b62ac",
+    "extraction/affine-enumerate/affine-splitter.log": "7683b78971e9d6374a49a7d4ac8e52e1eea6ee9f76466d7fbd8364b541692da7",
+    "extraction/affine-enumerate/arithmetic.llbc": "6af0ef22080f0cd7ee6884689b8e14984b00e6afd203f5303bf255819c6e536a",
+    "extraction/affine-enumerate/charon.log": "a3b5a64f69a725a4bc11cbff8467903923098893c7ea9bae4e4afefcb7c468f3",
+    "extraction/affine-enumerate/checked-affine-outer-continue.patch": "6481beb982e57655e7ee2c888daf823c9b5286f66af85f9ec56dac90e545aa4f",
+    "extraction/affine-enumerate/checked.log": "e0b21338ab6540b41728e4aeb4d31bdbca545a488d127e121ce5e9a23d2f4284",
+    "extraction/affine-enumerate/control_flow.py": "08ba400b5e7655a4e86e243ae3ab0f6c646317fd632ff99484be4492097cf7a9",
+    "extraction/affine-enumerate/fresh-build.log": "7f9cc89d08399c461e9680e05e3b28bbaef7fd1ffd2b92c96f414af5106f481d",
+    "extraction/affine-enumerate/guard-controls.py": "df151044522202c81a73dd823533c4ebf4bb28d67cec678d45fab80a553ed87a",
+    "extraction/affine-enumerate/missing-return-assignment.log": "2c48f70db76812659a09033452f3d4d596d72cbe45d1bbfa29ff017045f2d356",
+    "extraction/affine-enumerate/replay.log": "6fee48695ac33ac54445cbddb324dc34bc692ffef90db8f5943ef3c38bd09383",
+    "extraction/affine-enumerate/return-place.log": "ce677e1937de3337622b39025440625e23dffb0d29833a8386c1873689f79382",
+    "extraction/affine-enumerate/root-enumerate-affine.log": "fe2d154b89434b5f7c5160f3ffbbb09b0a37b54b0b1c5d8b9fefb3d02661325c",
+    "extraction/affine-enumerate/stock.log": "09b869b804f13fe73977881cff3c81d66bc524037495a3d439e6fe8fe775ba23",
+    "extraction/affine-enumerate/unchecked.log": "a3bc797db70a4a15257a458ea3514b04471a852386efa68985a83a8164a2dbeb",
+    "extraction/affine-enumerate/wrong-break.log": "27abf0e4d36b6286b98a7db3fbf242fd75b4457f022c2fecdb95258db9989f04",
+    "extraction/affine-enumerate/wrong-cleanup.log": "965ed28e84d33a440b06cc1b3128cb267e22139326951c3464bc66d0a359bbbb",
+    "extraction/affine-enumerate/wrong-constructor.log": "4b47515219d3ed26997f4b7f29d38cd332a475de5202a48157a7f4b6cbb26ba1",
+    "extraction/affine-enumerate/wrong-name.log": "80542618110ac0a54f318083fca6078e9d79c305b50b443c0a580c5d068e3090",
+    "extraction/affine-enumerate/wrong-span.log": "dc9f30ed926a5746e9920d111d267fcd3949d59dc0d7ff409ed4dc4eef1d264c"
+  }
+}

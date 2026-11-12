@@ -1,0 +1,547 @@
+{
+  "stock": {
+    "probe": {
+      "capture": [
+        {
+          "step": "charon",
+          "argv": [
+            "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+            "cargo",
+            "--preset=aeneas",
+            "--sysroot=default",
+            "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/probe/arithmetic.llbc",
+            "--start-from=bulksketch::decode::probe::_::run_next",
+            "--include=bulksketch::decode::probe::_::run_next",
+            "--include=bulksketch::decode::probe::_::charge",
+            "--include=bulksketch::decode::probe::_::run_charged",
+            "--opaque=bulksketch::decode::probe::_::reject",
+            "--opaque=bulksketch::decode::probe::verified",
+            "--opaque=bulksketch::decode::direct::two",
+            "--",
+            "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+            "-p",
+            "bulksketch",
+            "--lib",
+            "--locked",
+            "--offline",
+            "--target",
+            "x86_64-apple-darwin"
+          ],
+          "environment": {
+            "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+            "CARGO_BUILD_JOBS": "1",
+            "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-evidence-20261109-decoder-deflation/target"
+          },
+          "exit_code": 0
+        },
+        {
+          "step": "stock",
+          "argv": [
+            "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+            "-backend",
+            "lean",
+            "-checks",
+            "-sequential",
+            "-no-progress-bar",
+            "-print-error-emitters",
+            "-split-files",
+            "-dest",
+            "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/probe/Arithmetic",
+            "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/probe/arithmetic.llbc"
+          ],
+          "environment": {},
+          "exit_code": 0
+        }
+      ],
+      "replay": {
+        "command": [
+          "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/probe/Replay",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/probe/arithmetic.llbc"
+        ],
+        "status": 0,
+        "outputs": {
+          "Funs.lean": "dba7b0e8301534b34901515c5ec6f1d4c9c078debc65ee960196c81a8122417f",
+          "FunsExternal_Template.lean": "f9de5b08fa080c092f0d8babd8adad210878a3fb64438e8e220f4e4b784ed5ac",
+          "Types.lean": "75d69ee2a4d7f6ab801709f0149e54c27f705484fccd62bf60ecf7ab42fafcfa",
+          "TypesExternal_Template.lean": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d"
+        }
+      }
+    },
+    "wrapper": {
+      "capture": [
+        {
+          "step": "charon",
+          "argv": [
+            "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+            "cargo",
+            "--preset=aeneas",
+            "--sysroot=default",
+            "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/wrapper/arithmetic.llbc",
+            "--start-from=bulksketch::sketch::dispatch::run_probe",
+            "--include=bulksketch::sketch::dispatch::run_probe",
+            "--opaque=bulksketch::decode::probe::_::reject",
+            "--opaque=bulksketch::decode::probe::verified",
+            "--opaque=bulksketch::decode::direct::two",
+            "--opaque=bulksketch::decode::probe::_::run_next",
+            "--opaque=bulksketch::backend::portable",
+            "--opaque=bulksketch::backend::x86_pclmul",
+            "--opaque=bulksketch::backend::x86_vpclmul512",
+            "--",
+            "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+            "-p",
+            "bulksketch",
+            "--lib",
+            "--locked",
+            "--offline",
+            "--target",
+            "x86_64-apple-darwin"
+          ],
+          "environment": {
+            "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+            "CARGO_BUILD_JOBS": "1",
+            "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-evidence-20261109-decoder-deflation/target"
+          },
+          "exit_code": 0
+        },
+        {
+          "step": "stock",
+          "argv": [
+            "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+            "-backend",
+            "lean",
+            "-checks",
+            "-sequential",
+            "-no-progress-bar",
+            "-print-error-emitters",
+            "-split-files",
+            "-dest",
+            "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/wrapper/Arithmetic",
+            "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/wrapper/arithmetic.llbc"
+          ],
+          "environment": {},
+          "exit_code": 0
+        }
+      ],
+      "replay": {
+        "command": [
+          "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/wrapper/Replay",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/wrapper/arithmetic.llbc"
+        ],
+        "status": 0,
+        "outputs": {
+          "Funs.lean": "93d67758b75f68bfa5db10b10609766d37dc3fedaa6d7a8045e7b5e1b310bd5a",
+          "FunsExternal_Template.lean": "1c1195488e06b150156e1cb1b80f4b5e6108892622fb3d48a9461758cabaecbf",
+          "Types.lean": "047b7cb54d29be7afc034b56f14f4c4e8eeb89b7ddd28c2fd4a67d7f0e195272",
+          "TypesExternal_Template.lean": "7280e96675403cf7a53494524e419cad8b13a094a8fd95dadec4ff0dd5168b04"
+        }
+      }
+    }
+  },
+  "completed": {
+    "capture": [
+      {
+        "step": "charon",
+        "argv": [
+          "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+          "cargo",
+          "--preset=aeneas",
+          "--sysroot=default",
+          "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/capture/arithmetic.llbc",
+          "--start-from=bulksketch::sketch::dispatch::_::completed_result",
+          "--include=bulksketch::sketch::dispatch::_::completed_result",
+          "--opaque=bulksketch::decode::stages::_::enable_v3",
+          "--opaque=bulksketch::decode::stages::_::start_degrees",
+          "--opaque=bulksketch::decode::stages::_::verification_count",
+          "--opaque=bulksketch::decode::stages::_::reject_upper",
+          "--opaque=bulksketch::decode::stages::_::completed_result",
+          "--opaque=bulksketch::decode::stages::_::restart",
+          "--opaque=bulksketch::decode::stages::_::execute",
+          "--opaque={impl bulksketch::decode::row::RowExecution for bulksketch::decode::stages::Execution}::next_stage",
+          "--opaque={impl bulksketch::decode::row::RowExecution for bulksketch::decode::stages::Execution}::run_next",
+          "--opaque={impl bulksketch::decode::row::RowExecution for bulksketch::decode::stages::Execution}::finish",
+          "--opaque=bulksketch::decode::probe::_::count",
+          "--opaque=bulksketch::decode::probe::_::next_stage",
+          "--opaque=bulksketch::decode::probe::_::reject",
+          "--opaque=bulksketch::decode::probe::_::run_next",
+          "--opaque=bulksketch::sketch::dispatch::run_probe",
+          "--opaque=bulksketch::backend::portable::_::_",
+          "--opaque=bulksketch::backend::x86_pclmul::_::_",
+          "--opaque=bulksketch::backend::x86_vpclmul512::_::_",
+          "--",
+          "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+          "-p",
+          "bulksketch",
+          "--lib",
+          "--locked",
+          "--offline",
+          "--target",
+          "x86_64-apple-darwin"
+        ],
+        "environment": {
+          "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+          "CARGO_BUILD_JOBS": "1",
+          "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-evidence-20261109-decoder-deflation/target"
+        },
+        "exit_code": 0
+      },
+      {
+        "step": "stock",
+        "argv": [
+          "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/capture/Arithmetic",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/capture/arithmetic.llbc"
+        ],
+        "environment": {},
+        "exit_code": 1
+      }
+    ],
+    "controls": {
+      "wrong-site": {
+        "command": [
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/tool/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/wrong-site",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/wrong-site.llbc"
+        ],
+        "flag": true,
+        "status": 1,
+        "outputs": {
+          "Funs.lean": "404ca4ebdac295606e65a44dceef32e0fb8578c5dc51566042c4b04d1d272bc0",
+          "FunsExternal_Template.lean": "3d53d325f54662a5eb0ce38305cf3d940f9f7d36e96cdfc0758b9be80bdc9c0c",
+          "Types.lean": "499b80e6ac842c2a765aa121c1d3696bdf45ad4de2e242bcbbfc174d6ac306fe"
+        },
+        "log_sha256": "65a6aac35591fcdf6a4d9f0083a8489657c4b83ea0e20138072e9f4c04c5395d",
+        "binary_sha256": "26cd97c818e3e14b24cae92ca16b775a77f3ef7a76aa5d4fcba5caa06ef2c872",
+        "input_sha256": "7c724bc9c30566f32e4536c4bb8f4fd6fba1c91198991e263ec4731913fbf797"
+      },
+      "wrong-assert": {
+        "command": [
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/tool/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/wrong-assert",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/wrong-assert.llbc"
+        ],
+        "flag": true,
+        "status": 1,
+        "outputs": {
+          "Funs.lean": "8aedddede3efe1b0b143c4d4917c0cf807ea3723ae7d4fdc526f6a4e7a3ad5a0",
+          "FunsExternal_Template.lean": "a32a901f1ac4c84c26efa760afe5a0234f4a12b926f7c4cc43ac6463802909b7",
+          "Types.lean": "499b80e6ac842c2a765aa121c1d3696bdf45ad4de2e242bcbbfc174d6ac306fe"
+        },
+        "log_sha256": "96f25654cc0118d13202c19494a48095890d5986d6f851d2e71a6a9dc02b1275",
+        "binary_sha256": "26cd97c818e3e14b24cae92ca16b775a77f3ef7a76aa5d4fcba5caa06ef2c872",
+        "input_sha256": "6a2c0a476c316d32345a82efbb133e0e02b79f74ad6a4cd1d8f629007f2935fb"
+      },
+      "wrong-workspace": {
+        "command": [
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/tool/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/wrong-workspace",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/wrong-workspace.llbc"
+        ],
+        "flag": true,
+        "status": 1,
+        "outputs": {
+          "Funs.lean": "0ece044ea6e74c9d44a8f529a5a03401cb6ab8de71028ffe1434d0206381d0e6",
+          "FunsExternal_Template.lean": "c137e6abebccdc2001a7dc1de94357bbf119799b6f771cc6a62cfe029bdd39a5",
+          "Types.lean": "ca5722995c76e15f5cbee73c1c92bdc524b883006c2e52581e57c757f3fd02f4"
+        },
+        "log_sha256": "8f6b1c0e0392a019951e4b4e991fae39e18905abb6eda13e91686d49844343c7",
+        "binary_sha256": "26cd97c818e3e14b24cae92ca16b775a77f3ef7a76aa5d4fcba5caa06ef2c872",
+        "input_sha256": "7f3906f7d2d58343de1f762f29948ab1f7af628424919c587846e493d318bd6b"
+      },
+      "stock": {
+        "command": [
+          "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/stock",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/capture/arithmetic.llbc"
+        ],
+        "flag": false,
+        "status": 1,
+        "outputs": {
+          "Funs.lean": "0a05897d6a17fabb08b7b6d4c05b3d9f02b3d88db565c964a3d53cbddd1c28bd",
+          "FunsExternal_Template.lean": "616558ca3b403eb2dcd8ba686a7196c655b4592c9453eb7344cd5d68830c3be6",
+          "Types.lean": "499b80e6ac842c2a765aa121c1d3696bdf45ad4de2e242bcbbfc174d6ac306fe"
+        },
+        "log_sha256": "80e9e2b73cb97def19f3436162f407e7602e3e331fd2f954a9831a7be5f065ed",
+        "binary_sha256": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+        "input_sha256": "967f971106c8c1e83170ff6d4179a4901986b2db72f110cd35d193dffed5edbe"
+      },
+      "flag-off": {
+        "command": [
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/tool/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/flag-off",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/capture/arithmetic.llbc"
+        ],
+        "flag": false,
+        "status": 1,
+        "outputs": {
+          "Funs.lean": "0a05897d6a17fabb08b7b6d4c05b3d9f02b3d88db565c964a3d53cbddd1c28bd",
+          "FunsExternal_Template.lean": "616558ca3b403eb2dcd8ba686a7196c655b4592c9453eb7344cd5d68830c3be6",
+          "Types.lean": "499b80e6ac842c2a765aa121c1d3696bdf45ad4de2e242bcbbfc174d6ac306fe"
+        },
+        "log_sha256": "8cbfa6cbdd0a21ae8fdd2a4e1c7d8412854d7dc0f5e14f6fa0eb4e79c5af5d55",
+        "binary_sha256": "26cd97c818e3e14b24cae92ca16b775a77f3ef7a76aa5d4fcba5caa06ef2c872",
+        "input_sha256": "967f971106c8c1e83170ff6d4179a4901986b2db72f110cd35d193dffed5edbe"
+      },
+      "unchecked": {
+        "command": [
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/tool/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/unchecked",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/capture/arithmetic.llbc"
+        ],
+        "flag": true,
+        "status": 1,
+        "outputs": {
+          "Funs.lean": "0a05897d6a17fabb08b7b6d4c05b3d9f02b3d88db565c964a3d53cbddd1c28bd",
+          "FunsExternal_Template.lean": "616558ca3b403eb2dcd8ba686a7196c655b4592c9453eb7344cd5d68830c3be6",
+          "Types.lean": "499b80e6ac842c2a765aa121c1d3696bdf45ad4de2e242bcbbfc174d6ac306fe"
+        },
+        "log_sha256": "1dcce8d2950658bfc957bfceb6a06c77d130afee88e8130824a1048fe38f6360",
+        "binary_sha256": "26cd97c818e3e14b24cae92ca16b775a77f3ef7a76aa5d4fcba5caa06ef2c872",
+        "input_sha256": "967f971106c8c1e83170ff6d4179a4901986b2db72f110cd35d193dffed5edbe"
+      },
+      "checked": {
+        "command": [
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/tool/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/checked",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/capture/arithmetic.llbc"
+        ],
+        "flag": true,
+        "status": 0,
+        "outputs": {
+          "Funs.lean": "096778048a93fc27fb1285a6f2e52957306543548e8c9ee679d752aab6244daf",
+          "FunsExternal_Template.lean": "616558ca3b403eb2dcd8ba686a7196c655b4592c9453eb7344cd5d68830c3be6",
+          "Types.lean": "499b80e6ac842c2a765aa121c1d3696bdf45ad4de2e242bcbbfc174d6ac306fe"
+        },
+        "log_sha256": "5e281c26400757bd66295f10ee94aa2351a413a4cb4d5a1686a5bce188a63b4b",
+        "binary_sha256": "26cd97c818e3e14b24cae92ca16b775a77f3ef7a76aa5d4fcba5caa06ef2c872",
+        "input_sha256": "967f971106c8c1e83170ff6d4179a4901986b2db72f110cd35d193dffed5edbe"
+      },
+      "replay": {
+        "command": [
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/tool/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/replay",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/capture/arithmetic.llbc"
+        ],
+        "flag": true,
+        "status": 0,
+        "outputs": {
+          "Funs.lean": "096778048a93fc27fb1285a6f2e52957306543548e8c9ee679d752aab6244daf",
+          "FunsExternal_Template.lean": "616558ca3b403eb2dcd8ba686a7196c655b4592c9453eb7344cd5d68830c3be6",
+          "Types.lean": "499b80e6ac842c2a765aa121c1d3696bdf45ad4de2e242bcbbfc174d6ac306fe"
+        },
+        "log_sha256": "44a7adb19a3a3d35848812faa4f79fcbc7d81850753e698b3ea43b683e45ac89",
+        "binary_sha256": "26cd97c818e3e14b24cae92ca16b775a77f3ef7a76aa5d4fcba5caa06ef2c872",
+        "input_sha256": "967f971106c8c1e83170ff6d4179a4901986b2db72f110cd35d193dffed5edbe"
+      },
+      "strict": {
+        "command": [
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/tool/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-strict-joins",
+          "-dest",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/strict",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/capture/arithmetic.llbc"
+        ],
+        "flag": true,
+        "status": 0,
+        "outputs": {
+          "Funs.lean": "096778048a93fc27fb1285a6f2e52957306543548e8c9ee679d752aab6244daf",
+          "FunsExternal_Template.lean": "616558ca3b403eb2dcd8ba686a7196c655b4592c9453eb7344cd5d68830c3be6",
+          "Types.lean": "499b80e6ac842c2a765aa121c1d3696bdf45ad4de2e242bcbbfc174d6ac306fe"
+        },
+        "log_sha256": "54aec1ed8c360b5a72cfb838ba75a1811414b47c06b73983d72d8278d442ab96",
+        "binary_sha256": "26cd97c818e3e14b24cae92ca16b775a77f3ef7a76aa5d4fcba5caa06ef2c872",
+        "input_sha256": "967f971106c8c1e83170ff6d4179a4901986b2db72f110cd35d193dffed5edbe"
+      },
+      "compatibility": {
+        "command": [
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/tool/src/_build/default/main.exe",
+          "-backend",
+          "lean",
+          "-checks",
+          "-sequential",
+          "-no-progress-bar",
+          "-print-error-emitters",
+          "-split-files",
+          "-dest",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/compatibility",
+          "/workspace/bulk/bulksketch-proof-evidence-20261109-native-closure/row-dispatch/linked/arithmetic.llbc"
+        ],
+        "flag": true,
+        "status": 0,
+        "outputs": {
+          "Funs.lean": "62dcdfc4e66f5fd620dac9514ac26b78bf7ac92e1ecbf49278c58c398f5a784f",
+          "FunsExternal_Template.lean": "afde1bee08c948de30bacac28a034eee8b72f0016950b3bbf0cd47719cf36d4a",
+          "Types.lean": "63f2cedcf5f938290576d2df5cb2b2dab3760bfeb1d3a8ff06c5976572046a80"
+        },
+        "log_sha256": "ffd15144178d09ef53a694bb6c4b96206bf7a80e51783b40d36d37b0324ac97b",
+        "binary_sha256": "26cd97c818e3e14b24cae92ca16b775a77f3ef7a76aa5d4fcba5caa06ef2c872",
+        "input_sha256": "64f6c9091c3332293354e889b3ce4d932e82df63cc7ff79b04b26964fda174ca"
+      }
+    },
+    "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+    "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "variant_id": "checked-dispatch-completed-frozen-shared-v1",
+    "native_source_edited": false,
+    "modified_source_sha256": {
+      "src/interp/InterpJoin.ml": "925aef4d27b367245a252818ab249f0d394885426ece8178d7665cad2fead951"
+    },
+    "build_command": [
+      "dune",
+      "build",
+      "--root",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-public-lifecycle/completed/tool/src",
+      "-j",
+      "2",
+      "./main.exe"
+    ],
+    "build_exit_code": 0,
+    "base_source_sha256": {
+      "src/interp/InterpJoin.ml": "57c5478aae42f8a354755424b67f67f37dc8bd233d653c97de0dcbbea5dd6229"
+    }
+  },
+  "source_sha256": {
+    "src/decode/probe.rs": "14a478d93b2b55ac2803c40bed0aa93226bb53d82d35b3ea8bfa4c11b6ca460f",
+    "src/decode/scratch.rs": "97016cadabf021829b567ff1472a9f11136f54059d78e457d58896cc318e50f6",
+    "src/sketch/dispatch.rs": "4d506d82339b3294a8ab28e0476e55c8f4b1e80bf85f409430d7e52a82e01e56"
+  },
+  "shared_sha256": {
+    "bridge/Arithmetic/RowDispatchGenerated.lean": "de60227771f7750d386c272b845c5ca1e7717daa74267f313e0130141553755b",
+    "bridge/Arithmetic/CompletedResultGenerated.lean": "7c6ec0a2c56a0ff88eae2d51d5e6d1560b4e99ec7f5af8969b5c5492895b16aa",
+    "bridge/Arithmetic/CanonicalizeGenerated.lean": "bbd3ad2702570ec63cb096472f3926b5fc8016a9a878f0d7acb0e4ba3bb6037b",
+    "bridge/Arithmetic/ReconstructionRuntime.lean": "df3e1e3a70c72ba373b478d5f0bbad727f82da8f5a185a55aed8d02dd402d29c",
+    "bridge/Arithmetic/DegreeProbeGenerated.lean": "ad84c3b68aa3e296db6e8b318e97b576a79a432ec89b11e29de5bcc1e6968674",
+    "bridge/Arithmetic/DirectTwoGenerated.lean": "2166a8951a66bc37e91f16b34f34fec04288d5e33dba60ce78629e7af78cf1cd",
+    "bridge/Arithmetic/ReconstructionTypes.lean": "830fb3235ff9baf053aa13a5bf0e4844a57077a154ac51b94ec4e9e1403f5c6d"
+  },
+  "artifacts": {
+    "probe/arithmetic.llbc": "4d1373c954d72d070401dc406922afb095af4947d3081dc194f0793ba2855ae6",
+    "probe/charon.log": "d382aa19ff718c8afc51e415c225efeb5667a4e5d25e7f3388b896967889a28e",
+    "probe/stock.log": "d9bf1ab49eb49bc890371d13ade455279d5ac1e80f247c6570d05fb5847a6ffb",
+    "probe/replay.log": "f215f2adaded0f1f6d17117d7391bd2099ea2d7f2c87da6265b9bf02a4be28d7",
+    "probe/Arithmetic/Funs.lean": "dba7b0e8301534b34901515c5ec6f1d4c9c078debc65ee960196c81a8122417f",
+    "probe/Arithmetic/FunsExternal_Template.lean": "f9de5b08fa080c092f0d8babd8adad210878a3fb64438e8e220f4e4b784ed5ac",
+    "probe/Arithmetic/Types.lean": "75d69ee2a4d7f6ab801709f0149e54c27f705484fccd62bf60ecf7ab42fafcfa",
+    "probe/Arithmetic/TypesExternal_Template.lean": "12df4e969ad798941839c2fa7e775bbe89c0e2abe536e6ecf02af266dc758d3d",
+    "wrapper/arithmetic.llbc": "65768d7b30b23e196f39fb69d113ee6035a828b120db77fdf353854c2fb1e158",
+    "wrapper/charon.log": "4e787e26b02bff13d349c543dcbeada5cda87bcf6f4f18ea05a981e61e6aad3a",
+    "wrapper/stock.log": "d08c6dce74b2bff8455f48f97346596cb84b7e41c85df1e0d37658ad77de8e22",
+    "wrapper/replay.log": "a32eae3aa53a5aba9d781a50cd50b73f6989bece9af5d66644c99314ea727825",
+    "wrapper/Arithmetic/Funs.lean": "93d67758b75f68bfa5db10b10609766d37dc3fedaa6d7a8045e7b5e1b310bd5a",
+    "wrapper/Arithmetic/FunsExternal_Template.lean": "1c1195488e06b150156e1cb1b80f4b5e6108892622fb3d48a9461758cabaecbf",
+    "wrapper/Arithmetic/Types.lean": "047b7cb54d29be7afc034b56f14f4c4e8eeb89b7ddd28c2fd4a67d7f0e195272",
+    "wrapper/Arithmetic/TypesExternal_Template.lean": "7280e96675403cf7a53494524e419cad8b13a094a8fd95dadec4ff0dd5168b04",
+    "completed/arithmetic.llbc": "967f971106c8c1e83170ff6d4179a4901986b2db72f110cd35d193dffed5edbe",
+    "completed/charon.log": "413f9c24b36d25e7ca7cbfb28d5e334de1eb0223260f19d4f79e8d09d63bbbce",
+    "completed/Arithmetic/Funs.lean": "096778048a93fc27fb1285a6f2e52957306543548e8c9ee679d752aab6244daf",
+    "completed/Arithmetic/FunsExternal_Template.lean": "616558ca3b403eb2dcd8ba686a7196c655b4592c9453eb7344cd5d68830c3be6",
+    "completed/Arithmetic/Types.lean": "499b80e6ac842c2a765aa121c1d3696bdf45ad4de2e242bcbbfc174d6ac306fe",
+    "completed/checked-dispatch-result.patch": "bb8a1b98d1f263072d61379f471bd94e8a774e78d359022aa0aa3a03bf95518c",
+    "completed/build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "completed/wrong-site.log": "65a6aac35591fcdf6a4d9f0083a8489657c4b83ea0e20138072e9f4c04c5395d",
+    "completed/wrong-assert.log": "96f25654cc0118d13202c19494a48095890d5986d6f851d2e71a6a9dc02b1275",
+    "completed/wrong-workspace.log": "8f6b1c0e0392a019951e4b4e991fae39e18905abb6eda13e91686d49844343c7",
+    "completed/stock.log": "80e9e2b73cb97def19f3436162f407e7602e3e331fd2f954a9831a7be5f065ed",
+    "completed/flag-off.log": "8cbfa6cbdd0a21ae8fdd2a4e1c7d8412854d7dc0f5e14f6fa0eb4e79c5af5d55",
+    "completed/unchecked.log": "1dcce8d2950658bfc957bfceb6a06c77d130afee88e8130824a1048fe38f6360",
+    "completed/checked.log": "5e281c26400757bd66295f10ee94aa2351a413a4cb4d5a1686a5bce188a63b4b",
+    "completed/replay.log": "44a7adb19a3a3d35848812faa4f79fcbc7d81850753e698b3ea43b683e45ac89",
+    "completed/strict.log": "54aec1ed8c360b5a72cfb838ba75a1811414b47c06b73983d72d8278d442ab96",
+    "completed/compatibility.log": "ffd15144178d09ef53a694bb6c4b96206bf7a80e51783b40d36d37b0324ac97b",
+    "completed/scope_controls.py": "0f025f3730adde80ac0d8f1496fd7867eb057858c187a905ffd08a2a1cc64cbe"
+  }
+}

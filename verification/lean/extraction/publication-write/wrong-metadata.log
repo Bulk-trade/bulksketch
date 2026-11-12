@@ -1,0 +1,17 @@
+[[92mInfo[39m ] Imported: /workspace/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/wrong-metadata.llbc
+[[91mError[39m] publication write metadata: original length read differs
+Source: 'src/sketch/api.rs', lines 262:4-312:5
+Compiler source: PrePasses.ml, line 2383
+[[91mError[39m] Ignoring the body of 'bulksketch::sketch::api::{bulksketch::sketch::api::Publication<'s>}::write' because of previous error
+Source: 'src/sketch/api.rs', lines 262:4-312:5
+Compiler source: PrePasses.ml, line 2480
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::traits::iterator::Iterator', could not find the information for item 'all'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/traits/iterator.rs', lines 42:0-42:24
+Compiler source: extract/Extract.ml, line 2866
+
+[[92mInfo[39m ] Creating missing directory: /workspace/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/wrong-metadata
+[[92mInfo[39m ] Generated the partial file (because of 2 errors, including 2 unique errors): /workspace/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/wrong-metadata/TypesExternal_Template.lean
+[[92mInfo[39m ] Generated the partial file (because of 2 errors, including 2 unique errors): /workspace/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/wrong-metadata/Types.lean
+[[92mInfo[39m ] Generated the partial file (because of 2 errors, including 2 unique errors): /workspace/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/wrong-metadata/FunsExternal_Template.lean
+[[92mInfo[39m ] Generated the partial file (because of 2 errors, including 2 unique errors): /workspace/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/wrong-metadata/Funs.lean
+[[92mInfo[39m ] Total execution time: 0.310563 seconds

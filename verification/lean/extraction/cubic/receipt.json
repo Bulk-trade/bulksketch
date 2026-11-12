@@ -1,0 +1,87 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "b39e690586582acfdcb51b286d6adbb90141d976",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "selected_roots": [
+    "bulksketch::decode::deg34::cubic"
+  ],
+  "llbc_has_errors": false,
+  "native_source_edited": false,
+  "source_directory": "/workspace/bulk/bulksketch",
+  "native_files_checked": 41,
+  "native_build_inputs_checked": 3,
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+    "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-evidence-20261109/cubic/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true"
+  },
+  "commands": [
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109/cubic/arithmetic.llbc",
+        "--start-from=bulksketch::decode::deg34::cubic",
+        "--",
+        "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109/cubic/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109/cubic/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "artifacts": [
+    {
+      "path": "extraction/cubic/arithmetic.llbc",
+      "sha256": "023e4de954218ef839396928a270982c28acf7e1b513aa06abdbdbc4afb5d2ac"
+    },
+    {
+      "path": "extraction/cubic/charon.log",
+      "sha256": "0d2c76fa69c373f2d534198571878371902d3eb83c41f061b137abeec802cbbc"
+    },
+    {
+      "path": "extraction/cubic/aeneas.log",
+      "sha256": "f5b7f764454bb6c411835769d5bbe4bbad703b8883e9a05ae82ce59ed0080e5a"
+    },
+    {
+      "path": "extraction/cubic/Arithmetic/Types.lean",
+      "sha256": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1"
+    },
+    {
+      "path": "extraction/cubic/Arithmetic/Funs.lean",
+      "sha256": "72f828764ffee03a3827a12d3f287ae78ff3293b1cdc3735f4f8d2f012ee47c6"
+    },
+    {
+      "path": "extraction/cubic/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "9506979759dfd68418de57c868b5f31cdec5324bb97e709c917d27dc91c34739"
+    }
+  ]
+}

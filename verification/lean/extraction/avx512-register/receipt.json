@@ -1,0 +1,71 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "07927c25ecb8fe22c925692edbd2c0780baec8bd",
+  "selected_roots": [
+    "bulksketch::backend::x86_pclmul::raw_product",
+    "bulksketch::backend::x86_pclmul::multiply",
+    "bulksketch::backend::x86_vpclmul512::multiply"
+  ],
+  "target": "x86_64-apple-darwin",
+  "tool_commits": {
+    "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+    "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138"
+  },
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "llbc_has_errors": false,
+  "llbc_sha256": "e4e686a0874383e66b0bc815777783a1906528c5fc244969131dd3c1ad6f2fcb",
+  "recorded_output_directory": "/workspace/bulk/bulksketch-proof-evidence-20261109-dense/isa-next/register",
+  "artifacts": [
+    {
+      "path": "extraction/avx512-register/arithmetic.llbc",
+      "sha256": "e4e686a0874383e66b0bc815777783a1906528c5fc244969131dd3c1ad6f2fcb"
+    },
+    {
+      "path": "extraction/avx512-register/charon.log",
+      "sha256": "15379c164ddedea145a7f6a338d36e58d82c32ab68ac8a55d6777bc89dc69c0b"
+    },
+    {
+      "path": "extraction/avx512-register/aeneas.log",
+      "sha256": "60814542259a715911b3d05084a3c571f0488b3e9affda65e5417ff0dfb27d0b"
+    },
+    {
+      "path": "extraction/avx512-register/Arithmetic/Funs.lean",
+      "sha256": "54af9cc961dad9ebcc81f3d4668563f751eaf34d0d1689f0d020b0e17f222b59"
+    },
+    {
+      "path": "extraction/avx512-register/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "d018ab2041c38a1ff77ad3b4c16b0470f43e49e4fdbd2c0e382248809887219d"
+    },
+    {
+      "path": "extraction/avx512-register/Arithmetic/Types.lean",
+      "sha256": "667b39487bf75f7bb3b56b52025276e311073fbd1f5652b6322bf39768e70f15"
+    },
+    {
+      "path": "extraction/avx512-register/Arithmetic/TypesExternal_Template.lean",
+      "sha256": "03741536dc80eed14803efe4fd7a041e11748aea6728adcbefb2155abfd99bc5"
+    }
+  ],
+  "replay": {
+    "required_flags": [
+      "-checks",
+      "-sequential"
+    ],
+    "exit_code": 0,
+    "exact_generated_artifacts": 4,
+    "log_sha256": "13f2a0512bda948f2dd6c23b1e38c8b21a180a25408ac3f899eb133d961897e4",
+    "charon_exit_code": 0,
+    "charon_llbc_sha256": "ebd44baedccdfc33de53fb2b9ba0dbfa451aef63e6f2e4663e579602850fce05",
+    "charon_llbc_matches_except": "translated.options.dest_file",
+    "charon_log_sha256": "66c83dd4b89af9485ac2c9c0148cd3a19e7954d733bcebc57813ca0e639497db"
+  },
+  "native_source_edited": false,
+  "command_recipe": [
+    "charon cargo --preset=aeneas --sysroot=default --dest-file=<output>/arithmetic.llbc <selected roots as --start-from flags> -- --manifest-path=<repo>/Cargo.toml -p bulksketch --lib --locked --offline --target=x86_64-apple-darwin",
+    "aeneas -backend lean -checks -sequential -print-error-emitters -split-files -dest <output>/Arithmetic <output>/arithmetic.llbc"
+  ]
+}

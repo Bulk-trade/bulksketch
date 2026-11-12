@@ -1,0 +1,51 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "original_llbc": "extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc",
+  "llbc_sha256": "cd5efbbf9c68a8283359a2d48ffded1d60560df82374e131201a248106ebac7e",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "attempts": [
+    {
+      "configuration": "loops-no-rec",
+      "flags": [
+        "-loops-no-rec"
+      ],
+      "command": [
+        "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-no-progress-bar",
+        "-loops-no-rec",
+        "-dest",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/inverse-chain/enclosing-retry/loops-no-rec",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 1.5241287089884281,
+      "log_sha256": "e4355cc7f78152e8a1fe4df127f1349de860d2617608d067d431c50aac4fda97"
+    },
+    {
+      "configuration": "loops-to-rec",
+      "flags": [
+        "-loops-to-rec"
+      ],
+      "command": [
+        "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-no-progress-bar",
+        "-loops-to-rec",
+        "-dest",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/inverse-chain/enclosing-retry/loops-to-rec",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/canonical-arithmetic/inverse-pilot/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 1.3340125000104308,
+      "log_sha256": "dabdc25c3219bb63993e3905cf3c235c595c6b03a8f2a700b2bff0c1c3c56398"
+    }
+  ],
+  "native_source_edited": false,
+  "implementation_proof_credit": 0,
+  "blocker": "Original inverse_using captured borrowed-square closure join at maps.rs43-45 remains unsupported by pinned Aeneas. No disentangle option exists in the pinned tool help."
+}

@@ -1,0 +1,3 @@
+'BulksketchBridge.AffineQuarticMin.kernel_minimum_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.AffineQuarticMin.kernelMinimum_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.AffineQuarticMin.kernelMinimum_le' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,110 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "b39e690586582acfdcb51b286d6adbb90141d976",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "selected_roots": [
+    "{impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_pclmul::Pclmul}::frobenius",
+    "{impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_pclmul::Pclmul}::inverse",
+    "{impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_pclmul::Pclmul}::solve_quadratic"
+  ],
+  "llbc_has_errors": false,
+  "llbc_sha256": "33028d6f7cc4da10627354db9e1400a0d46ac2dca236e844fc2cb6045478459a",
+  "native_source_edited": false,
+  "commands": [
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-isa/pclmul-next-entries/arithmetic.llbc",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_pclmul::Pclmul}::frobenius",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_pclmul::Pclmul}::inverse",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_pclmul::Pclmul}::solve_quadratic",
+        "--",
+        "--manifest-path",
+        "/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-isa/pclmul-next-entries/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-isa/pclmul-next-entries/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "extraction/pclmul-next/arithmetic.llbc",
+      "sha256": "33028d6f7cc4da10627354db9e1400a0d46ac2dca236e844fc2cb6045478459a"
+    },
+    {
+      "path": "extraction/pclmul-next/charon.log",
+      "sha256": "2f60d40845faadfba1c7c450360e08ad56214b7a70fafdce21473d0dcb97ea12"
+    },
+    {
+      "path": "extraction/pclmul-next/aeneas.log",
+      "sha256": "c1d7b010d9738b187b43eb17a4bcc392d7fce80214216e4a4caf01b06ff5f3d8"
+    },
+    {
+      "path": "extraction/pclmul-next/Arithmetic/Funs.lean",
+      "sha256": "4bf4d4cc9388b30332cb9a2a426012959975a0416fd15e50a5a6950a94de81b5"
+    },
+    {
+      "path": "extraction/pclmul-next/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "642cd869b2f49290c93bcb33e578f158f62c7f513baeba9f6c08019d00a4db5b"
+    },
+    {
+      "path": "extraction/pclmul-next/Arithmetic/Types.lean",
+      "sha256": "fd6b34385076d522a2fe946ae94eec614bed7c11b378c49cc84f80ddeb952b21"
+    },
+    {
+      "path": "extraction/pclmul-next/Arithmetic/TypesExternal_Template.lean",
+      "sha256": "a1e7a1d84b947daa18ecec5a47226ab87de975dc5e2a6ca2f99059d1e76d5d82"
+    }
+  ],
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-isa/pclmul-next-entries/replay",
+      "/workspace/bulk/bulksketch/verification/lean/extraction/pclmul-next/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "exact_generated_artifacts": 4,
+    "log_sha256": "7885ef53288659f01bbc67025b5079aa5629843cfc20936d210537e2c56e302d"
+  }
+}

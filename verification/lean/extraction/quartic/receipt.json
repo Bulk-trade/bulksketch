@@ -1,0 +1,292 @@
+{
+  "status": "checked_original_closure_extracted",
+  "native_source_edited": false,
+  "native_body_proof_credit": 0,
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "5bc123ea6ab0ce851079e0270425de8f1ee4240e",
+  "source_file": "src/decode/deg34.rs",
+  "source_sha256": "50e92cc158d33b58361cf95719d4f13e01295802a15e1dab7622fab5ce050015",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "base_extension": "checked-ended-projector-leaf-v1",
+  "candidate_variant": "checked-fixedpoint-scalar-array-loan-retry-v1",
+  "patch_sha256": "43068339bcc31cdafb233423f36f5cee17578b427c501d0df5786666231f16de",
+  "modified_sources": {
+    "src/interp/InterpJoin.ml": "46487f8887e194bbcc74637b69c04bd82ee8f98edc6483ccf3969b2f9787f1e0",
+    "src/interp/InterpJoin.mli": "63a9419a8b7b1f7827a971572606aefea2e3035df74a2ddf8bb74929ff90570a",
+    "src/interp/InterpMatchCtxs.ml": "ed1538b2430704d0bbf522b4b30a17df5cff1dbb82da51a3b56780c3d90e0a60",
+    "src/interp/InterpMatchCtxs.mli": "f18cb08585cd608326312ba62f25167cedfc0e0fe0d2af22e51cf1479fa6810a"
+  },
+  "base_sources": {
+    "src/interp/InterpJoin.ml": "57c5478aae42f8a354755424b67f67f37dc8bd233d653c97de0dcbbea5dd6229",
+    "src/interp/InterpJoin.mli": "227522661285887afdbaeec554d95fc42e0948a6a5f279c4d6659e8fb444aff4",
+    "src/interp/InterpMatchCtxs.ml": "a97bd2650a71ec0795f570dac17a8a1f1f52ae2b6feb4619984e6f1d61fde264",
+    "src/interp/InterpMatchCtxs.mli": "2751202c007c368f632a3cf7fba4329994a64e6405b7e6a53931b74802e2a1ee"
+  },
+  "selector": "bulksketch::decode::deg34::solve",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "transparent_application_bodies": true,
+  "llbc_has_errors": false,
+  "tool_binary_sha256": {
+    "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "/workspace/bulk/bulksketch-proof-tools/quartic-array-loan-retry/src/_build/default/main.exe": "99c2c9f4db95a14cc0178b7373c247419e6ac6a424d8f7e5eda3e063ddcaf3d0",
+    "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "commands": [
+    {
+      "name": "charon",
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/quartic-reverse/arithmetic.llbc",
+        "--start-from=bulksketch::decode::deg34::solve",
+        "--",
+        "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0,
+      "env": {
+        "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+        "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/quartic-reverse/target",
+        "CARGO_BUILD_JOBS": "1",
+        "CARGO_NET_OFFLINE": "true"
+      }
+    },
+    {
+      "name": "candidate-build",
+      "command": [
+        "opam",
+        "exec",
+        "--root=/workspace/bulk/bulksketch-proofs/tooling/opam-root",
+        "--switch=aeneas-5.3.0",
+        "--",
+        "dune",
+        "build",
+        "-j",
+        "2",
+        "main.exe"
+      ],
+      "exit_code": 0,
+      "cwd": "/workspace/bulk/bulksketch-proof-tools/quartic-array-loan-retry/src",
+      "env": {
+        "DEVELOPER_DIR": "/Library/Developer/CommandLineTools",
+        "SDKROOT": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
+      }
+    },
+    {
+      "name": "narrow",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/quartic-array-loan-retry/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-log",
+        "InterpMatchCtxs",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/quartic-reverse/narrow",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/quartic-reverse/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "bae801d20df524409dd3bd7710e396d8a1c2d72c37add151df93fc0fbfbf4ddd",
+      "log_sha256": "476d21bc2cf56bc0e05459343f541d4da9fc8a4c010f4deb3ceeb18ee759e0d2"
+    },
+    {
+      "name": "replay",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/quartic-array-loan-retry/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/quartic-reverse/replay",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/quartic-reverse/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "bae801d20df524409dd3bd7710e396d8a1c2d72c37add151df93fc0fbfbf4ddd",
+      "log_sha256": "d49cdf7f204454571d2a94705355d2f6ad273be2d35a624a9f85355dd83e3ab4"
+    },
+    {
+      "name": "unchecked",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/quartic-array-loan-retry/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/quartic-reverse/unchecked",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/quartic-reverse/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "bae801d20df524409dd3bd7710e396d8a1c2d72c37add151df93fc0fbfbf4ddd",
+      "log_sha256": "1286db2a71dfdee74bd8ea9a724c37032b204b6d11edcd00eb2c2996852e6a8a"
+    },
+    {
+      "name": "pinned",
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/quartic-reverse/pinned",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/quartic-reverse/arithmetic.llbc"
+      ],
+      "exit_code": 1,
+      "input_sha256": "bae801d20df524409dd3bd7710e396d8a1c2d72c37add151df93fc0fbfbf4ddd",
+      "log_sha256": "1db5c1445a86de3a901271050649fc211930d2eb5ab892f3aadce388a81236f2"
+    },
+    {
+      "name": "cubic-control",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/quartic-array-loan-retry/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/quartic-reverse/cubic-control",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/cubic/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "023e4de954218ef839396928a270982c28acf7e1b513aa06abdbdbc4afb5d2ac",
+      "log_sha256": "9b0cbfac6c09781361251db0fec1c587e2a65f4cc61f1ee6ca54de900262db19"
+    },
+    {
+      "name": "certificate-control",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/quartic-array-loan-retry/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/quartic-reverse/certificate-control",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/degree-certificate/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "input_sha256": "25bafe45834a8e228ff8b5af07c0e23af4fbec6c764aad6a188c74b3441b631d",
+      "log_sha256": "2315c903c987863571b4904673c8ad8cdb9fd329bb44be5df1917b88a3c2940a"
+    },
+    {
+      "name": "guard-controls",
+      "command": [
+        "opam",
+        "exec",
+        "--root=/workspace/bulk/bulksketch-proofs/tooling/opam-root",
+        "--switch=aeneas-5.3.0",
+        "--",
+        "dune",
+        "exec",
+        "-j",
+        "2",
+        "./array_loan_controls/array_loan_controls.exe",
+        "--",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-reconstruction/quartic-reverse/arithmetic.llbc"
+      ],
+      "exit_code": 0,
+      "cwd": "/workspace/bulk/bulksketch-proof-tools/quartic-array-loan-retry/src",
+      "env": {
+        "DEVELOPER_DIR": "/Library/Developer/CommandLineTools",
+        "SDKROOT": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
+      }
+    }
+  ],
+  "guard_controls": [
+    "end-left-shared",
+    "end-right-shared",
+    "unchecked",
+    "original-mode",
+    "non-array",
+    "non-scalar-elements",
+    "mismatched-payload-type",
+    "payload-active-loan"
+  ],
+  "scope": "Checked continuation-free loop fixed-point list join only. Mixed concrete shared/mutable scalar arrays with matching borrow-free shared payload cause a stock retry ending the shared loan only. Context matching, collapse, and synthesis joins keep old mode. The original checked path still synthesizes and validates both sides.",
+  "observed_retry": "In the reverse quartic update, left roots^52 carries SL@51 and right roots^52 carries ML@57. The retry ends only SL@51 using stock join handling, preserving the mutable return mapping.",
+  "replayed_outputs_byte_identical": 3,
+  "unrelated_cubic_control_byte_identical": 3,
+  "unrelated_certificate_control_byte_identical": 3,
+  "artifacts": {
+    "checked-array-loan-retry.patch": "43068339bcc31cdafb233423f36f5cee17578b427c501d0df5786666231f16de",
+    "array-loan-retry-delta.patch": "0f8e89b4decc4ce1ac90a9177ebfbdf835d3b56a007ffa9c3d08299b9f89ffe7",
+    "arithmetic.llbc": "bae801d20df524409dd3bd7710e396d8a1c2d72c37add151df93fc0fbfbf4ddd",
+    "charon.log": "7c1997145318401494ec08efe7675c5c7648f1e4dd87c2fbcfc4045583d20089",
+    "aeneas.log": "c4f0c6901077e45961162e2e1996744a464b219eee86516a5090d80dcc7114a7",
+    "narrow.log": "476d21bc2cf56bc0e05459343f541d4da9fc8a4c010f4deb3ceeb18ee759e0d2",
+    "replay.log": "d49cdf7f204454571d2a94705355d2f6ad273be2d35a624a9f85355dd83e3ab4",
+    "pinned.log": "1db5c1445a86de3a901271050649fc211930d2eb5ab892f3aadce388a81236f2",
+    "unchecked.log": "1286db2a71dfdee74bd8ea9a724c37032b204b6d11edcd00eb2c2996852e6a8a",
+    "controls.log": "bd517cdbbbe1fc18d0d44d0d76d3b7a279a7ee6e2d74dc3b17d4a32e5163aae8",
+    "array_loan_controls.ml": "b639874afedd6e062ab2a564f75c9a586ef13b124695fd076d7710f1fafe204b",
+    "dune": "26dcb8e1fdef2773627dbb71a6e2b73737931b02fa3a49d2a9f731d3ad37f9c6",
+    "cubic-control.log": "9b0cbfac6c09781361251db0fec1c587e2a65f4cc61f1ee6ca54de900262db19",
+    "certificate-control.log": "2315c903c987863571b4904673c8ad8cdb9fd329bb44be5df1917b88a3c2940a",
+    "narrow/Funs.lean": "06faff2bfa131ad027aeaae819304d010a5ef034fe0303e0e52ebea79f236102",
+    "narrow/FunsExternal_Template.lean": "758cfbb7e74a8dd137a056e3b68de91d2a201145958af26adc614145ecbd0009",
+    "narrow/Types.lean": "c9a7b0fd09b8ece583fadda5865342ac70b4fb043eeeb4165bd89432bc685f48"
+  },
+  "files_sha256": {
+    "extraction/quartic/unchecked.log": "1286db2a71dfdee74bd8ea9a724c37032b204b6d11edcd00eb2c2996852e6a8a",
+    "extraction/quartic/aeneas.log": "d49cdf7f204454571d2a94705355d2f6ad273be2d35a624a9f85355dd83e3ab4",
+    "extraction/quartic/pinned.log": "1db5c1445a86de3a901271050649fc211930d2eb5ab892f3aadce388a81236f2",
+    "extraction/quartic/charon.log": "7c1997145318401494ec08efe7675c5c7648f1e4dd87c2fbcfc4045583d20089",
+    "extraction/quartic/arithmetic.llbc": "bae801d20df524409dd3bd7710e396d8a1c2d72c37add151df93fc0fbfbf4ddd",
+    "extraction/quartic/translator/controls.log": "bd517cdbbbe1fc18d0d44d0d76d3b7a279a7ee6e2d74dc3b17d4a32e5163aae8",
+    "extraction/quartic/translator/checked-array-loan-retry.patch": "43068339bcc31cdafb233423f36f5cee17578b427c501d0df5786666231f16de",
+    "extraction/quartic/translator/array-loan-retry-delta.patch": "0f8e89b4decc4ce1ac90a9177ebfbdf835d3b56a007ffa9c3d08299b9f89ffe7",
+    "extraction/quartic/Arithmetic/Funs.lean": "06faff2bfa131ad027aeaae819304d010a5ef034fe0303e0e52ebea79f236102",
+    "extraction/quartic/Arithmetic/FunsExternal_Template.lean": "758cfbb7e74a8dd137a056e3b68de91d2a201145958af26adc614145ecbd0009",
+    "extraction/quartic/Arithmetic/Types.lean": "c9a7b0fd09b8ece583fadda5865342ac70b4fb043eeeb4165bd89432bc685f48",
+    "extraction/quartic/translator/guards/array_loan_controls.ml": "b639874afedd6e062ab2a564f75c9a586ef13b124695fd076d7710f1fafe204b",
+    "extraction/quartic/translator/guards/dune": "26dcb8e1fdef2773627dbb71a6e2b73737931b02fa3a49d2a9f731d3ad37f9c6",
+    "extraction/quartic/translator/narrow.log": "476d21bc2cf56bc0e05459343f541d4da9fc8a4c010f4deb3ceeb18ee759e0d2",
+    "extraction/quartic/translator/cubic-control.log": "9b0cbfac6c09781361251db0fec1c587e2a65f4cc61f1ee6ca54de900262db19",
+    "extraction/quartic/translator/certificate-control.log": "2315c903c987863571b4904673c8ad8cdb9fd329bb44be5df1917b88a3c2940a"
+  },
+  "replay_output_sha256": {
+    "replay": {
+      "Funs.lean": "06faff2bfa131ad027aeaae819304d010a5ef034fe0303e0e52ebea79f236102",
+      "Types.lean": "c9a7b0fd09b8ece583fadda5865342ac70b4fb043eeeb4165bd89432bc685f48",
+      "FunsExternal_Template.lean": "758cfbb7e74a8dd137a056e3b68de91d2a201145958af26adc614145ecbd0009"
+    },
+    "cubic-control": {
+      "Funs.lean": "72f828764ffee03a3827a12d3f287ae78ff3293b1cdc3735f4f8d2f012ee47c6",
+      "Types.lean": "0b9acef79bca0cb45bace559062aaf8d99cc5b4504b5fa7b1dd473ba4bef89f1",
+      "FunsExternal_Template.lean": "9506979759dfd68418de57c868b5f31cdec5324bb97e709c917d27dc91c34739"
+    },
+    "certificate-control": {
+      "Funs.lean": "eb400afed2af3073c9eb76370bf617c9b6adb0128988510247b64ece531e4e55",
+      "Types.lean": "c9a7b0fd09b8ece583fadda5865342ac70b4fb043eeeb4165bd89432bc685f48",
+      "FunsExternal_Template.lean": "ea6b5454758a635c256befe630f8951adc942962f92e9d9e673458ce5dfdb570"
+    }
+  }
+}

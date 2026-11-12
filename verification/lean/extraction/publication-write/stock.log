@@ -1,0 +1,20 @@
+[[92mInfo[39m ] Imported: /workspace/bulk/bulksketch-proof-evidence-20261109-native-closure/publication/write/arithmetic.llbc
+[[91mError[39m] Could not match the contexts
+Source: 'src/sketch/api.rs', lines 292:16-294:17
+Compiler source: interp/InterpJoin.ml, line 1571
+[[93mWarn[39m ] Could not translate the body of function 'bulksketch::sketch::api::{bulksketch::sketch::api::Publication<'s>}::write because of previous error
+Name pattern: 'bulksketch::sketch::api::{bulksketch::sketch::api::Publication<'s>}::write'
+Definition span: 'src/sketch/api.rs', lines 262:4-312:5
+Source: 'src/sketch/api.rs', lines 292:16-294:17
+Compiler source: interp/Interp.ml, line 685
+
+[[93mWarn[39m ] When retrieving the builtin information for trait decl 'core::iter::traits::iterator::Iterator', could not find the information for item 'all'. The model defined in the Lean library seems to be missing the corresponding field.
+Source: '/rustc/library/core/src/iter/traits/iterator.rs', lines 42:0-42:24
+Compiler source: extract/Extract.ml, line 2866
+
+[[92mInfo[39m ] Creating missing directory: /workspace/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/stock
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /workspace/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/stock/TypesExternal_Template.lean
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /workspace/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/stock/Types.lean
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /workspace/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/stock/FunsExternal_Template.lean
+[[92mInfo[39m ] Generated the partial file (because of 1 errors, including 1 unique errors): /workspace/bulk/bulksketch-proof-evidence-20261109-publication-write-next/controls/stock/Funs.lean
+[[92mInfo[39m ] Total execution time: 0.610134 seconds

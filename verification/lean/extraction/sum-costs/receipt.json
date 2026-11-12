@@ -1,0 +1,105 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "selected_roots": [
+    "bulksketch::decode::work::sum_costs"
+  ],
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-09-17",
+    "CARGO_TARGET_DIR": "/workspace/bulk/bulksketch-proof-tools/work-schedule/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_NET_OFFLINE": "true"
+  },
+  "commands": [
+    [
+      "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-root-work-budget/sum-costs/stock-expanded/arithmetic.llbc",
+      "--start-from=bulksketch::decode::work::sum_costs",
+      "--no-dedup-serialized-ast",
+      "--",
+      "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked",
+      "--target",
+      "x86_64-apple-darwin"
+    ],
+    [
+      "python3",
+      "-O",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-root-work-budget/sum-costs/specialize.py",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-root-work-budget/sum-costs/stock-expanded/arithmetic.llbc",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-root-work-budget/sum-costs/specialized-builtins/arithmetic.llbc"
+    ],
+    [
+      "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-root-work-budget/sum-costs/specialized-builtins/Arithmetic",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-root-work-budget/sum-costs/specialized-builtins/arithmetic.llbc"
+    ]
+  ],
+  "exit_codes": [
+    0,
+    0,
+    0
+  ],
+  "artifacts": {
+    "arithmetic.llbc": "2be801cb47ed251d5b86d28d8c0b9a06afa6b761ae89ba4e55ee0270b6647d2b",
+    "specialized.llbc": "5c97bf7d74f619777524d05d904c12bcca819e5dc5e90f16658bce9a747e0dbf",
+    "charon.log": "a44912dc0d1f8af3a95470988d81ed4fb876778b1eee5e561bded60742f4ee2b",
+    "aeneas.log": "08fde78ddaf43daf4c7c6955e87f2377cb7245808114d991e149b66cea2df66a",
+    "specialize.py": "1b3f7bb84e01d505257a60de60929333463a2636c47aa4cd5a158aeb3c8063e1",
+    "Arithmetic/Types.lean": "2410637eec84426022ad63f9d898f32758d058ff7d41d1940a5868fcf5b5f4b5",
+    "Arithmetic/Funs.lean": "9536a3955e53528b9c8d345f05a6b430123b95bb9d6fc14d685ef550b3d8d524",
+    "Arithmetic/FunsExternal_Template.lean": "f6060f3ae6611935618551a3730cb90a80fac7bb8c2743b5f256dbcd234f6dc3"
+  },
+  "variant_id": "checked-sum-costs-try-fold-v1",
+  "header_sha256": "f6d759eb63e4ad631e16b321b53b3b491c5b9612d04eb152f608e22a0f6d2bb0",
+  "runtime": {
+    "sumCostsTryFoldFrom": "8a959771a58254b53ac8b67563bb8f638c70b99bfec717040355e69b080ca047",
+    "decode.work.checked_sum_costs_slice_try_fold": "7fb7dd0af08651e3cbb3b67dd92946b676dfeda4d1c024e20605bf8531c6b84a"
+  },
+  "rust_std_sha256": {
+    "iter/traits/iterator.rs": "6a6468cade532beaba7c8b3f0db2b3fa768a069c56b636c68fbf1b27bc7d81a0",
+    "slice/iter/macros.rs": "8db181ab6087b436dcc4c350efc7283ecc4912e34ca20d8bf7460fca5084c26c"
+  },
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-root-work-budget/sum-costs/specialized-replay/Arithmetic",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-root-work-budget/sum-costs/specialized-replay/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "specialized_sha256": "5c97bf7d74f619777524d05d904c12bcca819e5dc5e90f16658bce9a747e0dbf",
+    "output_sha256": {
+      "Types.lean": "2410637eec84426022ad63f9d898f32758d058ff7d41d1940a5868fcf5b5f4b5",
+      "Funs.lean": "9536a3955e53528b9c8d345f05a6b430123b95bb9d6fc14d685ef550b3d8d524",
+      "FunsExternal_Template.lean": "f6060f3ae6611935618551a3730cb90a80fac7bb8c2743b5f256dbcd234f6dc3"
+    }
+  }
+}

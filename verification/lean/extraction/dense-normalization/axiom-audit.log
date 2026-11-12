@@ -1,0 +1,5 @@
+'BulksketchBridge.DenseNormalization.normalized_len_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.DenseNormalization.normalizedLength_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.ReversePosition.scan_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BulksketchBridge.ReversePosition.expected_index_bound' depends on axioms: [propext, Quot.sound]
+'BulksketchBridge.ReversePosition.shared_rposition_refines' depends on axioms: [propext, Classical.choice, Quot.sound]

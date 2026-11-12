@@ -1,0 +1,62 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "3f4dc9a0f004f309e8e5ef8d2b2700f62b873270",
+  "source_root": "{impl bulksketch::backend::contract::BulkKernels for bulksketch::backend::portable::Portable}::xor_assign",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "native_source_edited": false,
+  "native_files_checked": 41,
+  "native_build_inputs_checked": 3,
+  "llbc_has_errors": false,
+  "llbc_sha256": "48f0136c7ec710188892da82e32e9e1c824f13006ca53fbd3d10e8cf06d8ecdf",
+  "tool_binary_sha256": {
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe",
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330"
+  },
+  "generated": [
+    {
+      "path": "extraction/portable-xor/Arithmetic/Funs.lean",
+      "sha256": "2de32175a7ff8f0bfcebfa5ad4ed9814965136fff08e0bd5b804e8d9250763f2"
+    },
+    {
+      "path": "extraction/portable-xor/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "fca2fe70ab4b973fb5bbbc5f1644826e71abb99c0245cd04c3a63eff88326ed4"
+    },
+    {
+      "path": "extraction/portable-xor/Arithmetic/Types.lean",
+      "sha256": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef"
+    }
+  ],
+  "logs": {
+    "charon.log": "ea698cd544aaaabe046d872e612157fa86bee2f7699d6572da35a09715112fc8",
+    "aeneas.log": "c908468387506bff765e82b77dcf813fc9a03345c7a7bb66bf5813ce4226a35d"
+  },
+  "recorded_output_directory": "/workspace/bulk/bulksketch-proof-tools/slice-kernels/xor-assign",
+  "rust_std_source_references": [
+    {
+      "path": "library/core/src/iter/adapters/zip.rs",
+      "sha256": "0c7f9a5a00af318a1262d3505b440c102db0dce2756f35fbb95f176a6cdc8ce9",
+      "lines": "290\u2013313",
+      "scope": "TrustedRandomAccess constructor and next use min remaining lengths and no cursor movement on None"
+    },
+    {
+      "path": "library/core/src/slice/iter.rs",
+      "sha256": "6cb6156e617daf67ec15c5510ac58ee85b12cd0edbe4bceb9a4ad9d10f1e4021",
+      "lines": "2987\u20133003",
+      "scope": "Iter and IterMut implement TrustedRandomAccess and have no side effects for unchecked accesses"
+    },
+    {
+      "path": "library/core/src/slice/iter/macros.rs",
+      "sha256": "8db181ab6087b436dcc4c350efc7283ecc4912e34ca20d8bf7460fca5084c26c",
+      "lines": "413\u2013424",
+      "scope": "get_unchecked reads or mutably borrows the indexed element without mutating the cursor"
+    }
+  ],
+  "command_recipe": [
+    "charon cargo --preset=aeneas --sysroot=default --dest-file=<output>/arithmetic.llbc --start-from=<source_root> -- --manifest-path=<repo>/Cargo.toml -p bulksketch --lib --locked",
+    "aeneas -backend lean -checks -sequential -split-files -dest <output>/Arithmetic <output>/arithmetic.llbc"
+  ],
+  "scoped_runtime_sha256": "683a48af92e8c4f992d4f0893ed18679122344714cdda9a2293c07029b85776d"
+}

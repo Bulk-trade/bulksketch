@@ -1,0 +1,36 @@
+{
+  "status": "targeted build and exact source challenge audit passed",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "native_item_id": "src/backend/portable.rs:109:method:bulksketch::backend::portable::<Portable as BulkKernels < F >>::horner_many",
+  "source_line_span_sha256": "07f2978c6272a4217ebf8086f717d7edb327260d48d5aed5406586d668682414",
+  "generated_declaration": "bulksketch.backend.portable.Portable.Insts.BulksketchBackendContractBulkKernels.horner_many",
+  "generated_file": "bridge/Arithmetic/PortableHornerGenerated.lean",
+  "generated_files": [
+    "bridge/Arithmetic/PortableHornerGenerated.lean",
+    "bridge/Arithmetic/Types.lean",
+    "bridge/Arithmetic/Funs.lean",
+    "bridge/Arithmetic/PortableGenerated.lean",
+    "bridge/Arithmetic/PortableXorGenerated.lean",
+    "bridge/Arithmetic/DenseNormalizationGenerated.lean"
+  ],
+  "aeneas_variant": "checked-ended-shared-scalar-v1",
+  "challenge": "BulksketchBridge.PortableHornerChallenges.hornerRefines",
+  "theorem": "BulksketchBridge.PortableHorner.horner_many_refines",
+  "scope": "All GF64 coefficient, point and destination slices. Equal lengths return the exact pointwise Horner evaluation of the ascending-degree coefficient list with the full original destination length. Empty coefficients fill zeros. Unequal lengths reach the original panic before traversal.",
+  "native_body_refinements_added": 1,
+  "verbatim_functions": 7,
+  "verbatim_types": 1,
+  "scoped_runtime_module": "bridge/Arithmetic/PortableHornerRuntime.lean",
+  "runtime_trust_boundary": "Shared slice split_last and Rev<slice::Iter<u64>>::fold correspondence in pinned Rust and Aeneas. The reverse fold calls pinned next_back, applies the generated stateful callback exactly once per coefficient and propagates Result effects. The original Zip frame uses the existing pinned slice-specialized MutableZip model. Native pointer, compiler, ownership and machine correspondence remain within the extraction/runtime boundary.",
+  "native_source_edited": false,
+  "full_native_coverage_achieved": false,
+  "files_sha256": {
+    "bridge/Arithmetic/PortableHornerRuntime.lean": "b3a4497de2c55f4acb0638b3bd57bc7fd75f9e0c9741751cf49d5cb9e3219bea",
+    "bridge/Arithmetic/PortableHornerGenerated.lean": "cf6735c9a9d3863d8523f8a9f936eb31e25d02bb788247883df79d38b6bed073",
+    "bridge/BulksketchBridge/PortableHornerChallenges.lean": "41265a31a00a53f6700cf7792eef91ab8d5e47847536e2bf4387155e604965f2",
+    "bridge/BulksketchBridge/PortableHorner.lean": "451c6f55463db0d74355b9e7c868e54344987de1a002f193c2a6908e54ad8f8a",
+    "bridge/BulksketchBridge/PortableZipMap.lean": "5985b26f6831f83088d3f13e1b37cc3daab2efb6157c172dfe77d7e3b53d623d",
+    "bridge/Arithmetic/MutableZipRuntime.lean": "683a48af92e8c4f992d4f0893ed18679122344714cdda9a2293c07029b85776d",
+    "extraction/portable-horner/project.py": "f1028f1f744bcb43dbda2d9ea0fd75c303ac890fbd6cc84b7d18069b3f651f5f"
+  }
+}

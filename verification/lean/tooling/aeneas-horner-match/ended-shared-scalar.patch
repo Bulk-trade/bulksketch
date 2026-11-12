@@ -1,0 +1,73 @@
+diff --git a/src/interp/InterpMatchCtxs.ml b/src/interp/InterpMatchCtxs.ml
+index 29705f4..46ae650 100644
+--- a/src/interp/InterpMatchCtxs.ml
++++ b/src/interp/InterpMatchCtxs.ml
+@@ -348,7 +348,11 @@ let rec match_types (span : Meta.span) ~(recover : bool) (ctx0 : eval_ctx)
+       TPtrMetadata ty
+   | _ -> match_distinct_types ty0 ty1
+ 
+-module MakeMatcher (M : PrimMatcher) : Matcher = struct
++module MakeMatcherWithMode
++    (M : PrimMatcher)
++    (Mode : sig
++      val match_ended_shared_scalars : bool
++    end) : Matcher = struct
+   let span = M.span
+ 
+   let rec match_tvalues (ctx0 : eval_ctx) (ctx1 : eval_ctx) (v0 : tvalue)
+@@ -553,6 +557,24 @@ module MakeMatcher (M : PrimMatcher) : Matcher = struct
+               (not (value_has_borrows sv.value));
+             M.match_ashared_loans match_rec ctx0 ctx1 v0.ty pm0 id0 sv0 av0
+               v1.ty pm1 id1 sv1 av1 ty sv av
++        | AEndedSharedLoan (sv0, av0), AEndedSharedLoan (sv1, av1)
++          when Mode.match_ended_shared_scalars && !Config.sanity_checks
++               && equal_tvalue sv0 sv1 && av0.ty = sv0.ty && av1.ty = sv1.ty
++               && (match (sv0.ty, sv0.value) with
++                   | TScalar _, VLiteral _ -> true
++                   | TScalar _, VSymbolic sv -> sv.sv_ty = sv0.ty
++                   | _ -> false)
++               && (match (av0.value, av1.value) with
++                   | AIgnored None, AIgnored None -> true
++                   | AIgnored (Some child0), AIgnored (Some child1) ->
++                       equal_tvalue child0 sv0 && equal_tvalue child1 sv1
++                   | _ -> false) ->
++            (* A scalar loan already ended in both contexts. The ignored child
++               carries either no metadata or the very same scalar. Validate
++               both before matching, and preserve the optional child payload. *)
++            let sv = match_rec sv0 sv1 in
++            let av = { (match_arec av0 av1) with value = av0.value } in
++            { value = ALoan (AEndedSharedLoan (sv, av)); ty }
+         | AMutLoan (pm0, id0, av0), AMutLoan (pm1, id1, av1) ->
+             [%ldebug "mut loans"];
+             [%ldebug "mut loans: matching children values"];
+@@ -586,6 +608,12 @@ module MakeMatcher (M : PrimMatcher) : Matcher = struct
+         M.match_avalues match_rec ctx0 ctx1 v0 v1
+ end
+ 
++module MakeMatcher (M : PrimMatcher) =
++  MakeMatcherWithMode (M) (struct let match_ended_shared_scalars = false end)
++
++module MakeContextMatcher (M : PrimMatcher) =
++  MakeMatcherWithMode (M) (struct let match_ended_shared_scalars = true end)
++
+ module MakeJoinMatcher (S : MatchJoinState) : PrimMatcher = struct
+   (** Small utility *)
+   let span = S.span
+@@ -2265,7 +2293,7 @@ let match_ctxs (span : Meta.span) ~(check_equiv : bool)
+     let lookup_shared_value_in_ctx1 = lookup_shared_value_in_ctx1
+   end in
+   let module CEM = MakeCheckEquivMatcher (S) in
+-  let module M = MakeMatcher (CEM) in
++  let module M = MakeContextMatcher (CEM) in
+   (* When matching abstractions we allow backtracking, so we need an alternative
+      version of the matchers where [recover] is true *)
+   let module RecoverS : MatchCheckEquivState = struct
+@@ -2283,7 +2311,7 @@ let match_ctxs (span : Meta.span) ~(check_equiv : bool)
+     let lookup_shared_value_in_ctx1 = lookup_shared_value_in_ctx1
+   end in
+   let module RecoverCEM = MakeCheckEquivMatcher (RecoverS) in
+-  let module RecoverM = MakeMatcher (RecoverCEM) in
++  let module RecoverM = MakeContextMatcher (RecoverCEM) in
+   (* Match the environments - we assume that they have the same structure
+      (and fail if they don't) *)
+ 

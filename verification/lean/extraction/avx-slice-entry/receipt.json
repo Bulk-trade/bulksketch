@@ -1,0 +1,109 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "source_sha256": {
+    "src/backend/x86_vpclmul512.rs": "7a9c29dff254508671aa4122b20644b21a9cfb40f86ba5eaadce02bf680475d4"
+  },
+  "native_source_edited": false,
+  "native_llbc_edited": false,
+  "commands": {
+    "charon": {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-avx-slice-memory/entry/arithmetic.llbc",
+        "--start-from=bulksketch::backend::x86_vpclmul512::scale_xor",
+        "--start-from=bulksketch::backend::x86_vpclmul512::square_slice",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::scale_xor",
+        "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::square_slice",
+        "--opaque=bulksketch::backend::x86_vpclmul512::scale_kernel",
+        "--opaque=bulksketch::backend::x86_vpclmul512::square_kernel",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::mul",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::square",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::frobenius",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::inverse",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::trace",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::solve_quadratic",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::raw_mul",
+        "--opaque=bulksketch::backend::x86_vpclmul512::_::reduce",
+        "--opaque=bulksketch::backend::portable::_::_",
+        "--include={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::scale_xor",
+        "--include={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::x86_vpclmul512::Vpclmul512}::square_slice",
+        "--",
+        "--manifest-path",
+        "/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    "aeneas": {
+      "command": [
+        "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-avx-slice-memory/entry/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-avx-slice-memory/entry/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  },
+  "tool_binary_sha256": {
+    "aeneas": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+    "charon": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe"
+  },
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-avx-slice-memory/replay-entry",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-avx-slice-memory/entry/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "output_sha256": {
+      "Funs.lean": "06b082ea80a145fe0022986622949c112ff17e6b1efe377e94a5213f9c1fa290",
+      "FunsExternal_Template.lean": "820002fc5740dd8f680f25749a9638bff8bd6d25fa7c9d01ba1756d76fae0b09",
+      "Types.lean": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef"
+    }
+  },
+  "runtime_sha256": {
+    "bridge/Arithmetic/AvxSquareRuntime.lean": "3cba580416043b3dda5f80d810729009a493ec211e0e03813552c5b4df10bcda",
+    "bridge/Arithmetic/AvxHornerChunkRuntime.lean": "8b4b25334dd663935446930ae7de5d9f3a52252e7afe236ab431dd48608c41d2",
+    "bridge/Arithmetic/AvxSliceKernelRuntime.lean": "dd728e9d41e16693ef495d484478c8bb922e03a8f232078f7e062974169ae002",
+    "bridge/Arithmetic/PortableSliceGenerated.lean": "5c96da93c60d31823dfd273e669f9066a51bd8d9648a04c19e163a9814408c31",
+    "bridge/Arithmetic/AvxSliceKernelGenerated.lean": "f15095f5796769df16f5bbc26128e77f67dc4f1948b3aa921e1982ca57f6e041",
+    "bridge/Arithmetic/Types.lean": "dd8212a82a7883d947f5788a14d7c16d0ff2a9bb95d3570910c79cc7e0b830a0"
+  },
+  "artifacts": {
+    "extraction/avx-slice-entry/Arithmetic/Funs.lean": "06b082ea80a145fe0022986622949c112ff17e6b1efe377e94a5213f9c1fa290",
+    "extraction/avx-slice-entry/Arithmetic/FunsExternal_Template.lean": "820002fc5740dd8f680f25749a9638bff8bd6d25fa7c9d01ba1756d76fae0b09",
+    "extraction/avx-slice-entry/Arithmetic/Types.lean": "21a2271bf5a1071312f0cfd02b0cf7db0d202e6a6e9f64a75836a019207b1fef",
+    "extraction/avx-slice-entry/aeneas.log": "1e08fb37e39613276995daa105e1679a6b6b7d190b6c84bb97e1a13b6111e162",
+    "extraction/avx-slice-entry/arithmetic.llbc": "5b3637434c8135c4ac30376c26946eb26e7aeaa253a4cf583f5b7b7530eb13c7",
+    "extraction/avx-slice-entry/charon.log": "413f9c24b36d25e7ca7cbfb28d5e334de1eb0223260f19d4f79e8d09d63bbbce",
+    "extraction/avx-slice-entry/replay.log": "373b171da2c443a18f4c7978132405b44b096b839178292647f79772bfd16d20"
+  }
+}

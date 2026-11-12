@@ -1,0 +1,28 @@
+{
+  "command": [
+    "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+    "cargo",
+    "--preset=aeneas",
+    "--sysroot=default",
+    "--dest-file=/workspace/bulk/bulksketch/verification/lean/extraction/portable-forwarding/portable.llbc",
+    "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::mul",
+    "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::square",
+    "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::frobenius",
+    "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::trace",
+    "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::solve_quadratic",
+    "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::raw_mul",
+    "--start-from={impl bulksketch::backend::contract::Arithmetic for bulksketch::backend::portable::Portable}::reduce",
+    "--start-from={impl bulksketch::field::BinaryField for bulksketch::field::Gf64}",
+    "--",
+    "--manifest-path",
+    "/workspace/bulk/bulksketch/Cargo.toml",
+    "-p",
+    "bulksketch",
+    "--lib",
+    "--locked"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.6267007919998377,
+  "log": "extraction/portable-forwarding/charon.log",
+  "log_sha256": "d382aa19ff718c8afc51e415c225efeb5667a4e5d25e7f3388b896967889a28e"
+}

@@ -1,0 +1,87 @@
+{
+  "status": "generated",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "checkout_commit": "b39e690586582acfdcb51b286d6adbb90141d976",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "llbc_has_errors": false,
+  "native_source_edited": false,
+  "runtime_sha256": "d03c8254dfda15a7f73a71f32f6df3df5c8ec58823191742eb7a0a6242fe159d",
+  "commands": [
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-native-next/feature-detect/arithmetic.llbc",
+        "--start-from=bulksketch::backend::x86_vpclmul512::detect",
+        "--",
+        "--manifest-path",
+        "/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-next/feature-detect/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-native-next/feature-detect/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "extraction/x86-feature-detect/arithmetic.llbc",
+      "sha256": "edd1a02167ac48f20621008cdff89e4ef3cc941d08fa4f0778f764ea001e7615"
+    },
+    {
+      "path": "extraction/x86-feature-detect/charon.log",
+      "sha256": "7c1997145318401494ec08efe7675c5c7648f1e4dd87c2fbcfc4045583d20089"
+    },
+    {
+      "path": "extraction/x86-feature-detect/aeneas.log",
+      "sha256": "0b408e40c104267c1c1f5e0fd31b7624ffc9b8a39ed6cf4d501f7571643ad1ff"
+    },
+    {
+      "path": "extraction/x86-feature-detect/Arithmetic/Funs.lean",
+      "sha256": "0ca59301ee47516c796ee315bcf39e85e3ef9fe9f65d7bc6a1713653bd7709df"
+    },
+    {
+      "path": "extraction/x86-feature-detect/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "50124fb1c67de1f4cc941ac73f4cc96c93d0bd8f77f24c55e4e6ce1a30657052"
+    },
+    {
+      "path": "extraction/x86-feature-detect/Arithmetic/Types.lean",
+      "sha256": "4e8bf7269bfb9aa4601860fb5937c5085df8502d87398930222619b066685b69"
+    }
+  ],
+  "stdarch_source_references": [
+    {
+      "path": "stdarch/crates/core_arch/src/x86/cpuid.rs",
+      "sha256": "7061c9caa88fe5ddeff983f94cb921c921f948f85bd483c56fd62001136747c3"
+    },
+    {
+      "path": "stdarch/crates/core_arch/src/x86/xsave.rs",
+      "sha256": "14ae3183ec2e9ab7aed5596a7e0b9e71af736d707cb847dc28d93caf012d6310"
+    }
+  ],
+  "instruction_reference": "https://cdrdv2-public.intel.com/843827/253665-sdm-vol-1-dec-24.pdf"
+}

@@ -1,0 +1,227 @@
+--- a/src/PrePasses.ml
++++ b/src/PrePasses.ml
+@@ -2361,6 +2361,216 @@
+     }
+   else f
+ 
++(** The captured source patterns use a raw pointer only for its slice length.
++    In the length-two arm, group the two constant index borrows into the
++    standard disjoint split so their original references remain usable
++    together. Any change in the guarded shapes is an extraction error. *)
++let lower_canonicalize_slice_pattern (crate : crate) (f : fun_decl) : fun_decl =
++  let fmt = Print.crate_to_fmt_env crate in
++  let name (fn : fun_decl) = Print.name_to_string fmt fn.item_meta.name in
++  let exact_source =
++    String.starts_with ~prefix:"bulksketch::decode::stages::" (name f)
++    && String.ends_with ~suffix:"::canonicalize" (name f)
++  in
++  match f.body with
++  | StructuredBody body when exact_source ->
++      let span = f.item_meta.span in
++      let require c message =
++        [%cassert] span c ("canonicalize slice lowering: " ^ message)
++      in
++      require (!Config.sanity_checks && not crate.options.skip_borrowck)
++        "symbolic and Rust borrow checks must be enabled";
++      require (span.data.file.name = Meta.Local "src/decode/stages.rs"
++               && span.data.beg_loc.line = 373 && span.data.end_loc.line = 405)
++        "source span changed";
++      let std_method prefix suffix =
++        match
++          FunDeclId.Map.values crate.fun_decls
++          |> List.filter (fun d ->
++                 String.starts_with ~prefix (name d)
++                 && String.ends_with ~suffix (name d))
++        with
++        | [ d ] -> d
++        | _ -> [%craise] span ("canonicalize slice lowering: absent or duplicate " ^ suffix)
++      in
++      let len = std_method "core::slice::" "::len" in
++      let split = std_method "core::slice::" "::split_at_mut" in
++      let swap = std_method "core::mem::" "::swap" in
++      require (len.body = OpaqueBody && split.body = OpaqueBody
++               && swap.body = OpaqueBody && not len.signature.is_unsafe
++               && not split.signature.is_unsafe && not swap.signature.is_unsafe)
++        "standard slice declaration scope differs";
++      require (match len.signature.inputs with
++        | [ TRef (_, TSlice (TVar _, None), RShared) ] ->
++            len.signature.output = mk_usize_ty
++        | _ -> false) "standard length signature differs";
++      require (match split.signature.inputs, split.signature.output with
++        | [ (TRef (_, TSlice (TVar _, None), RMut) as input); mid ],
++          TAdt { id; generics = { regions = []; types = [ left; right ];
++                                const_generics = []; trait_refs = [] };
++                 builtin = Some TTuple } ->
++            mid = mk_usize_ty && id = TypeDeclId.zero && left = input && right = input
++        | _ -> false) "standard split signature differs";
++      let local i : place =
++        let local : local = List.nth body.locals.locals i in
++        { kind = PlaceLocal local.index; ty = local.local_ty }
++      in
++      let roots = local 17 in
++      let slice_ty, word_ty =
++        match roots.ty with
++        | TRef (_, (TSlice ((TScalar (TInteger (Unsigned U64)) as word), _) as slice), RMut) ->
++            (slice, word)
++        | _ -> [%craise] span "canonicalize slice lowering: roots type differs"
++      in
++      let place p projection ty : place = { kind = PlaceProjection (p, projection); ty } in
++      let roots_deref = place roots Deref slice_ty in
++      let roots_length = Copy (place roots PtrMetadata mk_usize_ty) in
++      let num n =
++        Constant { kind = CInteger (UnsignedInteger (Usize, Z.of_int n)); ty = mk_usize_ty }
++      in
++      let i0 = num 0 and i1 = num 1 and i2 = num 2 in
++      let by_id = Hashtbl.create 20 in
++      let place_count = Hashtbl.create 20 in
++      let swap_count = ref 0 in
++      let inspect =
++        object
++          inherit [_] iter_statement as super
++          method! visit_statement () st =
++            Hashtbl.add by_id (StatementId.to_int st.statement_id) st;
++            (match st.kind with
++            | Call ({ func = FnOpRegular { kind = Fun id; _ }; _ }, _, _)
++              when id = swap.def_id -> incr swap_count
++            | _ -> ());
++            super#visit_statement () st
++          method! visit_PlaceLocal () id =
++            let n = LocalId.to_int id in
++            let count = Option.value (Hashtbl.find_opt place_count n) ~default:0 in
++            Hashtbl.replace place_count n (count + 1)
++        end
++      in
++      inspect#visit_block () body.body;
++      let original i =
++        match Hashtbl.find_all by_id i with
++        | [ st ] -> st
++        | _ -> [%craise] span "canonicalize slice lowering: statement identity differs"
++      in
++      let statement i = (original i).kind in
++      let branch_id = match statement 278 with
++        | Switch ({ scrutinee = SwitchValue (Move operand);
++                    branches = [ ({ kind = CBool false; _ }, rejected) ];
++                    fallback = Some accepted }, [ yes; no ])
++          when operand = local 37 && BranchId.to_int accepted = 0
++               && BranchId.to_int rejected = 1
++               && BlockId.to_int yes.block_id = 25 && BlockId.to_int no.block_id = 40 ->
++            yes.block_id
++        | _ -> [%craise] span "canonicalize slice lowering: length guard branch differs"
++      in
++      require (statement 184 = Assign (local 37, BinaryOp (Eq, Move (local 33), Move (local 36)))
++               && statement 183 = Assign (local 36, Use (i2, YesRetag))
++               && statement 182 = Assign (local 33, Use (Move (local 35), YesRetag)))
++        "length-two guard differs";
++      let left = local 61 and right = local 63 in
++      let reborrow = RvRef (roots_deref, BMut, roots_length) in
++      require (statement 44074 = Assign (left, reborrow)
++               && statement 44079 = Assign (right, reborrow)
++               && !swap_count = 1) "two-cell borrow or swap differs";
++      let idx0, idx1, idx_dest, idx_unwind = match statement 44077, statement 44082 with
++        | Call (l, _, _), Call (r, dest, unwind) -> (l, r, dest, unwind)
++        | _ -> [%craise] span "canonicalize slice lowering: no paired index calls"
++      in
++      require (idx0.func = idx1.func && idx0.args = [ i0; Move left ]
++               && idx1.args = [ i1; Move right ]) "two-cell indices differ";
++      let locals = ref [] and local_count = ref (List.length body.locals.locals) in
++      let regions = ref body.bound_body_regions in
++      let fresh_region () =
++        let r = RBody (RegionId.of_int !regions) in
++        incr regions; r
++      in
++      let fresh_local span ty =
++        let index = LocalId.of_int !local_count in
++        incr local_count;
++        locals := { index; local_ty = ty; name = None; span; drop_flag_for = None } :: !locals;
++        (({ kind = PlaceLocal index; ty } : place), index)
++      in
++      let mk_st span kind = { span; kind; statement_id = StatementId.zero; comments_before = [] } in
++      let make_call (callee : fun_decl) span dest args lifetime =
++        let generics = { regions = [ lifetime ]; types = [ word_ty ];
++                         const_generics = []; trait_refs = [] } in
++        let call = { func = FnOpRegular { kind = Fun callee.def_id; generics };
++                     args; safety = Inherit } in
++        Call (call, dest, { span; block_id = BlockId.zero; statements = [] })
++      in
++      let pairs = [ (180, 181, 34); (237, 238, 29); (244, 245, 24) ] in
++      let metadata_rewrites = ref 0 in
++      let split_rewrites = ref 0 in
++      let lower_block =
++        object
++          inherit [_] map_statement as super
++          method! visit_block () block =
++            let block = super#visit_block () block in
++            let rec lower_reads = function
++              | first :: second :: tail ->
++                  let f_id = StatementId.to_int first.statement_id in
++                  let s_id = StatementId.to_int second.statement_id in
++                  (match List.find_opt (fun (a, b, _) -> a = f_id && b = s_id) pairs with
++                  | None -> first :: lower_reads (second :: tail)
++                  | Some (_, _, raw_id) ->
++                      let raw = local raw_id in
++                      let dest = match second.kind with
++                        | Assign (dest, use) when use = Use (Copy (place raw PtrMetadata mk_usize_ty), NoRetag) ->
++                            dest
++                        | _ -> [%craise] span "canonicalize slice lowering: metadata consumer differs"
++                      in
++                      require (first.kind = Assign (raw, RawPtr (roots_deref, RShared, roots_length))
++                               && dest.ty = mk_usize_ty && Hashtbl.find place_count raw_id = 2)
++                        "raw pointer is not metadata-only";
++                      let lifetime = fresh_region () in
++                      let shared, shared_id = fresh_local first.span (TRef (lifetime, slice_ty, RShared)) in
++                      incr metadata_rewrites;
++                      mk_st first.span (StorageLive shared_id)
++                      :: { first with kind = Assign (shared, RvRef (roots_deref, BShared, roots_length)) }
++                      :: { second with kind = make_call len second.span dest [ Move shared ] lifetime }
++                      :: mk_st second.span (StorageDead shared_id)
++                      :: lower_reads tail)
++              | tail -> tail
++            in
++            let statements = lower_reads block.statements in
++            if block.block_id <> branch_id then { block with statements }
++            else
++              let lifetime = fresh_region () in
++              let input, input_id = fresh_local block.span (TRef (lifetime, slice_ty, RMut)) in
++              let pair_ty =
++                TAdt { id = TypeDeclId.zero;
++                       generics = { regions = []; types = [ left.ty; right.ty ];
++                                    const_generics = []; trait_refs = [] };
++                       builtin = Some TTuple }
++              in
++              let pair, pair_id = fresh_local block.span pair_ty in
++              let moved n dest =
++                Assign (dest, Use (Move (place pair (Field (None, FieldId.of_int n)) dest.ty), NoRetag))
++              in
++              let statements = List.concat_map (fun st ->
++                match StatementId.to_int st.statement_id with
++                | 44074 -> [ { st with kind = moved 0 left } ]
++                | 44079 -> [ { st with kind = moved 1 right }; mk_st st.span (StorageDead pair_id) ]
++                | 44082 -> [ { st with kind = Call ({ idx1 with args = [ i0; Move right ] }, idx_dest, idx_unwind) } ]
++                | _ -> [ st ]) statements
++              in
++              incr split_rewrites;
++              { block with statements =
++                  [ mk_st block.span (StorageLive input_id);
++                    mk_st block.span (Assign (input, reborrow));
++                    mk_st block.span (StorageLive pair_id);
++                    mk_st block.span (make_call split block.span pair [ Move input; i1 ] lifetime);
++                    mk_st block.span (StorageDead input_id) ] @ statements }
++        end
++      in
++      let block = lower_block#visit_block () body.body in
++      require (!metadata_rewrites = 3 && !split_rewrites = 1) "rewrite count differs";
++      let locals = { body.locals with locals = body.locals.locals @ List.rev !locals } in
++      { f with body = StructuredBody { body with body = block; locals; bound_body_regions = !regions } }
++  | _ -> f
++
+ let apply_passes (crate : crate) : crate =
+   (* Passes that apply to the whole crate *)
+   let crate = update_array_default crate in
+@@ -2368,6 +2578,7 @@
+   (* Passes that apply to individual function bodies *)
+   let function_passes =
+     [
++      ("lower_canonicalize_slice_pattern", lower_canonicalize_slice_pattern);
+       ("fix_closure_lifetimes", fix_closure_lifetimes);
+       ("fix_closure_signature_regions", fix_closure_signature_regions);
+       ("fix_anon_const_initializers", fix_anon_const_initializers);

@@ -1,0 +1,47 @@
+--- a/src/interp/InterpJoin.ml
++++ b/src/interp/InterpJoin.ml
+@@ -200,6 +200,35 @@
+   in
+   List.iter (fun abs -> visitor#visit_abs abs abs) absl;
+ 
++  (* These switches only return from the original completed_result body.
++     Keep its single frozen shared input loan: copying the workspace into a
++     new shared loan would duplicate the concrete inner mutable borrow IDs.
++     Other input reborrows, subsequent borrow processing and invariants stay
++     on their ordinary paths. *)
++  let keep_completed_workspace (abs : abs) (sv : tvalue) (rty : ty option) =
++    let site = span.data in
++    !Config.sanity_checks && loop_id = None && with_abs_conts
++    && Sys.getenv_opt "BULKSKETCH_DISPATCH_COMPLETED_RESULT" = Some "1"
++    && span.generated_from_span = None
++    && (match site.file.name with Local "src/sketch/dispatch.rs" -> true | _ -> false)
++    && (match site.beg_loc.line, site.beg_loc.col, site.end_loc.line, site.end_loc.col with
++        | (175, 8, 186, 5) | (177, 16, 177, 70) -> true
++        | _ -> false)
++    && (match abs.kind, sv.value, sv.ty, rty with
++        | SynthInput _, VAdt { variant_id = None; fields }, TAdt { id; _ },
++          Some (TAdt { id = input_id; _ })
++          when id = input_id
++               && Print.EvalCtx.name_to_string ctx (ctx_lookup_type_decl span ctx id).item_meta.name
++                  = "bulksketch::decode::scratch::RowWorkspace" ->
++            List.length fields = 10 &&
++            List.for_all
++              (fun (field : tvalue) ->
++                match field.value with
++                | VBorrow (VMutBorrow (_, { value = VSymbolic _; _ })) -> true
++                | _ -> false)
++              fields
++        | _ -> false)
++  in
+   (* Explore the shared borrows in the environment, and introduce
+      fresh abstractions with reborrows.
+ 
+@@ -219,7 +248,7 @@
+             super#visit_VSharedBorrow env bid sid
+         | Some (abs, sv, rty) ->
+             (* Check if the region abstraction is frozen *)
+-            if not abs.can_end then
++            if not abs.can_end && not (keep_completed_workspace abs sv rty) then
+               let bid, sid = push_abs_for_shared_value abs sv rty bid sid in
+               VSharedBorrow (bid, sid)
+             else super#visit_VSharedBorrow env bid sid

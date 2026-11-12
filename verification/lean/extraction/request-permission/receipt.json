@@ -1,0 +1,193 @@
+{
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "rust_toolchain": "nightly-2026-09-17",
+  "target": "x86_64-apple-darwin",
+  "native_source_edited": false,
+  "native_llbc_edited": false,
+  "commands": {
+    "charon": {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--lift-associated-types=core::ops::deref::Deref",
+        "--lift-associated-types=core::slice::index::SliceIndex",
+        "--treat-box-as-builtin",
+        "--ops-to-function-calls",
+        "--index-to-function-calls",
+        "--reconstruct-fallible-operations",
+        "--reconstruct-panic-calls",
+        "--reconstruct-asserts",
+        "--reconstruct-matches",
+        "--hide-marker-traits",
+        "--hide-allocator",
+        "--remove-unused-self-clauses",
+        "--remove-adt-clauses",
+        "--unbind-item-vars",
+        "--deallocate-all-locals",
+        "--no-gen-tuple-structs",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/request-permits-checked/arithmetic.llbc",
+        "--start-from=bulksketch::sketch::state::_::shape",
+        "--start-from={impl bulksketch::sketch::input::RequestInput for bulksketch::sketch::api::DecodeRequest}::permits_id",
+        "--start-from={impl bulksketch::sketch::input::RequestInput for bulksketch::sketch::input::DecodeRowsRequest}::permits_id",
+        "--include=bulksketch::sketch::state::_::shape",
+        "--include={impl bulksketch::sketch::input::RequestInput for bulksketch::sketch::api::DecodeRequest}::permits_id",
+        "--include={impl bulksketch::sketch::input::RequestInput for bulksketch::sketch::input::DecodeRowsRequest}::permits_id",
+        "--opaque=bulksketch::sketch::shape::_::permits_id",
+        "--opaque=bulksketch::sketch::input::RequestInput",
+        "--",
+        "--manifest-path",
+        "/workspace/bulk/bulksketch/Cargo.toml",
+        "-p",
+        "bulksketch",
+        "--lib",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    "aeneas": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/mono-aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/request-permits-checked/checked/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/request-permits-checked/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    }
+  },
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/mono-aeneas/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/request-permits-checked/replay/Arithmetic",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/request-permits-checked/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "output_sha256": {
+      "Funs.lean": "c252587cc3f06e4a23f277f5173ed2d665c0abc99d26db77c7d9587b0aa0ced1",
+      "FunsExternal_Template.lean": "2b0901e9bdee73ab8a60be5b2d5bbcf2e4bb6cc7ec7b8adcfcb584a70ccfc68b",
+      "Types.lean": "1a5807056481e0d20750fc2254f3a311f26e77d1bb9abb365798ad35c16ee819",
+      "TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea"
+    }
+  },
+  "source_sha256": {
+    "src/sketch/input.rs": "6c89022d5900daa757d0d5a1901c2446ec37e135610073b57cd78264c406ffaa",
+    "src/sketch/state.rs": "516876d63076bf34f5b37bcf47a8ca557cc22b1b1615124522b6853f9b8b3b45"
+  },
+  "artifacts": {
+    "extraction/request-permission/Arithmetic/Funs.lean": "c252587cc3f06e4a23f277f5173ed2d665c0abc99d26db77c7d9587b0aa0ced1",
+    "extraction/request-permission/Arithmetic/FunsExternal_Template.lean": "2b0901e9bdee73ab8a60be5b2d5bbcf2e4bb6cc7ec7b8adcfcb584a70ccfc68b",
+    "extraction/request-permission/Arithmetic/Types.lean": "1a5807056481e0d20750fc2254f3a311f26e77d1bb9abb365798ad35c16ee819",
+    "extraction/request-permission/Arithmetic/TypesExternal_Template.lean": "370414eab0fca9029848996c7a36a6972012d4bfbbb8b6ce1c98e9a59df7d7ea",
+    "extraction/request-permission/arithmetic.llbc": "1d356a7c1021698189e3a4f1eaf5f4c9b3de1888b339799730b3644dc94fc2e0",
+    "extraction/request-permission/charon.log": "4e787e26b02bff13d349c543dcbeada5cda87bcf6f4f18ea05a981e61e6aad3a",
+    "extraction/request-permission/checked-selective-lift.patch": "5efdb51e5a14db2e98c1519f9d1159e191b43df2ea1377c7e3c7528ac94f7a3e",
+    "extraction/request-permission/checked.log": "a4d24ca8786e9120145112dd90714d4c1a52114f5c56811ab8cf3e546bb19802",
+    "extraction/request-permission/no-check.log": "dcb8b8aa1a0683891ff322f3d2264278ffa4ee7be96fc4f8c4add20b33db10ba",
+    "extraction/request-permission/replay.log": "d53fe4b1fb01975bae120149b05819561cd80043c7c090cc839db69e90eb0915",
+    "extraction/request-permission/scoped-status": "b0be56028421fdc0b57272c86186fc52e901d33393ab3e6d949db0d518ae05bb",
+    "extraction/request-permission/wrong-scope.log": "ffabddfddf4c1afe1407e76d997f7e9eefa5ccd302df7cb96584d44ac8aa02ec",
+    "extraction/request-permission/project.py": "ad04a28594eb1dbeb1b0d8ba2d516e9820cb6595023a0b5e2a44dd3cad2b4a80"
+  },
+  "controls": {
+    "checked": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/mono-aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/request-permits-checked/checked/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/request-permits-checked/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    },
+    "replay": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/mono-aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/request-permits-checked/replay/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/request-permits-checked/arithmetic.llbc"
+      ],
+      "exit_code": 0
+    },
+    "no-check": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/mono-aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/request-permits-checked/no-check/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/request-permits-checked/arithmetic.llbc"
+      ],
+      "exit_code": 1
+    },
+    "wrong-scope": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/mono-aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/request-permits-checked/wrong-scope/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/request-permits-selective-lift/arithmetic.llbc"
+      ],
+      "exit_code": 1
+    },
+    "stock": {
+      "command": [
+        "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-checks",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/request-permits-checked/Arithmetic",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-publication-readback/request-permits-checked/arithmetic.llbc"
+      ],
+      "exit_code": 1
+    }
+  },
+  "compiler_patch_sha256": "5efdb51e5a14db2e98c1519f9d1159e191b43df2ea1377c7e3c7528ac94f7a3e"
+}

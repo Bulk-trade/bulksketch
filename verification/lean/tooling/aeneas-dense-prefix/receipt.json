@@ -1,0 +1,236 @@
+{
+  "status": "passed",
+  "variant_id": "checked-shared-expansion-owner-v1",
+  "base_aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "patch": "tooling/aeneas-dense-prefix/owner-guard.patch",
+  "patch_sha256": "8d3b307160f0309621cc3971b01cf1a18b8d78b09d1631ebee6da30e9b442150",
+  "modified_sources": {
+    "src/interp/InterpExpansion.ml": "a6f3b2621f0836c20add44395fad2ccac5e350aa51bf5d670d593e22f1d35df0"
+  },
+  "base_sources": {
+    "src/interp/InterpExpansion.ml": "c3672499de02ee3ed411bbbe2f6a85e7a24c33df9ec12b84e409327b4c6fc6dc"
+  },
+  "unchanged_collapse_guard_source_sha256": "bd02b5094799b93f14f29e962b3371db7ccde9eda496ae444aef41995c4948e7",
+  "patched_binary_sha256": "67d90faba0a8001c3df2f3de63c7102a00252e5573ee741b2c7b0e790d4b9529",
+  "baseline_binary_sha256": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+  "extraction": {
+    "input": "extraction/dense-square/arithmetic.llbc",
+    "input_sha256": "ee8d0fa36a190ea1b77c926bbeec0adea63d47ee3ce506bc97cce1ab37d5c1c3",
+    "required_flags": [
+      "-checks",
+      "-sequential"
+    ],
+    "command": [
+      "/workspace/bulk/bulksketch-proof-tools/aeneas-dense-prefix/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-split-files",
+      "-sequential",
+      "-print-error-emitters",
+      "-checks",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-tools/dense-prefix-investigation/regressions/original-square",
+      "/workspace/bulk/bulksketch/verification/lean/extraction/dense-square/arithmetic.llbc"
+    ],
+    "generated": [
+      {
+        "path": "extraction/dense-square/Arithmetic/Types.lean",
+        "sha256": "26c0c39ad883e30a6ab7d21bd518ae21d83b34252324a4d12e85169b3850b557"
+      },
+      {
+        "path": "extraction/dense-square/Arithmetic/Funs.lean",
+        "sha256": "7ff7bf02a64fb62cb3d28154514ad7b426018c4380dc56b4d101dee3d73bd505"
+      }
+    ],
+    "exit_code": 0
+  },
+  "regression_sources": {
+    "tooling/aeneas-dense-prefix/run.py": "f0c6822035a19f7e9098f03db0b759d40fc8013a071ba6dffe6022c489a0bd41",
+    "tooling/aeneas-dense-prefix/tests/Cargo.toml": "c4786210846407c975ca8745c71f96212c8b36f0f9e048fdf1f2b954e9c64af2",
+    "tooling/aeneas-dense-prefix/tests/Cargo.lock": "da99c8ef1525545496cbc525c6444088338ceb98ee74900bf8df75c4a066b5b8",
+    "tooling/aeneas-dense-prefix/tests/src/lib.rs": "843a9ae6635be7dde241a8ebc75e7585983c0ed3825e9e400facf5e76ea30b77",
+    "tooling/aeneas-dense-prefix/guards/dense_prefix_guards.ml": "1dad8d9769e769be2e8b18d8c9b7cccafa3e3ec4451bc796cf7dacbab38c89c0",
+    "tooling/aeneas-dense-prefix/guards/dune": "c759e8e9cc59be0e565c1a471c4a33a90d42054706e104752f8e74e63992e1ad"
+  },
+  "regressions": [
+    {
+      "case": "prefix_zip_read",
+      "baseline_exit_code": 1,
+      "patched_exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "case": "prefix_stride_read",
+      "baseline_exit_code": 1,
+      "patched_exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "case": "without-checks",
+      "exit_code": 1,
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "non-shared-expansion-with-loans",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "shared-abstraction-child",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "shared-abstraction-owner",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "shared-expression-child",
+      "status": "expected_rejection_confirmed"
+    },
+    {
+      "case": "shared-expression-owner",
+      "status": "expected_rejection_confirmed"
+    }
+  ],
+  "commands": [
+    {
+      "name": "charon-prefix-repro",
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+        "cargo",
+        "--preset=aeneas",
+        "--sysroot=default",
+        "--dest-file=/workspace/bulk/bulksketch-proof-tools/dense-prefix-investigation/regressions/repro.llbc",
+        "--",
+        "--manifest-path",
+        "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas-dense-prefix/tests/Cargo.toml",
+        "--lib",
+        "--locked",
+        "--offline"
+      ],
+      "cwd": "/workspace/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.5121164999982284,
+      "log_sha256": "7d983172d461baeed6a10ca90a4fa4d386a8cfba6c602aee72d3cae34371da7b"
+    },
+    {
+      "name": "prefix-baseline",
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-sequential",
+        "-print-error-emitters",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-tools/dense-prefix-investigation/regressions/prefix-baseline",
+        "/workspace/bulk/bulksketch-proof-tools/dense-prefix-investigation/regressions/repro.llbc"
+      ],
+      "cwd": "/workspace/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 0.6875715409987606,
+      "log_sha256": "db51e0348d0d8718ffd93235d6bb6b6aad7a0032d6fe7e782e4ea30abc8c217d"
+    },
+    {
+      "name": "prefix-checked",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/aeneas-dense-prefix/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-sequential",
+        "-print-error-emitters",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-tools/dense-prefix-investigation/regressions/prefix-checked",
+        "/workspace/bulk/bulksketch-proof-tools/dense-prefix-investigation/regressions/repro.llbc"
+      ],
+      "cwd": "/workspace/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.8519525419978891,
+      "log_sha256": "71fc04ce559241c9340dda1fb56dd5479f6c5e758aef6dbcbf991555f1b5c2b4"
+    },
+    {
+      "name": "prefix-without-checks",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/aeneas-dense-prefix/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-sequential",
+        "-print-error-emitters",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-tools/dense-prefix-investigation/regressions/prefix-without-checks",
+        "/workspace/bulk/bulksketch-proof-tools/dense-prefix-investigation/regressions/repro.llbc"
+      ],
+      "cwd": "/workspace/bulk/bulksketch/verification/lean",
+      "exit_code": 1,
+      "elapsed_seconds": 0.5399477079990902,
+      "log_sha256": "0d96b3440108a86493c0b53b967844cb9c1e6dcc57ba990137251ac18abfb0d2"
+    },
+    {
+      "name": "projection-guards",
+      "command": [
+        "opam",
+        "exec",
+        "--root=/workspace/bulk/bulksketch-proofs/tooling/opam-root",
+        "--switch=aeneas-5.3.0",
+        "--",
+        "dune",
+        "exec",
+        "--root",
+        "src",
+        "-j",
+        "2",
+        "./dense_prefix_guard_tests/dense_prefix_guards.exe",
+        "--",
+        "/workspace/bulk/bulksketch-proof-tools/dense-prefix-investigation/regressions/repro.llbc"
+      ],
+      "cwd": "/workspace/bulk/bulksketch-proof-tools/aeneas-dense-prefix",
+      "exit_code": 0,
+      "elapsed_seconds": 1.3485270410019439,
+      "log_sha256": "0b2cc4a343317c00e3e53266486b1a58b7f745db6a7185e6eaa02472a8d977da"
+    },
+    {
+      "name": "rust-value-regressions",
+      "command": [
+        "cargo",
+        "test",
+        "--release",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "/workspace/bulk/bulksketch/verification/lean/tooling/aeneas-dense-prefix/tests/Cargo.toml",
+        "--target-dir",
+        "/workspace/bulk/bulksketch-proof-tools/dense-prefix-investigation/regressions/rust-target",
+        "-j2"
+      ],
+      "cwd": "/workspace/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 1.2128891669999575,
+      "log_sha256": "d51c9b94545d4b89bcf4b308f60657c8d46e4d9715938b11c535e93211c42ff3"
+    },
+    {
+      "name": "original-square",
+      "command": [
+        "/workspace/bulk/bulksketch-proof-tools/aeneas-dense-prefix/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-split-files",
+        "-sequential",
+        "-print-error-emitters",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-tools/dense-prefix-investigation/regressions/original-square",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/dense-square/arithmetic.llbc"
+      ],
+      "cwd": "/workspace/bulk/bulksketch/verification/lean",
+      "exit_code": 0,
+      "elapsed_seconds": 1.9181697079984588,
+      "log_sha256": "49584d335a0aff0aa3f5b5b85760ec10faec2de5ec93f7fe15e5811f271defcc"
+    }
+  ],
+  "native_source_changed": false,
+  "new_native_coverage_credit_from_tests": 0
+}

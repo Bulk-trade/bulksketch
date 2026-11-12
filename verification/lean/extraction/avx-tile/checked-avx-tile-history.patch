@@ -1,0 +1,719 @@
+--- a/src/interp/InterpAbs.ml
++++ b/src/interp/InterpAbs.ml
+@@ -2790,7 +2790,7 @@
+      containing partially ended loans) *)
+   let abs =
+     destructure_abs span abs.kind ~can_end:abs.can_end
+-      ~destructure_shared_values:true ctx abs
++      ~preserve_shared_projector_history:true ~destructure_shared_values:true ctx abs
+   in
+   let regions = abs.regions.owned in
+   [%ldebug "- abs after destructure:\n" ^ abs_to_string span ctx abs];
+--- a/src/interp/InterpBorrows.ml
++++ b/src/interp/InterpBorrows.ml
+@@ -1933,8 +1933,23 @@
+         \         a region abstraction"
+ 
+ let destructure_abs (span : Meta.span) (abs_kind : abs_kind) ~(can_end : bool)
+-    ~(destructure_shared_values : bool) (ctx : eval_ctx) (abs0 : abs) : abs =
++    ?(preserve_shared_projector_history = false) ~(destructure_shared_values : bool) (ctx : eval_ctx) (abs0 : abs) : abs =
+   [%ltrace "- abs:\n" ^ abs_to_string span ctx abs0];
++  (* Continuations carry only mutable updates. A flat shared projection and
++     its shared history can remain intact in the context. *)
++  let rec shared_history = function
++    | AProjBorrows { proj; loans } ->
++        shared_projection proj && List.for_all (fun (_, p) -> shared_history p) loans
++    | AProjLoans { proj; consumed; borrows } ->
++        shared_projection proj
++        && List.for_all (fun (_, p) -> shared_history p) consumed
++        && List.for_all (fun (_, p) -> shared_history p) borrows
++    | AEmpty -> true
++    | AEndedProjBorrows _ | AEndedProjLoans _ -> false
++  and shared_projection (proj : symbolic_proj) =
++    not (TypesUtils.ty_has_mut_borrow_for_region_in_set
++      ctx.type_ctx.type_infos abs0.regions.owned proj.proj_ty)
++  in
+   (* Accumulator to store the destructured values *)
+   let avalues = ref [] in
+   (* Utility function to store a value in the accumulator *)
+@@ -2073,15 +2088,17 @@
+         | AProjLoans { proj = _; consumed; borrows } ->
+             (* There can be children in the presence of nested borrows: we
+                don't handle those for now. *)
+-            [%sanity_check] span (consumed = []);
+-            [%sanity_check] span (borrows = []);
++            [%sanity_check] span
++              ((consumed = [] && borrows = [])
++               || (preserve_shared_projector_history && shared_history aproj));
+             push av
+         | AProjBorrows { proj = _; loans } ->
+             (* For now, we fore all symbolic values containing borrows to be eagerly
+                expanded *)
+             (* There can be children in the presence of nested borrows: we
+                don't handle those for now. *)
+-            [%sanity_check] span (loans = []);
++            [%sanity_check] span
++              (loans = [] || (preserve_shared_projector_history && shared_history aproj));
+             push av
+         | AEndedProjLoans { proj = _; consumed; borrows } ->
+             (* There can be children in the presence of nested borrows: we
+--- a/src/interp/InterpBorrows.mli
++++ b/src/interp/InterpBorrows.mli
+@@ -145,6 +145,7 @@
+   Meta.span ->
+   abs_kind ->
+   can_end:bool ->
++  ?preserve_shared_projector_history:bool ->
+   destructure_shared_values:bool ->
+   eval_ctx ->
+   abs ->
+--- a/src/interp/InterpExpansion.ml
++++ b/src/interp/InterpExpansion.ml
+@@ -122,7 +122,7 @@
+                by region abstractions, and is thus inaccessible: such a value can't
+                be expanded)
+             *)
+-            [%cassert] span (loans = []) "Unreachable";
++            [%cassert] span (proj.sv_id <> original_sv.sv_id || loans = []) "Unreachable";
+             (* Check if this is the symbolic value we are looking for *)
+             if proj.sv_id = original_sv.sv_id then
+               (* Convert the symbolic expansion to a value on which we can
+@@ -184,7 +184,7 @@
+                by region abstractions, and is thus inaccessible: such a value can't
+                be expanded)
+             *)
+-            [%cassert] span (loans = []) "Unreachable";
++            [%cassert] span (proj.sv_id <> original_sv.sv_id || loans = []) "Unreachable";
+             (* Check if this is the symbolic value we are looking for *)
+             if proj.sv_id = original_sv.sv_id then
+               (* Convert the symbolic expansion to a value on which we can
+@@ -446,7 +446,8 @@
+                by region abstractions, and is thus inaccessible: such a value can't
+                be expanded)
+             *)
+-            [%cassert] span (loans = []) "Unreachable";
++            (* Non-target projectors keep their own given-back loans. *)
++            [%cassert] span (proj.sv_id <> original_sv.sv_id || loans = []) "Unreachable";
+             (* Check if we need to reborrow *)
+             match reborrow_ashared (Option.get proj_regions) proj with
+             | None -> super#visit_ASymbolic proj_regions pm aproj
+@@ -464,13 +465,14 @@
+         | EProjLoans _ ->
+             (* Loans are handled later *)
+             ESymbolic (pm, aproj)
+-        | EProjBorrows { proj = _; loans } ->
++        | EProjBorrows { proj; loans } ->
+             (* We should never expand a symbolic value which has consumed given
+                back values (because then it means the symbolic value was consumed
+                by region abstractions, and is thus inaccessible: such a value can't
+                be expanded)
+             *)
+-            [%cassert] span (loans = []) "Unreachable";
++            (* Non-target projectors keep their own given-back loans. *)
++            [%cassert] span (proj.sv_id <> original_sv.sv_id || loans = []) "Unreachable";
+             (* No need to check for reborrows of shared values: we don't track
+                them in abstraction expressions *)
+             super#visit_ESymbolic proj_regions pm aproj
+--- a/src/interp/InterpJoin.ml
++++ b/src/interp/InterpJoin.ml
+@@ -1025,7 +1025,7 @@
+         if is_fresh_abs_id abs.abs_id then
+           let abs =
+             destructure_abs span abs.kind ~can_end:true
+-              ~destructure_shared_values:true ctx abs
++              ~preserve_shared_projector_history:true ~destructure_shared_values:true ctx abs
+           in
+           abs
+         else abs)
+--- a/src/interp/InterpLoops.ml
++++ b/src/interp/InterpLoops.ml
+@@ -516,6 +516,41 @@
+         InterpBorrows.simplify_dummy_values_useless_abs config span ctx
+       in
+ 
++      (* The initialization Zip and the first-row fold have released both
++         local arrays at this exact source boundary. Ask the checked read
++         machinery to return their loans before the fixed point. Compose the
++         mutable writebacks into the original symbolic continuation. *)
++      let ctx, cc =
++        if Sys.getenv_opt "BULKSKETCH_TILE_HISTORY" = Some "1"
++           && span.data.file.name = Local "src/backend/x86_vpclmul512.rs"
++           && span.data.beg_loc.line = 451 && span.data.beg_loc.col = 4
++           && span.data.end_loc.line = 458 && span.data.end_loc.col = 5
++           && span.generated_from_span = None
++        then (
++          if not !Config.sanity_checks then
++            [%craise] span "tile loop entry requires checked symbolic execution";
++          let read_array name index (ctx, cc) =
++            let local =
++              List.find_map
++                (function
++                  | EBinding (BVar binder, _) when binder.name = Some name
++                    && Expressions.LocalId.to_int binder.index = index ->
++                      Some binder.index
++                  | _ -> None) ctx.env
++            in
++            let local = match local with
++              | Some local -> local
++              | None -> [%craise] span ("tile loop entry missing " ^ name)
++            in
++            let place = mk_place_from_var_id ctx span local in
++            [%cassert] span (TypesUtils.ty_is_array place.ty)
++              ("tile loop entry expected an array: " ^ name);
++            comp cc (InterpExpressions.eval_fake_read config span place ctx)
++          in
++          (ctx, cc) |> read_array "powers" 3 |> read_array "steps" 5)
++        else (ctx, cc)
++      in
++
+       (* We want to make sure the loop will *not* manipulate shared avalues
+          themselves containing shared loans (i.e., nested shared loans in
+          the abstractions), because it complexifies the matches between values
+--- a/src/interp/InterpMatchCtxs.ml
++++ b/src/interp/InterpMatchCtxs.ml
+@@ -2097,6 +2097,33 @@
+       ty;
+     }
+ 
++  (* Match only verbatim histories here. Register all historical symbolic
++     and region IDs as identity mappings, so surrounding matches cannot
++     rename an identifier in an otherwise unchanged history. *)
++  let match_exact_history (ctx0 : eval_ctx) (ctx1 : eval_ctx)
++      (left : (mconsumed_symb * aproj) list) (right : (mconsumed_symb * aproj) list) =
++    [%cassert_recover] S.recover span (left = right) "Projector histories differ";
++    let identity (sid : symbolic_value_id) ty =
++      ignore (match_symbolic_value_ids sid sid);
++      ignore (match_rtys ctx0 ctx1 ty ty)
++    in
++    let rec check ((meta, child) : mconsumed_symb * aproj) =
++      identity meta.sv_id meta.proj_ty;
++      match child with
++      | AProjBorrows { proj; loans } ->
++          identity proj.sv_id proj.proj_ty;
++          List.iter check loans
++      | AProjLoans { proj; consumed; borrows } ->
++          identity proj.sv_id proj.proj_ty;
++          List.iter check consumed;
++          List.iter check borrows
++      | AEmpty -> ()
++      | AEndedProjLoans _ | AEndedProjBorrows _ ->
++          [%craise_recover] S.recover span "Cannot match ended projector history"
++    in
++    List.iter check right;
++    right
++
+   let match_aproj_borrows (_match_values : tvalue_matcher) (ctx0 : eval_ctx)
+       (ctx1 : eval_ctx) _ty0 pm0 (proj0 : aproj_borrows) _ty1 pm1
+       (proj1 : aproj_borrows) ty proj_ty : tavalue =
+@@ -2108,11 +2135,11 @@
+     [%sanity_check_recover] S.recover span (pm0 = PNone && pm1 = PNone);
+     let { proj = proj0; loans = loans0 } : aproj_borrows = proj0 in
+     let { proj = proj1; loans = loans1 } : aproj_borrows = proj1 in
+-    [%sanity_check_recover] S.recover span (loans0 = [] && loans1 = []);
++    let loans = match_exact_history ctx0 ctx1 loans0 loans1 in
+     (* Match the ids of the symbolic values *)
+     let sv_id = match_symbolic_value_ids proj0.sv_id proj1.sv_id in
+     let proj : symbolic_proj = { sv_id; proj_ty } in
+-    { value = ASymbolic (PNone, AProjBorrows { proj; loans = [] }); ty }
++    { value = ASymbolic (PNone, AProjBorrows { proj; loans }); ty }
+ 
+   let match_aproj_loans (_match_values : tvalue_matcher) (ctx0 : eval_ctx)
+       (ctx1 : eval_ctx) _ty0 pm0 (proj0 : aproj_loans) _ty1 pm1
+@@ -2131,12 +2158,12 @@
+         =
+       proj1
+     in
+-    [%sanity_check_recover] S.recover span (consumed0 = [] && consumed1 = []);
+-    [%sanity_check_recover] S.recover span (borrows0 = [] && borrows1 = []);
++    let consumed = match_exact_history ctx0 ctx1 consumed0 consumed1 in
++    let borrows = match_exact_history ctx0 ctx1 borrows0 borrows1 in
+     (* Match the ids of the symbolic values *)
+     let sv_id = match_symbolic_value_ids proj0.sv_id proj1.sv_id in
+     let proj : symbolic_proj = { sv_id; proj_ty } in
+-    let proj = AProjLoans { proj; consumed = []; borrows = [] } in
++    let proj = AProjLoans { proj; consumed; borrows } in
+     { value = ASymbolic (PNone, proj); ty }
+ 
+   let match_aproj_shared_borrows (ctx0 : eval_ctx) (ctx1 : eval_ctx) _ty0
+--- a/src/interp/InterpReduceCollapse.ml
++++ b/src/interp/InterpReduceCollapse.ml
+@@ -55,7 +55,7 @@
+ 
+ (** Compute the set of shared loans and shared loan projectors without markers
+     appearing in the context *)
+-let get_non_marked_shared_loans span (ctx : eval_ctx) :
++let get_non_marked_shared_loans ?requested_projs span (ctx : eval_ctx) :
+     BorrowId.Set.t * NormSymbProj.Set.t =
+   let non_marked_loans = ref BorrowId.Set.empty in
+   let non_marked_projs = ref NormSymbProj.Set.empty in
+@@ -75,23 +75,26 @@
+       method! visit_ASymbolic env pm aproj =
+         match aproj with
+         | AProjLoans { proj; consumed; borrows } ->
+-            (* For now we don't support those cases *)
+-            [%sanity_check] span (consumed = []);
+-            [%sanity_check] span (borrows = []);
+-            if pm = PNone then
+-              let pred (r : region) =
+-                match r with
+-                | (RVar (Free _) | RStatic) as r' -> RegionSet.mem r' env
+-                | _ -> false
+-              in
+-              if
+-                not
+-                  (ty_has_mut_borrow_for_region_in_pred ctx.type_ctx.type_infos
+-                     pred proj.proj_ty)
+-              then (
+-                let proj = normalize_symbolic_proj env proj in
+-                non_marked_projs := NormSymbProj.Set.add proj !non_marked_projs;
+-                super#visit_ASymbolic env pm aproj)
++            let eligible =
++              pm = PNone
++              && not (ty_has_mut_borrow_for_region_in_set
++                ctx.type_ctx.type_infos env proj.proj_ty)
++            in
++            let normalized = if eligible then Some (normalize_symbolic_proj env proj) else None in
++            let needed =
++              match requested_projs with
++              | None -> true
++              | Some requested ->
++                  (match normalized with None -> false | Some key -> NormSymbProj.Set.mem key requested)
++            in
++            if needed then (
++              [%sanity_check] span (consumed = []);
++              [%sanity_check] span (borrows = []));
++            if eligible then (
++              if needed then
++                Option.iter (fun key -> non_marked_projs := NormSymbProj.Set.add key !non_marked_projs)
++                  normalized;
++              super#visit_ASymbolic env pm aproj)
+         | _ -> super#visit_ASymbolic env pm aproj
+ 
+       method! visit_abs _ abs = super#visit_abs abs.regions.owned abs
+@@ -127,9 +130,30 @@
+     (shared_borrows_seq :
+       (abs_id * int * proj_marker * borrow_or_proj * ty) list ref option)
+     (ctx : eval_ctx) : eval_ctx =
+-  (* Compute the set of loans without markers *)
++  let requested_projs = ref NormSymbProj.Set.empty in
++  let has_candidate = ref false in
++  let visitor =
++    object
++      inherit [_] iter_eval_ctx as super
++      method! visit_ASharedBorrow env pm bid sid =
++        if pm <> PNone then has_candidate := true;
++        super#visit_ASharedBorrow env pm bid sid
++      method! visit_ASymbolic regions pm aproj =
++        (match aproj with
++        | AProjBorrows { proj; loans = [] } when pm <> PNone ->
++            has_candidate := true;
++            requested_projs := NormSymbProj.Set.add
++              (normalize_symbolic_proj regions proj) !requested_projs
++        | _ -> ());
++        super#visit_ASymbolic regions pm aproj
++      method! visit_abs _ abs = super#visit_abs abs.regions.owned abs
++    end
++  in
++  visitor#visit_eval_ctx RegionSet.empty ctx;
++  if not !has_candidate then ctx else
++  (* Index only loans that can discharge a remaining marked projection. *)
+   let non_marked_loans, non_marked_loan_projs =
+-    get_non_marked_shared_loans span ctx
++    get_non_marked_shared_loans ~requested_projs:!requested_projs span ctx
+   in
+   [%ldebug
+     "- non_marked_loans: "
+@@ -887,7 +911,15 @@
+     | PRight -> PLeft
+   in
+ 
+-  let fixed_aids = ctx_get_frozen_abs_set ctx in
++  let fixed_aids =
++    (* This phase only merges abstractions through dual-marked projections.
++       A completely unmarked abstraction cannot supply either side of a merge.
++       Keep its full history in the context, outside the merge index. *)
++    AbsId.Map.fold
++      (fun aid abs fixed ->
++        if abs_has_markers abs then fixed else AbsId.Set.add aid fixed)
++      (ctx_get_abs ctx) (ctx_get_frozen_abs_set ctx)
++  in
+ 
+   (* Merge all the mergeable abs where the same element is present in both abs,
+      but with left and right markers respectively.
+@@ -1387,7 +1419,19 @@
+     (shared_borrows_seq :
+       (abs_id * int * proj_marker * borrow_or_proj * ty) list) (ctx : eval_ctx)
+     : eval_ctx =
+-  let loans, loan_projs = get_non_marked_shared_loans span ctx in
++  if shared_borrows_seq = [] then ctx else
++  let requested_projs =
++    List.fold_left
++      (fun requested (abs_id, _, _, reference, _) ->
++        match reference with
++        | Borrow _ -> requested
++        | Proj (_, proj) ->
++            let abs = ctx_lookup_abs ctx abs_id in
++            NormSymbProj.Set.add
++              (normalize_symbolic_proj abs.regions.owned proj) requested)
++      NormSymbProj.Set.empty shared_borrows_seq
++  in
++  let loans, loan_projs = get_non_marked_shared_loans ~requested_projs span ctx in
+   let ctx = ref ctx in
+   let update
+       ((abs_id, i, pm, borrow_or_proj, ty) :
+--- a/src/symbolic/SymbolicToPureExpressions.ml
++++ b/src/symbolic/SymbolicToPureExpressions.ml
+@@ -1284,6 +1284,9 @@
+ 
+ and translate_end_abstraction_join_or_loop (ectx : C.eval_ctx) (abs : V.abs)
+     (abs_level : abs_level) (e : S.expr) (ctx : bs_ctx) : texpr =
++  match try_translate_tile_steps_chain ectx abs abs_level e ctx with
++  | Some lowered -> lowered
++  | None ->
+   let span = ctx.span in
+   [%cassert] span (abs_level = 0) "Unimplemented";
+   (* Compute the input and output values *)
+@@ -1336,6 +1339,266 @@
+         ^ tpat_to_string ctx output ^ "\n- call: " ^ texpr_to_string ctx call
+         ^ "\n- next:\n" ^ texpr_to_string ctx next_e];
+       [%add_loc] mk_closed_checked_let ctx can_fail output call next_e
++
++(* The first tile loop returns two mutable arrays through independently
++   registered Zip projections. Its steps return nests two matched, empty
++   bookkeeping ends. Lower only that exact three-continuation chain. *)
++and try_translate_tile_steps_chain (ectx : C.eval_ctx) (abs : V.abs)
++    (level : abs_level) (e : S.expr) (ctx : bs_ctx) : texpr option =
++  let span = ctx.span in
++  let ( let* ) = Option.bind in
++  let require b = if b then Some () else None in
++  let* () = require (
++    level = 1 && !Config.sanity_checks &&
++    Sys.getenv_opt "BULKSKETCH_TILE_HISTORY" = Some "1" &&
++    Errors.raw_span_to_string span = "'src/backend/x86_vpclmul512.rs', lines 438:0-459:1") in
++  let rec take_end snapshots expr =
++    match expr with
++    | S.Meta ((S.Snapshot _ as snapshot), next) ->
++        take_end (snapshot :: snapshots) next
++    | S.EndAbs (ectx, abs, 0, next) ->
++        Some (List.rev snapshots, ectx, abs, next)
++    | _ -> None
++  in
++  let* s0, ec0, a0, e = take_end [] e in
++  let* s1, ec1, a1, e = take_end [] e in
++  let* s2, ec2, a2, suffix = take_end [] e in
++  let* () = require (
++    V.AbsLevelSet.equal abs.ended_subabs (V.AbsLevelSet.singleton 1) &&
++    V.AbsLevelSet.equal a0.ended_subabs (V.AbsLevelSet.of_list [0; 1]) &&
++    { a0 with ended_subabs = abs.ended_subabs } = abs &&
++    (match a0.kind, a1.kind, a2.kind with
++     | V.Loop _, V.FunCall _, V.FunCall _ -> true | _ -> false) &&
++    a0.abs_id <> a1.abs_id && a0.abs_id <> a2.abs_id && a1.abs_id <> a2.abs_id) in
++  let pure_fun (a : V.abs) =
++    match V.AbsId.Map.find_opt a.abs_id ctx.abs_id_to_info with
++    | Some { fvar; can_fail = false } -> Some fvar
++    | _ -> None
++  in
++  let* f0 = pure_fun a0 in
++  let* f1 = pure_fun a1 in
++  let* f2 = pure_fun a2 in
++  let* () = require (abs_to_consumed ctx ectx abs 1 = []) in
++  let ctx, level_one_outputs = abs_to_given_back None abs 1 ctx in
++  let* () = require (level_one_outputs = []) in
++  let borrow_history (value : V.tavalue) =
++    match value.value with
++    | V.ASymbolic (V.PNone, V.AEndedProjBorrows { mvalues; loans = [
++        (tag, V.AEndedProjLoans { proj; consumed = [(child, V.AEmpty)]; borrows = [] })] })
++      when tag.sv_id = proj && value.ty = mvalues.given_back.sv_ty &&
++           tag.proj_ty = value.ty && child.proj_ty = value.ty ->
++        Some (mvalues, tag, child)
++    | _ -> None
++  in
++  let loan_history (value : V.tavalue) =
++    match value.value with
++    | V.ASymbolic (V.PNone, V.AEndedProjLoans {
++        proj; consumed = [(given, V.AEmpty)]; borrows = [
++          (tag, V.AEndedProjBorrows { mvalues; loans = [] })] })
++      when value.ty = given.proj_ty && value.ty = mvalues.given_back.sv_ty ->
++        Some (proj, given, tag, mvalues)
++    | _ -> None
++  in
++  let* va0, va1, vl1, vl2, array =
++    match a0.avalues, a1.avalues, a2.avalues with
++    | [va0], [va1; { value = V.AIgnored _; _ }; vl1],
++      [{ value = V.AIgnored _; _ }; { value = V.ABorrow (V.AEndedMutBorrow (array, _)); _ }; vl2] ->
++        Some (va0, va1, vl1, vl2, array)
++    | _ -> None
++  in
++  let* m0, t0, n0 = borrow_history va0 in
++  let* m1, t1, n1 = borrow_history va1 in
++  let* p1, g1, u1, q1 = loan_history vl1 in
++  let* p2, g2, u2, q2 = loan_history vl2 in
++  let match_pair (ec : C.eval_ctx) (borrower : V.abs) (lender : V.abs)
++      (given : V.ended_proj_borrow_meta) (tag : V.mconsumed_symb)
++      (child : V.mconsumed_symb) (loan, (next : V.mconsumed_symb),
++          (other : V.mconsumed_symb), (nested : V.ended_proj_borrow_meta)) =
++    loan = given.consumed && next.sv_id = given.given_back.sv_id &&
++    other = tag && nested.consumed = tag.sv_id &&
++    nested.given_back.sv_id = child.sv_id &&
++    T.RegionSet.disjoint borrower.regions.owned lender.regions.owned &&
++    InterpBorrowsCore.projection_contains span ec borrower.regions.owned tag.proj_ty
++      lender.regions.owned next.proj_ty &&
++    InterpBorrowsCore.projection_contains span ec lender.regions.owned next.proj_ty
++      borrower.regions.owned tag.proj_ty &&
++    TypesUtils.ty_has_mut_borrow_for_region_in_set ctx.type_ctx.type_infos
++      borrower.regions.owned tag.proj_ty
++  in
++  let* () = require (
++    match_pair ec1 a0 a1 m0 t0 n0 (p1, g1, u1, q1) &&
++    match_pair ec2 a1 a2 m1 t1 n1 (p2, g2, u2, q2)) in
++  let output_single_history (av : V.tevalue)
++      (mv : V.ended_proj_borrow_meta) (tag : V.mconsumed_symb) (child : V.mconsumed_symb) =
++    match av.value with
++    | V.ESymbolic (V.PNone, V.EEndedProjBorrows {
++        mvalues; loans = [(label, V.EEndedProjLoans {
++          proj; consumed = [(consumed, V.EEmpty)]; borrows = [] })] })
++      when mvalues = mv && label = tag && proj = tag.sv_id && consumed = child &&
++           av.ty = mv.given_back.sv_ty ->
++        Some { av with value = V.ESymbolic
++          (V.PNone, V.EEndedProjBorrows { mvalues; loans = [] }) }
++    | _ -> None
++  in
++  let* c0 = a0.cont in
++  let* c1 = a1.cont in
++  let* c2 = a2.cont in
++  let* i0 = c0.input in
++  let* i1 = c1.input in
++  let* i2 = c2.input in
++  let* o0 = c0.output in
++  let* o1 = c1.output in
++  let* o2 = c2.output in
++  let* input_id, input_ty =
++    match a0.kind, i0.value with
++    | V.Loop lid, V.EApp (V.ELoop (aid, lid'), [[{ V.ty;
++          value = V.ESymbolic (V.PNone,
++            V.EEndedProjLoans { proj; consumed = []; borrows = [] }) }]])
++      when aid = a0.abs_id && lid = lid' && ty = va0.ty -> Some (proj, ty)
++    | _ -> None
++  in
++  let* out0 =
++    match o0.value with
++    | V.EAdt ({ borrow_proj = true; variant_id = None; fields = [av] } as row) ->
++        let* av = output_single_history av m0 t0 n0 in
++        Some { o0 with value = V.EAdt { row with fields = [av] } }
++    | _ -> None
++  in
++  let* out1 =
++    match o1.value with
++    | V.EAdt ({ borrow_proj = true; variant_id = None; fields = [av; ignored] } as row)
++      when (match ignored.value with V.EIgnored _ -> true | _ -> false) ->
++        let* av = output_single_history av m1 t1 n1 in
++        Some { o1 with value = V.EAdt { row with fields = [av; ignored] } }
++    | _ -> None
++  in
++  let* out_id, out_ty =
++    match o2.value with
++    | V.EAdt { borrow_proj = true; variant_id = None;
++        fields = [{ value = V.EIgnored _; _ };
++          { value = V.EBorrow (V.EEndedMutBorrow (mv, _)); _ }] }
++      when mv.bid = array.bid && mv.given_back = array.given_back ->
++        Some (mv.given_back.sv_id, mv.given_back.sv_ty)
++    | _ -> None
++  in
++  let input_history (a : V.abs) (input : V.tevalue) proj given tag nested =
++    match input.value with
++    | V.EApp (V.EFunCall aid, [[({ V.ty; value = V.ESymbolic (V.PNone,
++        V.EEndedProjLoans { proj = input_proj; consumed = [(given', V.EEmpty)]; borrows = [
++          (tag', V.EEndedProjBorrows { mvalues; loans = [] })] }) } as av)]])
++      when aid = a.abs_id && input_proj = proj && given' = given &&
++           tag' = tag && mvalues = nested && ty = given'.proj_ty ->
++        let av = { av with value = V.ESymbolic (V.PNone,
++          V.EEndedProjLoans { proj; consumed = [(given, V.EEmpty)]; borrows = [] }) } in
++        Some { input with value = V.EApp (V.EFunCall aid, [[av]]) }
++    | _ -> None
++  in
++  let* in1 = input_history a1 i1 p1 g1 u1 q1 in
++  let* in2 = input_history a2 i2 p2 g2 u2 q2 in
++  let output0 = m0.given_back in
++  let output1 = m1.given_back in
++  let tile_ty = ctx_translate_fwd_ty ctx input_ty in
++  let pair_ty = ctx_translate_fwd_ty ctx va1.ty in
++  let array_ty = ctx_translate_fwd_ty ctx out_ty in
++  let* () = require (
++    f0.ty = TArrow (tile_ty, tile_ty) &&
++    f1.ty = TArrow (tile_ty, pair_ty) &&
++    f2.ty = TArrow (pair_ty, array_ty)) in
++  let data = V.SymbolicValueId.Set.of_list [t0.sv_id; n0.sv_id; t1.sv_id; n1.sv_id] in
++  let* () = require (V.SymbolicValueId.Set.cardinal (V.SymbolicValueId.Set.of_list
++    [t0.sv_id; n0.sv_id; t1.sv_id; n1.sv_id; m0.consumed; m1.consumed; input_id;
++      output0.sv_id; output1.sv_id; out_id]) = 10) in
++  let contexts =
++    ec0 :: ec1 :: ec2 :: List.filter_map
++      (function S.Snapshot (_, ctx) -> Some ctx | _ -> None) (s0 @ s1 @ s2)
++  in
++  let shared_snapshot_abs (a : V.abs) =
++    let shared ty =
++      not (TypesUtils.ty_has_mut_borrow_for_region_in_set
++        ctx.type_ctx.type_infos a.regions.owned ty)
++    in
++    let rec projected = function
++      | V.AEmpty -> true
++      | V.AProjLoans { proj; consumed; borrows } ->
++          shared proj.proj_ty && children consumed && children borrows
++      | V.AProjBorrows { proj; loans } -> shared proj.proj_ty && children loans
++      | V.AEndedProjLoans { consumed; borrows; _ } ->
++          children consumed && children borrows
++      | V.AEndedProjBorrows { mvalues; loans } ->
++          shared mvalues.given_back.sv_ty && children loans
++    and children values =
++      List.for_all (fun ((tag : V.mconsumed_symb), proj) ->
++        shared tag.proj_ty && projected proj) values
++    in
++    not (V.AbsId.Map.mem a.abs_id ctx.abs_id_to_info) &&
++    List.for_all (fun (v : V.tavalue) ->
++      shared v.ty && match v.value with
++      | V.AIgnored _ -> true
++      | V.ASymbolic (V.PNone, proj) -> projected proj
++      | _ -> false) a.avalues
++  in
++  let independent_context (ec : C.eval_ctx) =
++    List.for_all (function
++      | V.EAbs a ->
++          V.SymbolicValueId.Set.disjoint data (fst (compute_abs_ids a)).sids
++          || shared_snapshot_abs a
++      | V.EBinding (_, v) ->
++          V.SymbolicValueId.Set.disjoint data (fst (compute_tvalue_ids v)).sids
++      | V.EFrame -> true) ec.env
++  in
++  let* () = require (List.for_all independent_context contexts) in
++  let exception Payload_use in
++  let visitor =
++    object (self)
++      inherit [_] S.iter_expr as super
++      method! visit_EndAbs env ectx abs level rest =
++        if shared_snapshot_abs abs then self#visit_expr env rest
++        else super#visit_EndAbs env ectx abs level rest
++      method! visit_symbolic_value_id _ id =
++        if V.SymbolicValueId.Set.mem id data then raise Payload_use
++      method! visit_msymbolic_value_id env id = self#visit_symbolic_value_id env id
++      method! visit_mconsumed_symb env (meta : V.mconsumed_symb) =
++        self#visit_symbolic_value_id env meta.sv_id
++      method! visit_mgiven_back_symb env (meta : V.mgiven_back_symb) =
++        self#visit_symbolic_value_id env meta.sv_id
++      method! visit_msymbolic_value env (value : V.msymbolic_value) =
++        self#visit_symbolic_value_id env value.sv_id
++      method! visit_call env call =
++        List.iter (self#visit_tvalue env) call.args;
++        self#visit_symbolic_value env call.dest
++      method! visit_emeta env = function
++        | S.Assignment (_, _, value, _) -> self#visit_tvalue env value
++        | S.Snapshot _ -> ()
++    end
++  in
++  let* () = require (try visitor#visit_expr () suffix; true with Payload_use -> false) in
++  Printf.eprintf "Checked tile steps callback chain: outer Zip, inner Zip, steps array\n";
++  let a0 = { a0 with cont = Some { c0 with output = Some out0 } } in
++  let a1 = { a1 with cont = Some { input = Some in1; output = Some out1 } } in
++  let a2 = { a2 with cont = Some { c2 with input = Some in2 } } in
++  let lower ec a fvar input_id input_ty output_id output_ty next ctx =
++    let input = symbolic_value_to_texpr ctx { sv_id = input_id; sv_ty = input_ty } in
++    let ctx, can_fail, pattern, call = translate_ended_abs_to_texpr ctx ec a 0 in
++    let applied, args = destruct_apps call in
++    let exact_pattern =
++      match V.SymbolicValueId.Map.find_opt output_id ctx.sv_to_var with
++      | None -> false
++      | Some var -> pattern = mk_tpat_from_fvar None var
++    in
++    [%cassert] span (not can_fail && applied = fvar && args = [input] &&
++      call.ty = output_ty && pattern.ty = output_ty && exact_pattern)
++      "tile steps continuation lost its input or mutable writeback";
++    [%add_loc] mk_closed_checked_let ctx can_fail pattern call (next ctx)
++  in
++  let replay snapshots next =
++    List.fold_right (fun snapshot next ctx -> translate_emeta_with snapshot next ctx)
++      snapshots next
++  in
++  let tail =
++    replay s2 (lower ec2 a2 f2 output1.sv_id vl2.ty out_id array_ty (translate_expr suffix)) in
++  let next =
++    replay s1 (lower ec1 a1 f1 output0.sv_id vl1.ty output1.sv_id pair_ty tail) in
++  Some (replay s0 (lower ec0 a0 f0 input_id input_ty output0.sv_id tile_ty next) ctx)
+ 
+ and translate_end_abstraction_with_cont (ectx : C.eval_ctx) (abs : V.abs)
+     (abs_level : abs_level) (e : S.expr) (ctx : bs_ctx) : texpr =
+@@ -2225,6 +2488,9 @@
+   translate_expr e ctx
+ 
+ and translate_emeta (meta : S.emeta) (e : S.expr) (ctx : bs_ctx) : texpr =
++  translate_emeta_with meta (translate_expr e) ctx
++
++and translate_emeta_with (meta : S.emeta) (next : bs_ctx -> texpr) (ctx : bs_ctx) : texpr =
+   let ctx, meta =
+     match meta with
+     | S.Assignment (ectx, lp, rv, rp) ->
+@@ -2255,7 +2521,7 @@
+         let infos = if infos <> [] then Some (SymbolicPlaces infos) else None in
+         (ctx, infos)
+   in
+-  let next_e = translate_expr e ctx in
++  let next_e = next ctx in
+   match meta with
+   | Some meta ->
+       let e = Meta (meta, next_e) in
+--- a/src/symbolic/SymbolicToPureTypes.ml
++++ b/src/symbolic/SymbolicToPureTypes.ml
+@@ -991,7 +991,7 @@
+   (* Return *)
+   { fwd_inputs; fwd_output; back_sg; fwd_info }
+ 
+-and translate_fun_sigs (span : span option) (decls_ctx : C.decls_ctx)
++and translate_fun_sigs ?(preserve_copied_constraints = false) (span : span option) (decls_ctx : C.decls_ctx)
+     (fun_id : fn_ptr_kind) (sg : A.bound_fun_sig)
+     (input_names : string option list) : fun_sigs =
+   (* Retrieve the list of parent backward functions *)
+@@ -1003,7 +1003,7 @@
+   let inst_sg : LlbcAst.inst_fun_sig =
+     let ({ T.inputs; output; _ } : T.fun_sig) = sg.item_binder_value in
+     [%sanity_check_opt_span] span
+-      (sg.item_binder_params.trait_type_constraints = []);
++      (sg.item_binder_params.trait_type_constraints = [] || preserve_copied_constraints);
+ 
+     let _, fresh_abs_id = V.AbsId.fresh_stateful_generator () in
+     let region_gr_id_abs_id_list =
+@@ -1027,7 +1027,7 @@
+     {
+       regions_hierarchy;
+       abs_regions_hierarchy;
+-      trait_type_constraints = [];
++      trait_type_constraints = sg.item_binder_params.trait_type_constraints;
+       inputs;
+       output;
+     }
+@@ -1055,7 +1055,7 @@
+ 
+ and translate_flat_trait_method_sigs (decls_ctx : C.decls_ctx)
+     (trait_decl : A.trait_decl) (method_id : TraitMethodId.id)
+-    (_bound_method : A.trait_method T.binder) : fun_sigs =
++    (bound_method : A.trait_method T.binder) : fun_sigs =
+   let span = trait_decl.item_meta.span in
+   let trait_decl_ref : T.trait_decl_ref =
+     let generics =
+@@ -1072,7 +1072,18 @@
+          method_id)
+   in
+   let input_names = List.map (fun _ -> None) sg.item_binder_value.inputs in
+-  translate_fun_sigs (Some span) decls_ctx fun_id sg input_names
++  let preserve_copied_constraints =
++    bound_method.binder_value.item_meta.diagnostic_item = Some "iter_copied"
++    &&
++    match sg.item_binder_params.trait_type_constraints with
++    | [{ T.binder_regions = []; outlives = []; binder_value = { trait_ref; ty; _ } }] ->
++        trait_ref.trait_decl_ref.id = trait_decl.def_id
++        && (match trait_ref.kind, ty with
++            | T.Self, T.TRef (_, T.TVar _, T.RShared) -> true
++            | _ -> false)
++    | _ -> false
++  in
++  translate_fun_sigs ~preserve_copied_constraints (Some span) decls_ctx fun_id sg input_names
+ 
+ and translate_trait_method_sig (decls_ctx : C.decls_ctx)
+     (trait_decl : A.trait_decl) (method_id : TraitMethodId.id)

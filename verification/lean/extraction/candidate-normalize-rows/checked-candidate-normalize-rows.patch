@@ -1,0 +1,530 @@
+--- a/src/PrePasses.ml
++++ b/src/PrePasses.ml
+@@ -2360,6 +2360,79 @@
+       generics = { f.generics with regions };
+     }
+   else f
++
++(** End the original row, yielded option and iterator reborrow after the
++    last immutable row use and before scalar compaction. *)
++let end_candidate_row_reads (crate : crate) (f : fun_decl) : fun_decl =
++  let site = f.item_meta.span.data in
++  let name = NameMatcher.parse_pattern "bulksketch::sketch::candidates::normalize_rows" in
++  let scoped =
++    !Config.sanity_checks
++    && Sys.getenv_opt "AENEAS_CHECKED_CANDIDATE_NORMALIZE_ROWS" = Some "1"
++    && f.item_meta.span.generated_from_span = None
++    && (match site.file.name with Local "src/sketch/candidates.rs" -> true | _ -> false)
++    && (site.beg_loc.line, site.beg_loc.col, site.end_loc.line, site.end_loc.col)
++       = (76, 0, 102, 1)
++    && ExtractName.match_name crate name f.item_meta.name
++  in
++  if not scoped then f
++  else match f.body with
++  | StructuredBody body when List.length body.locals.locals = 103 ->
++      let id (st : statement) = StatementId.to_int st.statement_id in
++      let move_ids = [827; 829; 830] in
++      let ids = List.map LocalId.of_int [35; 33; 31] in
++      let rec split prefix = function
++        | [] -> None
++        | ({kind = Loop _; _} as st) :: rest when id st = 801 ->
++            Some (List.rev prefix, st, rest)
++        | st :: rest -> split (st :: prefix) rest
++      in
++      let matched = ref 0 in
++      let transform (loop : block) =
++        match split [] loop.statements with
++        | Some (before, inner, rest) ->
++            let moved, rest = List.partition (fun st -> List.mem (id st) move_ids) rest in
++            let deaths = List.filter_map
++              (fun st -> match st.kind with StorageDead v -> Some v | _ -> None) moved in
++            let later_use = ref false in
++            let idle_iterator_use = ref false in
++            let scan_idle =
++              object
++                inherit [_] iter_statement as super
++                method! visit_place () p =
++                  (match p.kind with PlaceLocal id when id = LocalId.of_int 30 ->
++                    idle_iterator_use := true | _ -> ());
++                  super#visit_place () p
++              end
++            in
++            scan_idle#visit_statement () inner;
++            let scan =
++              object
++                inherit [_] iter_statement as super
++                method! visit_place () p =
++                  (match p.kind with PlaceLocal id when List.mem id ids -> later_use := true | _ -> ());
++                  super#visit_place () p
++              end
++            in
++            scan#visit_block () { loop with statements = inner :: rest };
++            if List.map id moved = move_ids && deaths = ids && not !later_use && not !idle_iterator_use
++              && List.exists (fun st -> id st = 625 && match st.kind with Call _ -> true | _ -> false) before
++            then (incr matched; { loop with statements = before @ moved @ (inner :: rest) })
++            else loop
++        | _ -> loop
++      in
++      let visitor =
++        object
++          inherit [_] map_statement as super
++          method! visit_statement () st =
++            match st.kind with
++            | Loop loop when id st = 834 -> { st with kind = Loop (transform loop) }
++            | _ -> super#visit_statement () st
++        end
++      in
++      let block = visitor#visit_block () body.body in
++      if !matched = 1 then { f with body = StructuredBody { body with body = block } } else f
++  | _ -> f
+ 
+ let apply_passes (crate : crate) : crate =
+   (* Passes that apply to the whole crate *)
+@@ -2373,6 +2446,7 @@
+       ("fix_anon_const_initializers", fix_anon_const_initializers);
+       ("erase_body_regions", erase_body_regions);
+       ("remove_unreachable", remove_unreachable);
++      ("end_candidate_row_reads", end_candidate_row_reads);
+       ("update_loop", update_loops);
+       ("remove_useless_joins", remove_useless_joins);
+       ( "remove_shallow_borrows_storage_live_dead",
+--- a/src/interp/InterpUtils.ml
++++ b/src/interp/InterpUtils.ml
+@@ -1217,3 +1217,24 @@
+     List.iter (visitor#visit_tavalue ()) abs.avalues;
+     false
+   with Found -> true
++
++
++(** This adaptation is limited to the original captured row normalizer.
++    Internal sites remain separately constrained by each transformation. *)
++let checked_candidate_rows_scope (span : Meta.span) (ctx : eval_ctx) : bool =
++  let source = span.data in
++  !Config.sanity_checks
++  && Sys.getenv_opt "AENEAS_CHECKED_CANDIDATE_NORMALIZE_ROWS" = Some "1"
++  && span.generated_from_span = None
++  && (match source.file.name with Local "src/sketch/candidates.rs" -> true | _ -> false)
++  && 76 <= source.beg_loc.line && source.end_loc.line <= 102
++  && (match FunDeclId.Map.find_opt (FunDeclId.of_int 11) ctx.crate.fun_decls with
++      | Some f ->
++          let site = f.item_meta.span.data in
++          f.item_meta.span.generated_from_span = None
++          && (match site.file.name with Local "src/sketch/candidates.rs" -> true | _ -> false)
++          && (site.beg_loc.line, site.beg_loc.col, site.end_loc.line, site.end_loc.col)
++             = (76, 0, 102, 1)
++          && Print.name_to_string (Print.crate_to_fmt_env ctx.crate) f.item_meta.name
++             = "bulksketch::sketch::candidates::normalize_rows"
++      | None -> false)
+--- a/src/interp/InterpJoin.ml
++++ b/src/interp/InterpJoin.ml
+@@ -14,6 +14,29 @@
+ (** The local logger *)
+ let log = Logging.join_log
+ 
++let normalize_dead_candidate_parent (span : Meta.span) (ctx : eval_ctx) (abs : abs) =
++  let site = span.data in
++  let scoped =
++    checked_candidate_rows_scope span ctx
++    && (match (site.beg_loc.line, site.beg_loc.col, site.end_loc.line, site.end_loc.col) with
++      | (93, 8, 99, 9) | (89, 4, 101, 5) -> true
++      | _ -> false)
++  in
++  if not scoped then abs
++  else match abs.avalues with
++  | [{value = ASymbolic (PNone, AProjBorrows { proj = a; loans = [] }); _};
++     {value = ASymbolic (PNone, AProjLoans { proj = b; consumed = []; borrows = [] }); _}]
++    when a.proj_ty = b.proj_ty && a.sv_id <> b.sv_id
++      && not (ty_has_mut_borrows ctx.type_ctx.type_infos a.proj_ty)
++      && (match a.proj_ty with TAdt iterator ->
++          let decl = ctx_lookup_type_decl span ctx iterator.id in
++          Print.name_to_string (Print.crate_to_fmt_env ctx.crate) decl.item_meta.name
++            = "core::iter::adapters::enumerate::Enumerate"
++        | _ -> false) ->
++      { abs with parents = AbsId.Set.filter
++          (fun parent -> Option.is_some (ctx_lookup_abs_opt ctx parent)) abs.parents }
++  | _ -> abs
++
+ (** Auxiliary helper for [reborrow_ashared_loans_symbolic_borrows] *)
+ let reborrow_ashared_loans (span : Meta.span) (loop_id : LoopId.id option)
+     ~(with_abs_conts : bool) : cm_fun =
+@@ -199,6 +222,47 @@
+     end
+   in
+   List.iter (fun abs -> visitor#visit_abs abs abs) absl;
++
++  (* A shared input of DecodeRow contains only immutable references.
++     Keep that frozen input's owned slice projector instead of cloning a
++     symbolic slice without its nested owner. *)
++  let keep_candidate_rows (abs : abs) (sv : tvalue)
++      (bid : BorrowId.id) (sid : SharedBorrowId.id) =
++    checked_candidate_rows_scope span ctx
++    && (match abs.kind with SynthInput _ -> not abs.can_end | _ -> false)
++    && (match sv.value, sv.ty with
++        | VSymbolic symbol, TSlice (TAdt row, _) ->
++            let decl = ctx_lookup_type_decl span ctx row.id in
++            let has_original_owner (owner : abs) =
++              let found = ref false in
++              let scan =
++                object
++                  inherit [_] iter_tavalue as super
++                  method! visit_ASymbolic () pm value =
++                    (match pm, value with
++                    | PNone, AProjLoans {proj; consumed = []; borrows = []}
++                      when proj.sv_id = symbol.sv_id && proj.proj_ty = symbol.sv_ty -> found := true
++                    | _ -> ());
++                    super#visit_ASymbolic () pm value
++                end
++              in
++              (match owner.kind with SynthInput _ -> not owner.can_end | _ -> false)
++              && AbsId.Set.mem abs.abs_id owner.parents
++              && (List.iter (scan#visit_tavalue ()) owner.avalues; !found)
++            in
++            Print.name_to_string (Print.crate_to_fmt_env ctx.crate) decl.item_meta.name
++              = "bulksketch::sketch::input::DecodeRow"
++            && not (ty_has_mut_borrows ctx.type_ctx.type_infos sv.ty)
++            && List.exists has_original_owner absl
++        | _ -> false)
++    && List.exists
++        (function
++          | EBinding (BVar var, { value = VBorrow (VSharedBorrow (bid0, sid0)); _ }) ->
++              var.index = Charon.Expressions.LocalId.of_int 1 && var.name = Some "rows"
++              && bid0 = bid && sid0 = sid
++          | _ -> false)
++        ctx.env
++  in
+ 
+   (* Explore the shared borrows in the environment, and introduce
+      fresh abstractions with reborrows.
+@@ -219,7 +283,7 @@
+             super#visit_VSharedBorrow env bid sid
+         | Some (abs, sv, rty) ->
+             (* Check if the region abstraction is frozen *)
+-            if not abs.can_end then
++            if not abs.can_end && not (keep_candidate_rows abs sv bid sid) then
+               let bid, sid = push_abs_for_shared_value abs sv rty bid sid in
+               VSharedBorrow (bid, sid)
+             else super#visit_VSharedBorrow env bid sid
+@@ -765,7 +829,7 @@
+         let var = EBinding (BVar b, v) in
+         (* Continue *)
+         var :: join_prefixes env0' env1'
+-    | (EAbs abs0 as abs) :: env0' ->
++    | EAbs abs0 :: env0' ->
+         let abs1, env1' = pop_abs abs0.abs_id env1 in
+ 
+         (* Debug *)
+@@ -785,10 +849,12 @@
+            Note that we ignore the continuation expressions: when computing fixed
+            points we might remove/add continuations while the presence/absence
+            shouldn't have an impact on the way we match/unify contexts. *)
++        let abs0 = normalize_dead_candidate_parent span ctx0 abs0 in
++        let abs1 = normalize_dead_candidate_parent span ctx1 abs1 in
+         [%sanity_check] span
+           (equal_abs { abs0 with cont = None } { abs1 with cont = None });
+         (* Continue *)
+-        abs :: join_prefixes env0' env1'
++        EAbs abs0 :: join_prefixes env0' env1'
+     | [] ->
+         if env1 = [] then []
+         else
+@@ -1546,6 +1612,8 @@
+ 
+   (* Check that the source context (i.e., the fixed-point context) matches
+      the resulting target context. *)
++  let src_ctx = ctx_map_abs (normalize_dead_candidate_parent span src_ctx) src_ctx in
++  let joined_ctx = ctx_map_abs (normalize_dead_candidate_parent span joined_ctx) joined_ctx in
+   let src_to_joined_maps =
+     let open InterpBorrowsCore in
+     let lookup_shared_loan lid ctx : tvalue =
+--- a/src/interp/InterpMatchCtxs.ml
++++ b/src/interp/InterpMatchCtxs.ml
+@@ -481,6 +481,9 @@
+     let match_rec = match_tvalues ctx0 ctx1 in
+     let match_arec = match_tavalues ctx0 ctx1 in
+     let ty = M.match_rtys ctx0 ctx1 v0.ty v1.ty in
++    let same_candidate_row_state =
++      checked_candidate_rows_scope M.span ctx0 && v0 = v1
++    in
+     match (v0.value, v1.value) with
+     | AAdt av0, AAdt av1 ->
+         [%ldebug "Matching ADTs"];
+@@ -560,6 +563,8 @@
+             [%ldebug "mut loans: matched children values"];
+             M.match_amut_loans match_rec ctx0 ctx1 v0.ty pm0 id0 av0 v1.ty pm1
+               id1 av1 ty av
++        | AEndedMutLoan {child; given_back; _}, AEndedMutLoan _
++          when same_candidate_row_state && is_aignored child.value && is_aignored given_back.value -> v0
+         | AIgnoredMutLoan _, AIgnoredMutLoan _
+         | AIgnoredSharedLoan _, AIgnoredSharedLoan _ ->
+             (* Those should have been filtered when destructuring the abstractions -
+--- a/src/interp/InterpLoops.ml
++++ b/src/interp/InterpLoops.ml
+@@ -339,11 +339,259 @@
+   let el = List.map eval_after_loop_iter ctx_resl in
+   let break_info = !ctx_info_at_break in
+   (break_info, cf_loop el)
++
++(* The row handle and its dependent shared owner are dead on entry to
++   the scalar compaction. Retire only their closed field-loan pair when
++   the scalar loop returns, keeping the enclosing iterator projectors. *)
++let candidate_row_loans (span : span) (ctx : eval_ctx) =
++  let site = span.data in
++  let scoped =
++    checked_candidate_rows_scope span ctx
++    && (site.beg_loc.line, site.beg_loc.col, site.end_loc.line, site.end_loc.col)
++       = (93, 8, 99, 9)
++  in
++  if not scoped then None
++  else
++    let is_row ty =
++      match ty with
++      | Types.TAdt row ->
++          let decl = ctx_lookup_type_decl span ctx row.id in
++          Print.name_to_string (Print.crate_to_fmt_env ctx.crate) decl.item_meta.name
++            = "bulksketch::sketch::input::DecodeRow"
++      | _ -> false
++    in
++    let retired (value : tvalue) =
++      match value.value with
++      | VAdt { variant_id = None; fields = [a;b;c] } when is_row value.ty ->
++          let field (v : tvalue) = match v.value with
++            | VBorrow (VSharedBorrow (bid, _)) -> Some bid
++            | _ -> None
++          in
++          (match field a, field b, field c with
++          | Some x, Some y, Some z when x <> y && x <> z && y <> z -> Some [x;y;z]
++          | _ -> None)
++      | _ -> None
++    in
++    let owners (value : tavalue) =
++      match value.value with
++      | AAdt { variant_id = None; fields = [a;b;c]; _ } when is_row value.ty ->
++          let field (v : tavalue) = match v.value with
++            | ALoan (ASharedLoan (PNone, bid, sv, _))
++              when not (tvalue_has_loans_or_borrows (Some span) ctx sv) -> Some bid
++            | _ -> None
++          in
++          (match field a, field b, field c with
++          | Some x, Some y, Some z -> Some [x;y;z]
++          | _ -> None)
++      | _ -> None
++    in
++    let ends = ref [] and loans = ref [] in
++    let collect =
++      object
++        inherit [_] iter_tavalue as super
++        method! visit_aloan_content (abs : abs) content =
++          (match content, abs.kind with
++          | AEndedSharedLoan (value, _), FunCall (call, _) ->
++              Option.iter (fun ids -> ends := (abs.abs_id,call,ids) :: !ends) (retired value)
++          | AIgnoredSharedLoan child, FunCall (call, _) ->
++              Option.iter (fun ids -> loans := (abs.abs_id,call,ids) :: !loans) (owners child)
++          | _ -> ());
++          super#visit_aloan_content abs content
++      end
++    in
++    env_iter_abs (fun abs -> List.iter (collect#visit_tavalue abs) abs.avalues) ctx.env;
++    match !ends, !loans with
++    | [(end_abs, end_call, end_ids)], [(loan_abs, loan_call, loan_ids)]
++      when end_abs <> loan_abs && end_call = loan_call && end_ids = loan_ids ->
++        let occurrences = ref BorrowId.Map.empty in
++        let record id is_loan =
++          if List.mem id end_ids then
++            occurrences := BorrowId.Map.update id (fun before ->
++              let borrows, loans = Option.value ~default:(0,0) before in
++              Some (if is_loan then (borrows, loans + 1) else (borrows + 1, loans)))
++              !occurrences
++        in
++        let check =
++          object
++            inherit [_] iter_eval_ctx as super
++            method! visit_borrow_id () id =
++              record id false;
++              super#visit_borrow_id () id
++            method! visit_loan_id () id =
++              record id true;
++              super#visit_loan_id () id
++          end
++        in
++        check#visit_eval_ctx () ctx;
++        if not (List.for_all (fun id -> BorrowId.Map.find_opt id !occurrences = Some (1,1)) end_ids)
++        then None
++        else
++          let remove =
++            object
++              inherit [_] map_tavalue as super
++              method! visit_tavalue aid (av : tavalue) =
++                match av.value with
++                | ALoan (AEndedSharedLoan (value, _))
++                    when aid = end_abs && retired value = Some end_ids ->
++                    ValuesUtils.mk_aignored span av.ty None
++                | ALoan (AIgnoredSharedLoan child)
++                    when aid = loan_abs && owners child = Some loan_ids ->
++                    ValuesUtils.mk_aignored span av.ty None
++                | _ -> super#visit_tavalue aid av
++            end
++          in
++          let retire (ctx : eval_ctx) =
++            let ctx = ctx_map_abs (fun (abs : abs) ->
++              if abs.abs_id = end_abs || abs.abs_id = loan_abs then
++                { abs with avalues = List.map (remove#visit_tavalue abs.abs_id) abs.avalues }
++              else abs) ctx
++            in
++            Invariants.check_invariants span ctx;
++            ctx
++          in
++          Some (end_abs, loan_abs, retire)
++    | _ -> None
++
++(* Isolate the readonly iterator frame while evaluating the original
++   scalar compaction loop. Its LLBC does not use the outer iterator or any
++   row field after its range has been built. *)
++let isolate_candidate_iterator (span : span) (ctx : eval_ctx) =
++  let unchanged = (ctx, fun c -> c) in
++  if not (checked_candidate_rows_scope span ctx) then unchanged
++  else match candidate_row_loans span ctx with
++  | None -> unchanged
++  | Some (_, _, retire) ->
++      let ctx = retire ctx in
++      let iterator_var = Charon.Expressions.LocalId.of_int 30 in
++      let cursor = List.find_map (function
++        | EBinding (BVar var, ({ value = VSymbolic sv; _ } as current))
++          when var.index = iterator_var && var.name = Some "iter"
++            && not (TypesUtils.ty_has_mut_borrows ctx.type_ctx.type_infos sv.sv_ty) ->
++            Some (sv.sv_id, current)
++        | _ -> None) ctx.env
++      in
++      match cursor with
++      | None -> unchanged
++      | Some (cursor_sid, cursor_value) ->
++          let info (abs : abs) =
++            let loan = ref SymbolicValueId.Set.empty
++            and borrow = ref SymbolicValueId.Set.empty
++            and mut = ref false in
++            let visitor =
++              object
++                inherit [_] iter_tavalue as super
++                method! visit_aloan_content () value =
++                  (match value with AMutLoan _ -> mut := true | _ -> ());
++                  super#visit_aloan_content () value
++                method! visit_aborrow_content () value =
++                  (match value with AMutBorrow _ -> mut := true | _ -> ());
++                  super#visit_aborrow_content () value
++                method! visit_ASymbolic () pm value =
++                  (match pm, value with
++                  | PNone, AProjLoans {proj; consumed = []; borrows = []} ->
++                      if TypesUtils.ty_has_mut_borrows ctx.type_ctx.type_infos proj.proj_ty then mut := true;
++                      loan := SymbolicValueId.Set.add proj.sv_id !loan
++                  | PNone, AProjBorrows {proj; loans = []} ->
++                      if TypesUtils.ty_has_mut_borrows ctx.type_ctx.type_infos proj.proj_ty then mut := true;
++                      borrow := SymbolicValueId.Set.add proj.sv_id !borrow
++                  | PNone, (AEndedProjLoans _ | AEndedProjBorrows _ | AEmpty) -> ()
++                  | _ -> mut := true);
++                  super#visit_ASymbolic () pm value
++              end
++            in
++            List.iter (visitor#visit_tavalue ()) abs.avalues;
++            (abs, !loan, !borrow, !mut)
++          in
++          let infos = List.map info (AbsId.Map.values (ctx_get_abs ctx)) in
++          let rec collect symbols seen =
++            let next = List.filter (fun ((abs : abs), loan, _, _) ->
++              not (AbsId.Set.mem abs.abs_id seen)
++              && not (SymbolicValueId.Set.disjoint symbols loan)) infos in
++            match next with
++            | [] -> Some (symbols, seen)
++            | _ when List.exists (fun ((abs : abs), _, _, mut) -> mut || not abs.can_end) next -> None
++            | _ ->
++                let seen = List.fold_left (fun seen ((abs : abs),_,_,_) -> AbsId.Set.add abs.abs_id seen) seen next in
++                let symbols = List.fold_left (fun s (_,_,b,_) -> SymbolicValueId.Set.union s b) symbols next in
++                collect symbols seen
++          in
++          match collect (SymbolicValueId.Set.singleton cursor_sid) AbsId.Set.empty with
++          | None -> unchanged
++          | Some (_, removed) when AbsId.Set.is_empty removed -> unchanged
++          | Some (symbols, removed) ->
++              let outside = List.exists (fun ((abs : abs), loan, borrow, _) ->
++                not (AbsId.Set.mem abs.abs_id removed)
++                && (not (AbsId.Set.disjoint abs.parents removed)
++                    || not (SymbolicValueId.Set.disjoint loan symbols)
++                    || not (SymbolicValueId.Set.disjoint borrow symbols))) infos in
++              let used_elsewhere = ref false in
++              let scan =
++                object
++                  inherit [_] iter_tvalue as super
++                  method! visit_VSymbolic () value =
++                    if SymbolicValueId.Set.mem value.sv_id symbols then used_elsewhere := true;
++                    super#visit_VSymbolic () value
++                end
++              in
++              List.iter (function
++                | EBinding (BVar var, _) when var.index = iterator_var -> ()
++                | EBinding (_, value) -> scan#visit_tvalue () value
++                | _ -> ()) ctx.env;
++              if outside || !used_elsewhere then unchanged
++              else
++                let removed_entry = function
++                  | EAbs abs -> AbsId.Set.mem abs.abs_id removed
++                  | _ -> false in
++                let key = function
++                  | EAbs abs -> `Abs abs.abs_id
++                  | EBinding (BVar var, _) -> `Local var.index
++                  | EBinding (BDummy id, _) -> `Dummy id
++                  | EFrame -> `Frame in
++                let env = List.filter_map (fun entry -> match entry with
++                  | EAbs abs when AbsId.Set.mem abs.abs_id removed -> None
++                  | EBinding (BVar var, value) when var.index = iterator_var ->
++                      Some (EBinding (BVar var, ValuesUtils.mk_bottom span value.ty))
++                  | _ -> Some entry) ctx.env in
++                let isolated = {ctx with env} in
++                Invariants.check_invariants span isolated;
++                let restore (after : eval_ctx) =
++                  let anchors = List.map key after.env in
++                  let rec plan = function
++                    | [] -> []
++                    | entry :: tail when removed_entry entry ->
++                        let anchor = Option.value ~default:`Frame
++                          (List.find_map (fun e ->
++                            let k = key e in if List.mem k anchors then Some k else None) tail) in
++                        (anchor, entry) :: plan tail
++                    | _ :: tail -> plan tail in
++                  let insertions = plan ctx.env in
++                  [%cassert] span (List.length insertions = AbsId.Set.cardinal removed
++                    && List.for_all (fun (anchor, _) -> List.mem anchor anchors) insertions)
++                    "readonly iterator frame lost its source anchors";
++                  let restored_cursor = ref false in
++                  let env = List.concat_map (fun entry ->
++                    let old = List.filter_map (fun (k,v) -> if k = key entry then Some v else None) insertions in
++                    let entry = match entry with
++                      | EBinding (BVar var, value) when var.index = iterator_var ->
++                          [%cassert] span (value.value = VBottom && value.ty = cursor_value.ty)
++                            "idle candidate iterator changed";
++                          [%cassert] span (not !restored_cursor) "duplicate readonly iterator local";
++                          restored_cursor := true;
++                          EBinding (BVar var, cursor_value)
++                      | _ -> entry in
++                    old @ [entry]) after.env in
++                  [%cassert] span !restored_cursor "readonly iterator local missing";
++                  let after = {after with env} in
++                  Invariants.check_invariants span after;
++                  after
++                in
++                (isolated, restore)
+ 
+ (** Evaluate a loop in symbolic mode *)
+ let eval_loop_symbolic (config : config) (span : span)
+     (eval_loop_body : stl_cm_fun) : st_cm_fun =
+  fun ctx ->
++  let ctx, restore_candidate_iterator = isolate_candidate_iterator span ctx in
+   (* Debug *)
+   [%ltrace "Context:\n" ^ eval_ctx_to_string ~span:(Some span) ctx ^ "\n"];
+ 
+@@ -502,7 +750,7 @@
+     in
+     cf_before_loop loop_expr
+   in
+-  ((break_ctx, Unit), cc)
++  ((restore_candidate_iterator break_ctx, Unit), cc)
+ 
+ let eval_loop (config : config) (span : span) (eval_loop_body : stl_cm_fun) :
+     stl_cm_fun =

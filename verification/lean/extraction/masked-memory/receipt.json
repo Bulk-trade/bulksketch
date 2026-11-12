@@ -1,0 +1,54 @@
+{
+  "status": "diagnostic-generated",
+  "native_body_proof_credit": 0,
+  "source_checkout": "07927c25ecb8fe22c925692edbd2c0780baec8bd",
+  "frozen_source": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "charon": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "aeneas": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "target": "x86_64-apple-darwin",
+  "checks": [
+    "-checks",
+    "-sequential"
+  ],
+  "selectors": [
+    "bulksketch::backend::x86_vpclmul512::load",
+    "bulksketch::backend::x86_vpclmul512::store"
+  ],
+  "charon_exit": 0,
+  "aeneas_exit": 0,
+  "llbc_has_errors": false,
+  "target_information": {
+    "target_pointer_size": 8,
+    "is_little_endian": true
+  },
+  "artifacts": [
+    {
+      "path": "extraction/masked-memory/arithmetic.llbc",
+      "sha256": "75e346aaae3ad05558bb5b81ebb732598afef9d5bf1193db227fd2c8f254dfae"
+    },
+    {
+      "path": "extraction/masked-memory/charon.log",
+      "sha256": "4fd7be90602ac05a177dc1700b3b6e1ce5179a1cf99cfa1b2ca81673e3882685"
+    },
+    {
+      "path": "extraction/masked-memory/aeneas.log",
+      "sha256": "82cbcb38d2780661d79e72a68c5d7ac8f3e6993a242877c1c4689c1f578daf65"
+    },
+    {
+      "path": "extraction/masked-memory/Arithmetic/Funs.lean",
+      "sha256": "fd6580176007c59804664065d916ee7f92930ce1db455b043a93f81b16aba065"
+    },
+    {
+      "path": "extraction/masked-memory/Arithmetic/FunsExternal_Template.lean",
+      "sha256": "8ebf3210795ec3e6c8c15cc15b206119e9e3d5177aa3f3f66488129ceac8d556"
+    },
+    {
+      "path": "extraction/masked-memory/Arithmetic/Types.lean",
+      "sha256": "9b78171eea85335494bba82fe6d25cc00734536d5fdd57b0c745df091935998f"
+    },
+    {
+      "path": "extraction/masked-memory/Arithmetic/TypesExternal_Template.lean",
+      "sha256": "e059007c1981aacd1410896cef572b2f58252192d0659b05a45707715b1cc99e"
+    }
+  ]
+}

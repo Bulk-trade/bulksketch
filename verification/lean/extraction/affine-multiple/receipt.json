@@ -1,0 +1,275 @@
+{
+  "variant_id": "checked-affine-multiple-zip-ends-v1",
+  "source_commit": "0a5bda53f6b07fcae8acd870e2d0c4a246d207e6",
+  "aeneas_commit": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_commit": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "target": "x86_64-apple-darwin",
+  "rust_toolchain": "nightly-2026-09-17",
+  "native_source_edited": false,
+  "native_llbc_edited": false,
+  "source_sha256": {
+    "src/decode/affine.rs": "a7c45498717202aec291b4c4acdd6f819edf16bcdf478500a8c74a3492c4e11d",
+    "src/poly/dense.rs": "13b360fba6387dda36a9655f3f67d01be6752e4ca6b7f8e1824e7333bf3da644",
+    "src/backend/contract.rs": "4d05ce564edc408ba04f5a907b159ad91018ba8cfd93126e17913ed49f7e3d59",
+    "src/types.rs": "5702a8552c1158cf69f2155d2484f246f87475dc6bef3ea734be52348acd940d"
+  },
+  "capture_sha256": "cd457378c74d590c8bded9bf73365787b38a21f05a35f1a6abfa6834465ad8b5",
+  "variant_patch": "extraction/affine-multiple/checked-affine-multiple-zip-ends.patch",
+  "variant_patch_sha256": "ee10ff36dfc11a6fe78b6789b775e4afbb4b2a3171458d37a599a9eae111e9c9",
+  "patched_binary_sha256": "53fd011bcc11b7107f4783b8cf1e98ce9ff8080b2b13efa68319abb321bc723b",
+  "base_sources": {
+    "src/interp/InterpStatements.ml": "52ff1eb23a3b02b969fbbd38849f58e27d8652253a3c7bf996e7a19e747f32a0",
+    "src/interp/InterpBorrows.ml": "41fe2d959370354e5187007eb358088883a196ebc44f6635511f215dba332a7a",
+    "src/interp/InterpBorrows.mli": "bec35be5ccd34bc596d23deaa4f1f4b93358759a385e9f55bef794c26d8ebcba",
+    "src/interp/InterpBorrowsCore.ml": "0294abaaf5a305ef73f19c807626e37e55023f52c9fb0e7abda86bfdcbf1db89",
+    "src/interp/InterpAbs.ml": "713c57546138df421b391293a76e175391f2ecbcf4b3d97db7e9e6c93c89de0b"
+  },
+  "modified_sources": {
+    "src/interp/InterpStatements.ml": "d8501e596eb0f22e3fbe2738f5f8a450b88824467371a96297de1fdc3ac7089b",
+    "src/interp/InterpBorrows.ml": "15e67c132d27eae2d463ad84cd870c2714e77f231958a887d35696bb47cb5cb2",
+    "src/interp/InterpBorrows.mli": "e796730bdedccb563e4271be55b341b8e2118dd5ecc5a60f7406a0460d4a6a9b",
+    "src/interp/InterpBorrowsCore.ml": "002da3564d478de1af820e6b86a139e5c8fbe94ff2b2f982ffd142025b78ebf2",
+    "src/interp/InterpAbs.ml": "e848a941e6bbff0c33cf2d84da9688e3dd3c91690b9f6deb4b5ca8eee07583d7"
+  },
+  "charon_recapture": {
+    "command": [
+      "/workspace/bulk/bulksketch-proofs/tooling/charon/bin/charon",
+      "cargo",
+      "--preset=aeneas",
+      "--sysroot=default",
+      "--dest-file=/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/recaptured.llbc",
+      "--start-from=bulksketch::decode::affine::multiple",
+      "--opaque=bulksketch::poly::dense::_::square_mod_into",
+      "--",
+      "--manifest-path=/workspace/bulk/bulksketch/Cargo.toml",
+      "-p",
+      "bulksketch",
+      "--lib",
+      "--locked",
+      "--target",
+      "x86_64-apple-darwin"
+    ],
+    "exit_code": 0,
+    "original_sha256": "cd457378c74d590c8bded9bf73365787b38a21f05a35f1a6abfa6834465ad8b5",
+    "recapture_sha256": "45089f9f04ea6f8612bf93f6b0be4f65a522ae810194b465167d67cf369b83f8",
+    "normalized_fields": [
+      "translated.options.dest_file"
+    ],
+    "log_sha256": "48db6175d661400b077f4a85935e7f0b2adf29c5cc225f8d9dfac488fcdab398",
+    "binary_sha256": "913e7969d1a0296038d115bcf1af47f8c0c6702266cc7a78a02a2b4ad7a0dfbe"
+  },
+  "fresh_build": {
+    "exit_code": 0,
+    "source_files_byte_identical": 104,
+    "modified_source_sha256": {
+      "src/interp/InterpStatements.ml": "d8501e596eb0f22e3fbe2738f5f8a450b88824467371a96297de1fdc3ac7089b",
+      "src/interp/InterpBorrows.ml": "15e67c132d27eae2d463ad84cd870c2714e77f231958a887d35696bb47cb5cb2",
+      "src/interp/InterpBorrows.mli": "e796730bdedccb563e4271be55b341b8e2118dd5ecc5a60f7406a0460d4a6a9b",
+      "src/interp/InterpBorrowsCore.ml": "002da3564d478de1af820e6b86a139e5c8fbe94ff2b2f982ffd142025b78ebf2",
+      "src/interp/InterpAbs.ml": "e848a941e6bbff0c33cf2d84da9688e3dd3c91690b9f6deb4b5ca8eee07583d7"
+    },
+    "command": [
+      "opam",
+      "exec",
+      "--root=/workspace/bulk/bulksketch-proofs/tooling/opam-root",
+      "--switch=aeneas-5.3.0",
+      "--",
+      "dune",
+      "build",
+      "--root",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-tool/src",
+      "-j",
+      "2"
+    ],
+    "log_sha256": "3a75304e780acbe29d2ab8f46aa89e110652412ae6dbd25eaaae6d09a30f3e34"
+  },
+  "replay": {
+    "command": [
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-tool/src/_build/default/main.exe",
+      "-backend",
+      "lean",
+      "-checks",
+      "-sequential",
+      "-no-progress-bar",
+      "-print-error-emitters",
+      "-split-files",
+      "-dest",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-replay",
+      "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/arithmetic.llbc"
+    ],
+    "exit_code": 0,
+    "binary_sha256": "53fd011bcc11b7107f4783b8cf1e98ce9ff8080b2b13efa68319abb321bc723b",
+    "input_sha256": "cd457378c74d590c8bded9bf73365787b38a21f05a35f1a6abfa6834465ad8b5",
+    "environment": {
+      "BULKSKETCH_AFFINE_MULTIPLE": "1"
+    },
+    "outputs": {
+      "Funs.lean": "c016c3f963dbe2708027b8e039a0c7590191864a6bcd17468e89e76fca38b7cc",
+      "FunsExternal_Template.lean": "6b79b38a224de70ad04c51859800b4fc780fbe31c9da077306463d61ffdbefa3",
+      "Types.lean": "8a93715ef2336aafd7a6e2441962da32c9298cbfcc57058f0cbea7e3d1718471"
+    },
+    "log_sha256": "1f527f6b55af8abeb3b2a0023d48a7f2e45e2fcf0d88a30e208c4508b3ee4f3b"
+  },
+  "controls": {
+    "stock": {
+      "command": [
+        "/workspace/bulk/bulksketch-proofs/tooling/aeneas/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-guard-controls/stock/generated",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/affine-multiple/arithmetic.llbc"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "input_sha256": "cd457378c74d590c8bded9bf73365787b38a21f05a35f1a6abfa6834465ad8b5",
+      "binary_sha256": "91f5a2776a79e2923517a2c4807c9fc017e79f185ae490502247f16e2941e330",
+      "log_sha256": "c7547078fda7545694acee959c6c8bc265a34a95327b05f48680b0b47d97b167",
+      "outputs": {}
+    },
+    "flag-off": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-guard-controls/flag-off/generated",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/affine-multiple/arithmetic.llbc"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "input_sha256": "cd457378c74d590c8bded9bf73365787b38a21f05a35f1a6abfa6834465ad8b5",
+      "binary_sha256": "53fd011bcc11b7107f4783b8cf1e98ce9ff8080b2b13efa68319abb321bc723b",
+      "log_sha256": "2bbfc13edb016a4c26ae4843f6823cbc7e98bf4e4e9911fd95ca3f9c4fd43eda",
+      "outputs": {}
+    },
+    "unchecked": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-guard-controls/unchecked/generated",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/affine-multiple/arithmetic.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_AFFINE_MULTIPLE": "1"
+      },
+      "exit_code": 1,
+      "input_sha256": "cd457378c74d590c8bded9bf73365787b38a21f05a35f1a6abfa6834465ad8b5",
+      "binary_sha256": "53fd011bcc11b7107f4783b8cf1e98ce9ff8080b2b13efa68319abb321bc723b",
+      "log_sha256": "ad6686fae48d25790ec2013fcf46ad3abf3e4bb70cb1fba04b6d9ec4ed3c7c62",
+      "outputs": {}
+    },
+    "checked": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-guard-controls/checked/generated",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/affine-multiple/arithmetic.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_AFFINE_MULTIPLE": "1"
+      },
+      "exit_code": 0,
+      "input_sha256": "cd457378c74d590c8bded9bf73365787b38a21f05a35f1a6abfa6834465ad8b5",
+      "binary_sha256": "53fd011bcc11b7107f4783b8cf1e98ce9ff8080b2b13efa68319abb321bc723b",
+      "log_sha256": "e51b3eed396ccb52d8ab056056cebf41574ec26dac3bb86c5aa64f8a55b9c7f1",
+      "outputs": {
+        "Funs.lean": "c016c3f963dbe2708027b8e039a0c7590191864a6bcd17468e89e76fca38b7cc",
+        "FunsExternal_Template.lean": "6b79b38a224de70ad04c51859800b4fc780fbe31c9da077306463d61ffdbefa3",
+        "Types.lean": "8a93715ef2336aafd7a6e2441962da32c9298cbfcc57058f0cbea7e3d1718471"
+      }
+    },
+    "wrong-lifetime": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-guard-controls/wrong-lifetime/generated",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-guard-controls/wrong-lifetime/arithmetic.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_AFFINE_MULTIPLE": "1"
+      },
+      "exit_code": 1,
+      "input_sha256": "54d6339666957f4910d183bc5ef0a381525e65ab3020e3bc755dd532b36d368a",
+      "binary_sha256": "53fd011bcc11b7107f4783b8cf1e98ce9ff8080b2b13efa68319abb321bc723b",
+      "log_sha256": "c9c87ce69e5eb4f67ec1fec0add74621b36919174164c402950d3a2b55fded7e",
+      "outputs": {}
+    },
+    "affine-splitter": {
+      "command": [
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-checked-zip-tool/src/_build/default/main.exe",
+        "-backend",
+        "lean",
+        "-sequential",
+        "-no-progress-bar",
+        "-print-error-emitters",
+        "-split-files",
+        "-checks",
+        "-dest",
+        "/workspace/bulk/bulksketch-proof-evidence-20261109-affine-native/affine-multiple/fresh-guard-controls/affine-splitter/generated",
+        "/workspace/bulk/bulksketch/verification/lean/extraction/affine-splitter/arithmetic.llbc"
+      ],
+      "environment": {
+        "BULKSKETCH_AFFINE_MULTIPLE": "1"
+      },
+      "exit_code": 0,
+      "input_sha256": "9be44210bff18a02d66a4caaca9be7b5148aa1cd8fc73e4e5a2c8ebaac288b50",
+      "binary_sha256": "53fd011bcc11b7107f4783b8cf1e98ce9ff8080b2b13efa68319abb321bc723b",
+      "log_sha256": "80ff0711105b7bc4c7e7caf02d9d54fe8633de9ad3f2106b1490de1c3144815d",
+      "outputs": {
+        "Funs.lean": "4a1e1a13827ea38655bd055b65e579e17052f91a8e92ea82a72bbddb6c6f876a",
+        "FunsExternal_Template.lean": "4c59046b038ddb5906a108fac743d2bfdafa10499b04405679623a05e331ef6d",
+        "Types.lean": "c1c3706fc639ac3c460be5b0043a2b49afa6b36f37172c27e5aca26f08c59abb"
+      }
+    }
+  },
+  "files_sha256": {
+    "extraction/affine-multiple/Arithmetic/Funs.lean": "c016c3f963dbe2708027b8e039a0c7590191864a6bcd17468e89e76fca38b7cc",
+    "extraction/affine-multiple/Arithmetic/FunsExternal_Template.lean": "6b79b38a224de70ad04c51859800b4fc780fbe31c9da077306463d61ffdbefa3",
+    "extraction/affine-multiple/Arithmetic/Types.lean": "8a93715ef2336aafd7a6e2441962da32c9298cbfcc57058f0cbea7e3d1718471",
+    "extraction/affine-multiple/affine-splitter.log": "80ff0711105b7bc4c7e7caf02d9d54fe8633de9ad3f2106b1490de1c3144815d",
+    "extraction/affine-multiple/arithmetic.llbc": "cd457378c74d590c8bded9bf73365787b38a21f05a35f1a6abfa6834465ad8b5",
+    "extraction/affine-multiple/charon.log": "48db6175d661400b077f4a85935e7f0b2adf29c5cc225f8d9dfac488fcdab398",
+    "extraction/affine-multiple/checked-affine-multiple-zip-ends.patch": "ee10ff36dfc11a6fe78b6789b775e4afbb4b2a3171458d37a599a9eae111e9c9",
+    "extraction/affine-multiple/checked.log": "e51b3eed396ccb52d8ab056056cebf41574ec26dac3bb86c5aa64f8a55b9c7f1",
+    "extraction/affine-multiple/flag-off.log": "2bbfc13edb016a4c26ae4843f6823cbc7e98bf4e4e9911fd95ca3f9c4fd43eda",
+    "extraction/affine-multiple/fresh-build.log": "3a75304e780acbe29d2ab8f46aa89e110652412ae6dbd25eaaae6d09a30f3e34",
+    "extraction/affine-multiple/guard-controls.py": "f6e593b71ebc3aa0a6c23c4c1e004deeefab937fd8f5e6b25d53b5b0d93b5871",
+    "extraction/affine-multiple/replay.log": "1f527f6b55af8abeb3b2a0023d48a7f2e45e2fcf0d88a30e208c4508b3ee4f3b",
+    "extraction/affine-multiple/stock.log": "c7547078fda7545694acee959c6c8bc265a34a95327b05f48680b0b47d97b167",
+    "extraction/affine-multiple/unchecked.log": "ad6686fae48d25790ec2013fcf46ad3abf3e4bb70cb1fba04b6d9ec4ed3c7c62",
+    "extraction/affine-multiple/wrong-lifetime.log": "c9c87ce69e5eb4f67ec1fec0add74621b36919174164c402950d3a2b55fded7e",
+    "extraction/affine-multiple/zip-lifetimes.log": "4ff0dab374e81a8a2b4370c8b11566fdf32aa93dba885a8ee1532d4108c08be4",
+    "extraction/affine-multiple/zip_lifetimes.py": "5a38b91aa37d3faeb900b3d0dcbcdf0e7025b1ec0ddbdb9d1cbdfa812fdb744b"
+  }
+}
