@@ -95,6 +95,9 @@ build caches and proof-output logs in their ignored directories.
 
 ## Submitting changes
 
+Report security problems privately as described in [SECURITY.md](SECURITY.md),
+not in a public issue.
+
 Use a fork and open a pull request against `main`. Keep each change focused and
 explain the concrete problem, resulting behavior and validation performed.
 Include reproduction commands and matched baseline results for performance
