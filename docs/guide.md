@@ -329,13 +329,15 @@ against such tailored inputs, not a proven bound.
 ## Optional: candidate IDs
 
 If you can guess some of the IDs in the difference (for example IDs you saw
-recently from that peer), pass them in `DecodeRequest::candidates`. After the
-Berlekamp-Massey step, the decoder tests each guess against the polynomial it
-found and removes the confirmed ones before the root-finding step, which
-saves work. Wrong guesses cost a little work and are otherwise ignored; a
-candidate is never returned unless the sketch confirms it. Set
-`max_candidate_inputs` in the limits and pass the same count to
-`complete_bound`; the count includes duplicates and 0.
+recently from that peer), pass them in `DecodeRequest::candidates`. When a
+bucket needs the general algorithm, the decoder tests each guess against the
+polynomial that the Berlekamp-Massey step found and removes the confirmed
+ones before the root-finding step, which saves work there. Every candidate
+also costs a little preprocessing, and buckets with few differences are
+decoded by shortcuts that do not use candidates, so for small differences
+candidates can increase the total work. A candidate is never returned unless
+the sketch confirms it. Set `max_candidate_inputs` in the limits and pass the
+same count to `complete_bound`; the count includes duplicates and 0.
 
 ## Advanced: staged and batched decoding
 
