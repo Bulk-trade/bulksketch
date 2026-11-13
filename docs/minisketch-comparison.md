@@ -41,7 +41,7 @@ changed since then.
 | Element 0 | cannot be stored | stored through a separate membership bit, so every `u64` is a valid ID |
 | 1 or 2 differences | Berlekamp-Massey, then linear and quadratic factors are solved directly | solved from `S1` (and `S3`) before Berlekamp-Massey, then verified |
 | 3 or 4 differences | Berlekamp-Massey, then trace-based root finding | closed-form cubic and quartic solvers (plan V3), then verified |
-| Root finding | Berlekamp trace algorithm with a random basis per sketch | trace splitting along directions derived from a caller-supplied seed, or (plan V3) roots from the least affine multiple of the locator |
+| Root finding | Berlekamp trace algorithm with a random basis per sketch | the same kind of splitting, along directions derived from a seed you supply; plan V3 also has a second method (based on the polynomial's least affine multiple) and picks between them automatically, so there is nothing to configure |
 | Known candidates | none | the caller may pass IDs it expects in the difference; confirmed ones are divided out before root finding |
 | Decoding many rows | one sketch per call | one call decodes a batch of rows with one arena; a `DecodeJob` can also run stage by stage |
 | Arithmetic | portable or CLMUL, chosen when the sketch is created | portable, PCLMUL or VPCLMUL with AVX-512, chosen at runtime; forced backends are tested to give identical results and work counts |
