@@ -25,7 +25,7 @@ fn readme_example() {
         .unwrap(),
     );
 
-    // Each side adds its IDs (nonzero u64 hashes) to its own sketch.
+    // Each side adds its IDs (u64 hashes) to its own sketch.
     let mut alice = MutableSketch::new(shape.clone(), BackendRequest::Auto).unwrap();
     let mut bob = MutableSketch::new(shape, BackendRequest::Auto).unwrap();
     for id in [11, 22, 33, 44] {

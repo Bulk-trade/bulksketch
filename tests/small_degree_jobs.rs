@@ -1,4 +1,6 @@
-//! Explicit V3 public jobs, including zero-S1 whole-row probes and atomic limits.
+//! Plan V3 requests whose rows hold three or four differences (the closed-form
+//! path), including rows whose first syndrome is zero, and requests that run
+//! into their limits.
 #![forbid(unsafe_code)]
 use {bulksketch::*, std::sync::Arc};
 

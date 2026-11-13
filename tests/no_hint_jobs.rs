@@ -1,5 +1,6 @@
-//! Public V3 bucket jobs with no candidate hints, caller-seeded splitting, and
-//! an earlier successful tiny row before the changed general path.
+//! Plan V3 requests without candidate hints and with a caller-chosen splitter
+//! seed: a small row decodes first, then a row takes the general path. The exact
+//! work charged is checked.
 #![forbid(unsafe_code)]
 use {bulksketch::*, std::sync::Arc};
 

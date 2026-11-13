@@ -1,4 +1,5 @@
-//! Production V3 job: zero-channel tiny row followed by a hinted general row.
+//! A plan V3 request with candidate hints: a small row that involves ID zero,
+//! followed by a larger row decoded with hints.
 #![forbid(unsafe_code)]
 use {bulksketch::*, std::sync::Arc};
 

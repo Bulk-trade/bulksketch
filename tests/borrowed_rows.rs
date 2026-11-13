@@ -1,4 +1,5 @@
-//! Borrowed legacy payloads exercise the same public driver as canonical views.
+//! Rows passed as raw syndrome bytes (`decode_rows_into`) decode like parsed
+//! sketches: same results, same work, same failure behaviour.
 use {
     bulksketch::{
         BackendRequest, DecodeError, DecodeLimits, DecodeOutcome, DecodePlan, DecodeRequest,
