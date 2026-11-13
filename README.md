@@ -36,8 +36,8 @@ difference of the two sets, as long as it has at most `c` elements.
   encoding (`FrozenSketch::encoded_v1`) already adds its own header and is not
   minisketch's format.
 
-License: TBD. `Cargo.toml` sets no `license` and `publish = false`. The vendored
-minisketch sources in `oracle/` keep their own licenses (see
+License: [MIT](LICENSE). The vendored minisketch sources in `oracle/` keep
+their own licenses (see
 [Repository layout](#repository-layout)).
 
 ## Example

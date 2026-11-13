@@ -10,7 +10,7 @@
     "tooling/ast-extractor/src/main.rs": "44def5e94c09b0ad4a1f3784c6c0e9664557c132a48cb3ba82549e8dcb1e3b7e",
     "tooling/ast-extractor/Cargo.lock": "aa72961ff258686a9e58d5b35b8ecfbca5d37216fca539bfc2870b442ef02cf3",
     "audit/source-inventory.json": "e8143e36f398a78722f9a78c7b31313e0648a28472d33c60dc87d41fd4f7943e",
-    "scope.json": "2502dabb052753705a42f5aa3bbdd17800da04316e30912a0fc3d8fb64bde5dd",
+    "scope.json": "5b9c7598ae595bc4c19906a0fb3da8044fbe22b647560c2b157e3982b966b9a1",
     "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
     "lakefile.toml": "b6b1d522c0d1a9676055f895112143020c2a04b9ff250fb795a0cbddd46398a0",
     "BulksketchProofs/Audit.lean": "c9ce92f2202ceb9297e81c78c86965dbecaf1509289c53ce106dbedd54ad8eb1",
@@ -1713,6 +1713,12 @@
       "old_sha256": "9076648e4a8c45ba7cb36848abc3d8a0b412aa47903d4a1885b33a8abb8f947a",
       "new_sha256": "69700278f50406478a872f0eb9b45b6fd3053ffbba00e51c1ededddc6f290319",
       "reason": "Use technical documentation and neutral metadata names; formal statements, native source, and validation conditions unchanged."
+    },
+    {
+      "path": "scope.json",
+      "old_sha256": "2502dabb052753705a42f5aa3bbdd17800da04316e30912a0fc3d8fb64bde5dd",
+      "new_sha256": "5b9c7598ae595bc4c19906a0fb3da8044fbe22b647560c2b157e3982b966b9a1",
+      "reason": "Add MIT package-license metadata only. Native source, dependency/features, compiler settings, proof statements, and runtime behavior are unchanged."
     }
   ]
 }
