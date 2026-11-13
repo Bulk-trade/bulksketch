@@ -2,6 +2,9 @@
 
 A set-reconciliation sketch in pure Rust using the PinSketch BCH-code
 construction over GF(2^64).
+[minisketch](https://github.com/bitcoin-core/minisketch) is the reference
+implementation of PinSketch; bulksketch is a separate implementation for
+64-bit IDs. [How the two compare](docs/minisketch-comparison.md).
 
 Two parties each build a small sketch of their set of 64-bit IDs. From one
 sketch of capacity `c` and its own set, the other party recovers the symmetric
@@ -64,7 +67,7 @@ let shape = Arc::new(
     .unwrap(),
 );
 
-// Each side adds its IDs (nonzero u64 hashes) to its own sketch.
+// Each side adds its IDs (u64 hashes) to its own sketch.
 let mut alice = MutableSketch::new(shape.clone(), BackendRequest::Auto).unwrap();
 let mut bob = MutableSketch::new(shape, BackendRequest::Auto).unwrap();
 for id in [11, 22, 33, 44] {
@@ -138,18 +141,19 @@ Root finding splits the locator polynomial along directions derived from the
 `Decoder` seed. An attacker who knows the seed can choose IDs whose roots resist
 those directions, so many split attempts fail. By our operation-count model,
 such a crafted row costs around 20 to 25 times the work of an honest
-full-capacity decode on the seeded root-finding path. The work budget still caps it. With a secret seed, the worst an attacker
-can easily force is about one honest full-capacity decode per row. Fixed seeds
-are fine for tests and deterministic simulation.
+full-capacity decode on the seeded root-finding path. The work budget still
+caps it. With a secret seed, the worst an attacker can easily force is about one
+honest full-capacity decode per row. Fixed seeds are fine for tests and
+deterministic simulation.
 
 ### Beyond capacity
 
 When a row holds more than `c` differences, the sketch no longer identifies the
 set. Usually the decode fails. Sometimes another set of at most `c` IDs has
 exactly the same syndromes (an alias). No decoder can tell that set from the
-real one. Recorded comparison tests found that random 64-bit IDs produced aliases only at
-capacities 1 to 3, while small consecutive integers (which span small GF(2)
-subspaces) produced them in 60 of 267 cases, up to capacity 89.
+real one. Recorded comparison tests found that random 64-bit IDs produced
+aliases only at capacities 1 to 3, while small consecutive integers (which span
+small GF(2) subspaces) produced them in 60 of 267 cases, up to capacity 89.
 
 bulksketch returns only sets that reproduce every syndrome of the input, so it
 never returns a set that is inconsistent with the sketch. The archived
@@ -209,10 +213,11 @@ and their scope.
 
 ### Verification
 
-The sanitized publication revision `6660856` passed all six audit gates, including frozen
-statement and source checks, a transitive axiom audit, Lean kernel replay,
+Revision `6660856` passed all six audit gates, including frozen statement and
+source checks, a transitive axiom audit, Lean kernel replay,
 and independent Nanoda replay. Only `propext`, `Classical.choice`, and
-`Quot.sound` are permitted. The native release suite passed 139 tests.
+`Quot.sound` are permitted. The native release suite passed 139 tests on
+arm64 and 148 on x86-64 Linux.
 The Rust source is pinned to `0a5bda53f6b07fcae8acd870e2d0c4a246d207e6`.
 
 ```sh
@@ -230,7 +235,7 @@ and V3 routes, and accelerated backend execution and memory contracts.
 ## Recorded comparison harness
 
 The [archived Criterion harness](https://github.com/Bulk-trade/bulksketch/tree/0a5bda53f6b07fcae8acd870e2d0c4a246d207e6/oracle)
-compared BulkSketch with Minisketch impl 0 (portable) and impl 1 (CLMUL, x86-64
+compared bulksketch with minisketch impl 0 (portable) and impl 1 (CLMUL, x86-64
 only). It is retained in Git history rather than the current build.
 
 | Case | Rows x capacity | Differences |
@@ -242,13 +247,13 @@ only). It is retained in Git history rather than the current build.
 | `pressure_16x18` | 16 x 18 | 6 to 60 per row; half of the rows exceed capacity and fail |
 
 Both libraries started from a prebuilt local sketch and remote row bytes.
-BulkSketch decoded all rows in one `decode_rows_into` call; Minisketch
+bulksketch decoded all rows in one `decode_rows_into` call; minisketch
 deserialized each row into a reused sketch, merged the local sketch and decoded
 it. Each case cycled through 32 different fixtures, with results checked before
 timing.
 
 This single-process harness did not reproduce the separate percentile method
-below. Its Minisketch copy included a candidate-decode entry point unused by the
+below. Its minisketch copy included a candidate-decode entry point unused by the
 benchmark and a per-thread seeded basis generator; it was compiled with
 `-O3 -march=native`.
 
@@ -267,8 +272,8 @@ PCLMUL support. The inputs went through an application wrapper (not part of
 this repository) that skips equal rows and calls `decode_rows_into` with plan
 V3 on the remaining rows of minisketch-format bytes. Fixtures came from an
 independent generator, not from production traffic. Times below about 410 ns
-are at the resolution limit of the method. These are percentiles of selected fixtures, not a worst-case guarantee,
-and other CPUs will give other numbers.
+are at the resolution limit of the method. These are percentiles of selected
+fixtures, not a worst-case guarantee, and other CPUs will give other numbers.
 
 Speedup = minisketch time / bulksketch time (above 1 means bulksketch is faster).
 
@@ -328,7 +333,9 @@ times therefore differ from these recorded results.
 | `tests/` | Integration tests and frozen vectors (`tests/vectors/`) |
 | `tools/check-ownership.py` | Compile-fail check used by `tests/ownership.rs` |
 | `verification/lean/` | Lean 4 models, native-body refinements and the Portable decoder theorem (see Proofs) |
+| `docs/minisketch-comparison.md` | What bulksketch shares with minisketch, what it adds and what it lacks |
 | `CONTRIBUTING.md` | Development, performance and proof-verification requirements |
+| `SECURITY.md` | How to report a vulnerability, and what the library does and does not defend against |
 
 The toolchain is pinned in `rust-toolchain.toml`. `rustfmt.toml` uses options
 that need a nightly rustfmt (`cargo +nightly fmt`).
