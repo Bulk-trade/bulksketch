@@ -22,6 +22,11 @@ jobs:
       - name: Install the pinned toolchain
         run: rustup show active-toolchain || rustup toolchain install
       - run: cargo test --release --locked
+      - name: Run the examples
+        run: |
+          for example in examples/*.rs; do
+            cargo run --release --locked --example "$(basename "$example" .rs)"
+          done
 
   lint:
     runs-on: ubuntu-24.04
