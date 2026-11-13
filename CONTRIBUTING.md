@@ -77,11 +77,26 @@ statement, add a correctness assumption or remove an obligation to make a check
 pass. The permitted axioms are `propext`, `Classical.choice` and `Quot.sound`.
 Application correctness must not be supplied by an axiom or a proof hole.
 
+This workflow applies when you change any of the library's source files
+listed in `verification/lean/audit/source-inventory.json` (the non-test files
+under `src/`; even a comment counts), `Cargo.toml`, `Cargo.lock`,
+`rust-toolchain.toml` or anything under `verification/lean`. Other changes,
+such as tests, examples and documentation outside `verification/lean`, are not
+pinned by the proofs.
+
 When source, build inputs or generated artifacts change, update their source
-associations and dependent fingerprints deliberately. Record intentional frozen
-input changes in `input_revisions`. Preserve the native source inventory and
-distinguish mathematical models from refinements of original function bodies.
-Hash updates alone do not establish correctness.
+associations and dependent fingerprints deliberately. The fingerprints are
+recorded in
+[`audit/source-inventory.json`](verification/lean/audit/source-inventory.json),
+[`scope.json`](verification/lean/scope.json) and the two `frozen-inputs.json`
+files ([`audit/`](verification/lean/audit/frozen-inputs.json) and
+[`bridge/audit/`](verification/lean/bridge/audit/frozen-inputs.json)), all under
+`verification/lean`. Record each intentional change in the `input_revisions`
+list of the `frozen-inputs.json` file that pins it. Regenerating extracted code
+is described in the [extraction guide](verification/lean/extraction/README.md).
+Preserve the native source inventory and distinguish mathematical models from
+refinements of original function bodies. Hash updates alone do not establish
+correctness.
 
 Keep generated bodies tied to the pinned extraction and document any translator
 variant or runtime model involved. State new assumptions explicitly and run the

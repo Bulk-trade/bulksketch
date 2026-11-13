@@ -1,6 +1,8 @@
 //! A sketch with 16 buckets. Each bucket decodes on its own, so a bucket that
-//! holds too many differences fails without spoiling the others, and the peers
-//! only need a fallback for that one bucket.
+//! holds too many differences usually fails without spoiling the others, and
+//! the peers only need a fallback for that one bucket. (Rarely, an overloaded
+//! bucket returns a wrong result instead of failing; see "When there are too
+//! many differences" in docs/guide.md.)
 //!
 //! Run it with:
 //!

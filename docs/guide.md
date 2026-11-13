@@ -221,10 +221,11 @@ so one bucket of capacity 18 is 171 bytes, and 16 buckets of capacity 8 are
 differences; the README's [Performance](../README.md#performance) section has
 measured times.
 
-**Buckets.** With one bucket, more differences than the capacity means the
-whole decode fails. Splitting the same total capacity over several buckets
-limits the damage: a bucket that overflows fails on its own, the others still
-decode, and the fallback only has to cover the failed bucket. In
+**Buckets.** With one bucket, more differences than the capacity usually
+make the whole decode fail. Splitting the same total capacity over several
+buckets limits the damage: an overloaded bucket usually fails on its own, the
+others still decode, and the fallback only has to cover the failed bucket (the
+rare wrong results described below apply to each bucket too). In
 [`buckets.rs`](../examples/buckets.rs), one of 16 buckets fails and the peers
 then exchange the IDs of that bucket only: about 1/16 of the set.
 

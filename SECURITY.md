@@ -31,9 +31,11 @@ bulksketch is meant to decode sketches received from untrusted peers.
   times an honest decode (the work budget still caps them). Use a secret seed.
   The seed is a mitigation, not a proven bound; see the README.
 - **More differences than capacity.** Beyond capacity, another set can have
-  exactly the same syndromes. No decoder can detect this. Size the capacity for
-  the difference you expect, and treat a decoded set as a claim to check against
-  your own data.
+  exactly the same syndromes. No decoder can detect this, and the result can
+  then leave out real differences. Size the capacity for the difference you
+  expect. When the reconciled sets must be exactly equal, confirm it
+  independently afterwards, for example by comparing a hash of each whole set;
+  checking only the returned IDs cannot reveal IDs that were left out.
 - **Timing.** The code is not constant-time. Do not sketch secret values.
 
 The Lean proofs cover the portable decoder under the assumptions listed in
