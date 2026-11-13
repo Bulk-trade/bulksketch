@@ -22,7 +22,7 @@
   "coverage_goal": "all native production logic under explicitly declared runtime/compiler/ISA assumptions",
   "coverage_goal_achieved": false,
   "source_build_inputs_sha256": {
-    "Cargo.toml": "56f9564093d2e82888a88b3cdb8e9043818c91e7483ae8f1ab4c7690e919efdc",
+    "Cargo.toml": "4695c5ba4b3520fb69e63aed13b7d11b596d6a36fb8d1025e1cc22ac05d9b86d",
     "Cargo.lock": "2d0ee90905288ebaf0914424b4e41ef6ca03c067c00e26fa0a1211f80b80a887",
     "rust-toolchain.toml": "6791dcb04edcb490caaf08590dbe1dd9d9954b46dab2095df12dc984f704f1a8"
   }
