@@ -117,10 +117,12 @@ fn main() -> Result<(), Box<dyn Error>> {
             assert_eq!(BTreeSet::from_iter(bob_lacks), BTreeSet::from(alice_only));
             assert_eq!(BTreeSet::from_iter(alice_lacks), BTreeSet::from(bob_only));
         }
-        Some(DecodeOutcome::Equal) => println!("The two sets are equal"),
+        // Equal sketches. Within the capacity, that means equal sets.
+        Some(DecodeOutcome::Equal) => println!("The two sketches are equal"),
         Some(DecodeOutcome::Failed { reason }) => {
-            // More differences than the capacity. Retry with a larger capacity
-            // or fall back to exchanging the IDs themselves.
+            // No verified result, most often because the sets differ in more
+            // IDs than the capacity. Retry with a larger capacity or fall back
+            // to exchanging the IDs themselves.
             println!("Could not decode: {reason:?}");
         }
         None => unreachable!("the shape has one bucket"),

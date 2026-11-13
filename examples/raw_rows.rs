@@ -6,8 +6,10 @@
 //! the order the sketch stores them. All rows in the batch are decoded in one
 //! call with one scratch arena, and each row succeeds or fails on its own.
 //!
-//! Raw rows have no place for ID 0 (the full encoding stores it as a separate
-//! flag), so an ID 0 held only by the remote side cannot be recovered this way.
+//! Raw rows have no place for the ID 0 flag that the full encoding carries, so
+//! the decoder assumes the remote set does not hold ID 0. Keep ID 0 out of sets
+//! you exchange this way: if the remote set holds it, the result for that row
+//! is wrong.
 //!
 //! Run it with:
 //!

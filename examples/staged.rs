@@ -1,9 +1,11 @@
 //! Running a decode one stage at a time with `DecodeJob`.
 //!
 //! `decode_into` runs a whole request in one call. A `DecodeJob` runs the same
-//! request in small steps, so a caller can interleave decoding with other work
-//! (for example, one stage per event-loop turn) and watch the work used so far.
-//! The steps and the result are deterministic: the same inputs and seed always
+//! request one stage at a time, so a caller can do other work between stages
+//! and watch the work used so far. A stage is one phase of the algorithm, such
+//! as the whole Berlekamp-Massey step for a bucket, and runs to completion when
+//! called: stages are not time slices, and some take much longer than others.
+//! The stages and the result are deterministic: the same inputs and seed always
 //! give the same stages, work counts and output.
 //!
 //! Run it with:

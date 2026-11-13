@@ -25,8 +25,9 @@ fn id(n: u64) -> u64 {
     n.wrapping_mul(0x9e37_79b9_7f4a_7c15)
 }
 
-/// Build a frozen sketch from many IDs at once. `toggle_batch` sorts the IDs
-/// into their buckets in one pass, which is faster than one `toggle` per ID.
+/// Build a frozen sketch from many IDs at once. `toggle_batch` first sorts the
+/// IDs into their buckets and then adds each bucket's IDs together, which can
+/// be faster than one `toggle` per ID.
 fn sketch_of(
     shape: &Arc<SketchShape<Gf64>>,
     ids: &[u64],

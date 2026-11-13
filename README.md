@@ -1,14 +1,20 @@
 # bulksketch
 
-A set-reconciliation sketch in pure Rust using the PinSketch BCH-code
-construction over GF(2^64).
+Find the few IDs that two large sets do not have in common by exchanging a
+small summary of each set, a *sketch*, instead of the sets themselves.
+
+bulksketch is a pure-Rust implementation of PinSketch (a construction based on
+BCH codes) for 64-bit IDs.
 [minisketch](https://github.com/bitcoin-core/minisketch) is the reference
-implementation of PinSketch; bulksketch is a separate implementation for
-64-bit IDs. [How the two compare](docs/minisketch-comparison.md).
+implementation of PinSketch; see [how the two compare](docs/minisketch-comparison.md).
 
 Two parties each build a small sketch of their set of 64-bit IDs. From one
 sketch of capacity `c` and its own set, the other party recovers the symmetric
 difference of the two sets, as long as it has at most `c` elements.
+
+New to set reconciliation? Start with the [guide](docs/guide.md), which
+explains the idea and every setting in plain terms, and the runnable
+[examples](examples/).
 
 - **Pure Rust, no dependencies.** The library's `[dependencies]` list is empty.
 - **Bounded work per decode.** Every decode runs under a checked work budget
@@ -21,8 +27,10 @@ difference of the two sets, as long as it has at most `c` elements.
   at capacity 89. It caps the cost of a hostile row; it does not make that cost
   small.
 - **Verified output.** A decoded row is checked against every stored syndrome
-  before it is returned. A row that cannot be decoded within its budget is
-  reported as `Failed`; no partial result of that row escapes.
+  before it is returned. A row that cannot be decoded within its output budget
+  is reported as `Failed`; no partial result of that row escapes, and the other
+  rows are unaffected. Running out of work budget is different: it fails the
+  whole request, and no row results are returned.
 - **Per-bucket decode.** A sketch can have many buckets (an ID goes to bucket
   `id % buckets`). Each bucket decodes or fails on its own.
 - **Runtime-selected arithmetic.** A portable backend, a PCLMUL backend and a
@@ -36,9 +44,8 @@ difference of the two sets, as long as it has at most `c` elements.
 
 License: [MIT](LICENSE).
 
-New to set reconciliation? Start with the [guide](docs/guide.md) and the
-runnable [examples](examples/). See [CONTRIBUTING.md](CONTRIBUTING.md) for
-development and verification commands.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development and verification
+commands.
 
 The crate is not on crates.io yet. To use it, add it as a git dependency:
 
@@ -185,6 +192,13 @@ Its sources and recorded workloads remain available in the
 [archived comparison suite](https://github.com/Bulk-trade/bulksketch/tree/0a5bda53f6b07fcae8acd870e2d0c4a246d207e6/oracle).
 
 ## Proofs
+
+In short: the end-to-end theorem covers the ordinary decoding route on the
+portable backend, without candidate hints. Not yet covered: the shortcut paths
+for small differences, plan V3's affine and closed-form root finding,
+candidate hints, the x86-64 backends, parsing, request admission and the code
+that builds sketches. Those parts are tested but not proved. The details
+follow.
 
 This repository contains Lean 4 proofs of the sketch mathematics and an
 end-to-end correctness theorem for the original Portable GF64 decoder.
