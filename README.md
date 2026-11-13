@@ -47,7 +47,8 @@ License: [MIT](LICENSE).
 See [CONTRIBUTING.md](CONTRIBUTING.md) for development and verification
 commands.
 
-The crate is not on crates.io yet. To use it, add it as a git dependency:
+The crate is not on crates.io yet. To use it, add it as a git dependency
+(Rust 1.89 or newer):
 
 ```toml
 [dependencies]
