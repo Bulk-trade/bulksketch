@@ -5,6 +5,9 @@ on:
     branches: [main]
   pull_request:
 
+permissions:
+  contents: read
+
 env:
   CARGO_TERM_COLOR: always
 
@@ -27,6 +30,14 @@ jobs:
           for example in examples/*.rs; do
             cargo run --release --locked --example "$(basename "$example" .rs)"
           done
+
+  msrv:
+    name: minimum Rust version (1.89)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustup toolchain install 1.89.0 --profile minimal
+      - run: cargo +1.89.0 test --release --locked
 
   lint:
     runs-on: ubuntu-24.04
