@@ -14,7 +14,7 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "39c639973e2d6deb24aee2edfe4f0c95d54975ecdddbee1e611e4428ebc08549",
-    "audit/frozen-inputs.json": "87b81c46d741c4c17248aa506463fbd10983f5311f2d46bbb6c0f8bbf82d5bdc",
+    "audit/frozen-inputs.json": "77a251acbf42bc5f380ca2839c09ffe50f86580682f8cf964f18ad9ba6adf917",
     "bridge/BulksketchBridge.lean": "5dbd9b1fd933cd65fc227225c70ec885fecc1b5eaa061ec44ae76ecd4d5eb840",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
@@ -288,7 +288,7 @@
     "extraction/portable-xor/project.py": "5df40c41e8b982a775d2cf0eeaaf6938a9fe46a7189645ee15cbb22cf7450870",
     "extraction/portable-xor/receipt.json": "66a4cd4838efc1a0f5c312d3d21bb4afa7c2801fee342d0ed63e7d4327d946a0",
     "extraction/portable-xor/refinement-receipt.json": "064222f445b771c56f238fd2c73cf29bc14210ee4c5d9b874337ca03b71a632e",
-    "README.md": "96e7f2a4d9ef4d4873fd948119e606d6a1889c0d6b47c57778ba73b91ec0deda",
+    "README.md": "e5b20c558033f99d8e82d54e0a3b08131fb8c13266fa43efa79c7467134c7e68",
     "RECONCILIATION.md": "54fff5f22a8edbfca170fac93e4d6e8fedb99e69b868eba464f9205ffb72832a",
     "audit/coverage.json": "188e3095de9755227b6ae77aba4a772e4e951a07ccd1cc831754e6fad265354b",
     "audit/reconciliation-checkpoint.json": "b22311c148f62eea4bbdb3968f6ae187abf6f7b553f9f1cd03f883eed2cd009a",
@@ -17764,6 +17764,18 @@
       "old_sha256": "8f8836fb1ef2e74d0bd9f40f07041d9c344da7350ed140abc112b62d85350129",
       "new_sha256": "87b81c46d741c4c17248aa506463fbd10983f5311f2d46bbb6c0f8bbf82d5bdc",
       "reason": "Add MIT package-license metadata only. Native source, dependency/features, compiler settings, proof statements, and runtime behavior are unchanged."
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "old_sha256": "87b81c46d741c4c17248aa506463fbd10983f5311f2d46bbb6c0f8bbf82d5bdc",
+      "new_sha256": "77a251acbf42bc5f380ca2839c09ffe50f86580682f8cf964f18ad9ba6adf917",
+      "reason": "Remove the comparison workspace and its development dependencies; update current scope documentation. Native Rust, production dependencies/features, proof statements and validator logic are unchanged."
+    },
+    {
+      "path": "README.md",
+      "old_sha256": "96e7f2a4d9ef4d4873fd948119e606d6a1889c0d6b47c57778ba73b91ec0deda",
+      "new_sha256": "e5b20c558033f99d8e82d54e0a3b08131fb8c13266fa43efa79c7467134c7e68",
+      "reason": "Remove the comparison workspace and its development dependencies; update current scope documentation. Native Rust, production dependencies/features, proof statements and validator logic are unchanged."
     }
   ]
 }

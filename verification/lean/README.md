@@ -6,8 +6,7 @@ verification checks the exact native source and build-input fingerprints against
 the frozen inventory. Native Rust remains the implementation.
 
 The scope is `src/` with production configurations, including portable and x86
-backends. The oracle, Minisketch, its bindings, and test-only implementations are
-excluded. The initial inventory retains 344 executable source declarations and
+backends. Test-only implementations are excluded. The initial inventory retains 344 executable source declarations and
 532 declarations in total. Compiler-expanded bodies and complete per-item
 contracts remain open, so no implementation-coverage percentage is claimed.
 

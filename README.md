@@ -1,14 +1,13 @@
 # bulksketch
 
-A set-reconciliation sketch in pure Rust: PinSketch (the BCH-code construction
-used by [minisketch](https://github.com/sipa/minisketch)) over GF(2^64).
+A set-reconciliation sketch in pure Rust using the PinSketch BCH-code
+construction over GF(2^64).
 
 Two parties each build a small sketch of their set of 64-bit IDs. From one
 sketch of capacity `c` and its own set, the other party recovers the symmetric
 difference of the two sets, as long as it has at most `c` elements.
 
 - **Pure Rust, no dependencies.** The library's `[dependencies]` list is empty.
-  Minisketch is used only by the test and benchmark crate in `oracle/`.
 - **Bounded work per decode.** Every decode runs under a checked work budget
   (`DecodeLimits::max_work`); a decode that would exceed it stops with
   `WorkLimitExceeded`. `DecodePlan::complete_bound` computes a budget and a
@@ -28,17 +27,13 @@ difference of the two sets, as long as it has at most `c` elements.
   The tests check that forced backends give the same results and work counts.
   `unsafe` code is confined to the two x86-64 backend files. Other targets,
   including AArch64, use the portable backend only.
-- **Minisketch's row bytes, for now.** Today the syndrome payload of a
-  one-bucket sketch is byte-for-byte a serialized 64-bit minisketch of the same
-  capacity, and `decode_rows_into` accepts such rows directly. This is a current
-  property, not a promise: the field, layout or wire format may change in a
-  later version if that makes decoding faster or sketches smaller. The full
-  encoding (`FrozenSketch::encoded_v1`) already adds its own header and is not
-  minisketch's format.
+- **Raw syndrome rows.** `decode_rows_into` accepts header-free syndrome rows.
+  The full encoding (`FrozenSketch::encoded_v1`) adds its own header. The field,
+  layout and wire format may change in later versions.
 
-License: [MIT](LICENSE). The vendored minisketch sources in `oracle/` keep
-their own licenses (see
-[Repository layout](#repository-layout)).
+License: [MIT](LICENSE).
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development and verification commands.
 
 ## Example
 
@@ -131,7 +126,7 @@ assert_eq!(
 Other entry points:
 
 - `decode_rows_into` decodes a batch of independent one-bucket rows, each given
-  as raw syndrome bytes (minisketch's serialized form), with one scratch arena.
+  as raw syndrome bytes, with one scratch arena.
 - `DecodeJob` runs a decode one stage at a time (`next_stage`, `run_next`,
   `finish`), for callers that interleave decoding with other work.
 - `candidates` passes IDs the caller expects in the difference; they can save
@@ -143,8 +138,7 @@ Root finding splits the locator polynomial along directions derived from the
 `Decoder` seed. An attacker who knows the seed can choose IDs whose roots resist
 those directions, so many split attempts fail. By our operation-count model,
 such a crafted row costs around 20 to 25 times the work of an honest
-full-capacity decode, in minisketch's algorithm and on our seeded root-finding
-path. The work budget still caps it. With a secret seed, the worst an attacker
+full-capacity decode on the seeded root-finding path. The work budget still caps it. With a secret seed, the worst an attacker
 can easily force is about one honest full-capacity decode per row. Fixed seeds
 are fine for tests and deterministic simulation.
 
@@ -153,37 +147,29 @@ are fine for tests and deterministic simulation.
 When a row holds more than `c` differences, the sketch no longer identifies the
 set. Usually the decode fails. Sometimes another set of at most `c` IDs has
 exactly the same syndromes (an alias). No decoder can tell that set from the
-real one. In the oracle tests, random 64-bit IDs produced aliases only at
+real one. Recorded comparison tests found that random 64-bit IDs produced aliases only at
 capacities 1 to 3, while small consecutive integers (which span small GF(2)
 subspaces) produced them in 60 of 267 cases, up to capacity 89.
 
 bulksketch returns only sets that reproduce every syndrome of the input, so it
-never returns a set that is inconsistent with the sketch. The oracle tests check
-this for every capacity from 1 to 89, and check that bulksketch returns the same
-set whenever minisketch finds a consistent one.
+never returns a set that is inconsistent with the sketch. The archived
+comparison suite checked this for capacities 1 through 89 and compared every
+consistent result with the external decoder.
 
 ## Tests
 
 ```sh
-cargo test --workspace --release
+cargo test --release --locked -p bulksketch
 ```
 
-This runs the library's own tests (unit tests, frozen vectors in
-`tests/vectors/`, and a compile-fail check of the decode job's borrow rules
-through `tools/check-ownership.py`, which needs `python3` and `rustc`) and the
-minisketch comparisons in `oracle/tests/`:
+The native suite includes unit tests, integration tests, frozen vectors in
+`tests/vectors/`, backend agreement checks and a compile-fail check of decode-job
+borrowing through `tools/check-ownership.py`. The ownership check needs Python 3
+and `rustc`.
 
-- the payload of a one-bucket sketch equals minisketch's serialized bytes, for
-  every capacity from 1 to 89 and sets below, at and above capacity;
-- decoding matches minisketch impl 0 and impl 1 and the true difference for
-  every capacity from 1 to 89 and every difference size up to the capacity, both
-  with remote bytes made by minisketch and by bulksketch;
-- beyond capacity, every returned set reproduces the sketch, and whenever
-  minisketch finds a consistent set, bulksketch returns the same set;
-- degree-3 and degree-4 rows on the closed-form path match minisketch.
-
-The `oracle` crate builds minisketch from C++ source, so it needs a C++ compiler
-and libclang (for `bindgen`). The library itself needs neither.
+The former comparison workspace and its C++ dependencies are no longer bundled.
+Its sources and recorded workloads remain available in the
+[archived comparison suite](https://github.com/Bulk-trade/bulksketch/tree/0a5bda53f6b07fcae8acd870e2d0c4a246d207e6/oracle).
 
 ## Proofs
 
@@ -241,40 +227,35 @@ establishing input validity through the public constructors and updates, wire
 parsing, the shared request job and its aggregate work allowance, candidate-hint
 and V3 routes, and accelerated backend execution and memory contracts.
 
-## Benchmark
+## Recorded comparison harness
 
-```sh
-cargo bench -p bulksketch-oracle --bench decode
-```
-
-One Criterion benchmark compares bulksketch with minisketch impl 0 (portable)
-and impl 1 (CLMUL, x86-64 only) on the same inputs:
+The [archived Criterion harness](https://github.com/Bulk-trade/bulksketch/tree/0a5bda53f6b07fcae8acd870e2d0c4a246d207e6/oracle)
+compared BulkSketch with Minisketch impl 0 (portable) and impl 1 (CLMUL, x86-64
+only). It is retained in Git history rather than the current build.
 
 | Case | Rows x capacity | Differences |
 |---|---|---|
-| `vote_16x18_total11`, `vote_16x89_total11` | 16 x 18, 16 x 89 | 10 to 12 per vote in total, routed to rows by `id % 16`, so most rows hold 0 to 2 and some are equal (the shape of the "full vote" rows under Performance) |
+| `vote_16x18_total11`, `vote_16x89_total11` | 16 x 18, 16 x 89 | 10 to 12 per vote in total, routed to rows by `id % 16`, so most rows hold 0 to 2 and some are equal |
 | `vote_16x18_d11`, `vote_16x89_d11` | 16 x 18, 16 x 89 | 11 in every row |
 | `row_c18_d1`, `_d2`, `_d5` | 1 x 18 | 1, 2, 5 |
 | `row_c89_d1`, `_d2`, `_d5` | 1 x 89 | 1, 2, 5 |
 | `pressure_16x18` | 16 x 18 | 6 to 60 per row; half of the rows exceed capacity and fail |
 
-Both libraries start from a prebuilt local sketch and the remote row bytes.
-bulksketch decodes all rows in one `decode_rows_into` call; minisketch
-deserializes each row into a reused sketch, merges the local sketch and decodes
-it. Each case cycles through 32 different fixtures. Results are checked before
+Both libraries started from a prebuilt local sketch and remote row bytes.
+BulkSketch decoded all rows in one `decode_rows_into` call; Minisketch
+deserialized each row into a reused sketch, merged the local sketch and decoded
+it. Each case cycled through 32 different fixtures, with results checked before
 timing.
 
-This is a plain single-process benchmark. It does not reproduce the method
-behind the numbers below (64 fresh processes per cell, a pinned core,
-percentiles over all calls), and its numbers will differ from them. Pin it to
-one core for steadier results, for example `taskset -c 2 cargo bench ...`.
-
-The vendored minisketch has two small local additions (a candidate-decode entry
-point that the benchmark does not use, and a per-thread seeded generator for the
-randomized basis instead of a `std::random_device` per sketch) and is compiled
-with `-O3 -march=native`.
+This single-process harness did not reproduce the separate percentile method
+below. Its Minisketch copy included a candidate-decode entry point unused by the
+benchmark and a per-thread seeded basis generator; it was compiled with
+`-O3 -march=native`.
 
 ## Performance
+
+These are recorded comparison results. The comparison libraries and harness are
+no longer bundled; native implementation code is unchanged by their removal.
 
 In the tables below, a *vote* is one complete 16-bucket sketch from a peer,
 compared against the local sketch: one call handles all 16 rows, and each row
@@ -316,9 +297,10 @@ Where bulksketch is **not** faster, or only slightly:
 
 The work budget limits counted operations, not time.
 
-### Reproducing the numbers
+### Measurement method
 
-The timing tool behind this table is not in this repository yet. Its method:
+The timing tool used for this table is not included in this repository. The
+recorded method:
 
 - Both libraries (and minisketch impl 0 and 1) are linked into one release
   binary and given identical input bytes. Correctness is checked outside the
@@ -333,10 +315,10 @@ The timing tool behind this table is not in this repository yet. Its method:
   twice) in every cell shows the noise level.
 - The fixtures are frozen before timing.
 
-To get comparable ratios with what is here, run the Criterion benchmark above
-pinned to one idle core on an x86-64 CPU with PCLMUL, and compare ratios rather
-than absolute times. Expect different numbers: the benchmark decodes every row,
-including equal ones, and does not use the wrapper described above.
+The archived Criterion harness provides a separate workload for comparing
+ratios on an idle x86-64 core with PCLMUL. It decodes every row, including equal
+ones, and does not use the application wrapper described above; its absolute
+times therefore differ from these recorded results.
 
 ## Repository layout
 
@@ -345,9 +327,8 @@ including equal ones, and does not use the wrapper described above.
 | `src/` | The library: field arithmetic and backends (`field/`, `backend/`), polynomials (`poly/`), Berlekamp-Massey, root finding and verification (`decode/`), and the sketch, wire format, scratch and request API (`sketch/`) |
 | `tests/` | Integration tests and frozen vectors (`tests/vectors/`) |
 | `tools/check-ownership.py` | Compile-fail check used by `tests/ownership.rs` |
-| `verification/lean/` | Lean 4 proofs of the field arithmetic and work meter (see Proofs) |
-| `oracle/` | Test-only crate (`publish = false`): minisketch comparisons (`oracle/tests/`) and the benchmark (`oracle/benches/decode.rs`) |
-| `oracle/minisketch-rs/` | Vendored copy of the [minisketch-rs](https://github.com/eupn/minisketch-rs) binding (Apache-2.0, see its `Cargo.toml`) with the minisketch C++ sources (MIT, `oracle/minisketch-rs/minisketch/LICENSE`, copyright 2018 Pieter Wuille, Greg Maxwell, Gleb Naumenko) |
+| `verification/lean/` | Lean 4 models, native-body refinements and the Portable decoder theorem (see Proofs) |
+| `CONTRIBUTING.md` | Development, performance and proof-verification requirements |
 
 The toolchain is pinned in `rust-toolchain.toml`. `rustfmt.toml` uses options
 that need a nightly rustfmt (`cargo +nightly fmt`).

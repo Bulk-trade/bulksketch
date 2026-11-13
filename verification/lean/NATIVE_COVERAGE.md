@@ -118,12 +118,12 @@ receipt data: three valid contexts pass and sixteen malformed contexts are
 rejected, including empty artifact lists and hidden frontend attribution.
 
 All 139 native release regression tests passed on the unchanged Rust source.
-There is no native runtime change or claimed speedup. Native benchmarking lives
-in the excluded oracle crate and is not used to claim a performance change.
+There is no native runtime change or claimed speedup. Historical performance
+comparisons are described in the repository README.
 
 The [Frobenius-table](FROBENIUS_TABLES.md), [slice](SLICE_NORMALIZATION.md) and
 [decoder](README.md) documentation describe the related proofs. Public
 state/resource/ownership contracts, accelerated end-to-end execution and
 compiler-expanded closure are outside this component record. The original
-source inventory is retained throughout. Replacement Lean decoders, Minisketch,
-bindings, the oracle and Bulk consensus are excluded.
+source inventory is retained throughout. Replacement Lean decoders, test-only
+implementations and Bulk consensus are excluded.
