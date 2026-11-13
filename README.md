@@ -36,7 +36,16 @@ difference of the two sets, as long as it has at most `c` elements.
 
 License: [MIT](LICENSE).
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for development and verification commands.
+New to set reconciliation? Start with the [guide](docs/guide.md) and the
+runnable [examples](examples/). See [CONTRIBUTING.md](CONTRIBUTING.md) for
+development and verification commands.
+
+The crate is not on crates.io yet. To use it, add it as a git dependency:
+
+```toml
+[dependencies]
+bulksketch = { git = "https://github.com/Bulk-trade/bulksketch" }
+```
 
 ## Example
 
@@ -331,6 +340,8 @@ times therefore differ from these recorded results.
 |---|---|
 | `src/` | The library: field arithmetic and backends (`field/`, `backend/`), polynomials (`poly/`), Berlekamp-Massey, root finding and verification (`decode/`), and the sketch, wire format, scratch and request API (`sketch/`) |
 | `tests/` | Integration tests and frozen vectors (`tests/vectors/`) |
+| `examples/` | Runnable programs: basic use, buckets, untrusted input, staged and batched decoding |
+| `docs/guide.md` | A guide for new users: how sketches work and how to choose their settings |
 | `tools/check-ownership.py` | Compile-fail check used by `tests/ownership.rs` |
 | `verification/lean/` | Lean 4 models, native-body refinements and the Portable decoder theorem (see Proofs) |
 | `docs/minisketch-comparison.md` | What bulksketch shares with minisketch, what it adds and what it lacks |
