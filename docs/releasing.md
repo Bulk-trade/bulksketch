@@ -11,9 +11,25 @@ As of November 2026, crates.io requires an API token to create a new crate.
 Trusted Publishing can publish versions of an existing crate, but cannot
 create one. See the [crates.io Trusted Publishing documentation](https://crates.io/docs/trusted-publishing).
 
-The first upload therefore needs a separately authorized bootstrap. Until that
-is complete, do not push a release tag: the OIDC-only workflow cannot publish
-the first version. Do not add a stored-token fallback to the release workflow.
+The first upload uses the separately authorized, manual
+[first-publication workflow](../.github/workflows/bootstrap.yml). It accepts
+only version `0.1.0` from an explicitly selected commit on `main`, runs the
+native tests and publication dry run, and stops if the crate already exists.
+Its one-time token is the `CRATES_IO_BOOTSTRAP_TOKEN` secret in the
+`crates-io-bootstrap` environment, restricted to `main`. Enter the token
+directly in GitHub; never put it in a local Cargo login, a file or a message.
+Delete the secret, revoke the token and remove the bootstrap workflow after
+the first successful publication.
+
+Create the token with only the `publish-new` scope, the exact crate name
+pattern `bulksketch`, and a custom expiration date of tomorrow. The publishing
+account must have a verified email address. Deleting a GitHub secret does not
+revoke its crates.io token; revoke it separately in crates.io token settings.
+
+Do not push the first release tag before the bootstrap is complete. While
+creating that first tag, leave the ordinary Release workflow disabled to avoid
+uploading the same version twice. Enable it after configuring the trusted
+publisher below. Subsequent release tags use OIDC, with no saved-token fallback.
 
 ## Trusted publisher configuration
 

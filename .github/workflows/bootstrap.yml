@@ -1,0 +1,81 @@
+name: First crates.io publication
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_commit:
+        description: Full commit SHA of the validated 0.1.0 release
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: crates-io-first-publication
+  cancel-in-progress: false
+
+env:
+  CARGO_TERM_COLOR: always
+  RELEASE_COMMIT: ${{ inputs.release_commit }}
+
+jobs:
+  validate:
+    if: github.repository == 'Bulk-trade/bulksketch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Check the first release source
+        run: |
+          python3 - <<'PY'
+          import os, pathlib, subprocess, tomllib
+          package = tomllib.loads(pathlib.Path("Cargo.toml").read_text())["package"]
+          assert package["name"] == "bulksketch", "Unexpected package"
+          assert package["version"] == "0.1.0", "Bootstrap is only for version 0.1.0"
+          assert package["publish"] == ["crates-io"], "Unexpected registry"
+          assert os.environ["RELEASE_COMMIT"] == subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(), "Unexpected release commit"
+          PY
+      - name: Install the pinned toolchain
+        run: rustup show active-toolchain || rustup toolchain install
+      - run: cargo test --release --locked
+      - run: cargo doc --no-deps --locked
+        env:
+          RUSTDOCFLAGS: -D warnings
+      - run: cargo publish --dry-run --locked --registry crates-io
+
+  publish:
+    needs: validate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment: crates-io-bootstrap
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Check the first release source and registry
+        run: |
+          python3 - <<'PY'
+          import os, pathlib, subprocess, tomllib, urllib.error, urllib.request
+          package = tomllib.loads(pathlib.Path("Cargo.toml").read_text())["package"]
+          assert package["name"] == "bulksketch", "Unexpected package"
+          assert package["version"] == "0.1.0", "Bootstrap is only for version 0.1.0"
+          assert package["publish"] == ["crates-io"], "Unexpected registry"
+          assert os.environ["RELEASE_COMMIT"] == subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(), "Unexpected release commit"
+          try:
+              urllib.request.urlopen("https://crates.io/api/v1/crates/bulksketch", timeout=30).close()
+          except urllib.error.HTTPError as error:
+              assert error.code == 404, "Unexpected registry response"
+          else:
+              raise SystemExit("The crate already exists; use the OIDC release workflow")
+          PY
+      - name: Install the pinned toolchain
+        run: rustup show active-toolchain || rustup toolchain install
+      - name: Publish the first version
+        run: |
+          test -n "$CARGO_REGISTRY_TOKEN"
+          cargo publish --locked --registry crates-io
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ secrets.CRATES_IO_BOOTSTRAP_TOKEN }}
