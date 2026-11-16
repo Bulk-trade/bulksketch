@@ -11,30 +11,17 @@ As of November 2026, crates.io requires an API token to create a new crate.
 Trusted Publishing can publish versions of an existing crate, but cannot
 create one. See the [crates.io Trusted Publishing documentation](https://crates.io/docs/trusted-publishing).
 
-The first upload uses the separately authorized, manual
-[first-publication workflow](../.github/workflows/bootstrap.yml). It accepts
-only version `0.1.0` from an explicitly selected commit on `main`, runs the
-native tests and publication dry run, and stops if the crate already exists.
-Its one-time token is the `CRATES_IO_BOOTSTRAP_TOKEN` secret in the
-`crates-io-bootstrap` environment, restricted to `main`. Enter the token
-directly in GitHub; never put it in a local Cargo login, a file or a message.
-Delete the secret, revoke the token and remove the bootstrap workflow after
-the first successful publication.
-
-Create the token with only the `publish-new` scope, the exact crate name
-pattern `bulksketch`, and a custom expiration date of tomorrow. The publishing
-account must have a verified email address. Deleting a GitHub secret does not
-revoke its crates.io token; revoke it separately in crates.io token settings.
-
-Do not push the first release tag before the bootstrap is complete. While
-creating that first tag, leave the ordinary Release workflow disabled to avoid
-uploading the same version twice. Enable it after configuring the trusted
-publisher below. Subsequent release tags use OIDC, with no saved-token fallback.
+Version `0.1.0` was published by a separate
+[manual CI workflow](https://github.com/Bulk-trade/bulksketch/actions/runs/43906181363).
+That workflow and its one-time GitHub secret were removed after publication.
+The bootstrap token was also revoked on crates.io. Subsequent releases use
+the OIDC workflow, with no saved-token fallback.
 
 ## Trusted publisher configuration
 
-After the crate exists, a crates.io owner must add this GitHub publisher in the
-crate's settings:
+A crates.io owner must add this GitHub publisher in the
+[crate's settings](https://crates.io/crates/bulksketch/settings/new-trusted-publisher)
+before publishing another version:
 
 | Field | Value |
 | --- | --- |
@@ -42,6 +29,9 @@ crate's settings:
 | Repository name | `bulksketch` |
 | Workflow filename | `release.yml` |
 | Environment | `crates-io` |
+
+In the crate's settings, enable **Require trusted publishing for all new
+versions** to reject ordinary API-token publication of subsequent releases.
 
 The GitHub `crates-io` environment permits release tags matching `v*`.
 The workflow also checks that the tagged commit belongs to `main`, that its

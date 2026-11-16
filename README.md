@@ -51,7 +51,9 @@ License: [MIT](LICENSE).
 See [CONTRIBUTING.md](CONTRIBUTING.md) for development and verification
 commands.
 
-Use the crate with Rust 1.89 or newer:
+Install [bulksketch from crates.io](https://crates.io/crates/bulksketch) with
+Rust 1.89 or newer. [Versioned API documentation](https://docs.rs/bulksketch)
+is available on docs.rs.
 
 ```toml
 [dependencies]
