@@ -1,0 +1,59 @@
+name: Rustdoc
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rustdoc
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.repository == 'Bulk-trade/bulksketch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Install the pinned toolchain
+        run: rustup show active-toolchain || rustup toolchain install
+      - name: Build public API documentation
+        run: |
+          cargo doc --no-deps --locked
+          cat > target/doc/index.html <<'HTML'
+          <!doctype html>
+          <html lang="en">
+          <meta charset="utf-8">
+          <meta http-equiv="refresh" content="0; url=./bulksketch/">
+          <title>BulkSketch API documentation</title>
+          <a href="./bulksketch/">BulkSketch API documentation</a>
+          </html>
+          HTML
+          touch target/doc/.nojekyll
+        env:
+          RUSTDOCFLAGS: -D warnings
+      - name: Upload documentation
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+        with:
+          path: target/doc
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy public API documentation
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

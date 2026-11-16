@@ -16,6 +16,10 @@ New to set reconciliation? Start with the [guide](docs/guide.md), which
 explains the idea and every setting in plain terms, and the runnable
 [examples](examples/).
 
+[API documentation](https://bulk-trade.github.io/bulksketch/) is built from
+`main` after every push. See [publishing and versioned docs](docs/releasing.md)
+for the crates.io release process.
+
 - **Pure Rust, no dependencies.** The library's `[dependencies]` list is empty.
 - **Bounded work per decode.** Every decode runs under a checked work budget
   (`DecodeLimits::max_work`); a decode that would exceed it stops with
@@ -47,11 +51,12 @@ License: [MIT](LICENSE).
 See [CONTRIBUTING.md](CONTRIBUTING.md) for development and verification
 commands.
 
-Use the crate with Rust 1.89 or newer:
+Use Rust 1.89 or newer. The first crates.io release is being prepared; until
+it is published, use the Git dependency:
 
 ```toml
 [dependencies]
-bulksketch = "0.1.0"
+bulksketch = { git = "https://github.com/Bulk-trade/bulksketch", branch = "main" }
 ```
 
 ## Example
@@ -194,7 +199,7 @@ Its sources and recorded workloads remain available in the
 ## Proofs
 
 The complete Lean sources and extraction evidence are available
-[in the GitHub repository](https://github.com/Bulk-trade/bulksketch/tree/v0.1.0/verification/lean).
+[in the GitHub repository](https://github.com/Bulk-trade/bulksketch/tree/main/verification/lean).
 
 In short: the end-to-end theorem covers the ordinary decoding route on the
 portable backend, without candidate hints. Not yet covered: the shortcut paths
@@ -211,7 +216,7 @@ the symmetric difference `A △ B`, including ID zero.
 
 ### Theorem and assumptions
 
-The [whole-sketch theorem](https://github.com/Bulk-trade/bulksketch/blob/v0.1.0/verification/lean/bridge/BulksketchBridge/PortableSketchEndToEnd.lean)
+The [whole-sketch theorem](https://github.com/Bulk-trade/bulksketch/blob/main/verification/lean/bridge/BulksketchBridge/PortableSketchEndToEnd.lean)
 uses the original `FrozenSketch` payloads and assumes the following.
 
 - Both sketches have the same shape with a positive bucket count, the required
@@ -233,8 +238,8 @@ work assumptions are per row.
 The supporting mathematics proves that capacity-bounded nonzero supports are
 uniquely determined by their odd syndromes, and connects native GF64 arithmetic
 to Mathlib's field representation. The
-[row theorem](https://github.com/Bulk-trade/bulksketch/blob/v0.1.0/verification/lean/bridge/BulksketchBridge/PortableRowEndToEnd.lean)
-and [verification guide](https://github.com/Bulk-trade/bulksketch/blob/v0.1.0/verification/lean/README.md) give the exact statements
+[row theorem](https://github.com/Bulk-trade/bulksketch/blob/main/verification/lean/bridge/BulksketchBridge/PortableRowEndToEnd.lean)
+and [verification guide](https://github.com/Bulk-trade/bulksketch/blob/main/verification/lean/README.md) give the exact statements
 and their scope.
 
 ### Verification

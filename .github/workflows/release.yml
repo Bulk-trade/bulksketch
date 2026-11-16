@@ -1,0 +1,77 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  CARGO_TERM_COLOR: always
+  RELEASE_TAG: ${{ github.ref_name }}
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Check the release tag and source
+        run: |
+          python3 - <<'PY'
+          import os, pathlib, tomllib
+          package = tomllib.loads(pathlib.Path("Cargo.toml").read_text())["package"]
+          assert package["name"] == "bulksketch", "Unexpected package"
+          assert package["publish"] == ["crates-io"], "Unexpected registry"
+          assert os.environ["RELEASE_TAG"] == "v" + package["version"], "Tag must match package version"
+          PY
+          git merge-base --is-ancestor HEAD origin/main
+      - name: Install the pinned toolchain
+        run: rustup show active-toolchain || rustup toolchain install
+      - run: cargo test --release --locked
+      - run: cargo doc --no-deps --locked
+        env:
+          RUSTDOCFLAGS: -D warnings
+      - run: cargo publish --dry-run --locked --registry crates-io
+
+  publish:
+    if: github.repository == 'Bulk-trade/bulksketch'
+    needs: validate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment: crates-io
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Check the release tag and source
+        run: |
+          python3 - <<'PY'
+          import os, pathlib, tomllib
+          package = tomllib.loads(pathlib.Path("Cargo.toml").read_text())["package"]
+          assert package["name"] == "bulksketch", "Unexpected package"
+          assert package["publish"] == ["crates-io"], "Unexpected registry"
+          assert os.environ["RELEASE_TAG"] == "v" + package["version"], "Tag must match package version"
+          PY
+          git merge-base --is-ancestor HEAD origin/main
+      - name: Install the pinned toolchain
+        run: rustup show active-toolchain || rustup toolchain install
+      - name: Authenticate with crates.io through OIDC
+        id: auth
+        uses: rust-lang/crates-io-auth-action@3268eb413133e2960fa4ae0e963ca76380c54cd9 # v1.0.6
+      - name: Publish to crates.io
+        run: cargo publish --locked --registry crates-io
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ steps.auth.outputs.token }}
