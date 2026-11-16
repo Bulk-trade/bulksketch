@@ -14,7 +14,7 @@
     "extraction/aeneas-pilot/workmeter-lean/Types.lean": "3d6135d890a67d72ef5dd351d8a52aa3ac733a635de2e97ea50029eeecfab1b1",
     "extraction/aeneas-pilot/workmeter-lean/Funs.lean": "a5769375b7efd149fab1d40bc886c1e859aec5f463d2c703f82ed1cf5322a940",
     "scripts/verify_bridge.py": "39c639973e2d6deb24aee2edfe4f0c95d54975ecdddbee1e611e4428ebc08549",
-    "audit/frozen-inputs.json": "25594936f9333be198d6b15b3a3129d1472f78a471273651c86dd7c851f3b72f",
+    "audit/frozen-inputs.json": "830f3ed79e73c04ad29d3766168ccdcd8175c3da8ab90433ce4646554676efac",
     "bridge/BulksketchBridge.lean": "5dbd9b1fd933cd65fc227225c70ec885fecc1b5eaa061ec44ae76ecd4d5eb840",
     "bridge/BulksketchBridge/WorkMeterUsedChallenges.lean": "e82ea2a33c971fb27a008b047d2b6688598899459102d7f97d8d7573fafd68e1",
     "bridge/BulksketchBridge/SpreadSpec.lean": "cb5db0539005a1763df31335b0bf9f4522eb183da3ebaf2a2afcb13fafabad93",
@@ -17782,6 +17782,12 @@
       "old_sha256": "77a251acbf42bc5f380ca2839c09ffe50f86580682f8cf964f18ad9ba6adf917",
       "new_sha256": "25594936f9333be198d6b15b3a3129d1472f78a471273651c86dd7c851f3b72f",
       "reason": "Add repository and minimum Rust version (rust-version) package metadata only. Native source, dependencies, features, compiler settings, proof statements, and runtime behavior are unchanged."
+    },
+    {
+      "path": "audit/frozen-inputs.json",
+      "old_sha256": "25594936f9333be198d6b15b3a3129d1472f78a471273651c86dd7c851f3b72f",
+      "new_sha256": "830f3ed79e73c04ad29d3766168ccdcd8175c3da8ab90433ce4646554676efac",
+      "reason": "Enable crates.io publication and constrain archive contents. Native Rust, production dependencies/features, compiler settings, proof statements and validator logic are unchanged."
     }
   ]
 }

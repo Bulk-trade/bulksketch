@@ -47,12 +47,11 @@ License: [MIT](LICENSE).
 See [CONTRIBUTING.md](CONTRIBUTING.md) for development and verification
 commands.
 
-The crate is not on crates.io yet. To use it, add it as a git dependency
-(Rust 1.89 or newer):
+Use the crate with Rust 1.89 or newer:
 
 ```toml
 [dependencies]
-bulksketch = { git = "https://github.com/Bulk-trade/bulksketch" }
+bulksketch = "0.1.0"
 ```
 
 ## Example
@@ -194,6 +193,9 @@ Its sources and recorded workloads remain available in the
 
 ## Proofs
 
+The complete Lean sources and extraction evidence are available
+[in the GitHub repository](https://github.com/Bulk-trade/bulksketch/tree/v0.1.0/verification/lean).
+
 In short: the end-to-end theorem covers the ordinary decoding route on the
 portable backend, without candidate hints. Not yet covered: the shortcut paths
 for small differences, plan V3's affine and closed-form root finding,
@@ -209,7 +211,7 @@ the symmetric difference `A △ B`, including ID zero.
 
 ### Theorem and assumptions
 
-The [whole-sketch theorem](verification/lean/bridge/BulksketchBridge/PortableSketchEndToEnd.lean)
+The [whole-sketch theorem](https://github.com/Bulk-trade/bulksketch/blob/v0.1.0/verification/lean/bridge/BulksketchBridge/PortableSketchEndToEnd.lean)
 uses the original `FrozenSketch` payloads and assumes the following.
 
 - Both sketches have the same shape with a positive bucket count, the required
@@ -231,8 +233,8 @@ work assumptions are per row.
 The supporting mathematics proves that capacity-bounded nonzero supports are
 uniquely determined by their odd syndromes, and connects native GF64 arithmetic
 to Mathlib's field representation. The
-[row theorem](verification/lean/bridge/BulksketchBridge/PortableRowEndToEnd.lean)
-and [verification guide](verification/lean/README.md) give the exact statements
+[row theorem](https://github.com/Bulk-trade/bulksketch/blob/v0.1.0/verification/lean/bridge/BulksketchBridge/PortableRowEndToEnd.lean)
+and [verification guide](https://github.com/Bulk-trade/bulksketch/blob/v0.1.0/verification/lean/README.md) give the exact statements
 and their scope.
 
 ### Verification

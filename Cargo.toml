@@ -9,7 +9,21 @@ repository = "https://github.com/Bulk-trade/bulksketch"
 readme = "README.md"
 keywords = ["sketch", "set-reconciliation", "pinsketch", "bch"]
 categories = ["algorithms", "data-structures"]
-publish = false
+publish = ["crates-io"]
+include = [
+    "/src/**",
+    "/examples/**",
+    "/tests/**",
+    "/tools/check-ownership.py",
+    "/docs/**",
+    "/README.md",
+    "/LICENSE",
+    "/CHANGELOG.md",
+    "/CONTRIBUTING.md",
+    "/SECURITY.md",
+    "/rust-toolchain.toml",
+    "/rustfmt.toml",
+]
 
 [dependencies]
 

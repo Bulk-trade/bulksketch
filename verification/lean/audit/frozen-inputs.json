@@ -10,7 +10,7 @@
     "tooling/ast-extractor/src/main.rs": "44def5e94c09b0ad4a1f3784c6c0e9664557c132a48cb3ba82549e8dcb1e3b7e",
     "tooling/ast-extractor/Cargo.lock": "aa72961ff258686a9e58d5b35b8ecfbca5d37216fca539bfc2870b442ef02cf3",
     "audit/source-inventory.json": "e8143e36f398a78722f9a78c7b31313e0648a28472d33c60dc87d41fd4f7943e",
-    "scope.json": "130f375a6b6ada167903d391fd94bb0e5c37a7aea9fcf482e7577ad3a9ca654a",
+    "scope.json": "45cd5a2b0615c130f9a52210acfd773c05b5b61fca167c7adbdf439ddefbc955",
     "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
     "lakefile.toml": "b6b1d522c0d1a9676055f895112143020c2a04b9ff250fb795a0cbddd46398a0",
     "BulksketchProofs/Audit.lean": "c9ce92f2202ceb9297e81c78c86965dbecaf1509289c53ce106dbedd54ad8eb1",
@@ -1737,6 +1737,12 @@
       "old_sha256": "a48fa744dda109508377df152188ee2ccaab7a16f68714007a5c3db010589c0a",
       "new_sha256": "130f375a6b6ada167903d391fd94bb0e5c37a7aea9fcf482e7577ad3a9ca654a",
       "reason": "Add repository and minimum Rust version (rust-version) package metadata only. Native source, dependencies, features, compiler settings, proof statements, and runtime behavior are unchanged."
+    },
+    {
+      "path": "scope.json",
+      "old_sha256": "130f375a6b6ada167903d391fd94bb0e5c37a7aea9fcf482e7577ad3a9ca654a",
+      "new_sha256": "45cd5a2b0615c130f9a52210acfd773c05b5b61fca167c7adbdf439ddefbc955",
+      "reason": "Enable crates.io publication and constrain archive contents. Native Rust, production dependencies/features, compiler settings, proof statements and validator logic are unchanged."
     }
   ]
 }
